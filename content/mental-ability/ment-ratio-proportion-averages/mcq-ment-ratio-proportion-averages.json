@@ -1,0 +1,655 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Ratio, Proportion & Averages",
+  "items": [
+    {
+      "id": "ment-ratio-proportion-averages-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "refresher": true,
+      "question": "The average of 15, 20, 35 and 38 is:",
+      "options": [
+        "25",
+        "27",
+        "28",
+        "29"
+      ],
+      "answerIndex": 1,
+      "explanation": "Average = (sum of observations) ÷ (number of observations).\n\nSum = 15 + 20 + 35 + 38 = 108; count = 4; average = 108 ÷ 4 = **27**.\n\n**Why not the others**\n- 25 — would need a total of 100, but the sum is 108.\n- 28 — would need a total of 112, four more than the actual sum.\n- 29 — would need a total of 116, overstating the sum by 8.\n\n**Key facts**\n- Average (mean) = (X₁ + X₂ + … + Xₙ) / n.\n- Total = average × number of terms — the form used to back-solve a missing value.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average",
+      "verified": true,
+      "covers": [
+        "Averages — basic (sum ÷ n)"
+      ],
+      "tags": [
+        "averages",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "refresher": true,
+      "question": "The ratio 84 : 105 in its simplest form is:",
+      "options": [
+        "4 : 5",
+        "5 : 6",
+        "6 : 7",
+        "7 : 8"
+      ],
+      "answerIndex": 0,
+      "explanation": "Divide both terms by their HCF.\n\nHCF(84, 105) = 21; 84 ÷ 21 = 4 and 105 ÷ 21 = 5, so 84 : 105 = **4 : 5**.\n\n**Why not the others**\n- 5 : 6 — that is 85 : 102 in the same scale, not 84 : 105.\n- 6 : 7 — equals 90 : 105; the first term is wrong.\n- 7 : 8 — unrelated; dividing 84 : 105 never yields 7 : 8.\n\n**Key facts**\n- A ratio is simplified by dividing both terms by their HCF.\n- 84 = 2²×3×7, 105 = 3×5×7, common factors 3×7 = 21.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions",
+      "verified": true,
+      "covers": [
+        "Ratio — simplification & combining (a:b, b:c → a:b:c)"
+      ],
+      "tags": [
+        "ratio",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "If a : b = 2 : 3 and b : c = 4 : 5, then a : b : c is:",
+      "options": [
+        "2 : 3 : 5",
+        "8 : 12 : 15",
+        "2 : 4 : 5",
+        "6 : 12 : 20"
+      ],
+      "answerIndex": 1,
+      "explanation": "Make the common term b equal in both ratios, then read all three together.\n\nb appears as 3 and as 4; LCM(3, 4) = 12. Scale a : b = 2 : 3 by 4 → 8 : 12; scale b : c = 4 : 5 by 3 → 12 : 15. Hence a : b : c = **8 : 12 : 15**.\n\n**Why not the others**\n- 2 : 3 : 5 — just stacks the given terms without equalising b (3 ≠ 4).\n- 2 : 4 : 5 — uses b = 4, but then a : b is 2 : 4 = 1 : 2, not 2 : 3.\n- 6 : 12 : 20 — c-term wrong; b : c would be 12 : 20 = 3 : 5, not 4 : 5.\n\n**Key facts**\n- To combine a : b and b : c, scale each so the shared term matches (use its LCM).\n- Combined ratio a : b : c is then read directly from the scaled terms.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions",
+      "verified": true,
+      "covers": [
+        "Ratio — simplification & combining (a:b, b:c → a:b:c)"
+      ],
+      "tags": [
+        "ratio",
+        "combining"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The compound ratio of 2 : 3, 9 : 4 and 5 : 6 is:",
+      "options": [
+        "5 : 4",
+        "3 : 2",
+        "4 : 5",
+        "5 : 6"
+      ],
+      "answerIndex": 0,
+      "explanation": "Compound ratio = (product of antecedents) : (product of consequents).\n\nAntecedents: 2×9×5 = 90; consequents: 3×4×6 = 72; so 90 : 72. HCF(90, 72) = 18 → 90/18 : 72/18 = **5 : 4**.\n\n**Why not the others**\n- 3 : 2 — equals 108 : 72; the antecedent product is wrong.\n- 4 : 5 — the inverse of the correct ratio (consequent over antecedent).\n- 5 : 6 — one of the input ratios, not the compounded result.\n\n**Key facts**\n- Compound ratio of a:b, c:d, e:f = ace : bdf.\n- Simplify the product ratio by its HCF.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios (Compound Ratio).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios (Compound Ratio)",
+      "verified": true,
+      "covers": [
+        "Compound & mixed ratio"
+      ],
+      "tags": [
+        "ratio",
+        "compound"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The cost of cloth varies directly with its length. If 8 metres cost ₹120, then 15 metres will cost:",
+      "options": [
+        "₹200",
+        "₹210",
+        "₹225",
+        "₹240"
+      ],
+      "answerIndex": 2,
+      "explanation": "In direct proportion, cost ÷ length is constant, so cost = k × length.\n\nk = 120 ÷ 8 = ₹15 per metre; cost of 15 m = 15 × 15 = **₹225**.\n\n**Why not the others**\n- ₹200 — uses ₹40/3 ≈ ₹13.3 per metre, not the given ₹15.\n- ₹210 — equals 14 × 15; wrong per-metre rate (₹14).\n- ₹240 — equals ₹16 × 15; over-states the rate by ₹1/metre.\n\n**Key facts**\n- Direct proportion: x ∝ y, i.e. x = ky; ratios stay equal (x₁/y₁ = x₂/y₂).\n- More → more (both rise or both fall together).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Direct Proportion.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Direct Proportion",
+      "verified": true,
+      "covers": [
+        "Direct proportion"
+      ],
+      "tags": [
+        "proportion",
+        "direct"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "12 men build a wall in 20 days. Working at the same rate, how many days will 16 men take to build the same wall?",
+      "options": [
+        "12 days",
+        "15 days",
+        "16 days",
+        "18 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Men and days are in inverse proportion, so men × days is constant.\n\n12 × 20 = 240 man-days; with 16 men, days = 240 ÷ 16 = **15 days**.\n\n**Why not the others**\n- 12 days — would need 20 men (240 ÷ 12), not 16.\n- 16 days — treats the relation as direct/1:1 rather than inverse.\n- 18 days — uses ≈ 13.3 men; not the given 16.\n\n**Key facts**\n- Inverse proportion: a ∝ 1/b, so a₁b₁ = a₂b₂ (product stays constant).\n- More men → fewer days.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Inverse Proportion.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Inverse Proportion",
+      "verified": true,
+      "covers": [
+        "Inverse proportion"
+      ],
+      "tags": [
+        "proportion",
+        "inverse"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The third proportional to 8 and 12 is:",
+      "options": [
+        "16",
+        "18",
+        "20",
+        "24"
+      ],
+      "answerIndex": 1,
+      "explanation": "The third proportional c to a and b satisfies a : b = b : c, so c = b²/a.\n\nc = 12² / 8 = 144 / 8 = **18**.\n\n**Why not the others**\n- 16 — that is 2×8; not b²/a.\n- 20 — no proportion gives it; 8 : 12 ≠ 12 : 20.\n- 24 — this is the fourth proportional pattern (b×?/a), not b²/a here.\n\n**Key facts**\n- Third proportional to a, b = b²/a (the middle term is repeated).\n- Continued proportion a : b = b : c ⇒ b² = ac.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Third Proportional.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Third Proportional",
+      "verified": true,
+      "covers": [
+        "Third proportional"
+      ],
+      "tags": [
+        "proportion",
+        "third-proportional"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The fourth proportional to 5, 8 and 15 is:",
+      "options": [
+        "18",
+        "20",
+        "22",
+        "24"
+      ],
+      "answerIndex": 3,
+      "explanation": "The fourth proportional d to a, b, c satisfies a : b = c : d, so d = (b×c)/a.\n\nd = (8 × 15) / 5 = 120 / 5 = **24**.\n\n**Why not the others**\n- 18 — this is 12²/8, the third-proportional pattern, not b×c/a.\n- 20 — would need a = 6 ( 8×15/6 = 20 ), not 5.\n- 22 — no whole proportion 5 : 8 = 15 : d gives 22.\n\n**Key facts**\n- Fourth proportional to a, b, c = (b×c)/a.\n- Proportion a : b = c : d ⇒ ad = bc (product of extremes = product of means).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Fourth Proportional.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Fourth Proportional",
+      "verified": true,
+      "covers": [
+        "Fourth proportional"
+      ],
+      "tags": [
+        "proportion",
+        "fourth-proportional"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The mean proportional between 8 and 18 is:",
+      "options": [
+        "10",
+        "12",
+        "13",
+        "14"
+      ],
+      "answerIndex": 1,
+      "explanation": "The mean proportional between a and b is √(ab).\n\n√(8 × 18) = √144 = **12**.\n\n**Why not the others**\n- 10 — √100, would need ab = 100, but 8×18 = 144.\n- 13 — √169; product is 144, not 169.\n- 14 — √196; overshoots the true product of 144.\n\n**Key facts**\n- Mean proportional (geometric mean) of a, b = √(ab).\n- Here a : x = x : b ⇒ x² = ab.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mean Proportional.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Mean Proportional",
+      "verified": true,
+      "covers": [
+        "Mean proportional"
+      ],
+      "tags": [
+        "proportion",
+        "mean-proportional"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "If (m + n) : (m − n) = 7 : 3, then m : n equals:",
+      "options": [
+        "5 : 2",
+        "4 : 3",
+        "7 : 3",
+        "10 : 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "Apply componendo and dividendo to (m+n)/(m−n) = 7/3.\n\nAdding and subtracting: [(m+n)+(m−n)] / [(m+n)−(m−n)] = (7+3)/(7−3) ⇒ 2m/2n = 10/4 ⇒ m/n = 5/2. So m : n = **5 : 2**.\n\n**Why not the others**\n- 4 : 3 — gives (m+n):(m−n) = 7 : 1, not 7 : 3.\n- 7 : 3 — just copies the given ratio; that is (m+n):(m−n), not m:n.\n- 10 : 3 — forgets to halve after componendo–dividendo (2m/2n, not 10/... unreduced).\n\n**Key facts**\n- Componendo & dividendo: if a/b = c/d then (a+b)/(a−b) = (c+d)/(c−d).\n- Handy for turning (sum):(difference) ratios into the base ratio.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Componendo and Dividendo.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Componendo and Dividendo",
+      "verified": true,
+      "covers": [
+        "Componendo & dividendo"
+      ],
+      "tags": [
+        "ratio",
+        "componendo-dividendo"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "A invests ₹5000 for 12 months and B invests ₹6000 for 8 months in a business. If the annual profit is ₹5400, A's share is:",
+      "options": [
+        "₹2400",
+        "₹2700",
+        "₹3000",
+        "₹3200"
+      ],
+      "answerIndex": 2,
+      "explanation": "In partnership, profit is shared in the ratio of (capital × time).\n\nA : B = 5000×12 : 6000×8 = 60000 : 48000 = 5 : 4. A's share = 5/9 × 5400 = **₹3000**.\n\n**Why not the others**\n- ₹2400 — that is B's share (4/9 × 5400).\n- ₹2700 — an equal 1 : 1 split, ignoring the time weighting.\n- ₹3200 — uses a 5000 : 6000 = 5 : 6-style split without multiplying by time.\n\n**Key facts**\n- Profit ratio = capital₁×time₁ : capital₂×time₂.\n- Each partner's share = (their ratio term / total) × total profit.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Partnership.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Partnership",
+      "verified": true,
+      "covers": [
+        "Partnership — profit sharing by capital × time"
+      ],
+      "tags": [
+        "ratio",
+        "partnership"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The average score of 3 boys is 70 and the average score of 7 girls is 72. The combined average score of all 10 is:",
+      "options": [
+        "70.6",
+        "71.0",
+        "71.4",
+        "71.8"
+      ],
+      "answerIndex": 2,
+      "explanation": "Combined mean = (n₁x̄₁ + n₂x̄₂) / (n₁ + n₂) — you cannot just average the two averages.\n\n= (3×70 + 7×72) / (3+7) = (210 + 504)/10 = 714/10 = **71.4**.\n\n**Why not the others**\n- 71.0 — the plain mean of 70 and 72, ignoring the unequal group sizes.\n- 70.6 — mis-weights toward the boys' group.\n- 71.8 — over-weights the girls' 72 beyond its 7/10 share.\n\n**Key facts**\n- Weighted / combined mean = Σ(nᵢ x̄ᵢ) / Σ nᵢ.\n- The larger group pulls the combined average toward its own mean.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Combined Mean (Average).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Combined Mean (Average)",
+      "verified": true,
+      "covers": [
+        "Weighted average / combined mean"
+      ],
+      "tags": [
+        "averages",
+        "combined-mean"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The average of five consecutive even numbers is 12. The largest of these numbers is:",
+      "options": [
+        "14",
+        "16",
+        "18",
+        "20"
+      ],
+      "answerIndex": 1,
+      "explanation": "For an odd count of equally-spaced numbers, the average equals the middle term.\n\nMiddle term = 12, so the five even numbers are 8, 10, 12, 14, 16; largest = **16**.\n\n**Why not the others**\n- 14 — that is the fourth term, not the largest.\n- 18 — would make the average 14 (10–18), not 12.\n- 20 — belongs to the set 12–20 whose average is 16.\n\n**Key facts**\n- Average of consecutive (arithmetic) numbers = the middle term = (first + last)/2.\n- With middle term m and common difference 2, the terms are m−4, m−2, m, m+2, m+4.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average",
+      "verified": true,
+      "covers": [
+        "Average of consecutive numbers"
+      ],
+      "tags": [
+        "averages",
+        "consecutive"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "A batsman in his 16th innings scores 85 runs and thereby raises his batting average by 3 runs. His average after the 16th innings is:",
+      "options": [
+        "37",
+        "38",
+        "40",
+        "43"
+      ],
+      "answerIndex": 2,
+      "explanation": "Let the average after 15 innings be x, so the new average is x + 3.\n\nTotal after 16 innings: 15x + 85 = 16(x + 3) ⇒ 15x + 85 = 16x + 48 ⇒ x = 37. New average = 37 + 3 = **40**.\n\n**Why not the others**\n- 37 — the average before this innings, not after.\n- 38 — a raise of only 1 run; the increase given is 3.\n- 43 — assumes the innings score itself equals the new average.\n\n**Key facts**\n- New total = old total + new score; new total = new-count × new-average.\n- Equating the two gives the member-inclusion change: 15x + 85 = 16(x+3).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (inclusion of a new observation).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average (inclusion of a new observation)",
+      "verified": true,
+      "covers": [
+        "Average change on inclusion / exclusion / replacement of a member"
+      ],
+      "tags": [
+        "averages",
+        "inclusion"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "A vessel contains 20 litres of pure milk. 4 litres are drawn out and replaced with water; this is repeated once more. The quantity of milk left is:",
+      "options": [
+        "12.0 L",
+        "12.8 L",
+        "13.6 L",
+        "16.0 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "After n replacements, milk left = initial × (1 − r/T)ⁿ, where r is drawn each time and T is total volume.\n\nMilk = 20 × (1 − 4/20)² = 20 × (0.8)² = 20 × 0.64 = **12.8 L**.\n\n**Why not the others**\n- 16.0 L — accounts for only one replacement (20×0.8), not two.\n- 13.6 L — subtracts 4 L twice linearly (20−4−2.4-style), ignoring the ratio effect.\n- 12.0 L — subtracts a flat 8 L, treating each draw as pure milk.\n\n**Key facts**\n- Successive replacement: final = initial × (1 − r/T)ⁿ.\n- Each step removes the same fraction of whatever milk currently remains.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Replacement N Times / Concept Based on Replacement.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Replacement N Times",
+      "verified": true,
+      "covers": [
+        "Successive replacement of liquid in a mixture — (1 − r/T)ⁿ"
+      ],
+      "tags": [
+        "mixtures",
+        "replacement"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "In what ratio must rice at ₹30/kg be mixed with rice at ₹40/kg to get a mixture worth ₹34/kg?",
+      "options": [
+        "2 : 3",
+        "3 : 2",
+        "4 : 3",
+        "3 : 4"
+      ],
+      "answerIndex": 1,
+      "explanation": "By the rule of alligation, cheaper : dearer = (dearer price − mean) : (mean − cheaper price).\n\n= (40 − 34) : (34 − 30) = 6 : 4 = **3 : 2** (cheaper ₹30 : dearer ₹40).\n\n**Why not the others**\n- 2 : 3 — the inverse; would place more of the dearer rice, giving a mean above ₹35.\n- 4 : 3 — gives a mean of ≈ ₹34.3, not ₹34.\n- 3 : 4 — mean ≈ ₹35.7, too high.\n\n**Key facts**\n- Alligation: quantity(cheap)/quantity(dear) = (dear − mean)/(mean − cheap).\n- The mean price always lies between the two component prices.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mixtures & Alligation.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Mixtures & Alligation",
+      "verified": true,
+      "covers": [
+        "Mixtures & alligation (rule of alligation)"
+      ],
+      "tags": [
+        "mixtures",
+        "alligation"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "In a field, chickens and cows together have 30 heads and 74 legs. The number of cows is:",
+      "options": [
+        "5",
+        "7",
+        "8",
+        "23"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each animal has 1 head, so heads = total animals = 30. Alligation on legs (chicken 2, cow 4) fixes the split.\n\nIf all 30 were chickens: legs = 60; actual legs = 74, so extra 14 legs come from cows, each adding 2 legs over a chicken ⇒ cows = 14 ÷ 2 = **7** (and 23 chickens).\n\n**Why not the others**\n- 23 — the number of chickens, not cows.\n- 8 — gives 30×2 + 8×2 = 76 legs, two too many.\n- 5 — gives 70 legs, four short of 74.\n\n**Key facts**\n- Heads-and-legs: assume all of one type, then each swap to the 4-legged type adds 2 legs.\n- cows = (legs − 2×heads) / 2; chickens = heads − cows.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Alligation by Number of Heads and Legs.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Alligation by Number of Heads and Legs",
+      "verified": true,
+      "covers": [
+        "Alligation — heads & legs"
+      ],
+      "tags": [
+        "mixtures",
+        "heads-legs"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "In a class the ratio of boys to girls is 3 : 2. What percentage of the class are boys?",
+      "options": [
+        "40%",
+        "50%",
+        "60%",
+        "66.7%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Convert the part-to-part ratio into a part-to-whole fraction, then to a percentage.\n\nBoys' share = 3 / (3 + 2) = 3/5 = 0.6 = **60%**.\n\n**Why not the others**\n- 40% — that is the girls' share (2/5).\n- 50% — assumes an equal 1 : 1 split.\n- 66.7% — that is boys as a percentage of girls (3/2), not of the class.\n\n**Key facts**\n- Ratio a : b → a as % of whole = a/(a+b) × 100.\n- Distinguish “% of the total” (denominator a+b) from “% of the other part” (denominator b).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios / Percentage.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios / Percentage",
+      "verified": true,
+      "covers": [
+        "Ratio ↔ percentage conversion"
+      ],
+      "tags": [
+        "ratio",
+        "percentage"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "₹1350 is divided among A, B and C in the ratio 2 : 3 : 4. C's share is:",
+      "options": [
+        "₹300",
+        "₹450",
+        "₹600",
+        "₹750"
+      ],
+      "answerIndex": 2,
+      "explanation": "Total parts = 2+3+4 = 9. C's share = 4/9 × 1350 = **₹600**.\n\n**Why not the others**\n- ₹300 — that is 2/9 × 1350, i.e. A's share.\n- ₹450 — that is 3/9 × 1350, i.e. B's share.\n- ₹750 — exceeds C's 4/9 portion; would need 5 parts.\n\n**Key facts**\n- Share of a term = (its ratio value / sum of ratio values) × total quantity.\n- Sum of all shares must equal the whole (300+450+600 = 1350).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Division in a Ratio.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Division in a Ratio",
+      "verified": true,
+      "covers": [
+        "Dividing a quantity in a given ratio"
+      ],
+      "tags": [
+        "ratio",
+        "division"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The present ages of A and B are in the ratio 5 : 7. Six years hence the ratio of their ages will be 3 : 4. B's present age is:",
+      "options": [
+        "30 years",
+        "35 years",
+        "42 years",
+        "49 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Let the ages be 5x and 7x. Then (5x+6)/(7x+6) = 3/4 ⇒ 4(5x+6) = 3(7x+6) ⇒ 20x+24 = 21x+18 ⇒ x = 6. B = 7x = **42 years**.\n\n**Why not the others**\n- 30 years — that is 5x = A's present age, not B's.\n- 35 years — uses x = 5, which fails the future-ratio equation.\n- 49 years — uses x = 7; then the six-years-hence ratio is not 3 : 4.\n\n**Key facts**\n- Set ages as 5x, 7x and translate the second condition into one equation.\n- Add the same number of years to both ages before forming the new ratio.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Ages).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Ages)",
+      "verified": true,
+      "covers": [
+        "Ratio of ages (ratio changes over time)"
+      ],
+      "tags": [
+        "ratio",
+        "ages"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "A bag contains ₹1, 50-paise and 25-paise coins in the ratio 2 : 3 : 4. If the total value of the coins is ₹45, the number of 25-paise coins is:",
+      "options": [
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "answerIndex": 2,
+      "explanation": "Let the numbers be 2k, 3k, 4k. Value = 2k(1) + 3k(0.5) + 4k(0.25) = 2k + 1.5k + 1k = 4.5k rupees. So 4.5k = 45 ⇒ k = 10. Number of 25-paise coins = 4k = **40**.\n\n**Why not the others**\n- 20 — that is 2k = the number of ₹1 coins.\n- 30 — that is 3k = the number of 50-paise coins.\n- 50 — no value of k gives 5k here; the 25-paise term is 4k.\n\n**Key facts**\n- Convert each denomination to rupees before summing the value.\n- Value per k = 2(1)+3(0.5)+4(0.25) = ₹4.5; divide total value by this.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Coins).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Coins)",
+      "verified": true,
+      "covers": [
+        "Coin-denomination ratio problems"
+      ],
+      "tags": [
+        "ratio",
+        "coins"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The average of 11 numbers is 50. The average of the first six is 49 and that of the last six is 52. The sixth number is:",
+      "options": [
+        "48",
+        "52",
+        "56",
+        "60"
+      ],
+      "answerIndex": 2,
+      "explanation": "Sum of all 11 = 11×50 = 550. Sum of first six = 6×49 = 294; sum of last six = 6×52 = 312. The sixth number lies in both groups, so 294 + 312 − 550 = **56**.\n\n**Why not the others**\n- 48 — ignores the double-counting of the overlapping sixth term.\n- 52 — the last-six average, not the shared term.\n- 60 — overstates; the correct overlap is 606 − 550 = 56.\n\n**Key facts**\n- Overlapping groups: (sum of group 1)+(sum of group 2) counts the common term twice.\n- Common term = (Σgroup1 + Σgroup2) − Σall.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (overlapping groups).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average (overlapping groups)",
+      "verified": true,
+      "covers": [
+        "Average — overlapping-group (common term counted twice)"
+      ],
+      "tags": [
+        "averages",
+        "overlap"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The average weight of 8 persons increases by 2.5 kg when a new person replaces one weighing 65 kg. The weight of the new person is:",
+      "options": [
+        "82.5 kg",
+        "85 kg",
+        "87.5 kg",
+        "90 kg"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total weight rises by 8 × 2.5 = 20 kg. That rise equals (new − replaced), so new = 65 + 20 = **85 kg**.\n\n**Why not the others**\n- 82.5 kg — adds only 17.5 kg; the total rise is 8×2.5 = 20 kg.\n- 87.5 kg — adds 22.5 kg, over-counting the increase.\n- 90 kg — assumes a 25 kg rise, i.e. 8×3.125.\n\n**Key facts**\n- Replacement: new value = old value + (change in average × number of members).\n- Here 8 × 2.5 = 20 kg added, on top of the 65 kg removed.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (replacement).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average (replacement)",
+      "verified": true,
+      "covers": [
+        "Average change on inclusion / exclusion / replacement of a member"
+      ],
+      "tags": [
+        "averages",
+        "replacement"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "Consider the following statements about a proportion a : b = c : d:\n1. It follows that a : c = b : d (alternendo).\n2. It follows that b : a = d : c (invertendo).\n3. The mean proportional between a and b is ab.\nWhich of the statements given above is/are correct?",
+      "options": [
+        "1 and 2 only",
+        "2 and 3 only",
+        "1 and 3 only",
+        "1, 2 and 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "Alternendo (a:c = b:d) and invertendo (b:a = d:c) are valid transformations of a proportion, so 1 and 2 are correct. The mean proportional between a and b is √(ab), not ab, so 3 is wrong. Hence **1 and 2 only**.\n\n**Why not the others**\n- 2 and 3 only — drops the true alternendo statement and keeps the false mean-proportional one.\n- 1 and 3 only — keeps the false statement 3 (mean proportional is √(ab)).\n- 1, 2 and 3 — includes statement 3, which is incorrect.\n\n**Key facts**\n- Alternendo: a:b = c:d ⇒ a:c = b:d. Invertendo: a:b = c:d ⇒ b:a = d:c.\n- Mean proportional between a and b = √(ab).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Properties of Proportion.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Properties of Proportion",
+      "verified": true,
+      "covers": [
+        "Proportion properties — invertendo & alternendo"
+      ],
+      "tags": [
+        "proportion",
+        "statement-based"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The average of the first 50 natural numbers is:",
+      "options": [
+        "24.5",
+        "25",
+        "25.5",
+        "26"
+      ],
+      "answerIndex": 2,
+      "explanation": "Average of the first n natural numbers = (n+1)/2 = (50+1)/2 = 51/2 = **25.5**.\n\n**Why not the others**\n- 24.5 — uses (n−1)/2, off by one.\n- 25 — uses n/2, ignoring the +1.\n- 26 — overshoots; (n+1)/2 = 25.5, not 26.\n\n**Key facts**\n- Sum of first n naturals = n(n+1)/2, so their average = (n+1)/2.\n- For any arithmetic progression, average = (first + last)/2 = (1+50)/2 = 25.5.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average of Natural Numbers.*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average of Natural Numbers",
+      "verified": true,
+      "covers": [
+        "Average of first n natural numbers"
+      ],
+      "tags": [
+        "averages",
+        "natural-numbers"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "A 40-litre mixture of milk and water contains milk and water in the ratio 3 : 1. How much water must be added to make the ratio 3 : 2?",
+      "options": [
+        "8 L",
+        "10 L",
+        "12 L",
+        "15 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "Milk = 3/4 × 40 = 30 L, water = 10 L. Milk is unchanged; for milk : water = 3 : 2 the water must be 30 × 2/3 = 20 L. Water to add = 20 − 10 = **10 L**.\n\n**Why not the others**\n- 8 L — would give 18 L water, ratio 30:18 = 5:3, not 3:2.\n- 12 L — gives 22 L water, ratio 30:22, not 3:2.\n- 15 L — gives 25 L water, ratio 30:25 = 6:5, not 3:2.\n\n**Key facts**\n- Only water is added, so milk (30 L) stays fixed; solve for the new water quantity.\n- Required water = milk × (new water ratio / milk ratio) = 30 × 2/3 = 20 L.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mixtures (changing ratio).*",
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Mixtures (changing ratio)",
+      "verified": true,
+      "covers": [
+        "Mixture — adding one component to change the ratio"
+      ],
+      "tags": [
+        "mixtures",
+        "ratio"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The average of the first 120 odd natural numbers is:",
+      "options": [
+        "120",
+        "121",
+        "119",
+        "60"
+      ],
+      "answerIndex": 0,
+      "explanation": "The sum of the first n odd natural numbers is n², so their average is n²/n = n. For n = 120 the average is 120.\n\n**Why not the others**\n- 121 — that is n+1, the rule for the first n EVEN naturals.\n- 119 — n−1, no valid basis.\n- 60 — halves n, confusing it with (n+1)/2 for naturals.\n\n**Key facts**\n- First n odd naturals: sum = n², average = n.\n- Equivalent AP shortcut: (first + last)/2 = (1 + 239)/2 = 120.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Average of first n odd / even natural numbers"
+      ],
+      "tags": [
+        "averages",
+        "odd-numbers",
+        "series"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-mcq-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "question": "The average of the first 25 even natural numbers is:",
+      "options": [
+        "26",
+        "25",
+        "24",
+        "13"
+      ],
+      "answerIndex": 0,
+      "explanation": "The sum of the first n even natural numbers is n(n+1), so the average is (n+1). For n = 25 the average is 26.\n\n**Why not the others**\n- 25 — that is n, the rule for ODD naturals.\n- 24 — n−1, no basis.\n- 13 — halves the count, a careless error.\n\n**Key facts**\n- First n even naturals: sum = n(n+1), average = n+1.\n- Check: (2 + 50)/2 = 26.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Average of first n odd / even natural numbers"
+      ],
+      "tags": [
+        "averages",
+        "even-numbers",
+        "series"
+      ]
+    }
+  ]
+}

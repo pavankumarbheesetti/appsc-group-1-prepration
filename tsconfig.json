@@ -1,0 +1,33 @@
+{
+  // TypeScript configuration for a Vite + vanilla-TS project.
+  // Strict mode is on; module resolution is "bundler" so Vite handles bundling.
+  "compilerOptions": {
+    /* Language / environment */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    /* Emit: Vite compiles TS, so tsc is used only for type-checking */
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true,
+
+    /* Interop */
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  // Type-check app source, config files, and tests.
+  "include": ["src", "vite.config.ts", "eslint.config.js"]
+}

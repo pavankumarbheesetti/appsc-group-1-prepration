@@ -1,0 +1,728 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Number Series & Coding-Decoding",
+  "items": [
+    {
+      "id": "ment-number-series-coding-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "refresher": true,
+      "question": "What is the position of the letter T in the English alphabet counted from the left?",
+      "options": [
+        "20",
+        "18",
+        "21",
+        "19"
+      ],
+      "answerIndex": 0,
+      "explanation": "Using the EJOTY landmarks (E-5, J-10, O-15, T-20, Y-25), T is the 20th letter.\n\n**Why not the others**\n- 18 — that is R, two places before T.\n- 21 — that is U, one place after T.\n- 19 — that is S, one place before T.\n\n**Key facts**\n- EJOTY: E=5, J=10, O=15, T=20, Y=25 give quick anchor positions.\n- Reverse position = 27 - forward position (T: 27-20 = 7 from the right).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (positional value / EJOTY).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (EJOTY)",
+      "verified": true,
+      "covers": [
+        "Letter position & EJOTY / dictionary order"
+      ],
+      "tags": [
+        "series-coding",
+        "refresher",
+        "ejoty"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "refresher": true,
+      "question": "In the reverse-alphabet scheme (opposite letter = 27 - position), which letter is opposite to D?",
+      "options": [
+        "U",
+        "V",
+        "X",
+        "W"
+      ],
+      "answerIndex": 3,
+      "explanation": "D is the 4th letter; its opposite is 27 - 4 = 23, which is W.\n\n**Why not the others**\n- U — position 21, the opposite of F (27-6).\n- V — position 22, the opposite of E (27-5).\n- X — position 24, the opposite of C (27-3).\n\n**Key facts**\n- Opposite-pair rule: letter n pairs with letter (27 - n).\n- Handy pairs: A-Z, B-Y, C-X, D-W, E-V, M-N.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (opposite letters).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (opposite letters)",
+      "verified": true,
+      "covers": [
+        "Letter-coding — reverse/opposite letter (27-n rule)"
+      ],
+      "tags": [
+        "series-coding",
+        "refresher",
+        "opposite-letter"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "refresher": true,
+      "question": "Find the next term: 3, 7, 11, 15, 19, ?",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "answerIndex": 2,
+      "explanation": "The series adds a constant 4 each time, so 19 + 4 = 23.\n\n**Why not the others**\n- 21 — only +2, breaks the fixed common difference.\n- 22 — +3, not the established +4 step.\n- 24 — +5, overshoots the constant step.\n\n**Key facts**\n- Arithmetic (addition) series: check the first differences; if constant, next term = last term + that difference.\n- Common difference here d = 4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (addition pattern).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — constant/varying difference (addition-subtraction)"
+      ],
+      "tags": [
+        "series-coding",
+        "refresher",
+        "number-series"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Select the number that replaces the question mark: 5, 10, 20, 40, 80, ?",
+      "options": [
+        "120",
+        "160",
+        "200",
+        "320"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each term is the previous term multiplied by 2 (geometric ratio r = 2), so 80 x 2 = 160.\n\n**Why not the others**\n- 120 — comes from adding 40 (mistaking a geometric series for arithmetic).\n- 200 — no consistent operation yields it from 80.\n- 320 — that is 80 x 4, doubling the ratio by mistake.\n\n**Key facts**\n- Geometric series: ratio between consecutive terms is constant (here 10/5 = 20/10 = 2).\n- Next term = last term x common ratio.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (multiplication pattern).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — multiplication/division (geometric ratio)"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "geometric"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Which number completes the series: 2, 5, 10, 17, 26, ?",
+      "options": [
+        "34",
+        "35",
+        "36",
+        "37"
+      ],
+      "answerIndex": 3,
+      "explanation": "Each term is n squared + 1 for n = 1,2,3,...: 1+1=2, 4+1=5, 9+1=10, 16+1=17, 25+1=26, and 36+1 = 37.\n\n**Why not the others**\n- 34 — would need 33+1; 33 is not a perfect square.\n- 35 — assumes a fixed +9 step, but the differences (3,5,7,9,11) grow.\n- 36 — the perfect square itself, forgetting the +1.\n\n**Key facts**\n- Square-based series: consecutive differences are consecutive odd numbers (3,5,7,9,11).\n- Pattern here: term = n^2 + 1.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (square/cube pattern).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — square/cube based pattern"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "squares"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Select the number that replaces the question mark: 17, 30, 47, 66, 89, ?",
+      "options": [
+        "118",
+        "112",
+        "116",
+        "120"
+      ],
+      "answerIndex": 0,
+      "explanation": "The successive differences are 13, 17, 19, 23 — consecutive prime numbers; the next prime is 29, so 89 + 29 = 118.\n\n**Why not the others**\n- 112 — uses +23 again, repeating a prime instead of advancing.\n- 116 — uses +27, which is not prime.\n- 120 — uses +31, skipping the prime 29.\n\n**Key facts**\n- Prime-difference series: check whether first differences form the prime sequence 2,3,5,7,11,13,17,19,23,29,31.\n- Here differences = 13,17,19,23,29.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (prime-difference pattern).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — prime-number-based differences"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "primes"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Find the missing number: 36, 18, 54, 27, 81, ?",
+      "options": [
+        "27",
+        "108",
+        "40.5",
+        "121.5"
+      ],
+      "answerIndex": 2,
+      "explanation": "The operations alternate: divide by 2, then multiply by 3. 36/2=18, 18x3=54, 54/2=27, 27x3=81, so 81/2 = 40.5.\n\n**Why not the others**\n- 27 — repeats an earlier term; ignores the alternating rule.\n- 108 — applies x3 (wrong step; a division is due next).\n- 121.5 — that is 81 x 1.5, an invented ratio.\n\n**Key facts**\n- Alternating/mixed series: two operations applied turn by turn (here /2 and x3).\n- Identify by testing operations on alternate gaps rather than a single common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — mixed/alternating operations"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "alternating"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Which number comes next: 2, 3, 5, 8, 13, 21, ?",
+      "options": [
+        "30",
+        "32",
+        "33",
+        "34"
+      ],
+      "answerIndex": 3,
+      "explanation": "Each term is the sum of the previous two (Fibonacci-type): 13 + 21 = 34.\n\n**Why not the others**\n- 30 — comes from +9, no consistent single difference exists.\n- 32 — assumes doubling minus a constant; does not fit earlier terms.\n- 33 — 12 + 21, using the wrong earlier term.\n\n**Key facts**\n- Sum-of-previous-terms (Fibonacci) series: term(n) = term(n-1) + term(n-2).\n- Spot it when neither a constant difference nor a constant ratio works.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (sum of previous terms).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — Fibonacci / sum of previous terms"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "fibonacci"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Find the wrong term in the series: 3, 7, 15, 31, 63, 128, 255",
+      "options": [
+        "15",
+        "128",
+        "31",
+        "255"
+      ],
+      "answerIndex": 1,
+      "explanation": "The rule is term x 2 + 1: 3->7, 7->15, 15->31, 31->63, 63->127. The series shows 128 where 127 belongs, so 128 is the wrong term.\n\n**Why not the others**\n- 15 — correct: 7 x 2 + 1 = 15.\n- 31 — correct: 15 x 2 + 1 = 31.\n- 255 — correct: 127 x 2 + 1 = 255 (it follows the intended 127).\n\n**Key facts**\n- Wrong-term type: find the governing rule from the majority of terms, then flag the single deviation.\n- Rule here: next = 2 x current + 1; expected 127, printed 128.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (wrong term).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Wrong-term (odd-term-out) in a number series"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "wrong-term"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Find the missing term: 10, 22, 46, ?, 190, 382",
+      "options": [
+        "94",
+        "88",
+        "92",
+        "96"
+      ],
+      "answerIndex": 0,
+      "explanation": "The rule is term x 2 + 2: 10->22, 22->46, 46->94, 94->190, 190->382. So the missing term is 94.\n\n**Why not the others**\n- 88 — that is 46 x 2 - 4; wrong constant.\n- 92 — that is 46 x 2; forgets the +2.\n- 96 — that is 46 x 2 + 4; wrong constant.\n\n**Key facts**\n- Missing-term type: establish the rule from surrounding terms, then compute the gap.\n- Verify forward: 94 x 2 + 2 = 190 and 190 x 2 + 2 = 382 confirm the rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (missing term).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Missing-term in a number series"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "missing-term"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Which letter completes the series: A, C, F, J, O, ?",
+      "options": [
+        "T",
+        "U",
+        "V",
+        "W"
+      ],
+      "answerIndex": 1,
+      "explanation": "The gaps between letters increase: +2, +3, +4, +5, +6. From O (15), 15 + 6 = 21 = U.\n\n**Why not the others**\n- T — position 20, only +5 from O.\n- V — position 22, +7 from O (overshoots).\n- W — position 23, +8 from O.\n\n**Key facts**\n- Single-sequence alphabet series: convert letters to positions (A=1...Z=26) and read the gap pattern.\n- Gaps here form 2,3,4,5,6.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (single sequence).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
+      "verified": true,
+      "covers": [
+        "Alphabet series — single sequence with positional gaps"
+      ],
+      "tags": [
+        "series-coding",
+        "alphabet-series"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Which group completes the series: BOJ, FQO, JST, NUY, ?",
+      "options": [
+        "RVD",
+        "SWC",
+        "RWD",
+        "QVD"
+      ],
+      "answerIndex": 2,
+      "explanation": "Treat each position separately. 1st letters: B,F,J,N (+4 each) -> R. 2nd letters: O,Q,S,U (+2 each) -> W. 3rd letters: J,O,T,Y (+5 each) -> D (25+5=30, 30-26=4=D). So the group is RWD.\n\n**Why not the others**\n- RVD — 2nd letter V (+1) breaks the +2 column pattern.\n- SWC — 1st letter S (+5) and 3rd letter C break both columns.\n- QVD — 1st letter Q (+3) and 2nd letter V (+1) break the pattern.\n\n**Key facts**\n- Grouped/combination series: split into columns and solve each column's own pattern.\n- Column steps here: +4, +2, +5 (with wrap-around after Z).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
+      "verified": true,
+      "covers": [
+        "Alphabet series — grouped/combination letter sequence"
+      ],
+      "tags": [
+        "series-coding",
+        "alphabet-series",
+        "combination"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Which term completes the alphanumeric series: C3, E5, G7, I9, ?",
+      "options": [
+        "J11",
+        "K10",
+        "L12",
+        "K11"
+      ],
+      "answerIndex": 3,
+      "explanation": "Letters advance by 2 (C,E,G,I,K) and numbers are the odd sequence 3,5,7,9,11. So the next term is K11.\n\n**Why not the others**\n- J11 — J is +1 from I, not +2.\n- K10 — number should be the odd value 11, not 10.\n- L12 — L is +3 from I and 12 breaks the odd sequence.\n\n**Key facts**\n- Alphanumeric series: track the letter pattern and the number pattern independently.\n- Here letters +2; numbers = consecutive odd numbers.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Mixed Series (alphanumeric).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Mixed Series",
+      "verified": true,
+      "covers": [
+        "Alphanumeric (mixed letter-number) series"
+      ],
+      "tags": [
+        "series-coding",
+        "alphanumeric"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "In a code language KANPUR is written as JBMQTS. How is BOMBAY written?",
+      "options": [
+        "APLCZZ",
+        "ANLCZZ",
+        "APKDZZ",
+        "APLCZX"
+      ],
+      "answerIndex": 0,
+      "explanation": "The letters shift alternately -1, +1: K-1=J, A+1=B, N-1=M, P+1=Q, U-1=T, R+1=S. Applying -1,+1 to BOMBAY: B-1=A, O+1=P, M-1=L, B+1=C, A-1=Z (wrap), Y+1=Z. Result: APLCZZ.\n\n**Why not the others**\n- ANLCZZ — 2nd letter treated as O-1=N instead of O+1=P.\n- APKDZZ — 3rd/4th letters mis-shifted (M-2, B+2).\n- APLCZX — last letter taken as Y-1=X instead of Y+1=Z.\n\n**Key facts**\n- Letter-shift coding: find the position change per letter, watching for alternating signs.\n- Wrap-around: after Z go to A (A-1 -> Z).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting)",
+      "verified": true,
+      "covers": [
+        "Letter-coding — forward/backward letter shifting"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "letter-shift"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "In a code language BEHOLD is written as BDEHLO. How is COURSE written in the same language?",
+      "options": [
+        "CEOURS",
+        "CEORSU",
+        "CORSEU",
+        "ECORSU"
+      ],
+      "answerIndex": 1,
+      "explanation": "The rule rearranges the letters of the word into ascending alphabetical order. COURSE -> C, E, O, R, S, U = CEORSU.\n\n**Why not the others**\n- CEOURS — U placed before R; not fully sorted.\n- CORSEU — keeps near-original order rather than alphabetical.\n- ECORSU — starts with E; sorting must start with C.\n\n**Key facts**\n- Rearrangement coding: the code is the same letters reordered by a rule (here ascending A-Z).\n- Check the sample: BEHOLD sorted = BDEHLO confirms the rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (alphabetical rearrangement).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (rearrangement)",
+      "verified": true,
+      "covers": [
+        "Letter-coding — rearrangement (criss-cross / alphabetical order)"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "rearrangement"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "If PUNCTUAL is coded as 47819765, how is LUNA coded in the same language?",
+      "options": [
+        "5876",
+        "6785",
+        "5768",
+        "5786"
+      ],
+      "answerIndex": 3,
+      "explanation": "Map each letter to its digit from PUNCTUAL=47819765: P=4, U=7, N=8, C=1, T=9, U=7, A=6, L=5. Then LUNA = L(5) U(7) N(8) A(6) = 5786.\n\n**Why not the others**\n- 5876 — swaps the U and N digits (7 and 8).\n- 6785 — reverses the order of the digits.\n- 5768 — replaces A's digit 6 with N's 8 at the end.\n\n**Key facts**\n- Letter-to-number coding: build a letter->digit table from the given pair, then substitute.\n- Keep letter order; only substitute the mapped digits.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
+      "verified": true,
+      "covers": [
+        "Number-coding — letter-to-number (positional value)"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "letter-to-number"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "If 64958 is coded as 53847, what is the code for 62654?",
+      "options": [
+        "51543",
+        "51443",
+        "71543",
+        "51533"
+      ],
+      "answerIndex": 0,
+      "explanation": "Each digit is reduced by 1: 6-1=5, 4-1=3, 9-1=8, 5-1=4, 8-1=7 gives 53847. Applying to 62654: 5,1,5,4,3 = 51543.\n\n**Why not the others**\n- 51443 — treats the 3rd digit 6 as 4 (should be 5).\n- 71543 — leaves the first digit as 7 instead of 6-1=5.\n- 51533 — mis-reduces the 4th digit 5 to 3 instead of 4.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation (here -1) from the sample.\n- Apply the same operation digit-by-digit.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
+      "verified": true,
+      "covers": [
+        "Number-coding — number-to-number operations"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "number-to-number"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "In a code language, 'sky is blue' is 'ta na ka', 'blue is high' is 'na ka pa', and 'high and dry' is 'pa la ja'. What is the code for 'high'?",
+      "options": [
+        "na",
+        "ka",
+        "pa",
+        "la"
+      ],
+      "answerIndex": 2,
+      "explanation": "Compare statements sharing words. 'sky is blue'=ta na ka and 'blue is high'=na ka pa share 'is' and 'blue' -> {na, ka}; the extra word in the second is 'high'=pa. 'high and dry'=pa la ja also contains pa, confirming high=pa.\n\n**Why not the others**\n- na — a shared code for 'is' or 'blue', not unique to high.\n- ka — the other shared code for 'is'/'blue'.\n- la — appears only in 'high and dry' and maps to 'and' or 'dry', not high.\n\n**Key facts**\n- Substitution / fictitious-language coding: intersect sentences to isolate the code of a common word.\n- The word common to two sentences shares the common code(s); the odd code is the odd word.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding and Decoding in Fictitious Language.*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language",
+      "verified": true,
+      "covers": [
+        "Substitution / fictitious-language coding"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "fictitious-language"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Digits are coded as 1=P, 2=Q, 3=R, 4=S, 5=T, 6=U, 7=V, 8=W, 9=X. Condition: if BOTH the first and the last digit are odd, code each of them as the pound sign. Using this rule, code the number 74369.",
+      "options": [
+        "VSRUX",
+        "£SRU£",
+        "£SRUX",
+        "VSRU£"
+      ],
+      "answerIndex": 1,
+      "explanation": "Base codes: 7=V, 4=S, 3=R, 6=U, 9=X. Check the condition: first digit 7 is odd and last digit 9 is odd, so BOTH are recoded as the pound sign. Result: £ S R U £.\n\n**Why not the others**\n- VSRUX — ignores the condition entirely (plain substitution).\n- £SRUX — recodes only the first digit, not the last.\n- VSRU£ — recodes only the last digit, not the first.\n\n**Key facts**\n- Conditional coding: apply base substitution first, then override with the stated condition.\n- Condition triggers only when BOTH ends are odd (7 and 9 here).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Conditional Matrix / Coding.*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Conditional Matrix",
+      "verified": true,
+      "covers": [
+        "Conditional coding (symbol-condition rule)"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "conditional"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "BOOK is to CPPL as WORD is to ?",
+      "options": [
+        "XPSD",
+        "VNQC",
+        "XQTE",
+        "XPSE"
+      ],
+      "answerIndex": 3,
+      "explanation": "Each letter of BOOK moves +1 to give CPPL (B->C, O->P, O->P, K->L). Apply +1 to WORD: W->X, O->P, R->S, D->E = XPSE.\n\n**Why not the others**\n- XPSD — leaves the last letter D unchanged instead of +1=E.\n- VNQC — shifts -1 (wrong direction).\n- XQTE — shifts the 2nd and 3rd letters by +2 instead of +1.\n\n**Key facts**\n- Coding by analogy: find the transformation in the first pair, then apply the identical rule to the second.\n- Rule here: shift each letter +1 in the alphabet.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding By Analogy.*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding By Analogy",
+      "verified": true,
+      "covers": [
+        "Coding by analogy"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "analogy"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Find the next term: 4, 9, 19, 35, 58, ?",
+      "options": [
+        "88",
+        "89",
+        "90",
+        "84"
+      ],
+      "answerIndex": 1,
+      "explanation": "First differences are 5, 10, 16, 23 and their differences (second level) are 5, 6, 7 — increasing by 1. The next second difference is 8, so the next first difference is 23 + 8 = 31, giving 58 + 31 = **89**.\n\n**Why not the others**\n- 88 — uses a next difference of 30 (mis-reading the second-level step).\n- 90 — uses 32, over-stepping the second difference.\n- 84 — repeats the last difference 23 + 3 instead of following the pattern.\n\n**Key facts**\n- Two-tier series: if first differences are irregular, examine the second differences.\n- Here second differences are 5, 6, 7, 8 (arithmetic), so first differences are 5, 10, 16, 23, 31.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (double difference).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — constant/varying difference (addition-subtraction)"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "double-difference"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Find the next term: 2, 6, 3, 9, 6, 18, ?",
+      "options": [
+        "12",
+        "9",
+        "21",
+        "15"
+      ],
+      "answerIndex": 3,
+      "explanation": "Two operations alternate: ×3 then −3. 2×3=6, 6−3=3, 3×3=9, 9−3=6, 6×3=18, and the next step is 18−3 = **15**.\n\n**Why not the others**\n- 12 — applies −6 instead of the established −3.\n- 9 — repeats an earlier term, ignoring the alternating rule.\n- 21 — adds 3 (×3 step) when a subtraction is due next.\n\n**Key facts**\n- Alternating series: two rules applied turn by turn (here ×3 and −3).\n- Detect by testing operations on alternate gaps rather than one common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
+      "verified": true,
+      "covers": [
+        "Number series — mixed/alternating operations"
+      ],
+      "tags": [
+        "series-coding",
+        "number-series",
+        "alternating"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Find the odd one out: 8, 27, 64, 100, 125",
+      "options": [
+        "27",
+        "64",
+        "100",
+        "125"
+      ],
+      "answerIndex": 2,
+      "explanation": "The set consists of perfect cubes — 2³=8, 3³=27, 4³=64, 5³=125 — but 100 = 10² is a perfect square, not a cube, so **100** is the odd one out.\n\n**Why not the others**\n- 27 — 3³, a perfect cube (fits the pattern).\n- 64 — 4³, a perfect cube.\n- 125 — 5³, a perfect cube.\n\n**Key facts**\n- Classification/odd-one-out: find the single common property, then flag the term that breaks it.\n- Perfect cubes here: 8, 27, 64, 125; 100 is only a perfect square.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Classification (odd one out).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Classification",
+      "verified": true,
+      "covers": [
+        "Classification / odd-one-out (numbers, letters, pairs)"
+      ],
+      "tags": [
+        "series-coding",
+        "classification",
+        "odd-one-out"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "6 : 42 :: 9 : ?",
+      "options": [
+        "90",
+        "72",
+        "81",
+        "99"
+      ],
+      "answerIndex": 0,
+      "explanation": "The relation is n × (n+1): 6 × 7 = 42. Applying the same rule, 9 × 10 = **90**.\n\n**Why not the others**\n- 72 — that is 8 × 9, using the wrong base.\n- 81 — 9², ignoring the (n+1) multiplier.\n- 99 — 9 × 11, over-stepping to (n+2).\n\n**Key facts**\n- Number analogy: identify the operation linking the first pair, then apply it to the second.\n- Here first term × (first term + 1): 6×7 and 9×10.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Analogy (number analogy).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Analogy",
+      "verified": true,
+      "covers": [
+        "Number analogy (relationship between number pairs)"
+      ],
+      "tags": [
+        "series-coding",
+        "analogy",
+        "number-analogy"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "In a certain code, TIGER is written as WLJHU. How is LION written in the same code?",
+      "options": [
+        "OLQR",
+        "PLRQ",
+        "OKRQ",
+        "OLRQ"
+      ],
+      "answerIndex": 3,
+      "explanation": "Each letter shifts +3 places: T→W, I→L, G→J, E→H, R→U gives WLJHU. Applying +3 to LION: L→O, I→L, O→R, N→Q = **OLRQ**.\n\n**Why not the others**\n- OLQR — swaps the last two letters (R and Q).\n- PLRQ — shifts the first letter +4 instead of +3.\n- OKRQ — shifts the second letter +2 (I→K) instead of +3.\n\n**Key facts**\n- Letter-shift coding: find the constant position change from the sample word.\n- Shift here = +3 for every letter (no wrap needed for LION).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting)",
+      "verified": true,
+      "covers": [
+        "Letter-coding — forward/backward letter shifting"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "letter-shift"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "If 3572 is coded as 4683, how is 6014 coded in the same language?",
+      "options": [
+        "7124",
+        "7125",
+        "6125",
+        "7025"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each digit increases by 1: 3→4, 5→6, 7→8, 2→3 gives 4683. Applying +1 to each digit of 6014: 6→7, 0→1, 1→2, 4→5 = **7125**.\n\n**Why not the others**\n- 7124 — leaves the last digit 4 as 4 instead of +1 = 5.\n- 6125 — leaves the first digit 6 unchanged instead of +1 = 7.\n- 7025 — treats the 0 as staying 0 instead of becoming 1.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation from the sample (here +1).\n- Apply the same operation digit by digit.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
+      "verified": true,
+      "covers": [
+        "Number-coding — number-to-number operations"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "number-to-number"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "In a code language, 'pen is blue' is written as 'mo ta re', 'blue is sky' as 're mo la', and 'sky is high' as 'la mo pa'. What is the code for 'is'?",
+      "options": [
+        "re",
+        "la",
+        "mo",
+        "ta"
+      ],
+      "answerIndex": 2,
+      "explanation": "The only word appearing in all three sentences is 'is', and the only code common to all three is 'mo'. Hence 'is' = **mo**.\n\n**Why not the others**\n- re — common only to the first two sentences; it codes 'blue'.\n- la — common only to the last two sentences; it codes 'sky'.\n- ta — appears only in the first sentence; it codes 'pen'.\n\n**Key facts**\n- Fictitious-language coding: intersect the sentences to isolate the code of the shared word.\n- 'is' occurs in all three ⇒ its code is the one common to all three sets = mo.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language.*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language",
+      "verified": true,
+      "covers": [
+        "Substitution / fictitious-language coding"
+      ],
+      "tags": [
+        "series-coding",
+        "coding",
+        "fictitious-language"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Which group completes the series: DEB, HIF, LMJ, PQN, ?",
+      "options": [
+        "TUR",
+        "TUS",
+        "SUR",
+        "TVR"
+      ],
+      "answerIndex": 0,
+      "explanation": "Solve each column separately. 1st letters D, H, L, P (+4 each) → T. 2nd letters E, I, M, Q (+4 each) → U. 3rd letters B, F, J, N (+4 each) → R. So the group is **TUR**.\n\n**Why not the others**\n- TUS — 3rd letter should be R (+4 from N), not S.\n- SUR — 1st letter should be T (+4 from P), not S.\n- TVR — 2nd letter should be U (+4 from Q), not V.\n\n**Key facts**\n- Grouped/combination series: split into columns and solve each column's pattern.\n- Every column here advances by +4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
+      "verified": true,
+      "covers": [
+        "Alphabet series — grouped/combination letter sequence"
+      ],
+      "tags": [
+        "series-coding",
+        "alphabet-series",
+        "combination"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "In each row of the table the third number follows one fixed rule based on the first two: (5, 3, 16), (7, 4, 33), (8, 6, ?). What replaces '?'",
+      "options": [
+        "28",
+        "26",
+        "14",
+        "48"
+      ],
+      "answerIndex": 0,
+      "explanation": "The rule is third = first² − second²: 5²−3² = 25−9 = 16 ✓ and 7²−4² = 49−16 = 33 ✓. So 8²−6² = 64 − 36 = 28.\n\n**Why not the others**\n- 26 — arises from 64−38, an arithmetic slip.\n- 14 — that is 8+6, the wrong (sum) rule.\n- 48 — that is 8×6, the product rule, which fails on the first two rows.\n\n**Key facts**\n- Confirm one rule fits every complete row before applying it.\n- Here third = a² − b² = (a+b)(a−b).\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
+      "source": "local APPSC Group 1 PDFs — Logical Reasoning: Matrix",
+      "verified": true,
+      "covers": [
+        "Missing number in a matrix/grid (row/column rule)"
+      ],
+      "tags": [
+        "number-series",
+        "matrix",
+        "squares"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-mcq-30",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "question": "Each row of the grid has the same total. Given the rows (12, 5, 7), (9, 8, 7) and (10, ?, 6), the missing number is:",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "Each complete row totals 12+5+7 = 24 and 9+8+7 = 24. So the third row must also total 24: 10 + ? + 6 = 24 ⇒ ? = 8.\n\n**Why not the others**\n- 7 — gives a row total of 23, not 24.\n- 9 — gives 25.\n- 6 — gives 22.\n\n**Key facts**\n- Constant-row-total grids: missing = common total − sum of the other cells.\n- Common total is read off any complete row.\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
+      "source": "local APPSC Group 1 PDFs — Logical Reasoning: Matrix",
+      "verified": true,
+      "covers": [
+        "Missing number in a matrix/grid (row/column rule)"
+      ],
+      "tags": [
+        "number-series",
+        "matrix",
+        "row-sum"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ivc-town-plan.svg — original schematic of Harappan town planning.
+  Intent: show the two-part layout — a raised CITADEL to the WEST (public/ritual
+  buildings on a mud-brick platform) and a gridded LOWER TOWN to the east with
+  streets meeting at RIGHT ANGLES, plus COVERED DRAINS along the streets and a
+  GRANARY in the citadel. Self-contained parchment panel + dark ink so it reads
+  on either app theme; prefers-color-scheme adapts the panel for OS dark mode.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" role="img"
+     aria-label="Schematic of Harappan town planning: western citadel and gridded lower town with covered drains">
+  <style>
+    .panel  { fill: #f7f3ea; stroke: #d8cdb5; }
+    .ink    { fill: #2b2b2b; }
+    .muted  { fill: #6b7280; }
+    .block  { fill: #ece3cf; stroke: #c9b78f; }
+    .cit    { fill: #e7d3ad; stroke: #b8934f; }
+    .street { stroke: #a89b7d; stroke-width: 8; stroke-linecap: square; }
+    .drain  { stroke: #2563eb; stroke-width: 2; stroke-dasharray: 6 4; opacity: .85; fill: none; }
+    .gran   { fill: #b45309; stroke: #7c3f06; }
+    text    { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .panel  { fill: #1f2530; stroke: #3a4353; }
+      .ink    { fill: #f3f4f6; }
+      .muted  { fill: #aab2bd; }
+      .block  { fill: #2b3342; stroke: #43506a; }
+      .cit    { fill: #3a3320; stroke: #7c6a3a; }
+      .street { stroke: #5b6675; }
+    }
+  </style>
+
+  <rect class="panel" x="4" y="4" width="812" height="512" rx="16"/>
+  <text class="ink" x="28" y="42" font-size="24" font-weight="700">Harappan town plan</text>
+  <text class="muted" x="28" y="66" font-size="14">Citadel (west, raised) · gridded lower town · right-angle streets · covered drains</text>
+
+  <!-- Compass -->
+  <g transform="translate(756,120)">
+    <line class="street" x1="0" y1="16" x2="0" y2="-16" stroke-width="2"/>
+    <path class="ink" d="M-6 -10 L0 -20 L6 -10 Z"/>
+    <text class="muted" x="0" y="34" font-size="12" text-anchor="middle">N</text>
+    <text class="muted" x="-22" y="4" font-size="12" text-anchor="middle">W</text>
+  </g>
+
+  <!-- CITADEL — raised platform to the WEST -->
+  <rect class="cit" x="60" y="120" width="220" height="330" rx="8"/>
+  <text class="ink" x="170" y="146" font-size="15" font-weight="700" text-anchor="middle">Citadel (west)</text>
+  <!-- Granary + a couple of public buildings on the platform -->
+  <rect class="gran" x="92" y="176" width="156" height="70" rx="4"/>
+  <text class="ink" x="170" y="218" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">Granary</text>
+  <rect class="block" x="92" y="272" width="70" height="60" rx="4"/>
+  <rect class="block" x="178" y="272" width="70" height="60" rx="4"/>
+  <rect class="block" x="92" y="356" width="156" height="66" rx="4"/>
+
+  <!-- LOWER TOWN — grid of insulae to the east -->
+  <text class="ink" x="560" y="146" font-size="15" font-weight="700" text-anchor="middle">Lower town (gridded)</text>
+  <!-- Streets at right angles -->
+  <g class="street">
+    <line x1="340" y1="120" x2="340" y2="450"/>
+    <line x1="450" y1="120" x2="450" y2="450"/>
+    <line x1="560" y1="120" x2="560" y2="450"/>
+    <line x1="670" y1="120" x2="670" y2="450"/>
+    <line x1="320" y1="200" x2="760" y2="200"/>
+    <line x1="320" y1="290" x2="760" y2="290"/>
+    <line x1="320" y1="380" x2="760" y2="380"/>
+  </g>
+  <!-- House blocks between streets -->
+  <g class="block">
+    <rect x="356" y="160" width="80" height="24" rx="2"/><rect x="466" y="160" width="80" height="24" rx="2"/><rect x="576" y="160" width="80" height="24" rx="2"/><rect x="686" y="160" width="60" height="24" rx="2"/>
+    <rect x="356" y="250" width="80" height="24" rx="2"/><rect x="466" y="250" width="80" height="24" rx="2"/><rect x="576" y="250" width="80" height="24" rx="2"/><rect x="686" y="250" width="60" height="24" rx="2"/>
+    <rect x="356" y="340" width="80" height="24" rx="2"/><rect x="466" y="340" width="80" height="24" rx="2"/><rect x="576" y="340" width="80" height="24" rx="2"/><rect x="686" y="340" width="60" height="24" rx="2"/>
+    <rect x="356" y="410" width="80" height="24" rx="2"/><rect x="466" y="410" width="80" height="24" rx="2"/><rect x="576" y="410" width="80" height="24" rx="2"/><rect x="686" y="410" width="60" height="24" rx="2"/>
+  </g>
+  <!-- Covered drains running alongside two of the streets -->
+  <path class="drain" d="M348 128 L348 446"/>
+  <path class="drain" d="M328 208 L752 208"/>
+  <text class="muted" x="560" y="486" font-size="13" text-anchor="middle">— — covered street drains</text>
+</svg>

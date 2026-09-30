@@ -1,0 +1,153 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Powers, Roots, HCF & LCM",
+  "items": [
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-indices",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "Laws of indices & fractional/negative exponents",
+      "body": "The index is the power to which a base is raised. Combine powers using these rules:\n\n| Rule | Formula |\n|---|---|\n| Product | a^m · a^n = a^(m+n) |\n| Quotient | a^m ÷ a^n = a^(m−n) |\n| Power of power | (a^m)^n = a^(mn) |\n| Zero index | a^0 = 1 (a ≠ 0) |\n| Negative index | a^(−n) = 1/a^n |\n| Fractional index | a^(m/n) = (ⁿ√a)^m |\n\n**Worked example** — (81/16)^(−3/4): flip for the negative sign → (16/81)^(3/4); since 16/81 = (2/3)⁴, we get (2/3)³ = 8/27.\n\n**Solving exponential equations** — write both sides with the same base, then equate the powers. E.g. 7^(x−y)=343=7³ and 7^(x+y)=16807=7⁵ give x−y=3, x+y=5 ⇒ x=4.\n\n**Common traps:** multiplying bases when you should only add exponents; mishandling the sign of a negative index; forgetting to take the root before the power in a^(m/n).",
+      "keyPoints": [
+        "a^m · a^n = a^(m+n); a^m ÷ a^n = a^(m−n); (a^m)^n = a^(mn)",
+        "a^0 = 1 for any a ≠ 0",
+        "a^(−n) = 1/a^n — a negative index means reciprocal",
+        "a^(m/n) = (nth root of a) raised to the mth power",
+        "Solve a^f = a^g by equating exponents f = g"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices",
+      "verified": true,
+      "tags": [
+        "indices",
+        "exponents"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-surds",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "Surds — simplify, rationalise & compare",
+      "body": "A surd is an irrational root that cannot be reduced to a rational number (e.g. √2, ³√5).\n\n**Rules:** √a × √b = √(ab); √a ÷ √b = √(a/b); but √a ± √b ≠ √(a±b) (surds do NOT add/subtract under one root).\n\n**Simplify** by pulling out square factors: √50 = √(25·2) = 5√2. Only like surds combine: 5√2 + 3√2 − 2√2 = 6√2.\n\n**Rationalise** a denominator by multiplying by the conjugate: 1/(√3−√2) × (√3+√2)/(√3+√2) = (√3+√2)/(3−2) = √3+√2, using (a−b)(a+b)=a²−b².\n\n**Compare** surds by converting to a common index = LCM of the roots. For ⁴√10, ³√6, √3, ³√10 use index 12: they become ¹²√1000, ¹²√1296, ¹²√729, ¹²√10000, so ³√10 is greatest and √3 comes after ⁴√10.\n\n**Worked example** — arrange √3, ⁴√10, ³√6, ³√10 ascending: radicands 729 < 1000 < 1296 < 10000 ⇒ √3 < ⁴√10 < ³√6 < ³√10.",
+      "keyPoints": [
+        "√a × √b = √(ab), but √a + √b ≠ √(a+b)",
+        "Simplify: √(k²·b) = k√b (e.g. √50 = 5√2)",
+        "Like surds combine: p√a ± q√a = (p±q)√a",
+        "Rationalise using the conjugate: (a−b)(a+b) = a² − b²",
+        "Compare surds by rewriting with a common index = LCM of the roots"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices",
+      "verified": true,
+      "tags": [
+        "surds",
+        "rationalisation",
+        "comparison"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-logarithms",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "Logarithms — laws, change of base, characteristic & mantissa",
+      "body": "A logarithm answers: to what power must the base be raised to get the number? a^b = c ⟺ logₐc = b.\n\n| Rule | Formula |\n|---|---|\n| Log of 1 | logᵦ 1 = 0 |\n| Log of base | logᵦ b = 1 |\n| Product | logᵦ(xy) = logᵦx + logᵦy |\n| Quotient | logᵦ(x/y) = logᵦx − logᵦy |\n| Power | logᵦ(xⁿ) = n·logᵦx |\n| Change of base | logₐb = (log꜀b)/(log꜀a) |\n\n**Worked example** — log 10 − log 5 + log 25 = log(10/5) + log 25 = log 2 + log 25 = log 50.\n\n**Change of base** — log₈16 = (log₂16)/(log₂8) = 4/3.\n\n**Characteristic & mantissa** — for a common (base-10) log, the integral part is the characteristic and the (always positive) decimal part is the mantissa. log 3257 = 3.5128 ⇒ characteristic 3, mantissa 0.5128. For an integer with n digits, characteristic = n − 1.\n\n**Common trap:** adding arguments (5+25) instead of multiplying when combining logs.",
+      "keyPoints": [
+        "a^b = c ⟺ logₐc = b; logᵦ1 = 0 and logᵦb = 1",
+        "log(xy) = log x + log y; log(x/y) = log x − log y",
+        "log(xⁿ) = n·log x",
+        "Change of base: logₐb = (log꜀b)/(log꜀a)",
+        "Common log: characteristic = integer part = (digits − 1); mantissa = positive decimal part"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Logarithm",
+      "verified": true,
+      "tags": [
+        "logarithm",
+        "change-of-base",
+        "characteristic-mantissa"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "HCF & LCM — methods and the product relationship",
+      "body": "**HCF** (Highest Common Factor) = largest number dividing all the given numbers. **LCM** (Least Common Multiple) = smallest number that is a multiple of all of them.\n\n**Prime factorization:** HCF = product of the LOWEST power of each common prime; LCM = product of the HIGHEST power of every prime present. E.g. 12=2²·3, 18=2·3² ⇒ HCF=2·3=6, LCM=2²·3²=36.\n\n**Euclidean (division) method for HCF:** divide larger by smaller, then divisor by remainder, repeat; the last non-zero remainder is the HCF. E.g. HCF(48,18): 48=2·18+12, 18=1·12+6, 12=2·6+0 ⇒ 6.\n\n**Key relationship:** for two numbers A and B, A × B = HCF(A,B) × LCM(A,B). So a missing number = (HCF × LCM) ÷ known number. Example: HCF=35, LCM=525, one number 105 ⇒ other = 35×525/105 = 175.\n\n**Co-prime numbers** (HCF = 1): their LCM equals their product, e.g. LCM(13,17)=221.",
+      "keyPoints": [
+        "HCF = product of lowest powers of common primes; LCM = product of highest powers of all primes",
+        "Euclidean algorithm: last non-zero remainder is the HCF",
+        "A × B = HCF × LCM (only for two numbers)",
+        "Missing number = (HCF × LCM) ÷ the known number",
+        "For co-prime numbers, LCM = product of the numbers"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF",
+      "verified": true,
+      "tags": [
+        "hcf-lcm",
+        "euclidean"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "HCF/LCM of fractions & remainder problems",
+      "body": "**Fractions:**\n- HCF of fractions = HCF(numerators) / LCM(denominators)\n- LCM of fractions = LCM(numerators) / HCF(denominators)\n\nExample — HCF of 4/9, 8/15, 12/20: HCF(4,8,12)=4, LCM(9,15,20)=180 ⇒ 4/180 = 1/45.\n\n**Remainder types** (very common in exams):\n\n| Problem | Method |\n|---|---|\n| Smallest number leaving the same remainder R when divided by x, y, z | LCM(x,y,z) + R |\n| Greatest number that divides x, y, z leaving the same remainder R | HCF(x−R, y−R, z−R) |\n| Greatest number dividing x, y, z leaving remainders a, b, c | HCF(x−a, y−b, z−c) |\n\n**Worked example** — smallest number leaving remainder 3 when divided by 5, 7, 9: LCM(5,7,9)=315 ⇒ 315+3 = 318.\n\n**Word problems (bells/ratio):** things recurring at intervals meet again after the LCM of the intervals. If two numbers are mx and my (co-prime x, y), their LCM = m·x·y.",
+      "keyPoints": [
+        "HCF of fractions = HCF(numerators) / LCM(denominators)",
+        "LCM of fractions = LCM(numerators) / HCF(denominators)",
+        "Smallest number leaving common remainder R = LCM(divisors) + R",
+        "Greatest number leaving common remainder R = HCF of (each number − R)",
+        "Recurring-interval (bells) problems recombine after the LCM of the intervals"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (fractions & remainders)",
+      "verified": true,
+      "tags": [
+        "hcf-lcm",
+        "fractions",
+        "remainder"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "Units digit (cyclicity) & trailing zeros of a factorial",
+      "body": "Two fast 'power' tricks that appear regularly alongside indices.\n\n**Units digit by cyclicity.** The units digit of aⁿ depends only on the units digit of the base and repeats in a short cycle:\n\n| Units digit of base | Cycle | Period |\n|---|---|---|\n| 2, 3, 7, 8 | (see below) | 4 |\n| 4, 9 | two-step | 2 |\n| 0, 1, 5, 6 | fixed | 1 |\n\nExamples of the 4-cycles: 2→2,4,8,6; 3→3,9,7,1; 7→7,9,3,1; 8→8,4,2,6. **Method:** reduce the exponent **mod 4**; a remainder of 0 means take the 4th (last) value in the cycle. So units digit of 7¹⁰⁵: 105 mod 4 = 1 ⇒ first term ⇒ **7**.\n\n**Trailing zeros of n!** A trailing zero needs a factor 10 = 2×5, and 5s are scarcer than 2s, so count the **power of 5**:\n\n> zeros in n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + …\n\nExample — 100!: ⌊100/5⌋ + ⌊100/25⌋ + ⌊100/125⌋ = 20 + 4 + 0 = **24** zeros. (The same ⌊n/pᵏ⌋ sum gives the power of any prime p in n!.)\n\n**Common trap:** using remainder 0 as 'first term' (it is the LAST term of the cycle), or counting only ⌊n/5⌋ and missing the extra 5s inside 25, 125, ….",
+      "keyPoints": [
+        "Units digit of aⁿ depends only on the base's units digit and repeats (period 1, 2 or 4)",
+        "Reduce the exponent mod 4; remainder 0 → the last value in the cycle",
+        "Cycles: 2→2,4,8,6; 3→3,9,7,1; 7→7,9,3,1; 8→8,4,2,6; 4,9 have period 2; 0,1,5,6 fixed",
+        "Trailing zeros of n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + … (power of 5)",
+        "The same ⌊n/pᵏ⌋ sum gives the power of any prime p in n!"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Cyclicity of Units Digit / Factorials",
+      "verified": true,
+      "tags": [
+        "units-digit",
+        "cyclicity",
+        "factorial",
+        "trailing-zeros"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-ratio-hcf-and-square-lcm",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "HCF from a ratio & least perfect square via LCM",
+      "body": "**Numbers given as a ratio share the multiplier as their HCF.** If three numbers are 2:3:4, write them as 2k, 3k, 4k; since 2, 3, 4 are collectively co-prime, HCF = k. Find k from the given sum or a stated HCF.\n\n*Example:* 2:3:4 with sum 549 ⇒ 9k = 549 ⇒ k = 61 ⇒ HCF = **61**.\n\n**Least number / least perfect square divisible by a set:** first take the LCM, then, for a perfect square, multiply by the primes whose powers are odd so every exponent becomes even.\n\n*Example:* least perfect square divisible by 2, 3, 5, 6, 9, 18 → LCM = 90 = 2¹·3²·5¹; the odd-power primes are 2 and 5, so multiply by 2×5 = 10 → 900 = 30².\n\n**Trap:** for the ratio-HCF, the parts (2,3,4) must be in lowest terms; if not, reduce first.",
+      "keyPoints": [
+        "Ratio a:b:c ⇒ numbers ak,bk,ck; HCF = k when a,b,c are collectively co-prime",
+        "2:3:4 summing 549 ⇒ k = 61, HCF = 61",
+        "Least number divisible by a set = their LCM",
+        "Least perfect square = LCM × (product of odd-power primes) to even all exponents",
+        "LCM(2,3,5,6,9,18)=90 → ×10 → 900 = 30²"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — HCF/LCM, Perfect Squares",
+      "verified": true,
+      "tags": [
+        "hcf-lcm",
+        "ratio",
+        "perfect-square"
+      ]
+    }
+  ]
+}

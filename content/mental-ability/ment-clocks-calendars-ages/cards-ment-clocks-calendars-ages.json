@@ -1,0 +1,117 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Clocks, Calendars & Ages",
+  "items": [
+    {
+      "id": "ment-clocks-calendars-ages-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "Angle between clock hands at H:M?",
+      "back": "Angle = |30H − 5.5M| degrees (take value ≤180°). Minute hand gains 5.5°/min on the hour hand.",
+      "examPoint": "Clock — angle between the hands (|30H − 5.5M|)",
+      "source": "APPSC Logical Reasoning — Clock",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "In 12 hours, how often do hands coincide / oppose / make right angles?",
+      "back": "Coincide 11, opposite 11, right angles 22 (double for 24 h → 22, 22, 44). Coincide every 65 5/11 min.",
+      "examPoint": "Clock — hands opposite / in a straight line (180°)",
+      "source": "APPSC Logical Reasoning — Clock",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "When do hands coincide / make 90° between hour H and H+1?",
+      "back": "Solve 30H = 5.5M (overlap at 60H/11 min) or |30H−5.5M| = 90. Hands overlap once every 720/11 min.",
+      "examPoint": "Clock — time when the hands coincide (65 5/11 min gap)",
+      "source": "APPSC Logical Reasoning — Clock",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "Faulty clock: total error, and does it read early or late?",
+      "back": "Total error = per-hour error × hours elapsed. Losing clock reads EARLIER; gaining clock reads LATER.",
+      "examPoint": "Clock — faulty clock gaining or losing time",
+      "source": "APPSC Logical Reasoning — Clock",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "Mirror image of a clock time?",
+      "back": "Mirror time = 12:00 − time (use 11:60 − time when minutes ≠ 00). e.g. 3:25 → 8:35. Water image uses 6:00 base.",
+      "examPoint": "Clock — mirror image of a given time",
+      "source": "APPSC Logical Reasoning — Clock",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "Odd days in 100 / 200 / 300 / 400 years?",
+      "back": "5, 3, 1, 0. Ordinary year = 1 odd day, leap year = 2. Map total mod 7: 0=Sunday … 6=Saturday.",
+      "examPoint": "Calendar — odd days concept (100/200/300/400 years)",
+      "source": "APPSC Logical Reasoning — Calendar",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "Leap-year rule?",
+      "back": "Divisible by 4, EXCEPT century years which must be divisible by 400. So 2000 leap; 1900 & 2100 not.",
+      "examPoint": "Calendar — leap year rule (÷4, not ÷100 unless ÷400)",
+      "source": "APPSC Logical Reasoning — Calendar",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "How much does a date advance to next year? When does a calendar repeat?",
+      "back": "+1 day after an ordinary year, +2 after a leap year. Repeats when odd days ≡0 mod7 & leap-status matches (ordinary 6/11 yr, leap 28 yr).",
+      "examPoint": "Calendar — repetition of a calendar (same-calendar year)",
+      "source": "APPSC Logical Reasoning — Calendar",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "Method for ratio-of-ages problems over time?",
+      "back": "Write parts as kx (5x, 7x); add/subtract the SAME time to each; equate to the new ratio and solve. Ratios are not preserved.",
+      "examPoint": "Ages — present ages from a ratio plus a later condition",
+      "source": "APPSC Quantitative Reasoning — Problem on Age",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "'N years ago' and difference-based age relations?",
+      "back": "Subtract N from BOTH ages before applying the relation ('hence' adds N). Age difference stays constant: if one is k older, A = B + k.",
+      "examPoint": "Ages — past-age relation (N years ago)",
+      "source": "APPSC Quantitative Reasoning — Problem on Age",
+      "verified": true
+    },
+    {
+      "id": "ment-clocks-calendars-ages-card-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "front": "Added member's age from a change in average?",
+      "back": "Added age = new_avg×(n+1) − old_avg×n; shortcut = new_avg + (rise × old count). e.g. 11 avg 29, +1 ⇒ coach = 41.",
+      "examPoint": "Ages — average age (team/family, member added or replaced)",
+      "source": "APPSC Quantitative Reasoning — Based on Cricket and Age",
+      "verified": true
+    }
+  ]
+}

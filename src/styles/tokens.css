@@ -1,0 +1,202 @@
+/*
+ * Design tokens — the single source of visual truth for the workspace.
+ *
+ * Everything downstream (base.css, components.css, view markup) consumes these
+ * custom properties, so re-theming is a matter of flipping values here. Two
+ * themes are provided via [data-theme] on <html>; the palette, elevation,
+ * spacing, type, radii, z-index and motion scales are all defined once.
+ *
+ * Design direction (2026 refresh): a calmer, premium study workspace — a warm
+ * neutral canvas with clear-but-quiet elevation, ONE confident indigo accent
+ * used sparingly (a single restrained gradient reserved for the hero + brand
+ * mark; solid accent everywhere else), and MUTED, desaturated semantic colours
+ * so no screen fights for attention. Fewer type sizes with a stronger
+ * hierarchy, a generous spacing rhythm, and a soft, consistent radius + shadow
+ * scale. Light + dark + font-scale all remain first-class.
+ *
+ * Naming: semantic tokens (--bg, --surface, --text, --accent…) are what views
+ * reference; raw scales (--indigo-500…) exist only to compose semantics so the
+ * two themes stay legible and consistent.
+ */
+
+:root {
+  /* Root font scale multiplier, driven by the persisted fontScale setting.
+     Every rem-based size multiplies through html { font-size } in base.css. */
+  --font-scale: 1;
+
+  /* ---- Type -------------------------------------------------------------- */
+  /* A refined system-ui stack (no web fonts → keeps the single file lean).
+     tabular-nums is applied on numeric UI (rings, counters) in base.css. */
+  --font-sans:
+    system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif:
+    'Iowan Old Style', 'Palatino Linotype', 'Georgia', 'Times New Roman', serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Menlo', monospace;
+
+  /* Telugu text stack: the BUNDLED, inlined webfont first (see telugu-font.css),
+     then system Telugu fonts, then a generic fallback. Applied only to
+     Telugu-tagged text ([lang='te']) so the Latin/base font is never affected. */
+  --font-telugu:
+    'Noto Sans Telugu', 'Telugu Sangam MN', 'Gautami', 'Nirmala UI', system-ui,
+    sans-serif;
+
+  /* Type scale — a tighter, stronger hierarchy. Fewer *distinct* steps in play
+     on any one screen: body sits at --fs-md, supporting text at --fs-sm, and a
+     clear jump to display sizes for heroes. rem so --font-scale multiplies it. */
+  --fs-xs: 0.75rem; /* 12 — captions, eyebrows */
+  --fs-sm: 0.875rem; /* 14 — secondary / meta */
+  --fs-md: 1rem; /* 16 — body (base) */
+  --fs-lg: 1.125rem; /* 18 — card titles */
+  --fs-xl: 1.375rem; /* 22 — section headings */
+  --fs-2xl: 1.75rem; /* 28 — page headings */
+  --fs-3xl: 2.25rem; /* 36 — hero */
+  --fs-4xl: 2.75rem; /* 44 — rare display */
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- Spacing scale (4px base; larger steps snap to an 8pt grid) -------- */
+  --space-0: 0;
+  --space-1: 0.25rem; /* 4 */
+  --space-2: 0.5rem; /* 8 */
+  --space-3: 0.75rem; /* 12 */
+  --space-4: 1rem; /* 16 */
+  --space-5: 1.5rem; /* 24 */
+  --space-6: 2rem; /* 32 — 8pt-aligned roomier section padding */
+  --space-7: 3rem; /* 48 — 8pt-aligned */
+  --space-8: 4rem; /* 64 — 8pt-aligned */
+
+  /* ---- Radii (soft + consistent; a touch tighter for a premium feel) ----- */
+  --radius-sm: 7px;
+  --radius-md: 11px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+
+  /* ---- Z-index ----------------------------------------------------------- */
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-sidebar: 200;
+  --z-topbar: 250;
+  --z-tabbar: 300;
+  --z-overlay: 400;
+
+  /* ---- Motion ------------------------------------------------------------ */
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+  /* Gentle, "settled" easing for entrances; standard for hovers. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Layout dimensions ------------------------------------------------- */
+  --sidebar-w: 256px;
+  --rail-w: 88px; /* medium-width icon navigation rail (Material adaptive nav) */
+  --topbar-h: 60px;
+  --tabbar-h: 64px;
+  /* Main content column: a wider measure so large displays aren't boxed into a
+     narrow strip with big empty gutters (was 940). Long-form PROSE is still
+     capped separately at --reading for legibility; only shells, cards, tables,
+     figures and question layouts use this fuller width. */
+  --content-max: 1180px;
+  /* Comfortable long-form reading measure for note PROSE (body text, lists).
+     Tables, figures and the two-column question blocks break out past this to
+     the fuller container width. Kept ≤ ~85ch so prose never runs too long. */
+  --reading: 80ch;
+
+  /* ---- Raw accent scale — ONE confident indigo (no violet second hue) ---- */
+  --indigo-300: #a5b0f8;
+  --indigo-400: #7f8cf2;
+  --indigo-500: #5b6cf0;
+  --indigo-600: #4a5ae0;
+  --indigo-700: #3b47c4;
+
+  /* The signature accent gradient — a single restrained indigo ramp (same hue,
+     not indigo→violet). Reserved for the hero + brand mark; everything else
+     uses the solid --accent so screens stay calm. */
+  --accent-gradient: linear-gradient(135deg, var(--indigo-500) 0%, var(--indigo-700) 100%);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Light theme (default)                                                       */
+/* -------------------------------------------------------------------------- */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f6f5f2; /* app canvas — a soft, warm off-white paper */
+  --bg-2: #edece7; /* recessed wells (tracks, insets) */
+  --surface: #ffffff; /* cards */
+  --surface-2: #faf9f6; /* nested surfaces */
+  --surface-glass: rgba(255, 255, 255, 0.75); /* top bar backdrop */
+
+  --text: #1e1f24; /* primary ink — warm near-black */
+  --text-2: #55575f; /* secondary — WCAG AA: 7.2:1 on #fff, 6.6:1 on #f6f5f2 */
+  --muted: #6a6b73; /* tertiary / captions — WCAG AA: 5.3:1 on #fff, 4.86:1 on #f6f5f2 */
+  --border: #e9e7e1; /* quiet hairline */
+  --border-strong: #d8d6cf;
+
+  --accent: var(--indigo-600);
+  --accent-2: var(--indigo-500);
+  --accent-soft: #eef0fd; /* tinted fills behind accent content */
+  --accent-contrast: #ffffff;
+
+  /* Muted, desaturated semantics — legible but never loud. Darkened for WCAG AA
+     on white/paper: --success #2f7a46 (~4.9:1), --warning #92670f (~4.6:1). */
+  --success: #2f7a46;
+  --success-soft: #e8f2ea;
+  --warning: #92670f;
+  --warning-soft: #f6efdd;
+  --danger: #c14a3f;
+  --danger-soft: #f6e8e5;
+
+  /* Elevation — soft, low-spread shadows tuned for a warm light canvas. */
+  --shadow-xs: 0 1px 2px rgba(28, 27, 24, 0.05);
+  --shadow-sm: 0 1px 3px rgba(28, 27, 24, 0.05), 0 1px 2px rgba(28, 27, 24, 0.04);
+  --shadow-md: 0 4px 14px rgba(28, 27, 24, 0.06), 0 1px 3px rgba(28, 27, 24, 0.04);
+  --shadow-lg: 0 14px 36px rgba(28, 27, 24, 0.10), 0 4px 10px rgba(28, 27, 24, 0.05);
+  --shadow-accent: 0 6px 18px rgba(74, 90, 224, 0.22);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dark theme                                                                  */
+/* -------------------------------------------------------------------------- */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0b0c0e; /* deep, neutral near-black canvas */
+  --bg-2: #131418; /* recessed wells */
+  --surface: #17181c; /* cards — subtly raised */
+  --surface-2: #1e1f24; /* nested surfaces */
+  --surface-glass: rgba(17, 18, 22, 0.72);
+
+  --text: #ececee;
+  --text-2: #b7b8bf;
+  --muted: #83848c;
+  --border: #26272d;
+  --border-strong: #34353d;
+
+  --accent: var(--indigo-400);
+  --accent-2: var(--indigo-500);
+  --accent-soft: #191c2e;
+  --accent-contrast: #0b0c0e;
+
+  --success: #57b06a;
+  --success-soft: #14241a;
+  --warning: #cf9a44;
+  --warning-soft: #251e12;
+  --danger: #e07a70;
+  --danger-soft: #271614;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.58);
+  --shadow-accent: 0 8px 24px rgba(91, 108, 240, 0.32);
+}

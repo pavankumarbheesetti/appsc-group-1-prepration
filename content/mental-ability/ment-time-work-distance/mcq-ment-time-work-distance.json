@@ -1,0 +1,680 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Time & Work, Time & Distance",
+  "items": [
+    {
+      "id": "ment-time-work-distance-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "refresher": true,
+      "question": "A can complete a piece of work in 10 days. What fraction of the work does A finish in one day?",
+      "options": [
+        "1/5",
+        "1/10",
+        "10",
+        "1/20"
+      ],
+      "answerIndex": 1,
+      "explanation": "If the whole work takes 10 days, the one-day work (rate) is 1/total days = **1/10**.\n\n**Why not the others**\n- 1/5 — that is 2 days' work (2 × 1/10), not one day's.\n- 10 — this is the number of days, not the fractional rate.\n- 1/20 — this would be the rate if A took 20 days.\n\n**Key facts**\n- Rate of work = 1 / (days to finish alone); work done = rate × time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Work and Wages / Fractions of Work.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Work and Wages",
+      "verified": true,
+      "covers": [
+        "Time & Work — single-worker rate (1/n per day)"
+      ],
+      "tags": [
+        "time-work",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "refresher": true,
+      "question": "Convert a speed of 72 km/h into metres per second.",
+      "options": [
+        "25 m/s",
+        "18 m/s",
+        "36 m/s",
+        "20 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "Multiply km/h by 5/18: 72 × 5/18 = 360/18 = **20 m/s**.\n\n**Why not the others**\n- 25 m/s — that is 90 km/h × 5/18.\n- 18 m/s — that would need 64.8 km/h.\n- 36 m/s — this wrongly multiplies by 1/2 (km/h ÷ 2), a common slip.\n\n**Key facts**\n- km/h → m/s: × 5/18.  m/s → km/h: × 18/5.\n\n*Source: local APPSC Quantitative Reasoning PDF — Relative speed / Average Speed.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Relative speed",
+      "verified": true,
+      "covers": [
+        "Speed–time–distance — km/h to m/s conversion"
+      ],
+      "tags": [
+        "speed-distance",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "refresher": true,
+      "question": "A boat's speed in still water is 10 km/h and the stream flows at 2 km/h. What are its downstream and upstream speeds?",
+      "options": [
+        "8 km/h and 12 km/h",
+        "12 km/h and 8 km/h",
+        "10 km/h and 2 km/h",
+        "12 km/h and 12 km/h"
+      ],
+      "answerIndex": 1,
+      "explanation": "Downstream = boat + stream = 10 + 2 = **12 km/h**; upstream = boat − stream = 10 − 2 = **8 km/h**.\n\n**Why not the others**\n- 8 and 12 km/h — the two values are swapped; downstream must be the faster one.\n- 10 and 2 km/h — these are the still-water and stream speeds, not effective speeds.\n- 12 and 12 km/h — upstream cannot equal downstream when a current exists.\n\n**Key facts**\n- Downstream = B + S (with the current); Upstream = B − S (against it).\n\n*Source: local APPSC Quantitative Reasoning PDF — Boat and Stream.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Boat and Stream",
+      "verified": true,
+      "covers": [
+        "Boats & streams — upstream and downstream speed"
+      ],
+      "tags": [
+        "boats-streams",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A can do a work in 12 days and B in 15 days. Working together, in how many days will they finish it?",
+      "options": [
+        "27 days",
+        "7 1/2 days",
+        "6 2/3 days",
+        "9 days"
+      ],
+      "answerIndex": 2,
+      "explanation": "Combined rate = 1/12 + 1/15 = 5/60 + 4/60 = 9/60 = 3/20 per day. Time = 20/3 = **6 2/3 days**.\n\n**Why not the others**\n- 27 days — this adds the days (12 + 15), which is never valid for combined work.\n- 7 1/2 days — that is 15/2, the wrong reciprocal.\n- 9 days — the simple average of 12 and 15, which overstates the joint time.\n\n**Key facts**\n- Together time = 1 / (1/a + 1/b) = ab/(a+b) = (12×15)/27 = 6 2/3 days.\n\n*Source: local APPSC Quantitative Reasoning PDF — Fractions of Work.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Fractions of Work",
+      "verified": true,
+      "covers": [
+        "Time & Work — combined work (LCM units / rate addition)"
+      ],
+      "tags": [
+        "time-work",
+        "combined"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A alone can finish a work in 18 days and B in 9 days. B works for 3 days and then leaves. In how many more days will A alone complete the remaining work?",
+      "options": [
+        "6 days",
+        "15 days",
+        "9 days",
+        "12 days"
+      ],
+      "answerIndex": 3,
+      "explanation": "Take total work = LCM(18,9) = 18 units; A = 1 unit/day, B = 2 units/day. B in 3 days does 3 × 2 = 6 units. Remaining = 18 − 6 = 12 units, done by A at 1 unit/day = **12 days**.\n\n**Why not the others**\n- 6 days — this is B's own contribution in units, not A's remaining time.\n- 15 days — this counts B's 3 days plus 12, but the question asks only the extra days for A.\n- 9 days — B's total solo time, unrelated to the remaining work.\n\n**Key facts**\n- LCM method: rate = units/day; remaining days = remaining units ÷ A's rate.\n\n*Source: local APPSC Quantitative Reasoning PDF — Fractions of Work.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Fractions of Work",
+      "verified": true,
+      "covers": [
+        "Time & Work — worker leaves or joins midway"
+      ],
+      "tags": [
+        "time-work",
+        "midway"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A is twice as efficient as B. Working together they finish a job in 12 days. In how many days can B alone finish it?",
+      "options": [
+        "18 days",
+        "24 days",
+        "36 days",
+        "30 days"
+      ],
+      "answerIndex": 2,
+      "explanation": "Let B's rate = x, so A's rate = 2x. Together 3x = 1/12, so x = 1/36. B alone needs 1/x = **36 days**.\n\n**Why not the others**\n- 18 days — this is A's solo time (2x = 1/18), not B's.\n- 24 days — the result of splitting 12 in ratio 1:1 instead of 2:1.\n- 30 days — no consistent efficiency ratio gives this.\n\n**Key facts**\n- 'k times as efficient' → rate ratio k:1; A's solo days = 18, B's = 36 (A is faster).\n\n*Source: local APPSC Quantitative Reasoning PDF — Efficiency and Work Comparison.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Efficiency and Work Comparison",
+      "verified": true,
+      "covers": [
+        "Time & Work — efficiency comparison (a is k times as efficient)"
+      ],
+      "tags": [
+        "time-work",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A can do a work in 8 days and B in 12 days. They work on alternate days, A starting first. In how many days is the work completed?",
+      "options": [
+        "10 days",
+        "9 1/2 days",
+        "9 3/5 days",
+        "9 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total = LCM(8,12) = 24 units; A = 3/day, B = 2/day. Each 2-day block (A then B) = 5 units. After 8 days (4 blocks) = 20 units. Day 9 (A) adds 3 → 23. Only 1 unit remains; on day 10 (B, rate 2) it takes 1/2 day. Total = 9 + 1/2 = **9 1/2 days**.\n\n**Why not the others**\n- 10 days — assumes B needs a full 10th day, but only half a day of B's work is left.\n- 9 3/5 days — uses A's rate (3/day) for the last bit, but day 10 belongs to B.\n- 9 days — after 9 days only 23 of 24 units are done.\n\n**Key facts**\n- Alternate work: sum one full cycle, count whole cycles, then finish the remainder with whoever's turn it is.\n\n*Source: local APPSC Quantitative Reasoning PDF — Alternate Days Work.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Alternate Days Work",
+      "verified": true,
+      "covers": [
+        "Alternate-days work"
+      ],
+      "tags": [
+        "time-work",
+        "alternate"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A can finish a work in 6 days and B in 8 days. They complete it together and are paid ₹2800 in all. What is A's share of the wages?",
+      "options": [
+        "₹1200",
+        "₹1400",
+        "₹1750",
+        "₹1600"
+      ],
+      "answerIndex": 3,
+      "explanation": "Wages are shared in the ratio of work done = ratio of rates = 1/6 : 1/8 = 4 : 3. A's share = 4/7 × 2800 = **₹1600** (B gets ₹1200).\n\n**Why not the others**\n- ₹1200 — that is B's share (3/7 × 2800), the slower worker.\n- ₹1400 — an equal 1:1 split, ignoring differing efficiency.\n- ₹1750 — comes from the wrong ratio 8 : 6 applied loosely.\n\n**Key facts**\n- Wage ∝ work done ∝ efficiency; ratio 1/6 : 1/8 = 4 : 3 (faster worker earns more).\n\n*Source: local APPSC Quantitative Reasoning PDF — Work and Wages.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Work and Wages",
+      "verified": true,
+      "covers": [
+        "Work & wages — sharing in ratio of work/efficiency"
+      ],
+      "tags": [
+        "time-work",
+        "wages"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "Pipe A can fill a tank in 6 hours and pipe B in 4 hours. If both are opened together, how long will they take to fill the tank?",
+      "options": [
+        "5 hours",
+        "2.4 hours",
+        "3 hours",
+        "2 hours"
+      ],
+      "answerIndex": 1,
+      "explanation": "Combined rate = 1/6 + 1/4 = 2/12 + 3/12 = 5/12 tank/hour. Time = 12/5 = **2.4 hours** (2 h 24 min).\n\n**Why not the others**\n- 5 hours — this adds the times (6 + 4)/2 = 5, invalid for combined filling.\n- 3 hours — the simple average of 6 and 4.\n- 2 hours — ignores that neither pipe alone is that fast.\n\n**Key facts**\n- Two inlets together: time = 1/(1/a + 1/b) = ab/(a+b) = 24/10 = 2.4 h.\n\n*Source: local APPSC Quantitative Reasoning PDF — Pipes and Cistern.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Pipes and Cistern",
+      "verified": true,
+      "covers": [
+        "Pipes & cisterns — two inlet pipes together"
+      ],
+      "tags": [
+        "pipes-cistern",
+        "inlet"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "An inlet pipe fills a tank in 10 hours while an outlet pipe empties a full tank in 15 hours. If both are opened together on an empty tank, how long will it take to fill?",
+      "options": [
+        "25 hours",
+        "12 hours",
+        "30 hours",
+        "6 hours"
+      ],
+      "answerIndex": 2,
+      "explanation": "Net rate = 1/10 − 1/15 = 3/30 − 2/30 = 1/30 tank/hour (positive, so it fills). Time = **30 hours**.\n\n**Why not the others**\n- 25 hours — adds the two times instead of combining rates.\n- 12 hours — treats both as inlets (1/10 + 1/15 = 1/6 → 6 h path), the wrong sign.\n- 6 hours — the both-filling result; here one pipe drains.\n\n**Key facts**\n- Outlet subtracts: net rate = 1/inlet − 1/outlet; fills only if the inlet is faster.\n\n*Source: local APPSC Quantitative Reasoning PDF — Pipes and Cistern.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Pipes and Cistern",
+      "verified": true,
+      "covers": [
+        "Pipes & cisterns — inlet with outlet or leak"
+      ],
+      "tags": [
+        "pipes-cistern",
+        "outlet"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "10 men working 8 hours a day finish a job in 6 days. How many days will 8 men working 10 hours a day take to finish the same job?",
+      "options": [
+        "6 days",
+        "5 days",
+        "7.5 days",
+        "4 days"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use M1·D1·H1 = M2·D2·H2: 10 × 6 × 8 = 8 × D × 10 → 480 = 80D → D = **6 days**.\n\n**Why not the others**\n- 5 days — comes from dropping the hours term (10×6 = 8×D → 7.5) then mis-rounding.\n- 7.5 days — ignores the extra working hours (10 vs 8) that offset fewer men.\n- 4 days — over-corrects for both changes in the wrong direction.\n\n**Key facts**\n\n| Quantity | Group 1 | Group 2 |\n|---|---|---|\n| Men (M) | 10 | 8 |\n| Hours/day (H) | 8 | 10 |\n| Days (D) | 6 | ? |\n\nM·D·H is constant for the same work.\n\n*Source: local APPSC Quantitative Reasoning PDF — Man-Hours Concept.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Man-Hours Concept",
+      "verified": true,
+      "covers": [
+        "Man-days — M1·D1·H1 = M2·D2·H2"
+      ],
+      "tags": [
+        "man-days",
+        "man-hours"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A car covers a distance at 40 km/h and returns along the same route at 60 km/h. What is its average speed for the whole journey?",
+      "options": [
+        "50 km/h",
+        "52 km/h",
+        "45 km/h",
+        "48 km/h"
+      ],
+      "answerIndex": 3,
+      "explanation": "For equal distances, average speed = 2xy/(x+y) = (2 × 40 × 60)/(40 + 60) = 4800/100 = **48 km/h**.\n\n**Why not the others**\n- 50 km/h — the plain average (40 + 60)/2, which is wrong for equal distances.\n- 52 km/h — no valid combination gives this.\n- 45 km/h — a mis-weighted average biased toward the slower leg.\n\n**Key facts**\n- Equal distances → harmonic mean 2xy/(x+y); it is always less than the simple average.\n\n*Source: local APPSC Quantitative Reasoning PDF — Average Speed.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Average Speed",
+      "verified": true,
+      "covers": [
+        "Average speed — equal distances (2xy/(x+y))"
+      ],
+      "tags": [
+        "speed-distance",
+        "average-speed"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A train 150 m long, running at 54 km/h, crosses a platform 210 m long. How long does it take?",
+      "options": [
+        "24 seconds",
+        "10 seconds",
+        "14 seconds",
+        "40 seconds"
+      ],
+      "answerIndex": 0,
+      "explanation": "Distance to cross = train + platform = 150 + 210 = 360 m. Speed = 54 × 5/18 = 15 m/s. Time = 360/15 = **24 seconds**.\n\n**Why not the others**\n- 10 seconds — uses only the train length (150/15), i.e. crossing a pole, not a platform.\n- 14 seconds — uses only the platform length (210/15).\n- 40 seconds — forgets to convert 54 km/h to 15 m/s.\n\n**Key facts**\n- Crossing a platform: distance = length of train + length of platform; time = distance ÷ speed.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Train.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Train",
+      "verified": true,
+      "covers": [
+        "Trains — crossing a pole or platform"
+      ],
+      "tags": [
+        "trains",
+        "platform"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "Two trains, 120 m and 180 m long, move towards each other at 40 km/h and 50 km/h respectively. How long do they take to cross each other completely?",
+      "options": [
+        "36 seconds",
+        "20 seconds",
+        "12 seconds",
+        "6 seconds"
+      ],
+      "answerIndex": 2,
+      "explanation": "Opposite directions → relative speed = 40 + 50 = 90 km/h = 90 × 5/18 = 25 m/s. Total length = 120 + 180 = 300 m. Time = 300/25 = **12 seconds**.\n\n**Why not the others**\n- 36 seconds — uses the difference 50 − 40 = 10 km/h (same-direction relative speed) by mistake.\n- 20 seconds — forgets to add the two lengths, using only one train.\n- 6 seconds — doubles the relative speed erroneously.\n\n**Key facts**\n- Opposite directions: relative speed = sum; crossing distance = sum of both lengths.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Train / Relative speed.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Train",
+      "verified": true,
+      "covers": [
+        "Trains — crossing another train",
+        "Relative speed — same vs opposite direction"
+      ],
+      "tags": [
+        "trains",
+        "relative-speed"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A 300 m long train running at 63 km/h overtakes a man running at 9 km/h in the same direction. How long does the train take to pass him?",
+      "options": [
+        "20 seconds",
+        "60/7 seconds",
+        "12 seconds",
+        "30 seconds"
+      ],
+      "answerIndex": 0,
+      "explanation": "Same direction → relative speed = 63 − 9 = 54 km/h = 54 × 5/18 = 15 m/s. The man's length is negligible, so distance = 300 m. Time = 300/15 = **20 seconds**.\n\n**Why not the others**\n- 60/7 seconds — uses the sum 63 + 9 = 72 km/h (opposite-direction relative speed) instead of the difference.\n- 12 seconds — forgets the man's speed and uses 63 km/h alone (300/17.5).\n- 30 seconds — takes relative speed as 36 km/h = 10 m/s, a wrong subtraction.\n\n**Key facts**\n- Same direction: relative speed = difference; a person's length is ignored, so distance = train length.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Train / Relative speed.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Relative speed",
+      "verified": true,
+      "covers": [
+        "Trains — crossing a moving person",
+        "Relative speed — same vs opposite direction"
+      ],
+      "tags": [
+        "trains",
+        "relative-speed",
+        "same-direction"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A boat covers 30 km downstream in 2 hours and the same 30 km upstream in 3 hours. Find the speed of the boat in still water and the speed of the stream.",
+      "options": [
+        "10 km/h and 5 km/h",
+        "15 km/h and 10 km/h",
+        "11 km/h and 4 km/h",
+        "12.5 km/h and 2.5 km/h"
+      ],
+      "answerIndex": 3,
+      "explanation": "Downstream speed = 30/2 = 15 km/h; upstream speed = 30/3 = 10 km/h. Boat = (15 + 10)/2 = **12.5 km/h**; stream = (15 − 10)/2 = **2.5 km/h**.\n\n**Why not the others**\n- 10 km/h and 5 km/h — sums to 15 (downstream) but upstream would be 5, contradicting 10.\n- 15 km/h and 10 km/h — these are the downstream and upstream speeds themselves, not boat/stream.\n- 11 km/h and 4 km/h — gives downstream 15 but upstream 7, not 10.\n\n**Key facts**\n- Boat = (downstream + upstream)/2; Stream = (downstream − upstream)/2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Boat and Stream.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Boat and Stream",
+      "verified": true,
+      "covers": [
+        "Boats & streams — finding boat or stream speed"
+      ],
+      "tags": [
+        "boats-streams",
+        "still-water"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A boat whose speed in still water is 10 km/h has to travel 24 km upstream in a river flowing at 2 km/h. How long will the trip take?",
+      "options": [
+        "2 hours",
+        "3 hours",
+        "2.4 hours",
+        "4 hours"
+      ],
+      "answerIndex": 1,
+      "explanation": "Upstream speed = 10 − 2 = 8 km/h. Time = distance/speed = 24/8 = **3 hours**.\n\n**Why not the others**\n- 2 hours — uses downstream speed 12 km/h (24/12) instead of upstream.\n- 2.4 hours — uses the still-water speed 10 km/h (24/10), ignoring the current.\n- 4 hours — takes upstream speed as 6 km/h, subtracting the stream twice.\n\n**Key facts**\n- Upstream speed = boat − stream; time = distance ÷ upstream speed.\n\n*Source: local APPSC Quantitative Reasoning PDF — Boat and Stream.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Boat and Stream",
+      "verified": true,
+      "covers": [
+        "Boats & streams — upstream and downstream speed"
+      ],
+      "tags": [
+        "boats-streams",
+        "upstream"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "In a 100 m race, A beats B by 20 m. What is the ratio of the speeds of A and B?",
+      "options": [
+        "4 : 5",
+        "5 : 1",
+        "5 : 4",
+        "1 : 5"
+      ],
+      "answerIndex": 2,
+      "explanation": "When A runs 100 m, B runs only 100 − 20 = 80 m in the same time. Since speed ∝ distance for equal time, A : B = 100 : 80 = **5 : 4**.\n\n**Why not the others**\n- 4 : 5 — the ratio inverted; A is faster, so A's term must be larger.\n- 5 : 1 — treats the 20 m gap as B's total distance.\n- 1 : 5 — inverted form of the above error.\n\n**Key facts**\n- 'A beats B by d metres' in an L-metre race → speed ratio = L : (L − d), run in equal time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Race.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Race",
+      "verified": true,
+      "covers": [
+        "Races — head-start and beats"
+      ],
+      "tags": [
+        "races",
+        "head-start"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "Walking at 5 km/h a man reaches his office 6 minutes late; walking at 6 km/h he reaches 4 minutes early. How far is the office?",
+      "options": [
+        "5 km",
+        "6 km",
+        "4 km",
+        "10 km"
+      ],
+      "answerIndex": 0,
+      "explanation": "Let distance = d. The time difference between the two walks = 6 + 4 = 10 min = 1/6 hour. d/5 − d/6 = 1/6 → d(6 − 5)/30 = 1/6 → d/30 = 1/6 → d = **5 km**.\n\n**Why not the others**\n- 6 km — uses only the 6 km/h leg without the time-difference equation.\n- 4 km — takes the gap as 4 min instead of the full 10 min.\n- 10 km — doubles the correct distance by using 20 min.\n\n**Key facts**\n- Total time gap = late + early; set d/v₁ − d/v₂ = gap (in hours) and solve for d.\n\n*Source: local APPSC Quantitative Reasoning PDF — Average Speed / time-speed-distance.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Average Speed",
+      "verified": true,
+      "covers": [
+        "Distance–time — change of speed (early/late arrival)"
+      ],
+      "tags": [
+        "speed-distance",
+        "late-early"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A, B and C can do a work alone in 20, 30 and 60 days respectively. Working all together, they finish it in:",
+      "options": [
+        "8 days",
+        "10 days",
+        "12 days",
+        "15 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Combined rate = 1/20 + 1/30 + 1/60 = 3/60 + 2/60 + 1/60 = 6/60 = 1/10 work/day. Time = **10 days**.\n\n**Why not the others**\n- 8 days — would need a combined rate of 1/8; the true rate is 1/10.\n- 12 days — comes from omitting C's contribution (1/20+1/30 = 1/12).\n- 15 days — uses only A and C, or mis-adds the fractions.\n\n**Key facts**\n- Together time = 1 / (1/a + 1/b + 1/c).\n- Add rates using a common denominator: LCM(20,30,60) = 60.\n\n*Source: local APPSC Quantitative Reasoning PDF — Fractions of Work.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Fractions of Work",
+      "verified": true,
+      "covers": [
+        "Time & Work — three or more workers together"
+      ],
+      "tags": [
+        "time-work",
+        "three-workers"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "Two pipes fill a tank in 20 and 30 minutes respectively while a third pipe empties the full tank in 15 minutes. If all three are opened together on an empty tank, it will be filled in:",
+      "options": [
+        "30 minutes",
+        "60 minutes",
+        "45 minutes",
+        "20 minutes"
+      ],
+      "answerIndex": 1,
+      "explanation": "Net rate = 1/20 + 1/30 − 1/15 = 3/60 + 2/60 − 4/60 = 1/60 tank/min. Time = **60 minutes**.\n\n**Why not the others**\n- 30 minutes — ignores the emptying pipe (1/20+1/30 = 1/12 → 12 min path).\n- 45 minutes — mis-adds the fractions; net rate is 1/60, not 1/45.\n- 20 minutes — uses only the fastest inlet.\n\n**Key facts**\n- Inlets add, outlets subtract: net rate = 1/20 + 1/30 − 1/15.\n- A positive net rate means the tank fills; time = 1 / net rate.\n\n*Source: local APPSC Quantitative Reasoning PDF — Pipes and Cistern.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Pipes and Cistern",
+      "verified": true,
+      "covers": [
+        "Pipes & cisterns — inlet with outlet or leak"
+      ],
+      "tags": [
+        "pipes-cistern",
+        "outlet"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "If 12 men can complete a piece of work in 24 days, how many men are needed to complete the same work in 18 days?",
+      "options": [
+        "14",
+        "16",
+        "18",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "Men and days are inversely related: M₁D₁ = M₂D₂ ⇒ 12 × 24 = M₂ × 18 ⇒ M₂ = 288/18 = **16**.\n\n**Why not the others**\n- 14 — 288/18 = 16, not 14; under-counts the men needed.\n- 18 — would finish in 16 days, faster than required.\n- 9 — fewer men means more days, not fewer.\n\n**Key facts**\n- Fewer days ⇒ more men (inverse proportion), M₁D₁ = M₂D₂.\n- M₂ = (12 × 24)/18 = 16.\n\n*Source: local APPSC Quantitative Reasoning PDF — Man-Hours Concept.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Man-Hours Concept",
+      "verified": true,
+      "covers": [
+        "Man-days — M1·D1·H1 = M2·D2·H2"
+      ],
+      "tags": [
+        "man-days",
+        "inverse"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A train crosses a pole in 15 seconds and a 100 m long platform in 25 seconds. The length of the train is:",
+      "options": [
+        "120 m",
+        "150 m",
+        "180 m",
+        "200 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "Let length = L, speed = v. Pole: L = 15v. Platform: L + 100 = 25v. Subtracting: 100 = 10v ⇒ v = 10 m/s. So L = 15 × 10 = **150 m**.\n\n**Why not the others**\n- 120 m — would need v = 8 m/s, but the platform data give v = 10 m/s.\n- 180 m — implies v = 12 m/s, inconsistent with 100 = 10v.\n- 200 m — implies v = 13.3 m/s, not supported.\n\n**Key facts**\n- Crossing a pole covers the train length; crossing a platform covers length + platform.\n- Subtract the two equations to get the speed, then the length.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Train.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Train",
+      "verified": true,
+      "covers": [
+        "Trains — find length/speed from two crossings"
+      ],
+      "tags": [
+        "trains",
+        "two-crossings"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A thief running at 10 km/h is spotted by a policeman 200 m behind him, running at 12 km/h in the same direction. The distance the policeman must run to catch the thief is:",
+      "options": [
+        "800 m",
+        "1000 m",
+        "1200 m",
+        "600 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "Relative speed = 12 − 10 = 2 km/h = 2 × 5/18 = 5/9 m/s. Time to close 200 m = 200 ÷ (5/9) = 360 s. In 360 s the policeman runs 12 × 5/18 × 360 = **1200 m**.\n\n**Why not the others**\n- 800 m — uses the thief's speed (10 km/h) for the run distance.\n- 1000 m — uses relative speed for the distance instead of the policeman's actual speed.\n- 600 m — halves the catching time.\n\n**Key facts**\n- Chase (same direction): closing speed = difference of speeds.\n- Catch time = gap / closing speed; distance run = own speed × catch time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Relative speed.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Relative speed",
+      "verified": true,
+      "covers": [
+        "Relative speed — chase / pursuit problems"
+      ],
+      "tags": [
+        "relative-speed",
+        "chase"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A man rows to a place 48 km away and comes back, taking 14 hours in all. He finds that he can row 4 km downstream in the same time as 3 km upstream. The speed of the boat in still water is:",
+      "options": [
+        "6 km/h",
+        "7 km/h",
+        "8 km/h",
+        "9 km/h"
+      ],
+      "answerIndex": 1,
+      "explanation": "4 km downstream takes the same time as 3 km upstream ⇒ downstream : upstream speed = 4 : 3, so u = 3d/4. Then 48/d + 48/u = 14 ⇒ 48/d + 64/d = 112/d = 14 ⇒ d = 8, u = 6. Still-water speed = (d+u)/2 = (8+6)/2 = **7 km/h**.\n\n**Why not the others**\n- 6 km/h — that is the upstream speed, not the still-water speed.\n- 8 km/h — that is the downstream speed.\n- 9 km/h — exceeds the downstream speed, impossible here.\n\n**Key facts**\n- 'Same time for 4 km down as 3 km up' ⇒ down : up = 4 : 3.\n- Still water = (down + up)/2; stream = (down − up)/2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Boat and Stream.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Boat and Stream",
+      "verified": true,
+      "covers": [
+        "Boats & streams — finding boat or stream speed"
+      ],
+      "tags": [
+        "boats-streams",
+        "still-water"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "In a 200 m race A beats B by 20 metres or 5 seconds. B's time to run the full 200 m is:",
+      "options": [
+        "45 seconds",
+        "50 seconds",
+        "40 seconds",
+        "55 seconds"
+      ],
+      "answerIndex": 1,
+      "explanation": "'Beats by 20 m or 5 s' means B covers those last 20 m in 5 s, so B's speed = 20/5 = 4 m/s. B's time for 200 m = 200/4 = **50 seconds**.\n\n**Why not the others**\n- 45 seconds — this is A's time (B's time − 5 s), not B's.\n- 40 seconds — uses 5 m/s, but B's speed is 4 m/s.\n- 55 seconds — overstates B's time.\n\n**Key facts**\n- 'Beats by d m or t s' ⇒ loser's speed = d/t.\n- Loser's time for full race = race length / loser's speed; winner's time = that − t.\n\n*Source: local APPSC Quantitative Reasoning PDF — Race.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Race",
+      "verified": true,
+      "covers": [
+        "Races — beats by given metres or seconds"
+      ],
+      "tags": [
+        "races",
+        "beats"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "A is 25% more efficient than B. If A alone can finish a work in 20 days, B alone will finish it in:",
+      "options": [
+        "16 days",
+        "24 days",
+        "25 days",
+        "30 days"
+      ],
+      "answerIndex": 2,
+      "explanation": "A's rate = 1.25 × B's rate, so A takes fewer days: B's days = 20 × 1.25 = **25 days**. (Rate ratio A:B = 5:4 ⇒ days ratio 4:5 ⇒ B = 20 × 5/4 = 25.)\n\n**Why not the others**\n- 16 days — makes B faster than A, contradicting A being more efficient.\n- 24 days — uses a 20% efficiency edge (20×1.2), not 25%.\n- 30 days — uses a 50% edge.\n\n**Key facts**\n- More efficient ⇒ fewer days; days ∝ 1/efficiency.\n- A:B efficiency = 5:4 ⇒ days B = days A × 5/4.\n\n*Source: local APPSC Quantitative Reasoning PDF — Efficiency and Work Comparison.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Efficiency and Work Comparison",
+      "verified": true,
+      "covers": [
+        "Time & Work — efficiency comparison (a is k times as efficient)"
+      ],
+      "tags": [
+        "time-work",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "2 men can do as much work as 3 women. If 6 men and 6 women together finish a job in 8 days, how long will 12 women alone take to finish the same job?",
+      "options": [
+        "8 days",
+        "10 days",
+        "12 days",
+        "15 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Convert everyone into a common unit (women) using the equivalence.\n\n**Worked steps**\n- 2 men = 3 women ⇒ 1 man = 1.5 women, so 6 men = 9 women.\n- 6 men + 6 women = 9 + 6 = 15 women. Total work = 15 women × 8 days = 120 woman-days.\n- 12 women take 120 ÷ 12 = **10 days**.\n\n**Why not the others**\n- 8 days — reuses the original time without rescaling the workforce.\n- 12 days — forgets to convert men into women.\n- 15 days — divides by 8 women instead of 12.\n\n**Key facts**\n- Reduce all workers to one equivalent type before using man-days.\n- Total work (in worker-days) is constant: W = workers × days.\n\n*Source: standard APPSC/SSC arithmetic — Men–Women–Boys equivalence.*",
+      "source": "standard APPSC/SSC arithmetic — Men–Women equivalence",
+      "verified": true,
+      "covers": [
+        "Time & Work — men–women–boys equivalence"
+      ],
+      "tags": [
+        "time-work",
+        "equivalence"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-mcq-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "question": "4 men alone can complete a work in 12 days, and 6 women alone can complete the same work in 12 days. If 4 men and 6 women work together, they will finish it in:",
+      "options": [
+        "4 days",
+        "6 days",
+        "8 days",
+        "9 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Add the group rates directly (each group already does the whole job in 12 days).\n\n**Worked steps**\n- Rate of 4 men = 1/12 job/day; rate of 6 women = 1/12 job/day.\n- Together = 1/12 + 1/12 = 2/12 = 1/6 job/day.\n- Time = 1 ÷ (1/6) = **6 days**.\n\n**Why not the others**\n- 4 days — over-counts the combined rate.\n- 8 days and 9 days — treat the groups as slower than they are; combining two equal 12-day teams halves the time to 6.\n\n**Key facts**\n- When two teams can each finish in the same time t, together they take t/2.\n- Rates add; times do not.\n\n*Source: standard APPSC/SSC arithmetic — Men–Women equivalence / combined work.*",
+      "source": "standard APPSC/SSC arithmetic — Men–Women equivalence",
+      "verified": true,
+      "covers": [
+        "Time & Work — men–women–boys equivalence"
+      ],
+      "tags": [
+        "time-work",
+        "equivalence"
+      ]
+    }
+  ]
+}

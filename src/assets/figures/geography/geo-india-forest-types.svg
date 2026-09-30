@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- geo-india-forest-types.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" role="img" aria-labelledby="t d">
+  <title id="t">Indian forest types by rainfall</title>
+  <desc id="d">Rainfall ladder of forest types: tropical evergreen (&gt;200 cm), tropical moist deciduous (100-200 cm, sal), tropical dry deciduous (70-100 cm, teak, most widespread), thorn &amp; scrub (&lt;70 cm), tidal mangrove (sundari).</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="432" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Forest types of India — rainfall ladder</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">Champion &amp; Seth: 5 major groups (wetter at top)</text><rect class="box3" x="28" y="92" width="764" height="60" rx="10"/><text class="ink" x="44" y="118" font-size="15" font-weight="700" text-anchor="start">Tropical evergreen</text><text class="muted" x="44" y="139" font-size="13" text-anchor="start">rosewood, mahogany, ebony</text><text class="teal" x="770" y="128" font-size="14" font-weight="700" text-anchor="end">&gt;200 cm</text><rect class="box3" x="28" y="160" width="764" height="60" rx="10"/><text class="ink" x="44" y="186" font-size="15" font-weight="700" text-anchor="start">Tropical moist deciduous</text><text class="muted" x="44" y="207" font-size="13" text-anchor="start">SAL, teak, sandalwood</text><text class="teal" x="770" y="196" font-size="14" font-weight="700" text-anchor="end">100–200 cm</text><rect class="box2" x="28" y="228" width="764" height="60" rx="10"/><text class="ink" x="44" y="254" font-size="15" font-weight="700" text-anchor="start">Tropical dry deciduous (most widespread)</text><text class="muted" x="44" y="275" font-size="13" text-anchor="start">TEAK, bamboo</text><text class="teal" x="770" y="264" font-size="14" font-weight="700" text-anchor="end">70–100 cm</text><rect class="box2" x="28" y="296" width="764" height="60" rx="10"/><text class="ink" x="44" y="322" font-size="15" font-weight="700" text-anchor="start">Thorn &amp; scrub</text><text class="muted" x="44" y="343" font-size="13" text-anchor="start">acacia (kikar), khair</text><text class="teal" x="770" y="332" font-size="14" font-weight="700" text-anchor="end">&lt;70 cm</text><rect class="box" x="28" y="364" width="764" height="60" rx="10"/><text class="ink" x="44" y="390" font-size="15" font-weight="700" text-anchor="start">Tidal / mangrove</text><text class="muted" x="44" y="411" font-size="13" text-anchor="start">sundari</text><text class="teal" x="770" y="400" font-size="14" font-weight="700" text-anchor="end">deltas &amp; estuaries</text>
+</svg>

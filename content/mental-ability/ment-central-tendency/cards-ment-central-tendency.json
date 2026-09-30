@@ -1,0 +1,107 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Measures of Central Tendency",
+  "items": [
+    {
+      "id": "ment-central-tendency-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Mean — ungrouped, grouped, combined, weighted?",
+      "back": "Ungrouped Σx/n; grouped Σfx/Σf (x=mid-value); combined (n₁x̄₁+n₂x̄₂)/(n₁+n₂); weighted Σwx/Σw.",
+      "examPoint": "Arithmetic mean — all forms",
+      "source": "APPSC Quantitative Reasoning — Mean",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Correcting a wrongly-copied observation; change of origin/scale?",
+      "back": "Corrected mean = old mean + (Σcorrect − Σwrong)/n. Under y=ax+b: ȳ=ax̄+b.",
+      "examPoint": "Mean — correction, origin & scale",
+      "source": "APPSC Quantitative Reasoning — Mean",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Median — ungrouped and grouped formula?",
+      "back": "Sort first. Odd n: [(n+1)/2]ᵗʰ; even: mean of two middle. Grouped: L+[(N/2−C)/f]×h (C = cf before median class).",
+      "examPoint": "Median — ungrouped & grouped",
+      "source": "APPSC Quantitative Reasoning — Median",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Mode — grouped formula and empirical relation?",
+      "back": "Grouped: l+[(f₁−f₀)/(2f₁−f₀−f₂)]×h. Empirical: Mode = 3·Median − 2·Mean.",
+      "examPoint": "Mode — grouped & empirical relation",
+      "source": "APPSC Quantitative Reasoning — Mode",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Normal / symmetric distribution — relation among the three averages?",
+      "back": "Mean = Median = Mode (zero skew). In right-skew Mean>Median>Mode; left-skew reverses.",
+      "examPoint": "Symmetric distribution — mean=median=mode",
+      "source": "APPSC Quantitative Reasoning — Central tendency",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Range and coefficient of range?",
+      "back": "Range = H − L. Coefficient of range = (H−L)/(H+L) — unitless relative spread.",
+      "examPoint": "Range & coefficient of range",
+      "source": "APPSC Quantitative Reasoning — Range",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Variance, standard deviation and CV?",
+      "back": "σ²=(1/n)Σ(x−x̄)²; σ=√variance; CV=(σ/mean)×100. Under y=ax+b: variance ×a², SD ×|a|; +b no effect.",
+      "examPoint": "Variance, SD, coefficient of variation",
+      "source": "APPSC Quantitative Reasoning — Variance & SD",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Mean deviation — formula and minimum property?",
+      "back": "MD = (1/n)Σ|x−A| (absolute deviations). MD is least when taken about the MEDIAN.",
+      "examPoint": "Mean deviation",
+      "source": "APPSC Quantitative Reasoning — Mean Deviation",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Which average to use — symmetric, skewed, categorical data?",
+      "back": "Symmetric/no outliers → Mean; outliers/open-ended/skew → Median; qualitative/most-frequent → Mode.",
+      "examPoint": "Choosing the appropriate measure",
+      "source": "APPSC Quantitative Reasoning — Central tendency",
+      "verified": true
+    },
+    {
+      "id": "ment-central-tendency-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "front": "Three-year moving average — how and how many?",
+      "back": "Average each sliding block of 3 consecutive values. n data points → (n−3+1) averages. 30,35,25,42,62 → 30,34,43.",
+      "examPoint": "Moving averages / time-series trend",
+      "source": "standard APPSC/SSC statistics — moving averages",
+      "verified": true
+    }
+  ]
+}

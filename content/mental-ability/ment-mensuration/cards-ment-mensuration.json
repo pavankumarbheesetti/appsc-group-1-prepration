@@ -1,0 +1,117 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Mensuration (Area & Volume)",
+  "items": [
+    {
+      "id": "ment-mensuration-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Triangle area by Heron's formula?",
+      "back": "Area = √[s(s−a)(s−b)(s−c)], s = (a+b+c)/2. (13,14,15 ⇒ s=21, area=84.) No extra ½.",
+      "examPoint": "2D area — triangle (Heron's formula)",
+      "source": "APPSC Quantitative Reasoning — Triangle",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Circle area, circumference, sector area, ring area?",
+      "back": "A=πr², C=2πr; sector=(θ/360)πr², arc=(θ/360)2πr; ring=π(R²−r²). Use π=22/7 when r is a multiple of 7.",
+      "examPoint": "Circle — area, circumference, ring, sector",
+      "source": "APPSC Quantitative Reasoning — Circle; Sector",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Equilateral triangle area & height; square/rectangle diagonals?",
+      "back": "Equilateral: area=(√3/4)a², height=(√3/2)a. Square diagonal=a√2; rectangle diagonal=√(l²+b²).",
+      "examPoint": "Equilateral triangle; rectangle & square",
+      "source": "APPSC Quantitative Reasoning — 2D figures",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Cylinder volume, CSA, TSA?",
+      "back": "V=πr²h; CSA=2πrh; TSA=2πr(r+h).",
+      "examPoint": "Right circular cylinder — volume & surface area",
+      "source": "APPSC Quantitative Reasoning — Cylinder",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Cone volume, slant height, CSA, TSA?",
+      "back": "V=⅓πr²h; slant l=√(r²+h²); CSA=πrl; TSA=πr(r+l). Don't drop the ⅓.",
+      "examPoint": "Right circular cone — volume, CSA, slant",
+      "source": "APPSC Quantitative Reasoning — Cone",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Sphere and hemisphere volume & surface area?",
+      "back": "Sphere: V=4/3πr³, SA=4πr². Hemisphere: V=2/3πr³, solid TSA=3πr² (curved 2πr²).",
+      "examPoint": "Sphere & hemisphere — volume, surface area",
+      "source": "APPSC Quantitative Reasoning — Sphere; Hemisphere",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Cuboid & cube — volume, TSA, space diagonal?",
+      "back": "Cuboid: V=lbh, TSA=2(lb+bh+hl), diagonal=√(l²+b²+h²). Cube: V=a³, TSA=6a², diagonal=a√3.",
+      "examPoint": "Cube & cuboid — volume, surface, diagonal",
+      "source": "APPSC Quantitative Reasoning — Cube; Cuboid",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Melting & recasting — governing principle?",
+      "back": "Volume is conserved: pieces = original volume ÷ one-piece volume. Spheres recast into spheres: count = (R/r)³, not (R/r)².",
+      "examPoint": "Melting and recasting — volume conservation",
+      "source": "APPSC Quantitative Reasoning — Sphere/Cone",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Uniform scaling — how do area and volume change with factor k?",
+      "back": "Length ×k, area ×k², volume ×k³. Edge +50% (k=1.5): TSA +125%, volume +237.5%.",
+      "examPoint": "Surface-area vs volume scaling (k², k³)",
+      "source": "APPSC Quantitative Reasoning — Cube scaling",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Volume ratio when radius and height ratios differ (cone/cylinder)?",
+      "back": "V ∝ r²h — keep only varying factors. Cones h 1:5, r 5:3 ⇒ (25×1):(9×5)=25:45=5:9.",
+      "examPoint": "Volume ratio from independent dimension ratios",
+      "source": "standard APPSC/SSC mensuration — volume ratios",
+      "verified": true
+    },
+    {
+      "id": "ment-mensuration-card-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "front": "Cone : hemisphere : cylinder volumes on equal base r with height r?",
+      "back": "⅓πr³ : ⅔πr³ : πr³ = 1 : 2 : 3.",
+      "examPoint": "Volume ratio cone : hemisphere : cylinder",
+      "source": "APPSC Quantitative Reasoning — Solids",
+      "verified": true
+    }
+  ]
+}

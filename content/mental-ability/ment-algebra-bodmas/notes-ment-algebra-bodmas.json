@@ -1,0 +1,150 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Algebra & BODMAS",
+  "items": [
+    {
+      "id": "ment-algebra-bodmas-note-bodmas",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "BODMAS, Simplification & Defined Symbols",
+      "body": "**BODMAS** fixes the order of operations in any expression:\n\n| Order | Operation |\n|---|---|\n| B | Brackets — ( ), { }, [ ] inner-first |\n| O | Orders — powers & roots |\n| D M | Division & Multiplication — **left to right** (equal rank) |\n| A S | Addition & Subtraction — **left to right** |\n\n**Worked example:** 48 ÷ 8 × 3 + (7 − 4)² − 5\n= 48 ÷ 8 × 3 + 3² − 5 → 6 × 3 + 9 − 5 → 18 + 9 − 5 = **22**.\n\n**Defined-symbol (operator) questions:** replace the invented symbol with its rule, then apply BODMAS. E.g. if a △ b = (a + b) ÷ (a − b), then 9 △ 5 = 14 ÷ 4 = 3.5. Respect operand order — a △ b ≠ b △ a in general.\n\n**Common trap:** doing × before ÷ (or + before −). They are equal in rank and evaluated left to right.",
+      "keyPoints": [
+        "BODMAS = Brackets, Orders, Division/Multiplication (left→right), Addition/Subtraction (left→right).",
+        "Division and multiplication share one rank; solve whichever comes first from the left.",
+        "In defined-symbol problems, substitute the rule exactly before simplifying.",
+        "a △ b need not equal b △ a — operand order matters.",
+        "Always resolve innermost brackets and powers before ÷/× and +/−."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Bodmas Rule",
+      "verified": true,
+      "tags": [
+        "bodmas",
+        "simplification"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-identities",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "Algebraic Identities — the standard toolkit",
+      "body": "Memorise these; most 'find a² + b²' or 'find a³ + b³' problems use them directly.\n\n| Identity | Form |\n|---|---|\n| Square of sum | (a + b)² = a² + 2ab + b² |\n| Square of difference | (a − b)² = a² − 2ab + b² |\n| Difference of squares | a² − b² = (a + b)(a − b) |\n| Sum of cubes | a³ + b³ = (a + b)³ − 3ab(a + b) |\n| Difference of cubes | a³ − b³ = (a − b)³ + 3ab(a − b) |\n| Three-term square | (a + b + c)² = a² + b² + c² + 2(ab + bc + ca) |\n\n**Worked example:** a + b = 7, ab = 10 ⇒ a³ + b³ = 7³ − 3(10)(7) = 343 − 210 = **133**.\n\n**Shortcut:** a² + b² = (a + b)² − 2ab, and a² + b² = (a − b)² + 2ab — pick whichever data you are given.\n\n**Common trap:** forgetting the factor of 2 on the ab term (writing (a+b)² = a² + ab + b²).",
+      "keyPoints": [
+        "(a ± b)² = a² ± 2ab + b² — never drop the 2ab term.",
+        "a² − b² = (a + b)(a − b).",
+        "a² + b² = (a + b)² − 2ab = (a − b)² + 2ab.",
+        "a³ + b³ = (a + b)³ − 3ab(a + b); a³ − b³ = (a − b)³ + 3ab(a − b).",
+        "(a + b + c)² = a² + b² + c² + 2(ab + bc + ca)."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
+      "verified": true,
+      "tags": [
+        "identities"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-equations",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "Linear & Quadratic Equations",
+      "body": "**Linear (one variable):** expand brackets, transpose terms (sign flips across '='), divide by the coefficient last. e.g. 3(x + 4) = 5x − 2 ⇒ 3x + 12 = 5x − 2 ⇒ 14 = 2x ⇒ x = 7.\n\n**Linear (two variables):** solve by substitution or elimination, then verify in BOTH equations. e.g. 4x + 3y = 25, 2x − y = 5 ⇒ y = 2x − 5 ⇒ 10x − 15 = 25 ⇒ x = 4, y = 3.\n\n**Quadratic ax² + bx + c = 0:**\n- Roots by factorisation (split middle term) or formula x = [−b ± √(b² − 4ac)] / 2a.\n- **Discriminant D = b² − 4ac** decides nature:\n\n| D | Nature of roots |\n|---|---|\n| D > 0 | Real & distinct |\n| D = 0 | Real & equal |\n| D < 0 | Imaginary (complex) |\n\n- **Sum of roots = −b/a, Product = c/a.**\n\n**Worked example:** x² − 6x + 11 = 0 ⇒ D = 36 − 44 = −8 < 0 ⇒ roots imaginary; sum = 6, product = 11.\n\n**Common trap:** forgetting the sign of b in −b/a, or mislabelling factor numbers as roots (roots take the opposite sign of the split numbers).",
+      "keyPoints": [
+        "Transpose across '=' by flipping the sign; divide by the x-coefficient last.",
+        "Verify a two-variable solution in BOTH original equations.",
+        "Quadratic roots: x = [−b ± √(b² − 4ac)] / 2a.",
+        "Discriminant D = b² − 4ac: >0 real distinct, =0 real equal, <0 imaginary.",
+        "Sum of roots = −b/a; product of roots = c/a."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Quadratic Equation / Linear Equation in One & Two Variable",
+      "verified": true,
+      "tags": [
+        "linear-equation",
+        "quadratic"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-progressions",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "Progressions — AP, GP, HP & AGP",
+      "body": "| Type | nth term | Sum |\n|---|---|---|\n| AP | aₙ = a + (n − 1)d | Sₙ = n/2 [2a + (n − 1)d] = n/2 (a + l) |\n| GP | aₙ = a·rⁿ⁻¹ | Sₙ = a(rⁿ − 1)/(r − 1); S∞ = a/(1 − r) if \\|r\\| < 1 |\n| HP | reciprocals form an AP | convert to AP, solve, invert |\n\n**GP worked example:** 3, 6, 12, … first 8 terms: a = 3, r = 2 ⇒ S₈ = 3(2⁸ − 1)/(2 − 1) = 3 × 255 = **765**.\n\n**Infinite GP:** 8 + 4 + 2 + … ⇒ r = 1/2 ⇒ S∞ = 8/(1 − 1/2) = **16** (converges only because |r| < 1).\n\n**HP worked example:** 6, 4, 3, … ⇒ reciprocals 1/6, 1/4, 1/3 are an AP with d = 1/12 ⇒ 4th reciprocal = 5/12 ⇒ 4th HP term = **12/5**.\n\n**AGP** (arithmetic × geometric, e.g. 1, 2r, 3r², …): find the sum using the S − rS shift method.\n\n**Common trap:** using rⁿ instead of (rⁿ − 1) in the GP sum, or applying S∞ when |r| ≥ 1 (it does not converge).",
+      "keyPoints": [
+        "AP: aₙ = a + (n − 1)d; Sₙ = n/2 [2a + (n − 1)d].",
+        "GP: aₙ = a·rⁿ⁻¹; Sₙ = a(rⁿ − 1)/(r − 1).",
+        "Infinite GP sum S∞ = a/(1 − r) is valid only when |r| < 1.",
+        "HP: take reciprocals → they form an AP → solve → invert back.",
+        "AGP = arithmetic × geometric; sum via the S − rS shift technique."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Arithmetic Progression / Geometric Progression / Harmonic Progression (HP)",
+      "verified": true,
+      "tags": [
+        "ap",
+        "gp",
+        "hp",
+        "agp"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-polynomials",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "Polynomials — Remainder & Factor Theorems",
+      "body": "**Remainder Theorem:** when a polynomial f(x) is divided by (x − a), the remainder equals **f(a)** — just substitute, no long division needed.\n\n**Factor Theorem:** (x − a) is a factor of f(x) **iff f(a) = 0**.\n\n**Worked example:** remainder of 2x³ − 3x² + 4x − 7 divided by (x − 2):\nf(2) = 2(8) − 3(4) + 4(2) − 7 = 16 − 12 + 8 − 7 = **5**.\n\nFor a divisor (ax − b), evaluate f(b/a).\n\n**Common trap:** substituting x = −a instead of x = +a for a divisor (x − a); also arithmetic sign slips on the constant term.",
+      "keyPoints": [
+        "Remainder Theorem: remainder of f(x) ÷ (x − a) = f(a).",
+        "Factor Theorem: (x − a) is a factor iff f(a) = 0.",
+        "For divisor (ax − b), evaluate f(b/a).",
+        "Divisor (x − a) ⇒ substitute x = +a (not −a).",
+        "No long division needed — direct substitution gives the remainder."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Polynomials",
+      "verified": true,
+      "tags": [
+        "polynomials",
+        "remainder-theorem",
+        "factor-theorem"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-sets",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "Sets & Two-Set Venn Counting",
+      "body": "**Inclusion–Exclusion (two sets):** n(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n\n- Only A = n(A) − n(A ∩ B); Only B = n(B) − n(A ∩ B).\n- Neither = Universal − n(A ∪ B).\n- Complement: n(A′) = n(U) − n(A).\n\n**Worked example:** 100 students, 60 cricket, 45 tennis, 20 both.\nn(C ∪ T) = 60 + 45 − 20 = 85 ⇒ Neither = 100 − 85 = **15**.\n\n**Three sets (for reference):** n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A∩B) − n(B∩C) − n(C∩A) + n(A∩B∩C).\n\n**Common trap:** forgetting to add back the intersection once (double-subtracting the 'both' group), or omitting the 'neither' region from the universal total.",
+      "keyPoints": [
+        "n(A ∪ B) = n(A) + n(B) − n(A ∩ B).",
+        "Neither = Universal set − n(A ∪ B).",
+        "Only A = n(A) − n(A ∩ B).",
+        "Three sets add back the triple intersection n(A∩B∩C).",
+        "Complement n(A′) = n(U) − n(A)."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Sets and Type of Sets / Complement of Sets",
+      "verified": true,
+      "tags": [
+        "sets",
+        "venn",
+        "inclusion-exclusion"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-percentage-in-simplification",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "Percentage embedded in a simplification (solve for x)",
+      "body": "Exam simplification items often hide one unknown percentage in an equation of the form  p₁% of A + x% of B = p₂% of C. Convert every '% of' to a product (k% of N = kN/100), collect the known terms, and solve the resulting linear equation for x.\n\n*Example:* 25% of 480 + 30% of 500 + x% of 90 = 35% of 900.\n120 + 150 + 0.9x = 315 ⇒ 0.9x = 45 ⇒ **x = 50**.\n\n**Method:** (1) turn each percentage into a decimal-times-value, (2) move constants to the right, (3) divide by the coefficient of x.\n\n**Trap:** 'x% of 90' is 0.9x, NOT 90x; keep the /100 on the unknown term too.",
+      "keyPoints": [
+        "k% of N = kN/100; apply to the unknown term as well",
+        "Collect known products, then solve the linear equation for x",
+        "25%·480 + 30%·500 + x%·90 = 35%·900 ⇒ x = 50",
+        "Common slip: writing x% of 90 as 90x instead of 0.9x"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Simplification with Percentages",
+      "verified": true,
+      "tags": [
+        "algebra",
+        "percentage",
+        "simplification"
+      ]
+    }
+  ]
+}

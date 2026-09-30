@@ -1,0 +1,84 @@
+{
+  "$ref": "#/definitions/cards",
+  "definitions": {
+    "cards": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "cards"
+        },
+        "subjectCode": {
+          "type": "string",
+          "enum": [
+            "HIST",
+            "POL",
+            "ECON",
+            "GEO",
+            "SCI",
+            "MENT",
+            "CA",
+            "TEL",
+            "ENG"
+          ]
+        },
+        "topic": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "subjectCode": {
+                "$ref": "#/definitions/cards/properties/subjectCode"
+              },
+              "subtopicId": {
+                "type": "string"
+              },
+              "front": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "back": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "examPoint": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "verified": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id",
+              "subjectCode",
+              "subtopicId",
+              "front",
+              "back",
+              "verified"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "subjectCode",
+        "topic",
+        "items"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

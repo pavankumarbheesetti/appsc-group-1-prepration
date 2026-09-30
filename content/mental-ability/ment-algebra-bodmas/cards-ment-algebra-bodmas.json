@@ -1,0 +1,117 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Algebra & BODMAS",
+  "items": [
+    {
+      "id": "ment-algebra-bodmas-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "What is the BODMAS order, and how are ÷/× and +/− ranked?",
+      "back": "Brackets → Orders (powers/roots) → Division & Multiplication (equal rank, left→right) → Addition & Subtraction (left→right).",
+      "examPoint": "BODMAS — order of operations & simplification",
+      "source": "APPSC Quantitative Reasoning — Bodmas Rule",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "How do you solve a defined-symbol problem, e.g. a△b = (a+b)÷(a−b)?",
+      "back": "Substitute the rule exactly, then apply BODMAS. Respect operand order: a△b ≠ b△a. So 9△5 = 14÷4 = 3.5.",
+      "examPoint": "Defined-symbol / operator substitution",
+      "source": "APPSC Quantitative Reasoning — Bodmas Rule",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "Give (a±b)², a²−b², and a²+b² in terms of (a+b) and ab.",
+      "back": "(a±b)² = a² ± 2ab + b²; a²−b² = (a+b)(a−b); a²+b² = (a+b)² − 2ab = (a−b)² + 2ab.",
+      "examPoint": "Algebraic identities — (a±b)² and a²−b²",
+      "source": "APPSC Quantitative Reasoning — Basic Identities",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "Expand a³±b³ using (a±b) and ab; and x³±1/x³?",
+      "back": "a³+b³ = (a+b)³ − 3ab(a+b); a³−b³ = (a−b)³ + 3ab(a−b). x³−1/x³ = (x−1/x)³ + 3(x−1/x).",
+      "examPoint": "Algebraic identities — a³±b³ (sum/difference of cubes)",
+      "source": "APPSC Quantitative Reasoning — Basic Identities",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "If x + 1/x = k, what is x² + 1/x²?",
+      "back": "x² + 1/x² = k² − 2 (square and subtract the middle term 2). Likewise x² + 1/x² = (x−1/x)² + 2.",
+      "examPoint": "Algebraic identities — reciprocal forms (x±1/x)",
+      "source": "APPSC Quantitative Reasoning — Basic Identities",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "For ax²+bx+c=0: discriminant, nature of roots, sum and product?",
+      "back": "D = b²−4ac: D>0 real distinct, D=0 real equal, D<0 imaginary. Sum of roots = −b/a; product = c/a.",
+      "examPoint": "Quadratic equations — nature of roots & sum/product (discriminant)",
+      "source": "APPSC Quantitative Reasoning — Quadratic Equation",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "AP: nth term and sum of n terms?",
+      "back": "aₙ = a + (n−1)d; Sₙ = n/2 [2a + (n−1)d] = n/2 (first + last). Middle of three AP terms = their mean.",
+      "examPoint": "Arithmetic Progression — nth term & sum",
+      "source": "APPSC Quantitative Reasoning — Arithmetic Progression",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "GP: finite sum and sum to infinity?",
+      "back": "aₙ = a·rⁿ⁻¹; Sₙ = a(rⁿ−1)/(r−1). S∞ = a/(1−r) valid ONLY when |r|<1 (else it diverges).",
+      "examPoint": "Geometric Progression — sum to infinity",
+      "source": "APPSC Quantitative Reasoning — Geometric Progression",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "How is an HP solved? What is an AGP?",
+      "back": "HP: take reciprocals → they form an AP → solve → invert back. AGP = arithmetic×geometric; sum via the S − rS shift method.",
+      "examPoint": "Harmonic Progression & AGP",
+      "source": "APPSC Quantitative Reasoning — Harmonic Progression (HP)",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "Remainder & Factor theorems for f(x) divided by (x−a)?",
+      "back": "Remainder = f(a) (just substitute). (x−a) is a factor ⇔ f(a)=0. For divisor (ax−b) evaluate f(b/a).",
+      "examPoint": "Polynomials — remainder & factor theorem",
+      "source": "APPSC Quantitative Reasoning — Polynomials",
+      "verified": true
+    },
+    {
+      "id": "ment-algebra-bodmas-card-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "front": "Two-set counting: union and 'neither'?",
+      "back": "n(A∪B) = n(A)+n(B)−n(A∩B); Neither = Universal − n(A∪B); Only A = n(A) − n(A∩B).",
+      "examPoint": "Set operations & two-set Venn count",
+      "source": "APPSC Quantitative Reasoning — Sets and Type of Sets",
+      "verified": true
+    }
+  ]
+}

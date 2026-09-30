@@ -1,0 +1,38 @@
+{
+  "name": "appsc-group-1-preparation",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Offline-first APPSC Group-1 exam preparation web app (fresh, typed, tested rebuild).",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "prebuild": "npm run gen:manifest",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "gen:schema": "vite-node scripts/gen-json-schema.ts",
+    "gen:manifest": "vite-node scripts/gen-manifest.ts",
+    "validate:content": "vite-node scripts/validate-content.ts",
+    "audit:coverage": "vite-node scripts/audit-coverage.ts",
+    "check": "npm run typecheck && npm run lint && npm run validate:content && npm run audit:coverage && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/node": "^22.20.4",
+    "eslint": "^9.13.0",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.11.0",
+    "vite": "^5.4.10",
+    "vite-plugin-singlefile": "^2.0.3",
+    "vitest": "^2.1.4",
+    "zod-to-json-schema": "^3.23.5"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}

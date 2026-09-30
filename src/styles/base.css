@@ -1,0 +1,137 @@
+/*
+ * Base layer — modern reset, root element styling, typography defaults and
+ * accessibility primitives (focus-visible rings, reduced-motion gate).
+ *
+ * Consumes tokens.css. No component styling lives here.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* Root font size multiplies through the persisted font scale, so every
+   rem-based dimension in the app grows/shrinks together with the A-/A+ control. */
+html {
+  font-size: calc(100% * var(--font-scale));
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--lh-normal);
+  /* Crisp text on both themes. */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Smooth theme transitions on the canvas (gated for reduced-motion below). */
+  transition:
+    background-color var(--dur-base) var(--ease-in-out),
+    color var(--dur-base) var(--ease-in-out);
+}
+
+/* Headings: tight leading + balanced wrapping for editorial feel. */
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Telugu-tagged text uses the bundled Telugu webfont first, then system Telugu
+   fonts (see --font-telugu in tokens.css + @font-face in telugu-font.css). This
+   opt-in selector guarantees Telugu glyphs render on any device while leaving
+   the app's Latin/base font (--font-sans) completely untouched. */
+[lang='te'] {
+  font-family: var(--font-telugu);
+}
+
+/* Numeric UI (counters, rings, stats) reads better with tabular figures. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---- Accessibility ------------------------------------------------------- */
+
+/* A visible, high-contrast focus ring on keyboard navigation only. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+/* Remove the default ring when focus came from a pointer (focus-visible wins). */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Screen-reader-only utility for labels we don't want painted. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Respect the user's motion preference: disable ALL transitions/animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

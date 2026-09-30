@@ -1,0 +1,182 @@
+{
+  "kind": "notes",
+  "subjectCode": "SCI",
+  "topic": "ICT, e-Governance & Cyber Security",
+  "items": [
+    {
+      "id": "sci-ict-egovernance-cyber-note-digital-india",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "title": "ICT, Digital India & e-Governance Models",
+      "body": "## ICT — nature & scope\n\n- **ICT** = convergence of **information technology** (computing, data) and **communication technology** (telecom, internet, networks). It underpins banking, education, health, commerce, agriculture and public administration.\n\n## Digital India (launched 1 July 2015, MeitY)\n\nUmbrella programme with **nine pillars** and three vision areas (infrastructure as a utility, governance & services on demand, digital empowerment).\n\n| Nine pillars (indicative) |\n|---|\n| Broadband Highways · Universal Access to Mobile Connectivity · Public Internet Access |\n| e-Governance (reforming govt through tech) · **e-Kranti** (electronic service delivery) |\n| Information for All · Electronics Manufacturing · IT for Jobs · Early Harvest Programmes |\n\n## e-Governance interaction models\n\n| Model | Meaning | Example |\n|---|---|---|\n| G2C | Government-to-Citizen | DigiLocker, UMANG |\n| G2B | Government-to-Business | GeM, e-procurement |\n| G2G | Government-to-Government | API Setu data exchange |\n| G2E | Government-to-Employee | payroll/HR portals |\n\n## Key delivery platforms\n\n- **UMANG** — single app for many government services; **DigiLocker** — verified digital documents; **e-Sign** — Aadhaar-based e-signature; **API Setu** — open-API interoperability layer.",
+      "keyPoints": [
+        "ICT = convergence of information technology (computing) and communication technology (telecom/internet).",
+        "Digital India launched 1 July 2015 by MeitY, built on nine pillars.",
+        "e-Kranti is the electronic-service-delivery pillar of Digital India.",
+        "e-Governance models: G2C (citizen), G2B (business), G2G (government), G2E (employee).",
+        "UMANG = unified services app; DigiLocker = verified digital documents; e-Sign = Aadhaar e-signature; API Setu = open-API interoperability."
+      ],
+      "mnemonic": "Models 'C-B-G-E' = Citizen, Business, Government, Employee — the four 'who' of e-governance.",
+      "source": "MeitY / PIB — Digital India programme & e-Governance models",
+      "verified": true,
+      "tags": [
+        "ict",
+        "digital-india",
+        "e-governance",
+        "umang",
+        "digilocker"
+      ]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-note-india-stack",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "title": "India Stack & Digital Public Infrastructure",
+      "body": "## India Stack — layered digital public infrastructure (DPI)\n\nA set of **open APIs** built around identity, payments and data, enabling presence-less, paperless and cashless service delivery.\n\n| Layer | Component | Role |\n|---|---|---|\n| Identity | **Aadhaar** | Unique digital identity / e-KYC |\n| Payments | **UPI** | Real-time interoperable retail payments |\n| Data | **DigiLocker**, **Account Aggregator** | Verified documents; consent-based data sharing |\n| Commerce | **ONDC** | Open network democratising e-commerce |\n| Health | **CoWIN / ABDM** | Vaccination & digital health records |\n\n## UPI — scale (2024-25)\n\n- Operated by **NPCI** (RBI-promoted); launched 2016.\n- **World's largest real-time retail payment system by volume**; monthly transactions crossed the **16-billion** mark in 2024-25, forming a dominant share of retail digital payments.\n- Internationally linked (e.g., Singapore's PayNow), extending cross-border remittance.\n\n## Why DPI matters\n\n- Lowers cost of service delivery, expands **financial inclusion**, and enables direct benefit transfers (DBT) with reduced leakage.",
+      "keyPoints": [
+        "India Stack = open-API digital public infrastructure across identity, payments and data.",
+        "Layers: Aadhaar (identity), UPI (payments), DigiLocker & Account Aggregator (data), ONDC (commerce), CoWIN (health).",
+        "UPI is operated by NPCI, launched 2016, and is the world's largest real-time retail payment system by volume.",
+        "Monthly UPI volumes crossed 16 billion transactions in 2024-25.",
+        "Account Aggregator enables consent-based sharing of financial data; ONDC is an open e-commerce network, not a single company's app."
+      ],
+      "source": "MeitY — India Stack / DPI; NPCI — UPI statistics 2024-25",
+      "verified": true,
+      "tags": [
+        "india-stack",
+        "upi",
+        "npci",
+        "ondc",
+        "account-aggregator",
+        "dpi"
+      ]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-note-data-protection-law",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "title": "Data Protection & Cyber Law — DPDP Act 2023, Rules 2025 & IT Act 2000",
+      "body": "## Digital Personal Data Protection (DPDP) Act, 2023\n\n- India's **first dedicated data-protection law**, enacted August 2023, following the *Puttaswamy* (2017) right-to-privacy judgment.\n- **Key actors:** Data Principal (the individual), Data Fiduciary (who decides purpose/means of processing), Significant Data Fiduciary (higher-obligation entities).\n- **Data Protection Board of India** — adjudicates breaches; penalties **up to ₹250 crore** per instance.\n- **Rights:** access, correction, erasure, grievance redressal, nomination. **Children's data** (<18) needs verifiable parental consent.\n- **DPDP Rules, 2025** — notified in 2025; operationalise consent managers, security safeguards, breach notification and the Board's functioning.\n\n## Information Technology (IT) Act, 2000\n\n- India's **primary cyber law** for e-commerce and cyber offences; substantially **amended in 2008**.\n- **Section 66A** (penalising 'offensive' messages) was **struck down** by the Supreme Court in *Shreya Singhal v. Union of India* (2015) for violating free speech.\n- Other key sections: 43A (data-breach compensation), 69 (interception), 70/70A/70B (protected systems, NCIIPC, CERT-In), 79 (intermediary safe harbour).",
+      "keyPoints": [
+        "DPDP Act 2023 is India's first dedicated data-protection law; DPDP Rules were notified in 2025.",
+        "DPDP establishes the Data Protection Board of India; penalties up to ₹250 crore per instance.",
+        "DPDP roles: Data Principal (individual), Data Fiduciary, Significant Data Fiduciary; children's data needs parental consent.",
+        "IT Act 2000 is India's primary cyber law, amended in 2008.",
+        "Section 66A was struck down by the SC in Shreya Singhal v. Union of India (2015)."
+      ],
+      "mnemonic": "DPDP roles = 'Principal owns, Fiduciary processes' — the individual vs the data handler.",
+      "source": "MeitY / PIB — DPDP Act 2023 & Rules 2025; IT Act 2000; Shreya Singhal (2015)",
+      "verified": true,
+      "tags": [
+        "dpdp",
+        "it-act",
+        "66a",
+        "data-protection-board",
+        "privacy"
+      ]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "title": "Cyber Security Architecture & Citizen Redress",
+      "body": "## Institutional architecture\n\n| Body | Role | Anchor |\n|---|---|---|\n| **CERT-In** | National nodal agency for cyber incident response | MeitY; IT Act **Sec 70B** |\n| **NCIIPC** | Protects **Critical Information Infrastructure (CII)** | NTRO; IT Act **Sec 70A** |\n| **Cyber Swachhta Kendra** | Botnet-cleaning & malware analysis | Under CERT-In |\n| **I4C** | Cyber-crime coordination & reporting portal | Ministry of Home Affairs |\n\n- **National Cyber Security Policy 2013** — first national policy; aimed at a secure cyber ecosystem and a skilled workforce.\n- **CERT-In 2022 directions** — report specified incidents **within 6 hours**; retain logs 180 days; KYC/data retention for VPN & cloud providers.\n\n## Common cyber threats\n\n- **Phishing** (credential-stealing fraud), **ransomware** (file-encrypting extortion), **DDoS** (traffic flooding), **man-in-the-middle** (intercepting communications).\n\n## Citizen redress\n\n- **National Cybercrime Reporting Portal** (cybercrime.gov.in), **helpline 1930**, and **CFCFRMS** (Citizen Financial Cyber Fraud Reporting and Management System) for rapid reporting and freezing of defrauded funds.",
+      "keyPoints": [
+        "CERT-In (under MeitY, Sec 70B) is the national cyber-incident response agency; NCIIPC (under NTRO, Sec 70A) protects Critical Information Infrastructure.",
+        "CERT-In's 2022 directions mandate reporting specified cyber incidents within 6 hours.",
+        "Cyber Swachhta Kendra is CERT-In's botnet-cleaning centre; National Cyber Security Policy was adopted in 2013.",
+        "I4C (under MHA) runs the National Cybercrime Reporting Portal (cybercrime.gov.in) and helpline 1930.",
+        "CFCFRMS enables rapid reporting to freeze fraudulently transferred money.",
+        "Common threats: phishing, ransomware, DDoS and man-in-the-middle attacks."
+      ],
+      "source": "CERT-In cyber-security handbook; NCIIPC; I4C / MHA",
+      "verified": true,
+      "tags": [
+        "cert-in",
+        "nciipc",
+        "i4c",
+        "1930",
+        "cyber-security"
+      ]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-note-emerging-tech-missions",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "title": "Emerging-Tech Missions — AI, 5G/6G, Quantum, Semiconductors, Supercomputing",
+      "body": "## IndiaAI Mission (approved 2024)\n\n- Outlay ~**₹10,372 crore** over 5 years (MeitY). Seven pillars: **Compute Capacity** (GPUs), **Innovation Centre**, **Datasets Platform (AIKosh)**, **Application Development**, **FutureSkills**, **Startup Financing**, **Safe & Trusted AI**.\n- **Deepfakes / AI governance:** MeitY advisories under the IT Rules 2021 require labelling/traceability of AI-generated content; a dedicated AI law is under debate.\n\n## Connectivity & quantum\n\n- **5G** launched **October 2022**; rolled out across all districts within ~2 years.\n- **Bharat 6G Vision** (2023) targets India among global 6G leaders (patents, standards) by ~2030.\n- **National Quantum Mission** (approved 2023, ~₹6,003 crore) — quantum computing, **communication (quantum-secure/QKD)**, sensing and materials.\n\n## Hardware missions\n\n- **India Semiconductor Mission** (₹76,000 crore): approved units at **Dholera (Gujarat)** — India's first commercial fab (Tata–PSMC), **Sanand (Gujarat)** (Micron and others), and **Jagiroad/Morigaon (Assam)** (Tata OSAT).\n- **National Supercomputing Mission** (2015, C-DAC): the **PARAM** series; **PARAM Rudra** supercomputers dedicated to the nation in 2024.",
+      "keyPoints": [
+        "IndiaAI Mission (2024) has ~₹10,372 crore outlay; pillars include compute capacity, AIKosh datasets, FutureSkills and Safe & Trusted AI.",
+        "MeitY advisories address deepfakes/AI-generated content under IT Rules 2021, pending dedicated regulation.",
+        "5G launched October 2022; Bharat 6G Vision (2023) targets 6G leadership by ~2030.",
+        "National Quantum Mission (2023, ~₹6,003 cr) supports quantum-secure communication.",
+        "India Semiconductor Mission (₹76,000 cr): fabs/units at Dholera & Sanand (Gujarat) and Jagiroad/Morigaon (Assam).",
+        "National Supercomputing Mission's PARAM Rudra supercomputers were dedicated in 2024 (C-DAC)."
+      ],
+      "source": "MeitY / PIB — IndiaAI, Semicon India; DoT — 5G/6G; DST — National Quantum Mission; C-DAC — NSM",
+      "verified": true,
+      "tags": [
+        "indiaai",
+        "5g",
+        "6g",
+        "quantum",
+        "semiconductor",
+        "param-rudra"
+      ]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-note-ap-egovernance",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "title": "Connectivity Backbone & Andhra Pradesh e-Governance",
+      "body": "## National connectivity & cloud backbone\n\n| Initiative | Purpose |\n|---|---|\n| **BharatNet** | Optical-fibre broadband to all gram panchayats (rural backbone) |\n| **PM-WANI** | Public Wi-Fi hotspots for last-mile access |\n| **Common Service Centres (CSC)** | Rural digital access points delivering G2C services |\n| **MeghRaj (GI Cloud)** | Government cloud-computing services & empanelled data centres |\n\n## Andhra Pradesh — e-governance leadership\n\n- **Real Time Governance Society (RTGS)** — runs a **Real Time Governance Centre** integrating department data for real-time monitoring of schemes and grievance redress.\n- **e-Pragati** — AP's **enterprise-architecture platform** integrating departmental services into a single digital backbone.\n- **Praja Sadhikara Survey** — a household **socio-economic data-collection** exercise linking citizen data to services.\n- **Mana Mitra** — **WhatsApp-based governance**: citizens access many government services and downloadable certificates directly via a dedicated WhatsApp number, delivered through RTGS.\n\n## Mains angle\n\n- AP illustrates the shift from portal-based to **chat-based, whole-of-government** service delivery, raising both **access** gains and **data-privacy/DPDP-compliance** questions.",
+      "keyPoints": [
+        "BharatNet delivers fibre broadband to gram panchayats; PM-WANI provides public Wi-Fi; CSCs are rural G2C delivery points.",
+        "MeghRaj (GI Cloud) is MeitY's government cloud-computing initiative.",
+        "AP's Real Time Governance Society (RTGS) runs a real-time centre for scheme monitoring and grievance redress.",
+        "e-Pragati is AP's enterprise-architecture platform integrating departmental services.",
+        "Praja Sadhikara Survey was a household socio-economic data-collection exercise.",
+        "Mana Mitra delivers AP government services and certificates via WhatsApp through RTGS."
+      ],
+      "source": "MeitY / DoT — BharatNet, PM-WANI, CSC, MeghRaj; AP Real Time Governance Society; AP IT & e-Governance Dept",
+      "verified": true,
+      "tags": [
+        "bharatnet",
+        "pm-wani",
+        "csc",
+        "meghraj",
+        "ap",
+        "rtgs",
+        "mana-mitra"
+      ]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "title": "Emerging Digital Technologies — Blockchain, Web 3.0, Cloud & Communication Tech",
+      "body": "## Blockchain, crypto-assets & Web 3.0\n\n- **Blockchain** = a **distributed, decentralised public ledger** replicated across nodes; records are **immutable** and validated by **consensus** (Proof-of-Work / Proof-of-Stake). No single user controls it, yet everyone can inspect it (a **permissionless** chain lets anyone build apps on it without permission).\n- Not limited to cryptocurrency — supports **smart contracts** (self-executing code, e.g. Ethereum), supply-chain tracking, land records.\n- **Cryptocurrency** (e.g. Bitcoin) is **fungible** (each unit interchangeable). An **NFT (Non-Fungible Token)** is a **unique** cryptographic token on a blockchain representing a specific digital/physical asset; being non-fungible it is **not** used as an equivalent medium of exchange.\n- **Web 3.0** = a decentralised web where users **control their own data**, blockchain-based social networks are possible, and services are run by users collectively rather than a single corporation.\n\n## Cloud service models\n\n| Model | User gets | Example |\n|---|---|---|\n| **IaaS** | Raw compute/storage/network | AWS EC2 |\n| **PaaS** | Platform to build/deploy apps | Google App Engine |\n| **SaaS** | Ready software over the internet | **Gmail / Outlook / Yahoo Mail** |\n\n- In **SaaS**, users can often customise the interface and data fields and access data from mobile devices.\n\n## Communication technologies\n\n| Tech | Key fact |\n|---|---|\n| **RFID** | Radio-frequency tags — short-range identification |\n| **NFC** | Contactless via EM radio fields; works only at **~4 cm**; can use **encryption** |\n| **WLAN / Bluetooth** | Short-range wireless networking |\n| **Li-Fi (VLC)** | Uses **visible light (375–780 nm)** as medium; **many times faster than Wi-Fi**; no EM interference |\n| **4G LTE vs VoLTE** | Both are 4G; **VoLTE = Voice over LTE** (carries voice as data over the LTE network) |\n| **Project Loon** | Google balloon-based **wireless internet** for remote areas |\n\n## AI — present capabilities\n\n- Present-state AI can already do **disease diagnosis, text-to-speech, content generation** (stories/songs), and optimise **industrial energy use**; it cannot wirelessly transmit electrical energy.",
+      "keyPoints": [
+        "Blockchain is a decentralised, immutable public ledger validated by consensus; permissionless chains let anyone build apps and it is not limited to cryptocurrency.",
+        "NFTs are unique (non-fungible) tokens on a blockchain, unlike fungible cryptocurrency; they are not a medium of exchange.",
+        "Web 3.0 = decentralised web where users own their data and services are user-run, not corporation-run.",
+        "Cloud models: IaaS (infrastructure), PaaS (platform), SaaS (software, e.g. Gmail/Outlook).",
+        "NFC works only within ~4 cm and can use encryption; RFID/WLAN/Bluetooth are short-range technologies.",
+        "Li-Fi/VLC uses visible light (375–780 nm), is faster than Wi-Fi and has no EM interference.",
+        "VoLTE = Voice over LTE (both 4G); Project Loon = balloon-based wireless internet."
+      ],
+      "source": "NITI Aayog/MeitY primers on Blockchain & DPI; NIST cloud definition; UPSC-standard S&T references (verified Sep 2026)",
+      "verified": true,
+      "tags": [
+        "blockchain",
+        "nft",
+        "web3",
+        "cloud",
+        "saas",
+        "nfc",
+        "li-fi",
+        "volte"
+      ]
+    }
+  ]
+}

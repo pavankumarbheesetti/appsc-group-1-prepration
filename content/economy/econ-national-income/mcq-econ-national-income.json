@@ -1,0 +1,352 @@
+{
+  "kind": "mcq",
+  "subjectCode": "ECON",
+  "topic": "National Income",
+  "items": [
+    {
+      "id": "econ-national-income-mcq-1",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "refresher": true,
+      "question": "Gross National Product (GNP) is obtained from GDP by adding which of the following?",
+      "options": [
+        "Depreciation",
+        "Net Factor Income from Abroad",
+        "Indirect taxes",
+        "Subsidies"
+      ],
+      "answerIndex": 1,
+      "explanation": "**GNP = GDP + Net Factor Income from Abroad (NFIA)** — it moves from a territorial (domestic) measure to a national (resident-based) one.\n\n**Why not the others**\n- Depreciation — is *subtracted* from a gross measure to get the corresponding net measure (NNP = GNP − Depreciation).\n- Indirect taxes — are *subtracted* (with subsidies added back) to convert market price to factor cost.\n- Subsidies — are *added* only in the market-price to factor-cost conversion, not to reach GNP.\n\n**Key facts**\n- NFIA = income of residents abroad − income of foreigners at home.\n- Positive NFIA ⇒ GNP > GDP; India's NFIA is typically negative.\n\n*Source: APPSC GK PDF — Methods of Calculating National Income (Important Adjustments).*",
+      "source": "APPSC GK PDF — Methods of Calculating National Income",
+      "verified": true,
+      "covers": ["GNP = GDP + Net Factor Income from Abroad", "Net Factor Income from Abroad (NFIA)"],
+      "tags": ["gnp", "nfia", "refresher"]
+    },
+    {
+      "id": "econ-national-income-mcq-2",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "refresher": true,
+      "question": "National Income of a country is defined as:",
+      "options": [
+        "GDP at market price",
+        "GNP at market price",
+        "NNP at factor cost",
+        "NDP at market price"
+      ],
+      "answerIndex": 2,
+      "explanation": "**National Income = NNP at Factor Cost** — the income actually accruing to the factors of production.\n\n**Why not the others**\n- GDP at market price — a gross, territorial, market-price aggregate, not net factor income.\n- GNP at market price — still gross and at market price (includes net indirect taxes).\n- NDP at market price — net but domestic and at market price, not the national factor-cost income.\n\n**Key facts**\n- NNP at FC = NNP at MP − Indirect Taxes + Subsidies.\n- Only factor incomes (wages, rent, interest, profit, mixed income) are counted.\n\n*Source: APPSC GK PDF — National Income (National Income section).*",
+      "source": "APPSC GK PDF — National Income",
+      "verified": true,
+      "covers": ["NI = NNP at Factor Cost; Personal & Disposable Income", "National Income — meaning & significance"],
+      "tags": ["national-income", "nnp", "factor-cost", "refresher"]
+    },
+    {
+      "id": "econ-national-income-mcq-3",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "refresher": true,
+      "question": "Which method of estimating national income uses the formula GDP = C + I + G + (X − M)?",
+      "options": [
+        "Income method",
+        "Expenditure method",
+        "Value-added (product) method",
+        "Output-deflator method"
+      ],
+      "answerIndex": 1,
+      "explanation": "The **expenditure method** adds all final spending: private consumption (C), investment (I), government spending (G) and net exports (X − M).\n\n**Why not the others**\n- Income method — sums factor incomes (wages + rent + interest + profit + mixed income).\n- Value-added (product) method — sums net value added (output − intermediate consumption) across sectors.\n- Output-deflator method — not a national-income method; the deflator is only a price index.\n\n**Key facts**\n- All three genuine methods yield the same total.\n- Closed economy, no government ⇒ identity reduces to I = S.\n\n*Source: APPSC GK PDF — Methods of Calculating National Income (Expenditure Method).*",
+      "source": "APPSC GK PDF — Methods of Calculating National Income",
+      "verified": true,
+      "covers": ["Expenditure Method (C+I+G+(X−M); savings-investment identity)"],
+      "tags": ["expenditure-method", "refresher"]
+    },
+    {
+      "id": "econ-national-income-mcq-4",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Consider the following statements regarding GDP and GNP:\n1. GDP measures output produced within a country's borders, including that by foreign-owned firms.\n2. GNP measures output by a country's residents, wherever produced.\n3. If Net Factor Income from Abroad is negative, GNP exceeds GDP.\n4. Income earned by an Indian company operating abroad is part of India's GNP but not its GDP.\nWhich of the statements are correct?",
+      "options": [
+        "1, 2 and 4 only",
+        "1, 2 and 3 only",
+        "2, 3 and 4 only",
+        "1, 3 and 4 only"
+      ],
+      "answerIndex": 0,
+      "explanation": "GDP is territorial and GNP is resident-based; a negative NFIA makes GNP *smaller* than GDP, so statement 3 is wrong.\n\n**Why not the others**\n- 1, 2 and 3 only — includes the false statement 3 (negative NFIA ⇒ GNP < GDP) and drops the correct statement 4.\n- 2, 3 and 4 only — drops the correct statement 1 and keeps the false statement 3.\n- 1, 3 and 4 only — drops the correct statement 2 and keeps the false statement 3.\n\n**Key facts**\n| Term | Basis | Foreign income of residents |\n|---|---|---|\n| GDP | Territory | Excluded |\n| GNP | Residents | Included (via +NFIA) |\n\n*Source: APPSC GK PDF — National Income (GDP vs GNP table).*",
+      "source": "APPSC GK PDF — National Income (GDP vs GNP)",
+      "verified": true,
+      "covers": ["GDP — concept (domestic territory, incl. foreign entities)", "GNP = GDP + Net Factor Income from Abroad", "Net Factor Income from Abroad (NFIA)"],
+      "tags": ["gdp", "gnp", "nfia", "statement"]
+    },
+    {
+      "id": "econ-national-income-mcq-5",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "In an economy the following data (₹ crore) are given: GDP at market price = 200, Net Factor Income from Abroad = −10, Depreciation = 20, Indirect Taxes = 25, Subsidies = 5. What is the National Income (NNP at factor cost)?",
+      "options": [
+        "150",
+        "160",
+        "170",
+        "145"
+      ],
+      "answerIndex": 0,
+      "explanation": "Work down the ladder step by step.\n\nStep 1 — GNP(MP) = GDP(MP) + NFIA = 200 + (−10) = **190**.\nStep 2 — NNP(MP) = GNP(MP) − Depreciation = 190 − 20 = **170**.\nStep 3 — NNP(FC) = NNP(MP) − Indirect Taxes + Subsidies = 170 − 25 + 5 = **150**.\n\n**Why not the others**\n- 160 — forgets to add back subsidies (170 − 25 + 5 miscomputed as 165? ) or mishandles a step; not the correct net-of-taxes figure.\n- 170 — stops at NNP at market price, forgetting the market-price to factor-cost conversion.\n- 145 — wrongly subtracts subsidies instead of adding them (170 − 25 − 5 = 140/145 trap).\n\n**Key facts**\n| Conversion | Operation |\n|---|---|\n| GDP → GNP | + NFIA |\n| Gross → Net | − Depreciation |\n| MP → FC | − Indirect Taxes + Subsidies |\n\n*Source: APPSC GK PDF — Methods of Calculating National Income (Important Formulae).*",
+      "source": "APPSC GK PDF — Methods of Calculating National Income (formulae)",
+      "verified": true,
+      "covers": ["Market price vs Factor cost (indirect taxes − subsidies)", "NNP = GNP − Depreciation", "NI = NNP at Factor Cost; Personal & Disposable Income"],
+      "tags": ["numerical", "factor-cost", "nnp"]
+    },
+    {
+      "id": "econ-national-income-mcq-6",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "A country's nominal GDP is ₹150 lakh crore and its real GDP (at base-year prices) is ₹120 lakh crore. The GDP deflator is:",
+      "options": [
+        "80",
+        "125",
+        "120",
+        "150"
+      ],
+      "answerIndex": 1,
+      "explanation": "GDP Deflator = (Nominal GDP ÷ Real GDP) × 100 = (150 ÷ 120) × 100 = **125**.\n\n**Why not the others**\n- 80 — is the inverse ratio (120 ÷ 150 × 100); the deflator puts nominal over real, not real over nominal.\n- 120 — simply the real GDP value, not a ratio.\n- 150 — simply the nominal GDP value, not a ratio.\n\n**Key facts**\n- A deflator of 125 means the general price level is 25% above the base year.\n- The GDP deflator covers all goods/services in GDP, unlike fixed-basket CPI/WPI.\n\n*Source: APPSC GK PDF — National Income (Nominal vs Real GDP).*",
+      "source": "APPSC GK PDF — National Income (Nominal vs Real GDP)",
+      "verified": true,
+      "covers": ["Nominal vs Real GDP & GDP deflator"],
+      "tags": ["deflator", "real-gdp", "numerical"]
+    },
+    {
+      "id": "econ-national-income-mcq-7",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Which of the following is correct about the relationship between Gross Value Added (GVA) and GDP?",
+      "options": [
+        "GDP at market price = GVA at basic prices + Product Taxes − Product Subsidies",
+        "GVA at basic prices = GDP at market price + Product Taxes − Product Subsidies",
+        "GDP at market price = GVA at basic prices − Product Taxes + Product Subsidies",
+        "GVA and GDP are always numerically identical"
+      ],
+      "answerIndex": 0,
+      "explanation": "**GDP (market price) = GVA (basic prices) + Product Taxes − Product Subsidies** — market price sits above basic price by the value of net product taxes.\n\n**Why not the others**\n- GVA = GDP + Product Taxes − Product Subsidies — reverses the correct direction; GVA is the smaller (basic-price) measure.\n- GDP = GVA − Product Taxes + Product Subsidies — flips the signs of taxes and subsidies.\n- GVA and GDP always identical — false; they differ by net product taxes.\n\n**Key facts**\n- GVA is the supply/producer-side measure; GDP is the demand-side, market-price measure.\n- India began headlining GVA at basic prices with the 2015 (base 2011-12) revision.\n\n*Source: APPSC GK PDF — National Income; MoSPI National Accounts (GVA at basic prices).*",
+      "source": "APPSC GK PDF — National Income; MoSPI National Accounts",
+      "verified": true,
+      "covers": ["GVA — concept & GVA-to-GDP relation (headline metric since 2015)"],
+      "tags": ["gva", "gdp", "basic-prices"]
+    },
+    {
+      "id": "econ-national-income-mcq-8",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Consider the following statements about the base year of India's national accounts:\n1. The base year currently in official use is 2011-12.\n2. A new GDP series is being prepared with 2022-23 as the base year.\n3. The revision is guided by the Advisory Committee on National Accounts Statistics (ACNAS).\n4. National accounts and GDP estimates are compiled by the RBI.\nWhich of the statements are correct?",
+      "options": [
+        "1 and 2 only",
+        "1, 2 and 3 only",
+        "2, 3 and 4 only",
+        "1, 3 and 4 only"
+      ],
+      "answerIndex": 1,
+      "explanation": "The base year is 2011-12, being revised to 2022-23 under ACNAS; national accounts are compiled by the NSO under MoSPI, **not** the RBI — so statement 4 is wrong.\n\n**Why not the others**\n- 1 and 2 only — omits the correct statement 3 about ACNAS guiding the revision.\n- 2, 3 and 4 only — drops the correct statement 1 and keeps the false statement 4.\n- 1, 3 and 4 only — drops the correct statement 2 and keeps the false statement 4.\n\n**Key facts**\n- 2022-23 new series is chaired by Prof. Biswanath Goldar (ACNAS), scheduled for release in early 2026.\n- NSO (CSO + NSSO merged in 2019) under MoSPI prepares national accounts.\n\n*Source: MoSPI / PIB — National Accounts base-year revision (base 2022-23).*",
+      "source": "MoSPI / PIB — National Accounts base-year revision",
+      "verified": true,
+      "covers": ["Base year — 2011-12 current & revision to 2022-23 new series (ACNAS, NSO-MoSPI, 2026)", "History & agencies — Dadabhai Naoroji, V.K.R.V. Rao, CSO/NSO, NSC; estimation difficulties"],
+      "tags": ["base-year", "2022-23", "acnas", "mospi", "statement"]
+    },
+    {
+      "id": "econ-national-income-mcq-9",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Match List-I (Method / concept) with List-II (Defining feature) and select the correct answer:\nList-I\nA. Product (Value-Added) Method\nB. Income Method\nC. Expenditure Method\nD. Double counting\nList-II\n1. Sum of C + I + G + (X − M)\n2. Sum of wages, rent, interest, profit and mixed income\n3. Avoided by counting only value added / final goods\n4. Gross Value of Output minus Intermediate Consumption",
+      "options": [
+        "A-4, B-2, C-1, D-3",
+        "A-1, B-2, C-4, D-3",
+        "A-4, B-1, C-2, D-3",
+        "A-3, B-2, C-1, D-4"
+      ],
+      "answerIndex": 0,
+      "explanation": "The product method is output−intermediate consumption (4), income method sums factor incomes (2), expenditure method is C+I+G+(X−M) (1), and double counting is avoided by counting only value added / final goods (3).\n\n**Why not the others**\n- A-1, B-2, C-4, D-3 — swaps the product and expenditure descriptions.\n- A-4, B-1, C-2, D-3 — misassigns income (should be factor incomes) and expenditure descriptions.\n- A-3, B-2, C-1, D-4 — confuses the product method with the double-counting concept.\n\n**Key facts**\n- Transfer payments are excluded from the income method.\n- Only final goods/value added enter all methods to avoid double counting.\n\n*Source: APPSC GK PDF — Methods of Calculating National Income.*",
+      "source": "APPSC GK PDF — Methods of Calculating National Income",
+      "verified": true,
+      "covers": ["Product / Value-Added Method (GVO − intermediate consumption)", "Income Method (factor incomes; transfer payments excluded)", "Expenditure Method (C+I+G+(X−M); savings-investment identity)", "Double counting problem & final goods / value added"],
+      "tags": ["methods", "match", "double-counting"]
+    },
+    {
+      "id": "econ-national-income-mcq-10",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Under the income method of estimating national income, which of the following should NOT be included?",
+      "options": [
+        "Wages and salaries of workers",
+        "Rent on land and interest on capital",
+        "Old-age pensions and scholarships",
+        "Mixed income of the self-employed"
+      ],
+      "answerIndex": 2,
+      "explanation": "**Old-age pensions and scholarships are transfer payments** — they are not earned in current production, so they are excluded from the income method.\n\n**Why not the others**\n- Wages and salaries — factor income to labour; included.\n- Rent and interest — factor incomes to land and capital; included.\n- Mixed income of the self-employed — factor income of small traders/farmers; included.\n\n**Key facts**\n- Income method: NI = Wages + Rent + Interest + Profit + Mixed Income.\n- Transfer payments have no corresponding output, so counting them would overstate income.\n\n*Source: APPSC GK PDF — Methods of Calculating National Income (Income Method).*",
+      "source": "APPSC GK PDF — Methods of Calculating National Income (Income Method)",
+      "verified": true,
+      "covers": ["Income Method (factor incomes; transfer payments excluded)"],
+      "tags": ["income-method", "transfer-payments"]
+    },
+    {
+      "id": "econ-national-income-mcq-11",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "The agriculture sector produces output worth ₹1,000 using seeds and fertiliser worth ₹300, and industry produces ₹1,500 using ₹600 of intermediate inputs. Using the value-added method, the combined Gross Value Added is:",
+      "options": [
+        "₹2,500",
+        "₹1,600",
+        "₹900",
+        "₹2,200"
+      ],
+      "answerIndex": 1,
+      "explanation": "Value added = Gross Value of Output − Intermediate Consumption for each sector, then summed.\n\nAgriculture: 1,000 − 300 = **₹700**.\nIndustry: 1,500 − 600 = **₹900**.\nCombined GVA = 700 + 900 = **₹1,600**.\n\n**Why not the others**\n- ₹2,500 — adds only the gross outputs (1,000 + 1,500), ignoring intermediate consumption (double counting).\n- ₹900 — counts only the industry sector's value added.\n- ₹2,200 — subtracts only one sector's inputs, mishandling the other.\n\n**Key facts**\n- Counting gross output double-counts intermediate goods.\n- GVA = Σ(Output − Intermediate Consumption) across sectors.\n\n*Source: APPSC GK PDF — Methods of Calculating National Income (Production Method example).*",
+      "source": "APPSC GK PDF — Methods of Calculating National Income",
+      "verified": true,
+      "covers": ["Product / Value-Added Method (GVO − intermediate consumption)", "Double counting problem & final goods / value added"],
+      "tags": ["value-added", "numerical", "double-counting"]
+    },
+    {
+      "id": "econ-national-income-mcq-12",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Assertion (A): Real GDP is a better measure of economic growth than nominal GDP.\nReason (R): Real GDP is valued at constant base-year prices and therefore removes the effect of price changes.\nSelect the correct option:",
+      "options": [
+        "Both A and R are true, and R is the correct explanation of A",
+        "Both A and R are true, but R is not the correct explanation of A",
+        "A is true, but R is false",
+        "A is false, but R is true"
+      ],
+      "answerIndex": 0,
+      "explanation": "Both statements are true and R correctly explains A: because real GDP holds prices constant at the base year, changes in it reflect changes in the *quantity* of output, making it the truer growth gauge.\n\n**Why not the others**\n- Both true but R not the explanation — wrong; the constant-price valuation is exactly why real GDP is better for growth.\n- A true, R false — R is a correct definition of real GDP.\n- A false, R true — A is correct; nominal GDP is inflated by rising prices.\n\n**Key facts**\n- GDP Deflator = (Nominal ÷ Real) × 100 links the two.\n- Nominal GDP can rise purely from inflation with no extra output.\n\n*Source: APPSC GK PDF — National Income (Nominal vs Real GDP).*",
+      "source": "APPSC GK PDF — National Income (Nominal vs Real GDP)",
+      "verified": true,
+      "covers": ["Nominal vs Real GDP & GDP deflator", "National Income — meaning & significance"],
+      "tags": ["real-gdp", "assertion-reason"]
+    },
+    {
+      "id": "econ-national-income-mcq-13",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Who is credited with the first scientific estimate of India's national income, and who made the earliest estimate during the colonial period?",
+      "options": [
+        "First scientific — V.K.R.V. Rao; earliest — Dadabhai Naoroji",
+        "First scientific — Dadabhai Naoroji; earliest — V.K.R.V. Rao",
+        "First scientific — P.C. Mahalanobis; earliest — William Digby",
+        "First scientific — V.K.R.V. Rao; earliest — R.C. Desai"
+      ],
+      "answerIndex": 0,
+      "explanation": "**Dadabhai Naoroji** made the **earliest estimate** (in *Poverty and Un-British Rule in India*, 1867-68), while **V.K.R.V. Rao** produced the **first scientific estimate** (1931).\n\n**Why not the others**\n- Naoroji scientific / Rao earliest — reverses the two roles.\n- Mahalanobis / Digby — Mahalanobis shaped the Second Plan and set up the CSO/ISI, not the first scientific NI estimate; Digby wrote on famine, not the first estimate.\n- Rao scientific / R.C. Desai earliest — Desai made later estimates, not the earliest colonial one.\n\n**Key facts**\n- Post-Independence estimates were institutionalised via the National Income Committee (1949, chaired by Mahalanobis).\n- The CSO (now NSO) later took over official estimation.\n\n*Source: Standard Indian Economy reference; APPSC GK PDF — National Income.*",
+      "source": "Standard Indian Economy reference; APPSC GK PDF — National Income",
+      "verified": true,
+      "covers": ["History & agencies — Dadabhai Naoroji, V.K.R.V. Rao, CSO/NSO, NSC; estimation difficulties"],
+      "tags": ["naoroji", "vkrv-rao", "history"]
+    },
+    {
+      "id": "econ-national-income-mcq-14",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Consider the following statements about difficulties in estimating India's national income:\n1. A large informal/unorganised sector makes reliable data hard to collect.\n2. Non-monetised transactions such as self-consumption of farm produce are difficult to value.\n3. Only market-price data are used, so the black economy is fully captured.\nWhich of the statements are correct?",
+      "options": [
+        "1 and 2 only",
+        "1 and 3 only",
+        "2 and 3 only",
+        "1, 2 and 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "The informal sector and non-monetised output are genuine difficulties; the black economy is **not** captured (it escapes official data), so statement 3 is wrong.\n\n**Why not the others**\n- 1 and 3 only — keeps the false statement 3 about the black economy being captured.\n- 2 and 3 only — drops correct statement 1 and keeps false statement 3.\n- 1, 2 and 3 — includes the false statement 3.\n\n**Key facts**\n- The shadow/black economy is excluded from GDP, understating true activity.\n- Self-consumption and barter must be imputed, adding estimation error.\n\n*Source: APPSC GK PDF — National Income (Limitations); Methods of Calculating National Income.*",
+      "source": "APPSC GK PDF — National Income (Limitations)",
+      "verified": true,
+      "covers": ["History & agencies — Dadabhai Naoroji, V.K.R.V. Rao, CSO/NSO, NSC; estimation difficulties", "National Income — meaning & significance"],
+      "tags": ["informal-sector", "estimation", "statement"]
+    },
+    {
+      "id": "econ-national-income-mcq-15",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "If GDP is ₹500, Depreciation is ₹40 and Net Factor Income from Abroad is ₹15, what is the Net National Product (NNP)?",
+      "options": [
+        "₹475",
+        "₹460",
+        "₹525",
+        "₹455"
+      ],
+      "answerIndex": 0,
+      "explanation": "First convert domestic to national, then gross to net.\n\nStep 1 — GNP = GDP + NFIA = 500 + 15 = **₹515**.\nStep 2 — NNP = GNP − Depreciation = 515 − 40 = **₹475**.\n\n**Why not the others**\n- ₹460 — subtracts depreciation from GDP (NDP = 460) but forgets to add NFIA.\n- ₹525 — adds both NFIA and depreciation instead of subtracting depreciation.\n- ₹455 — subtracts NFIA instead of adding it before removing depreciation.\n\n**Key facts**\n| Step | Operation |\n|---|---|\n| GDP → GNP | + NFIA |\n| GNP → NNP | − Depreciation |\n| GDP → NDP | − Depreciation |\n\n*Source: APPSC GK PDF — Methods of Calculating National Income (Important Formulae).*",
+      "source": "APPSC GK PDF — Methods of Calculating National Income (formulae)",
+      "verified": true,
+      "covers": ["NNP = GNP − Depreciation", "NDP = GDP − Depreciation", "GNP = GDP + Net Factor Income from Abroad"],
+      "tags": ["nnp", "ndp", "numerical"]
+    },
+    {
+      "id": "econ-national-income-mcq-16",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Which of the following correctly relates Personal Income (PI) and Disposable Income (DI)?",
+      "options": [
+        "DI = PI + indirect taxes",
+        "PI = DI − transfer payments",
+        "DI = PI − depreciation",
+        "DI = PI − direct/personal taxes"
+      ],
+      "answerIndex": 3,
+      "explanation": "**Disposable Income = Personal Income − direct (personal) taxes** — it is what households are left with to spend or save.\n\n**Why not the others**\n- DI = PI + indirect taxes — indirect taxes are not added back to households; they raise market prices, not disposable income.\n- PI = DI − transfer payments — transfers are *added* into personal income, not subtracted from disposable income.\n- DI = PI − depreciation — depreciation applies to capital stock and gross-to-net aggregates, not to household disposable income.\n\n**Key facts**\n- Personal Income includes transfer payments received by households.\n- DI is split between consumption and household saving.\n\n*Source: APPSC GK PDF — National Income (Personal Income, Disposable Income).*",
+      "source": "APPSC GK PDF — National Income",
+      "verified": true,
+      "covers": ["NI = NNP at Factor Cost; Personal & Disposable Income"],
+      "tags": ["personal-income", "disposable-income"]
+    },
+    {
+      "id": "econ-national-income-mcq-17",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "A 'closed economy' is one in which",
+      "options": [
+        "the money supply is fully controlled by the central bank",
+        "deficit financing takes place",
+        "only exports take place",
+        "neither exports nor imports take place"
+      ],
+      "answerIndex": 3,
+      "explanation": "A **closed economy** has **no foreign trade** — neither exports nor imports — and no net factor income from abroad, so **GDP equals GNP**. An open economy trades with the rest of the world.\n\n**Why not the others**\n- Money supply fully controlled — a monetary-policy condition, unrelated to openness of trade.\n- Deficit financing — a fiscal operation, not a definition of a closed economy.\n- Only exports — an economy with exports is already open; a closed economy has neither exports nor imports.\n\n**Key facts**\n- Closed economy: X = M = 0, NFIA = 0, GDP = GNP.\n- Expenditure identity in a closed economy without government: I = S.\n\n*Source: NCERT Macroeconomics; APPSC GK PDF — National Income.*",
+      "source": "NCERT Macroeconomics; APPSC GK PDF — National Income",
+      "verified": true,
+      "covers": ["Closed vs open economy (GDP = GNP when no foreign trade)"],
+      "tags": ["closed-economy", "open-economy"]
+    },
+    {
+      "id": "econ-national-income-mcq-18",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "Expenditure by foreign tourists visiting India to watch an international sporting event is treated in India's national accounts as",
+      "options": [
+        "an export (of services)",
+        "an import",
+        "domestic final consumption by residents",
+        "a transfer payment"
+      ],
+      "answerIndex": 0,
+      "explanation": "Spending by foreign visitors in India is a **receipt from abroad for services rendered here** — an **export of services (an invisible)**, entering as a credit in the external account and adding to net exports (X − M).\n\n**Why not the others**\n- An import — imports are Indian residents' purchases from abroad, the opposite flow.\n- Domestic final consumption by residents — the spenders are non-residents, not Indian households.\n- A transfer payment — a transfer involves no good/service in return; here services are consumed.\n\n**Key facts**\n- Invisibles include tourism, software and shipping services.\n- Net exports (X − M) in the expenditure method include such service exports.\n\n*Source: NCERT Macroeconomics; RBI Balance of Payments manual.*",
+      "source": "NCERT Macroeconomics; RBI Balance of Payments manual",
+      "verified": true,
+      "covers": ["Invisibles — services/tourism as exports in national accounts"],
+      "tags": ["invisibles", "exports", "services"]
+    },
+    {
+      "id": "econ-national-income-mcq-19",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-national-income",
+      "question": "The National Income Committee, the first official body to estimate India's national income after independence (set up in 1949), was chaired by",
+      "options": [
+        "V.K.R.V. Rao",
+        "P.C. Mahalanobis",
+        "Dadabhai Naoroji",
+        "D.R. Gadgil"
+      ],
+      "answerIndex": 1,
+      "explanation": "The **National Income Committee (1949)** was chaired by **P.C. Mahalanobis**, with V.K.R.V. Rao and D.R. Gadgil as members; its work led to the establishment of the **Central Statistical Organisation (CSO) in 1951**.\n\n**Why not the others**\n- V.K.R.V. Rao — a committee member; famous for the first *scientific* NI estimate (1931), not its chair.\n- Dadabhai Naoroji — made the earliest NI estimate (1867-68), long before the committee.\n- D.R. Gadgil — a member of the committee, not its chairman.\n\n**Key facts**\n- NIC set up 1949; first report 1951, final report 1954.\n- Led to CSO (1951); today NSO under MoSPI compiles national accounts.\n\n*Source: MoSPI; APPSC GK PDF — National Income.*",
+      "source": "MoSPI; APPSC GK PDF — National Income",
+      "verified": true,
+      "covers": ["National Income Committee 1949 (Mahalanobis chair) & CSO 1951", "History & agencies — Dadabhai Naoroji, V.K.R.V. Rao, CSO/NSO, NSC; estimation difficulties"],
+      "tags": ["national-income-committee", "mahalanobis"]
+    }
+  ]
+}

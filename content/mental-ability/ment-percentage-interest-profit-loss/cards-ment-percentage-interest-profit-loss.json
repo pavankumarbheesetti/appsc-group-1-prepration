@@ -1,0 +1,127 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Percentage, SI/CI, Profit & Loss",
+  "items": [
+    {
+      "id": "ment-percentage-interest-profit-loss-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Net effect of two successive percentage changes a% then b%?",
+      "back": "net = a + b + ab/100 (use + for rise, − for fall). Equal +x% then −x% gives −x²/100 % (never 0).",
+      "examPoint": "Successive percentage change (net single effect)",
+      "source": "APPSC Quantitative Reasoning — Successive Percentage Change",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "If A is x% more than B, how much % less is B than A?",
+      "back": "B is x/(100+x)×100 % less than A. (25% more ⇒ 20% less.) Price up x% ⇒ cut consumption by x/(100+x)×100 %.",
+      "examPoint": "Comparison — reverse percentage relation",
+      "source": "APPSC Quantitative Reasoning — Comparison of Percentage",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Simple Interest formula and the doubling condition?",
+      "back": "SI = PRT/100; Amount = P(1+RT/100). A sum doubles when RT = 100; becomes n times when RT = (n−1)×100.",
+      "examPoint": "Simple Interest — formula, rate/time, doubling",
+      "source": "APPSC Quantitative Reasoning — Simple Interest",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Compound Interest formula; half-yearly & quarterly adjustments?",
+      "back": "A = P(1+R/100)ⁿ; CI = A−P. Half-yearly: rate R/2, periods 2n. Quarterly: rate R/4, periods 4n.",
+      "examPoint": "Compound Interest — annual, half-yearly, quarterly",
+      "source": "APPSC Quantitative Reasoning — Compound Interest",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "CI − SI difference for 2 and 3 years (same P, R, T)?",
+      "back": "2 years: P(R/100)². 3 years: P(R/100)²×(3 + R/100). Year-1 CI = SI; CI exceeds SI from year 2.",
+      "examPoint": "CI − SI difference (2 & 3 years)",
+      "source": "APPSC Quantitative Reasoning — Compound Interest",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Profit/Loss and discount — which base for each?",
+      "back": "Profit%/Loss% are on CP: SP = CP(1±%/100). Discount is on MP: SP = MP(1−d/100). Never subtract discount% from mark-up%.",
+      "examPoint": "Profit & Loss — CP/SP/MP, discount",
+      "source": "APPSC Quantitative Reasoning — Discount & MP",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Two successive discounts a%, b% as a single discount?",
+      "back": "Single equivalent = a + b − ab/100 (i.e. multiply (1−a/100)(1−b/100)).",
+      "examPoint": "Successive discount (single equivalent)",
+      "source": "APPSC Quantitative Reasoning — Successive discount",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Dishonest dealer selling at CP with a false weight — gain%?",
+      "back": "gain% = error/(true value − error) × 100. A 900 g 'kg' ⇒ 100/900 = 11.11%.",
+      "examPoint": "Dishonest dealer / false weight",
+      "source": "APPSC Quantitative Reasoning — Profit & Loss",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Two articles at the SAME selling price, one +x% one −x% — net result?",
+      "back": "Always a net LOSS of x²/100 %, regardless of the actual price.",
+      "examPoint": "Two articles same SP, equal profit% & loss%",
+      "source": "APPSC Quantitative Reasoning — Profit & Loss",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Partnership — how is profit shared?",
+      "back": "Share ∝ Capital × Time (capital-months). Equal time ⇒ capital ratio. Form C₁T₁:C₂T₂:…, take each fraction of profit.",
+      "examPoint": "Partnership — profit sharing by capital × time",
+      "source": "standard APPSC/SSC arithmetic — Partnership",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "Alligation — ratio to blend two ingredients to a mean price m?",
+      "back": "qty cheaper : qty dearer = (dearer − m) : (m − cheaper). Mean lies nearer the larger-quantity ingredient.",
+      "examPoint": "Mixture & alligation — ratio for a target mean price",
+      "source": "standard APPSC/SSC arithmetic — Mixtures & Alligation",
+      "verified": true
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-card-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "front": "x% of A = y% of B ⇒ ratio A : B?",
+      "back": "A : B = y : x (cross-multiply xA/100 = yB/100).",
+      "examPoint": "Percentage equality — x% of A = y% of B",
+      "source": "APPSC Quantitative Reasoning — Basic Percentage",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ivc-extent-map.svg — original schematic (NOT to scale) of the Indus Valley
+  Civilization's spread across the north-west of the subcontinent.
+  Intent: give learners a mental map of the MAJOR sites (Harappa, Mohenjo-daro,
+  Dholavira, Lothal, Kalibangan, Rakhigarhi, Chanhudaro) plus the four
+  cardinal BOUNDARY sites (Manda N, Alamgirpur E, Sutkagendor W, Daimabad S).
+  Self-contained: it carries its own parchment panel + dark ink so it stays
+  legible whether the app theme is light or dark; a prefers-color-scheme block
+  additionally adapts the panel when the OS is in dark mode.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" role="img"
+     aria-label="Schematic map of major and boundary sites of the Indus Valley Civilization">
+  <style>
+    .panel { fill: #f7f3ea; stroke: #d8cdb5; }
+    .land  { fill: #ece3cf; stroke: #c9b78f; }
+    .river { fill: none; stroke: #3b82f6; stroke-width: 3; stroke-linecap: round; opacity: .85; }
+    .ink   { fill: #2b2b2b; }
+    .muted { fill: #6b7280; }
+    .site  { fill: #b45309; stroke: #7c3f06; }
+    .bound { fill: #0f766e; stroke: #0c5c55; }
+    .lead  { stroke: #9aa0a6; stroke-width: 1; }
+    text   { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .panel { fill: #1f2530; stroke: #3a4353; }
+      .land  { fill: #2b3342; stroke: #43506a; }
+      .ink   { fill: #f3f4f6; }
+      .muted { fill: #aab2bd; }
+      .lead  { stroke: #5b6675; }
+    }
+  </style>
+
+  <rect class="panel" x="4" y="4" width="812" height="552" rx="16"/>
+  <text class="ink" x="28" y="42" font-size="24" font-weight="700">Indus Valley Civilization — extent &amp; key sites</text>
+  <text class="muted" x="28" y="66" font-size="14">Schematic, not to scale · orange = major site · teal = cardinal boundary</text>
+
+  <!-- Stylised landmass of the NW subcontinent -->
+  <path class="land" d="M250 120 C 360 96, 470 104, 560 150 C 640 190, 680 260, 650 340
+                         C 626 410, 560 470, 470 486 C 380 500, 300 470, 262 404
+                         C 210 320, 196 210, 250 120 Z"/>
+
+  <!-- Rivers: Indus (west) and Ghaggar–Hakra (east) -->
+  <path class="river" d="M300 130 C 296 210, 320 300, 300 470"/>
+  <path class="river" d="M520 150 C 540 240, 560 330, 520 440"/>
+
+  <!-- Major sites (orange dots) -->
+  <g font-size="14" font-weight="600">
+    <circle class="site" cx="312" cy="196" r="6"/><text class="ink" x="324" y="200">Harappa</text>
+    <circle class="site" cx="300" cy="300" r="6"/><text class="ink" x="220" y="304" text-anchor="end">Mohenjo-daro</text>
+    <circle class="site" cx="300" cy="360" r="6"/><text class="ink" x="220" y="364" text-anchor="end">Chanhudaro</text>
+    <circle class="site" cx="470" cy="360" r="6"/><text class="ink" x="482" y="364">Dholavira</text>
+    <circle class="site" cx="452" cy="430" r="6"/><text class="ink" x="464" y="434">Lothal</text>
+    <circle class="site" cx="470" cy="230" r="6"/><text class="ink" x="482" y="234">Kalibangan</text>
+    <circle class="site" cx="430" cy="176" r="6"/><text class="ink" x="442" y="168">Rakhigarhi</text>
+  </g>
+
+  <!-- Boundary (cardinal) sites (teal) with leader lines to the frame labels -->
+  <g font-size="13" font-weight="700">
+    <!-- North: Manda -->
+    <circle class="bound" cx="360" cy="110" r="6"/>
+    <line class="lead" x1="360" y1="110" x2="360" y2="92"/>
+    <text class="ink" x="360" y="86" text-anchor="middle">Manda (N)</text>
+    <!-- East: Alamgirpur -->
+    <circle class="bound" cx="628" cy="300" r="6"/>
+    <line class="lead" x1="628" y1="300" x2="700" y2="300"/>
+    <text class="ink" x="706" y="304">Alamgirpur (E)</text>
+    <!-- West: Sutkagendor -->
+    <circle class="bound" cx="252" cy="330" r="6"/>
+    <line class="lead" x1="252" y1="330" x2="120" y2="330"/>
+    <text class="ink" x="114" y="334" text-anchor="end">Sutkagendor (W)</text>
+    <!-- South: Daimabad -->
+    <circle class="bound" cx="470" cy="486" r="6"/>
+    <line class="lead" x1="470" y1="486" x2="470" y2="516"/>
+    <text class="ink" x="470" y="530" text-anchor="middle">Daimabad (S)</text>
+  </g>
+</svg>

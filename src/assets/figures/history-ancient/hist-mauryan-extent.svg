@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- hist-mauryan-extent.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" role="img" aria-labelledby="t d">
+  <title id="t">Mauryan Empire extent</title>
+  <desc id="d">Schematic map of the Mauryan Empire under Ashoka: capital Pataliputra, Taxila (NW), Ujjain, Kalinga (261 BCE war), Suvarnagiri (south). Founded by Chandragupta with Chanakya.</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="462" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Mauryan Empire — extent under Ashoka</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">Schematic (c. 250 BCE; not to scale)</text><path class="land" d="M210 110 C 420 88, 600 110, 660 200 C 700 300, 640 420, 470 450 C 330 470, 230 420, 205 320 C 185 230, 180 160, 210 110 Z"/><circle class="accent" cx="300" cy="165" r="7"/><text class="ink" x="312" y="169" font-size="13.5" font-weight="700" text-anchor="start">Pataliputra (capital)</text><circle class="teal" cx="280" cy="130" r="7"/><text class="ink" x="292" y="134" font-size="13.5" font-weight="700" text-anchor="start">Taxila (NW)</text><circle class="teal" cx="250" cy="235" r="7"/><text class="ink" x="262" y="239" font-size="13.5" font-weight="700" text-anchor="start">Ujjain</text><circle class="accent" cx="470" cy="300" r="7"/><text class="ink" x="482" y="304" font-size="13.5" font-weight="700" text-anchor="start">Kalinga (war, 261 BCE)</text><circle class="teal" cx="350" cy="380" r="7"/><text class="ink" x="362" y="384" font-size="13.5" font-weight="700" text-anchor="start">Suvarnagiri (south)</text><text class="muted" x="28" y="452" font-size="12.5" text-anchor="start">Founded by Chandragupta (321 BCE, guided by Chanakya); peak under Ashoka; rock/pillar edicts across the empire.</text>
+</svg>

@@ -1,0 +1,634 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Mensuration (Area & Volume)",
+  "items": [
+    {
+      "id": "ment-mensuration-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "refresher": true,
+      "question": "Find the area of a rectangle whose length is 12 cm and breadth is 8 cm.",
+      "options": [
+        "40 cm²",
+        "96 cm²",
+        "20 cm²",
+        "192 cm²"
+      ],
+      "answerIndex": 1,
+      "explanation": "Area of a rectangle = length × breadth = 12 × 8 = **96 cm²**.\n\n**Why not the others**\n- 40 cm² — this is the perimeter 2(12 + 8), not the area.\n- 20 cm² — this is just (12 + 8), the semi-perimeter, not the area.\n- 192 cm² — this doubles the correct area (a ×2 slip).\n\n**Key facts**\n- Rectangle: area = l × b; perimeter = 2(l + b); diagonal = √(l² + b²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Rectangle.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Rectangle",
+      "verified": true,
+      "covers": [
+        "Rectangle & square — area, perimeter, diagonal"
+      ],
+      "tags": [
+        "area-2d",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "refresher": true,
+      "question": "What is the volume of a cube whose edge is 5 cm?",
+      "options": [
+        "150 cm³",
+        "100 cm³",
+        "75 cm³",
+        "125 cm³"
+      ],
+      "answerIndex": 3,
+      "explanation": "Volume of a cube = (edge)³ = 5³ = **125 cm³**.\n\n**Why not the others**\n- 150 cm³ — this is the total surface area 6 × 5² = 150 cm², not the volume.\n- 100 cm³ — corresponds to 4 × 5², no standard cube formula.\n- 75 cm³ — corresponds to 3 × 5², not a volume.\n\n**Key facts**\n- Cube (edge a): volume = a³; TSA = 6a²; diagonal = a√3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Cube",
+      "verified": true,
+      "covers": [
+        "Cube — volume, total surface area, diagonal"
+      ],
+      "tags": [
+        "solids",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "refresher": true,
+      "question": "Find the area of a circle of radius 7 cm. (Take π = 22/7.)",
+      "options": [
+        "154 cm²",
+        "44 cm²",
+        "49 cm²",
+        "616 cm²"
+      ],
+      "answerIndex": 0,
+      "explanation": "Area = πr² = (22/7) × 7 × 7 = 22 × 7 = **154 cm²**.\n\n**Why not the others**\n- 44 cm² — this is the circumference 2πr = 2 × (22/7) × 7 = 44 cm, not the area.\n- 49 cm² — this is r² alone, missing the factor π.\n- 616 cm² — this is 4πr² (the surface area of a sphere of radius 7), not a circle's area.\n\n**Key facts**\n- Circle: area = πr²; circumference = 2πr; with π = 22/7 keep radius a multiple of 7 for clean values.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Circle.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Basic concept of Circle",
+      "verified": true,
+      "covers": [
+        "Circle — area, circumference, ring/annulus"
+      ],
+      "tags": [
+        "area-2d",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "The sides of a triangle are 13 cm, 14 cm and 15 cm. Find its area.",
+      "options": [
+        "42 cm²",
+        "168 cm²",
+        "84 cm²",
+        "91 cm²"
+      ],
+      "answerIndex": 2,
+      "explanation": "Use Heron's formula. Semi-perimeter s = (13 + 14 + 15)/2 = 21. Area = √[s(s−a)(s−b)(s−c)] = √[21 × 8 × 7 × 6] = √7056 = **84 cm²**.\n\n**Why not the others**\n- 42 cm² — this halves the correct area (misusing ½ twice).\n- 168 cm² — this doubles the area (dropping a ½ that Heron's formula does not need).\n- 91 cm² — arises from a wrong s−side product; the radicand must be 7056.\n\n**Key facts**\n- Heron: s = (a+b+c)/2, area = √[s(s−a)(s−b)(s−c)]; the 13-14-15 triangle is a standard 84 cm² case.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Triangle.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Basic concept of Triangle",
+      "verified": true,
+      "covers": [
+        "2D area — triangle (base–height and Heron's formula)"
+      ],
+      "tags": [
+        "area-2d",
+        "triangle"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "The parallel sides of a trapezium are 12 cm and 20 cm, and the distance between them is 5 cm. Find its area.",
+      "options": [
+        "160 cm²",
+        "96 cm²",
+        "64 cm²",
+        "80 cm²"
+      ],
+      "answerIndex": 3,
+      "explanation": "Area of a trapezium = ½ × (sum of parallel sides) × height = ½ × (12 + 20) × 5 = ½ × 32 × 5 = **80 cm²**.\n\n**Why not the others**\n- 160 cm² — this forgets the ½ (uses sum × height directly).\n- 96 cm² — this uses the difference-free product 12 × 8, not the trapezium rule.\n- 64 cm² — this multiplies only one parallel side (16 × 4-type slip).\n\n**Key facts**\n- Trapezium: area = ½(a + b)h. Parallelogram: area = base × height.\n\n*Source: local APPSC Quantitative Reasoning PDF — Trapezium.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Trapezium",
+      "verified": true,
+      "covers": [
+        "Trapezium & parallelogram — area"
+      ],
+      "tags": [
+        "area-2d",
+        "trapezium"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Find the area of a sector of a circle of radius 21 cm subtending an angle of 60° at the centre. (Take π = 22/7.)",
+      "options": [
+        "231 cm²",
+        "462 cm²",
+        "154 cm²",
+        "77 cm²"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sector area = (θ/360) × πr² = (60/360) × (22/7) × 21² = (1/6) × (22/7) × 441 = (1/6) × 1386 = **231 cm²**.\n\n**Why not the others**\n- 462 cm² — this uses θ = 120° (a doubled angle).\n- 154 cm² — this is (θ/360) taken as 1/9 (using 40°), a wrong fraction.\n- 77 cm² — this is the arc length region under a 1/18 fraction, not 1/6.\n\n**Key facts**\n- Sector: area = (θ/360)πr²; arc length = (θ/360)·2πr.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sector, Chord and Tangent.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Sector, Chord and Tangent",
+      "verified": true,
+      "covers": [
+        "Sector — area and arc length"
+      ],
+      "tags": [
+        "area-2d",
+        "sector"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Find the length of the space diagonal of a cuboid whose dimensions are 2 cm × 3 cm × 6 cm.",
+      "options": [
+        "11 cm",
+        "7 cm",
+        "√41 cm ≈ 6.4 cm",
+        "5 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "Space diagonal = √(l² + b² + h²) = √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = **7 cm**.\n\n**Why not the others**\n- 11 cm — this adds the edges (2 + 3 + 6), which is not the diagonal.\n- √41 cm — this drops one term (only 4 + 36 or 9 + 32), an incomplete sum.\n- 5 cm — this uses only √(9 + 16)-type face values, ignoring the third dimension.\n\n**Key facts**\n- Cuboid: volume = lbh; TSA = 2(lb + bh + hl); space diagonal = √(l² + b² + h²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cuboid (Rectangular Prism).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Cuboid (Rectangular Prism)",
+      "verified": true,
+      "covers": [
+        "Cuboid — volume, surface area, space diagonal"
+      ],
+      "tags": [
+        "solids",
+        "cuboid"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Find the volume of a right circular cylinder of radius 7 cm and height 10 cm. (Take π = 22/7.)",
+      "options": [
+        "770 cm³",
+        "440 cm³",
+        "1540 cm³",
+        "2200 cm³"
+      ],
+      "answerIndex": 2,
+      "explanation": "Volume = πr²h = (22/7) × 7² × 10 = (22/7) × 49 × 10 = 22 × 70 = **1540 cm³**.\n\n**Why not the others**\n- 770 cm³ — this halves the correct volume.\n- 440 cm³ — this is the curved surface area 2πrh = 2 × (22/7) × 7 × 10 = 440 cm², not the volume.\n- 2200 cm³ — uses r = 10-type mix-up, overstating the base area.\n\n**Key facts**\n- Cylinder: volume = πr²h; CSA = 2πrh; TSA = 2πr(r + h).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cylinder.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Right Circular Cylinder",
+      "verified": true,
+      "covers": [
+        "Right circular cylinder — volume and surface area"
+      ],
+      "tags": [
+        "solids",
+        "cylinder"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Find the volume of a right circular cone of radius 7 cm and height 6 cm. (Take π = 22/7.)",
+      "options": [
+        "924 cm³",
+        "308 cm³",
+        "462 cm³",
+        "616 cm³"
+      ],
+      "answerIndex": 1,
+      "explanation": "Volume = (1/3)πr²h = (1/3) × (22/7) × 7² × 6 = (1/3) × 22 × 7 × 6 = (1/3) × 924 = **308 cm³**.\n\n**Why not the others**\n- 924 cm³ — this omits the 1/3 (that is the enclosing cylinder's volume).\n- 462 cm³ — this uses 1/2 instead of 1/3.\n- 616 cm³ — corresponds to a wrong height/factor mix, not (1/3)πr²h.\n\n**Key facts**\n- Cone: volume = ⅓πr²h; slant l = √(r² + h²); CSA = πrl; a cone is one-third of the cylinder on the same base.\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cone.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Right Circular Cone",
+      "verified": true,
+      "covers": [
+        "Right circular cone — volume, CSA, slant height"
+      ],
+      "tags": [
+        "solids",
+        "cone"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Find the total surface area of a sphere of radius 7 cm. (Take π = 22/7.)",
+      "options": [
+        "616 cm²",
+        "1232 cm²",
+        "462 cm²",
+        "308 cm²"
+      ],
+      "answerIndex": 0,
+      "explanation": "Surface area of a sphere = 4πr² = 4 × (22/7) × 7² = 4 × 22 × 7 = **616 cm²**.\n\n**Why not the others**\n- 1232 cm² — this doubles the correct value (uses 8πr²).\n- 462 cm² — this is 3πr² (the total surface area of a hemisphere), not a full sphere.\n- 308 cm² — this is 2πr², the curved surface of a hemisphere.\n\n**Key facts**\n- Sphere: surface area = 4πr²; volume = (4/3)πr³.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sphere.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Sphere",
+      "verified": true,
+      "covers": [
+        "Sphere — volume and surface area"
+      ],
+      "tags": [
+        "solids",
+        "sphere"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Find the total surface area of a solid hemisphere of radius 7 cm. (Take π = 22/7.)",
+      "options": [
+        "308 cm²",
+        "462 cm²",
+        "616 cm²",
+        "231 cm²"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total surface area of a solid hemisphere = curved (2πr²) + flat circular base (πr²) = 3πr² = 3 × (22/7) × 7² = 3 × 22 × 7 = **462 cm²**.\n\n**Why not the others**\n- 308 cm² — this is only the curved part 2πr², forgetting the flat base.\n- 616 cm² — this is 4πr², a full sphere's surface.\n- 231 cm² — this is 1.5πr², an incorrect coefficient.\n\n**Key facts**\n- Hemisphere: curved SA = 2πr²; total SA (solid) = 3πr²; volume = (2/3)πr³.\n\n*Source: local APPSC Quantitative Reasoning PDF — Hemisphere.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Hemisphere",
+      "verified": true,
+      "covers": [
+        "Hemisphere — volume and surface area"
+      ],
+      "tags": [
+        "solids",
+        "hemisphere"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A frustum of a cone has radii 6 cm and 3 cm and height 7 cm. Find its volume. (Take π = 22/7.)",
+      "options": [
+        "231 cm³",
+        "924 cm³",
+        "308 cm³",
+        "462 cm³"
+      ],
+      "answerIndex": 3,
+      "explanation": "Volume = (1/3)πh(R² + Rr + r²) = (1/3) × (22/7) × 7 × (6² + 6×3 + 3²) = (1/3) × 22 × (36 + 18 + 9) = (1/3) × 22 × 63 = (1/3) × 1386 = **462 cm³**.\n\n**Why not the others**\n- 231 cm³ — this halves the correct value (uses 1/6 instead of 1/3).\n- 924 cm³ — this omits the 1/3 factor.\n- 308 cm³ — this uses only R² (treats it as a full cone of radius 6).\n\n**Key facts**\n- Frustum: volume = ⅓πh(R² + Rr + r²); slant l = √(h² + (R−r)²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Frustum of Cone.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Frustum of Cone",
+      "verified": true,
+      "covers": [
+        "Frustum of a cone — volume"
+      ],
+      "tags": [
+        "solids",
+        "frustum"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A right prism has a triangular base with sides 3 cm, 4 cm, 5 cm and a length (height) of 10 cm. Find its volume.",
+      "options": [
+        "120 cm³",
+        "60 cm³",
+        "30 cm³",
+        "90 cm³"
+      ],
+      "answerIndex": 1,
+      "explanation": "The base is a right triangle (3-4-5), area = ½ × 3 × 4 = 6 cm². Prism volume = base area × length = 6 × 10 = **60 cm³**.\n\n**Why not the others**\n- 120 cm³ — this is the lateral surface area (perimeter 12 × length 10), not the volume.\n- 30 cm³ — this uses base area × 5, a wrong length.\n- 90 cm³ — this uses a base area of 9, mis-computing the triangle.\n\n**Key facts**\n- Right prism: volume = (base area) × length; LSA = (base perimeter) × length; TSA = LSA + 2(base area).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Prism.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Right Prism",
+      "verified": true,
+      "covers": [
+        "Right prism — volume and lateral surface area"
+      ],
+      "tags": [
+        "solids",
+        "prism"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Find the volume of a pyramid whose base is a square of side 6 cm and whose height is 10 cm.",
+      "options": [
+        "360 cm³",
+        "120 cm³",
+        "240 cm³",
+        "60 cm³"
+      ],
+      "answerIndex": 1,
+      "explanation": "Pyramid volume = (1/3) × base area × height = (1/3) × 6² × 10 = (1/3) × 36 × 10 = (1/3) × 360 = **120 cm³**.\n\n**Why not the others**\n- 360 cm³ — this omits the 1/3 factor (base area × height only).\n- 240 cm³ — uses 2/3 instead of 1/3.\n- 60 cm³ — uses 1/6 instead of 1/3.\n\n**Key facts**\n- Pyramid: volume = ⅓ × (base area) × height — like a cone, one-third of the enclosing prism.\n\n*Source: local APPSC Quantitative Reasoning PDF — Pyramid.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Pyramid",
+      "verified": true,
+      "covers": [
+        "Pyramid — volume"
+      ],
+      "tags": [
+        "solids",
+        "pyramid"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A solid consists of a right circular cylinder (radius 7 cm, height 10 cm) surmounted by a cone of the same radius and height 6 cm. Find its total volume. (Take π = 22/7.)",
+      "options": [
+        "1848 cm³",
+        "1540 cm³",
+        "2156 cm³",
+        "1232 cm³"
+      ],
+      "answerIndex": 0,
+      "explanation": "Total volume = cylinder + cone = πr²h₁ + (1/3)πr²h₂ = 1540 + 308 = **1848 cm³** (cylinder = (22/7)×49×10 = 1540; cone = (1/3)×(22/7)×49×6 = 308).\n\n**Why not the others**\n- 1540 cm³ — this counts only the cylinder, ignoring the cone on top.\n- 2156 cm³ — this adds a full cone (924) instead of ⅓ of it.\n- 1232 cm³ — an under-count using a wrong cone contribution.\n\n**Key facts**\n- Combined solids: add the component volumes; for surface area add only the exposed faces (omit shared interfaces).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cylinder / Right Circular Cone.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Right Circular Cylinder / Right Circular Cone",
+      "verified": true,
+      "covers": [
+        "Combined solids (cylinder + cone/hemisphere)"
+      ],
+      "tags": [
+        "solids",
+        "combined"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A solid metallic sphere of radius 6 cm is melted and recast into small spheres each of radius 1 cm. How many small spheres are formed?",
+      "options": [
+        "36",
+        "72",
+        "216",
+        "108"
+      ],
+      "answerIndex": 2,
+      "explanation": "Volume is conserved on melting. Number = (volume of big sphere)/(volume of small sphere) = [(4/3)πR³]/[(4/3)πr³] = (R/r)³ = (6/1)³ = **216**.\n\n**Why not the others**\n- 36 — this is (R/r)², using area scaling instead of volume.\n- 72 — this is 2 × 36, a mixed factor.\n- 108 — this halves 216 incorrectly.\n\n**Key facts**\n- Recasting conserves volume; number of pieces = total volume ÷ one-piece volume = (R/r)³ for spheres.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sphere.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Sphere",
+      "verified": true,
+      "covers": [
+        "Melting and recasting — volume conservation"
+      ],
+      "tags": [
+        "solids",
+        "recasting"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "If each edge of a cube is increased by 50%, by what percentage does its total surface area increase?",
+      "options": [
+        "225%",
+        "125%",
+        "237.5%",
+        "112.5%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Surface area scales as the square of the linear factor. New edge = 1.5a, so SA scales by (1.5)² = 2.25, i.e. the new SA is 225% of the old. Increase = 225% − 100% = **125%**.\n\n**Why not the others**\n- 225% — this is the ratio of new to old SA, not the increase (which is 125%).\n- 237.5% — this is the volume increase, since volume scales by (1.5)³ = 3.375 → +237.5%.\n- 112.5% — this halves the correct increase.\n\n**Key facts**\n- Linear ×k ⇒ area ×k², volume ×k³. Here k = 1.5: area ×2.25 (+125%), volume ×3.375 (+237.5%).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Cube",
+      "verified": true,
+      "covers": [
+        "Surface-area vs volume scaling (k², k³)"
+      ],
+      "tags": [
+        "solids",
+        "scaling"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "The area of an equilateral triangle of side 12 cm is:",
+      "options": [
+        "24√3 cm²",
+        "36√3 cm²",
+        "72√3 cm²",
+        "144√3 cm²"
+      ],
+      "answerIndex": 1,
+      "explanation": "Area of an equilateral triangle = (√3/4)a² = (√3/4) × 12² = (√3/4) × 144 = **36√3 cm²** (≈ 62.35 cm²).\n\n**Why not the others**\n- 24√3 cm² — uses (√3/6)a², a wrong coefficient.\n- 72√3 cm² — doubles the correct area.\n- 144√3 cm² — this is √3 × a², forgetting the 1/4 factor.\n\n**Key facts**\n- Equilateral triangle (side a): area = (√3/4)a²; height = (√3/2)a.\n- (√3/4) × 144 = 36√3 cm².\n\n*Source: local APPSC Quantitative Reasoning PDF — Equilateral Triangle.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Equilateral Triangle",
+      "verified": true,
+      "covers": [
+        "Equilateral triangle — area (√3/4·a²) and height"
+      ],
+      "tags": [
+        "area-2d",
+        "equilateral"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "The diagonals of a rhombus are 24 cm and 10 cm. Its area and side are respectively:",
+      "options": [
+        "120 cm² and 13 cm",
+        "240 cm² and 13 cm",
+        "120 cm² and 26 cm",
+        "60 cm² and 13 cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 24 × 10 = **120 cm²**. The diagonals bisect at right angles, so side = √(12² + 5²) = √169 = **13 cm**.\n\n**Why not the others**\n- 240 cm² and 13 cm — forgets the ½ in the area formula.\n- 120 cm² and 26 cm — uses the full diagonals, not their halves, for the side.\n- 60 cm² and 13 cm — halves the area twice.\n\n**Key facts**\n- Rhombus area = ½·d₁·d₂; diagonals bisect each other at 90°.\n- Side = √[(d₁/2)² + (d₂/2)²] = √(12²+5²) = 13 cm.\n\n*Source: local APPSC Quantitative Reasoning PDF — Rhombus.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Rhombus",
+      "verified": true,
+      "covers": [
+        "Rhombus — area from diagonals and side"
+      ],
+      "tags": [
+        "area-2d",
+        "rhombus"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A circular ring (annulus) has an outer radius of 14 cm and an inner radius of 7 cm. Its area is: (Take π = 22/7.)",
+      "options": [
+        "462 cm²",
+        "154 cm²",
+        "616 cm²",
+        "231 cm²"
+      ],
+      "answerIndex": 0,
+      "explanation": "Area of a ring = π(R² − r²) = (22/7)(14² − 7²) = (22/7)(196 − 49) = (22/7)(147) = **462 cm²**.\n\n**Why not the others**\n- 154 cm² — this is the inner circle's area πr², not the ring.\n- 616 cm² — this is the outer circle's area πR².\n- 231 cm² — halves the correct ring area.\n\n**Key facts**\n- Ring/annulus area = π(R² − r²) = outer circle − inner circle.\n- (22/7)(196 − 49) = 462 cm².\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Circle.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Basic concept of Circle",
+      "verified": true,
+      "covers": [
+        "Circle — area, circumference, ring/annulus"
+      ],
+      "tags": [
+        "area-2d",
+        "annulus"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A cone, a hemisphere and a cylinder stand on equal bases of radius r and have the same height equal to r. The ratio of their volumes is:",
+      "options": [
+        "1 : 2 : 3",
+        "3 : 2 : 1",
+        "1 : 1 : 1",
+        "2 : 1 : 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "With height = r: cone = ⅓πr²·r = ⅓πr³; hemisphere = ⅔πr³; cylinder = πr²·r = πr³. Dividing by ⅓πr³ gives 1 : 2 : 3 ⇒ cone : hemisphere : cylinder = **1 : 2 : 3**.\n\n**Why not the others**\n- 3 : 2 : 1 — reverses the order; the cylinder is the largest, not the smallest.\n- 1 : 1 : 1 — the three solids do not have equal volumes.\n- 2 : 1 : 3 — mis-assigns the hemisphere's ⅔ share.\n\n**Key facts**\n- Same base r and height r: cone ⅓πr³, hemisphere ⅔πr³, cylinder πr³.\n- Ratio 1 : 2 : 3 (a classic mensuration result).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cone / Hemisphere / Cylinder.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Cone / Hemisphere / Cylinder",
+      "verified": true,
+      "covers": [
+        "Volume ratio cone : hemisphere : cylinder (same r, h = r)"
+      ],
+      "tags": [
+        "solids",
+        "volume-ratio"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A rectangular water tank is 6 m long, 5 m wide and 4.5 m deep. Its full capacity in litres is:",
+      "options": [
+        "13,500 litres",
+        "1,35,000 litres",
+        "1,350 litres",
+        "1,35,00,000 litres"
+      ],
+      "answerIndex": 1,
+      "explanation": "Volume = 6 × 5 × 4.5 = 135 m³. Since 1 m³ = 1000 litres, capacity = 135 × 1000 = **1,35,000 litres**.\n\n**Why not the others**\n- 13,500 litres — uses 1 m³ = 100 L, a wrong conversion.\n- 1,350 litres — uses 1 m³ = 10 L.\n- 1,35,00,000 litres — uses 1 m³ = 100,000 L, off by a factor of 100.\n\n**Key facts**\n- Volume of a cuboidal tank = l × b × h (in metres) gives cubic metres.\n- 1 m³ = 1000 litres, so 135 m³ = 1,35,000 L.\n\n*Source: local APPSC Quantitative Reasoning PDF — Cuboid (capacity).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Cuboid (capacity)",
+      "verified": true,
+      "covers": [
+        "Volume of a tank / water — capacity in litres"
+      ],
+      "tags": [
+        "solids",
+        "capacity"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "A rectangular lawn 60 m long and 40 m wide is surrounded on the outside by a path 2 m wide. The area of the path is:",
+      "options": [
+        "400 m²",
+        "408 m²",
+        "416 m²",
+        "424 m²"
+      ],
+      "answerIndex": 2,
+      "explanation": "Outer rectangle = (60 + 2×2) × (40 + 2×2) = 64 × 44 = 2816 m². Lawn = 60 × 40 = 2400 m². Path = 2816 − 2400 = **416 m²**.\n\n**Why not the others**\n- 400 m² — ignores the four corner squares of the path.\n- 408 m² — adds only part of the corner contribution.\n- 424 m² — over-counts the corners.\n\n**Key facts**\n- Outside path: add 2×width to each dimension, then subtract the inner rectangle.\n- (64×44) − (60×40) = 2816 − 2400 = 416 m².\n\n*Source: local APPSC Quantitative Reasoning PDF — Paths and Borders.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Paths and Borders",
+      "verified": true,
+      "covers": [
+        "Area of a path or border around a rectangle"
+      ],
+      "tags": [
+        "area-2d",
+        "path"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "How many square tiles of side 40 cm are required to pave the floor of a room 8 m long and 6 m wide?",
+      "options": [
+        "240",
+        "300",
+        "360",
+        "480"
+      ],
+      "answerIndex": 1,
+      "explanation": "Floor area = 8 × 6 = 48 m². Each tile = 0.4 × 0.4 = 0.16 m². Number = 48 ÷ 0.16 = **300**.\n\n**Why not the others**\n- 240 — uses a tile of 0.5 m side (0.25 m²).\n- 360 — uses a tile of area 48/360, i.e. wrong tile size.\n- 480 — uses a 0.3 m × 0.3 m tile pattern incorrectly.\n\n**Key facts**\n- Number of tiles = floor area ÷ area of one tile (consistent units).\n- 48 m² ÷ 0.16 m² = 300 tiles.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tiling / Bricks.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Tiling / Bricks",
+      "verified": true,
+      "covers": [
+        "Tiling / number of tiles or bricks"
+      ],
+      "tags": [
+        "area-2d",
+        "tiling"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Match List I (solid) with List II (volume formula) and select the correct answer:\nList I: A. Cone  B. Sphere  C. Cylinder  D. Hemisphere\nList II: 1. πr²h  2. ⅔πr³  3. ⅓πr²h  4. 4/3πr³",
+      "options": [
+        "A-3, B-4, C-1, D-2",
+        "A-1, B-4, C-3, D-2",
+        "A-3, B-2, C-1, D-4",
+        "A-4, B-3, C-1, D-2"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cone = ⅓πr²h → 3; Sphere = 4/3πr³ → 4; Cylinder = πr²h → 1; Hemisphere = ⅔πr³ → 2. So **A-3, B-4, C-1, D-2**.\n\n**Why not the others**\n- A-1, B-4, C-3, D-2 — swaps the cone and cylinder formulas.\n- A-3, B-2, C-1, D-4 — swaps the sphere and hemisphere formulas.\n- A-4, B-3, C-1, D-2 — assigns the sphere formula to the cone.\n\n**Key facts**\n| Solid | Volume |\n|---|---|\n| Cone | ⅓πr²h |\n| Sphere | 4/3πr³ |\n| Cylinder | πr²h |\n| Hemisphere | ⅔πr³ |\n\n*Source: local APPSC Quantitative Reasoning PDF — Solids (formulae).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Solids (formulae)",
+      "verified": true,
+      "covers": [
+        "Match solids with their volume/surface-area formulas"
+      ],
+      "tags": [
+        "solids",
+        "match-the-following"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "Two cones have their heights in the ratio 1 : 5 and the radii of their bases in the ratio 5 : 3. The ratio of their volumes is:",
+      "options": [
+        "5 : 9",
+        "9 : 5",
+        "5 : 27",
+        "25 : 9"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cone volume V = ⅓πr²h, so V ∝ r²h; the common ⅓π cancels in a ratio.\n\n**Worked steps**\n- V₁ : V₂ = r₁²h₁ : r₂²h₂ = (5² × 1) : (3² × 5) = 25 : 45.\n- Divide by 5: = **5 : 9**.\n\n**Why not the others**\n- 25 : 9 — uses only the radius ratio squared, ignoring the heights.\n- 9 : 5 — inverts the correct ratio.\n- 5 : 27 — cubes a ratio, which applies to similar solids, not this mix.\n\n**Key facts**\n- For volume comparisons keep only the varying factors: V ∝ r²h for a cone.\n- Reduce 25 : 45 to lowest terms (÷5) → 5 : 9.\n\n*Source: standard APPSC/SSC mensuration — ratio of cone volumes.*",
+      "source": "standard APPSC/SSC mensuration — volume ratios",
+      "verified": true,
+      "covers": [
+        "Volume ratio from linear-dimension ratios (V ∝ r²h)",
+        "Volume ratio from independent dimension ratios (V ∝ r²h)"
+      ],
+      "tags": [
+        "solids",
+        "ratio",
+        "cone"
+      ]
+    },
+    {
+      "id": "ment-mensuration-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "question": "If the radius of a right circular cylinder is doubled and its height is halved, its volume becomes:",
+      "options": [
+        "unchanged",
+        "doubled",
+        "four times",
+        "halved"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cylinder volume V = πr²h, so the factor change = (radius factor)² × (height factor).\n\n**Worked steps**\n- Radius ×2 ⇒ r² factor = 2² = 4; height ×½.\n- New/old = 4 × ½ = 2 ⇒ volume is **doubled**.\n\n**Why not the others**\n- unchanged — assumes the ×4 and ×½ cancel to 1, but 4 × ½ = 2.\n- four times — counts only the radius effect, ignoring the halved height.\n- halved — uses the height change only.\n\n**Key facts**\n- V ∝ r²h: radius enters as a square, height linearly.\n- Combine the factors multiplicatively: 4 × 0.5 = 2.\n\n*Source: standard APPSC/SSC mensuration — scaling of cylinder volume.*",
+      "source": "standard APPSC/SSC mensuration — scaling",
+      "verified": true,
+      "covers": [
+        "Volume ratio from linear-dimension ratios (V ∝ r²h)"
+      ],
+      "tags": [
+        "solids",
+        "scaling",
+        "cylinder"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$ref": "#/definitions/mindmap",
+  "definitions": {
+    "mindmap": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "mindmap"
+        },
+        "subjectCode": {
+          "type": "string",
+          "enum": [
+            "HIST",
+            "POL",
+            "ECON",
+            "GEO",
+            "SCI",
+            "MENT",
+            "CA",
+            "TEL",
+            "ENG"
+          ]
+        },
+        "topic": {
+          "type": "string"
+        },
+        "subtopicId": {
+          "type": "string"
+        },
+        "root": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "branches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "leaves": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 60
+                },
+                "maxItems": 4
+              }
+            },
+            "required": [
+              "label",
+              "leaves"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 7
+        }
+      },
+      "required": [
+        "kind",
+        "subjectCode",
+        "topic",
+        "subtopicId",
+        "root",
+        "branches"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

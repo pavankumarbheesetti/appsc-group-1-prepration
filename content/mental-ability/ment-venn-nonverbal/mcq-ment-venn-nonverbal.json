@@ -1,0 +1,743 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Venn Diagrams & Non-Verbal Reasoning (Shapes)",
+  "items": [
+    {
+      "id": "ment-venn-nonverbal-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "refresher": true,
+      "question": "Which group of capital letters remains UNCHANGED when reflected in a vertical mirror (a mirror placed to the side)?",
+      "options": [
+        "A, H, I, M, O, T, U, V, W, X, Y",
+        "B, C, D, E, K, S, Z",
+        "F, G, J, L, P, Q, R",
+        "N, R, S, Z, G, J"
+      ],
+      "answerIndex": 0,
+      "explanation": "A vertical mirror inverts a figure laterally (left becomes right). Only letters with a **vertical axis of symmetry** look the same after this flip.\n\n**Why not the others**\n- B, C, D, E, K, S, Z — these are symmetric top-to-bottom (water/horizontal axis), not left-to-right, so a vertical mirror changes them.\n- F, G, J, L, P, Q, R — wholly asymmetric; every one changes in a vertical mirror.\n- N, R, S, Z, G, J — N, S and Z have rotational (point) symmetry, not mirror symmetry, so they reverse in a side mirror.\n\n**Key facts**\n- Vertical-mirror–invariant capitals: A, H, I, M, O, T, U, V, W, X, Y.\n- Rule: a side/vertical mirror swaps left and right; a letter survives only if its left and right halves are identical.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image",
+      "verified": true,
+      "covers": [
+        "Mirror image — letters and words"
+      ],
+      "tags": [
+        "mirror-image",
+        "refresher",
+        "non-verbal"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "refresher": true,
+      "question": "Which Venn arrangement best represents the three groups — Furniture, Table, Chair?",
+      "options": [
+        "Three separate (disjoint) circles that do not touch",
+        "Two disjoint circles (Table, Chair) both drawn inside one larger circle (Furniture)",
+        "Three concentric circles, one wholly inside another inside another",
+        "Three mutually overlapping circles with a common central region"
+      ],
+      "answerIndex": 1,
+      "explanation": "Tables and chairs are both **kinds of furniture** but no table is a chair, so both are separate subsets lying wholly within Furniture.\n\n**Why not the others**\n- Three separate circles — wrong; a table IS furniture, so Table cannot be disjoint from Furniture.\n- Three concentric circles — implies every chair is a table (or vice-versa); false, as Table and Chair are distinct.\n- Three mutually overlapping circles — implies some tables are chairs; impossible.\n\n**Key facts**\n- Subset (class within a class) → smaller circle fully inside the larger one.\n- Two coordinate classes under one genus → two non-touching circles inside the genus circle.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Logical Venn Diagram.*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Logical Venn Diagram",
+      "verified": true,
+      "covers": [
+        "Venn — logical class relationship (items to diagram)"
+      ],
+      "tags": [
+        "venn",
+        "refresher",
+        "class-relationship"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "refresher": true,
+      "question": "A cube has how many faces, edges and vertices, respectively?",
+      "options": [
+        "6, 8, 12",
+        "8, 12, 6",
+        "6, 12, 8",
+        "12, 6, 8"
+      ],
+      "answerIndex": 2,
+      "explanation": "A cube is bounded by **6 square faces**, has **12 edges** where faces meet, and **8 vertices** (corners).\n\n**Why not the others**\n- 6, 8, 12 — swaps edges and vertices.\n- 8, 12, 6 — lists them in the wrong order (this is vertices/edges/faces jumbled).\n- 12, 6, 8 — puts edges first as if they were faces.\n\n**Key facts**\n- Euler check: V − E + F = 8 − 12 + 6 = 2. ✓\n- These 8 corners matter in painted-cube problems: corner cubes always show 3 painted faces.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube",
+      "verified": true,
+      "covers": [
+        "Painted cube — cut into smaller cubes (3/2/1/0 faces)"
+      ],
+      "tags": [
+        "cube",
+        "refresher",
+        "non-verbal"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "In a survey of 100 readers, three newspapers A, B and C are read. The region counts are:\n\n| Region | Readers |\n|---|---|\n| Only A | 20 |\n| Only B | 15 |\n| Only C | 12 |\n| A and B only | 8 |\n| B and C only | 9 |\n| A and C only | 6 |\n| All three | 5 |\n| None | 25 |\n\nHow many readers read EXACTLY ONE newspaper?",
+      "options": [
+        "52",
+        "47",
+        "42",
+        "75"
+      ],
+      "answerIndex": 1,
+      "explanation": "\"Exactly one\" = the sum of the three single-set-only regions.\n\nStep 1 — Only A + Only B + Only C = 20 + 15 + 12.\nStep 2 — = **47**.\n\n**Why not the others**\n- 52 — adds one of the 'only two' regions (e.g. +5) by mistake.\n- 42 — drops a region or subtracts 'all three'.\n- 75 — counts everyone who reads at least one paper (100 − 25 none), not 'exactly one'.\n\n**Key facts**\n| Quantity | Regions summed | Value |\n|---|---|---|\n| Exactly one | only A + only B + only C | 47 |\n| Exactly two | AB + BC + AC (only) | 23 |\n| At least one | all regions − none | 75 |\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems.*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems",
+      "verified": true,
+      "covers": [
+        "Venn numerical — region counts (only/exactly/at least)"
+      ],
+      "tags": [
+        "venn",
+        "numerical",
+        "region-count"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "In a class of 60 students, 35 play cricket, 30 play hockey and 10 play both. How many play NEITHER game?",
+      "options": [
+        "10",
+        "15",
+        "5",
+        "25"
+      ],
+      "answerIndex": 2,
+      "explanation": "Use the two-set union formula, then subtract from the total.\n\nStep 1 — n(C ∪ H) = n(C) + n(H) − n(C ∩ H) = 35 + 30 − 10 = 55.\nStep 2 — Neither = Total − n(C ∪ H) = 60 − 55 = **5**.\n\n**Why not the others**\n- 10 — this is the 'both' count, not 'neither'.\n- 15 — forgets to subtract the overlap (60 − 35 − 30 + 10 mis-signed).\n- 25 — adds the overlap instead of subtracting it (35 + 30 + 10 error).\n\n**Key facts**\n- n(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n- Neither = Universal − n(A ∪ B).\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems.*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems",
+      "verified": true,
+      "covers": [
+        "Venn numerical — two-set union formula n(A∪B)"
+      ],
+      "tags": [
+        "venn",
+        "numerical",
+        "two-set"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "Which Venn arrangement correctly represents the relationship among — Women, Mothers, Doctors?",
+      "options": [
+        "Three separate circles that do not touch anywhere",
+        "Mothers inside Women, and Doctors a separate circle touching neither",
+        "Three concentric circles: Doctors inside Mothers inside Women",
+        "A large circle (Women) containing Mothers wholly inside it, with Doctors a circle that partly overlaps both Women and Mothers"
+      ],
+      "answerIndex": 3,
+      "explanation": "Every mother is a woman (Mothers ⊂ Women); doctors may be men or women, and some doctors are mothers — so Doctors partly overlaps both.\n\n**Why not the others**\n- Three separate circles — wrong; mothers are women and some women/mothers are doctors, so overlaps exist.\n- Doctors touching neither — false; some doctors are women (and mothers).\n- Concentric (Doctors ⊂ Mothers ⊂ Women) — implies every doctor is a mother; untrue.\n\n**Key facts**\n- ⊂ (all-of) → circle fully inside; partial (some-are) → overlapping circles.\n- 'Mothers' is a subset of 'Women'; 'Doctors' is an intersecting set spanning inside and outside.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Logical Venn Diagram.*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Logical Venn Diagram",
+      "verified": true,
+      "covers": [
+        "Venn — logical class relationship (items to diagram)"
+      ],
+      "tags": [
+        "venn",
+        "class-relationship"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A water image is the reflection seen in still water — a flip about a HORIZONTAL axis (top and bottom interchange). Which set of capital letters appears UNCHANGED in its water image?",
+      "options": [
+        "A, H, I, M, O, T, U, V, W, X, Y",
+        "B, C, D, E, H, I, K, O, X",
+        "F, G, J, L, N, P, R",
+        "A, V, W, Y, M, S, Z"
+      ],
+      "answerIndex": 1,
+      "explanation": "A water image flips top-to-bottom, so only letters with a **horizontal axis of symmetry** are unchanged.\n\n**Why not the others**\n- A, H, I, M, U, V, W, Y — these are symmetric left-to-right (vertical axis) → that is the MIRROR-image set, a classic trap here.\n- F, G, J, L, N, P, R — asymmetric top-to-bottom; all change.\n- A, V, W, Y, M, S, Z — mix of vertical-symmetry and rotational letters; wrong for a horizontal flip.\n\n**Key facts**\n- Water-image (horizontal-symmetry) capitals: B, C, D, E, H, I, K, O, X.\n- Note H, I, O, X have BOTH axes, so they survive mirror AND water images.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Water Image.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Water Image",
+      "verified": true,
+      "covers": [
+        "Water image — letters and numbers"
+      ],
+      "tags": [
+        "water-image",
+        "non-verbal"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A wall clock shows the time 4:30. What time will its MIRROR image (vertical mirror) show?",
+      "options": [
+        "6:30",
+        "7:00",
+        "7:30",
+        "8:30"
+      ],
+      "answerIndex": 2,
+      "explanation": "For a mirror image of a clock, subtract the given time from 11:60 (i.e. 12:00).\n\nStep 1 — Mirror time = 11:60 − actual time.\nStep 2 — 11:60 − 4:30 = **7:30**.\n\n**Why not the others**\n- 6:30 — comes from 11:00 − 4:30 (wrong base; must use 11:60).\n- 7:00 — arises from a minute error (subtracting 4:60).\n- 8:30 — this is 12:60 − 4:30, using the wrong subtraction base.\n\n**Key facts**\n- Mirror-clock rule: reflected time = 11:60 − H:MM (for times after 12:00 use 23:60).\n- Quick check: mirror of 3:00 is 9:00; hands are laterally reversed.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image",
+      "verified": true,
+      "covers": [
+        "Mirror image — numbers and clock times"
+      ],
+      "tags": [
+        "mirror-image",
+        "clock"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "When the word CODE is held up to a vertical mirror, in what ORDER do its letters appear (reading the reflection left to right)?",
+      "options": [
+        "EDOC",
+        "CODE",
+        "DOCE",
+        "EODC"
+      ],
+      "answerIndex": 0,
+      "explanation": "A vertical mirror reverses left–right order, so the last letter is read first.\n\nStep 1 — Reverse the sequence C-O-D-E → E-D-O-C.\nStep 2 — Reading the reflection left to right gives **EDOC** (each individual letter is also laterally flipped, but the ORDER is E-D-O-C).\n\n**Why not the others**\n- CODE — unchanged order; a mirror must reverse the sequence.\n- DOCE — only partial/incorrect rearrangement.\n- EODC — O and D swapped incorrectly; strict reversal is E-D-O-C.\n\n**Key facts**\n- Mirror of a word = write the letters in reverse order (right-to-left).\n- Then flip each letter's shape laterally for the full image.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image",
+      "verified": true,
+      "covers": [
+        "Mirror image — letters and words"
+      ],
+      "tags": [
+        "mirror-image",
+        "word"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A cube is painted red on all six faces and then cut into 64 equal smaller cubes. How many of the small cubes have EXACTLY TWO faces painted?",
+      "options": [
+        "8",
+        "24",
+        "12",
+        "32"
+      ],
+      "answerIndex": 1,
+      "explanation": "64 = 4³, so the cube is cut n = 4 per edge. Two-face cubes lie on the edges (but not corners).\n\nStep 1 — Two-face count = 12 × (n − 2) = 12 × (4 − 2).\nStep 2 — = 12 × 2 = **24**.\n\n**Why not the others**\n- 8 — this is the corner (3-face) count, which is always 8.\n- 12 — the number of edges, not the cubes on them.\n- 32 — over-counts; there are only 24 edge (2-face) cubes for n = 4.\n\n**Key facts — painted cube, n per edge**\n| Painted faces | Location | Formula | n=4 |\n|---|---|---|---|\n| 3 | corners | 8 | 8 |\n| 2 | edges | 12(n−2) | 24 |\n| 1 | faces | 6(n−2)² | 24 |\n| 0 | interior | (n−2)³ | 8 |\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube",
+      "verified": true,
+      "covers": [
+        "Painted cube — cut into smaller cubes (3/2/1/0 faces)"
+      ],
+      "tags": [
+        "cube",
+        "painted-cube"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A solid stack is built in three layers of unit cubes: the bottom layer is a 4×4 block, the middle layer a 3×3 block centred on it, and the top layer a 2×2 block. How many unit cubes are used in all?",
+      "options": [
+        "25",
+        "27",
+        "29",
+        "30"
+      ],
+      "answerIndex": 2,
+      "explanation": "Count each layer and add.\n\nStep 1 — Bottom = 4 × 4 = 16; Middle = 3 × 3 = 9; Top = 2 × 2 = 4.\nStep 2 — Total = 16 + 9 + 4 = **29**.\n\n**Why not the others**\n- 25 — forgets the top layer (16 + 9).\n- 27 — the count for a full 3×3×3 cube, not this stepped stack.\n- 30 — arithmetic slip (adds an extra cube).\n\n**Key facts**\n- For layered/stepped solids, count cubes layer by layer, then sum.\n- Do not assume a full cuboid — a stepped stack has fewer cubes than its bounding box (here bounding box 4×4×3 = 48).\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube",
+      "verified": true,
+      "covers": [
+        "Counting cubes in a solid or stack"
+      ],
+      "tags": [
+        "cube",
+        "counting"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "An open dice (net) is laid out as a cross:\n\n```\n        [ S ]\n[ P ] [ Q ] [ R ] [ U ]\n        [ T ]\n```\n\nWhen folded into a cube (with the standard opposite pairs P↔R, Q↔S, U↔T), which face is OPPOSITE to Q?",
+      "options": [
+        "S",
+        "R",
+        "T",
+        "P"
+      ],
+      "answerIndex": 0,
+      "explanation": "In a net, faces that are ONE step apart in the same row/column become adjacent on folding; the opposite face is the one that cannot touch it.\n\nStep 1 — Q is the centre of the horizontal strip; P and R fold up to become its left/right neighbours (adjacent), and U becomes the far face opposite P.\nStep 2 — S (directly above Q in the net) folds to sit opposite Q → answer **S**.\n\n**Why not the others**\n- R — folds to become adjacent to Q (and opposite P).\n- T — folds opposite U, not Q.\n- P — becomes adjacent to Q and opposite R.\n\n**Key facts**\n- Opposite pairs here: P↔R, Q↔S, U↔T.\n- Net rule: faces separated by exactly one face in a straight line are OPPOSITE when folded.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Open Dice.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Open Dice",
+      "verified": true,
+      "covers": [
+        "Open dice — net and opposite faces"
+      ],
+      "tags": [
+        "dice",
+        "open-dice",
+        "net"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "Two views of the SAME dice are given, both with 5 on top:\n\n| View | Front | Right |\n|---|---|---|\n| A | 3 | 2 |\n| B | 2 | 6 |\n\nWhich number lies OPPOSITE to 2?",
+      "options": [
+        "6",
+        "3",
+        "4",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "Top (5) is fixed in both views, so the die was rotated about the vertical axis; the four side faces cycle.\n\nStep 1 — In View A (seen from top, clockwise): Front 3 → Right 2. In View B the old Right (2) has become the Front, and its new Right is 6, so 6 was the Back.\nStep 2 — Clockwise cycle of the four sides: 3 → 2 → 6 → 4 (the leftover of {2,3,4,6}). Opposite = two steps apart: 2 ↔ 4.\nStep 3 — Face opposite 2 is **4**.\n\n**Why not the others**\n- 6 — this is opposite 3, not 2.\n- 3 — 3 is adjacent to 2, not opposite.\n- 1 — with 5 on top, 1 is on the bottom, unrelated to 2.\n\n**Key facts**\n- Fix the common face; the other faces cycle around it.\n- In a 4-face cycle, opposites are the pair two positions apart.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problems on Closed Dice.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problems on Closed Dice",
+      "verified": true,
+      "covers": [
+        "Closed dice — deduce hidden or opposite face"
+      ],
+      "tags": [
+        "dice",
+        "closed-dice"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A large triangle has its apex joined by straight lines to FOUR points on the base — the two base corners plus two interior division points. How many triangles are there in the whole figure?\n\n```\n            A\n           /|\\ \\\n          / | \\  \\\n         /  |  \\   \\\n        B---C---D---E   (base points B, C, D, E)\n```",
+      "options": [
+        "6",
+        "3",
+        "4",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "Every triangle here is formed by the apex A plus any two of the base points; the side of each triangle is the base segment between the chosen points.\n\nStep 1 — The apex is joined to 4 base points (B, C, D, E).\nStep 2 — Choosing any 2 of these 4 lines defines one triangle: ⁴C₂ = 4!/(2!·2!) = 6.\nStep 3 — So there are **6** triangles.\n\n**Why not the others**\n- 3 — counts only the three smallest triangles (ABC, ACD, ADE).\n- 4 — miscounts the combined triangles.\n- 8 — over-counts; only 6 valid apex-based triangles exist.\n\n**Key facts**\n- Triangles from one apex to k base points = ᵏC₂ = k(k−1)/2.\n- Here k = 4 → 4·3/2 = 6.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures",
+      "verified": true,
+      "covers": [
+        "Counting figures — triangles"
+      ],
+      "tags": [
+        "counting-figures",
+        "triangles"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "How many SQUARES (of all sizes) are there in a 3×3 grid of unit squares?\n\n```\n+--+--+--+\n|  |  |  |\n+--+--+--+\n|  |  |  |\n+--+--+--+\n|  |  |  |\n+--+--+--+\n```",
+      "options": [
+        "9",
+        "13",
+        "14",
+        "36"
+      ],
+      "answerIndex": 2,
+      "explanation": "Count squares by size and add.\n\nStep 1 — 1×1 squares: 3² = 9.\nStep 2 — 2×2 squares: 2² = 4.\nStep 3 — 3×3 square: 1² = 1.\nStep 4 — Total = 9 + 4 + 1 = **14**.\n\n**Why not the others**\n- 9 — counts only the unit (1×1) squares.\n- 13 — drops the single 3×3 square.\n- 36 — this is the number of RECTANGLES (⁴C₂ × ⁴C₂ = 6 × 6), not squares.\n\n**Key facts**\n- Squares in an n×n grid = 1² + 2² + … + n² = n(n+1)(2n+1)/6.\n- Rectangles in an n×n grid = [n(n+1)/2]².\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (Quadrilateral).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (Quadrilateral)",
+      "verified": true,
+      "covers": [
+        "Counting figures — squares and rectangles"
+      ],
+      "tags": [
+        "counting-figures",
+        "squares"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A square sheet of paper is folded in half (top over bottom), then folded again in half (left over right). A single hole is punched through all the layers, away from any fold line. When the paper is fully unfolded, how many holes appear?",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each fold doubles the number of paper layers; a punch through all layers makes one hole per layer.\n\nStep 1 — Number of layers after f folds = 2^f.\nStep 2 — Here f = 2 folds → 2² = 4 layers.\nStep 3 — One punch through 4 layers → **4** holes on unfolding (arranged symmetrically about both fold lines).\n\n**Why not the others**\n- 2 — would be the result of only one fold (2 layers).\n- 8 — would need three folds (2³ layers).\n- 1 — ignores that folding stacks multiple layers.\n\n**Key facts**\n- Holes = 2^(number of folds), provided the punch is not on a fold line.\n- Holes appear as mirror images across each fold crease.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding",
+      "verified": true,
+      "covers": [
+        "Paper folding and cutting (holes on unfolding)"
+      ],
+      "tags": [
+        "paper-folding",
+        "non-verbal"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "In a dot-situation problem, a figure is drawn with three overlapping shapes — a Triangle, a Circle and a Square — and a dot must be placed in a region that lies inside ALL THREE shapes at once. Which described placement is correct?",
+      "options": [
+        "The dot is inside the Triangle and Circle but outside the Square",
+        "The dot is inside the Square only",
+        "The dot is inside the Circle and Square but outside the Triangle",
+        "The dot is inside the region common to the Triangle, the Circle and the Square"
+      ],
+      "answerIndex": 3,
+      "explanation": "A dot-situation answer must reproduce exactly the same region-membership as required — here, common to all three shapes.\n\n**Why not the others**\n- Triangle and Circle only — the dot is outside the Square, so it is not in all three.\n- Square only — inside just one shape, not the triple-overlap.\n- Circle and Square only — outside the Triangle, so fails the 'all three' condition.\n\n**Key facts**\n- Identify which shapes the dot must lie in; the correct option shares the SAME set of memberships.\n- The triple-overlap region is the small central area common to all three figures.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Dot section.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Dot section",
+      "verified": true,
+      "covers": [
+        "Dot situation (placing a dot in a region)"
+      ],
+      "tags": [
+        "dot-situation",
+        "non-verbal"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "Complete the number matrix by finding the value that replaces '?' (the same rule links the three numbers in every row):\n\n```\n| 2 | 3 | 5  |\n| 4 | 5 | 9  |\n| 6 | 7 | ?  |\n```",
+      "options": [
+        "11",
+        "13",
+        "12",
+        "14"
+      ],
+      "answerIndex": 1,
+      "explanation": "Test the relation across a completed row, then apply it to the last row.\n\nStep 1 — Row 1: 2 + 3 = 5 ✓. Row 2: 4 + 5 = 9 ✓. Rule: column 3 = column 1 + column 2.\nStep 2 — Row 3: 6 + 7 = **13**.\n\n**Why not the others**\n- 11 — would need 6 + 5 or a different, inconsistent rule.\n- 12 — no consistent operation gives 12 across all rows.\n- 14 — comes from 7 + 7 or 2×7, which fails rows 1 and 2.\n\n**Key facts**\n- For completion/pattern matrices, verify one rule on ALL given rows before using it.\n- Common rules: row sum, difference, product, or a positional operation.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Completion of Incomplete Pattern.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Completion of Incomplete Pattern",
+      "verified": true,
+      "covers": [
+        "Completion of incomplete pattern (figure matrix)"
+      ],
+      "tags": [
+        "pattern-completion",
+        "matrix"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A hidden-figure (embedded-figure) question asks which simple shape is concealed within a more complex design. Which regular figure is embedded at the centre of a regular five-pointed star (a pentagram)?",
+      "options": [
+        "A regular pentagon",
+        "A regular hexagon",
+        "A square",
+        "A circle"
+      ],
+      "answerIndex": 0,
+      "explanation": "When the five straight lines of a pentagram cross, the region enclosed at the centre is a small **regular pentagon**.\n\n**Why not the others**\n- Regular hexagon — a hexagon (6 sides) arises from other constructions (e.g. overlapping triangles/Star of David), not a 5-pointed star.\n- Square — a 4-sided figure is unrelated to the 5-fold symmetry of a pentagram.\n- Circle — the pentagram is made of straight lines only; no circular region is enclosed.\n\n**Key facts**\n- A pentagram's inner crossing lines bound a regular pentagon.\n- Embedded-figure method: trace the outline of the target shape within the complex design without adding new lines.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Hidden Image.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Hidden Image",
+      "verified": true,
+      "covers": [
+        "Hidden / embedded figure identification"
+      ],
+      "tags": [
+        "hidden-figure",
+        "embedded"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "In a survey of 120 people: 65 read English, 45 read Hindi and 42 read Telugu; 20 read English and Hindi, 25 read Hindi and Telugu, 15 read English and Telugu, and 8 read all three papers. How many read AT LEAST ONE newspaper?",
+      "options": [
+        "92",
+        "108",
+        "100",
+        "112"
+      ],
+      "answerIndex": 2,
+      "explanation": "Apply three-set inclusion–exclusion: |E∪H∪T| = (65+45+42) − (20+25+15) + 8 = 152 − 60 + 8 = **100**.\n\n**Why not the others**\n- 92 — stops at 152 − 60 and forgets to add back the all-three count (+8).\n- 108 — adds the pairwise overlaps instead of subtracting them.\n- 112 — subtracts only two of the three pairwise overlaps.\n\n**Key facts**\n- |A∪B∪C| = Σsingles − Σpairs + triple.\n- The pairwise figures here already include the all-three readers, so add the triple back once.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems (three sets).*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems",
+      "verified": true,
+      "covers": [
+        "Venn numerical — three-set inclusion–exclusion formula"
+      ],
+      "tags": [
+        "venn",
+        "numerical",
+        "three-set"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "Among 150 students the subject-wise region counts are: only Maths 30, only Physics 25, only Chemistry 20, Maths & Physics only 15, Physics & Chemistry only 10, Maths & Chemistry only 12, all three 8. How many study EXACTLY TWO subjects?",
+      "options": [
+        "37",
+        "45",
+        "30",
+        "90"
+      ],
+      "answerIndex": 0,
+      "explanation": "'Exactly two' is the sum of the three 'only two' regions: 15 + 10 + 12 = **37** (the all-three region is excluded).\n\n**Why not the others**\n- 45 — wrongly adds the all-three count (8) to the exactly-two total.\n- 30 — drops one of the three pairwise-only regions.\n- 90 — counts everyone who studies at least one subject, not exactly two.\n\n**Key facts**\n| Quantity | Regions summed |\n|---|---|\n| Exactly one | only-M + only-P + only-C |\n| Exactly two | MP-only + PC-only + MC-only |\n| All three | central region |\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems (region counts).*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems",
+      "verified": true,
+      "covers": [
+        "Venn numerical — region counts (only/exactly/at least)"
+      ],
+      "tags": [
+        "venn",
+        "numerical",
+        "region-count"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A wall clock shows 8:20. What time will its MIRROR image (vertical mirror) show?",
+      "options": [
+        "4:40",
+        "3:20",
+        "2:40",
+        "3:40"
+      ],
+      "answerIndex": 3,
+      "explanation": "For a mirror image of a clock, subtract the given time from 11:60. 11:60 − 8:20 = **3:40**.\n\n**Why not the others**\n- 4:40 — from using 12:00 − 8:20 without borrowing correctly.\n- 3:20 — leaves the minutes unchanged; the minutes must reflect too (60 − 20 = 40).\n- 2:40 — subtracts the hour from 11 instead of from 11:60 with the minute borrow.\n\n**Key facts**\n- Mirror-clock rule: reflected time = 11:60 − H:MM (for times after 12:00 use 23:60).\n- Quick check: the mirror of 3:00 is 9:00.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image (clock).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image",
+      "verified": true,
+      "covers": [
+        "Mirror image — numbers and clock times"
+      ],
+      "tags": [
+        "mirror-image",
+        "clock"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "How many RECTANGLES (of all sizes) are there in a grid of 2 rows and 3 columns of unit squares?",
+      "options": [
+        "24",
+        "18",
+        "9",
+        "12"
+      ],
+      "answerIndex": 1,
+      "explanation": "A rectangle is fixed by choosing 2 of the horizontal grid lines and 2 of the vertical grid lines. With 2 rows there are 3 horizontal lines and with 3 columns there are 4 vertical lines: C(3,2) × C(4,2) = 3 × 6 = **18**.\n\n**Why not the others**\n- 24 — miscounts the vertical-line choices as C(4,3) or similar.\n- 9 — counts only the unit (1×1) cells (2 × 3 = 6) or a partial set.\n- 12 — uses 2 × 3 × 2, an ad-hoc product.\n\n**Key facts**\n- Rectangles in an m×n cell grid = C(m+1,2) × C(n+1,2).\n- Here (m,n) = (2,3): C(3,2) × C(4,2) = 3 × 6 = 18.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (rectangles).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures",
+      "verified": true,
+      "covers": [
+        "Counting figures — squares and rectangles"
+      ],
+      "tags": [
+        "counting-figures",
+        "rectangles"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A cube is painted red on all six faces and then cut into 125 equal smaller cubes. How many of the small cubes have EXACTLY ONE face painted?",
+      "options": [
+        "27",
+        "36",
+        "54",
+        "8"
+      ],
+      "answerIndex": 2,
+      "explanation": "125 = 5³, so the cube is cut n = 5 per edge. One-face cubes lie at the centres of the six faces: 6 × (n − 2)² = 6 × 3² = 6 × 9 = **54**.\n\n**Why not the others**\n- 27 — that is the interior (0-face) count (n−2)³ = 3³.\n- 36 — uses 6 × (n−2) instead of 6 × (n−2)².\n- 8 — the corner (3-face) count, which is always 8.\n\n**Key facts — painted cube, n per edge**\n| Faces painted | Formula | n=5 |\n|---|---|---|\n| 3 (corners) | 8 | 8 |\n| 2 (edges) | 12(n−2) | 36 |\n| 1 (faces) | 6(n−2)² | 54 |\n| 0 (interior) | (n−2)³ | 27 |\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube",
+      "verified": true,
+      "covers": [
+        "Painted cube — cut into smaller cubes (3/2/1/0 faces)"
+      ],
+      "tags": [
+        "cube",
+        "painted-cube"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "The apex of a triangle is joined by straight lines to FIVE points on its base (the two base corners plus three interior points). How many triangles are there in the whole figure?",
+      "options": [
+        "10",
+        "6",
+        "15",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "Every triangle is formed by the apex together with any two of the base points, its third side being the base segment between them. Choosing 2 of the 5 base points: C(5,2) = 5×4/2 = **10**.\n\n**Why not the others**\n- 6 — that is C(4,2), the count for four base points, not five.\n- 15 — C(6,2), as if there were six base points.\n- 8 — an undercount that misses several apex-based triangles.\n\n**Key facts**\n- Triangles from one apex to k base points = C(k,2) = k(k−1)/2.\n- Here k = 5 → 5·4/2 = 10.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (triangles).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures",
+      "verified": true,
+      "covers": [
+        "Counting figures — triangles"
+      ],
+      "tags": [
+        "counting-figures",
+        "triangles"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A square sheet of paper is folded in half three successive times, and then a single hole is punched through all the layers away from any fold line. How many holes appear when the paper is fully unfolded?",
+      "options": [
+        "6",
+        "4",
+        "16",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "Each fold doubles the number of layers, so after 3 folds there are 2³ = 8 layers. One punch through 8 layers gives **8** holes on unfolding.\n\n**Why not the others**\n- 6 — treats folds as additive (2 × 3) rather than doubling.\n- 4 — the result of only two folds (2² layers).\n- 16 — would need four folds (2⁴ layers).\n\n**Key facts**\n- Holes = 2^(number of folds), provided the punch is not on a fold line.\n- The holes appear symmetrically about each fold crease.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding",
+      "verified": true,
+      "covers": [
+        "Paper folding and cutting (holes on unfolding)"
+      ],
+      "tags": [
+        "paper-folding",
+        "non-verbal"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A solid is built as a three-layer stepped stack of unit cubes: the bottom layer is a 5×5 block, the middle layer a 3×3 block centred on it, and the top layer a single 1×1 cube. How many unit cubes are used in all?",
+      "options": [
+        "34",
+        "35",
+        "33",
+        "30"
+      ],
+      "answerIndex": 1,
+      "explanation": "Count each layer and add: 5×5 = 25, 3×3 = 9, 1×1 = 1. Total = 25 + 9 + 1 = **35**.\n\n**Why not the others**\n- 34 — an arithmetic slip (misses one cube in a layer).\n- 33 — drops two cubes, e.g. counting the middle layer as 3×3 − 2.\n- 30 — forgets the top single cube and mis-adds the lower layers.\n\n**Key facts**\n- For stepped/layered solids, count cubes layer by layer, then sum.\n- A stepped stack has far fewer cubes than its 5×5×3 = 75 bounding box.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube (stacking).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube",
+      "verified": true,
+      "covers": [
+        "Counting cubes in a solid or stack"
+      ],
+      "tags": [
+        "cube",
+        "counting"
+      ]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "In a figure series a single dot sits at one corner of a square and moves one corner clockwise at each step. If in Figure 1 the dot is at the top-left corner, at which corner is it in Figure 4?",
+      "options": ["Top-right", "Bottom-right", "Bottom-left", "Top-left"],
+      "answerIndex": 2,
+      "explanation": "Clockwise from top-left: Fig 1 = top-left, Fig 2 = top-right, Fig 3 = bottom-right, Fig 4 = bottom-left.\n\n**Why not the others**\n- Top-right — that is Figure 2.\n- Bottom-right — that is Figure 3.\n- Top-left — that is Figure 1 (and would recur at Figure 5).\n\n**Key facts**\n- In a figure series, isolate the single constant transformation and apply it step by step.\n- A dot cycling the four corners has period 4.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Series.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Series",
+      "verified": true,
+      "covers": ["Non-verbal — figure series (next figure)"],
+      "tags": ["non-verbal", "figure-series"]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "An arrow rotates 90 degrees clockwise at each step of a figure series. In Figure 1 it points North. In which direction does it point in Figure 3?",
+      "options": ["North", "East", "South", "West"],
+      "answerIndex": 2,
+      "explanation": "90 degrees clockwise each step: Fig 1 = North, Fig 2 = East, Fig 3 = South.\n\n**Why not the others**\n- North — that is the starting Figure 1.\n- East — that is Figure 2.\n- West — that would be an anticlockwise turn, not clockwise.\n\n**Key facts**\n- Clockwise rotation order: N to E to S to W.\n- Two clockwise quarter-turns from North land on South.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Series (rotation).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Series",
+      "verified": true,
+      "covers": ["Non-verbal — figure series (next figure)"],
+      "tags": ["non-verbal", "figure-series", "rotation"]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-30",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "Figure analogy: a regular four-sided square corresponds to a three-sided triangle (one side is removed). By the same rule, a regular six-sided hexagon corresponds to which figure?",
+      "options": ["A seven-sided heptagon", "A five-sided pentagon", "A four-sided square", "Another hexagon"],
+      "answerIndex": 1,
+      "explanation": "The transformation removes exactly one side: square (4) to triangle (3). Applying it to a hexagon (6) gives a pentagon (5).\n\n**Why not the others**\n- Heptagon (7) — that ADDS a side, the opposite of the rule.\n- Square (4) — that removes two sides, not one.\n- Hexagon — unchanged, so no rule was applied.\n\n**Key facts**\n- In a figure analogy, find the exact relation between the first pair and apply the identical relation to the third figure.\n- 'Lose one side' maps an n-gon to an (n-1)-gon.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Analogy.*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Analogy",
+      "verified": true,
+      "covers": ["Non-verbal — figure analogy (A:B::C:D)"],
+      "tags": ["non-verbal", "figure-analogy"]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-31",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "A : B :: C : ? — In figure A a shape contains 2 dots; in figure B the same shape contains 4 dots. If figure C is a shape containing 3 dots, how many dots should figure D contain?",
+      "options": ["5", "6", "9", "8"],
+      "answerIndex": 1,
+      "explanation": "From A to B the number of dots DOUBLES (2 to 4). Applying the same rule to C (3 dots) gives 3 x 2 = 6 dots.\n\n**Why not the others**\n- 5 — that adds 2 dots, but the rule is multiplication, not addition.\n- 9 — that triples the count, an over-application.\n- 8 — that adds 5, unrelated to the doubling rule.\n\n**Key facts**\n- A figure analogy can act on a countable element (dots, lines) as well as on shape.\n- Detect whether the change is additive or multiplicative before applying it.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Analogy (element count).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Figure Analogy",
+      "verified": true,
+      "covers": ["Non-verbal — figure analogy (A:B::C:D)"],
+      "tags": ["non-verbal", "figure-analogy", "count"]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-32",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "Four figures are described. Which one is the ODD one out? (a) a triangle with a dot inside it; (b) a square with a dot inside it; (c) a circle with a dot inside it; (d) a pentagon with a dot outside it.",
+      "options": ["The triangle with a dot inside", "The square with a dot inside", "The circle with a dot inside", "The pentagon with a dot outside"],
+      "answerIndex": 3,
+      "explanation": "Three figures share the property 'dot lies INSIDE the shape'; the pentagon has its dot OUTSIDE, so it is the exception.\n\n**Why not the others**\n- Triangle / square / circle — each has the dot inside, matching the common rule.\n\n**Key facts**\n- Figure classification: find the property shared by most figures, then pick the one that breaks it.\n- The shape itself is a distractor here; the discriminating feature is the dot's position.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Classification (odd one out).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Classification",
+      "verified": true,
+      "covers": ["Non-verbal — figure classification (odd one out)"],
+      "tags": ["non-verbal", "classification"]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-33",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "In a figure-classification item, three figures are built from an EVEN number of straight line segments (4, 6 and 2) while one is built from an ODD number. Which figure is the odd one out?",
+      "options": ["The figure with 3 line segments", "The figure with 4 line segments", "The figure with 6 line segments", "The figure with 2 line segments"],
+      "answerIndex": 0,
+      "explanation": "The shared property is 'even number of line segments' (4, 6, 2). The figure with 3 segments is the only odd count, so it does not belong.\n\n**Why not the others**\n- 4, 6 and 2 segments — all even, matching the common property.\n\n**Key facts**\n- Classification can hinge on a numeric property (parity, count of elements), not just shape.\n- Test count/parity when the shapes look superficially different.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Classification (segment count).*",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Classification",
+      "verified": true,
+      "covers": ["Non-verbal — figure classification (odd one out)"],
+      "tags": ["non-verbal", "classification", "parity"]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-34",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "In a survey, 70% of people like tea and 80% like coffee. What is the MINIMUM possible percentage of people who like BOTH?",
+      "options": ["50%", "60%", "70%", "30%"],
+      "answerIndex": 0,
+      "explanation": "When two group sizes add to more than 100%, the smallest possible overlap = (70 + 80) - 100 = 50%.\n\n**Why not the others**\n- 60% — no basis; the forced overlap is exactly 50%.\n- 70% — that is the MAXIMUM overlap (the smaller of the two groups), not the minimum.\n- 30% — a mis-application, e.g. 100 - 70.\n\n**Key facts**\n- Minimum n(A and B) = n(A) + n(B) - 100% (when the sum exceeds 100%).\n- Maximum n(A and B) = the smaller of the two group percentages.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Venn / set overlap (min-max).*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems",
+      "verified": true,
+      "covers": ["Venn numerical — minimum / maximum overlap"],
+      "tags": ["venn", "overlap", "minimum"]
+    },
+    {
+      "id": "ment-venn-nonverbal-mcq-35",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "question": "45% of students play cricket and 65% play football. What is the MAXIMUM possible percentage who play BOTH games?",
+      "options": ["45%", "65%", "10%", "55%"],
+      "answerIndex": 0,
+      "explanation": "The overlap can never exceed the smaller group, so the maximum who play both = min(45, 65) = 45%.\n\n**Why not the others**\n- 65% — the larger group; the overlap cannot exceed the smaller one.\n- 10% — that is the MINIMUM overlap, 45 + 65 - 100.\n- 55% — no valid basis.\n\n**Key facts**\n- Maximum overlap = smaller of the two set sizes = 45%.\n- Minimum overlap = 45 + 65 - 100 = 10%.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Venn / set overlap (min-max).*",
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Venn Diagram Problems",
+      "verified": true,
+      "covers": ["Venn numerical — minimum / maximum overlap"],
+      "tags": ["venn", "overlap", "maximum"]
+    }
+  ]
+}

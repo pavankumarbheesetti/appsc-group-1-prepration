@@ -1,0 +1,119 @@
+{
+  "$ref": "#/definitions/notes",
+  "definitions": {
+    "notes": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "notes"
+        },
+        "subjectCode": {
+          "type": "string",
+          "enum": [
+            "HIST",
+            "POL",
+            "ECON",
+            "GEO",
+            "SCI",
+            "MENT",
+            "CA",
+            "TEL",
+            "ENG"
+          ]
+        },
+        "topic": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "subjectCode": {
+                "$ref": "#/definitions/notes/properties/subjectCode"
+              },
+              "syllabusRef": {
+                "type": "string"
+              },
+              "subtopicId": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "figure": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "alt": {
+                    "type": "string"
+                  },
+                  "caption": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src",
+                  "alt"
+                ],
+                "additionalProperties": false
+              },
+              "figures": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/notes/properties/items/items/properties/figure"
+                }
+              },
+              "keyPoints": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mnemonic": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "verified": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "subjectCode",
+              "title",
+              "body"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "subjectCode",
+        "topic",
+        "items"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,147 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Number Series & Coding-Decoding",
+  "items": [
+    {
+      "id": "ment-number-series-coding-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Number-series detection ladder — what order do you test?",
+      "back": "Difference → ratio → squares/cubes → prime gaps → alternating (two rules) → Fibonacci.",
+      "examPoint": "Number series — constant/varying difference (addition-subtraction)",
+      "source": "APPSC GK — Number Series",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Consecutive odd differences (3,5,7,9) signal which pattern?",
+      "back": "A square pattern, n² (or n²±k). E.g. 2,5,10,17,26 = n²+1.",
+      "examPoint": "Number series — square/cube based pattern",
+      "source": "APPSC GK — Number Series",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "How to crack an alternating (mixed) series?",
+      "back": "Two operations applied turn by turn; test alternate gaps separately (e.g. /2 then ×3).",
+      "examPoint": "Number series — mixed/alternating operations",
+      "source": "APPSC GK — Number Series",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Wrong-term vs missing-term — the method for each?",
+      "back": "Wrong: derive rule from the majority, flag the deviation. Missing: fix rule from neighbours, verify forward past the gap.",
+      "examPoint": "Wrong-term (odd-term-out) in a number series",
+      "source": "APPSC GK — Number Series",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "EJOTY anchors for letter positions?",
+      "back": "E=5, J=10, O=15, T=20, Y=25 — count from the nearest anchor.",
+      "examPoint": "Letter position & EJOTY / dictionary order",
+      "source": "APPSC GK — Coding-Decoding",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Opposite-letter (mirror) rule?",
+      "back": "Opposite position = 27 − forward position. Pairs: A-Z, B-Y, C-X, D-W, M-N.",
+      "examPoint": "Letter-coding — reverse/opposite letter (27-n rule)",
+      "source": "APPSC GK — Coding-Decoding",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "How to solve a grouped/combination alphabet series?",
+      "back": "Split each block into columns and solve each column's own step; subtract 26 for wrap-around after Z.",
+      "examPoint": "Alphabet series — grouped/combination letter sequence",
+      "source": "APPSC GK — Alphabet Series",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Method for an alphanumeric series like C3, E5, G7, I9?",
+      "back": "Track the letter pattern and the number pattern independently (letters +2; numbers odd → K11).",
+      "examPoint": "Alphanumeric (mixed letter-number) series",
+      "source": "APPSC GK — Mixed Series",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Letter-shift coding — the trap to watch for?",
+      "back": "The shift can alternate (e.g. −1,+1). Verify sign on the sample; handle wrap-around (A−1=Z).",
+      "examPoint": "Letter-coding — forward/backward letter shifting",
+      "source": "APPSC GK — Coding-Decoding",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Rearrangement coding — how to identify the rule?",
+      "back": "Same letters reordered — usually ascending alphabetical (BEHOLD→BDEHLO ⇒ COURSE→CEORSU).",
+      "examPoint": "Letter-coding — rearrangement (criss-cross / alphabetical order)",
+      "source": "APPSC GK — Coding-Decoding",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Letter-to-number coding method?",
+      "back": "Build a letter→digit map from the given word=code pair, keep letter order, then substitute for the target.",
+      "examPoint": "Number-coding — letter-to-number (positional value)",
+      "source": "APPSC GK — Number Coding",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Fictitious-language (substitution) coding — the trick?",
+      "back": "Intersect two sentences sharing a word to pin its code; the word common to all sentences takes the code common to all.",
+      "examPoint": "Substitution / fictitious-language coding",
+      "source": "APPSC GK — Coding-Decoding",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Conditional coding — order of operations?",
+      "back": "Do the base substitution first, THEN apply the overriding condition(s); watch for overlaps.",
+      "examPoint": "Conditional coding (symbol-condition rule)",
+      "source": "APPSC GK — Coding-Decoding",
+      "verified": true
+    },
+    {
+      "id": "ment-number-series-coding-card-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "front": "Number analogy — how to solve 6 : 42 :: 9 : ?",
+      "back": "Find the relation in the first pair and apply it: n×(n+1) ⇒ 6×7=42, so 9×10=90.",
+      "examPoint": "Number analogy (relationship between number pairs)",
+      "source": "APPSC GK — Analogy",
+      "verified": true
+    }
+  ]
+}

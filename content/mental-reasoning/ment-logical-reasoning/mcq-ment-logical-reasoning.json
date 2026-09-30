@@ -1,0 +1,842 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Logical Reasoning",
+  "items": [
+    {
+      "id": "ment-logical-reasoning-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "refresher": true,
+      "question": "In syllogism, which mapping of everyday keywords to the standard quantifier is correct?",
+      "options": [
+        "'None', '0%' → Some",
+        "'At least', 'Many', 'A few' → All",
+        "'Only a few' → All",
+        "'Each', 'Every', 'Only', '100%' → All"
+      ],
+      "answerIndex": 3,
+      "explanation": "Words that mean 'every single one' — Each, Every, Only, 100% — all translate to the universal **All**.\n\n**Why not the others**\n- 'None', '0%' → Some — 'None/0%' maps to **No**, not Some.\n- 'At least', 'Many', 'A few' → All — these mean 1–99%, i.e. **Some**, not All.\n- 'Only a few' → All — 'Only a few A are B' uniquely means **Some A are B AND Some A are not B**, never All.\n\n**Key facts**\n| Keyword | Quantifier |\n|---|---|\n| Each, Every, Only, 100% | All |\n| At least, Many, A few, 1–99% | Some |\n| None, 0% | No |\n| Only a few | Some + Some-not (both true) |\n\n*Source: APPSC GK — Logical Reasoning: Syllogism (keyword conventions).*",
+      "source": "APPSC GK — Logical Reasoning: Syllogism",
+      "verified": true,
+      "covers": [
+        "Syllogism — 'Only a few' & keyword mapping"
+      ],
+      "tags": [
+        "syllogism",
+        "refresher",
+        "keywords"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "refresher": true,
+      "question": "Given the statement P > Q = R ≥ S, which conclusion is definitely true?",
+      "options": [
+        "P < S",
+        "S > P",
+        "P > S",
+        "Q < S"
+      ],
+      "answerIndex": 2,
+      "explanation": "Chain the relations: P > Q, Q = R, R ≥ S. So P > Q = R ≥ S gives **P > S** (a strict '>' anywhere in a same-direction chain makes the end relation strict).\n\n**Why not the others**\n- P < S — reverses the true direction; the chain runs P down to S, so P is the largest.\n- S > P — same reversal error; S is the smallest here.\n- Q < S — Q = R ≥ S means Q ≥ S, so Q < S can never hold.\n\n**Key facts**\n- A relation is definite only if every link points the same way (all ≥/>, or all ≤/<).\n- One strict '>' in an otherwise '≥/=' chain forces the overall relation to be strict '>'.\n\n*Source: APPSC GK — Logical Reasoning: Inequality (basic chaining).*",
+      "source": "APPSC GK — Logical Reasoning: Inequality",
+      "verified": true,
+      "covers": [
+        "Coded inequalities — decode symbols & derive relation"
+      ],
+      "tags": [
+        "inequality",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "refresher": true,
+      "question": "Which set of three terms is best shown by three circles, each one lying wholly inside the next (concentric)?",
+      "options": [
+        "Pigeon, Bird, Living thing",
+        "Table, Chair, Furniture",
+        "Doctor, Engineer, Human",
+        "Gold, Silver, Metal"
+      ],
+      "answerIndex": 0,
+      "explanation": "Every Pigeon is a Bird and every Bird is a Living thing, so the three classes nest one inside another: Pigeon ⊂ Bird ⊂ Living thing.\n\n**Why not the others**\n- Table, Chair, Furniture — Table and Chair are both furniture but are **separate** (disjoint) classes inside Furniture, not nested in each other.\n- Doctor, Engineer, Human — Doctor and Engineer are disjoint sets, both inside Human; not one-inside-another.\n- Gold, Silver, Metal — Gold and Silver are disjoint types of Metal, not nested.\n\n**Key facts**\n- Concentric (nested) circles = a strict 'is-a' chain where each class is a subset of the next.\n- Two co-ordinate subclasses of a bigger class (Gold/Silver, Table/Chair) sit as **separate** circles inside it.\n\n*Source: APPSC GK — Logical Reasoning: Logical Venn Diagram.*",
+      "source": "APPSC GK — Logical Reasoning: Logical Venn Diagram",
+      "verified": true,
+      "covers": [
+        "Logical Venn — best diagram for related classes"
+      ],
+      "tags": [
+        "venn",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statements: All pens are books. All books are papers. Some papers are red. Conclusions: I. All pens are papers. II. Some pens are red. III. Some papers are pens.",
+      "options": [
+        "Only I follows",
+        "Only I and II follow",
+        "All three follow",
+        "Only I and III follow"
+      ],
+      "answerIndex": 3,
+      "explanation": "All pens → books → papers, so **All pens are papers** (I true). Since all pens are papers, at least those papers are pens, so **Some papers are pens** (III true). 'Red' attaches only to *some* papers with no link to pens, so **Some pens are red** is not definite (II false).\n\n**Why not the others**\n- Only I follows — misses III, which is the guaranteed converse of 'All pens are papers'.\n- Only I and II follow — II cannot be drawn; the red papers need not include any pen.\n- All three follow — would require II, which has no definite basis.\n\n**Key facts**\n- 'All A are B' always yields the definite converse 'Some B are A'.\n- A term (red) linked to only 'some' of a class gives no definite tie to a nested subclass.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism (basic, definite conclusions).*",
+      "source": "APPSC GK — Logical Reasoning: Syllogism",
+      "verified": true,
+      "covers": [
+        "Syllogism — basic (definite conclusions)"
+      ],
+      "tags": [
+        "syllogism",
+        "basic"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statements: All bottles are black. Some black are white. Conclusions: I. All blacks are bottles. II. Some blacks are not bottles.",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Either I or II follows",
+        "Neither I nor II follows"
+      ],
+      "answerIndex": 2,
+      "explanation": "'All bottles are black' fixes bottles inside black, but the rest of 'black' is undecided. So 'All blacks are bottles' is only possible (not definite) and 'Some blacks are not bottles' is also only possible — each is individually false, yet together they exhaust all cases.\n\n**Why not the others**\n- Only I follows — I is not definite; the leftover black region may or may not be bottles.\n- Only II follows — II is equally undetermined on its own.\n- Neither I nor II follows — the two form a complementary pair (All + Some-not) on the same subject/predicate, so one of them must hold → Either/Or.\n\n**Key facts**\n| Complementary pair (Either-Or) | \n|---|\n| Some + No |\n| All + Some-not |\n- Condition: both conclusions individually false, same subject & predicate.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism (Either-Or).*",
+      "source": "APPSC GK — Logical Reasoning: Syllogism",
+      "verified": true,
+      "covers": [
+        "Syllogism — either-or (complementary pairs)"
+      ],
+      "tags": [
+        "syllogism",
+        "either-or"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statements: No movie is a song. All songs are anthems. Conclusions: I. All movies being anthems is a possibility. II. All songs can never be movies.",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Neither follows",
+        "Both I and II follow"
+      ],
+      "answerIndex": 3,
+      "explanation": "No movie is a song, and all songs are anthems, so the anthem circle is free to be enlarged to also contain all movies — **I is a valid possibility**. Since no movie is a song, songs and movies are disjoint, so 'all songs are movies' is impossible → **II follows** definitely.\n\n**Why not the others**\n- Only I follows — ignores that disjointness of movie/song makes II certainly true.\n- Only II follows — the possibility in I is genuinely constructible, so I also holds.\n- Neither follows — both are supported once you draw the least and an expanded diagram.\n\n**Key facts**\n- A possibility conclusion is TRUE if it holds in *any one* valid diagram.\n- 'No A is B' guarantees 'All A are B' can never be true → statements of that impossibility follow.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism (Possibility).*",
+      "source": "APPSC GK — Logical Reasoning: Syllogism",
+      "verified": true,
+      "covers": [
+        "Syllogism — possibility conclusions"
+      ],
+      "tags": [
+        "syllogism",
+        "possibility"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statements: Only a few Adults are Plumbers. Only a few Plumbers are Taxi drivers. Conclusions: I. Some Adults are Taxi drivers. II. All Plumbers can never be Taxi drivers.",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither follows"
+      ],
+      "answerIndex": 1,
+      "explanation": "'Only a few Plumbers are Taxi drivers' means Some plumbers ARE and Some plumbers are NOT taxi drivers — so **not all plumbers can be taxi drivers** (II follows). Adults and Taxi drivers share no direct link, so 'Some Adults are Taxi drivers' is only possible, not definite (I fails).\n\n**Why not the others**\n- Only I follows — Adult↔Taxi has no guaranteed overlap; I is not definite.\n- Both I and II follow — I is merely possible, so it cannot be reported as following.\n- Neither follows — II is forced by the 'Some-not' half baked into 'Only a few'.\n\n**Key facts**\n- 'Only a few X are Y' ⇒ Some X are Y AND Some X are not Y (both definite).\n- Hence 'All X are Y' is ruled out whenever 'Only a few X are Y' is stated.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism ('Only a few').*",
+      "source": "APPSC GK — Logical Reasoning: Syllogism",
+      "verified": true,
+      "covers": [
+        "Syllogism — 'Only a few' & keyword mapping"
+      ],
+      "tags": [
+        "syllogism",
+        "only-a-few"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Which diagram best represents the relationship among the classes: Females, Mothers, Doctors?",
+      "options": [
+        "Three mutually separate circles",
+        "Mothers wholly inside Females; Doctors a circle overlapping both Females and Mothers",
+        "Three concentric circles: Doctors inside Mothers inside Females",
+        "Females and Mothers separate, both lying inside Doctors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Every Mother is a Female, so Mothers ⊂ Females. A Doctor may be male or female, and a mother may or may not be a doctor, so Doctors **partially overlaps** both Females and Mothers.\n\n**Why not the others**\n- Three mutually separate circles — false, since all mothers are females (they must overlap/nest).\n- Doctors inside Mothers inside Females — wrong: not every doctor is a mother or even female.\n- Females and Mothers inside Doctors — reverses reality; not all females/mothers are doctors.\n\n**Key facts**\n- 'All A are B' ⇒ A nested inside B.\n- Two classes that only *sometimes* coincide (Doctors with Females/Mothers) ⇒ intersecting circles.\n\n*Source: APPSC GK — Logical Reasoning: Logical Venn Diagram (representation).*",
+      "source": "APPSC GK — Logical Reasoning: Logical Venn Diagram",
+      "verified": true,
+      "covers": [
+        "Logical Venn — best diagram for related classes"
+      ],
+      "tags": [
+        "venn",
+        "representation"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "In a class of 100 students, 60 like tea, 50 like coffee and 30 like both. How many like neither tea nor coffee?",
+      "options": [
+        "20",
+        "10",
+        "30",
+        "40"
+      ],
+      "answerIndex": 0,
+      "explanation": "By inclusion–exclusion, students liking at least one = n(T ∪ C) = 60 + 50 − 30 = 80. Therefore neither = 100 − 80 = **20**.\n\n**Why not the others**\n- 10 — comes from wrongly using 100 − (60 + 50 − 30 − 10); no extra 10 exists.\n- 30 — this is 'both', not 'neither'.\n- 40 — results from forgetting to subtract the overlap (100 − 60).\n\n**Key facts**\n| Formula | Value |\n|---|---|\n| n(T ∪ C) = n(T) + n(C) − n(T ∩ C) | 60 + 50 − 30 = 80 |\n| Neither = Total − n(T ∪ C) | 100 − 80 = 20 |\n\n*Source: APPSC GK — Logical Reasoning: Venn Diagram Problems (region counts).*",
+      "source": "APPSC GK — Logical Reasoning: Venn Diagram Problems",
+      "verified": true,
+      "covers": [
+        "Logical Venn — numerical region counts"
+      ],
+      "tags": [
+        "venn",
+        "numerical"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Symbols: 'A#B' = A ≥ B; 'A$B' = A = B; 'A%B' = A < B; 'A*B' = A > B. Given P # Q; Q $ R; R % S, which conclusion is definitely true? I. P * R (P > R)  II. S * Q (S > Q)",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither follows"
+      ],
+      "answerIndex": 1,
+      "explanation": "Decode: P ≥ Q, Q = R, R < S, giving P ≥ Q = R < S. So S > R = Q ⇒ **S > Q (II true)**. But P ≥ R only (P could equal R), so **P > R is not definite (I false)**.\n\n**Why not the others**\n- Only I follows — P ≥ R allows equality, so strict P > R can't be guaranteed.\n- Both I and II follow — I fails on the equality case.\n- Neither follows — II is forced because S > R and R = Q.\n\n**Key facts**\n| Code | Meaning |\n|---|---|\n| # | ≥ |\n| $ | = |\n| % | < |\n| * | > |\n- A '≥' link can never yield a strict '>' conclusion by itself.\n\n*Source: APPSC GK — Logical Reasoning: Coded Inequality.*",
+      "source": "APPSC GK — Logical Reasoning: Inequality",
+      "verified": true,
+      "covers": [
+        "Coded inequalities — decode symbols & derive relation"
+      ],
+      "tags": [
+        "inequality",
+        "coded"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statement: B = K ≥ H = T > U ≤ I. Conclusions: I. H > I  II. H ≤ I",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Either I or II follows",
+        "Neither follows"
+      ],
+      "answerIndex": 2,
+      "explanation": "H = T > U ≤ I: the '>' then '≤' meet nose-to-nose at U, so H vs I cannot be fixed. Both 'H > I' and 'H ≤ I' are individually false, but as the complementary pair (> , ≤) on the same two elements, exactly one must hold.\n\n**Why not the others**\n- Only I follows — H > I is not definite (relation via U is broken).\n- Only II follows — H ≤ I is equally undetermined alone.\n- Neither follows — '>' and '≤' on the same pair together cover every case → Either/Or.\n\n**Key facts**\n| Either-Or pairs (inequality) |\n|---|\n| ≤ + > |\n| > + ≤ |\n- A '>' followed by '≤' (or '<' by '≥') pointing into a common element breaks a definite relation.\n\n*Source: APPSC GK — Logical Reasoning: Inequality (Either-Or).*",
+      "source": "APPSC GK — Logical Reasoning: Inequality",
+      "verified": true,
+      "covers": [
+        "Coded inequalities — either-or complementary pairs"
+      ],
+      "tags": [
+        "inequality",
+        "either-or"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "If 13 % 27 % 3 = 1053 and 4 % 8 % 13 = 416, then 3 % 16 % 10 = ?",
+      "options": [
+        "290",
+        "460",
+        "520",
+        "480"
+      ],
+      "answerIndex": 3,
+      "explanation": "Test operators: treating '%' as multiplication, 13 × 27 × 3 = 1053 ✓ and 4 × 8 × 13 = 416 ✓. So '%' = ×, giving 3 × 16 × 10 = **480**.\n\n**Why not the others**\n- 290 — from 3 × 16 × 10 mis-added as 3 × (16 + 10) + ... arithmetic slip.\n- 460 — a near-value trap from mis-multiplying 16 × 10 as 150.\n- 520 — from 3 × 16 = 48, then ×10 = 480 mis-carried to 520.\n\n**Key facts**\n- Coded-operator problems: substitute a single arithmetic operation and verify against BOTH given equations before applying.\n- 3 × 16 × 10 = 480.\n\n*Source: APPSC GK — Logical Reasoning: Coded Logic (operator substitution).*",
+      "source": "APPSC GK — Logical Reasoning: Coded Logic",
+      "verified": true,
+      "covers": [
+        "Coded logic — operator/symbol substitution"
+      ],
+      "tags": [
+        "coded-logic",
+        "operators"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Five people P, Q, R, S, T sit in a row facing north. R is at the extreme left, T at the extreme right, Q is immediately to the right of P, and S is between Q and T. Who sits exactly in the middle (3rd position)?",
+      "options": [
+        "P",
+        "Q",
+        "S",
+        "R"
+      ],
+      "answerIndex": 1,
+      "explanation": "R is seat 1, T is seat 5. P–Q are adjacent with Q right of P, and S lies between Q and T, forcing the order R, P, Q, S, T. The middle (3rd) seat is **Q**.\n\n**Why not the others**\n- P — sits 2nd, immediately right of R.\n- S — sits 4th, between Q and T.\n- R — fixed at the extreme left (1st).\n\n**Key facts**\n| Seat | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Person | R | P | Q | S | T |\n- Method: place the definite end clues first, then slot adjacency/between clues.\n\n*Source: APPSC GK — Logical Reasoning: Linear Arrangement (Seating).*",
+      "source": "APPSC GK — Logical Reasoning: Linear Arrangement",
+      "verified": true,
+      "covers": [
+        "Linear seating arrangement"
+      ],
+      "tags": [
+        "seating",
+        "linear"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Six friends P, Q, R, S, T, U sit around a circular table facing the centre, equally spaced. Going clockwise: Q is immediately after P, R immediately after Q, S is directly opposite P, and T immediately after S. Who sits directly opposite Q?",
+      "options": [
+        "P",
+        "R",
+        "T",
+        "U"
+      ],
+      "answerIndex": 2,
+      "explanation": "Clockwise the seats fill as P(1), Q(2), R(3), then S opposite P means S is at seat 4, T immediately after S at seat 5, leaving U at seat 6. Seat opposite Q(2) is seat 5 = **T**.\n\n**Why not the others**\n- P — opposite P is S (seat 4), not Q.\n- R — R is at seat 3; opposite R is seat 6 = U.\n- U — U is at seat 6, opposite R, not Q.\n\n**Key facts**\n| Seat (clockwise) | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Person | P | Q | R | S | T | U |\n- In a 6-seat circle, the person opposite seat i sits at seat i + 3.\n\n*Source: APPSC GK — Logical Reasoning: Circular Arrangement (Seating).*",
+      "source": "APPSC GK — Logical Reasoning: Circular Arrangement",
+      "verified": true,
+      "covers": [
+        "Circular seating arrangement"
+      ],
+      "tags": [
+        "seating",
+        "circular"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Five people P, Q, R, S, T live on a 5-floor building (floor 1 = bottom, floor 5 = top), one per floor. T lives on the topmost floor, S on floor 1, R on floor 2, and P lives immediately below Q. Who lives on floor 4?",
+      "options": [
+        "P",
+        "Q",
+        "R",
+        "T"
+      ],
+      "answerIndex": 1,
+      "explanation": "T = floor 5, S = 1, R = 2, leaving floors 3 and 4 for P and Q. 'P immediately below Q' forces P = 3 and Q = 4. So floor 4 is **Q**.\n\n**Why not the others**\n- P — lands on floor 3, directly below Q.\n- R — fixed on floor 2.\n- T — fixed on the top floor 5.\n\n**Key facts**\n| Floor | 5 | 4 | 3 | 2 | 1 |\n|---|---|---|---|---|---|\n| Person | T | Q | P | R | S |\n- Method: lock the explicitly given floors first, then fit the relative 'immediately above/below' clue into the gap.\n\n*Source: APPSC GK — Logical Reasoning: Floor Puzzle.*",
+      "source": "APPSC GK — Logical Reasoning: Floor Puzzle",
+      "verified": true,
+      "covers": [
+        "Floor & scheduling puzzle"
+      ],
+      "tags": [
+        "puzzle",
+        "floor"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "A committee of 3 is formed from 3 men (A, B, C) and 2 women (X, Y). It must contain at least one woman, and A and B are never selected together. How many valid committees are possible?",
+      "options": [
+        "6",
+        "8",
+        "7",
+        "9"
+      ],
+      "answerIndex": 2,
+      "explanation": "List 3-member groups with ≥1 woman and without both A and B: ACX, ACY, AXY, BCX, BCY, BXY, CXY = **7**.\n\n**Why not the others**\n- 6 — drops one valid group (e.g. CXY) by over-restricting.\n- 8 — wrongly keeps one A&B group such as ABX or ABY.\n- 9 — counts all ≥1-woman groups but forgets to remove the two containing both A and B.\n\n**Key facts**\n- Total C(5,3) = 10; all-men group ABC (0 women) removed → 9 with ≥1 woman.\n- Remove groups holding both A and B (ABX, ABY) → 9 − 2 = 7.\n\n*Source: APPSC GK — Logical Reasoning: Grouping and Selections.*",
+      "source": "APPSC GK — Logical Reasoning: Grouping and Selections",
+      "verified": true,
+      "covers": [
+        "Grouping & selection puzzle"
+      ],
+      "tags": [
+        "puzzle",
+        "grouping"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statement: Should private coaching institutes be banned in India? Arguments: I. Yes, they commercialise education and impose a heavy financial burden on parents. II. No, they supplement school teaching and help students clear competitive exams.",
+      "options": [
+        "Only argument I is strong",
+        "Only argument II is strong",
+        "Both I and II are strong",
+        "Neither is strong"
+      ],
+      "answerIndex": 2,
+      "explanation": "A strong argument is directly relevant to the issue and cites a real, weighty consequence. I (commercialisation/financial burden) and II (supplementing schooling, exam success) are both directly on-point and substantive, so **both are strong**.\n\n**Why not the others**\n- Only I is strong — dismisses II, but supplementing teaching is a genuine, relevant merit.\n- Only II is strong — ignores I's real concern about cost and commercialisation.\n- Neither is strong — both are relevant and consequential, not superficial or ambiguous.\n\n**Key facts**\n- Strong: relevant + directly related + real practical import.\n- Weak: trivial, ambiguous, superficial, or restates the question.\n\n*Source: APPSC GK — Verbal Reasoning: Statements and Arguments.*",
+      "source": "APPSC GK — Verbal Reasoning: Statements and Arguments",
+      "verified": true,
+      "covers": [
+        "Statement & Arguments — strong vs weak"
+      ],
+      "tags": [
+        "statement-argument",
+        "verbal"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statement: The school has decided to conduct all its classes online from next week. Assumptions: I. The students have access to internet-enabled devices. II. Online classes are as effective as in-person classes.",
+      "options": [
+        "Only assumption I is implicit",
+        "Only assumption II is implicit",
+        "Both are implicit",
+        "Neither is implicit"
+      ],
+      "answerIndex": 0,
+      "explanation": "An implicit assumption is something taken for granted for the statement to make sense. The decision to go online presupposes students **can access** online classes (I implicit). Whether online is *as effective as* offline (II) is a debatable opinion, not a necessary presupposition.\n\n**Why not the others**\n- Only II is implicit — effectiveness is not assumed; the school may act for other reasons.\n- Both are implicit — II is a value judgement, not something taken for granted.\n- Neither is implicit — I must be assumed, else the decision is unworkable.\n\n**Key facts**\n- Test: negate the assumption — if the statement collapses, it is implicit.\n- Reject assumptions that are extreme, comparative-opinion, or add outside information.\n\n*Source: APPSC GK — Verbal Reasoning: Statements and Assumptions.*",
+      "source": "APPSC GK — Verbal Reasoning: Statements and Assumptions",
+      "verified": true,
+      "covers": [
+        "Statement & Assumptions"
+      ],
+      "tags": [
+        "statement-assumption",
+        "verbal"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statement: To reduce road accidents, the government has decided to increase the fine for traffic violations tenfold. Conclusions: I. Higher fines may deter people from violating traffic rules. II. Road accidents will now stop completely.",
+      "options": [
+        "Only conclusion I follows",
+        "Only conclusion II follows",
+        "Both follow",
+        "Neither follows"
+      ],
+      "answerIndex": 0,
+      "explanation": "A valid conclusion must follow reasonably (not absolutely) from the statement. Steeper fines can plausibly deter violations, so **I follows**. 'Accidents will stop completely' is an extreme, unsupported leap, so **II does not follow**.\n\n**Why not the others**\n- Only II follows — 'completely stop' is too absolute; deterrence is never total.\n- Both follow — II's extremity disqualifies it.\n- Neither follows — I is a moderate, defensible inference the measure implies.\n\n**Key facts**\n- Accept moderate, hedged conclusions ('may', 'likely'); reject absolute claims ('always', 'completely', 'never').\n- The conclusion must not require facts beyond the statement.\n\n*Source: APPSC GK — Verbal Reasoning: Statement and Conclusion.*",
+      "source": "APPSC GK — Verbal Reasoning: Statement and Conclusion",
+      "verified": true,
+      "covers": [
+        "Statement & Conclusions"
+      ],
+      "tags": [
+        "statement-conclusion",
+        "verbal"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Passage: The literacy rate of a state rose from 60% in 2011 to 75% in 2021. Which of the following can be VALIDLY inferred?",
+      "options": [
+        "The state now has the highest literacy rate in India",
+        "Female literacy in particular rose the most",
+        "Illiteracy in the state has been fully eliminated",
+        "The literacy rate increased by 15 percentage points over the decade"
+      ],
+      "answerIndex": 3,
+      "explanation": "An inference must be a logically certain deduction from the data given. 75% − 60% = 15, so the literacy rate rose by **15 percentage points** — this alone is guaranteed.\n\n**Why not the others**\n- Highest in India — no comparison with other states is given.\n- Female literacy rose the most — the passage gives no gender breakdown.\n- Illiteracy fully eliminated — 75% literacy means 25% are still illiterate.\n\n**Key facts**\n- Inference = a conclusion that MUST be true given the passage, adding no outside data.\n- Distinguish 'percentage points' (75−60 = 15) from 'percent increase' (15/60 = 25%).\n\n*Source: APPSC GK — Verbal Reasoning: Statements and Inferences.*",
+      "source": "APPSC GK — Verbal Reasoning: Statements and Inferences",
+      "verified": true,
+      "covers": [
+        "Statement & Inferences"
+      ],
+      "tags": [
+        "statement-inference",
+        "verbal"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Assertion (A): Water boils at a lower temperature at high altitudes. Reason (R): Atmospheric pressure decreases as altitude increases.",
+      "options": [
+        "Both A and R are true and R is the correct explanation of A",
+        "Both A and R are true but R is NOT the correct explanation of A",
+        "A is true but R is false",
+        "A is false but R is true"
+      ],
+      "answerIndex": 0,
+      "explanation": "Both statements are factually true, and the lower pressure at altitude is precisely *why* the boiling point falls (a liquid boils when its vapour pressure equals ambient pressure). So R correctly explains A.\n\n**Why not the others**\n- Both true but R not the explanation — R is exactly the cause of A, so this is wrong.\n- A true, R false — R (pressure falls with altitude) is a true fact.\n- A false, R true — A (lower boiling point at altitude) is also true.\n\n**Key facts**\n- Boiling occurs when vapour pressure = surrounding pressure; lower ambient pressure ⇒ lower boiling point.\n- A-R method: judge each statement's truth first, then test whether R *causes* A.\n\n*Source: APPSC GK — Verbal Reasoning: Assertion and Reason.*",
+      "source": "APPSC GK — Verbal Reasoning: Assertion and Reason",
+      "verified": true,
+      "covers": [
+        "Assertion & Reason"
+      ],
+      "tags": [
+        "assertion-reason",
+        "verbal"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Read the two statements. Statement I: The government sharply increased the price of petrol. Statement II: The use of public transport in the city rose noticeably. Which best describes their relationship?",
+      "options": [
+        "Statement I is the cause and Statement II is its effect",
+        "Statement II is the cause and Statement I is its effect",
+        "Both are independent causes",
+        "Both are effects of independent causes"
+      ],
+      "answerIndex": 0,
+      "explanation": "A sharp rise in petrol price makes private driving costlier, prompting people to switch to public transport. So I is the cause and II is its effect.\n\n**Why not the others**\n- II is the cause and I its effect — a rise in bus/train use does not push up petrol prices; the timing is backwards.\n- Both are independent causes — they are clearly linked, not unrelated.\n- Both effects of an independent cause — no third common cause is indicated; I directly drives II.\n\n**Key facts**\n- Cause–effect test: identify which event realistically triggers the other and check the time order.\n- Price rise of a substitute good typically shifts demand to the cheaper alternative.\n\n*Source: APPSC GK — Verbal Reasoning: Cause and Effect.*",
+      "source": "APPSC GK — Verbal Reasoning: Cause and Effect",
+      "verified": true,
+      "covers": [
+        "Cause & Effect"
+      ],
+      "tags": [
+        "cause-effect",
+        "verbal"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statement: A large number of students fail in Mathematics every year in the state board examination. Courses of action: I. Remedial coaching classes should be arranged for academically weak students. II. Mathematics should be removed from the board syllabus.",
+      "options": [
+        "Only course of action II follows",
+        "Neither follows",
+        "Both follow",
+        "Only course of action I follows"
+      ],
+      "answerIndex": 3,
+      "explanation": "A valid course of action must be practical and directly address the problem. Remedial coaching tackles the root cause (weak preparation), so **I follows**. Dropping Maths entirely is an extreme, harmful over-reaction, so **II does not follow**.\n\n**Why not the others**\n- Only II follows — removing a core subject is impractical and disproportionate.\n- Neither follows — I is a sound, targeted remedy.\n- Both follow — II fails the practicality/proportionality test.\n\n**Key facts**\n- A good course of action is feasible, proportionate, and improves the situation.\n- Reject actions that are extreme, escapist, or create bigger problems.\n\n*Source: APPSC GK — Verbal Reasoning: Course of Action.*",
+      "source": "APPSC GK — Verbal Reasoning: Course of Action",
+      "verified": true,
+      "covers": [
+        "Course of Action"
+      ],
+      "tags": [
+        "course-of-action",
+        "verbal"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "In a row of 40 students all facing north, A is 13th from the left end and B is 17th from the right end. How many students sit between A and B?",
+      "options": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "B's position from the left = (40 − 17) + 1 = 24th. A is 13th from the left, so the students strictly between positions 13 and 24 number 24 − 13 − 1 = **10**.\n\n**Why not the others**\n- 9 — forgets to add 1 when converting B's right-position to a left-position.\n- 11 — counts one of the two boundary students (A or B) as 'between'.\n- 12 — omits the −1 that excludes both A and B themselves.\n\n**Key facts**\n- Position from left = (Total − position from right) + 1.\n- People strictly between positions p and q (p<q) = q − p − 1.\n\n*Source: APPSC GK — Logical Reasoning: Ranking & Order (row position).*",
+      "source": "APPSC GK — Logical Reasoning: Ranking and Order",
+      "verified": true,
+      "covers": [
+        "Ranking & order — position from both ends"
+      ],
+      "tags": [
+        "ranking",
+        "order",
+        "row-position"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "In a class, Rahul's rank is 7th from the top and 26th from the bottom. How many students are there in the class?",
+      "options": [
+        "33",
+        "31",
+        "32",
+        "34"
+      ],
+      "answerIndex": 2,
+      "explanation": "When one person's ranks from both ends are given, the total = (rank from top) + (rank from bottom) − 1 = 7 + 26 − 1 = **32** (the −1 avoids counting Rahul twice).\n\n**Why not the others**\n- 33 — simply adds 7 + 26 and forgets to subtract the double-counted person.\n- 31 — subtracts 2 instead of 1.\n- 34 — adds an extra person to the total.\n\n**Key facts**\n- Total = (rank from top) + (rank from bottom) − 1.\n- Rahul is counted in both '7th from top' and '26th from bottom', hence one subtraction.\n\n*Source: APPSC GK — Logical Reasoning: Ranking & Order (total from two ranks).*",
+      "source": "APPSC GK — Logical Reasoning: Ranking and Order",
+      "verified": true,
+      "covers": [
+        "Ranking & order — position from both ends"
+      ],
+      "tags": [
+        "ranking",
+        "order"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "A man starts from his house, walks 4 km due north, then turns and walks 3 km due east. How far is he from his starting point?",
+      "options": [
+        "7 km",
+        "1 km",
+        "5 km",
+        "3.5 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "The northward and eastward legs are perpendicular, so the straight-line distance is the hypotenuse: √(4² + 3²) = √25 = **5 km**.\n\n**Why not the others**\n- 7 km — just adds 4 + 3, which would be the path length, not the shortest (straight-line) distance.\n- 1 km — wrongly subtracts the two legs.\n- 3.5 km — averages the two legs, which has no geometric basis.\n\n**Key facts**\n- Two perpendicular displacements combine by Pythagoras: distance = √(a² + b²).\n- 3-4-5 is the classic right-triangle triple.\n\n*Source: APPSC GK — Logical Reasoning: Direction Sense (shortest distance).*",
+      "source": "APPSC GK — Logical Reasoning: Direction Sense",
+      "verified": true,
+      "covers": [
+        "Direction sense & distance"
+      ],
+      "tags": [
+        "direction-sense",
+        "distance"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "A person walks 5 m towards south, turns left and walks 5 m, turns left again and walks 8 m, and finally turns left and walks 5 m. How far and in which direction is he now from the starting point?",
+      "options": [
+        "3 m, South",
+        "3 m, North",
+        "5 m, North",
+        "8 m, North"
+      ],
+      "answerIndex": 1,
+      "explanation": "Track coordinates from the origin. South 5 → (0,−5); left faces East, +5 → (5,−5); left faces North, +8 → (5,3); left faces West, −5 → (0,3). Final point (0,3) is **3 m North** of start.\n\n**Why not the others**\n- 3 m South — right magnitude but wrong side; the net vertical shift is +3 (north).\n- 5 m North — ignores that the 5 m east and 5 m west cancel, and mis-reads the vertical total.\n- 8 m North — takes only the third leg, ignoring the initial 5 m south.\n\n**Key facts**\n- Turning left repeatedly cycles the facing: S → E → N → W.\n- Net displacement = vector sum; east/west legs of equal length cancel.\n\n*Source: APPSC GK — Logical Reasoning: Direction Sense (turns & final position).*",
+      "source": "APPSC GK — Logical Reasoning: Direction Sense",
+      "verified": true,
+      "covers": [
+        "Direction sense & distance"
+      ],
+      "tags": [
+        "direction-sense",
+        "turns"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Consider the following: P is heavier than Q. Q is heavier than S. S is heavier than R. Who among the four is the heaviest?",
+      "options": [
+        "P",
+        "Q",
+        "S",
+        "R"
+      ],
+      "answerIndex": 0,
+      "explanation": "Chain the comparisons: P > Q, Q > S, S > R gives the single order P > Q > S > R. The top of the chain, **P**, is the heaviest.\n\n**Why not the others**\n- Q — heavier than S and R but lighter than P.\n- S — third in the order; heavier only than R.\n- R — the lightest, at the bottom of the chain.\n\n**Key facts**\n- When all comparisons point the same way they form one ranked line: P > Q > S > R.\n- The heaviest/tallest is the element with nothing above it in the chain.\n\n*Source: APPSC GK — Logical Reasoning: Order & Ranking (comparison).*",
+      "source": "APPSC GK — Logical Reasoning: Order and Ranking",
+      "verified": true,
+      "covers": [
+        "Order & ranking — comparison (tallest/heaviest)"
+      ],
+      "tags": [
+        "ranking",
+        "comparison"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statements: All roses are flowers. All flowers are plants. No plant is a stone. Conclusions: I. No rose is a stone. II. Some plants are roses. III. Some flowers are not stones.",
+      "options": [
+        "Only I and II follow",
+        "Only I and III follow",
+        "Only II and III follow",
+        "All three follow"
+      ],
+      "answerIndex": 3,
+      "explanation": "Roses ⊂ flowers ⊂ plants, and no plant is a stone. So every rose is a plant and hence no rose is a stone (**I follows**). 'All roses are plants' gives the definite converse 'Some plants are roses' (**II follows**). All flowers are plants and no plant is a stone, so no flower is a stone, which certainly means some flowers are not stones (**III follows**).\n\n**Why not the others**\n- Only I and II — III is equally guaranteed once flowers are shown to be non-stones.\n- Only I and III — II is the valid converse of a universal and cannot be dropped.\n- Only II and III — I is forced because roses are plants and no plant is a stone.\n\n**Key facts**\n- 'All A are B' + 'No B is C' ⇒ 'No A is C'.\n- 'All A are B' always yields the converse 'Some B are A'.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism (three-statement).*",
+      "source": "APPSC GK — Logical Reasoning: Syllogism",
+      "verified": true,
+      "covers": [
+        "Syllogism — basic (definite conclusions)"
+      ],
+      "tags": [
+        "syllogism",
+        "three-statement"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-30",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Six people A, B, C, D, E and F sit in a row facing north. F is at the extreme left end and C is at the extreme right end. A sits immediately to the right of F. D sits between B and E, with B immediately to D's left and the trio B–D–E occupying consecutive seats. Who sits third from the left end?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "E"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seats 1–6: F is seat 1, C is seat 6. A immediately right of F → A is seat 2. The remaining consecutive trio in order B, D, E fills seats 3, 4, 5. So seat 3 (third from the left) is **B**.\n\n**Why not the others**\n- D — sits in seat 4 (between B and E).\n- A — sits in seat 2, immediately right of F.\n- E — sits in seat 5, at the right of the trio.\n\n**Key facts**\n| Seat | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Person | F | A | B | D | E | C |\n- Fix the two ends first, then place the fixed block (B-D-E) into the remaining consecutive seats.\n\n*Source: APPSC GK — Logical Reasoning: Linear Arrangement (six persons).*",
+      "source": "APPSC GK — Logical Reasoning: Linear Arrangement",
+      "verified": true,
+      "covers": [
+        "Linear seating arrangement"
+      ],
+      "tags": [
+        "seating",
+        "linear"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-31",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Statement: A ≥ B > C ≤ D = E. Conclusions: I. A > C  II. E ≥ C",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither follows"
+      ],
+      "answerIndex": 2,
+      "explanation": "Take each conclusion against the chain. A ≥ B and B > C give A > C, so **I follows**. C ≤ D and D = E give C ≤ E, i.e. E ≥ C, so **II follows**. Both are definite.\n\n**Why not the others**\n- Only I follows — II is also definite because D = E lets C ≤ D transfer to C ≤ E.\n- Only II follows — I is definite: a '≥' followed by a strict '>' yields a strict '>'.\n- Neither follows — both relations are fully determined by the chain.\n\n**Key facts**\n- A ≥ B > C ⇒ A > C (one strict link makes the whole strict).\n- Equality (D = E) lets a relation with D carry over unchanged to E.\n\n*Source: APPSC GK — Logical Reasoning: Inequality (chained relations).*",
+      "source": "APPSC GK — Logical Reasoning: Inequality",
+      "verified": true,
+      "covers": [
+        "Coded inequalities — decode symbols & derive relation"
+      ],
+      "tags": [
+        "inequality",
+        "chaining"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-32",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "A teacher announces: \"This weekend we shall go either for a picnic or for a trek.\" In which single situation is her statement proven FALSE?",
+      "options": [
+        "They go for a picnic but not a trek",
+        "They go for a trek but not a picnic",
+        "They go for both a picnic and a trek",
+        "They go for neither a picnic nor a trek"
+      ],
+      "answerIndex": 3,
+      "explanation": "An inclusive 'A or B' claim is false ONLY when both parts are false — i.e. they do neither. If at least one of the two happens, the promise is kept.\n\n**Why not the others**\n- Picnic but not trek — at least one option occurred, so the 'or' statement is TRUE.\n- Trek but not picnic — again one option occurred; statement TRUE.\n- Both picnic and trek — 'or' is inclusive, so doing both still keeps it TRUE.\n\n**Key facts**\n- 'A or B' is FALSE only when BOTH A and B are false.\n- A conditional 'if P then Q' is false only when P is true and Q is false.\n\n*Source: UPSC CSE (CSAT) 2016 pattern — disjunction falsification; APPSC GK — Verbal Reasoning: Logic.*",
+      "source": "UPSC CSE (CSAT) 2016 (via UPSCprep); APPSC GK — Verbal Reasoning: Logic",
+      "verified": true,
+      "covers": [
+        "Truth-functional logic — falsifying a disjunction / conditional"
+      ],
+      "tags": [
+        "logic",
+        "disjunction",
+        "falsify"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-33",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Rule: \"If it rains, the match will be cancelled.\" Which single observation would prove this rule FALSE?",
+      "options": [
+        "It rains and the match is cancelled",
+        "It does not rain and the match is held",
+        "It rains and the match is held",
+        "It does not rain and the match is cancelled"
+      ],
+      "answerIndex": 2,
+      "explanation": "A conditional 'if P then Q' is false only when the antecedent P is true but the consequent Q is false — it rains (P true) yet the match is held (Q false).\n\n**Why not the others**\n- Rains and cancelled — P true, Q true: the rule is obeyed.\n- No rain and match held — the rule says nothing about no-rain days, so it is not violated.\n- No rain and cancelled — antecedent false; a false antecedent can never falsify a conditional.\n\n**Key facts**\n- Only the case (antecedent true, consequent false) breaks a conditional.\n- A false antecedent leaves a conditional vacuously true.\n\n*Source: APPSC GK — Verbal Reasoning: Conditional logic; UPSC CSE (CSAT) reasoning pattern.*",
+      "source": "APPSC GK — Verbal Reasoning: Logic; UPSC CSE (CSAT)",
+      "verified": true,
+      "covers": [
+        "Truth-functional logic — falsifying a disjunction / conditional"
+      ],
+      "tags": [
+        "logic",
+        "conditional",
+        "falsify"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-34",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Four people ate from fruit baskets. A ate apples and bananas; B ate bananas and oranges; C ate oranges and grapes; D ate apples and grapes. Only B and C fell ill. Which fruit most likely caused the illness?",
+      "options": [
+        "Apples",
+        "Bananas",
+        "Oranges",
+        "Grapes"
+      ],
+      "answerIndex": 2,
+      "explanation": "The cause must be common to ALL the ill (B and C) and absent from all the well (A and D). B ate {bananas, oranges} and C ate {oranges, grapes}; the only item common to both is ORANGES, and neither A nor D ate oranges.\n\n**Why not the others**\n- Apples — eaten by A and D, who stayed well.\n- Bananas — eaten by A (well), so it cannot be the cause.\n- Grapes — eaten by D (well), so ruled out.\n\n**Key facts**\n- Cause = the element common to EVERY affected person and ABSENT from every unaffected person.\n- Eliminate any item eaten by even one healthy person.\n\n*Source: UPSC CSE (CSAT) 2016 pattern — cause elimination / data logic (via UPSCprep).*",
+      "source": "UPSC CSE (CSAT) 2016 (via UPSCprep)",
+      "verified": true,
+      "covers": [
+        "Cause-elimination / data logic (common element)"
+      ],
+      "tags": [
+        "data-logic",
+        "cause-elimination"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-35",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "Five students fell sick after lunch. The suspect dish is the ONE item eaten by every sick student and by none of the healthy ones. Sick students ate {rice, curd}, {rice, salad}, {rice, juice}; healthy students ate {curd, salad} and {juice, salad}. Which item is the suspect?",
+      "options": [
+        "Rice",
+        "Curd",
+        "Salad",
+        "Juice"
+      ],
+      "answerIndex": 0,
+      "explanation": "The only item eaten by all three sick students is RICE, and neither healthy student ate rice — so rice is the suspect.\n\n**Why not the others**\n- Curd — a healthy student ate curd, so it is ruled out.\n- Salad — both healthy students ate salad; clearly not the cause.\n- Juice — a healthy student ate juice, so it is eliminated.\n\n**Key facts**\n- Suspect = item present in every affected case and absent from every unaffected case.\n- A single healthy consumer eliminates an item.\n\n*Source: UPSC CSE (CSAT) cause-elimination pattern (via UPSCprep).*",
+      "source": "UPSC CSE (CSAT) (via UPSCprep)",
+      "verified": true,
+      "covers": [
+        "Cause-elimination / data logic (common element)"
+      ],
+      "tags": [
+        "data-logic",
+        "cause-elimination"
+      ]
+    },
+    {
+      "id": "ment-logical-reasoning-mcq-36",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "question": "A group has 30 men (none of whom know music) and 20 women (some of whom know music). Six people are chosen at random and it turns out that NONE of the six knows music. What can be concluded about the gender composition of the six?",
+      "options": [
+        "All six are men",
+        "At least some of the six are women",
+        "Exactly three are men and three are women",
+        "Nothing definite can be said about the gender composition"
+      ],
+      "answerIndex": 3,
+      "explanation": "The people who do NOT know music are all 30 men PLUS the women who do not know music. So a music-free group of six may be all men, all non-music women, or any mix — the data does not fix the split.\n\n**Why not the others**\n- All six men — possible but not forced, since non-music women also qualify.\n- At least some women — not forced; the six could all be men.\n- Exactly three-three — an arbitrary split with no basis in the data.\n\n**Key facts**\n- When the given data is consistent with several compositions, the correct answer is 'cannot be determined'.\n- Beware questions engineered so that a definite-looking option is actually unsupported.\n\n*Source: UPSC CSE (CSAT) 2016 pattern — indeterminacy trap (via UPSCprep).*",
+      "source": "UPSC CSE (CSAT) 2016 (via UPSCprep)",
+      "verified": true,
+      "covers": [
+        "Indeterminacy — 'cannot be determined' trap"
+      ],
+      "tags": [
+        "indeterminacy",
+        "data-logic"
+      ]
+    }
+  ]
+}

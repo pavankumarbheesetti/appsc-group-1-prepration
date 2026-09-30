@@ -18,7 +18,11 @@
       ],
       "source": "NCERT Science; ICMR-National Institute of Nutrition",
       "verified": true,
-      "tags": ["nutrition", "deficiency", "vitamins"]
+      "tags": [
+        "nutrition",
+        "deficiency",
+        "vitamins"
+      ]
     },
     {
       "id": "sci-health-diseases-note-diseases",
@@ -35,7 +39,11 @@
       ],
       "source": "NCERT Science; WHO; NCVBDC, MoHFW",
       "verified": true,
-      "tags": ["communicable", "vector-borne", "ncd"]
+      "tags": [
+        "communicable",
+        "vector-borne",
+        "ncd"
+      ]
     },
     {
       "id": "sci-health-diseases-note-immunity-uip",
@@ -52,7 +60,12 @@
       ],
       "source": "MoHFW; WHO India; PIB",
       "verified": true,
-      "tags": ["immunity", "vaccines", "uip", "indradhanush"]
+      "tags": [
+        "immunity",
+        "vaccines",
+        "uip",
+        "indradhanush"
+      ]
     },
     {
       "id": "sci-health-diseases-note-missions",
@@ -69,7 +82,12 @@
       ],
       "source": "PIB; National Health Authority; MoHFW; National Health Policy 2017",
       "verified": true,
-      "tags": ["ayushman-bharat", "nhm", "abdm", "health-policy"]
+      "tags": [
+        "ayushman-bharat",
+        "nhm",
+        "abdm",
+        "health-policy"
+      ]
     },
     {
       "id": "sci-health-diseases-note-eradication",
@@ -86,7 +104,13 @@
       ],
       "source": "WHO; MoHFW; PIB",
       "verified": true,
-      "tags": ["eradication", "elimination", "who", "amr", "tb"]
+      "tags": [
+        "eradication",
+        "elimination",
+        "who",
+        "amr",
+        "tb"
+      ]
     },
     {
       "id": "sci-health-diseases-note-programmes-outbreaks",
@@ -103,7 +127,39 @@
       ],
       "source": "Ministry of Women & Child Development; WHO; MoHFW; PIB",
       "verified": true,
-      "tags": ["poshan", "outbreaks", "one-health", "icmr"]
+      "tags": [
+        "poshan",
+        "outbreaks",
+        "one-health",
+        "icmr"
+      ]
+    },
+    {
+      "id": "sci-health-diseases-note-immunity-microbiology",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-health-diseases",
+      "title": "Immunity, Vaccine Platforms & Microbiology Concepts",
+      "body": "## Immune cells\n\n- **B cells** produce **antibodies** (humoral immunity); **T cells** drive **cell-mediated immunity** (helper T cells coordinate; cytotoxic T cells kill infected cells). Together they protect the body from pathogen-caused disease.\n\n## Vaccine platforms (COVID-19 examples)\n\n| Vaccine | Platform |\n|---|---|\n| **Covishield** (SII/Oxford–AstraZeneca) | **Viral vector** (ChAdOx1) — NOT mRNA |\n| **Covaxin** (Bharat Biotech) | **Inactivated** whole-virus |\n| **Sputnik V** | **Viral vector** (adenovirus) |\n| Pfizer / Moderna | **mRNA** |\n| ZyCoV-D | **DNA** (world's first) |\n\n## Viruses & other microbes\n\n- Viruses need a host and can infect **bacteria (bacteriophages), fungi (mycoviruses) and plants** — not just animals.\n- **Adenovirus** is a **DNA** virus (causes common cold); a **retrovirus** carries **RNA** and reverse-transcribes to DNA — **HIV** (AIDS) is a retrovirus.\n- **ACE2** is the human cell-surface receptor that **SARS-CoV-2 uses to enter cells** — hence discussed with viral-disease spread.\n\n## Biofilms & probiotics\n\n- **Biofilms** form on medical implants and on food/food-processing surfaces and show **high antibiotic resistance** (10–1000×).\n- **Probiotics** contain **both bacteria and yeast**, **naturally occur in the gut**, and aid digestion of **milk sugars (lactose)**.\n\n## Disease–agent quick pairs\n\n- **H1N1** = swine flu; **H5N1** = bird flu; **Zika/Dengue/Chikungunya** = *Aedes* mosquito; **Ebola** hit **Guinea, Sierra Leone, Liberia** (2014 West Africa).",
+      "keyPoints": [
+        "B cells make antibodies (humoral immunity); T cells provide cell-mediated immunity.",
+        "Covishield = viral vector (not mRNA); Covaxin = inactivated; Sputnik V = viral vector; ZyCoV-D = world's first DNA vaccine.",
+        "Viruses can infect bacteria (bacteriophages), fungi and plants, not only animals.",
+        "Adenovirus is a DNA virus; a retrovirus (RNA) like HIV reverse-transcribes to DNA.",
+        "ACE2 is the receptor SARS-CoV-2 uses to enter human cells.",
+        "Biofilms form on implants and food surfaces and are highly antibiotic-resistant.",
+        "Probiotics contain bacteria and yeast, naturally occur in the gut and help digest lactose.",
+        "Ebola's 2014 outbreak centred on Guinea, Sierra Leone and Liberia."
+      ],
+      "source": "ICMR/WHO fact sheets; NIV Pune; UPSC-standard S&T references (verified Sep 2026)",
+      "verified": true,
+      "tags": [
+        "immunity",
+        "vaccine-platforms",
+        "biofilm",
+        "probiotic",
+        "retrovirus",
+        "ace2"
+      ]
     }
   ]
 }

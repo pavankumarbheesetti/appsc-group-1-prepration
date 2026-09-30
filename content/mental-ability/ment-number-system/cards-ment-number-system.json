@@ -1,0 +1,157 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Number System",
+  "items": [
+    {
+      "id": "ment-number-system-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Nesting of number sets, and examples of irrationals?",
+      "back": "N ⊂ W ⊂ Z ⊂ Q ⊂ R. Irrationals (non-terminating, non-repeating): √2, √3, π, e. √16 = 4 is rational.",
+      "examPoint": "Number classification — natural/whole/integer/rational/irrational/real",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Prime, composite, co-prime — the key facts?",
+      "back": "2 is the only even prime & smallest prime; 1 is neither prime nor composite; co-prime ⇔ HCF = 1 (e.g. 8 & 15).",
+      "examPoint": "Prime, composite & co-prime identification",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Divisibility tests for 3/9, 4, 8, 11?",
+      "back": "3 & 9: digit sum divisible by 3/9. 4: last two digits. 8: last three digits. 11: (odd-place − even-place) sum = 0 or a multiple of 11.",
+      "examPoint": "Divisibility rules (2, 3, 4, 6, 8, 9, 11)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How to count the factors of a number?",
+      "back": "If N = pᵃ·qᵇ·rᶜ, number of factors = (a+1)(b+1)(c+1), counting 1 and N. E.g. 360 = 2³·3²·5 → 4·3·2 = 24.",
+      "examPoint": "Number of factors via prime factorisation",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How to count odd (and even) factors?",
+      "back": "Odd factors: drop all powers of 2, then take the (e+1) product. Even factors = total − odd. E.g. 1260 → odd = 3·2·2 = 12.",
+      "examPoint": "Number of odd/even factors",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Unit-digit cyclicity of powers?",
+      "back": "Only base's unit digit matters. 2,3,7,8 cycle with period 4; 4,9 with period 2; 0,1,5,6 stay fixed. Use (power mod 4).",
+      "examPoint": "Unit digit — cyclicity of powers",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Unit digit of a sum/product of powers — method?",
+      "back": "Reduce each power to its unit digit via cyclicity, then add/multiply. E.g. 17^23 + 24^24 → 3 + 6 = 9.",
+      "examPoint": "Unit digit of an expression (sum/product of powers)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Trailing zeros in n! — formula?",
+      "back": "⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + … (5s are the limiting factor). E.g. 100! → 20 + 4 = 24 zeros.",
+      "examPoint": "Trailing zeros in a factorial",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Trailing zeros in a product/power — method?",
+      "back": "Prime-factorise, total the 2s and 5s, take the minimum. E.g. 15^50·20^40·25^30 → min(80, 150) = 80.",
+      "examPoint": "Trailing zeros in a product/power",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Remainder of a power (e.g. 2^100 ÷ 7)?",
+      "back": "List power-remainders to find the cycle: 2,4,1 (length 3). 100 mod 3 = 1 → 2^1 ≡ 2. Remainder = 2.",
+      "examPoint": "Remainder of powers — cyclicity/pattern method",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Remainder shortcut when the divisor divides a larger divisor?",
+      "back": "N ÷ d₁ leaves r; if d₂ | d₁ then N ÷ d₂ leaves r mod d₂. E.g. N÷899 leaves 63; 899 = 29·31 → N÷29 leaves 63 mod 29 = 5.",
+      "examPoint": "Remainder — divisor as a multiple / successive division",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "HCF × LCM identity for two numbers?",
+      "back": "HCF × LCM = product of the two numbers (two numbers only). E.g. HCF 12, LCM 240, one number 48 → other = 2880/48 = 60.",
+      "examPoint": "HCF × LCM = product of two numbers",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How to compare/order fractions quickly?",
+      "back": "Convert to decimals, or cross-multiply (a/b vs c/d ⇒ a·d vs b·c), or use a common denominator, then compare.",
+      "examPoint": "Fractions & decimals — comparison and ordering",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Convert a recurring decimal to a fraction?",
+      "back": "Pure recurring 0.(block) = block / (as many 9s as digits). E.g. 0.363636… = 36/99 = 4/11. 0.7̄ = 7/9.",
+      "examPoint": "Recurring decimal to fraction conversion",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Perfect-square unit-digit test + HCF/LCM word problems?",
+      "back": "Squares end only in 0,1,4,5,6,9 (never 2,3,7,8). Bells toll together → LCM; greatest number leaving same remainder → HCF of differences.",
+      "examPoint": "Perfect square — unit-digit property test",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    }
+  ]
+}

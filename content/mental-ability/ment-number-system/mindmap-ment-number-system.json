@@ -1,0 +1,63 @@
+{
+  "kind": "mindmap",
+  "subjectCode": "MENT",
+  "topic": "Number System",
+  "subtopicId": "ment-number-system",
+  "root": "Number System",
+  "branches": [
+    {
+      "label": "Classification",
+      "leaves": [
+        "N ⊂ W ⊂ Z ⊂ Q ⊂ R",
+        "Irrational: √2, π, e",
+        "2 = only even prime",
+        "Co-prime ⇔ HCF = 1"
+      ]
+    },
+    {
+      "label": "Divisibility",
+      "leaves": [
+        "3 / 9: digit sum",
+        "4: last two digits",
+        "8: last three digits",
+        "11: alternating digit sum"
+      ]
+    },
+    {
+      "label": "Factors",
+      "leaves": [
+        "N = pᵃqᵇ → (a+1)(b+1)",
+        "Includes 1 and N",
+        "Odd: drop powers of 2",
+        "Even = total − odd"
+      ]
+    },
+    {
+      "label": "Unit digit",
+      "leaves": [
+        "Only base's unit digit",
+        "2,3,7,8 cycle 4",
+        "4,9 cycle 2",
+        "0,1,5,6 fixed"
+      ]
+    },
+    {
+      "label": "Zeros & power-remainders",
+      "leaves": [
+        "n! zeros = ⌊n/5⌋+⌊n/25⌋…",
+        "Product: min(#2, #5)",
+        "Rem. of aⁿ: use cycle",
+        "2^100 ÷ 7 = 2"
+      ]
+    },
+    {
+      "label": "HCF-LCM & fractions",
+      "leaves": [
+        "HCF × LCM = a × b",
+        "Bells → LCM",
+        "Same remainder → HCF of diffs",
+        "0.(36) = 36/99 = 4/11"
+      ]
+    }
+  ]
+}

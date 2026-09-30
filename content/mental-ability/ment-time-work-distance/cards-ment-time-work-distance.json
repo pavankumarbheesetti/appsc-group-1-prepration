@@ -1,0 +1,117 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Time & Work, Time & Distance",
+  "items": [
+    {
+      "id": "ment-time-work-distance-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "LCM (units) method for time & work?",
+      "back": "Let total work = LCM of the given days, so each rate is a whole number of units/day. Combined rate = sum of unit rates.",
+      "examPoint": "Time & Work — combined work (LCM units)",
+      "source": "APPSC Quantitative Reasoning — Efficiency and Work",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "A alone a days, B alone b days — together in how many days?",
+      "back": "Together time = ab/(a+b) = 1/(1/a+1/b). Never add the days.",
+      "examPoint": "Time & Work — combined work",
+      "source": "APPSC Quantitative Reasoning — Time & Work",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "'A is k times as efficient as B' — days relation?",
+      "back": "Rate ratio A:B = k:1 ⇒ days ratio 1:k (faster one takes fewer days). Wages ∝ efficiency.",
+      "examPoint": "Time & Work — efficiency comparison",
+      "source": "APPSC Quantitative Reasoning — Efficiency",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "Man-days rule for the same job?",
+      "back": "M₁D₁H₁/W₁ = M₂D₂H₂/W₂. More men or hours ⇒ fewer days; include W when job size changes.",
+      "examPoint": "Man-days — M₁D₁H₁ = M₂D₂H₂",
+      "source": "APPSC Quantitative Reasoning — Man-Hours",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "Men–women–boys equivalence problems — first step?",
+      "back": "Convert all worker types to one unit via the given relation (e.g. 2 men = 3 women), THEN apply worker-days = workers × days.",
+      "examPoint": "Time & Work — men–women–boys equivalence",
+      "source": "standard APPSC/SSC arithmetic — equivalence",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "Pipes & cisterns — net rate rule?",
+      "back": "Inlet rate is + (fill), outlet/leak is − (empty). Fill time = 1 ÷ net rate; tank fills only if net rate > 0.",
+      "examPoint": "Pipes & cisterns — inlet with outlet/leak",
+      "source": "APPSC Quantitative Reasoning — Pipes and Cistern",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "Speed conversions and average speed for equal distances?",
+      "back": "km/h → m/s ×5/18; m/s → km/h ×18/5. Average speed (equal distances) = 2xy/(x+y) (harmonic mean).",
+      "examPoint": "Speed–time–distance; average speed",
+      "source": "APPSC Quantitative Reasoning — Average Speed",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "Relative speed — same vs opposite direction?",
+      "back": "Same direction: difference of speeds. Opposite: sum of speeds. Used for overtaking, meeting and chase problems.",
+      "examPoint": "Relative speed — same vs opposite direction",
+      "source": "APPSC Quantitative Reasoning — Relative speed",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "Train crossing distances — pole, platform, another train?",
+      "back": "Pole/person: train length ÷ v. Platform: (L+P) ÷ v. Another train: (L₁+L₂) ÷ relative speed.",
+      "examPoint": "Trains — crossing pole/platform/train",
+      "source": "APPSC Quantitative Reasoning — Problem on Train",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "Boats & streams — down/upstream and recovering speeds?",
+      "back": "Downstream = B+S, Upstream = B−S. B = (down+up)/2, S = (down−up)/2.",
+      "examPoint": "Boats & streams — upstream/downstream",
+      "source": "APPSC Quantitative Reasoning — Boat and Stream",
+      "verified": true
+    },
+    {
+      "id": "ment-time-work-distance-card-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "front": "'A beats B by d metres' in an L-metre race — speed ratio?",
+      "back": "In equal time A runs L while B runs (L−d) ⇒ speed ratio = L : (L−d). A 'start of x m' means B runs (L−x).",
+      "examPoint": "Races — beats by metres/seconds",
+      "source": "APPSC Quantitative Reasoning — Race",
+      "verified": true
+    }
+  ]
+}

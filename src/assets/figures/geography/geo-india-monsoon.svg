@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- geo-india-monsoon.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" role="img" aria-labelledby="t d">
+  <title id="t">Indian monsoon mechanism</title>
+  <desc id="d">Upper panel: South-West monsoon (June-Sept), Arabian Sea and Bay of Bengal branches, onset over Kerala ~1 June, driven by the Tibetan low and jet streams. Lower panel: retreating North-East monsoon (Oct-Dec) bringing rain to the Coromandel coast and coastal Andhra Pradesh.</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="492" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Indian Monsoon — mechanism</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">SW (summer) vs NE / retreating (winter) monsoon</text><rect class="box3" x="28" y="92" width="764" height="180" rx="12"/><text class="ink" x="44" y="120" font-size="16" font-weight="700" text-anchor="start">South-West Monsoon (June–Sept)</text><text class="muted" x="44" y="146" font-size="13" text-anchor="start">Triggers: Tibetan low · Subtropical Jet shifts north · Tropical Easterly Jet · Somali Jet</text><path class="river" d="M120 210 C 260 180, 360 200, 430 175"/><path class="river" d="M120 250 C 300 250, 420 230, 520 210"/><text class="teal" x="70" y="200" font-size="13" font-weight="700" text-anchor="start">Arabian Sea branch →</text><text class="teal" x="70" y="262" font-size="13" font-weight="700" text-anchor="start">Bay of Bengal branch →</text><text class="muted" x="560" y="200" font-size="13" text-anchor="start">Onset ~1 June (Kerala)</text><rect class="box2" x="28" y="288" width="764" height="150" rx="12"/><text class="ink" x="44" y="316" font-size="16" font-weight="700" text-anchor="start">North-East / Retreating Monsoon (Oct–Dec)</text><path class="river" d="M520 360 C 400 360, 300 380, 180 400"/><text class="accent" x="300" y="350" font-size="13" font-weight="700" text-anchor="start">← winds cross Bay of Bengal</text><text class="muted" x="44" y="402" font-size="13" text-anchor="start">Main rainy season of the Coromandel coast (Tamil Nadu) &amp; coastal Andhra Pradesh</text><text class="muted" x="28" y="470" font-size="13" text-anchor="start">El Niño weakens the SW monsoon; La Niña &amp; +ve IOD strengthen it.</text>
+</svg>

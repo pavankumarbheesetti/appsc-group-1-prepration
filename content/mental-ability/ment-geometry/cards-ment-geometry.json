@@ -1,0 +1,107 @@
+{
+  "kind": "cards",
+  "subjectCode": "MENT",
+  "topic": "Geometry",
+  "items": [
+    {
+      "id": "ment-geometry-card-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Parallel lines cut by a transversal — which pairs are equal vs supplementary?",
+      "back": "Corresponding, alternate interior and alternate exterior angles are EQUAL; co-interior (same-side interior) angles are SUPPLEMENTARY (180°).",
+      "examPoint": "Parallel lines & transversal — angle pairs",
+      "source": "Quantitative Reasoning — Angles",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Triangle angle sum, exterior angle and the inequality?",
+      "back": "Interior angles = 180°; exterior angle = sum of two remote interiors; each side lies strictly between the difference and sum of the other two.",
+      "examPoint": "Triangle — angle sum & exterior-angle theorem",
+      "source": "Quantitative Reasoning — Triangle",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Pythagorean triples to memorise; similar-triangle area ratio?",
+      "back": "3-4-5, 5-12-13, 8-15-17, 7-24-25 (and multiples). Similar triangles: area ratio = (side ratio)² = k².",
+      "examPoint": "Pythagoras & triangle similarity",
+      "source": "Quantitative Reasoning — Triangle; Similarity",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Triangle centres — centroid, circumcentre, incentre, orthocentre?",
+      "back": "Centroid: medians, divides 2:1 from vertex. Circumcentre: perp-bisectors (right △ ⇒ hypotenuse midpoint). Incentre: angle bisectors. Orthocentre: altitudes (right △ ⇒ right-angle vertex).",
+      "examPoint": "Triangle centres properties",
+      "source": "Quantitative Reasoning — Centroid; Circumcentre",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Angle bisector theorem?",
+      "back": "Bisector from A meets BC at D with BD:DC = AB:AC.",
+      "examPoint": "Angle bisector theorem",
+      "source": "Quantitative Reasoning — Angle Bisector",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Circle angle theorems (centre, semicircle, same segment, cyclic quad)?",
+      "back": "Central angle = 2× inscribed on same arc; angle in a semicircle = 90°; angles in the same segment equal; cyclic quad opposite angles sum 180°.",
+      "examPoint": "Circle — central vs inscribed; cyclic quad",
+      "source": "Quantitative Reasoning — Theorems of circle",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Tangent facts: length, two-tangent angle, tangential quadrilateral?",
+      "back": "Tangent ⟂ radius; length from point at distance d = √(d²−r²); two tangents from a point are equal, with ∠P + central angle = 180°; tangential quad: AB+CD=BC+AD.",
+      "examPoint": "Tangent properties & tangential quadrilateral",
+      "source": "Quantitative Reasoning — Theorems of circle",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Polygon angle sums?",
+      "back": "Interior sum = (n−2)×180°; exterior sum = 360° (always). Regular: each interior = (n−2)180/n, each exterior = 360/n.",
+      "examPoint": "Polygon — interior & exterior angle sums",
+      "source": "Quantitative Reasoning — Angles; polygon",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Coordinate geometry — distance, section, slope, triangle area?",
+      "back": "d=√(Δx²+Δy²); section (m:n) = ((mx₂+nx₁)/(m+n),…); slope=Δy/Δx (⊥ ⇒ m₁m₂=−1); area=½|x₁(y₂−y₃)+…|, zero ⇒ collinear.",
+      "examPoint": "Coordinate geometry — distance, section, slope, area",
+      "source": "Quantitative Reasoning — Co-ordinate Geometry",
+      "verified": true
+    },
+    {
+      "id": "ment-geometry-card-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "front": "Counting integer-sided triangles for perimeter P?",
+      "back": "List a ≤ b ≤ c with a+b+c=P and a+b>c (so c < P/2). Perimeter 14 ⇒ 4 triangles; perimeter 11 ⇒ 4.",
+      "examPoint": "Integer-sided triangle counting",
+      "source": "Quantitative Reasoning — Triangle inequality",
+      "verified": true
+    }
+  ]
+}

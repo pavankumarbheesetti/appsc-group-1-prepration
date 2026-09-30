@@ -1,0 +1,129 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Logical Reasoning",
+  "items": [
+    {
+      "id": "ment-logical-reasoning-note-syllogism-method",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "title": "Syllogism — Venn method, either-or & possibility",
+      "body": "## Method\n\nAssume all statements are 100% true and draw the **least possible** Venn diagram. A definite conclusion must hold in *every* possible diagram; a **possibility** conclusion holds if it is true in *any one* diagram.\n\n## Quantifier → diagram\n\n| Statement | Meaning |\n|---|---|\n| All A are B | A wholly inside B (definite converse: Some B are A) |\n| Some A are B | A and B overlap |\n| Some A are not B | part of A lies outside B |\n| No A is B | A and B disjoint (No B is A too) |\n\n## Either-Or (complementary pairs)\n\nWhen two conclusions have the **same subject & predicate**, are **individually false**, and form the pair **Some + No** or **All + Some-not**, the answer is *Either I or II follows*.\n\n## Worked example\n\nStatements: All bottles are black; Some black are white. Conclusions: I. All blacks are bottles; II. Some blacks are not bottles. Both are only *possible* (individually false) and form the All + Some-not pair → **Either I or II follows**.\n\n## Common traps\n\n- Treating a possible conclusion as definite.\n- Reading 'Some + Some-not' or 'All + No' as an either-or pair (they are NOT).\n- Forgetting 'Only a few A are B' = Some are + Some are not (both definite).",
+      "keyPoints": [
+        "Always draw the least possible Venn diagram; a definite conclusion must hold in every diagram.",
+        "'All A are B' gives the definite converse 'Some B are A'.",
+        "Either-Or pairs are only Some+No and All+Some-not, with same subject/predicate and both individually false.",
+        "A possibility conclusion is true if it holds in any one valid diagram.",
+        "'Only a few A are B' means Some A are B AND Some A are not B (both definitely true).",
+        "If all statements are positive, all negative definite conclusions are false, and vice versa."
+      ],
+      "source": "APPSC GK — Logical Reasoning: Syllogism",
+      "verified": true,
+      "tags": ["syllogism", "venn", "method"]
+    },
+    {
+      "id": "ment-logical-reasoning-note-inequality-method",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "title": "Coded inequalities — decoding & either-or",
+      "body": "## Method\n\nFirst **decode** any symbols into <, >, ≤, ≥, =, then combine only when every link points the **same direction**. A relation is definite only if the chain is unbroken and one-directional.\n\n## Direction rules\n\n| Chain | Definite conclusion |\n|---|---|\n| P > Q > R / P > Q ≥ R / P = Q > R | P > R |\n| P < Q < R / P < Q ≤ R / P = Q < R | P < R |\n| P ≥ Q ≥ R / P = Q ≥ R | P ≥ R (P > R or P = R) |\n| P ≤ Q ≤ R | P ≤ R |\n| P < Q > R (opposite arrows meet) | No conclusion |\n\nA single strict '>' in an otherwise '≥/=' chain makes the end relation strict '>'.\n\n## Either-Or\n\nWhen two elements can't be fixed and the two conclusions form **≤ + >** (or **> + ≤**) on the same pair, both are individually false but together exhaust all cases → *Either/Or*.\n\n## Worked example\n\nH = T > U ≤ I: the '>' and '≤' meet at U, so H vs I is undetermined. 'H > I' and 'H ≤ I' → **Either I or II follows**.\n\n## Common traps\n\n- Concluding a strict '>' from a '≥' link (equality is allowed).\n- Combining across opposite-facing arrows (P < Q > R gives nothing).",
+      "keyPoints": [
+        "Decode symbols to <,>,≤,≥,= before combining any relations.",
+        "Combine only same-direction links; opposite arrows meeting at an element break the relation.",
+        "A '≥' link can never yield a strict '>' conclusion by itself.",
+        "One strict '>' in a ≥/= chain forces the overall relation to be '>'.",
+        "Inequality either-or pairs are ≤+> and >+≤ on the same two elements, both individually false."
+      ],
+      "source": "APPSC GK — Logical Reasoning: Inequality",
+      "verified": true,
+      "tags": ["inequality", "coded", "method"]
+    },
+    {
+      "id": "ment-logical-reasoning-note-venn-numerical",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "title": "Logical Venn — representation & region counts",
+      "body": "## Representation\n\nChoose the diagram from the class relationship: a strict 'is-a' chain (Pigeon ⊂ Bird ⊂ Living thing) = **nested/concentric** circles; two co-ordinate subclasses of one class (Gold, Silver ⊂ Metal) = **separate** circles inside it; classes that only sometimes coincide (Doctors, Females) = **overlapping** circles.\n\n## Numerical formula\n\nTwo sets: **n(A ∪ B) = n(A) + n(B) − n(A ∩ B)**; *neither* = Total − n(A ∪ B).\n\nThree sets: **n(A ∪ B ∪ C) = n(A)+n(B)+n(C) − n(A∩B) − n(B∩C) − n(A∩C) + n(A∩B∩C)**.\n\n## Worked example\n\n100 students, 60 tea, 50 coffee, 30 both. At least one = 60 + 50 − 30 = 80; **neither = 100 − 80 = 20**.\n\n## Common traps\n\n- Forgetting to subtract the overlap (double-counting 'both').\n- Confusing 'only A' (n(A) − n(A∩B)) with n(A).",
+      "keyPoints": [
+        "Nested circles = strict subset chain; separate circles = disjoint co-ordinate classes; overlap = partial coincidence.",
+        "Two-set union: n(A∪B) = n(A) + n(B) − n(A∩B).",
+        "Neither = Total − n(A∪B).",
+        "Only-A region = n(A) − n(A∩B); subtract overlaps to avoid double counting.",
+        "Three-set count adds back the triple overlap n(A∩B∩C)."
+      ],
+      "source": "APPSC GK — Logical Reasoning: Logical Venn & Venn Diagram Problems",
+      "verified": true,
+      "tags": ["venn", "numerical", "method"]
+    },
+    {
+      "id": "ment-logical-reasoning-note-arrangement-puzzles",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "title": "Seating, floor & grouping puzzles — approach",
+      "body": "## General approach\n\nPlace **definite clues first** (ends, fixed floors, 'directly opposite'), then fit relative clues ('immediately right/below', 'between'). Keep a slot grid and eliminate.\n\n## Linear rows\n\nFacing **north**: person's left = your left. Facing **south**: left/right flip. 'Between X and Y' fixes order once one end is known.\n\n## Circular tables\n\nFacing the **centre**: a person's left is clockwise-neighbour's side; facing **outward** it reverses. In an n-seat circle the person opposite seat i sits at seat **i + n/2**.\n\n## Floor puzzles\n\nNumber floors bottom = 1 to top = n; 'immediately above/below' = adjacent floors; 'topmost/ground' are hard anchors.\n\n## Grouping & selection\n\nCount with combinations C(n,r); apply constraints by **subtracting** invalid groups (e.g. 'A and B never together', 'at least one woman').\n\n## Common traps\n\n- Mixing up left/right for south-facing or outward-facing people.\n- Assuming adjacency when only 'near' (not 'immediately next') is stated.",
+      "keyPoints": [
+        "Anchor definite clues (ends, fixed floors, opposite) before relative clues.",
+        "North-facing: person's left = your left; south-facing reverses.",
+        "In an n-seat circle, seat opposite i is seat i + n/2.",
+        "Floor 'immediately above/below' means adjacent floors; top/ground are hard anchors.",
+        "Grouping: use C(n,r) and subtract groups that break constraints.",
+        "'Near' is not the same as 'immediately next to' — do not assume adjacency."
+      ],
+      "source": "APPSC GK — Logical Reasoning: Seating, Floor & Grouping puzzles",
+      "verified": true,
+      "tags": ["seating", "puzzle", "method"]
+    },
+    {
+      "id": "ment-logical-reasoning-note-statement-based",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "title": "Statement-based verbal reasoning — arguments, assumptions, conclusions, inferences",
+      "body": "## Statement & Arguments\n\n**Strong** = relevant + directly related to the issue + real practical import. **Weak** = trivial, ambiguous, superficial, or merely restating the question.\n\n## Statement & Assumptions\n\nAn assumption is something **taken for granted** for the statement to hold. Test by **negation**: if denying it collapses the statement, it is implicit. Reject assumptions that are extreme, comparative-opinion, or bring in outside facts.\n\n## Statement & Conclusions\n\nAccept **moderate, hedged** conclusions ('may', 'likely') that follow reasonably; reject **absolute** claims ('always', 'completely', 'never') and anything needing facts beyond the statement.\n\n## Statement & Inferences\n\nAn inference must be a **logically certain** deduction from the data, adding nothing external. Distinguish **percentage points** (75 − 60 = 15) from **percent change** (15/60 = 25%).\n\n## Common traps\n\n- Marking an extreme conclusion/course as valid.\n- Treating a debatable value-judgement as an implicit assumption.",
+      "keyPoints": [
+        "Strong argument = relevant + directly related + real practical import; weak = trivial/ambiguous/restates question.",
+        "Assumption test: negate it — if the statement fails, it is implicit.",
+        "Reject extreme, comparative-opinion, or outside-fact assumptions.",
+        "Conclusions: accept hedged ('may/likely'), reject absolute ('always/never/completely').",
+        "Inference must be logically certain from the passage, adding no external data.",
+        "Percentage points (75−60=15) differ from percent increase (15/60=25%)."
+      ],
+      "source": "APPSC GK — Verbal Reasoning: Statements & Arguments/Assumptions/Conclusions/Inferences",
+      "verified": true,
+      "tags": ["verbal", "statement-based", "method"]
+    },
+    {
+      "id": "ment-logical-reasoning-note-ar-cause-coa",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "title": "Assertion-Reason, Cause-Effect & Course of Action frameworks",
+      "body": "## Assertion & Reason (standard 4 options)\n\n1. Both A and R true, **R correctly explains A**.\n2. Both A and R true, but R is **NOT** the correct explanation.\n3. A true, R false.\n4. A false, R true.\n\nMethod: judge each statement's truth first, then test whether R is the *cause* of A.\n\n## Cause & Effect\n\nIdentify which event realistically **triggers** the other and check the **time order**. Options usually include: I cause/II effect; II cause/I effect; independent causes; both effects of a common cause.\n\n## Course of Action\n\nA valid course of action is **feasible, proportionate, and improves** the situation. Reject actions that are extreme, escapist, or create bigger problems.\n\n## Worked cues\n\n- Water boils lower at altitude *because* pressure falls → A-R option 1.\n- Petrol price rises → public-transport use rises → I is cause, II is effect.\n- Many fail Maths → arrange remedial coaching (valid); removing Maths (invalid, extreme).",
+      "keyPoints": [
+        "A-R: decide truth of A and R separately, then whether R explains A.",
+        "A-R option 1 requires R to be the actual cause of A, not just co-true.",
+        "Cause-Effect: find the realistic trigger and check chronological order.",
+        "Course of action must be feasible, proportionate and improve the situation.",
+        "Reject extreme or escapist courses of action (e.g. removing a core subject)."
+      ],
+      "source": "APPSC GK — Verbal Reasoning: Assertion-Reason, Cause & Effect, Course of Action",
+      "verified": true,
+      "tags": ["assertion-reason", "cause-effect", "course-of-action", "method"]
+    },
+    {
+      "id": "ment-logical-reasoning-note-truth-cause-indeterminacy",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-logical-reasoning",
+      "title": "Truth-functional logic, cause-elimination & indeterminacy traps",
+      "body": "## Falsifying a disjunction or conditional (UPSC CSAT favourite)\n\n| Claim | It is FALSE only when |\n|---|---|\n| 'A or B' (inclusive) | BOTH A and B are false |\n| 'A and B' | at least ONE of A, B is false |\n| 'If P then Q' | P is TRUE and Q is FALSE |\n\n- An inclusive 'or' is still true when both happen; only 'neither' breaks it.\n- A conditional is never falsified by a false antecedent (it is vacuously true).\n\n## Cause-elimination / data logic\n\nGiven who consumed what and who was affected, the **cause** is the single item that is common to **every affected** case AND absent from **every unaffected** case. One healthy consumer eliminates an item.\n\nWorked cue: sick ate {rice,curd},{rice,salad},{rice,juice}; healthy ate {curd,salad},{juice,salad}. Only *rice* is in all sick and no healthy set ⇒ rice is the cause.\n\n## Indeterminacy ('cannot be determined')\n\nWhen the data is consistent with **more than one** answer, the correct response is *nothing definite can be said*. Test-writers dress an underdetermined split (e.g. gender of a music-free subset drawn from 30 non-music men + some non-music women) as though a definite option existed.\n\n## Common traps\n\n- Reading inclusive 'or' as exclusive (marking 'both' as a falsifier).\n- Treating a false-antecedent case as violating a conditional.\n- Picking a definite-sounding option when the data underdetermines it.",
+      "keyPoints": [
+        "'A or B' is false only when both are false; 'if P then Q' is false only when P is true and Q is false.",
+        "A false antecedent leaves a conditional vacuously true — it cannot falsify the rule.",
+        "Cause = item common to every affected case and absent from every unaffected case; one healthy consumer eliminates it.",
+        "When data fits several answers, the correct choice is 'cannot be determined'.",
+        "Inclusive 'or' stays true when both parts occur — only 'neither' breaks it."
+      ],
+      "source": "UPSC CSE (CSAT) 2016 patterns (via UPSCprep); APPSC GK — Verbal Reasoning: Logic",
+      "verified": true,
+      "tags": ["logic", "disjunction", "conditional", "cause-elimination", "indeterminacy", "method"]
+    }
+  ]
+}

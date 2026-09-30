@@ -1,0 +1,139 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Clocks, Calendars & Ages",
+  "items": [
+    {
+      "id": "ment-clocks-calendars-ages-note-clock-angle-events",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Clocks — angle formula and hand-position events",
+      "body": "## Angle between the hands\n\n- **Angle = |30H − 5.5M|** degrees (H = hour, M = minutes). If the result exceeds 180°, subtract from 360°.\n- The minute hand moves **6°/min**, the hour hand **0.5°/min**, so the minute hand gains **5.5°/min** on the hour hand.\n\n## When the hands meet / oppose / square up\n\n| Event | Condition | In 12 hours | In 24 hours |\n|---|---|---|---|\n| Coincide (0°) | 30H = 5.5M | 11 | 22 |\n| Opposite (180°) | \\|30H − 5.5M\\| = 180 | 11 | 22 |\n| Right angle (90°) | \\|30H − 5.5M\\| = 90 | 22 | 44 |\n\n## Worked example\n\nAt 3:40, angle = |30×3 − 5.5×40| = |90 − 220| = **130°**. Hands coincide every **720/11 = 65 5/11 min**; the overlap past hour H is at **60H/11** minutes.\n\n## Trap\n\n- Between 5 and 7 o'clock the hands are opposite only ONCE, which is why the 12-hour count is 11, not 12.",
+      "keyPoints": [
+        "Angle between hands = |30H − 5.5M| degrees; take the value ≤ 180°.",
+        "Minute hand gains 5.5° per minute on the hour hand.",
+        "In 12 hours: coincide 11 times, opposite 11 times, right angles 22 times (double for 24 h).",
+        "Hands coincide every 65 5/11 minutes; overlap past hour H is at 60H/11 minutes.",
+        "Right-angle / opposite times solve |30H − 5.5M| = 90 or 180."
+      ],
+      "mnemonic": "Remember '30H minus five-and-a-half M' — the 5.5 is the minute hand's per-minute gain.",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "tags": [
+        "clock",
+        "angle",
+        "coincidence",
+        "right-angle"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Clocks — faulty clocks and mirror images",
+      "body": "## Faulty (gaining / losing) clock\n\n- **Total error = per-hour error × hours elapsed.**\n- A **losing** clock shows an EARLIER time; a **gaining** clock shows a LATER time.\n- Example: loses 3 min/hour, set right at 6 a.m. → in 24 h it loses 72 min = 1 h 12 min → shows **4:48 a.m.**\n- 'Correct-time' problems: if a clock gains g and loses l over a span, find when the net error returns to zero.\n\n## Mirror image\n\n- **Mirror time = 12:00 − actual time** (use **11:60 − time** when minutes ≠ 00).\n- Example: 3:25 → 11:60 − 3:25 = **8:35**.\n\n## Water image\n\n- Reference is **18:00 (6:00)**, not 12:00 — subtract the time from 18:30/etc. (a different reflection axis).\n\n## Trap\n\n- Don't confuse mirror (left–right, base 12:00) with water image (up–down, base 6:00).",
+      "keyPoints": [
+        "Faulty-clock error = per-hour gain/loss × number of hours elapsed.",
+        "A losing clock reads earlier; a gaining clock reads later than true time.",
+        "Mirror image of a time = 12:00 − time (use 11:60 − time when minutes are non-zero).",
+        "Mirror example: 3:25 → 8:35.",
+        "Water image uses the 6:00 reference, distinct from the mirror's 12:00 reference."
+      ],
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "tags": [
+        "clock",
+        "faulty-clock",
+        "mirror-image",
+        "water-image"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Calendars — odd days and finding the day of the week",
+      "body": "## Odd days\n\n- **Odd days** = the days left over after removing complete weeks.\n- 1 ordinary year = **1 odd day**; 1 leap year = **2 odd days**.\n- Century totals: **100 yrs = 5, 200 yrs = 3, 300 yrs = 1, 400 yrs = 0** odd days.\n\n## Month odd-days (ordinary year)\n\n| Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| 3 | 0 | 3 | 2 | 3 | 2 | 3 | 3 | 2 | 3 | 2 | 3 |\n\n(In a leap year February contributes 1 odd day.)\n\n## Finding the day\n\n1. Add odd days from complete centuries + remaining years (count leap years as 2) + month odd-days + date.\n2. Take the total **mod 7**; map **0 → Sunday, 1 → Monday, … 6 → Saturday**.\n\n## Worked example\n\n15 Aug 1947 → total odd days ≡ 5 ⇒ **Friday** (verified with datetime).",
+      "keyPoints": [
+        "Odd days = remainder after removing whole weeks; ordinary year = 1, leap year = 2.",
+        "Century odd days: 100→5, 200→3, 300→1, 400→0.",
+        "Map the total odd days mod 7: 0 = Sunday … 6 = Saturday.",
+        "Month odd-days (ordinary): 3,0,3,2,3,2,3,3,2,3,2,3.",
+        "15 August 1947 was a Friday."
+      ],
+      "mnemonic": "Century odd-days count DOWN in twos: 5, 3, 1, 0.",
+      "source": "local APPSC Logical Reasoning PDF — Calendar",
+      "verified": true,
+      "tags": [
+        "calendar",
+        "odd-days",
+        "day-of-week"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-leap-year-repetition",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Calendars — leap-year rule and calendar repetition",
+      "body": "## Leap-year rule\n\n- A year is a leap year if **divisible by 4**, EXCEPT century years, which must be **divisible by 400**.\n- So 2000 is a leap year; 1900 and 2100 are NOT.\n- Leap year = 366 days (Feb 29); ordinary year = 365 days.\n\n## Same date, next year\n\n- The same date moves forward **1 day** after an ordinary year and **2 days** after a leap year.\n- Example: 1 Jan 2024 (Mon) → 1 Jan 2025 is **Wednesday**, because 2024 is a leap year (+2).\n\n## Calendar repetition\n\n- A calendar repeats when the total odd days since that year ≡ **0 (mod 7)** AND leap-year status matches.\n- **Ordinary years** typically repeat after **6 or 11 years**; **leap years** after **28 years**.\n- Example: 2023's calendar repeats in **2034** (verified with datetime).",
+      "keyPoints": [
+        "Leap year: divisible by 4, but century years must be divisible by 400.",
+        "2000 is a leap year; 1900 and 2100 are not.",
+        "Same date advances 1 day after an ordinary year, 2 days after a leap year.",
+        "A calendar repeats when odd days ≡ 0 mod 7 and leap-status matches.",
+        "Ordinary years repeat after 6/11 years; leap years after 28; 2023 repeats in 2034."
+      ],
+      "source": "local APPSC Logical Reasoning PDF — Calendar",
+      "verified": true,
+      "tags": [
+        "calendar",
+        "leap-year",
+        "repetition"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-ages-methods",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Ages — ratio, difference and average methods",
+      "body": "## Set-up\n\n- **Ratio ages** → write parts as kx (e.g. 5x, 7x); add/subtract the SAME time to each, then equate to the new ratio and solve.\n- **Difference** stays constant over time: if one is k years older, use A = B + k.\n- **'N years ago'** → subtract N from BOTH ages before applying the relation; **'N years hence'** → add N to both.\n\n## Averages of ages\n\n- New member's age = new_avg × (n+1) − old_avg × n.\n- **Shortcut:** added age = new average + (rise in average × number of old members).\n- Example: 11 players avg 29; adding a coach raises avg to 30 → coach = 30 + 1×11 = **41**.\n\n## Worked example\n\nAges 5x : 7x; six years hence 3:4 → 4(5x+6) = 3(7x+6) → x = 6 → **30 and 42 years**.\n\n## Common traps\n\n- Add the time to BOTH people, not just one.\n- Ratios are NOT preserved as years pass — always re-solve.",
+      "keyPoints": [
+        "Ratio ages: use parts kx, add the same time to each, equate to the new ratio, solve.",
+        "Age difference is constant; if one is k years older, A = B + k.",
+        "'N years ago' subtracts N from both ages; 'N years hence' adds N to both.",
+        "Added member's age = new_avg×(n+1) − old_avg×n; shortcut = new_avg + rise×(old count).",
+        "Ratios change over time, so re-solve rather than reusing the old ratio."
+      ],
+      "mnemonic": "Ages move together — whatever you do to one age, do to the other.",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Age / Based on Cricket and Age",
+      "verified": true,
+      "tags": [
+        "ages",
+        "ratio",
+        "average",
+        "difference"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-century-and-date-shift",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Last day of a century & date-shift within a month",
+      "body": "**Last day of a century** follows a fixed 400-year cycle. The odd days for 100/200/300/400 years are 5/3/1/0, so the last day (31 Dec of a year ending in 00) can only be Friday, Wednesday, Monday or Sunday — it can **never be Tuesday, Thursday or Saturday**. (The same three days are also impossible as the *first* day of a century.)\n\n**Date-shift within one month:** any two dates in the same month differ by a whole number of days, so the weekday advances by (difference mod 7).\n\n*Example:* if the 5th is a Tuesday, the 21st is 21 − 5 = 16 days later; 16 mod 7 = 2, so the day is Tuesday + 2 = **Thursday**. Dates exactly 7, 14, 21 … apart fall on the same weekday.\n\n**Trap:** count the GAP between the dates (16), not the date number itself, before taking mod 7.",
+      "keyPoints": [
+        "Last day of a century is only Fri/Wed/Mon/Sun — never Tue/Thu/Sat",
+        "Odd days: 100 yr = 5, 200 = 3, 300 = 1, 400 = 0",
+        "Within a month, weekday advances by (date difference mod 7)",
+        "5th = Tuesday ⇒ 21st = Tue + (16 mod 7 = 2) = Thursday",
+        "Dates 7/14/21 apart share the same weekday"
+      ],
+      "source": "Testbook Calendar Reasoning PYQ patterns; APPSC Quantitative Reasoning PDF",
+      "verified": true,
+      "tags": [
+        "calendar",
+        "century",
+        "date-shift"
+      ]
+    }
+  ]
+}

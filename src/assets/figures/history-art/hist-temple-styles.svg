@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- hist-temple-styles.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" role="img" aria-labelledby="t d">
+  <title id="t">Temple architecture styles</title>
+  <desc id="d">Three classical temple styles: Nagara (north, curvilinear shikhara), Dravida (south, pyramidal vimana and gopuram), and Vesara (Deccan hybrid).</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="452" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Temple architecture styles of India</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">Three classical modes</text><rect class="box2" x="34" y="110" width="250" height="300" rx="12"/><polygon class="accent" points="129.0,210 159.0,150 189.0,210"/><text class="ink" x="159.0" y="250" font-size="18" font-weight="700" text-anchor="middle">Nagara</text><text class="muted" x="159.0" y="280" font-size="12.5" text-anchor="middle">North India; curvilinear</text><text class="muted" x="159.0" y="300" font-size="12.5" text-anchor="middle">SHIKHARA; no boundary walls;</text><text class="muted" x="159.0" y="320" font-size="12.5" text-anchor="middle">e.g. Khajuraho, Sun Temple</text><text class="muted" x="159.0" y="340" font-size="12.5" text-anchor="middle">Konark</text><rect class="box3" x="292" y="110" width="250" height="300" rx="12"/><polygon class="teal" points="377.0,210 389.0,150 445.0,150 457.0,210"/><text class="ink" x="417.0" y="250" font-size="18" font-weight="700" text-anchor="middle">Dravida</text><text class="muted" x="417.0" y="280" font-size="12.5" text-anchor="middle">South India; pyramidal VIMANA</text><text class="muted" x="417.0" y="300" font-size="12.5" text-anchor="middle">+ GOPURAM gateways; enclosed;</text><text class="muted" x="417.0" y="320" font-size="12.5" text-anchor="middle">e.g. Brihadeeswara, Meenakshi</text><rect class="box" x="550" y="110" width="250" height="300" rx="12"/><rect class="blue" x="645.0" y="160" width="60" height="50"/><text class="ink" x="675.0" y="250" font-size="18" font-weight="700" text-anchor="middle">Vesara</text><text class="muted" x="675.0" y="280" font-size="12.5" text-anchor="middle">Deccan hybrid of Nagara +</text><text class="muted" x="675.0" y="300" font-size="12.5" text-anchor="middle">Dravida; e.g.</text><text class="muted" x="675.0" y="320" font-size="12.5" text-anchor="middle">Chalukya/Hoysala temples</text><text class="muted" x="675.0" y="340" font-size="12.5" text-anchor="middle">(Belur, Halebidu)</text>
+</svg>

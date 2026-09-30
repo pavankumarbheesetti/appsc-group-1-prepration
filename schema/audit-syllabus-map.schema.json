@@ -1,0 +1,63 @@
+{
+  "$ref": "#/definitions/audit-syllabus-map",
+  "definitions": {
+    "audit-syllabus-map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "paper": {
+            "type": "string",
+            "enum": [
+              "prelims-1",
+              "prelims-2",
+              "mains-telugu",
+              "mains-english",
+              "mains-1",
+              "mains-2",
+              "mains-3",
+              "mains-4",
+              "mains-5"
+            ]
+          },
+          "clause": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subtopicIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "apSpecific": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ref",
+          "paper",
+          "clause",
+          "subtopicIds",
+          "keywords",
+          "apSpecific"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

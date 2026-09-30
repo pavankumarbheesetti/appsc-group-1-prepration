@@ -1,0 +1,29 @@
+/*
+ * Bundled Telugu webfont — Noto Sans Telugu (weight 400, Telugu subset only).
+ *
+ * WHY: the Telugu course must render script/tracing glyphs on ANY device, even
+ * those with no system Telugu font installed. To keep the app a fully offline,
+ * double-click single-file bundle, the font is NOT fetched from a CDN. Instead
+ * the single woff2 below is vendored locally under src/assets/fonts and inlined
+ * as a data: URI by vite-plugin-singlefile at build time.
+ *
+ * PROVENANCE: extracted from the `@fontsource/noto-sans-telugu` npm package
+ * (v5.3.0) — specifically files/noto-sans-telugu-telugu-400-normal.woff2, the
+ * pre-subsetted Telugu-only cut. We ship ONLY weight 400 and ONLY woff2 (every
+ * target browser supports woff2) so the bundle stays lean — no all-language
+ * subsets, no redundant .woff fallback, no extra weights.
+ *
+ * unicode-range restricts the face to the Telugu block (+ common marks) so the
+ * browser never uses it for Latin/base text — the app's Latin font stack is
+ * untouched. Telugu-tagged text opts in via var(--font-telugu) (see tokens.css
+ * and the [lang='te'] rule in base.css).
+ */
+@font-face {
+  font-family: 'Noto Sans Telugu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/noto-sans-telugu-telugu-400.woff2') format('woff2');
+  /* Telugu block U+0C00–0C7F, plus ZWNJ/ZWJ + common punctuation Telugu uses. */
+  unicode-range: U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CDA, U+1CF2, U+200C-200D, U+25CC;
+}

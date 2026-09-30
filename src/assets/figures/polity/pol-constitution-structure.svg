@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- pol-constitution-structure.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" role="img" aria-labelledby="t d">
+  <title id="t">Structure of the Constitution of India</title>
+  <desc id="d">Stacked overview: Preamble, Parts (originally 22-25), Articles (395 growing to ~470), Schedules (8 to 12), and the amendment mechanism under Article 368.</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="462" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Structure of the Constitution of India</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">As originally adopted + key later additions</text><rect class="box3" x="28" y="92" width="764" height="66" rx="10"/><text class="ink" x="44" y="120" font-size="16" font-weight="700" text-anchor="start">Preamble</text><text class="muted" x="44" y="142" font-size="12.5" text-anchor="start">Sovereign, Socialist, Secular, Democratic, Republic</text><rect class="box" x="28" y="166" width="764" height="66" rx="10"/><text class="ink" x="44" y="194" font-size="16" font-weight="700" text-anchor="start">Parts (25 → now 22*)</text><text class="muted" x="44" y="216" font-size="12.5" text-anchor="start">Grouped Articles; e.g. Part III (Rights), IV (DPSP)</text><rect class="box2" x="28" y="240" width="764" height="66" rx="10"/><text class="ink" x="44" y="268" font-size="16" font-weight="700" text-anchor="start">Articles (395 → ~470)</text><text class="muted" x="44" y="290" font-size="12.5" text-anchor="start">Numbered provisions; added via 'A' (e.g. 21A)</text><rect class="box" x="28" y="314" width="764" height="66" rx="10"/><text class="ink" x="44" y="342" font-size="16" font-weight="700" text-anchor="start">Schedules (8 → 12)</text><text class="muted" x="44" y="364" font-size="12.5" text-anchor="start">Tables: Union/State lists (7th), languages (8th), PRIs (11th), ULBs (12th)</text><rect class="box2" x="28" y="388" width="764" height="66" rx="10"/><text class="ink" x="44" y="416" font-size="16" font-weight="700" text-anchor="start">Amendments</text><text class="muted" x="44" y="438" font-size="12.5" text-anchor="start">Article 368; 100+ so far (1st 1951, 42nd 'mini-constitution')</text><text class="muted" x="28" y="458" font-size="12" text-anchor="start">*Parts VII &amp; IX-B etc. account for renumbering; borrowed features from many constitutions.</text>
+</svg>

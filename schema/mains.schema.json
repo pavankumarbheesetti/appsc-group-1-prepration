@@ -1,0 +1,106 @@
+{
+  "$ref": "#/definitions/mains",
+  "definitions": {
+    "mains": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "mains"
+        },
+        "subjectCode": {
+          "type": "string",
+          "enum": [
+            "HIST",
+            "POL",
+            "ECON",
+            "GEO",
+            "SCI",
+            "MENT",
+            "CA",
+            "TEL",
+            "ENG"
+          ]
+        },
+        "topic": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "subjectCode": {
+                "$ref": "#/definitions/mains/properties/subjectCode"
+              },
+              "syllabusRef": {
+                "type": "string"
+              },
+              "subtopicId": {
+                "type": "string"
+              },
+              "paper": {
+                "type": "string",
+                "enum": [
+                  "screening-1",
+                  "screening-2",
+                  "mains-1",
+                  "mains-2",
+                  "mains-3",
+                  "mains-4",
+                  "mains-5",
+                  "qualifying"
+                ]
+              },
+              "question": {
+                "type": "string"
+              },
+              "modelAnswer": {
+                "type": "string"
+              },
+              "keyPoints": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "marks": {
+                "type": "number"
+              },
+              "source": {
+                "type": "string"
+              },
+              "verified": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "subjectCode",
+              "paper",
+              "question"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "subjectCode",
+        "topic",
+        "items"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

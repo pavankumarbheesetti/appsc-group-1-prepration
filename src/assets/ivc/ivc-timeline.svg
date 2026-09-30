@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ivc-timeline.svg — original horizontal timeline of the IVC phases.
+  Intent: fix the exam-critical dates in memory — Early Harappan (~3300–2600 BCE),
+  Mature Harappan (2600–1900 BCE, the urban peak) and Late Harappan (1900–1300 BCE,
+  de-urbanisation). Self-contained parchment panel + dark ink for both app themes;
+  prefers-color-scheme adapts the panel under OS dark mode.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" role="img"
+     aria-label="Timeline of Indus Valley Civilization phases: Early ~3300 to 2600 BCE, Mature 2600 to 1900 BCE, Late 1900 to 1300 BCE">
+  <style>
+    .panel { fill: #f7f3ea; stroke: #d8cdb5; }
+    .ink   { fill: #2b2b2b; }
+    .muted { fill: #6b7280; }
+    .axis  { stroke: #a89b7d; stroke-width: 2; }
+    .early { fill: #f0c987; stroke: #c9922f; }
+    .mature{ fill: #b45309; stroke: #7c3f06; }
+    .late  { fill: #d98d6a; stroke: #a85a37; }
+    text   { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .panel { fill: #1f2530; stroke: #3a4353; }
+      .ink   { fill: #f3f4f6; }
+      .muted { fill: #aab2bd; }
+      .axis  { stroke: #5b6675; }
+      .early { fill: #7c6323; stroke: #b9942f; }
+      .late  { fill: #7a4630; stroke: #b5744f; }
+    }
+  </style>
+
+  <rect class="panel" x="4" y="4" width="812" height="332" rx="16"/>
+  <text class="ink" x="28" y="42" font-size="24" font-weight="700">Phases of the Indus Valley Civilization</text>
+  <text class="muted" x="28" y="66" font-size="14">All dates BCE · bar widths scaled to duration</text>
+
+  <!-- Axis -->
+  <line class="axis" x1="60" y1="250" x2="760" y2="250"/>
+
+  <!-- Phase bars. x-range 60..760 maps 3300..1300 BCE (700px / 2000yr). -->
+  <!-- Early: 3300–2600 (700yr) -->
+  <rect class="early" x="60" y="150" width="245" height="60" rx="6"/>
+  <text class="ink" x="182" y="186" font-size="15" font-weight="700" text-anchor="middle">Early Harappan</text>
+  <text class="muted" x="182" y="234" font-size="13" text-anchor="middle">~3300–2600</text>
+
+  <!-- Mature: 2600–1900 (700yr) -->
+  <rect class="mature" x="305" y="140" width="245" height="80" rx="6"/>
+  <text x="428" y="180" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">Mature Harappan</text>
+  <text x="428" y="200" font-size="12" text-anchor="middle" fill="#ffe8d6">urban peak</text>
+  <text class="muted" x="428" y="234" font-size="13" text-anchor="middle">2600–1900</text>
+
+  <!-- Late: 1900–1300 (600yr) -->
+  <rect class="late" x="550" y="150" width="210" height="60" rx="6"/>
+  <text class="ink" x="655" y="186" font-size="15" font-weight="700" text-anchor="middle">Late Harappan</text>
+  <text class="muted" x="655" y="234" font-size="13" text-anchor="middle">1900–1300</text>
+
+  <!-- Boundary ticks + year labels -->
+  <g class="muted" font-size="12" text-anchor="middle">
+    <line class="axis" x1="60"  y1="250" x2="60"  y2="262"/><text x="60"  y="280">3300</text>
+    <line class="axis" x1="305" y1="250" x2="305" y2="262"/><text x="305" y="280">2600</text>
+    <line class="axis" x1="550" y1="250" x2="550" y2="262"/><text x="550" y="280">1900</text>
+    <line class="axis" x1="760" y1="250" x2="760" y2="262"/><text x="760" y="280">1300</text>
+  </g>
+</svg>

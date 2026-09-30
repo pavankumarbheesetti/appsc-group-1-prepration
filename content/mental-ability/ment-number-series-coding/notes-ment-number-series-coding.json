@@ -1,0 +1,158 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Number Series & Coding-Decoding",
+  "items": [
+    {
+      "id": "ment-number-series-coding-note-number-series",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "title": "Number Series — pattern families & the detection ladder",
+      "body": "A number series follows one hidden rule; your job is to find it fast. Work down this ladder:\n\n| Step | Test | Pattern family |\n|---|---|---|\n| 1 | Constant first difference? | Arithmetic (+/- d) |\n| 2 | Constant ratio? | Geometric (x/÷ r) |\n| 3 | Terms near squares/cubes? | n^2, n^3 (± k) |\n| 4 | Differences are 2,3,5,7,11...? | Prime-difference |\n| 5 | Two rules turn-by-turn? | Mixed/alternating |\n| 6 | term = sum of previous two? | Fibonacci-type |\n\n**Worked example** — 2, 5, 10, 17, 26, ?  Differences 3,5,7,9 (odd numbers) => square pattern n^2+1 => 36+1 = **37**.\n\nFor **wrong-term** questions, derive the rule from the majority of terms, then flag the one deviation. For **missing-term** questions, fix the rule from surrounding terms and verify it forward past the gap.",
+      "keyPoints": [
+        "Detection order: difference -> ratio -> squares/cubes -> prime gaps -> alternating -> Fibonacci.",
+        "Squares: 1,4,9,16,25,36; Cubes: 1,8,27,64,125; memorise up to 15^2 and 10^3.",
+        "Consecutive differences of odd numbers (3,5,7,9) signal an n^2 pattern.",
+        "Prime series: 2,3,5,7,11,13,17,19,23,29,31 — check as differences.",
+        "Alternating series apply two operations turn by turn (e.g. /2 then x3).",
+        "Fibonacci-type: term(n) = term(n-1) + term(n-2).",
+        "Wrong-term: rule from the majority; missing-term: verify forward past the gap."
+      ],
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series, Mixed Series",
+      "verified": true,
+      "tags": [
+        "series-coding",
+        "number-series"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-note-alphabet-series",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "title": "Alphabet & Alphanumeric Series — positions and columns",
+      "body": "Convert letters to positions and the series becomes a number series.\n\n**EJOTY anchors:** E=5, J=10, O=15, T=20, Y=25. Count from the nearest anchor to place any letter quickly. Reverse position = 27 - forward position.\n\n**Single sequence:** read the gap pattern. A, C, F, J, O, ? -> gaps +2,+3,+4,+5,+6 -> O(15)+6 = 21 = **U**.\n\n**Grouped/combination:** split each block into columns and solve each column separately. BOJ, FQO, JST, NUY, ? -> col1 +4 (B,F,J,N,R), col2 +2 (O,Q,S,U,W), col3 +5 (J,O,T,Y,D) -> **RWD**. Remember wrap-around: after Z, continue from A (so 30 -> 30-26 = 4 = D).\n\n**Alphanumeric:** track the letter pattern and the number pattern independently, e.g. C3,E5,G7,I9,? -> letters +2, numbers odd sequence -> **K11**.",
+      "keyPoints": [
+        "A=1 ... Z=26; EJOTY: E5, J10, O15, T20, Y25.",
+        "Reverse (opposite) position = 27 - forward position; pairs A-Z, B-Y, C-X, D-W, M-N.",
+        "Single-sequence series: solve the gap pattern between letters.",
+        "Grouped series: split into columns and solve each column's own step.",
+        "Wrap-around after Z: subtract 26 from positions above 26.",
+        "Alphanumeric series: solve the letter track and number track separately."
+      ],
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series, Mixed Series",
+      "verified": true,
+      "tags": [
+        "series-coding",
+        "alphabet-series",
+        "ejoty"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-note-letter-coding",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "title": "Letter Coding — shifting, opposite and rearrangement",
+      "body": "Three common letter-coding rules:\n\n1. **Shifting:** each letter moves a fixed number of places (watch for alternating +/-). KANPUR -> JBMQTS uses -1,+1 alternately; so BOMBAY -> **APLCZZ**.\n2. **Opposite letter (27-n):** replace each letter by its mirror. APPLE -> ZKKOV (A<->Z, P<->K, L<->O, E<->V).\n3. **Rearrangement:** same letters reordered by a rule — usually ascending alphabetical order. BEHOLD -> BDEHLO, so COURSE -> **CEORSU**.\n\n**Method:** write positions under each source letter, compute the shift/rule, then apply to the target and convert back to letters. Always handle wrap-around (A-1 -> Z, Z+1 -> A).",
+      "keyPoints": [
+        "Shifting coding: find the per-letter position change; it may alternate (e.g. -1,+1).",
+        "Opposite-letter coding uses the 27-n mirror (A<->Z, B<->Y ...).",
+        "Rearrangement coding reorders the same letters, commonly ascending alphabetical.",
+        "Confirm the rule on the given sample before applying it to the target word.",
+        "Handle wrap-around: after Z go to A, before A go to Z."
+      ],
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (Letter Shifting)",
+      "verified": true,
+      "tags": [
+        "series-coding",
+        "coding",
+        "letter-shift"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-note-number-coding",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "title": "Number Coding — letter-to-number and number-to-number",
+      "body": "**Letter-to-number:** build a letter->digit table from the given word/code pair, then substitute for the target. PUNCTUAL=47819765 gives P=4,U=7,N=8,C=1,T=9,A=6,L=5; so LUNA = **5786**. Codes may also use positional value (A=1...Z=26) or an operation on it (e.g. position x 2).\n\n**Number-to-number:** detect the per-digit operation from the sample, then apply digit-by-digit. 64958 -> 53847 is each digit -1; so 62654 -> **51543**. Other frequent rules: squaring each digit, +/- constant, or a two-step operation.\n\n**Word-value coding:** sometimes the code = a property of the word, e.g. (number of letters - 1): MANGO(5)->4, so MUSKMELON(9)->8.",
+      "keyPoints": [
+        "Letter-to-number: derive a letter->digit map from the given pair, keep letter order.",
+        "Positional coding often uses A=1...Z=26 (or an operation on the position).",
+        "Number-to-number: identify the per-digit operation (e.g. -1, square) and apply to each digit.",
+        "Word-value coding: code may equal a count property such as (letters - 1).",
+        "Always re-verify the derived rule on the provided sample."
+      ],
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
+      "verified": true,
+      "tags": [
+        "series-coding",
+        "coding",
+        "number-coding"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-note-substitution-conditional",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "title": "Substitution, Fictitious-language & Conditional Coding",
+      "body": "**Fictitious language / substitution:** each word maps to a code word. Intersect sentences that share words to isolate a single word's code. If 'sky is blue'=ta na ka and 'blue is high'=na ka pa, the shared words is/blue = {na, ka}; the leftover pa in the second sentence = **high**.\n\n**Coding by analogy:** find the transformation in the first pair and apply the same to the second. BOOK:CPPL (each letter +1) => WORD:**XPSE**.\n\n**Conditional coding:** apply base substitution, then override with the stated condition(s). With 1=P...9=X and the rule 'if both first and last digits are odd, code each as #', the number 74369 becomes **#SRU#** (7 and 9 both odd). Read every condition and check overlaps carefully.",
+      "keyPoints": [
+        "Fictitious-language: intersect sentences sharing a word to pin down its code.",
+        "The word common to two sentences carries the common code(s); the odd code = odd word.",
+        "Coding by analogy: replicate the first pair's transformation on the second.",
+        "Conditional coding: do base substitution first, then apply overriding conditions.",
+        "Trace each condition literally; watch for cases where more than one condition applies."
+      ],
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Fictitious Language, Coding By Analogy, Conditional Matrix",
+      "verified": true,
+      "tags": [
+        "series-coding",
+        "coding",
+        "conditional",
+        "analogy"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-note-shortcuts-traps",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "title": "Shortcuts & Common Traps",
+      "body": "**Speed tools**\n- EJOTY (E5,J10,O15,T20,Y25) + opposite rule 27-n turn letter work into arithmetic.\n- Unit-digit cyclicity helps verify large-number series (2:2,4,8,6; 3:3,9,7,1 — cycle of 4).\n- Keep squares to 15 and cubes to 10 memorised.\n\n**Common traps**\n\n| Trap | Guard |\n|---|---|\n| Forcing arithmetic on a geometric series | Always test the ratio too |\n| Missing an alternating (two-rule) pattern | Check alternate gaps separately |\n| Ignoring wrap-around after Z | Subtract 26 when position > 26 |\n| Not applying a stated condition in coding | Do base code, THEN override by condition |\n| Reversing shift direction | Re-verify sign on the given sample |\n\n**Worked example (trap check)** — 36,18,54,27,81,? looks irregular; alternate /2 and x3 gives 81/2 = **40.5**.",
+      "keyPoints": [
+        "EJOTY + 27-n rule convert letter problems into simple arithmetic.",
+        "Unit-digit cycles repeat every 4 powers (2->2,4,8,6; 3->3,9,7,1).",
+        "Test ratio as well as difference before deciding the family.",
+        "Alternating series need alternate gaps examined separately.",
+        "In coding, apply base substitution first and conditions last.",
+        "Re-verify the rule on the sample to avoid a reversed-direction error."
+      ],
+      "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series, Coding-Decoding (compiled shortcuts)",
+      "verified": true,
+      "tags": [
+        "series-coding",
+        "shortcuts",
+        "traps"
+      ]
+    },
+    {
+      "id": "ment-number-series-coding-note-matrix-missing-number",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-series-coding",
+      "title": "Missing number in a matrix / grid",
+      "body": "Number-matrix items give a 2×3, 3×3 or figure grid; find the rule that ties each **row** (or column, or diagonal) together, then apply it to the incomplete row.\n\n**Ladder of rules to test:**\n1. Same total across rows/columns (row sum constant).\n2. Third = f(first, second): sum, difference, product, product ± a constant.\n3. Squares/cubes: third = first² − second², or (first+second)², etc.\n4. Column-wise average or ratio.\n\n*Example (difference of squares):* rows (5,3,16), (7,4,33) follow third = first² − second² (25−9=16, 49−16=33); so (8,6,?) → 64−36 = **28**.\n\n*Example (constant row total):* if every row totals 24, then (10, ?, 6) → ? = 24 − 16 = **8**.\n\n**Trap:** check the SAME rule holds for every complete row before applying it; a rule that fits only one row is a coincidence.",
+      "keyPoints": [
+        "Find the rule per row/column/diagonal, then apply to the gap",
+        "Test in order: constant total → f(a,b) → squares/cubes → column ratio",
+        "Difference-of-squares grids: third = first² − second² (e.g. 8²−6²=28)",
+        "Constant-row-total grids: missing = total − other entries",
+        "Verify the rule on every complete row before trusting it"
+      ],
+      "source": "local APPSC Group 1 PDFs — Logical Reasoning: Mixed Series / Matrix",
+      "verified": true,
+      "tags": [
+        "number-series",
+        "matrix",
+        "missing-number"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "kind": "mindmap",
+  "subjectCode": "MENT",
+  "topic": "Measures of Central Tendency",
+  "subtopicId": "ment-central-tendency",
+  "root": "Central Tendency & Dispersion",
+  "branches": [
+    {
+      "label": "Mean",
+      "leaves": [
+        "Σx/n; grouped Σfx/Σf",
+        "Combined (n₁x̄₁+n₂x̄₂)/Σn",
+        "Correct: +(Σcorr−Σwrong)/n",
+        "y=ax+b → ȳ=ax̄+b"
+      ]
+    },
+    {
+      "label": "Median",
+      "leaves": [
+        "Sort first",
+        "Odd (n+1)/2 th",
+        "Grouped L+[(N/2−C)/f]h",
+        "Robust to outliers"
+      ]
+    },
+    {
+      "label": "Mode",
+      "leaves": [
+        "Most frequent",
+        "l+[(f₁−f₀)/(2f₁−f₀−f₂)]h",
+        "Mode=3Med−2Mean"
+      ]
+    },
+    {
+      "label": "Shape",
+      "leaves": [
+        "Normal: Mean=Med=Mode",
+        "Right skew Mean>Med>Mode",
+        "Empirical on skew"
+      ]
+    },
+    {
+      "label": "Dispersion",
+      "leaves": [
+        "Range H−L; coeff (H−L)/(H+L)",
+        "MD (1/n)Σ|x−A|, min at median",
+        "σ²=Σ(x−x̄)²/n, CV=σ/mean×100",
+        "y=ax+b: var ×a²"
+      ]
+    },
+    {
+      "label": "Time series",
+      "leaves": [
+        "3-yr MA sliding mean",
+        "n−k+1 averages",
+        "Smooths trend"
+      ]
+    }
+  ]
+}

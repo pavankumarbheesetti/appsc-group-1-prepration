@@ -1,0 +1,114 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Measures of Central Tendency",
+  "items": [
+    {
+      "id": "ment-central-tendency-note-mean",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "title": "Arithmetic Mean — ungrouped, grouped, combined & weighted",
+      "body": "## Formulae\n\n| Case | Formula |\n|---|---|\n| Ungrouped | x̄ = (x₁ + x₂ + … + xₙ)/n |\n| Grouped | x̄ = Σfx/Σf  (x = class mid-value) |\n| Combined | x̄ = (n₁x̄₁ + n₂x̄₂)/(n₁ + n₂) |\n| Weighted | x̄ = Σwx/Σw |\n\n## Worked example (grouped)\n\nClasses 0–10…40–50 with f = 5, 8, 15, 16, 6; mid-values 5, 15, 25, 35, 45.\nΣfx = 25+120+375+560+270 = 1350, Σf = 50 ⇒ **mean = 1350/50 = 27**.\n\n## Shortcuts & traps\n\n- **Correcting a wrong value:** corrected mean = old mean + (Σcorrect − Σwrong)/n. (Work with the total Sum = mean × count.)\n- **Adding/removing items:** find the new/removed sum as (new total − old total).\n- **Change of origin/scale:** if y = a·x + b then ȳ = a·x̄ + b — mean shifts by b and scales by a.\n- **Trap:** the combined mean is a *weighted* average, not the simple average of the two group means.",
+      "keyPoints": [
+        "Ungrouped mean = sum of observations ÷ number of observations.",
+        "Grouped mean = Σfx/Σf where x is each class mid-value.",
+        "Combined mean = (n₁x̄₁ + n₂x̄₂)/(n₁ + n₂) — weighted by group sizes.",
+        "Weighted mean = Σwx/Σw; equals the simple mean when all weights are equal.",
+        "Corrected mean = old mean + (Σcorrect − Σwrong)/n.",
+        "Under y = a·x + b the mean becomes a·x̄ + b (change of origin and scale)."
+      ],
+      "mnemonic": "Mean = 'total ÷ count' — always convert a mean back to a Sum (mean × count) before adding, removing or correcting values.",
+      "source": "local APPSC Quantitative Reasoning PDF — Mean",
+      "verified": true,
+      "tags": ["central-tendency", "mean", "grouped", "combined", "weighted"]
+    },
+    {
+      "id": "ment-central-tendency-note-median",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "title": "Median — ungrouped and grouped",
+      "body": "## Ungrouped (arrange in ascending order first)\n\n- **Odd n:** Median = [(n+1)/2]ᵗʰ term.\n- **Even n:** Median = average of the (n/2)ᵗʰ and (n/2+1)ᵗʰ terms.\n\n## Grouped\n\nMedian = **L + [(N/2 − C)/f] × h**, where\nL = lower limit of median class, N = Σf, C = cumulative frequency *before* the median class, f = frequency of the median class, h = class width. The median class is the one whose cumulative frequency first reaches N/2.\n\n## Worked example (grouped)\n\nf = 4, 5, 7, 10, 12, 8 (classes 0–10…50–60); N = 46, N/2 = 23. Cumulative 4, 9, 16, 26 ⇒ median class 30–40. Median = 30 + [(23 − 16)/10]×10 = **37**.\n\n## Traps\n\n- Forgetting to sort ungrouped data before picking the middle term.\n- Using C = cf of the median class itself instead of the class *before* it.\n- The median is a positional average, so it is **robust to outliers**.",
+      "keyPoints": [
+        "Always sort data ascending before finding an ungrouped median.",
+        "Odd n: median = [(n+1)/2]ᵗʰ term; even n: mean of the two middle terms.",
+        "Grouped median = L + [(N/2 − C)/f] × h.",
+        "Median class = first class whose cumulative frequency ≥ N/2.",
+        "C is the cumulative frequency of the class BEFORE the median class.",
+        "The median is unaffected by extreme outliers (positional measure)."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Median",
+      "verified": true,
+      "tags": ["central-tendency", "median", "grouped"]
+    },
+    {
+      "id": "ment-central-tendency-note-mode",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "title": "Mode & the empirical relation",
+      "body": "## Ungrouped\n\nMode = the value that occurs most frequently. A set may be unimodal, bimodal, or have **no mode** (all frequencies equal).\n\n## Grouped\n\nMode = **l + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × h**, where\nl = lower limit of the modal class, f₁ = frequency of the modal class, f₀ = frequency of the class before it, f₂ = frequency of the class after it, h = class width. The modal class is the one with the **highest frequency**.\n\n### Worked example\n\nPets 1–2…5–6 with f = 5, 9, 3, 2, 1 ⇒ modal class 2–3 (l=2, f₁=9, f₀=5, f₂=3, h=1). Mode = 2 + (4/10) = **2.4**.\n\n## Empirical relation (moderately skewed data)\n\n**Mode = 3·Median − 2·Mean.** Equivalently, Mean − Mode = 3(Mean − Median). Use it when any one of the three is unknown.",
+      "keyPoints": [
+        "Mode (ungrouped) = the most frequently occurring value; can be none, one or many.",
+        "Grouped mode = l + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × h.",
+        "Modal class = the class with the highest frequency.",
+        "Empirical relation: Mode = 3·Median − 2·Mean (moderately skewed data).",
+        "The mode is the only measure usable for qualitative/categorical data."
+      ],
+      "mnemonic": "Empirical order on a skewed curve: Mean pulled toward the tail, then Median, then Mode — 'Mode = 3 Median − 2 Mean'.",
+      "source": "local APPSC Quantitative Reasoning PDF — Mode",
+      "verified": true,
+      "tags": ["central-tendency", "mode", "empirical-relation"]
+    },
+    {
+      "id": "ment-central-tendency-note-dispersion",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "title": "Dispersion basics — range & mean deviation",
+      "body": "## Range\n\n- **Range = Highest − Lowest.** Simple but ignores all intermediate values.\n- **Coefficient of range = (H − L)/(H + L)** — a unitless *relative* measure of spread.\n\n## Mean deviation (MD)\n\n**MD = (1/n)·Σ|x − A|**, where A is a chosen average (mean, median or mode) and |·| ignores signs. MD is **least when taken about the median**.\n\n### Worked example (about the mean)\n\nData 6, 7, 10, 12, 13, 4, 8, 12 ⇒ mean = 9. Absolute deviations 3, 2, 1, 3, 4, 5, 1, 3 sum to 22 ⇒ **MD = 22/8 = 2.75**.\n\n## Traps\n\n- Range gives no information about the distribution of the middle values.\n- In MD you must take **absolute** deviations, else the signed deviations about the mean sum to zero.",
+      "keyPoints": [
+        "Range = Highest value − Lowest value.",
+        "Coefficient of range = (H − L)/(H + L) — unitless relative dispersion.",
+        "Mean deviation = (1/n)·Σ|x − A| using absolute deviations.",
+        "Mean deviation is minimum when measured about the median.",
+        "Signed deviations about the mean always sum to zero — hence use absolute values."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Range and Class Interval / Mean Deviation",
+      "verified": true,
+      "tags": ["central-tendency", "range", "mean-deviation", "dispersion"]
+    },
+    {
+      "id": "ment-central-tendency-note-variance-sd",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "title": "Variance, standard deviation & choosing a measure",
+      "body": "## Variance & standard deviation\n\n- **Variance σ² = (1/n)·Σ(x − x̄)²** — the mean of squared deviations.\n- **Standard deviation σ = √variance** — same units as the data; the most-used spread measure.\n\n### Worked example\n\nData 2, 4, 6, 8, 10 ⇒ mean 6. Squared deviations 16, 4, 0, 4, 16 sum to 40 ⇒ variance = 40/5 = **8**, SD = √8 ≈ **2.83**.\n\n### Change of origin & scale\n\nUnder y = a·x + b: **variance ×a², SD ×|a|; adding b has no effect.** SD is unaffected by a shift of origin.\n\n## Which measure to use?\n\n| Situation | Best measure |\n|---|---|\n| Symmetric data, no outliers | Mean |\n| Outliers / open-ended classes / skew | Median |\n| Qualitative / most-frequent category | Mode |\n| Overall spread about the mean | Standard deviation |",
+      "keyPoints": [
+        "Variance σ² = (1/n)·Σ(x − x̄)²; standard deviation σ = √variance.",
+        "SD is in the same units as the data and is the most widely used dispersion measure.",
+        "Change of scale: variance ×a², SD ×|a|; change of origin (adding b) leaves both unchanged.",
+        "Use the mean for symmetric data, the median for skewed/outlier data, the mode for categorical data.",
+        "For the data 2,4,6,8,10 the population variance is 8 and SD ≈ 2.83."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Variance and Standard Deviation",
+      "verified": true,
+      "tags": ["central-tendency", "variance", "standard-deviation", "measure-selection"]
+    },
+    {
+      "id": "ment-central-tendency-note-moving-average",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "title": "Moving averages & time-series trend",
+      "body": "A **moving average** smooths a time series so its underlying **trend** stands out, by replacing each block of consecutive values with their mean and sliding the block along one step at a time.\n\n## Method (k-year moving average)\n\n1. Average the first k values.\n2. Drop the oldest value, add the next one, average again.\n3. Repeat to the end. With n data points you get **(n − k + 1)** moving averages.\n\n## Worked example (3-year)\n\nSales 30, 35, 25, 42, 62 →\n- (30+35+25)/3 = 30\n- (35+25+42)/3 = 34\n- (25+42+62)/3 = 43\n\nTrend values: **30, 34, 43** (rising).\n\n## Notes & traps\n\n- For an **odd** k the moving average is centred on the middle year; for an **even** k a second centring step is needed.\n- A series in AP gives moving averages equal to each window's middle term.\n- Moving averages reduce short-term fluctuation but **shorten** the series by (k − 1) terms.",
+      "keyPoints": [
+        "k-year moving average = mean of each sliding block of k consecutive values.",
+        "Number of moving averages = n − k + 1.",
+        "Odd k centres on the middle year; even k needs an extra centring.",
+        "3-year MA of 30,35,25,42,62 = 30, 34, 43.",
+        "Moving averages smooth fluctuations to expose the trend, losing (k−1) terms."
+      ],
+      "mnemonic": "Slide-and-average: drop the oldest, add the newest, re-mean.",
+      "source": "standard APPSC/SSC statistics — moving averages / time series",
+      "verified": true,
+      "tags": ["central-tendency", "moving-average", "time-series"]
+    }
+  ]
+}

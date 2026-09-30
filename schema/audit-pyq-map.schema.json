@@ -1,0 +1,64 @@
+{
+  "$ref": "#/definitions/audit-pyq-map",
+  "definitions": {
+    "audit-pyq-map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "years": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "minItems": 1
+          },
+          "paper": {
+            "type": "string",
+            "enum": [
+              "prelims-1",
+              "prelims-2",
+              "mains-telugu",
+              "mains-english",
+              "mains-1",
+              "mains-2",
+              "mains-3",
+              "mains-4",
+              "mains-5"
+            ]
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gist": {
+            "type": "string",
+            "minLength": 1
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "subtopicId": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "years",
+          "paper",
+          "subject",
+          "gist",
+          "keywords",
+          "subtopicId"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

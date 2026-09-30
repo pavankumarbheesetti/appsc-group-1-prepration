@@ -1,0 +1,64 @@
+{
+  "kind": "mains",
+  "subjectCode": "SCI",
+  "topic": "ICT, e-Governance & Cyber Security",
+  "items": [
+    {
+      "id": "sci-ict-egovernance-cyber-mains-dpi-governance",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "paper": "mains-5",
+      "question": "Discuss how Digital Public Infrastructure (the 'India Stack') has transformed governance and service delivery in India. What challenges accompany this transformation?",
+      "modelAnswer": "**Introduction.** Digital Public Infrastructure (DPI), popularly the **India Stack**, is a layered set of open APIs spanning **identity (Aadhaar), payments (UPI) and data (DigiLocker, Account Aggregator)**, enabling *presence-less, paperless and cashless* service delivery. Anchored in the **Digital India** programme (2015), it has reshaped how the state reaches citizens.\n\n**Body — transformation.** (1) **Financial inclusion & DBT:** Aadhaar-enabled bank accounts and **UPI** — now the world's largest real-time retail payment system, crossing 16 billion monthly transactions in 2024-25 — allow direct benefit transfers with reduced leakage. (2) **Ease of access:** **UMANG, DigiLocker and API Setu** collapse counters and paperwork into on-demand digital services (G2C/G2B/G2G). (3) **Innovation:** open networks like **ONDC** democratise e-commerce, while **CoWIN** demonstrated population-scale delivery. (4) **State capacity:** platforms such as AP's **Real Time Governance Centre** and **Mana Mitra** (WhatsApp governance) show real-time, whole-of-government delivery.\n\n**Challenges.** (a) **Digital divide** — connectivity, device access and digital literacy gaps; (b) **data protection & privacy** — addressed by the **DPDP Act 2023 and Rules 2025**, but implementation and consent-fatigue remain; (c) **cyber-security risk** — a larger attack surface (phishing, ransomware) needing **CERT-In/NCIIPC** vigilance; (d) **exclusion errors** from authentication failures; (e) **vendor lock-in** and interoperability governance.\n\n**Conclusion.** DPI has made governance more inclusive, efficient and transparent, but its gains must be secured by robust **privacy, cyber-security and last-mile access** so that digital service delivery is genuinely universal.",
+      "keyPoints": [
+        "India Stack DPI layers: Aadhaar (identity), UPI (payments), DigiLocker/Account Aggregator (data), ONDC, CoWIN.",
+        "UPI = world's largest real-time retail payment system; enables DBT with reduced leakage.",
+        "Platforms UMANG, DigiLocker, API Setu deliver on-demand G2C/G2B/G2G services.",
+        "AP examples: Real Time Governance Centre and Mana Mitra (WhatsApp governance).",
+        "Challenges: digital divide, data privacy (DPDP Act 2023/Rules 2025), cyber-security, exclusion errors."
+      ],
+      "marks": 15,
+      "source": "MeitY — Digital India / India Stack; NPCI — UPI; DPDP Act 2023",
+      "verified": true,
+      "tags": ["dpi", "india-stack", "upi", "e-governance", "mains-5"]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-mains-cyber-security",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "paper": "mains-5",
+      "question": "Examine India's cyber-security framework and the growing threat of cyber crime. What institutional and legal measures has India adopted to protect citizens and critical infrastructure?",
+      "modelAnswer": "**Introduction.** As India digitises governance, finance and critical services, its **cyber-security** posture becomes a matter of national security and citizen welfare. Rising threats — **phishing, ransomware, DDoS and financial fraud** — have pushed India to build a layered institutional and legal framework.\n\n**Body — institutions.** (1) **CERT-In** (under MeitY, IT Act Sec 70B) is the national incident-response nodal agency; its **2022 directions** mandate 6-hour incident reporting and log retention. (2) **NCIIPC** (under NTRO, Sec 70A) protects **Critical Information Infrastructure** in power, banking, telecom and transport. (3) **Cyber Swachhta Kendra** offers botnet-cleaning and malware tools. (4) For citizens, the **I4C** (Ministry of Home Affairs) runs the **National Cybercrime Reporting Portal**, the **1930 helpline** and **CFCFRMS** to rapidly freeze defrauded funds.\n\n**Legal measures.** The **IT Act 2000** (amended 2008) is the core cyber law; **Section 66A** was struck down (*Shreya Singhal*, 2015). The **DPDP Act 2023 and Rules 2025** add a consent-based data-protection regime with the **Data Protection Board** and penalties up to ₹250 crore. The **National Cyber Security Policy 2013** set the strategic direction.\n\n**Challenges & way forward.** Skilled-workforce shortages, coordination across agencies, low citizen awareness and the rise of **AI-enabled deepfake fraud** demand an updated national cyber-security strategy, capacity-building, public awareness (e.g., Cyber Jagrookta) and stronger public-private cooperation.\n\n**Conclusion.** India has built a credible, multi-layered framework; sustaining trust in its digital economy now depends on continual upgradation, skilling and citizen awareness.",
+      "keyPoints": [
+        "CERT-In (MeitY, Sec 70B) — national incident response; 2022 directions mandate 6-hour reporting.",
+        "NCIIPC (NTRO, Sec 70A) protects Critical Information Infrastructure; Cyber Swachhta Kendra cleans botnets.",
+        "I4C (MHA) runs cybercrime.gov.in, 1930 helpline and CFCFRMS for freezing defrauded funds.",
+        "Legal: IT Act 2000 (66A struck down), DPDP Act 2023/Rules 2025, National Cyber Security Policy 2013.",
+        "Emerging challenge: AI-enabled deepfake fraud; way forward = updated strategy, skilling, awareness."
+      ],
+      "marks": 15,
+      "source": "CERT-In; NCIIPC; I4C / MHA; MeitY — IT Act & DPDP Act",
+      "verified": true,
+      "tags": ["cyber-security", "cert-in", "i4c", "dpdp", "mains-5"]
+    },
+    {
+      "id": "sci-ict-egovernance-cyber-mains-ap-egov",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-ict-egovernance-cyber",
+      "paper": "mains-5",
+      "question": "Andhra Pradesh has been a pioneer in technology-driven governance. Evaluate its major e-governance initiatives and their impact on citizen service delivery.",
+      "modelAnswer": "**Introduction.** Andhra Pradesh has positioned itself as a leader in **technology-driven, data-centric governance**, leveraging ICT to make service delivery real-time, transparent and citizen-centric.\n\n**Body — initiatives.** (1) **Real Time Governance Society (RTGS)** runs a **Real Time Governance Centre** that integrates departmental databases into dashboards for real-time monitoring of schemes, disaster response and grievance redress. (2) **e-Pragati** is the state's **enterprise-architecture platform**, unifying departmental services into a single digital backbone for seamless G2C delivery. (3) The **Praja Sadhikara Survey** built a household socio-economic dataset linking citizens to entitlements. (4) **Mana Mitra** brings **WhatsApp-based governance**, letting citizens obtain services and downloadable certificates through a familiar chat interface — a shift from portals to **conversational, whole-of-government** delivery. (5) Backbone schemes like **BharatNet, CSCs and MeghRaj cloud** support last-mile access.\n\n**Impact & concerns.** These initiatives improve **accessibility, speed, transparency and DBT efficiency**, especially for rural citizens. However, they raise concerns of **digital divide** (connectivity/literacy), **data privacy and DPDP-compliance**, cyber-security, and the risk of **exclusion** where authentication or connectivity fails.\n\n**Conclusion.** AP's model demonstrates how integrated, real-time and chat-based governance can deepen citizen service delivery; its long-term success rests on **inclusive access, data protection and cyber-resilience** aligned with the DPDP framework.",
+      "keyPoints": [
+        "AP RTGS runs a Real Time Governance Centre integrating data for scheme monitoring and grievance redress.",
+        "e-Pragati = AP's enterprise-architecture platform unifying departmental services.",
+        "Praja Sadhikara Survey built a household socio-economic dataset linking citizens to entitlements.",
+        "Mana Mitra delivers services/certificates via WhatsApp — conversational whole-of-government governance.",
+        "Impact: accessibility, transparency, DBT efficiency; concerns: digital divide, privacy/DPDP, cyber-security, exclusion."
+      ],
+      "marks": 10,
+      "source": "AP Real Time Governance Society; AP IT & e-Governance Department",
+      "verified": true,
+      "tags": ["ap", "rtgs", "e-pragati", "mana-mitra", "mains-5"]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Time & Work, Time & Distance",
+  "items": [
+    {
+      "id": "ment-time-work-distance-note-time-work-method",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "Time & Work — the LCM (units) method",
+      "body": "## Core idea\n\n- **Rate of work = 1 / (days to finish alone)**; work done = rate × time.\n- **LCM shortcut:** let total work = LCM of the given days, so each rate becomes a whole number of *units/day* — no fractions.\n\n## Combined & efficiency\n\n- Together: time = 1/(1/a + 1/b) = **ab/(a+b)**.\n- 'A is k times as efficient as B' → rate ratio **k : 1**, and time ratio **1 : k** (the faster one takes fewer days).\n\n## Worked example\n\nA = 18 days, B = 9 days. Total = LCM(18,9) = **18 units** → A = 1 unit/day, B = 2 units/day. B works 3 days = 6 units; remaining 12 units by A = **12 days**.\n\n## Common traps\n\n- Never **add days** for combined work (12 + 15 ≠ answer).\n- The **simple average** of the two times overstates the joint time.",
+      "keyPoints": [
+        "Rate of work = 1 / days to finish alone; work = rate × time.",
+        "LCM method: set total work = LCM of days so rates are whole units/day.",
+        "Together time = ab/(a+b) = 1/(1/a + 1/b).",
+        "'k times as efficient' means rate ratio k:1 and time ratio 1:k.",
+        "Never add the individual days for combined work."
+      ],
+      "mnemonic": "Think 'units, not fractions' — LCM turns every rate into a clean whole number.",
+      "source": "local APPSC Quantitative Reasoning PDF — Fractions of Work / Efficiency and Work Comparison",
+      "verified": true,
+      "tags": ["time-work", "lcm-method", "efficiency"]
+    },
+    {
+      "id": "ment-time-work-distance-note-alternate-days",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "Alternate-days work",
+      "body": "## Method\n\n1. Convert to **units** (LCM method).\n2. Add one **full cycle** (e.g. A-day + B-day) to get units per cycle.\n3. Count how many whole cycles fit, then **finish the remainder** with whoever's turn is next — this last stretch may be a **fraction of a day**.\n\n## Worked example\n\nA = 8 days (3/day), B = 12 days (2/day); total = LCM = 24 units. One 2-day cycle = 3 + 2 = 5 units. 4 cycles (8 days) = 20 units. Day 9 (A): +3 → 23. Just 1 unit left; day 10 (B, 2/day) needs 1/2 day. **Total = 9½ days.**\n\n## Trap\n\n- The last person may not need a full day — check the leftover units against that day's rate.",
+      "keyPoints": [
+        "Alternate work: sum one full cycle (A-day + B-day) first.",
+        "Fit whole cycles, then finish the remainder with the next person's turn.",
+        "The final stretch is often a fraction of a day — do not round it up automatically.",
+        "Who starts first matters when the work finishes mid-cycle."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Alternate Days Work",
+      "verified": true,
+      "tags": ["time-work", "alternate-days"]
+    },
+    {
+      "id": "ment-time-work-distance-note-wages-mandays",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "Work & wages and the man-days rule",
+      "body": "## Wages\n\n- **Wages ∝ work done ∝ efficiency.** Split total pay in the ratio of the workers' rates.\n- Example: A (6 days) and B (8 days) → ratio 1/6 : 1/8 = **4 : 3**; on ₹2800, A = ₹1600, B = ₹1200 (the faster worker earns more).\n\n## Man-days / man-hours\n\n- For the **same job**, the product **M · D · H** is constant:\n\n$$\\frac{M_1 D_1 H_1}{W_1} = \\frac{M_2 D_2 H_2}{W_2}$$\n\n- Example: 10 men × 8 h × 6 days = 8 men × 10 h × D → 480 = 80D → **D = 6 days**.\n\n## Trap\n\n- Don't forget the **hours term** — fewer men can be offset by longer hours.",
+      "keyPoints": [
+        "Wages are shared in the ratio of work done = ratio of efficiency (1/a : 1/b).",
+        "The faster worker (smaller days) earns the larger share.",
+        "M1·D1·H1 = M2·D2·H2 for the same amount of work.",
+        "Include work amount (W) in the ratio when the job size changes."
+      ],
+      "mnemonic": "MDH = constant — More men or Hours means fewer Days.",
+      "source": "local APPSC Quantitative Reasoning PDF — Work and Wages / Man-Hours Concept",
+      "verified": true,
+      "tags": ["wages", "man-days", "man-hours"]
+    },
+    {
+      "id": "ment-time-work-distance-note-pipes-cistern",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "Pipes & cisterns",
+      "body": "## Idea\n\nPipes and cisterns are just time-and-work with **inlets = positive** (fill) and **outlets/leaks = negative** (empty).\n\n| Situation | Net rate (tank/hour) |\n|---|---|\n| Two inlets a, b | 1/a + 1/b |\n| Inlet a with outlet b | 1/a − 1/b |\n\n- Time to fill = **1 ÷ net rate**. The tank fills only if the net rate is **positive** (inlet faster than outlet).\n\n## Worked examples\n\n- A = 6 h, B = 4 h (both inlets): rate = 1/6 + 1/4 = 5/12 → **2.4 h**.\n- Inlet 10 h, outlet 15 h: net = 1/10 − 1/15 = 1/30 → **30 h** to fill.",
+      "keyPoints": [
+        "Inlet rate is added (+), outlet/leak rate is subtracted (−).",
+        "Fill time = 1 ÷ net rate; tank fills only if net rate is positive.",
+        "Two inlets together: time = ab/(a+b).",
+        "A leak that empties in y hours reduces the inlet's effective rate by 1/y."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Pipes and Cistern",
+      "verified": true,
+      "tags": ["pipes-cistern", "inlet-outlet"]
+    },
+    {
+      "id": "ment-time-work-distance-note-speed-distance-trains",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "Speed–distance–time, average speed & trains",
+      "body": "## Basics\n\n- **Distance = Speed × Time.** Convert **km/h → m/s by ×5/18** (and m/s → km/h by ×18/5).\n- **Average speed (equal distances)** = **2xy/(x+y)** (harmonic mean), always less than (x+y)/2.\n- **Change-of-speed problems:** if a distance d is late by t₁ at v₁ and early by t₂ at v₂, then d/v₁ − d/v₂ = (t₁ + t₂) in hours.\n\n## Relative speed\n\n- **Same direction:** relative speed = **difference** of speeds.\n- **Opposite directions:** relative speed = **sum** of speeds.\n\n## Trains\n\n| Crossing | Distance covered |\n|---|---|\n| Pole / person (point object) | length of train |\n| Platform / bridge | train + platform length |\n| Another train | sum of both lengths (÷ relative speed) |\n\nExample: 150 m train at 54 km/h (=15 m/s) over a 210 m platform → 360/15 = **24 s**.",
+      "keyPoints": [
+        "km/h → m/s: multiply by 5/18; m/s → km/h: multiply by 18/5.",
+        "Average speed for equal distances = 2xy/(x+y), not the plain average.",
+        "Same direction → relative speed = difference; opposite → sum.",
+        "Crossing a pole/person uses train length; a platform adds the platform length; another train adds both lengths.",
+        "Early/late: d/v1 − d/v2 = total time gap in hours."
+      ],
+      "mnemonic": "5/18 down, 18/5 up — and 'Same=Subtract, Opposite=Odd(add)'.",
+      "source": "local APPSC Quantitative Reasoning PDF — Average Speed / Relative speed / Problem on Train",
+      "verified": true,
+      "tags": ["speed-distance", "average-speed", "trains", "relative-speed"]
+    },
+    {
+      "id": "ment-time-work-distance-note-boats-races",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "Boats & streams and races",
+      "body": "## Boats & streams\n\n- Let boat speed in still water = **B**, stream = **S**.\n- **Downstream = B + S** (with current); **Upstream = B − S** (against current).\n- Recover the two speeds: **B = (down + up)/2**, **S = (down − up)/2**.\n- Example: 30 km down in 2 h (=15 km/h) and 30 km up in 3 h (=10 km/h) → B = 12.5 km/h, S = 2.5 km/h.\n\n## Races\n\n- 'A beats B by **d** metres' in an **L**-metre race → in equal time A runs L while B runs (L − d), so **speed ratio = L : (L − d)**.\n- 'Beats by **t** seconds' → B covers that last gap in t seconds; combine with B's speed to find distances.\n- A **head-start (start of x m)** means B runs (L − x) while A runs L.",
+      "keyPoints": [
+        "Downstream = B + S; Upstream = B − S.",
+        "Boat speed = (down + up)/2; stream speed = (down − up)/2.",
+        "Upstream is always the slower (smaller) effective speed.",
+        "Beaten by d m in an L m race → speed ratio L : (L − d).",
+        "A 'start of x metres' means the opponent runs only (L − x)."
+      ],
+      "mnemonic": "Down-Add, Up-Under (subtract); Boat = average of the two, Stream = half their gap.",
+      "source": "local APPSC Quantitative Reasoning PDF — Boat and Stream / Race",
+      "verified": true,
+      "tags": ["boats-streams", "races"]
+    },
+    {
+      "id": "ment-time-work-distance-note-worker-equivalence",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "Men–women–boys equivalence",
+      "body": "Some problems give a **conversion between worker types** (e.g. 2 men = 3 women, or 1 man = 2 boys). The trick is to **reduce every worker to one common unit** before applying the man-days rule.\n\n## Method\n\n1. Use the given relation to express all workers in one type (say, women).\n2. Compute total work in **worker-days**: W = (equivalent workers) × days.\n3. Re-divide W by the new equivalent workforce to get the new time.\n\n## Worked example\n\n2 men = 3 women ⇒ 1 man = 1.5 women. So 6 men + 6 women = 9 + 6 = **15 women**. If they finish in 8 days, W = 15 × 8 = 120 woman-days; 12 women take 120 ÷ 12 = **10 days**.\n\n## Trap\n\n- Never add men and women directly — convert first. A man-count and a woman-count are different 'currencies' until you apply the exchange rate.",
+      "keyPoints": [
+        "Convert all worker types to one common unit using the given equivalence (e.g. 2 men = 3 women).",
+        "Total work in worker-days = equivalent workers × days, and is constant.",
+        "Two teams that each finish in time t together take t/2 (rates add).",
+        "Do not add different worker types before converting them."
+      ],
+      "mnemonic": "One currency first — convert men↔women↔boys before you count days.",
+      "source": "standard APPSC/SSC arithmetic — Men–Women–Boys equivalence",
+      "verified": true,
+      "tags": ["time-work", "equivalence", "man-days"]
+    }
+  ]
+}

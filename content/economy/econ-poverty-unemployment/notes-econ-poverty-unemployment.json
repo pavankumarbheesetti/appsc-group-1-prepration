@@ -1,0 +1,116 @@
+{
+  "kind": "notes",
+  "subjectCode": "ECON",
+  "topic": "Poverty & Unemployment",
+  "items": [
+    {
+      "id": "econ-poverty-unemployment-note-poverty-line-committees",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-poverty-unemployment",
+      "title": "Poverty Line & Expert Committees",
+      "body": "## Concept\n\n- The **poverty line** is a threshold of per-capita consumption expenditure below which a person is 'poor'. India's traditional line was anchored to a **minimum calorie norm**: **2400 kcal/day (rural)** and **2100 kcal/day (urban)**.\n- **Absolute poverty** = inability to meet a fixed subsistence minimum; **relative poverty** = deprivation relative to the rest of society (an inequality concept).\n- Measures: **Head Count Ratio (HCR)** = share of population below the line (incidence); **Poverty Gap Index** = average income shortfall of the poor (depth).\n\n## Expert committees\n\n| Committee | Report | Key contribution |\n|---|---|---|\n| **Alagh** (Task Force) | 1979 | First to define the poverty line using **calorie norms** |\n| **Lakdawala** | 1993 | **State-specific** poverty lines; separate rural/urban price indices (CPI-AL, CPI-IW) |\n| **Tendulkar** | 2009 | Dropped pure calorie anchor; **Mixed Reference Period (MRP)**; included health & education spend; uniform basket |\n| **Rangarajan** | 2014 | Reverted to **separate rural/urban baskets**; **Modified MRP**; govt did not officially adopt |\n\n- **Poverty ratios (2011-12):** Tendulkar ≈ **21.9%** (≈ ₹816/month rural, ₹1000/month urban); Rangarajan ≈ **29.5%** (≈ ₹972/month rural, ₹1407/month urban — about **₹32/day rural and ₹47/day urban** — a costlier basket).",
+      "keyPoints": [
+        "Traditional poverty line = calorie norm of 2400 kcal (rural) and 2100 kcal (urban) per person per day.",
+        "Absolute poverty = fixed subsistence minimum; relative poverty = deprivation relative to others.",
+        "Head Count Ratio = incidence (share poor); Poverty Gap = depth (income shortfall).",
+        "Alagh (1979) first defined the calorie-based line; Lakdawala (1993) introduced state-specific lines.",
+        "Tendulkar (2009) used Mixed Reference Period; 21.9% for 2011-12 (~₹816 rural/₹1000 urban per month).",
+        "Rangarajan (2014) used Modified MRP; 29.5% for 2011-12 (~₹972 rural/₹1407 urban per month, ~₹32/₹47 per day); not officially adopted."
+      ],
+      "mnemonic": "Committee order 'A-L-T-R' = Alagh → Lakdawala → Tendulkar → Rangarajan.",
+      "source": "Planning Commission / NITI Aayog — poverty-estimation expert group reports",
+      "verified": true,
+      "tags": ["poverty", "committees", "poverty-line"]
+    },
+    {
+      "id": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-poverty-unemployment",
+      "title": "Multidimensional Poverty — Global & National MPI",
+      "body": "## Beyond income\n\nPoverty is not only low income; the **Multidimensional Poverty Index (MPI)** captures overlapping **non-monetary deprivations** using the **Alkire-Foster counting method**.\n\n## Global MPI\n\n- Published by **OPHI (University of Oxford)** and **UNDP** (in the Human Development Report since 2010).\n- **3 dimensions** — Health, Education, Standard of Living — via **10 indicators**.\n\n## National MPI (NITI Aayog)\n\n- Retains the **3 dimensions** but uses **12 indicators**, adding **Maternal Health** and **Bank Accounts** to reflect India's flagship schemes; based on **NFHS** data.\n\n| Dimension | Indicators |\n|---|---|\n| Health | Nutrition, Child & adolescent mortality, **Maternal health** |\n| Education | Years of schooling, School attendance |\n| Standard of living | Cooking fuel, Sanitation, Drinking water, Electricity, Housing, Assets, **Bank account** |\n\n## Key finding\n\n- NITI Aayog's **2023** paper: national MPI headcount fell from **29.17% (2013-14) to 11.28% (2022-23)**, with about **24.82 crore** people escaping multidimensional poverty; largest declines in UP, Bihar and MP.",
+      "keyPoints": [
+        "MPI uses the Alkire-Foster counting method to measure overlapping deprivations.",
+        "Global MPI = OPHI (Oxford) + UNDP, with 3 dimensions and 10 indicators.",
+        "National MPI (NITI Aayog) keeps 3 dimensions but has 12 indicators — adds maternal health and bank accounts.",
+        "National MPI dimensions: Health, Education, Standard of Living, based on NFHS data.",
+        "NITI 2023: MPI headcount fell 29.17% (2013-14) to 11.28% (2022-23); about 24.82 crore escaped poverty."
+      ],
+      "mnemonic": "National MPI = Global 10 + 2 (Maternal health, Bank account) = 12 indicators.",
+      "source": "OPHI & UNDP Global MPI; NITI Aayog National MPI reports (2021, 2023)",
+      "verified": true,
+      "tags": ["mpi", "niti-aayog", "multidimensional-poverty"]
+    },
+    {
+      "id": "econ-poverty-unemployment-note-types-of-unemployment",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-poverty-unemployment",
+      "title": "Types of Unemployment",
+      "body": "## Main types\n\n| Type | Meaning | Example |\n|---|---|---|\n| **Structural** | Skill-job mismatch from industrial/technological change | Automation displacing assembly-line workers |\n| **Frictional** | Short, voluntary gap while switching jobs / first job search | Graduate seeking first job |\n| **Cyclical** | Falls in a boom, rises in a recession (demand-linked) | 2008 layoffs in construction/finance |\n| **Seasonal** | Tied to particular seasons | Farm labour idle after harvest |\n| **Disguised** | More workers engaged than needed; marginal productivity ≈ 0 | Extra family members on a small farm |\n\n## Related forms\n\n- **Open unemployment** — visibly seeking work but jobless.\n- **Educated (white-collar) unemployment** — qualified youth unable to find suitable jobs.\n- **Technological unemployment** — automation/AI displacing labour.\n- **Underemployment** — working below one's capacity, skill or desired hours.\n\n## Lewis model\n\n- W. Arthur Lewis's **dual-sector 'unlimited supply of labour'** model: **surplus (disguised) farm labour** can move to the modern industrial sector at a near-constant wage without cutting farm output — the essence of **structural transformation**. India's **jobless growth** debate questions whether high GDP growth is generating enough jobs.",
+      "keyPoints": [
+        "Structural unemployment arises from a mismatch between workers' skills and available jobs.",
+        "Frictional unemployment is short-term and voluntary (job transitions); cyclical tracks the business cycle.",
+        "Disguised unemployment: surplus workers whose marginal productivity is near zero, typical of agriculture.",
+        "Educated unemployment affects qualified youth; technological unemployment stems from automation.",
+        "Lewis's dual-sector model transfers surplus farm labour to industry without loss of farm output."
+      ],
+      "mnemonic": "'SF-CSD' warm-up: Structural, Frictional, Cyclical, Seasonal, Disguised.",
+      "source": "local APPSC GK PDF — Indian Economics: Unemployment in India (Types); Lewis dual-sector model",
+      "verified": true,
+      "tags": ["unemployment", "types", "lewis-model"]
+    },
+    {
+      "id": "econ-poverty-unemployment-note-plfs-measurement",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-poverty-unemployment",
+      "title": "Measuring Employment — PLFS",
+      "body": "## What is PLFS\n\n- The **Periodic Labour Force Survey (PLFS)**, launched by the **NSO (MoSPI) in 2017**, is India's principal source of labour-market data. It **replaced the quinquennial Employment-Unemployment Surveys (EUS)** of the NSSO. First annual report (2019) covered July 2017 – June 2018.\n\n## Measurement approaches\n\n| Approach | Reference period | Note |\n|---|---|---|\n| **Usual Status (UPS/UPSS)** | 365 days | Activity for the major part of the year (+ subsidiary) |\n| **Current Weekly Status (CWS)** | 7 days | Employed if works ≥1 hour on any day of the week |\n| **Current Daily Status (CDS)** | each day of the week | Most rigorous; captures intensity/underemployment |\n\n- Key ratios: **LFPR** (labour force ÷ population), **WPR** (workers ÷ population), **UR** (unemployed ÷ labour force).\n\n## 2025 revamp (current)\n\n- From **January 2025**, MoSPI revamped the PLFS to release **monthly** labour-force estimates for **both rural and urban** areas (enlarged sample, **calendar-year** reporting), replacing the earlier annual-plus-urban-quarterly design — giving far more timely jobs data.",
+      "keyPoints": [
+        "PLFS was launched by the NSO (MoSPI) in 2017 and replaced the NSSO's quinquennial EUS.",
+        "Usual Status uses a 365-day reference; CWS uses 7 days; CDS records each day of the week.",
+        "CWS counts a person employed if they work at least one hour on any day of the reference week.",
+        "Key indicators: LFPR (labour force participation), WPR (worker-population ratio), UR (unemployment rate).",
+        "From January 2025, PLFS releases monthly estimates for both rural and urban areas on a calendar-year basis."
+      ],
+      "mnemonic": "Reference periods shrink: Usual (year) > Weekly (7 days) > Daily (each day).",
+      "source": "MoSPI — PLFS framework, concepts, and 2024-25 revamp announcement",
+      "verified": true,
+      "tags": ["plfs", "measurement", "current-affairs"]
+    },
+    {
+      "id": "econ-poverty-unemployment-note-employment-schemes",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-poverty-unemployment",
+      "title": "Employment & Poverty-Eradication Schemes",
+      "body": "## Wage employment — MGNREGA and its successor\n\n- **MGNREGA** (enacted 2005, implemented 2 Feb 2006, Ministry of Rural Development) gave a **legal right to work**: **100 days** of unskilled manual wage employment per rural household per year, with at least one-third of jobs for **women**, an **unemployment allowance** if work is not provided in 15 days, and durable-asset creation.\n- Recent tightening: the **Aadhaar-Based Payment System (ABPS)** was made **mandatory from 2024** (job-card ↔ Aadhaar ↔ bank), alongside the **NMMS** app for geo-tagged attendance.\n- **Change (2025):** Parliament passed the **Viksit Bharat–Guarantee for Rozgar and Ajeevika Mission (Gramin) Act, 2025 (VB–G RAM G)**, which **repealed MGNREGA** and replaced it with an updated rural **employment-and-livelihood guarantee** framework, still under the Ministry of Rural Development.\n\n## Skilling & self-employment\n\n| Scheme | Year | Focus |\n|---|---|---|\n| **PMEGP** | 2008 | Credit-linked subsidy for micro-enterprises (MSME) |\n| **DDU-GKY** | 2014 | Rural youth skilling + placement |\n| **Skill India / PMKVY** | 2015 | Vocational training & certification |\n| **Stand-Up India** | 2016 | Bank loans to SC/ST & women entrepreneurs |\n| **e-Shram** | 2021 | National database of unorganised workers |\n\n## Poverty-eradication lineage\n\n- **Self-employment:** IRDP (1978-80) → **SGSY** (1999) → **NRLM/Aajeevika** (2011) → **DAY-NRLM** (2015).\n- **Wage-employment:** NREP/RLEGP → JRY → SGRY → **MGNREGA** → **VB–G RAM G (2025)**.\n\n## Rural credit delivery\n\n- The **Service Area Approach (1989)** was implemented under the **Lead Bank Scheme** (RBI, 1969): each rural/semi-urban bank branch is assigned specific villages for planned credit and development lending — a key channel for anti-poverty credit.",
+      "keyPoints": [
+        "MGNREGA (2005/2006) gave a legal right to 100 days of wage work; one-third of jobs reserved for women.",
+        "Aadhaar-Based Payment System (ABPS) became mandatory for MGNREGA wages from 2024.",
+        "In 2025 the VB-G RAM G Act repealed MGNREGA and replaced it with an updated rural employment-livelihood framework.",
+        "PMEGP (MSME micro-enterprises), DDU-GKY (rural skilling), Stand-Up India (SC/ST & women loans), e-Shram (unorganised-worker database).",
+        "Self-employment lineage: IRDP (1978-80) to SGSY (1999) to NRLM/DAY-NRLM (2011/2015).",
+        "The Service Area Approach (1989) was implemented under the Lead Bank Scheme (RBI, 1969) for planned rural credit delivery."
+      ],
+      "mnemonic": "Wage line ends 'MGNREGA → VB-G RAM G' (2005 → 2025 replacement).",
+      "source": "local APPSC GK PDF — Unemployment in India (Government Initiatives); Ministry of Rural Development; VB-G RAM G Act 2025 (verified Sep 2026)",
+      "verified": true,
+      "tags": ["schemes", "mgnrega", "vb-g-ram-g", "skilling"]
+    },
+    {
+      "id": "econ-poverty-unemployment-note-causes-current-situation",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-poverty-unemployment",
+      "title": "Causes & Current Employment Situation",
+      "body": "## Causes of unemployment in India\n\n- **Population growth** — the labour force grows faster than jobs are created.\n- **Education-skill gap** — theoretical curricula, weak vocational training and poor industry-academia linkage leave graduates job-unready (underemployment).\n- **Economic factors** — slowdowns, inflation raising production costs, and industrial stagnation depress hiring.\n- **Technology** — automation and AI reduce demand for routine manual labour and widen the **digital divide**.\n\n## Current picture (recent PLFS-era trends)\n\n- **Rural-urban shift:** rural unemployment fell markedly from **5.3% (2017-18) to 2.5% (2023-24)**, and urban from **7.7% to 5.1%** over the same period.\n- **Youth (15-29)** unemployment remains the key challenge, though it fell from **17.8% (2017-18)** to about **10% (2022-23)**; educated youth are hardest to absorb.\n- **Structural features:** dominance of the **informal/unorganised sector**, rising female self-employment, a **low female LFPR** with a wide gender gap, and sharp **regional disparities** across states.\n- The **jobless growth** debate asks whether high GDP growth is generating proportionate employment.",
+      "keyPoints": [
+        "Main causes: population growth, education-skill mismatch, economic slowdowns/inflation, and automation.",
+        "Rural unemployment fell from 5.3% (2017-18) to 2.5% (2023-24); urban from 7.7% to 5.1%.",
+        "Youth (15-29) unemployment fell from 17.8% (2017-18) to about 10% (2022-23) but remains the core challenge.",
+        "India's labour market is dominated by the informal/unorganised sector with a low female LFPR.",
+        "Jobless growth = GDP growth not matched by proportionate job creation; regional disparities are wide."
+      ],
+      "source": "local APPSC GK PDF — Unemployment in India (Causes; Current Situation); PLFS trends",
+      "verified": true,
+      "tags": ["unemployment", "causes", "current-situation", "youth"]
+    }
+  ]
+}

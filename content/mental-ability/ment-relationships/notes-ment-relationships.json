@@ -1,0 +1,152 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Relationships (Blood Relations)",
+  "items": [
+    {
+      "id": "ment-relationships-note-family-tree-method",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "The family-tree method (draw it, don't guess)",
+      "body": "Almost every blood-relation question is solved fastest by drawing a small **top-down family tree** and placing people generation by generation.\n\n**Notation**\n\n| Symbol | Meaning |\n|---|---|\n| □ | male |\n| ○ | female |\n| = (horizontal) | married couple |\n| \\| (vertical) | parent → child (descent) |\n| ⎵ bracket | siblings |\n\n**Steps**\n1. Read the sentence in small pieces; watch the words *his, her, only, elder*.\n2. Fix each person's **gender** the moment it is given (son/daughter/brother/sister/wife/husband).\n3. Place elders on top, children below; same generation on the same row.\n4. Read the final relation *from the target person's viewpoint*.\n\n**Worked example** — *A is B's sister; C is B's mother; D is C's father. A→D?* Put D on top → C below (D's child) → A and B below C. A is two descent steps below D and is female ⇒ **granddaughter**.\n\n**Common trap:** never assume a mother/father's gender partner or extra siblings that are not stated.",
+      "keyPoints": [
+        "Draw a top-down tree: elders on top, children below, same generation on one row",
+        "□ = male, ○ = female, horizontal = = married couple, vertical | = parent-to-child",
+        "Fix gender the instant a gendered word (son, daughter, wife, brother) appears",
+        "Read the answer from the target person's point of view",
+        "Do not invent siblings or spouses that the statement never mentions"
+      ],
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based)",
+      "verified": true,
+      "tags": [
+        "blood-relations",
+        "method"
+      ]
+    },
+    {
+      "id": "ment-relationships-note-coded-relations",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "Decoding coded (symbol) blood relations",
+      "body": "In coded questions, symbols such as +, −, ×, ÷, @, #, & stand for relationships, and you must **read a chain left to right, one link at a time**.\n\n**Method**\n1. Write the key as a tiny legend before touching the chain.\n2. For 'A op B', translate to 'A is the <relation> of B', then draw A and B on the tree.\n3. Chain the pieces: the second person of one link is the first of the next.\n4. Read the required relation and its **direction** (father-in-law vs son-in-law are opposite ends).\n\n**Worked example** — key: A×B = A father of B, A÷B = A daughter of B. *P × Q ÷ R → P?R.* P is Q's father; Q is R's daughter, so R is Q's other parent = mother; two parents of one child ⇒ P is R's **husband**.\n\n**Traps**\n- Reaching a person through the **father (×)** gives *paternal* relatives; through the **mother (+)** gives *maternal* relatives.\n- The question may ask 'how is R related to P' — the reverse of what the chain naturally reads.",
+      "keyPoints": [
+        "Write the symbol legend first, then translate each link to 'A is the __ of B'",
+        "Chain links: the 2nd person of one link is the 1st of the next",
+        "Route through the father = paternal relative; through the mother = maternal relative",
+        "Two people who are both parents of one child are spouses",
+        "Watch the asked direction: father-in-law and son-in-law are opposite ends of the same link"
+      ],
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded)",
+      "verified": true,
+      "tags": [
+        "blood-relations",
+        "coded",
+        "method"
+      ]
+    },
+    {
+      "id": "ment-relationships-note-pointing-photo",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "Pointing & photograph statements — resolve the self-reference",
+      "body": "In pointing/introduction and photo questions a speaker describes someone via a chain that often loops back to the **speaker themselves**.\n\n**Key phrases to collapse first**\n\n| Phrase | Resolves to |\n|---|---|\n| the only daughter of my mother | the (female) speaker herself |\n| the only son of my father | the (male) speaker himself |\n| my father's only son (spoken by a man) | the speaker himself |\n\n**Method:** work the phrase **inside-out**, replace any self-referring clause with 'the speaker', then read the leftover relation.\n\n**Worked example** — *'His mother is the only daughter of my mother,' says Latha about a man in a photo.* 'Only daughter of my mother' = Latha ⇒ the man's mother is Latha ⇒ Latha is his **mother**.\n\n**Trap:** the gender of the speaker matters — 'only child' does not reveal it, but 'only daughter/son' does.",
+      "keyPoints": [
+        "Collapse self-referring clauses first: 'only daughter of my mother' = the female speaker",
+        "'Only son of my father' spoken by a man = the man himself",
+        "Work the phrase inside-out, then read the leftover relation",
+        "Speaker's gender is revealed by 'daughter/son' but not by the neutral word 'child'"
+      ],
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Introduction)",
+      "verified": true,
+      "tags": [
+        "blood-relations",
+        "pointing",
+        "method"
+      ]
+    },
+    {
+      "id": "ment-relationships-note-data-sufficiency",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "Data sufficiency in blood relations — the gender check",
+      "body": "Data-sufficiency (DS) items ask whether the statement(s) let you determine a relation, **not** to state the relation itself. Judge each statement in isolation, then together.\n\n**Standard 4-option convention**\n1. I alone sufficient, II alone not.\n2. II alone sufficient, I alone not.\n3. Both together sufficient, neither alone.\n4. Both together still not sufficient (or either alone).\n\n**The decisive habit:** before calling a statement sufficient, check that the **gender of the target person** is fixed. Words like *child, parent, cousin, sibling, spouse* are gender-neutral and frequently leave the exact relation (son vs daughter, etc.) undetermined.\n\n**Worked example** — *M?N. I: M is the child of N. II: N is the mother of two children.* Even together, M could be son or daughter ⇒ **not sufficient**.\n\n**Trap:** a statement can fully fix the *tree* yet still fail because a needed gender is missing.",
+      "keyPoints": [
+        "DS asks whether the relation is determinable, not what it is",
+        "Test Statement I alone, then II alone, then both together",
+        "Always verify the target person's gender is fixed before declaring sufficiency",
+        "'Child', 'parent', 'cousin', 'spouse' are gender-neutral traps",
+        "A statement can fix the family tree yet be insufficient for lack of a gender"
+      ],
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Data Sufficiency in Blood Relation",
+      "verified": true,
+      "tags": [
+        "blood-relations",
+        "data-sufficiency",
+        "method"
+      ]
+    },
+    {
+      "id": "ment-relationships-note-common-traps",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "Common traps: 'only', maternal vs paternal, and generations",
+      "body": "A cluster of recurring traps decides most tricky blood-relation questions.\n\n**1. The word 'only'** — 'only son/daughter' removes all sibling alternatives, so it usually forces the chain to the speaker's own parent or the speaker themselves and rules out any *cousin/aunt/uncle* branch on that side.\n\n**2. Maternal vs paternal** — the *same* label (uncle, aunt, grandfather) can be either side. Trace whether you reached the person through the **mother** (maternal) or the **father** (paternal).\n\n**3. Counting generations**\n\n| Descent links up | Relation |\n|---|---|\n| 1 | parent |\n| 2 | grandparent |\n| 3 | great-grandparent |\n\n**4. In-law direction** — spouse's parent = parent-in-law; daughter's husband = son-in-law; these are opposite ends of one marriage link, so the asked direction changes the answer.\n\n**Worked example** — *A father of F; F father of B; B mother of C.* Three descent links from A to C ⇒ A is C's **great-grandfather**.",
+      "keyPoints": [
+        "'Only son/daughter' blocks cousin/aunt/uncle branches on that side",
+        "Same label (uncle/aunt/grandfather) is maternal or paternal by the route taken",
+        "Descent links up: 1 = parent, 2 = grandparent, 3 = great-grandparent",
+        "Spouse's parent = parent-in-law; daughter's husband = son-in-law (opposite ends)",
+        "Re-read which direction the question asks before finalising the answer"
+      ],
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Traps/Generations)",
+      "verified": true,
+      "tags": [
+        "blood-relations",
+        "traps",
+        "method"
+      ]
+    },
+    {
+      "id": "ment-relationships-note-seating-ranking",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "Seating arrangement & ranking — the counting formulas",
+      "body": "The same paper mixes blood relations with **seating** and **ranking** items; both are solved by drawing positions and applying a small set of formulas.\n\n**Linear seating (a row).** Fix the person with the most definite clue first (often the middle seat), then place neighbours. When everyone **faces north**, each person's left = the observer's left, so no flip is needed; if they **face south**, left and right swap.\n\n**Circular seating (facing the centre).** A chain of 'immediate right' statements fixes one cyclic order; the sequence wraps around (after the last person it returns to the first). Useful equivalences for n equally-spaced seats:\n\n| Fact | Rule |\n|---|---|\n| k to the left | = (n − k) to the right |\n| Seat exactly opposite | n/2 places away (only when n is even) |\n\n**Ranking / position formulas.**\n\n| Ask | Formula |\n|---|---|\n| Total people (one person, both ends given) | L + R − 1 |\n| Position from the other end | N − (position from that end) + 1 |\n| 'k places below rank r' | rank (r + k) from the top |\n| On interchange | each person takes the other's fixed position |\n\n**Worked example** — Ravi is 7th from left and 12th from right ⇒ total = 7 + 12 − 1 = **18**. In a row of 40, the 16th from left is 40 − 16 + 1 = **25th** from right.\n\n**Common trap:** forgetting the **−1** (the counted person is shared by both ends), or not flipping left/right for south-facing rows.",
+      "keyPoints": [
+        "Total from both ends = L + R − 1 (subtract the double-counted person)",
+        "Position from other end = N − (position from this end) + 1",
+        "Fix the most-constrained seat first; north-facing = observer's left, south-facing flips",
+        "Circle: 'k to the left' = '(n−k) to the right'; opposite seat is n/2 away (n even)",
+        "'k places below rank r' = rank (r+k) from the top; on interchange each takes the other's seat"
+      ],
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
+      "verified": true,
+      "tags": [
+        "seating",
+        "ranking",
+        "method"
+      ]
+    },
+    {
+      "id": "ment-relationships-note-chained-riddle",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "Multi-step chained relation riddles",
+      "body": "APPSC favours single-sentence riddles that chain three or four relation links, often with 'only son/daughter' or 'great-grandfather' hooks. Resolve them **from the innermost phrase outward**, drawing each link on a tree as you go, and fix each person's gender immediately.\n\n*Example 1:* 'P is the mother of A's brother's father's wife.' Innermost: A's brother's father = A's father; A's father's wife = A's mother; P is the mother of A's mother = A's **maternal grandmother**.\n\n*Example 2:* 'The lady is the daughter of the only granddaughter of Ram's maternal great-grandfather.' The maternal great-grandfather's only granddaughter is Ram's mother; her daughter is Ram's **sister**.\n\n**Trap:** 'maternal' pins the link to the mother's side; 'only granddaughter/son' collapses several possibilities into one specific person — use it to force the identity.",
+      "keyPoints": [
+        "Resolve chained riddles innermost-phrase-first, one link at a time",
+        "'A's brother's father' = A's father; 'father's wife' = mother",
+        "Mother of A's mother = maternal grandmother",
+        "'only granddaughter of maternal great-grandfather' = the mother",
+        "'maternal' fixes the mother's side; 'only' forces a unique identity"
+      ],
+      "source": "AP State Govt / APPSC Group-2 22.12.2022 & 14.12.2022 PYQ patterns",
+      "verified": true,
+      "tags": [
+        "blood-relations",
+        "chained",
+        "riddle"
+      ]
+    }
+  ]
+}

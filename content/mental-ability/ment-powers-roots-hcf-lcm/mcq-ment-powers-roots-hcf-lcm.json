@@ -1,0 +1,757 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Powers, Roots, HCF & LCM",
+  "items": [
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "refresher": true,
+      "question": "The value of 2^5 × 2^3 is:",
+      "options": [
+        "256",
+        "64",
+        "128",
+        "512"
+      ],
+      "answerIndex": 0,
+      "explanation": "Same base, so add the exponents: 2^5 × 2^3 = 2^(5+3) = 2^8 = 256.\n\n**Why not the others**\n- 64 — this is 2^6, the result of wrongly computing 5+1 or multiplying only part of it.\n- 128 — this is 2^7, from adding exponents as 5+2.\n- 512 — this is 2^9, from multiplying the bases (2×2=4) as well as adding exponents.\n\n**Key facts**\n| Rule | Formula |\n|---|---|\n| Product | a^m · a^n = a^(m+n) |\n| Quotient | a^m ÷ a^n = a^(m−n) |\n| Power of power | (a^m)^n = a^(mn) |\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Laws of Indices).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Laws of Indices)",
+      "verified": true,
+      "covers": [
+        "Laws of indices — product, quotient and power-of-power"
+      ],
+      "tags": [
+        "indices",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "refresher": true,
+      "question": "The LCM of 12 and 18 is:",
+      "options": [
+        "6",
+        "72",
+        "36",
+        "216"
+      ],
+      "answerIndex": 2,
+      "explanation": "12 = 2²×3 and 18 = 2×3². Take the highest power of each prime: 2²×3² = 4×9 = 36.\n\n**Why not the others**\n- 6 — this is the HCF of 12 and 18, not the LCM.\n- 72 — takes an extra factor of 2 (2³×3²); higher than needed.\n- 216 — this is 12×18, which equals LCM×HCF (36×6), not the LCM alone.\n\n**Key facts**\n- LCM = product of the highest power of every prime present.\n- HCF = product of the lowest power of the common primes.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Prime Factorization Method).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Prime Factorization Method)",
+      "verified": true,
+      "covers": [
+        "HCF and LCM by prime factorization"
+      ],
+      "tags": [
+        "lcm",
+        "refresher"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "If 7^(x−y) = 343 and 7^(x+y) = 16807, then the value of x is:",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "8"
+      ],
+      "answerIndex": 2,
+      "explanation": "343 = 7³ so x−y = 3. 16807 = 7⁵ so x+y = 5. Adding: 2x = 8, hence x = 4 (and y = 1).\n\n**Why not the others**\n- 3 — this is the value of (x−y), not x.\n- 5 — this is the value of (x+y), not x.\n- 8 — this is 2x; you must halve it to get x.\n\n**Key facts**\n- Equate powers of the same base: a^m = a^n ⇒ m = n.\n- 7¹=7, 7²=49, 7³=343, 7⁴=2401, 7⁵=16807.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 7).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 7)",
+      "verified": true,
+      "covers": [
+        "Exponential equations — solve for the unknown"
+      ],
+      "tags": [
+        "indices",
+        "equations"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The value of (81/16)^(−3/4) is:",
+      "options": [
+        "27/8",
+        "8/27",
+        "9/4",
+        "16/81"
+      ],
+      "answerIndex": 1,
+      "explanation": "A negative index inverts the base: (81/16)^(−3/4) = (16/81)^(3/4). Now 16/81 = (2/3)⁴, so ((2/3)⁴)^(3/4) = (2/3)³ = 8/27.\n\n**Why not the others**\n- 27/8 — this is the reciprocal (2/3)^(−3) = (3/2)³; sign of the index handled backwards.\n- 9/4 — this is (3/2)², from using index 1/2 instead of 3/4.\n- 16/81 — this is just (16/81)^1; the ^(3/4) step was dropped.\n\n**Key facts**\n- a^(−n) = 1/a^n; (a/b)^(−n) = (b/a)^n.\n- a^(m/n) = (a^(1/n))^m — take the nth root, then the mth power.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 6).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 6)",
+      "verified": true,
+      "covers": [
+        "Fractional and negative exponents"
+      ],
+      "tags": [
+        "indices",
+        "fractional-exponent"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The value of √50 + √18 − √8 is:",
+      "options": [
+        "4√2",
+        "6√2",
+        "5√2",
+        "8√2"
+      ],
+      "answerIndex": 1,
+      "explanation": "Reduce each surd to a multiple of √2: √50 = 5√2, √18 = 3√2, √8 = 2√2. So 5√2 + 3√2 − 2√2 = 6√2.\n\n**Why not the others**\n- 4√2 — arises if √18 is wrongly taken as √8 (both 2√2), giving 5+2−2.\n- 5√2 — arises if the −√8 term is dropped (5+3−3).\n- 8√2 — arises from adding all three coefficients (5+3+2) instead of subtracting the last.\n\n**Key facts**\n- Only like surds combine: p√a ± q√a = (p±q)√a.\n- √(k²·b) = k√b; √50=√(25·2), √18=√(9·2), √8=√(4·2).\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 1, simplification).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 1, simplification)",
+      "verified": true,
+      "covers": [
+        "Surds — simplification to a√b form"
+      ],
+      "tags": [
+        "surds",
+        "simplification"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "On rationalising the denominator, 1 / (√3 − √2) equals:",
+      "options": [
+        "√3 − √2",
+        "√3 + √2",
+        "√5",
+        "√6 − 1"
+      ],
+      "answerIndex": 1,
+      "explanation": "Multiply numerator and denominator by the conjugate (√3 + √2): denominator becomes (√3)² − (√2)² = 3 − 2 = 1. So the value is (√3 + √2)/1 = √3 + √2.\n\n**Why not the others**\n- √3 − √2 — this is the original denominator, not the rationalised value.\n- √5 — from wrongly adding under one root: √3+√2 ≠ √5.\n- √6 − 1 — mishandles the conjugate product; the denominator is 1, not involving √6 in the answer.\n\n**Key facts**\n- Conjugate of (a − b) is (a + b); (a−b)(a+b) = a² − b² removes the surd.\n- Rationalise = clear surds from the denominator.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Rules of surds).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Rules of surds)",
+      "verified": true,
+      "covers": [
+        "Surds — rationalisation of the denominator"
+      ],
+      "tags": [
+        "surds",
+        "rationalisation"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Which of the following is the greatest: ⁴√10, ³√6, √3, ³√10 ?",
+      "options": [
+        "⁴√10",
+        "³√6",
+        "√3",
+        "³√10"
+      ],
+      "answerIndex": 3,
+      "explanation": "Bring all to a common index 12 (LCM of 4, 3, 2) and compare the resulting radicands: ⁴√10 = 10^(3/12) = ¹²√1000; ³√6 = 6^(4/12) = ¹²√1296; √3 = 3^(6/12) = ¹²√729; ³√10 = 10^(4/12) = ¹²√10000. The largest radicand (10000) is ³√10.\n\n**Why not the others**\n- ⁴√10 — becomes ¹²√1000, the smallest of the four.\n- ³√6 — becomes ¹²√1296, larger than √3 but smaller than ³√10.\n- √3 — becomes ¹²√729, second smallest.\n\n**Key facts**\n- To compare surds, rewrite each with a common index = LCM of the roots.\n- With a common index, the surd with the largest radicand is greatest.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Comparison of Surds).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Comparison of Surds)",
+      "verified": true,
+      "covers": [
+        "Surds — comparison and ordering via a common index"
+      ],
+      "tags": [
+        "surds",
+        "comparison"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Consider the following statements:\n1. √1764 = 42\n2. ³√3375 = 15\nWhich of the statements is/are correct?",
+      "options": [
+        "1 only",
+        "2 only",
+        "Both 1 and 2",
+        "Neither 1 nor 2"
+      ],
+      "answerIndex": 2,
+      "explanation": "Check each: 42² = 1764, so statement 1 is correct. 15³ = 15×15×15 = 3375, so statement 2 is correct. Both hold.\n\n**Why not the others**\n- 1 only — rejects statement 2, but 15³ genuinely equals 3375.\n- 2 only — rejects statement 1, but 42² genuinely equals 1764.\n- Neither — both statements are in fact true.\n\n**Key facts**\n- Prime-factor to root: 1764 = 2²·3²·7² ⇒ √1764 = 2·3·7 = 42.\n- 3375 = 3³·5³ ⇒ ³√3375 = 3·5 = 15.\n\n*Source: local APPSC Quantitative Reasoning PDF — Square and Square Roots.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Square and Square Roots",
+      "verified": true,
+      "covers": [
+        "Square roots and cube roots"
+      ],
+      "tags": [
+        "square-root",
+        "cube-root",
+        "statement-based"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The value of log 10 − log 5 + log 25 (all to base 10) is:",
+      "options": [
+        "log 30",
+        "log 50",
+        "2",
+        "log 100"
+      ],
+      "answerIndex": 1,
+      "explanation": "Use the laws: log 10 − log 5 = log(10/5) = log 2; then log 2 + log 25 = log(2×25) = log 50.\n\n**Why not the others**\n- log 30 — from adding 5+25 instead of multiplying (10/5)×25.\n- 2 — this is log 100; would require the argument to be 100, but it is 50.\n- log 100 — from taking 10×25/... incorrectly; the correct product is (10÷5)×25 = 50.\n\n**Key facts**\n| Law | Formula |\n|---|---|\n| Product | log(xy) = log x + log y |\n| Quotient | log(x/y) = log x − log y |\n| Power | log(xⁿ) = n·log x |\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (Example 8).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Logarithm (Example 8)",
+      "verified": true,
+      "covers": [
+        "Logarithm laws — product, quotient, power and evaluation"
+      ],
+      "tags": [
+        "logarithm",
+        "laws"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The value of log₈ 16 is:",
+      "options": [
+        "4/3",
+        "3/4",
+        "2",
+        "1/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "Change to base 2: log₈16 = (log₂16)/(log₂8) = 4/3. (Equivalently 8 = 2³, 16 = 2⁴, so log₈16 = 4/3.)\n\n**Why not the others**\n- 3/4 — this is log₁₆8, the reciprocal; numerator and denominator swapped.\n- 2 — treats it as log₄16; wrong base.\n- 1/2 — treats it as log₁₆4; wrong argument.\n\n**Key facts**\n- Change of base: logₐb = (log꜀b)/(log꜀a).\n- log of a power of the base: log_(2³)(2⁴) = 4/3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (Base Change Rule).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Logarithm (Base Change Rule)",
+      "verified": true,
+      "covers": [
+        "Logarithm — change of base rule"
+      ],
+      "tags": [
+        "logarithm",
+        "change-of-base"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Given log 3257 = 3.5128, the characteristic of the logarithm is:",
+      "options": [
+        "0.5128",
+        "2",
+        "3",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "The characteristic is the integral part of the logarithm; the mantissa is the (always positive) decimal part. For 3.5128 the characteristic is 3 and the mantissa is 0.5128. (For a number with n digits in its integer part, characteristic = n − 1; 3257 has 4 digits ⇒ 3.)\n\n**Why not the others**\n- 0.5128 — this is the mantissa, the decimal part, not the characteristic.\n- 2 — would be the characteristic of a 3-digit number; 3257 has 4 digits.\n- 4 — this is the digit count, not the characteristic (which is digits − 1).\n\n**Key facts**\n- Characteristic = integer part; Mantissa = decimal part (kept positive).\n- For an integer of n digits, characteristic of its common log = n − 1.\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (Characteristic and Mantissa).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Logarithm (Characteristic and Mantissa)",
+      "verified": true,
+      "covers": [
+        "Logarithm — characteristic and mantissa"
+      ],
+      "tags": [
+        "logarithm",
+        "characteristic-mantissa"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The HCF and LCM of two numbers are 35 and 525 respectively. If one number is 105, the other number is:",
+      "options": [
+        "150",
+        "175",
+        "125",
+        "245"
+      ],
+      "answerIndex": 1,
+      "explanation": "Product of two numbers = HCF × LCM. So other number = (35 × 525) ÷ 105 = 18375 ÷ 105 = 175.\n\n**Why not the others**\n- 150 — does not satisfy 105 × n = 35 × 525 (= 18375).\n- 125 — 105 × 125 = 13125 ≠ 18375.\n- 245 — 105 × 245 = 25725 ≠ 18375.\n\n**Key facts**\n- For any two numbers A, B: A × B = HCF(A,B) × LCM(A,B).\n- Hence second number = (HCF × LCM) ÷ first number.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 11).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 11)",
+      "verified": true,
+      "covers": [
+        "Product of two numbers = HCF × LCM"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "product-relation"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The HCF of the fractions 4/9, 8/15 and 12/20 is:",
+      "options": [
+        "1/45",
+        "4/5",
+        "24/1",
+        "1/180"
+      ],
+      "answerIndex": 0,
+      "explanation": "HCF of fractions = (HCF of numerators) / (LCM of denominators). HCF(4, 8, 12) = 4; LCM(9, 15, 20) = 180. So HCF = 4/180 = 1/45.\n\n**Why not the others**\n- 4/5 — from HCF(numerators)/HCF(denominators); the denominator rule is LCM, not HCF.\n- 24/1 — this is the LCM of the fractions [LCM(num)/HCF(den) = 24/1], not the HCF.\n- 1/180 — takes numerator HCF as 1 instead of 4.\n\n**Key facts**\n- HCF of fractions = HCF(numerators) / LCM(denominators).\n- LCM of fractions = LCM(numerators) / HCF(denominators).\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 14, fractions).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 14, fractions)",
+      "verified": true,
+      "covers": [
+        "HCF and LCM of fractions"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "fractions"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The smallest number which, when divided by 5, 7 and 9, leaves the same remainder 3 in each case, is:",
+      "options": [
+        "312",
+        "318",
+        "315",
+        "321"
+      ],
+      "answerIndex": 1,
+      "explanation": "For a common remainder R, required number = LCM(divisors) + R. LCM(5, 7, 9) = 315, so number = 315 + 3 = 318.\n\n**Why not the others**\n- 312 — this is LCM − 3; the remainder must be added, not subtracted.\n- 315 — this is the LCM itself, which leaves remainder 0, not 3.\n- 321 — this is LCM + 6, adding twice the remainder.\n\n**Key facts**\n- Smallest number leaving common remainder R = LCM(divisors) + R.\n- Greatest number leaving common remainder R on dividing x, y, z = HCF(x−R, y−R, z−R).\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 18, remainders).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 18, remainders)",
+      "verified": true,
+      "covers": [
+        "HCF and LCM — remainder and word problems"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "remainder"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The units digit of 7¹⁰⁵ is:",
+      "options": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "answerIndex": 2,
+      "explanation": "Units digits of powers of 7 cycle 7, 9, 3, 1 with period 4. 105 mod 4 = 1, so the units digit matches 7¹, which is **7**.\n\n**Why not the others**\n- 1 — corresponds to a remainder of 0 (e.g. 7⁴), but 105 mod 4 = 1.\n- 3 — corresponds to remainder 3 (7³).\n- 9 — corresponds to remainder 2 (7²).\n\n**Key facts**\n- Units digit of aⁿ repeats with a fixed cycle (7 → 7,9,3,1, period 4).\n- Reduce the exponent modulo the cycle length; remainder 1 → first term.\n\n*Source: local APPSC Quantitative Reasoning PDF — Cyclicity of Units Digit.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Cyclicity of Units Digit",
+      "verified": true,
+      "covers": [
+        "Units digit of a power (cyclicity)"
+      ],
+      "tags": [
+        "indices",
+        "units-digit"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The number of trailing zeros at the end of 100! is:",
+      "options": [
+        "20",
+        "24",
+        "25",
+        "10"
+      ],
+      "answerIndex": 1,
+      "explanation": "Trailing zeros are set by the power of 5. Count = ⌊100/5⌋ + ⌊100/25⌋ + ⌊100/125⌋ = 20 + 4 + 0 = **24**.\n\n**Why not the others**\n- 20 — counts only ⌊100/5⌋, missing the extra 5s in multiples of 25.\n- 25 — adds one too many; ⌊100/125⌋ = 0.\n- 10 — counts multiples of 10 only, an incorrect method.\n\n**Key facts**\n- Trailing zeros of n! = Σ⌊n/5ᵏ⌋ (power of 5, since 2s are always in surplus).\n- ⌊100/5⌋=20, ⌊100/25⌋=4, ⌊100/125⌋=0 ⇒ 24.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factorials / Power of a Prime.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Factorials / Power of a Prime",
+      "verified": true,
+      "covers": [
+        "Trailing zeros / power of a prime in a factorial"
+      ],
+      "tags": [
+        "factorial",
+        "trailing-zeros"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "If x = 3 + 2√2, then the value of x + 1/x is:",
+      "options": [
+        "4√2",
+        "6",
+        "6√2",
+        "4"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rationalise: 1/x = 1/(3+2√2) × (3−2√2)/(3−2√2) = (3−2√2)/(9−8) = 3 − 2√2. So x + 1/x = (3+2√2) + (3−2√2) = **6**.\n\n**Why not the others**\n- 4√2 — this is x − 1/x, not the sum.\n- 6√2 — incorrectly keeps the surd terms instead of cancelling them.\n- 4 — drops one of the rational 3s.\n\n**Key facts**\n- Rationalise 1/(a+b√c) by multiplying by the conjugate (a−b√c).\n- Here the ±2√2 terms cancel, leaving 3 + 3 = 6.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds (conjugate).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds (conjugate)",
+      "verified": true,
+      "covers": [
+        "Surds — value of x + 1/x type expressions"
+      ],
+      "tags": [
+        "surds",
+        "conjugate"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The HCF of 1.75, 5.6 and 7 is:",
+      "options": [
+        "0.07",
+        "0.35",
+        "1.75",
+        "0.7"
+      ],
+      "answerIndex": 1,
+      "explanation": "Write as 1.75, 5.60, 7.00; ignore decimals: HCF(175, 560, 700). 175 = 5²·7, 560 = 2⁴·5·7, 700 = 2²·5²·7 ⇒ common 5·7 = 35. Restore two decimal places: 35/100 = **0.35**.\n\n**Why not the others**\n- 0.07 — takes the common factor as 7 only, missing the 5.\n- 1.75 — the smallest number, not the HCF of all three.\n- 0.7 — uses common factor 70, but 175 is not divisible by 70.\n\n**Key facts**\n- HCF of decimals: give all the same number of decimal places, take integer HCF, then restore the decimal.\n- HCF(175,560,700) = 35 ⇒ 0.35.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (decimals).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (decimals)",
+      "verified": true,
+      "covers": [
+        "HCF and LCM of decimals"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "decimals"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The greatest number that divides 62, 132 and 237 leaving the same remainder in each case is:",
+      "options": [
+        "25",
+        "35",
+        "15",
+        "70"
+      ],
+      "answerIndex": 1,
+      "explanation": "For a common remainder, the required number divides the differences: 132−62 = 70, 237−132 = 105, 237−62 = 175. HCF(70, 105, 175) = 35, so the answer is **35**.\n\n**Why not the others**\n- 25 — does not divide 70 (70/25 is not integer).\n- 15 — does not divide 70 or 175 exactly.\n- 70 — divides 70 but not 105 (105/70 is not integer).\n\n**Key facts**\n- Greatest number leaving the same remainder = HCF of the pairwise differences.\n- 70 = 2·5·7, 105 = 3·5·7, 175 = 5²·7 ⇒ HCF = 5·7 = 35.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders)",
+      "verified": true,
+      "covers": [
+        "HCF and LCM — remainder and word problems"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "remainder"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Four bells toll at intervals of 6, 8, 12 and 18 seconds respectively. If they toll together at the start, how many times will they toll together again in the next one hour?",
+      "options": [
+        "40",
+        "48",
+        "50",
+        "60"
+      ],
+      "answerIndex": 2,
+      "explanation": "They coincide every LCM(6,8,12,18) = 72 seconds. In 3600 seconds the number of subsequent coincidences = 3600 ÷ 72 = **50**.\n\n**Why not the others**\n- 40 — uses an interval of 90 s, not the true LCM of 72 s.\n- 48 — uses 75 s; the LCM is 72 s.\n- 60 — uses 60 s, ignoring that LCM(6,8,12,18) = 72.\n\n**Key facts**\n- Events recur together every LCM of their intervals.\n- Coincidences after the start in time T = ⌊T / LCM⌋ = 3600/72 = 50.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (bells).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (bells)",
+      "verified": true,
+      "covers": [
+        "LCM word problems — bells / lights coinciding"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "bells"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Given log₁₀ 2 = 0.3010, the number of digits in 2⁶⁴ is:",
+      "options": [
+        "18",
+        "19",
+        "20",
+        "21"
+      ],
+      "answerIndex": 2,
+      "explanation": "log₁₀(2⁶⁴) = 64 × 0.3010 = 19.264. The number of digits = ⌊characteristic⌋ + 1 = 19 + 1 = **20**.\n\n**Why not the others**\n- 18 — would require a characteristic of 17.\n- 19 — forgets to add 1 to the characteristic (19).\n- 21 — adds 2 instead of 1 to the characteristic.\n\n**Key facts**\n- Digits of N = ⌊log₁₀N⌋ + 1.\n- 64 × 0.3010 = 19.264 ⇒ characteristic 19 ⇒ 20 digits.\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (digits).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Logarithm (digits)",
+      "verified": true,
+      "covers": [
+        "Logarithm — number of digits in a large power"
+      ],
+      "tags": [
+        "logarithm",
+        "digits"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Consider the following statements (a is a non-zero real number):\n1. (aᵐ)ⁿ = aᵐⁿ.\n2. a⁰ = 1.\n3. √(a²) = a for every real a.\nWhich of the statements given above is/are correct?",
+      "options": [
+        "1 and 2 only",
+        "1 and 3 only",
+        "2 and 3 only",
+        "1, 2 and 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "Power of a power multiplies exponents (1 true). Any non-zero base to the power 0 is 1 (2 true). But √(a²) = |a|, which equals a only when a ≥ 0, so 3 is false. Hence **1 and 2 only**.\n\n**Why not the others**\n- 1 and 3 only — keeps the false statement 3 (√(a²) = |a|, not a).\n- 2 and 3 only — keeps statement 3, which fails for negative a.\n- 1, 2 and 3 — includes the incorrect statement 3.\n\n**Key facts**\n- (aᵐ)ⁿ = aᵐⁿ; a⁰ = 1 for a ≠ 0.\n- √(a²) = |a| (the principal square root is non-negative).\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (laws).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (laws)",
+      "verified": true,
+      "covers": [
+        "Statement-based — index and surd laws (a⁰, √(a²)=|a|)",
+        "Laws of indices — product, quotient and power-of-power"
+      ],
+      "tags": [
+        "indices",
+        "surds",
+        "statement-based"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The greatest length of a tape that can measure exactly the lengths 7 m, 3 m 85 cm and 12 m 95 cm is:",
+      "options": [
+        "5 cm",
+        "35 cm",
+        "7 cm",
+        "175 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "Convert to cm: 700, 385, 1295. The largest measuring length is their HCF. 700 = 2²·5²·7, 385 = 5·7·11, 1295 = 5·7·37; common factors 5·7 = **35 cm**.\n\n**Why not the others**\n- 5 cm — only the factor 5; it divides all three but is not the greatest.\n- 7 cm — only the factor 7; a common divisor but smaller than 35.\n- 175 cm — 175 = 5²·7 does not divide 385 (385÷175 is not whole).\n\n**Key facts**\n- 'Greatest length that measures each exactly' = HCF of the lengths.\n- Always convert all measures to the same unit first.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (greatest measure).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (greatest measure)",
+      "verified": true,
+      "covers": [
+        "HCF word problems — largest measuring rod / tape"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "tape"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "A rectangular floor 15 m 17 cm long and 9 m 2 cm broad is to be paved with square tiles of the same size. The least number of such tiles required is:",
+      "options": [
+        "814",
+        "902",
+        "41",
+        "770"
+      ],
+      "answerIndex": 0,
+      "explanation": "The largest square tile has side = HCF of the dimensions (in cm). 1517 = 37×41, 902 = 2×11×41, so HCF = 41 cm. Number of tiles = (1517×902)÷41² = (1517÷41)×(902÷41) = 37×22 = **814**.\n\n**Why not the others**\n- 902 — the breadth in cm, not a tile count.\n- 41 — the tile side in cm, not the number of tiles.\n- 770 — arises from a wrong tile side; only side 41 divides both dimensions.\n\n**Key facts**\n- Largest identical square tile side = HCF of length and breadth.\n- Least number of tiles = (L×B) ÷ (side)² = (L÷side)×(B÷side).\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (paving tiles).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (paving tiles)",
+      "verified": true,
+      "covers": [
+        "HCF word problems — largest square tiles to pave a floor"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "tiles"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Three runners complete one round of a circular track in 252, 308 and 198 seconds respectively. If they start together from the same point, after how many seconds will they next meet at the starting point?",
+      "options": [
+        "1386",
+        "2520",
+        "2772",
+        "5544"
+      ],
+      "answerIndex": 2,
+      "explanation": "They meet at the start after a time that is a whole number of laps for each, i.e. the LCM of the lap times. 252 = 2²·3²·7, 308 = 2²·7·11, 198 = 2·3²·11; LCM = 2²·3²·7·11 = **2772 seconds**.\n\n**Why not the others**\n- 1386 — half the LCM; not a whole number of laps for the 252 s runner.\n- 2520 — LCM of a different set; not divisible by 198 or 308.\n- 5544 — twice the LCM; they meet earlier, at 2772 s.\n\n**Key facts**\n- Runners from the same point meet again at the start after LCM of their lap times.\n- (They may cross elsewhere sooner, but coincide at the start only at the LCM.)\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (circular track).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (circular track)",
+      "verified": true,
+      "covers": [
+        "LCM word problems — runners meeting on a circular track"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "circular-track"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The greatest number of persons among whom 1001 pens and 910 pencils can be distributed so that each person gets the same number of pens and the same number of pencils is:",
+      "options": [
+        "7",
+        "13",
+        "91",
+        "143"
+      ],
+      "answerIndex": 2,
+      "explanation": "Each person gets an equal whole number of pens and of pencils, so the number of persons divides both 1001 and 910; the greatest such number is their HCF. 1001 = 7·11·13, 910 = 2·5·7·13, so HCF = 7·13 = **91**.\n\n**Why not the others**\n- 7 — a common factor, but not the greatest.\n- 13 — a common factor, but 91 > 13.\n- 143 = 11×13 — does not divide 910 (910÷143 is not whole).\n\n**Key facts**\n- 'Greatest number of persons for equal distribution' = HCF of the quantities.\n- Each person then gets 1001÷91 = 11 pens and 910÷91 = 10 pencils.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (equal distribution).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (equal distribution)",
+      "verified": true,
+      "covers": [
+        "HCF word problems — greatest equal distribution / packing"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "distribution"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Three traffic lights change after 48, 72 and 108 seconds respectively. If they all change together at 8:20:00 a.m., at what time will they next change together?",
+      "options": [
+        "8:26:12 a.m.",
+        "8:27:00 a.m.",
+        "8:27:12 a.m.",
+        "8:28:12 a.m."
+      ],
+      "answerIndex": 2,
+      "explanation": "They change together after LCM(48, 72, 108) seconds. 48 = 2⁴·3, 72 = 2³·3², 108 = 2²·3³; LCM = 2⁴·3³ = 432 s = 7 min 12 s. So next change = 8:20:00 + 7:12 = **8:27:12 a.m.**\n\n**Why not the others**\n- 8:26:12 — uses 372 s; the true LCM is 432 s.\n- 8:27:00 — forgets the extra 12 s (adds only 7 min).\n- 8:28:12 — uses 492 s, larger than the LCM.\n\n**Key facts**\n- Simultaneous change recurs every LCM of the change intervals.\n- 432 s = 7 min 12 s; add to the given clock time.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (traffic lights).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (traffic lights)",
+      "verified": true,
+      "covers": [
+        "LCM word problems — traffic lights changing together (clock time)"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "clock"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The least number which when divided by 6, 7, 8, 9 and 12 leaves a remainder 1 in each case is:",
+      "options": [
+        "421",
+        "504",
+        "505",
+        "511"
+      ],
+      "answerIndex": 2,
+      "explanation": "A number leaving remainder 1 for each divisor is (a common multiple) + 1; the least is LCM + 1. LCM(6,7,8,9,12) = 2³·3²·7 = 504, so the number is 504 + 1 = **505**.\n\n**Why not the others**\n- 421 — not of the form LCM+1; leaves wrong remainders.\n- 504 — the LCM itself, which leaves remainder 0, not 1.\n- 511 — 504 + 7; adds an extra 6, giving wrong remainders.\n\n**Key facts**\n- Least number leaving common remainder R = LCM(divisors) + R.\n- LCM(6,7,8,9,12) = 504.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders)",
+      "verified": true,
+      "covers": [
+        "LCM word problems — least number leaving remainder 1"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "remainder"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The least number which when divided by 5, 6, 7 and 8 leaves remainders 3, 4, 5 and 6 respectively is:",
+      "options": [
+        "838",
+        "840",
+        "842",
+        "418"
+      ],
+      "answerIndex": 0,
+      "explanation": "In each case (divisor − remainder) = 2 is constant, so the number is (a common multiple) − 2, and the least is LCM − 2. LCM(5,6,7,8) = 840, so the number is 840 − 2 = **838**.\n\n**Why not the others**\n- 840 — the LCM itself; leaves remainder 0, not the required ones.\n- 842 — LCM + 2; wrong sign of the constant gap.\n- 418 — roughly half the LCM; not a common multiple minus 2.\n\n**Key facts**\n- When (divisor − remainder) is the same constant k, least number = LCM − k.\n- Here k = 5−3 = 6−4 = 7−5 = 8−6 = 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders)",
+      "verified": true,
+      "covers": [
+        "LCM word problems — least number when (divisor − remainder) is constant"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "remainder"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-30",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "24 boys and 60 girls are to be seated in rows for an exam so that each row has the same number of students and no row mixes boys and girls. The minimum number of rows required is:",
+      "options": [
+        "6",
+        "7",
+        "12",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "To minimise rows, maximise students per row; that maximum is HCF(24, 60) = 12 (largest size that splits both groups evenly). Boys need 24÷12 = 2 rows and girls 60÷12 = 5 rows, giving 2 + 5 = **7** rows.\n\n**Why not the others**\n- 6 — would need 14 per row, but 14 does not divide 24 or 60.\n- 12 — uses 7 per row (HCF misread); 7 does not divide 24 or 60.\n- 5 — fewer than the 7 rows actually needed once no mixing is required.\n\n**Key facts**\n- Largest equal row size with no mixing = HCF of the group sizes.\n- Minimum rows = (total students) ÷ HCF = (24+60)÷12 = 7.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (grouping).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (grouping)",
+      "verified": true,
+      "covers": [
+        "HCF word problems — minimum rows / equal groups with no mixing"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "word-problem",
+        "grouping"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-31",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "Three numbers are in the ratio 2 : 3 : 4 and their sum is 549. Their HCF is:",
+      "options": [
+        "61",
+        "59",
+        "63",
+        "67"
+      ],
+      "answerIndex": 0,
+      "explanation": "Write the numbers as 2k, 3k, 4k. Their sum 9k = 549 ⇒ k = 61. Since 2, 3, 4 are collectively co-prime, HCF(2k,3k,4k) = k = 61 (the numbers are 122, 183, 244).\n\n**Why not the others**\n- 59 — 9×59 = 531 ≠ 549.\n- 63 — 9×63 = 567 ≠ 549.\n- 67 — 9×67 = 603 ≠ 549.\n\n**Key facts**\n- Numbers in ratio a:b:c ⇒ common multiplier k is the HCF (a,b,c co-prime).\n- k = sum / (a+b+c) = 549/9 = 61.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "HCF from numbers given in a ratio"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "ratio"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-mcq-32",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "question": "The least perfect square that is exactly divisible by 2, 3, 5, 6, 9 and 18 is:",
+      "options": [
+        "900",
+        "1600",
+        "450",
+        "180"
+      ],
+      "answerIndex": 0,
+      "explanation": "First LCM(2,3,5,6,9,18) = 90 = 2¹·3²·5¹. For a perfect square every prime power must be even; the odd-power primes are 2 and 5, so multiply by 2×5 = 10, giving 900 = 30².\n\n**Why not the others**\n- 1600 = 40² is a perfect square but is not divisible by 3 or 9.\n- 450 = 2·3²·5² is divisible by all six but is not a perfect square (power of 2 is odd).\n- 180 = 2²·3²·5 is not a perfect square (power of 5 is odd).\n\n**Key facts**\n- Least common multiple gives divisibility; even out the exponents for a square.\n- 90 × 10 = 900 = 30².\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Least perfect square divisible by given numbers (LCM + square)"
+      ],
+      "tags": [
+        "hcf-lcm",
+        "perfect-square",
+        "lcm"
+      ]
+    }
+  ]
+}

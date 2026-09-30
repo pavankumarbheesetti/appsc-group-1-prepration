@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- pol-parliament-structure.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" role="img" aria-labelledby="t d">
+  <title id="t">Parliament of India structure</title>
+  <desc id="d">President at top over two Houses: Lok Sabha (max 552, directly elected, Money Bills, Speaker) and Rajya Sabha (max 250, indirectly elected, permanent, Vice-President chairs).</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="472" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Parliament of India</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">President + two Houses (Article 79)</text><rect class="box3" x="285" y="92" width="250" height="60" rx="12"/><text class="ink" x="410" y="128" font-size="16" font-weight="700" text-anchor="middle">President of India</text><path class="lead" d="M410 152 L410 182"/><rect class="box2" x="60" y="190" width="330" height="230" rx="12"/><rect class="box" x="430" y="190" width="330" height="230" rx="12"/><text class="ink" x="225" y="220" font-size="15" font-weight="700" text-anchor="middle">Lok Sabha (House of the People)</text><text class="ink" x="595" y="220" font-size="15" font-weight="700" text-anchor="middle">Rajya Sabha (Council of States)</text><text class="muted" x="80" y="250" font-size="12.5" text-anchor="start">• Max 552 (now 543 elected)</text><text class="muted" x="80" y="278" font-size="12.5" text-anchor="start">• Directly elected; term 5 years</text><text class="muted" x="80" y="306" font-size="12.5" text-anchor="start">• Money Bills originate here</text><text class="muted" x="80" y="334" font-size="12.5" text-anchor="start">• Presiding: Speaker</text><text class="muted" x="80" y="362" font-size="12.5" text-anchor="start">• Dissolvable; no-confidence motion</text><text class="muted" x="450" y="250" font-size="12.5" text-anchor="start">• Max 250 (238 elected + 12 nom.)</text><text class="muted" x="450" y="278" font-size="12.5" text-anchor="start">• Indirectly elected; permanent body</text><text class="muted" x="450" y="306" font-size="12.5" text-anchor="start">• 1/3 retire every 2 years</text><text class="muted" x="450" y="334" font-size="12.5" text-anchor="start">• Presiding: Vice-President (Chair)</text><text class="muted" x="450" y="362" font-size="12.5" text-anchor="start">• Special powers: Art 249, 312</text><path class="lead" d="M285 152 C 200 165, 180 178, 200 190"/><path class="lead" d="M535 152 C 620 165, 640 178, 620 190"/><text class="muted" x="28" y="458" font-size="13" text-anchor="start">A Bill becomes law after both Houses pass it and the President assents.</text>
+</svg>

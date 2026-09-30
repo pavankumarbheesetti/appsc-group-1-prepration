@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- econ-budget-structure.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" role="img" aria-labelledby="t d">
+  <title id="t">Union Budget structure and deficits</title>
+  <desc id="d">Receipts (revenue: taxes, capital: borrowings) vs Expenditure (revenue and capital), and the three deficits: Fiscal (borrowing), Revenue, and Primary (fiscal minus interest).</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="492" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Union Budget — structure &amp; deficits</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">Annual Financial Statement (Art 112)</text><rect class="box3" x="28" y="92" width="372" height="150" rx="12"/><rect class="box2" x="420" y="92" width="372" height="150" rx="12"/><text class="ink" x="214" y="118" font-size="16" font-weight="700" text-anchor="middle">Receipts</text><text class="ink" x="606" y="118" font-size="16" font-weight="700" text-anchor="middle">Expenditure</text><text class="muted" x="48" y="150" font-size="13" text-anchor="start">Revenue: taxes (GST, income,</text><text class="muted" x="48" y="172" font-size="13" text-anchor="start">corporate), interest, dividends</text><text class="muted" x="48" y="202" font-size="13" text-anchor="start">Capital: borrowings, recoveries,</text><text class="muted" x="48" y="224" font-size="13" text-anchor="start">disinvestment</text><text class="muted" x="440" y="150" font-size="13" text-anchor="start">Revenue: salaries, interest,</text><text class="muted" x="440" y="172" font-size="13" text-anchor="start">subsidies, grants</text><text class="muted" x="440" y="202" font-size="13" text-anchor="start">Capital: assets, loans, </text><text class="muted" x="440" y="224" font-size="13" text-anchor="start">infrastructure</text><rect class="box" x="28" y="268" width="764" height="58" rx="10"/><text class="ink" x="44" y="293" font-size="15" font-weight="700" text-anchor="start">Fiscal Deficit</text><text class="muted" x="44" y="315" font-size="12.5" text-anchor="start">Total expenditure − total receipts (excl. borrowings) = govt borrowing</text><rect class="box" x="28" y="334" width="764" height="58" rx="10"/><text class="ink" x="44" y="359" font-size="15" font-weight="700" text-anchor="start">Revenue Deficit</text><text class="muted" x="44" y="381" font-size="12.5" text-anchor="start">Revenue expenditure − revenue receipts</text><rect class="box" x="28" y="400" width="764" height="58" rx="10"/><text class="ink" x="44" y="425" font-size="15" font-weight="700" text-anchor="start">Primary Deficit</text><text class="muted" x="44" y="447" font-size="12.5" text-anchor="start">Fiscal deficit − interest payments</text><text class="muted" x="28" y="484" font-size="12.5" text-anchor="start">FRBM Act targets fiscal prudence. Money Bill route (Art 110); Finance Bill enacts taxes.</text>
+</svg>

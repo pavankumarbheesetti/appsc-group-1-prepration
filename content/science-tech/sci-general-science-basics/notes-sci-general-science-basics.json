@@ -1,0 +1,166 @@
+{
+  "kind": "notes",
+  "subjectCode": "SCI",
+  "topic": "General Science Basics (Physics, Chemistry & Biology)",
+  "items": [
+    {
+      "id": "sci-general-science-basics-note-mechanics",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-general-science-basics",
+      "title": "Physics I — Units, Motion, Force & Gravitation",
+      "body": "## Units & Measurement\n\n- **Seven SI base units**: metre (length), kilogram (mass), second (time), ampere (current), **kelvin (temperature)**, mole (amount), candela (luminous intensity).\n- **Derived units**: newton (force), joule (energy), watt (power), pascal (pressure), hertz (frequency).\n\n## Motion (Kinematics)\n\n- **Scalars** (magnitude only): distance, speed, mass, energy. **Vectors** (magnitude + direction): displacement, velocity, acceleration, force.\n- **Equations of motion**: v = u + at; s = ut + ½at²; v² = u² + 2as.\n- In **uniform circular motion**, speed is constant but velocity changes (direction changes).\n\n## Force & Newton's Laws\n\n| Law | Statement |\n|---|---|\n| First | A body stays at rest/uniform motion unless acted on by a force (**inertia**) |\n| Second | F = ma (= rate of change of momentum) |\n| Third | Every action has an equal and opposite reaction (on a **different** body) |\n\n- **Momentum** = mass × velocity; it is conserved in collisions.\n\n## Gravitation\n\n- **Universal law**: F = G·m₁m₂/r².\n- **g ≈ 9.8 m/s²**; greater at poles than equator; **g on Moon ≈ g/6**.\n- **Mass** is constant everywhere; **weight (W = mg)** varies with g (zero at Earth's centre).\n- **Work** W = F·s·cosθ (zero if force ⟂ displacement); **Power** = work/time (watt); **1 HP ≈ 746 W**; energy is conserved.\n\n## Fluids — Pressure & Buoyancy\n\n- **Pressure** P = F/A; in a fluid **P = hρg** (rises with depth); **atmospheric pressure ≈ 101 kPa** at sea level and falls with altitude.\n- **Archimedes' principle**: upthrust (buoyant force) = weight of fluid displaced. A body **floats** when its average density < the fluid's; a **hydrometer** and ship flotation use this.\n- **Pascal's law**: pressure applied to an enclosed fluid is transmitted equally (hydraulic brakes/lift).",
+      "keyPoints": [
+        "Seven SI base units include kelvin (temperature) and mole (amount); newton/joule/watt are derived.",
+        "Displacement, velocity and acceleration are vectors; distance and speed are scalars.",
+        "Newton's 1st law = inertia; 2nd law F = ma; 3rd law action-reaction act on different bodies.",
+        "Momentum = mass × velocity and is conserved in collisions.",
+        "g is greater at the poles than the equator and about one-sixth on the Moon; weight = mg, mass is constant.",
+        "Work = F·s·cosθ (zero when force is perpendicular to displacement); 1 horsepower ≈ 746 watts.",
+        "Archimedes' principle: upthrust = weight of displaced fluid; a body floats if its density < fluid's; pressure P = hρg."
+      ],
+      "mnemonic": "Newton order: Inertia → F=ma → Action-Reaction (1-2-3).",
+      "source": "NCERT Science Class 9 — Motion; Force and Laws of Motion; Gravitation; Work and Energy",
+      "verified": true,
+      "tags": [
+        "physics",
+        "mechanics",
+        "units",
+        "newton",
+        "gravitation"
+      ]
+    },
+    {
+      "id": "sci-general-science-basics-note-light-sound-heat",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-general-science-basics",
+      "title": "Physics II — Light, Sound & Heat",
+      "body": "## Light\n\n- **Reflection**: angle of incidence = angle of reflection.\n  - **Concave mirror** (converging) → shaving/makeup mirror, vehicle headlights, torches.\n  - **Convex mirror** (diverging) → vehicle rear-view mirror (wider field, erect diminished image).\n- **Refraction**: bending of light between media; measured by **refractive index**.\n  - **Convex lens** = converging (magnifying glass, corrects hypermetropia); **concave lens** = diverging (corrects myopia).\n- **Dispersion**: a prism splits white light into **VIBGYOR**; rainbow is dispersion + internal reflection.\n- Eye defects: **myopia** (short sight → concave lens), **hypermetropia** (long sight → convex lens), **presbyopia**, **cataract**.\n\n## Sound\n\n- A **mechanical wave** that needs a medium — cannot travel through vacuum.\n- Speed: **solids > liquids > gases** (~343 m/s in air at room temperature).\n- **Audible range** 20 Hz – 20,000 Hz; **infrasound** < 20 Hz; **ultrasound** > 20,000 Hz.\n- **Echo** = reflected sound; **SONAR** uses ultrasound to find sea depth/objects.\n\n## Heat\n\n| Mode | Medium | Example |\n|---|---|---|\n| Conduction | Solids | Heating a metal rod |\n| Convection | Fluids | Sea/land breeze, boiling water |\n| Radiation | None (vacuum) | Heat from the Sun |\n\n- **Specific heat**: water's is unusually high (moderates coastal climate).\n- **Latent heat**: absorbed/released during a change of state at **constant temperature** (melting, boiling).",
+      "keyPoints": [
+        "Concave mirror converges (headlights, shaving); convex mirror diverges (rear-view, wide view).",
+        "Convex lens is converging and corrects hypermetropia; concave lens is diverging and corrects myopia.",
+        "A prism disperses white light into VIBGYOR; refraction is the bending of light between media.",
+        "Sound needs a medium (no sound in vacuum) and travels fastest in solids; audible range 20 Hz-20 kHz.",
+        "Ultrasound (>20 kHz) is used in SONAR to measure sea depth; echo is reflected sound.",
+        "Heat transfer: conduction (solids), convection (fluids), radiation (works in vacuum, e.g. the Sun)."
+      ],
+      "source": "NCERT Science Class 9-10 — Light: Reflection and Refraction; Sound; Heat",
+      "verified": true,
+      "tags": [
+        "physics",
+        "light",
+        "sound",
+        "heat",
+        "optics"
+      ]
+    },
+    {
+      "id": "sci-general-science-basics-note-electricity-modern",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-general-science-basics",
+      "title": "Physics III — Electricity, Magnetism & Modern Physics",
+      "body": "## Electricity\n\n- **Ohm's law**: V = IR (at constant temperature). Resistance in **ohms (Ω)**.\n- **Series circuit**: same current through all; resistances add (R = R₁ + R₂ + …).\n- **Parallel circuit**: same voltage across each; household wiring is in parallel.\n- **Electric power** P = VI = I²R = V²/R; commercial unit of energy = **kilowatt-hour (unit)**.\n- **Fuse/MCB**: connected in **series** in the live wire; melts/trips on overload (heating effect).\n\n## Magnetism & Electromagnetism\n\n- A current-carrying conductor produces a **magnetic field** (Oersted).\n- **Electromagnetic induction** (Faraday): a changing magnetic field induces a current → basis of the **generator/dynamo**.\n- **Electric motor**: converts electrical energy → mechanical energy.\n\n## Modern Physics\n\n- **Atom** = nucleus (protons + neutrons) with electrons around it.\n- **Radioactivity** emissions: **alpha** (helium nucleus), **beta** (electron), **gamma** (EM radiation).\n- **Nuclear fission**: heavy nucleus splits → energy (nuclear reactors, atom bomb).\n- **Nuclear fusion**: light nuclei combine → energy (**the Sun**, hydrogen bomb; ITER is experimental).",
+      "keyPoints": [
+        "Ohm's law: V = IR; electric power P = VI = I²R; commercial energy unit = kilowatt-hour.",
+        "In series the current is the same; household appliances are wired in parallel.",
+        "A fuse/MCB is connected in series in the live wire and works on the heating effect of current.",
+        "Electromagnetic induction (Faraday) is the basis of the generator; a motor converts electrical to mechanical energy.",
+        "Radioactive emissions: alpha (He nucleus), beta (electron), gamma (EM radiation).",
+        "Fission (heavy nucleus splits) powers reactors; fusion (light nuclei combine) powers the Sun."
+      ],
+      "source": "NCERT Science Class 10 — Electricity; Magnetic Effects of Electric Current; Structure of the Atom",
+      "verified": true,
+      "tags": [
+        "physics",
+        "electricity",
+        "magnetism",
+        "nuclear"
+      ],
+      "figure": {
+        "src": "sci-em-spectrum",
+        "alt": "The electromagnetic spectrum ordered by energy",
+        "caption": "Radio → microwave → infrared → visible → ultraviolet → X-ray → gamma (rising frequency/energy)."
+      }
+    },
+    {
+      "id": "sci-general-science-basics-note-chemistry-basics",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-general-science-basics",
+      "title": "Chemistry I — Matter, Atoms, Acids-Bases & Common Compounds",
+      "body": "## Matter\n\n- **States**: solid, liquid, gas (plasma, BEC advanced). **Sublimation** = solid → vapour directly (camphor, dry ice).\n- **Classification**: element → compound → mixture.\n\n| Type | Example |\n|---|---|\n| Element | Iron, oxygen, gold |\n| Compound | Water, CO₂, common salt |\n| Mixture | Air, sea water, soil |\n\n- **Physical change** → no new substance (melting ice); **chemical change** → new substance (rusting, burning).\n\n## Atomic Structure\n\n- **Atomic number (Z)** = protons; **Mass number (A)** = protons + neutrons.\n- **Isotopes**: same Z, different A (C-12/C-14; protium/deuterium/tritium).\n- **Valency** = combining capacity (carbon = 4 → CH₄).\n\n## Acids, Bases & Salts\n\n- **pH scale 0–14**: < 7 acidic, 7 neutral, > 7 basic. Indicators: litmus, phenolphthalein, methyl orange.\n- **Neutralisation**: acid + base → salt + water.\n\n## Common Compounds & Chemical Names\n\n| Common name | Chemical |\n|---|---|\n| Common salt | NaCl |\n| Baking soda | NaHCO₃ |\n| Washing soda | Na₂CO₃·10H₂O |\n| Bleaching powder | CaOCl₂ |\n| Quicklime | CaO |\n| Slaked lime | Ca(OH)₂ |\n| Plaster of Paris | CaSO₄·½H₂O |",
+      "keyPoints": [
+        "Air is a mixture; water and CO₂ are compounds; rusting and burning are chemical changes.",
+        "Atomic number = protons; mass number = protons + neutrons; isotopes share atomic number, differ in mass.",
+        "Valency = combining capacity; carbon has valency 4.",
+        "pH < 7 acidic, 7 neutral, > 7 basic; acid + base → salt + water (neutralisation).",
+        "Baking soda = NaHCO₃, washing soda = Na₂CO₃·10H₂O, bleaching powder = CaOCl₂, quicklime = CaO.",
+        "Plaster of Paris = CaSO₄·½H₂O; slaked lime = Ca(OH)₂; common salt = NaCl."
+      ],
+      "mnemonic": "'Baking = Bicarbonate' → baking soda is sodium biCARBonate (NaHCO₃).",
+      "source": "NCERT Science Class 9-10 — Matter; Atoms and Molecules; Acids, Bases and Salts",
+      "verified": true,
+      "tags": [
+        "chemistry",
+        "matter",
+        "atom",
+        "acids-bases",
+        "compounds"
+      ]
+    },
+    {
+      "id": "sci-general-science-basics-note-metals-carbon",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-general-science-basics",
+      "title": "Chemistry II — Metals, Non-metals, Carbon Compounds & Fertilisers",
+      "body": "## Metals & Non-metals\n\n- **Metals**: lustrous, malleable, ductile, good conductors; **mercury is the only liquid metal** at room temperature.\n- **Non-metals**: generally poor conductors (**graphite is an exception**), brittle.\n- **Noble (inert) gases** (He, Ne, Ar, Kr): chemically unreactive; **electric filament bulbs are filled with argon or nitrogen** to stop the tungsten filament from oxidising/burning; helium fills balloons/airships and neon glows in signs.\n- **Reactivity series** (high → low): K > Na > Ca > Mg > Al > Zn > Fe > Cu > **Ag > Au** (noble/least reactive).\n\n| Alloy | Composition |\n|---|---|\n| Brass | Copper + Zinc |\n| Bronze | Copper + Tin |\n| Steel | Iron + Carbon |\n| Stainless steel | Iron + Cr + Ni |\n\n## Carbon Compounds\n\n- **Allotropes of carbon**: diamond (hardest natural), graphite (conductor), fullerene, graphene.\n- **Hydrocarbons**: methane (CH₄, simplest), ethane, propane, butane (LPG).\n- **Polymers**: large chains — natural (cellulose, natural rubber, proteins) vs synthetic (**polythene, PVC, nylon, bakelite**).\n\n## Fertilisers\n\n- **NPK** = Nitrogen, Phosphorus, Potassium.\n- **Urea** = major nitrogenous fertiliser; DAP supplies phosphorus; MOP supplies potassium.",
+      "keyPoints": [
+        "Mercury is the only metal liquid at room temperature; non-metals are poor conductors (except graphite).",
+        "Electric filament bulbs are filled with argon (or nitrogen), an inert gas, to prevent the filament from oxidising.",
+        "Reactivity series: K > Na > Ca > Mg > Al > Zn > Fe > Cu > Ag > Au; gold and silver are noble metals.",
+        "Brass = copper + zinc; bronze = copper + tin; steel = iron + carbon.",
+        "Carbon allotropes: diamond, graphite, fullerene, graphene; methane is the simplest hydrocarbon.",
+        "Polythene, PVC and nylon are synthetic polymers; cellulose and natural rubber are natural polymers.",
+        "Fertilisers supply N-P-K; urea is a nitrogenous fertiliser."
+      ],
+      "source": "NCERT Science Class 10 — Metals and Non-metals; Carbon and its Compounds",
+      "verified": true,
+      "tags": [
+        "chemistry",
+        "metals",
+        "carbon",
+        "polymers",
+        "fertilisers"
+      ]
+    },
+    {
+      "id": "sci-general-science-basics-note-biology-basics",
+      "subjectCode": "SCI",
+      "subtopicId": "sci-general-science-basics",
+      "title": "Biology — Cell, Human Body, Nutrition & Plant Physiology",
+      "body": "## The Cell\n\n- **Robert Hooke** first saw 'cells' (cork); **Robert Brown** discovered the nucleus.\n- **Mitochondria** = powerhouse of the cell; **ribosomes** = protein synthesis.\n\n| Feature | Plant cell | Animal cell |\n|---|---|---|\n| Cell wall | Present | Absent |\n| Chloroplast | Present | Absent |\n| Large vacuole | Present | Small/absent |\n\n## Human Body Systems\n\n- **Digestion** → largest gland is the **liver**; **circulation** → four-chambered heart; **respiration** → gas exchange in **alveoli**.\n- **Blood groups**: **O-negative** = universal donor; **AB** = universal recipient.\n- **Neuron** = unit of the nervous system; **nephron** = unit of the kidney; **medulla oblongata** controls heartbeat/breathing.\n\n## Nutrition, Vitamins & Hormones\n\n| Deficiency | Disease |\n|---|---|\n| Vitamin A | Night blindness |\n| Vitamin C | Scurvy |\n| Vitamin D | Rickets |\n| Vitamin B1 | Beriberi |\n| Iron | Anaemia |\n| Iodine | Goitre |\n\n- Hormones: **insulin** (pancreas → blood sugar), **thyroxine** (thyroid → metabolism), **adrenaline** (fight-or-flight); **pituitary** = master gland (base of brain).\n\n## Plant Physiology & Classification\n\n- **Photosynthesis**: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (light + chlorophyll); **transpiration** = loss of water vapour through stomata.\n- **Five-kingdom classification** (Whittaker): Monera, Protista, Fungi, Plantae, Animalia.",
+      "keyPoints": [
+        "Robert Hooke discovered cells (cork); Robert Brown discovered the nucleus; mitochondria = powerhouse.",
+        "Plant cells have a cell wall and chloroplasts; animal cells lack both.",
+        "Liver is the largest gland; alveoli exchange gases; O-negative = universal donor, AB = universal recipient.",
+        "Neuron = nervous system unit; nephron = kidney unit; medulla controls heartbeat and breathing.",
+        "Deficiencies: Vitamin A→night blindness, C→scurvy, D→rickets, B1→beriberi, iron→anaemia, iodine→goitre.",
+        "Photosynthesis needs chlorophyll and light; Whittaker's five kingdoms: Monera, Protista, Fungi, Plantae, Animalia."
+      ],
+      "mnemonic": "Five kingdoms 'MPFPA' = Monera, Protista, Fungi, Plantae, Animalia.",
+      "source": "NCERT Science Class 9-10 — The Fundamental Unit of Life; Life Processes; Control and Coordination; Diversity in Living Organisms",
+      "verified": true,
+      "tags": [
+        "biology",
+        "cell",
+        "human-body",
+        "vitamins",
+        "plant-physiology",
+        "classification"
+      ],
+      "figure": {
+        "src": "sci-five-kingdoms",
+        "alt": "Whittaker's five kingdoms of living organisms",
+        "caption": "Monera, Protista, Fungi, Plantae, Animalia — classified by cell type, wall, nutrition and organisation."
+      }
+    }
+  ]
+}

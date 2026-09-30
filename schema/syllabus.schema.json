@@ -1,0 +1,154 @@
+{
+  "$ref": "#/definitions/syllabus",
+  "definitions": {
+    "syllabus": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "syllabus"
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "authority": {
+              "type": "string"
+            },
+            "notificationNo": {
+              "type": "string"
+            },
+            "notificationDate": {
+              "type": "string"
+            },
+            "applicationWindow": {
+              "type": "object",
+              "properties": {
+                "from": {
+                  "type": "string"
+                },
+                "to": {
+                  "type": "string"
+                },
+                "closeTime": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "from",
+                "to"
+              ],
+              "additionalProperties": false
+            },
+            "totalVacancies": {
+              "type": "number"
+            },
+            "totalMarks": {
+              "type": "number"
+            },
+            "verified": {
+              "type": "boolean"
+            },
+            "verifiedDate": {
+              "type": "string"
+            },
+            "source": {
+              "type": "object",
+              "properties": {
+                "pdf": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "pages": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "authority",
+            "notificationNo",
+            "notificationDate",
+            "applicationWindow",
+            "totalVacancies",
+            "totalMarks",
+            "verified",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "subjectCode": {
+                "type": "string",
+                "enum": [
+                  "HIST",
+                  "POL",
+                  "ECON",
+                  "GEO",
+                  "SCI",
+                  "MENT",
+                  "CA",
+                  "TEL",
+                  "ENG"
+                ]
+              },
+              "paper": {
+                "type": "string",
+                "enum": [
+                  "screening-1",
+                  "screening-2",
+                  "mains-1",
+                  "mains-2",
+                  "mains-3",
+                  "mains-4",
+                  "mains-5",
+                  "qualifying"
+                ]
+              },
+              "serial": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              },
+              "title": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "page": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "subjectCode",
+              "paper",
+              "serial",
+              "title",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "meta",
+        "nodes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

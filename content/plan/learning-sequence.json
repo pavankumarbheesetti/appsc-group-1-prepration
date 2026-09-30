@@ -1,0 +1,885 @@
+{
+  "version": 1,
+  "subjects": {
+    "HIST": [
+      {
+        "id": "hist-ancient-stone-age",
+        "prereqs": [],
+        "stream": "early",
+        "why": "Prehistory opens the chronology; nothing precedes it."
+      },
+      {
+        "id": "hist-ancient-ivc",
+        "prereqs": [
+          "hist-ancient-stone-age"
+        ],
+        "stream": "early",
+        "why": "Harappan urbanism follows and contrasts the Stone Age."
+      },
+      {
+        "id": "hist-ancient-early-vedic",
+        "prereqs": [
+          "hist-ancient-ivc"
+        ],
+        "stream": "early",
+        "why": "Vedic society follows the decline of the Harappan cities."
+      },
+      {
+        "id": "hist-ancient-later-vedic",
+        "prereqs": [
+          "hist-ancient-early-vedic"
+        ],
+        "stream": "early",
+        "why": "Later-Vedic expansion builds directly on the early-Vedic base."
+      },
+      {
+        "id": "hist-ancient-mahajanapadas",
+        "prereqs": [
+          "hist-ancient-later-vedic"
+        ],
+        "stream": "early",
+        "why": "The sixteen mahajanapadas emerge from later-Vedic territorial states."
+      },
+      {
+        "id": "hist-ancient-rise-of-magadha",
+        "prereqs": [
+          "hist-ancient-mahajanapadas"
+        ],
+        "stream": "early",
+        "why": "Magadha's rise is the power contest among the mahajanapadas."
+      },
+      {
+        "id": "hist-ancient-magadha-dynasties",
+        "prereqs": [
+          "hist-ancient-rise-of-magadha"
+        ],
+        "stream": "early",
+        "why": "Haryanka–Nanda dynasties continue Magadha's ascent."
+      },
+      {
+        "id": "hist-ancient-jainism",
+        "prereqs": [
+          "hist-ancient-mahajanapadas"
+        ],
+        "stream": "early",
+        "why": "6th-century-BCE heterodoxy arises in the mahajanapada milieu."
+      },
+      {
+        "id": "hist-ancient-buddhism-1",
+        "prereqs": [
+          "hist-ancient-mahajanapadas"
+        ],
+        "stream": "early",
+        "why": "Buddhism shares the same 6th-century-BCE setting as Jainism."
+      },
+      {
+        "id": "hist-ancient-buddhism-2",
+        "prereqs": [
+          "hist-ancient-buddhism-1"
+        ],
+        "stream": "early",
+        "why": "Councils and spread of Buddhism continue the story."
+      },
+      {
+        "id": "hist-ancient-alexander",
+        "prereqs": [
+          "hist-ancient-mahajanapadas"
+        ],
+        "stream": "early",
+        "why": "Alexander's 326 BCE invasion meets the north-western mahajanapadas."
+      },
+      {
+        "id": "hist-ancient-indo-greek",
+        "prereqs": [
+          "hist-ancient-alexander"
+        ],
+        "stream": "early",
+        "why": "Indo-Greek kingdoms are the aftermath of Alexander's campaign."
+      },
+      {
+        "id": "hist-ancient-mauryan",
+        "prereqs": [
+          "hist-ancient-magadha-dynasties",
+          "hist-ancient-alexander"
+        ],
+        "stream": "early",
+        "why": "The Mauryas supplant the Nandas in the wake of Alexander."
+      },
+      {
+        "id": "hist-ancient-sungas-kanvas",
+        "prereqs": [
+          "hist-ancient-mauryan"
+        ],
+        "stream": "early",
+        "why": "Shunga–Kanva succeed the collapsing Mauryan empire."
+      },
+      {
+        "id": "hist-ancient-satavahanas",
+        "prereqs": [
+          "hist-ancient-mauryan"
+        ],
+        "stream": "early",
+        "why": "Satavahanas rise in the Deccan after Mauryan decline."
+      },
+      {
+        "id": "hist-ap-satavahanas-ikshvakus",
+        "prereqs": [
+          "hist-ancient-satavahanas"
+        ],
+        "stream": "early",
+        "why": "AP's Satavahanas–Ikshvakus interleave exactly at the Satavahana era."
+      },
+      {
+        "id": "hist-ancient-sakas-parthians",
+        "prereqs": [
+          "hist-ancient-indo-greek"
+        ],
+        "stream": "early",
+        "why": "Shakas/Parthians follow the Indo-Greeks in the north-west."
+      },
+      {
+        "id": "hist-ancient-kushanas",
+        "prereqs": [
+          "hist-ancient-sakas-parthians"
+        ],
+        "stream": "early",
+        "why": "Kushanas succeed the Shaka–Parthian rulers."
+      },
+      {
+        "id": "hist-ancient-sangam",
+        "prereqs": [
+          "hist-ancient-satavahanas"
+        ],
+        "stream": "early",
+        "why": "Sangam-age far south is contemporary with the Deccan Satavahanas."
+      },
+      {
+        "id": "hist-ancient-guptas",
+        "prereqs": [
+          "hist-ancient-kushanas"
+        ],
+        "stream": "early",
+        "why": "The Gupta classical age follows the post-Mauryan north."
+      },
+      {
+        "id": "hist-ancient-harsha",
+        "prereqs": [
+          "hist-ancient-guptas"
+        ],
+        "stream": "early",
+        "why": "Harsha's kingdom follows Gupta disintegration."
+      },
+      {
+        "id": "hist-ancient-post-gupta",
+        "prereqs": [
+          "hist-ancient-harsha"
+        ],
+        "stream": "early",
+        "why": "Post-Gupta regional kingdoms close the ancient era."
+      },
+      {
+        "id": "hist-ancient-books-authors",
+        "prereqs": [
+          "hist-ancient-guptas"
+        ],
+        "stream": "early",
+        "why": "Consolidates key texts/authors spanning the ancient eras just covered."
+      },
+      {
+        "id": "hist-ancient-travelers",
+        "prereqs": [
+          "hist-ancient-harsha"
+        ],
+        "stream": "early",
+        "why": "Consolidates foreign travellers (Megasthenes→Xuanzang) across those eras."
+      },
+      {
+        "id": "hist-medieval-south-indian-dynasties",
+        "prereqs": [
+          "hist-ancient-post-gupta"
+        ],
+        "stream": "early",
+        "why": "Chalukyas/Pallavas/Cholas open the medieval Deccan and south."
+      },
+      {
+        "id": "hist-ap-kakatiyas",
+        "prereqs": [
+          "hist-medieval-south-indian-dynasties"
+        ],
+        "stream": "early",
+        "why": "AP's Kakatiyas interleave at the Eastern-Chalukya/south-Indian era."
+      },
+      {
+        "id": "hist-medieval-kanauj-tripartite",
+        "prereqs": [
+          "hist-ancient-post-gupta"
+        ],
+        "stream": "early",
+        "why": "The tripartite struggle for Kanauj is early-medieval north India."
+      },
+      {
+        "id": "hist-medieval-delhi-sultanate",
+        "prereqs": [
+          "hist-medieval-kanauj-tripartite"
+        ],
+        "stream": "early",
+        "why": "Turkish invasions and the Sultanate follow the Rajput north."
+      },
+      {
+        "id": "hist-medieval-vijayanagara-bahmani",
+        "prereqs": [
+          "hist-medieval-delhi-sultanate"
+        ],
+        "stream": "early",
+        "why": "Vijayanagara & Bahmani arise in the Deccan reacting to the Sultanate."
+      },
+      {
+        "id": "hist-ap-reddi-kingdoms",
+        "prereqs": [
+          "hist-medieval-vijayanagara-bahmani"
+        ],
+        "stream": "early",
+        "why": "The Reddi kingdoms sit beside Vijayanagara–Bahmani in 14th–15th-c AP."
+      },
+      {
+        "id": "hist-ap-qutb-shahis",
+        "prereqs": [
+          "hist-medieval-vijayanagara-bahmani"
+        ],
+        "stream": "early",
+        "why": "Golconda Qutb Shahis emerge after the Bahmani break-up."
+      },
+      {
+        "id": "hist-medieval-mughal-empire",
+        "prereqs": [
+          "hist-medieval-delhi-sultanate"
+        ],
+        "stream": "early",
+        "why": "The Mughals succeed the Delhi Sultanate in the north."
+      },
+      {
+        "id": "hist-medieval-bhakti-sufi",
+        "prereqs": [
+          "hist-medieval-delhi-sultanate"
+        ],
+        "stream": "early",
+        "why": "Bhakti–Sufi movements span the Sultanate–Mughal centuries."
+      },
+      {
+        "id": "hist-modern-european-companies",
+        "prereqs": [
+          "hist-medieval-mughal-empire"
+        ],
+        "stream": "modern",
+        "why": "European companies arrive as the Mughal empire weakens."
+      },
+      {
+        "id": "hist-modern-governors-viceroys",
+        "prereqs": [
+          "hist-modern-european-companies"
+        ],
+        "stream": "modern",
+        "why": "Company/Crown administration follows the trading companies."
+      },
+      {
+        "id": "hist-modern-1857-revolt",
+        "prereqs": [
+          "hist-modern-governors-viceroys"
+        ],
+        "stream": "modern",
+        "why": "1857 is the revolt against the Company rule just established."
+      },
+      {
+        "id": "hist-modern-socio-religious-reforms",
+        "prereqs": [
+          "hist-modern-1857-revolt"
+        ],
+        "stream": "modern",
+        "why": "19th-c reform movements run alongside early colonial rule."
+      },
+      {
+        "id": "hist-modern-freedom-movement",
+        "prereqs": [
+          "hist-modern-1857-revolt"
+        ],
+        "stream": "modern",
+        "why": "The organised freedom struggle follows 1857 and the reforms."
+      },
+      {
+        "id": "hist-modern-gandhi",
+        "prereqs": [
+          "hist-modern-freedom-movement"
+        ],
+        "stream": "modern",
+        "why": "The Gandhian phase is the climax of the freedom movement."
+      },
+      {
+        "id": "hist-ap-andhra-freedom-movement",
+        "prereqs": [
+          "hist-modern-freedom-movement",
+          "hist-modern-gandhi"
+        ],
+        "stream": "modern",
+        "why": "Andhra's freedom struggle interleaves after the national movement/Gandhi."
+      },
+      {
+        "id": "hist-modern-patel-bose",
+        "prereqs": [
+          "hist-modern-gandhi"
+        ],
+        "stream": "modern",
+        "why": "Patel and Bose are contemporaries of the late Gandhian phase."
+      },
+      {
+        "id": "hist-modern-ambedkar-constitution",
+        "prereqs": [
+          "hist-modern-gandhi"
+        ],
+        "stream": "modern",
+        "why": "Ambedkar's constitutional role follows the freedom struggle."
+      },
+      {
+        "id": "hist-modern-post-independence-integration",
+        "prereqs": [
+          "hist-modern-patel-bose"
+        ],
+        "stream": "modern",
+        "why": "Integration of princely states follows 1947 (Patel's task)."
+      },
+      {
+        "id": "hist-ap-andhra-movement-formation",
+        "prereqs": [
+          "hist-modern-post-independence-integration"
+        ],
+        "stream": "modern",
+        "why": "AP's formation (1953/1956) interleaves after post-independence integration."
+      },
+      {
+        "id": "hist-art-architecture",
+        "prereqs": [
+          "hist-ancient-guptas",
+          "hist-medieval-mughal-empire"
+        ],
+        "stream": "modern",
+        "why": "Architecture consolidates temple→Indo-Islamic styles after those dynasties."
+      },
+      {
+        "id": "hist-art-literature-science",
+        "prereqs": [
+          "hist-ancient-guptas",
+          "hist-medieval-mughal-empire"
+        ],
+        "stream": "modern",
+        "why": "Literature & science consolidate classical→medieval output after the dynasties."
+      },
+      {
+        "id": "hist-art-ap-culture",
+        "prereqs": [
+          "hist-ap-kakatiyas",
+          "hist-ap-qutb-shahis"
+        ],
+        "stream": "modern",
+        "why": "AP culture builds on the AP dynasties (Kakatiya, Qutb Shahi) already studied."
+      }
+    ],
+    "POL": [
+      {
+        "id": "pol-constitution-evolution",
+        "prereqs": [],
+        "why": "Historical evolution of the constitution is the natural starting point."
+      },
+      {
+        "id": "pol-constitution-features-preamble",
+        "prereqs": [
+          "pol-constitution-evolution"
+        ],
+        "why": "Salient features & Preamble follow the making of the constitution."
+      },
+      {
+        "id": "pol-fundamental-rights",
+        "prereqs": [
+          "pol-constitution-features-preamble"
+        ],
+        "why": "Fundamental Rights are the first substantive Part after the Preamble."
+      },
+      {
+        "id": "pol-directive-principles",
+        "prereqs": [
+          "pol-fundamental-rights"
+        ],
+        "why": "DPSP are studied against and after the Fundamental Rights."
+      },
+      {
+        "id": "pol-fundamental-duties",
+        "prereqs": [
+          "pol-directive-principles"
+        ],
+        "why": "Fundamental Duties complete the rights–duties triad."
+      },
+      {
+        "id": "pol-union-executive-legislature",
+        "prereqs": [
+          "pol-constitution-features-preamble"
+        ],
+        "why": "Union government structure follows the constitutional basics."
+      },
+      {
+        "id": "pol-state-executive-legislature",
+        "prereqs": [
+          "pol-union-executive-legislature"
+        ],
+        "why": "State government mirrors the Union structure just learned."
+      },
+      {
+        "id": "pol-judiciary",
+        "prereqs": [
+          "pol-union-executive-legislature",
+          "pol-fundamental-rights"
+        ],
+        "why": "The judiciary interprets rights and completes the three organs."
+      },
+      {
+        "id": "pol-union-state-relations",
+        "prereqs": [
+          "pol-state-executive-legislature"
+        ],
+        "why": "Centre–State relations presuppose both Union and State governments."
+      },
+      {
+        "id": "pol-amendments-basic-structure",
+        "prereqs": [
+          "pol-fundamental-rights",
+          "pol-judiciary"
+        ],
+        "why": "Basic-structure doctrine builds on rights and judicial review."
+      },
+      {
+        "id": "pol-constitutional-authorities",
+        "prereqs": [
+          "pol-union-executive-legislature"
+        ],
+        "why": "Constitutional authorities (CAG, EC, UPSC…) attach to the government organs."
+      },
+      {
+        "id": "pol-statutory-regulatory-bodies",
+        "prereqs": [
+          "pol-constitutional-authorities"
+        ],
+        "why": "Statutory/regulatory bodies extend the constitutional-authorities picture."
+      },
+      {
+        "id": "pol-panchayati-raj",
+        "prereqs": [
+          "pol-state-executive-legislature"
+        ],
+        "why": "Local self-government extends the state tier downward (73rd/74th)."
+      },
+      {
+        "id": "pol-governance-egovernance",
+        "prereqs": [
+          "pol-panchayati-raj"
+        ],
+        "why": "Governance & e-governance build on the administrative tiers."
+      },
+      {
+        "id": "pol-rights-issues",
+        "prereqs": [
+          "pol-fundamental-rights"
+        ],
+        "why": "Social-justice rights issues apply the Fundamental Rights framework."
+      },
+      {
+        "id": "pol-lpg-impact",
+        "prereqs": [
+          "pol-governance-egovernance"
+        ],
+        "why": "LPG's impact on polity/governance follows the governance discussion."
+      },
+      {
+        "id": "pol-foreign-policy-ir",
+        "prereqs": [],
+        "why": "India's foreign policy is a largely self-contained IR block."
+      },
+      {
+        "id": "pol-international-institutions",
+        "prereqs": [
+          "pol-foreign-policy-ir"
+        ],
+        "why": "International institutions follow from foreign-policy principles."
+      },
+      {
+        "id": "pol-policies-programmes",
+        "prereqs": [
+          "pol-rights-issues"
+        ],
+        "why": "Government policies/programmes apply the social-justice and governance base."
+      }
+    ],
+    "ECON": [
+      {
+        "id": "econ-characteristics-development",
+        "prereqs": [],
+        "why": "Basic features of the Indian economy set the foundation."
+      },
+      {
+        "id": "econ-national-income",
+        "prereqs": [
+          "econ-characteristics-development"
+        ],
+        "why": "National-income accounting quantifies the economy's characteristics."
+      },
+      {
+        "id": "econ-planning-niti-aayog",
+        "prereqs": [
+          "econ-characteristics-development"
+        ],
+        "why": "Planning history/NITI Aayog follows the economy's basic profile."
+      },
+      {
+        "id": "econ-poverty-unemployment",
+        "prereqs": [
+          "econ-national-income"
+        ],
+        "why": "Poverty & unemployment are measured against national income."
+      },
+      {
+        "id": "econ-human-sustainable-development",
+        "prereqs": [
+          "econ-poverty-unemployment"
+        ],
+        "why": "HDI & sustainable development extend poverty/welfare measurement."
+      },
+      {
+        "id": "econ-agriculture",
+        "prereqs": [
+          "econ-characteristics-development"
+        ],
+        "why": "Agriculture is the primary sector of the economy just profiled."
+      },
+      {
+        "id": "econ-industry",
+        "prereqs": [
+          "econ-agriculture"
+        ],
+        "why": "Industry (secondary sector) follows agriculture."
+      },
+      {
+        "id": "econ-rural-urban-development",
+        "prereqs": [
+          "econ-agriculture"
+        ],
+        "why": "Rural–urban development builds on the agrarian/sectoral base."
+      },
+      {
+        "id": "econ-rbi-banking-markets",
+        "prereqs": [
+          "econ-national-income"
+        ],
+        "why": "Money, banking & markets rest on national-income/monetary concepts."
+      },
+      {
+        "id": "econ-fiscal-budget-gst",
+        "prereqs": [
+          "econ-national-income"
+        ],
+        "why": "Fiscal policy, budget & GST build on national-income aggregates."
+      },
+      {
+        "id": "econ-reforms-trade-wto",
+        "prereqs": [
+          "econ-industry"
+        ],
+        "why": "1991 reforms, trade & WTO follow the industry/sectoral base."
+      },
+      {
+        "id": "econ-environment-policy",
+        "prereqs": [
+          "econ-human-sustainable-development"
+        ],
+        "why": "Environmental economics/policy extends sustainable development."
+      },
+      {
+        "id": "econ-ap-economy-bifurcation",
+        "prereqs": [
+          "econ-characteristics-development"
+        ],
+        "why": "AP economy & 2014 bifurcation apply the national frame to the state."
+      },
+      {
+        "id": "econ-ap-reorganisation-act",
+        "prereqs": [
+          "econ-ap-economy-bifurcation"
+        ],
+        "why": "The AP Reorganisation Act details follow the bifurcation overview."
+      }
+    ],
+    "GEO": [
+      {
+        "id": "geo-earth-solar-system",
+        "prereqs": [],
+        "why": "Earth in the solar system is the physical-geography foundation."
+      },
+      {
+        "id": "geo-landforms-structure",
+        "prereqs": [
+          "geo-earth-solar-system"
+        ],
+        "why": "Earth's interior & landforms follow its origin/structure."
+      },
+      {
+        "id": "geo-atmosphere-climatology",
+        "prereqs": [
+          "geo-earth-solar-system"
+        ],
+        "why": "Atmosphere & climate build on Earth's motions (rotation/revolution)."
+      },
+      {
+        "id": "geo-oceans-marine-resources",
+        "prereqs": [
+          "geo-atmosphere-climatology"
+        ],
+        "why": "Oceanography relates to the atmosphere via currents and climate."
+      },
+      {
+        "id": "geo-physical-india",
+        "prereqs": [
+          "geo-landforms-structure"
+        ],
+        "why": "India's physiography applies the general landform concepts."
+      },
+      {
+        "id": "geo-physical-andhra-pradesh",
+        "prereqs": [
+          "geo-physical-india"
+        ],
+        "why": "AP's physical geography is a zoom-in on physical India."
+      },
+      {
+        "id": "geo-social-geography",
+        "prereqs": [
+          "geo-physical-india"
+        ],
+        "why": "Population/social geography sits on the physical base of India."
+      },
+      {
+        "id": "geo-economic-geography",
+        "prereqs": [
+          "geo-physical-india",
+          "geo-social-geography"
+        ],
+        "why": "Economic geography combines physical resources with human/social patterns."
+      }
+    ],
+    "SCI": [
+      {
+        "id": "sci-general-science-basics",
+        "prereqs": [],
+        "why": "Core physics/chemistry/biology basics come first (SCI rule)."
+      },
+      {
+        "id": "sci-nature-scope-policy",
+        "prereqs": [
+          "sci-general-science-basics"
+        ],
+        "why": "Nature, scope & S&T policy frame the applied topics."
+      },
+      {
+        "id": "sci-indian-scientists",
+        "prereqs": [
+          "sci-nature-scope-policy"
+        ],
+        "why": "Indian scientists/institutions contextualise the S&T ecosystem."
+      },
+      {
+        "id": "sci-energy",
+        "prereqs": [
+          "sci-general-science-basics"
+        ],
+        "why": "Energy sources apply basic physics and chemistry."
+      },
+      {
+        "id": "sci-space-defence",
+        "prereqs": [
+          "sci-general-science-basics"
+        ],
+        "why": "Space & defence tech apply the science basics."
+      },
+      {
+        "id": "sci-ict-egovernance-cyber",
+        "prereqs": [
+          "sci-general-science-basics"
+        ],
+        "why": "ICT, e-governance & cyber apply computing basics."
+      },
+      {
+        "id": "sci-biotech-nanotech-genetics",
+        "prereqs": [
+          "sci-general-science-basics"
+        ],
+        "why": "Biotech/nanotech/genetics apply basic biology and chemistry."
+      },
+      {
+        "id": "sci-health-diseases",
+        "prereqs": [
+          "sci-biotech-nanotech-genetics"
+        ],
+        "why": "Health & diseases (vaccines, genetics) build on biotech/genetics."
+      },
+      {
+        "id": "sci-environment-biodiversity-climate",
+        "prereqs": [
+          "sci-general-science-basics",
+          "sci-energy"
+        ],
+        "why": "Environment/biodiversity/climate build on science basics and energy."
+      }
+    ],
+    "MENT": [
+      {
+        "id": "ment-number-system",
+        "stream": "quant",
+        "prereqs": [],
+        "why": "The number system is the quantitative foundation."
+      },
+      {
+        "id": "ment-number-series-coding",
+        "stream": "reasoning",
+        "prereqs": [],
+        "why": "Series & coding open the reasoning lane."
+      },
+      {
+        "id": "ment-algebra-bodmas",
+        "stream": "quant",
+        "prereqs": [
+          "ment-number-system"
+        ],
+        "why": "Algebra & BODMAS operate on the number system."
+      },
+      {
+        "id": "ment-relationships",
+        "stream": "reasoning",
+        "prereqs": [],
+        "why": "Blood-relations reasoning needs no quant prerequisite."
+      },
+      {
+        "id": "ment-powers-roots-hcf-lcm",
+        "stream": "quant",
+        "prereqs": [
+          "ment-number-system"
+        ],
+        "why": "Powers, roots, HCF/LCM extend number properties."
+      },
+      {
+        "id": "ment-ratio-proportion-averages",
+        "stream": "quant",
+        "prereqs": [
+          "ment-number-system"
+        ],
+        "why": "Ratio/proportion/averages build on the number system."
+      },
+      {
+        "id": "ment-clocks-calendars-ages",
+        "stream": "reasoning",
+        "prereqs": [
+          "ment-ratio-proportion-averages",
+          "ment-algebra-bodmas"
+        ],
+        "why": "Clocks/calendars/ages need ratio and algebra first (per rule)."
+      },
+      {
+        "id": "ment-percentage-interest-profit-loss",
+        "stream": "quant",
+        "prereqs": [
+          "ment-ratio-proportion-averages"
+        ],
+        "why": "Percentage/interest/profit-loss are applied ratios."
+      },
+      {
+        "id": "ment-venn-nonverbal",
+        "stream": "reasoning",
+        "prereqs": [],
+        "why": "Venn & non-verbal reasoning form a distinct visual lane."
+      },
+      {
+        "id": "ment-emotional-intelligence",
+        "stream": "abilities",
+        "prereqs": [],
+        "why": "Emotional intelligence opens the psychological-abilities lane mid-way."
+      },
+      {
+        "id": "ment-social-intelligence-decision",
+        "stream": "abilities",
+        "prereqs": [
+          "ment-emotional-intelligence"
+        ],
+        "why": "Social intelligence & decision-making follow emotional intelligence."
+      },
+      {
+        "id": "ment-time-work-distance",
+        "stream": "quant",
+        "prereqs": [
+          "ment-ratio-proportion-averages"
+        ],
+        "why": "Time-work-distance problems are rate/ratio applications."
+      },
+      {
+        "id": "ment-logical-reasoning",
+        "stream": "reasoning",
+        "prereqs": [
+          "ment-venn-nonverbal"
+        ],
+        "why": "Syllogisms/logical reasoning build on Venn/non-verbal skills."
+      },
+      {
+        "id": "ment-mensuration",
+        "stream": "quant",
+        "prereqs": [
+          "ment-powers-roots-hcf-lcm"
+        ],
+        "why": "Mensuration uses powers/roots for area & volume."
+      },
+      {
+        "id": "ment-geometry",
+        "stream": "quant",
+        "prereqs": [
+          "ment-mensuration"
+        ],
+        "why": "Geometry follows mensuration in the quant chain."
+      },
+      {
+        "id": "ment-central-tendency",
+        "stream": "quant",
+        "prereqs": [
+          "ment-ratio-proportion-averages"
+        ],
+        "why": "Central tendency (mean/median/mode) extends averages."
+      },
+      {
+        "id": "ment-data-interpretation-probability",
+        "stream": "quant",
+        "prereqs": [
+          "ment-percentage-interest-profit-loss",
+          "ment-central-tendency"
+        ],
+        "why": "DI & probability combine percentages, averages and ratios — the capstone."
+      }
+    ],
+    "CA": [
+      {
+        "id": "ca-regional",
+        "prereqs": [],
+        "why": "AP/regional current affairs — a rotating stream with no prerequisite."
+      },
+      {
+        "id": "ca-national",
+        "prereqs": [],
+        "why": "National current affairs — rotating, no prerequisite."
+      },
+      {
+        "id": "ca-international",
+        "prereqs": [],
+        "why": "International current affairs — rotating, no prerequisite."
+      }
+    ]
+  }
+}

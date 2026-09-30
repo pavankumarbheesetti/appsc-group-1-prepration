@@ -1,0 +1,110 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Venn Diagrams & Non-Verbal Reasoning (Shapes)",
+  "items": [
+    {
+      "id": "ment-venn-nonverbal-note-venn-methods",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "title": "Venn Diagrams — class relationships & region-count numericals",
+      "body": "## Two uses of Venn diagrams\n\n**(a) Logical class relationship** — pick the diagram that matches how the groups relate:\n\n| Relationship | Diagram | Example |\n|---|---|---|\n| All A are B (subset) | small circle inside a big one | Apples ⊂ Fruits |\n| Some A are B (overlap) | two partly overlapping circles | Doctors & Women |\n| No A is B (disjoint) | two separate circles | Birds & Fish |\n| Two coordinate classes in one genus | two separate circles inside a larger one | Table, Chair ⊂ Furniture |\n\n**(b) Numerical (region counts)** — read counts region by region.\n\nWorked example: Only A = 20, Only B = 15, Only C = 12, A∩B only = 8, B∩C only = 9, A∩C only = 6, all three = 5, none = 25.\n- Exactly one = 20 + 15 + 12 = **47**\n- Exactly two = 8 + 9 + 6 = **23**\n- At least two = 23 + 5 = **28**\n- At least one = everything − none = (47+23+5) = **75**\n\n**Two-set formula:** n(A ∪ B) = n(A) + n(B) − n(A ∩ B); Neither = Universal − n(A ∪ B).\n\n**Common trap:** 'exactly two' excludes the all-three region; 'at least two' includes it.",
+      "keyPoints": [
+        "Subset → circle inside a circle; 'some are' → overlapping circles; 'no ... is' → disjoint circles.",
+        "Two coordinate classes under one genus (Table, Chair under Furniture) → two separate circles inside a larger circle.",
+        "Exactly one = sum of the three 'only' regions; exactly two excludes the all-three region.",
+        "n(A ∪ B) = n(A) + n(B) − n(A ∩ B); Neither = Universal − n(A ∪ B).",
+        "At least one = total elements − 'none' region."
+      ],
+      "source": "local APPSC Group-1 PDF — Logical Reasoning: Logical Venn Diagram; Venn Diagram Problems",
+      "verified": true,
+      "tags": ["venn", "class-relationship", "numerical"]
+    },
+    {
+      "id": "ment-venn-nonverbal-note-mirror-water",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "title": "Mirror & Water Images — rules and symmetric letters",
+      "body": "## Mirror image (vertical mirror)\n\nA mirror flips the figure **laterally** — left becomes right; the ORDER of letters in a word reverses.\n\n- Capitals unchanged in a vertical mirror: **A, H, I, M, O, T, U, V, W, X, Y**.\n- Mirror of a word = write it in reverse order, then flip each letter. e.g. CODE → EDOC.\n- **Mirror-clock rule:** reflected time = 11:60 − actual time. So 4:30 → 7:30; 3:00 → 9:00.\n\n## Water image (horizontal / reflection in water)\n\nFlips the figure **top-to-bottom**; the order of letters is unchanged but each is turned upside-down.\n\n- Capitals unchanged in water image: **B, C, D, E, H, I, K, O, X**.\n- Numbers 0 and 8 read the same in both mirror and water images.\n\n**Both axes:** H, I, O, X survive BOTH mirror and water images (they have vertical AND horizontal symmetry).\n\n**Common trap:** mixing the two symmetric-letter sets — the mirror set (A,H,I,M,O,T,U,V,W,X,Y) is often offered as a distractor in a water-image question.",
+      "keyPoints": [
+        "Mirror = lateral (left-right) flip; a word's letter order reverses (CODE → EDOC).",
+        "Vertical-mirror-invariant capitals: A, H, I, M, O, T, U, V, W, X, Y.",
+        "Water image = top-to-bottom flip; water-invariant capitals: B, C, D, E, H, I, K, O, X.",
+        "Mirror-clock time = 11:60 − actual time (e.g. 4:30 → 7:30).",
+        "H, I, O, X are unchanged in both mirror and water images."
+      ],
+      "mnemonic": "Mirror set spells the vertical-symmetry family 'HIMO...'; water set is the flat-topped-and-bottomed letters B C D E H I K O X.",
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image; Water Image",
+      "verified": true,
+      "tags": ["mirror-image", "water-image"]
+    },
+    {
+      "id": "ment-venn-nonverbal-note-cube-dice",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "title": "Cube & Dice — painted-cube formulas and opposite faces",
+      "body": "## Painted cube cut into n³ small cubes\n\nA cube (6 faces, 12 edges, 8 vertices) painted on all faces, then cut n per edge:\n\n| Painted faces | Where | Formula |\n|---|---|---|\n| 3 | corners | 8 (always) |\n| 2 | edges | 12(n − 2) |\n| 1 | face centres | 6(n − 2)² |\n| 0 | interior | (n − 2)³ |\n\nCheck: the four counts add to n³. For n = 4: 8 + 24 + 24 + 8 = 64. ✓\n\n## Counting cubes in a stack\n\nCount layer by layer; a stepped stack has FEWER cubes than its bounding cuboid. e.g. layers 4×4 + 3×3 + 2×2 = 16 + 9 + 4 = 29.\n\n## Dice — opposite faces\n\n- **Open dice (net):** faces separated by exactly one face in a straight line become OPPOSITE when folded; adjacent faces in the net fold to be adjacent.\n- **Closed dice (two views):** if one face is common to both views, the die was rotated about it; the other faces cycle, and opposites are the pair two steps apart in that cycle.",
+      "keyPoints": [
+        "A cube has 6 faces, 12 edges, 8 vertices; corner cubes always show 3 painted faces (count = 8).",
+        "Painted-cube counts: 3-face = 8, 2-face = 12(n−2), 1-face = 6(n−2)², 0-face = (n−2)³.",
+        "The four painted-face counts sum to n³ (n = cubes per edge).",
+        "Count cubes in a stack layer by layer; a stepped stack has fewer cubes than its bounding box.",
+        "Open-dice net: faces one apart in a straight line are opposite; closed dice: fix the common face and cycle the rest."
+      ],
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube; Open Dice; Closed Dice",
+      "verified": true,
+      "tags": ["cube", "dice", "painted-cube"]
+    },
+    {
+      "id": "ment-venn-nonverbal-note-fold-dot-pattern-hidden",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "title": "Paper folding, dot situation, pattern completion & hidden figures",
+      "body": "## Paper folding & cutting\n\n- Each fold DOUBLES the layers: layers = 2^(number of folds).\n- One punch through all layers → 2^folds holes, appearing as mirror images across each crease (assuming the punch is not on a fold line).\n- e.g. 2 folds → 4 layers → 4 symmetric holes.\n\n## Dot situation\n\n- Note exactly which shapes the given dot lies in (e.g. inside triangle AND circle AND square).\n- The correct option is the figure with a region sharing the SAME set of shape-memberships.\n\n## Completion of incomplete pattern (matrix)\n\n- Find one rule that fits ALL complete rows/columns (sum, difference, product, or a spatial operation), then apply it to the missing cell.\n- Worked example: rows where col3 = col1 + col2 → 6 + 7 = 13.\n\n## Hidden / embedded figure\n\n- Trace the target shape's outline within the complex design WITHOUT adding lines.\n- Classic fact: the centre of a regular five-pointed star (pentagram) encloses a regular pentagon.",
+      "keyPoints": [
+        "Paper folding: holes on unfolding = 2^(number of folds), if the punch is off the fold lines.",
+        "Punched holes appear as mirror images across each fold crease.",
+        "Dot situation: the answer has a region with the same shape-memberships as the required dot.",
+        "Pattern matrix: confirm one rule on all complete rows before applying it to the blank.",
+        "Hidden figure: a pentagram encloses a regular pentagon at its centre; trace outlines without adding lines."
+      ],
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding; Dot section; Completion of Incomplete Pattern; Hidden Image",
+      "verified": true,
+      "tags": ["paper-folding", "dot-situation", "pattern-completion", "hidden-figure"]
+    },
+    {
+      "id": "ment-venn-nonverbal-note-counting-figures",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "title": "Counting Figures — triangles, squares and rectangles",
+      "body": "## Triangles from a single apex\n\nIf an apex is joined to k points on the base, the number of triangles = ᵏC₂ = k(k − 1)/2.\n- e.g. apex joined to 4 base points → 4·3/2 = 6 triangles.\n\n## Squares & rectangles in an m×n grid\n\n| Figure | Formula (for n×n grid) |\n|---|---|\n| Squares (all sizes) | 1² + 2² + … + n² = n(n+1)(2n+1)/6 |\n| Rectangles (all sizes) | [n(n+1)/2]² |\n\n- In a 3×3 grid: squares = 1 + 4 + 9 = **14**; rectangles = 6 × 6 = **36**.\n- Every square is also a rectangle, so squares ≤ rectangles.\n\n## Method for composite figures\n\n1. Count the smallest (simple) figures first.\n2. Then count figures made of 2, 3, … components.\n3. Add carefully; work systematically (by size) to avoid missing or double-counting.",
+      "keyPoints": [
+        "Triangles from one apex to k base points = ᵏC₂ = k(k−1)/2 (4 points → 6 triangles).",
+        "Squares in an n×n grid = 1² + 2² + … + n² = n(n+1)(2n+1)/6.",
+        "Rectangles in an n×n grid = [n(n+1)/2]²; in a 3×3 grid, squares = 14 and rectangles = 36.",
+        "Every square is a rectangle, so the square count never exceeds the rectangle count.",
+        "Count composite figures systematically by size (simplest first) to avoid missing any."
+      ],
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (Quadrilateral)",
+      "verified": true,
+      "tags": ["counting-figures", "triangles", "squares", "rectangles"]
+    },
+    {
+      "id": "ment-venn-nonverbal-note-figure-series-analogy-classification",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-venn-nonverbal",
+      "title": "Non-verbal figure reasoning — series, analogy, classification & min/max overlap",
+      "body": "## Figure series (next figure)\n\nIsolate the ONE constant transformation applied at each step, then extend it:\n\n| Transformation | Cue |\n|---|---|\n| Rotation | element turns 45/90/180 degrees per step (clockwise unless stated) |\n| Movement | a marker moves one position (e.g. one corner clockwise) per step |\n| Add / delete | an element appears or disappears at a fixed rate |\n| Enlarge / shrink / invert | size or orientation changes each step |\n\nA marker cycling four corners has period 4; a 90-degree rotation returns to start after 4 steps.\n\n## Figure analogy (A : B :: C : ?)\n\nFind the exact relation from A to B (rotate, add/remove a side or element, change count), then apply the **identical** relation to C. The change may act on the shape (square→triangle = lose one side) or on a countable element (2 dots→4 dots = double).\n\n## Figure classification (odd one out)\n\nFind the property shared by MOST figures and pick the exception. The discriminating feature is often not the shape but the dot's position, element count, parity of line-segments, or shading.\n\n## Minimum / maximum overlap of two sets\n\n| Quantity | Formula |\n|---|---|\n| Maximum n(A∩B) | the smaller of n(A), n(B) |\n| Minimum n(A∩B) | n(A) + n(B) − 100% (when the sum exceeds 100%) |\n\ne.g. 70% + 80%: min both = 150 − 100 = 50%; max both = 70%.\n\n## Common traps\n\n- Applying two changes when the series uses only one rule.\n- Confusing the minimum overlap (A+B−100) with the maximum (smaller set).",
+      "keyPoints": [
+        "Figure series: identify the single constant transformation (rotation/movement/add-delete) and extend it.",
+        "Figure analogy: apply the exact A→B relation to C; it may act on shape or on a countable element.",
+        "Figure classification: find the property shared by most figures; the odd one breaks it (often position/count, not shape).",
+        "Maximum overlap of two sets = the smaller set; minimum overlap = A + B − 100% when the sum exceeds 100%.",
+        "For 70% and 80%: minimum both = 50%, maximum both = 70%."
+      ],
+      "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Series, Analogy, Classification; Logical Reasoning: set overlap",
+      "verified": true,
+      "tags": ["non-verbal", "figure-series", "figure-analogy", "classification", "overlap", "method"]
+    }
+  ]
+}

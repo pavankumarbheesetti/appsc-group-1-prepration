@@ -1,0 +1,580 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Algebra & BODMAS",
+  "items": [
+    {
+      "id": "ment-algebra-bodmas-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "refresher": true,
+      "question": "Simplify: 48 ÷ 8 × 3 + (7 − 4)² − 5",
+      "options": [
+        "18",
+        "22",
+        "26",
+        "20"
+      ],
+      "answerIndex": 1,
+      "explanation": "Apply BODMAS: brackets → orders (powers) → division/multiplication (left→right) → addition/subtraction.\n\nStep 1: Bracket (7 − 4) = 3.\nStep 2: Order 3² = 9.\nStep 3: Division/Multiplication left to right: 48 ÷ 8 = 6, then 6 × 3 = 18.\nStep 4: Now 18 + 9 − 5 = 22.\n\n**Why not the others**\n- 18 — stops after the ÷ and × step, forgetting to add 9 and subtract 5.\n- 26 — does 48 ÷ (8 × 3) = 2 wrongly, or mis-adds.\n- 20 — treats 7 − 4² as (7−4)²=9 correctly but then does 6+9+5.\n\n**Key facts**\n- Order: **B**rackets, **O**rders (powers/roots), **D**ivision & **M**ultiplication (left→right, equal rank), **A**ddition & **S**ubtraction (left→right).\n- ÷ and × are done in the order they appear, NOT × before ÷.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Bodmas Rule",
+      "verified": true,
+      "covers": [
+        "BODMAS — order of operations & simplification"
+      ],
+      "tags": [
+        "algebra",
+        "refresher",
+        "bodmas"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "refresher": true,
+      "question": "The 15th term of the arithmetic progression 7, 11, 15, 19, … is:",
+      "options": [
+        "59",
+        "67",
+        "63",
+        "60"
+      ],
+      "answerIndex": 2,
+      "explanation": "Use the AP nth-term formula aₙ = a + (n − 1)d.\n\nStep 1: First term a = 7, common difference d = 11 − 7 = 4.\nStep 2: a₁₅ = 7 + (15 − 1) × 4 = 7 + 14 × 4 = 7 + 56 = 63.\n\n**Why not the others**\n- 59 — uses (n − 1) = 13 instead of 14 (13 × 4 = 52; 7 + 52 = 59).\n- 67 — uses n = 15 directly (7 + 15 × 4).\n- 60 — adds 7 + 53, an arithmetic slip.\n\n**Key facts**\n- nth term: **aₙ = a + (n − 1)d**.\n- Sum of n terms: Sₙ = n/2 [2a + (n − 1)d] = n/2 (a + l).\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Arithmetic Progression",
+      "verified": true,
+      "covers": [
+        "Arithmetic Progression — nth term & sum"
+      ],
+      "tags": [
+        "algebra",
+        "refresher",
+        "ap"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "If the operation a △ b is defined as a △ b = (a + b) ÷ (a − b), then the value of 9 △ 5 is:",
+      "options": [
+        "3.5",
+        "2.5",
+        "1.75",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "Substitute the given values into the defined rule.\n\nStep 1: a = 9, b = 5, so a + b = 14 and a − b = 4.\nStep 2: 9 △ 5 = 14 ÷ 4 = 3.5.\n\n**Why not the others**\n- 2.5 — computes (a − b) ÷ (a + b) = 4/14... or reverses; a mis-read of the rule.\n- 1.75 — divides (a − b) into (a + b) as 7/4 after halving wrongly.\n- 4 — returns only the denominator (a − b), ignoring the division.\n\n**Key facts**\n- In symbol-substitution problems, replace the operator with its definition exactly, then apply BODMAS.\n- Watch operand order: a △ b need not equal b △ a.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Bodmas Rule",
+      "verified": true,
+      "covers": [
+        "Defined-symbol / operator substitution"
+      ],
+      "tags": [
+        "algebra",
+        "symbol-operation"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "If a + b = 12 and ab = 27, then a² + b² equals:",
+      "options": [
+        "90",
+        "108",
+        "117",
+        "63"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use the identity (a + b)² = a² + b² + 2ab, rearranged to a² + b² = (a + b)² − 2ab.\n\nStep 1: (a + b)² = 12² = 144.\nStep 2: 2ab = 2 × 27 = 54.\nStep 3: a² + b² = 144 − 54 = 90.\n\n**Why not the others**\n- 108 — subtracts only ab (27) instead of 2ab: 144 − 36 is also wrong; a mis-application.\n- 117 — computes 144 − 27, forgetting the factor 2 on ab.\n- 63 — subtracts 2ab twice or uses (a − b)² path incorrectly.\n\n**Key facts**\n- (a + b)² = a² + 2ab + b²; (a − b)² = a² − 2ab + b².\n- a² + b² = (a + b)² − 2ab; also a² − b² = (a + b)(a − b).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
+      "verified": true,
+      "covers": [
+        "Algebraic identities — (a±b)² and a²−b²"
+      ],
+      "tags": [
+        "algebra",
+        "identities"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "If a + b = 7 and ab = 10, then the value of a³ + b³ is:",
+      "options": [
+        "147",
+        "210",
+        "133",
+        "259"
+      ],
+      "answerIndex": 2,
+      "explanation": "Use the identity a³ + b³ = (a + b)³ − 3ab(a + b).\n\nStep 1: (a + b)³ = 7³ = 343.\nStep 2: 3ab(a + b) = 3 × 10 × 7 = 210.\nStep 3: a³ + b³ = 343 − 210 = 133.\n\n**Why not the others**\n- 147 — uses (a + b)³ − 3ab = 343 − 30... or a mis-count of terms.\n- 210 — reports only the subtracted term 3ab(a + b).\n- 259 — adds instead of subtracts, or drops the (a + b) factor: 343 − 84.\n\n**Key facts**\n- a³ + b³ = (a + b)³ − 3ab(a + b) = (a + b)(a² − ab + b²).\n- a³ − b³ = (a − b)³ + 3ab(a − b) = (a − b)(a² + ab + b²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
+      "verified": true,
+      "covers": [
+        "Algebraic identities — a³±b³ (sum/difference of cubes)"
+      ],
+      "tags": [
+        "algebra",
+        "identities",
+        "cubes"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "Solve for x:  3(x + 4) = 5x − 2",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "7"
+      ],
+      "answerIndex": 3,
+      "explanation": "Expand, collect like terms, and isolate x.\n\nStep 1: 3(x + 4) = 3x + 12, so 3x + 12 = 5x − 2.\nStep 2: 12 + 2 = 5x − 3x → 14 = 2x.\nStep 3: x = 14 ÷ 2 = 7.\n\n**Why not the others**\n- 5 — arises from 3x + 12 = 5x − 2 solved as 10 = 2x (dropping the +2 sign).\n- 6 — from 12 = 2x, forgetting to move the −2.\n- 8 — from 16 = 2x, a sign slip when transposing.\n\n**Key facts**\n- Transpose terms across '=' by changing their sign; divide by the coefficient of x last.\n- Always expand brackets first (BODMAS) before collecting terms.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable",
+      "verified": true,
+      "covers": [
+        "Linear equation in one variable"
+      ],
+      "tags": [
+        "algebra",
+        "linear-equation"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "Solve the simultaneous equations 4x + 3y = 25 and 2x − y = 5.",
+      "options": [
+        "x = 4, y = 3",
+        "x = 3, y = 4",
+        "x = 5, y = 1",
+        "x = 2, y = 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use substitution (or elimination).\n\nStep 1: From 2x − y = 5, y = 2x − 5.\nStep 2: Substitute into 4x + 3y = 25: 4x + 3(2x − 5) = 25 → 4x + 6x − 15 = 25.\nStep 3: 10x = 40 → x = 4; then y = 2(4) − 5 = 3.\n\n**Why not the others**\n- x = 3, y = 4 — swaps the values; check 4(3) + 3(4) = 24 ≠ 25.\n- x = 5, y = 1 — satisfies 2x − y = 9, not 5.\n- x = 2, y = 3 — gives 4(2) + 3(3) = 17 ≠ 25.\n\n**Key facts**\n- Elimination: make one variable's coefficients equal, then add/subtract.\n- Always verify the pair in BOTH original equations.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable",
+      "verified": true,
+      "covers": [
+        "Linear equations in two variables (simultaneous)"
+      ],
+      "tags": [
+        "algebra",
+        "simultaneous-equations"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "The roots of the quadratic equation x² − 9x + 20 = 0 are:",
+      "options": [
+        "2 and 10",
+        "−4 and −5",
+        "4 and 5",
+        "3 and 6"
+      ],
+      "answerIndex": 2,
+      "explanation": "Factorise by splitting the middle term into two numbers that multiply to +20 and add to −9.\n\nStep 1: −4 and −5 satisfy (−4)(−5) = 20 and (−4) + (−5) = −9.\nStep 2: x² − 4x − 5x + 20 = 0 → (x − 4)(x − 5) = 0.\nStep 3: x = 4 or x = 5.\n\n**Why not the others**\n- 2 and 10 — multiply to 20 but add to 12, not 9.\n- −4 and −5 — these are the factor numbers, not the roots (roots take the opposite sign).\n- 3 and 6 — add to 9 but multiply to 18, not 20.\n\n**Key facts**\n- For x² − Sx + P = 0, look for two numbers with sum S and product P; roots are those numbers.\n- Quadratic formula fallback: x = [−b ± √(b² − 4ac)] / 2a.\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Quadratic Equation",
+      "verified": true,
+      "covers": [
+        "Quadratic equations — solving roots (factorisation/formula)"
+      ],
+      "tags": [
+        "algebra",
+        "quadratic"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "What is the nature of the roots of the equation x² − 6x + 11 = 0?",
+      "options": [
+        "Real and equal",
+        "Real and distinct",
+        "Imaginary (no real roots)",
+        "Real and irrational"
+      ],
+      "answerIndex": 2,
+      "explanation": "The nature of roots is decided by the discriminant D = b² − 4ac.\n\nStep 1: a = 1, b = −6, c = 11.\nStep 2: D = (−6)² − 4(1)(11) = 36 − 44 = −8.\nStep 3: D < 0, so the roots are imaginary (complex conjugates), with no real value.\n\n**Why not the others**\n- Real and equal — requires D = 0.\n- Real and distinct — requires D > 0.\n- Real and irrational — requires D > 0 and not a perfect square; here D is negative.\n\n**Key facts**\n- D > 0 → real & distinct; D = 0 → real & equal; D < 0 → imaginary.\n- Sum of roots = −b/a, product = c/a (here sum = 6, product = 11).\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Quadratic Equation",
+      "verified": true,
+      "covers": [
+        "Quadratic equations — nature of roots & sum/product (discriminant)"
+      ],
+      "tags": [
+        "algebra",
+        "quadratic",
+        "discriminant"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "The remainder when the polynomial 2x³ − 3x² + 4x − 7 is divided by (x − 2) is:",
+      "options": [
+        "−1",
+        "5",
+        "9",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "By the Remainder Theorem, the remainder on division by (x − a) equals f(a).\n\nStep 1: Here a = 2, so evaluate f(2).\nStep 2: f(2) = 2(2)³ − 3(2)² + 4(2) − 7 = 16 − 12 + 8 − 7.\nStep 3: = 5.\n\n**Why not the others**\n- −1 — evaluates at x = 1 (f(1) = 2 − 3 + 4 − 7).\n- 9 — mis-computes 2(8) − 3(4) + 8 − 7 as 16 − 4...; an arithmetic slip.\n- 3 — drops the −7 constant or mis-signs a term.\n\n**Key facts**\n- Remainder Theorem: dividing f(x) by (x − a) gives remainder f(a).\n- Factor Theorem: (x − a) is a factor iff f(a) = 0.\n\n*Source: local APPSC Quantitative Reasoning PDF — Polynomials.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Polynomials",
+      "verified": true,
+      "covers": [
+        "Polynomials — remainder & factor theorem"
+      ],
+      "tags": [
+        "algebra",
+        "polynomials",
+        "remainder-theorem"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "The sum of the first 8 terms of the geometric progression 3, 6, 12, 24, … is:",
+      "options": [
+        "768",
+        "381",
+        "384",
+        "765"
+      ],
+      "answerIndex": 3,
+      "explanation": "Use the finite GP sum Sₙ = a(rⁿ − 1)/(r − 1) for r > 1.\n\nStep 1: a = 3, r = 6/3 = 2, n = 8.\nStep 2: 2⁸ = 256, so 2⁸ − 1 = 255.\nStep 3: S₈ = 3 × 255 ÷ (2 − 1) = 765.\n\n**Why not the others**\n- 768 — uses 3 × 256, forgetting to subtract 1 (uses rⁿ instead of rⁿ − 1).\n- 381 — sums only 7 terms (a(2⁷ − 1) = 3 × 127).\n- 384 — 3 × 128, an off-by-one in the exponent.\n\n**Key facts**\n- GP nth term: aₙ = a·rⁿ⁻¹.\n- Sum: Sₙ = a(rⁿ − 1)/(r − 1) if r > 1; a(1 − rⁿ)/(1 − r) if r < 1.\n\n*Source: local APPSC Quantitative Reasoning PDF — Geometric Progression.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Geometric Progression",
+      "verified": true,
+      "covers": [
+        "Geometric Progression — nth term & finite sum"
+      ],
+      "tags": [
+        "algebra",
+        "gp"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "The sum to infinity of the series 8 + 4 + 2 + 1 + … is:",
+      "options": [
+        "12",
+        "20",
+        "8",
+        "16"
+      ],
+      "answerIndex": 3,
+      "explanation": "An infinite GP with |r| < 1 has sum S∞ = a/(1 − r).\n\nStep 1: a = 8, r = 4/8 = 1/2 (and |1/2| < 1, so the sum converges).\nStep 2: 1 − r = 1 − 1/2 = 1/2.\nStep 3: S∞ = 8 ÷ (1/2) = 16.\n\n**Why not the others**\n- 12 — adds only the first few terms (8 + 4) without the tail.\n- 20 — over-counts, e.g. treats r as larger.\n- 8 — reports only the first term.\n\n**Key facts**\n- S∞ = a/(1 − r), valid ONLY when |r| < 1.\n- If |r| ≥ 1 the infinite sum does not converge (no finite value).\n\n*Source: local APPSC Quantitative Reasoning PDF — Geometric Progression.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Geometric Progression",
+      "verified": true,
+      "covers": [
+        "Geometric Progression — sum to infinity"
+      ],
+      "tags": [
+        "algebra",
+        "gp",
+        "infinite-sum"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "The numbers 6, 4, 3, … are in harmonic progression (HP). The 4th term of this HP is:",
+      "options": [
+        "2",
+        "5/2",
+        "12/5",
+        "1/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "A sequence is in HP if the reciprocals of its terms form an AP.\n\nStep 1: Reciprocals: 1/6, 1/4, 1/3. Common difference d = 1/4 − 1/6 = 1/12.\nStep 2: 4th reciprocal (AP) = 1/3 + 1/12 = 4/12 + 1/12 = 5/12.\nStep 3: 4th HP term = reciprocal of 5/12 = 12/5.\n\n**Why not the others**\n- 2 — assumes the HP itself is arithmetic (3 − 1 = 2), ignoring reciprocals.\n- 5/2 — takes the AP term 5/12 mis-scaled, or a slip.\n- 1/2 — gives the AP 4th term's neighbour, not its reciprocal.\n\n**Key facts**\n- HP: convert to AP via reciprocals, solve, then invert back.\n- AGP term = (AP term) × (GP term), e.g. 1, 2x, 3x², …; sum uses the S − rS shift method.\n\n*Source: local APPSC Quantitative Reasoning PDF — Harmonic Progression (HP).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Harmonic Progression (HP)",
+      "verified": true,
+      "covers": [
+        "Harmonic Progression & AGP"
+      ],
+      "tags": [
+        "algebra",
+        "hp",
+        "agp"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "In a group of 100 students, 60 play cricket, 45 play tennis and 20 play both. How many play neither game?",
+      "options": [
+        "15",
+        "25",
+        "35",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use the two-set inclusion–exclusion formula, then subtract from the total.\n\nStep 1: n(C ∪ T) = n(C) + n(T) − n(C ∩ T) = 60 + 45 − 20 = 85.\nStep 2: Neither = Total − n(C ∪ T) = 100 − 85 = 15.\n\n**Why not the others**\n- 25 — subtracts only one set's overlap, e.g. 100 − (60 + 45 − 40).\n- 35 — forgets to add back the 'both' correctly: 100 − (60 + 45 − 20) miscomputed.\n- 5 — double-subtracts the intersection (100 − 60 − 45 + 20 − 20).\n\n**Key facts**\n- n(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n- Neither = Universal − n(A ∪ B); 'only A' = n(A) − n(A ∩ B).\n\n*Source: local APPSC Quantitative Reasoning PDF — Sets and Type of Sets / Union, Intersection using venn diagram.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Sets and Type of Sets",
+      "verified": true,
+      "covers": [
+        "Set operations & two-set Venn count"
+      ],
+      "tags": [
+        "algebra",
+        "sets",
+        "venn"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "Simplify:  36 ÷ 6 + 4 × 3 − (5 − 2)²",
+      "options": [
+        "3",
+        "9",
+        "15",
+        "21"
+      ],
+      "answerIndex": 1,
+      "explanation": "Apply BODMAS in order.\n\nStep 1: Bracket (5 − 2) = 3.\nStep 2: Order 3² = 9.\nStep 3: Division/Multiplication (left→right): 36 ÷ 6 = 6, and 4 × 3 = 12.\nStep 4: Addition/Subtraction: 6 + 12 − 9 = 9.\n\n**Why not the others**\n- 3 — subtracts 9 from 6 first, then adds 12 wrongly ordered.\n- 15 — forgets to subtract the 9 (stops at 6 + 12 − 3).\n- 21 — adds the bracket value 3 instead of its square 9 (6 + 12 + 3).\n\n**Key facts**\n- Order: Brackets → Orders (powers) → ÷ and × (left→right) → + and − (left→right).\n- ÷ and × share rank and are done as they appear.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Bodmas Rule",
+      "verified": true,
+      "covers": [
+        "BODMAS — order of operations & simplification"
+      ],
+      "tags": [
+        "algebra",
+        "bodmas"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "If x + 1/x = 5, then the value of x² + 1/x² is:",
+      "options": [
+        "21",
+        "23",
+        "25",
+        "27"
+      ],
+      "answerIndex": 1,
+      "explanation": "Square the given expression: (x + 1/x)² = x² + 2·x·(1/x) + 1/x² = x² + 1/x² + 2.\n\nStep 1: (x + 1/x)² = 5² = 25.\nStep 2: x² + 1/x² = 25 − 2 = 23.\n\n**Why not the others**\n- 21 — subtracts 4 (uses 2·2) instead of 2.\n- 25 — forgets to subtract the middle term 2.\n- 27 — adds 2 instead of subtracting it.\n\n**Key facts**\n- x² + 1/x² = (x + 1/x)² − 2.\n- x² + 1/x² = (x − 1/x)² + 2 (useful when the difference is given).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
+      "verified": true,
+      "covers": [
+        "Algebraic identities — reciprocal forms (x±1/x)"
+      ],
+      "tags": [
+        "algebra",
+        "identities",
+        "reciprocal"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "If x − 1/x = 3, then the value of x³ − 1/x³ is:",
+      "options": [
+        "27",
+        "30",
+        "36",
+        "45"
+      ],
+      "answerIndex": 2,
+      "explanation": "Use a³ − b³ = (a − b)³ + 3ab(a − b) with a = x, b = 1/x (so ab = 1).\n\nStep 1: (x − 1/x)³ = 3³ = 27.\nStep 2: 3·(x)(1/x)·(x − 1/x) = 3 × 1 × 3 = 9.\nStep 3: x³ − 1/x³ = 27 + 9 = 36.\n\n**Why not the others**\n- 27 — reports only (x − 1/x)³, omitting the 3ab(a − b) term.\n- 30 — an arithmetic slip (27 + 3).\n- 45 — adds 27 + 18, doubling the correction term.\n\n**Key facts**\n- x³ − 1/x³ = (x − 1/x)³ + 3(x − 1/x).\n- x³ + 1/x³ = (x + 1/x)³ − 3(x + 1/x).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
+      "verified": true,
+      "covers": [
+        "Algebraic identities — reciprocal forms (x±1/x)"
+      ],
+      "tags": [
+        "algebra",
+        "identities",
+        "cubes",
+        "reciprocal"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "One root of the quadratic equation x² − 7x + k = 0 is 3. The value of k and the other root are:",
+      "options": [
+        "k = 12, other root 4",
+        "k = 10, other root 4",
+        "k = 12, other root 5",
+        "k = 9, other root 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "Substitute the known root, then use sum/product of roots.\n\nStep 1: x = 3 is a root, so 3² − 7(3) + k = 0 → 9 − 21 + k = 0 → k = 12.\nStep 2: Sum of roots = 7, so other root = 7 − 3 = 4 (check product = 3 × 4 = 12 = k). ✓\n\n**Why not the others**\n- k = 10, other root 4 — product 3×4 = 12 ≠ 10; k is wrong.\n- k = 12, other root 5 — sum 3 + 5 = 8 ≠ 7.\n- k = 9, other root 3 — sum would be 6, not 7.\n\n**Key facts**\n- For ax² + bx + c = 0: sum of roots = −b/a, product = c/a.\n- Here sum = 7, product = k, so the roots are 3 and 4 with k = 12.\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Quadratic Equation",
+      "verified": true,
+      "covers": [
+        "Quadratic equations — nature of roots & sum/product (discriminant)"
+      ],
+      "tags": [
+        "algebra",
+        "quadratic",
+        "sum-product"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "The sum of the first 25 terms of the arithmetic progression with first term 4 and common difference 3 is:",
+      "options": [
+        "900",
+        "980",
+        "1000",
+        "1025"
+      ],
+      "answerIndex": 2,
+      "explanation": "Use Sₙ = n/2 [2a + (n − 1)d].\n\nStep 1: a = 4, d = 3, n = 25.\nStep 2: Sₙ = 25/2 [2(4) + 24(3)] = 25/2 [8 + 72] = 25/2 × 80.\nStep 3: = 25 × 40 = 1000.\n\n**Why not the others**\n- 900 — uses (n − 1) = 23 or drops a term.\n- 980 — arithmetic slip in 2a + (n − 1)d.\n- 1025 — uses n = 25 with 2a + n·d instead of (n − 1)d.\n\n**Key facts**\n- Sₙ = n/2 [2a + (n − 1)d] = n/2 (first + last term).\n- Last term l = a + (n − 1)d = 4 + 72 = 76; S = 25/2 (4 + 76) = 1000.\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Arithmetic Progression",
+      "verified": true,
+      "covers": [
+        "Arithmetic Progression — nth term & sum"
+      ],
+      "tags": [
+        "algebra",
+        "ap",
+        "sum"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "Consider the following statements about progressions:\n1. The sum of the first n terms of an AP is n/2 [2a + (n − 1)d].\n2. An infinite geometric progression with |r| < 1 has a finite sum equal to a/(1 − r).\n3. If three numbers are in AP, the middle number is the arithmetic mean of the other two.\nWhich of the above is/are correct?",
+      "options": [
+        "1 and 2 only",
+        "2 and 3 only",
+        "1 and 3 only",
+        "1, 2 and 3"
+      ],
+      "answerIndex": 3,
+      "explanation": "All three are standard, correct results: the AP sum formula (1), the convergent infinite-GP sum for |r| < 1 (2), and the arithmetic-mean property of three AP terms (3).\n\n**Why not the others**\n- 1 and 2 only — omits the true AP arithmetic-mean property (3).\n- 2 and 3 only — drops the correct AP sum formula (1).\n- 1 and 3 only — drops the correct infinite-GP sum (2).\n\n**Key facts**\n- AP: Sₙ = n/2 [2a + (n − 1)d]; middle of three AP terms = (a + c)/2.\n- GP: S∞ = a/(1 − r) only when |r| < 1.\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression; Geometric Progression.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Arithmetic Progression; Geometric Progression",
+      "verified": true,
+      "covers": [
+        "Arithmetic Progression — nth term & sum",
+        "Geometric Progression — sum to infinity"
+      ],
+      "tags": [
+        "algebra",
+        "progressions",
+        "statement-based"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "The sum of two numbers is 35 and their difference is 9. The two numbers are:",
+      "options": [
+        "20 and 15",
+        "22 and 13",
+        "23 and 12",
+        "24 and 11"
+      ],
+      "answerIndex": 1,
+      "explanation": "Set up two equations: x + y = 35 and x − y = 9.\n\nStep 1: Add them: 2x = 44 → x = 22.\nStep 2: Subtract: 2y = 26 → y = 13. Check: 22 + 13 = 35, 22 − 13 = 9. ✓\n\n**Why not the others**\n- 20 and 15 — difference is 5, not 9.\n- 23 and 12 — difference is 11.\n- 24 and 11 — difference is 13.\n\n**Key facts**\n- For sum S and difference D: larger = (S + D)/2, smaller = (S − D)/2.\n- Here (35 + 9)/2 = 22 and (35 − 9)/2 = 13.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable",
+      "verified": true,
+      "covers": [
+        "Linear equations in two variables (simultaneous)"
+      ],
+      "tags": [
+        "algebra",
+        "simultaneous-equations",
+        "word-problem"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "For what value of k is (x − 2) a factor of the polynomial x³ − 3x² + kx − 2?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "By the Factor Theorem, (x − 2) is a factor iff f(2) = 0.\n\nStep 1: f(2) = 2³ − 3(2²) + k(2) − 2 = 8 − 12 + 2k − 2.\nStep 2: = 2k − 6. Set 2k − 6 = 0 → k = 3.\n\n**Why not the others**\n- 1 — gives f(2) = 2(1) − 6 = −4 ≠ 0.\n- 2 — gives f(2) = 4 − 6 = −2 ≠ 0.\n- 4 — gives f(2) = 8 − 6 = 2 ≠ 0.\n\n**Key facts**\n- Factor Theorem: (x − a) is a factor of f(x) iff f(a) = 0.\n- Remainder Theorem: dividing f(x) by (x − a) leaves remainder f(a).\n\n*Source: local APPSC Quantitative Reasoning PDF — Polynomials.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Polynomials",
+      "verified": true,
+      "covers": [
+        "Polynomials — remainder & factor theorem"
+      ],
+      "tags": [
+        "algebra",
+        "polynomials",
+        "factor-theorem"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "If 25% of 480 + 30% of 500 + x% of 90 = 35% of 900, then x is:",
+      "options": [
+        "50",
+        "45",
+        "40",
+        "55"
+      ],
+      "answerIndex": 0,
+      "explanation": "Convert each term: 25% of 480 = 120, 30% of 500 = 150, 35% of 900 = 315, and x% of 90 = 0.9x. So 120 + 150 + 0.9x = 315 ⇒ 0.9x = 45 ⇒ x = 50.\n\n**Why not the others**\n- 45 — equals 0.9x, i.e. the value before dividing by 0.9.\n- 40 — arises from mis-adding the constants.\n- 55 — over-solves; 0.9×55 = 49.5, giving 319.5 ≠ 315.\n\n**Key facts**\n- k% of N = kN/100.\n- Solve the linear equation after collecting constants.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Percentage embedded in a simplification (solve for x)"
+      ],
+      "tags": [
+        "algebra",
+        "percentage",
+        "simplification"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "question": "If 20% of 150 + x% of 80 = 50% of 100, then x equals:",
+      "options": [
+        "25",
+        "20",
+        "30",
+        "15"
+      ],
+      "answerIndex": 0,
+      "explanation": "20% of 150 = 30, 50% of 100 = 50, and x% of 80 = 0.8x. So 30 + 0.8x = 50 ⇒ 0.8x = 20 ⇒ x = 25.\n\n**Why not the others**\n- 20 — that is 0.8x, not x.\n- 30 — the constant term on the left, not the answer.\n- 15 — 0.8×15 = 12, giving 42 ≠ 50.\n\n**Key facts**\n- Turn every '% of' into kN/100 before solving.\n- Isolate x by dividing by its coefficient (0.8).\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Percentage embedded in a simplification (solve for x)"
+      ],
+      "tags": [
+        "algebra",
+        "percentage",
+        "simplification"
+      ]
+    }
+  ]
+}

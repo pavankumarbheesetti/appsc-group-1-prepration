@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- geo-ap-regions-districts.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" role="img" aria-labelledby="t d">
+  <title id="t">Andhra Pradesh regions and district evolution</title>
+  <desc id="d">Left: three schematic regions — North-Coastal, Coastal Andhra, Rayalaseema. Right: district count evolution 13 (before Apr 2022) to 26 (Apr 2022) to 28 (Polavaram &amp; Markapuram, 31 Dec 2025). Labelled schematic, not a surveyed map.</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="462" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Andhra Pradesh — regions &amp; districts</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">Schematic (post-2014 bifurcation)</text><rect class="box3" x="28" y="96" width="500" height="80" rx="10"/><text class="ink" x="44" y="126" font-size="16" font-weight="700" text-anchor="start">North-Coastal</text><text class="muted" x="44" y="152" font-size="12.5" text-anchor="start">Srikakulam · Vizianagaram · Visakhapatnam belt</text><rect class="box" x="28" y="188" width="500" height="80" rx="10"/><text class="ink" x="44" y="218" font-size="16" font-weight="700" text-anchor="start">Coastal Andhra</text><text class="muted" x="44" y="244" font-size="12.5" text-anchor="start">Godavari–Krishna deltas; fertile east-coast plains</text><rect class="box2" x="28" y="280" width="500" height="80" rx="10"/><text class="ink" x="44" y="310" font-size="16" font-weight="700" text-anchor="start">Rayalaseema</text><text class="muted" x="44" y="336" font-size="12.5" text-anchor="start">Semi-arid Deccan interior (Kurnool, Kadapa, Anantapu</text><rect class="box" x="548" y="96" width="244" height="260" rx="12"/><text class="ink" x="670" y="126" font-size="15" font-weight="700" text-anchor="middle">District count</text><circle class="teal" cx="588" cy="160" r="18"/><text class="panel" x="588" y="166" font-size="16" font-weight="700" text-anchor="middle">13</text><text class="muted" x="616" y="158" font-size="12" text-anchor="start">before 4 Apr 2022</text><circle class="teal" cx="588" cy="222" r="18"/><text class="panel" x="588" y="228" font-size="16" font-weight="700" text-anchor="middle">26</text><text class="muted" x="616" y="220" font-size="12" text-anchor="start">from 4 Apr 2022</text><circle class="teal" cx="588" cy="284" r="18"/><text class="panel" x="588" y="290" font-size="16" font-weight="700" text-anchor="middle">28</text><text class="muted" x="616" y="282" font-size="12" text-anchor="start">+ Polavaram, Markapuram (3</text><text class="muted" x="616" y="298" font-size="12" text-anchor="start">1 Dec 2025)</text><text class="muted" x="28" y="400" font-size="13" text-anchor="start">AP = 8th-largest state (~1,62,970 sq km); Arma Konda (~1,690 m) is the highest point.</text><text class="muted" x="28" y="424" font-size="12" text-anchor="start">Label: schematic region grouping, not a surveyed boundary map.</text>
+</svg>

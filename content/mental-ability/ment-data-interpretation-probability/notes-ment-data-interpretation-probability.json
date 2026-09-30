@@ -1,0 +1,89 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Data Interpretation, Data Sufficiency & Probability",
+  "items": [
+    {
+      "id": "ment-data-interpretation-probability-note-di-basics",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-data-interpretation-probability",
+      "title": "Data Interpretation — chart types and core operations",
+      "body": "DI gives data as a **table, bar graph, line graph, pie chart, radar, scatter, caselet** (worded paragraph) or a **combination** of these, and asks you to compute. The chart is just a container — the maths is always percentage, ratio, average or difference.\n\n**The two operations that appear most**\n\n| Operation | Formula |\n|---|---|\n| Percentage change | (new − old)/old × 100 |\n| Share of total | part/whole × 100 |\n| Average across categories | Σ values / number of categories |\n| Pie slice → amount | (share% / 100) × total |\n| Pie slice → angle | share% × 360° |\n\n**Worked example (combined chart trap).** Revenue/Profit (₹ lakh): 2022 = 300/60, 2023 = 350/63. Which year has the higher *margin*? 60/300 = 20% vs 63/350 = 18%. Even though 2023's profit (63) is larger in absolute terms, **2022 has the higher margin** — 'profit as % of revenue' is a ratio, not the raw profit.\n\n**Missing-data DI.** If a total is given, a missing entry = total − Σ(known entries).",
+      "keyPoints": [
+        "Percentage change = (new − old)/old × 100 — always divide by the OLD value.",
+        "Pie: amount = (share%/100) × total; central angle = share% × 360°.",
+        "Average across categories = sum of values ÷ number of categories.",
+        "'Profit as % of revenue' is a ratio (Profit/Revenue), not the largest absolute profit.",
+        "Missing table value = grand total − sum of the known values.",
+        "'More than X' means strictly greater — exclude a value exactly equal to X."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDFs — Tabulation, Bar Graph, Line Graph, Pie Chart, Caselet DI, Radar, Scatter",
+      "verified": true
+    },
+    {
+      "id": "ment-data-interpretation-probability-note-data-sufficiency",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-data-interpretation-probability",
+      "title": "Data Sufficiency — the 4-option convention",
+      "body": "You are NOT asked to find the answer — only whether the statements give **enough** information to find it uniquely. A statement is *sufficient* only if it pins exactly **one** value.\n\n**Standard option set**\n\n| Option | Meaning |\n|---|---|\n| I | Statement I ALONE is sufficient (II is not) |\n| II | Statement II ALONE is sufficient (I is not) |\n| Both | BOTH together are needed (neither alone works) |\n| Either | EITHER alone is sufficient |\n| Neither | Even together they are insufficient |\n\n**Method.** Test each statement in isolation first. Only if both fail alone do you combine them.\n\n**Worked example.** *What is the two-digit number?* I: digit sum = 9 (many: 18, 27, …). II: tens − units = 3 (many: 30, 41, …). Neither alone is unique. Together: t + u = 9 and t − u = 3 ⇒ t = 6, u = 3 ⇒ **63** — unique ⇒ answer is **Both together**.\n\n**Trap.** Do not actually solve further than needed — once uniqueness is established, stop. And 'even prime' has a unique answer (2), so a single such clue can be sufficient by itself.",
+      "keyPoints": [
+        "A statement is sufficient only if it yields exactly ONE value.",
+        "Always test I alone and II alone BEFORE combining them.",
+        "'Both together' = neither alone works but the pair pins a unique answer.",
+        "The only even prime is 2, so that single clue can be sufficient alone.",
+        "You judge sufficiency, not the final numerical answer."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Data Sufficiency",
+      "verified": true
+    },
+    {
+      "id": "ment-data-interpretation-probability-note-permutation-combination",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-data-interpretation-probability",
+      "title": "Permutations & Combinations — order vs selection",
+      "body": "The single decision that governs every counting problem: **does order matter?**\n\n| Situation | Use | Formula |\n|---|---|---|\n| Arrangement, code, rank, seating in a row | Permutation | nPr = n!/(n−r)! |\n| Selection, team, committee, group | Combination | nCr = n!/(r!(n−r)!) |\n| Seating around a round table | Circular | (n−1)! |\n\n**Link:** nCr = nPr / r!.\n\n**Worked example (selection).** Choose 3 players from 8: 8C3 = (8×7×6)/(3×2×1) = 56.\n\n**Worked example (circular).** Seat 6 people round a table: fix one person to kill rotational duplicates ⇒ (6−1)! = 120. (If clockwise = anticlockwise, e.g. a bead necklace, divide again by 2.)\n\n**Common traps.** Using nPr where the answer wants an unordered selection (over-counts by r!); forgetting to reduce circular counts by one factorial; treating a 'code/word/number' (ordered) as a selection.",
+      "keyPoints": [
+        "Order matters ⇒ permutation (nPr = n!/(n−r)!); order irrelevant ⇒ combination (nCr).",
+        "nCr = nPr / r! — the two differ only by the r! ordering factor.",
+        "Circular arrangement of n = (n−1)!; divide by 2 more if clockwise = anticlockwise.",
+        "'Team / committee / group' ⇒ combination; 'code / rank / arrangement' ⇒ permutation.",
+        "8C3 = 56; 5P3 = 60; 6 in a circle = 120."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
+      "verified": true
+    },
+    {
+      "id": "ment-data-interpretation-probability-note-probability",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-data-interpretation-probability",
+      "title": "Probability — formulae, dice, cards and the two rules",
+      "body": "**Basic:** P(event) = favourable outcomes / total equally-likely outcomes; 0 ≤ P ≤ 1.\n\n**Standard sample spaces**\n\n| Experiment | Total outcomes |\n|---|---|\n| One die | 6 |\n| Two dice | 36 |\n| One coin / two coins | 2 / 4 |\n| A pack of cards | 52 (4 suits × 13; 4 of each rank, 13 of each suit) |\n\n**Addition (union) rule:** P(A ∪ B) = P(A) + P(B) − P(A ∩ B). For mutually exclusive events P(A ∩ B) = 0.\n\n**Multiplication rule:** independent ⇒ P(A ∩ B) = P(A)·P(B); dependent (without replacement) ⇒ P(A then B) = P(A)·P(B|A).\n\n**Worked example (union — cards).** P(king or heart) = 4/52 + 13/52 − 1/52 = 16/52 = 4/13 (subtract the king of hearts, counted twice).\n\n**Worked example (without replacement).** Bag: 5 red, 3 blue. P(1st red, 2nd blue) = 5/8 × 3/7 = 15/56 — the denominator drops to 7 because a ball was removed.\n\n**Balls/committee:** model as combinations — P = favourable C / total C, e.g. both red from 4R+3G = 4C2/7C2 = 6/21 = 2/7.\n\n**Common traps.** Forgetting to subtract the overlap in the addition rule; keeping the same denominator on a without-replacement second draw; treating (2,6) and (6,2) as one outcome on two dice.",
+      "keyPoints": [
+        "P(event) = favourable / total; probability lies between 0 and 1.",
+        "Two dice give 36 ordered outcomes; a pack has 52 cards (4 kings, 13 hearts, 1 both).",
+        "Addition rule: P(A ∪ B) = P(A) + P(B) − P(A ∩ B); subtract the overlap.",
+        "Without replacement: second-draw denominator shrinks by 1 — P(A then B) = P(A)·P(B|A).",
+        "Balls/committee probability = favourable combinations ÷ total combinations.",
+        "P(sum 8 with two dice) = 5/36; P(both red from 4R+3G) = 2/7."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Probability",
+      "verified": true
+    },
+    {
+      "id": "ment-data-interpretation-probability-note-pyq-counting-variants",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-data-interpretation-probability",
+      "title": "PYQ counting & DI variants — LCM coincidence, constrained selection, handshakes-vs-hugs, %-less base",
+      "body": "These four UPSC CSAT patterns recur and each has a fixed method.\n\n**LCM coincidence ('how many times together').** Periodic events with periods p, q, r coincide every **LCM(p,q,r)**; the number of coincidences in time T is **⌊T / LCM⌋**. e.g. bells at 3, 4, 6 min ⇒ LCM 12; in 72 min they meet 72/12 = 6 times.\n\n**Constrained / dependent selection.** Count all C(n, r), then **subtract** the selections that break the dependency. e.g. pick 2 of 5 subjects where Maths-II needs Maths-I: 5C2 = 10, minus the 3 pairs of Maths-II with a non-Maths-I subject = **7**.\n\n**Handshakes vs hugs (opposite vs same sex).** Opposite-sex pairs (handshakes) = **m × w**; same-sex pairs (hugs) = **mC2 + wC2**. e.g. 3 men, 4 women ⇒ handshakes 12, hugs 3 + 6 = 9.\n\n**Percentage-less on a shared base.** 'Y is x% less than Z' ⇒ Y = Z(1 − x/100). To compare Y with X, use **X as the base**: (X − Y)/X × 100. e.g. X = 80, Y = 72 (of Z = 100) ⇒ Y is (8/80)×100 = **10%** less than X, not 8%.\n\n**Common traps**\n- Counting every shorter period instead of the LCM.\n- Forgetting to subtract dependency-violating selections.\n- Subtracting the two 'percent-less' figures directly (28 − 20) instead of re-basing on X.",
+      "keyPoints": [
+        "Events with periods p,q,r coincide every LCM(p,q,r); count in time T = ⌊T/LCM⌋.",
+        "Dependent selection: count all C(n,r) then subtract the selections that violate the dependency.",
+        "Opposite-sex pairs (handshakes) = m×w; same-sex pairs (hugs) = mC2 + wC2.",
+        "'Y is x% less than Z' ⇒ Y = Z(1−x/100); compare Y vs X using X as the base.",
+        "3 men & 4 women: 12 handshakes, 9 hugs; X=80,Y=72 ⇒ Y is 10% less than X."
+      ],
+      "source": "UPSC CSE (CSAT) 2015-2016 patterns (via UPSCprep); local APPSC Quantitative Reasoning PDFs",
+      "verified": true
+    }
+  ]
+}

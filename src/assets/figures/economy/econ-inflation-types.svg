@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- econ-inflation-types.svg - original hand-authored schematic for the APPSC study app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 430" role="img" aria-labelledby="t d">
+  <title id="t">Types of inflation</title>
+  <desc id="d">Inflation types: demand-pull, cost-push, by speed (creeping to hyperinflation), and deflation/disinflation. Measured by CPI (retail) and WPI (wholesale).</desc>
+  <style>
+    .panel{fill:#f7f3ea;stroke:#d8cdb5}
+    .ink{fill:#2b2b2b}
+    .muted{fill:#6b7280}
+    .box{fill:#eef2f7;stroke:#c9d3e0}
+    .box2{fill:#fef3e6;stroke:#e6c79c}
+    .box3{fill:#e8f5ee;stroke:#a9d8bf}
+    .accent{fill:#b45309;stroke:#7c3f06}
+    .teal{fill:#0f766e;stroke:#0c5c55}
+    .blue{fill:#2563eb;stroke:#1e40af}
+    .river{fill:none;stroke:#2563eb;stroke-width:3;stroke-linecap:round;opacity:.85}
+    .lead{stroke:#9aa0a6;stroke-width:1;fill:none}
+    .bar{fill:#2563eb}
+    .bar2{fill:#0f766e}
+    .land{fill:#ece3cf;stroke:#c9b78f}
+    text{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+    .h{font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .panel{fill:#1f2530;stroke:#3a4353}
+      .ink{fill:#f3f4f6}
+      .muted{fill:#aab2bd}
+      .box{fill:#2b3342;stroke:#43506a}
+      .box2{fill:#3a2f22;stroke:#6b5330}
+      .box3{fill:#22352b;stroke:#3f6b52}
+      .land{fill:#2b3342;stroke:#43506a}
+      .lead{stroke:#5b6675}
+    }
+  </style>
+  <rect class="panel" x="4" y="4" width="812" height="422" rx="16"/>
+<text class="ink" x="28" y="42" font-size="22" font-weight="700" text-anchor="start">Inflation — types &amp; measures</text><text class="muted" x="28" y="66" font-size="13" text-anchor="start">Rising general price level</text><rect class="box2" x="28" y="96" width="764" height="60" rx="10"/><text class="ink" x="44" y="122" font-size="16" font-weight="700" text-anchor="start">Demand-pull</text><text class="muted" x="44" y="144" font-size="13" text-anchor="start">Too much money chasing too few goods (excess demand)</text><rect class="box3" x="28" y="164" width="764" height="60" rx="10"/><text class="ink" x="44" y="190" font-size="16" font-weight="700" text-anchor="start">Cost-push</text><text class="muted" x="44" y="212" font-size="13" text-anchor="start">Rising input costs (wages, oil) push prices up</text><rect class="box" x="28" y="232" width="764" height="60" rx="10"/><text class="ink" x="44" y="258" font-size="16" font-weight="700" text-anchor="start">By speed</text><text class="muted" x="44" y="280" font-size="13" text-anchor="start">Creeping &lt; Walking &lt; Galloping &lt; Hyperinflation</text><rect class="box2" x="28" y="300" width="764" height="60" rx="10"/><text class="ink" x="44" y="326" font-size="16" font-weight="700" text-anchor="start">Deflation / Disinflation</text><text class="muted" x="44" y="348" font-size="13" text-anchor="start">Falling prices / a slowing inflation rate</text><text class="muted" x="28" y="400" font-size="13" text-anchor="start">Measured in India by CPI (retail, MPC target) and WPI (wholesale).</text>
+</svg>

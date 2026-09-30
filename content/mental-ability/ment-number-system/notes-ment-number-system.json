@@ -1,0 +1,173 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Number System",
+  "items": [
+    {
+      "id": "ment-number-system-note-classification",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Classification of numbers",
+      "body": "Every number in the syllabus sits in a nested hierarchy: **N ⊂ W ⊂ Z ⊂ Q ⊂ R**.\n\n| Set | Symbol | Members | Note |\n|---|---|---|---|\n| Natural | N | 1, 2, 3, … | starts at 1 |\n| Whole | W | 0, 1, 2, … | adds 0 |\n| Integer | Z | …,−1,0,1,… | adds negatives |\n| Rational | Q | p/q, q≠0 | terminating or recurring decimal |\n| Irrational | — | √2, π, e | non-terminating, non-repeating |\n| Real | R | Q ∪ irrationals | the number line |\n\n**Special numbers:** prime = exactly two factors (smallest = 2, the only even prime); composite = more than two factors (smallest = 4); **1 is neither**. Co-prime pair ⇔ HCF = 1 (e.g. 8 & 15). Twin primes differ by 2 (11,13).\n\n**Trap:** √(perfect square) is rational (√16 = 4); a non-perfect-square root is irrational. 22/7 is rational (only an approximation of π).",
+      "keyPoints": [
+        "Nesting of number sets: N ⊂ W ⊂ Z ⊂ Q ⊂ R",
+        "Natural numbers start at 1; whole numbers add 0",
+        "Rational = p/q (q≠0) = terminating or recurring decimal; irrational = non-terminating non-repeating",
+        "2 is the only even prime and the smallest prime; 1 is neither prime nor composite",
+        "Co-prime numbers have HCF = 1; a non-perfect-square root is irrational"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "classification"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-divisibility",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Divisibility rules (shortcut table)",
+      "body": "Test divisibility without dividing:\n\n| Divisor | Rule |\n|---|---|\n| 2 | last digit even (0,2,4,6,8) |\n| 3 | digit sum divisible by 3 |\n| 4 | last two digits divisible by 4 |\n| 5 | last digit 0 or 5 |\n| 6 | divisible by both 2 and 3 |\n| 8 | last three digits divisible by 8 |\n| 9 | digit sum divisible by 9 |\n| 11 | (odd-place sum) − (even-place sum) = 0 or a multiple of 11 |\n\n**Worked example (11):** For 62_35 divisible by 11 — from the right, (5+_+6) − (3+2) = 6 + _ must be a multiple of 11 ⇒ _ = 5, giving 62535 = 11 × 5685.\n\n**Trap:** 6 needs BOTH the 2-test and 3-test; passing only one is not enough. For 11, count places from the unit digit.",
+      "keyPoints": [
+        "Divisible by 3 ⇔ digit sum divisible by 3; by 9 ⇔ digit sum divisible by 9",
+        "Divisible by 4 ⇔ last two digits; by 8 ⇔ last three digits",
+        "Divisible by 6 ⇔ divisible by both 2 and 3",
+        "Divisible by 11 ⇔ alternating digit-sum is 0 or a multiple of 11",
+        "Count digit places from the right (unit digit = first/odd place) for the 11-test"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "divisibility"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-factors",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Factors from prime factorisation",
+      "body": "Start with prime factorisation N = p^a · q^b · r^c …\n\n- **Number of factors** = (a+1)(b+1)(c+1)…  (includes 1 and N).\n- **Number of odd factors** = drop all powers of 2, then apply the same product.\n- **Number of even factors** = total factors − odd factors.\n- **Sum of factors** = [(p^{a+1}−1)/(p−1)] × [(q^{b+1}−1)/(q−1)] × …\n\n**Worked example:** 360 = 2³·3²·5 ⇒ factors = 4·3·2 = **24**. For 1260 = 2²·3²·5·7, odd factors = (from 3²·5·7) 3·2·2 = **12**.\n\n**Trap:** do NOT forget the +1 on each exponent, and do NOT include the power of 2 when counting odd factors.",
+      "keyPoints": [
+        "Number of factors of N = p^a·q^b·… is (a+1)(b+1)…",
+        "360 = 2³·3²·5 has (3+1)(2+1)(1+1) = 24 factors",
+        "Odd factors: ignore powers of 2, then take the (e+1) product",
+        "Even factors = total factors − odd factors",
+        "Sum of factors uses the geometric-series formula per prime"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "factors"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-unit-digit",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Unit digit — cyclicity method",
+      "body": "Only the base's unit digit matters. Digits 0,1,5,6 keep the same unit digit at any power. Others cycle with period 4:\n\n| Base ends in | Cycle | Period |\n|---|---|---|\n| 2 | 2,4,8,6 | 4 |\n| 3 | 3,9,7,1 | 4 |\n| 7 | 7,9,3,1 | 4 |\n| 8 | 8,4,2,6 | 4 |\n| 4 | 4,6 | 2 (odd→4, even→6) |\n| 9 | 9,1 | 2 (odd→9, even→1) |\n\n**Shortcut:** take (power mod 4). Remainder 1,2,3 → that term of the cycle; remainder 0 → the 4th term.\n\n**Worked example:** 3^47 → 47 mod 4 = 3 → 3rd term of (3,9,7,1) = **7**. For 17^23 + 24^24 → 3 + 6 = **9** (24^even ends in 6).",
+      "keyPoints": [
+        "Unit digit depends only on the unit digit of the base",
+        "Digits 0,1,5,6 stay unchanged at any power",
+        "Cyclicity of 2,3,7,8 is 4; of 4 and 9 is 2",
+        "Use (power mod 4); remainder 0 means the 4th term of the cycle",
+        "Base ending in 4: odd power → 4, even power → 6"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "unit-digit"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-trailing-zeros",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Trailing zeros (pairs of 2 and 5)",
+      "body": "Each trailing zero needs one 2 and one 5, since 10 = 2 × 5. Count both, take the minimum.\n\n**In a factorial n!:** 5s are scarcer, so trailing zeros = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + …\n\n**Worked example:** 100! → ⌊100/5⌋ + ⌊100/25⌋ = 20 + 4 = **24** zeros.\n\n**In a product/power:** prime-factorise each base, total the 2s and 5s, take the minimum.\n\n**Worked example:** 15^50 × 20^40 × 25^30 → 5s = 50+40+60 = 150, 2s = 80 (from 20^40 = 2^80). min(80,150) = **80** zeros.\n\n**Trap:** in a factorial the answer is always driven by 5s; in a product, check which of 2 or 5 is scarcer.",
+      "keyPoints": [
+        "One trailing zero = one pair of (2 × 5); count both and take the minimum",
+        "Trailing zeros in n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + …",
+        "100! ends in 24 zeros",
+        "In a product, prime-factorise, total the 2s and 5s, take the smaller count",
+        "In a factorial the 5-count is always the limiting factor"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Number of Zeros",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "trailing-zeros"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-hcf-lcm-remainder",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "HCF–LCM identity, remainders & perfect squares",
+      "body": "**HCF × LCM = product of the two numbers** (two numbers only). So a missing fourth quantity is found from the other three. For fractions: HCF = HCF(numerators)/LCM(denominators); LCM = LCM(numerators)/HCF(denominators).\n\n**Remainders:** Dividend = Divisor × quotient + Remainder. If divisor d₂ divides d₁, then N mod d₂ = (given remainder) mod d₂.\n\n*Example:* N ÷ 899 leaves 63; 899 = 29 × 31, so N ÷ 29 leaves 63 mod 29 = **5**.\n\n**Remainder of powers (cyclicity):** list the remainders of the base's successive powers to find the cycle length, then use (exponent mod cycle-length). *Example:* 2^100 ÷ 7 → 2¹,2²,2³ leave 2,4,1 (cycle length 3); 100 mod 3 = 1 → remainder **2**.\n\n**HCF/LCM word problems:** 'bells toll / lights blink together again' → **LCM** of the intervals; 'greatest number dividing a, b, c leaving the SAME remainder' → **HCF of the pairwise differences**; 'least number leaving remainder r with each divisor' → **LCM(divisors) + r**.\n\n**Perfect-square unit-digit test:** a perfect square ends only in 0,1,4,5,6,9 — never 2,3,7,8. So 1298 (ends in 8) is not a perfect square, while 441 = 21² and 625 = 25² are.",
+      "keyPoints": [
+        "HCF × LCM = product of the two numbers (holds for exactly two numbers)",
+        "HCF of fractions = HCF(numerators) / LCM(denominators)",
+        "Dividend = Divisor × quotient + Remainder",
+        "If d₂ divides d₁, then N mod d₂ = (remainder when divided by d₁) mod d₂",
+        "Remainder of a^n by a divisor: use the cycle of power-remainders, then (exponent mod cycle length) — e.g. 2^100 ÷ 7 = 2",
+        "Word problems: bells toll together → LCM of intervals; greatest number leaving the same remainder → HCF of the differences",
+        "Perfect squares end only in 0,1,4,5,6,9 — never 2,3,7,8"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF; Remainder Theorem; Perfect Square",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "hcf-lcm",
+        "remainder",
+        "perfect-square"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-fractions-decimals",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Fractions, decimals & recurring decimals",
+      "body": "**Comparing/ordering fractions** — three quick methods:\n\n1. **Decimals:** convert each to a decimal and compare (fastest for a small set).\n2. **Cross-multiplication (two at a time):** a/b vs c/d ⇒ compare a·d with b·c.\n3. **Common denominator:** rewrite over the LCM of denominators, then compare numerators.\n\n*Example:* 3/5, 5/8, 7/12, 11/20 → 0.60, 0.625, 0.583, 0.55 ⇒ ascending **11/20 < 7/12 < 3/5 < 5/8**.\n\n**Recurring decimal → fraction:**\n\n- **Pure recurring** 0.(ab)… = (repeating block)/(as many 9s as digits). E.g. 0.363636… = 36/99 = **4/11**; 0.7̄ = 7/9.\n- **Mixed recurring** 0.a(bc)… = (whole non-recurring+recurring block − non-recurring part)/(9s for recurring digits then 0s for non-recurring). E.g. 0.1(6) = (16−1)/90 = 15/90 = 1/6.\n\n**Terminating vs recurring:** a fraction in lowest terms terminates iff its denominator has only 2s and/or 5s as prime factors.",
+      "keyPoints": [
+        "Compare fractions by decimals, cross-multiplication (a·d vs b·c), or a common denominator",
+        "Pure recurring 0.(block) = block / (as many 9s as digits) — e.g. 0.(36) = 36/99 = 4/11",
+        "Mixed recurring uses 9s for recurring digits then 0s for non-recurring digits in the denominator",
+        "A fraction terminates iff its lowest-term denominator has only prime factors 2 and/or 5"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Fractions; Decimals",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "fractions",
+        "decimals",
+        "recurring"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-counting-special-sums",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Counting terms in a range & factoring power-sums",
+      "body": "**Count of multiples of k in [a, b]** = ⌊b/k⌋ − ⌊(a−1)/k⌋.\n\n*Example:* multiples of 15 (=LCM of 3 & 5) from 17 to 457 → ⌊457/15⌋ − ⌊16/15⌋ = 30 − 1 = **29**.\n\n**Numbers divisible by BOTH x and y** → count multiples of LCM(x, y). Three-digit multiples of 7 = ⌊999/7⌋ − ⌊99/7⌋ = 142 − 14 = **128**.\n\n**AP term count:** in an evenly spaced list a, a+d, …, l the number of terms n = (l − a)/d + 1.\n\n**Prime counting in a range:** just list them — e.g. primes between 100 and 120 are 101, 103, 107, 109, 113 → **5**.\n\n**Factoring a sum of consecutive powers:** pull out the smallest power. aᵐ + aᵐ⁺¹ + … + aᵐ⁺ᵏ = aᵐ(1 + a + a² + … + aᵏ).\n\n*Example:* 6²⁵ + 6²⁶ + 6²⁷ + 6²⁸ = 6²⁵(1 + 6 + 36 + 216) = 6²⁵ × **259**, so 259 (=7×37) is a divisor.\n\n**Trap:** for 'divisible by both', divide the range by the LCM, not by each number separately; and always factor a power-sum before testing divisibility.",
+      "keyPoints": [
+        "Count of multiples of k in [a,b] = ⌊b/k⌋ − ⌊(a−1)/k⌋",
+        "Divisible by both x and y ⇒ count multiples of LCM(x,y)",
+        "AP term count n = (l − a)/d + 1",
+        "Sum of consecutive powers aᵐ+…+aᵐ⁺ᵏ = aᵐ(1+a+…+aᵏ)",
+        "6²⁵+6²⁶+6²⁷+6²⁸ = 6²⁵·259; primes between 100 and 120 are 5 in number"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Counting & Series of Powers",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "counting",
+        "power-sums"
+      ]
+    }
+  ]
+}

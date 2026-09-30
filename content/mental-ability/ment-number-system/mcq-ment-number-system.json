@@ -1,0 +1,724 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Number System",
+  "items": [
+    {
+      "id": "ment-number-system-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "refresher": true,
+      "question": "Which of the following is an irrational number?",
+      "options": [
+        "√16",
+        "22/7",
+        "√7",
+        "0.375"
+      ],
+      "answerIndex": 2,
+      "explanation": "√7 cannot be written as a ratio p/q of integers, so it is irrational; its decimal (2.6457…) never terminates or repeats.\n\n**Why not the others**\n- √16 — equals 4, a whole number (rational).\n- 22/7 — a ratio of integers, hence rational (only an approximation of π, not π itself).\n- 0.375 — a terminating decimal = 3/8, rational.\n\n**Key facts**\n- Rational = expressible as p/q, q≠0 (terminating or recurring decimal).\n- Irrational = non-terminating, non-repeating (√2, √3, √7, π, e).\n- A perfect-square root (√16, √25) is rational; a non-perfect-square root is irrational.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "verified": true,
+      "covers": [
+        "Number classification — natural/whole/integer/rational/irrational/real"
+      ],
+      "tags": [
+        "number-system",
+        "refresher",
+        "irrational"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "refresher": true,
+      "question": "A number is divisible by 9 if:",
+      "options": [
+        "its last digit is 9",
+        "the sum of its digits is divisible by 9",
+        "it is divisible by 3",
+        "its last two digits are divisible by 9"
+      ],
+      "answerIndex": 1,
+      "explanation": "The test for 9 is the digit-sum rule: a number is divisible by 9 exactly when the sum of its digits is divisible by 9 (e.g. 4518 → 4+5+1+8 = 18, divisible by 9).\n\n**Why not the others**\n- its last digit is 9 — irrelevant; 19 ends in 9 but is not divisible by 9.\n- it is divisible by 3 — necessary but not sufficient (e.g. 12 is divisible by 3, not by 9).\n- its last two digits are divisible by 9 — that is not the rule; the 4-test uses last two digits, not the 9-test.\n\n**Key facts**\n| Divisor | Test |\n|---|---|\n| 3 | digit sum divisible by 3 |\n| 9 | digit sum divisible by 9 |\n| 4 | last two digits divisible by 4 |\n| 8 | last three digits divisible by 8 |\n\n*Source: local APPSC Quantitative Reasoning PDF — Divisibility Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "refresher",
+        "divisibility"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "refresher": true,
+      "question": "For any two positive integers, HCF × LCM equals:",
+      "options": [
+        "the sum of the two numbers",
+        "the product of the two numbers",
+        "the difference of the two numbers",
+        "the larger of the two numbers"
+      ],
+      "answerIndex": 1,
+      "explanation": "For any two numbers a and b, HCF(a,b) × LCM(a,b) = a × b. E.g. for 12 and 18: HCF = 6, LCM = 36, and 6 × 36 = 216 = 12 × 18.\n\n**Why not the others**\n- the sum — no such identity links HCF·LCM to a+b.\n- the difference — unrelated to HCF·LCM.\n- the larger number — LCM alone can already exceed the larger number; the product identity is with a×b.\n\n**Key facts**\n- HCF × LCM = product of the two numbers (holds only for **two** numbers, not three).\n- So the fourth quantity is found once the other three are known.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF.*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF",
+      "verified": true,
+      "covers": [
+        "HCF × LCM = product of two numbers"
+      ],
+      "tags": [
+        "number-system",
+        "refresher",
+        "hcf-lcm"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following statements:\n1. Every integer is a rational number.\n2. Every whole number is a natural number.\n3. Zero is a whole number but not a natural number.\nWhich of the statements are correct?",
+      "options": [
+        "1 and 2 only",
+        "1 and 3 only",
+        "2 and 3 only",
+        "1, 2 and 3"
+      ],
+      "answerIndex": 1,
+      "explanation": "Statement 1 is correct — any integer n = n/1, a ratio of integers. Statement 3 is correct — whole numbers are {0,1,2,…} while natural numbers start at 1, so 0 is whole but not natural. Statement 2 is wrong — 0 is a whole number but not a natural number, so not every whole number is natural.\n\n**Why not the others**\n- 1 and 2 only — includes false statement 2 and drops true statement 3.\n- 2 and 3 only — includes false statement 2.\n- 1, 2 and 3 — statement 2 is false, so all-three is wrong.\n\n**Key facts**\n| Set | Members |\n|---|---|\n| Natural (N) | 1, 2, 3, … |\n| Whole (W) | 0, 1, 2, 3, … |\n| Integer (Z) | …, −1, 0, 1, … |\n| Rational (Q) | p/q, q≠0 |\n- Nesting: N ⊂ W ⊂ Z ⊂ Q ⊂ R.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "verified": true,
+      "covers": [
+        "Number classification — natural/whole/integer/rational/irrational/real"
+      ],
+      "tags": [
+        "number-system",
+        "classification",
+        "statement"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following statements:\n1. 1 is neither prime nor composite.\n2. 2 is the only even prime number.\n3. 15 and 21 are co-prime to each other.\nWhich of the statements are correct?",
+      "options": [
+        "1 only",
+        "1 and 2 only",
+        "2 and 3 only",
+        "1, 2 and 3"
+      ],
+      "answerIndex": 1,
+      "explanation": "Statement 1 is correct — 1 has only one factor, so it is neither prime (needs exactly two factors) nor composite (needs more than two). Statement 2 is correct — every other even number is divisible by 2 besides 1 and itself. Statement 3 is wrong — HCF(15, 21) = 3 ≠ 1, so they are NOT co-prime.\n\n**Why not the others**\n- 1 only — drops the true statement 2.\n- 2 and 3 only — statement 3 is false (common factor 3).\n- 1, 2 and 3 — statement 3 is false.\n\n**Key facts**\n- Co-prime ⇔ HCF = 1 (e.g. 15 & 28). 15 = 3×5, 21 = 3×7 share the factor 3.\n- Prime = exactly two factors; smallest prime = 2; 1 is a unit, not prime.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "verified": true,
+      "covers": [
+        "Prime, composite & co-prime identification"
+      ],
+      "tags": [
+        "number-system",
+        "prime",
+        "coprime"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "If the number 62_35 (a five-digit number with one missing digit) is divisible by 11, the missing digit is:",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "Divisibility by 11 uses the alternating digit sum. For 6 2 x 3 5, from the right: (5 + x + 6) − (3 + 2) = (11 + x) − 5 = 6 + x. This must be a multiple of 11, so 6 + x = 11 ⇒ x = 5. Check: 62535 ÷ 11 = 5685 exactly.\n\n**Why not the others**\n- 3 — gives alternating sum 9, not a multiple of 11.\n- 4 — gives 10, not a multiple of 11.\n- 6 — gives 12, not a multiple of 11.\n\n**Key facts**\n- Rule of 11: (sum of digits in odd places) − (sum in even places) is 0 or a multiple of 11.\n- Positions are counted from the right (unit digit = 1st, odd place).\n\n*Source: local APPSC Quantitative Reasoning PDF — Divisibility Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "divisibility",
+        "eleven"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The total number of factors of 360 is:",
+      "options": [
+        "12",
+        "18",
+        "24",
+        "20"
+      ],
+      "answerIndex": 2,
+      "explanation": "Prime factorise: 360 = 2³ × 3² × 5¹. The number of factors = product of (exponent + 1) = (3+1)(2+1)(1+1) = 4 × 3 × 2 = 24.\n\n**Why not the others**\n- 12 — comes from missing a factor, e.g. using (3+1)(2+1) and dropping the 5-term.\n- 18 — that is the count for 180 = 2²×3²×5, i.e. (2+1)(2+1)(1+1); a common mix-up.\n- 20 — no valid exponent combination for 360 gives 20.\n\n**Key facts**\n- If N = p^a · q^b · r^c, number of factors = (a+1)(b+1)(c+1).\n- Count includes 1 and N itself.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factors.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "verified": true,
+      "covers": [
+        "Number of factors via prime factorisation"
+      ],
+      "tags": [
+        "number-system",
+        "factors"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many odd factors does 1260 have?",
+      "options": [
+        "6",
+        "12",
+        "18",
+        "24"
+      ],
+      "answerIndex": 1,
+      "explanation": "1260 = 2² × 3² × 5 × 7. Odd factors ignore the factor 2, so count factors of the odd part 3² × 5 × 7: (2+1)(1+1)(1+1) = 3 × 2 × 2 = 12.\n\n**Why not the others**\n- 6 — using only (2+1)(1+1), dropping the 7-term.\n- 18 — that is the count for a different exponent set, not the odd part of 1260.\n- 24 — this is closer to the TOTAL factor count: (2+1)(2+1)(1+1)(1+1) = 36 total, not 24; the trap is confusing odd-count with total-count.\n\n**Key facts**\n- Odd factors: drop all powers of 2, then apply (e+1) product to the remaining primes.\n- Even factors = total factors − odd factors.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factors.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "verified": true,
+      "covers": [
+        "Number of odd/even factors"
+      ],
+      "tags": [
+        "number-system",
+        "odd-factors"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The unit digit of 3^47 is:",
+      "options": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "answerIndex": 2,
+      "explanation": "The unit digit of powers of 3 cycles with period 4: 3, 9, 7, 1. Divide the power by 4: 47 ÷ 4 leaves remainder 3, so take the 3rd term of the cycle (3, 9, **7**, 1) = 7.\n\n**Why not the others**\n- 1 — this is the 4th term (remainder 0, i.e. powers like 3⁴, 3⁸).\n- 3 — the 1st term (remainder 1, powers like 3¹, 3⁵).\n- 9 — the 2nd term (remainder 2, powers like 3²).\n\n**Key facts**\n| Base | Cycle of unit digit |\n|---|---|\n| 2 | 2, 4, 8, 6 |\n| 3 | 3, 9, 7, 1 |\n| 7 | 7, 9, 3, 1 |\n| 8 | 8, 4, 2, 6 |\n- Shortcut: unit digit depends on (power mod 4); if remainder 0 use the 4th term.\n\n*Source: local APPSC Quantitative Reasoning PDF — Unit Digit.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "verified": true,
+      "covers": [
+        "Unit digit — cyclicity of powers"
+      ],
+      "tags": [
+        "number-system",
+        "unit-digit",
+        "cyclicity"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The unit digit of 17^23 + 24^24 is:",
+      "options": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "answerIndex": 3,
+      "explanation": "Take each term's unit digit. 17^23: base ends in 7 (cycle 7,9,3,1); 23 mod 4 = 3 ⇒ 3rd term = 3. 24^24: base ends in 4; a power of 4 with an EVEN exponent ends in 6. Add: 3 + 6 = 9, so the unit digit is 9.\n\n**Why not the others**\n- 1 — would need the two unit digits to sum to 11 or 1; they sum to 9.\n- 3 — that is the unit digit of 17^23 alone, ignoring the second term.\n- 7 — arises if 24^24 is mistakenly given unit digit 4 (odd-power case); its exponent is even, giving 6.\n\n**Key facts**\n- Only unit digits of the bases matter for the unit digit of a power.\n- Base ending in 4: odd power → 4, even power → 6. Base ending in 6/5/1/0 → unchanged.\n\n*Source: local APPSC Quantitative Reasoning PDF — Unit Digit.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "verified": true,
+      "covers": [
+        "Unit digit of an expression (sum/product of powers)"
+      ],
+      "tags": [
+        "number-system",
+        "unit-digit",
+        "expression"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The number of trailing zeros at the end of 200! is:",
+      "options": [
+        "49",
+        "40",
+        "48",
+        "50"
+      ],
+      "answerIndex": 0,
+      "explanation": "A trailing zero needs a pair (2 × 5); 5s are scarcer, so count factors of 5 in 200!: ⌊200/5⌋ + ⌊200/25⌋ + ⌊200/125⌋ = 40 + 8 + 1 = 49 (⌊200/625⌋ = 0). So 49 trailing zeros.\n\n**Why not the others**\n- 40 — counts only ⌊200/5⌋ and forgets the extra 5s in multiples of 25 and 125.\n- 48 — omits the ⌊200/125⌋ = 1 contribution.\n- 50 — over-counts by one beyond the correct 49.\n\n**Key facts**\n- Trailing zeros in n! = ⌊n/5⌋ + ⌊n/5²⌋ + ⌊n/5³⌋ + …\n- Stop when 5^k > n. Factors of 2 always exceed factors of 5, so 5 is the limiting prime.\n\n*Source: local APPSC Quantitative Reasoning PDF — Number of Zeros.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Number of Zeros",
+      "verified": true,
+      "covers": [
+        "Trailing zeros in a factorial"
+      ],
+      "tags": [
+        "number-system",
+        "trailing-zeros",
+        "factorial"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The number of trailing zeros in the product 15^50 × 20^40 × 25^30 is:",
+      "options": [
+        "70",
+        "80",
+        "120",
+        "150"
+      ],
+      "answerIndex": 1,
+      "explanation": "Count factors of 2 and 5 and take the minimum. Prime factors: 15 = 3·5, 20 = 2²·5, 25 = 5². Factors of 5 = 50(from 15^50) + 40(from 20^40) + 60(from 25^30) = 150. Factors of 2 = 80 (only 20^40 gives 2²·⁴⁰ = 80). Trailing zeros = min(80, 150) = 80.\n\n**Why not the others**\n- 70 — an undercount of the 2s; 20^40 supplies 2 × 40 = 80.\n- 120 — not equal to either total; no valid pairing gives 120.\n- 150 — that is the count of 5s alone; but 2s (80) are the limiting factor.\n\n**Key facts**\n- Trailing zeros = min(total powers of 2, total powers of 5).\n- 20^40 = 2^80 · 5^40; 15^50 = 3^50 · 5^50; 25^30 = 5^60.\n\n*Source: local APPSC Quantitative Reasoning PDF — Number of Zeros.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Number of Zeros",
+      "verified": true,
+      "covers": [
+        "Trailing zeros in a product/power"
+      ],
+      "tags": [
+        "number-system",
+        "trailing-zeros",
+        "product"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "A number when divided by 899 leaves a remainder of 63. What is the remainder when the same number is divided by 29?",
+      "options": [
+        "5",
+        "7",
+        "3",
+        "29"
+      ],
+      "answerIndex": 0,
+      "explanation": "899 = 29 × 31, so 29 divides 899. Write N = 899q + 63 = 29(31q) + 63. The 29(31q) part is divisible by 29, so the remainder comes from 63: 63 = 29 × 2 + 5, giving remainder 5.\n\n**Why not the others**\n- 7 — would require 63 = 29k + 7, but 63 − 7 = 56 is not a multiple of 29.\n- 3 — 63 − 3 = 60 is not a multiple of 29.\n- 29 — a remainder must be less than the divisor 29, so 29 is impossible.\n\n**Key facts**\n- Dividend = Divisor × quotient + Remainder.\n- If divisor d₂ divides d₁, then (N mod d₂) = (remainder mod d₂), since the d₁-multiple part vanishes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Remainder Theorem.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Remainder Theorem",
+      "verified": true,
+      "covers": [
+        "Remainder — divisor as a multiple / successive division"
+      ],
+      "tags": [
+        "number-system",
+        "remainder"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Which of the following fractions is the largest?",
+      "options": [
+        "3/4",
+        "5/7",
+        "7/9",
+        "11/14"
+      ],
+      "answerIndex": 3,
+      "explanation": "Convert to decimals: 3/4 = 0.750, 5/7 ≈ 0.714, 7/9 ≈ 0.778, 11/14 ≈ 0.786. The largest is 11/14 ≈ 0.786.\n\n**Why not the others**\n- 3/4 = 0.750 — larger than 5/7 but smaller than 7/9 and 11/14.\n- 5/7 ≈ 0.714 — the smallest of the four.\n- 7/9 ≈ 0.778 — close second, just below 11/14.\n\n**Key facts**\n- Compare fractions by converting to decimals, or cross-multiply pairs (a/b vs c/d ⇒ compare a·d and b·c).\n- Common denominator (LCM of 4,7,9,14 = 252) also works: 189, 180, 196, 198 → 198 is largest.\n\n*Source: local APPSC Quantitative Reasoning PDF — Fractions.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Fractions",
+      "verified": true,
+      "covers": [
+        "Fractions & decimals — comparison and ordering"
+      ],
+      "tags": [
+        "number-system",
+        "fractions",
+        "comparison"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The fraction equal to the recurring decimal 0.363636… is:",
+      "options": [
+        "4/11",
+        "9/25",
+        "36/90",
+        "3/8"
+      ],
+      "answerIndex": 0,
+      "explanation": "For a purely recurring decimal, the fraction = (repeating block)/(as many 9s as digits in the block). The block '36' has 2 digits, so 0.363636… = 36/99 = 4/11 (÷9).\n\n**Why not the others**\n- 9/25 = 0.36 — a TERMINATING decimal, not the recurring 0.3636….\n- 36/90 = 0.4 — wrong; 90 would apply to a mixed recurring form, not 0.36 recurring.\n- 3/8 = 0.375 — unrelated terminating value.\n\n**Key facts**\n- Pure recurring: 0.(ab)… = ab/99; 0.(a)… = a/9.\n- Mixed recurring 0.a(bc)… uses 9s for recurring digits and 0s for non-recurring digits in the denominator.\n\n*Source: local APPSC Quantitative Reasoning PDF — Decimals.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Decimals",
+      "verified": true,
+      "covers": [
+        "Recurring decimal to fraction conversion"
+      ],
+      "tags": [
+        "number-system",
+        "recurring-decimal"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Which of the following numbers CANNOT be a perfect square?",
+      "options": [
+        "441",
+        "625",
+        "1444",
+        "1298"
+      ],
+      "answerIndex": 3,
+      "explanation": "A perfect square never ends in 2, 3, 7 or 8. 1298 ends in 8, so it cannot be a perfect square. The other three are perfect squares: 441 = 21², 625 = 25², 1444 = 38².\n\n**Why not the others**\n- 441 — = 21², ends in 1 (a valid perfect-square unit digit).\n- 625 — = 25², ends in 5.\n- 1444 — = 38², ends in 4.\n\n**Key facts**\n- Perfect squares end only in 0, 1, 4, 5, 6, 9 — never 2, 3, 7, 8.\n- Also, a perfect square has an odd number of digits in its digital-root set {1,4,7,9}; the unit-digit test is the fastest elimination.\n\n*Source: local APPSC Quantitative Reasoning PDF — Perfect Square.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Perfect Square",
+      "verified": true,
+      "covers": [
+        "Perfect square — unit-digit property test"
+      ],
+      "tags": [
+        "number-system",
+        "perfect-square"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following statements:\n1. A number divisible by 12 is divisible by both 3 and 4.\n2. If a number is divisible by 4 and by 6, it must be divisible by 24.\n3. Every number divisible by 8 is divisible by 4.\nWhich of the statements are correct?",
+      "options": [
+        "1 and 2 only",
+        "1, 2 and 3",
+        "1 and 3 only",
+        "1 only"
+      ],
+      "answerIndex": 2,
+      "explanation": "Statement 1 is correct — 12 = 3 × 4 with 3 and 4 co-prime, so divisibility by 12 forces divisibility by both. Statement 3 is correct — 8 = 4 × 2, so any multiple of 8 is a multiple of 4. Statement 2 is wrong — e.g. 12 is divisible by 4 and 6 but not by 24; divisibility by 4 and 6 only guarantees divisibility by LCM(4,6) = 12.\n\n**Why not the others**\n- 1 and 2 only — statement 2 fails (LCM of 4 and 6 is 12, not 24).\n- 1, 2 and 3 — includes the false statement 2.\n- 1 only — drops the true statement 3.\n\n**Key facts**\n- Divisibility by a·b (a, b co-prime) ⇔ divisible by both a and b.\n- Divisible by m and n ⇒ divisible by LCM(m, n), not necessarily by m·n.\n\n*Source: local APPSC Quantitative Reasoning PDF — Divisibility Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "divisibility",
+        "statement"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Four bells toll at intervals of 6, 8, 12 and 18 seconds respectively. If they toll together at the start, after how many seconds will they toll together again?",
+      "options": [
+        "36",
+        "72",
+        "144",
+        "48"
+      ],
+      "answerIndex": 1,
+      "explanation": "The bells coincide again after the LCM of the intervals. 6 = 2·3, 8 = 2³, 12 = 2²·3, 18 = 2·3²; LCM = 2³ · 3² = 8 × 9 = **72 seconds**.\n\n**Why not the others**\n- 36 — LCM of only 6, 12, 18; it is not a multiple of 8.\n- 144 — a common multiple but not the LEAST one.\n- 48 — a multiple of 6, 8, 12 but not of 18.\n\n**Key facts**\n- 'Toll/ring together again' → LCM of the intervals.\n- LCM takes the highest power of each prime: 2³ and 3² → 72.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF.*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "lcm",
+        "bells"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "A number, when successively divided by 5 and then by 4, leaves remainders 2 and 1 respectively, the final quotient being 3. What is the number?",
+      "options": [
+        "57",
+        "62",
+        "72",
+        "67"
+      ],
+      "answerIndex": 3,
+      "explanation": "Work backwards. The second division: quotient 3, divisor 4, remainder 1 → first quotient = 4×3 + 1 = 13. The first division: quotient 13, divisor 5, remainder 2 → number = 5×13 + 2 = **67**. Check: 67 ÷ 5 = 13 r 2; 13 ÷ 4 = 3 r 1. ✓\n\n**Why not the others**\n- 57 — gives 57 ÷ 5 = 11 r 2, but 11 ÷ 4 = 2 r 3, not r 1.\n- 62 — 62 ÷ 5 = 12 r 2, then 12 ÷ 4 = 3 r 0, not r 1.\n- 72 — 72 ÷ 5 = 14 r 2, then 14 ÷ 4 = 3 r 2, not r 1.\n\n**Key facts**\n- Successive division: the quotient of one step becomes the dividend of the next.\n- Reconstruct upward: dividend = divisor × quotient + remainder at each stage.\n\n*Source: local APPSC Quantitative Reasoning PDF — Remainder Theorem (successive division).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Remainder Theorem",
+      "verified": true,
+      "covers": [
+        "Remainder — divisor as a multiple / successive division"
+      ],
+      "tags": [
+        "number-system",
+        "successive-division"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 7^95?",
+      "options": [
+        "3",
+        "7",
+        "9",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "Unit digits of powers of 7 cycle with period 4: 7, 9, 3, 1. Since 95 ÷ 4 leaves remainder 3, take the 3rd term of the cycle = **3**.\n\n**Why not the others**\n- 7 — the 1st term (remainder 1, e.g. 7¹, 7⁵).\n- 9 — the 2nd term (remainder 2, e.g. 7²).\n- 1 — the 4th term (remainder 0, e.g. 7⁴, 7⁸).\n\n**Key facts**\n| Base | Unit-digit cycle |\n|---|---|\n| 7 | 7, 9, 3, 1 |\n- Shortcut: unit digit depends on (power mod 4); remainder 3 → 3rd term.\n\n*Source: local APPSC Quantitative Reasoning PDF — Unit Digit.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "verified": true,
+      "covers": [
+        "Unit digit — cyclicity of powers"
+      ],
+      "tags": [
+        "number-system",
+        "unit-digit",
+        "cyclicity"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many factors does 720 have?",
+      "options": [
+        "24",
+        "28",
+        "30",
+        "36"
+      ],
+      "answerIndex": 2,
+      "explanation": "Prime factorise: 720 = 2⁴ × 3² × 5¹. Number of factors = (4+1)(2+1)(1+1) = 5 × 3 × 2 = **30**.\n\n**Why not the others**\n- 24 — uses (3+1)(2+1)(1+1), mis-reading the power of 2 as 3.\n- 28 — no valid exponent combination for 720 yields 28.\n- 36 — uses (4+1)(2+1)(1+1) plus an extra factor, or wrong exponents.\n\n**Key facts**\n- If N = pᵃ·qᵇ·rᶜ, number of factors = (a+1)(b+1)(c+1), counting 1 and N.\n- 720 = 2⁴·3²·5 → 5·3·2 = 30.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factors.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "verified": true,
+      "covers": [
+        "Number of factors via prime factorisation"
+      ],
+      "tags": [
+        "number-system",
+        "factors"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Which of the following fractions is the SMALLEST?",
+      "options": [
+        "5/8",
+        "7/12",
+        "3/5",
+        "11/20"
+      ],
+      "answerIndex": 3,
+      "explanation": "Convert to decimals: 5/8 = 0.625, 7/12 ≈ 0.583, 3/5 = 0.600, 11/20 = 0.550. The smallest is **11/20 = 0.55**.\n\n**Why not the others**\n- 5/8 = 0.625 — the largest of the four.\n- 7/12 ≈ 0.583 — larger than 11/20.\n- 3/5 = 0.600 — larger than both 7/12 and 11/20.\n\n**Key facts**\n- Compare fractions by decimals, or by a common denominator (LCM of 8,12,5,20 = 120): 75, 70, 72, 66 → 66 is smallest.\n- Cross-multiplication also works for pairwise comparison.\n\n*Source: local APPSC Quantitative Reasoning PDF — Fractions.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Fractions",
+      "verified": true,
+      "covers": [
+        "Fractions & decimals — comparison and ordering"
+      ],
+      "tags": [
+        "number-system",
+        "fractions",
+        "comparison"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following statements:\n1. There are 8 prime numbers between 1 and 20.\n2. 91 is a prime number.\n3. Two consecutive natural numbers are always co-prime.\nWhich of the statements are correct?",
+      "options": [
+        "1 and 2 only",
+        "1 and 3 only",
+        "2 and 3 only",
+        "1, 2 and 3"
+      ],
+      "answerIndex": 1,
+      "explanation": "Statement 1 is correct — the primes between 1 and 20 are 2, 3, 5, 7, 11, 13, 17, 19 (eight in all). Statement 3 is correct — consecutive naturals differ by 1, whose only common factor is 1, so their HCF is 1. Statement 2 is wrong — 91 = 7 × 13, so it is composite.\n\n**Why not the others**\n- 1 and 2 only — 91 is not prime (7 × 13), so statement 2 fails.\n- 2 and 3 only — statement 2 is false.\n- 1, 2 and 3 — includes the false statement 2.\n\n**Key facts**\n- Co-prime ⇔ HCF = 1; consecutive integers n, n+1 always satisfy this.\n- 91 = 7 × 13 is a classic 'looks prime but isn't' trap.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "verified": true,
+      "covers": [
+        "Prime, composite & co-prime identification"
+      ],
+      "tags": [
+        "number-system",
+        "prime",
+        "coprime"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the greatest number that divides 43, 91 and 183, leaving the same remainder in each case?",
+      "options": [
+        "4",
+        "8",
+        "9",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "The required number divides the differences of the given numbers exactly. Differences: 91 − 43 = 48, 183 − 91 = 92, 183 − 43 = 140. The greatest such divisor is HCF(48, 92, 140) = **4**.\n\n**Why not the others**\n- 8 — divides 48 but not 92 or 140 (both are 4 mod 8).\n- 9 — divides none of the three differences.\n- 12 — divides 48 but not 92.\n\n**Key facts**\n- 'Greatest number leaving the SAME remainder' → HCF of the pairwise differences.\n- HCF(48, 92, 140) = 4; indeed 43, 91, 183 each leave remainder 3 on division by 4.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (greatest divisor).*",
+      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "hcf",
+        "greatest-divisor"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the remainder when 2^100 is divided by 7?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "Find the cycle of remainders of powers of 2 mod 7: 2¹ = 2, 2² = 4, 2³ = 8 ≡ 1 (mod 7). The cycle length is 3. Now 100 mod 3 = 1, so 2^100 ≡ 2^1 ≡ **2** (mod 7).\n\n**Why not the others**\n- 1 — this is 2³ ≡ 1; it would need 100 to be a multiple of 3, but 100 mod 3 = 1.\n- 4 — this is 2² ≡ 4; it would need 100 mod 3 = 2, but the remainder is 1.\n- 5 — 5 never appears in the cycle (2, 4, 1) of powers of 2 mod 7.\n\n**Key facts**\n| Step | Value |\n|---|---|\n| Cycle of 2^n mod 7 | 2, 4, 1 (length 3) |\n| 100 mod 3 | 1 |\n| Answer | 2^1 ≡ 2 |\n- Method: list power-remainders to get the cycle length c, then compute (exponent mod c).\n\n*Source: local APPSC Quantitative Reasoning PDF — Remainder Theorem (remainder of powers).*",
+      "source": "local APPSC Quantitative Reasoning PDF — Remainder Theorem",
+      "verified": true,
+      "covers": [
+        "Remainder of powers — cyclicity/pattern method"
+      ],
+      "tags": [
+        "number-system",
+        "remainder",
+        "powers",
+        "cyclicity"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many numbers from 17 to 457 (both inclusive) are divisible by both 3 and 5?",
+      "options": [
+        "29",
+        "30",
+        "28",
+        "31"
+      ],
+      "answerIndex": 0,
+      "explanation": "Divisible by both 3 and 5 means divisible by LCM(3,5)=15. Count of multiples of 15 in [17,457] = ⌊457/15⌋ − ⌊16/15⌋ = 30 − 1 = 29.\n\n**Why not the others**\n- 30 — ⌊457/15⌋ alone, forgetting to drop the multiple (15) below 17.\n- 28 — over-subtracts one valid term.\n- 31 — counts a multiple beyond 457.\n\n**Key facts**\n- Count of multiples of k in [a,b] = ⌊b/k⌋ − ⌊(a−1)/k⌋.\n- 'Divisible by both x and y' ⇒ use LCM(x,y).\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Counting multiples / terms in a range (AP count)"
+      ],
+      "tags": [
+        "number-system",
+        "counting",
+        "multiples"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many three-digit numbers are exactly divisible by 7?",
+      "options": [
+        "128",
+        "127",
+        "126",
+        "142"
+      ],
+      "answerIndex": 0,
+      "explanation": "Three-digit numbers run 100–999. Multiples of 7 = ⌊999/7⌋ − ⌊99/7⌋ = 142 − 14 = 128.\n\n**Why not the others**\n- 127 — off-by-one from mis-counting an endpoint.\n- 126 — under-counts by two.\n- 142 — ⌊999/7⌋ alone, without subtracting the two-digit multiples.\n\n**Key facts**\n- Count of multiples of k up to N = ⌊N/k⌋.\n- In a range [a,b]: ⌊b/k⌋ − ⌊(a−1)/k⌋.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Counting multiples / terms in a range (AP count)"
+      ],
+      "tags": [
+        "number-system",
+        "counting",
+        "multiples"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The sum 6²⁵ + 6²⁶ + 6²⁷ + 6²⁸ is exactly divisible by:",
+      "options": [
+        "257",
+        "258",
+        "259",
+        "260"
+      ],
+      "answerIndex": 2,
+      "explanation": "Factor out the smallest power: 6²⁵ + 6²⁶ + 6²⁷ + 6²⁸ = 6²⁵(1 + 6 + 36 + 216) = 6²⁵ × 259. So 259 (= 7 × 37) divides the sum.\n\n**Why not the others**\n- 257 — a prime, but the bracket totals 259, not 257.\n- 258 — 1+6+36+216 = 259, not 258.\n- 260 — off by one from the correct bracket sum.\n\n**Key facts**\n- aᵐ + aᵐ⁺¹ + … = aᵐ(1 + a + a² + …).\n- 1 + 6 + 36 + 216 = 259.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Factoring a sum of consecutive powers to find a divisor"
+      ],
+      "tags": [
+        "number-system",
+        "power-sum",
+        "divisibility"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The expression 3⁴ + 3⁵ + 3⁶ is divisible by:",
+      "options": [
+        "13",
+        "11",
+        "7",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "Take out 3⁴: 3⁴ + 3⁵ + 3⁶ = 3⁴(1 + 3 + 9) = 3⁴ × 13. So the sum is divisible by 13.\n\n**Why not the others**\n- 11 — the bracket 1+3+9 = 13, not a multiple of 11.\n- 7 — 13 is not a multiple of 7.\n- 5 — the sum ends in 3⁴·13 = 81·13 = 1053, not divisible by 5.\n\n**Key facts**\n- Factor the least power first: 3⁴(1+3+9).\n- 1 + 3 + 9 = 13.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Factoring a sum of consecutive powers to find a divisor"
+      ],
+      "tags": [
+        "number-system",
+        "power-sum",
+        "divisibility"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-30",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The mixed recurring decimal 0.2454545… expressed as a fraction in lowest terms is:",
+      "options": [
+        "27/110",
+        "24/99",
+        "245/990",
+        "5/22"
+      ],
+      "answerIndex": 0,
+      "explanation": "For a mixed recurring decimal, numerator = (whole non-recurring+recurring block) − (non-recurring part); denominator = one 9 per recurring digit followed by one 0 per non-recurring digit. Here non-recurring digit is '2', recurring block '45': (245 − 2)/990 = 243/990 = 27/110.\n\n**Why not the others**\n- 24/99 — treats it as purely recurring 0.24̄, ignoring the leading non-recurring 2.\n- 245/990 — forgets to subtract the non-recurring part (245 − 2 = 243).\n- 5/22 = 0.2272… — a different value.\n\n**Key facts**\n- Mixed recurring 0.a(bc)… = (abc − a)/990.\n- 243/990 simplifies by 9 to 27/110.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
+      "verified": true,
+      "covers": [
+        "Recurring decimal to fraction conversion"
+      ],
+      "tags": [
+        "number-system",
+        "recurring-decimal",
+        "mixed"
+      ]
+    }
+  ]
+}

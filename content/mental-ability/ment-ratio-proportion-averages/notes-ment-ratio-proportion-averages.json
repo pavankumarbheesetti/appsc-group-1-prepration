@@ -1,0 +1,107 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Ratio, Proportion & Averages",
+  "items": [
+    {
+      "id": "ment-ratio-proportion-averages-note-ratios",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Ratios — simplify, combine, compound",
+      "body": "A **ratio** a : b compares two like quantities; simplify by dividing both terms by their HCF.\n\n**Combining a : b and b : c.** Make the common term equal (its LCM), then read a : b : c directly.\n\n| Operation | Rule |\n|---|---|\n| Simplify | divide both terms by HCF |\n| Combine (a:b, b:c) | scale so b matches → a : b : c |\n| Compound ratio | (a×c×e) : (b×d×f) |\n| Mixed ratio of x:y & P:Q | Px : Qy |\n\n**Worked example.** a : b = 2 : 3, b : c = 4 : 5. LCM of b-terms (3, 4) = 12 → a : b = 8 : 12, b : c = 12 : 15, so a : b : c = 8 : 12 : 15.\n\n**Common trap:** stacking terms (2 : 3 : 5) without equalising the shared term.",
+      "keyPoints": [
+        "Simplify a ratio by dividing both terms by their HCF.",
+        "To combine a:b and b:c, scale each so the common term b matches (use its LCM), then read a:b:c.",
+        "Compound ratio of a:b, c:d, e:f = ace : bdf (antecedents over consequents).",
+        "Mixed ratio of x:y and P:Q is Px : Qy.",
+        "A ratio has no units and compares like quantities only."
+      ],
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions",
+      "verified": true
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-proportion",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Proportion — direct, inverse & the proportionals",
+      "body": "A **proportion** states a : b = c : d, so product of extremes = product of means (ad = bc).\n\n**Direct proportion** (x ∝ y): x/y constant — more → more. **Inverse proportion** (x ∝ 1/y): xy constant — more → less (e.g. men × days).\n\n| Term | Definition | Formula |\n|---|---|---|\n| Third proportional to a, b | a : b = b : c | c = b²/a |\n| Fourth proportional to a, b, c | a : b = c : d | d = bc/a |\n| Mean proportional of a, b | a : x = x : b | x = √(ab) |\n\n**Componendo & dividendo:** if a/b = c/d then (a+b)/(a−b) = (c+d)/(c−d) — turns a (sum):(difference) ratio into the base ratio fast.\n\n**Worked example.** (m+n):(m−n) = 7:3 ⇒ m/n = (7+3)/(7−3) = 10/4 = 5/2, so m : n = 5 : 2.\n\n**Common trap:** using b²/a (third proportional) when the question asks the fourth proportional bc/a, or vice-versa.",
+      "keyPoints": [
+        "Proportion a:b = c:d ⇒ ad = bc (extremes product = means product).",
+        "Direct proportion: x/y constant (more → more); inverse: xy constant (more → less).",
+        "Third proportional to a, b = b²/a; fourth proportional to a, b, c = bc/a.",
+        "Mean proportional (geometric mean) between a and b = √(ab).",
+        "Componendo & dividendo: a/b = c/d ⇒ (a+b)/(a−b) = (c+d)/(c−d)."
+      ],
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Direct/Inverse Proportion, Third/Fourth/Mean Proportional, Componendo-Dividendo",
+      "verified": true
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-partnership",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Partnership — sharing profit",
+      "body": "Profit is shared in the ratio of each partner's **capital × time** invested.\n\nProfit ratio = C₁T₁ : C₂T₂ : … ; each partner's share = (their term ÷ sum of terms) × total profit.\n\n**Worked example.** A: ₹5000 for 12 months, B: ₹6000 for 8 months. Ratio = 60000 : 48000 = 5 : 4. On ₹5400 profit, A gets 5/9 × 5400 = ₹3000, B gets ₹2400.\n\n**Common trap:** using only the capitals (5000 : 6000) when the investment periods differ — always multiply by time.",
+      "keyPoints": [
+        "Profit-sharing ratio = capital × time for each partner.",
+        "Each share = (partner's ratio term / total of terms) × total profit.",
+        "Equal periods → ratio reduces to just the capitals.",
+        "A 'sleeping' vs 'working' partner distinction does not change the capital×time rule unless a salary is stated."
+      ],
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Partnership",
+      "verified": true
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-averages",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Averages — basic, combined & change on a swap",
+      "body": "**Average** = (sum of observations) ÷ (number of observations); rearranged, **total = average × count**.\n\n**Consecutive / equally-spaced numbers:** average = middle term = (first + last)/2.\n\n**Change on shift/scale:** add x to every value → average rises by x; multiply every value by x → average multiplies by x.\n\n**Combined (weighted) mean:** (n₁x̄₁ + n₂x̄₂)/(n₁ + n₂) — never just the mean of two means when the groups differ in size.\n\n**Inclusion / replacement.** New total = old total ± change; equate to new-count × new-average.\n\n**Worked example (16th innings).** Old average x over 15 innings; scoring 85 raises it by 3: 15x + 85 = 16(x+3) ⇒ x = 37, new average = 40.\n\n**Common trap:** averaging two averages while ignoring unequal group sizes.",
+      "keyPoints": [
+        "Average = sum ÷ count; total = average × count (used to back-solve a missing term).",
+        "Average of consecutive/equally-spaced numbers = middle term = (first + last)/2.",
+        "Combined mean = (n₁x̄₁ + n₂x̄₂)/(n₁ + n₂), weighted by group size.",
+        "Add x to all values → average +x; multiply all by x → average ×x.",
+        "Inclusion/replacement: new total = new count × new average — equate to old total ± change."
+      ],
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average, Combined Mean",
+      "verified": true
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-mixtures",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Mixtures & alligation (incl. replacement)",
+      "body": "**Rule of alligation** gives the ratio to mix two items of different value/price so the blend hits a target mean:\n\n> quantity(cheaper) : quantity(dearer) = (dearer − mean) : (mean − cheaper)\n\nThe mean always lies **between** the two component values.\n\n**Heads-and-legs** is alligation in disguise: with heads = total animals and each cow/goat adding 2 legs over a 2-legged bird, cows = (legs − 2×heads)/2.\n\n**Successive replacement** of a liquid: after n draw-and-replace steps, remaining pure liquid = **initial × (1 − r/T)ⁿ** (r drawn each time, T total volume).\n\n**Worked example.** 20 L milk, draw 4 L and top up with water, twice: milk = 20×(1−4/20)² = 20×0.64 = 12.8 L.\n\n**Common trap:** subtracting the drawn amount linearly each time instead of applying the (1−r/T)ⁿ fraction.",
+      "keyPoints": [
+        "Alligation: qty(cheap)/qty(dear) = (dear − mean)/(mean − cheap).",
+        "The mean (mixture) value always lies between the two component values.",
+        "Heads & legs: cows = (legs − 2×heads)/2, chickens = heads − cows.",
+        "Successive replacement: milk left = initial × (1 − r/T)ⁿ after n steps.",
+        "Each replacement removes the same fraction of whatever remains, not a fixed amount."
+      ],
+      "source": "local APPSC Group-1 Quantitative Reasoning PDF — Alligation, Replacement N Times",
+      "verified": true
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-average-first-n-series",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Average of the first n odd / even natural numbers",
+      "body": "Two results save time on 'average of the first n …' items:\n\n- **First n ODD natural numbers** (1, 3, 5, …): sum = n², so the average = n²/n = **n**.\n- **First n EVEN natural numbers** (2, 4, 6, …): sum = n(n+1), so the average = **n + 1**.\n- **First n natural numbers** (1, 2, …, n): average = (n+1)/2.\n\n*Examples:* average of the first 120 odd naturals = 120; average of the first 25 even naturals = 26; average of the first 50 naturals = 25.5.\n\n**Why:** any evenly spaced list (an AP) has average = (first + last)/2 — the odd/even results are just this shortcut applied.\n\n**Trap:** the ODD average is n, but the EVEN average is n+1 — do not swap them.",
+      "keyPoints": [
+        "Average of first n odd naturals = n (sum = n²)",
+        "Average of first n even naturals = n+1 (sum = n(n+1))",
+        "Average of first n naturals = (n+1)/2",
+        "General AP average = (first + last)/2",
+        "Odd→n, even→n+1: keep them distinct"
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Averages of Series",
+      "verified": true,
+      "tags": [
+        "averages",
+        "series",
+        "natural-numbers"
+      ]
+    }
+  ]
+}

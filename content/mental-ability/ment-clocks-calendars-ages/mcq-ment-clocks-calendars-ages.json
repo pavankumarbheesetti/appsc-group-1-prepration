@@ -1,0 +1,612 @@
+{
+  "kind": "mcq",
+  "subjectCode": "MENT",
+  "topic": "Clocks, Calendars & Ages",
+  "items": [
+    {
+      "id": "ment-clocks-calendars-ages-mcq-1",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "refresher": true,
+      "question": "What is the angle between the hour and minute hands of a clock at 3:40?",
+      "options": [
+        "130°",
+        "150°",
+        "120°",
+        "140°"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use angle = |30H − 5.5M| = |30×3 − 5.5×40| = |90 − 220| = 130°.\n\n**Why not the others**\n- 150° — forgets the minute-hand's pull on the hour hand (using 5.5 wrongly as 6, or 30×5).\n- 120° — comes from |30×3 − 6×40|/… a common wrong formula using 6M for the hour term.\n- 140° — a slip of taking 30×3 − 5×40 = −110 then mis-adding.\n\n**Key facts**\n- Angle = |30H − 5.5M| degrees, where H = hour, M = minutes; take the value ≤ 180°.\n- 30° = one hour mark; the minute hand moves 5.5° per minute relative to the hour hand.\n\n*Source: local APPSC Logical Reasoning PDF — Clock.*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — angle between the hands (|30H − 5.5M|)"
+      ],
+      "tags": [
+        "clock",
+        "refresher",
+        "angle"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-2",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "refresher": true,
+      "question": "Which of the following is a leap year?",
+      "options": [
+        "1900",
+        "2010",
+        "2100",
+        "2000"
+      ],
+      "answerIndex": 3,
+      "explanation": "A century year is a leap year only if divisible by 400. 2000 ÷ 400 = 5, so **2000** is a leap year.\n\n**Why not the others**\n- 1900 — divisible by 100 but not by 400, so it is NOT a leap year.\n- 2010 — not divisible by 4, so an ordinary year.\n- 2100 — divisible by 100 but not by 400, so NOT a leap year.\n\n**Key facts**\n- Rule: a year is a leap year if divisible by 4, EXCEPT century years, which must be divisible by 400.\n- Leap year = 366 days (Feb has 29); ordinary year = 365 days.\n\n*Source: local APPSC Logical Reasoning PDF — Calendar.*",
+      "source": "local APPSC Logical Reasoning PDF — Calendar",
+      "verified": true,
+      "covers": [
+        "Calendar — leap year rule (÷4, not ÷100 unless ÷400)"
+      ],
+      "tags": [
+        "calendar",
+        "refresher",
+        "leap-year"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-3",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "refresher": true,
+      "question": "What is the mirror image of the time 3:25 (as seen in a plane mirror)?",
+      "options": [
+        "8:35",
+        "9:35",
+        "8:25",
+        "7:35"
+      ],
+      "answerIndex": 0,
+      "explanation": "For times after 1:00, mirror time = 11:60 − actual time = (11:60) − (3:25) = **8:35**.\n\n**Why not the others**\n- 9:35 — from subtracting the hour wrongly (12 − 3 = 9) without borrowing for the minutes.\n- 8:25 — leaves the minutes unchanged; minutes must also be reflected (60 − 25 = 35).\n- 7:35 — uses 11 − 4 for the hour, mis-borrowing.\n\n**Key facts**\n- Mirror image: subtract the time from 12:00 (use 11:60 when minutes ≠ 00).\n- Water image needs a different reference (18:00), not 12:00.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (mirror image).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — mirror image of a given time"
+      ],
+      "tags": [
+        "clock",
+        "refresher",
+        "mirror-image"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-4",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "At what time between 4 and 5 o'clock will the two hands of a clock coincide (overlap)?",
+      "options": [
+        "4:20 min",
+        "4:22 2/11 min",
+        "4:21 9/11 min",
+        "4:23 7/11 min"
+      ],
+      "answerIndex": 2,
+      "explanation": "Hands coincide when 30H = 5.5M ⇒ M = 60H/11. For H = 4: M = 240/11 = **21 9/11**, i.e. 4:21 9/11.\n\n**Why not the others**\n- 4:20 — the rough guess ignoring the hour hand's own movement.\n- 4:22 2/11 — arises from using 5H·(12/11) with the wrong base.\n- 4:23 7/11 — the overlap time for the 5–6 window, not 4–5.\n\n**Key facts**\n- The hands coincide once each ~65 5/11 minutes (720/11 min) → 11 times in 12 h, 22 times in 24 h.\n- Coincidence minute past hour H = 60H/11.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence of hands).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — time when the hands coincide (65 5/11 min gap)"
+      ],
+      "tags": [
+        "clock",
+        "coincidence"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-5",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "At what time between 2 and 3 o'clock will the hands of a clock be at right angles (90°) for the first time?",
+      "options": [
+        "2:25 5/11 min",
+        "2:27 3/11 min",
+        "2:30 min",
+        "2:28 8/11 min"
+      ],
+      "answerIndex": 1,
+      "explanation": "Need |30×2 − 5.5M| = 90 ⇒ |60 − 5.5M| = 90. Taking 5.5M − 60 = 90 gives M = 150/5.5 = 300/11 = **27 3/11**, so 2:27 3/11.\n\n**Why not the others**\n- 2:25 5/11 — solves 60 − 5.5M = 60 (a 60° gap), not 90°.\n- 2:30 — a rough guess; at 2:30 the angle is |60 − 165| = 105°, not 90°.\n- 2:28 8/11 — uses 5.5M − 60 = 95, an arithmetic slip.\n\n**Key facts**\n- Right-angle condition: |30H − 5.5M| = 90.\n- Hands are at right angles 22 times in 12 hours and 44 times in 24 hours.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (right angles).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — hands at right angles (90°) and count in a day"
+      ],
+      "tags": [
+        "clock",
+        "right-angle"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-6",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "How many times in 12 hours do the two hands of a clock point in exactly opposite directions (180°)?",
+      "options": [
+        "12 times",
+        "22 times",
+        "24 times",
+        "11 times"
+      ],
+      "answerIndex": 3,
+      "explanation": "The hands are opposite once in roughly every 65 5/11 minutes, but between 5 and 7 o'clock this happens only once, so in 12 hours they are opposite **11 times**.\n\n**Why not the others**\n- 12 times — the naive 'once per hour' count; the 5–7 overlap removes one.\n- 22 times — that is the 24-hour total (11 × 2), or the number of coincidences+opposites confusion.\n- 24 times — double-counts, treating each hour as giving two opposites.\n\n**Key facts**\n- In 12 hours: hands coincide 11 times, are opposite 11 times, at right angles 22 times.\n- Double each for a full 24-hour day (22, 22, 44).\n\n*Source: local APPSC Logical Reasoning PDF — Clock (straight line / opposite hands).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — hands opposite / in a straight line (180°)"
+      ],
+      "tags": [
+        "clock",
+        "opposite-hands"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-7",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "A watch loses 3 minutes every hour. It was set right at 6:00 a.m. What true time will it show at 6:00 a.m. the next day?",
+      "options": [
+        "4:48 a.m.",
+        "5:12 a.m.",
+        "4:00 a.m.",
+        "3:36 a.m."
+      ],
+      "answerIndex": 0,
+      "explanation": "In 24 true hours the watch loses 3 × 24 = 72 minutes = 1 h 12 min. So it shows 6:00 a.m. − 1:12 = **4:48 a.m.**\n\n**Why not the others**\n- 5:12 a.m. — subtracts only 48 minutes (mis-multiplying 3 × 16).\n- 4:00 a.m. — rounds the loss to a flat 2 hours.\n- 3:36 a.m. — doubles the loss to 144 minutes.\n\n**Key facts**\n- Total error = (loss/gain per hour) × number of hours elapsed.\n- A losing clock shows an EARLIER time; a gaining clock shows a LATER time.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (faulty / gaining-losing clock).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — faulty clock gaining or losing time"
+      ],
+      "tags": [
+        "clock",
+        "faulty-clock"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-8",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "How many odd days are there in 200 years?",
+      "options": [
+        "3",
+        "5",
+        "1",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "100 years have 5 odd days, so 200 years have 5 × 2 = 10 odd days ≡ 10 − 7 = **3** odd days.\n\n**Why not the others**\n- 5 — that is the count for 100 years, not 200.\n- 1 — the count for 300 years (15 mod 7).\n- 0 — the count for 400 years (28 mod 7), which is fully divisible.\n\n**Key facts**\n- Odd days: 100 yrs = 5, 200 yrs = 3, 300 yrs = 1, 400 yrs = 0.\n- 'Odd days' = days left over after counting complete weeks; 1 ordinary year = 1 odd day, 1 leap year = 2.\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
+      "source": "local APPSC Logical Reasoning PDF — Calendar",
+      "verified": true,
+      "covers": [
+        "Calendar — odd days concept (100/200/300/400 years)"
+      ],
+      "tags": [
+        "calendar",
+        "odd-days"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-9",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "India became independent on 15 August 1947. What day of the week was it?",
+      "options": [
+        "Thursday",
+        "Saturday",
+        "Friday",
+        "Wednesday"
+      ],
+      "answerIndex": 2,
+      "explanation": "Counting odd days up to 15 Aug 1947 (1600 yrs = 0, 300 yrs = 1, 46 yrs = 46 + 11 leap = 57 ≡ 1, plus days of 1947 to 15 Aug) gives a total ≡ 5 odd days from Sunday ⇒ **Friday**.\n\n**Why not the others**\n- Thursday — one odd day short (an off-by-one in the month totals).\n- Saturday — one odd day extra.\n- Wednesday — miscounts the leap years in 1901–1947.\n\n**Key facts**\n- Day = (total odd days) counted from a reference; 0→Sunday, 1→Monday … 5→Friday, 6→Saturday.\n- Month odd-days (Jan..): 3,0,3,2,3,2,3,3,2,3,2,3 for an ordinary year.\n\n*Source: standard calendar computation (verified with datetime).*",
+      "source": "standard calendar computation (verified with datetime)",
+      "verified": true,
+      "covers": [
+        "Calendar — finding the day of the week for a given date"
+      ],
+      "tags": [
+        "calendar",
+        "day-of-week"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-10",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "If 1 January 2024 is a Monday, what day of the week is 1 January 2025?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Monday"
+      ],
+      "answerIndex": 1,
+      "explanation": "2024 is a leap year (366 days = 52 weeks + 2 odd days), so the day advances by 2: Monday + 2 = **Wednesday**.\n\n**Why not the others**\n- Tuesday — advances by only 1 day, as if 2024 were an ordinary year.\n- Thursday — advances by 3 days, over-counting the odd days.\n- Monday — assumes 364 days (0 odd days), which is never the case.\n\n**Key facts**\n- An ordinary year carries 1 odd day; a leap year carries 2 odd days.\n- Same date next year moves forward 1 day (ordinary) or 2 days (leap year in between).\n\n*Source: standard calendar computation (verified with datetime).*",
+      "source": "standard calendar computation (verified with datetime)",
+      "verified": true,
+      "covers": [
+        "Calendar — day after N days / day gap between two dates"
+      ],
+      "tags": [
+        "calendar",
+        "day-advance"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-11",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "Which year will have the same calendar as the year 2023?",
+      "options": [
+        "2028",
+        "2029",
+        "2034",
+        "2033"
+      ],
+      "answerIndex": 2,
+      "explanation": "2023 is an ordinary year. Adding odd days year by year (1+2+1+1+1+2+1+1+1+2 = 13 ≡ 6, then +1 more for 2034 alignment), the running odd-day total first returns to a multiple of 7 with matching leap-status at **2034**.\n\n**Why not the others**\n- 2028 — is a leap year, so its calendar cannot match an ordinary year like 2023.\n- 2029 — running odd days = 7 (≡0) but it follows a different Jan-1 weekday; check fails.\n- 2033 — one year short; the odd-day sum is not yet a multiple of 7 with matching type.\n\n**Key facts**\n- A calendar repeats when total odd days since the year ≡ 0 (mod 7) AND leap-year status matches.\n- Ordinary years usually repeat after 6 or 11 years; leap years after 28.\n\n*Source: standard calendar computation (verified with datetime).*",
+      "source": "standard calendar computation (verified with datetime)",
+      "verified": true,
+      "covers": [
+        "Calendar — repetition of a calendar (same-calendar year)"
+      ],
+      "tags": [
+        "calendar",
+        "repetition"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-12",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "The present ages of A and B are in the ratio 5 : 7. Six years hence the ratio becomes 3 : 4. What are their present ages?",
+      "options": [
+        "25 and 35 years",
+        "35 and 49 years",
+        "20 and 28 years",
+        "30 and 42 years"
+      ],
+      "answerIndex": 3,
+      "explanation": "Let ages be 5x and 7x. Then (5x+6)/(7x+6) = 3/4 ⇒ 4(5x+6) = 3(7x+6) ⇒ 20x+24 = 21x+18 ⇒ x = 6. Ages = 5×6 and 7×6 = **30 and 42 years**.\n\n**Why not the others**\n- 25 and 35 — x = 5, but then 31/41 ≠ 3/4.\n- 35 and 49 — x = 7, giving 41/55 ≠ 3/4.\n- 20 and 28 — x = 4, giving 26/34 ≠ 3/4.\n\n**Key facts**\n- Set ratio parts as 5x, 7x; add the time to both, equate to the new ratio, solve the linear equation.\n- Check by substituting x back into the future ratio.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
+      "verified": true,
+      "covers": [
+        "Ages — present ages from a ratio plus a later condition"
+      ],
+      "tags": [
+        "ages",
+        "ratio"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-13",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "A father is 30 years older than his son. In 12 years the father's age will be twice the son's age. What is the son's present age?",
+      "options": [
+        "16 years",
+        "20 years",
+        "18 years",
+        "15 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Let son = S, father = S + 30. In 12 years: (S+30)+12 = 2(S+12) ⇒ S+42 = 2S+24 ⇒ S = **18 years**.\n\n**Why not the others**\n- 16 — gives father 46; in 12 yrs 58 vs 2×28 = 56, not equal.\n- 20 — gives father 50; in 12 yrs 62 vs 2×32 = 64, not equal.\n- 15 — gives father 45; in 12 yrs 57 vs 2×27 = 54, not equal.\n\n**Key facts**\n- The age difference stays constant; use it to write one age in terms of the other.\n- 'Twice as old' → form the equation at the stated future/past time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
+      "verified": true,
+      "covers": [
+        "Ages — difference-based relation (one is k years older)"
+      ],
+      "tags": [
+        "ages",
+        "difference"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-14",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "The average age of 11 cricket players is 29 years. When the coach's age is included, the average of all 12 rises by 1 year. What is the coach's age?",
+      "options": [
+        "40 years",
+        "30 years",
+        "41 years",
+        "42 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Total of 11 players = 11 × 29 = 319. New average = 30, so total of 12 = 12 × 30 = 360. Coach's age = 360 − 319 = **41 years**.\n\n**Why not the others**\n- 40 — from adding only 21 (using new avg 29+... ) — arithmetic slip on the totals.\n- 42 — assumes the average rises by 1 across 12 AND adds an extra year.\n- 30 — the new average itself, not the coach's age.\n\n**Key facts**\n- New member's value = (new total) − (old total) = new_avg×(n+1) − old_avg×n.\n- Shortcut: added age = new average + (rise × number of old members) = 30 + 1×11 = 41.\n\n*Source: local APPSC Quantitative Reasoning PDF — Based on Cricket and Age / Basic Concept Averages.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Based on Cricket and Age",
+      "verified": true,
+      "covers": [
+        "Ages — average age (team/family, member added or replaced)"
+      ],
+      "tags": [
+        "ages",
+        "average"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-15",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "The present ages of a mother and daughter are in the ratio 7 : 1. Five years hence the ratio becomes 4 : 1. What is the mother's present age?",
+      "options": [
+        "35 years",
+        "42 years",
+        "28 years",
+        "49 years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Let ages be 7x and x. Then (7x+5)/(x+5) = 4/1 ⇒ 7x+5 = 4x+20 ⇒ 3x = 15 ⇒ x = 5. Mother = 7×5 = **35 years**.\n\n**Why not the others**\n- 42 — x = 6, but 47/11 ≠ 4.\n- 28 — x = 4, giving 33/9 ≠ 4.\n- 49 — x = 7, giving 54/12 ≠ 4.\n\n**Key facts**\n- Ratios change over time because the SAME number of years is added to both ages.\n- Equate the future ratio to a single fraction and solve for x.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
+      "verified": true,
+      "covers": [
+        "Ages — ratio of ages changing over time"
+      ],
+      "tags": [
+        "ages",
+        "ratio-change"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "Ten years ago, A's age was half of B's age. If the ratio of their present ages is 3 : 4, what is the sum of their present ages?",
+      "options": [
+        "30 years",
+        "35 years",
+        "45 years",
+        "40 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Let present ages be 3k and 4k. Ten years ago: 3k − 10 = (4k − 10)/2 ⇒ 6k − 20 = 4k − 10 ⇒ 2k = 10 ⇒ k = 5. Ages = 15 and 20; sum = **35 years**.\n\n**Why not the others**\n- 30 — k = 4.28…, not integer; fails the 'half' condition.\n- 45 — k = 6.43…, does not satisfy 3k−10 = (4k−10)/2.\n- 40 — k = 5.71…, again inconsistent with the past condition.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the stated relation.\n- Combine the present ratio (3k, 4k) with the past equation to solve for k.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
+      "verified": true,
+      "covers": [
+        "Ages — past-age relation (N years ago)"
+      ],
+      "tags": [
+        "ages",
+        "past-age"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "What is the angle between the hour and minute hands of a clock at 5:30?",
+      "options": [
+        "45°",
+        "15°",
+        "30°",
+        "60°"
+      ],
+      "answerIndex": 1,
+      "explanation": "Use angle = |30H − 5.5M| = |30×5 − 5.5×30| = |150 − 165| = **15°**.\n\n**Why not the others**\n- 45° — uses |30×5 − 5×30| = |150 − 150| type slip, mishandling the 5.5 factor.\n- 30° — treats the hour hand as fixed at the 5 mark, ignoring its half-hour advance.\n- 60° — doubles the true gap by a formula error.\n\n**Key facts**\n- Angle = |30H − 5.5M|, taking the value ≤ 180°.\n- At 5:30 the hour hand is halfway between 5 and 6, only 15° from the minute hand at 6.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (angle between hands).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — angle between the hands (|30H − 5.5M|)"
+      ],
+      "tags": [
+        "clock",
+        "angle"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "How many times in a full day (24 hours) do the two hands of a clock coincide (overlap)?",
+      "options": [
+        "24",
+        "20",
+        "44",
+        "22"
+      ],
+      "answerIndex": 3,
+      "explanation": "In 12 hours the hands coincide 11 times (only once between 11 and 1, not twice), so in 24 hours they coincide 11 × 2 = **22** times.\n\n**Why not the others**\n- 24 — the naive 'twice per… ' or 'once per hour × 24' count; one overlap is shared across the 11–12–1 window.\n- 20 — under-counts by removing two valid overlaps.\n- 44 — that is the number of RIGHT-ANGLE positions in 24 hours, not coincidences.\n\n**Key facts**\n- 12 h: coincide 11 times, opposite 11 times, right angles 22 times.\n- Double each for 24 h → 22, 22, 44.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence count).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — time when the hands coincide (65 5/11 min gap)"
+      ],
+      "tags": [
+        "clock",
+        "coincidence"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "A clock gains 5 minutes every hour. It is set right at 8:00 a.m. What time will the clock SHOW when the correct time is 8:00 p.m. the same day?",
+      "options": [
+        "9:00 p.m.",
+        "8:48 p.m.",
+        "9:12 p.m.",
+        "7:00 p.m."
+      ],
+      "answerIndex": 0,
+      "explanation": "From 8:00 a.m. to 8:00 p.m. is 12 true hours. The clock gains 5 × 12 = 60 minutes = 1 hour, so it shows 8:00 p.m. + 1:00 = **9:00 p.m.**\n\n**Why not the others**\n- 8:48 p.m. — adds only 48 minutes (mis-multiplying 5 × 12).\n- 9:12 p.m. — adds 72 minutes as if 12 hours were 14.4.\n- 7:00 p.m. — subtracts the gain; a gaining clock runs ahead, not behind.\n\n**Key facts**\n- Total error = (gain/loss per hour) × hours elapsed.\n- A gaining clock shows a LATER time; a losing clock shows an EARLIER time.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (gaining/losing clock).*",
+      "source": "local APPSC Logical Reasoning PDF — Clock",
+      "verified": true,
+      "covers": [
+        "Clock — faulty clock gaining or losing time"
+      ],
+      "tags": [
+        "clock",
+        "faulty-clock"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "India's first Republic Day was 26 January 1950. What day of the week was it?",
+      "options": [
+        "Wednesday",
+        "Friday",
+        "Thursday",
+        "Saturday"
+      ],
+      "answerIndex": 2,
+      "explanation": "Counting odd days up to 26 January 1950 (1600 yrs → 0, 300 yrs → 1, 49 yrs with 12 leap years → 61 ≡ 5, plus 26 days of January → 26 ≡ 5) totals 11 ≡ 4 odd days from the reference, which lands on **Thursday** (a standard calendar computation confirms 26-Jan-1950 = Thursday).\n\n**Why not the others**\n- Wednesday — one odd day short (an off-by-one in the January day count).\n- Friday — one odd day extra.\n- Saturday — miscounts the leap years in 1901–1949.\n\n**Key facts**\n- Day = total odd days counted from the reference; map 0→Sunday … 4→Thursday.\n- Republic Day 26 Jan 1950 fell on a Thursday.\n\n*Source: standard calendar computation (verified with datetime).*",
+      "source": "standard calendar computation (verified with datetime)",
+      "verified": true,
+      "covers": [
+        "Calendar — finding the day of the week for a given date"
+      ],
+      "tags": [
+        "calendar",
+        "day-of-week"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "How many odd days are there in 400 years?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "answerIndex": 3,
+      "explanation": "100 years give 5 odd days, so 400 years give 5 × 4 = 20; adding the extra leap day of the 400th century year makes 21 ≡ 0 (i.e. 400 years contain exactly a whole number of weeks). So **0** odd days.\n\n**Why not the others**\n- 1 — the count for 300 years (15 mod 7).\n- 2 — no standard century block gives 2 odd days.\n- 3 — the count for 200 years (10 mod 7).\n\n**Key facts**\n- Odd days: 100 → 5, 200 → 3, 300 → 1, 400 → 0.\n- Every 400-year cycle repeats the calendar exactly (0 odd days).\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
+      "source": "local APPSC Logical Reasoning PDF — Calendar",
+      "verified": true,
+      "covers": [
+        "Calendar — odd days concept (100/200/300/400 years)"
+      ],
+      "tags": [
+        "calendar",
+        "odd-days"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "The present ages of A and B are in the ratio 3 : 5. Ten years hence the ratio of their ages becomes 5 : 7. What is A's present age?",
+      "options": [
+        "20 years",
+        "15 years",
+        "25 years",
+        "12 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Let the ages be 3x and 5x. Then (3x+10)/(5x+10) = 5/7 ⇒ 7(3x+10) = 5(5x+10) ⇒ 21x+70 = 25x+50 ⇒ 4x = 20 ⇒ x = 5. So A = 3×5 = **15 years**.\n\n**Why not the others**\n- 20 — x = 6.67 does not satisfy the future ratio.\n- 25 — that is B's present age (5x = 25), not A's.\n- 12 — x = 4 gives 22/30 ≠ 5/7.\n\n**Key facts**\n- Set the ratio parts as 3x, 5x; add the elapsed time to both, equate to the new ratio.\n- Check: (15+10)/(25+10) = 25/35 = 5/7. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
+      "verified": true,
+      "covers": [
+        "Ages — present ages from a ratio plus a later condition"
+      ],
+      "tags": [
+        "ages",
+        "ratio"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "The average age of a family of 6 members is 25 years. If the grandfather, aged 50, is not counted, what is the average age of the remaining 5 members?",
+      "options": [
+        "20 years",
+        "22 years",
+        "25 years",
+        "21 years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Total age of 6 = 6 × 25 = 150. Removing the grandfather (50) leaves 150 − 50 = 100 for 5 members, so the new average = 100 ÷ 5 = **20 years**.\n\n**Why not the others**\n- 22 — from dividing 110 by 5 (subtracting only 40).\n- 25 — assumes the average is unchanged, but removing an above-average member lowers it.\n- 21 — an arithmetic slip on the remaining total.\n\n**Key facts**\n- New average = (old total − removed value) ÷ (remaining count).\n- Removing a member older than the mean pulls the average down.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Concept Averages.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Averages",
+      "verified": true,
+      "covers": [
+        "Ages — average age (team/family, member added or replaced)"
+      ],
+      "tags": [
+        "ages",
+        "average"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "The sum of the present ages of a father and his son is 60 years. Six years ago, the father's age was five times the son's age. What is the son's present age?",
+      "options": [
+        "12 years",
+        "16 years",
+        "14 years",
+        "10 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Let son = s and father = 60 − s. Six years ago: (60 − s) − 6 = 5(s − 6) ⇒ 54 − s = 5s − 30 ⇒ 6s = 84 ⇒ s = **14 years**.\n\n**Why not the others**\n- 12 — gives father 48; 6 yrs ago 42 vs 5×6 = 30, not equal.\n- 16 — gives father 44; 6 yrs ago 38 vs 5×10 = 50, not equal.\n- 10 — gives father 50; 6 yrs ago 44 vs 5×4 = 20, not equal.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the ratio/multiple.\n- Check: father now 46, son 14; 6 yrs ago 40 = 5 × 8. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
+      "verified": true,
+      "covers": [
+        "Ages — past-age relation (N years ago)"
+      ],
+      "tags": [
+        "ages",
+        "past-age"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "The last day of a century cannot be:",
+      "options": [
+        "Monday, Wednesday or Friday",
+        "Tuesday, Thursday or Saturday",
+        "Sunday, Tuesday or Thursday",
+        "Any day of the week is possible"
+      ],
+      "answerIndex": 1,
+      "explanation": "Over a 400-year cycle the odd days for 100, 200, 300 and 400 years are 5, 3, 1 and 0, which make the last day of a century fall only on Friday, Wednesday, Monday or Sunday. Hence it can never be Tuesday, Thursday or Saturday.\n\n**Why not the others**\n- Monday, Wednesday or Friday — Monday, Wednesday and Friday ARE all possible last days.\n- Sunday, Tuesday or Thursday — Sunday is possible, so this set is wrong.\n- Any day is possible — false; only four weekdays occur.\n\n**Key facts**\n- Odd days: 100 yr = 5, 200 = 3, 300 = 1, 400 = 0.\n- Possible last days: Sun, Mon, Wed, Fri only.\n\n*Source: Testbook Calendar Reasoning PYQ.*",
+      "source": "Testbook Calendar Reasoning PYQ",
+      "verified": true,
+      "covers": [
+        "Calendar — last day of a century constraint"
+      ],
+      "tags": [
+        "calendar",
+        "century",
+        "odd-days"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-mcq-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "question": "If the 5th of a certain month is a Tuesday, what day of the week is the 21st of the same month?",
+      "options": [
+        "Thursday",
+        "Wednesday",
+        "Friday",
+        "Saturday"
+      ],
+      "answerIndex": 0,
+      "explanation": "The 21st is 21 − 5 = 16 days after the 5th. 16 mod 7 = 2, so the weekday advances two places from Tuesday: Tuesday → Wednesday → Thursday.\n\n**Why not the others**\n- Wednesday — only one day's advance (would need a 15-day gap).\n- Friday — three days' advance, i.e. a 17-day gap.\n- Saturday — four days' advance, not 16 mod 7 = 2.\n\n**Key facts**\n- Weekday advances by (date difference mod 7).\n- 16 mod 7 = 2 ⇒ Tuesday + 2 = Thursday.\n\n*Source: APPSC Quantitative Reasoning PDF — Calendar date-shift.*",
+      "source": "APPSC Quantitative Reasoning PDF — Calendar",
+      "verified": true,
+      "covers": [
+        "Calendar — date-shift within a month (weekday to a target date)"
+      ],
+      "tags": [
+        "calendar",
+        "date-shift"
+      ]
+    }
+  ]
+}

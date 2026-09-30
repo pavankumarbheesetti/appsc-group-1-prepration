@@ -1,0 +1,93 @@
+{
+  "kind": "notes",
+  "subjectCode": "MENT",
+  "topic": "Mensuration (Area & Volume)",
+  "items": [
+    {
+      "id": "ment-mensuration-note-2d-formulae",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "title": "2D areas, perimeters & the circle",
+      "body": "Learn the plane-figure formulae cold — most 3D problems reduce to a base area.\n\n| Figure | Area | Perimeter / other |\n|---|---|---|\n| Rectangle (l, b) | l·b | 2(l+b); diagonal √(l²+b²) |\n| Square (a) | a² | 4a; diagonal a√2 |\n| Triangle (b, h) | ½·b·h | — |\n| Triangle (sides a,b,c) | √[s(s−a)(s−b)(s−c)], s=½(a+b+c) | Heron's |\n| Equilateral (a) | (√3/4)a² | height (√3/2)a |\n| Parallelogram | base·height | — |\n| Trapezium (∥ a,b; ht h) | ½(a+b)·h | — |\n| Circle (r) | πr² | circumference 2πr |\n| Ring/annulus (R,r) | π(R²−r²) | — |\n| Sector (angle θ) | (θ/360)πr² | arc = (θ/360)·2πr |\n\n**Worked example.** Sides 13, 14, 15: s = 21, area = √(21·8·7·6) = √7056 = 84 cm². **Trap:** Heron's formula has no extra ½ — don't halve 84.\n\n**π convention:** use π = 22/7 when the radius is a multiple of 7 (question will say so); otherwise 3.14. Always state which you used.",
+      "keyPoints": [
+        "Rectangle area = l·b, diagonal = √(l²+b²); square diagonal = a√2.",
+        "Triangle area = ½·base·height, or Heron's √[s(s−a)(s−b)(s−c)] with s = ½(a+b+c).",
+        "Equilateral triangle of side a: area = (√3/4)a².",
+        "Trapezium area = ½(sum of parallel sides)·height.",
+        "Circle: area = πr², circumference = 2πr; ring = π(R²−r²).",
+        "Sector: area = (θ/360)·πr², arc length = (θ/360)·2πr."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDFs — Rectangle, Basic concept of Triangle, Trapezium, Basic concept of Circle, Sector",
+      "verified": true,
+      "tags": ["area-2d", "formulae"]
+    },
+    {
+      "id": "ment-mensuration-note-solids-formulae",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "title": "Volumes & surface areas of standard solids",
+      "body": "The master table. TSA = total surface area, CSA/LSA = curved/lateral surface.\n\n| Solid | Volume | CSA / LSA | TSA |\n|---|---|---|---|\n| Cube (a) | a³ | 4a² | 6a² |\n| Cuboid (l,b,h) | l·b·h | 2h(l+b) | 2(lb+bh+hl) |\n| Cylinder (r,h) | πr²h | 2πrh | 2πr(r+h) |\n| Cone (r,h) | ⅓πr²h | πrl | πr(l+r) |\n| Sphere (r) | (4/3)πr³ | — | 4πr² |\n| Hemisphere (r) | (2/3)πr³ | 2πr² | 3πr² (solid) |\n| Frustum (R,r,h) | ⅓πh(R²+Rr+r²) | π(R+r)l | CSA + πR² + πr² |\n| Prism | base area·length | base perimeter·length | LSA + 2·base area |\n| Pyramid | ⅓·base area·height | ½·base perimeter·slant | LSA + base area |\n\n**Diagonals / slants:** cube = a√3; cuboid = √(l²+b²+h²); cone slant l = √(r²+h²); frustum slant l = √(h²+(R−r)²).\n\n**Worked example (cone).** r = 7, h = 6, π = 22/7: V = ⅓·(22/7)·49·6 = ⅓·924 = 308 cm³. **Trap:** the ⅓ — dropping it gives the enclosing cylinder (924), a classic distractor.",
+      "keyPoints": [
+        "Cube: V = a³, TSA = 6a², diagonal = a√3.",
+        "Cuboid: V = lbh, TSA = 2(lb+bh+hl), space diagonal = √(l²+b²+h²).",
+        "Cylinder: V = πr²h, CSA = 2πrh, TSA = 2πr(r+h).",
+        "Cone: V = ⅓πr²h, slant l = √(r²+h²), CSA = πrl.",
+        "Sphere: V = (4/3)πr³, SA = 4πr²; hemisphere solid TSA = 3πr², V = (2/3)πr³.",
+        "Frustum: V = ⅓πh(R²+Rr+r²); prism V = base area·length; pyramid V = ⅓·base area·height."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDFs — Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Sphere, Hemisphere, Frustum of Cone, Right Prism, Pyramid",
+      "verified": true,
+      "tags": ["solids", "formulae"]
+    },
+    {
+      "id": "ment-mensuration-note-combined-recast",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "title": "Combined solids, melting & recasting",
+      "body": "**Combined solids** (a toy = cone + hemisphere; a tent = cylinder + cone): add component **volumes** directly. For **surface area**, add only the *exposed* faces and drop the shared interface (e.g. a hemisphere resting on a cylinder hides both flat circles).\n\n**Melting / recasting** conserves volume: (volume of original) = (total volume of new pieces). So the number of pieces = original volume ÷ one-piece volume.\n\n**Worked example.** A sphere of radius 6 cm is recast into spheres of radius 1 cm. Number = (4/3)πR³ ÷ (4/3)πr³ = (R/r)³ = 6³ = 216. **Trap:** answer is (R/r)³ = 216, not (R/r)² = 36 — melting is a volume (cube-power) relation, not an area one.\n\n**Common wire/rod trap:** a sphere drawn into a wire — equate sphere volume to cylinder (wire) volume πr²·length to find the length.",
+      "keyPoints": [
+        "Combined solid volume = sum of component volumes.",
+        "Combined surface area = sum of exposed surfaces only; drop hidden interfaces.",
+        "Melting/recasting conserves volume: pieces = original volume ÷ one-piece volume.",
+        "For spheres recast into spheres, count = (R/r)³, not (R/r)².",
+        "Sphere-into-wire: (4/3)πR³ = πr²·L to get wire length L."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDFs — Sphere, Right Circular Cylinder, Right Circular Cone",
+      "verified": true,
+      "tags": ["solids", "combined", "recasting"]
+    },
+    {
+      "id": "ment-mensuration-note-scaling",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "title": "Scaling: how area and volume change with size",
+      "body": "If every linear dimension of a figure is multiplied by a factor **k**:\n\n| Quantity | Scales by |\n|---|---|\n| Length / perimeter / diagonal | k |\n| Area / surface area | k² |\n| Volume | k³ |\n\n**Worked example.** Each edge of a cube up by 50% ⇒ k = 1.5. Surface area ×(1.5)² = 2.25 → **+125%**; volume ×(1.5)³ = 3.375 → **+237.5%**. **Trap:** the *increase* is 125%, while the *new value as a fraction of old* is 225% — read the wording.\n\n**Percentage shortcut:** % change in area ≈ 2×(linear %) + (linear %)²/100; % change in volume ≈ 3×(linear %) + ... — but for exam accuracy just use k² and k³ directly.\n\n**Painting / cost problems:** cost = (surface area to be covered) × (rate per unit area); number of tiles/cans = area ÷ area covered per unit.",
+      "keyPoints": [
+        "Linear ×k ⇒ area ×k², volume ×k³.",
+        "Edge +50% (k=1.5): surface area +125%, volume +237.5%.",
+        "'New is 225% of old' means an increase of 125% — distinguish ratio from increase.",
+        "Painting/cost = surface area × rate; tiles/cans = total area ÷ unit area.",
+        "Doubling all dimensions (k=2) multiplies volume 8× and surface area 4×."
+      ],
+      "source": "local APPSC Quantitative Reasoning PDF — Cube (scaling of area and volume)",
+      "verified": true,
+      "tags": ["solids", "scaling", "percentage"]
+    },
+    {
+      "id": "ment-mensuration-note-volume-ratios",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "title": "Volume & area ratios from independent dimension ratios",
+      "body": "When two solids differ in **more than one dimension independently** (e.g. radii in one ratio, heights in another), do NOT use the single k²/k³ scaling rule — instead keep only the varying factors in the volume formula.\n\n| Solid | V ∝ | Compare using |\n|---|---|---|\n| Cone / Cylinder | r²h | (r₁/r₂)² × (h₁/h₂) |\n| Sphere | r³ | (r₁/r₂)³ |\n\n**Worked example.** Cones with heights 1:5 and radii 5:3 → V₁:V₂ = (5²·1):(3²·5) = 25:45 = **5:9**.\n\n**Worked example (single-dimension change).** Cylinder radius doubled, height halved → factor = 2²×½ = **2** (volume doubles).\n\n**Trap:** the uniform-scaling shortcut (area ×k², volume ×k³) only applies when *every* linear dimension scales by the **same** k. With independent r and h ratios, substitute into V ∝ r²h directly.",
+      "keyPoints": [
+        "Independent r and h ratios: compare via V ∝ r²h (cone/cylinder) — keep only varying factors.",
+        "Cones heights 1:5, radii 5:3 → volumes 25:45 = 5:9.",
+        "Radius doubled & height halved: factor = 2²×½ = 2 (volume doubles).",
+        "Uniform k²/k³ scaling applies only when all linear dimensions scale by the same k."
+      ],
+      "source": "standard APPSC/SSC mensuration — volume ratios & scaling",
+      "verified": true,
+      "tags": ["solids", "ratio", "scaling"]
+    }
+  ]
+}
