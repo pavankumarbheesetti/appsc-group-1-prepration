@@ -1,0 +1,116 @@
+/**
+ * Print styles — primarily the printable A4 OMR answer sheet.
+ *
+ * On screen the `.omr-print-sheet` is hidden (it is only meaningful on paper).
+ * When printing, we reveal ONLY that sheet, laid out on an A4 page, and hide the
+ * rest of the app chrome so a learner can print a clean bubble sheet for paper
+ * mocks (offline, no new dependency).
+ */
+
+/* The printable sheet never shows on screen. */
+.omr-print-sheet {
+  display: none;
+}
+
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  /* Hide everything, then surface only the printable OMR sheet. */
+  body * {
+    visibility: hidden;
+  }
+  .omr-print-sheet,
+  .omr-print-sheet * {
+    visibility: visible;
+  }
+  .omr-print-sheet {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background: #fff;
+    font-family: system-ui, Arial, sans-serif;
+  }
+
+  .omr-print-title {
+    font-size: 14pt;
+    text-align: center;
+    margin: 0 0 6mm;
+  }
+
+  .omr-print-id {
+    display: flex;
+    gap: 10mm;
+    flex-wrap: wrap;
+    margin-bottom: 6mm;
+    padding-bottom: 4mm;
+    border-bottom: 1px solid #000;
+  }
+  .omr-print-id-field {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+  }
+  .omr-print-id-label {
+    font-size: 9pt;
+    font-weight: 700;
+  }
+  .omr-print-id-boxes {
+    display: flex;
+    gap: 1.5mm;
+  }
+  .omr-print-box {
+    width: 6mm;
+    height: 7mm;
+    border: 1px solid #000;
+    display: inline-block;
+  }
+
+  /* Answer grid: multi-column flow so 120 rows fit an A4 page. */
+  .omr-print-grid {
+    column-count: 4;
+    column-gap: 8mm;
+  }
+  .omr-print-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5mm;
+    break-inside: avoid;
+    margin-bottom: 1.2mm;
+  }
+  .omr-print-num {
+    width: 7mm;
+    text-align: right;
+    font-size: 8pt;
+    font-variant-numeric: tabular-nums;
+  }
+  .omr-print-bubble,
+  .omr-print-series .omr-print-bubble {
+    width: 5mm;
+    height: 5mm;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6pt;
+    line-height: 1;
+  }
+  .omr-print-series {
+    display: flex;
+    gap: 2mm;
+  }
+
+  .omr-print-foot {
+    margin-top: 6mm;
+    font-size: 8pt;
+    border-top: 1px solid #000;
+    padding-top: 3mm;
+  }
+}

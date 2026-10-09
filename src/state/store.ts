@@ -15,7 +15,7 @@
  */
 import type { NotebookEntry } from '../engine/notebook';
 import type { SrCard } from '../engine/spaced-repetition';
-import { DEFAULT_EXAM_DATE, DEFAULT_STUDY_MINUTES, DEFAULT_SUNDAY_STUDY_MINUTES, OLD_DEFAULT_EXAM_DATE } from '../config';
+import { DEFAULT_DAYS_OFF, DEFAULT_EXAM_DATE, DEFAULT_STUDY_MINUTES, DEFAULT_SUNDAY_STUDY_MINUTES, OLD_DEFAULT_EXAM_DATE } from '../config';
 import { isValidISODate, todayISO } from '../lib/dates';
 import { z } from 'zod';
 
@@ -25,6 +25,44 @@ export interface ProgressEntry {
   correct: number;
   wrong: number;
   lastResult?: 'correct' | 'wrong';
+  /**
+   * The confidence tag the learner last attached to this question in a test
+   * runner (`sure` / `fifty` / `guess`). OPTIONAL and purely additive — older
+   * blobs without it are untouched, and nothing reads it as required. Lets the
+   * app persist "how I felt about this answer" alongside the attempt.
+   */
+  lastConfidence?: 'sure' | 'fifty' | 'guess';
+}
+
+/**
+ * One finished TEST's negative-marking roll-up, appended to {@link
+ * AppState.testAttempts} on submit. Powers the Progress view's "Negative-marking
+ * habit" trend (guess accuracy + marks lost to wrong answers over recent tests).
+ * Deliberately a flat, additive record — older blobs normalise to `[]`.
+ */
+export interface TestAttemptRecord {
+  /** Epoch-ms the test was submitted. */
+  at: number;
+  /** Which runner produced it (`week-test` / `unit-test` / `full-mock` / …). */
+  kind: string;
+  /** Questions in the test. */
+  total: number;
+  /** Attempted (selected an option). */
+  attempted: number;
+  /** Attempted-and-correct. */
+  correct: number;
+  /** Attempted-and-wrong. */
+  wrong: number;
+  /** Left blank. */
+  skipped: number;
+  /** NET score = correct − wrong/3. */
+  net: number;
+  /** Answers the learner tagged `guess` and attempted. */
+  guessAttempted: number;
+  /** Of those guesses, how many were correct. */
+  guessCorrect: number;
+  /** Marks shed to wrong answers = wrong × 1/3. */
+  marksLostToWrong: number;
 }
 
 /**
@@ -93,6 +131,17 @@ export interface Settings {
    */
   sundayStudyMinutes: number;
   /**
+   * Festival / holiday DAYS OFF as ISO `YYYY-MM-DD` strings (de-duplicated,
+   * sorted). Each is a LIGHT day the planner caps at ≤ 60 min (Current Affairs +
+   * flashcards only): no mock, no new topic. Mocks that would fall on a day off
+   * move to the next suitable day and displaced study flows into the catch-up
+   * buffers. Defaults to {@link DEFAULT_DAYS_OFF} on first run (Diwali 8 Nov 2026
+   * + Bhogi/Sankranti/Kanuma 13–15 Jan 2027); the learner adds/removes them in
+   * Settings. OPTIONAL on disk/import — an older blob without this key
+   * normalises to the defaults.
+   */
+  daysOff: string[];
+  /**
    * One-time Today notice flag: set `true` by the load-time migration when a
    * stored exam date equal to the retired old default ({@link
    * OLD_DEFAULT_EXAM_DATE}, 15 Nov 2026) was auto-moved to the detailed-
@@ -140,6 +189,21 @@ export interface AppState {
    * backward-compatible.
    */
   english: Record<string, EnglishDraft>;
+  /**
+   * One-off ADMIN TASK "done" flags, keyed by admin-task id (e.g.
+   * `'apply-online'`, `'hall-ticket'`). An admin task card shows on Today from
+   * its start date until the learner marks it done (`true` here). OPTIONAL on
+   * disk / import — an older blob without this key normalises to `{}` (see
+   * {@link normalize}), so it is fully backward-compatible. A missing/false
+   * entry means "not yet done".
+   */
+  adminDone: Record<string, boolean>;
+  /**
+   * Finished-TEST history (most-recent last). See {@link TestAttemptRecord}.
+   * OPTIONAL on disk / import — an older blob without this key normalises to
+   * `[]`, so it is fully backward-compatible.
+   */
+  testAttempts: TestAttemptRecord[];
 }
 
 /** A mutator receives a mutable draft and edits it in place. */
@@ -165,6 +229,7 @@ const ProgressEntrySchema: z.ZodType<ProgressEntry> = z.object({
   correct: z.number(),
   wrong: z.number(),
   lastResult: z.enum(['correct', 'wrong']).optional(),
+  lastConfidence: z.enum(['sure', 'fifty', 'guess']).optional(),
 });
 
 const SrCardSchema: z.ZodType<SrCard> = z.object({
@@ -195,6 +260,27 @@ const EnglishDraftSchema: z.ZodType<EnglishDraft> = z.object({
   checks: z.array(z.boolean()),
   updatedAt: z.number(),
 });
+
+/** Each admin-task "done" flag is simply a boolean. @internal */
+const AdminFlagSchema: z.ZodType<boolean> = z.boolean();
+
+/** One finished-test roll-up record (see {@link TestAttemptRecord}). @internal */
+const TestAttemptRecordSchema: z.ZodType<TestAttemptRecord> = z.object({
+  at: z.number(),
+  kind: z.string(),
+  total: z.number(),
+  attempted: z.number(),
+  correct: z.number(),
+  wrong: z.number(),
+  skipped: z.number(),
+  net: z.number(),
+  guessAttempted: z.number(),
+  guessCorrect: z.number(),
+  marksLostToWrong: z.number(),
+});
+
+/** Cap on the retained finished-test history (most recent kept). */
+export const MAX_TEST_ATTEMPTS = 60;
 
 /** Current state schema version. */
 export const STATE_VERSION = 1;
@@ -253,6 +339,7 @@ export function defaultState(): AppState {
       planStartDate: todayISO(),
       dailyStudyMinutes: DEFAULT_STUDY_MINUTES,
       sundayStudyMinutes: DEFAULT_SUNDAY_STUDY_MINUTES,
+      daysOff: [...DEFAULT_DAYS_OFF],
     },
     progress: {},
     sr: {},
@@ -261,6 +348,8 @@ export function defaultState(): AppState {
     mains: {},
     telugu: {},
     english: {},
+    adminDone: {},
+    testAttempts: [],
   };
 }
 
@@ -307,6 +396,7 @@ function normalize(input: unknown): AppState {
       //    History).
       sundayStudyMinutes: migrateSundayMinutes(settings),
       prelimsDateMigrationNotice: migratePrelimsNotice(settings),
+      daysOff: normalizeDaysOff(settings),
     },
     progress: isRecord(obj.progress) ? (obj.progress as AppState['progress']) : {},
     sr: isRecord(obj.sr) ? (obj.sr as AppState['sr']) : {},
@@ -315,7 +405,26 @@ function normalize(input: unknown): AppState {
     mains: isRecord(obj.mains) ? (obj.mains as AppState['mains']) : {},
     telugu: isRecord(obj.telugu) ? (obj.telugu as AppState['telugu']) : {},
     english: isRecord(obj.english) ? (obj.english as AppState['english']) : {},
+    adminDone: isRecord(obj.adminDone) ? (obj.adminDone as AppState['adminDone']) : {},
+    testAttempts: Array.isArray((obj as { testAttempts?: unknown }).testAttempts)
+      ? ((obj as { testAttempts: unknown }).testAttempts as AppState['testAttempts'])
+      : [],
   };
+}
+
+/**
+ * De-duplicate, validate and SORT a persisted `daysOff` list of ISO dates.
+ * Non-string / non-ISO entries are dropped. When the key is ABSENT (an older
+ * blob or a fresh install) the {@link DEFAULT_DAYS_OFF} festival defaults apply;
+ * an explicitly stored EMPTY array is respected (the learner cleared them all).
+ * @internal
+ */
+function normalizeDaysOff(settings: Partial<Settings>): string[] {
+  const raw = (settings as { daysOff?: unknown }).daysOff;
+  if (!Array.isArray(raw)) return [...DEFAULT_DAYS_OFF];
+  const seen = new Set<string>();
+  for (const v of raw) if (typeof v === 'string' && isValidISODate(v)) seen.add(v);
+  return [...seen].sort();
 }
 
 /** True for a plain, non-null, non-array object. @internal */
@@ -547,6 +656,72 @@ export function setSundayStudyMinutes(minutes: number): AppState {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Days-off (festival / holiday) accessors                                     */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The learner's DAYS OFF as a de-duplicated, sorted array of ISO `YYYY-MM-DD`
+ * strings. Each is a LIGHT day the planner caps at ≤ 60 min (CA + flashcards),
+ * with no mock and no new topic.
+ */
+export function getDaysOff(): string[] {
+  return [...loadState().settings.daysOff];
+}
+
+/** Whether `iso` is currently marked a day off. */
+export function isDayOff(iso: string): boolean {
+  return loadState().settings.daysOff.includes(iso);
+}
+
+/**
+ * Add an ISO date to the days-off list (idempotent; kept de-duplicated +
+ * sorted). An invalid ISO date is IGNORED so the setting can never be corrupted
+ * from the UI. Returns the updated state.
+ */
+export function addDayOff(iso: string): AppState {
+  if (!isValidISODate(iso)) return loadState();
+  return updateState((s) => {
+    if (!s.settings.daysOff.includes(iso)) {
+      s.settings.daysOff = [...s.settings.daysOff, iso].sort();
+    }
+  });
+}
+
+/** Remove an ISO date from the days-off list (no-op if absent). Returns state. */
+export function removeDayOff(iso: string): AppState {
+  return updateState((s) => {
+    s.settings.daysOff = s.settings.daysOff.filter((d) => d !== iso);
+  });
+}
+
+/** Reset the days-off list back to the {@link DEFAULT_DAYS_OFF} festival defaults. */
+export function resetDaysOff(): AppState {
+  return updateState((s) => {
+    s.settings.daysOff = [...DEFAULT_DAYS_OFF];
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* Admin-task (eligibility gate) accessors                                     */
+/* -------------------------------------------------------------------------- */
+
+/** Whether the admin task `id` (e.g. `'apply-online'`) has been marked done. */
+export function isAdminDone(id: string): boolean {
+  return loadState().adminDone[id] === true;
+}
+
+/**
+ * Mark admin task `id` done (or not). Setting `false` DELETES the key rather
+ * than storing `false`, keeping the map compact. Returns the updated state.
+ */
+export function setAdminDone(id: string, done: boolean): AppState {
+  return updateState((s) => {
+    if (done) s.adminDone[id] = true;
+    else delete s.adminDone[id];
+  });
+}
+
+/* -------------------------------------------------------------------------- */
 /* Mains writing-practice accessors (draft + self-eval rubric)                 */
 /* -------------------------------------------------------------------------- */
 
@@ -658,6 +833,30 @@ export function clearEnglish(key: string): AppState {
   });
 }
 
+/* -------------------------------------------------------------------------- */
+/* Test-attempt history (negative-marking habit trend)                         */
+/* -------------------------------------------------------------------------- */
+
+/** The retained finished-test history (most-recent last). */
+export function getTestAttempts(): readonly TestAttemptRecord[] {
+  return loadState().testAttempts;
+}
+
+/**
+ * Append one finished-test roll-up to the history (keeping only the most recent
+ * {@link MAX_TEST_ATTEMPTS}). Called on every test submit so the Progress view's
+ * "Negative-marking habit" card can trend guess accuracy + marks lost to wrong
+ * answers over recent tests. Returns the updated state.
+ */
+export function recordTestAttempt(rec: TestAttemptRecord): AppState {
+  return updateState((s) => {
+    s.testAttempts.push(rec);
+    if (s.testAttempts.length > MAX_TEST_ATTEMPTS) {
+      s.testAttempts = s.testAttempts.slice(-MAX_TEST_ATTEMPTS);
+    }
+  });
+}
+
 /** Serialize the current state as pretty JSON (for laptop↔phone transfer). */
 export function exportStateJSON(): string {
   return JSON.stringify(loadState(), null, 2);
@@ -690,6 +889,18 @@ export function importStateJSON(str: string): AppState {
   validateEntries('telugu', TeluguFlagSchema, next.telugu);
   // The English writing map: validate every draft/checks entry.
   validateEntries('english', EnglishDraftSchema, next.english);
+  // The admin-task flags map: every entry must be a boolean done-flag.
+  validateEntries('adminDone', AdminFlagSchema, next.adminDone);
+  // The finished-test history: validate every record in the array.
+  next.testAttempts.forEach((rec, i) => {
+    const result = TestAttemptRecordSchema.safeParse(rec);
+    if (!result.success) {
+      const detail = result.error.issues
+        .map((issue) => `${issue.path.join('.') || '(root)'}: ${issue.message}`)
+        .join('; ');
+      throw new Error(`Invalid testAttempts entry [${i}]: ${detail}`);
+    }
+  });
   saveState(next);
   return next;
 }
@@ -710,6 +921,7 @@ export function resetProgress(): AppState {
     s.mains = {};
     s.telugu = {};
     s.english = {};
+    s.testAttempts = [];
   });
 }
 

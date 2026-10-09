@@ -30,7 +30,7 @@ import { buildSession } from '../engine/drill';
 import { recordAnswer } from '../engine/notebook';
 import { newCard, review } from '../engine/spaced-repetition';
 import { navigate } from '../router/router';
-import { updateState, loadState } from '../state/store';
+import { updateState, loadState, recordTestAttempt } from '../state/store';
 import { mockScore, formatNet, formatDuration, pct, type MockAnswer } from '../lib/metrics';
 import {
   EXAM_PATTERNS,
@@ -45,6 +45,14 @@ import {
   buildWeekTest,
   buildWeekTestSeries,
   scoreWeekTest,
+  negativeMarkingSummary,
+  avgTimeToBubbleMs,
+  omrBookletNotBubbled,
+  shouldWarnUnbubbled,
+  MOCK_CONFIDENCES,
+  MOCK_CONFIDENCE_LABEL,
+  type MockConfidence,
+  type NegativeMarkingSummary,
   type BuiltMock,
   type BuiltWeekTest,
   type WeekTestInput,
@@ -95,6 +103,12 @@ interface PaperSetup {
   mockNumber: number;
   /** Sit only ONE section of the paper (sectional mock), or `null` for full. */
   sectionId: string | null;
+  /**
+   * Practise with a separate OMR answer sheet: questions are shown WITHOUT
+   * inline selection and the learner darkens bubbles on a 1–120 / A–D grid,
+   * after a roll-number + booklet-series bubbling drill. Full-paper only.
+   */
+  omrMode: boolean;
 }
 
 /**
@@ -147,6 +161,8 @@ let pendingWeekTest: WeekTestInput | null = null;
  */
 let pendingWeekTestOpts: WeekTestOptions | null = null;
 let pendingWeekTestExclude: ReadonlySet<string> | null = null;
+/** Which kind of scoped test is pending (`week-test` / `unit-test`). @internal */
+let pendingWeekTestKind: string | null = null;
 
 /**
  * Launch the first-pass WEEK TEST for a `week-test` {@link PlanBlock}: a short
@@ -164,6 +180,7 @@ export function openWeekTest(block: PlanBlock): void {
   pendingWeekTest = input;
   pendingWeekTestOpts = null;
   pendingWeekTestExclude = null;
+  pendingWeekTestKind = 'week-test';
   navigate('/mock');
 }
 
@@ -246,6 +263,7 @@ export function openUnitTest(block: PlanBlock): void {
     thisWeekRatio: 1,
   };
   pendingWeekTestExclude = weekTestUsedIds(); // prefer questions not used in week tests
+  pendingWeekTestKind = 'unit-test';
   navigate('/mock');
 }
 
@@ -336,15 +354,23 @@ export function render(root: HTMLElement): void {
   const focusWeekTest = pendingWeekTest;
   const focusWeekTestOpts = pendingWeekTestOpts;
   const focusWeekTestExclude = pendingWeekTestExclude;
+  const focusWeekTestKind = pendingWeekTestKind;
   pendingScope = null;
   pendingPaper = null;
   pendingWeekTest = null;
   pendingWeekTestOpts = null;
   pendingWeekTestExclude = null;
+  pendingWeekTestKind = null;
 
   // A deep-linked WEEK TEST / UNIT TEST runs straight into the scoped, timed test.
   if (focusWeekTest) {
-    beginWeekTest(root, focusWeekTest, focusWeekTestOpts ?? undefined, focusWeekTestExclude ?? undefined);
+    beginWeekTest(
+      root,
+      focusWeekTest,
+      focusWeekTestOpts ?? undefined,
+      focusWeekTestExclude ?? undefined,
+      focusWeekTestKind ?? 'week-test',
+    );
     return;
   }
 
@@ -365,6 +391,7 @@ export function render(root: HTMLElement): void {
     paper: focusPaper ?? 'paper1',
     mockNumber: 1,
     sectionId: null,
+    omrMode: false,
   };
 
   drawShell(root, mode, setup, paperSetup);
@@ -499,9 +526,41 @@ function paperBody(root: HTMLElement, setup: MockSetup, paperSetup: PaperSetup):
     class: 'btn btn-primary btn-lg btn-block',
     type: 'button',
     ariaLabel: startLabel,
-    onClick: () => beginPaperMock(root, paperSetup, () => drawShell(root, 'paper', setup, paperSetup)),
+    onClick: () =>
+      paperSetup.omrMode
+        ? beginOmrMock(root, paperSetup, () => drawShell(root, 'paper', setup, paperSetup))
+        : beginPaperMock(root, paperSetup, () => drawShell(root, 'paper', setup, paperSetup)),
   }, [startLabel]);
   startBtn.appendChild(icon('arrow-right', 18));
+
+  // OMR practice toggle — a keyboard-accessible switch (full-paper realism).
+  const omrToggle = el('button', {
+    class: paperSetup.omrMode ? 'mock-omr-toggle is-on' : 'mock-omr-toggle',
+    type: 'button',
+    attrs: { role: 'switch', 'aria-checked': String(paperSetup.omrMode) },
+    onClick: () => {
+      paperSetup.omrMode = !paperSetup.omrMode;
+      redraw();
+    },
+  }, [
+    el('span', { class: 'mock-omr-track' }, [el('span', { class: 'mock-omr-thumb' })]),
+    el('span', { text: 'Practise with an OMR sheet' }),
+  ]);
+  const omrNote = el('p', { class: 'section-lead', attrs: { role: 'note' } }, [
+    paperSetup.omrMode
+      ? 'OMR mode: a 2-minute roll-number + booklet-series drill first, then answer by darkening bubbles on a separate 1–120 (A–D) sheet. Transfer in batches of 10–15 and keep a 10-minute buffer.'
+      : 'Turn this on to rehearse the real answer-sheet: bubble roll number + series, then transcribe answers to a separate OMR grid.',
+  ]);
+  const omrExtra: Child[] = [];
+  if (paperSetup.omrMode) {
+    const printBtn = button({
+      label: 'Print OMR sheet',
+      variant: 'secondary',
+      iconName: 'arrow-right',
+      onClick: () => printOmrSheet(),
+    });
+    omrExtra.push(printBtn, printableOmrSheet(startCount));
+  }
 
   return [
     banner,
@@ -513,6 +572,9 @@ function paperBody(root: HTMLElement, setup: MockSetup, paperSetup: PaperSetup):
     stepper,
     patternNote,
     seriesNote,
+    el('div', { class: 'mock-omr-row', attrs: { style: 'margin-top:var(--space-4)' } }, [omrToggle]),
+    omrNote,
+    ...omrExtra,
     startBtn,
   ];
 }
@@ -644,7 +706,7 @@ function beginMock(root: HTMLElement, setup: MockSetup, onBack: () => void): voi
     onBack();
     return;
   }
-  runMock(root, items, setup.length, () => beginMock(root, setup, onBack), onBack);
+  runMock(root, items, setup.length, () => beginMock(root, setup, onBack), onBack, drawResults, 'scoped-mock');
 }
 
 /**
@@ -675,8 +737,9 @@ function beginPaperMock(root: HTMLElement, setup: PaperSetup, onBack: () => void
     minutes,
     () => beginPaperMock(root, setup, onBack),
     onBack,
-    (r, _items, selected, elapsed, onRetake, back) =>
-      drawPaperResults(r, mock, selected, elapsed, onRetake, back),
+    (r, _items, selected, confidences, elapsed, onRetake, back) =>
+      drawPaperResults(r, mock, selected, confidences, elapsed, onRetake, back),
+    setup.sectionId ? 'sectional-mock' : 'full-mock',
   );
 }
 
@@ -708,6 +771,7 @@ function beginWeekTest(
   input: WeekTestInput,
   opts?: WeekTestOptions,
   exclude?: ReadonlySet<string>,
+  kind = 'week-test',
 ): void {
   const test = buildWeekTest(input, opts, exclude);
   if (test.items.length === 0) {
@@ -720,10 +784,11 @@ function beginWeekTest(
     root,
     test.items,
     test.durationMin,
-    () => beginWeekTest(root, input, opts, exclude),
+    () => beginWeekTest(root, input, opts, exclude, kind),
     () => navigate('/'),
-    (r, _items, selected, elapsed, onRetake, back) =>
-      drawWeekTestResults(r, test, selected, elapsed, onRetake, back),
+    (r, _items, selected, confidences, elapsed, onRetake, back) =>
+      drawWeekTestResults(r, test, selected, confidences, elapsed, onRetake, back),
+    kind,
   );
 }
 
@@ -737,6 +802,7 @@ function drawWeekTestResults(
   root: HTMLElement,
   test: BuiltWeekTest,
   selected: ReadonlyArray<number | null>,
+  confidences: ReadonlyArray<MockConfidence | null>,
   elapsedMs: number,
   onRetake: () => void,
   onBack: () => void,
@@ -808,7 +874,7 @@ function drawWeekTestResults(
     el('ol', { class: 'mock-review' }, test.items.map((item, i) => reviewItem(item, selected[i] ?? null, i + 1))),
   ]);
 
-  mount(root, el('div', { class: 'results mock-results' }, [summaryCard, reviewCard]));
+  mount(root, el('div', { class: 'results mock-results' }, [summaryCard, negMarkingCard(test.items, selected, confidences), reviewCard]));
 }
 
 /** Format a remaining-ms countdown as `M:SS` (minutes uncapped, e.g. `120:00`). @internal */
@@ -840,12 +906,15 @@ function runMock(
     root: HTMLElement,
     items: readonly MCQItem[],
     selected: ReadonlyArray<number | null>,
+    confidences: ReadonlyArray<MockConfidence | null>,
     elapsedMs: number,
     onRetake: () => void,
     onBack: () => void,
   ) => void = drawResults,
+  kind = 'mock',
 ): void {
   const selected: Array<number | null> = items.map(() => null);
+  const confidences: Array<MockConfidence | null> = items.map(() => null);
   const flagged: boolean[] = items.map(() => false);
   let idx = 0;
 
@@ -869,8 +938,8 @@ function runMock(
     submitted = true;
     stopTimer();
     const elapsed = Math.min(durationMs, Date.now() - startedAt);
-    recordMock(items, selected);
-    onResults(root, items, selected, elapsed, onRetake, onBack);
+    recordMock(items, selected, confidences, kind);
+    onResults(root, items, selected, confidences, elapsed, onRetake, onBack);
   };
 
   const tick = (): void => {
@@ -923,6 +992,27 @@ function runMock(
         draw();
       },
     }, [icon('target', 15), el('span', { text: flagged[idx] ? 'Flagged' : 'Flag for review' })]);
+
+    // Confidence segmented control — optional per-answer tag (default none).
+    // Keyboard accessible (real buttons; clicking the active tag clears it).
+    const confSeg = el('div', {
+      class: 'mock-confidence',
+      attrs: { role: 'radiogroup', 'aria-label': 'How confident are you?' },
+    }, [
+      el('span', { class: 'mock-confidence-label', text: 'Confidence:' }),
+      ...MOCK_CONFIDENCES.map((c) => {
+        const active = confidences[idx] === c;
+        return el('button', {
+          class: active ? 'mock-conf-btn is-active' : 'mock-conf-btn',
+          type: 'button',
+          attrs: { role: 'radio', 'aria-checked': String(active) },
+          onClick: () => {
+            confidences[idx] = confidences[idx] === c ? null : c;
+            draw();
+          },
+        }, [MOCK_CONFIDENCE_LABEL[c]]);
+      }),
+    ]);
 
     // Options — selectable, NO correctness feedback while running.
     const optionList = el('div', { class: 'option-list' }, item.options.map((opt, i) => {
@@ -1008,7 +1098,7 @@ function runMock(
       el('div', { class: 'card question-card' }, [
         ...renderQuestionStem(item.question),
         optionList,
-        el('div', { class: 'mock-flag-row' }, [flagBtn]),
+        el('div', { class: 'mock-flag-row' }, [confSeg, flagBtn]),
       ]),
       grid,
       el('div', { class: 'mock-nav' }, [prevBtn, nextBtn, submitBtn]),
@@ -1022,11 +1112,18 @@ function runMock(
 
 /**
  * Persist a submitted mock: for every ATTEMPTED question, bump progress,
- * reschedule the SR card, and update the wrong-answer notebook. Skipped/blank
- * questions are left untouched (they were never "seen"). Mirrors the drill
+ * reschedule the SR card, update the wrong-answer notebook, and record the
+ * learner's optional confidence tag. Skipped/blank questions are left untouched
+ * (they were never "seen"). Also appends a {@link TestAttemptRecord} roll-up so
+ * the Progress "Negative-marking habit" trend can grow. Mirrors the drill
  * recorder so a mock feeds the same subsystems. @internal
  */
-function recordMock(items: readonly MCQItem[], selected: ReadonlyArray<number | null>): void {
+function recordMock(
+  items: readonly MCQItem[],
+  selected: ReadonlyArray<number | null>,
+  confidences: ReadonlyArray<MockConfidence | null> = [],
+  kind = 'mock',
+): void {
   const now = Date.now();
   updateState((s) => {
     items.forEach((item, i) => {
@@ -1035,17 +1132,45 @@ function recordMock(items: readonly MCQItem[], selected: ReadonlyArray<number | 
       const correct = sel === item.answerIndex;
       const result: 'correct' | 'wrong' = correct ? 'correct' : 'wrong';
       const prev = s.progress[item.id] ?? { seen: 0, correct: 0, wrong: 0 };
+      const conf = confidences[i] ?? undefined;
       s.progress[item.id] = {
         seen: prev.seen + 1,
         correct: prev.correct + (correct ? 1 : 0),
         wrong: prev.wrong + (correct ? 0 : 1),
         lastResult: result,
+        ...(conf ? { lastConfidence: conf } : {}),
       };
       const cardSr = s.sr[item.id] ?? newCard(item.id, now);
       s.sr[item.id] = review(cardSr, result, now);
       const entry = recordAnswer(item.id, s.notebook[item.id], result, now);
       if (entry) s.notebook[item.id] = entry;
     });
+  });
+
+  // Append the finished-test roll-up (guess accuracy + marks lost → trend).
+  const summary = negativeMarkingSummary(
+    items.map((item, i) => {
+      const sel = selected[i];
+      const attempted = sel !== null && sel !== undefined;
+      return {
+        attempted,
+        correct: attempted && sel === item.answerIndex,
+        confidence: confidences[i] ?? null,
+      };
+    }),
+  );
+  recordTestAttempt({
+    at: now,
+    kind,
+    total: items.length,
+    attempted: summary.attempted,
+    correct: summary.correct,
+    wrong: summary.wrong,
+    skipped: summary.skipped,
+    net: summary.net,
+    guessAttempted: summary.byConfidence.guess.attempted,
+    guessCorrect: summary.byConfidence.guess.correct,
+    marksLostToWrong: summary.marksLostToWrong,
   });
 }
 
@@ -1067,6 +1192,7 @@ function drawResults(
   root: HTMLElement,
   items: readonly MCQItem[],
   selected: ReadonlyArray<number | null>,
+  confidences: ReadonlyArray<MockConfidence | null>,
   elapsedMs: number,
   onRetake: () => void,
   onBack: () => void,
@@ -1114,7 +1240,7 @@ function drawResults(
     el('ol', { class: 'mock-review' }, items.map((item, i) => reviewItem(item, selected[i] ?? null, i + 1))),
   ]);
 
-  mount(root, el('div', { class: 'results mock-results' }, [summaryCard, reviewCard]));
+  mount(root, el('div', { class: 'results mock-results' }, [summaryCard, negMarkingCard(items, selected, confidences), reviewCard]));
 }
 
 /**
@@ -1128,6 +1254,7 @@ function drawPaperResults(
   root: HTMLElement,
   mock: BuiltMock,
   selected: ReadonlyArray<number | null>,
+  confidences: ReadonlyArray<MockConfidence | null>,
   elapsedMs: number,
   onRetake: () => void,
   onBack: () => void,
@@ -1200,7 +1327,7 @@ function drawPaperResults(
     el('ol', { class: 'mock-review' }, mock.items.map((item, i) => reviewItem(item, selected[i] ?? null, i + 1))),
   ]);
 
-  mount(root, el('div', { class: 'results mock-results' }, [summaryCard, reviewCard]));
+  mount(root, el('div', { class: 'results mock-results' }, [summaryCard, negMarkingCard(mock.items, selected, confidences), reviewCard]));
 }
 function reviewItem(item: MCQItem, chosen: number | null, num: number): HTMLElement {
   const attempted = chosen !== null;
@@ -1257,4 +1384,494 @@ function metric(value: string, label: string, tone: 'ok' | 'bad' | null): HTMLEl
 /** A labelled form field wrapper (matches the Drill refine fields). @internal */
 function field(label: string, control: HTMLElement): HTMLElement {
   return el('label', { class: 'field' }, [el('span', { class: 'field-label', text: label }), control]);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* NEGATIVE-MARKING HABIT card (every test runner's results)                   */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The "Negative-marking habit" results card: net with −1/3, attempts vs
+ * accuracy, the "if you had skipped your Guess answers" net, accuracy by
+ * confidence (Sure / 50-50 / Guess), and the one-line eliminate-2 rule reminder.
+ * Shown on every test's results. @internal
+ */
+function negMarkingCard(
+  items: readonly MCQItem[],
+  selected: ReadonlyArray<number | null>,
+  confidences: ReadonlyArray<MockConfidence | null>,
+): HTMLElement {
+  const sum: NegativeMarkingSummary = negativeMarkingSummary(
+    items.map((item, i) => {
+      const sel = selected[i];
+      const attempted = sel !== null && sel !== undefined;
+      return {
+        attempted,
+        correct: attempted && sel === item.answerIndex,
+        confidence: confidences[i] ?? null,
+      };
+    }),
+  );
+
+  const guessN = sum.byConfidence.guess.attempted;
+  const kids: Child[] = [
+    el('p', { class: 'section-lead' }, [
+      `You attempted ${sum.attempted} of ${items.length} · accuracy ${pct(sum.accuracy)} · net ${formatNet(sum.net)} · marks lost to wrong answers ${formatNet(sum.marksLostToWrong)}.`,
+    ]),
+    el('p', { class: 'section-lead neg-skip-guesses' }, [
+      guessN > 0
+        ? `If you had skipped your ${guessN} Guess answer${guessN === 1 ? '' : 's'}: net ${formatNet(sum.netSkippingGuesses)} (vs ${formatNet(sum.net)} now).`
+        : `If you had skipped your Guess answers: net ${formatNet(sum.netSkippingGuesses)} — you tagged none as a pure guess.`,
+    ]),
+  ];
+
+  if (sum.hasRatings) {
+    const confRows = MOCK_CONFIDENCES.map((c) => {
+      const b = sum.byConfidence[c];
+      return el('tr', {}, [
+        el('th', { attrs: { scope: 'row' }, text: MOCK_CONFIDENCE_LABEL[c] }),
+        el('td', { class: 'tnum', text: String(b.attempted) }),
+        el('td', { class: 'tnum', text: String(b.correct) }),
+        el('td', { class: 'tnum', text: b.attempted > 0 ? pct(b.accuracy) : '—' }),
+      ]);
+    });
+    kids.push(
+      el('table', { class: 'mock-section-table mock-conf-table' }, [
+        el('caption', { class: 'field-label', text: 'Accuracy by confidence' }),
+        el('thead', {}, [
+          el('tr', {}, [
+            el('th', { attrs: { scope: 'col' }, text: 'Tag' }),
+            el('th', { attrs: { scope: 'col' }, text: 'Attempted' }),
+            el('th', { attrs: { scope: 'col' }, text: 'Correct' }),
+            el('th', { attrs: { scope: 'col' }, text: 'Accuracy' }),
+          ]),
+        ]),
+        el('tbody', {}, confRows),
+      ]),
+    );
+  } else {
+    kids.push(
+      el('p', { class: 'section-lead', attrs: { role: 'note' } }, [
+        'Tip: tag each answer Sure / 50-50 / Guess while you take the test to see your accuracy by confidence and how many marks your guesses cost.',
+      ]),
+    );
+  }
+
+  kids.push(
+    el('p', { class: 'neg-rule', attrs: { role: 'note' } }, [
+      el('strong', { text: 'Rule of thumb: ' }),
+      el('span', { text: 'answer when you can eliminate 2 options; skip pure guesses.' }),
+    ]),
+  );
+
+  return card({ title: 'Negative-marking habit' }, kids);
+}
+
+/* -------------------------------------------------------------------------- */
+/* OMR MODE — bubble-sheet realism for full-paper mocks                        */
+/* -------------------------------------------------------------------------- */
+
+/** Letters A–D for the OMR bubble columns. @internal */
+const OMR_LETTERS = ['A', 'B', 'C', 'D'] as const;
+
+/**
+ * Assemble a FULL official paper for OMR practice and run it through the
+ * bubble-sheet flow (identity drill → bubble-grid answering → results). Uses the
+ * same deterministic {@link buildPaperMock} as {@link beginPaperMock}. @internal
+ */
+function beginOmrMock(root: HTMLElement, setup: PaperSetup, onBack: () => void): void {
+  const pattern = patternFor(setup.paper);
+  const pools = mockSectionPools(pattern);
+  const full = buildPaperMock(pattern, pools, setup.mockNumber);
+  const mock: BuiltMock = setup.sectionId ? sliceToSection(full, setup.sectionId) : full;
+  if (mock.items.length === 0) {
+    onBack();
+    return;
+  }
+  runOmrMock(root, mock, () => beginOmrMock(root, setup, onBack), onBack);
+}
+
+/**
+ * Run an OMR-mode mock: a 2-minute roll-number + booklet-series bubbling drill,
+ * then a running phase where questions carry NO inline selection — the learner
+ * darkens bubbles on a separate 1–N (A–D) sheet and may make a tentative
+ * "booklet" scratch mark per question. Live countdown + a 10-minute warning when
+ * booklet-marked answers remain un-bubbled; time-to-bubble is measured.
+ * @internal
+ */
+function runOmrMock(
+  root: HTMLElement,
+  mock: BuiltMock,
+  onRetake: () => void,
+  onBack: () => void,
+): void {
+  const items = mock.items;
+  const bubbles: Array<number | null> = items.map(() => null); // the OMR sheet
+  const scratch: Array<number | null> = items.map(() => null); // booklet marks
+  const fillTimes: number[] = [];
+  const roll: Array<number | null> = [null, null, null, null, null, null];
+  let series: number | null = null;
+
+  let idx = 0;
+  const identityStart = Date.now();
+  let identityMs = 0;
+
+  const minutes = items.length;
+  const durationMs = minutes * 60_000;
+  let startedAt = 0;
+  let deadline = 0;
+  let countdownEl: HTMLElement | null = null;
+  let warnEl: HTMLElement | null = null;
+  let timer: ReturnType<typeof setInterval> | null = null;
+  let submitted = false;
+
+  const stopTimer = (): void => {
+    if (timer !== null) {
+      clearInterval(timer);
+      timer = null;
+    }
+  };
+
+  const submit = (): void => {
+    if (submitted) return;
+    submitted = true;
+    stopTimer();
+    const elapsed = startedAt > 0 ? Math.min(durationMs, Date.now() - startedAt) : 0;
+    recordMock(items, bubbles, [], 'full-mock-omr');
+    drawOmrResults(root, mock, bubbles, scratch, {
+      elapsedMs: elapsed,
+      identityMs,
+      avgBubbleMs: avgTimeToBubbleMs(fillTimes),
+      onRetake,
+      onBack,
+    });
+  };
+
+  const tick = (): void => {
+    const h = location.hash;
+    if (h !== '#/mock' && h !== '#mock') {
+      stopTimer();
+      return;
+    }
+    const remaining = deadline - Date.now();
+    const remainingS = Math.max(0, Math.ceil(remaining / 1000));
+    if (countdownEl) {
+      countdownEl.textContent = formatCountdown(remaining);
+      countdownEl.classList.toggle('is-amber', remainingS <= COUNTDOWN_AMBER_S && remainingS > COUNTDOWN_RED_S);
+      countdownEl.classList.toggle('is-red', remainingS <= COUNTDOWN_RED_S);
+    }
+    if (warnEl) {
+      warnEl.classList.toggle('is-shown', shouldWarnUnbubbled(remaining, scratch, bubbles));
+    }
+    if (remaining <= 0) submit();
+  };
+
+  /* ---- Identity drill -------------------------------------------------- */
+  const drawIdentity = (): void => {
+    const rollGrid = el('div', { class: 'omr-roll', attrs: { role: 'group', 'aria-label': 'Roll number' } },
+      roll.map((val, col) =>
+        el('div', { class: 'omr-roll-col' },
+          Array.from({ length: 10 }, (_, d) =>
+            el('button', {
+              class: val === d ? 'omr-bubble is-filled' : 'omr-bubble',
+              type: 'button',
+              attrs: { 'aria-label': `Roll digit ${col + 1} = ${d}`, 'aria-pressed': String(val === d) },
+              onClick: () => {
+                roll[col] = roll[col] === d ? null : d;
+                drawIdentity();
+              },
+            }, [String(d)]),
+          ),
+        ),
+      ),
+    );
+    const seriesRow = el('div', { class: 'omr-series', attrs: { role: 'radiogroup', 'aria-label': 'Booklet series' } },
+      OMR_LETTERS.map((L, i) =>
+        el('button', {
+          class: series === i ? 'omr-bubble is-filled' : 'omr-bubble',
+          type: 'button',
+          attrs: { role: 'radio', 'aria-checked': String(series === i), 'aria-label': `Booklet series ${L}` },
+          onClick: () => {
+            series = series === i ? null : i;
+            drawIdentity();
+          },
+        }, [L]),
+      ),
+    );
+
+    const startBtn = button({
+      label: 'Start paper',
+      variant: 'primary',
+      iconName: 'arrow-right',
+      onClick: () => {
+        identityMs = Date.now() - identityStart;
+        startedAt = Date.now();
+        deadline = startedAt + durationMs;
+        timer = setInterval(tick, 250);
+        draw();
+      },
+    });
+
+    mount(root, el('div', { class: 'mock-setup omr-identity' }, [
+      card({ title: 'OMR drill · fill your identity first', subtitle: 'About 2 minutes — the #1 cause of a rejected sheet is a wrong roll number or booklet series.' }, [
+        el('div', { class: 'mock-banner', attrs: { role: 'note' } }, [icon('timer', 16), el('span', { text: 'Darken fully with a black/blue ballpoint. One bubble per column. No overwriting.' })]),
+        el('p', { class: 'field-label', text: 'Roll number' }),
+        rollGrid,
+        el('p', { class: 'field-label', attrs: { style: 'margin-top:var(--space-3)' }, text: 'Booklet series' }),
+        seriesRow,
+        el('p', { class: 'section-lead', attrs: { style: 'margin-top:var(--space-3)' }, text: 'Then transcribe answers to the OMR sheet in batches of 10–15 and keep a 10-minute transfer buffer.' }),
+        startBtn,
+      ]),
+    ]));
+  };
+
+  /* ---- Running (booklet question + separate bubble sheet) -------------- */
+  const draw = (): void => {
+    const item = items[idx];
+    if (!item) return;
+
+    const remaining = deadline - Date.now();
+    countdownEl = el('span', { class: 'mock-countdown tnum', text: formatCountdown(remaining) });
+    const timerChip = el('div', { class: 'mock-timer', attrs: { role: 'timer', 'aria-live': 'off', 'aria-label': 'Time remaining' } }, [icon('timer', 16), countdownEl]);
+
+    const bubbledCount = bubbles.reduce<number>((n, b) => n + (b === null ? 0 : 1), 0);
+    const topline = el('div', { class: 'mock-topline' }, [
+      timerChip,
+      el('span', { class: 'focus-count tnum', text: `Question ${idx + 1} of ${items.length}` }),
+      el('span', { class: 'mock-answered tnum', text: `${bubbledCount} bubbled` }),
+    ]);
+
+    warnEl = el('div', {
+      class: shouldWarnUnbubbled(remaining, scratch, bubbles) ? 'omr-warning is-shown' : 'omr-warning',
+      attrs: { role: 'alert' },
+    }, [icon('timer', 15), el('span', { text: 'Under 10 minutes left — transfer your booklet answers to the OMR sheet now.' })]);
+
+    // Read-only options (NO inline selection in OMR mode).
+    const optionList = el('div', { class: 'option-list omr-booklet-options' }, item.options.map((opt, i) =>
+      el('div', { class: 'option-card is-static' }, [
+        el('span', { class: 'option-key', text: OMR_LETTERS[i] ?? String(i + 1) }),
+        el('span', { class: 'option-body', text: opt }),
+      ]),
+    ));
+
+    // Booklet scratch mark (tentative) — segmented A–D.
+    const scratchSeg = el('div', { class: 'omr-scratch', attrs: { role: 'radiogroup', 'aria-label': 'Booklet scratch mark' } }, [
+      el('span', { class: 'mock-confidence-label', text: 'Booklet mark:' }),
+      ...OMR_LETTERS.map((L, i) => {
+        const active = scratch[idx] === i;
+        return el('button', {
+          class: active ? 'omr-scratch-btn is-active' : 'omr-scratch-btn',
+          type: 'button',
+          attrs: { role: 'radio', 'aria-checked': String(active) },
+          onClick: () => {
+            scratch[idx] = scratch[idx] === i ? null : i;
+            draw();
+          },
+        }, [L]);
+      }),
+    ]);
+
+    // The separate OMR bubble sheet — one row per question (sticky on mobile).
+    const sheetRows = items.map((_, qi) =>
+      el('div', { class: qi === idx ? 'omr-row is-current' : 'omr-row' }, [
+        el('span', { class: 'omr-row-num tnum', text: String(qi + 1) }),
+        ...OMR_LETTERS.map((L, i) =>
+          el('button', {
+            class: bubbles[qi] === i ? 'omr-bubble is-filled' : 'omr-bubble',
+            type: 'button',
+            attrs: { 'aria-label': `Question ${qi + 1} option ${L}`, 'aria-pressed': String(bubbles[qi] === i) },
+            onClick: () => {
+              const was = bubbles[qi];
+              bubbles[qi] = bubbles[qi] === i ? null : i;
+              if (bubbles[qi] !== null && was !== bubbles[qi]) fillTimes.push(Date.now());
+              draw();
+            },
+          }, [L]),
+        ),
+      ]),
+    );
+    const sheetPanel = el('aside', { class: 'omr-sheet-panel', attrs: { 'aria-label': 'OMR answer sheet' } }, [
+      el('div', { class: 'omr-sheet-head' }, [
+        el('span', { class: 'field-label', text: 'OMR answer sheet' }),
+        el('span', { class: 'section-lead', text: 'Darken one bubble per question.' }),
+      ]),
+      el('div', { class: 'omr-sheet-grid' }, sheetRows),
+    ]);
+
+    const prevBtn = el('button', { class: 'btn btn-secondary', type: 'button', onClick: idx > 0 ? () => { idx -= 1; draw(); } : undefined }, ['Prev']);
+    if (idx === 0) prevBtn.setAttribute('disabled', 'true');
+    const nextBtn = el('button', { class: 'btn btn-secondary', type: 'button', onClick: idx < items.length - 1 ? () => { idx += 1; draw(); } : undefined }, ['Next']);
+    if (idx === items.length - 1) nextBtn.setAttribute('disabled', 'true');
+    const submitBtn = el('button', { class: 'btn btn-primary', type: 'button', ariaLabel: 'Submit OMR sheet and see results', onClick: () => submit() }, ['Submit sheet']);
+
+    const stage = el('section', { class: 'focus-stage mock-running omr-running', attrs: { tabindex: '-1' } });
+    stage.append(
+      el('div', { class: 'mock-banner mock-banner-slim', attrs: { role: 'note' } }, [icon('timer', 14), el('span', { text: 'OMR mode · transfer answers in batches of 10–15 · −1/3' })]),
+      topline,
+      warnEl,
+      el('div', { class: 'omr-layout' }, [
+        el('div', { class: 'omr-question-col' }, [
+          el('div', { class: 'card question-card' }, [
+            ...renderQuestionStem(item.question),
+            optionList,
+            el('div', { class: 'mock-flag-row' }, [scratchSeg]),
+          ]),
+          el('div', { class: 'mock-nav' }, [prevBtn, nextBtn, submitBtn]),
+        ]),
+        sheetPanel,
+      ]),
+    );
+    mount(root, stage);
+    stage.focus();
+  };
+
+  drawIdentity();
+}
+
+/** Options for {@link drawOmrResults}. @internal */
+interface OmrResultOpts {
+  elapsedMs: number;
+  identityMs: number;
+  avgBubbleMs: number;
+  onRetake: () => void;
+  onBack: () => void;
+}
+
+/**
+ * Draw an OMR mock's results: the overall NET score, per-section table, the
+ * transcription-gap flag ("marked in booklet but not bubbled"), the
+ * time-to-bubble + identity-drill metrics, a printable-sheet button, and the
+ * shared negative-marking card + full review. @internal
+ */
+function drawOmrResults(
+  root: HTMLElement,
+  mock: BuiltMock,
+  bubbles: ReadonlyArray<number | null>,
+  scratch: ReadonlyArray<number | null>,
+  opts: OmrResultOpts,
+): void {
+  const result = scorePaperMock(mock, bubbles);
+  const score = result.overall;
+  const variant = score.accuracy >= 0.8 ? 'success' : score.accuracy >= 0.5 ? 'accent' : 'warning';
+  const notBubbled = omrBookletNotBubbled(scratch, bubbles);
+
+  const hero = el('div', { class: 'mock-result-hero' }, [
+    el('div', { class: 'mock-net' }, [
+      el('span', { class: 'mock-net-value tnum', text: formatNet(score.net) }),
+      el('span', { class: 'mock-net-label', text: `net marks · out of ${score.total}` }),
+    ]),
+    ring({ value: score.accuracy, centerText: pct(score.accuracy), centerLabel: 'accuracy', size: 132, variant }),
+  ]);
+
+  const breakdown = el('div', { class: 'results-breakdown' }, [
+    metric(String(score.attempted), 'bubbled', null),
+    metric(String(score.correct), 'correct', 'ok'),
+    metric(String(score.wrong), 'wrong', 'bad'),
+    metric(String(score.skipped), 'blank', null),
+    metric(formatDuration(opts.elapsedMs), 'time used', null),
+  ]);
+
+  const omrMetrics = el('div', { class: 'results-breakdown' }, [
+    metric(notBubbled > 0 ? String(notBubbled) : '0', 'booklet, not bubbled', notBubbled > 0 ? 'bad' : null),
+    metric(opts.avgBubbleMs > 0 ? formatDuration(opts.avgBubbleMs) : '—', 'avg time to bubble', null),
+    metric(formatDuration(opts.identityMs), 'identity drill', null),
+  ]);
+
+  const flagNote = el('p', { class: 'section-lead', attrs: { role: notBubbled > 0 ? 'alert' : 'note', style: 'text-align:center' } }, [
+    notBubbled > 0
+      ? `⚠ ${notBubbled} answer${notBubbled === 1 ? '' : 's'} marked in your booklet but NOT bubbled on the OMR sheet — in the real exam those score zero. Always transfer every booklet mark.`
+      : 'Every booklet mark made it onto the OMR sheet — clean transcription.',
+  ]);
+
+  const rows = result.sections.map((s) =>
+    el('tr', {}, [
+      el('th', { attrs: { scope: 'row' }, text: `${s.section.part} · ${s.section.label}` }),
+      el('td', { class: 'tnum', text: `${s.score.correct}/${s.score.total}` }),
+      el('td', { class: 'tnum', text: String(s.score.wrong) }),
+      el('td', { class: 'tnum', text: String(s.score.skipped) }),
+      el('td', { class: 'tnum', text: `${formatNet(s.net)} / ${s.section.marks}` }),
+    ]),
+  );
+  const sectionTable = el('table', { class: 'mock-section-table' }, [
+    el('caption', { class: 'field-label', text: 'Per-section score' }),
+    el('thead', {}, [
+      el('tr', {}, [
+        el('th', { attrs: { scope: 'col' }, text: 'Section' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Correct' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Wrong' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Blank' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Net / Max' }),
+      ]),
+    ]),
+    el('tbody', {}, rows),
+  ]);
+
+  const actions = el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
+    button({ label: 'Retake', variant: 'primary', iconName: 'timer', onClick: opts.onRetake }),
+    button({ label: 'Print OMR sheet', variant: 'secondary', iconName: 'arrow-right', onClick: () => printOmrSheet() }),
+    button({ label: 'Back', variant: 'ghost', onClick: opts.onBack }),
+    button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
+  ]);
+
+  const summaryCard = card({}, [
+    el('h2', { class: 'card-title', attrs: { style: 'text-align:center' }, text: `${mock.pattern.title} · OMR Mock ${mock.mockNumber}` }),
+    hero,
+    breakdown,
+    omrMetrics,
+    flagNote,
+    sectionTable,
+    actions,
+  ]);
+
+  const reviewCard = card({ title: 'Full review', subtitle: `${score.total} question${score.total === 1 ? '' : 's'} — your bubble vs the correct one` }, [
+    el('ol', { class: 'mock-review' }, mock.items.map((item, i) => reviewItem(item, bubbles[i] ?? null, i + 1))),
+  ]);
+
+  mount(root, el('div', { class: 'results mock-results' }, [
+    summaryCard,
+    negMarkingCard(mock.items, bubbles, []),
+    printableOmrSheet(mock.items.length),
+    reviewCard,
+  ]));
+}
+
+/**
+ * A printable A4 OMR answer sheet: an identity header (roll number + booklet
+ * series) plus a 1..`count` grid of empty A–D bubbles. Hidden on screen; the
+ * print stylesheet (`src/styles/print.css`) reveals ONLY this element on an A4
+ * page. @internal
+ */
+function printableOmrSheet(count: number): HTMLElement {
+  const rollHeader = el('div', { class: 'omr-print-id' }, [
+    el('div', { class: 'omr-print-id-field' }, [
+      el('span', { class: 'omr-print-id-label', text: 'Roll No.' }),
+      el('div', { class: 'omr-print-id-boxes' }, Array.from({ length: 10 }, () => el('span', { class: 'omr-print-box' }))),
+    ]),
+    el('div', { class: 'omr-print-id-field' }, [
+      el('span', { class: 'omr-print-id-label', text: 'Booklet series' }),
+      el('div', { class: 'omr-print-series' }, OMR_LETTERS.map((L) => el('span', { class: 'omr-print-bubble', text: L }))),
+    ]),
+  ]);
+
+  const rows = Array.from({ length: count }, (_, i) =>
+    el('div', { class: 'omr-print-row' }, [
+      el('span', { class: 'omr-print-num', text: String(i + 1) }),
+      ...OMR_LETTERS.map((L) => el('span', { class: 'omr-print-bubble', text: L })),
+    ]),
+  );
+
+  return el('section', { class: 'omr-print-sheet', attrs: { 'aria-label': 'Printable OMR answer sheet' } }, [
+    el('h2', { class: 'omr-print-title', text: 'APPSC Group-1 — OMR Practice Answer Sheet' }),
+    rollHeader,
+    el('div', { class: 'omr-print-grid' }, rows),
+    el('p', { class: 'omr-print-foot', text: 'Use a black/blue ballpoint. Darken one bubble fully per question. No overwriting or stray marks.' }),
+  ]);
+}
+
+/** Trigger the browser print dialog for the printable OMR sheet. @internal */
+function printOmrSheet(): void {
+  if (typeof window !== 'undefined' && typeof window.print === 'function') {
+    window.print();
+  }
 }

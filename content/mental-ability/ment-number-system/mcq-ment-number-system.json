@@ -10,17 +10,17 @@
       "refresher": true,
       "question": "Which of the following is an irrational number?",
       "options": [
-        "√16",
+        "\u221a16",
         "22/7",
-        "√7",
+        "\u221a7",
         "0.375"
       ],
       "answerIndex": 2,
-      "explanation": "√7 cannot be written as a ratio p/q of integers, so it is irrational; its decimal (2.6457…) never terminates or repeats.\n\n**Why not the others**\n- √16 — equals 4, a whole number (rational).\n- 22/7 — a ratio of integers, hence rational (only an approximation of π, not π itself).\n- 0.375 — a terminating decimal = 3/8, rational.\n\n**Key facts**\n- Rational = expressible as p/q, q≠0 (terminating or recurring decimal).\n- Irrational = non-terminating, non-repeating (√2, √3, √7, π, e).\n- A perfect-square root (√16, √25) is rational; a non-perfect-square root is irrational.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "explanation": "\u221a7 cannot be written as a ratio p/q of integers, so it is irrational; its decimal (2.6457\u2026) never terminates or repeats.\n\n**Why not the others**\n- \u221a16 \u2014 equals 4, a whole number (rational).\n- 22/7 \u2014 a ratio of integers, hence rational (only an approximation of \u03c0, not \u03c0 itself).\n- 0.375 \u2014 a terminating decimal = 3/8, rational.\n\n**Key facts**\n- Rational = expressible as p/q, q\u22600 (terminating or recurring decimal).\n- Irrational = non-terminating, non-repeating (\u221a2, \u221a3, \u221a7, \u03c0, e).\n- A perfect-square root (\u221a16, \u221a25) is rational; a non-perfect-square root is irrational.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System",
       "verified": true,
       "covers": [
-        "Number classification — natural/whole/integer/rational/irrational/real"
+        "Number classification \u2014 natural/whole/integer/rational/irrational/real"
       ],
       "tags": [
         "number-system",
@@ -41,8 +41,8 @@
         "its last two digits are divisible by 9"
       ],
       "answerIndex": 1,
-      "explanation": "The test for 9 is the digit-sum rule: a number is divisible by 9 exactly when the sum of its digits is divisible by 9 (e.g. 4518 → 4+5+1+8 = 18, divisible by 9).\n\n**Why not the others**\n- its last digit is 9 — irrelevant; 19 ends in 9 but is not divisible by 9.\n- it is divisible by 3 — necessary but not sufficient (e.g. 12 is divisible by 3, not by 9).\n- its last two digits are divisible by 9 — that is not the rule; the 4-test uses last two digits, not the 9-test.\n\n**Key facts**\n| Divisor | Test |\n|---|---|\n| 3 | digit sum divisible by 3 |\n| 9 | digit sum divisible by 9 |\n| 4 | last two digits divisible by 4 |\n| 8 | last three digits divisible by 8 |\n\n*Source: local APPSC Quantitative Reasoning PDF — Divisibility Rule.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "explanation": "The test for 9 is the digit-sum rule: a number is divisible by 9 exactly when the sum of its digits is divisible by 9 (e.g. 4518 \u2192 4+5+1+8 = 18, divisible by 9).\n\n**Why not the others**\n- its last digit is 9 \u2014 irrelevant; 19 ends in 9 but is not divisible by 9.\n- it is divisible by 3 \u2014 necessary but not sufficient (e.g. 12 is divisible by 3, not by 9).\n- its last two digits are divisible by 9 \u2014 that is not the rule; the 4-test uses last two digits, not the 9-test.\n\n**Key facts**\n| Divisor | Test |\n|---|---|\n| 3 | digit sum divisible by 3 |\n| 9 | digit sum divisible by 9 |\n| 4 | last two digits divisible by 4 |\n| 8 | last three digits divisible by 8 |\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Divisibility Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Divisibility Rule",
       "verified": true,
       "covers": [
         "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
@@ -58,7 +58,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "refresher": true,
-      "question": "For any two positive integers, HCF × LCM equals:",
+      "question": "For any two positive integers, HCF \u00d7 LCM equals:",
       "options": [
         "the sum of the two numbers",
         "the product of the two numbers",
@@ -66,11 +66,11 @@
         "the larger of the two numbers"
       ],
       "answerIndex": 1,
-      "explanation": "For any two numbers a and b, HCF(a,b) × LCM(a,b) = a × b. E.g. for 12 and 18: HCF = 6, LCM = 36, and 6 × 36 = 216 = 12 × 18.\n\n**Why not the others**\n- the sum — no such identity links HCF·LCM to a+b.\n- the difference — unrelated to HCF·LCM.\n- the larger number — LCM alone can already exceed the larger number; the product identity is with a×b.\n\n**Key facts**\n- HCF × LCM = product of the two numbers (holds only for **two** numbers, not three).\n- So the fourth quantity is found once the other three are known.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF.*",
-      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF",
+      "explanation": "For any two numbers a and b, HCF(a,b) \u00d7 LCM(a,b) = a \u00d7 b. E.g. for 12 and 18: HCF = 6, LCM = 36, and 6 \u00d7 36 = 216 = 12 \u00d7 18.\n\n**Why not the others**\n- the sum \u2014 no such identity links HCF\u00b7LCM to a+b.\n- the difference \u2014 unrelated to HCF\u00b7LCM.\n- the larger number \u2014 LCM alone can already exceed the larger number; the product identity is with a\u00d7b.\n\n**Key facts**\n- HCF \u00d7 LCM = product of the two numbers (holds only for **two** numbers, not three).\n- So the fourth quantity is found once the other three are known.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 LCM and HCF.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 LCM and HCF",
       "verified": true,
       "covers": [
-        "HCF × LCM = product of two numbers"
+        "HCF \u00d7 LCM = product of two numbers"
       ],
       "tags": [
         "number-system",
@@ -90,11 +90,11 @@
         "1, 2 and 3"
       ],
       "answerIndex": 1,
-      "explanation": "Statement 1 is correct — any integer n = n/1, a ratio of integers. Statement 3 is correct — whole numbers are {0,1,2,…} while natural numbers start at 1, so 0 is whole but not natural. Statement 2 is wrong — 0 is a whole number but not a natural number, so not every whole number is natural.\n\n**Why not the others**\n- 1 and 2 only — includes false statement 2 and drops true statement 3.\n- 2 and 3 only — includes false statement 2.\n- 1, 2 and 3 — statement 2 is false, so all-three is wrong.\n\n**Key facts**\n| Set | Members |\n|---|---|\n| Natural (N) | 1, 2, 3, … |\n| Whole (W) | 0, 1, 2, 3, … |\n| Integer (Z) | …, −1, 0, 1, … |\n| Rational (Q) | p/q, q≠0 |\n- Nesting: N ⊂ W ⊂ Z ⊂ Q ⊂ R.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "explanation": "Statement 1 is correct \u2014 any integer n = n/1, a ratio of integers. Statement 3 is correct \u2014 whole numbers are {0,1,2,\u2026} while natural numbers start at 1, so 0 is whole but not natural. Statement 2 is wrong \u2014 0 is a whole number but not a natural number, so not every whole number is natural.\n\n**Why not the others**\n- 1 and 2 only \u2014 includes false statement 2 and drops true statement 3.\n- 2 and 3 only \u2014 includes false statement 2.\n- 1, 2 and 3 \u2014 statement 2 is false, so all-three is wrong.\n\n**Key facts**\n| Set | Members |\n|---|---|\n| Natural (N) | 1, 2, 3, \u2026 |\n| Whole (W) | 0, 1, 2, 3, \u2026 |\n| Integer (Z) | \u2026, \u22121, 0, 1, \u2026 |\n| Rational (Q) | p/q, q\u22600 |\n- Nesting: N \u2282 W \u2282 Z \u2282 Q \u2282 R.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System",
       "verified": true,
       "covers": [
-        "Number classification — natural/whole/integer/rational/irrational/real"
+        "Number classification \u2014 natural/whole/integer/rational/irrational/real"
       ],
       "tags": [
         "number-system",
@@ -114,8 +114,8 @@
         "1, 2 and 3"
       ],
       "answerIndex": 1,
-      "explanation": "Statement 1 is correct — 1 has only one factor, so it is neither prime (needs exactly two factors) nor composite (needs more than two). Statement 2 is correct — every other even number is divisible by 2 besides 1 and itself. Statement 3 is wrong — HCF(15, 21) = 3 ≠ 1, so they are NOT co-prime.\n\n**Why not the others**\n- 1 only — drops the true statement 2.\n- 2 and 3 only — statement 3 is false (common factor 3).\n- 1, 2 and 3 — statement 3 is false.\n\n**Key facts**\n- Co-prime ⇔ HCF = 1 (e.g. 15 & 28). 15 = 3×5, 21 = 3×7 share the factor 3.\n- Prime = exactly two factors; smallest prime = 2; 1 is a unit, not prime.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "explanation": "Statement 1 is correct \u2014 1 has only one factor, so it is neither prime (needs exactly two factors) nor composite (needs more than two). Statement 2 is correct \u2014 every other even number is divisible by 2 besides 1 and itself. Statement 3 is wrong \u2014 HCF(15, 21) = 3 \u2260 1, so they are NOT co-prime.\n\n**Why not the others**\n- 1 only \u2014 drops the true statement 2.\n- 2 and 3 only \u2014 statement 3 is false (common factor 3).\n- 1, 2 and 3 \u2014 statement 3 is false.\n\n**Key facts**\n- Co-prime \u21d4 HCF = 1 (e.g. 15 & 28). 15 = 3\u00d75, 21 = 3\u00d77 share the factor 3.\n- Prime = exactly two factors; smallest prime = 2; 1 is a unit, not prime.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System",
       "verified": true,
       "covers": [
         "Prime, composite & co-prime identification"
@@ -138,8 +138,8 @@
         "6"
       ],
       "answerIndex": 2,
-      "explanation": "Divisibility by 11 uses the alternating digit sum. For 6 2 x 3 5, from the right: (5 + x + 6) − (3 + 2) = (11 + x) − 5 = 6 + x. This must be a multiple of 11, so 6 + x = 11 ⇒ x = 5. Check: 62535 ÷ 11 = 5685 exactly.\n\n**Why not the others**\n- 3 — gives alternating sum 9, not a multiple of 11.\n- 4 — gives 10, not a multiple of 11.\n- 6 — gives 12, not a multiple of 11.\n\n**Key facts**\n- Rule of 11: (sum of digits in odd places) − (sum in even places) is 0 or a multiple of 11.\n- Positions are counted from the right (unit digit = 1st, odd place).\n\n*Source: local APPSC Quantitative Reasoning PDF — Divisibility Rule.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "explanation": "Divisibility by 11 uses the alternating digit sum. For 6 2 x 3 5, from the right: (5 + x + 6) \u2212 (3 + 2) = (11 + x) \u2212 5 = 6 + x. This must be a multiple of 11, so 6 + x = 11 \u21d2 x = 5. Check: 62535 \u00f7 11 = 5685 exactly.\n\n**Why not the others**\n- 3 \u2014 gives alternating sum 9, not a multiple of 11.\n- 4 \u2014 gives 10, not a multiple of 11.\n- 6 \u2014 gives 12, not a multiple of 11.\n\n**Key facts**\n- Rule of 11: (sum of digits in odd places) \u2212 (sum in even places) is 0 or a multiple of 11.\n- Positions are counted from the right (unit digit = 1st, odd place).\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Divisibility Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Divisibility Rule",
       "verified": true,
       "covers": [
         "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
@@ -162,8 +162,8 @@
         "20"
       ],
       "answerIndex": 2,
-      "explanation": "Prime factorise: 360 = 2³ × 3² × 5¹. The number of factors = product of (exponent + 1) = (3+1)(2+1)(1+1) = 4 × 3 × 2 = 24.\n\n**Why not the others**\n- 12 — comes from missing a factor, e.g. using (3+1)(2+1) and dropping the 5-term.\n- 18 — that is the count for 180 = 2²×3²×5, i.e. (2+1)(2+1)(1+1); a common mix-up.\n- 20 — no valid exponent combination for 360 gives 20.\n\n**Key facts**\n- If N = p^a · q^b · r^c, number of factors = (a+1)(b+1)(c+1).\n- Count includes 1 and N itself.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factors.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "explanation": "Prime factorise: 360 = 2\u00b3 \u00d7 3\u00b2 \u00d7 5\u00b9. The number of factors = product of (exponent + 1) = (3+1)(2+1)(1+1) = 4 \u00d7 3 \u00d7 2 = 24.\n\n**Why not the others**\n- 12 \u2014 comes from missing a factor, e.g. using (3+1)(2+1) and dropping the 5-term.\n- 18 \u2014 that is the count for 180 = 2\u00b2\u00d73\u00b2\u00d75, i.e. (2+1)(2+1)(1+1); a common mix-up.\n- 20 \u2014 no valid exponent combination for 360 gives 20.\n\n**Key facts**\n- If N = p^a \u00b7 q^b \u00b7 r^c, number of factors = (a+1)(b+1)(c+1).\n- Count includes 1 and N itself.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Factors.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Factors",
       "verified": true,
       "covers": [
         "Number of factors via prime factorisation"
@@ -185,8 +185,8 @@
         "24"
       ],
       "answerIndex": 1,
-      "explanation": "1260 = 2² × 3² × 5 × 7. Odd factors ignore the factor 2, so count factors of the odd part 3² × 5 × 7: (2+1)(1+1)(1+1) = 3 × 2 × 2 = 12.\n\n**Why not the others**\n- 6 — using only (2+1)(1+1), dropping the 7-term.\n- 18 — that is the count for a different exponent set, not the odd part of 1260.\n- 24 — this is closer to the TOTAL factor count: (2+1)(2+1)(1+1)(1+1) = 36 total, not 24; the trap is confusing odd-count with total-count.\n\n**Key facts**\n- Odd factors: drop all powers of 2, then apply (e+1) product to the remaining primes.\n- Even factors = total factors − odd factors.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factors.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "explanation": "1260 = 2\u00b2 \u00d7 3\u00b2 \u00d7 5 \u00d7 7. Odd factors ignore the factor 2, so count factors of the odd part 3\u00b2 \u00d7 5 \u00d7 7: (2+1)(1+1)(1+1) = 3 \u00d7 2 \u00d7 2 = 12.\n\n**Why not the others**\n- 6 \u2014 using only (2+1)(1+1), dropping the 7-term.\n- 18 \u2014 that is the count for a different exponent set, not the odd part of 1260.\n- 24 \u2014 this is closer to the TOTAL factor count: (2+1)(2+1)(1+1)(1+1) = 36 total, not 24; the trap is confusing odd-count with total-count.\n\n**Key facts**\n- Odd factors: drop all powers of 2, then apply (e+1) product to the remaining primes.\n- Even factors = total factors \u2212 odd factors.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Factors.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Factors",
       "verified": true,
       "covers": [
         "Number of odd/even factors"
@@ -208,11 +208,11 @@
         "9"
       ],
       "answerIndex": 2,
-      "explanation": "The unit digit of powers of 3 cycles with period 4: 3, 9, 7, 1. Divide the power by 4: 47 ÷ 4 leaves remainder 3, so take the 3rd term of the cycle (3, 9, **7**, 1) = 7.\n\n**Why not the others**\n- 1 — this is the 4th term (remainder 0, i.e. powers like 3⁴, 3⁸).\n- 3 — the 1st term (remainder 1, powers like 3¹, 3⁵).\n- 9 — the 2nd term (remainder 2, powers like 3²).\n\n**Key facts**\n| Base | Cycle of unit digit |\n|---|---|\n| 2 | 2, 4, 8, 6 |\n| 3 | 3, 9, 7, 1 |\n| 7 | 7, 9, 3, 1 |\n| 8 | 8, 4, 2, 6 |\n- Shortcut: unit digit depends on (power mod 4); if remainder 0 use the 4th term.\n\n*Source: local APPSC Quantitative Reasoning PDF — Unit Digit.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "explanation": "The unit digit of powers of 3 cycles with period 4: 3, 9, 7, 1. Divide the power by 4: 47 \u00f7 4 leaves remainder 3, so take the 3rd term of the cycle (3, 9, **7**, 1) = 7.\n\n**Why not the others**\n- 1 \u2014 this is the 4th term (remainder 0, i.e. powers like 3\u2074, 3\u2078).\n- 3 \u2014 the 1st term (remainder 1, powers like 3\u00b9, 3\u2075).\n- 9 \u2014 the 2nd term (remainder 2, powers like 3\u00b2).\n\n**Key facts**\n| Base | Cycle of unit digit |\n|---|---|\n| 2 | 2, 4, 8, 6 |\n| 3 | 3, 9, 7, 1 |\n| 7 | 7, 9, 3, 1 |\n| 8 | 8, 4, 2, 6 |\n- Shortcut: unit digit depends on (power mod 4); if remainder 0 use the 4th term.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Unit Digit.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Unit Digit",
       "verified": true,
       "covers": [
-        "Unit digit — cyclicity of powers"
+        "Unit digit \u2014 cyclicity of powers"
       ],
       "tags": [
         "number-system",
@@ -232,8 +232,8 @@
         "9"
       ],
       "answerIndex": 3,
-      "explanation": "Take each term's unit digit. 17^23: base ends in 7 (cycle 7,9,3,1); 23 mod 4 = 3 ⇒ 3rd term = 3. 24^24: base ends in 4; a power of 4 with an EVEN exponent ends in 6. Add: 3 + 6 = 9, so the unit digit is 9.\n\n**Why not the others**\n- 1 — would need the two unit digits to sum to 11 or 1; they sum to 9.\n- 3 — that is the unit digit of 17^23 alone, ignoring the second term.\n- 7 — arises if 24^24 is mistakenly given unit digit 4 (odd-power case); its exponent is even, giving 6.\n\n**Key facts**\n- Only unit digits of the bases matter for the unit digit of a power.\n- Base ending in 4: odd power → 4, even power → 6. Base ending in 6/5/1/0 → unchanged.\n\n*Source: local APPSC Quantitative Reasoning PDF — Unit Digit.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "explanation": "Take each term's unit digit. 17^23: base ends in 7 (cycle 7,9,3,1); 23 mod 4 = 3 \u21d2 3rd term = 3. 24^24: base ends in 4; a power of 4 with an EVEN exponent ends in 6. Add: 3 + 6 = 9, so the unit digit is 9.\n\n**Why not the others**\n- 1 \u2014 would need the two unit digits to sum to 11 or 1; they sum to 9.\n- 3 \u2014 that is the unit digit of 17^23 alone, ignoring the second term.\n- 7 \u2014 arises if 24^24 is mistakenly given unit digit 4 (odd-power case); its exponent is even, giving 6.\n\n**Key facts**\n- Only unit digits of the bases matter for the unit digit of a power.\n- Base ending in 4: odd power \u2192 4, even power \u2192 6. Base ending in 6/5/1/0 \u2192 unchanged.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Unit Digit.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Unit Digit",
       "verified": true,
       "covers": [
         "Unit digit of an expression (sum/product of powers)"
@@ -256,8 +256,8 @@
         "50"
       ],
       "answerIndex": 0,
-      "explanation": "A trailing zero needs a pair (2 × 5); 5s are scarcer, so count factors of 5 in 200!: ⌊200/5⌋ + ⌊200/25⌋ + ⌊200/125⌋ = 40 + 8 + 1 = 49 (⌊200/625⌋ = 0). So 49 trailing zeros.\n\n**Why not the others**\n- 40 — counts only ⌊200/5⌋ and forgets the extra 5s in multiples of 25 and 125.\n- 48 — omits the ⌊200/125⌋ = 1 contribution.\n- 50 — over-counts by one beyond the correct 49.\n\n**Key facts**\n- Trailing zeros in n! = ⌊n/5⌋ + ⌊n/5²⌋ + ⌊n/5³⌋ + …\n- Stop when 5^k > n. Factors of 2 always exceed factors of 5, so 5 is the limiting prime.\n\n*Source: local APPSC Quantitative Reasoning PDF — Number of Zeros.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Number of Zeros",
+      "explanation": "A trailing zero needs a pair (2 \u00d7 5); 5s are scarcer, so count factors of 5 in 200!: \u230a200/5\u230b + \u230a200/25\u230b + \u230a200/125\u230b = 40 + 8 + 1 = 49 (\u230a200/625\u230b = 0). So 49 trailing zeros.\n\n**Why not the others**\n- 40 \u2014 counts only \u230a200/5\u230b and forgets the extra 5s in multiples of 25 and 125.\n- 48 \u2014 omits the \u230a200/125\u230b = 1 contribution.\n- 50 \u2014 over-counts by one beyond the correct 49.\n\n**Key facts**\n- Trailing zeros in n! = \u230an/5\u230b + \u230an/5\u00b2\u230b + \u230an/5\u00b3\u230b + \u2026\n- Stop when 5^k > n. Factors of 2 always exceed factors of 5, so 5 is the limiting prime.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Number of Zeros.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Number of Zeros",
       "verified": true,
       "covers": [
         "Trailing zeros in a factorial"
@@ -272,7 +272,7 @@
       "id": "ment-number-system-mcq-12",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "question": "The number of trailing zeros in the product 15^50 × 20^40 × 25^30 is:",
+      "question": "The number of trailing zeros in the product 15^50 \u00d7 20^40 \u00d7 25^30 is:",
       "options": [
         "70",
         "80",
@@ -280,8 +280,8 @@
         "150"
       ],
       "answerIndex": 1,
-      "explanation": "Count factors of 2 and 5 and take the minimum. Prime factors: 15 = 3·5, 20 = 2²·5, 25 = 5². Factors of 5 = 50(from 15^50) + 40(from 20^40) + 60(from 25^30) = 150. Factors of 2 = 80 (only 20^40 gives 2²·⁴⁰ = 80). Trailing zeros = min(80, 150) = 80.\n\n**Why not the others**\n- 70 — an undercount of the 2s; 20^40 supplies 2 × 40 = 80.\n- 120 — not equal to either total; no valid pairing gives 120.\n- 150 — that is the count of 5s alone; but 2s (80) are the limiting factor.\n\n**Key facts**\n- Trailing zeros = min(total powers of 2, total powers of 5).\n- 20^40 = 2^80 · 5^40; 15^50 = 3^50 · 5^50; 25^30 = 5^60.\n\n*Source: local APPSC Quantitative Reasoning PDF — Number of Zeros.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Number of Zeros",
+      "explanation": "Count factors of 2 and 5 and take the minimum. Prime factors: 15 = 3\u00b75, 20 = 2\u00b2\u00b75, 25 = 5\u00b2. Factors of 5 = 50(from 15^50) + 40(from 20^40) + 60(from 25^30) = 150. Factors of 2 = 80 (only 20^40 gives 2\u00b2\u00b7\u2074\u2070 = 80). Trailing zeros = min(80, 150) = 80.\n\n**Why not the others**\n- 70 \u2014 an undercount of the 2s; 20^40 supplies 2 \u00d7 40 = 80.\n- 120 \u2014 not equal to either total; no valid pairing gives 120.\n- 150 \u2014 that is the count of 5s alone; but 2s (80) are the limiting factor.\n\n**Key facts**\n- Trailing zeros = min(total powers of 2, total powers of 5).\n- 20^40 = 2^80 \u00b7 5^40; 15^50 = 3^50 \u00b7 5^50; 25^30 = 5^60.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Number of Zeros.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Number of Zeros",
       "verified": true,
       "covers": [
         "Trailing zeros in a product/power"
@@ -304,11 +304,11 @@
         "29"
       ],
       "answerIndex": 0,
-      "explanation": "899 = 29 × 31, so 29 divides 899. Write N = 899q + 63 = 29(31q) + 63. The 29(31q) part is divisible by 29, so the remainder comes from 63: 63 = 29 × 2 + 5, giving remainder 5.\n\n**Why not the others**\n- 7 — would require 63 = 29k + 7, but 63 − 7 = 56 is not a multiple of 29.\n- 3 — 63 − 3 = 60 is not a multiple of 29.\n- 29 — a remainder must be less than the divisor 29, so 29 is impossible.\n\n**Key facts**\n- Dividend = Divisor × quotient + Remainder.\n- If divisor d₂ divides d₁, then (N mod d₂) = (remainder mod d₂), since the d₁-multiple part vanishes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Remainder Theorem.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Remainder Theorem",
+      "explanation": "899 = 29 \u00d7 31, so 29 divides 899. Write N = 899q + 63 = 29(31q) + 63. The 29(31q) part is divisible by 29, so the remainder comes from 63: 63 = 29 \u00d7 2 + 5, giving remainder 5.\n\n**Why not the others**\n- 7 \u2014 would require 63 = 29k + 7, but 63 \u2212 7 = 56 is not a multiple of 29.\n- 3 \u2014 63 \u2212 3 = 60 is not a multiple of 29.\n- 29 \u2014 a remainder must be less than the divisor 29, so 29 is impossible.\n\n**Key facts**\n- Dividend = Divisor \u00d7 quotient + Remainder.\n- If divisor d\u2082 divides d\u2081, then (N mod d\u2082) = (remainder mod d\u2082), since the d\u2081-multiple part vanishes.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Remainder Theorem.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Remainder Theorem",
       "verified": true,
       "covers": [
-        "Remainder — divisor as a multiple / successive division"
+        "Remainder \u2014 divisor as a multiple / successive division"
       ],
       "tags": [
         "number-system",
@@ -327,11 +327,11 @@
         "11/14"
       ],
       "answerIndex": 3,
-      "explanation": "Convert to decimals: 3/4 = 0.750, 5/7 ≈ 0.714, 7/9 ≈ 0.778, 11/14 ≈ 0.786. The largest is 11/14 ≈ 0.786.\n\n**Why not the others**\n- 3/4 = 0.750 — larger than 5/7 but smaller than 7/9 and 11/14.\n- 5/7 ≈ 0.714 — the smallest of the four.\n- 7/9 ≈ 0.778 — close second, just below 11/14.\n\n**Key facts**\n- Compare fractions by converting to decimals, or cross-multiply pairs (a/b vs c/d ⇒ compare a·d and b·c).\n- Common denominator (LCM of 4,7,9,14 = 252) also works: 189, 180, 196, 198 → 198 is largest.\n\n*Source: local APPSC Quantitative Reasoning PDF — Fractions.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Fractions",
+      "explanation": "Convert to decimals: 3/4 = 0.750, 5/7 \u2248 0.714, 7/9 \u2248 0.778, 11/14 \u2248 0.786. The largest is 11/14 \u2248 0.786.\n\n**Why not the others**\n- 3/4 = 0.750 \u2014 larger than 5/7 but smaller than 7/9 and 11/14.\n- 5/7 \u2248 0.714 \u2014 the smallest of the four.\n- 7/9 \u2248 0.778 \u2014 close second, just below 11/14.\n\n**Key facts**\n- Compare fractions by converting to decimals, or cross-multiply pairs (a/b vs c/d \u21d2 compare a\u00b7d and b\u00b7c).\n- Common denominator (LCM of 4,7,9,14 = 252) also works: 189, 180, 196, 198 \u2192 198 is largest.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Fractions.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Fractions",
       "verified": true,
       "covers": [
-        "Fractions & decimals — comparison and ordering"
+        "Fractions & decimals \u2014 comparison and ordering"
       ],
       "tags": [
         "number-system",
@@ -343,7 +343,7 @@
       "id": "ment-number-system-mcq-15",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "question": "The fraction equal to the recurring decimal 0.363636… is:",
+      "question": "The fraction equal to the recurring decimal 0.363636\u2026 is:",
       "options": [
         "4/11",
         "9/25",
@@ -351,8 +351,8 @@
         "3/8"
       ],
       "answerIndex": 0,
-      "explanation": "For a purely recurring decimal, the fraction = (repeating block)/(as many 9s as digits in the block). The block '36' has 2 digits, so 0.363636… = 36/99 = 4/11 (÷9).\n\n**Why not the others**\n- 9/25 = 0.36 — a TERMINATING decimal, not the recurring 0.3636….\n- 36/90 = 0.4 — wrong; 90 would apply to a mixed recurring form, not 0.36 recurring.\n- 3/8 = 0.375 — unrelated terminating value.\n\n**Key facts**\n- Pure recurring: 0.(ab)… = ab/99; 0.(a)… = a/9.\n- Mixed recurring 0.a(bc)… uses 9s for recurring digits and 0s for non-recurring digits in the denominator.\n\n*Source: local APPSC Quantitative Reasoning PDF — Decimals.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Decimals",
+      "explanation": "For a purely recurring decimal, the fraction = (repeating block)/(as many 9s as digits in the block). The block '36' has 2 digits, so 0.363636\u2026 = 36/99 = 4/11 (\u00f79).\n\n**Why not the others**\n- 9/25 = 0.36 \u2014 a TERMINATING decimal, not the recurring 0.3636\u2026.\n- 36/90 = 0.4 \u2014 wrong; 90 would apply to a mixed recurring form, not 0.36 recurring.\n- 3/8 = 0.375 \u2014 unrelated terminating value.\n\n**Key facts**\n- Pure recurring: 0.(ab)\u2026 = ab/99; 0.(a)\u2026 = a/9.\n- Mixed recurring 0.a(bc)\u2026 uses 9s for recurring digits and 0s for non-recurring digits in the denominator.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Decimals.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Decimals",
       "verified": true,
       "covers": [
         "Recurring decimal to fraction conversion"
@@ -374,11 +374,11 @@
         "1298"
       ],
       "answerIndex": 3,
-      "explanation": "A perfect square never ends in 2, 3, 7 or 8. 1298 ends in 8, so it cannot be a perfect square. The other three are perfect squares: 441 = 21², 625 = 25², 1444 = 38².\n\n**Why not the others**\n- 441 — = 21², ends in 1 (a valid perfect-square unit digit).\n- 625 — = 25², ends in 5.\n- 1444 — = 38², ends in 4.\n\n**Key facts**\n- Perfect squares end only in 0, 1, 4, 5, 6, 9 — never 2, 3, 7, 8.\n- Also, a perfect square has an odd number of digits in its digital-root set {1,4,7,9}; the unit-digit test is the fastest elimination.\n\n*Source: local APPSC Quantitative Reasoning PDF — Perfect Square.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Perfect Square",
+      "explanation": "A perfect square never ends in 2, 3, 7 or 8. 1298 ends in 8, so it cannot be a perfect square. The other three are perfect squares: 441 = 21\u00b2, 625 = 25\u00b2, 1444 = 38\u00b2.\n\n**Why not the others**\n- 441 \u2014 = 21\u00b2, ends in 1 (a valid perfect-square unit digit).\n- 625 \u2014 = 25\u00b2, ends in 5.\n- 1444 \u2014 = 38\u00b2, ends in 4.\n\n**Key facts**\n- Perfect squares end only in 0, 1, 4, 5, 6, 9 \u2014 never 2, 3, 7, 8.\n- Also, a perfect square has an odd number of digits in its digital-root set {1,4,7,9}; the unit-digit test is the fastest elimination.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Perfect Square.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Perfect Square",
       "verified": true,
       "covers": [
-        "Perfect square — unit-digit property test"
+        "Perfect square \u2014 unit-digit property test"
       ],
       "tags": [
         "number-system",
@@ -397,8 +397,8 @@
         "1 only"
       ],
       "answerIndex": 2,
-      "explanation": "Statement 1 is correct — 12 = 3 × 4 with 3 and 4 co-prime, so divisibility by 12 forces divisibility by both. Statement 3 is correct — 8 = 4 × 2, so any multiple of 8 is a multiple of 4. Statement 2 is wrong — e.g. 12 is divisible by 4 and 6 but not by 24; divisibility by 4 and 6 only guarantees divisibility by LCM(4,6) = 12.\n\n**Why not the others**\n- 1 and 2 only — statement 2 fails (LCM of 4 and 6 is 12, not 24).\n- 1, 2 and 3 — includes the false statement 2.\n- 1 only — drops the true statement 3.\n\n**Key facts**\n- Divisibility by a·b (a, b co-prime) ⇔ divisible by both a and b.\n- Divisible by m and n ⇒ divisible by LCM(m, n), not necessarily by m·n.\n\n*Source: local APPSC Quantitative Reasoning PDF — Divisibility Rule.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "explanation": "Statement 1 is correct \u2014 12 = 3 \u00d7 4 with 3 and 4 co-prime, so divisibility by 12 forces divisibility by both. Statement 3 is correct \u2014 8 = 4 \u00d7 2, so any multiple of 8 is a multiple of 4. Statement 2 is wrong \u2014 e.g. 12 is divisible by 4 and 6 but not by 24; divisibility by 4 and 6 only guarantees divisibility by LCM(4,6) = 12.\n\n**Why not the others**\n- 1 and 2 only \u2014 statement 2 fails (LCM of 4 and 6 is 12, not 24).\n- 1, 2 and 3 \u2014 includes the false statement 2.\n- 1 only \u2014 drops the true statement 3.\n\n**Key facts**\n- Divisibility by a\u00b7b (a, b co-prime) \u21d4 divisible by both a and b.\n- Divisible by m and n \u21d2 divisible by LCM(m, n), not necessarily by m\u00b7n.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Divisibility Rule.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Divisibility Rule",
       "verified": true,
       "covers": [
         "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
@@ -421,11 +421,11 @@
         "48"
       ],
       "answerIndex": 1,
-      "explanation": "The bells coincide again after the LCM of the intervals. 6 = 2·3, 8 = 2³, 12 = 2²·3, 18 = 2·3²; LCM = 2³ · 3² = 8 × 9 = **72 seconds**.\n\n**Why not the others**\n- 36 — LCM of only 6, 12, 18; it is not a multiple of 8.\n- 144 — a common multiple but not the LEAST one.\n- 48 — a multiple of 6, 8, 12 but not of 18.\n\n**Key facts**\n- 'Toll/ring together again' → LCM of the intervals.\n- LCM takes the highest power of each prime: 2³ and 3² → 72.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF.*",
-      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF",
+      "explanation": "The bells coincide again after the LCM of the intervals. 6 = 2\u00b73, 8 = 2\u00b3, 12 = 2\u00b2\u00b73, 18 = 2\u00b73\u00b2; LCM = 2\u00b3 \u00b7 3\u00b2 = 8 \u00d7 9 = **72 seconds**.\n\n**Why not the others**\n- 36 \u2014 LCM of only 6, 12, 18; it is not a multiple of 8.\n- 144 \u2014 a common multiple but not the LEAST one.\n- 48 \u2014 a multiple of 6, 8, 12 but not of 18.\n\n**Key facts**\n- 'Toll/ring together again' \u2192 LCM of the intervals.\n- LCM takes the highest power of each prime: 2\u00b3 and 3\u00b2 \u2192 72.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 LCM and HCF.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 LCM and HCF",
       "verified": true,
       "covers": [
-        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+        "HCF & LCM \u2014 word problems (bells, greatest divisor, least number)"
       ],
       "tags": [
         "number-system",
@@ -445,11 +445,11 @@
         "67"
       ],
       "answerIndex": 3,
-      "explanation": "Work backwards. The second division: quotient 3, divisor 4, remainder 1 → first quotient = 4×3 + 1 = 13. The first division: quotient 13, divisor 5, remainder 2 → number = 5×13 + 2 = **67**. Check: 67 ÷ 5 = 13 r 2; 13 ÷ 4 = 3 r 1. ✓\n\n**Why not the others**\n- 57 — gives 57 ÷ 5 = 11 r 2, but 11 ÷ 4 = 2 r 3, not r 1.\n- 62 — 62 ÷ 5 = 12 r 2, then 12 ÷ 4 = 3 r 0, not r 1.\n- 72 — 72 ÷ 5 = 14 r 2, then 14 ÷ 4 = 3 r 2, not r 1.\n\n**Key facts**\n- Successive division: the quotient of one step becomes the dividend of the next.\n- Reconstruct upward: dividend = divisor × quotient + remainder at each stage.\n\n*Source: local APPSC Quantitative Reasoning PDF — Remainder Theorem (successive division).*",
-      "source": "local APPSC Quantitative Reasoning PDF — Remainder Theorem",
+      "explanation": "Work backwards. The second division: quotient 3, divisor 4, remainder 1 \u2192 first quotient = 4\u00d73 + 1 = 13. The first division: quotient 13, divisor 5, remainder 2 \u2192 number = 5\u00d713 + 2 = **67**. Check: 67 \u00f7 5 = 13 r 2; 13 \u00f7 4 = 3 r 1. \u2713\n\n**Why not the others**\n- 57 \u2014 gives 57 \u00f7 5 = 11 r 2, but 11 \u00f7 4 = 2 r 3, not r 1.\n- 62 \u2014 62 \u00f7 5 = 12 r 2, then 12 \u00f7 4 = 3 r 0, not r 1.\n- 72 \u2014 72 \u00f7 5 = 14 r 2, then 14 \u00f7 4 = 3 r 2, not r 1.\n\n**Key facts**\n- Successive division: the quotient of one step becomes the dividend of the next.\n- Reconstruct upward: dividend = divisor \u00d7 quotient + remainder at each stage.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Remainder Theorem (successive division).*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Remainder Theorem",
       "verified": true,
       "covers": [
-        "Remainder — divisor as a multiple / successive division"
+        "Remainder \u2014 divisor as a multiple / successive division"
       ],
       "tags": [
         "number-system",
@@ -468,11 +468,11 @@
         "1"
       ],
       "answerIndex": 0,
-      "explanation": "Unit digits of powers of 7 cycle with period 4: 7, 9, 3, 1. Since 95 ÷ 4 leaves remainder 3, take the 3rd term of the cycle = **3**.\n\n**Why not the others**\n- 7 — the 1st term (remainder 1, e.g. 7¹, 7⁵).\n- 9 — the 2nd term (remainder 2, e.g. 7²).\n- 1 — the 4th term (remainder 0, e.g. 7⁴, 7⁸).\n\n**Key facts**\n| Base | Unit-digit cycle |\n|---|---|\n| 7 | 7, 9, 3, 1 |\n- Shortcut: unit digit depends on (power mod 4); remainder 3 → 3rd term.\n\n*Source: local APPSC Quantitative Reasoning PDF — Unit Digit.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "explanation": "Unit digits of powers of 7 cycle with period 4: 7, 9, 3, 1. Since 95 \u00f7 4 leaves remainder 3, take the 3rd term of the cycle = **3**.\n\n**Why not the others**\n- 7 \u2014 the 1st term (remainder 1, e.g. 7\u00b9, 7\u2075).\n- 9 \u2014 the 2nd term (remainder 2, e.g. 7\u00b2).\n- 1 \u2014 the 4th term (remainder 0, e.g. 7\u2074, 7\u2078).\n\n**Key facts**\n| Base | Unit-digit cycle |\n|---|---|\n| 7 | 7, 9, 3, 1 |\n- Shortcut: unit digit depends on (power mod 4); remainder 3 \u2192 3rd term.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Unit Digit.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Unit Digit",
       "verified": true,
       "covers": [
-        "Unit digit — cyclicity of powers"
+        "Unit digit \u2014 cyclicity of powers"
       ],
       "tags": [
         "number-system",
@@ -492,8 +492,8 @@
         "36"
       ],
       "answerIndex": 2,
-      "explanation": "Prime factorise: 720 = 2⁴ × 3² × 5¹. Number of factors = (4+1)(2+1)(1+1) = 5 × 3 × 2 = **30**.\n\n**Why not the others**\n- 24 — uses (3+1)(2+1)(1+1), mis-reading the power of 2 as 3.\n- 28 — no valid exponent combination for 720 yields 28.\n- 36 — uses (4+1)(2+1)(1+1) plus an extra factor, or wrong exponents.\n\n**Key facts**\n- If N = pᵃ·qᵇ·rᶜ, number of factors = (a+1)(b+1)(c+1), counting 1 and N.\n- 720 = 2⁴·3²·5 → 5·3·2 = 30.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factors.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "explanation": "Prime factorise: 720 = 2\u2074 \u00d7 3\u00b2 \u00d7 5\u00b9. Number of factors = (4+1)(2+1)(1+1) = 5 \u00d7 3 \u00d7 2 = **30**.\n\n**Why not the others**\n- 24 \u2014 uses (3+1)(2+1)(1+1), mis-reading the power of 2 as 3.\n- 28 \u2014 no valid exponent combination for 720 yields 28.\n- 36 \u2014 uses (4+1)(2+1)(1+1) plus an extra factor, or wrong exponents.\n\n**Key facts**\n- If N = p\u1d43\u00b7q\u1d47\u00b7r\u1d9c, number of factors = (a+1)(b+1)(c+1), counting 1 and N.\n- 720 = 2\u2074\u00b73\u00b2\u00b75 \u2192 5\u00b73\u00b72 = 30.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Factors.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Factors",
       "verified": true,
       "covers": [
         "Number of factors via prime factorisation"
@@ -515,11 +515,11 @@
         "11/20"
       ],
       "answerIndex": 3,
-      "explanation": "Convert to decimals: 5/8 = 0.625, 7/12 ≈ 0.583, 3/5 = 0.600, 11/20 = 0.550. The smallest is **11/20 = 0.55**.\n\n**Why not the others**\n- 5/8 = 0.625 — the largest of the four.\n- 7/12 ≈ 0.583 — larger than 11/20.\n- 3/5 = 0.600 — larger than both 7/12 and 11/20.\n\n**Key facts**\n- Compare fractions by decimals, or by a common denominator (LCM of 8,12,5,20 = 120): 75, 70, 72, 66 → 66 is smallest.\n- Cross-multiplication also works for pairwise comparison.\n\n*Source: local APPSC Quantitative Reasoning PDF — Fractions.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Fractions",
+      "explanation": "Convert to decimals: 5/8 = 0.625, 7/12 \u2248 0.583, 3/5 = 0.600, 11/20 = 0.550. The smallest is **11/20 = 0.55**.\n\n**Why not the others**\n- 5/8 = 0.625 \u2014 the largest of the four.\n- 7/12 \u2248 0.583 \u2014 larger than 11/20.\n- 3/5 = 0.600 \u2014 larger than both 7/12 and 11/20.\n\n**Key facts**\n- Compare fractions by decimals, or by a common denominator (LCM of 8,12,5,20 = 120): 75, 70, 72, 66 \u2192 66 is smallest.\n- Cross-multiplication also works for pairwise comparison.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Fractions.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Fractions",
       "verified": true,
       "covers": [
-        "Fractions & decimals — comparison and ordering"
+        "Fractions & decimals \u2014 comparison and ordering"
       ],
       "tags": [
         "number-system",
@@ -539,8 +539,8 @@
         "1, 2 and 3"
       ],
       "answerIndex": 1,
-      "explanation": "Statement 1 is correct — the primes between 1 and 20 are 2, 3, 5, 7, 11, 13, 17, 19 (eight in all). Statement 3 is correct — consecutive naturals differ by 1, whose only common factor is 1, so their HCF is 1. Statement 2 is wrong — 91 = 7 × 13, so it is composite.\n\n**Why not the others**\n- 1 and 2 only — 91 is not prime (7 × 13), so statement 2 fails.\n- 2 and 3 only — statement 2 is false.\n- 1, 2 and 3 — includes the false statement 2.\n\n**Key facts**\n- Co-prime ⇔ HCF = 1; consecutive integers n, n+1 always satisfy this.\n- 91 = 7 × 13 is a classic 'looks prime but isn't' trap.\n\n*Source: local APPSC Quantitative Reasoning PDF — Classification of Number System.*",
-      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "explanation": "Statement 1 is correct \u2014 the primes between 1 and 20 are 2, 3, 5, 7, 11, 13, 17, 19 (eight in all). Statement 3 is correct \u2014 consecutive naturals differ by 1, whose only common factor is 1, so their HCF is 1. Statement 2 is wrong \u2014 91 = 7 \u00d7 13, so it is composite.\n\n**Why not the others**\n- 1 and 2 only \u2014 91 is not prime (7 \u00d7 13), so statement 2 fails.\n- 2 and 3 only \u2014 statement 2 is false.\n- 1, 2 and 3 \u2014 includes the false statement 2.\n\n**Key facts**\n- Co-prime \u21d4 HCF = 1; consecutive integers n, n+1 always satisfy this.\n- 91 = 7 \u00d7 13 is a classic 'looks prime but isn't' trap.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System.*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System",
       "verified": true,
       "covers": [
         "Prime, composite & co-prime identification"
@@ -563,11 +563,11 @@
         "12"
       ],
       "answerIndex": 0,
-      "explanation": "The required number divides the differences of the given numbers exactly. Differences: 91 − 43 = 48, 183 − 91 = 92, 183 − 43 = 140. The greatest such divisor is HCF(48, 92, 140) = **4**.\n\n**Why not the others**\n- 8 — divides 48 but not 92 or 140 (both are 4 mod 8).\n- 9 — divides none of the three differences.\n- 12 — divides 48 but not 92.\n\n**Key facts**\n- 'Greatest number leaving the SAME remainder' → HCF of the pairwise differences.\n- HCF(48, 92, 140) = 4; indeed 43, 91, 183 each leave remainder 3 on division by 4.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (greatest divisor).*",
-      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF",
+      "explanation": "The required number divides the differences of the given numbers exactly. Differences: 91 \u2212 43 = 48, 183 \u2212 91 = 92, 183 \u2212 43 = 140. The greatest such divisor is HCF(48, 92, 140) = **4**.\n\n**Why not the others**\n- 8 \u2014 divides 48 but not 92 or 140 (both are 4 mod 8).\n- 9 \u2014 divides none of the three differences.\n- 12 \u2014 divides 48 but not 92.\n\n**Key facts**\n- 'Greatest number leaving the SAME remainder' \u2192 HCF of the pairwise differences.\n- HCF(48, 92, 140) = 4; indeed 43, 91, 183 each leave remainder 3 on division by 4.\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 LCM and HCF (greatest divisor).*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 LCM and HCF",
       "verified": true,
       "covers": [
-        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+        "HCF & LCM \u2014 word problems (bells, greatest divisor, least number)"
       ],
       "tags": [
         "number-system",
@@ -587,11 +587,11 @@
         "5"
       ],
       "answerIndex": 1,
-      "explanation": "Find the cycle of remainders of powers of 2 mod 7: 2¹ = 2, 2² = 4, 2³ = 8 ≡ 1 (mod 7). The cycle length is 3. Now 100 mod 3 = 1, so 2^100 ≡ 2^1 ≡ **2** (mod 7).\n\n**Why not the others**\n- 1 — this is 2³ ≡ 1; it would need 100 to be a multiple of 3, but 100 mod 3 = 1.\n- 4 — this is 2² ≡ 4; it would need 100 mod 3 = 2, but the remainder is 1.\n- 5 — 5 never appears in the cycle (2, 4, 1) of powers of 2 mod 7.\n\n**Key facts**\n| Step | Value |\n|---|---|\n| Cycle of 2^n mod 7 | 2, 4, 1 (length 3) |\n| 100 mod 3 | 1 |\n| Answer | 2^1 ≡ 2 |\n- Method: list power-remainders to get the cycle length c, then compute (exponent mod c).\n\n*Source: local APPSC Quantitative Reasoning PDF — Remainder Theorem (remainder of powers).*",
-      "source": "local APPSC Quantitative Reasoning PDF — Remainder Theorem",
+      "explanation": "Find the cycle of remainders of powers of 2 mod 7: 2\u00b9 = 2, 2\u00b2 = 4, 2\u00b3 = 8 \u2261 1 (mod 7). The cycle length is 3. Now 100 mod 3 = 1, so 2^100 \u2261 2^1 \u2261 **2** (mod 7).\n\n**Why not the others**\n- 1 \u2014 this is 2\u00b3 \u2261 1; it would need 100 to be a multiple of 3, but 100 mod 3 = 1.\n- 4 \u2014 this is 2\u00b2 \u2261 4; it would need 100 mod 3 = 2, but the remainder is 1.\n- 5 \u2014 5 never appears in the cycle (2, 4, 1) of powers of 2 mod 7.\n\n**Key facts**\n| Step | Value |\n|---|---|\n| Cycle of 2^n mod 7 | 2, 4, 1 (length 3) |\n| 100 mod 3 | 1 |\n| Answer | 2^1 \u2261 2 |\n- Method: list power-remainders to get the cycle length c, then compute (exponent mod c).\n\n*Source: local APPSC Quantitative Reasoning PDF \u2014 Remainder Theorem (remainder of powers).*",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Remainder Theorem",
       "verified": true,
       "covers": [
-        "Remainder of powers — cyclicity/pattern method"
+        "Remainder of powers \u2014 cyclicity/pattern method"
       ],
       "tags": [
         "number-system",
@@ -612,7 +612,7 @@
         "31"
       ],
       "answerIndex": 0,
-      "explanation": "Divisible by both 3 and 5 means divisible by LCM(3,5)=15. Count of multiples of 15 in [17,457] = ⌊457/15⌋ − ⌊16/15⌋ = 30 − 1 = 29.\n\n**Why not the others**\n- 30 — ⌊457/15⌋ alone, forgetting to drop the multiple (15) below 17.\n- 28 — over-subtracts one valid term.\n- 31 — counts a multiple beyond 457.\n\n**Key facts**\n- Count of multiples of k in [a,b] = ⌊b/k⌋ − ⌊(a−1)/k⌋.\n- 'Divisible by both x and y' ⇒ use LCM(x,y).\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "explanation": "Divisible by both 3 and 5 means divisible by LCM(3,5)=15. Count of multiples of 15 in [17,457] = \u230a457/15\u230b \u2212 \u230a16/15\u230b = 30 \u2212 1 = 29.\n\n**Why not the others**\n- 30 \u2014 \u230a457/15\u230b alone, forgetting to drop the multiple (15) below 17.\n- 28 \u2014 over-subtracts one valid term.\n- 31 \u2014 counts a multiple beyond 457.\n\n**Key facts**\n- Count of multiples of k in [a,b] = \u230ab/k\u230b \u2212 \u230a(a\u22121)/k\u230b.\n- 'Divisible by both x and y' \u21d2 use LCM(x,y).\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -636,7 +636,7 @@
         "142"
       ],
       "answerIndex": 0,
-      "explanation": "Three-digit numbers run 100–999. Multiples of 7 = ⌊999/7⌋ − ⌊99/7⌋ = 142 − 14 = 128.\n\n**Why not the others**\n- 127 — off-by-one from mis-counting an endpoint.\n- 126 — under-counts by two.\n- 142 — ⌊999/7⌋ alone, without subtracting the two-digit multiples.\n\n**Key facts**\n- Count of multiples of k up to N = ⌊N/k⌋.\n- In a range [a,b]: ⌊b/k⌋ − ⌊(a−1)/k⌋.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "explanation": "Three-digit numbers run 100\u2013999. Multiples of 7 = \u230a999/7\u230b \u2212 \u230a99/7\u230b = 142 \u2212 14 = 128.\n\n**Why not the others**\n- 127 \u2014 off-by-one from mis-counting an endpoint.\n- 126 \u2014 under-counts by two.\n- 142 \u2014 \u230a999/7\u230b alone, without subtracting the two-digit multiples.\n\n**Key facts**\n- Count of multiples of k up to N = \u230aN/k\u230b.\n- In a range [a,b]: \u230ab/k\u230b \u2212 \u230a(a\u22121)/k\u230b.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -652,7 +652,7 @@
       "id": "ment-number-system-mcq-28",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "question": "The sum 6²⁵ + 6²⁶ + 6²⁷ + 6²⁸ is exactly divisible by:",
+      "question": "The sum 6\u00b2\u2075 + 6\u00b2\u2076 + 6\u00b2\u2077 + 6\u00b2\u2078 is exactly divisible by:",
       "options": [
         "257",
         "258",
@@ -660,7 +660,7 @@
         "260"
       ],
       "answerIndex": 2,
-      "explanation": "Factor out the smallest power: 6²⁵ + 6²⁶ + 6²⁷ + 6²⁸ = 6²⁵(1 + 6 + 36 + 216) = 6²⁵ × 259. So 259 (= 7 × 37) divides the sum.\n\n**Why not the others**\n- 257 — a prime, but the bracket totals 259, not 257.\n- 258 — 1+6+36+216 = 259, not 258.\n- 260 — off by one from the correct bracket sum.\n\n**Key facts**\n- aᵐ + aᵐ⁺¹ + … = aᵐ(1 + a + a² + …).\n- 1 + 6 + 36 + 216 = 259.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "explanation": "Factor out the smallest power: 6\u00b2\u2075 + 6\u00b2\u2076 + 6\u00b2\u2077 + 6\u00b2\u2078 = 6\u00b2\u2075(1 + 6 + 36 + 216) = 6\u00b2\u2075 \u00d7 259. So 259 (= 7 \u00d7 37) divides the sum.\n\n**Why not the others**\n- 257 \u2014 a prime, but the bracket totals 259, not 257.\n- 258 \u2014 1+6+36+216 = 259, not 258.\n- 260 \u2014 off by one from the correct bracket sum.\n\n**Key facts**\n- a\u1d50 + a\u1d50\u207a\u00b9 + \u2026 = a\u1d50(1 + a + a\u00b2 + \u2026).\n- 1 + 6 + 36 + 216 = 259.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -676,7 +676,7 @@
       "id": "ment-number-system-mcq-29",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "question": "The expression 3⁴ + 3⁵ + 3⁶ is divisible by:",
+      "question": "The expression 3\u2074 + 3\u2075 + 3\u2076 is divisible by:",
       "options": [
         "13",
         "11",
@@ -684,7 +684,7 @@
         "5"
       ],
       "answerIndex": 0,
-      "explanation": "Take out 3⁴: 3⁴ + 3⁵ + 3⁶ = 3⁴(1 + 3 + 9) = 3⁴ × 13. So the sum is divisible by 13.\n\n**Why not the others**\n- 11 — the bracket 1+3+9 = 13, not a multiple of 11.\n- 7 — 13 is not a multiple of 7.\n- 5 — the sum ends in 3⁴·13 = 81·13 = 1053, not divisible by 5.\n\n**Key facts**\n- Factor the least power first: 3⁴(1+3+9).\n- 1 + 3 + 9 = 13.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "explanation": "Take out 3\u2074: 3\u2074 + 3\u2075 + 3\u2076 = 3\u2074(1 + 3 + 9) = 3\u2074 \u00d7 13. So the sum is divisible by 13.\n\n**Why not the others**\n- 11 \u2014 the bracket 1+3+9 = 13, not a multiple of 11.\n- 7 \u2014 13 is not a multiple of 7.\n- 5 \u2014 the sum ends in 3\u2074\u00b713 = 81\u00b713 = 1053, not divisible by 5.\n\n**Key facts**\n- Factor the least power first: 3\u2074(1+3+9).\n- 1 + 3 + 9 = 13.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -700,7 +700,7 @@
       "id": "ment-number-system-mcq-30",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "question": "The mixed recurring decimal 0.2454545… expressed as a fraction in lowest terms is:",
+      "question": "The mixed recurring decimal 0.2454545\u2026 expressed as a fraction in lowest terms is:",
       "options": [
         "27/110",
         "24/99",
@@ -708,7 +708,7 @@
         "5/22"
       ],
       "answerIndex": 0,
-      "explanation": "For a mixed recurring decimal, numerator = (whole non-recurring+recurring block) − (non-recurring part); denominator = one 9 per recurring digit followed by one 0 per non-recurring digit. Here non-recurring digit is '2', recurring block '45': (245 − 2)/990 = 243/990 = 27/110.\n\n**Why not the others**\n- 24/99 — treats it as purely recurring 0.24̄, ignoring the leading non-recurring 2.\n- 245/990 — forgets to subtract the non-recurring part (245 − 2 = 243).\n- 5/22 = 0.2272… — a different value.\n\n**Key facts**\n- Mixed recurring 0.a(bc)… = (abc − a)/990.\n- 243/990 simplifies by 9 to 27/110.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "explanation": "For a mixed recurring decimal, numerator = (whole non-recurring+recurring block) \u2212 (non-recurring part); denominator = one 9 per recurring digit followed by one 0 per non-recurring digit. Here non-recurring digit is '2', recurring block '45': (245 \u2212 2)/990 = 243/990 = 27/110.\n\n**Why not the others**\n- 24/99 \u2014 treats it as purely recurring 0.24\u0304, ignoring the leading non-recurring 2.\n- 245/990 \u2014 forgets to subtract the non-recurring part (245 \u2212 2 = 243).\n- 5/22 = 0.2272\u2026 \u2014 a different value.\n\n**Key facts**\n- Mixed recurring 0.a(bc)\u2026 = (abc \u2212 a)/990.\n- 243/990 simplifies by 9 to 27/110.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -718,6 +718,52 @@
         "number-system",
         "recurring-decimal",
         "mixed"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-31",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Evaluate (3.0 \u00d7 10^8) \u00d7 (4.0 \u00d7 10^-3) and express the result in standard scientific notation (a \u00d7 10^n with 1 \u2264 a < 10).",
+      "options": [
+        "1.2 \u00d7 10^6",
+        "12 \u00d7 10^5",
+        "1.2 \u00d7 10^5",
+        "1.2 \u00d7 10^-6"
+      ],
+      "answerIndex": 0,
+      "covers": [
+        "Scientific (standard) notation \u2014 a \u00d7 10^n form & products"
+      ],
+      "explanation": "Multiply the mantissas and add the exponents: 3.0 \u00d7 4.0 = 12 and 10^8 \u00d7 10^-3 = 10^5, giving 12 \u00d7 10^5; renormalising 12 = 1.2 \u00d7 10^1 gives **1.2 \u00d7 10^6**.\n\n**Why not the others**\n- 12 \u00d7 10^5 \u2014 numerically equal but NOT standard form: the mantissa must satisfy 1 \u2264 a < 10, and 12 \u2265 10.\n- 1.2 \u00d7 10^5 \u2014 drops the extra power of ten gained when 12 is renormalised to 1.2 \u00d7 10^1.\n- 1.2 \u00d7 10^-6 \u2014 subtracts the exponents (and mishandles the sign) instead of adding them.\n\n**Key facts**\n- Multiply: multiply mantissas, ADD exponents, then renormalise so 1 \u2264 a < 10.\n- 3.0 \u00d7 4.0 = 12; 10^8 \u00d7 10^-3 = 10^5; 12 \u00d7 10^5 = 1.2 \u00d7 10^6.\n\n*Source: NCERT mathematics \u2014 exponents & standard (scientific) notation (concept, evergreen).*",
+      "source": "NCERT mathematics \u2014 exponents & scientific notation (concept)",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "scientific-notation"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-32",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The order of magnitude of a positive quantity is the power of ten nearest to it: writing x = a \u00d7 10^n with 1 \u2264 a < 10, the order is n when a < \u221a10 (\u2248 3.16) and n + 1 when a \u2265 \u221a10. What is the order of magnitude of 4,500?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "answerIndex": 1,
+      "covers": [
+        "Order of magnitude \u2014 nearest power of ten"
+      ],
+      "explanation": "4,500 = 4.5 \u00d7 10^3; since the mantissa 4.5 \u2265 \u221a10 \u2248 3.16, the nearest power of ten is 10^4, so the order of magnitude is **4** (log\u2081\u2080 4500 \u2248 3.65 rounds to 4).\n\n**Why not the others**\n- 3 \u2014 the exponent in 4.5 \u00d7 10^3, but 4.5 \u2265 3.16 rounds the power UP to 10^4.\n- 5 \u2014 4,500 is far below 10^5 (= 1,00,000).\n- 2 \u2014 4,500 is well above 10^2 (= 100).\n\n**Key facts**\n- x = a \u00d7 10^n, 1 \u2264 a < 10; order = n if a < 3.16, else n + 1.\n- Equivalent rule: round log\u2081\u2080 x to the nearest integer (log\u2081\u2080 4500 \u2248 3.65 \u2192 4).\n\n*Source: NCERT mathematics \u2014 order of magnitude, nearest-power-of-ten convention (concept, evergreen).*",
+      "source": "NCERT mathematics \u2014 order of magnitude (concept)",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "order-of-magnitude"
       ]
     }
   ]

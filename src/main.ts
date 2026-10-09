@@ -5,6 +5,7 @@ import './styles/telugu-font.css';
 import './styles/base.css';
 import './styles/components.css';
 import './styles/timeline.css';
+import './styles/print.css';
 import { renderApp } from './app';
 
 const root = document.querySelector<HTMLElement>('#app');

@@ -64,7 +64,7 @@ describe('content loader', () => {
   });
 
   it('looks up a bank by path', () => {
-    const bank = getBankByPath('/content/history-ancient/mcq-indus-valley.json');
+    const bank = getBankByPath('/content/history-ancient/hist-ancient-ivc/mcq-hist-ancient-ivc.json');
     expect(bank?.bank.kind).toBe('mcq');
     expect(getBankByPath('/content/does-not-exist.json')).toBeUndefined();
   });

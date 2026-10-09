@@ -10,6 +10,15 @@ import {
 import type { ProgressLike } from '../drill';
 import type { MCQItem } from '../../content/types';
 import type { SrCard } from '../spaced-repetition';
+import { getBanks } from '../../content/loader';
+
+/**
+ * The size of the whole MCQ drill pool, COMPUTED from the loaded content (every
+ * mcq bank's items) rather than hard-coded, so adding/removing questions keeps
+ * these full-scope assertions correct without a manual edit. buildSession with
+ * no filter draws from exactly this pool.
+ */
+const TOTAL_MCQS = getBanks('mcq').reduce((n, b) => n + b.bank.items.length, 0);
 
 // Exercises the drill builder/scorer against the real content pool. The HIST
 // pool now spans twenty-three Ancient-India subtopics (IVC + Stone Age, Early/Later
@@ -53,9 +62,9 @@ describe('drill.buildSession', () => {
 
   it('treats limit as optional — undefined/0/negative means the whole scope', () => {
     // No limit → every question in scope (full cross-subject pool).
-    expect(buildSession({}).items).toHaveLength(3227);
-    expect(buildSession({ limit: 0 }).items).toHaveLength(3227);
-    expect(buildSession({ limit: -5 }).items).toHaveLength(3227);
+    expect(buildSession({}).items).toHaveLength(TOTAL_MCQS);
+    expect(buildSession({ limit: 0 }).items).toHaveLength(TOTAL_MCQS);
+    expect(buildSession({ limit: -5 }).items).toHaveLength(TOTAL_MCQS);
     // A positive limit caps the pool.
     expect(buildSession({ limit: 2 }).items).toHaveLength(2);
     expect(buildSession({ limit: 1000 }).items).toHaveLength(1000);
@@ -66,7 +75,7 @@ describe('drill.buildSession', () => {
     // float to the top under refresher-first ordering, which is otherwise stable —
     // deterministic and complete over the whole pool.
     const items = buildSession({}).items;
-    expect(items).toHaveLength(3227);
+    expect(items).toHaveLength(TOTAL_MCQS);
     // Still a permutation of the whole pool (compare to a shuffled full build).
     const shuffled = buildSession({ seed: 3 }).items;
     expect([...items.map((i) => i.id)].sort()).toEqual([...shuffled.map((i) => i.id)].sort());
@@ -84,7 +93,7 @@ describe('drill.buildSession', () => {
     const b = buildSession({ seed: 42 }).items.map((i) => i.id);
     const c = buildSession({ seed: 7 }).items.map((i) => i.id);
     expect(a).toEqual(b); // same seed → same order
-    expect(a).toHaveLength(3227);
+    expect(a).toHaveLength(TOTAL_MCQS);
     // A different seed still returns the same SET of questions (a permutation).
     expect([...c].sort()).toEqual([...a].sort());
   });
@@ -108,7 +117,7 @@ describe('drill.buildSession', () => {
     };
     const ids = buildSession({ dueOnly: true, srCards, now }).items.map((i) => i.id);
     expect(ids).not.toContain('ivc-mcq-1');
-    expect(ids).toHaveLength(3226);
+    expect(ids).toHaveLength(TOTAL_MCQS - 1);
   });
 });
 

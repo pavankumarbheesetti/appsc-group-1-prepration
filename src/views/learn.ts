@@ -15,7 +15,7 @@
  * "Back to Syllabus" link. Search can deep-link here (a specific tab / note)
  * via {@link openLearn}.
  */
-import { getCards, getMindmap, getSubtopic, getSubtopicCoverage, type SubtopicView } from '../content/loader';
+import { getCards, getCaUpdatedThrough, getMindmap, getSubtopic, getSubtopicCoverage, type SubtopicView } from '../content/loader';
 import { buildSession } from '../engine/drill';
 import type { SessionScore } from '../engine/drill';
 import { navigate, routeParam } from '../router/router';
@@ -192,6 +192,20 @@ function countChip(iconName: Parameters<typeof icon>[0], text: string): HTMLElem
   return el('span', { class: 'learn-count' }, [icon(iconName, 15), el('span', { text })]);
 }
 
+/**
+ * Format an ISO `YYYY-MM-DD` CA freshness date as a short, human label like
+ * `9 Oct 2026`. Falls back to the raw string if it is not a parseable date.
+ * @internal
+ */
+function formatCaDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const day = Number(m[3]);
+  const mon = months[Number(m[2]) - 1] ?? m[2];
+  return `${day} ${mon} ${m[1]}`;
+}
+
 /** The stable id of the single (swapped) Learn tabpanel. @internal */
 const LEARN_PANEL_ID = 'learn-tabpanel';
 
@@ -297,6 +311,14 @@ function notesPanel(sub: SubtopicView, root: HTMLElement): HTMLElement {
   const map = getMindmap(sub.meta.id);
   const cards = getCards(sub.meta.id);
   const kids: Child[] = [];
+  // Current-Affairs subtopics show how fresh the bank is (STANDARDS: CA is
+  // dated). The marker is read from content/current-affairs/meta.json.
+  if (sub.meta.subjectCode === 'CA') {
+    kids.push(el('p', { class: 'section-lead learn-ca-freshness' }, [
+      icon('timer', 15),
+      el('span', { text: `Current affairs updated through ${formatCaDate(getCaUpdatedThrough())}` }),
+    ]));
+  }
   if (map) kids.push(buildAtAGlance(map));
   if (cards.length > 0) {
     kids.push(el('div', { class: 'learn-flashcards-cta' }, [

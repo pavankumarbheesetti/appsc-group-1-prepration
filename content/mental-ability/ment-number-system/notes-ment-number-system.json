@@ -8,15 +8,15 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "title": "Classification of numbers",
-      "body": "Every number in the syllabus sits in a nested hierarchy: **N ⊂ W ⊂ Z ⊂ Q ⊂ R**.\n\n| Set | Symbol | Members | Note |\n|---|---|---|---|\n| Natural | N | 1, 2, 3, … | starts at 1 |\n| Whole | W | 0, 1, 2, … | adds 0 |\n| Integer | Z | …,−1,0,1,… | adds negatives |\n| Rational | Q | p/q, q≠0 | terminating or recurring decimal |\n| Irrational | — | √2, π, e | non-terminating, non-repeating |\n| Real | R | Q ∪ irrationals | the number line |\n\n**Special numbers:** prime = exactly two factors (smallest = 2, the only even prime); composite = more than two factors (smallest = 4); **1 is neither**. Co-prime pair ⇔ HCF = 1 (e.g. 8 & 15). Twin primes differ by 2 (11,13).\n\n**Trap:** √(perfect square) is rational (√16 = 4); a non-perfect-square root is irrational. 22/7 is rational (only an approximation of π).",
+      "body": "Every number in the syllabus sits in a nested hierarchy: **N \u2282 W \u2282 Z \u2282 Q \u2282 R**.\n\n| Set | Symbol | Members | Note |\n|---|---|---|---|\n| Natural | N | 1, 2, 3, \u2026 | starts at 1 |\n| Whole | W | 0, 1, 2, \u2026 | adds 0 |\n| Integer | Z | \u2026,\u22121,0,1,\u2026 | adds negatives |\n| Rational | Q | p/q, q\u22600 | terminating or recurring decimal |\n| Irrational | \u2014 | \u221a2, \u03c0, e | non-terminating, non-repeating |\n| Real | R | Q \u222a irrationals | the number line |\n\n**Special numbers:** prime = exactly two factors (smallest = 2, the only even prime); composite = more than two factors (smallest = 4); **1 is neither**. Co-prime pair \u21d4 HCF = 1 (e.g. 8 & 15). Twin primes differ by 2 (11,13).\n\n**Trap:** \u221a(perfect square) is rational (\u221a16 = 4); a non-perfect-square root is irrational. 22/7 is rational (only an approximation of \u03c0).",
       "keyPoints": [
-        "Nesting of number sets: N ⊂ W ⊂ Z ⊂ Q ⊂ R",
+        "Nesting of number sets: N \u2282 W \u2282 Z \u2282 Q \u2282 R",
         "Natural numbers start at 1; whole numbers add 0",
-        "Rational = p/q (q≠0) = terminating or recurring decimal; irrational = non-terminating non-repeating",
+        "Rational = p/q (q\u22600) = terminating or recurring decimal; irrational = non-terminating non-repeating",
         "2 is the only even prime and the smallest prime; 1 is neither prime nor composite",
         "Co-prime numbers have HCF = 1; a non-perfect-square root is irrational"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — Classification of Number System",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Classification of Number System",
       "verified": true,
       "tags": [
         "number-system",
@@ -28,15 +28,15 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "title": "Divisibility rules (shortcut table)",
-      "body": "Test divisibility without dividing:\n\n| Divisor | Rule |\n|---|---|\n| 2 | last digit even (0,2,4,6,8) |\n| 3 | digit sum divisible by 3 |\n| 4 | last two digits divisible by 4 |\n| 5 | last digit 0 or 5 |\n| 6 | divisible by both 2 and 3 |\n| 8 | last three digits divisible by 8 |\n| 9 | digit sum divisible by 9 |\n| 11 | (odd-place sum) − (even-place sum) = 0 or a multiple of 11 |\n\n**Worked example (11):** For 62_35 divisible by 11 — from the right, (5+_+6) − (3+2) = 6 + _ must be a multiple of 11 ⇒ _ = 5, giving 62535 = 11 × 5685.\n\n**Trap:** 6 needs BOTH the 2-test and 3-test; passing only one is not enough. For 11, count places from the unit digit.",
+      "body": "Test divisibility without dividing:\n\n| Divisor | Rule |\n|---|---|\n| 2 | last digit even (0,2,4,6,8) |\n| 3 | digit sum divisible by 3 |\n| 4 | last two digits divisible by 4 |\n| 5 | last digit 0 or 5 |\n| 6 | divisible by both 2 and 3 |\n| 8 | last three digits divisible by 8 |\n| 9 | digit sum divisible by 9 |\n| 11 | (odd-place sum) \u2212 (even-place sum) = 0 or a multiple of 11 |\n\n**Worked example (11):** For 62_35 divisible by 11 \u2014 from the right, (5+_+6) \u2212 (3+2) = 6 + _ must be a multiple of 11 \u21d2 _ = 5, giving 62535 = 11 \u00d7 5685.\n\n**Trap:** 6 needs BOTH the 2-test and 3-test; passing only one is not enough. For 11, count places from the unit digit.",
       "keyPoints": [
-        "Divisible by 3 ⇔ digit sum divisible by 3; by 9 ⇔ digit sum divisible by 9",
-        "Divisible by 4 ⇔ last two digits; by 8 ⇔ last three digits",
-        "Divisible by 6 ⇔ divisible by both 2 and 3",
-        "Divisible by 11 ⇔ alternating digit-sum is 0 or a multiple of 11",
+        "Divisible by 3 \u21d4 digit sum divisible by 3; by 9 \u21d4 digit sum divisible by 9",
+        "Divisible by 4 \u21d4 last two digits; by 8 \u21d4 last three digits",
+        "Divisible by 6 \u21d4 divisible by both 2 and 3",
+        "Divisible by 11 \u21d4 alternating digit-sum is 0 or a multiple of 11",
         "Count digit places from the right (unit digit = first/odd place) for the 11-test"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — Divisibility Rule",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Divisibility Rule",
       "verified": true,
       "tags": [
         "number-system",
@@ -48,15 +48,15 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "title": "Factors from prime factorisation",
-      "body": "Start with prime factorisation N = p^a · q^b · r^c …\n\n- **Number of factors** = (a+1)(b+1)(c+1)…  (includes 1 and N).\n- **Number of odd factors** = drop all powers of 2, then apply the same product.\n- **Number of even factors** = total factors − odd factors.\n- **Sum of factors** = [(p^{a+1}−1)/(p−1)] × [(q^{b+1}−1)/(q−1)] × …\n\n**Worked example:** 360 = 2³·3²·5 ⇒ factors = 4·3·2 = **24**. For 1260 = 2²·3²·5·7, odd factors = (from 3²·5·7) 3·2·2 = **12**.\n\n**Trap:** do NOT forget the +1 on each exponent, and do NOT include the power of 2 when counting odd factors.",
+      "body": "Start with prime factorisation N = p^a \u00b7 q^b \u00b7 r^c \u2026\n\n- **Number of factors** = (a+1)(b+1)(c+1)\u2026  (includes 1 and N).\n- **Number of odd factors** = drop all powers of 2, then apply the same product.\n- **Number of even factors** = total factors \u2212 odd factors.\n- **Sum of factors** = [(p^{a+1}\u22121)/(p\u22121)] \u00d7 [(q^{b+1}\u22121)/(q\u22121)] \u00d7 \u2026\n\n**Worked example:** 360 = 2\u00b3\u00b73\u00b2\u00b75 \u21d2 factors = 4\u00b73\u00b72 = **24**. For 1260 = 2\u00b2\u00b73\u00b2\u00b75\u00b77, odd factors = (from 3\u00b2\u00b75\u00b77) 3\u00b72\u00b72 = **12**.\n\n**Trap:** do NOT forget the +1 on each exponent, and do NOT include the power of 2 when counting odd factors.",
       "keyPoints": [
-        "Number of factors of N = p^a·q^b·… is (a+1)(b+1)…",
-        "360 = 2³·3²·5 has (3+1)(2+1)(1+1) = 24 factors",
+        "Number of factors of N = p^a\u00b7q^b\u00b7\u2026 is (a+1)(b+1)\u2026",
+        "360 = 2\u00b3\u00b73\u00b2\u00b75 has (3+1)(2+1)(1+1) = 24 factors",
         "Odd factors: ignore powers of 2, then take the (e+1) product",
-        "Even factors = total factors − odd factors",
+        "Even factors = total factors \u2212 odd factors",
         "Sum of factors uses the geometric-series formula per prime"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — Factors",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Factors",
       "verified": true,
       "tags": [
         "number-system",
@@ -67,16 +67,16 @@
       "id": "ment-number-system-note-unit-digit",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "title": "Unit digit — cyclicity method",
-      "body": "Only the base's unit digit matters. Digits 0,1,5,6 keep the same unit digit at any power. Others cycle with period 4:\n\n| Base ends in | Cycle | Period |\n|---|---|---|\n| 2 | 2,4,8,6 | 4 |\n| 3 | 3,9,7,1 | 4 |\n| 7 | 7,9,3,1 | 4 |\n| 8 | 8,4,2,6 | 4 |\n| 4 | 4,6 | 2 (odd→4, even→6) |\n| 9 | 9,1 | 2 (odd→9, even→1) |\n\n**Shortcut:** take (power mod 4). Remainder 1,2,3 → that term of the cycle; remainder 0 → the 4th term.\n\n**Worked example:** 3^47 → 47 mod 4 = 3 → 3rd term of (3,9,7,1) = **7**. For 17^23 + 24^24 → 3 + 6 = **9** (24^even ends in 6).",
+      "title": "Unit digit \u2014 cyclicity method",
+      "body": "Only the base's unit digit matters. Digits 0,1,5,6 keep the same unit digit at any power. Others cycle with period 4:\n\n| Base ends in | Cycle | Period |\n|---|---|---|\n| 2 | 2,4,8,6 | 4 |\n| 3 | 3,9,7,1 | 4 |\n| 7 | 7,9,3,1 | 4 |\n| 8 | 8,4,2,6 | 4 |\n| 4 | 4,6 | 2 (odd\u21924, even\u21926) |\n| 9 | 9,1 | 2 (odd\u21929, even\u21921) |\n\n**Shortcut:** take (power mod 4). Remainder 1,2,3 \u2192 that term of the cycle; remainder 0 \u2192 the 4th term.\n\n**Worked example:** 3^47 \u2192 47 mod 4 = 3 \u2192 3rd term of (3,9,7,1) = **7**. For 17^23 + 24^24 \u2192 3 + 6 = **9** (24^even ends in 6).",
       "keyPoints": [
         "Unit digit depends only on the unit digit of the base",
         "Digits 0,1,5,6 stay unchanged at any power",
         "Cyclicity of 2,3,7,8 is 4; of 4 and 9 is 2",
         "Use (power mod 4); remainder 0 means the 4th term of the cycle",
-        "Base ending in 4: odd power → 4, even power → 6"
+        "Base ending in 4: odd power \u2192 4, even power \u2192 6"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — Unit Digit",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Unit Digit",
       "verified": true,
       "tags": [
         "number-system",
@@ -88,15 +88,15 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "title": "Trailing zeros (pairs of 2 and 5)",
-      "body": "Each trailing zero needs one 2 and one 5, since 10 = 2 × 5. Count both, take the minimum.\n\n**In a factorial n!:** 5s are scarcer, so trailing zeros = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + …\n\n**Worked example:** 100! → ⌊100/5⌋ + ⌊100/25⌋ = 20 + 4 = **24** zeros.\n\n**In a product/power:** prime-factorise each base, total the 2s and 5s, take the minimum.\n\n**Worked example:** 15^50 × 20^40 × 25^30 → 5s = 50+40+60 = 150, 2s = 80 (from 20^40 = 2^80). min(80,150) = **80** zeros.\n\n**Trap:** in a factorial the answer is always driven by 5s; in a product, check which of 2 or 5 is scarcer.",
+      "body": "Each trailing zero needs one 2 and one 5, since 10 = 2 \u00d7 5. Count both, take the minimum.\n\n**In a factorial n!:** 5s are scarcer, so trailing zeros = \u230an/5\u230b + \u230an/25\u230b + \u230an/125\u230b + \u2026\n\n**Worked example:** 100! \u2192 \u230a100/5\u230b + \u230a100/25\u230b = 20 + 4 = **24** zeros.\n\n**In a product/power:** prime-factorise each base, total the 2s and 5s, take the minimum.\n\n**Worked example:** 15^50 \u00d7 20^40 \u00d7 25^30 \u2192 5s = 50+40+60 = 150, 2s = 80 (from 20^40 = 2^80). min(80,150) = **80** zeros.\n\n**Trap:** in a factorial the answer is always driven by 5s; in a product, check which of 2 or 5 is scarcer.",
       "keyPoints": [
-        "One trailing zero = one pair of (2 × 5); count both and take the minimum",
-        "Trailing zeros in n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + …",
+        "One trailing zero = one pair of (2 \u00d7 5); count both and take the minimum",
+        "Trailing zeros in n! = \u230an/5\u230b + \u230an/25\u230b + \u230an/125\u230b + \u2026",
         "100! ends in 24 zeros",
         "In a product, prime-factorise, total the 2s and 5s, take the smaller count",
         "In a factorial the 5-count is always the limiting factor"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — Number of Zeros",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Number of Zeros",
       "verified": true,
       "tags": [
         "number-system",
@@ -107,18 +107,18 @@
       "id": "ment-number-system-note-hcf-lcm-remainder",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "title": "HCF–LCM identity, remainders & perfect squares",
-      "body": "**HCF × LCM = product of the two numbers** (two numbers only). So a missing fourth quantity is found from the other three. For fractions: HCF = HCF(numerators)/LCM(denominators); LCM = LCM(numerators)/HCF(denominators).\n\n**Remainders:** Dividend = Divisor × quotient + Remainder. If divisor d₂ divides d₁, then N mod d₂ = (given remainder) mod d₂.\n\n*Example:* N ÷ 899 leaves 63; 899 = 29 × 31, so N ÷ 29 leaves 63 mod 29 = **5**.\n\n**Remainder of powers (cyclicity):** list the remainders of the base's successive powers to find the cycle length, then use (exponent mod cycle-length). *Example:* 2^100 ÷ 7 → 2¹,2²,2³ leave 2,4,1 (cycle length 3); 100 mod 3 = 1 → remainder **2**.\n\n**HCF/LCM word problems:** 'bells toll / lights blink together again' → **LCM** of the intervals; 'greatest number dividing a, b, c leaving the SAME remainder' → **HCF of the pairwise differences**; 'least number leaving remainder r with each divisor' → **LCM(divisors) + r**.\n\n**Perfect-square unit-digit test:** a perfect square ends only in 0,1,4,5,6,9 — never 2,3,7,8. So 1298 (ends in 8) is not a perfect square, while 441 = 21² and 625 = 25² are.",
+      "title": "HCF\u2013LCM identity, remainders & perfect squares",
+      "body": "**HCF \u00d7 LCM = product of the two numbers** (two numbers only). So a missing fourth quantity is found from the other three. For fractions: HCF = HCF(numerators)/LCM(denominators); LCM = LCM(numerators)/HCF(denominators).\n\n**Remainders:** Dividend = Divisor \u00d7 quotient + Remainder. If divisor d\u2082 divides d\u2081, then N mod d\u2082 = (given remainder) mod d\u2082.\n\n*Example:* N \u00f7 899 leaves 63; 899 = 29 \u00d7 31, so N \u00f7 29 leaves 63 mod 29 = **5**.\n\n**Remainder of powers (cyclicity):** list the remainders of the base's successive powers to find the cycle length, then use (exponent mod cycle-length). *Example:* 2^100 \u00f7 7 \u2192 2\u00b9,2\u00b2,2\u00b3 leave 2,4,1 (cycle length 3); 100 mod 3 = 1 \u2192 remainder **2**.\n\n**HCF/LCM word problems:** 'bells toll / lights blink together again' \u2192 **LCM** of the intervals; 'greatest number dividing a, b, c leaving the SAME remainder' \u2192 **HCF of the pairwise differences**; 'least number leaving remainder r with each divisor' \u2192 **LCM(divisors) + r**.\n\n**Perfect-square unit-digit test:** a perfect square ends only in 0,1,4,5,6,9 \u2014 never 2,3,7,8. So 1298 (ends in 8) is not a perfect square, while 441 = 21\u00b2 and 625 = 25\u00b2 are.",
       "keyPoints": [
-        "HCF × LCM = product of the two numbers (holds for exactly two numbers)",
+        "HCF \u00d7 LCM = product of the two numbers (holds for exactly two numbers)",
         "HCF of fractions = HCF(numerators) / LCM(denominators)",
-        "Dividend = Divisor × quotient + Remainder",
-        "If d₂ divides d₁, then N mod d₂ = (remainder when divided by d₁) mod d₂",
-        "Remainder of a^n by a divisor: use the cycle of power-remainders, then (exponent mod cycle length) — e.g. 2^100 ÷ 7 = 2",
-        "Word problems: bells toll together → LCM of intervals; greatest number leaving the same remainder → HCF of the differences",
-        "Perfect squares end only in 0,1,4,5,6,9 — never 2,3,7,8"
+        "Dividend = Divisor \u00d7 quotient + Remainder",
+        "If d\u2082 divides d\u2081, then N mod d\u2082 = (remainder when divided by d\u2081) mod d\u2082",
+        "Remainder of a^n by a divisor: use the cycle of power-remainders, then (exponent mod cycle length) \u2014 e.g. 2^100 \u00f7 7 = 2",
+        "Word problems: bells toll together \u2192 LCM of intervals; greatest number leaving the same remainder \u2192 HCF of the differences",
+        "Perfect squares end only in 0,1,4,5,6,9 \u2014 never 2,3,7,8"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF; Remainder Theorem; Perfect Square",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 LCM and HCF; Remainder Theorem; Perfect Square",
       "verified": true,
       "tags": [
         "number-system",
@@ -132,14 +132,14 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "title": "Fractions, decimals & recurring decimals",
-      "body": "**Comparing/ordering fractions** — three quick methods:\n\n1. **Decimals:** convert each to a decimal and compare (fastest for a small set).\n2. **Cross-multiplication (two at a time):** a/b vs c/d ⇒ compare a·d with b·c.\n3. **Common denominator:** rewrite over the LCM of denominators, then compare numerators.\n\n*Example:* 3/5, 5/8, 7/12, 11/20 → 0.60, 0.625, 0.583, 0.55 ⇒ ascending **11/20 < 7/12 < 3/5 < 5/8**.\n\n**Recurring decimal → fraction:**\n\n- **Pure recurring** 0.(ab)… = (repeating block)/(as many 9s as digits). E.g. 0.363636… = 36/99 = **4/11**; 0.7̄ = 7/9.\n- **Mixed recurring** 0.a(bc)… = (whole non-recurring+recurring block − non-recurring part)/(9s for recurring digits then 0s for non-recurring). E.g. 0.1(6) = (16−1)/90 = 15/90 = 1/6.\n\n**Terminating vs recurring:** a fraction in lowest terms terminates iff its denominator has only 2s and/or 5s as prime factors.",
+      "body": "**Comparing/ordering fractions** \u2014 three quick methods:\n\n1. **Decimals:** convert each to a decimal and compare (fastest for a small set).\n2. **Cross-multiplication (two at a time):** a/b vs c/d \u21d2 compare a\u00b7d with b\u00b7c.\n3. **Common denominator:** rewrite over the LCM of denominators, then compare numerators.\n\n*Example:* 3/5, 5/8, 7/12, 11/20 \u2192 0.60, 0.625, 0.583, 0.55 \u21d2 ascending **11/20 < 7/12 < 3/5 < 5/8**.\n\n**Recurring decimal \u2192 fraction:**\n\n- **Pure recurring** 0.(ab)\u2026 = (repeating block)/(as many 9s as digits). E.g. 0.363636\u2026 = 36/99 = **4/11**; 0.7\u0304 = 7/9.\n- **Mixed recurring** 0.a(bc)\u2026 = (whole non-recurring+recurring block \u2212 non-recurring part)/(9s for recurring digits then 0s for non-recurring). E.g. 0.1(6) = (16\u22121)/90 = 15/90 = 1/6.\n\n**Terminating vs recurring:** a fraction in lowest terms terminates iff its denominator has only 2s and/or 5s as prime factors.",
       "keyPoints": [
-        "Compare fractions by decimals, cross-multiplication (a·d vs b·c), or a common denominator",
-        "Pure recurring 0.(block) = block / (as many 9s as digits) — e.g. 0.(36) = 36/99 = 4/11",
+        "Compare fractions by decimals, cross-multiplication (a\u00b7d vs b\u00b7c), or a common denominator",
+        "Pure recurring 0.(block) = block / (as many 9s as digits) \u2014 e.g. 0.(36) = 36/99 = 4/11",
         "Mixed recurring uses 9s for recurring digits then 0s for non-recurring digits in the denominator",
         "A fraction terminates iff its lowest-term denominator has only prime factors 2 and/or 5"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — Fractions; Decimals",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Fractions; Decimals",
       "verified": true,
       "tags": [
         "number-system",
@@ -153,20 +153,42 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "title": "Counting terms in a range & factoring power-sums",
-      "body": "**Count of multiples of k in [a, b]** = ⌊b/k⌋ − ⌊(a−1)/k⌋.\n\n*Example:* multiples of 15 (=LCM of 3 & 5) from 17 to 457 → ⌊457/15⌋ − ⌊16/15⌋ = 30 − 1 = **29**.\n\n**Numbers divisible by BOTH x and y** → count multiples of LCM(x, y). Three-digit multiples of 7 = ⌊999/7⌋ − ⌊99/7⌋ = 142 − 14 = **128**.\n\n**AP term count:** in an evenly spaced list a, a+d, …, l the number of terms n = (l − a)/d + 1.\n\n**Prime counting in a range:** just list them — e.g. primes between 100 and 120 are 101, 103, 107, 109, 113 → **5**.\n\n**Factoring a sum of consecutive powers:** pull out the smallest power. aᵐ + aᵐ⁺¹ + … + aᵐ⁺ᵏ = aᵐ(1 + a + a² + … + aᵏ).\n\n*Example:* 6²⁵ + 6²⁶ + 6²⁷ + 6²⁸ = 6²⁵(1 + 6 + 36 + 216) = 6²⁵ × **259**, so 259 (=7×37) is a divisor.\n\n**Trap:** for 'divisible by both', divide the range by the LCM, not by each number separately; and always factor a power-sum before testing divisibility.",
+      "body": "**Count of multiples of k in [a, b]** = \u230ab/k\u230b \u2212 \u230a(a\u22121)/k\u230b.\n\n*Example:* multiples of 15 (=LCM of 3 & 5) from 17 to 457 \u2192 \u230a457/15\u230b \u2212 \u230a16/15\u230b = 30 \u2212 1 = **29**.\n\n**Numbers divisible by BOTH x and y** \u2192 count multiples of LCM(x, y). Three-digit multiples of 7 = \u230a999/7\u230b \u2212 \u230a99/7\u230b = 142 \u2212 14 = **128**.\n\n**AP term count:** in an evenly spaced list a, a+d, \u2026, l the number of terms n = (l \u2212 a)/d + 1.\n\n**Prime counting in a range:** just list them \u2014 e.g. primes between 100 and 120 are 101, 103, 107, 109, 113 \u2192 **5**.\n\n**Factoring a sum of consecutive powers:** pull out the smallest power. a\u1d50 + a\u1d50\u207a\u00b9 + \u2026 + a\u1d50\u207a\u1d4f = a\u1d50(1 + a + a\u00b2 + \u2026 + a\u1d4f).\n\n*Example:* 6\u00b2\u2075 + 6\u00b2\u2076 + 6\u00b2\u2077 + 6\u00b2\u2078 = 6\u00b2\u2075(1 + 6 + 36 + 216) = 6\u00b2\u2075 \u00d7 **259**, so 259 (=7\u00d737) is a divisor.\n\n**Trap:** for 'divisible by both', divide the range by the LCM, not by each number separately; and always factor a power-sum before testing divisibility.",
       "keyPoints": [
-        "Count of multiples of k in [a,b] = ⌊b/k⌋ − ⌊(a−1)/k⌋",
-        "Divisible by both x and y ⇒ count multiples of LCM(x,y)",
-        "AP term count n = (l − a)/d + 1",
-        "Sum of consecutive powers aᵐ+…+aᵐ⁺ᵏ = aᵐ(1+a+…+aᵏ)",
-        "6²⁵+6²⁶+6²⁷+6²⁸ = 6²⁵·259; primes between 100 and 120 are 5 in number"
+        "Count of multiples of k in [a,b] = \u230ab/k\u230b \u2212 \u230a(a\u22121)/k\u230b",
+        "Divisible by both x and y \u21d2 count multiples of LCM(x,y)",
+        "AP term count n = (l \u2212 a)/d + 1",
+        "Sum of consecutive powers a\u1d50+\u2026+a\u1d50\u207a\u1d4f = a\u1d50(1+a+\u2026+a\u1d4f)",
+        "6\u00b2\u2075+6\u00b2\u2076+6\u00b2\u2077+6\u00b2\u2078 = 6\u00b2\u2075\u00b7259; primes between 100 and 120 are 5 in number"
       ],
-      "source": "local APPSC Quantitative Reasoning PDF — Counting & Series of Powers",
+      "source": "local APPSC Quantitative Reasoning PDF \u2014 Counting & Series of Powers",
       "verified": true,
       "tags": [
         "number-system",
         "counting",
         "power-sums"
+      ]
+    },
+    {
+      "id": "ment-number-system-note-order-of-magnitude",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "title": "Order of magnitude & scientific notation",
+      "body": "**Scientific (standard) notation.** Write any number as **a \u00d7 10^n** with **1 \u2264 a < 10** and *n* an integer. Large numbers give positive *n*, small numbers negative *n*. Shift the decimal point and count the places moved.\n\n| Number | Standard form |\n|---|---|\n| 45,000 | 4.5 \u00d7 10^4 |\n| 0.00067 | 6.7 \u00d7 10^-4 |\n| 384,400 | 3.844 \u00d7 10^5 |\n\n**Operations.** Multiply \u2192 multiply the mantissas and **add** the exponents; divide \u2192 divide the mantissas and **subtract** the exponents; then **renormalise** so the mantissa is back in [1, 10). E.g. (3 \u00d7 10^8)(4 \u00d7 10^-3) = 12 \u00d7 10^5 = **1.2 \u00d7 10^6**.\n\n**Order of magnitude.** The power of ten **nearest** the number. Writing x = a \u00d7 10^n (1 \u2264 a < 10), the order is **n** when a < \u221a10 (\u2248 3.16) and **n + 1** when a \u2265 \u221a10 \u2014 equivalently, round log\u2081\u2080 x to the nearest integer. So 4,500 = 4.5 \u00d7 10^3 has order of magnitude **4** (4.5 \u2265 3.16), while 2,800 = 2.8 \u00d7 10^3 has order **3** (2.8 < 3.16).\n\n**Traps.** 12 \u00d7 10^5 is numerically fine but **not** standard form (mantissa must be < 10). Two quantities differ by *k* **orders of magnitude** when their orders differ by *k* (a factor of about 10^k).",
+      "keyPoints": [
+        "Standard form: a \u00d7 10^n with 1 \u2264 a < 10 and n an integer.",
+        "Multiply: multiply mantissas, ADD exponents; divide: subtract exponents; then renormalise.",
+        "Order of magnitude = power of ten nearest the number (round log\u2081\u2080 x to the nearest integer).",
+        "Boundary \u221a10 \u2248 3.16: if the mantissa a \u2265 3.16, round the exponent UP by 1.",
+        "4,500 = 4.5 \u00d7 10^3 \u2192 order of magnitude 4; 2,800 = 2.8 \u00d7 10^3 \u2192 order 3.",
+        "(3 \u00d7 10^8)(4 \u00d7 10^-3) = 1.2 \u00d7 10^6 (12 \u00d7 10^5 renormalised)."
+      ],
+      "source": "NCERT mathematics \u2014 exponents, scientific notation & order of magnitude (standard convention)",
+      "verified": true,
+      "tags": [
+        "number-system",
+        "scientific-notation",
+        "order-of-magnitude"
       ]
     }
   ]

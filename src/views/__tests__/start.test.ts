@@ -22,6 +22,31 @@ describe('Start-here guide (#/start)', () => {
     expect(headings).toContain('If you miss a day');
   });
 
+  it('adds the OMR sheet rules section with the key disqualifiers', () => {
+    const root = document.createElement('div');
+    start.render(root);
+    const headings = [...root.querySelectorAll('h2')].map((h) => h.textContent);
+    expect(headings).toContain('OMR sheet rules');
+    const text = root.textContent ?? '';
+    expect(text).toContain('ballpoint');
+    expect(text).toContain('Darken the whole bubble');
+    expect(text).toContain('overwriting');
+    expect(text).toContain('roll number and booklet series');
+    expect(text).toContain('batches of 10–15');
+  });
+
+  it('adds the "After Prelims: Mains" section with the timeline + light pre-Prelims work', () => {
+    const root = document.createElement('div');
+    start.render(root);
+    const headings = [...root.querySelectorAll('h2')].map((h) => h.textContent);
+    expect(headings).toContain('After Prelims: Mains');
+    const text = root.textContent ?? '';
+    expect(text).toContain('June–July 2027');
+    expect(text).toContain('qualifying');
+    expect(text).toContain('Telugu');
+    expect(text).toContain('fortnight');
+  });
+
   it('states the correct exam facts (two 120-mark papers, −⅓, 1:50 gateway)', () => {
     const root = document.createElement('div');
     start.render(root);

@@ -6384,3 +6384,232 @@ button.tel-lang-card {
 .road-event .nav-icon {
   color: var(--accent);
 }
+
+/* -------------------------------------------------------------------------- */
+/* Confidence tagging (test runners) + negative-marking habit card            */
+/* -------------------------------------------------------------------------- */
+
+.mock-confidence {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.mock-confidence-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.mock-conf-btn,
+.omr-scratch-btn {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-pill, 999px);
+  padding: 4px 12px;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  min-height: 32px;
+}
+.mock-conf-btn:hover,
+.omr-scratch-btn:hover {
+  border-color: var(--color-accent);
+}
+.mock-conf-btn.is-active,
+.omr-scratch-btn.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-contrast, #fff);
+}
+.mock-conf-btn:focus-visible,
+.omr-scratch-btn:focus-visible,
+.omr-bubble:focus-visible,
+.mock-omr-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.neg-skip-guesses {
+  font-weight: 600;
+}
+.neg-rule {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface-alt, rgba(0, 0, 0, 0.03));
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--text-sm);
+}
+
+/* -------------------------------------------------------------------------- */
+/* OMR mode                                                                    */
+/* -------------------------------------------------------------------------- */
+
+.mock-omr-toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-pill, 999px);
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: var(--text-sm);
+}
+.mock-omr-track {
+  width: 34px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--color-border);
+  position: relative;
+  flex: 0 0 auto;
+  transition: background 0.15s ease;
+}
+.mock-omr-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s ease;
+}
+.mock-omr-toggle.is-on .mock-omr-track {
+  background: var(--color-accent);
+}
+.mock-omr-toggle.is-on .mock-omr-thumb {
+  transform: translateX(16px);
+}
+
+.omr-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-4);
+  align-items: start;
+}
+.omr-question-col {
+  min-width: 0;
+}
+
+.omr-sheet-panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 10px);
+  background: var(--color-surface);
+  padding: var(--space-3);
+  position: sticky;
+  top: var(--space-3);
+  max-height: 70vh;
+  overflow: auto;
+}
+.omr-sheet-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-2);
+}
+.omr-sheet-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.omr-row,
+.omr-roll-col,
+.omr-series {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.omr-row.is-current {
+  background: var(--color-surface-alt, rgba(0, 0, 0, 0.04));
+  border-radius: var(--radius-sm, 6px);
+}
+.omr-row-num {
+  width: 28px;
+  text-align: right;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.omr-bubble {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs, 11px);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.omr-bubble:hover {
+  border-color: var(--color-accent);
+}
+.omr-bubble.is-filled {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-surface);
+  font-weight: 700;
+}
+
+.omr-roll {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.omr-roll-col {
+  flex-direction: column;
+}
+
+.omr-warning {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm, 6px);
+  background: var(--color-warning-bg, #fff4e5);
+  color: var(--color-warning-text, #7a4b00);
+  border: 1px solid var(--color-warning, #e0a44a);
+  margin-bottom: var(--space-2);
+}
+.omr-warning.is-shown {
+  display: flex;
+}
+
+.omr-scratch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* Mobile: the bubble sheet becomes a sticky bottom sheet usable at 390px. */
+@media (max-width: 720px) {
+  .omr-layout {
+    grid-template-columns: 1fr;
+  }
+  .omr-sheet-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    border-radius: var(--radius-lg, 14px) var(--radius-lg, 14px) 0 0;
+    max-height: 40vh;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.18);
+    z-index: 40;
+  }
+  .omr-sheet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 4px 10px;
+  }
+  .omr-question-col {
+    padding-bottom: 42vh;
+  }
+}

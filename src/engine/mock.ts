@@ -21,7 +21,7 @@
  */
 import type { MCQItem } from '../content/types';
 import type { ExamPattern, ExamSection, PaperId } from '../lib/exam-pattern';
-import { type MockAnswer, mockScore, type MockScore } from '../lib/metrics';
+import { type MockAnswer, mockScore, type MockScore, NEGATIVE_MARK } from '../lib/metrics';
 
 /** Section pools keyed by the section's `subjectCode`. */
 export type SectionPools = Readonly<Record<string, readonly MCQItem[]>>;
@@ -457,4 +457,216 @@ export function scoreWeekTest(
     },
   );
   return { sections, overall: mockScore(overall) };
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* CONFIDENCE TAGGING — "negative marking as a habit" (every test runner)      */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The learner's OPTIONAL per-answer confidence tag, set while taking ANY test
+ * (week test, unit test, full mock, sectional). Three levels mirroring how a
+ * candidate actually feels at the moment of answering:
+ *   - `sure`  — "I know this".
+ *   - `fifty` — "it's a 50-50".
+ *   - `guess` — "a pure guess".
+ * `null`/absent means the learner didn't tag it (the unobtrusive default).
+ */
+export type MockConfidence = 'sure' | 'fifty' | 'guess';
+
+/** The three tags, in display order. */
+export const MOCK_CONFIDENCES: readonly MockConfidence[] = ['sure', 'fifty', 'guess'];
+
+/** Short human label for a confidence tag. */
+export const MOCK_CONFIDENCE_LABEL: Record<MockConfidence, string> = {
+  sure: 'Sure',
+  fifty: '50-50',
+  guess: 'Guess',
+};
+
+/**
+ * One answered question's outcome plus its optional confidence tag — the pure
+ * input to {@link negativeMarkingSummary}. Built by the test runner in memory.
+ */
+export interface ConfidenceOutcome {
+  /** The learner selected an option (else it is a blank/skip). */
+  attempted: boolean;
+  /** Whether that selected option was right (ignored when skipped). */
+  correct: boolean;
+  /** The optional confidence tag set before answering. */
+  confidence: MockConfidence | null;
+}
+
+/** Per-confidence accuracy roll-up for the results "accuracy by confidence" line. */
+export interface ConfidenceBucket {
+  /** Questions carrying this tag (attempted or not). */
+  total: number;
+  /** Of those, how many were attempted. */
+  attempted: number;
+  /** Attempted-and-correct. */
+  correct: number;
+  /** Attempted-and-wrong. */
+  wrong: number;
+  /** correct / attempted in [0, 1]; 0 when none attempted. */
+  accuracy: number;
+}
+
+/** The full "negative-marking habit" summary a results screen renders. */
+export interface NegativeMarkingSummary {
+  /** NET score = correct − wrong × 1/3 (blanks neutral). */
+  net: number;
+  /** NET had every answer tagged `guess` been left BLANK instead. */
+  netSkippingGuesses: number;
+  /** Marks shed to wrong answers = wrong × 1/3 (always ≥ 0). */
+  marksLostToWrong: number;
+  /** Questions attempted (selected an option). */
+  attempted: number;
+  /** Attempted-and-correct. */
+  correct: number;
+  /** Attempted-and-wrong (the only penalised bucket). */
+  wrong: number;
+  /** Left blank. */
+  skipped: number;
+  /** correct / attempted in [0, 1]. */
+  accuracy: number;
+  /** Per-tag roll-up (plus an `unset` bucket for untagged answers). */
+  byConfidence: Record<MockConfidence | 'unset', ConfidenceBucket>;
+  /** True when at least one answer carried a confidence tag. */
+  hasRatings: boolean;
+}
+
+/** A zeroed {@link ConfidenceBucket}. @internal */
+function emptyBucket(): ConfidenceBucket {
+  return { total: 0, attempted: 0, correct: 0, wrong: 0, accuracy: 0 };
+}
+
+/**
+ * Fold per-question {@link ConfidenceOutcome}s into the {@link
+ * NegativeMarkingSummary} the results screen shows. Pure; the overall `net`
+ * uses the same −1/3 rule as {@link netScore}, and `netSkippingGuesses` answers
+ * "what if I had left my pure guesses blank" by removing every `guess`-tagged
+ * ATTEMPT from both the correct and wrong tallies.
+ */
+export function negativeMarkingSummary(
+  outcomes: readonly ConfidenceOutcome[],
+): NegativeMarkingSummary {
+  const by: Record<MockConfidence | 'unset', ConfidenceBucket> = {
+    sure: emptyBucket(),
+    fifty: emptyBucket(),
+    guess: emptyBucket(),
+    unset: emptyBucket(),
+  };
+  let attempted = 0;
+  let correct = 0;
+  let wrong = 0;
+  let hasRatings = false;
+
+  for (const o of outcomes) {
+    const key: MockConfidence | 'unset' = o.confidence ?? 'unset';
+    if (o.confidence) hasRatings = true;
+    const bucket = by[key];
+    bucket.total += 1;
+    if (o.attempted) {
+      attempted += 1;
+      bucket.attempted += 1;
+      if (o.correct) {
+        correct += 1;
+        bucket.correct += 1;
+      } else {
+        wrong += 1;
+        bucket.wrong += 1;
+      }
+    }
+  }
+
+  for (const k of ['sure', 'fifty', 'guess', 'unset'] as const) {
+    const b = by[k];
+    b.accuracy = b.attempted > 0 ? b.correct / b.attempted : 0;
+  }
+
+  const net = correct - wrong * NEGATIVE_MARK;
+  // Dropping every guessed ATTEMPT (right or wrong) → that bucket becomes blank.
+  const keptCorrect = correct - by.guess.correct;
+  const keptWrong = wrong - by.guess.wrong;
+  const netSkippingGuesses = keptCorrect - keptWrong * NEGATIVE_MARK;
+
+  return {
+    net,
+    netSkippingGuesses,
+    marksLostToWrong: wrong * NEGATIVE_MARK,
+    attempted,
+    correct,
+    wrong,
+    skipped: outcomes.length - attempted,
+    accuracy: attempted > 0 ? correct / attempted : 0,
+    byConfidence: by,
+    hasRatings,
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+/* OMR MODE — realism helpers for full-paper mocks (pure)                      */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * How long before auto-submit the OMR runner nags about answers that are marked
+ * on the booklet but not yet transferred to the sheet (the real "10-minute
+ * buffer" rule). Ten minutes, in ms.
+ */
+export const OMR_WARNING_MS = 10 * 60_000;
+
+/**
+ * The number of bubble rows left BLANK on the OMR sheet (an entry is `null`
+ * when the learner has not darkened any bubble for that question). Pure.
+ */
+export function countUnbubbled(bubbles: ReadonlyArray<number | null>): number {
+  let n = 0;
+  for (const b of bubbles) if (b === null || b === undefined) n += 1;
+  return n;
+}
+
+/**
+ * How many questions the learner answered ON THE BOOKLET (a `scratch` mark is
+ * set) but has NOT yet bubbled onto the OMR sheet — the "marked in booklet but
+ * not bubbled" transcription gap the results screen flags, and the signal the
+ * 10-minute warning watches. Pure.
+ */
+export function omrBookletNotBubbled(
+  scratch: ReadonlyArray<number | null>,
+  bubbles: ReadonlyArray<number | null>,
+): number {
+  let n = 0;
+  const len = Math.max(scratch.length, bubbles.length);
+  for (let i = 0; i < len; i += 1) {
+    const s = scratch[i];
+    const b = bubbles[i];
+    if (s !== null && s !== undefined && (b === null || b === undefined)) n += 1;
+  }
+  return n;
+}
+
+/**
+ * Whether to raise the "you still have un-transferred answers" warning: true
+ * only inside the final {@link OMR_WARNING_MS} window (and before time runs
+ * out) AND when at least one booklet-marked answer is still un-bubbled. Pure, so
+ * the view can simply gate its banner on it. @see omrBookletNotBubbled
+ */
+export function shouldWarnUnbubbled(
+  remainingMs: number,
+  scratch: ReadonlyArray<number | null>,
+  bubbles: ReadonlyArray<number | null>,
+): boolean {
+  if (remainingMs <= 0 || remainingMs > OMR_WARNING_MS) return false;
+  return omrBookletNotBubbled(scratch, bubbles) > 0;
+}
+
+/** The mean gap in ms between consecutive bubble fills — a "time to bubble"
+ * pace metric. `fillTimes` is the epoch-ms stamp of each darkened bubble, in the
+ * order they were filled. Returns 0 for fewer than two fills. Pure. */
+export function avgTimeToBubbleMs(fillTimes: readonly number[]): number {
+  if (fillTimes.length < 2) return 0;
+  const sorted = [...fillTimes].sort((a, b) => a - b);
+  const span = sorted[sorted.length - 1]! - sorted[0]!;
+  return Math.round(span / (sorted.length - 1));
 }

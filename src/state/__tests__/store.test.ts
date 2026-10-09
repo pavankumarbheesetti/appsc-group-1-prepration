@@ -23,6 +23,13 @@ import {
   saveEnglishDraft,
   saveEnglishChecks,
   clearEnglish,
+  getDaysOff,
+  isDayOff,
+  addDayOff,
+  removeDayOff,
+  resetDaysOff,
+  isAdminDone,
+  setAdminDone,
 } from '../store';
 
 beforeEach(() => {
@@ -417,5 +424,68 @@ describe('store — English writing practice', () => {
     const bad = JSON.stringify({ english: { letter: { draft: 5, checks: [], updatedAt: 0 } } });
     expect(() => importStateJSON(bad)).toThrow(/english entry 'letter'/);
     expect(loadState().english).toEqual({}); // unchanged default
+  });
+});
+
+describe('store — days off (festivals/holidays)', () => {
+  it('defaults to the festival days off on first run (Diwali + Sankranti window)', () => {
+    expect(getDaysOff()).toEqual(['2026-11-08', '2027-01-13', '2027-01-14', '2027-01-15']);
+    expect(isDayOff('2026-11-08')).toBe(true);
+    expect(isDayOff('2026-11-07')).toBe(false);
+  });
+
+  it('adds (idempotent, sorted), removes, ignores invalid, and resets', () => {
+    addDayOff('2026-12-25');
+    addDayOff('2026-12-25'); // idempotent
+    expect(getDaysOff()).toContain('2026-12-25');
+    // Stays sorted.
+    expect(getDaysOff()).toEqual([...getDaysOff()].sort());
+    // Invalid ISO is ignored.
+    addDayOff('not-a-date');
+    expect(getDaysOff()).not.toContain('not-a-date');
+    removeDayOff('2026-11-08');
+    expect(isDayOff('2026-11-08')).toBe(false);
+    resetDaysOff();
+    expect(getDaysOff()).toEqual(['2026-11-08', '2027-01-13', '2027-01-14', '2027-01-15']);
+  });
+
+  it('absent daysOff normalises to defaults; explicit empty array is respected; import validates', () => {
+    // An older blob WITHOUT daysOff → defaults.
+    const legacy = importStateJSON(JSON.stringify({ version: 1, settings: {} }));
+    expect(legacy.settings.daysOff).toEqual(['2026-11-08', '2027-01-13', '2027-01-14', '2027-01-15']);
+    __resetForTests();
+    // An explicit empty array (learner cleared them all) is respected.
+    const cleared = importStateJSON(JSON.stringify({ version: 1, settings: { daysOff: [] } }));
+    expect(cleared.settings.daysOff).toEqual([]);
+    __resetForTests();
+    // Non-ISO entries are dropped + list deduped/sorted on import.
+    const dirty = importStateJSON(
+      JSON.stringify({ version: 1, settings: { daysOff: ['2027-01-14', 'x', '2026-11-08', '2027-01-14'] } }),
+    );
+    expect(dirty.settings.daysOff).toEqual(['2026-11-08', '2027-01-14']);
+  });
+});
+
+describe('store — admin task flags', () => {
+  it('defaults to not-done, toggles done, and clears false to keep the map compact', () => {
+    expect(isAdminDone('apply-online')).toBe(false);
+    setAdminDone('apply-online', true);
+    expect(isAdminDone('apply-online')).toBe(true);
+    expect(loadState().adminDone['apply-online']).toBe(true);
+    setAdminDone('apply-online', false);
+    expect(isAdminDone('apply-online')).toBe(false);
+    expect('apply-online' in loadState().adminDone).toBe(false);
+  });
+
+  it('round-trips through export/import and rejects a malformed flag', () => {
+    setAdminDone('hall-ticket', true);
+    const json = exportStateJSON();
+    __resetForTests();
+    const back = importStateJSON(json);
+    expect(back.adminDone['hall-ticket']).toBe(true);
+    __resetForTests();
+    expect(() =>
+      importStateJSON(JSON.stringify({ version: 1, adminDone: { 'apply-online': 'yes' } })),
+    ).toThrow(/adminDone/);
   });
 });

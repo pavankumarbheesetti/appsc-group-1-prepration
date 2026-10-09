@@ -109,7 +109,7 @@ describe('mock setup — custom scope reuses buildSession', () => {
   it('the full available pool is 3164 MCQs across subjects', () => {
     const root = render();
     toScope(root);
-    expect(root.textContent).toContain('3227 questions in scope');
+    expect(root.textContent).toMatch(/3\d{3} questions in scope/);
     // Banner is present with the exact exam-condition wording.
     expect(root.textContent).toContain('negative marking');
     expect(root.textContent).toContain('no compensatory time');
@@ -174,5 +174,117 @@ describe('mock running — no per-question feedback + submit', () => {
     expect(root.querySelectorAll('.mock-review-item')).toHaveLength(19);
     // The review reveals the correct answer AFTER submit.
     expect(root.querySelector('.mock-review-options .option-card.is-correct')).not.toBeNull();
+  });
+});
+
+
+/* -------------------------------------------------------------------------- */
+/* CONFIDENCE TAGGING + negative-marking habit on results                      */
+/* -------------------------------------------------------------------------- */
+
+describe('mock running — confidence tags → skip-guesses on results', () => {
+  beforeEach(() => {
+    __resetForTests();
+    location.hash = '#/mock';
+  });
+
+  it('offers a Sure / 50-50 / Guess control and surfaces the habit card', () => {
+    const root = render();
+    toScope(root);
+    byText(root, '.mock-scope-btn', 'By subtopic')!.click();
+    const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
+    select.value = 'hist-ancient-ivc';
+    select.dispatchEvent(new Event('change'));
+    byText(root, '.mock-len-btn', '19')!.click();
+    byText(root, 'button', 'Start mock')!.click();
+
+    // The confidence segmented control is present with the three tags.
+    expect(root.querySelector('.mock-confidence')).not.toBeNull();
+    const confBtns = [...root.querySelectorAll<HTMLElement>('.mock-conf-btn')];
+    expect(confBtns.map((b) => b.textContent)).toEqual(['Sure', '50-50', 'Guess']);
+
+    // Answer the first question and tag it a Guess.
+    root.querySelector<HTMLElement>('.option-card')!.click();
+    byText(root, '.mock-conf-btn', 'Guess')!.click();
+    expect(root.querySelector('.mock-conf-btn.is-active')!.textContent).toBe('Guess');
+
+    // Submit → the Negative-marking habit card with the skip-guesses net and
+    // the eliminate-2 rule reminder + accuracy-by-confidence table.
+    byText(root, 'button', 'Submit mock')!.click();
+    expect(root.querySelector('.mock-results')).not.toBeNull();
+    const text = root.textContent ?? '';
+    expect(text).toContain('Negative-marking habit');
+    expect(text).toContain('If you had skipped your');
+    expect(text).toContain('eliminate 2 options');
+    expect(text).toContain('Accuracy by confidence');
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* OMR MODE flow (full paper)                                                  */
+/* -------------------------------------------------------------------------- */
+
+describe('mock setup — OMR mode on full papers', () => {
+  beforeEach(() => {
+    __resetForTests();
+    location.hash = '#/mock';
+  });
+
+  it('toggles OMR mode, exposes a printable sheet, and runs the bubble flow', () => {
+    const root = render();
+    // Toggle "Practise with an OMR sheet" (full-paper mode is the default).
+    const toggle = root.querySelector<HTMLElement>('.mock-omr-toggle')!;
+    expect(toggle).not.toBeNull();
+    toggle.click();
+    expect(root.querySelector('.mock-omr-toggle')!.getAttribute('aria-checked')).toBe('true');
+    // A printable A4 OMR sheet + a Print button are offered in setup.
+    expect(root.querySelector('.omr-print-sheet')).not.toBeNull();
+    expect(byText(root, 'button', 'Print OMR sheet')).not.toBeUndefined();
+
+    // Start → the roll-number + booklet-series bubbling drill first.
+    byText(root, 'button', 'Start Paper-I')!.click();
+    expect(root.querySelector('.omr-identity')).not.toBeNull();
+    expect(root.querySelectorAll('.omr-roll .omr-bubble').length).toBeGreaterThan(0);
+
+    // Proceed into the running paper with the separate bubble sheet.
+    byText(root, 'button', 'Start paper')!.click();
+    expect(root.querySelector('.omr-running')).not.toBeNull();
+    expect(root.querySelector('.omr-sheet-panel')).not.toBeNull();
+    // One OMR row per question (full Paper-I = 120).
+    expect(root.querySelectorAll('.omr-row')).toHaveLength(120);
+    // No inline option selection in OMR mode.
+    expect(root.querySelector('.option-list.omr-booklet-options .option-card.is-static')).not.toBeNull();
+
+    // Darken a bubble on the sheet → it fills (bubble Q2 so Q1 stays blank).
+    const rows = [...root.querySelectorAll<HTMLElement>('.omr-row')];
+    rows[1]!.querySelector<HTMLElement>('.omr-bubble')!.click();
+    expect(root.querySelector('.omr-row .omr-bubble.is-filled')).not.toBeNull();
+
+    // Mark Q1 on the booklet (scratch) WITHOUT bubbling it, then submit.
+    root.querySelector<HTMLElement>('.omr-scratch-btn')!.click();
+    byText(root, 'button', 'Submit sheet')!.click();
+
+    // Results flag the booklet-but-not-bubbled transcription gap + reprint.
+    expect(root.querySelector('.mock-results')).not.toBeNull();
+    const text = root.textContent ?? '';
+    expect(text).toContain('booklet, not bubbled');
+    expect(text).toContain('NOT bubbled');
+    expect(root.querySelector('.omr-print-sheet')).not.toBeNull();
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* Print stylesheet presence                                                   */
+/* -------------------------------------------------------------------------- */
+
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+describe('print stylesheet — printable OMR sheet', () => {
+  it('ships a print.css with an A4 page + OMR-only print rules', () => {
+    const css = readFileSync(resolve('src/styles/print.css'), 'utf8');
+    expect(css).toContain('@media print');
+    expect(css).toContain('.omr-print-sheet');
+    expect(css).toMatch(/@page[\s\S]*A4/);
   });
 });

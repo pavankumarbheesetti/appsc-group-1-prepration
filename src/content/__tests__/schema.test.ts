@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import mcqBank from '../../../content/history-ancient/mcq-indus-valley.json';
-import notesBank from '../../../content/history-ancient/notes-indus-valley.json';
-import mainsBank from '../../../content/history-ancient/mains-indus-valley.json';
+import mcqBank from '../../../content/history-ancient/hist-ancient-ivc/mcq-hist-ancient-ivc.json';
+import notesBank from '../../../content/history-ancient/hist-ancient-ivc/notes-hist-ancient-ivc.json';
+import mainsBank from '../../../content/history-ancient/hist-ancient-ivc/mains-hist-ancient-ivc.json';
 import syllabusBank from '../../../content/syllabus/official-2026.json';
 import manifest from '../../../content/manifest.json';
 import taxonomy from '../../../content/taxonomy.json';

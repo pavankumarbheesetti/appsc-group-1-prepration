@@ -306,3 +306,125 @@ describe('scoreWeekTest — per-paper + overall net marks (−1/3)', () => {
     expect(r.overall.skipped).toBe(45);
   });
 });
+
+
+/* -------------------------------------------------------------------------- */
+/* CONFIDENCE TAGGING — negative-marking habit summary                         */
+/* -------------------------------------------------------------------------- */
+
+import {
+  negativeMarkingSummary,
+  countUnbubbled,
+  omrBookletNotBubbled,
+  shouldWarnUnbubbled,
+  avgTimeToBubbleMs,
+  OMR_WARNING_MS,
+  type ConfidenceOutcome,
+  type MockConfidence,
+} from '../mock';
+
+/** Shorthand for a confidence outcome. */
+function out(attempted: boolean, correct: boolean, confidence: MockConfidence | null): ConfidenceOutcome {
+  return { attempted, correct, confidence };
+}
+
+describe('negativeMarkingSummary — net, skip-guesses, accuracy by confidence', () => {
+  it('computes net with −1/3 and marks lost to wrong answers', () => {
+    // 6 correct, 3 wrong, 1 blank → net = 6 − 3/3 = 5; marks lost = 1.
+    const outcomes: ConfidenceOutcome[] = [
+      ...Array.from({ length: 6 }, () => out(true, true, null)),
+      ...Array.from({ length: 3 }, () => out(true, false, null)),
+      out(false, false, null),
+    ];
+    const s = negativeMarkingSummary(outcomes);
+    expect(s.correct).toBe(6);
+    expect(s.wrong).toBe(3);
+    expect(s.skipped).toBe(1);
+    expect(s.net).toBeCloseTo(5, 6);
+    expect(s.marksLostToWrong).toBeCloseTo(1, 6);
+    expect(s.attempted).toBe(9);
+    expect(s.accuracy).toBeCloseTo(6 / 9, 6);
+    expect(s.hasRatings).toBe(false);
+  });
+
+  it('"if you had skipped your Guess answers" drops guessed attempts from net', () => {
+    // Sure: 2 correct. Guess: 1 correct + 2 wrong. 50-50: 1 wrong.
+    const outcomes: ConfidenceOutcome[] = [
+      out(true, true, 'sure'),
+      out(true, true, 'sure'),
+      out(true, true, 'guess'),
+      out(true, false, 'guess'),
+      out(true, false, 'guess'),
+      out(true, false, 'fifty'),
+    ];
+    const s = negativeMarkingSummary(outcomes);
+    // net = 3 correct − 3 wrong/3 = 3 − 1 = 2.
+    expect(s.net).toBeCloseTo(2, 6);
+    // Drop the 3 guesses (1 correct, 2 wrong): kept 2 correct − 1 wrong/3 = 2 − 1/3.
+    expect(s.netSkippingGuesses).toBeCloseTo(2 - 1 / 3, 6);
+    // Here the guesses netted +1/3 together, so skipping them LOWERS the net.
+    expect(s.netSkippingGuesses).toBeLessThan(s.net);
+    expect(s.hasRatings).toBe(true);
+  });
+
+  it('rolls up accuracy by confidence (Sure / 50-50 / Guess / unset)', () => {
+    const outcomes: ConfidenceOutcome[] = [
+      out(true, true, 'sure'),
+      out(true, false, 'sure'),
+      out(true, true, 'fifty'),
+      out(true, false, 'guess'),
+      out(false, false, 'guess'),
+      out(true, true, null),
+    ];
+    const s = negativeMarkingSummary(outcomes);
+    expect(s.byConfidence.sure).toMatchObject({ attempted: 2, correct: 1 });
+    expect(s.byConfidence.sure.accuracy).toBeCloseTo(0.5, 6);
+    expect(s.byConfidence.fifty).toMatchObject({ attempted: 1, correct: 1 });
+    expect(s.byConfidence.guess).toMatchObject({ total: 2, attempted: 1, correct: 0 });
+    expect(s.byConfidence.unset).toMatchObject({ total: 1, attempted: 1, correct: 1 });
+  });
+
+  it('with no ratings, skip-guesses net equals the plain net', () => {
+    const outcomes: ConfidenceOutcome[] = [out(true, true, null), out(true, false, null)];
+    const s = negativeMarkingSummary(outcomes);
+    expect(s.hasRatings).toBe(false);
+    expect(s.netSkippingGuesses).toBeCloseTo(s.net, 6);
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* OMR MODE helpers                                                            */
+/* -------------------------------------------------------------------------- */
+
+describe('OMR helpers — unbubbled, booklet-not-bubbled, warning, pace', () => {
+  it('counts un-bubbled rows (nulls on the sheet)', () => {
+    expect(countUnbubbled([0, null, 2, null, 1])).toBe(2);
+    expect(countUnbubbled([])).toBe(0);
+  });
+
+  it('flags answers marked on the booklet but not bubbled', () => {
+    const scratch = [0, 1, null, 2];
+    const bubbles = [0, null, null, 2]; // Q2 has a booklet mark but no bubble
+    expect(omrBookletNotBubbled(scratch, bubbles)).toBe(1);
+  });
+
+  it('warns only inside the 10-minute window when transfers are pending', () => {
+    const scratch = [0, 1, 2];
+    const bubbles = [0, null, null]; // two booklet-marked but un-bubbled
+    // Plenty of time left → no warning.
+    expect(shouldWarnUnbubbled(OMR_WARNING_MS + 1000, scratch, bubbles)).toBe(false);
+    // Inside the window with pending transfers → warn.
+    expect(shouldWarnUnbubbled(OMR_WARNING_MS - 1000, scratch, bubbles)).toBe(true);
+    // Time up → no warning (the test is over).
+    expect(shouldWarnUnbubbled(0, scratch, bubbles)).toBe(false);
+    // Inside the window but everything transferred → no warning.
+    expect(shouldWarnUnbubbled(OMR_WARNING_MS - 1000, [0, 1], [0, 1])).toBe(false);
+  });
+
+  it('measures mean time-to-bubble, 0 for fewer than two fills', () => {
+    expect(avgTimeToBubbleMs([])).toBe(0);
+    expect(avgTimeToBubbleMs([1000])).toBe(0);
+    // Fills at 0, 2000, 4000 → mean gap 2000 ms.
+    expect(avgTimeToBubbleMs([0, 2000, 4000])).toBe(2000);
+  });
+});

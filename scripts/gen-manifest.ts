@@ -83,6 +83,10 @@ for (const abs of walkJsonFiles(CONTENT_DIR)) {
   // ORDER over taxonomy ids, validated by its own schema — not a content bank,
   // so it is never registered in the manifest.
   if (globPath.startsWith('/content/plan/')) continue;
+  // The CA freshness marker (content/current-affairs/meta.json) is validated by
+  // its own schema in the loader + validate:content — not a content bank, so it
+  // is never registered in the manifest.
+  if (globPath.endsWith('/current-affairs/meta.json')) continue;
 
   const raw: unknown = JSON.parse(readFileSync(abs, 'utf8'));
   const kind = (raw as { kind?: unknown } | null)?.kind;

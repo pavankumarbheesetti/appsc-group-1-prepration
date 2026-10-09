@@ -49,6 +49,26 @@ export const DEFAULT_STUDY_MINUTES = 240;
  */
 export const DEFAULT_SUNDAY_STUDY_MINUTES = 360;
 
+/**
+ * Default DAYS OFF (festivals / holidays) as ISO `YYYY-MM-DD` strings — the
+ * learner can add/remove these in Settings (persisted to `settings.daysOff`).
+ * A day off is a LIGHT day (≤ 60 min, Current Affairs + flashcards only): no
+ * mock, no new topic; any work it would have carried flows into the catch-up
+ * buffers and mocks move to the next suitable day (see the planner).
+ *
+ * The first-run defaults are the two biggest Andhra Pradesh festival windows in
+ * this prep cycle:
+ *  - **Diwali — Sun 8 Nov 2026** (Lakshmi Puja / main Diwali).
+ *  - **Bhogi / Sankranti / Kanuma — 13–15 Jan 2027** (the three-day Sankranti,
+ *    AP's biggest festival, nine days before the exam).
+ */
+export const DEFAULT_DAYS_OFF: readonly string[] = [
+  '2026-11-08',
+  '2027-01-13',
+  '2027-01-14',
+  '2027-01-15',
+];
+
 /** Total marks across the APPSC Group-1 exam (used by progress/analytics). */
 export const TOTAL_MARKS = 825;
 

@@ -53,6 +53,8 @@ export function render(root: HTMLElement): void {
     howYourPlanWorks(plan.summary.coverageEndISO, anchors),
     howToStudyOneTopic(),
     howToHandleNegativeMarking(),
+    omrSheetRules(),
+    afterPrelimsMains(),
     whatIfYouMissADay(),
     footerNav(),
   );
@@ -247,6 +249,57 @@ function howToHandleNegativeMarking(): HTMLElement {
       el('span', { text: ', three wrong at ' }),
       el('strong', { text: '−⅓' }),
       el('span', { text: ' cancel out). Eliminate even one wrong option and the average turns positive. Eliminate two and it is clearly worth answering.' }),
+    ]),
+  ]);
+}
+
+/* -------------------------------------------------------------------------- */
+/* (e) OMR sheet rules                                                         */
+/* -------------------------------------------------------------------------- */
+
+/** Section: how to fill the OMR answer sheet without disqualifying yourself. @internal */
+function omrSheetRules(): HTMLElement {
+  return card({ title: 'OMR sheet rules', subtitle: 'The answer sheet is machine-read — fill it right' }, [
+    el('p', { class: 'section-lead' }, [
+      el('span', { text: 'Prelims is answered on a bubble ' }),
+      el('strong', { text: 'OMR sheet' }),
+      el('span', { text: ' that a scanner reads. The questions are easy to lose marks on if the sheet is filled wrong, so practise this like a skill — turn on ' }),
+      el('strong', { text: 'OMR mode' }),
+      el('span', { text: ' in a full mock.' }),
+    ]),
+    el('ul', {}, [
+      el('li', {}, [el('strong', { text: 'Black or blue ballpoint only.' }), el('span', { text: ' No pencil, no gel pen — a pencil mark can be erased or missed by the scanner.' })]),
+      el('li', {}, [el('strong', { text: 'Darken the whole bubble.' }), el('span', { text: ' A half-filled or ticked bubble may not register. Fill it completely.' })]),
+      el('li', {}, [el('strong', { text: 'No overwriting.' }), el('span', { text: ' Two marks on one question = wrong. Don’t erase or use whitener; don’t leave stray marks.' })]),
+      el('li', {}, [el('strong', { text: 'Bubble roll number and booklet series correctly.' }), el('span', { text: ' A wrong roll number or series can get the whole sheet rejected — this is the single biggest avoidable mistake.' })]),
+      el('li', {}, [el('strong', { text: 'Transfer in batches of 10–15.' }), el('span', { text: ' Solve on the booklet, then move a batch to the OMR sheet. Keep a 10-minute buffer at the end to finish transferring — never leave it all to the last minute.' })]),
+    ]),
+  ]);
+}
+
+/* -------------------------------------------------------------------------- */
+/* (f) After Prelims: Mains                                                    */
+/* -------------------------------------------------------------------------- */
+
+/** Section: the Mains timeline + the light Mains work we do before Prelims. @internal */
+function afterPrelimsMains(): HTMLElement {
+  return card({ title: 'After Prelims: Mains', subtitle: 'What comes next — and the little we touch now' }, [
+    el('p', { class: 'section-lead' }, [
+      el('span', { text: 'Prelims only ' }),
+      el('strong', { text: 'shortlists' }),
+      el('span', { text: ' you for the Mains, which is the exam that actually counts toward the final merit. The Mains date is ' }),
+      el('strong', { text: 'announced later' }),
+      el('span', { text: ' — based on recent cycles it is likely around ' }),
+      el('strong', { text: 'June–July 2027' }),
+      el('span', { text: ' (dates TBA), giving a comfortable 4–5 month runway after Prelims.' }),
+    ]),
+    el('ul', {}, [
+      el('li', {}, [el('strong', { text: 'Telugu and English are qualifying papers.' }), el('span', { text: ' You only need to pass them; the marks don’t add to your merit. English is low-risk for most; Telugu is a slow motor skill, so we seed it early.' })]),
+      el('li', {}, [el('strong', { text: 'Before Prelims we keep Mains light:' }), el('span', { text: ' Telugu practice 15 minutes, three times a week, plus one Mains answer per fortnight (Sundays, in December) on a topic you’ve already studied.' })]),
+      el('li', {}, [el('strong', { text: 'Everything else waits until after Prelims.' }), el('span', { text: ' Ethics, Law, the General Essay craft, full answer-writing speed and 3-hour stamina — all of it fits in the post-Prelims runway, so it doesn’t steal time from the gateway exam now.' })]),
+    ]),
+    el('p', { class: 'section-lead', attrs: { role: 'note' } }, [
+      'Bottom line: get through Prelims first. The Mains build starts in earnest the week after your Prelims is done.',
     ]),
   ]);
 }

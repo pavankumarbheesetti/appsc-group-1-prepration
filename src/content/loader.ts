@@ -15,10 +15,12 @@
 import {
   parseBank,
   parseCards,
+  parseCaMeta,
   parseManifest,
   parseMindmap,
   parseSyllabus,
   type BankKind,
+  type CaMeta,
   type CardItem,
   type ContentBank,
   type MainsItem,
@@ -64,7 +66,7 @@ import {
 
 /** A parsed content bank paired with the glob path it came from. */
 export interface LoadedBank {
-  /** Absolute glob path, e.g. `/content/history-ancient/mcq-indus-valley.json`. */
+  /** Absolute glob path, e.g. `/content/history-ancient/hist-ancient-ivc/mcq-hist-ancient-ivc.json`. */
   path: string;
   bank: ContentBank;
 }
@@ -126,6 +128,12 @@ export interface ContentIndex {
    * a time (STANDARDS §8a). Pure ordering over taxonomy ids; NOT a content bank.
    */
   units: Units;
+  /**
+   * The Current-Affairs freshness marker (`content/current-affairs/meta.json`):
+   * the date through which the CA banks have been backfilled/verified. Not a
+   * content bank — read by path, never in the manifest.
+   */
+  caMeta: CaMeta;
 }
 
 /**
@@ -155,6 +163,7 @@ function buildIndex(): ContentIndex {
   let timeline: TimelineBank | null = null;
   let learningSequence: LearningSequence | null = null;
   let units: Units | null = null;
+  let caMeta: CaMeta | null = null;
   const banks: LoadedBank[] = [];
   /** Curated memory-layer banks, indexed by subtopicId as they are discovered. */
   const cards = new Map<string, CardItem[]>();
@@ -203,6 +212,14 @@ function buildIndex(): ContentIndex {
         units = parseUnits(data);
       }
       // Any other file under content/plan/ is ignored by the loader.
+      continue;
+    }
+
+    // The CA freshness marker lives at /content/current-affairs/meta.json and is
+    // NOT a content bank — read it by path (its own schema) and skip the bank
+    // routing below. It is never registered in the manifest.
+    if (path.endsWith('/current-affairs/meta.json')) {
+      caMeta = parseCaMeta(data);
       continue;
     }
 
@@ -276,6 +293,11 @@ function buildIndex(): ContentIndex {
   if (!units) {
     throw new Error('content: plan/units.json not found under /content');
   }
+  if (!caMeta) {
+    throw new Error(
+      'content: current-affairs/meta.json not found under /content',
+    );
+  }
 
   const byPath = new Map<string, LoadedBank>();
   const bySubject = new Map<SubjectCode, LoadedBank[]>();
@@ -329,6 +351,7 @@ function buildIndex(): ContentIndex {
     timeline,
     learningSequence,
     units,
+    caMeta,
   };
 }
 
@@ -367,6 +390,16 @@ export function getLearningSequence(): LearningSequence {
  */
 export function getUnits(): Units {
   return getContentIndex().units;
+}
+
+/**
+ * The date (ISO `YYYY-MM-DD`) through which the Current-Affairs banks have been
+ * backfilled/verified, from `content/current-affairs/meta.json`. Drives the
+ * "Current affairs updated through <date>" label in the Learn workspace and the
+ * Start-here guide.
+ */
+export function getCaUpdatedThrough(): string {
+  return getContentIndex().caMeta.updatedThrough;
 }
 
 /**

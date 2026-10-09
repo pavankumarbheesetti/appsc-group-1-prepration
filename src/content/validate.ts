@@ -21,6 +21,7 @@ import { z } from 'zod';
 import {
   ContentBankSchema,
   CardsBankSchema,
+  CaMetaSchema,
   ManifestSchema,
   MindmapBankSchema,
   SyllabusBankSchema,
@@ -44,7 +45,7 @@ const PROJECT_ROOT = resolve(CONTENT_DIR, '..');
 
 /**
  * Convert an absolute disk path into the glob-style path used in the manifest
- * and by the loader, e.g. `/content/history-ancient/mcq-indus-valley.json`.
+ * and by the loader, e.g. `/content/history-ancient/hist-ancient-ivc/mcq-hist-ancient-ivc.json`.
  */
 function toGlobPath(absPath: string): string {
   return `/${relative(PROJECT_ROOT, absPath).split(sep).join('/')}`;
@@ -65,7 +66,7 @@ function toDiskPath(globPath: string): string {
  * `warnings` are advisory (e.g. a dangling `syllabusRef`) and never fail the gate.
  */
 export interface FileValidationResult {
-  /** Glob-style path, e.g. `/content/history-ancient/mcq-indus-valley.json`. */
+  /** Glob-style path, e.g. `/content/history-ancient/hist-ancient-ivc/mcq-hist-ancient-ivc.json`. */
   file: string;
   /** True when there are no hard errors. */
   ok: boolean;
@@ -190,6 +191,7 @@ export function validateAllContent(): FileValidationResult[] {
   const timelineGlob = toGlobPath(join(CONTENT_DIR, 'timeline', 'events.json'));
   const planGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'learning-sequence.json'));
   const unitsGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'units.json'));
+  const caMetaGlob = toGlobPath(join(CONTENT_DIR, 'current-affairs', 'meta.json'));
 
   /** Taxonomy subtopic ids, captured for the timeline cross-check. */
   const taxonomySubtopicIds = new Set<string>();
@@ -328,6 +330,21 @@ export function validateAllContent(): FileValidationResult[] {
       resultFor(file).warnings.push(
         'unrecognised file under content/plan/ (not learning-sequence.json or units.json) \u2014 ignored',
       );
+      continue;
+    }
+
+    // The CA freshness marker at content/current-affairs/meta.json is validated
+    // against its OWN schema and EXCLUDED from the bank/orphan/manifest checks
+    // (it is not a content bank and not a manifest entry).
+    if (file === caMetaGlob) {
+      const raw = readJson(abs);
+      if (raw === undefined) continue;
+      const parsed = CaMetaSchema.safeParse(raw);
+      if (parsed.success) {
+        resultFor(file); // show as PASS
+      } else {
+        resultFor(file).errors.push(...formatIssues(parsed.error));
+      }
       continue;
     }
 

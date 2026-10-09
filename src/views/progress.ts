@@ -17,10 +17,11 @@ import { getSubjects, getSubtopic, getSubtopicCoverage, getSubtopics } from '../
 import type { TaxonomySubtopic } from '../content/taxonomy';
 import { activeEntries } from '../engine/notebook';
 import { navigate } from '../router/router';
-import { loadState } from '../state/store';
+import { loadState, getTestAttempts, type TestAttemptRecord } from '../state/store';
 import {
   dueCount,
   pct,
+  formatNet,
   statusFromMastery,
   subtopicMasteryPct,
   type SubtopicStatus,
@@ -170,6 +171,7 @@ export function render(root: HTMLElement): void {
       root,
       buildOverview(overall, due),
       buildMistakes(mistakes),
+      buildNegMarkingHabit(getTestAttempts()),
       buildBreakdown(rows, draw),
     );
   };
@@ -229,6 +231,67 @@ function buildMistakes(count: number): HTMLElement {
       button({ label: 'Open notebook', variant: count > 0 ? 'primary' : 'ghost', iconName: 'arrow-right', onClick: () => navigate('/notebook') }),
     ]),
   ]);
+}
+
+/**
+ * The "Negative-marking habit" card: a compact trend over recent tests of
+ * guess accuracy and marks lost to wrong answers, so the learner can see
+ * whether their guessing is costing or paying. Returns `null` when no test has
+ * been taken yet (nothing to trend). @internal
+ */
+function buildNegMarkingHabit(attempts: readonly TestAttemptRecord[]): HTMLElement | null {
+  if (attempts.length === 0) return null;
+  const recent = attempts.slice(-8);
+
+  // Aggregate guess accuracy + marks lost across the recent window.
+  let guessAttempted = 0;
+  let guessCorrect = 0;
+  let marksLost = 0;
+  for (const a of recent) {
+    guessAttempted += a.guessAttempted;
+    guessCorrect += a.guessCorrect;
+    marksLost += a.marksLostToWrong;
+  }
+  const guessAcc = guessAttempted > 0 ? guessCorrect / guessAttempted : 0;
+
+  const lead = el('p', { class: 'section-lead' }, [
+    guessAttempted > 0
+      ? `Over your last ${recent.length} test${recent.length === 1 ? '' : 's'} you got ${pct(guessAcc)} of your Guess answers right and shed ${formatNet(marksLost)} marks to wrong answers.`
+      : `Over your last ${recent.length} test${recent.length === 1 ? '' : 's'} you shed ${formatNet(marksLost)} marks to wrong answers. Tag answers Sure / 50-50 / Guess during a test to track guess accuracy.`,
+  ]);
+
+  // A tiny per-test trend row (most recent last): marks lost + guess accuracy.
+  const trendRows = recent.map((a) => {
+    const ga = a.guessAttempted > 0 ? a.guessCorrect / a.guessAttempted : null;
+    return el('tr', {}, [
+      el('td', { text: new Date(a.at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) }),
+      el('td', { text: a.kind.replace(/-/g, ' ') }),
+      el('td', { class: 'tnum', text: formatNet(a.net) }),
+      el('td', { class: 'tnum', text: `−${formatNet(a.marksLostToWrong)}` }),
+      el('td', { class: 'tnum', text: ga === null ? '—' : pct(ga) }),
+    ]);
+  });
+
+  const table = el('table', { class: 'mock-section-table' }, [
+    el('caption', { class: 'field-label', text: 'Recent tests' }),
+    el('thead', {}, [
+      el('tr', {}, [
+        el('th', { attrs: { scope: 'col' }, text: 'Date' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Test' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Net' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Marks lost' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Guess acc' }),
+      ]),
+    ]),
+    el('tbody', {}, trendRows),
+  ]);
+
+  const rule = el('p', { class: 'neg-rule', attrs: { role: 'note' } }, [
+    el('strong', { text: 'Rule of thumb: ' }),
+    el('span', { text: 'answer when you can eliminate 2 options; skip pure guesses.' }),
+  ]);
+
+  return card({ title: 'Negative-marking habit' }, [lead, table, rule]);
 }
 
 /** Per-subject → per-subtopic breakdown with a sort toggle. @internal */

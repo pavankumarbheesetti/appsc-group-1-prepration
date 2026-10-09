@@ -438,6 +438,25 @@ export const ManifestSchema = z.object({
 export type Manifest = z.infer<typeof ManifestSchema>;
 
 /* -------------------------------------------------------------------------- */
+/* Current-affairs freshness meta                                              */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The single Current-Affairs freshness marker (`content/current-affairs/meta.json`).
+ *
+ * It records the date through which the CA banks have been backfilled/verified,
+ * so the Learn workspace and Start-here guide can show "Current affairs updated
+ * through <date>". It is NOT a content bank: the loader reads it by path, it is
+ * never registered in the manifest, and it has its own schema here. `updatedThrough`
+ * is an ISO `YYYY-MM-DD` date (regex-validated so a malformed value fails fast).
+ */
+export const CaMetaSchema = z.object({
+  /** ISO date (YYYY-MM-DD) the CA banks are current through. */
+  updatedThrough: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'must be an ISO YYYY-MM-DD date'),
+});
+export type CaMeta = z.infer<typeof CaMetaSchema>;
+
+/* -------------------------------------------------------------------------- */
 /* Parse helpers                                                               */
 /* -------------------------------------------------------------------------- */
 
@@ -507,6 +526,19 @@ export function parseManifest(json: unknown): Manifest {
   const result = ManifestSchema.safeParse(json);
   if (!result.success) {
     throw new Error(`Invalid manifest — ${formatIssues(result.error)}`);
+  }
+  return result.data;
+}
+
+/**
+ * Parse an unknown value as the Current-Affairs freshness meta
+ * (`content/current-affairs/meta.json`).
+ * @throws Error with a clear message when validation fails.
+ */
+export function parseCaMeta(json: unknown): CaMeta {
+  const result = CaMetaSchema.safeParse(json);
+  if (!result.success) {
+    throw new Error(`Invalid CA meta — ${formatIssues(result.error)}`);
   }
   return result.data;
 }
