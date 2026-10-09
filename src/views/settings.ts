@@ -21,9 +21,13 @@ import {
   STATE_VERSION,
   exportStateJSON,
   getDailyStudyMinutes,
+  getDaysOff,
   getExamDate,
   getPlanStartDate,
   getSundayStudyMinutes,
+  addDayOff,
+  removeDayOff,
+  resetDaysOff,
   importStateJSON,
   loadState,
   resetProgress,
@@ -82,6 +86,7 @@ function buildDisplayCard(rerender: () => void): HTMLElement {
     planStartField(rerender),
     studyTimeField(rerender),
     sundayTimeField(rerender),
+    daysOffField(rerender),
     themeField(rerender),
     fontField(rerender),
   ]);
@@ -198,6 +203,77 @@ function sundayTimeField(rerender: () => void): HTMLElement {
     }),
     el('div', { class: 'settings-field-row' }, [seg, custom]),
   ]);
+}
+
+/**
+ * "Days off" control — the learner's festival / holiday days (Diwali,
+ * Sankranti, …). Each day off is a LIGHT day the planner caps at ≤ 60 min
+ * (Current Affairs + flashcards only): no mock, no new topic. Shows the current
+ * days as removable chips, an add-date input, and a "Reset to defaults" button.
+ * Every edit re-plans (the caller redraws; Planner/Today read the new list
+ * live). Persisted to `settings.daysOff` via the store accessors. @internal
+ */
+function daysOffField(rerender: () => void): HTMLElement {
+  const days = getDaysOff();
+  const chips =
+    days.length > 0
+      ? days.map((iso) =>
+          el('span', { class: 'dayoff-chip' }, [
+            el('span', { class: 'dayoff-chip-date', text: prettyDayOff(iso) }),
+            el('button', {
+              type: 'button',
+              class: 'dayoff-chip-remove',
+              ariaLabel: `Remove day off ${prettyDayOff(iso)}`,
+              text: '\u00d7',
+              onClick: () => {
+                removeDayOff(iso);
+                rerender();
+              },
+            }),
+          ]),
+        )
+      : [el('span', { class: 'settings-hint', text: 'No days off — the plan runs every day.' })];
+
+  const add = el('input', {
+    class: 'exam-date-input',
+    type: 'date',
+    ariaLabel: 'Add a day off',
+  }) as HTMLInputElement;
+  add.addEventListener('change', () => {
+    if (add.value) {
+      addDayOff(add.value);
+      rerender();
+    }
+  });
+
+  const resetBtn = button({
+    label: 'Reset to defaults',
+    variant: 'ghost',
+    onClick: () => {
+      resetDaysOff();
+      rerender();
+    },
+  });
+
+  return el('div', { class: 'field settings-field' }, [
+    el('span', { class: 'field-label', text: 'Days off' }),
+    el('span', {
+      class: 'settings-hint',
+      text: 'Festivals and holidays become light days (≤ 60 min, Current Affairs + flashcards). No mock or new topic lands on a day off; mocks move to the next suitable day.',
+    }),
+    el('div', { class: 'dayoff-chips' }, chips),
+    el('div', { class: 'settings-field-row' }, [add, resetBtn]),
+  ]);
+}
+
+/** Format a day-off ISO date as e.g. `Sun 8 Nov 2026`. @internal */
+function prettyDayOff(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const dows = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  if (!y || !m || !d) return iso;
+  const dow = new Date(Date.UTC(y, m - 1, d)).getUTCDay();
+  return `${dows[dow]} ${d} ${months[m - 1]} ${y}`;
 }
 
 /** Editable exam date (syncs `settings.examDate`, same as the Planner). @internal */

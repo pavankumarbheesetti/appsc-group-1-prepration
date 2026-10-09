@@ -555,8 +555,14 @@ describe('rhythm — POOL-FIX block-legality invariant (every block coherent)', 
         for (const b of d.blocks) {
           const topics = (b.topics ?? []).filter((t) => t.kind === 'topic');
           if (topics.length === 0) continue;
-          const allQuick = topics.every((t) => t.pass === 'quick');
-          expect(topics.length).toBeLessThanOrEqual(allQuick ? 4 : 3);
+          // ≤ 3 new first-pass topics (4 if all QUICK) applies to the TEACHING
+          // blocks ('subject'/'ment'); 'targeted-revision'/'revise' carry a
+          // marks-based REVISIT set (more topics, lighter) and are bound only by
+          // the Σ-minutes legality below.
+          if (b.kind === 'subject' || b.kind === 'ment') {
+            const allQuick = topics.every((t) => t.pass === 'quick');
+            expect(topics.length).toBeLessThanOrEqual(allQuick ? 4 : 3);
+          }
           const topicMinutes = topics.reduce((a, t) => a + t.estMinutes, 0);
           expect(topicMinutes).toBeLessThanOrEqual(b.minutes);
         }
@@ -668,7 +674,7 @@ describe('long window — phases, final window, revision cycle (exam 24 Jan 2027
     expect(summary.infeasibleFloorTopicIds).toEqual([]);
   });
 
-  it('first pass = WEEK TESTS on Saturdays + ONE dress rehearsal; revision + final are FULL mocks (Paper-II first in the cycle)', () => {
+  it('first pass = WEEK TESTS + TWO dress rehearsals (P2 then P1); weekly full mocks from the last coverage Saturday (P2 first); final 3/week', () => {
     const { days, summary } = buildPlan(longOpts(EXAM));
 
     // Coverage Saturdays are WEEK TESTS: they teach nothing, are not 'mock'
@@ -681,38 +687,44 @@ describe('long window — phases, final window, revision cycle (exam 24 Jan 2027
       expect(d.phase).toBe('learn');
       expect([...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]).toEqual([]);
       expect(d.blocks.map((b) => b.kind)).toEqual(['week-test', 'week-test-review', 'catchup']);
-      // The pool only ever contains topics first-passed on/before this Saturday.
       const wt = d.blocks.find((b) => b.kind === 'week-test')!;
       expect((wt.weekTestSubtopicIds ?? []).length).toBeGreaterThan(0);
     }
     expect(summary.weekTests).toBe(weekTestDays.length);
 
-    // Exactly ONE dress rehearsal in the first pass (a full mock on a coverage Saturday).
-    const dress = days.filter((d) =>
-      d.blocks.some((b) => b.kind === 'mock' && b.label.includes('Dress rehearsal')),
-    );
-    expect(dress.length).toBe(1);
-    expect(dress[0]!.dateISO < A.revisionStartISO!).toBe(true);
-    expect(dayOfWeekISO(dress[0]!.dateISO)).toBe(6);
-    expect(summary.dressRehearsalISO).toBe(dress[0]!.dateISO);
-    expect(dress[0]!.phase).toBe('mock');
+    // EXACTLY TWO dress rehearsals in the first pass (full mocks on coverage
+    // Saturdays), the FIRST Paper-II and the SECOND Paper-I (STANDARDS §8a item 4).
+    const schedule = buildMockSchedule('2026-09-30', A);
+    const dressDates = [...schedule.entries()]
+      .filter(([, m]) => m.kind === 'dress-rehearsal')
+      .map(([d]) => d)
+      .sort();
+    expect(dressDates.length).toBe(2);
+    for (const d of dressDates) {
+      expect(dayOfWeekISO(d)).toBe(6);
+      expect(d < A.revisionStartISO!).toBe(true);
+    }
+    expect(schedule.get(dressDates[0]!)!.paper).toBe('paper2');
+    expect(schedule.get(dressDates[1]!)!.paper).toBe('paper1');
+    expect(summary.dressRehearsalISO).toBe(dressDates[0]!);
 
-    // Full-mock days (phase 'mock') = dress + revision + final; all pre-final are Saturdays.
+    // Full-mock days (phase 'mock') pre-final are all Saturdays.
     const mockDays = days.filter((d) => d.phase === 'mock');
     for (const d of mockDays.filter((x) => x.dateISO < A.finalStartISO)) {
       expect(dayOfWeekISO(d.dateISO)).toBe(6);
     }
 
-    // Revision-cycle full mocks alternate Paper-II first.
-    const schedule = buildMockSchedule('2026-09-30', A, undefined, dress[0]!.mockPaper!);
-    const revSat = [...schedule.entries()]
-      .filter(([d, m]) => m.kind === 'full' && d >= A.revisionStartISO! && d < A.finalStartISO)
+    // Weekly full mocks run every Saturday from the LAST coverage Saturday
+    // through the revision cycle, alternating Paper-II first.
+    const weeklySat = [...schedule.entries()]
+      .filter(([d, m]) => m.kind === 'full' && d < A.finalStartISO)
       .map(([d]) => d)
       .sort();
-    expect(revSat.length).toBeGreaterThan(0);
-    expect(schedule.get(revSat[0]!)!.paper).toBe('paper2');
-    for (let i = 1; i < revSat.length; i += 1) {
-      expect(schedule.get(revSat[i]!)!.paper).not.toBe(schedule.get(revSat[i - 1]!)!.paper);
+    expect(weeklySat.length).toBeGreaterThan(0);
+    expect(dayOfWeekISO(weeklySat[0]!)).toBe(6);
+    expect(schedule.get(weeklySat[0]!)!.paper).toBe('paper2'); // Paper-II first
+    for (let i = 1; i < weeklySat.length; i += 1) {
+      expect(schedule.get(weeklySat[i]!)!.paper).not.toBe(schedule.get(weeklySat[i - 1]!)!.paper);
     }
 
     // Final window carries 3 full mocks per 7-day week.
@@ -720,6 +732,10 @@ describe('long window — phases, final window, revision cycle (exam 24 Jan 2027
     expect(finalMocks.length).toBeGreaterThanOrEqual(3);
     const weeks = Math.max(1, Math.round(diffDaysISO(A.finalStartISO, A.lightISO) / 7));
     expect(finalMocks.length).toBeGreaterThanOrEqual(3 * weeks - 1);
+
+    // Full-mock sittings stay within the non-repeating per-paper capacity.
+    expect(summary.fullMockPaperCounts.paper1).toBeLessThanOrEqual(9);
+    expect(summary.fullMockPaperCounts.paper2).toBeLessThanOrEqual(8);
   });
 
   it('is progress-aware: a studied topic keeps its completion and is still first-passed once', () => {
@@ -838,5 +854,126 @@ describe('rhythm — UNIT WRAP-UP (consolidate a unit right after finishing it)'
     }
     // The fixture's long window has Sundays with room to start the next unit.
     expect(sawTwoUnits).toBe(true);
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+
+describe('rhythm — a test block is FIXED, never scaled by the day budget', () => {
+  // The real plan scenario from the mock-day bug report: start Sat 10 Oct 2026,
+  // exam Sun 24 Jan 2027, weekday 240 / Sunday 360, the default festival days
+  // off (incl. the 13–15 Jan Sankranti window). The 14 Jan final-window mock is
+  // displaced off the holiday; it must NOT land back-to-back with the Sat 16 Jan
+  // full mock (N3), and a full paper block is ALWAYS 120 min regardless of the
+  // day budget.
+  const EXAM = '2027-01-24';
+  const DAYS_OFF = ['2026-11-08', '2027-01-13', '2027-01-14', '2027-01-15'];
+  const scenario = (budget: number): BuildPlanOpts =>
+    longOpts(EXAM, {
+      startISO: '2026-10-10',
+      todayISO: '2026-10-10',
+      dailyBudgetMin: budget === 180 ? 180 : 240,
+      weekendBudgetMin: budget,
+      daysOff: DAYS_OFF,
+    });
+
+  it('fixes EVERY full-mock / dress-rehearsal block at 120 min and the review at 60, for budgets 180/240/360', () => {
+    for (const budget of [180, 240, 360]) {
+      const { days } = buildPlan(scenario(budget));
+      const mockDays = days.filter((d) => d.phase === 'mock');
+      expect(mockDays.length).toBeGreaterThan(0);
+      for (const d of mockDays) {
+        const mock = d.blocks.find((b) => b.kind === 'mock')!;
+        const review = d.blocks.find((b) => b.kind === 'mock-review')!;
+        expect(mock.minutes).toBe(120); // a full Prelims paper is ALWAYS 120 min
+        expect(review.minutes).toBe(60); // review is fixed, never scaled
+        // Extra budget flows to the weakest-area drill, never into the mock.
+        const weakest = d.blocks.find((b) => b.kind === 'weakest-area');
+        if (weakest) expect(mock.minutes + review.minutes + weakest.minutes).toBeLessThanOrEqual(d.budgetMin);
+      }
+    }
+  });
+
+  it('fixes EVERY week-test block at 55 min, for budgets 180/240/360', () => {
+    for (const budget of [180, 240, 360]) {
+      const { days } = buildPlan(scenario(budget));
+      const weekTestBlocks = days
+        .flatMap((d) => d.blocks)
+        .filter((b) => b.kind === 'week-test');
+      expect(weekTestBlocks.length).toBeGreaterThan(0);
+      for (const b of weekTestBlocks) expect(b.minutes).toBe(55); // WEEK_TEST_MINUTES, never scaled
+    }
+  });
+
+  it('never schedules two full mocks on consecutive days (festival-displaced mock, N3)', () => {
+    const { days, summary } = buildPlan(scenario(360));
+    const fulls = summary.mockList
+      .filter((m) => m.kind !== 'week-test')
+      .map((m) => m.dateISO)
+      .sort();
+    expect(fulls.length).toBeGreaterThan(0);
+    // No two full mocks (full or dress-rehearsal) ever fall on consecutive days.
+    for (let i = 1; i < fulls.length; i += 1) {
+      const gapDays = (Date.parse(fulls[i]!) - Date.parse(fulls[i - 1]!)) / 86_400_000;
+      expect(gapDays).toBeGreaterThanOrEqual(2);
+    }
+    // The Sat 16 Jan full mock survives; the Thu 14 Jan mock (displaced by the
+    // 13–15 Jan Sankranti break) is NOT doubled onto Sun 17 Jan next to it.
+    expect(fulls).toContain('2027-01-16');
+    expect(fulls).not.toContain('2027-01-17');
+    // A full-mock block is ALWAYS 120 min, even on a larger-budget Sunday.
+    for (const d of days.filter((x) => x.phase === 'mock')) {
+      expect(d.blocks.find((b) => b.kind === 'mock')!.minutes).toBe(120);
+    }
+  });
+});
+
+/**
+ * RE-AUDIT 1 — N1 sequence-order invariant over the FIXTURE in a LONG window.
+ * The beginner-ramp + days-off capacity deficit must be absorbed by SHIFTING
+ * the remaining first passes forward in learning-sequence order (never by
+ * pulling a subject's tail/mid topics out of order), so per subject the
+ * first-pass dates are non-decreasing in sequence order — at budgets
+ * 180 / 240 / 360, with and without days off.
+ */
+describe('re-audit 1 — N1 first-pass order non-decreasing (fixture, long window)', () => {
+  const OFF = ['2026-11-08', '2027-01-13', '2027-01-14', '2027-01-15'];
+  it('never first-passes a topic before an earlier sequence topic of its subject', () => {
+    for (const budget of [180, 240, 360]) {
+      for (const daysOff of [undefined, OFF]) {
+        const opts = longOpts('2027-01-24', {
+          dailyBudgetMin: budget,
+          weekendBudgetMin: budget,
+          daysOff: daysOff ? [...daysOff] : undefined,
+        });
+        const { days } = buildPlan(opts);
+        const subj = subjectOf(opts);
+        const seq = opts.sequence!.order;
+        const fp = new Map<string, string>();
+        for (const d of days) {
+          for (const id of [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]) {
+            if (!fp.has(id)) fp.set(id, d.dateISO);
+          }
+        }
+        const bySubject = new Map<string, string[]>();
+        for (const id of fp.keys()) {
+          const code = subj.get(id)!;
+          const arr = bySubject.get(code) ?? [];
+          arr.push(id);
+          bySubject.set(code, arr);
+        }
+        for (const [code, ids] of bySubject) {
+          const order = seq[code] ?? [];
+          const idx = new Map(order.map((id, i) => [id, i] as const));
+          ids.sort((a, b) => (idx.get(a) ?? 0) - (idx.get(b) ?? 0));
+          let prev = '';
+          for (const id of ids) {
+            const date = fp.get(id)!;
+            expect(date >= prev, `${code} budget=${budget} off=${!!daysOff}: ${id} @${date} < ${prev}`).toBe(true);
+            prev = date;
+          }
+        }
+      }
+    }
   });
 });

@@ -21,7 +21,7 @@ import { isDue } from '../engine/spaced-repetition';
 import { planDayFor, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic } from '../engine/planner';
 import { WEEK_TEST_COUNT, WEEK_TEST_MINUTES } from '../engine/mock';
 import { navigate } from '../router/router';
-import { loadState, getPrelimsDateMigrationNotice, dismissPrelimsDateNotice } from '../state/store';
+import { loadState, getPrelimsDateMigrationNotice, dismissPrelimsDateNotice, isAdminDone, setAdminDone } from '../state/store';
 import { currentPlan } from '../lib/plan';
 import { diffDaysISO, daysToGo, todayISO, addDaysISO } from '../lib/dates';
 import { openLearn } from './learn';
@@ -75,11 +75,115 @@ export function render(root: HTMLElement): void {
   mount(
     root,
     dateNotice,
+    buildRecoveryBanner(summary),
     buildNowHero(summary, today, todayDay),
+    ...buildAdminCards(root, today, todayDay),
     allMastered ? masteredCard() : buildChecklist(todayDay),
     allMastered ? null : buildNextSaturdayCard(plan, today),
     buildMainsParallelNote(summary),
   );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Admin task cards (eligibility gates — STANDARDS §8a)                        */
+/* -------------------------------------------------------------------------- */
+
+/** Public portal for the application / hall ticket. @internal */
+const PSC_URL = 'https://psc.ap.gov.in';
+/** Hall-ticket card appears from this date (watch the portal from ~12 Jan). @internal */
+const HALL_TICKET_FROM = '2027-01-12';
+
+/**
+ * The compact ADMIN-TASK cards shown on Today (eligibility gates): "Apply
+ * online" from plan start until done, "Hall ticket" from ~12 Jan until done, and
+ * an exam-day checklist on the light day (exam − 1). Each is a small card with a
+ * short checklist and ONE "Mark done" button (toggles `adminDone` via
+ * {@link setAdminDone} and re-renders). Returns only the currently-active,
+ * not-yet-done cards (possibly none). @internal
+ */
+function buildAdminCards(root: HTMLElement, today: string, day: PlanDay | undefined): HTMLElement[] {
+  const out: HTMLElement[] = [];
+  // 1) APPLY ONLINE — from plan start until marked done.
+  if (!isAdminDone('apply-online')) {
+    out.push(
+      adminCard(root, {
+        id: 'apply-online',
+        title: 'Apply online — deadline 27 Oct 2026, 11:59 PM',
+        lead: 'Submit your APPSC Group-1 application before the deadline.',
+        checklist: [
+          'OTPR registration / login',
+          'Photo & signature specs',
+          'Fee payment',
+          'Choose exam centre',
+          'Download application PDF',
+        ],
+        link: { label: 'Open psc.ap.gov.in', href: PSC_URL },
+      }),
+    );
+  }
+  // 2) HALL TICKET — from ~12 Jan until marked done.
+  if (today >= HALL_TICKET_FROM && !isAdminDone('hall-ticket')) {
+    out.push(
+      adminCard(root, {
+        id: 'hall-ticket',
+        title: 'Hall ticket — download when released',
+        lead: 'Watch psc.ap.gov.in from ~12 Jan and download your hall ticket as soon as it is released.',
+        checklist: [],
+        link: { label: 'Open psc.ap.gov.in', href: PSC_URL },
+      }),
+    );
+  }
+  // 3) EXAM-DAY CHECKLIST — only on the light day (exam − 1), until done.
+  if (day?.light && !isAdminDone('exam-day')) {
+    out.push(
+      adminCard(root, {
+        id: 'exam-day',
+        title: 'Exam-day checklist',
+        lead: 'Prelims is tomorrow. Get everything ready tonight.',
+        checklist: [
+          'Hall ticket (printed) + photo ID',
+          'Black / blue ballpoint pens',
+          'Reach the centre early',
+          'OMR rules: fill bubbles fully, no stray marks',
+        ],
+      }),
+    );
+  }
+  return out;
+}
+
+/** One compact admin-task card with a checklist, optional link and a "Mark done". @internal */
+function adminCard(
+  root: HTMLElement,
+  spec: { id: string; title: string; lead: string; checklist: readonly string[]; link?: { label: string; href: string } },
+): HTMLElement {
+  const body: Child[] = [el('p', { class: 'section-lead', text: spec.lead })];
+  if (spec.checklist.length > 0) {
+    body.push(
+      el('ul', { class: 'admin-checklist' }, spec.checklist.map((item) => el('li', { text: item }))),
+    );
+  }
+  const actions: Child[] = [];
+  if (spec.link) {
+    actions.push(
+      el('a', { class: 'btn btn-ghost', href: spec.link.href, attrs: { target: '_blank', rel: 'noopener noreferrer' } }, [
+        el('span', { text: spec.link.label }),
+      ]),
+    );
+  }
+  actions.push(
+    button({
+      label: 'Mark done',
+      variant: 'secondary',
+      iconName: 'check',
+      onClick: () => {
+        setAdminDone(spec.id, true);
+        render(root);
+      },
+    }),
+  );
+  body.push(el('div', { class: 'admin-card-actions' }, actions));
+  return card({ title: spec.title }, body);
 }
 
 /**
@@ -113,10 +217,34 @@ function buildPrelimsDateNotice(root: HTMLElement, summary: PlanSummary): HTMLEl
   ]);
 }
 
+/**
+ * RE-AUDIT 2 — the calm RECOVERY banner (no alarm wording). Shown only when the
+ * learner is genuinely behind (`summary.daysBehind ≥ 1`) and the plan was
+ * adjusted to stay feasible: "You're N days behind — the plan has been adjusted:
+ * …". Returns `null` otherwise. @internal
+ */
+function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
+  if (!summary.recovery || summary.daysBehind < 1) return null;
+  const n = summary.daysBehind;
+  const detail =
+    summary.recoveryChanges.length > 0
+      ? `${summary.recoveryChanges.join('; ')}. You can still finish on time.`
+      : 'The plan has been rebalanced so you can still finish on time.';
+  return el('section', { class: 'today-banner is-ok', attrs: { role: 'status' } }, [
+    el('span', { class: 'today-banner-icon' }, [icon('calendar', 22)]),
+    el('div', { class: 'today-banner-text' }, [
+      el('span', {
+        class: 'today-banner-title',
+        text: `You\u2019re ${n} ${n === 1 ? 'day' : 'days'} behind \u2014 the plan has been adjusted`,
+      }),
+      el('span', { class: 'today-banner-detail', text: detail }),
+    ]),
+  ]);
+}
+
 /* -------------------------------------------------------------------------- */
 /* Hero + banner                                                               */
 /* -------------------------------------------------------------------------- */
-
 /**
  * The "Now" hero — the single focal point of Today. It names the day's FIRST
  * actionable block (unit/topic title · its block · minutes) and offers ONE

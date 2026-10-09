@@ -4,7 +4,7 @@ import { prettyDowDate } from '../today';
 import { buildAtAGlance } from '../components/atglance';
 import { getSubtopics } from '../../content/loader';
 import { getMindmap } from '../../content/loader';
-import { __resetForTests, setPlanStartDate } from '../../state/store';
+import { __resetForTests, setPlanStartDate, setExamDate, isAdminDone, setAdminDone } from '../../state/store';
 import { addDaysISO, dayOfWeekISO, todayISO } from '../../lib/dates';
 
 describe('today view — "Now" hero + Start CTA', () => {
@@ -138,5 +138,64 @@ describe('at-a-glance curated map', () => {
     branchLabel.click();
     expect(branch.classList.contains('is-revealed')).toBe(true);
     expect(branchLabel.getAttribute('aria-expanded')).toBe('true');
+  });
+});
+
+/**
+ * Today-view ADMIN TASK cards (eligibility gates, STANDARDS §8a). Driven through
+ * the real render, which reads the wall clock, so the tests pin the plan to
+ * "running now" (start = today, exam far in the future) so the happy-path (not
+ * the pre-start / post-exam graceful states) renders.
+ */
+describe('today view — admin task cards', () => {
+  beforeEach(() => {
+    __resetForTests();
+    location.hash = '';
+    setExamDate(addDaysISO(todayISO(), 120));
+    setPlanStartDate(todayISO());
+  });
+
+  it('shows the compact "Apply online" card (deadline, checklist, portal link) from plan start', () => {
+    const root = document.createElement('div');
+    today.render(root);
+    expect(root.textContent).toContain('Apply online — deadline 27 Oct 2026, 11:59 PM');
+    expect(root.textContent).toContain('OTPR registration / login');
+    expect(root.textContent).toContain('Photo & signature specs');
+    expect(root.textContent).toContain('Fee payment');
+    expect(root.textContent).toContain('Choose exam centre');
+    expect(root.textContent).toContain('Download application PDF');
+    expect(
+      [...root.querySelectorAll<HTMLAnchorElement>('a')].some(
+        (a) => a.getAttribute('href') === 'https://psc.ap.gov.in',
+      ),
+    ).toBe(true);
+  });
+
+  it('hides the "Apply online" card once it is marked done', () => {
+    const root = document.createElement('div');
+    today.render(root);
+    const markDone = [...root.querySelectorAll<HTMLButtonElement>('button')].find((b) =>
+      b.textContent?.includes('Mark done'),
+    );
+    expect(markDone).toBeTruthy();
+    markDone!.click();
+    expect(isAdminDone('apply-online')).toBe(true);
+    const root2 = document.createElement('div');
+    today.render(root2);
+    expect(root2.textContent).not.toContain('Apply online — deadline');
+  });
+
+  it('does NOT show the hall-ticket or exam-day cards before their dates', () => {
+    const root = document.createElement('div');
+    today.render(root);
+    expect(root.textContent).not.toContain('Hall ticket — download when released');
+    expect(root.textContent).not.toContain('Exam-day checklist');
+  });
+
+  it('respects a pre-set done flag (hidden when already done)', () => {
+    setAdminDone('apply-online', true);
+    const root = document.createElement('div');
+    today.render(root);
+    expect(root.textContent).not.toContain('Apply online — deadline');
   });
 });

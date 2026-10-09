@@ -47,6 +47,7 @@ export function render(root: HTMLElement): void {
   mount(
     root,
     buildHeader(summary),
+    buildRecoveryBanner(summary),
     buildUnitHeader(plan),
     buildThisWeek(plan),
     buildRoadStrip(plan),
@@ -105,6 +106,26 @@ function buildHeader(summary: PlanSummary): HTMLElement {
   return el('section', { class: 'hero planner-hero' }, [left, countdownCard]);
 }
 
+/**
+ * RE-AUDIT 2 — the calm RECOVERY banner on the Planner (no alarm wording),
+ * shown only when the learner is genuinely behind (`summary.daysBehind ≥ 1`) and
+ * the plan was adjusted to stay feasible. Returns `null` otherwise. @internal
+ */
+function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
+  if (!summary.recovery || summary.daysBehind < 1) return null;
+  const n = summary.daysBehind;
+  const detail =
+    summary.recoveryChanges.length > 0
+      ? `${summary.recoveryChanges.join('; ')}. You can still finish on time.`
+      : 'The plan has been rebalanced so you can still finish on time.';
+  return el('section', { class: 'feasibility is-ok', attrs: { role: 'status' } }, [
+    icon('calendar', 16),
+    el('span', {
+      text: `You\u2019re ${n} ${n === 1 ? 'day' : 'days'} behind \u2014 the plan has been adjusted: ${detail}`,
+    }),
+  ]);
+}
+
 /* -------------------------------------------------------------------------- */
 /* This week — the default view (unit header + 7-row table)                    */
 /* -------------------------------------------------------------------------- */
@@ -158,6 +179,7 @@ function dayFocus(day: PlanDay): { label: string; topics: string } {
     return { label: day.mockPaper === 'paper1' ? 'Paper-I full mock' : 'Paper-II full mock', topics: '' };
   }
   if (day.blocks.some((b) => b.kind === 'week-test')) return { label: 'Week test', topics: '' };
+  if (day.dayOff) return { label: 'Day off', topics: 'Current Affairs + flashcards' };
   if (day.light) return { label: 'Light day', topics: '' };
   if (day.blocks.length === 0) return { label: 'Rest', topics: '' };
   const names = day.topics.map((t) => (t.kind === 'practice' ? 'Mental Ability practice' : t.name || t.subtopicId));

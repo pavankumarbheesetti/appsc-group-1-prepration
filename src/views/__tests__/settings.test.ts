@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import * as settings from '../settings';
-import { __resetForTests, getExamDate, getPlanStartDate } from '../../state/store';
+import { __resetForTests, getExamDate, getPlanStartDate, getDaysOff } from '../../state/store';
+import { DEFAULT_DAYS_OFF } from '../../config';
 import { addDaysISO, todayISO } from '../../lib/dates';
 
 /** Find the Plan-start date input by its aria-label. */
@@ -45,5 +46,66 @@ describe('settings view — plan start date control', () => {
     input.value = chosen;
     input.dispatchEvent(new Event('change'));
     expect(getPlanStartDate()).toBe(chosen);
+  });
+});
+
+/** Find the "Add a day off" date input. */
+function addDayOffInput(root: HTMLElement): HTMLInputElement | undefined {
+  return [...root.querySelectorAll<HTMLInputElement>('input[type="date"]')].find(
+    (i) => i.getAttribute('aria-label') === 'Add a day off',
+  );
+}
+
+describe('settings view — days off control', () => {
+  beforeEach(() => {
+    __resetForTests();
+  });
+
+  it('renders the default days off as removable chips, an add-date input and a reset button', () => {
+    const root = document.createElement('div');
+    settings.render(root);
+    expect(root.textContent).toContain('Days off');
+    // One chip per current day off (defaults on a fresh profile).
+    expect(getDaysOff().length).toBe(DEFAULT_DAYS_OFF.length);
+    expect(root.querySelectorAll('.dayoff-chip').length).toBe(DEFAULT_DAYS_OFF.length);
+    expect(addDayOffInput(root)).toBeTruthy();
+    expect(
+      [...root.querySelectorAll<HTMLButtonElement>('button')].some((b) =>
+        b.textContent?.includes('Reset to defaults'),
+      ),
+    ).toBe(true);
+  });
+
+  it('adds a new day off from the date input', () => {
+    const root = document.createElement('div');
+    settings.render(root);
+    const add = addDayOffInput(root)!;
+    add.value = '2026-12-25';
+    add.dispatchEvent(new Event('change'));
+    expect(getDaysOff()).toContain('2026-12-25');
+  });
+
+  it('removes a day off from its chip remove button', () => {
+    const root = document.createElement('div');
+    settings.render(root);
+    const before = getDaysOff().length;
+    const remove = root.querySelector<HTMLButtonElement>('.dayoff-chip-remove');
+    expect(remove).toBeTruthy();
+    remove!.click();
+    expect(getDaysOff().length).toBe(before - 1);
+  });
+
+  it('restores the festival defaults with "Reset to defaults"', () => {
+    const root = document.createElement('div');
+    settings.render(root);
+    // Mutate then reset.
+    const add = addDayOffInput(root)!;
+    add.value = '2026-12-25';
+    add.dispatchEvent(new Event('change'));
+    const reset = [...root.querySelectorAll<HTMLButtonElement>('button')].find((b) =>
+      b.textContent?.includes('Reset to defaults'),
+    )!;
+    reset.click();
+    expect(getDaysOff()).toEqual([...DEFAULT_DAYS_OFF]);
   });
 });

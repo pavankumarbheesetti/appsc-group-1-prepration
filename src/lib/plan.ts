@@ -186,5 +186,8 @@ export function currentPlan(now: Date = new Date()): Plan {
     // Passed on the planner's `weekendBudgetMin` opt, which the rhythm now treats
     // as the SUNDAY budget only.
     weekendBudgetMin: settings.sundayStudyMinutes,
+    // Festival / holiday days off → LIGHT days (≤ 60 min, no mock/new topic);
+    // mocks move off them and displaced work flows into the catch-up buffers.
+    daysOff: settings.daysOff,
   });
 }
