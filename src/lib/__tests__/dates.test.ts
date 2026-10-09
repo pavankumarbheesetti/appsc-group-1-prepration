@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   addDaysISO,
+  daysToGo,
   daysUntilExam,
   diffDaysISO,
   inclusiveDaysISO,
@@ -62,6 +63,24 @@ describe('daysUntilExam — single source for the exam countdown', () => {
   it('equals inclusiveDaysISO(today, exam) with args in exam-first order', () => {
     expect(daysUntilExam('2026-11-15', '2026-09-27')).toBe(
       inclusiveDaysISO('2026-09-27', '2026-11-15'),
+    );
+  });
+});
+
+describe('daysToGo — the conventional displayed countdown', () => {
+  it('counts calendar days BETWEEN today and the exam (one less than inclusive)', () => {
+    // The reported case: 9 Oct 2026 → 24 Jan 2027 ⇒ 107 (daysUntilExam ⇒ 108).
+    expect(daysToGo('2027-01-24', '2026-10-09')).toBe(107);
+    expect(daysUntilExam('2027-01-24', '2026-10-09')).toBe(108);
+    // Day before the exam → 1; exam day itself → 0; once past → 0 (clamped).
+    expect(daysToGo('2026-11-15', '2026-11-14')).toBe(1);
+    expect(daysToGo('2026-11-15', '2026-11-15')).toBe(0);
+    expect(daysToGo('2026-11-15', '2026-11-16')).toBe(0);
+  });
+
+  it('is always exactly one less than the inclusive countdown before the exam', () => {
+    expect(daysToGo('2026-11-15', '2026-09-27')).toBe(
+      daysUntilExam('2026-11-15', '2026-09-27') - 1,
     );
   });
 });

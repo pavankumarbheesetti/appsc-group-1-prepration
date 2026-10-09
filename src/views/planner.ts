@@ -17,11 +17,11 @@
 import { feasibilityLine, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic, type SubjectFit } from '../engine/planner';
 import { getLearningSequence, getSubtopic, getSubtopics } from '../content/loader';
 import { SUBJECTS, type SubjectCode } from '../content/types';
-import { getExamDate, setExamDate } from '../state/store';
+import { getExamDate, setExamDate, getPlanStartDate } from '../state/store';
 import { currentPlan } from '../lib/plan';
 import { loadState } from '../state/store';
 import { subtopicMasteryPct } from '../lib/metrics';
-import { daysUntilExam, todayISO } from '../lib/dates';
+import { daysToGo, diffDaysISO, todayISO } from '../lib/dates';
 import { el, mount, type Child } from './dom';
 import { card } from './components/card';
 import { chip } from './components/chip';
@@ -29,7 +29,7 @@ import { progressBar } from './components/progress';
 import { icon } from './components/icon';
 import { openLearn } from './learn';
 import { openPaperMock } from './mock';
-import { prettyDate, fmtDuration, startPracticeDrill } from './today';
+import { prettyDate, prettyDowDate, fmtDuration, startPracticeDrill } from './today';
 
 /** Render the Planner view into `root`. */
 export function render(root: HTMLElement): void {
@@ -59,7 +59,7 @@ export function render(root: HTMLElement): void {
 /** Header with the editable exam date, countdown and feasibility line. @internal */
 function buildHeader(summary: PlanSummary, rerender: () => void): HTMLElement {
   const today = todayISO();
-  const daysToExam = daysUntilExam(summary.examDateISO, today);
+  const daysToExam = daysToGo(summary.examDateISO, today);
 
   const dateInput = el('input', {
     class: 'exam-date-input',
@@ -271,15 +271,21 @@ function dayCell(day: PlanDay): HTMLElement {
   if (day.mockPaper) cls.push('is-mock');
   if (day.light) cls.push('is-light');
 
+  const start = getPlanStartDate();
+  const preStart = diffDaysISO(day.dateISO, start) > 0;
+  if (preStart) cls.push('is-prestart');
+
   const head = el('div', { class: 'plan-cell-head' }, [
     el('span', { class: 'plan-cell-dow', text: dowLabel(day.dateISO) }),
     el('span', { class: 'plan-cell-date tnum', text: prettyDate(day.dateISO).replace(/ \d{4}$/, '') }),
     day.status === 'today' ? chip({ text: 'Today', tone: 'ok' }) : null,
   ]);
 
-  const body: Child[] = day.blocks.length > 0
-    ? day.blocks.map(cellBlock)
-    : [el('span', { class: 'plan-day-idle', text: day.light ? 'Light day' : 'Rest' })];
+  const body: Child[] = preStart
+    ? [el('span', { class: 'plan-day-idle', text: `Plan starts ${prettyDowDate(start)}` })]
+    : day.blocks.length > 0
+      ? day.blocks.map(cellBlock)
+      : [el('span', { class: 'plan-day-idle', text: day.light ? 'Light day' : 'Rest' })];
 
   return el('div', { class: cls.join(' ') }, [head, el('div', { class: 'plan-cell-body' }, body)]);
 }

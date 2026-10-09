@@ -22,15 +22,18 @@ import {
   exportStateJSON,
   getDailyStudyMinutes,
   getExamDate,
+  getPlanStartDate,
   getSundayStudyMinutes,
   importStateJSON,
   loadState,
   resetProgress,
   setDailyStudyMinutes,
   setExamDate,
+  setPlanStartDate,
   setSundayStudyMinutes,
   updateState,
 } from '../state/store';
+import { addDaysISO, todayISO } from '../lib/dates';
 import { el, mount } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
@@ -67,6 +70,7 @@ export function render(root: HTMLElement): void {
 function buildDisplayCard(rerender: () => void): HTMLElement {
   return card({ title: 'Display & schedule' }, [
     examDateField(rerender),
+    planStartField(rerender),
     studyTimeField(rerender),
     sundayTimeField(rerender),
     themeField(rerender),
@@ -207,6 +211,56 @@ function examDateField(rerender: () => void): HTMLElement {
     el('span', { class: 'field-label', text: 'Exam date' }),
     el('span', { class: 'settings-hint', text: 'Drives the Planner countdown and day-by-day plan.' }),
     input,
+  ]);
+}
+
+/**
+ * Editable PLAN START DATE control + a one-tap "Start my plan tomorrow" button.
+ * The learner chooses when the plan begins: the date input is bounded to
+ * [today, exam − 14 days]; the button sets it to tomorrow. Both persist to
+ * `settings.planStartDate`, confirm with a toast and re-plan (the caller
+ * redraws; Planner/Today read the new start live). Days before the start date
+ * are free. Rendered as a non-`label` field so the button is not swallowed by a
+ * wrapping label click. @internal
+ */
+function planStartField(rerender: () => void): HTMLElement {
+  const today = todayISO();
+  const maxStart = addDaysISO(getExamDate(), -14);
+  const input = el('input', {
+    class: 'exam-date-input',
+    type: 'date',
+    value: getPlanStartDate(),
+    ariaLabel: 'Plan start date',
+    attrs: { min: today, max: maxStart },
+  }) as HTMLInputElement;
+  input.value = getPlanStartDate();
+  input.addEventListener('change', () => {
+    const before = getPlanStartDate();
+    setPlanStartDate(input.value);
+    // Invalid/cleared input is a no-op in the store — restore the field.
+    if (getPlanStartDate() === before) {
+      input.value = before;
+      return;
+    }
+    showToast('Plan start updated \u2014 your plan has been re-planned', { tone: 'success' });
+    rerender();
+  });
+
+  const startTomorrow = button({
+    label: 'Start my plan tomorrow',
+    variant: 'secondary',
+    iconName: 'arrow-right',
+    onClick: () => {
+      setPlanStartDate(addDaysISO(todayISO(), 1));
+      showToast('Your plan starts tomorrow \u2014 re-planned', { tone: 'success' });
+      rerender();
+    },
+  });
+
+  return el('div', { class: 'field settings-field' }, [
+    el('span', { class: 'field-label', text: 'Plan start date' }),
+    el('span', { class: 'settings-hint', text: 'Your progress is kept. Days before the start date are free.' }),
+    el('div', { class: 'settings-field-row' }, [input, startTomorrow]),
   ]);
 }
 

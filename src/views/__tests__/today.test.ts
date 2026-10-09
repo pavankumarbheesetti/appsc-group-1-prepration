@@ -1,9 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import * as today from '../today';
+import { prettyDowDate } from '../today';
 import { buildAtAGlance } from '../components/atglance';
 import { getSubtopics } from '../../content/loader';
 import { getMindmap } from '../../content/loader';
-import { __resetForTests } from '../../state/store';
+import { __resetForTests, setPlanStartDate } from '../../state/store';
+import { addDaysISO, dayOfWeekISO, todayISO } from '../../lib/dates';
 
 describe('today view — Start today\u2019s study CTA', () => {
   beforeEach(() => {
@@ -35,6 +37,36 @@ describe('today view — Start today\u2019s study CTA', () => {
     today.render(root);
     // Either the block cards render, or a graceful state does — never a crash.
     expect(root.querySelector('.today-budget')).toBeTruthy();
+  });
+});
+
+describe('today view — plan has not started yet (free pre-start days)', () => {
+  beforeEach(() => {
+    __resetForTests();
+    location.hash = '';
+  });
+
+  it('shows a "starts tomorrow" card instead of today\u2019s blocks', () => {
+    const start = addDaysISO(todayISO(), 1);
+    setPlanStartDate(start);
+    const root = document.createElement('div');
+    today.render(root);
+    expect(root.textContent).toContain('Your plan starts tomorrow');
+    expect(root.textContent).toContain(prettyDowDate(start));
+    expect(root.textContent).toContain('Days before the start date are free');
+    // The day's rhythm block budget is NOT rendered before the plan starts.
+    expect(root.querySelector('.today-budget')).toBeFalsy();
+  });
+
+  it('derives the Paper-II baseline mock when day 1 is a Saturday mock', () => {
+    // The first Saturday on/after tomorrow is the plan's opening baseline mock.
+    let start = addDaysISO(todayISO(), 1);
+    while (dayOfWeekISO(start) !== 6) start = addDaysISO(start, 1);
+    setPlanStartDate(start);
+    const root = document.createElement('div');
+    today.render(root);
+    expect(root.textContent).toContain('Your plan starts');
+    expect(root.textContent).toContain('Paper-II baseline mock');
   });
 });
 

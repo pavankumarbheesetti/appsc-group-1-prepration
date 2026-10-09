@@ -476,6 +476,21 @@ export function getPlanStartDate(): string {
 }
 
 /**
+ * Persist a new PLAN START DATE (ISO `YYYY-MM-DD`) — the day the learner's study
+ * plan begins. Invalid input (not a real ISO calendar date) is IGNORED so the
+ * setting can never be corrupted from the UI; the caller can re-read
+ * {@link getPlanStartDate} to confirm. Range (min = today, max = exam − 14 days)
+ * is enforced by the Settings control, not here, so the store stays a pure
+ * validated persister. Returns the updated state.
+ */
+export function setPlanStartDate(iso: string): AppState {
+  if (!isValidISODate(iso)) return loadState();
+  return updateState((s) => {
+    s.settings.planStartDate = iso;
+  });
+}
+
+/**
  * Whether the one-time "Prelims moved to 24 Jan 2027" notice is pending on
  * Today — set by the load-time Notification 07/2026 exam-date migration.
  */

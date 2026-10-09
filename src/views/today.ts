@@ -18,11 +18,11 @@ import type { Band } from '../content/taxonomy';
 import type { MainsItem } from '../content/types';
 import { buildSession } from '../engine/drill';
 import { buildCuratedDeck, selectSession } from '../engine/flashcards';
-import { planDayFor, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic } from '../engine/planner';
+import { planDayFor, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic } from '../engine/planner';
 import { navigate } from '../router/router';
 import { loadState, getPrelimsDateMigrationNotice, dismissPrelimsDateNotice } from '../state/store';
 import { currentPlan } from '../lib/plan';
-import { diffDaysISO, daysUntilExam, todayISO } from '../lib/dates';
+import { diffDaysISO, daysToGo, todayISO } from '../lib/dates';
 import { openLearn } from './learn';
 import { openMainsQuestion } from './mains';
 import { openPaperMock } from './mock';
@@ -48,7 +48,7 @@ export function render(root: HTMLElement): void {
 
   // Graceful state: the plan has not started yet.
   if (diffDaysISO(today, start) > 0) {
-    mount(root, dateNotice, buildCountdownHero(summary, today, undefined), notStartedCard(start));
+    mount(root, dateNotice, buildCountdownHero(summary, today, undefined), startsSoonCard(plan, start, today));
     return;
   }
   // Graceful state: the exam date has passed — switch to MAINS kick-start.
@@ -126,7 +126,7 @@ function buildPrelimsDateNotice(root: HTMLElement, summary: PlanSummary): HTMLEl
  * falls back to "Open planner" as the primary. @internal
  */
 function buildCountdownHero(summary: PlanSummary, today: string, day: PlanDay | undefined): HTMLElement {
-  const daysToExam = daysUntilExam(summary.examDateISO, today);
+  const daysToExam = daysToGo(summary.examDateISO, today);
   const startAction = day ? firstStart(day) : null;
 
   const actions: Child[] = startAction
@@ -570,16 +570,45 @@ export function todaysCuratedSession(): number {
 /* Graceful-state cards                                                        */
 /* -------------------------------------------------------------------------- */
 
-/** Shown before the plan's start date. @internal */
-function notStartedCard(start: string): HTMLElement {
+/**
+ * Shown before the plan's start date — a small card derived from the plan's
+ * FIRST day, so the learner knows exactly what day 1 holds (e.g. a Paper-II
+ * baseline mock). "Days before the start date are free." @internal
+ */
+function startsSoonCard(plan: Plan, start: string, today: string): HTMLElement {
+  const desc = describeFirstDay(plan, start);
+  const headline =
+    diffDaysISO(today, start) === 1
+      ? `Your plan starts tomorrow \u2014 ${prettyDowDate(start)}: ${desc}`
+      : `Your plan starts ${prettyDowDate(start)}: ${desc}`;
   return card({ title: 'Your plan starts soon' }, [
     el('div', { class: 'empty-state' }, [
       el('span', { class: 'empty-icon' }, [icon('sparkles', 26)]),
-      el('h3', { text: `Plan begins ${prettyDate(start)}` }),
-      el('p', { text: 'Set up the schedule now — the planner shows every study day up to Prelims.' }),
+      el('h3', { text: headline }),
+      el('p', { text: 'Days before the start date are free \u2014 your progress is kept.' }),
       button({ label: 'Open planner', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/planner') }),
     ]),
   ]);
+}
+
+/**
+ * A plain-language description of the plan's FIRST day — the opening Paper-II
+ * baseline mock when day 1 is a Saturday mock, else the first subject/topic
+ * scheduled. @internal
+ */
+function describeFirstDay(plan: Plan, start: string): string {
+  const day =
+    plan.days.find((d) => d.dateISO === start) ??
+    plan.days.find((d) => d.dateISO >= start && d.blocks.length > 0);
+  if (!day) return 'your study plan';
+  if (day.mockPaper === 'paper2') return 'Paper-II baseline mock';
+  if (day.mockPaper === 'paper1') return 'Paper-I mock';
+  const lead = day.blocks.find((b) => b.kind === 'subject' || b.kind === 'catchup' || b.kind === 'ment');
+  if (lead) {
+    const topic = lead.topics?.[0];
+    return topic ? `${lead.label} · ${topic.name}` : lead.label;
+  }
+  return day.blocks[0]?.label ?? 'your study plan';
 }
 
 /** Shown once the exam date has passed. @internal */
@@ -638,4 +667,14 @@ export function prettyDate(iso: string): string {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   if (!y || !m || !d) return iso;
   return `${d} ${months[m - 1]} ${y}`;
+}
+
+/** Format an ISO date with its weekday, no year — e.g. `Sat 10 Oct`. */
+export function prettyDowDate(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const dows = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  if (!y || !m || !d) return iso;
+  const dow = new Date(Date.UTC(y, m - 1, d)).getUTCDay();
+  return `${dows[dow]} ${d} ${months[m - 1]}`;
 }

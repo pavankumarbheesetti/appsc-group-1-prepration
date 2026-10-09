@@ -7,6 +7,8 @@ import {
   loadState,
   saveState,
   setExamDate,
+  getPlanStartDate,
+  setPlanStartDate,
   subscribe,
   updateState,
   getMainsEntry,
@@ -65,6 +67,18 @@ describe('store', () => {
     expect(getExamDate()).toBe('2027-01-31');
     setExamDate('not-a-date');
     expect(getExamDate()).toBe('2027-01-31'); // unchanged
+  });
+
+  it('sets and persists the plan start date; ignores invalid input', () => {
+    const before = getPlanStartDate();
+    expect(before).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    setPlanStartDate('2026-10-10');
+    expect(getPlanStartDate()).toBe('2026-10-10');
+    // Invalid input is a no-op (the setting can never be corrupted from the UI).
+    setPlanStartDate('nope');
+    expect(getPlanStartDate()).toBe('2026-10-10');
+    setPlanStartDate('2026-02-31'); // impossible calendar date → rejected
+    expect(getPlanStartDate()).toBe('2026-10-10');
   });
 
   it('migrates the retired old-default exam date (15 Nov 2026 → 24 Jan 2027) with a one-time notice', () => {

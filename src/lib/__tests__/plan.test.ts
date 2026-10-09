@@ -4,7 +4,7 @@ import { getSubtopics } from '../../content/loader';
 import { buildPlan, computePlanAnchors, buildMockSchedule } from '../../engine/planner';
 import { PAPER_I, PAPER_II } from '../exam-pattern';
 import { buildPaperMock, mockSeriesLength } from '../../engine/mock';
-import { __resetForTests, getPlanStartDate } from '../../state/store';
+import { __resetForTests, getPlanStartDate, setPlanStartDate } from '../../state/store';
 import { addDaysISO } from '../dates';
 
 /** Derived anchors for the explicit short-window test harness (30 Sep → 15 Nov 2026). */
@@ -18,6 +18,9 @@ const SHORT = computePlanAnchors('2026-11-15', '2026-09-30');
 describe('plan bridge — full-taxonomy scope, prelims-driven plan', () => {
   beforeEach(() => {
     __resetForTests();
+    // Pin the plan start to the fixed `now` these tests pass, so the plan has no
+    // free pre-start days (the start defaults to the wall clock otherwise).
+    setPlanStartDate('2026-09-30');
   });
 
   it('planSubtopics covers every taxonomy subtopic exactly once, with track + subject', () => {
@@ -168,6 +171,7 @@ describe('mockSectionPools — full-paper pools from real content', () => {
 describe('gap-fill — track placement of the new subtopics (rhythm)', () => {
   beforeEach(() => {
     __resetForTests();
+    setPlanStartDate('2026-09-30');
   });
 
   it('first-passes the SCI basics subtopic once in the coverage window (paper2 aptitude)', () => {
@@ -999,6 +1003,67 @@ describe('planner DEEPEN passes — final-window weak-area top-ups (real content
     expect(new Set(ids).size).toBe(ids.length);
     const reported = new Set(summary.infeasibleFloorTopicIds);
     for (const id of ids) expect(reported.has(id)).toBe(false);
+  });
+});
+
+/**
+ * Learner-chosen PLAN START DATE: days before the start are FREE (no blocks, no
+ * placement) and the plan's first on/after-start day is day 1 — the opening
+ * Saturday mock becomes the Paper-II BASELINE mock that sets the starting level.
+ * Driven through the pure engine with fixed dates so it is clock-independent.
+ */
+describe('plan start date — free pre-start days + baseline mock', () => {
+  beforeEach(() => {
+    __resetForTests();
+  });
+
+  function planFrom(startISO: string, todayISOArg: string) {
+    return buildPlan({
+      subtopics: planSubtopics(),
+      progress: plannerProgress(),
+      mainsQuestionIds: mainsQuestionBank(),
+      pyqFrequency: pyqFrequency(),
+      sequence: learningSequence(),
+      examDateISO: '2027-01-24',
+      startISO,
+      todayISO: todayISOArg,
+      dailyBudgetMin: 240,
+      weekendBudgetMin: 360,
+    });
+  }
+
+  it('schedules nothing on 9 Oct and makes day 1 (Sat 10 Oct) the Paper-II baseline mock', () => {
+    const { days } = planFrom('2026-10-10', '2026-10-09');
+    // Today (9 Oct) precedes the start — a FREE day: no blocks, nothing placed.
+    const oct9 = days.find((d) => d.dateISO === '2026-10-09');
+    expect(oct9).toBeDefined();
+    expect(oct9!.blocks).toEqual([]);
+    expect(oct9!.theorySubtopicIds).toEqual([]);
+    expect(oct9!.aptitudeSubtopicIds).toEqual([]);
+    expect(oct9!.plannedMinutes).toBe(0);
+    // The first day that carries any blocks is 10 Oct.
+    const firstWithBlocks = days.find((d) => d.blocks.length > 0);
+    expect(firstWithBlocks?.dateISO).toBe('2026-10-10');
+    // 10 Oct is the Paper-II baseline mock.
+    const day1 = days.find((d) => d.dateISO === '2026-10-10')!;
+    expect(day1.mockPaper).toBe('paper2');
+    const mockBlock = day1.blocks.find((b) => b.kind === 'mock');
+    expect(mockBlock?.label).toContain('baseline');
+    expect(mockBlock?.label).toContain('Paper-II');
+  });
+
+  it('first-passes every prelims subtopic exactly once despite the free pre-start day', () => {
+    const { days } = planFrom('2026-10-10', '2026-10-09');
+    const aptitude = days.flatMap((d) => d.aptitudeSubtopicIds);
+    expect(aptitude.length).toBe(29);
+    expect(new Set(aptitude).size).toBe(29);
+  });
+
+  it('does NOT relabel a mock as baseline once the plan has already started', () => {
+    const { days } = planFrom('2026-09-30', '2026-10-09');
+    const firstMock = days.find((d) => d.mockPaper !== null)!;
+    const mockBlock = firstMock.blocks.find((b) => b.kind === 'mock');
+    expect(mockBlock?.label).not.toContain('baseline');
   });
 });
 });

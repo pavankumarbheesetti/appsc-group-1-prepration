@@ -90,6 +90,21 @@ export function daysUntilExam(examDateISO: string, todayISO: string): number {
 }
 
 /**
+ * The CONVENTIONAL "days to go" shown in the countdown — whole CALENDAR days
+ * BETWEEN today and the exam day (the exam day itself is NOT counted), clamped
+ * to 0 once the exam date is reached or passed. This is the number learners
+ * expect to see ("107 days to go" the day it is 107 sleeps away), as opposed to
+ * the planner's INCLUSIVE {@link daysUntilExam} (which also counts the exam day
+ * and so reads one higher). ONLY the displayed countdown uses this; all planner
+ * maths keep the inclusive count.
+ *
+ * e.g. today `2026-10-09` → exam `2027-01-24` ⇒ 107 (daysUntilExam ⇒ 108).
+ */
+export function daysToGo(examDateISO: string, todayISO: string): number {
+  return Math.max(0, diffDaysISO(todayISO, examDateISO));
+}
+
+/**
  * Day-of-week for an ISO date, computed on UTC-midnight so it is timezone
  * stable: `0` = Sunday … `6` = Saturday (matching `Date.prototype.getUTCDay`).
  */

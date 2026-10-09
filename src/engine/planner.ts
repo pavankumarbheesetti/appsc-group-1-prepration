@@ -1017,6 +1017,14 @@ interface DaySlot {
   mockPaper: PaperId | null;
   mockNumber: number;
   budgetMin: number;
+  /**
+   * True for a day that falls BEFORE the learner's chosen plan START date (only
+   * possible when the start date is in the future of `todayISO`). A pre-start
+   * day carries NO blocks and is excluded from topic placement — "days before
+   * the start date are free" — so nothing is scheduled or lost; the first
+   * on/after-start day is the plan's real day 1.
+   */
+  preStart: boolean;
 }
 
 /**
@@ -1081,7 +1089,9 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     const dow = dayOfWeekISO(dateISO);
     const region = regionFor(dateISO);
     const mock = mockNumberByDate.get(dateISO);
-    const isMock = region !== 'exam' && region !== 'light' && mock !== undefined;
+    // A day BEFORE the chosen plan start is "free": no blocks, no placement.
+    const preStart = diffDaysISO(opts.startISO, dateISO) < 0;
+    const isMock = !preStart && region !== 'exam' && region !== 'light' && mock !== undefined;
     slots.push({
       dateISO,
       dayIndex: di,
@@ -1093,6 +1103,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       // Only SUNDAY carries the (larger) Sunday budget; SATURDAY is a mock day
       // and simply follows the daily budget.
       budgetMin: region === 'exam' ? 0 : dow === 0 ? weekendBudgetMin : dailyBudgetMin,
+      preStart,
     });
   }
 
@@ -1975,11 +1986,25 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     return d < 0 ? 'past' : d === 0 ? 'today' : 'upcoming';
   };
 
+  // The plan's REAL first day — the chosen start date when it is today or in the
+  // future (otherwise the plan already began, so there is no first-day to flag).
+  // When that day is the opening Saturday MOCK it is the "baseline" mock that
+  // sets the learner's starting level (labelled specially, first mock only).
+  const planFirstISO = diffDaysISO(todayISO, opts.startISO) >= 0 ? opts.startISO : null;
+
   const days: PlanDay[] = [];
   for (const slot of slots) {
     const day = blankDay(slot, statusFor(slot.dateISO));
     const scale = slot.budgetMin / 240;
     const sm = (base: number): number => Math.max(1, Math.round(base * scale));
+
+    // A day BEFORE the chosen plan start is FREE — no blocks scheduled. The
+    // first on/after-start day is the plan's real day 1 (views show
+    // "Plan starts <date>" on these free days).
+    if (slot.preStart) {
+      days.push(day);
+      continue;
+    }
 
     if (slot.region === 'exam') {
       // Exam day — no tasks.
@@ -2002,11 +2027,17 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     if (slot.isMock) {
       // MOCK day: full mock 120 + review wrong 60 + weakest area 60.
       const paperLabel = slot.mockPaper === 'paper1' ? 'Paper-I' : 'Paper-II';
+      // The plan's OPENING Saturday mock is the BASELINE mock — it sets the
+      // learner's starting level (special label, first mock only).
+      const isBaseline = planFirstISO !== null && slot.dateISO === planFirstISO && slot.mockPaper === 'paper2';
+      const mockLabel = isBaseline
+        ? 'Paper-II baseline mock \u2014 sets your starting level'
+        : `Full ${paperLabel} mock`;
       day.phase = 'mock';
       day.mockPaper = slot.mockPaper;
       day.mockNumber = slot.mockNumber;
       day.blocks = [
-        { kind: 'mock', label: `Full ${paperLabel} mock`, minutes: sm(120), mockPaper: slot.mockPaper!, mockNumber: slot.mockNumber },
+        { kind: 'mock', label: mockLabel, minutes: sm(120), mockPaper: slot.mockPaper!, mockNumber: slot.mockNumber },
         { kind: 'mock-review', label: 'Review wrong answers', minutes: sm(60) },
         { kind: 'weakest-area', label: 'Weakest-area drill', minutes: sm(60) },
       ];
@@ -2474,7 +2505,7 @@ interface SubjectSlotInfo {
 function coverageSubjectSlots(slots: readonly DaySlot[]): SubjectSlotInfo[] {
   const out: SubjectSlotInfo[] = [];
   for (const s of slots) {
-    if (s.region !== 'coverage' || s.isMock) continue;
+    if (s.region !== 'coverage' || s.isMock || s.preStart) continue;
     if (s.dow >= 1 && s.dow <= 5) {
       const owner = SUBJECT_BY_DOW[s.dow]!;
       out.push({ dateISO: s.dateISO, dow: s.dow, owner, baseMin: SUBJECT_BASE_MIN[s.dow]!, subjectCode: owner });
