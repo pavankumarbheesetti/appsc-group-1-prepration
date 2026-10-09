@@ -51,22 +51,23 @@ describe('today view — plan has not started yet (free pre-start days)', () => 
     setPlanStartDate(start);
     const root = document.createElement('div');
     today.render(root);
-    expect(root.textContent).toContain('Your plan starts tomorrow');
+    expect(root.textContent).toContain('Tomorrow is Day 1');
     expect(root.textContent).toContain(prettyDowDate(start));
     expect(root.textContent).toContain('Days before the start date are free');
     // The day's rhythm block budget is NOT rendered before the plan starts.
     expect(root.querySelector('.today-budget')).toBeFalsy();
   });
 
-  it('derives the Paper-II baseline mock when day 1 is a Saturday mock', () => {
-    // The first Saturday on/after tomorrow is the plan's opening baseline mock.
+  it('describes day 1 as an ORIENTATION day when it is a Saturday (no baseline mock)', () => {
+    // The first Saturday on/after tomorrow is the plan's day-1 orientation day.
     let start = addDaysISO(todayISO(), 1);
     while (dayOfWeekISO(start) !== 6) start = addDaysISO(start, 1);
     setPlanStartDate(start);
     const root = document.createElement('div');
     today.render(root);
-    expect(root.textContent).toContain('Your plan starts');
-    expect(root.textContent).toContain('Paper-II baseline mock');
+    expect(root.textContent).toContain('Day 1');
+    expect(root.textContent).toContain('Start here');
+    expect(root.textContent).not.toContain('baseline');
   });
 });
 

@@ -19,6 +19,9 @@ import { getLearningSequence, getSubtopic, getSubtopics } from '../content/loade
 import { SUBJECTS, type SubjectCode } from '../content/types';
 import { getExamDate, setExamDate, getPlanStartDate } from '../state/store';
 import { currentPlan } from '../lib/plan';
+import { mockSectionPools } from '../lib/plan';
+import { mockSeriesLength } from '../engine/mock';
+import { PAPER_I, PAPER_II } from '../lib/exam-pattern';
 import { loadState } from '../state/store';
 import { subtopicMasteryPct } from '../lib/metrics';
 import { daysToGo, diffDaysISO, todayISO } from '../lib/dates';
@@ -28,7 +31,7 @@ import { chip } from './components/chip';
 import { progressBar } from './components/progress';
 import { icon } from './components/icon';
 import { openLearn } from './learn';
-import { openPaperMock } from './mock';
+import { openPaperMock, openWeekTest } from './mock';
 import { prettyDate, prettyDowDate, fmtDuration, startPracticeDrill } from './today';
 
 /** Render the Planner view into `root`. */
@@ -143,6 +146,7 @@ function buildFitSummary(summary: PlanSummary): HTMLElement {
   const stats: Child[] = [
     stat('Time each day', budgetLabel),
     stat('Full mocks', String(summary.mockSittings)),
+    summary.weekTests > 0 ? stat('Week tests', String(summary.weekTests)) : null,
     stat('New topics until', prettyDate(summary.coverageEndISO)),
     stat('Exam', prettyDate(summary.examDateISO)),
   ];
@@ -153,10 +157,24 @@ function buildFitSummary(summary: PlanSummary): HTMLElement {
     ? el('p', { class: 'section-lead', attrs: { role: 'note' }, text: `Running tight: ${summary.spills.map((s) => `${subjectName(s.subject)} finishes ${prettyDate(s.lastDateISO)}`).join('; ')}.` })
     : el('p', { class: 'section-lead', attrs: { role: 'note' }, text: 'Every subject fits its slots before new topics stop — no overflow.' });
 
+  // Full-mock sittings per paper vs the non-repeating capacity (mockSeriesLength);
+  // when sittings exceed capacity, some sections WRAP (reuse questions) — flagged
+  // honestly here.
+  const capP1 = mockSeriesLength(PAPER_I, mockSectionPools(PAPER_I));
+  const capP2 = mockSeriesLength(PAPER_II, mockSectionPools(PAPER_II));
+  const sitP1 = summary.fullMockPaperCounts.paper1;
+  const sitP2 = summary.fullMockPaperCounts.paper2;
+  const wraps = sitP1 > capP1 || sitP2 > capP2;
+  const mockCapNote = summary.mockSittings > 0
+    ? el('p', { class: 'section-lead', attrs: { role: 'note' }, text:
+        `Full mocks — Paper-I: ${sitP1} of ${capP1} non-repeating · Paper-II: ${sitP2} of ${capP2} non-repeating.${wraps ? ' Some later papers reuse earlier questions (pool wrap).' : ''}` })
+    : null;
+
   return card({ title: 'Plan fit', subtitle: 'How the whole prelims scope fits your time' }, [
     el('div', { class: 'plan-stat-grid' }, stats),
     el('div', { class: 'plan-fit-subjects' }, fitRows),
     spillNote,
+    mockCapNote,
   ]);
 }
 
@@ -294,12 +312,23 @@ function dayCell(day: PlanDay): HTMLElement {
 function cellBlock(block: PlanBlock): HTMLElement {
   if (block.kind === 'mock' && block.mockPaper) {
     const paper = block.mockPaper;
+    const dress = block.label.includes('Dress rehearsal');
     return el('button', {
       class: 'plan-cell-mock',
       type: 'button',
-      ariaLabel: `Sit ${paper === 'paper1' ? 'Paper-I' : 'Paper-II'} full mock`,
+      ariaLabel: dress
+        ? 'Sit the dress-rehearsal full mock'
+        : `Sit ${paper === 'paper1' ? 'Paper-I' : 'Paper-II'} full mock`,
       onClick: () => openPaperMock(paper),
-    }, [icon('timer', 13), el('span', { text: `${paper === 'paper1' ? 'Paper-I' : 'Paper-II'} mock` })]);
+    }, [icon('timer', 13), el('span', { text: dress ? 'Dress rehearsal' : `${paper === 'paper1' ? 'Paper-I' : 'Paper-II'} mock` })]);
+  }
+  if (block.kind === 'week-test') {
+    return el('button', {
+      class: 'plan-cell-mock',
+      type: 'button',
+      ariaLabel: 'Start this week’s test — questions from topics you have studied',
+      onClick: () => openWeekTest(block),
+    }, [icon('timer', 13), el('span', { text: block.label })]);
   }
 
   const topics = block.topics ?? [];

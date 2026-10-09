@@ -124,10 +124,45 @@ budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ t
   Thu Geography, Fri Science&Tech; Tue/Thu = 120 + 15 Telugu) · 20 Revise (due cards + mistakes + topics
   first‑passed ~3/~10 days ago; AP/band‑A also ~21) · 25 Current Affairs (Mon/Wed/Fri AP, Tue national,
   Thu international; ~15 new Qs + next notes).
-- **Saturday:** full mock 120 (one full mock every Saturday from the first Saturday on/after plan start
-  until the final window, alternating **Paper‑II / Paper‑I starting with Paper‑II**, non‑repeating series #;
-  when a paper's series exceeds the pool‑supported `mockSeriesLength` the section WRAPS and is flagged
-  `wrapped` — the UI surfaces the reuse — or a sectional mock is used) + review wrong 60 + weakest‑area 60.
+- **DAY‑1 ORIENTATION — beginner‑friendly start (LOCKED):** the plan's FIRST day (`planStartDate` when it is
+  today or in the future), **when it falls on a Saturday** (the opening‑mock case — e.g. the real
+  planStartDate Sat 10 Oct 2026), is an **ORIENTATION day**, NOT a full mock: a **Start here** block (30 min,
+  opens `#/start`) · **Mental Ability** — the first MENT sequence topic (Number System, 60) · **History** —
+  the first H‑early topic(s) (Stone Age, then IVC if it fits, ~120) · **Current affairs** — "How current
+  affairs is asked" + the first CA set (30). **No mock and no revise block on day 1.** The opening Saturday is
+  dropped from the mock schedule (`buildMockSchedule(…, orientationISO)`). The orientation day records NO
+  first pass — its named topics are shown as guided Learn links and are still first‑passed on their own
+  scheduled days, so "every topic first‑passed exactly once" is unchanged. A weekday/Sunday day‑1 keeps the
+  normal shape (the first study day already carries real topics, not a mock). The old **"Paper‑II baseline
+  mock"** labelling is RETIRED — mock blocks read simply "Full Paper‑I/II mock".
+- **START HERE guide (`#/start`, `src/views/start.ts`):** a plain‑language beginner orientation, linked from
+  Today on day 1, from Settings, and from the nav "More" sheet. Five scannable sections: (a) the exam in 1
+  minute (two 120‑mark papers + parts, −1/3 marking, 1:50 gateway that does not count in merit, key dates —
+  facts from `src/lib/exam-pattern.ts` + the detailed Notification 07/2026); (b) how your plan works
+  (weekday/Saturday/Sunday shape + the first‑pass → revision → final phases, dates DERIVED from the plan);
+  (c) how to study one topic (Topic at a glance → Notes → Practice → Flashcards; Full/Standard/Quick pass);
+  (d) negative marking (answer when you can eliminate options, skip pure guesses, with the simple EV maths);
+  (e) what to do if you miss a day (Sunday catch‑up; don't double up). Accessible headings; works at 390px.
+- **Saturday — FIRST PASS = "WEEK TEST"; revision cycle + final window = FULL MOCKS:**
+  During the first pass (coverage window) each Saturday — EXCEPT the day‑1 orientation Saturday above and the
+  single dress rehearsal below — is a **WEEK TEST**, not a full mock: a timed **45‑question / 55‑minute**
+  test (−1/3 marking, per‑paper net marks like the mock results) drawn ONLY from the MCQs of topics the plan
+  has first‑passed on or before that Saturday (≈ 2/3 from that week's topics, 1/3 from earlier; Paper‑I /
+  Paper‑II in proportion to what was covered; deterministic seed per date; no question repeats across week
+  tests where the pool allows — see `buildWeekTest` / `buildWeekTestSeries` in `engine/mock.ts`). The day is
+  **week test 55 + "Review every wrong or guessed answer" 45 + catch‑up of missed items** (runtime, else the
+  next topics of the biggest‑backlog subject). One tap from Today and the Planner launches it (reuses the mock
+  runner with a scoped pool, custom count + time — `openWeekTest`).
+  **DRESS REHEARSAL:** exactly ONE full 120‑question mock in the first pass, on the coverage Saturday nearest
+  the first‑pass midpoint, paper = whichever paper's topics are more covered by then (tie → Paper‑II); labelled
+  "Dress rehearsal — practise the 2‑hour format; the score doesn't matter yet".
+  **FULL MOCKS** run every Saturday from the **revision cycle** onward, alternating **Paper‑II / Paper‑I
+  (Paper‑II first)**, then the **final window** keeps **3 full mocks/week** (Tue/Thu/Sat, Paper‑I first). Full
+  mocks (dress + revision + final) share one per‑paper non‑repeating series #; week tests have their own
+  counter and do NOT consume the series. When a paper's full‑mock sittings exceed the pool‑supported
+  `mockSeriesLength` the section WRAPS and is flagged `wrapped` (the UI surfaces the reuse). The old
+  **"Paper‑II baseline mock"** labelling is RETIRED. (Short window < 8 weeks: the old shape — every Saturday a
+  full mock, no week tests, no dress rehearsal.)
 - **Sunday (SETTINGS "Sunday study time", default 360 = 6 h; presets 4/5/6/7 h + custom):** TWO study
   blocks — **Modern History** (the H‑modern stream, 120–240 min) + **Polity** (Polity's SECOND weekly slot,
   next Polity topics in sequence, 60–120 min) — then 60 weekly revision + 45 CA round‑up + 15 Telugu. The two
@@ -138,6 +173,12 @@ budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ t
   catch‑up of the week's missed items still takes precedence.
   (Stored `weekendStudyMinutes` migrates to `sundayStudyMinutes`: kept if greater than the daily budget, else
   360.)
+- **EARLY REVISE block (beginner‑friendly):** while fewer than **10 curated cards are due** across the deck
+  (the first days, before spaced repetition has built up), the weekday 20‑min **Revise** block is relabelled
+  **"Flashcards for what you studied yesterday"** on Today and its launcher scopes a Revise session to the
+  **previous plan day's topics'** curated cards (or, if that day has none, the most recent studied topic's
+  cards). It is NEVER an empty block. Implemented in the Today block label + launcher (`openReviseScope`),
+  reading the plan's day topics; once ≥ 10 cards are due the block reverts to the normal whole‑deck Revise.
 - **THREE depth tiers (single time model, `planner.ts`):** `FULL = min(60, subtopicMinutes)` (read notes
   + ~20 Qs + review), `STANDARD = 40` (notes + ~12 Qs), `QUICK = 25` (key facts + cards + ~8 Qs). The
   per‑topic FULL cap is **60** (the old 90 was unrealistic and is what made the floor infeasible). Views

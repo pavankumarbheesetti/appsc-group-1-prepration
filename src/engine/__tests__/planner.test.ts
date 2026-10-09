@@ -639,25 +639,54 @@ describe('long window — phases, final window, revision cycle (exam 24 Jan 2027
     expect(summary.infeasibleFloorTopicIds).toEqual([]);
   });
 
-  it('Saturday mocks alternate (Paper-II first) and STOP before the final window; final window runs 3/week', () => {
-    const { days } = buildPlan(longOpts(EXAM));
+  it('first pass = WEEK TESTS on Saturdays + ONE dress rehearsal; revision + final are FULL mocks (Paper-II first in the cycle)', () => {
+    const { days, summary } = buildPlan(longOpts(EXAM));
+
+    // Coverage Saturdays are WEEK TESTS: they teach nothing, are not 'mock'
+    // phase, and carry the week-test → review → catch-up block trio.
+    const weekTestDays = days.filter((d) => d.blocks.some((b) => b.kind === 'week-test'));
+    expect(weekTestDays.length).toBeGreaterThan(0);
+    for (const d of weekTestDays) {
+      expect(dayOfWeekISO(d.dateISO)).toBe(6);
+      expect(d.dateISO < A.revisionStartISO!).toBe(true); // coverage region
+      expect(d.phase).toBe('learn');
+      expect([...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]).toEqual([]);
+      expect(d.blocks.map((b) => b.kind)).toEqual(['week-test', 'week-test-review', 'catchup']);
+      // The pool only ever contains topics first-passed on/before this Saturday.
+      const wt = d.blocks.find((b) => b.kind === 'week-test')!;
+      expect((wt.weekTestSubtopicIds ?? []).length).toBeGreaterThan(0);
+    }
+    expect(summary.weekTests).toBe(weekTestDays.length);
+
+    // Exactly ONE dress rehearsal in the first pass (a full mock on a coverage Saturday).
+    const dress = days.filter((d) =>
+      d.blocks.some((b) => b.kind === 'mock' && b.label.includes('Dress rehearsal')),
+    );
+    expect(dress.length).toBe(1);
+    expect(dress[0]!.dateISO < A.revisionStartISO!).toBe(true);
+    expect(dayOfWeekISO(dress[0]!.dateISO)).toBe(6);
+    expect(summary.dressRehearsalISO).toBe(dress[0]!.dateISO);
+    expect(dress[0]!.phase).toBe('mock');
+
+    // Full-mock days (phase 'mock') = dress + revision + final; all pre-final are Saturdays.
     const mockDays = days.filter((d) => d.phase === 'mock');
-    const coverageRevMocks = mockDays.filter((d) => d.dateISO < A.finalStartISO);
-    // All pre-final mocks are Saturdays.
-    for (const d of coverageRevMocks) expect(dayOfWeekISO(d.dateISO)).toBe(6);
-    // The DERIVED Saturday series starts Paper-II and strictly alternates.
-    const schedule = buildMockSchedule('2026-09-30', A);
-    const satSeries = [...schedule.keys()].filter((d) => d < A.finalStartISO).sort();
-    expect(schedule.get(satSeries[0]!)!.paper).toBe('paper2');
-    for (let i = 1; i < satSeries.length; i += 1) {
-      expect(schedule.get(satSeries[i]!)!.paper).not.toBe(schedule.get(satSeries[i - 1]!)!.paper);
+    for (const d of mockDays.filter((x) => x.dateISO < A.finalStartISO)) {
+      expect(dayOfWeekISO(d.dateISO)).toBe(6);
     }
-    // The in-plan pre-final mocks (today onward) also alternate consecutively.
-    const sorted = coverageRevMocks.slice().sort((a, b) => a.dateISO.localeCompare(b.dateISO));
-    for (let i = 1; i < sorted.length; i += 1) {
-      expect(sorted[i]!.mockPaper).not.toBe(sorted[i - 1]!.mockPaper);
+
+    // Revision-cycle full mocks alternate Paper-II first.
+    const schedule = buildMockSchedule('2026-09-30', A, undefined, dress[0]!.mockPaper!);
+    const revSat = [...schedule.entries()]
+      .filter(([d, m]) => m.kind === 'full' && d >= A.revisionStartISO! && d < A.finalStartISO)
+      .map(([d]) => d)
+      .sort();
+    expect(revSat.length).toBeGreaterThan(0);
+    expect(schedule.get(revSat[0]!)!.paper).toBe('paper2');
+    for (let i = 1; i < revSat.length; i += 1) {
+      expect(schedule.get(revSat[i]!)!.paper).not.toBe(schedule.get(revSat[i - 1]!)!.paper);
     }
-    // Final window carries 3 mocks per 7-day week.
+
+    // Final window carries 3 full mocks per 7-day week.
     const finalMocks = mockDays.filter((d) => d.dateISO >= A.finalStartISO && d.dateISO < A.lightISO);
     expect(finalMocks.length).toBeGreaterThanOrEqual(3);
     const weeks = Math.max(1, Math.round(diffDaysISO(A.finalStartISO, A.lightISO) / 7));

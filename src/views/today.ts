@@ -18,14 +18,17 @@ import type { Band } from '../content/taxonomy';
 import type { MainsItem } from '../content/types';
 import { buildSession } from '../engine/drill';
 import { buildCuratedDeck, selectSession } from '../engine/flashcards';
+import { isDue } from '../engine/spaced-repetition';
 import { planDayFor, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic } from '../engine/planner';
+import { WEEK_TEST_COUNT, WEEK_TEST_MINUTES } from '../engine/mock';
 import { navigate } from '../router/router';
 import { loadState, getPrelimsDateMigrationNotice, dismissPrelimsDateNotice } from '../state/store';
 import { currentPlan } from '../lib/plan';
-import { diffDaysISO, daysToGo, todayISO } from '../lib/dates';
+import { diffDaysISO, daysToGo, todayISO, addDaysISO } from '../lib/dates';
 import { openLearn } from './learn';
 import { openMainsQuestion } from './mains';
-import { openPaperMock } from './mock';
+import { openPaperMock, openWeekTest } from './mock';
+import { openReviseScope } from './revise';
 import { mountQuiz } from './quiz';
 import { el, mount, type Child } from './dom';
 import { card } from './components/card';
@@ -262,6 +265,74 @@ function buildBudgetToday(day: PlanDay | undefined, summary: PlanSummary): HTMLE
   ]);
 }
 
+/**
+ * The EARLY-REVISE context for a day's blocks. Before ~10 curated cards are due
+ * across the whole deck, the weekday 20-min Revise block becomes "Flashcards for
+ * what you studied yesterday" — seeded with the previous plan day's topics (or
+ * the most recent studied topic's cards) so it is never empty. @internal
+ */
+interface ReviseCtx {
+  early: boolean;
+  /** Subtopic ids (with authored curated cards) to scope the early session to. */
+  yesterdayIds: string[];
+}
+
+/**
+ * How many curated cards are DUE for a SCHEDULED recall right now — i.e. cards
+ * the learner has already reviewed at least once (they carry a spaced-repetition
+ * entry) and whose next review has come due. Brand-new, never-reviewed cards are
+ * NOT counted: early in the plan this is < 10, which is exactly when the Revise
+ * block should fall back to "what you studied yesterday". @internal
+ */
+function curatedDueCount(): number {
+  const sr = loadState().flashcards;
+  const now = Date.now();
+  let n = 0;
+  for (const s of getSubtopics()) {
+    for (const c of buildCuratedDeck(getCards(s.id))) {
+      const entry = sr[c.id];
+      if (entry && isDue(entry, now)) n += 1;
+    }
+  }
+  return n;
+}
+
+/**
+ * Build the early-revise context for `today`: the previous plan day's
+ * first-passed topics (falling back to the most recent studied day), filtered
+ * to those that actually have curated cards so the session is never empty.
+ *
+ * The LIVE plan starts at today, so "yesterday" is not in it; we read a
+ * CANONICAL plan anchored at the plan START date, where the topic→date schedule
+ * is identical but every day (including yesterday) is present. @internal
+ */
+function computeReviseCtx(today: string): ReviseCtx {
+  const EARLY_THRESHOLD = 10;
+  const early = curatedDueCount() < EARLY_THRESHOLD;
+  if (!early) return { early, yesterdayIds: [] };
+
+  const startISO = loadState().settings.planStartDate;
+  const canonical = currentPlan(new Date(`${startISO}T00:00:00`));
+  const withCards = (ids: readonly string[]): string[] => ids.filter((id) => getCards(id).length > 0);
+  const dayTopics = (dateISO: string): string[] => {
+    const d = canonical.days.find((x) => x.dateISO === dateISO);
+    return d ? [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds] : [];
+  };
+
+  // Candidate lists, newest-first: yesterday, then earlier studied days.
+  const candidates: string[][] = [dayTopics(addDaysISO(today, -1))];
+  const studiedBefore = canonical.days
+    .filter((d) => d.dateISO < today && [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds].length > 0)
+    .sort((a, b) => b.dateISO.localeCompare(a.dateISO));
+  for (const d of studiedBefore) candidates.push([...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]);
+
+  for (const ids of candidates) {
+    const scoped = withCards(ids);
+    if (scoped.length > 0) return { early, yesterdayIds: scoped };
+  }
+  return { early, yesterdayIds: [] };
+}
+
 /** The day's rhythm blocks, in order — each a card with a one-tap start. @internal */
 function buildBlocks(day: PlanDay | undefined): HTMLElement {
   const blocks = day?.blocks ?? [];
@@ -273,14 +344,19 @@ function buildBlocks(day: PlanDay | undefined): HTMLElement {
       ]),
     ]);
   }
-  return el('div', { class: 'today-blocks' }, blocks.map(blockCard));
+  const reviseCtx = computeReviseCtx(day?.dateISO ?? todayISO());
+  return el('div', { class: 'today-blocks' }, blocks.map((b) => blockCard(b, reviseCtx)));
 }
 
 /** Render one rhythm block as a card. @internal */
-function blockCard(block: PlanBlock): HTMLElement {
+function blockCard(block: PlanBlock, reviseCtx: ReviseCtx): HTMLElement {
+  // Early-revise relabel: before ~10 cards are due, the Revise block reviews
+  // "what you studied yesterday" so a beginner always has a non-empty session.
+  const earlyRevise = block.kind === 'revise' && reviseCtx.early && reviseCtx.yesterdayIds.length > 0;
+  const title = earlyRevise ? 'Flashcards for what you studied yesterday' : block.label;
   const head = el('div', { class: 'block-head' }, [
     el('div', { class: 'block-head-main' }, [
-      el('h3', { class: 'block-title', text: block.label }),
+      el('h3', { class: 'block-title', text: title }),
       block.buildsOn ? el('span', { class: 'block-builds', text: `builds on: ${block.buildsOn}` }) : null,
     ]),
     chip({ text: fmtDuration(block.minutes), tone: 'muted', iconName: 'timer' }),
@@ -295,7 +371,7 @@ function blockCard(block: PlanBlock): HTMLElement {
   // "Open Revise" action so the remaining time still points at weakest-first
   // revision. Every other topic-less block shows its one-tap start as before.
   if (topics.length === 0 || block.kind === 'targeted-revision') {
-    const action = blockAction(block);
+    const action = blockAction(block, reviseCtx);
     if (action) body.push(action);
   }
 
@@ -303,7 +379,7 @@ function blockCard(block: PlanBlock): HTMLElement {
 }
 
 /** The one-tap start for a topic-less block (revise / ca / mock / telugu…). @internal */
-function blockAction(block: PlanBlock): HTMLElement | null {
+function blockAction(block: PlanBlock, reviseCtx?: ReviseCtx): HTMLElement | null {
   switch (block.kind) {
     case 'ca':
     case 'ca-refresh':
@@ -329,7 +405,31 @@ function blockAction(block: PlanBlock): HTMLElement | null {
       return button({ label: 'Review mistakes', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/notebook') });
     case 'weakest-area':
       return button({ label: 'Practise weak areas', variant: 'secondary', iconName: 'target', onClick: () => navigate('/progress') });
-    case 'revise':
+    case 'week-test':
+      return button({
+        label: `Start week test · ${WEEK_TEST_COUNT} Q · ${WEEK_TEST_MINUTES} min`,
+        variant: 'primary',
+        iconName: 'timer',
+        onClick: () => openWeekTest(block),
+      });
+    case 'week-test-review':
+      return button({ label: 'Review every wrong answer', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/notebook') });
+    case 'catchup':
+      return button({ label: 'Catch up', variant: 'secondary', iconName: 'target', onClick: () => navigate('/progress') });
+    case 'revise': {
+      // Early in the plan (before ~10 cards are due) the Revise block reviews
+      // yesterday's studied topics so a beginner always has a non-empty session.
+      if (reviseCtx?.early && reviseCtx.yesterdayIds.length > 0) {
+        const ids = reviseCtx.yesterdayIds;
+        return button({
+          label: 'Review yesterday’s flashcards',
+          variant: 'primary',
+          iconName: 'arrow-right',
+          onClick: () => openReviseScope(ids),
+        });
+      }
+      return button({ label: 'Open Revise', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/revise') });
+    }
     case 'targeted-revision':
     case 'weekly-revision':
       return button({ label: 'Open Revise', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/revise') });
@@ -344,6 +444,13 @@ function blockAction(block: PlanBlock): HTMLElement | null {
       });
     case 'light':
       return el('p', { class: 'section-lead', text: 'AP + current-affairs key facts and formula sheet — keep it light.' });
+    case 'start-here':
+      return button({
+        label: 'Open the Start here guide',
+        variant: 'primary',
+        iconName: 'arrow-right',
+        onClick: () => navigate('/start'),
+      });
     default:
       return null;
   }
@@ -456,6 +563,12 @@ function firstStart(day: PlanDay): { onClick: () => void; hint: string } | null 
     if (b.kind === 'mock' && b.mockPaper) {
       const paper = b.mockPaper;
       return { onClick: () => openPaperMock(paper), hint: `First up: full ${paper === 'paper1' ? 'Paper-I' : 'Paper-II'} mock` };
+    }
+    if (b.kind === 'week-test') {
+      return {
+        onClick: () => openWeekTest(b),
+        hint: `First up: week test · ${WEEK_TEST_COUNT} Q · ${WEEK_TEST_MINUTES} min`,
+      };
     }
   }
   return null;
@@ -572,37 +685,50 @@ export function todaysCuratedSession(): number {
 
 /**
  * Shown before the plan's start date — a small card derived from the plan's
- * FIRST day, so the learner knows exactly what day 1 holds (e.g. a Paper-II
- * baseline mock). "Days before the start date are free." @internal
+ * FIRST day, so the learner knows exactly what day 1 holds. Day 1 is an
+ * ORIENTATION day ("Start here (30 min), Number System, Stone Age"); "Days
+ * before the start date are free." @internal
  */
 function startsSoonCard(plan: Plan, start: string, today: string): HTMLElement {
   const desc = describeFirstDay(plan, start);
   const headline =
     diffDaysISO(today, start) === 1
-      ? `Your plan starts tomorrow \u2014 ${prettyDowDate(start)}: ${desc}`
-      : `Your plan starts ${prettyDowDate(start)}: ${desc}`;
+      ? `Tomorrow is Day 1 \u2014 ${desc}`
+      : `Day 1 is ${prettyDowDate(start)} \u2014 ${desc}`;
   return card({ title: 'Your plan starts soon' }, [
     el('div', { class: 'empty-state' }, [
       el('span', { class: 'empty-icon' }, [icon('sparkles', 26)]),
       el('h3', { text: headline }),
-      el('p', { text: 'Days before the start date are free \u2014 your progress is kept.' }),
-      button({ label: 'Open planner', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/planner') }),
+      el('p', { text: `${prettyDowDate(start)} \u00b7 Days before the start date are free \u2014 your progress is kept.` }),
+      el('div', { class: 'hero-actions' }, [
+        button({ label: 'Start here', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/start') }),
+        button({ label: 'Open planner', variant: 'ghost', onClick: () => navigate('/planner') }),
+      ]),
     ]),
   ]);
 }
 
 /**
- * A plain-language description of the plan's FIRST day — the opening Paper-II
- * baseline mock when day 1 is a Saturday mock, else the first subject/topic
- * scheduled. @internal
+ * A plain-language description of the plan's FIRST day. Day 1 is an ORIENTATION
+ * day — "Start here (30 min), Number System, Stone Age" — derived from its
+ * blocks; otherwise the first subject/topic (or mock) scheduled. @internal
  */
 function describeFirstDay(plan: Plan, start: string): string {
   const day =
     plan.days.find((d) => d.dateISO === start) ??
     plan.days.find((d) => d.dateISO >= start && d.blocks.length > 0);
   if (!day) return 'your study plan';
-  if (day.mockPaper === 'paper2') return 'Paper-II baseline mock';
-  if (day.mockPaper === 'paper1') return 'Paper-I mock';
+  const startHere = day.blocks.find((b) => b.kind === 'start-here');
+  if (startHere) {
+    const parts: string[] = [`Start here (${startHere.minutes} min)`];
+    const ment = day.blocks.find((b) => b.kind === 'ment')?.topics?.[0];
+    if (ment) parts.push(ment.name);
+    const hist = day.blocks.find((b) => b.kind === 'subject')?.topics?.[0];
+    if (hist) parts.push(hist.name);
+    return parts.join(', ');
+  }
+  if (day.mockPaper === 'paper2') return 'Full Paper-II mock';
+  if (day.mockPaper === 'paper1') return 'Full Paper-I mock';
   const lead = day.blocks.find((b) => b.kind === 'subject' || b.kind === 'catchup' || b.kind === 'ment');
   if (lead) {
     const topic = lead.topics?.[0];

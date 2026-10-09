@@ -32,6 +32,8 @@
 import type { Band, Track } from '../content/taxonomy';
 import type { LearningStream } from '../content/plan-types';
 import type { PaperId } from '../lib/exam-pattern';
+import type { MockKind } from './mock';
+import { WEEK_TEST_COUNT, WEEK_TEST_MINUTES } from './mock';
 import {
   addDaysISO,
   dayOfWeekISO,
@@ -187,11 +189,14 @@ export type PlanBlockKind =
   | 'mock-review'
   | 'weakest-area'
   | 'catchup'
+  | 'week-test'
+  | 'week-test-review'
   | 'weekly-revision'
   | 'ca-roundup'
   | 'telugu'
   | 'targeted-revision'
   | 'ca-refresh'
+  | 'start-here'
   | 'light';
 
 /**
@@ -213,6 +218,15 @@ export interface PlanBlock {
   mockNumber?: number;
   /** For a `ment-practice` block: the covered MENT ids the drill draws from. */
   practiceSubtopicIds?: string[];
+  /**
+   * For a `week-test` block: the Saturday date (deterministic seed), the FULL
+   * set of subtopic ids first-passed on or before that Saturday (the test pool)
+   * and the subset first-passed in that WEEK (favoured ~2/3). The Today/Planner
+   * launcher reconstructs the deterministic {@link buildWeekTest} from these.
+   */
+  weekTestDateISO?: string;
+  weekTestSubtopicIds?: string[];
+  weekTestThisWeekIds?: string[];
   /** For a `ca`/`ca-refresh`/`ca-roundup` block: its focus CA subtopic id. */
   caSubtopicId?: string;
   /** Previous topic name in the same subject's sequence (Today view). */
@@ -415,8 +429,14 @@ export interface PlanSummary {
   subjectFit: SubjectFit[];
   /** Date all MENT topics were first-passed (`''` when none). */
   mentAllPassedISO: string;
-  /** The full mock schedule (date → paper + per-paper series number). */
-  mockList: Array<{ dateISO: string; paper: PaperId; mockNumber: number }>;
+  /** The full test schedule (date → paper + per-paper series number + kind). */
+  mockList: Array<{ dateISO: string; paper: PaperId; mockNumber: number; kind: MockKind }>;
+  /** How many first-pass WEEK TESTS are scheduled (long window; 0 short). */
+  weekTests: number;
+  /** The dress-rehearsal date (the one first-pass full mock), '' when none. */
+  dressRehearsalISO: string;
+  /** Full-mock sittings per paper (dress + revision + final), excluding week tests. */
+  fullMockPaperCounts: Record<PaperId, number>;
   /** Weekday slots reassigned from a finished subject to the neediest one. */
   reallocations: Array<{ dateISO: string; fromSubject: string; toSubject: string }>;
   /** The coverage-end date after which no new topics are introduced. */
@@ -688,64 +708,136 @@ function firstDowOnOrAfter(fromISO: string, dow: number): string {
   return fromISO;
 }
 
-/** A scheduled mock: its paper + 1-based per-paper series number. */
+/**
+ * A scheduled Saturday/weekday TEST event: its {@link MockKind}, the paper
+ * (meaningful for full mocks + the dress rehearsal; a placeholder for a week
+ * test, which spans both papers) and its 1-based series number WITHIN its kind
+ * family — full mocks (dress + revision + final) share one per-paper counter;
+ * week tests have their own counter.
+ */
 export interface ScheduledMock {
+  kind: MockKind;
   paper: PaperId;
   num: number;
 }
 
 /**
- * Build the full mock schedule (date → paper + per-paper series number) DERIVED
- * from the plan start + anchors — never a hardcoded calendar. Pure.
+ * Build the full test schedule (date → {@link ScheduledMock}) DERIVED from the
+ * plan start + anchors — never a hardcoded calendar. Pure.
  *
- *  - COVERAGE + REVISION: one full mock every Saturday from the first Saturday
- *    on/after plan start until the final window, alternating Paper-II / Paper-I
- *    starting with Paper-II.
- *  - FINAL WINDOW: full mocks on 3 days a week (Tue / Thu / Sat), alternating
- *    Paper-I / Paper-II. (Short window: weekly Saturdays only — the old shape.)
+ * LONG window (the real scenario):
+ *  - FIRST-PASS SATURDAYS → `week-test`: a short, studied-topics-only timed test
+ *    (see {@link buildWeekTest}). The coverage Saturday NEAREST the first-pass
+ *    midpoint is instead the single `dress-rehearsal` full mock.
+ *  - REVISION CYCLE SATURDAYS → `full` mocks, alternating Paper-II / Paper-I
+ *    (Paper-II first).
+ *  - FINAL WINDOW → `full` mocks on 3 days a week (Tue / Thu / Sat), alternating
+ *    Paper-I / Paper-II (Paper-I first) — unchanged.
  *
- * Each paper draws the NON-REPEATING series (see `engine/mock.ts`): mock N takes
- * the Nth disjoint window of a stable shuffle. When N exceeds the pool-supported
- * `mockSeriesLength`, that section WRAPS and is flagged `wrapped` (the UI
- * surfaces the reuse); a sectional mock is the alternative. The planner only
- * assigns the numbers — it does not know the pool sizes.
+ * SHORT window (compressed fallback): every scheduled Saturday is a `full` mock,
+ * exactly as before (no week tests, no dress rehearsal).
+ *
+ * Full-mock series numbers (dress + revision + final) are a single per-paper
+ * counter ascending by date; week tests carry their own counter. Each paper
+ * draws the NON-REPEATING series (see `engine/mock.ts`); when a mock number
+ * exceeds the pool-supported `mockSeriesLength`, that section WRAPS (flagged by
+ * the mock engine and surfaced by the UI). `dressPaper` sets the dress
+ * rehearsal's paper (the planner passes the paper more covered by then).
  */
 export function buildMockSchedule(
   planStartISO: string,
   a: PlanAnchors,
+  orientationISO?: string,
+  dressPaper: PaperId = 'paper2',
 ): Map<string, ScheduledMock> {
-  const paperByDate = new Map<string, PaperId>();
-  // 1) Saturday series across coverage + revision (strictly before the final window).
-  let alt = 0;
-  for (let d = firstDowOnOrAfter(planStartISO, 6); d < a.finalStartISO; d = addDaysISO(d, 7)) {
-    paperByDate.set(d, alt % 2 === 0 ? 'paper2' : 'paper1'); // start Paper-II
-    alt += 1;
-  }
-  // 2) Final-window mocks.
+  const out = new Map<string, ScheduledMock>();
+
+  // ---- SHORT window: every Saturday a full mock (the old shape) -------------
   if (a.shortWindow) {
-    // Old compressed shape: weekly Saturdays inside the (short) final window.
+    const paperByDate = new Map<string, PaperId>();
+    let alt = 0;
+    for (let d = firstDowOnOrAfter(planStartISO, 6); d < a.finalStartISO; d = addDaysISO(d, 7)) {
+      paperByDate.set(d, alt % 2 === 0 ? 'paper2' : 'paper1'); // start Paper-II
+      alt += 1;
+    }
     for (let d = firstDowOnOrAfter(a.finalStartISO, 6); d < a.lightISO; d = addDaysISO(d, 7)) {
       paperByDate.set(d, alt % 2 === 0 ? 'paper2' : 'paper1');
       alt += 1;
     }
-  } else {
-    // 3 mocks a week on Tue/Thu/Sat, alternating Paper-I / Paper-II.
+    if (orientationISO !== undefined) paperByDate.delete(orientationISO);
+    const counter: Record<PaperId, number> = { paper1: 0, paper2: 0 };
+    for (const dateISO of [...paperByDate.keys()].sort()) {
+      const paper = paperByDate.get(dateISO)!;
+      counter[paper] += 1;
+      out.set(dateISO, { kind: 'full', paper, num: counter[paper] });
+    }
+    return out;
+  }
+
+  // ---- LONG window ----------------------------------------------------------
+  // 1) Coverage Saturdays (first pass): week tests, minus the dress rehearsal.
+  const coverageSaturdays: string[] = [];
+  for (let d = firstDowOnOrAfter(planStartISO, 6); d < (a.revisionStartISO ?? a.finalStartISO); d = addDaysISO(d, 7)) {
+    if (orientationISO !== undefined && d === orientationISO) continue;
+    coverageSaturdays.push(d);
+  }
+  // The dress rehearsal lands on the coverage Saturday nearest the first-pass
+  // midpoint (planStart → coverageEnd); ties resolve to the earlier Saturday.
+  const midpointISO = addDaysISO(planStartISO, Math.floor(inclusiveDaysISO(planStartISO, a.coverageEndISO) / 2));
+  let dressISO: string | null = null;
+  let bestGap = Infinity;
+  for (const d of coverageSaturdays) {
+    const gap = Math.abs(diffDaysISO(midpointISO, d));
+    if (gap < bestGap) {
+      bestGap = gap;
+      dressISO = d;
+    }
+  }
+
+  // 2) Revision-cycle Saturdays: full mocks, Paper-II first.
+  const revisionPaperByDate = new Map<string, PaperId>();
+  if (a.revisionStartISO !== null) {
+    let rAlt = 0;
+    for (let d = firstDowOnOrAfter(a.revisionStartISO, 6); d < a.finalStartISO; d = addDaysISO(d, 7)) {
+      revisionPaperByDate.set(d, rAlt % 2 === 0 ? 'paper2' : 'paper1'); // Paper-II first
+      rAlt += 1;
+    }
+  }
+
+  // 3) Final-window full mocks: Tue/Thu/Sat, Paper-I first (unchanged).
+  const finalPaperByDate = new Map<string, PaperId>();
+  {
     let fAlt = 0;
     for (let d = a.finalStartISO; d < a.lightISO; d = addDaysISO(d, 1)) {
       const dow = dayOfWeekISO(d);
       if (dow === 2 || dow === 4 || dow === 6) {
-        paperByDate.set(d, fAlt % 2 === 0 ? 'paper1' : 'paper2'); // start Paper-I
+        finalPaperByDate.set(d, fAlt % 2 === 0 ? 'paper1' : 'paper2'); // Paper-I first
         fAlt += 1;
       }
     }
   }
-  // 3) Assign per-paper series numbers ascending by date (stable, deterministic).
-  const out = new Map<string, ScheduledMock>();
-  const counter: Record<PaperId, number> = { paper1: 0, paper2: 0 };
-  for (const dateISO of [...paperByDate.keys()].sort()) {
-    const paper = paperByDate.get(dateISO)!;
-    counter[paper] += 1;
-    out.set(dateISO, { paper, num: counter[paper] });
+
+  // 4) Assemble: full mocks (dress + revision + final) share one per-paper
+  //    counter ascending by date; week tests carry their own counter.
+  const fullPaperByDate = new Map<string, PaperId>();
+  if (dressISO !== null) fullPaperByDate.set(dressISO, dressPaper);
+  for (const [d, p] of revisionPaperByDate) fullPaperByDate.set(d, p);
+  for (const [d, p] of finalPaperByDate) fullPaperByDate.set(d, p);
+
+  const fullCounter: Record<PaperId, number> = { paper1: 0, paper2: 0 };
+  for (const dateISO of [...fullPaperByDate.keys()].sort()) {
+    const paper = fullPaperByDate.get(dateISO)!;
+    fullCounter[paper] += 1;
+    const kind: MockKind = dateISO === dressISO ? 'dress-rehearsal' : 'full';
+    out.set(dateISO, { kind, paper, num: fullCounter[paper] });
+  }
+
+  let weekTestNum = 0;
+  for (const dateISO of [...coverageSaturdays].sort()) {
+    if (dateISO === dressISO) continue;
+    weekTestNum += 1;
+    // `paper` is a placeholder for a week test (it spans both papers).
+    out.set(dateISO, { kind: 'week-test', paper: 'paper2', num: weekTestNum });
   }
   return out;
 }
@@ -1080,15 +1172,26 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   const regionFor = (dateISO: string): DaySlotRegion => regionForISO(dateISO, anchors);
   const lastISO = examDateISO;
   const totalDays = inclusiveDaysISO(todayISO, lastISO);
-  // The full mock schedule, derived from the plan start + anchors.
-  const mockNumberByDate = buildMockSchedule(opts.startISO, anchors);
+  // The plan's REAL first day — the chosen start date when it is today or in the
+  // future (otherwise the plan already began, so there is no first day to flag).
+  // When that first day is a Saturday it would otherwise open with a full mock;
+  // instead it becomes DAY-1 ORIENTATION (STANDARDS §8a), so it is dropped from
+  // the mock schedule here.
+  const planFirstISO = diffDaysISO(todayISO, opts.startISO) >= 0 ? opts.startISO : null;
+  const orientationISO =
+    planFirstISO !== null && dayOfWeekISO(planFirstISO) === 6 ? planFirstISO : undefined;
+  // The test schedule, derived from the plan start + anchors. Built now (with a
+  // provisional dress paper) so slots know WHICH Saturdays are test days; the
+  // real schedule (with the dress rehearsal's paper resolved from coverage) is
+  // rebuilt below once first-pass dates are known.
+  const mockScheduleProvisional = buildMockSchedule(opts.startISO, anchors, orientationISO);
 
   const slots: DaySlot[] = [];
   for (let di = 0; di < totalDays; di += 1) {
     const dateISO = addDaysISO(todayISO, di);
     const dow = dayOfWeekISO(dateISO);
     const region = regionFor(dateISO);
-    const mock = mockNumberByDate.get(dateISO);
+    const mock = mockScheduleProvisional.get(dateISO);
     // A day BEFORE the chosen plan start is "free": no blocks, no placement.
     const preStart = diffDaysISO(opts.startISO, dateISO) < 0;
     const isMock = !preStart && region !== 'exam' && region !== 'light' && mock !== undefined;
@@ -1100,7 +1203,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       isMock,
       mockPaper: isMock ? mock!.paper : null,
       mockNumber: isMock ? mock!.num : 0,
-      // Only SUNDAY carries the (larger) Sunday budget; SATURDAY is a mock day
+      // Only SUNDAY carries the (larger) Sunday budget; SATURDAY is a test day
       // and simply follows the daily budget.
       budgetMin: region === 'exam' ? 0 : dow === 0 ? weekendBudgetMin : dailyBudgetMin,
       preStart,
@@ -1697,7 +1800,63 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     return { pass, res, deferred };
   };
 
-  const { pass: passByTopic, res: result, deferred: deferredIds } = computeFit(weekendBudgetMin / 240);
+  const { pass: passByTopic, res: fitResult, deferred: deferredIds } = computeFit(weekendBudgetMin / 240);
+
+  // ---- DAY-1 ORIENTATION first pass (STANDARDS §8a) -----------------------
+  // When the plan's first day is a Saturday it opens with ORIENTATION whose
+  // Mental Ability + History STUDY blocks ARE the first pass of those topics —
+  // not a duplicate preview. Pick the orientation topics here (in sequence
+  // order, at their PLANNED tier) and REMOVE them from the packer queues so the
+  // next MENT day and Monday's History block CONTINUE the sequence instead of
+  // re-teaching the same topics (a beginner must never study a topic twice).
+  //   • MENT: the first Mental Ability topic (ment-number-system), always FULL.
+  //   • HIST: the first H-early topics that FIT the 120-min orientation block at
+  //     their planned tier (≤ 3 new topics, 4 if all QUICK). A topic that cannot
+  //     fit stays for Monday — never first-passed on two days.
+  const orientationMentId = orientationISO !== undefined ? mentList[0]?.id : undefined;
+  const orientationHistIds: string[] = [];
+  if (orientationISO !== undefined) {
+    let used = 0;
+    let count = 0;
+    let allQuick = true;
+    for (const s of histEarlySrc) {
+      if (deferredIds.has(s.id)) continue; // never pull a buffer-spill topic forward
+      const p = passByTopic.get(s.id) ?? 'quick';
+      const m = passMinutes(s, p);
+      const isQuick = p === 'quick' || m <= QUICK_MIN;
+      const maxTopics = allQuick && isQuick ? 4 : 3; // ≤ 3 new topics (4 if all QUICK)
+      if (count >= maxTopics) break;
+      if (count > 0 && used + m > 120) break; // 120-min orientation History block
+      used += m;
+      count += 1;
+      allQuick = allQuick && isQuick;
+      orientationHistIds.push(s.id);
+    }
+  }
+  const orientationExcluded = new Set<string>(orientationHistIds);
+
+  // Re-pack with the orientation History topics removed from the queues so the
+  // in-window placement (Monday onward) continues from the NEXT sequence topic.
+  // With no orientation (non-Saturday start) this reproduces the fit result
+  // exactly (packAllScaled is pure), so non-orientation plans are unchanged.
+  const result =
+    orientationExcluded.size > 0
+      ? packAllScaled(
+          passByTopic,
+          weekendBudgetMin / 240,
+          new Set([...deferredIds, ...orientationExcluded]),
+        )
+      : fitResult;
+
+  // Explicit placements for the orientation History first pass (on the Saturday
+  // orientation day), each at its planned tier.
+  const orientationPlacements: Placement[] = orientationHistIds.map((id) => ({
+    dateISO: orientationISO!,
+    subjectCode: 'HIST',
+    id,
+    pass: passByTopic.get(id) ?? 'quick',
+  }));
+
   // The reported SPILL = intentionally DEFERRED low-priority QUICK topics PLUS
   // any topic the packer still could not place (a genuine shortfall — protected).
   const spillIdSet = [...deferredIds, ...result.leftoverIds];
@@ -1787,7 +1946,14 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   const mentByDate = new Map<string, PlanSubtopic[]>();
   let mentAllPassedISO = '';
   {
-    const q = mentList.slice();
+    // The orientation day's MENT block is the FIRST pass of mentList[0], so it is
+    // removed from the weekday queue here and seeded on the orientation date —
+    // the first weekday MENT block then continues with the NEXT topic in
+    // sequence (ment-number-series-coding).
+    const q = (orientationMentId !== undefined
+      ? mentList.filter((s) => s.id !== orientationMentId)
+      : mentList
+    ).slice();
     for (const slot of mentWeekdaySlots) {
       if (q.length === 0) break;
       let used = 0;
@@ -1806,6 +1972,12 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
         if (q.length === 0) mentAllPassedISO = slot.dateISO;
       }
     }
+  }
+  // Seed the orientation day's MENT first pass (ment-number-system) so it is
+  // first-passed exactly once — on the orientation day, not again on Monday.
+  if (orientationISO !== undefined && orientationMentId !== undefined) {
+    const s = byId.get(orientationMentId);
+    if (s) mentByDate.set(orientationISO, [s]);
   }
 
   // ---- CA first-pass tracking (first rotation appearance per CA id) -------
@@ -1829,7 +2001,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     arr.push(id);
     firstPassByDate.set(dateISO, arr);
   };
-  for (const p of [...placements, ...spillPlacements]) pushFirstPass(p.dateISO, p.id);
+  for (const p of [...placements, ...spillPlacements, ...orientationPlacements]) pushFirstPass(p.dateISO, p.id);
   for (const [dateISO, list] of mentByDate) for (const s of list) pushFirstPass(dateISO, s.id);
   for (const [dateISO, caId] of caFirstPassByDate) pushFirstPass(dateISO, caId);
 
@@ -1852,6 +2024,29 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       if (prev === undefined || dateISO < prev) firstPassDateById.set(id, dateISO);
     }
   }
+
+  // ---- Dress-rehearsal paper + the REAL test schedule ---------------------
+  // The single first-pass full mock (the dress rehearsal) sits in whichever
+  // paper is MORE covered by its date: count theory (Paper-I) vs aptitude
+  // (Paper-II) subtopics first-passed STRICTLY before the dress date; a tie (or
+  // no dress rehearsal) defaults to Paper-II, whose MENT lane is front-loaded.
+  const trackById = (id: string): 'theory' | 'aptitude' =>
+    (byId.get(id)?.track ?? 'paper1') === 'paper2' ? 'aptitude' : 'theory';
+  const provisionalDressISO =
+    [...mockScheduleProvisional.entries()].find(([, m]) => m.kind === 'dress-rehearsal')?.[0] ?? null;
+  let dressPaper: PaperId = 'paper2';
+  if (provisionalDressISO !== null) {
+    let p1 = 0;
+    let p2 = 0;
+    for (const [id, fp] of firstPassDateById) {
+      if (fp !== '' && fp < provisionalDressISO) {
+        if (trackById(id) === 'theory') p1 += 1;
+        else p2 += 1;
+      }
+    }
+    dressPaper = p1 > p2 ? 'paper1' : 'paper2'; // tie → Paper-II
+  }
+  const mockScheduleByDate = buildMockSchedule(opts.startISO, anchors, orientationISO, dressPaper);
   /** Extra minutes to lift a topic from `from` to `to` (its floor). @internal */
   const deepenGapMinutes = (from: PlanPass, to: PlanPass): number => {
     if (from === 'quick' && to === 'standard') return DEEPEN_QUICK_TO_STANDARD_MIN;
@@ -1942,7 +2137,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
 
   // ---- Placements indexed by date ----------------------------------------
   const placedByDate = new Map<string, Placement[]>();
-  for (const p of [...placements, ...spillPlacements]) {
+  for (const p of [...placements, ...spillPlacements, ...orientationPlacements]) {
     const arr = placedByDate.get(p.dateISO) ?? [];
     arr.push(p);
     placedByDate.set(p.dateISO, arr);
@@ -1986,11 +2181,8 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     return d < 0 ? 'past' : d === 0 ? 'today' : 'upcoming';
   };
 
-  // The plan's REAL first day — the chosen start date when it is today or in the
-  // future (otherwise the plan already began, so there is no first-day to flag).
-  // When that day is the opening Saturday MOCK it is the "baseline" mock that
-  // sets the learner's starting level (labelled specially, first mock only).
-  const planFirstISO = diffDaysISO(todayISO, opts.startISO) >= 0 ? opts.startISO : null;
+  // The plan's REAL first day is computed once near the top (`planFirstISO`);
+  // when it is a Saturday it becomes DAY-1 ORIENTATION (handled below).
 
   const days: PlanDay[] = [];
   for (const slot of slots) {
@@ -2002,6 +2194,71 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     // first on/after-start day is the plan's real day 1 (views show
     // "Plan starts <date>" on these free days).
     if (slot.preStart) {
+      days.push(day);
+      continue;
+    }
+
+    // ---- DAY-1 ORIENTATION (STANDARDS §8a) --------------------------------
+    // The plan's first day, when it is a Saturday (the opening-mock case — the
+    // real planStartDate Sat 10 Oct), opens with ORIENTATION instead of a full
+    // mock: a "Start here" guide block, the first Mental Ability topic, the
+    // first History topic(s), and a Current-Affairs intro. No mock, no revise.
+    // The named first topics are shown as guided Learn links; they are still
+    // formally first-passed on their own scheduled days, so first-pass
+    // accounting (every topic once) is unchanged.
+    if (
+      orientationISO !== undefined &&
+      slot.dateISO === orientationISO &&
+      slot.region !== 'exam' &&
+      slot.region !== 'light'
+    ) {
+      day.phase = 'learn';
+      const blocks: PlanBlock[] = [
+        { kind: 'start-here', label: 'Start here \u2014 how the exam and this app work', minutes: 30 },
+      ];
+      // The orientation Mental Ability + History blocks ARE the first pass of
+      // their topics (recorded in mentByDate / placedByDate above), so they are
+      // taught at their planned tier here and the NEXT MENT day / Monday History
+      // block continue the sequence — no topic is first-passed twice.
+      const mentTopics = (mentByDate.get(orientationISO) ?? []).map((s) => toTopic(s.id, 'full'));
+      if (mentTopics.length > 0) {
+        blocks.push({
+          kind: 'ment',
+          label: 'Mental Ability',
+          minutes: 60,
+          subjectCode: 'MENT',
+          topics: mentTopics,
+          buildsOn: buildsOnFor(mentByDate.get(orientationISO)?.[0]?.id, seqOrder, 'MENT', nameById),
+        });
+      }
+      const histPlaced = (placedByDate.get(orientationISO) ?? []).filter((p) => p.subjectCode === 'HIST');
+      const histTopics = histPlaced.map((p) => toTopic(p.id, p.pass));
+      if (histTopics.length > 0) {
+        blocks.push({
+          kind: 'subject',
+          label: SUBJECT_LABEL['HIST'] ?? 'History',
+          minutes: 120,
+          subjectCode: 'HIST',
+          topics: histTopics,
+          buildsOn: buildsOnFor(histPlaced[0]?.id, seqOrder, 'HIST', nameById),
+        });
+      }
+      const caFirst = caList[0]?.id ?? 'ca-regional';
+      blocks.push({
+        kind: 'ca',
+        label: 'How current affairs is asked \u00b7 first CA set',
+        minutes: 30,
+        caSubtopicId: caFirst,
+      });
+      day.blocks = blocks;
+      // The orientation study blocks ARE the first pass of their MENT + History
+      // topics (STANDARDS §8a): record them so first-pass accounting counts each
+      // Prelims topic exactly once (here, not again on a later day).
+      const orientationTopics = [...mentTopics, ...histTopics];
+      recordFirstPass(day, orientationTopics);
+      day.topics = orientationTopics;
+      day.drillTarget = orientationTopics.reduce((a, t) => a + availableDrill(t.mcqCount), 0);
+      finaliseBlocks(day, slot.budgetMin);
       days.push(day);
       continue;
     }
@@ -2025,19 +2282,61 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     }
 
     if (slot.isMock) {
-      // MOCK day: full mock 120 + review wrong 60 + weakest area 60.
-      const paperLabel = slot.mockPaper === 'paper1' ? 'Paper-I' : 'Paper-II';
-      // The plan's OPENING Saturday mock is the BASELINE mock — it sets the
-      // learner's starting level (special label, first mock only).
-      const isBaseline = planFirstISO !== null && slot.dateISO === planFirstISO && slot.mockPaper === 'paper2';
-      const mockLabel = isBaseline
-        ? 'Paper-II baseline mock \u2014 sets your starting level'
+      const sched = mockScheduleByDate.get(slot.dateISO);
+      // ---- WEEK TEST (first-pass Saturday) --------------------------------
+      // A short, studied-topics-only timed test (45 Q / 55 min, −1/3), then a
+      // review of every wrong/guessed answer, then catch-up of missed items (or
+      // the next topics of the biggest-backlog subject). It teaches NO new
+      // topic, so first-pass accounting is unchanged (exactly like a mock day).
+      if (sched?.kind === 'week-test') {
+        // Pool = every subtopic first-passed on or before this Saturday; the
+        // subset first-passed in the 7 days ENDING this Saturday is "this week".
+        const weekStartISO = addDaysISO(slot.dateISO, -6);
+        const studied: string[] = [];
+        const thisWeek: string[] = [];
+        for (const [id, fp] of firstPassDateById) {
+          if (fp === '' || fp > slot.dateISO) continue;
+          studied.push(id);
+          if (fp >= weekStartISO) thisWeek.push(id);
+        }
+        studied.sort();
+        thisWeek.sort();
+        day.phase = 'learn';
+        const testMin = sm(WEEK_TEST_MINUTES);
+        const reviewMin = sm(45);
+        const catchupMin = Math.max(1, slot.budgetMin - testMin - reviewMin);
+        day.blocks = [
+          {
+            kind: 'week-test',
+            label: `Week test ${sched.num}`,
+            minutes: testMin,
+            mockNumber: sched.num,
+            weekTestDateISO: slot.dateISO,
+            weekTestSubtopicIds: studied,
+            weekTestThisWeekIds: thisWeek,
+          },
+          { kind: 'week-test-review', label: 'Review every wrong or guessed answer', minutes: reviewMin },
+          { kind: 'catchup', label: 'Catch up on missed items \u2014 or the next topics of your biggest backlog', minutes: catchupMin },
+        ];
+        day.drillTarget = WEEK_TEST_COUNT;
+        finaliseBlocks(day, slot.budgetMin);
+        days.push(day);
+        continue;
+      }
+
+      // ---- FULL mock / DRESS REHEARSAL ------------------------------------
+      const paper = sched?.paper ?? slot.mockPaper ?? 'paper2';
+      const num = sched?.num ?? slot.mockNumber;
+      const paperLabel = paper === 'paper1' ? 'Paper-I' : 'Paper-II';
+      const isDress = sched?.kind === 'dress-rehearsal';
+      const mockLabel = isDress
+        ? `Dress rehearsal \u2014 practise the 2-hour format; the score doesn\u2019t matter yet`
         : `Full ${paperLabel} mock`;
       day.phase = 'mock';
-      day.mockPaper = slot.mockPaper;
-      day.mockNumber = slot.mockNumber;
+      day.mockPaper = paper;
+      day.mockNumber = num;
       day.blocks = [
-        { kind: 'mock', label: mockLabel, minutes: sm(120), mockPaper: slot.mockPaper!, mockNumber: slot.mockNumber },
+        { kind: 'mock', label: mockLabel, minutes: sm(120), mockPaper: paper, mockNumber: num },
         { kind: 'mock-review', label: 'Review wrong answers', minutes: sm(60) },
         { kind: 'weakest-area', label: 'Weakest-area drill', minutes: sm(60) },
       ];
@@ -2320,11 +2619,20 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     0,
   );
 
-  const mockList = [...mockNumberByDate.entries()]
+  const mockList = [...mockScheduleByDate.entries()]
     .filter(([dateISO]) => diffDaysISO(todayISO, dateISO) >= 0 && diffDaysISO(dateISO, examDateISO) >= 0)
-    .map(([dateISO, m]) => ({ dateISO, paper: m.paper, mockNumber: m.num }))
+    .map(([dateISO, m]) => ({ dateISO, paper: m.paper, mockNumber: m.num, kind: m.kind }))
     .sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+  // Full-mock SITTINGS = full + dress-rehearsal days (phase 'mock'); week tests
+  // are a separate, lighter event and do NOT consume the non-repeating series.
   const mockSittings = days.filter((d) => d.phase === 'mock').length;
+  const weekTests = mockList.filter((m) => m.kind === 'week-test').length;
+  const dressRehearsalISO = mockList.find((m) => m.kind === 'dress-rehearsal')?.dateISO ?? '';
+  // Full-mock sittings per paper (dress + revision + final) vs the non-repeating
+  // capacity (`mockSeriesLength`). `fullMockPaperCounts` lets the UI honestly
+  // report "N sittings on Paper-X of M non-repeating" and keep the wrap flag.
+  const fullMockPaperCounts: Record<PaperId, number> = { paper1: 0, paper2: 0 };
+  for (const m of mockList) if (m.kind !== 'week-test') fullMockPaperCounts[m.paper] += 1;
 
   // Per-subject FULL/STANDARD/QUICK fit report.
   const lastFirstPass: Record<string, string> = {};
@@ -2474,6 +2782,9 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       subjectFit,
       mentAllPassedISO,
       mockList,
+      weekTests,
+      dressRehearsalISO,
+      fullMockPaperCounts,
       reallocations,
       coverageEndISO,
       spills,
@@ -2767,6 +3078,9 @@ function buildPostPrelims(p: {
       subjectFit: [],
       mentAllPassedISO: '',
       mockList: [],
+      weekTests: 0,
+      dressRehearsalISO: '',
+      fullMockPaperCounts: { paper1: 0, paper2: 0 },
       reallocations: [],
       coverageEndISO: computePlanAnchors(p.examDateISO, p.todayISO).coverageEndISO,
       spills: [],

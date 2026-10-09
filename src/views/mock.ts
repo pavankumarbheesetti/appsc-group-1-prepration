@@ -30,7 +30,7 @@ import { buildSession } from '../engine/drill';
 import { recordAnswer } from '../engine/notebook';
 import { newCard, review } from '../engine/spaced-repetition';
 import { navigate } from '../router/router';
-import { updateState } from '../state/store';
+import { updateState, loadState } from '../state/store';
 import { mockScore, formatNet, formatDuration, pct, type MockAnswer } from '../lib/metrics';
 import {
   EXAM_PATTERNS,
@@ -42,9 +42,15 @@ import {
   buildPaperMock,
   mockSeriesLength,
   scorePaperMock,
+  buildWeekTest,
+  scoreWeekTest,
   type BuiltMock,
+  type BuiltWeekTest,
+  type WeekTestInput,
+  type WeekTestResult,
 } from '../engine/mock';
-import { mockSectionPools } from '../lib/plan';
+import { mockSectionPools, planSubtopics, currentPlan } from '../lib/plan';
+import type { PlanBlock } from '../engine/planner';
 import { el, mount, type Child } from './dom';
 import { renderExplanation, renderQuestionStem } from './quiz';
 import { card } from './components/card';
@@ -125,6 +131,74 @@ export function openPaperMock(paper: PaperId): void {
   navigate('/mock');
 }
 
+/**
+ * A one-shot WEEK-TEST request set by {@link openWeekTest} (the Today / Planner
+ * first-pass Saturday launcher) and consumed once by {@link render}.
+ */
+let pendingWeekTest: WeekTestInput | null = null;
+
+/**
+ * Launch the first-pass WEEK TEST for a `week-test` {@link PlanBlock}: a short
+ * (45-Q / 55-min, −1/3) timed test drawn ONLY from the topics the plan has
+ * first-passed on or before that Saturday — reusing the mock runner with a
+ * scoped pool, a custom count and a custom time. Deterministic in the Saturday
+ * date (see {@link buildWeekTest}).
+ */
+export function openWeekTest(block: PlanBlock): void {
+  const input = weekTestInputFromBlock(block);
+  if (input === null) {
+    navigate('/mock');
+    return;
+  }
+  pendingWeekTest = input;
+  navigate('/mock');
+}
+
+/**
+ * Build a {@link WeekTestInput} for a `week-test` plan block. The pool is the
+ * set of topics first-passed on or before the block's Saturday, split into
+ * THIS-week vs earlier and into Paper-I / Paper-II (by each subtopic's exam
+ * track). The first-pass dates are read from a CANONICAL plan anchored at the
+ * plan START date — the live plan starts at *today*, so a Saturday viewed on
+ * that same day would otherwise see almost no prior first-passes. Returns `null`
+ * when the block carries no date. @internal
+ */
+function weekTestInputFromBlock(block: PlanBlock): WeekTestInput | null {
+  const dateISO = block.weekTestDateISO;
+  if (dateISO === undefined || dateISO === '') return null;
+  const startISO = loadState().settings.planStartDate;
+  const canonical = currentPlan(new Date(`${startISO}T00:00:00`));
+  // First first-pass date per subtopic (days are in ascending date order).
+  const firstPass = new Map<string, string>();
+  for (const d of canonical.days) {
+    for (const id of [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]) {
+      if (!firstPass.has(id)) firstPass.set(id, d.dateISO);
+    }
+  }
+  const weekStartISO = isoShift(dateISO, -6);
+  const trackById = new Map(planSubtopics().map((s) => [s.id, s.track] as const));
+  const paperOf = (id: string): PaperId => (trackById.get(id) === 'paper2' ? 'paper2' : 'paper1');
+  const mcqsOf = (id: string): MCQItem[] => getSubtopic(id)?.mcqs ?? [];
+  const pools: WeekTestInput = {
+    dateISO,
+    thisWeek: { paper1: [], paper2: [] },
+    earlier: { paper1: [], paper2: [] },
+  };
+  for (const [id, fp] of firstPass) {
+    if (fp > dateISO) continue;
+    const tier = fp >= weekStartISO ? pools.thisWeek : pools.earlier;
+    (tier[paperOf(id)] as MCQItem[]).push(...mcqsOf(id));
+  }
+  return pools;
+}
+
+/** Shift an ISO `YYYY-MM-DD` date by `days`. @internal */
+function isoShift(dateISO: string, days: number): string {
+  const d = new Date(`${dateISO}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
 /* -------------------------------------------------------------------------- */
 /* Scope helpers                                                               */
 /* -------------------------------------------------------------------------- */
@@ -187,8 +261,16 @@ export function render(root: HTMLElement): void {
   // Consume any deep-link requests (one-shot).
   const focusScope = pendingScope;
   const focusPaper = pendingPaper;
+  const focusWeekTest = pendingWeekTest;
   pendingScope = null;
   pendingPaper = null;
+  pendingWeekTest = null;
+
+  // A deep-linked WEEK TEST runs straight into the scoped, timed test.
+  if (focusWeekTest) {
+    beginWeekTest(root, focusWeekTest);
+    return;
+  }
 
   // A deep-linked scope forces custom-scope mode; a deep-linked paper forces
   // full-paper mode; otherwise default to the full official paper (the primary
@@ -533,6 +615,119 @@ function sliceToSection(mock: BuiltMock, sectionId: string): BuiltMock {
     items: section.items.slice(),
     sectionByIndex: section.items.map(() => sectionId),
   };
+}
+
+/* -------------------------------------------------------------------------- */
+/* WEEK TEST — scoped, studied-topics-only timed test                          */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Assemble and run the first-pass WEEK TEST for `input` (one Saturday's scoped
+ * pools): a 45-question / 55-minute timed test drawn only from first-passed
+ * topics, scored with per-paper net marks. Reuses the shared {@link runMock}
+ * runner with the week test's custom count + time. @internal
+ */
+function beginWeekTest(root: HTMLElement, input: WeekTestInput): void {
+  const test = buildWeekTest(input);
+  if (test.items.length === 0) {
+    // Nothing studied yet — fall back to the normal setup instead of a blank run.
+    pendingWeekTest = null;
+    render(root);
+    return;
+  }
+  runMock(
+    root,
+    test.items,
+    test.durationMin,
+    () => beginWeekTest(root, input),
+    () => navigate('/'),
+    (r, _items, selected, elapsed, onRetake, back) =>
+      drawWeekTestResults(r, test, selected, elapsed, onRetake, back),
+  );
+}
+
+/**
+ * Draw a WEEK TEST's results: the overall NET score plus a PER-PAPER table
+ * (Paper-I / Paper-II net marks), mirroring the full-mock results surface. Uses
+ * the pure {@link scoreWeekTest} so section and overall figures always agree.
+ * @internal
+ */
+function drawWeekTestResults(
+  root: HTMLElement,
+  test: BuiltWeekTest,
+  selected: ReadonlyArray<number | null>,
+  elapsedMs: number,
+  onRetake: () => void,
+  onBack: () => void,
+): void {
+  const result: WeekTestResult = scoreWeekTest(test, selected);
+  const score = result.overall;
+  const variant = score.accuracy >= 0.8 ? 'success' : score.accuracy >= 0.5 ? 'accent' : 'warning';
+
+  const hero = el('div', { class: 'mock-result-hero' }, [
+    el('div', { class: 'mock-net' }, [
+      el('span', { class: 'mock-net-value tnum', text: formatNet(score.net) }),
+      el('span', { class: 'mock-net-label', text: `net marks · out of ${score.total}` }),
+    ]),
+    ring({ value: score.accuracy, centerText: pct(score.accuracy), centerLabel: 'accuracy', size: 132, variant }),
+  ]);
+
+  const breakdown = el('div', { class: 'results-breakdown' }, [
+    metric(String(score.attempted), 'attempted', null),
+    metric(String(score.correct), 'correct', 'ok'),
+    metric(String(score.wrong), 'wrong', 'bad'),
+    metric(String(score.skipped), 'skipped', null),
+    metric(formatDuration(elapsedMs), 'time used', null),
+  ]);
+
+  const rows = result.sections.map((s) =>
+    el('tr', {}, [
+      el('th', { attrs: { scope: 'row' }, text: s.label }),
+      el('td', { class: 'tnum', text: `${s.score.correct}/${s.score.total}` }),
+      el('td', { class: 'tnum', text: String(s.score.wrong) }),
+      el('td', { class: 'tnum', text: String(s.score.skipped) }),
+      el('td', { class: 'tnum', text: formatNet(s.net) }),
+    ]),
+  );
+  const sectionTable = el('table', { class: 'mock-section-table' }, [
+    el('caption', { class: 'field-label', text: 'Per-paper score' }),
+    el('thead', {}, [
+      el('tr', {}, [
+        el('th', { attrs: { scope: 'col' }, text: 'Paper' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Correct' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Wrong' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Skipped' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Net' }),
+      ]),
+    ]),
+    el('tbody', {}, rows),
+  ]);
+
+  const scoreNote = el('p', { class: 'section-lead', attrs: { style: 'text-align:center' } }, [
+    `Net = correct − wrong ÷ 3 = ${score.correct} − ${score.wrong}÷3 = ${formatNet(score.net)}. Blanks are not penalised. This week test only covers topics you have studied so far.`,
+  ]);
+
+  const actions = el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
+    button({ label: 'Retake', variant: 'primary', iconName: 'timer', onClick: onRetake }),
+    button({ label: 'Review mistakes', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/notebook') }),
+    button({ label: 'Back', variant: 'ghost', onClick: onBack }),
+    button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
+  ]);
+
+  const summaryCard = card({}, [
+    el('h2', { class: 'card-title', attrs: { style: 'text-align:center' }, text: `Week test · ${test.count} questions` }),
+    hero,
+    breakdown,
+    sectionTable,
+    scoreNote,
+    actions,
+  ]);
+
+  const reviewCard = card({ title: 'Full review', subtitle: `${score.total} question${score.total === 1 ? '' : 's'} — your answer vs the correct one` }, [
+    el('ol', { class: 'mock-review' }, test.items.map((item, i) => reviewItem(item, selected[i] ?? null, i + 1))),
+  ]);
+
+  mount(root, el('div', { class: 'results mock-results' }, [summaryCard, reviewCard]));
 }
 
 /** Format a remaining-ms countdown as `M:SS` (minutes uncapped, e.g. `120:00`). @internal */

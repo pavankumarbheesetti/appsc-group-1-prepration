@@ -18,6 +18,7 @@ import { el } from './views/dom';
 import { icon, type IconName } from './views/components/icon';
 import * as today from './views/today';
 import * as planner from './views/planner';
+import * as startGuide from './views/start';
 import * as drill from './views/drill';
 import * as mock from './views/mock';
 import * as notebook from './views/notebook';
@@ -79,6 +80,7 @@ interface NavSection {
 const NAV_SECTIONS: ReadonlyArray<NavSection> = [
   { eyebrow: 'Plan', items: [
     { label: 'Today', path: '/', iconName: 'dashboard' },
+    { label: 'Start here', path: '/start', iconName: 'sparkles' },
     { label: 'Planner', path: '/planner', iconName: 'calendar' },
   ] },
   { eyebrow: 'Learn', items: [
@@ -466,6 +468,7 @@ export function renderApp(root: HTMLElement): void {
   };
   wire('/', today.render);
   wire('/planner', planner.render);
+  wire('/start', startGuide.render);
   wire('/drill', drill.render);
   wire('/mock', mock.render);
   wire('/syllabus', syllabus.render);

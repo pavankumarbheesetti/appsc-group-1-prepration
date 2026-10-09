@@ -5,7 +5,7 @@ import { buildPlan, computePlanAnchors, buildMockSchedule } from '../../engine/p
 import { PAPER_I, PAPER_II } from '../exam-pattern';
 import { buildPaperMock, mockSeriesLength } from '../../engine/mock';
 import { __resetForTests, getPlanStartDate, setPlanStartDate } from '../../state/store';
-import { addDaysISO } from '../dates';
+import { addDaysISO, dayOfWeekISO } from '../dates';
 
 /** Derived anchors for the explicit short-window test harness (30 Sep → 15 Nov 2026). */
 const SHORT = computePlanAnchors('2026-11-15', '2026-09-30');
@@ -1008,11 +1008,13 @@ describe('planner DEEPEN passes — final-window weak-area top-ups (real content
 
 /**
  * Learner-chosen PLAN START DATE: days before the start are FREE (no blocks, no
- * placement) and the plan's first on/after-start day is day 1 — the opening
- * Saturday mock becomes the Paper-II BASELINE mock that sets the starting level.
- * Driven through the pure engine with fixed dates so it is clock-independent.
+ * placement) and the plan's first on/after-start day is day 1. When day 1 is a
+ * Saturday it is the DAY-1 ORIENTATION day (STANDARDS §8a) — a "Start here"
+ * guide block + the first Mental Ability / History topics + a CA intro, with NO
+ * mock and NO revise block. Driven through the pure engine with fixed dates so
+ * it is clock-independent.
  */
-describe('plan start date — free pre-start days + baseline mock', () => {
+describe('plan start date — free pre-start days + day-1 orientation', () => {
   beforeEach(() => {
     __resetForTests();
   });
@@ -1032,7 +1034,7 @@ describe('plan start date — free pre-start days + baseline mock', () => {
     });
   }
 
-  it('schedules nothing on 9 Oct and makes day 1 (Sat 10 Oct) the Paper-II baseline mock', () => {
+  it('schedules nothing on 9 Oct and makes day 1 (Sat 10 Oct) an ORIENTATION day — no mock', () => {
     const { days } = planFrom('2026-10-10', '2026-10-09');
     // Today (9 Oct) precedes the start — a FREE day: no blocks, nothing placed.
     const oct9 = days.find((d) => d.dateISO === '2026-10-09');
@@ -1044,26 +1046,138 @@ describe('plan start date — free pre-start days + baseline mock', () => {
     // The first day that carries any blocks is 10 Oct.
     const firstWithBlocks = days.find((d) => d.blocks.length > 0);
     expect(firstWithBlocks?.dateISO).toBe('2026-10-10');
-    // 10 Oct is the Paper-II baseline mock.
+    // 10 Oct is the ORIENTATION day: no mock, a Start-here block, the first MENT
+    // topic, the first History topic(s), a CA intro, and NO revise block.
     const day1 = days.find((d) => d.dateISO === '2026-10-10')!;
-    expect(day1.mockPaper).toBe('paper2');
-    const mockBlock = day1.blocks.find((b) => b.kind === 'mock');
-    expect(mockBlock?.label).toContain('baseline');
-    expect(mockBlock?.label).toContain('Paper-II');
+    expect(day1.mockPaper).toBeNull();
+    expect(day1.blocks.some((b) => b.kind === 'mock')).toBe(false);
+    expect(day1.blocks.some((b) => b.kind === 'revise')).toBe(false);
+    const startHere = day1.blocks.find((b) => b.kind === 'start-here');
+    expect(startHere).toBeDefined();
+    expect(startHere!.minutes).toBe(30);
+    const ment = day1.blocks.find((b) => b.kind === 'ment');
+    expect(ment?.topics?.[0]?.subtopicId).toBe('ment-number-system');
+    const hist = day1.blocks.find((b) => b.kind === 'subject' && b.subjectCode === 'HIST');
+    expect(hist?.topics?.[0]?.subtopicId).toBe('hist-ancient-stone-age');
+    expect(day1.blocks.some((b) => b.kind === 'ca')).toBe(true);
   });
 
-  it('first-passes every prelims subtopic exactly once despite the free pre-start day', () => {
+  it('first-passes every prelims subtopic exactly once despite the free pre-start + orientation day', () => {
     const { days } = planFrom('2026-10-10', '2026-10-09');
     const aptitude = days.flatMap((d) => d.aptitudeSubtopicIds);
     expect(aptitude.length).toBe(29);
     expect(new Set(aptitude).size).toBe(29);
+    const theory = days.flatMap((d) => d.theorySubtopicIds);
+    expect(new Set(theory).size).toBe(88);
+    // The orientation day's Mental Ability + History STUDY blocks ARE the first
+    // pass of their topics (recorded here, exactly once) — a beginner never
+    // studies them again on a later day.
+    const day1 = days.find((d) => d.dateISO === '2026-10-10')!;
+    expect(day1.aptitudeSubtopicIds).toContain('ment-number-system');
+    expect(day1.theorySubtopicIds).toContain('hist-ancient-stone-age');
+    const otherFirstPass = new Set(
+      days
+        .filter((d) => d.dateISO !== '2026-10-10')
+        .flatMap((d) => [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]),
+    );
+    expect(otherFirstPass.has('ment-number-system')).toBe(false);
+    expect(otherFirstPass.has('hist-ancient-stone-age')).toBe(false);
   });
 
-  it('does NOT relabel a mock as baseline once the plan has already started', () => {
-    const { days } = planFrom('2026-09-30', '2026-10-09');
-    const firstMock = days.find((d) => d.mockPaper !== null)!;
-    const mockBlock = firstMock.blocks.find((b) => b.kind === 'mock');
-    expect(mockBlock?.label).not.toContain('baseline');
+  it('first-passes every subtopic on exactly ONE day (orientation, Wednesday, and Monday starts)', () => {
+    // The duplication bug surfaced on a Saturday (orientation) start, but the
+    // "first-passed exactly once" invariant must hold for EVERY start shape.
+    const starts: ReadonlyArray<readonly [string, string]> = [
+      ['2026-10-10', '2026-10-09'], // Saturday start → day-1 orientation
+      ['2026-09-30', '2026-09-30'], // Wednesday start → no orientation
+      ['2026-10-12', '2026-10-12'], // Monday start → no orientation
+    ];
+    for (const [startISO, todayISOArg] of starts) {
+      const { days } = planFrom(startISO, todayISOArg);
+      const firstPass = days.flatMap((d) => [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]);
+      // No subtopic appears as a first pass on more than one day.
+      const seen = new Map<string, number>();
+      for (const id of firstPass) seen.set(id, (seen.get(id) ?? 0) + 1);
+      const dupes = [...seen.entries()].filter(([, n]) => n > 1).map(([id]) => id);
+      expect(dupes).toEqual([]);
+      // …and every prelims theory (88) + aptitude (29) topic is first-passed once.
+      expect(new Set(days.flatMap((d) => d.theorySubtopicIds)).size).toBe(88);
+      expect(new Set(days.flatMap((d) => d.aptitudeSubtopicIds)).size).toBe(29);
+    }
+  });
+
+  it('continues the MENT sequence the next MENT day after orientation (no re-teach of number-system)', () => {
+    const { days } = planFrom('2026-10-10', '2026-10-09');
+    const orientation = days.find((d) => d.blocks.some((b) => b.kind === 'start-here'))!;
+    expect(orientation.dateISO).toBe('2026-10-10');
+    const orientMent = orientation.blocks.find((b) => b.kind === 'ment');
+    expect(orientMent?.topics?.[0]?.subtopicId).toBe('ment-number-system');
+    // The FIRST 'ment' topic block AFTER orientation continues the sequence with
+    // the next topic — it does NOT re-teach ment-number-system.
+    const nextMent = days
+      .filter((d) => d.dateISO > orientation.dateISO)
+      .flatMap((d) => d.blocks)
+      .find((b) => b.kind === 'ment' && (b.topics?.length ?? 0) > 0);
+    expect(nextMent?.topics?.[0]?.subtopicId).toBe('ment-number-series-coding');
+  });
+
+  it('never relabels a mock as baseline; first pass uses week tests + one dress rehearsal', () => {
+    const { days, summary } = planFrom('2026-09-30', '2026-10-09');
+    // The first pass carries WEEK TESTS on Saturdays (not full mocks).
+    const firstWeekTest = days.find((d) => d.blocks.some((b) => b.kind === 'week-test'))!;
+    expect(firstWeekTest).toBeDefined();
+    expect(dayOfWeekISO(firstWeekTest.dateISO)).toBe(6);
+    expect(firstWeekTest.phase).toBe('learn');
+    // The only first-pass full mock is the DRESS REHEARSAL; its label is plain
+    // language, never "baseline".
+    const dress = days.find((d) => d.mockPaper !== null && d.dateISO < summary.coverageEndISO)!;
+    const dressBlock = dress.blocks.find((b) => b.kind === 'mock');
+    expect(dressBlock?.label).not.toContain('baseline');
+    expect(dressBlock?.label).toContain('Dress rehearsal');
+    // Revision-cycle / final full mocks keep the plain "Full Paper-x mock" label.
+    const fullMock = days.find(
+      (d) => d.mockPaper !== null && d.dateISO >= summary.coverageEndISO,
+    )!;
+    const fullBlock = fullMock.blocks.find((b) => b.kind === 'mock');
+    expect(fullBlock?.label).toMatch(/^Full Paper-(I|II) mock$/);
+  });
+
+  it('week-test pools only contain FIRST-PASSED topics; Sat 17 Oct draws ~2/3 that week', () => {
+    const { days } = planFrom('2026-10-10', '2026-10-09');
+    // Cumulative set of topics first-passed on or before each date.
+    const firstPassOnOrBefore = (dateISO: string): Set<string> => {
+      const set = new Set<string>();
+      for (const d of days) {
+        if (d.dateISO > dateISO) continue;
+        for (const id of [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]) set.add(id);
+      }
+      return set;
+    };
+
+    const sat = days.find((d) => d.dateISO === '2026-10-17')!;
+    const wt = sat.blocks.find((b) => b.kind === 'week-test');
+    expect(wt).toBeDefined();
+    expect(wt!.weekTestDateISO).toBe('2026-10-17');
+
+    const studied = firstPassOnOrBefore('2026-10-17');
+    // Every pool id was first-passed on or before this Saturday (never a topic
+    // not yet studied).
+    for (const id of wt!.weekTestSubtopicIds ?? []) expect(studied.has(id)).toBe(true);
+    expect((wt!.weekTestSubtopicIds ?? []).length).toBeGreaterThan(0);
+
+    // "This week" ids are the subset first-passed in the 7 days ending Sat.
+    const weekStart = addDaysISO('2026-10-17', -6);
+    const thisWeekExpected = new Set<string>();
+    for (const d of days) {
+      if (d.dateISO < weekStart || d.dateISO > '2026-10-17') continue;
+      for (const id of [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]) thisWeekExpected.add(id);
+    }
+    for (const id of wt!.weekTestThisWeekIds ?? []) expect(thisWeekExpected.has(id)).toBe(true);
+    // The pool is the union; this-week is a (non-empty) subset of it.
+    expect((wt!.weekTestThisWeekIds ?? []).length).toBeGreaterThan(0);
+    for (const id of wt!.weekTestThisWeekIds ?? []) {
+      expect((wt!.weekTestSubtopicIds ?? []).includes(id)).toBe(true);
+    }
   });
 });
 });

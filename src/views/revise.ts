@@ -132,8 +132,40 @@ function hubCard(iconName: IconName, title: string, status: string, cta: string,
   ]);
 }
 
+/**
+ * A one-shot SCOPED-revise request set by {@link openReviseScope} (e.g. the
+ * Today "Flashcards for what you studied yesterday" launcher) and consumed once
+ * by {@link renderFlashcards}. When set, the runner reviews a curated deck built
+ * ONLY from these subtopic ids instead of the whole deck.
+ */
+let pendingScopeIds: string[] | null = null;
+
+/**
+ * Navigate to the flashcard runner scoped to a specific set of subtopic ids —
+ * used by the EARLY-REVISE block ("Flashcards for what you studied yesterday")
+ * so the beginner always has a non-empty, relevant session even before 10
+ * curated cards are due across the whole deck.
+ */
+export function openReviseScope(subtopicIds: readonly string[]): void {
+  pendingScopeIds = [...subtopicIds];
+  navigate('/revise/flashcards');
+}
+
+/** The curated deck for a specific set of subtopic ids, in order. @internal */
+function scopedDeck(ids: readonly string[]): Flashcard[] {
+  const out: Flashcard[] = [];
+  for (const id of ids) out.push(...buildCuratedDeck(getCards(id)));
+  return out;
+}
+
 /** Render the flashcard runner (`#/revise/flashcards`) into `root`. */
 export function renderFlashcards(root: HTMLElement): void {
+  const scope = pendingScopeIds;
+  pendingScopeIds = null;
+  if (scope !== null) {
+    mountFlashcards(root, scopedDeck(scope), () => render(root));
+    return;
+  }
   mountFlashcards(root, collectCuratedCards(), () => renderFlashcards(root));
 }
 

@@ -3,7 +3,11 @@ import {
   buildPaperMock,
   mockSeriesLength,
   scorePaperMock,
+  buildWeekTest,
+  buildWeekTestSeries,
+  scoreWeekTest,
   type SectionPools,
+  type WeekTestInput,
 } from '../mock';
 import { PAPER_I, PAPER_II, type ExamPattern } from '../../lib/exam-pattern';
 import type { MCQItem } from '../../content/types';
@@ -148,5 +152,157 @@ describe('scorePaperMock — per-section + overall net marks', () => {
     const result = scorePaperMock(mock, selected);
     expect(result.overall.net).toBe(0);
     expect(result.overall.skipped).toBe(120);
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* WEEK TEST                                                                   */
+/* -------------------------------------------------------------------------- */
+
+/** Fixture MCQs with a tag-prefixed id so a draw's provenance is checkable. */
+function tagged(tag: string, code: MCQItem['subjectCode'], n: number): MCQItem[] {
+  return Array.from({ length: n }, (_, i) => ({
+    id: `${tag}-${i + 1}`,
+    subjectCode: code,
+    question: `${tag} Q${i + 1}`,
+    options: ['a', 'b', 'c', 'd'],
+    answerIndex: i % 4,
+    verified: true,
+  }));
+}
+
+/** A generous week-test input: both papers, both tiers well-stocked. */
+function wtInput(dateISO: string): WeekTestInput {
+  return {
+    dateISO,
+    thisWeek: {
+      paper1: tagged('p1tw', 'HIST', 60),
+      paper2: tagged('p2tw', 'MENT', 40),
+    },
+    earlier: {
+      paper1: tagged('p1ea', 'POL', 60),
+      paper2: tagged('p2ea', 'SCI', 40),
+    },
+  };
+}
+
+describe('buildWeekTest — a scoped, studied-topics-only mini mock', () => {
+  it('draws 45 questions, 55 minutes by default', () => {
+    const t = buildWeekTest(wtInput('2026-10-17'));
+    expect(t.count).toBe(45);
+    expect(t.items).toHaveLength(45);
+    expect(t.durationMin).toBe(55);
+    expect(t.sectionByIndex).toHaveLength(45);
+    expect(new Set(t.items.map((i) => i.id)).size).toBe(45); // no dup within a test
+  });
+
+  it('favours THIS week ~2/3 and earlier ~1/3', () => {
+    const t = buildWeekTest(wtInput('2026-10-17'));
+    const thisWeek = t.items.filter((i) => i.id.includes('tw')).length;
+    const earlier = t.items.filter((i) => i.id.includes('ea')).length;
+    expect(thisWeek + earlier).toBe(45);
+    // 2/3 of 45 = 30 this-week, 15 earlier (allowing small rounding slack).
+    expect(thisWeek).toBeGreaterThanOrEqual(28);
+    expect(thisWeek).toBeLessThanOrEqual(32);
+    expect(earlier).toBeGreaterThanOrEqual(13);
+    expect(earlier).toBeLessThanOrEqual(17);
+  });
+
+  it('keeps Paper-I / Paper-II in proportion to what was covered', () => {
+    // Paper-I covered 120 (60+60), Paper-II 80 (40+40) → 60% / 40% → ~27 / ~18.
+    const t = buildWeekTest(wtInput('2026-10-17'));
+    const p1 = t.sectionByIndex.filter((p) => p === 'paper1').length;
+    const p2 = t.sectionByIndex.filter((p) => p === 'paper2').length;
+    expect(p1 + p2).toBe(45);
+    expect(p1).toBeGreaterThan(p2); // Paper-I had more covered material
+    expect(p1).toBeGreaterThanOrEqual(25);
+    expect(p1).toBeLessThanOrEqual(29);
+  });
+
+  it('is deterministic in its date seed', () => {
+    const a = buildWeekTest(wtInput('2026-10-17'));
+    const b = buildWeekTest(wtInput('2026-10-17'));
+    expect(a.items.map((i) => i.id)).toEqual(b.items.map((i) => i.id));
+    const c = buildWeekTest(wtInput('2026-10-24'));
+    expect(c.items.map((i) => i.id)).not.toEqual(a.items.map((i) => i.id));
+  });
+
+  it('respects an exclude set — avoids reused ids while the pool allows', () => {
+    const first = buildWeekTest(wtInput('2026-10-17'));
+    const exclude = new Set(first.items.map((i) => i.id));
+    const second = buildWeekTest(wtInput('2026-10-24'), {}, exclude);
+    const overlap = second.items.filter((i) => exclude.has(i.id)).length;
+    expect(overlap).toBe(0); // pool (200) >> 90 drawn, so zero reuse
+  });
+
+  it('fills from the other paper/bucket when one is tiny (no silent short)', () => {
+    const t = buildWeekTest({
+      dateISO: '2026-10-17',
+      thisWeek: { paper1: tagged('p1tw', 'HIST', 5), paper2: tagged('p2tw', 'MENT', 50) },
+      earlier: { paper1: [], paper2: tagged('p2ea', 'SCI', 50) },
+    });
+    expect(t.count).toBe(45);
+    expect(t.short).toBe(false);
+  });
+
+  it('is honestly short when the studied pool is smaller than the ask', () => {
+    const t = buildWeekTest({
+      dateISO: '2026-10-17',
+      thisWeek: { paper1: tagged('p1tw', 'HIST', 10), paper2: tagged('p2tw', 'MENT', 5) },
+      earlier: { paper1: [], paper2: [] },
+    });
+    expect(t.count).toBe(15);
+    expect(t.short).toBe(true);
+  });
+
+  it('honours a custom count and duration', () => {
+    const t = buildWeekTest(wtInput('2026-10-17'), { count: 20, durationMin: 25 });
+    expect(t.items).toHaveLength(20);
+    expect(t.durationMin).toBe(25);
+  });
+});
+
+describe('buildWeekTestSeries — no repeats across tests where the pool allows', () => {
+  it('threads a used-set so consecutive tests draw disjoint questions', () => {
+    // A growing pool across three Saturdays; 200 p1 + 160 p2 total ≥ 3×45.
+    const inputs: WeekTestInput[] = ['2026-10-17', '2026-10-24', '2026-10-31'].map((d) => wtInput(d));
+    const series = buildWeekTestSeries(inputs);
+    const all = [...series.values()].flatMap((t) => t.items.map((i) => i.id));
+    expect(all.length).toBe(135);
+    expect(new Set(all).size).toBe(135); // every question unique across the series
+  });
+
+  it('is deterministic as a whole', () => {
+    const inputs: WeekTestInput[] = ['2026-10-17', '2026-10-24'].map((d) => wtInput(d));
+    const a = buildWeekTestSeries(inputs);
+    const b = buildWeekTestSeries(inputs);
+    for (const d of ['2026-10-17', '2026-10-24']) {
+      expect(a.get(d)!.items.map((i) => i.id)).toEqual(b.get(d)!.items.map((i) => i.id));
+    }
+  });
+});
+
+describe('scoreWeekTest — per-paper + overall net marks (−1/3)', () => {
+  it('scores each paper and the overall, blanks neutral', () => {
+    const t = buildWeekTest(wtInput('2026-10-17'));
+    // Correct all but the first 3 (wrong); overall net = correct − wrong/3.
+    const selected = t.items.map((it, i) => (i < 3 ? (it.answerIndex + 1) % 4 : it.answerIndex));
+    const r = scoreWeekTest(t, selected);
+    expect(r.overall.total).toBe(45);
+    expect(r.overall.correct).toBe(42);
+    expect(r.overall.wrong).toBe(3);
+    expect(r.overall.net).toBeCloseTo(41, 6);
+    const papers = r.sections.map((s) => s.paper);
+    expect(papers).toContain('paper1');
+    expect(papers).toContain('paper2');
+    const netSum = r.sections.reduce((a, s) => a + s.net, 0);
+    expect(netSum).toBeCloseTo(r.overall.net, 6);
+  });
+
+  it('does not penalise blanks', () => {
+    const t = buildWeekTest(wtInput('2026-10-17'));
+    const r = scoreWeekTest(t, t.items.map(() => null));
+    expect(r.overall.net).toBe(0);
+    expect(r.overall.skipped).toBe(45);
   });
 });

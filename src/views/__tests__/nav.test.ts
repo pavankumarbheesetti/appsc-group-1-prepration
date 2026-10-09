@@ -38,6 +38,7 @@ describe('app shell nav', () => {
     renderApp(root);
     expect(navLabels(root)).toEqual([
       'Today',
+      'Start here',
       'Planner',
       'Syllabus',
       'Drill',

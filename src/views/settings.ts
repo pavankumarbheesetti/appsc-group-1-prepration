@@ -35,6 +35,7 @@ import {
 } from '../state/store';
 import { addDaysISO, todayISO } from '../lib/dates';
 import { el, mount } from './dom';
+import { navigate } from '../router/router';
 import { card } from './components/card';
 import { button } from './components/button';
 import { chip } from './components/chip';
@@ -57,9 +58,17 @@ function applyDisplay(): void {
 /** Render the Settings view into `root`. */
 export function render(root: HTMLElement): void {
   const draw = (): void => {
-    mount(root, buildDisplayCard(draw), buildDataCard(draw), buildAboutCard());
+    mount(root, buildStartHereCard(), buildDisplayCard(draw), buildDataCard(draw), buildAboutCard());
   };
   draw();
+}
+
+/** A "New here?" card linking to the beginner Start-here guide. @internal */
+function buildStartHereCard(): HTMLElement {
+  return card({ title: 'New here?' }, [
+    el('p', { class: 'section-lead', text: 'The Start here guide explains the exam, how your plan works, and how to study a topic — in plain language.' }),
+    button({ label: 'Open the Start here guide', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/start') }),
+  ]);
 }
 
 /* -------------------------------------------------------------------------- */
