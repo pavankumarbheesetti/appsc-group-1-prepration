@@ -10,19 +10,15 @@ import {
   PER_TOPIC_DRILL_QUOTA,
   MAINS_PER_DAY,
   POST_PRELIMS_HORIZON_DAYS,
-  COVERAGE_END_ISO,
-  FINAL_START_ISO,
-  LIGHT_ISO,
-  EXAM_ISO,
-  SPILL_MAX_ISO,
-  MOCKS,
+  computePlanAnchors,
+  buildMockSchedule,
   QUICK_MIN,
   type BuildPlanOpts,
   type PlanDay,
   type PlanSequence,
   type PlanSubtopic,
 } from '../planner';
-import { daysUntilExam, dayOfWeekISO } from '../../lib/dates';
+import { daysUntilExam, dayOfWeekISO, addDaysISO, diffDaysISO } from '../../lib/dates';
 import type { LearningStream } from '../../content/plan-types';
 
 /**
@@ -139,6 +135,14 @@ function subjectBlockOf(day: PlanDay): PlanDay['blocks'][number] | undefined {
   return day.blocks.find((b) => b.kind === 'subject' || b.kind === 'catchup');
 }
 
+/**
+ * The derived anchors for the fixture window (today = start = Wed 30 Sep 2026,
+ * exam = Sun 15 Nov 2026). 47 days < 8 weeks → the SHORT-WINDOW fallback, which
+ * reproduces the old calendar exactly (coverage-end 4 Nov, final start 5 Nov,
+ * light 14 Nov, exam 15 Nov). Used in place of the retired hardcoded constants.
+ */
+const FX = computePlanAnchors('2026-11-15', '2026-09-30');
+
 /** Map subtopic id → subjectCode for the fixture. */
 function subjectOf(opts: BuildPlanOpts): Map<string, string> {
   return new Map(opts.subtopics.map((s) => [s.id, s.subjectCode] as const));
@@ -218,47 +222,49 @@ describe('rhythm — sequence order respected', () => {
   });
 });
 
-describe('rhythm — mock schedule', () => {
-  it('places exactly the 8 fixed mocks with correct paper + per-paper series #', () => {
+describe('rhythm — mock schedule (derived from exam date, no hardcoded calendar)', () => {
+  it('schedules exactly the DERIVED mocks (buildMockSchedule), alternating from Paper-II', () => {
     const { days, summary } = buildPlan(baseOpts());
+    const schedule = buildMockSchedule('2026-09-30', FX);
+    const inWindow = [...schedule.keys()].filter((d) => d >= '2026-09-30' && d <= FX.examISO).sort();
     const mockDays = days.filter((d) => d.phase === 'mock');
-    const mockDates = Object.keys(MOCKS);
-    expect(mockDays.map((d) => d.dateISO).sort()).toEqual(mockDates.slice().sort());
-    for (const d of mockDays) {
-      expect(d.mockPaper).toBe(MOCKS[d.dateISO]);
-    }
+    expect(mockDays.map((d) => d.dateISO).sort()).toEqual(inWindow);
+    for (const d of mockDays) expect(d.mockPaper).toBe(schedule.get(d.dateISO)!.paper);
     // No non-mock day carries a mock paper.
     for (const d of days.filter((d) => d.phase !== 'mock')) expect(d.mockPaper).toBeNull();
-    // Per-paper series numbers are 1..4, non-repeating.
-    const p1 = summary.mockList.filter((m) => m.paper === 'paper1').map((m) => m.mockNumber);
-    const p2 = summary.mockList.filter((m) => m.paper === 'paper2').map((m) => m.mockNumber);
-    expect(p1.slice().sort()).toEqual([1, 2, 3, 4]);
-    expect(p2.slice().sort()).toEqual([1, 2, 3, 4]);
-    expect(summary.mockList.length).toBe(8);
+    // Short-window fallback → every mock is a Saturday, series starts Paper-II.
+    for (const dateISO of inWindow) expect(dayOfWeekISO(dateISO)).toBe(6);
+    expect(schedule.get(inWindow[0]!)!.paper).toBe('paper2');
+    // Per-paper series numbers are 1..N, non-repeating.
+    const nums = (p: 'paper1' | 'paper2'): number[] =>
+      summary.mockList.filter((m) => m.paper === p).map((m) => m.mockNumber).sort((a, b) => a - b);
+    expect(nums('paper2')).toEqual(nums('paper2').map((_, i) => i + 1));
+    expect(nums('paper1')).toEqual(nums('paper1').map((_, i) => i + 1));
+    expect(summary.mockList.length).toBe(inWindow.length);
   });
 });
 
 describe('rhythm — coverage end / final window / exam', () => {
-  it('introduces no new topics after the coverage-end date (except reported spill ≤ 6 Nov)', () => {
+  it('introduces no new topics after the coverage-end date (except reported spill)', () => {
     const { days, summary } = buildPlan(baseOpts());
     const spilledIds = new Set(summary.spills.flatMap((s) => s.topicIds));
     for (const d of days) {
-      if (d.dateISO <= COVERAGE_END_ISO) continue;
+      if (d.dateISO <= FX.coverageEndISO) continue;
       for (const id of [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]) {
         expect(spilledIds.has(id)).toBe(true);
-        expect(d.dateISO <= SPILL_MAX_ISO).toBe(true);
+        expect(d.dateISO <= FX.spillDates[1]).toBe(true);
       }
     }
-    expect(FINAL_START_ISO > COVERAGE_END_ISO).toBe(true);
+    expect(FX.finalStartISO > FX.coverageEndISO).toBe(true);
   });
 
-  it('keeps 14 Nov LIGHT (≤ 90 min, no mock) and 15 Nov EXAM empty', () => {
+  it('keeps the light day (exam − 1) LIGHT (≤ 90 min, no mock) and the exam day empty', () => {
     const { days } = buildPlan(baseOpts());
-    const light = days.find((d) => d.dateISO === LIGHT_ISO)!;
+    const light = days.find((d) => d.dateISO === FX.lightISO)!;
     expect(light.light).toBe(true);
     expect(light.plannedMinutes).toBeLessThanOrEqual(90);
     expect(light.mockPaper).toBeNull();
-    const exam = days.find((d) => d.dateISO === EXAM_ISO)!;
+    const exam = days.find((d) => d.dateISO === FX.examISO)!;
     expect(exam.plannedMinutes).toBe(0);
     expect(exam.blocks).toEqual([]);
   });
@@ -325,7 +331,7 @@ describe('rhythm — Telugu on Tue/Thu/Sun', () => {
     for (const d of days) {
       const dow = dayOfWeekISO(d.dateISO);
       const isTeluguDow = dow === 0 || dow === 2 || dow === 4;
-      const eligible = isTeluguDow && d.phase !== 'mock' && !d.light && d.dateISO !== EXAM_ISO;
+      const eligible = isTeluguDow && d.phase !== 'mock' && !d.light && d.dateISO !== FX.examISO;
       expect(d.teluguBlock).toBe(eligible);
     }
   });
@@ -381,9 +387,9 @@ describe('rhythm — summary read-out', () => {
     const { summary } = buildPlan(opts);
     expect(summary.rhythm).toBe(true);
     expect(summary.postPrelims).toBe(false);
-    expect(summary.coverageEndISO).toBe(COVERAGE_END_ISO);
+    expect(summary.coverageEndISO).toBe(FX.coverageEndISO);
     expect(summary.feasible).toBe(true);
-    expect(summary.mockList.length).toBe(8);
+    expect(summary.mockList.length).toBe(buildMockSchedule('2026-09-30', FX).size);
     expect(summary.subjectFit.length).toBe(5);
     for (const f of summary.subjectFit) {
       expect(f.full + f.quick).toBe(f.total);
@@ -527,5 +533,151 @@ describe('rhythm — POOL-FIX block-legality invariant (every block coherent)', 
         }
       }
     }
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* LONG WINDOW — Notification 07/2026: Prelims moved to 24 Jan 2027            */
+/* -------------------------------------------------------------------------- */
+
+/** Long-window opts: re-planned from today (9 Oct 2026), plan started 30 Sep. */
+function longOpts(examDateISO: string, overrides: Partial<BuildPlanOpts> = {}): BuildPlanOpts {
+  return baseOpts({
+    startISO: '2026-09-30',
+    todayISO: '2026-10-09',
+    examDateISO,
+    dailyBudgetMin: 240,
+    weekendBudgetMin: 360,
+    ...overrides,
+  });
+}
+
+describe('calendar is DERIVED from the exam date (no hardcoded Nov-2026 constant)', () => {
+  it('every anchor moves with the exam date — tested at 24 Jan 2027 AND 20 Dec 2026', () => {
+    for (const exam of ['2027-01-24', '2026-12-20']) {
+      const a = computePlanAnchors(exam, '2026-09-30');
+      expect(a.shortWindow).toBe(false); // both are > 8 weeks out
+      // Exam day empty; light day the day before; FINAL WINDOW = 21 days.
+      expect(a.examISO).toBe(exam);
+      expect(a.lightISO).toBe(addDaysISO(exam, -1));
+      expect(a.finalStartISO).toBe(addDaysISO(exam, -21));
+      expect(diffDaysISO(a.finalStartISO, a.examISO)).toBe(21);
+      // Coverage ends a revision cycle (28 d) before the final window.
+      expect(a.finalStartISO > a.coverageEndISO).toBe(true);
+      expect(diffDaysISO(a.coverageEndISO, a.finalStartISO)).toBe(28);
+      expect(a.revisionStartISO).toBe(addDaysISO(a.coverageEndISO, 1));
+    }
+    // The two dates genuinely differ (not a baked-in calendar).
+    const jan = computePlanAnchors('2027-01-24', '2026-09-30');
+    const dec = computePlanAnchors('2026-12-20', '2026-09-30');
+    expect(jan.finalStartISO).not.toBe(dec.finalStartISO);
+  });
+
+  it('a tight exam (< 8 weeks) keeps the OLD compressed behaviour (no revision cycle)', () => {
+    const a = computePlanAnchors('2026-11-15', '2026-09-30');
+    expect(a.shortWindow).toBe(true);
+    expect(a.revisionStartISO).toBeNull();
+    expect(a.coverageEndISO).toBe('2026-11-04'); // the old constant
+    expect(a.finalStartISO).toBe('2026-11-05');
+    expect(a.lightISO).toBe('2026-11-14');
+  });
+});
+
+describe('long window — phases, final window, revision cycle (exam 24 Jan 2027)', () => {
+  const EXAM = '2027-01-24';
+  const A = computePlanAnchors(EXAM, '2026-09-30');
+
+  it('exam day empty, light day before it, no new topics in the final window', () => {
+    const { days } = buildPlan(longOpts(EXAM));
+    const exam = days.find((d) => d.dateISO === A.examISO)!;
+    expect(exam.plannedMinutes).toBe(0);
+    expect(exam.blocks).toEqual([]);
+    const light = days.find((d) => d.dateISO === A.lightISO)!;
+    expect(light.light).toBe(true);
+    expect(light.plannedMinutes).toBeLessThanOrEqual(90);
+    // Final window = the 21 days exam−21 … exam−2; NO first-pass topics there.
+    const finalDays = days.filter((d) => d.dateISO >= A.finalStartISO && d.dateISO < A.lightISO);
+    expect(finalDays.length).toBeGreaterThan(0);
+    for (const d of finalDays) {
+      expect([...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]).toEqual([]);
+    }
+  });
+
+  it('runs a revision cycle between coverage and the final window', () => {
+    const { days, summary } = buildPlan(longOpts(EXAM));
+    expect(summary.revisionDays).toBeGreaterThan(0);
+    const revDays = days.filter(
+      (d) => d.dateISO >= A.revisionStartISO! && d.dateISO < A.finalStartISO,
+    );
+    expect(revDays.length).toBe(summary.revisionDays);
+    for (const d of revDays) {
+      expect(d.segment).toBe('revision');
+      // Revision = no NEW first-pass topics (coverage already finished).
+      expect([...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]).toEqual([]);
+    }
+  });
+
+  it('finishes the first pass BEFORE the revision cycle starts', () => {
+    const { days, summary } = buildPlan(longOpts(EXAM));
+    const firstPassDates = days
+      .filter((d) => [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds].length > 0)
+      .map((d) => d.dateISO);
+    for (const dateISO of firstPassDates) expect(dateISO <= summary.coverageEndISO).toBe(true);
+    expect(summary.coverageEndISO).toBe(A.coverageEndISO);
+  });
+
+  it('first-passes every Prelims topic exactly once', () => {
+    const { days, summary } = buildPlan(longOpts(EXAM));
+    const scheduled = days.flatMap((d) => [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]);
+    expect(scheduled.length).toBe(summary.prelimsTotal);
+    expect(new Set(scheduled).size).toBe(summary.prelimsTotal);
+  });
+
+  it('reaches FULL depth for all non-exempt topics at 240/360 and is feasible', () => {
+    const { summary } = buildPlan(longOpts(EXAM));
+    expect(summary.feasible).toBe(true);
+    expect(summary.infeasibleFloorTopicIds).toEqual([]);
+  });
+
+  it('Saturday mocks alternate (Paper-II first) and STOP before the final window; final window runs 3/week', () => {
+    const { days } = buildPlan(longOpts(EXAM));
+    const mockDays = days.filter((d) => d.phase === 'mock');
+    const coverageRevMocks = mockDays.filter((d) => d.dateISO < A.finalStartISO);
+    // All pre-final mocks are Saturdays.
+    for (const d of coverageRevMocks) expect(dayOfWeekISO(d.dateISO)).toBe(6);
+    // The DERIVED Saturday series starts Paper-II and strictly alternates.
+    const schedule = buildMockSchedule('2026-09-30', A);
+    const satSeries = [...schedule.keys()].filter((d) => d < A.finalStartISO).sort();
+    expect(schedule.get(satSeries[0]!)!.paper).toBe('paper2');
+    for (let i = 1; i < satSeries.length; i += 1) {
+      expect(schedule.get(satSeries[i]!)!.paper).not.toBe(schedule.get(satSeries[i - 1]!)!.paper);
+    }
+    // The in-plan pre-final mocks (today onward) also alternate consecutively.
+    const sorted = coverageRevMocks.slice().sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+    for (let i = 1; i < sorted.length; i += 1) {
+      expect(sorted[i]!.mockPaper).not.toBe(sorted[i - 1]!.mockPaper);
+    }
+    // Final window carries 3 mocks per 7-day week.
+    const finalMocks = mockDays.filter((d) => d.dateISO >= A.finalStartISO && d.dateISO < A.lightISO);
+    expect(finalMocks.length).toBeGreaterThanOrEqual(3);
+    const weeks = Math.max(1, Math.round(diffDaysISO(A.finalStartISO, A.lightISO) / 7));
+    expect(finalMocks.length).toBeGreaterThanOrEqual(3 * weeks - 1);
+  });
+
+  it('is progress-aware: a studied topic keeps its completion and is still first-passed once', () => {
+    const opts = longOpts(EXAM);
+    const firstTheory = opts.subtopics.find((s) => s.track === 'paper1')!.id;
+    const firstApt = opts.subtopics.find((s) => s.track === 'paper2')!.id;
+    const progress = {
+      [firstTheory]: { seen: 4, masteryPct: 100 },
+      [firstApt]: { seen: 2, masteryPct: 90 },
+    };
+    const { days, summary } = buildPlan(longOpts(EXAM, { progress }));
+    expect(summary.prelimsStudied).toBe(2);
+    expect(summary.prelimsMastered).toBe(2);
+    const scheduled = days.flatMap((d) => [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]);
+    expect(scheduled).toContain(firstTheory);
+    expect(scheduled).toContain(firstApt);
+    expect(new Set(scheduled).size).toBe(summary.prelimsTotal);
   });
 });

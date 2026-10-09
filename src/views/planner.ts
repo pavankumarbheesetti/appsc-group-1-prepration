@@ -1,7 +1,7 @@
 /**
  * Planner — the exam-date-driven weekly RHYTHM schedule (route `#/planner`).
  *
- * The header carries an EDITABLE exam-date input (default 15 Nov 2026) that
+ * The header carries an EDITABLE exam-date input (default 24 Jan 2027) that
  * recomputes the plan live, a countdown, and a one-line FEASIBILITY read-out.
  * Below it:
  *   - Prelims coverage (material / studied / mastered);

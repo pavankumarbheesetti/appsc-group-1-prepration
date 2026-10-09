@@ -17,8 +17,21 @@ export const EXAM_NOTIFICATION = '07/2026';
  * This is the single date every study plan, countdown and feasibility check is
  * anchored on; it is editable by the learner (persisted to `settings.examDate`)
  * and only used as the first-run default here.
+ *
+ * Updated for the DETAILED Notification 07/2026 (dated 06/10/2026): the
+ * Screening (Prelims) Test is **24 Jan 2027** (the brief notification's
+ * convention-date of 15 Nov 2026 is retired — see {@link OLD_DEFAULT_EXAM_DATE}).
  */
-export const DEFAULT_EXAM_DATE = '2026-11-15';
+export const DEFAULT_EXAM_DATE = '2027-01-24';
+
+/**
+ * The RETIRED first-run default exam date from the brief-notification build
+ * (15 Nov 2026). A stored `settings.examDate` equal to THIS exact value is the
+ * old default and is auto-migrated to {@link DEFAULT_EXAM_DATE} on load (with a
+ * one-time Today notice); any OTHER stored date is a learner choice and is left
+ * untouched. See `src/state/store.ts` → `normalize`.
+ */
+export const OLD_DEFAULT_EXAM_DATE = '2026-11-15';
 
 /**
  * Default DAILY study-time budget in MINUTES — a working professional's 4 hours

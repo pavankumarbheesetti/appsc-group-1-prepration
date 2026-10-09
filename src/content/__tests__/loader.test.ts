@@ -50,7 +50,7 @@ describe('content loader', () => {
     const syllabus = getSyllabus();
     expect(syllabus.meta.notificationNo).toBe('07/2026');
     expect(syllabus.meta.verified).toBe(true);
-    expect(syllabus.meta.totalVacancies).toBe(163);
+    expect(syllabus.meta.totalVacancies).toBe(166);
     expect(syllabus.meta.totalMarks).toBe(825);
     expect(syllabus.nodes).toHaveLength(10);
   });

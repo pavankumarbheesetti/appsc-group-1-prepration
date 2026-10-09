@@ -20,7 +20,7 @@ import { buildSession } from '../engine/drill';
 import { buildCuratedDeck, selectSession } from '../engine/flashcards';
 import { planDayFor, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic } from '../engine/planner';
 import { navigate } from '../router/router';
-import { loadState } from '../state/store';
+import { loadState, getPrelimsDateMigrationNotice, dismissPrelimsDateNotice } from '../state/store';
 import { currentPlan } from '../lib/plan';
 import { diffDaysISO, daysUntilExam, todayISO } from '../lib/dates';
 import { openLearn } from './learn';
@@ -43,10 +43,12 @@ export function render(root: HTMLElement): void {
   const summary = plan.summary;
   const state = loadState();
   const start = state.settings.planStartDate;
+  // One-time Notification 07/2026 notice (Prelims moved 15 Nov 2026 → 24 Jan 2027).
+  const dateNotice = buildPrelimsDateNotice(root, summary);
 
   // Graceful state: the plan has not started yet.
   if (diffDaysISO(today, start) > 0) {
-    mount(root, buildCountdownHero(summary, today, undefined), notStartedCard(start));
+    mount(root, dateNotice, buildCountdownHero(summary, today, undefined), notStartedCard(start));
     return;
   }
   // Graceful state: the exam date has passed — switch to MAINS kick-start.
@@ -55,13 +57,14 @@ export function render(root: HTMLElement): void {
       const kickstartDay = planDayFor(plan, today) ?? plan.days[0];
       mount(
         root,
+        dateNotice,
         buildCountdownHero(summary, today, undefined),
         mainsKickstartCard(),
         buildMainsSection(kickstartDay),
       );
       return;
     }
-    mount(root, buildCountdownHero(summary, today, undefined), examPassedCard());
+    mount(root, dateNotice, buildCountdownHero(summary, today, undefined), examPassedCard());
     return;
   }
 
@@ -71,6 +74,7 @@ export function render(root: HTMLElement): void {
 
   mount(
     root,
+    dateNotice,
     buildCountdownHero(summary, today, todayDay),
     buildBanner(summary),
     buildRings(summary),
@@ -78,6 +82,37 @@ export function render(root: HTMLElement): void {
     allMastered ? masteredCard() : buildBlocks(todayDay),
     buildMainsParallelNote(summary),
   );
+}
+
+/**
+ * One-time banner shown after the detailed Notification 07/2026 moved the
+ * Prelims date (15 Nov 2026 → 24 Jan 2027). Returns `null` when no migration is
+ * pending (fresh install or already dismissed). Dismissing clears the flag and
+ * re-renders. @internal
+ */
+function buildPrelimsDateNotice(root: HTMLElement, summary: PlanSummary): HTMLElement | null {
+  if (!getPrelimsDateMigrationNotice()) return null;
+  return el('section', { class: 'today-banner is-ok', attrs: { role: 'status' } }, [
+    el('span', { class: 'today-banner-icon' }, [icon('calendar', 22)]),
+    el('div', { class: 'today-banner-text' }, [
+      el('span', {
+        class: 'today-banner-title',
+        text: `Prelims moved to ${prettyDate(summary.examDateISO)} — your plan has been updated`,
+      }),
+      el('span', {
+        class: 'today-banner-detail',
+        text: 'Notification 07/2026 (detailed) set the Screening Test to 24 Jan 2027. Your progress is unchanged.',
+      }),
+    ]),
+    button({
+      label: 'Got it',
+      variant: 'ghost',
+      onClick: () => {
+        dismissPrelimsDateNotice();
+        render(root);
+      },
+    }),
+  ]);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -470,7 +505,7 @@ function buildMainsToday(day: PlanDay | undefined): HTMLElement {
   return el('div', { class: 'card today-mains-card' }, body);
 }
 
-/** A small footnote clarifying 15 Nov = Prelims, Mains is a parallel track. @internal */
+/** A small footnote clarifying the exam date = Prelims, Mains is a parallel track. @internal */
 function buildMainsParallelNote(summary: PlanSummary): HTMLElement {
   return el('p', { class: 'section-lead today-track-note', attrs: { role: 'note' } }, [
     icon('calendar', 14),

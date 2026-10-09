@@ -43,9 +43,9 @@ describe('store', () => {
     expect(s.version).toBe(1);
     expect(s.settings.theme).toBe('light');
     expect(s.settings.fontScale).toBe(1);
-    // New planner settings: examDate defaults to 15 Nov 2026; planStartDate is
+    // New planner settings: examDate defaults to 24 Jan 2027; planStartDate is
     // captured as a valid ISO date ("today" on first run).
-    expect(s.settings.examDate).toBe('2026-11-15');
+    expect(s.settings.examDate).toBe('2027-01-24');
     expect(s.settings.planStartDate).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(s.progress).toEqual({});
     expect(s.sr).toEqual({});
@@ -59,12 +59,25 @@ describe('store', () => {
   it('defaults or repairs a malformed examDate, and get/set round-trip', () => {
     // A blob with a bad examDate falls back to the default.
     const repaired = importStateJSON('{"settings":{"examDate":"2026-13-40"}}');
-    expect(repaired.settings.examDate).toBe('2026-11-15');
+    expect(repaired.settings.examDate).toBe('2027-01-24');
     // set/get honour a valid ISO date and ignore an invalid one.
     setExamDate('2027-01-31');
     expect(getExamDate()).toBe('2027-01-31');
     setExamDate('not-a-date');
     expect(getExamDate()).toBe('2027-01-31'); // unchanged
+  });
+
+  it('migrates the retired old-default exam date (15 Nov 2026 → 24 Jan 2027) with a one-time notice', () => {
+    // A stored blob carrying the OLD default is auto-moved to the new Prelims date.
+    const migrated = importStateJSON('{"settings":{"examDate":"2026-11-15"}}');
+    expect(migrated.settings.examDate).toBe('2027-01-24');
+    expect(migrated.settings.prelimsDateMigrationNotice).toBe(true);
+  });
+
+  it('leaves a learner-set exam date (not the old default) untouched, no notice', () => {
+    const custom = importStateJSON('{"settings":{"examDate":"2027-03-01"}}');
+    expect(custom.settings.examDate).toBe('2027-03-01');
+    expect(custom.settings.prelimsDateMigrationNotice).not.toBe(true);
   });
 
   it('persists a mutation across a cache reset (round-trips localStorage)', () => {

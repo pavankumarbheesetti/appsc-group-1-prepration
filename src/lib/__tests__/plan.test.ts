@@ -1,10 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { planSubtopics, plannerProgress, currentPlan, mainsQuestionBank, mockSectionPools, pyqFrequency, learningSequence } from '../plan';
 import { getSubtopics } from '../../content/loader';
-import { buildPlan, COVERAGE_END_ISO, SPILL_MAX_ISO, MOCKS, FINAL_START_ISO, LIGHT_ISO, EXAM_ISO } from '../../engine/planner';
+import { buildPlan, computePlanAnchors, buildMockSchedule } from '../../engine/planner';
 import { PAPER_I, PAPER_II } from '../exam-pattern';
 import { buildPaperMock, mockSeriesLength } from '../../engine/mock';
-import { __resetForTests } from '../../state/store';
+import { __resetForTests, getPlanStartDate } from '../../state/store';
+import { addDaysISO } from '../dates';
+
+/** Derived anchors for the explicit short-window test harness (30 Sep → 15 Nov 2026). */
+const SHORT = computePlanAnchors('2026-11-15', '2026-09-30');
 
 /**
  * The plan bridge spans the WHOLE taxonomy but the PRELIMS plan scope is only
@@ -67,7 +71,9 @@ describe('plan bridge — full-taxonomy scope, prelims-driven plan', () => {
     const { summary } = currentPlan(new Date('2026-09-30T00:00:00'));
     expect(summary.rhythm).toBe(true);
     expect(summary.postPrelims).toBe(false);
-    expect(summary.coverageEndISO).toBe(COVERAGE_END_ISO);
+    expect(summary.coverageEndISO).toBe(
+      computePlanAnchors(summary.examDateISO, getPlanStartDate()).coverageEndISO,
+    );
     expect(summary.theoryTotal).toBe(88);
     expect(summary.aptitudeTotal).toBe(29);
     expect(summary.prelimsTotal).toBe(117);
@@ -194,7 +200,7 @@ describe('gap-fill — track placement of the new subtopics (rhythm)', () => {
   });
 
   it('feeds the post-prelims Mains kick-start from a bank that includes the POL Mains subtopics', () => {
-    const { days, summary } = currentPlan(new Date('2026-11-20T00:00:00'));
+    const { days, summary } = currentPlan(new Date('2027-01-30T00:00:00'));
     expect(summary.postPrelims).toBe(true);
     expect(days.every((d) => d.phase === 'mains')).toBe(true);
     const bank = mainsQuestionBank();
@@ -302,7 +308,7 @@ describe('rhythm scheduling over real content (240/day, fixed dates)', () => {
     const AP = /-ap-|andhra|ap-culture|ap-reorganisation|ap-economy/;
     const bandAById = new Map(planSubtopics().map((s) => [s.id, s.band] as const));
     for (const s of summary.spills) {
-      expect(s.lastDateISO <= SPILL_MAX_ISO).toBe(true);
+      expect(s.lastDateISO <= SHORT.spillDates[1]).toBe(true);
       for (const id of s.topicIds) {
         expect(AP.test(id)).toBe(false);
         expect(bandAById.get(id)).not.toBe('A');
@@ -325,11 +331,16 @@ describe('rhythm scheduling over real content (240/day, fixed dates)', () => {
     for (const id of apIds) expect(passById.get(id)).toBe('full');
   });
 
-  it('schedules exactly the 8 fixed mocks with per-paper series numbers', () => {
+  it('schedules the derived short-window mocks with per-paper series numbers', () => {
     const { summary } = realPlan();
-    expect(summary.mockList.length).toBe(8);
-    expect(summary.mockList.filter((m) => m.paper === 'paper1').map((m) => m.mockNumber).sort()).toEqual([1, 2, 3, 4]);
-    expect(summary.mockList.filter((m) => m.paper === 'paper2').map((m) => m.mockNumber).sort()).toEqual([1, 2, 3, 4]);
+    const expected = [...buildMockSchedule('2026-09-30', SHORT).keys()].filter(
+      (d) => d >= '2026-09-30' && d <= SHORT.examISO,
+    );
+    expect(summary.mockList.length).toBe(expected.length);
+    const nums = (p: 'paper1' | 'paper2'): number[] =>
+      summary.mockList.filter((m) => m.paper === p).map((m) => m.mockNumber).sort((a, b) => a - b);
+    expect(nums('paper1')).toEqual(nums('paper1').map((_, i) => i + 1));
+    expect(nums('paper2')).toEqual(nums('paper2').map((_, i) => i + 1));
   });
 
   it('completes the Mental Ability lane then runs practice sets', () => {
@@ -343,9 +354,9 @@ describe('rhythm scheduling over real content (240/day, fixed dates)', () => {
     for (const d of days) expect(d.plannedMinutes).toBeLessThanOrEqual(d.budgetMin);
     const spilled = new Set(summary.spills.flatMap((s) => s.topicIds));
     for (const d of days) {
-      if (d.dateISO <= COVERAGE_END_ISO) continue;
+      if (d.dateISO <= SHORT.coverageEndISO) continue;
       for (const id of [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]) {
-        expect(spilled.has(id) && d.dateISO <= SPILL_MAX_ISO).toBe(true);
+        expect(spilled.has(id) && d.dateISO <= SHORT.spillDates[1]).toBe(true);
       }
     }
     const examDay = days[days.length - 1]!;
@@ -563,7 +574,7 @@ describe('rhythm depth tiers + Paper-I balance (real content)', () => {
     // buffer still only holds QUICK topics within the Thu 5 / Fri 6 window.
     expect(summary.feasible).toBe(false);
     expect(summary.infeasibleFloorTopicIds.length).toBeGreaterThan(0);
-    for (const s of summary.spills) expect(s.lastDateISO <= SPILL_MAX_ISO).toBe(true);
+    for (const s of summary.spills) expect(s.lastDateISO <= SHORT.spillDates[1]).toBe(true);
   });
 });
 
@@ -932,7 +943,7 @@ describe('planner DEEPEN passes — final-window weak-area top-ups (real content
     expect(new Set(ids).size).toBe(ids.length); // exactly once each
     const fp = firstPassDates(days);
     const pass = passMap(days);
-    const mockDates = new Set(Object.keys(MOCKS));
+    const mockDates = new Set(buildMockSchedule('2026-09-30', SHORT).keys());
     for (const d of deep) {
       // A deepen lifts a QUICK below-floor topic up to its STANDARD floor.
       expect(d.fromTier).toBe('quick');
@@ -942,11 +953,11 @@ describe('planner DEEPEN passes — final-window weak-area top-ups (real content
       // Scheduled strictly AFTER its own first pass …
       expect(fp.get(d.id)! < d.dateISO).toBe(true);
       // … inside the final window 5–13 Nov …
-      expect(d.dateISO >= FINAL_START_ISO && d.dateISO <= '2026-11-13').toBe(true);
+      expect(d.dateISO >= SHORT.finalStartISO && d.dateISO <= addDaysISO(SHORT.examISO, -2)).toBe(true);
       // … and never on a mock / light / exam day.
       expect(mockDates.has(d.dateISO)).toBe(false);
-      expect(d.dateISO).not.toBe(LIGHT_ISO);
-      expect(d.dateISO).not.toBe(EXAM_ISO);
+      expect(d.dateISO).not.toBe(SHORT.lightISO);
+      expect(d.dateISO).not.toBe(SHORT.examISO);
     }
   });
 

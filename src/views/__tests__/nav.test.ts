@@ -68,7 +68,7 @@ describe('app shell nav', () => {
     expect(location.hash).toBe('#/planner');
     const dateInput = root.querySelector<HTMLInputElement>('#view input[type="date"]');
     expect(dateInput).not.toBeNull();
-    expect(dateInput!.value).toBe('2026-11-15');
+    expect(dateInput!.value).toBe('2027-01-24');
   });
 
   it('routes Progress to #/progress and renders the analytics view', () => {

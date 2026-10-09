@@ -12,9 +12,11 @@ Group‑1 Prelims** (Papers I & II), plus learn to **write Mains** and clear the
 languages (English + Telugu from scratch)**. Everything serves that goal: study material →
 practice (sub‑topic + full mocks, exam‑standard) → memory (active recall) → planner to the exam.
 
-Exam date lives in Settings (default **15 Nov 2026**, treated as the **Prelims** date; Mains is a
-lighter parallel track after Prelims). NOTE: the exact prelims date is by convention, not an
-officially fetched date (verified: notification 15 Sep 2026; applications 6–27 Oct 2026).
+Exam date lives in Settings (default **24 Jan 2027**, treated as the **Prelims / Screening Test**
+date; Mains is a lighter parallel track after Prelims). NOTE: the Screening date is from the
+**DETAILED Notification 07/2026 (dated 06/10/2026): Screening Test 24 Jan 2027, 166 vacancies**
+(the brief notification's convention-date of 15 Nov 2026 is retired; a stored old-default exam date
+auto-migrates on load). Applications 6–27 Oct 2026.
 
 ---
 
@@ -106,15 +108,26 @@ notebook + weak areas) · Progress (real analytics) · Mains (writing‑skill tr
 
 ## 8a. Planner rules — FIXED WEEKLY RHYTHM, PRELIMS‑FIRST (LOCKED)
 The planner (`src/engine/planner.ts`, pure/deterministic) runs a FIXED WEEKLY RHYTHM to Prelims
-(default 15 Nov 2026), scaling every block to the daily budget (Settings, default 240) and the Sunday budget
-(Settings "Sunday study time", default 360). Each day's minutes are ≤ that day's budget.
-- **Weekdays Mon–Fri (to Wed 4 Nov):** 60 Mental Ability (next MENT sequence topic; after all MENT
+(default **24 Jan 2027**), scaling every block to the daily budget (Settings, default 240) and the Sunday
+budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ that day's budget.
+- **DERIVED CALENDAR — no hardcoded dates (LOCKED):** every phase anchor is computed from
+  `settings.examDate` (+ plan start / today) by `computePlanAnchors`, so changing the exam date just works —
+  there are NO hardcoded calendar dates in the planner. **Exam day = examDate (empty); light day = exam−1
+  (≤90, no mock); FINAL WINDOW = the last 21 days before the exam (exam−21 … exam−2), no new topics;
+  REVISION CYCLE = ~4 weeks immediately before the final window; COVERAGE END = final‑window start − the
+  revision cycle (28 d).** With the detailed‑notification 24 Jan 2027 date, re‑planning from 9 Oct 2026
+  gives: first pass **9 Oct → ~6 Dec 2026**, revision cycle **~7 Dec 2026 → ~2 Jan 2027**, final window
+  **3 Jan → 22 Jan 2027**, light **23 Jan**, exam **24 Jan**. SHORT‑WINDOW FALLBACK (exam < 8 weeks away):
+  no revision cycle and a compressed 10‑day final window — the old pre‑2027 behaviour.
+- **Weekdays Mon–Fri (coverage window):** 60 Mental Ability (next MENT sequence topic; after all MENT
   first‑passed → mixed practice weighted to mistakes) · 135 SUBJECT (Mon History, Tue Polity, Wed Economy,
   Thu Geography, Fri Science&Tech; Tue/Thu = 120 + 15 Telugu) · 20 Revise (due cards + mistakes + topics
   first‑passed ~3/~10 days ago; AP/band‑A also ~21) · 25 Current Affairs (Mon/Wed/Fri AP, Tue national,
   Thu international; ~15 new Qs + next notes).
-- **Saturday:** full mock 120 (3 Oct P2, 10 Oct P1, 17 Oct P2, 24 Oct P1, 31 Oct P2, 7 Nov P1;
-  non‑repeating series #) + review wrong 60 + weakest‑area 60.
+- **Saturday:** full mock 120 (one full mock every Saturday from the first Saturday on/after plan start
+  until the final window, alternating **Paper‑II / Paper‑I starting with Paper‑II**, non‑repeating series #;
+  when a paper's series exceeds the pool‑supported `mockSeriesLength` the section WRAPS and is flagged
+  `wrapped` — the UI surfaces the reuse — or a sectional mock is used) + review wrong 60 + weakest‑area 60.
 - **Sunday (SETTINGS "Sunday study time", default 360 = 6 h; presets 4/5/6/7 h + custom):** TWO study
   blocks — **Modern History** (the H‑modern stream, 120–240 min) + **Polity** (Polity's SECOND weekly slot,
   next Polity topics in sequence, 60–120 min) — then 60 weekly revision + 45 CA round‑up + 15 Telugu. The two
@@ -148,8 +161,8 @@ The planner (`src/engine/planner.ts`, pure/deterministic) runs a FIXED WEEKLY RH
   its OWN order; cross‑stream prereqs not required); a donated/pooled slot feeds whichever stream has the
   larger remaining backlog. This keeps the high‑yield Modern + AP topics from landing last.
 - **Depth allocation — OWN CAPACITY, then a shared POOL (deterministic):**
-  1. **Own capacity `C_s`** = the sum of a subject's OWN weekday subject‑block minutes from 30 Sep → 4 Nov
-     (HIST Mon, POL Tue, ECON Wed, GEO Thu, SCI Fri). Sunday adds two dedicated study blocks — **Modern
+  1. **Own capacity `C_s`** = the sum of a subject's OWN weekday subject‑block minutes over the coverage
+     window (HIST Mon, POL Tue, ECON Wed, GEO Thu, SCI Fri). Sunday adds two dedicated study blocks — **Modern
      History (H‑modern)** and **Polity** — on top of those weekday slots.
   2. **Own fill:** start every topic at QUICK, then upgrade WITHIN the subject in depth priority
      (AP → band A → PYQ desc → examPoints desc) — AP to FULL (always), then every floor topic to STANDARD,
@@ -180,7 +193,7 @@ The planner (`src/engine/planner.ts`, pure/deterministic) runs a FIXED WEEKLY RH
   because History overflows); (b) **densify‑to‑fit** — relax the lowest‑priority non‑AP/non‑band‑A topic to
   QUICK IN‑WINDOW (a QUICK block holds 4 vs 3) ONLY when that actually seats more topics (so spare Sunday
   capacity is spent on depth, not needlessly flattened to QUICK); then (c) **defer‑to‑fit** — move the
-  lowest‑priority non‑AP/non‑band‑A QUICK topic into the **Thu 5 / Fri 6 buffer** (AP/band‑A are always
+  lowest‑priority non‑AP/non‑band‑A QUICK topic into the **post‑coverage spill buffer** (AP/band‑A are always
   placed IN‑WINDOW). The buffer is **QUICK‑only AND block‑legal**: a spill block never claims fewer minutes
   than the topics it teaches (≤ 3 new topics, 4 if all QUICK), and a buffer day never plans past its budget —
   the old buffer crammed the whole reported tail into one day with 60‑min blocks holding 75 min of QUICK.
@@ -196,16 +209,22 @@ The planner (`src/engine/planner.ts`, pure/deterministic) runs a FIXED WEEKLY RH
   when the floor is still short AFTER deepening (empty once feasible — no "move the exam date" noise); it is
   computed by RE‑RUNNING the fit over **Sunday budgets 360 → 600 in 30‑min steps** and reporting the MINIMUM
   extra Sunday time that meets the floor, else falling back to moving the exam date. A short QUICK‑only tail
-  in the Thu 5 / Fri 6 buffer is by design.
+  in the post‑coverage spill buffer is by design.
 - **Report (per subject):** total, FULL/STANDARD/QUICK counts, minutes, last first‑pass date; the
   DEPTH‑FLOOR topics forced **below STANDARD** (`summary.infeasibleFloorTopicIds` — few, and never AP;
   History carries the bulk as it holds 47 of the 88 Paper‑I subtopics); and per‑subject Paper‑I
-  minutes/shares (`summary.paperOne{Minutes,SharePct}BySubject`). A genuine tail may spill to Thu 5 – Fri 6
-  Nov only (reported, ≤ 3 new topics per spill block), never later.
-- **Final window Thu 5–Sat 14 Nov:** no new topics; daily 60 MENT practice + 120 targeted revision
-  (weakest by accuracy; AP + band A first) + 45 CA/AP refresh + 15 Telugu (Tue/Thu/Sun); mocks Tue 10 Nov
-  P2 & Thu 12 Nov P1 (120/60/60). Sat 14 Nov LIGHT (≤90, AP + CA key facts + formula sheet, no mock).
-  Sun 15 Nov EXAM: no tasks.
+  minutes/shares (`summary.paperOne{Minutes,SharePct}BySubject`). A genuine tail may spill into the
+  post‑coverage spill buffer (the first two days after coverage end) only (reported, ≤ 3 new topics per
+  spill block), never later.
+- **Revision cycle (long window only, ~4 weeks before the final window):** the SAME weekly rhythm, but the
+  subject block REVISITS already‑first‑passed topics in sequence order (weakest‑first, ~25 min each: notes
+  skim + cards + mistakes + ~10 Qs) instead of teaching new ones — NO new first passes. MENT practice, Revise,
+  CA, Telugu and the Saturday mock keep running; Sunday revisits Modern History + Polity. `segment` =
+  `'revision'`; `summary.revisionDays` reports its length (0 in the short‑window fallback).
+- **Final window (last 21 days, exam−21 … exam−2):** no new topics; daily 60 MENT practice + 120 targeted
+  revision (weakest by accuracy; AP + band A first) + 45 CA/AP refresh + 15 Telugu (Tue/Thu/Sun); full mocks
+  on **3 days a week (Tue/Thu/Sat), alternating Paper‑I / Paper‑II** (120/60/60). The light day (exam−1) is
+  LIGHT (≤90, AP + CA key facts + formula sheet, no mock). The exam day is empty.
 - **DEEPEN passes — close the weak areas (LOCKED):** every topic left BELOW its floor after coverage
   (`summary.infeasibleFloorTopicIds`, all QUICK, never AP/band‑A) gets ONE **deepen** top‑up scheduled into a
   final‑window `targeted-revision` block that brings it UP to its floor tier. A deepen is the EXTRA time only:
@@ -213,7 +232,7 @@ The planner (`src/engine/planner.ts`, pure/deterministic) runs a FIXED WEEKLY RH
   20 min**. It is a `PlanTopic` with a fourth `pass` value **`deepen`** living inside the targeted‑revision
   block — NOT a first pass, so each topic is still first‑passed exactly once (deepen items are excluded from
   the day's theory/aptitude first‑pass lists). Scheduling (deterministic): fill the targeted‑revision blocks
-  **from the first final‑window day onward** (after the Thu 5 / Fri 6 QUICK spill first‑passes — a topic's
+  **from the first final‑window day onward** (after any post‑coverage spill first‑passes — a topic's
   deepen must come AFTER its own first pass), priority **AP → band A → PYQ desc → examPoints desc**; each
   block still obeys **Σ deepen minutes ≤ block minutes, ≤ 4 deepen topics per block, day ≤ budget**, and the
   remaining targeted‑revision time stays generic weakest‑first revision. A deepened topic counts as **MEETING

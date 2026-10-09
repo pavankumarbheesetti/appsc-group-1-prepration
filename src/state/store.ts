@@ -15,7 +15,7 @@
  */
 import type { NotebookEntry } from '../engine/notebook';
 import type { SrCard } from '../engine/spaced-repetition';
-import { DEFAULT_EXAM_DATE, DEFAULT_STUDY_MINUTES, DEFAULT_SUNDAY_STUDY_MINUTES } from '../config';
+import { DEFAULT_EXAM_DATE, DEFAULT_STUDY_MINUTES, DEFAULT_SUNDAY_STUDY_MINUTES, OLD_DEFAULT_EXAM_DATE } from '../config';
 import { isValidISODate, todayISO } from '../lib/dates';
 import { z } from 'zod';
 
@@ -92,6 +92,15 @@ export interface Settings {
    * carried over; otherwise the Sunday default applies.
    */
   sundayStudyMinutes: number;
+  /**
+   * One-time Today notice flag: set `true` by the load-time migration when a
+   * stored exam date equal to the retired old default ({@link
+   * OLD_DEFAULT_EXAM_DATE}, 15 Nov 2026) was auto-moved to the detailed-
+   * notification Prelims date ({@link DEFAULT_EXAM_DATE}, 24 Jan 2027). Today
+   * shows the banner once, then {@link dismissPrelimsDateNotice} clears it.
+   * Absent/false means no notice is pending.
+   */
+  prelimsDateMigrationNotice?: boolean;
 }
 
 /** The complete persisted application state. */
@@ -274,12 +283,12 @@ function normalize(input: unknown): AppState {
         typeof settings.fontScale === 'number' && settings.fontScale > 0
           ? settings.fontScale
           : 1,
-      // Backward-compatible: an old blob without these keys (or with a
-      // malformed date) falls back to the sensible default rather than failing.
-      examDate:
-        typeof settings.examDate === 'string' && isValidISODate(settings.examDate)
-          ? settings.examDate
-          : base.settings.examDate,
+      // Backward-compatible + Notification 07/2026 MIGRATION: a stored exam
+      // date equal to the retired OLD default (15 Nov 2026) is auto-moved to the
+      // new detailed-notification Prelims date (24 Jan 2027) and a one-time Today
+      // notice is flagged. Any OTHER stored date is a learner choice and is left
+      // untouched (a malformed date falls back to the new default).
+      examDate: migrateExamDate(settings),
       planStartDate:
         typeof settings.planStartDate === 'string' &&
         isValidISODate(settings.planStartDate)
@@ -297,6 +306,7 @@ function normalize(input: unknown): AppState {
       //  - else the sensible Sunday default (extra time for Polity + Modern
       //    History).
       sundayStudyMinutes: migrateSundayMinutes(settings),
+      prelimsDateMigrationNotice: migratePrelimsNotice(settings),
     },
     progress: isRecord(obj.progress) ? (obj.progress as AppState['progress']) : {},
     sr: isRecord(obj.sr) ? (obj.sr as AppState['sr']) : {},
@@ -311,6 +321,31 @@ function normalize(input: unknown): AppState {
 /** True for a plain, non-null, non-array object. @internal */
 function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
+
+/**
+ * Resolve the persisted exam date, applying the Notification 07/2026 migration:
+ * a stored date equal to the retired OLD default ({@link OLD_DEFAULT_EXAM_DATE},
+ * 15 Nov 2026) is moved to the new default ({@link DEFAULT_EXAM_DATE}, 24 Jan
+ * 2027); any other valid date is kept; a malformed/absent date falls back to the
+ * new default. @internal
+ */
+function migrateExamDate(settings: Partial<Settings>): string {
+  const stored = settings.examDate;
+  if (stored === OLD_DEFAULT_EXAM_DATE) return DEFAULT_EXAM_DATE;
+  if (typeof stored === 'string' && isValidISODate(stored)) return stored;
+  return DEFAULT_EXAM_DATE;
+}
+
+/**
+ * Whether the one-time "Prelims moved to 24 Jan 2027" Today notice is pending:
+ * `true` when the stored exam date is the retired old default (so this load
+ * migrates it), else the stored flag (so a dismissed notice stays dismissed).
+ * A fresh install (new default) never shows it. @internal
+ */
+function migratePrelimsNotice(settings: Partial<Settings>): boolean {
+  if (settings.examDate === OLD_DEFAULT_EXAM_DATE) return true;
+  return (settings as { prelimsDateMigrationNotice?: unknown }).prelimsDateMigrationNotice === true;
 }
 
 /**
@@ -374,7 +409,14 @@ export function loadState(): AppState {
     return current;
   }
   try {
-    current = normalize(JSON.parse(raw));
+    const parsed: unknown = JSON.parse(raw);
+    current = normalize(parsed);
+    // Persist the Notification 07/2026 exam-date migration ONCE so it does not
+    // re-fire on every load. Write directly (no listener churn at load time).
+    const storedExam = (parsed as { settings?: { examDate?: unknown } })?.settings?.examDate;
+    if (storedExam === OLD_DEFAULT_EXAM_DATE && current.settings.examDate === DEFAULT_EXAM_DATE) {
+      writeRaw(JSON.stringify(current));
+    }
   } catch {
     // Corrupt JSON — start fresh rather than crash.
     current = defaultState();
@@ -431,6 +473,21 @@ export function setExamDate(iso: string): AppState {
 /** The date the plan started (ISO `YYYY-MM-DD`). */
 export function getPlanStartDate(): string {
   return loadState().settings.planStartDate;
+}
+
+/**
+ * Whether the one-time "Prelims moved to 24 Jan 2027" notice is pending on
+ * Today — set by the load-time Notification 07/2026 exam-date migration.
+ */
+export function getPrelimsDateMigrationNotice(): boolean {
+  return loadState().settings.prelimsDateMigrationNotice === true;
+}
+
+/** Dismiss the one-time Prelims-date-moved notice (persists so it stays gone). */
+export function dismissPrelimsDateNotice(): AppState {
+  return updateState((s) => {
+    s.settings.prelimsDateMigrationNotice = false;
+  });
 }
 
 /** The learner's DAILY study-time budget in minutes. */

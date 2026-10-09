@@ -91,9 +91,10 @@ export type PlanPhase = 'learn' | 'revise' | 'mock' | 'mains';
 
 /**
  * The higher-level study PHASE a day belongs to. In the rhythm this is
- * `coverage` (weekly rhythm to the coverage-end date), `final` (the revision
- * window Thu 5 – Sat 14 Nov) or `post-prelims` (after the exam). `revision` is
- * retained in the union for backward compatibility with the view/type surface.
+ * `coverage` (first-pass weekly rhythm to the coverage-end date), `revision`
+ * (the ~4-week sequence-order revision cycle, long window only), `final` (the
+ * 21-day final window ending the day before the exam) or `post-prelims` (after
+ * the exam). All phase boundaries are DERIVED from the exam date.
  */
 export type PlanSegment = 'coverage' | 'revision' | 'final' | 'post-prelims';
 
@@ -320,9 +321,9 @@ export interface PlanSummary {
 
   /** Coverage-window day count (to the coverage-end date). */
   coverageDays: number;
-  /** Retained for the view surface (always 0 in the rhythm). */
+  /** Revision-cycle day count (0 in the short-window fallback). */
   revisionDays: number;
-  /** Final revision-window day count (Thu 5 – Sun 15 Nov). */
+  /** Final-window day count (the 21-day window + light + exam day). */
   finalDays: number;
   /** How many full-length mock sittings the plan schedules. */
   mockSittings: number;
@@ -420,7 +421,7 @@ export interface PlanSummary {
   reallocations: Array<{ dateISO: string; fromSubject: string; toSubject: string }>;
   /** The coverage-end date after which no new topics are introduced. */
   coverageEndISO: string;
-  /** Any subjects that spilled new topics into the Thu 5 – Fri 6 Nov window. */
+  /** Any subjects that spilled new topics into the post-coverage spill buffer. */
   spills: Array<{ subject: string; topicIds: string[]; lastDateISO: string }>;
 
   /**
@@ -571,31 +572,183 @@ export const TIME = {
 } as const;
 
 /* -------------------------------------------------------------------------- */
-/* Rhythm calendar constants (this exam window)                                */
+/* Rhythm calendar — DERIVED from the exam date (no hardcoded calendar)        */
 /* -------------------------------------------------------------------------- */
 
-/** No NEW topics are introduced after this date (Wed). */
-export const COVERAGE_END_ISO = '2026-11-04';
-/** The final revision window begins here (Thu). */
-export const FINAL_START_ISO = '2026-11-05';
-/** The LIGHT day before the exam (Sat, ≤ 90 min, no mock). */
-export const LIGHT_ISO = '2026-11-14';
-/** The EXAM day (Sun) — no tasks. */
-export const EXAM_ISO = '2026-11-15';
-/** A subject may spill new topics only through this date (Fri). */
-export const SPILL_MAX_ISO = '2026-11-06';
+/**
+ * The FINAL revision window length in days: the last 21 days before the exam
+ * (exam−21 … exam−2), during which NO new topics are introduced — only targeted
+ * weakest-first revision, AP/CA refresh, deepen top-ups and full mocks (3 days a
+ * week). The light day (exam−1) and the empty exam day sit just after it.
+ */
+export const FINAL_WINDOW_DAYS = 21;
 
-/** The fixed mock schedule: date → paper. Series numbers derived in {@link buildRhythmPlan}. */
-export const MOCKS: Readonly<Record<string, PaperId>> = {
-  '2026-10-03': 'paper2',
-  '2026-10-10': 'paper1',
-  '2026-10-17': 'paper2',
-  '2026-10-24': 'paper1',
-  '2026-10-31': 'paper2',
-  '2026-11-07': 'paper1',
-  '2026-11-10': 'paper2',
-  '2026-11-12': 'paper1',
-};
+/**
+ * The REVISION CYCLE length in days — the ~4-week sequence-order revision pass
+ * that sits between the first-pass coverage window and the final window. Each
+ * subject block revisits its topics in sequence order (weakest-first) at ~25 min
+ * each. COVERAGE END = the final-window start minus this cycle.
+ */
+export const REVISION_CYCLE_DAYS = 28;
+
+/**
+ * SHORT-WINDOW threshold (weeks). When the plan start → exam span is shorter
+ * than this, the planner drops the revision cycle and compresses the final
+ * window to {@link SHORT_FINAL_WINDOW_DAYS} — the OLD pre-2027 behaviour, so a
+ * tight re-plan still produces a sane schedule.
+ */
+export const SHORT_WINDOW_WEEKS = 8;
+
+/** The compressed final-window length used by the short-window fallback. */
+export const SHORT_FINAL_WINDOW_DAYS = 10;
+
+/** The phase anchors the whole rhythm plan derives from the exam date. */
+export interface PlanAnchors {
+  /** The EXAM day (empty). */
+  examISO: string;
+  /** The LIGHT day — exam − 1 (≤ 90 min, no mock). */
+  lightISO: string;
+  /** First day of the final revision window — exam − {@link FINAL_WINDOW_DAYS}. */
+  finalStartISO: string;
+  /** First day of the revision cycle, or `null` in the short-window fallback. */
+  revisionStartISO: string | null;
+  /** Last COVERAGE day — no NEW topics are introduced after it. */
+  coverageEndISO: string;
+  /** The two days a genuine coverage tail may spill into (last resort). */
+  spillDates: readonly [string, string];
+  /** True when the compressed short-window fallback is in effect. */
+  shortWindow: boolean;
+}
+
+/**
+ * Compute every rhythm phase anchor from the exam date + plan start — the ONE
+ * place the calendar is derived, so changing `settings.examDate` just works
+ * (there are NO hardcoded calendar dates anywhere in the planner). Pure.
+ *
+ *   coverage (first pass)   …  revisionStart − 1
+ *   revision cycle          revisionStart … finalStart − 1   (long window only)
+ *   final window (21 days)  finalStart (exam−21) … exam − 2
+ *   light                   exam − 1
+ *   exam                    exam
+ *
+ * Short window (< {@link SHORT_WINDOW_WEEKS} weeks to the exam): no revision
+ * cycle and a compressed {@link SHORT_FINAL_WINDOW_DAYS}-day final window.
+ */
+export function computePlanAnchors(examISO: string, planStartISO: string): PlanAnchors {
+  const lightISO = addDaysISO(examISO, -1);
+  const spanDays = inclusiveDaysISO(planStartISO, examISO);
+  const shortWindow = spanDays < SHORT_WINDOW_WEEKS * 7;
+
+  if (shortWindow) {
+    const finalStartISO = addDaysISO(examISO, -SHORT_FINAL_WINDOW_DAYS);
+    const coverageEndISO = addDaysISO(finalStartISO, -1);
+    return {
+      examISO,
+      lightISO,
+      finalStartISO,
+      revisionStartISO: null,
+      coverageEndISO,
+      spillDates: [finalStartISO, addDaysISO(finalStartISO, 1)],
+      shortWindow: true,
+    };
+  }
+
+  const finalStartISO = addDaysISO(examISO, -FINAL_WINDOW_DAYS);
+  const coverageEndISO = addDaysISO(finalStartISO, -REVISION_CYCLE_DAYS);
+  const revisionStartISO = addDaysISO(coverageEndISO, 1);
+  return {
+    examISO,
+    lightISO,
+    finalStartISO,
+    revisionStartISO,
+    coverageEndISO,
+    // Last resort only: a genuine coverage tail spills into the first two
+    // revision-cycle days (it should not happen with the long window).
+    spillDates: [revisionStartISO, addDaysISO(revisionStartISO, 1)],
+    shortWindow: false,
+  };
+}
+
+/** The rhythm region a date falls in, given the derived {@link PlanAnchors}. */
+export function regionForISO(dateISO: string, a: PlanAnchors): DaySlotRegion {
+  if (dateISO >= a.examISO) return 'exam';
+  if (dateISO === a.lightISO) return 'light';
+  if (dateISO >= a.finalStartISO) return 'final';
+  if (a.revisionStartISO !== null && dateISO >= a.revisionStartISO) return 'revision';
+  return 'coverage';
+}
+
+/** The ISO date of the first `dow` (0=Sun … 6=Sat) on or after `fromISO`. @internal */
+function firstDowOnOrAfter(fromISO: string, dow: number): string {
+  let d = fromISO;
+  for (let i = 0; i < 7; i += 1) {
+    if (dayOfWeekISO(d) === dow) return d;
+    d = addDaysISO(d, 1);
+  }
+  return fromISO;
+}
+
+/** A scheduled mock: its paper + 1-based per-paper series number. */
+export interface ScheduledMock {
+  paper: PaperId;
+  num: number;
+}
+
+/**
+ * Build the full mock schedule (date → paper + per-paper series number) DERIVED
+ * from the plan start + anchors — never a hardcoded calendar. Pure.
+ *
+ *  - COVERAGE + REVISION: one full mock every Saturday from the first Saturday
+ *    on/after plan start until the final window, alternating Paper-II / Paper-I
+ *    starting with Paper-II.
+ *  - FINAL WINDOW: full mocks on 3 days a week (Tue / Thu / Sat), alternating
+ *    Paper-I / Paper-II. (Short window: weekly Saturdays only — the old shape.)
+ *
+ * Each paper draws the NON-REPEATING series (see `engine/mock.ts`): mock N takes
+ * the Nth disjoint window of a stable shuffle. When N exceeds the pool-supported
+ * `mockSeriesLength`, that section WRAPS and is flagged `wrapped` (the UI
+ * surfaces the reuse); a sectional mock is the alternative. The planner only
+ * assigns the numbers — it does not know the pool sizes.
+ */
+export function buildMockSchedule(
+  planStartISO: string,
+  a: PlanAnchors,
+): Map<string, ScheduledMock> {
+  const paperByDate = new Map<string, PaperId>();
+  // 1) Saturday series across coverage + revision (strictly before the final window).
+  let alt = 0;
+  for (let d = firstDowOnOrAfter(planStartISO, 6); d < a.finalStartISO; d = addDaysISO(d, 7)) {
+    paperByDate.set(d, alt % 2 === 0 ? 'paper2' : 'paper1'); // start Paper-II
+    alt += 1;
+  }
+  // 2) Final-window mocks.
+  if (a.shortWindow) {
+    // Old compressed shape: weekly Saturdays inside the (short) final window.
+    for (let d = firstDowOnOrAfter(a.finalStartISO, 6); d < a.lightISO; d = addDaysISO(d, 7)) {
+      paperByDate.set(d, alt % 2 === 0 ? 'paper2' : 'paper1');
+      alt += 1;
+    }
+  } else {
+    // 3 mocks a week on Tue/Thu/Sat, alternating Paper-I / Paper-II.
+    let fAlt = 0;
+    for (let d = a.finalStartISO; d < a.lightISO; d = addDaysISO(d, 1)) {
+      const dow = dayOfWeekISO(d);
+      if (dow === 2 || dow === 4 || dow === 6) {
+        paperByDate.set(d, fAlt % 2 === 0 ? 'paper1' : 'paper2'); // start Paper-I
+        fAlt += 1;
+      }
+    }
+  }
+  // 3) Assign per-paper series numbers ascending by date (stable, deterministic).
+  const out = new Map<string, ScheduledMock>();
+  const counter: Record<PaperId, number> = { paper1: 0, paper2: 0 };
+  for (const dateISO of [...paperByDate.keys()].sort()) {
+    const paper = paperByDate.get(dateISO)!;
+    counter[paper] += 1;
+    out.set(dateISO, { paper, num: counter[paper] });
+  }
+  return out;
+}
 
 /** Weekday (dow 1..5) → the day's SUBJECT block. */
 const SUBJECT_BY_DOW: Readonly<Record<number, string>> = {
@@ -851,12 +1004,15 @@ interface RhythmContext {
   postMainsPerDay: number;
 }
 
+/** The rhythm region a day falls in (coverage → revision → final → light → exam). */
+export type DaySlotRegion = 'coverage' | 'revision' | 'final' | 'light' | 'exam';
+
 /** A single day-slot in the rhythm window (before block materialisation). @internal */
 interface DaySlot {
   dateISO: string;
   dayIndex: number;
   dow: number;
-  region: 'coverage' | 'final' | 'light' | 'exam';
+  region: DaySlotRegion;
   isMock: boolean;
   mockPaper: PaperId | null;
   mockNumber: number;
@@ -909,17 +1065,15 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     (seqOrder[code] ?? []).forEach((id, i) => seqIndex.set(id, i));
   }
 
-  // ---- Enumerate the day-slots todayISO → EXAM_ISO ------------------------
+  // ---- Enumerate the day-slots todayISO → EXAM day -----------------------
+  // Every phase anchor is DERIVED from the exam date + plan start (no hardcoded
+  // calendar), so a future exam-date change just works.
+  const anchors = computePlanAnchors(examDateISO, opts.startISO);
+  const regionFor = (dateISO: string): DaySlotRegion => regionForISO(dateISO, anchors);
   const lastISO = examDateISO;
   const totalDays = inclusiveDaysISO(todayISO, lastISO);
-  const mockCounter: Record<PaperId, number> = { paper1: 0, paper2: 0 };
-  // Assign per-paper mock numbers over the FIXED schedule (ascending by date).
-  const mockNumberByDate = new Map<string, { paper: PaperId; num: number }>();
-  for (const dateISO of Object.keys(MOCKS).sort()) {
-    const paper = MOCKS[dateISO]!;
-    mockCounter[paper] += 1;
-    mockNumberByDate.set(dateISO, { paper, num: mockCounter[paper] });
-  }
+  // The full mock schedule, derived from the plan start + anchors.
+  const mockNumberByDate = buildMockSchedule(opts.startISO, anchors);
 
   const slots: DaySlot[] = [];
   for (let di = 0; di < totalDays; di += 1) {
@@ -1587,7 +1741,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   // REPORTED; the plan is flagged not-feasible with the shortfall + options.
   const spills: Array<{ subject: string; topicIds: string[]; lastDateISO: string }> = [];
   const spillPlacements: Placement[] = [];
-  const spillDates = [FINAL_START_ISO, SPILL_MAX_ISO]; // Thu 5, Fri 6 Nov ONLY
+  const spillDates = [...anchors.spillDates]; // first two post-coverage days ONLY
   const leftoverBySubject = new Map<string, string[]>();
   for (const id of spillIdSet) {
     const code = byId.get(id)?.subjectCode ?? '';
@@ -1862,6 +2016,67 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       continue;
     }
 
+    if (slot.region === 'revision') {
+      // REVISION CYCLE (long window only, ~4 weeks between coverage and the
+      // final window): the SAME weekly rhythm, but the subject block REVISITS
+      // already-first-passed topics in sequence order (weakest-first, ~25 min
+      // each: notes skim + cards + mistakes + 10 Qs) instead of teaching new
+      // ones — so NO new topics are first-passed here (coverage is done).
+      day.phase = 'revise';
+      // Weakest-first slice of a subject's topics for the day's revision list.
+      const revisitPick = (code: string, n: number): string[] =>
+        [...(subjectLists[code] ?? [])]
+          .sort((a, b) => ctx.masteryOf(a.id) - ctx.masteryOf(b.id))
+          .slice(0, n)
+          .map((s) => s.id);
+
+      if (slot.dow === 0) {
+        // SUNDAY revision: Modern History + Polity revision blocks, then the
+        // fixed weekly revision + CA round-up + Telugu.
+        const blocks: PlanBlock[] = [
+          { kind: 'targeted-revision', label: 'Modern History revision — sequence order, weakest first', minutes: Math.max(1, sunHmodCap(scale)), subjectCode: 'HIST' },
+        ];
+        if (sunPolCap(scale) > 0) {
+          blocks.push({ kind: 'targeted-revision', label: 'Polity revision — sequence order, weakest first', minutes: Math.max(1, sunPolCap(scale)), subjectCode: 'POL' });
+        }
+        blocks.push({ kind: 'weekly-revision', label: 'Weekly revision (mistakes + flashcards)', minutes: 60 });
+        blocks.push({ kind: 'ca-roundup', label: 'Current Affairs weekly round-up', minutes: 45, caSubtopicId: 'ca-national' });
+        blocks.push({ kind: 'telugu', label: 'Telugu script practice', minutes: 15 });
+        day.blocks = blocks;
+        day.teluguBlock = true;
+        day.weeklyRevision = true;
+        day.caRevision = true;
+        day.reviseSubtopicIds = [...revisitPick('HIST', 4), ...revisitPick('POL', 3)];
+        finaliseBlocks(day, slot.budgetMin);
+        days.push(day);
+        continue;
+      }
+
+      // WEEKDAY revision (Mon–Fri): MENT practice + the owner subject's revision
+      // block + optional Telugu + Revise + Current Affairs.
+      const covered = coveredMentUpTo(slot.dateISO);
+      const scope = practiceScope(covered.length > 0 ? covered : mentList.map((s) => s.id));
+      const subj = SUBJECT_BY_DOW[slot.dow]!;
+      const subjBaseMin = SUBJECT_BASE_MIN[slot.dow]!;
+      const blocks: PlanBlock[] = [
+        { kind: 'ment-practice', label: 'Mental Ability practice', minutes: sm(60), practiceSubtopicIds: scope, topics: [practiceTopic(scope)] },
+        { kind: 'targeted-revision', label: `${SUBJECT_LABEL[subj] ?? subj} revision — sequence order, weakest first`, minutes: sm(subjBaseMin), subjectCode: subj },
+      ];
+      if (slot.dow === 2 || slot.dow === 4) {
+        blocks.push({ kind: 'telugu', label: 'Telugu script practice', minutes: sm(15) });
+        day.teluguBlock = true;
+      }
+      blocks.push({ kind: 'revise', label: 'Revise (due cards + mistakes + spaced recall)', minutes: sm(20) });
+      const caId = CA_ROTATION[slot.dow]!;
+      blocks.push({ kind: 'ca', label: CA_LABEL[caId] ?? 'Current Affairs', minutes: sm(25), caSubtopicId: caId });
+      day.caRevision = true;
+      day.blocks = blocks;
+      day.reviseSubtopicIds = revisitPick(subj, 6);
+      finaliseBlocks(day, slot.budgetMin);
+      days.push(day);
+      continue;
+    }
+
     if (slot.region === 'final') {
       // FINAL revision window (non-mock): MENT practice + targeted revision + CA refresh + Telugu.
       const covered = coveredMentUpTo(slot.dateISO);
@@ -1870,7 +2085,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       blocks.push({ kind: 'ment-practice', label: 'Mental Ability practice', minutes: sm(60), practiceSubtopicIds: scope, topics: [practiceTopic(scope)] });
       // Coverage SPILL (Thu 5 / Fri 6 Nov only): any subject topic that could not
       // be placed by the coverage-end date is taught here as a subject block.
-      const spilledHere = (placedByDate.get(slot.dateISO) ?? []).filter(() => slot.dateISO <= SPILL_MAX_ISO);
+      const spilledHere = (placedByDate.get(slot.dateISO) ?? []).filter(() => slot.dateISO <= anchors.spillDates[1]);
       const spillTopics = spilledHere.map((p) => toTopic(p.id, p.pass));
       if (spillTopics.length > 0) {
         // Group the day's spill by subject and emit block-size-legal spill
@@ -2015,7 +2230,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   }
 
   // ---- Summary ------------------------------------------------------------
-  const coverageEndISO = COVERAGE_END_ISO;
+  const coverageEndISO = anchors.coverageEndISO;
 
   // ---- Post-DEEPEN floor shortfall + feasibility options ------------------
   // A topic whose DEEPEN pass was scheduled MEETS its floor (its effective tier),
@@ -2161,7 +2376,10 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
 
   // Coverage-window day counts (cosmetic, for the view surface).
   const coverageDays = slots.filter((s) => s.region === 'coverage').length;
+  const revisionDays = slots.filter((s) => s.region === 'revision').length;
+  const finalRegionDays = slots.filter((s) => s.region === 'final').length;
   const finalDays = slots.filter((s) => s.region === 'final' || s.region === 'light' || s.region === 'exam').length;
+  const finalMockDays = days.filter((d) => d.phase === 'mock' && regionFor(d.dateISO) === 'final').length;
   const learnDaysLeft = coverageDays;
 
   const theoryUnstudied = Math.max(0, ctx.theoryTotal - ctx.theoryStudied);
@@ -2183,7 +2401,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       learnDaysLeft,
       rhythm: true,
       coverageDays,
-      revisionDays: 0,
+      revisionDays,
       finalDays,
       mockSittings,
       postPrelims: false,
@@ -2195,7 +2413,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       coverageP2SharePct,
       mentPracticeSets,
       revisionMinutes,
-      bufferDays: Math.max(0, finalDays - mockSittings),
+      bufferDays: Math.max(0, finalRegionDays - finalMockDays),
       avgStudyDayMinutes,
       maxStudyDayMinutes,
       weekendMainsCount: 0,
@@ -2242,14 +2460,6 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
 /* -------------------------------------------------------------------------- */
 /* Rhythm helpers                                                              */
 /* -------------------------------------------------------------------------- */
-
-/** The rhythm region a date falls in. @internal */
-function regionFor(dateISO: string): DaySlot['region'] {
-  if (dateISO === EXAM_ISO || dateISO > EXAM_ISO) return 'exam';
-  if (dateISO === LIGHT_ISO) return 'light';
-  if (dateISO >= FINAL_START_ISO) return 'final';
-  return 'coverage';
-}
 
 /** One coverage subject-slot (a weekday or Sunday) with its owner + base minutes. @internal */
 interface SubjectSlotInfo {
@@ -2372,7 +2582,12 @@ function blankDay(slot: DaySlot, status: PlanDayStatus): PlanDay {
     dateISO: slot.dateISO,
     dayIndex: slot.dayIndex,
     phase: slot.region === 'coverage' ? 'learn' : 'revise',
-    segment: slot.region === 'coverage' ? 'coverage' : 'final',
+    segment:
+      slot.region === 'coverage'
+        ? 'coverage'
+        : slot.region === 'revision'
+          ? 'revision'
+          : 'final',
     blocks: [],
     theorySubtopicIds: [],
     aptitudeSubtopicIds: [],
@@ -2522,7 +2737,7 @@ function buildPostPrelims(p: {
       mentAllPassedISO: '',
       mockList: [],
       reallocations: [],
-      coverageEndISO: COVERAGE_END_ISO,
+      coverageEndISO: computePlanAnchors(p.examDateISO, p.todayISO).coverageEndISO,
       spills: [],
       infeasibleFloorTopicIds: [],
       deepenTopicIds: [],
@@ -2552,7 +2767,8 @@ export function feasibilityLine(s: PlanSummary): string {
   if (s.daysLeft <= 0) return `${topics} · exam day has passed`;
   if (!s.feasible) {
     const spilled = s.spills.map((sp) => sp.subject).join(', ');
-    return `${topics} · ${days} · fixed weekly rhythm · ${spilled} spills to ${SPILL_MAX_ISO}`;
+    const spillBy = s.spills[0]?.lastDateISO ?? s.examDateISO;
+    return `${topics} · ${days} · fixed weekly rhythm · ${spilled} spills to ${spillBy}`;
   }
   return `${topics} · ${days} · fixed weekly rhythm · On track`;
 }

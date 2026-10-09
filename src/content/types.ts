@@ -116,6 +116,12 @@ export const SyllabusMetaSchema = z.object({
   authority: z.string(),
   notificationNo: z.string(),
   notificationDate: z.string(),
+  /**
+   * Date of the DETAILED notification (07/2026 dated 06/10/2026), when present.
+   * The brief notification date stays in {@link notificationDate} as the
+   * authored source; this records the later detailed-notification date.
+   */
+  detailedNotificationDate: z.string().optional(),
   applicationWindow: z.object({
     from: z.string(),
     to: z.string(),
