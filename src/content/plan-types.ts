@@ -153,3 +153,72 @@ export function parseLearningSequence(json: unknown): LearningSequence {
   }
   return result.data;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Study UNITS — WEEKLY SUBJECT UNITS (the pre-Prelims first-pass rhythm)       */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The subject codes a unit may belong to — the five Paper-I/Science subjects
+ * that carry weekly subject units in the first pass. Mental Ability (MENT) and
+ * Current Affairs (CA) run as their OWN daily lanes and are NOT unitised, so
+ * they are intentionally excluded. Kept as a closed enum so a typo fails the
+ * content gate.
+ */
+export const UnitSubjectSchema = z.enum(['HIST', 'POL', 'ECON', 'GEO', 'SCI']);
+/** Union of unit subject codes. */
+export type UnitSubject = z.infer<typeof UnitSubjectSchema>;
+
+/**
+ * One WEEKLY SUBJECT UNIT — a coherent, beginner-friendly chapter/era run of a
+ * single subject's learning sequence (e.g. "Ancient India I — Stone Age to the
+ * Mahajanapadas"). The planner teaches ONE unit at a time in the main study
+ * block, across however many days it takes, so connected material is learned in
+ * a sustained run rather than scattered one-slot-a-week (STANDARDS §8a).
+ */
+export const PlanUnitSchema = z.object({
+  /** Stable unit id (e.g. `unit-hist-ancient-1`). */
+  id: z.string().min(1),
+  /** The subject this unit belongs to (one of the five Paper-I/Science codes). */
+  subjectCode: UnitSubjectSchema,
+  /** Beginner-friendly title shown to the learner. */
+  title: z.string().min(1),
+  /**
+   * The subtopic ids this unit teaches, in study order. Validated to be a
+   * CONTIGUOUS run of that subject's learning sequence (see validate.ts), so a
+   * unit never jumps around the chronology/prerequisite chain.
+   */
+  topicIds: z.array(z.string().min(1)).min(1),
+  /** One-line human justification for why this unit is grouped as it is. */
+  why: z.string().min(1),
+});
+export type PlanUnit = z.infer<typeof PlanUnitSchema>;
+
+/**
+ * The whole units document: a version tag plus the ORDERED list of units the
+ * planner teaches, one after another. The order is authored to alternate
+ * subjects (so no Paper-I subject waits too long between units) while keeping
+ * each subject's units — and the History units chronologically — in order; this
+ * is cross-checked in validate.ts. Every Prelims subtopic EXCEPT MENT and CA
+ * must appear EXACTLY ONCE across the units.
+ */
+export const UnitsSchema = z.object({
+  /** Schema/version tag so the file can evolve compatibly. */
+  version: z.number().int().positive(),
+  /** The ordered list of weekly subject units. */
+  units: z.array(PlanUnitSchema).min(1),
+});
+/** The whole units document. */
+export type Units = z.infer<typeof UnitsSchema>;
+
+/**
+ * Parse an unknown value as the units document.
+ * @throws Error with a clear message when validation fails.
+ */
+export function parseUnits(json: unknown): Units {
+  const result = UnitsSchema.safeParse(json);
+  if (!result.success) {
+    throw new Error(`Invalid units file — ${formatIssues(result.error)}`);
+  }
+  return result.data;
+}

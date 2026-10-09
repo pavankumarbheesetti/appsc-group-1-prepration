@@ -43,10 +43,12 @@ import {
   mockSeriesLength,
   scorePaperMock,
   buildWeekTest,
+  buildWeekTestSeries,
   scoreWeekTest,
   type BuiltMock,
   type BuiltWeekTest,
   type WeekTestInput,
+  type WeekTestOptions,
   type WeekTestResult,
 } from '../engine/mock';
 import { mockSectionPools, planSubtopics, currentPlan } from '../lib/plan';
@@ -138,6 +140,15 @@ export function openPaperMock(paper: PaperId): void {
 let pendingWeekTest: WeekTestInput | null = null;
 
 /**
+ * Optional tunables + repeat-avoidance for the pending scoped test. A week test
+ * uses the defaults (45 Q / 55 min, ~2/3 this-week); a UNIT TEST overrides the
+ * count + time and excludes the questions already spent in week tests. Consumed
+ * with {@link pendingWeekTest} by {@link render}. @internal
+ */
+let pendingWeekTestOpts: WeekTestOptions | null = null;
+let pendingWeekTestExclude: ReadonlySet<string> | null = null;
+
+/**
  * Launch the first-pass WEEK TEST for a `week-test` {@link PlanBlock}: a short
  * (45-Q / 55-min, −1/3) timed test drawn ONLY from the topics the plan has
  * first-passed on or before that Saturday — reusing the mock runner with a
@@ -151,6 +162,8 @@ export function openWeekTest(block: PlanBlock): void {
     return;
   }
   pendingWeekTest = input;
+  pendingWeekTestOpts = null;
+  pendingWeekTestExclude = null;
   navigate('/mock');
 }
 
@@ -197,6 +210,65 @@ function isoShift(dateISO: string, days: number): string {
   const d = new Date(`${dateISO}T00:00:00Z`);
   d.setUTCDate(d.getUTCDate() + days);
   return d.toISOString().slice(0, 10);
+}
+
+/**
+ * Launch the UNIT TEST of a `unit-wrapup` {@link PlanBlock} (STANDARDS §8a): the
+ * timed middle slice of a unit's wrap-up — a `block.unitTestCount`-question
+ * test (1 Q/min, −1/3) drawn ONLY from that unit's own topics' MCQs, preferring
+ * questions not already spent in the week tests. Reuses the week-test / scoped
+ * mock runner (scoped pool + custom count + time + per-paper net results),
+ * deterministic in `block.unitTestDateISO`.
+ */
+export function openUnitTest(block: PlanBlock): void {
+  const ids = block.unitTestSubtopicIds ?? [];
+  const dateISO = block.unitTestDateISO ?? '';
+  const count = block.unitTestCount ?? 0;
+  if (ids.length === 0 || dateISO === '' || count <= 0) {
+    navigate('/mock');
+    return;
+  }
+  const trackById = new Map(planSubtopics().map((s) => [s.id, s.track] as const));
+  const paperOf = (id: string): PaperId => (trackById.get(id) === 'paper2' ? 'paper2' : 'paper1');
+  const mcqsOf = (id: string): MCQItem[] => getSubtopic(id)?.mcqs ?? [];
+  // The pool is ONLY this unit's topics (all in the "this week" bucket, so the
+  // draw ratio is irrelevant); Paper-I / Paper-II split by each topic's track.
+  const input: WeekTestInput = {
+    dateISO,
+    thisWeek: { paper1: [], paper2: [] },
+    earlier: { paper1: [], paper2: [] },
+  };
+  for (const id of ids) (input.thisWeek[paperOf(id)] as MCQItem[]).push(...mcqsOf(id));
+  pendingWeekTest = input;
+  pendingWeekTestOpts = {
+    count,
+    durationMin: block.unitTestMinutes ?? count,
+    thisWeekRatio: 1,
+  };
+  pendingWeekTestExclude = weekTestUsedIds(); // prefer questions not used in week tests
+  navigate('/mock');
+}
+
+/**
+ * Every question id already spent across the first-pass WEEK TESTS, from the
+ * CANONICAL plan (anchored at the plan start date so the whole schedule is
+ * present). A unit test prefers questions NOT in this set. @internal
+ */
+function weekTestUsedIds(): Set<string> {
+  const startISO = loadState().settings.planStartDate;
+  const canonical = currentPlan(new Date(`${startISO}T00:00:00`));
+  const inputs: WeekTestInput[] = [];
+  for (const d of canonical.days) {
+    const wt = d.blocks.find((b) => b.kind === 'week-test');
+    if (!wt) continue;
+    const input = weekTestInputFromBlock(wt);
+    if (input) inputs.push(input);
+  }
+  const used = new Set<string>();
+  if (inputs.length === 0) return used;
+  const series = buildWeekTestSeries(inputs);
+  for (const test of series.values()) for (const it of test.items) used.add(it.id);
+  return used;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -262,13 +334,17 @@ export function render(root: HTMLElement): void {
   const focusScope = pendingScope;
   const focusPaper = pendingPaper;
   const focusWeekTest = pendingWeekTest;
+  const focusWeekTestOpts = pendingWeekTestOpts;
+  const focusWeekTestExclude = pendingWeekTestExclude;
   pendingScope = null;
   pendingPaper = null;
   pendingWeekTest = null;
+  pendingWeekTestOpts = null;
+  pendingWeekTestExclude = null;
 
-  // A deep-linked WEEK TEST runs straight into the scoped, timed test.
+  // A deep-linked WEEK TEST / UNIT TEST runs straight into the scoped, timed test.
   if (focusWeekTest) {
-    beginWeekTest(root, focusWeekTest);
+    beginWeekTest(root, focusWeekTest, focusWeekTestOpts ?? undefined, focusWeekTestExclude ?? undefined);
     return;
   }
 
@@ -627,8 +703,13 @@ function sliceToSection(mock: BuiltMock, sectionId: string): BuiltMock {
  * topics, scored with per-paper net marks. Reuses the shared {@link runMock}
  * runner with the week test's custom count + time. @internal
  */
-function beginWeekTest(root: HTMLElement, input: WeekTestInput): void {
-  const test = buildWeekTest(input);
+function beginWeekTest(
+  root: HTMLElement,
+  input: WeekTestInput,
+  opts?: WeekTestOptions,
+  exclude?: ReadonlySet<string>,
+): void {
+  const test = buildWeekTest(input, opts, exclude);
   if (test.items.length === 0) {
     // Nothing studied yet — fall back to the normal setup instead of a blank run.
     pendingWeekTest = null;
@@ -639,7 +720,7 @@ function beginWeekTest(root: HTMLElement, input: WeekTestInput): void {
     root,
     test.items,
     test.durationMin,
-    () => beginWeekTest(root, input),
+    () => beginWeekTest(root, input, opts, exclude),
     () => navigate('/'),
     (r, _items, selected, elapsed, onRetake, back) =>
       drawWeekTestResults(r, test, selected, elapsed, onRetake, back),

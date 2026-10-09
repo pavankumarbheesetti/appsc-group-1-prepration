@@ -45,7 +45,7 @@ import {
   type SyllabusMap,
 } from './audit-types';
 import { parseTimeline, type TimelineBank } from './timeline-types';
-import { parseLearningSequence, type LearningSequence } from './plan-types';
+import { parseLearningSequence, parseUnits, type LearningSequence, type Units } from './plan-types';
 import {
   coveragePct,
   examPointCoverage,
@@ -121,6 +121,11 @@ export interface ContentIndex {
    * Pure ordering + dependency metadata over taxonomy ids; NOT a content bank.
    */
   learningSequence: LearningSequence;
+  /**
+   * The ordered WEEKLY SUBJECT UNITS the pre-Prelims first pass teaches, one at
+   * a time (STANDARDS §8a). Pure ordering over taxonomy ids; NOT a content bank.
+   */
+  units: Units;
 }
 
 /**
@@ -149,6 +154,7 @@ function buildIndex(): ContentIndex {
   let auditPyqWeights: PyqWeights | null = null;
   let timeline: TimelineBank | null = null;
   let learningSequence: LearningSequence | null = null;
+  let units: Units | null = null;
   const banks: LoadedBank[] = [];
   /** Curated memory-layer banks, indexed by subtopicId as they are discovered. */
   const cards = new Map<string, CardItem[]>();
@@ -193,6 +199,8 @@ function buildIndex(): ContentIndex {
     if (path.startsWith('/content/plan/')) {
       if (path.endsWith('/learning-sequence.json')) {
         learningSequence = parseLearningSequence(data);
+      } else if (path.endsWith('/units.json')) {
+        units = parseUnits(data);
       }
       // Any other file under content/plan/ is ignored by the loader.
       continue;
@@ -265,6 +273,9 @@ function buildIndex(): ContentIndex {
       'content: plan/learning-sequence.json not found under /content',
     );
   }
+  if (!units) {
+    throw new Error('content: plan/units.json not found under /content');
+  }
 
   const byPath = new Map<string, LoadedBank>();
   const bySubject = new Map<SubjectCode, LoadedBank[]>();
@@ -317,6 +328,7 @@ function buildIndex(): ContentIndex {
     auditPyqWeights,
     timeline,
     learningSequence,
+    units,
   };
 }
 
@@ -347,6 +359,14 @@ export function getTimeline(): TimelineBank {
  */
 export function getLearningSequence(): LearningSequence {
   return getContentIndex().learningSequence;
+}
+
+/**
+ * The ordered WEEKLY SUBJECT UNITS the pre-Prelims first pass teaches, one at a
+ * time (STANDARDS §8a) — each a coherent chapter/era run of a single subject.
+ */
+export function getUnits(): Units {
+  return getContentIndex().units;
 }
 
 /**

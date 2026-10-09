@@ -13,6 +13,8 @@ import {
   computePlanAnchors,
   buildMockSchedule,
   QUICK_MIN,
+  WRAPUP_MIN_IDLE_MIN,
+  WRAPUP_MAX_MIN,
   type BuildPlanOpts,
   type PlanDay,
   type PlanSequence,
@@ -98,7 +100,22 @@ function makeFixture(): { subtopics: PlanSubtopic[]; sequence: PlanSequence } {
     subtopics.push({ id, name: `CA ${i}`, order: order++, subjectCode: 'CA', track: 'paper2', band: caBands[i], mcqCount: 10, examPointCount: 2 });
   });
 
-  return { subtopics, sequence: { order: order_, mentStreams } };
+  // WEEKLY SUBJECT UNITS — contiguous runs of each subject's sequence, authored
+  // in an interleaved teaching order that (a) starts with a History unit (day-1
+  // orientation), (b) keeps each subject's units in sequence order, and (c)
+  // keeps the three History units chronological relative to one another.
+  const h = order_['HIST']!;
+  const units = [
+    { id: 'u-hist-1', subjectCode: 'HIST', title: 'History I', why: 'ancient opening', topicIds: h.slice(0, 10) },
+    { id: 'u-pol', subjectCode: 'POL', title: 'Polity', why: 'constitution', topicIds: order_['POL']! },
+    { id: 'u-econ', subjectCode: 'ECON', title: 'Economy', why: 'concepts', topicIds: order_['ECON']! },
+    { id: 'u-hist-2', subjectCode: 'HIST', title: 'History II', why: 'medieval', topicIds: h.slice(10, 20) },
+    { id: 'u-geo', subjectCode: 'GEO', title: 'Geography', why: 'physical', topicIds: order_['GEO']! },
+    { id: 'u-sci', subjectCode: 'SCI', title: 'Science & Tech', why: 'applied', topicIds: order_['SCI']! },
+    { id: 'u-hist-3', subjectCode: 'HIST', title: 'History III', why: 'modern', topicIds: h.slice(20, 30) },
+  ];
+
+  return { subtopics, sequence: { order: order_, mentStreams, units } as PlanSequence };
 }
 
 /** `count` MAINS-track subtopics — the parallel track (excluded from the rhythm). */
@@ -160,31 +177,43 @@ describe('availableDrill / PER_TOPIC_DRILL_QUOTA', () => {
   });
 });
 
-describe('rhythm — weekday subject mapping + reallocation', () => {
-  it('maps Mon→HIST, Tue→POL, Wed→ECON, Thu→GEO, Fri→SCI in the first week', () => {
-    const { days } = buildPlan(baseOpts());
-    const byDate = new Map(days.map((d) => [d.dateISO, d] as const));
-    // First week (before any subject finishes) the owner teaches its own slot.
-    expect(subjectBlockOf(byDate.get('2026-09-30')!)?.subjectCode).toBe('ECON'); // Wed
-    expect(subjectBlockOf(byDate.get('2026-10-01')!)?.subjectCode).toBe('GEO'); // Thu
-    expect(subjectBlockOf(byDate.get('2026-10-02')!)?.subjectCode).toBe('SCI'); // Fri
-    expect(subjectBlockOf(byDate.get('2026-10-05')!)?.subjectCode).toBe('HIST'); // Mon
-    expect(subjectBlockOf(byDate.get('2026-10-06')!)?.subjectCode).toBe('POL'); // Tue
-    // Sunday catch-up is a History block.
-    expect(subjectBlockOf(byDate.get('2026-10-04')!)?.subjectCode).toBe('HIST');
+describe('rhythm — WEEKLY SUBJECT UNITS (one unit at a time in the main block)', () => {
+  it('teaches ONE unit per main block, in unit order, starting with the first (History) unit', () => {
+    const opts = baseOpts();
+    const { days } = buildPlan(opts);
+    const subj = subjectOf(opts);
+    const unitOfTopic = new Map<string, string>();
+    for (const u of opts.sequence!.units!) for (const id of u.topicIds) unitOfTopic.set(id, u.id);
+    // Day 1 (Sat 30 Sep is a weekday start → not orientation here) and every
+    // coverage main block: all its first-pass subject topics belong to ONE unit.
+    const unitSeen: string[] = [];
+    for (const d of days) {
+      const main = subjectBlockOf(d);
+      const topicIds = (main?.topics ?? []).filter((t) => t.kind === 'topic').map((t) => t.subtopicId);
+      const units = new Set(topicIds.map((id) => unitOfTopic.get(id)).filter(Boolean));
+      expect(units.size).toBeLessThanOrEqual(1); // ONE unit per main block
+      if (d.unitId && !unitSeen.includes(d.unitId)) unitSeen.push(d.unitId);
+    }
+    // Units are taught in the authored order, History first.
+    const authored = opts.sequence!.units!.map((u) => u.id).filter((id) => unitSeen.includes(id));
+    expect(unitSeen).toEqual(authored);
+    expect(subj.get(opts.sequence!.units![0]!.topicIds[0]!)).toBe('HIST');
   });
 
-  it('reallocates a finished subject\u2019s weekday slot to the neediest subject', () => {
+  it('exposes the current unit on each coverage day (unitDay / unitDays / nextUnitTitle)', () => {
     const { days, summary } = buildPlan(baseOpts());
-    expect(summary.reallocations.length).toBeGreaterThan(0);
-    const byDate = new Map(days.map((d) => [d.dateISO, d] as const));
-    for (const r of summary.reallocations) {
-      const dow = dayOfWeekISO(r.dateISO);
-      // The slot's calendar owner is NOT the subject that actually taught it.
-      const owner = ({ 1: 'HIST', 2: 'POL', 3: 'ECON', 4: 'GEO', 5: 'SCI' } as Record<number, string>)[dow] ?? 'HIST';
-      expect(r.fromSubject).toBe(owner);
-      expect(r.toSubject).not.toBe(owner);
-      expect(subjectBlockOf(byDate.get(r.dateISO)!)?.subjectCode).toBe(r.toSubject);
+    // Every unit the plan reports has a contiguous date window and topic count.
+    expect(summary.units.length).toBeGreaterThan(0);
+    for (const u of summary.units) {
+      expect(u.topicCount).toBeGreaterThan(0);
+      if (u.startISO) expect(u.startISO <= u.endISO).toBe(true);
+    }
+    // A coverage day with a unit reports a 1-based day index within its run.
+    const withUnit = days.filter((d) => d.unitId !== null && d.segment === 'coverage');
+    expect(withUnit.length).toBeGreaterThan(0);
+    for (const d of withUnit) {
+      expect(d.unitDay).toBeGreaterThanOrEqual(1);
+      expect(d.unitDay).toBeLessThanOrEqual(d.unitDays);
     }
   });
 });
@@ -708,5 +737,106 @@ describe('long window — phases, final window, revision cycle (exam 24 Jan 2027
     expect(scheduled).toContain(firstTheory);
     expect(scheduled).toContain(firstApt);
     expect(new Set(scheduled).size).toBe(summary.prelimsTotal);
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* UNIT WRAP-UP — fill the idle time on unit-end days (STANDARDS §8a)          */
+/* -------------------------------------------------------------------------- */
+
+describe('rhythm — UNIT WRAP-UP (consolidate a unit right after finishing it)', () => {
+  const EXAM = '2027-01-24';
+
+  it('leaves no first-pass main subject block ≥30 min idle (minutes == its topics)', () => {
+    const { days } = buildPlan(longOpts(EXAM));
+    let saw = 0;
+    for (const d of days.filter((x) => x.segment === 'coverage')) {
+      for (const b of d.blocks) {
+        if (b.kind !== 'subject') continue;
+        saw += 1;
+        const tmin = (b.topics ?? []).filter((t) => t.kind === 'topic').reduce((a, t) => a + t.estMinutes, 0);
+        // The teaching block carries NO ≥30-min idle — the leftover becomes a
+        // wrap-up / next-unit block / 'Catch up or rest' instead.
+        expect(b.minutes - tmin).toBeLessThan(WRAPUP_MIN_IDLE_MIN);
+      }
+    }
+    expect(saw).toBeGreaterThan(0);
+    // Every ≥30-min filler on a first-pass STUDY day (not the week-test Saturday,
+    // which has its own catch-up) is explicitly a 'Catch up or rest' block.
+    for (const d of days.filter((x) => x.segment === 'coverage')) {
+      if (d.blocks.some((b) => b.kind === 'week-test')) continue;
+      for (const b of d.blocks) {
+        if (b.kind === 'catchup' && b.minutes >= WRAPUP_MIN_IDLE_MIN) expect(b.label).toBe('Catch up or rest');
+      }
+    }
+  });
+
+  it('gives EVERY first-pass unit exactly one wrap-up, each 30–90 min', () => {
+    const { days, summary } = buildPlan(longOpts(EXAM));
+    const wrapByUnit = new Map<string, number>();
+    for (const d of days.filter((x) => x.segment === 'coverage')) {
+      for (const b of d.blocks) {
+        if (b.kind !== 'unit-wrapup') continue;
+        expect(b.unitId).toBeTruthy();
+        expect(b.minutes).toBeGreaterThanOrEqual(WRAPUP_MIN_IDLE_MIN);
+        expect(b.minutes).toBeLessThanOrEqual(WRAPUP_MAX_MIN);
+        wrapByUnit.set(b.unitId!, (wrapByUnit.get(b.unitId!) ?? 0) + 1);
+      }
+    }
+    expect(summary.units.length).toBeGreaterThan(0);
+    for (const u of summary.units) expect(wrapByUnit.get(u.id)).toBe(1); // exactly one each
+    expect(wrapByUnit.size).toBe(summary.units.length);
+  });
+
+  it('scopes each unit test to ONLY its own topics, timed 1 Q/min (glance + review removed)', () => {
+    const opts = longOpts(EXAM);
+    const { days } = buildPlan(opts);
+    const unitTopics = new Map(opts.sequence!.units!.map((u) => [u.id, new Set(u.topicIds)]));
+    let seen = 0;
+    for (const d of days.filter((x) => x.segment === 'coverage')) {
+      for (const b of d.blocks) {
+        if (b.kind !== 'unit-wrapup') continue;
+        seen += 1;
+        const pool = unitTopics.get(b.unitId!)!;
+        expect((b.unitTestSubtopicIds ?? []).length).toBeGreaterThan(0);
+        for (const id of b.unitTestSubtopicIds ?? []) expect(pool.has(id)).toBe(true);
+        // Count = round(size − 15 glance − 15 review); timer = 1 min/question.
+        expect(b.unitTestCount).toBe(Math.max(0, Math.round(b.minutes - 30)));
+        expect(b.unitTestMinutes).toBe(b.unitTestCount);
+        expect(b.unitTestDateISO).toBe(d.dateISO);
+      }
+    }
+    expect(seen).toBeGreaterThan(0);
+  });
+
+  it('starts the NEXT unit in the same block only after a wrap-up, as a separate one-unit block', () => {
+    const opts = longOpts(EXAM);
+    const { days } = buildPlan(opts);
+    const unitOf = new Map<string, string>();
+    for (const u of opts.sequence!.units!) for (const id of u.topicIds) unitOf.set(id, u.id);
+    const unitOfBlock = (b: PlanDay['blocks'][number]): string | undefined => {
+      const t = (b.topics ?? []).find((x) => x.kind === 'topic');
+      return t ? unitOf.get(t.subtopicId) : undefined;
+    };
+    let sawTwoUnits = false;
+    for (const d of days.filter((x) => x.segment === 'coverage')) {
+      const subjectBlocks = d.blocks.filter((b) => b.kind === 'subject');
+      // Each 'subject' block teaches exactly ONE unit.
+      for (const b of subjectBlocks) {
+        const us = new Set((b.topics ?? []).filter((t) => t.kind === 'topic').map((t) => unitOf.get(t.subtopicId)));
+        expect(us.size).toBe(1);
+      }
+      if (subjectBlocks.length >= 2) {
+        sawTwoUnits = true;
+        const kinds = d.blocks.map((b) => b.kind);
+        const first = kinds.indexOf('subject');
+        const second = kinds.indexOf('subject', first + 1);
+        // A wrap-up separates the finished unit from the newly started one.
+        expect(kinds.slice(first, second)).toContain('unit-wrapup');
+        expect(unitOfBlock(subjectBlocks[0]!)).not.toBe(unitOfBlock(subjectBlocks[1]!));
+      }
+    }
+    // The fixture's long window has Sundays with room to start the next unit.
+    expect(sawTwoUnits).toBe(true);
   });
 });

@@ -14,7 +14,6 @@
  * prelims subtopic is mastered; post-Prelims the plan flips to a Mains kick-start.
  */
 import { getBanks, getCards, getSubtopic, getSubtopics } from '../content/loader';
-import type { Band } from '../content/taxonomy';
 import type { MainsItem } from '../content/types';
 import { buildSession } from '../engine/drill';
 import { buildCuratedDeck, selectSession } from '../engine/flashcards';
@@ -27,16 +26,14 @@ import { currentPlan } from '../lib/plan';
 import { diffDaysISO, daysToGo, todayISO, addDaysISO } from '../lib/dates';
 import { openLearn } from './learn';
 import { openMainsQuestion } from './mains';
-import { openPaperMock, openWeekTest } from './mock';
+import { openPaperMock, openWeekTest, openUnitTest } from './mock';
 import { openReviseScope } from './revise';
 import { mountQuiz } from './quiz';
 import { el, mount, type Child } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
 import { chip } from './components/chip';
-import { ring } from './components/ring';
 import { icon } from './components/icon';
-import { bandBadge } from './components/badges';
 
 /** Render the Today view into `root`. */
 export function render(root: HTMLElement): void {
@@ -51,7 +48,7 @@ export function render(root: HTMLElement): void {
 
   // Graceful state: the plan has not started yet.
   if (diffDaysISO(today, start) > 0) {
-    mount(root, dateNotice, buildCountdownHero(summary, today, undefined), startsSoonCard(plan, start, today));
+    mount(root, dateNotice, buildNowHero(summary, today, undefined), startsSoonCard(plan, start, today));
     return;
   }
   // Graceful state: the exam date has passed — switch to MAINS kick-start.
@@ -61,13 +58,13 @@ export function render(root: HTMLElement): void {
       mount(
         root,
         dateNotice,
-        buildCountdownHero(summary, today, undefined),
+        buildNowHero(summary, today, undefined),
         mainsKickstartCard(),
         buildMainsSection(kickstartDay),
       );
       return;
     }
-    mount(root, dateNotice, buildCountdownHero(summary, today, undefined), examPassedCard());
+    mount(root, dateNotice, buildNowHero(summary, today, undefined), examPassedCard());
     return;
   }
 
@@ -78,11 +75,9 @@ export function render(root: HTMLElement): void {
   mount(
     root,
     dateNotice,
-    buildCountdownHero(summary, today, todayDay),
-    buildBanner(summary),
-    buildRings(summary),
-    buildBudgetToday(todayDay, summary),
-    allMastered ? masteredCard() : buildBlocks(todayDay),
+    buildNowHero(summary, today, todayDay),
+    allMastered ? masteredCard() : buildChecklist(todayDay),
+    allMastered ? null : buildNextSaturdayCard(plan, today),
     buildMainsParallelNote(summary),
   );
 }
@@ -123,112 +118,93 @@ function buildPrelimsDateNotice(root: HTMLElement, summary: PlanSummary): HTMLEl
 /* -------------------------------------------------------------------------- */
 
 /**
- * Countdown hero: greeting + "Prelims on …" countdown card. The PRIMARY button
- * is "Start today's study" (→ first scheduled topic); "Open planner" is the
- * secondary link. Before the plan starts / post-exam there is no day, so it
- * falls back to "Open planner" as the primary. @internal
+ * The "Now" hero — the single focal point of Today. It names the day's FIRST
+ * actionable block (unit/topic title · its block · minutes) and offers ONE
+ * primary button, "Start", that jumps straight into it (→ {@link firstStart}).
+ * A compact plain-text "N days to Prelims" sits in the eyebrow (the big
+ * countdown card is gone), and a muted "This week: <unit> · day X of Y" line
+ * places today inside the current weekly subject unit. Before the plan starts /
+ * post-exam there is no day, so it falls back to "Open planner" as the primary.
+ * @internal
  */
-function buildCountdownHero(summary: PlanSummary, today: string, day: PlanDay | undefined): HTMLElement {
+function buildNowHero(summary: PlanSummary, today: string, day: PlanDay | undefined): HTMLElement {
   const daysToExam = daysToGo(summary.examDateISO, today);
   const startAction = day ? firstStart(day) : null;
+  const focus = day ? nowFocus(day) : null;
 
   const actions: Child[] = startAction
     ? [
-        button({ label: "Start today\u2019s study", onClick: startAction.onClick, variant: 'primary', large: true, iconName: 'arrow-right' }),
-        button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: 'ghost' }),
+        button({ label: 'Start', onClick: startAction.onClick, variant: 'primary', large: true, iconName: 'arrow-right' }),
+        button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: 'secondary' }),
       ]
     : [button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: 'primary', large: true, iconName: 'arrow-right' })];
 
   const left = el('div', { class: 'hero-body' }, [
     el('p', {
       class: 'hero-greeting',
-      text: `${greeting(new Date())} · Prelims on ${prettyDate(summary.examDateISO)}`,
+      text: `${greeting(new Date())} · ${daysToExam} ${daysToExam === 1 ? 'day' : 'days'} to Prelims`,
     }),
     el('h2', { class: 'hero-title', text: 'Today' }),
-    el('div', { class: 'hero-meta' }, [
-      chip({ text: `${summary.prelimsStudied}/${summary.prelimsTotal} prelims studied`, tone: 'accent' }),
-      chip({ text: `${summary.prelimsMastered} mastered`, tone: summary.prelimsMastered > 0 ? 'ok' : 'default' }),
-    ]),
-    startAction ? el('p', { class: 'hero-start-hint section-lead', text: startAction.hint }) : null,
+    buildUnitLine(day),
+    focus
+      ? el('div', { class: 'hero-now' }, [
+          el('span', { class: 'hero-now-eyebrow', text: 'Up now' }),
+          el('span', { class: 'hero-now-title', text: focus.title }),
+          el('span', { class: 'hero-now-meta' }, [
+            el('span', { text: focus.context }),
+            chip({ text: fmtDuration(focus.minutes), tone: 'default', iconName: 'timer' }),
+          ]),
+        ])
+      : null,
     el('div', { class: 'hero-actions' }, actions),
   ]);
 
-  const countdownCard = el('div', { class: 'countdown' }, [
-    el('div', { class: 'countdown-days tnum', text: String(daysToExam) }),
-    el('div', { class: 'countdown-unit', text: daysToExam === 1 ? 'day to Prelims' : 'days to Prelims' }),
-    el('div', { class: 'countdown-label', text: `Prelims · ${prettyDate(summary.examDateISO)}` }),
-  ]);
-
-  return el('section', { class: 'hero' }, [left, countdownCard]);
+  return el('section', { class: 'hero' }, [left]);
 }
-
-/** On-track / behind banner over the PRELIMS scope. @internal */
-function buildBanner(summary: PlanSummary): HTMLElement {
-  const ok = summary.onTrack;
-  const cls = ok ? 'today-banner is-ok' : 'today-banner is-warn';
-  const iconName = ok ? 'check' : 'flame';
-  const headline = ok
-    ? 'On track for Prelims'
-    : `Behind by ${summary.behindBy} prelims topic${summary.behindBy === 1 ? '' : 's'}`;
-  const pace = `${summary.theoryPerDay} theory + ${summary.aptitudePerDay} aptitude/day`;
-  const detail = ok
-    ? `${summary.learnDaysLeft} learn day${summary.learnDaysLeft === 1 ? '' : 's'} left · about ${pace} keeps both papers moving.`
-    : `Do ${pace} to catch up before ${prettyDate(summary.examDateISO)}.`;
-  return el('section', { class: cls, attrs: { role: 'status' } }, [
-    el('span', { class: 'today-banner-icon' }, [icon(iconName, 22)]),
-    el('div', { class: 'today-banner-text' }, [
-      el('span', { class: 'today-banner-title', text: headline }),
-      el('span', { class: 'today-banner-detail', text: detail }),
-    ]),
-  ]);
-}
-
-/* -------------------------------------------------------------------------- */
-/* Rings                                                                       */
-/* -------------------------------------------------------------------------- */
 
 /**
- * Prelims mastery / coverage / mastered-count rings. On a FRESH install
- * (nothing studied yet) the centres read "—" rather than a hard 0/0% so the
- * cockpit doesn't look broken. @internal
+ * The muted "This week: <unit title> · day X of Y" line that places today in
+ * its weekly subject unit. Returns `null` when the day carries no unit (mock /
+ * final / light / pre-start). @internal
  */
-function buildRings(summary: PlanSummary): HTMLElement {
-  const fresh = summary.prelimsStudied === 0;
-  const ringCard = (r: HTMLElement, caption: string, sub: string): HTMLElement =>
-    el('div', { class: 'card ring-card' }, [
-      r,
-      el('span', { class: 'ring-caption', text: caption }),
-      el('span', { class: 'ring-sub', text: sub }),
-    ]);
+function buildUnitLine(day: PlanDay | undefined): HTMLElement | null {
+  if (!day || !day.unitId || !day.unitTitle) return null;
+  const text = `This week: ${unitShortTitle(day.unitTitle)} · day ${day.unitDay} of ${day.unitDays}`;
+  return el('p', { class: 'hero-unit-line', text });
+}
 
-  const masteredFrac = summary.prelimsTotal > 0 ? summary.prelimsMastered / summary.prelimsTotal : 0;
+/** The day's FIRST actionable focus — the block/topic the "Start" button opens. @internal */
+function nowFocus(day: PlanDay): { title: string; context: string; minutes: number } | null {
+  for (const b of day.blocks) {
+    const t = (b.topics ?? [])[0];
+    if (t) {
+      const name = t.kind === 'practice'
+        ? 'Mental Ability practice'
+        : t.name || getSubtopic(t.subtopicId)?.meta.name || t.subtopicId;
+      return { title: name, context: b.label, minutes: t.estMinutes || b.minutes };
+    }
+    if (b.kind === 'mock' && b.mockPaper) {
+      return { title: b.mockPaper === 'paper1' ? 'Full Paper-I mock' : 'Full Paper-II mock', context: b.label, minutes: b.minutes };
+    }
+    if (b.kind === 'week-test') {
+      return { title: 'This week\u2019s test', context: `${WEEK_TEST_COUNT} questions`, minutes: b.minutes };
+    }
+  }
+  return null;
+}
 
-  return el('div', { class: 'rings' }, [
-    ringCard(
-      ring({ value: summary.prelimsMasteryPct / 100, centerText: fresh ? '\u2014' : `${summary.prelimsMasteryPct}%`, centerLabel: 'mastery' }),
-      'Mastery',
-      fresh ? 'answer a drill to begin' : 'average across prelims',
-    ),
-    ringCard(
-      ring({ value: summary.prelimsCoveragePct / 100, centerText: fresh ? '\u2014' : `${summary.prelimsCoveragePct}%`, centerLabel: 'studied', variant: 'accent' }),
-      'Coverage',
-      `${summary.prelimsStudied}/${summary.prelimsTotal} prelims topics`,
-    ),
-    ringCard(
-      ring({
-        value: masteredFrac,
-        centerText: fresh ? '\u2014' : `${summary.prelimsMastered}`,
-        centerLabel: 'mastered',
-        variant: summary.prelimsMastered > 0 ? 'success' : 'accent',
-      }),
-      'Mastered',
-      `of ${summary.prelimsTotal} prelims topics`,
-    ),
-  ]);
+/**
+ * The short, beginner-friendly unit name — the part before the em-dash of a
+ * unit title (e.g. "Ancient India I — Stone Age …" → "Ancient India I"). Falls
+ * back to the whole title when there is no dash. @internal
+ */
+function unitShortTitle(title: string): string {
+  const i = title.indexOf('\u2014');
+  return (i > 0 ? title.slice(0, i) : title).trim();
 }
 
 /* -------------------------------------------------------------------------- */
-/* Budget + the day's rhythm blocks                                            */
+/* The day's rhythm blocks (slim checklist)                                    */
 /* -------------------------------------------------------------------------- */
 
 /** Format minutes as a compact `3 h 50 m` / `50 m` / `4 h` label. @internal */
@@ -237,32 +213,6 @@ export function fmtDuration(min: number): string {
   const m = Math.round(min % 60);
   if (h === 0) return `${m} m`;
   return m === 0 ? `${h} h` : `${h} h ${m} m`;
-}
-
-/**
- * "Today's plan" budget line — the day's total scheduled minutes vs the day's
- * time budget (e.g. "3 h 50 m of 4 h"), plus a per-block minute breakdown drawn
- * straight from the rhythm blocks. @internal
- */
-function buildBudgetToday(day: PlanDay | undefined, summary: PlanSummary): HTMLElement {
-  const budget = day?.budgetMin ?? summary.dailyBudgetMin;
-  const planned = day?.plannedMinutes ?? 0;
-  const pct = budget > 0 ? Math.min(1, planned / budget) : 0;
-
-  const blocks: Child[] = (day?.blocks ?? []).map((b) =>
-    chip({ text: `${b.label} · ${fmtDuration(b.minutes)}`, tone: 'muted' }),
-  );
-
-  return el('section', { class: 'today-budget card', attrs: { role: 'status' } }, [
-    el('div', { class: 'today-budget-head' }, [
-      el('span', { class: 'today-budget-title', text: "Today\u2019s plan" }),
-      el('span', { class: 'today-budget-total tnum', text: `${fmtDuration(planned)} of ${fmtDuration(budget)}` }),
-    ]),
-    el('div', { class: 'today-budget-bar', attrs: { role: 'presentation' } }, [
-      el('div', { class: 'today-budget-fill', attrs: { style: `width:${Math.round(pct * 100)}%` } }),
-    ]),
-    blocks.length > 0 ? el('div', { class: 'today-budget-blocks' }, blocks) : null,
-  ]);
 }
 
 /**
@@ -333,8 +283,13 @@ function computeReviseCtx(today: string): ReviseCtx {
   return { early, yesterdayIds: [] };
 }
 
-/** The day's rhythm blocks, in order — each a card with a one-tap start. @internal */
-function buildBlocks(day: PlanDay | undefined): HTMLElement {
+/**
+ * The day's rhythm as a SLIM ORDERED CHECKLIST — one row per block
+ * (`block · topic · minutes · done`), replacing the old per-block cards and the
+ * duplicate budget card. Each row one-taps into its study target; a row is
+ * ticked "done" when every first-pass topic in it has been studied. @internal
+ */
+function buildChecklist(day: PlanDay | undefined): HTMLElement {
   const blocks = day?.blocks ?? [];
   if (blocks.length === 0) {
     return card({ title: 'Today' }, [
@@ -345,206 +300,193 @@ function buildBlocks(day: PlanDay | undefined): HTMLElement {
     ]);
   }
   const reviseCtx = computeReviseCtx(day?.dateISO ?? todayISO());
-  return el('div', { class: 'today-blocks' }, blocks.map((b) => blockCard(b, reviseCtx)));
+  const budget = day?.budgetMin ?? 0;
+  const planned = day?.plannedMinutes ?? 0;
+  return card(
+    {
+      title: 'Today\u2019s plan',
+      subtitle: budget > 0 ? `${fmtDuration(planned)} of ${fmtDuration(budget)}` : undefined,
+    },
+    [el('ul', { class: 'today-checklist' }, blocks.map((b) => checklistRow(b, reviseCtx)))],
+  );
 }
 
-/** Render one rhythm block as a card. @internal */
-function blockCard(block: PlanBlock, reviseCtx: ReviseCtx): HTMLElement {
-  // Early-revise relabel: before ~10 cards are due, the Revise block reviews
-  // "what you studied yesterday" so a beginner always has a non-empty session.
+/** One slim checklist row for a rhythm block. @internal */
+function checklistRow(block: PlanBlock, reviseCtx: ReviseCtx): HTMLElement {
   const earlyRevise = block.kind === 'revise' && reviseCtx.early && reviseCtx.yesterdayIds.length > 0;
-  const title = earlyRevise ? 'Flashcards for what you studied yesterday' : block.label;
-  const head = el('div', { class: 'block-head' }, [
-    el('div', { class: 'block-head-main' }, [
-      el('h3', { class: 'block-title', text: title }),
-      block.buildsOn ? el('span', { class: 'block-builds', text: `builds on: ${block.buildsOn}` }) : null,
-    ]),
-    chip({ text: fmtDuration(block.minutes), tone: 'muted', iconName: 'timer' }),
-  ]);
-
-  const body: Child[] = [];
+  const label = earlyRevise ? 'Review yesterday\u2019s flashcards' : block.label;
   const topics = block.topics ?? [];
-  if (topics.length > 0) {
-    body.push(el('div', { class: 'study-list' }, topics.map(topicLink)));
-  }
-  // A targeted-revision block also carries DEEPEN top-ups; keep its generic
-  // "Open Revise" action so the remaining time still points at weakest-first
-  // revision. Every other topic-less block shows its one-tap start as before.
-  if (topics.length === 0 || block.kind === 'targeted-revision') {
-    const action = blockAction(block, reviseCtx);
-    if (action) body.push(action);
-  }
+  const detail = topics.length > 0 ? topicSummary(topics) : blockDetail(block);
+  const done = blockDone(block);
+  const nav = blockStart(block, reviseCtx);
 
-  return el('div', { class: 'card block-card' }, [head, ...body]);
+  const row = el('li', { class: done ? 'today-check is-done' : 'today-check' }, [
+    el('button', {
+      class: 'today-check-btn',
+      type: 'button',
+      ariaLabel: `${label}${detail ? ` — ${detail}` : ''}, about ${fmtDuration(block.minutes)}${done ? ', done' : ''}`,
+      onClick: nav,
+    }, [
+      el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : []),
+      el('span', { class: 'today-check-main' }, [
+        el('span', { class: 'today-check-label', text: label }),
+        detail ? el('span', { class: 'today-check-detail', text: detail }) : null,
+      ]),
+      chip({ text: fmtDuration(block.minutes), tone: 'muted', iconName: 'timer' }),
+      el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
+    ]),
+  ]);
+  return row;
 }
 
-/** The one-tap start for a topic-less block (revise / ca / mock / telugu…). @internal */
-function blockAction(block: PlanBlock, reviseCtx?: ReviseCtx): HTMLElement | null {
+/** A compact "first topic (+N more)" detail line for a block's topics. @internal */
+function topicSummary(topics: readonly PlanTopic[]): string {
+  const first = topics[0]!;
+  const name = first.kind === 'practice'
+    ? 'Mental Ability practice'
+    : first.name || getSubtopic(first.subtopicId)?.meta.name || first.subtopicId;
+  return topics.length > 1 ? `${name} +${topics.length - 1} more` : name;
+}
+
+/** A plain-language detail line for a topic-less block. @internal */
+function blockDetail(block: PlanBlock): string {
+  switch (block.kind) {
+    case 'ca':
+    case 'ca-refresh':
+    case 'ca-roundup':
+      return 'Current affairs';
+    case 'mock':
+      return block.mockPaper === 'paper1' ? 'Full Paper-I mock' : block.mockPaper === 'paper2' ? 'Full Paper-II mock' : 'Full mock';
+    case 'week-test':
+      return `${WEEK_TEST_COUNT} questions · ${WEEK_TEST_MINUTES} min`;
+    case 'mock-review':
+    case 'week-test-review':
+      return 'Review your wrong answers';
+    case 'weakest-area':
+    case 'catchup':
+      return 'Weak areas';
+    case 'telugu':
+      return 'Telugu practice';
+    case 'unit-wrapup':
+      return block.unitTestCount && block.unitTestCount > 0
+        ? `Recap + ${block.unitTestCount}-question unit test`
+        : 'Recap your finished unit';
+    case 'light':
+      return 'Key facts — keep it light';
+    case 'start-here':
+      return 'Orientation guide';
+    default:
+      return '';
+  }
+}
+
+/**
+ * Whether a block counts as DONE from recorded progress — true when it carries
+ * first-pass topics and every one has been studied (any MCQ seen). Topic-less
+ * blocks (mock / revise / CA) are never auto-ticked. @internal
+ */
+function blockDone(block: PlanBlock): boolean {
+  const topics = block.topics ?? [];
+  if (topics.length === 0) return false;
+  const progress = loadState().progress;
+  return topics.every((t) => {
+    if (t.kind === 'practice') return false;
+    const ids = getSubtopic(t.subtopicId)?.mcqs.map((m) => m.id) ?? [];
+    return ids.length > 0 && ids.some((id) => (progress[id]?.seen ?? 0) > 0);
+  });
+}
+
+/** The one-tap start handler for a checklist row (topic or topic-less block). @internal */
+function blockStart(block: PlanBlock, reviseCtx: ReviseCtx): () => void {
+  const first = (block.topics ?? [])[0];
+  if (first) {
+    if (first.kind === 'practice') {
+      return () => startPracticeDrill(first.practiceSubtopicIds ?? [], first.mcqCount > 0 ? first.mcqCount : 20);
+    }
+    return () => openLearn(first.subtopicId);
+  }
   switch (block.kind) {
     case 'ca':
     case 'ca-refresh':
     case 'ca-roundup': {
       const sid = block.caSubtopicId;
-      return button({
-        label: 'Current affairs',
-        variant: 'primary',
-        iconName: 'arrow-right',
-        onClick: () => (sid ? openLearn(sid) : navigate('/drill')),
-      });
+      return () => (sid ? openLearn(sid) : navigate('/drill'));
     }
     case 'mock': {
       const paper = block.mockPaper;
-      return button({
-        label: paper ? `Start ${paper === 'paper1' ? 'Paper-I' : 'Paper-II'} mock` : 'Start mock',
-        variant: 'primary',
-        iconName: 'timer',
-        onClick: () => (paper ? openPaperMock(paper) : navigate('/mock')),
-      });
+      return () => (paper ? openPaperMock(paper) : navigate('/mock'));
     }
     case 'mock-review':
-      return button({ label: 'Review mistakes', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/notebook') });
-    case 'weakest-area':
-      return button({ label: 'Practise weak areas', variant: 'secondary', iconName: 'target', onClick: () => navigate('/progress') });
-    case 'week-test':
-      return button({
-        label: `Start week test · ${WEEK_TEST_COUNT} Q · ${WEEK_TEST_MINUTES} min`,
-        variant: 'primary',
-        iconName: 'timer',
-        onClick: () => openWeekTest(block),
-      });
     case 'week-test-review':
-      return button({ label: 'Review every wrong answer', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/notebook') });
+      return () => navigate('/notebook');
+    case 'weakest-area':
     case 'catchup':
-      return button({ label: 'Catch up', variant: 'secondary', iconName: 'target', onClick: () => navigate('/progress') });
-    case 'revise': {
-      // Early in the plan (before ~10 cards are due) the Revise block reviews
-      // yesterday's studied topics so a beginner always has a non-empty session.
-      if (reviseCtx?.early && reviseCtx.yesterdayIds.length > 0) {
+      return () => navigate('/progress');
+    case 'week-test':
+      return () => openWeekTest(block);
+    case 'unit-wrapup':
+      return () => openUnitTest(block);
+    case 'revise':
+      if (reviseCtx.early && reviseCtx.yesterdayIds.length > 0) {
         const ids = reviseCtx.yesterdayIds;
-        return button({
-          label: 'Review yesterday’s flashcards',
-          variant: 'primary',
-          iconName: 'arrow-right',
-          onClick: () => openReviseScope(ids),
-        });
+        return () => openReviseScope(ids);
       }
-      return button({ label: 'Open Revise', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/revise') });
-    }
+      return () => navigate('/revise');
     case 'targeted-revision':
     case 'weekly-revision':
-      return button({ label: 'Open Revise', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/revise') });
+      return () => navigate('/revise');
     case 'telugu':
-      return button({ label: 'Telugu practice', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/languages') });
+      return () => navigate('/languages');
     case 'ment-practice':
-      return button({
-        label: 'Mental Ability practice',
-        variant: 'primary',
-        iconName: 'drill',
-        onClick: () => startPracticeDrill(block.practiceSubtopicIds ?? [], 20),
-      });
-    case 'light':
-      return el('p', { class: 'section-lead', text: 'AP + current-affairs key facts and formula sheet — keep it light.' });
+      return () => startPracticeDrill(block.practiceSubtopicIds ?? [], 20);
     case 'start-here':
-      return button({
-        label: 'Open the Start here guide',
-        variant: 'primary',
-        iconName: 'arrow-right',
-        onClick: () => navigate('/start'),
-      });
+      return () => navigate('/start');
     default:
-      return null;
+      return () => navigate('/planner');
   }
 }
 
-/** One study-topic row linking to the subtopic's Learn workspace. @internal */
-function topicLink(topic: PlanTopic): HTMLElement {
-  if (topic.kind === 'practice') return practiceLink(topic);
-  if (topic.pass === 'deepen') return deepenLink(topic);
-  const view = getSubtopic(topic.subtopicId);
-  const name = topic.name || view?.meta.name || topic.subtopicId;
-  const band = view?.meta.band as Band | undefined;
-  const hasQuestions = topic.mcqCount > 0;
-  const countChip = hasQuestions
-    ? chip({ text: `${topic.mcqCount} Q`, tone: 'accent' })
-    : chip({ text: 'material coming', tone: 'muted', iconName: 'timer' });
-  const timeChip = chip({ text: fmtDuration(topic.estMinutes), tone: 'muted' });
-  // Depth tier chip: FULL (the default) shows none; STANDARD / QUICK are marked.
-  const passChip = topic.pass === 'quick'
-    ? chip({ text: 'Quick pass', tone: 'warn', title: 'Key facts + cards + ~8 questions — a light first pass' })
-    : topic.pass === 'standard'
-      ? chip({ text: 'Standard', tone: 'muted', title: 'Notes + ~12 questions — a standard first pass' })
-      : null;
-  return el('button', {
-    class: 'study-link',
-    type: 'button',
-    ariaLabel: hasQuestions
-      ? `Study ${name} — ${topic.mcqCount} question${topic.mcqCount === 1 ? '' : 's'}, about ${fmtDuration(topic.estMinutes)}${topic.pass !== 'full' ? `, ${topic.pass} pass` : ''}`
-      : `Study ${name} — material coming soon, about ${fmtDuration(topic.estMinutes)}`,
-    onClick: () => openLearn(topic.subtopicId),
-  }, [
-    el('div', { class: 'study-link-main' }, [
-      band ? bandBadge(band) : null,
-      el('span', { class: 'study-link-name', text: name }),
-      passChip,
-      countChip,
-      timeChip,
-    ]),
-    el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
-  ]);
-}
-
 /**
- * A DEEPEN row — a final-window top-up that lifts a below-floor topic to its
- * floor depth. Plain language, no tier jargon: "Deepen · <topic> · 15 min".
- * @internal
+ * The next SATURDAY event (week test or full mock) on/after today — a single
+ * slim secondary card so the week's checkpoint is visible without the dense
+ * grid. Returns `null` when none remain. @internal
  */
-function deepenLink(topic: PlanTopic): HTMLElement {
-  const view = getSubtopic(topic.subtopicId);
-  const name = topic.name || view?.meta.name || topic.subtopicId;
-  return el('button', {
-    class: 'study-link',
-    type: 'button',
-    ariaLabel: `Deepen ${name} — about ${topic.estMinutes} minutes to strengthen a weak area`,
-    onClick: () => openLearn(topic.subtopicId),
-  }, [
-    el('div', { class: 'study-link-main' }, [
-      chip({ text: 'Deepen', tone: 'accent' }),
-      el('span', { class: 'study-link-name', text: name }),
-      chip({ text: `${topic.estMinutes} min`, tone: 'muted' }),
+function buildNextSaturdayCard(plan: Plan, today: string): HTMLElement | null {
+  const day = plan.days.find((d) => {
+    if (d.dateISO < today) return false;
+    if (dayOfWeek(d.dateISO) !== 6) return false;
+    return d.mockPaper !== null || d.blocks.some((b) => b.kind === 'week-test');
+  });
+  if (!day) return null;
+
+  const isMock = day.mockPaper !== null;
+  const label = isMock
+    ? day.mockPaper === 'paper1' ? 'Paper-I full mock' : 'Paper-II full mock'
+    : 'Week test';
+  const detail = day.dateISO === today ? 'today' : prettyDowDate(day.dateISO);
+  return card({ title: 'This week\u2019s checkpoint' }, [
+    el('div', { class: 'today-checkpoint' }, [
+      el('span', { class: 'today-checkpoint-icon' }, [icon('timer', 20)]),
+      el('div', { class: 'today-checkpoint-text' }, [
+        el('span', { class: 'today-checkpoint-title', text: `${label} · ${detail}` }),
+        el('span', { class: 'section-lead', text: isMock ? 'A timed full paper under exam conditions.' : 'Questions drawn mostly from this week\u2019s unit.' }),
+      ]),
+      button({ label: 'Open planner', variant: 'ghost', onClick: () => navigate('/planner') }),
     ]),
-    el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
   ]);
 }
 
-/**
- * A Mental Ability PRACTICE-set row — a mixed drill over the day's ALREADY-
- * covered MENT subtopics. @internal
- */
-function practiceLink(topic: PlanTopic): HTMLElement {
-  const q = topic.mcqCount;
-  const countChip = q > 0
-    ? chip({ text: `${q} Q`, tone: 'accent' })
-    : chip({ text: 'material coming', tone: 'muted', iconName: 'timer' });
-  return el('button', {
-    class: 'study-link',
-    type: 'button',
-    ariaLabel: `Mental Ability practice — ${q} mixed question${q === 1 ? '' : 's'}, about ${fmtDuration(topic.estMinutes)}`,
-    onClick: () => startPracticeDrill(topic.practiceSubtopicIds ?? [], q > 0 ? q : 20),
-  }, [
-    el('div', { class: 'study-link-main' }, [
-      chip({ text: 'Practice', tone: 'accent' }),
-      el('span', { class: 'study-link-name', text: 'Mental Ability practice' }),
-      countChip,
-      chip({ text: fmtDuration(topic.estMinutes), tone: 'muted' }),
-    ]),
-    el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
-  ]);
+/** Day-of-week (0=Sun … 6=Sat) for an ISO date, UTC-safe. @internal */
+function dayOfWeek(iso: string): number {
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d) return -1;
+  return new Date(Date.UTC(y, m - 1, d)).getUTCDay();
 }
 
 /**
- * The PRIMARY "Start today's study" action — the first scheduled topic's Learn
- * workspace (or the first mock/practice block). Returns `null` when there is
- * nothing actionable. @internal
+ * The PRIMARY "Start" action — the first scheduled topic's Learn workspace (or
+ * the first mock/practice block). Returns `null` when there is nothing
+ * actionable. @internal
  */
 function firstStart(day: PlanDay): { onClick: () => void; hint: string } | null {
   for (const b of day.blocks) {

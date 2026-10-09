@@ -9,13 +9,13 @@
  * trivially testable. This is a selector, not pure logic: keep the arithmetic
  * in the engine and metrics modules.
  */
-import { getBanks, getContentIndex, getLearningSequence, getSubjects, getSubtopic, getSubtopics } from '../content/loader';
+import { getBanks, getContentIndex, getLearningSequence, getSubjects, getSubtopic, getSubtopics, getUnits } from '../content/loader';
 import { subtopicMasteryPct } from './metrics';
 import { loadState } from '../state/store';
 import { todayISO } from './dates';
 import { buildSession } from '../engine/drill';
 import type { MCQItem } from '../content/types';
-import type { LearningStream } from '../content/plan-types';
+import type { LearningStream, PlanUnit } from '../content/plan-types';
 import type { ExamPattern } from './exam-pattern';
 import type { SectionPools } from '../engine/mock';
 import {
@@ -153,7 +153,17 @@ export function learningSequence(): PlanSequence {
       for (const step of steps) if (step.stream === 'early' || step.stream === 'modern') histStreams[step.id] = step.stream;
     }
   }
-  return { order, mentStreams, histStreams };
+  // The ordered WEEKLY SUBJECT UNITS the first pass teaches one at a time, each
+  // filtered to its in-scope (paper1/paper2) subtopics. The engine packs units
+  // in this order; MENT + CA remain their own daily lanes (not unitised).
+  const units: PlanUnit[] = getUnits().units.map((u) => ({
+    id: u.id,
+    subjectCode: u.subjectCode,
+    title: u.title,
+    why: u.why,
+    topicIds: u.topicIds.filter((id) => inScope.has(id)),
+  }));
+  return { order, mentStreams, histStreams, units };
 }
 
 /**

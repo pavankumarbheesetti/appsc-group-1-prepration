@@ -30,7 +30,7 @@
  * stays free of any content/store import and trivially testable.
  */
 import type { Band, Track } from '../content/taxonomy';
-import type { LearningStream } from '../content/plan-types';
+import type { LearningStream, PlanUnit } from '../content/plan-types';
 import type { PaperId } from '../lib/exam-pattern';
 import type { MockKind } from './mock';
 import { WEEK_TEST_COUNT, WEEK_TEST_MINUTES } from './mock';
@@ -196,6 +196,7 @@ export type PlanBlockKind =
   | 'telugu'
   | 'targeted-revision'
   | 'ca-refresh'
+  | 'unit-wrapup'
   | 'start-here'
   | 'light';
 
@@ -231,6 +232,24 @@ export interface PlanBlock {
   caSubtopicId?: string;
   /** Previous topic name in the same subject's sequence (Today view). */
   buildsOn?: string;
+  /**
+   * For a `unit-wrapup` block (STANDARDS §8a): the unit being consolidated and
+   * the inputs the Today/Planner launcher reconstructs the scoped UNIT TEST
+   * from. The wrap-up is `WRAPUP_GLANCE_MIN` "Topic at a glance" + a timed
+   * `unitTestCount`-question test (1 Q/min, −1/3) drawn ONLY from this unit's
+   * topics' MCQs + `WRAPUP_REVIEW_MIN` review. `unitTestDateISO` is the
+   * deterministic seed. `unitId`/`unitTitle` identify the finished unit.
+   */
+  unitId?: string;
+  unitTitle?: string;
+  /** The unit's own topic ids — the ONLY pool the unit test draws from. */
+  unitTestSubtopicIds?: string[];
+  /** Target unit-test question count (= `unitTestMinutes`, 1 Q/min). */
+  unitTestCount?: number;
+  /** Unit-test timer minutes. */
+  unitTestMinutes?: number;
+  /** Deterministic unit-test seed (the day the wrap-up is scheduled). */
+  unitTestDateISO?: string;
 }
 
 /** One day of the study plan — an ordered list of rhythm blocks (+ legacy fields). */
@@ -291,6 +310,24 @@ export interface PlanDay {
    * QUICK badge. Empty on mock / final / exam days.
    */
   topics: PlanTopic[];
+  /**
+   * The WEEKLY SUBJECT UNIT this day's MAIN study block teaches (STANDARDS §8a),
+   * or `null` on a day with no unit main block (mocks, week tests, final window,
+   * light/exam, pre-start). During the first pass a day's main block teaches
+   * exactly ONE unit; during the revision cycle it REVISITS one unit. Views
+   * render the unit header + progress ("Unit 3 of 14 · day 2 of 4") from these.
+   */
+  unitId: string | null;
+  /** The current unit's beginner-friendly title (`null` when `unitId` is null). */
+  unitTitle: string | null;
+  /** The current unit's subject code (`null` when `unitId` is null). */
+  unitSubjectCode: string | null;
+  /** 1-based day index of this unit's run (how many days in it has been taught). */
+  unitDay: number;
+  /** Total days this unit's run spans across the plan. */
+  unitDays: number;
+  /** The NEXT unit's title after this one finishes, or `null` when it is the last. */
+  nextUnitTitle: string | null;
   status: PlanDayStatus;
 }
 
@@ -427,6 +464,14 @@ export interface PlanSummary {
   /* ---- Rhythm read-out ---- */
   /** Per-subject FULL/QUICK fit report. */
   subjectFit: SubjectFit[];
+  /**
+   * The WEEKLY SUBJECT UNITS of the first pass, in teaching order, each with the
+   * calendar window it occupies (`startISO`→`endISO`, the first and last
+   * coverage day its main block is taught) and how many topics it carries. The
+   * Planner view renders the unit timeline from this. Empty in the short-window
+   * fallback / post-prelims.
+   */
+  units: Array<{ id: string; title: string; subjectCode: string; startISO: string; endISO: string; topicCount: number }>;
   /** Date all MENT topics were first-passed (`''` when none). */
   mentAllPassedISO: string;
   /** The full test schedule (date → paper + per-paper series number + kind). */
@@ -503,6 +548,14 @@ export interface PlanSequence {
    * is packed as a single `early` chain (the fallback for unit fixtures).
    */
   histStreams?: Readonly<Record<string, 'early' | 'modern'>>;
+  /**
+   * The ordered WEEKLY SUBJECT UNITS the first pass teaches one at a time
+   * (STANDARDS §8a). Each unit's `topicIds` is a contiguous run of its subject's
+   * sequence, already filtered to in-scope subtopics by the caller. When absent
+   * (older unit fixtures) the engine derives ONE unit per subject from the
+   * per-subject order, so the unit-stream rhythm always has units to teach.
+   */
+  units?: readonly PlanUnit[];
 }
 
 /** Options for {@link buildPlan}. */
@@ -914,6 +967,36 @@ export const DEEPEN_STANDARD_TO_FULL_MIN = 20;
 /** Max DEEPEN topics scheduled into one final-window `targeted-revision` block. */
 export const DEEPEN_MAX_PER_BLOCK = 4;
 
+/* -------------------------------------------------------------------------- */
+/* UNIT WRAP-UP (consolidate a unit right after finishing it, STANDARDS §8a)   */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Minimum leftover main-block minutes (after a unit's last topics) that triggers
+ * a UNIT WRAP-UP. On a unit's last first-pass day, when the main block has at
+ * least this much time left, the beginner consolidates the unit instead of
+ * leaving the block idle (STANDARDS §8a).
+ */
+export const WRAPUP_MIN_IDLE_MIN = 30;
+
+/** The largest a single unit wrap-up ever grows to (`min(leftover, this)`). */
+export const WRAPUP_MAX_MIN = 90;
+
+/** Fixed minutes of a wrap-up spent on the "Topic at a glance" recap. */
+export const WRAPUP_GLANCE_MIN = 15;
+
+/** Fixed minutes of a wrap-up spent reviewing wrong / guessed answers. */
+export const WRAPUP_REVIEW_MIN = 15;
+
+/**
+ * The timed UNIT TEST size inside a wrap-up of `size` minutes: the middle slice
+ * after the glance + review, at 1 question / minute, −1/3 marking. Never
+ * negative (a 30-min wrap-up is glance + review only, with a 0-question test).
+ */
+export function unitTestCountForWrapup(size: number): number {
+  return Math.max(0, Math.round(size - WRAPUP_GLANCE_MIN - WRAPUP_REVIEW_MIN));
+}
+
 /** Matches AP-specific subtopic ids (studied at FULL depth first). */
 const AP_RE = /-ap-|andhra|ap-culture|ap-reorganisation|ap-economy/;
 
@@ -1131,6 +1214,8 @@ interface Placement {
   subjectCode: string;
   id: string;
   pass: PlanPass;
+  /** Index into the ordered unit list (the WEEKLY SUBJECT UNIT this topic belongs to). */
+  unitIndex?: number;
 }
 
 /**
@@ -1265,79 +1350,45 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     subjectIsP1[code] = (subjectLists[code]![0]?.track ?? 'paper1') !== 'paper2';
   }
 
-  // ---- OWN CAPACITY (§1) ---------------------------------------------------
-  // Each subject's capacity C_s = the sum of ITS OWN weekday subject-block base
-  // minutes from 30 Sep → 4 Nov (HIST Mon, POL Tue, ECON Wed, GEO Thu, SCI Fri).
-  // The SUNDAY POOL P is ALL of the Sunday STUDY minutes over the same range —
-  // `(sundayBudget − 120 fixed) × #coverage-Sundays` — so a bigger Sunday budget
-  // really buys more depth (defect 3: the pool must SCALE with the Sunday budget,
-  // not sit at a fixed 600). Computed inside `computeFit` from `weekendScale` so
-  // the option probes re-fit at a higher budget. `numCoverageSundays` is the
-  // count of Sunday study slots in the coverage window.
-  const ownCapacity: Record<string, number> = {};
-  for (const code of SUBJECT_ORDER) ownCapacity[code] = 0;
-  let numCoverageSundays = 0;
-  for (const slot of subjectSlots) {
-    if (slot.dow === 0) numCoverageSundays += 1;
-    else ownCapacity[slot.owner] = (ownCapacity[slot.owner] ?? 0) + slot.baseMin;
+  // ---- WEEKLY SUBJECT UNITS (STANDARDS §8a) -------------------------------
+  // The first pass teaches ONE unit at a time in the MAIN study block, across
+  // however many days the unit takes, instead of rotating a different subject
+  // each weekday. `units` is the ordered teaching list; each unit's topics are a
+  // contiguous run of its subject's sequence (already in-scope). When the caller
+  // supplies no units (older fixtures) we derive ONE unit per subject so the
+  // unit-stream rhythm always has something to teach.
+  interface BuiltUnit {
+    id: string;
+    title: string;
+    subjectCode: string;
+    topics: PlanSubtopic[];
   }
+  const unitSpecs = opts.sequence?.units;
+  let units: BuiltUnit[];
+  if (unitSpecs && unitSpecs.length > 0) {
+    units = [];
+    for (const u of unitSpecs) {
+      const topics: PlanSubtopic[] = [];
+      for (const id of u.topicIds) {
+        const s = byId.get(id);
+        if (s && (s.track ?? 'paper1') !== 'mains') topics.push(s);
+      }
+      if (topics.length > 0) units.push({ id: u.id, title: u.title, subjectCode: u.subjectCode, topics });
+    }
+  } else {
+    units = SUBJECT_ORDER.map((code) => ({
+      id: `unit-${code.toLowerCase()}`,
+      title: SUBJECT_LABEL[code] ?? code,
+      subjectCode: code,
+      topics: subjectLists[code]!,
+    })).filter((u) => u.topics.length > 0);
+  }
+  const unitIndexById = new Map<string, number>();
+  units.forEach((u, ui) => u.topics.forEach((s) => unitIndexById.set(s.id, ui)));
+  // Every topic that belongs to a unit, in UNIT (teaching) order.
+  const allUnitTopics: PlanSubtopic[] = units.flatMap((u) => u.topics);
 
-  // ---- HISTORY TWO STREAMS (defect 1: priority inversion) ------------------
-  // History is scheduled as TWO parallel chronological streams so its high-yield
-  // Modern + AP topics no longer land last. Monday advances H-early (ancient +
-  // medieval + AP early dynasties); Sunday advances H-modern (modern + AP
-  // freedom/statehood + art & culture). Each stream stays strictly in its OWN
-  // order (cross-stream prereqs not required); a donated/pooled slot feeds
-  // whichever stream carries the higher-priority unmet depth. Absent stream tags
-  // (unit fixtures) → a single `early` chain (the historical single-chain path).
-  const histStreamTag = opts.sequence?.histStreams ?? {};
-  const histAll = subjectLists['HIST'] ?? [];
-  const histEarlySrc = histAll.filter((s) => (histStreamTag[s.id] ?? 'early') !== 'modern');
-  const histModernSrc = histAll.filter((s) => histStreamTag[s.id] === 'modern');
-
-  // Budget SCALES the packing CAPACITY (not just the display, defect 3): weekday
-  // blocks scale with the DAILY budget, the Sunday catch-up block with the
-  // WEEKEND budget — so a bigger weekend budget really seats more Sunday topics.
-  // `weekendScale` is a parameter so option probes can re-fit at a higher budget.
-  const dailyScale = dailyBudgetMin / 240;
-  const slotCap = (slot: SubjectSlotInfo, weekendScale: number): number =>
-    slot.dow === 0 ? Math.round(120 * weekendScale) : Math.round(slot.baseMin * dailyScale);
-
-  // ---- SUNDAY SHAPE (two study blocks) ------------------------------------
-  // A Sunday's fixed slots are weekly revision (60) + CA round-up (45) + Telugu
-  // (15) = 120 min. The remaining budget is the STUDY window, split into:
-  //   • a Modern-History block (H-modern) — History 120–240, and
-  //   • a Polity block (Polity's SECOND weekly slot) — Polity 60–120.
-  // POLITY IS CUT FIRST below the 360-min default (at 240 the previous shape:
-  // 120 H-modern only, no Polity block). Above 360 the SURPLUS goes to Modern
-  // HISTORY (defect 3: H-modern was hard-capped at 120, so a bigger Sunday
-  // budget only grew Polity — already all-FULL — and bought no History depth).
-  // `weekendScale` = weekendBudgetMin / 240 (probeable at +60/+120).
-  const SUNDAY_FIXED_MIN = 120; // weekly revision 60 + CA round-up 45 + Telugu 15
-  const SUNDAY_POL_CAP = 120; // Polity's 2nd slot never exceeds 120 (its own weekday base)
-  const sundayStudyCap = (weekendScale: number): number =>
-    Math.max(0, Math.round(240 * weekendScale) - SUNDAY_FIXED_MIN);
-  // Polity gets the first 60–120 of study ABOVE the 120-min H-modern floor, then
-  // is capped at 120; everything else (the surplus) is Modern History's.
-  const sunPolCap = (weekendScale: number): number => {
-    const study = sundayStudyCap(weekendScale);
-    return study <= 120 ? 0 : Math.min(SUNDAY_POL_CAP, study - 120);
-  };
-  const sunHmodCap = (weekendScale: number): number =>
-    Math.max(0, sundayStudyCap(weekendScale) - sunPolCap(weekendScale));
-
-
-  // Depth priority within a subject: AP first, then band A, then PYQ desc, then
-  // examPoints desc — the ordering OWN-FILL, POOL and stream-selection respect.
-  const depthPriority = (a: PlanSubtopic, b: PlanSubtopic): number => {
-    const ap = (isAP(a) ? 0 : 1) - (isAP(b) ? 0 : 1);
-    if (ap !== 0) return ap;
-    const ba = (a.band === 'A' ? 0 : 1) - (b.band === 'A' ? 0 : 1);
-    if (ba !== 0) return ba;
-    const pq = (pyq[b.id] ?? 0) - (pyq[a.id] ?? 0);
-    if (pq !== 0) return pq;
-    return (b.examPointCount ?? 0) - (a.examPointCount ?? 0);
-  };
+  // Lexicographic compare of priority keys (for downgrade/defer victim picks).
   const cmpKey = (a: number[], b: number[]): number => {
     for (let i = 0; i < a.length; i += 1) {
       if (a[i]! < b[i]!) return -1;
@@ -1345,425 +1396,184 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     }
     return 0;
   };
-  // PROTECTED-FROM-SPILL topics must ALWAYS be placed IN-WINDOW (never deferred
-  // to the buffer): AP (always FULL) and every band-A topic. The STANDARD-tier
-  // depth floor (POL/ECON/GEO/SCI + History PYQ/band-B topics) is a strong TARGET
-  // — kept via the downgrade guard while topics fit — but it YIELDS to AP/band-A
-  // placement: when block COUNT forces it, the lowest-priority floor topics are
-  // sacrificed to QUICK in the buffer and REPORTED, so AP/band-A are never
-  // starved. Only AP + band A are structurally unspillable.
+  // AP + band-A topics are PROTECTED: always FULL, always placed in-window.
   const isProtected = (s: PlanSubtopic): boolean => isAP(s) || s.band === 'A';
-  // A topic may be DOWNGRADED to fit only while it stays AT OR ABOVE its floor —
-  // its current pass must outrank its floor tier. This keeps AP FULL, band A
-  // FULL, and POL/ECON/GEO/SCI + History-PYQ topics ≥ STANDARD, while still
-  // letting an over-deepened topic shed a tier down to (never below) its floor.
+  // A topic may be downgraded to fit only while it stays AT OR ABOVE its floor.
   const canDowngrade = (s: PlanSubtopic, pass: ReadonlyMap<string, PlanPass>): boolean =>
     PASS_RANK[pass.get(s.id)!] > PASS_RANK[floorTier(s)];
+  // Lowest-priority-first ordering for a downgrade/defer victim: lowest PYQ, then
+  // fewest exam points, then latest in the learning sequence.
+  const downgradeRank = (s: PlanSubtopic): number[] => [
+    pyq[s.id] ?? 0,
+    s.examPointCount ?? 0,
+    -(seqIndex.get(s.id) ?? 0),
+  ];
 
-  // ---- OWN FILL (§2) — depth-v3, base capacity (budget-independent target) --
-  // Start every topic at QUICK; a topic whose FULL pass is no costlier than QUICK
-  // is simply FULL. Then upgrade WITHIN the subject in depth-priority order — AP
-  // to FULL (always), then floor→STANDARD, floor→FULL, non-floor→STANDARD,
-  // non-floor→FULL — each step only while the subject's OWN total stays ≤ its
-  // capacity C_s. Returns a FRESH map so the fit can be recomputed for option
-  // probes. Deterministic. @internal
-  const buildDepthTarget = (): Map<string, PlanPass> => {
-    const pass = new Map<string, PlanPass>();
-    for (const s of allSubjectTopics) {
-      // Seed each topic at its DEPTH FLOOR (never below): AP/band-A → FULL,
-      // POL/ECON/GEO/SCI + History-PYQ/band-B → STANDARD, PYQ-0 band-C/D → QUICK.
-      // A topic whose FULL pass is no costlier than QUICK is simply FULL.
-      const seed: PlanPass = isAP(s) || fullMin(s) <= QUICK_MIN ? 'full' : floorTier(s);
-      pass.set(s.id, seed);
-    }
-    const subjTotalOf = (code: string): number =>
-      subjectLists[code]!.reduce((a, s) => a + passMinutes(s, pass.get(s.id)!), 0);
-    const stepUpWithin = (s: PlanSubtopic, budget: number): boolean => {
-      const cur = pass.get(s.id)!;
-      if (cur === 'full') return false;
-      const next: PlanPass = cur === 'quick' ? 'standard' : 'full';
-      const delta = passMinutes(s, next) - passMinutes(s, cur);
-      if (subjTotalOf(s.subjectCode) + delta > budget) return false;
-      pass.set(s.id, next);
-      return true;
-    };
-    for (const code of SUBJECT_ORDER) {
-      const cap = ownCapacity[code] ?? 0;
-      const ordered = subjectLists[code]!.slice().sort(depthPriority);
-      const floor = ordered.filter(isFloorTopic);
-      const nonFloor = ordered.filter((s) => !isFloorTopic(s));
-      for (const s of floor) if (pass.get(s.id) === 'quick') stepUpWithin(s, cap);
-      for (const s of floor) while (pass.get(s.id) !== 'full' && stepUpWithin(s, cap)) { /* to FULL */ }
-      for (const s of nonFloor) if (pass.get(s.id) === 'quick') stepUpWithin(s, cap);
-      for (const s of nonFloor) while (pass.get(s.id) !== 'full' && stepUpWithin(s, cap)) { /* to FULL */ }
-    }
-    return pass;
+  // ---- Main-block capacity (budget-scaled) --------------------------------
+  // A weekday MAIN BLOCK is 135 min (Tue/Thu 120, 15 given to Telugu); the
+  // Sunday MAIN BLOCK is the Sunday budget minus the fixed 120 (weekly revision
+  // 60 + CA round-up 45 + Telugu 15). Weekday caps scale with the DAILY budget,
+  // the Sunday cap with the SUNDAY budget (probeable for feasibility options).
+  const SUNDAY_FIXED_MIN = 120; // weekly revision 60 + CA round-up 45 + Telugu 15
+  const mainCapFor = (dow: number, sundayBudget: number): number => {
+    if (dow === 0) return Math.max(1, Math.round(sundayBudget) - SUNDAY_FIXED_MIN);
+    const scale = dailyBudgetMin / 240;
+    const base = dow === 2 || dow === 4 ? 120 : 135;
+    return Math.max(1, Math.round(base * scale));
   };
 
-  // ---- Pack ALL subject-lane topics chronologically, with reallocation ----
-  // Unchanged reallocation rules (§3 no-donation-below-FULL; Sunday → neediest)
-  // but with: History served from its TWO streams (Monday→early, Sunday→modern,
-  // donated→higher-priority stream), and block CAPACITY = the slot's
-  // BUDGET-SCALED minutes (defect 3). A block still holds ≤3 new topics (4 if all
-  // QUICK); topics run strictly in each stream's/subject's order; never span
-  // days. Pure in `pass` + `weekendScale` (re-runnable for option probes). @internal
+  // ---- Unit-stream packer -------------------------------------------------
+  // Pack units into the coverage MAIN slots IN ORDER. One unit per block
+  // (CLEAN BREAKS): a block teaches only the current unit, continuing day after
+  // day, so a beginner studies each chapter in a sustained run. ≤ 3 new topics
+  // per block (4 only if all QUICK); topics run in order and never span days.
+  // UNIT WRAP-UP (STANDARDS §8a): when a unit FINISHES in a block with ≥ 30 min
+  // of the main block still free, those minutes become a consolidation wrap-up
+  // (glance + a scoped unit test + review) instead of idle time; and only if the
+  // NEXT unit's first topic still fits the minutes left after the wrap-up does
+  // that unit begin in the SAME block (so Sunday time is not wasted) — otherwise
+  // it starts on a fresh day. Pure in `pass` + `sundayBudget` + `excluded`
+  // (re-runnable for the fit probes). @internal
+  interface WrapUp {
+    dateISO: string;
+    unitIndex: number;
+    size: number;
+  }
   interface PackResult {
     placements: Placement[];
     reallocations: Array<{ dateISO: string; fromSubject: string; toSubject: string }>;
     reallocatedInto: Record<string, string[]>;
     slotSubject: Map<string, string>;
     leftoverIds: string[];
+    /** One UNIT WRAP-UP per unit that finished a block with ≥ 30 min to spare. */
+    wrapups: WrapUp[];
   }
-  const packAllScaled = (
+  const packUnits = (
     pass: ReadonlyMap<string, PlanPass>,
-    weekendScale: number,
-    deferred: ReadonlySet<string> = new Set<string>(),
+    sundayBudget: number,
+    excluded: ReadonlySet<string> = new Set<string>(),
   ): PackResult => {
-    const keep = (s: PlanSubtopic): boolean => !deferred.has(s.id);
-    const queues: Record<string, PlanSubtopic[]> = {};
-    for (const code of SUBJECT_ORDER) queues[code] = code === 'HIST' ? [] : subjectLists[code]!.filter(keep);
-    const histEarlyQ = histEarlySrc.filter(keep);
-    const histModernQ = histModernSrc.filter(keep);
-    const remList = (code: string): PlanSubtopic[] =>
-      code === 'HIST' ? [...histEarlyQ, ...histModernQ] : queues[code]!;
-    const remCount = (code: string): number =>
-      code === 'HIST' ? histEarlyQ.length + histModernQ.length : queues[code]!.length;
-    const allFull = (code: string): boolean =>
-      subjectLists[code]!.every((s) => pass.get(s.id) === 'full');
+    const queues = units.map((u) => u.topics.filter((s) => !excluded.has(s.id)));
+    let cursor = 0;
+    const advance = (): void => {
+      while (cursor < units.length && queues[cursor]!.length === 0) cursor += 1;
+    };
     const placements: Placement[] = [];
-    const reallocations: Array<{ dateISO: string; fromSubject: string; toSubject: string }> = [];
+    const slotSubject = new Map<string, string>();
+    const wrapups: WrapUp[] = [];
+    for (const slot of subjectSlots) {
+      advance();
+      if (cursor >= units.length) break; // every unit taught
+      const cap = mainCapFor(slot.dow, sundayBudget);
+      let used = 0;
+      let placedAnyUnit = false;
+      // Fill the main block: the current unit's next topics, then a wrap-up when
+      // it finishes with room, then (only if it fits) the next unit.
+      for (;;) {
+        advance();
+        if (cursor >= units.length) break;
+        const ui = cursor;
+        const q = queues[ui]!;
+        const firstUnitInSlot = !placedAnyUnit;
+        // A NEW unit may only START mid-block when its first topic fits the
+        // minutes still free (the clean-break rule defers it to a fresh day
+        // otherwise). The first unit of the block is never gated this way.
+        if (!firstUnitInSlot) {
+          const s0 = q[0]!;
+          if (used + passMinutes(s0, pass.get(s0.id)!) > cap) break;
+        }
+        let count = 0;
+        let allQuickSoFar = true;
+        while (q.length > 0) {
+          const s = q[0]!;
+          const p = pass.get(s.id)!;
+          const isQuick = p === 'quick' || passMinutes(s, p) <= QUICK_MIN;
+          const maxTopics = allQuickSoFar && isQuick ? 4 : 3; // ≤3 new topics (4 if all QUICK)
+          if (count >= maxTopics) break;
+          const m = passMinutes(s, p);
+          // The very first topic of the FIRST unit in a block is always placed
+          // (never stranded or split); every later topic must fit the cap.
+          if ((count > 0 || !firstUnitInSlot) && used + m > cap) break;
+          // RESERVE WRAP-UP ROOM: if this is the unit's FINAL topic and placing
+          // it here would leave < WRAPUP_MIN_IDLE_MIN free, defer it to the next
+          // block so the unit ENDS with room to consolidate (every unit gets a
+          // wrap-up). The block's first topic always progresses; a lone final
+          // topic (≤ FULL_CAP_MIN) always leaves ample room on a fresh block.
+          if (q.length === 1 && count > 0 && used + m > cap - WRAPUP_MIN_IDLE_MIN) break;
+          q.shift();
+          used += m;
+          count += 1;
+          allQuickSoFar = allQuickSoFar && isQuick;
+          placements.push({ dateISO: slot.dateISO, subjectCode: units[ui]!.subjectCode, id: s.id, pass: p, unitIndex: ui });
+        }
+        if (count === 0) break; // nothing more fits in this block
+        slotSubject.set(slot.dateISO, units[ui]!.subjectCode);
+        placedAnyUnit = true;
+        if (q.length > 0) break; // unit not finished → it continues next day
+        // Unit finished cleanly in this block. Advance past it and, when ≥ 30
+        // min remain, reserve a UNIT WRAP-UP (bounded at WRAPUP_MAX_MIN). The
+        // loop then tries the next unit, which only starts if its first topic
+        // fits the minutes still free (checked at the top of the next pass).
+        cursor += 1;
+        const leftover = cap - used;
+        if (leftover >= WRAPUP_MIN_IDLE_MIN) {
+          const size = Math.min(leftover, WRAPUP_MAX_MIN);
+          used += size;
+          wrapups.push({ dateISO: slot.dateISO, unitIndex: ui, size });
+        } else {
+          break; // too little left to consolidate → next unit starts a fresh day
+        }
+      }
+    }
     const reallocatedInto: Record<string, string[]> = {};
     for (const code of SUBJECT_ORDER) reallocatedInto[code] = [];
-    const slotSubject = new Map<string, string>();
-    // The most important remaining topic of a HIST stream (for donated slots).
-    const bestRankOf = (q: readonly PlanSubtopic[]): number[] => {
-      let best: number[] | null = null;
-      for (const s of q) {
-        const key = [isAP(s) ? 0 : 1, s.band === 'A' ? 0 : 1, -(pyq[s.id] ?? 0), -(s.examPointCount ?? 0)];
-        if (best === null || cmpKey(key, best) < 0) best = key;
-      }
-      return best ?? [9, 9, 0, 0];
-    };
-    const histQueueFor = (slot: SubjectSlotInfo): PlanSubtopic[] => {
-      if (histModernQ.length === 0) return histEarlyQ;
-      if (histEarlyQ.length === 0) return histModernQ;
-      if (slot.dow === 1) return histEarlyQ; // Monday → H-early
-      if (slot.dow === 0) return histModernQ; // Sunday → H-modern
-      // Donated/pooled weekday → the stream with the larger remaining backlog
-      // (usually H-early, so its long chain reaches its late protected topics),
-      // breaking ties toward the higher-priority remaining head.
-      if (histEarlyQ.length !== histModernQ.length) {
-        return histEarlyQ.length > histModernQ.length ? histEarlyQ : histModernQ;
-      }
-      return cmpKey(bestRankOf(histEarlyQ), bestRankOf(histModernQ)) <= 0 ? histEarlyQ : histModernQ;
-    };
-    const neediest = (): string | null => {
-      let best: string | null = null;
-      let bestAP = -1;
-      let bestDeep = -1;
-      let bestCount = -1;
-      for (const code of SUBJECT_ORDER) {
-        const list = remList(code);
-        if (list.length === 0) continue;
-        const ap = list.filter(isAP).length;
-        // Depth topics (STANDARD/FULL) still to place NEED a slot most — this is
-        // what stops a freed slot going to a QUICK tail while a small Paper-I
-        // subject still has band-A/floor depth topics unplaced.
-        const deep = list.filter((s) => pass.get(s.id) !== 'quick').length;
-        const count = list.length;
-        if (
-          ap > bestAP ||
-          (ap === bestAP && (deep > bestDeep || (deep === bestDeep && count > bestCount)))
-        ) {
-          best = code;
-          bestAP = ap;
-          bestDeep = deep;
-          bestCount = count;
-        }
-      }
-      return best;
-    };
-    // Fill ONE study block from queue `q` for `subject` at `dateISO`, capped at
-    // `cap` minutes and ≤3 new topics (4 if the whole block is QUICK). Topics run
-    // strictly in queue order and never span days. @internal
-    const fillBlock = (dateISO: string, subject: string, q: PlanSubtopic[], cap: number): void => {
-      let used = 0;
-      let count = 0;
-      let allQuickSoFar = true;
-      while (q.length > 0) {
-        const s = q[0]!;
-        const p = pass.get(s.id)!;
-        const isQuick = p === 'quick' || passMinutes(s, p) <= QUICK_MIN;
-        const maxTopics = allQuickSoFar && isQuick ? 4 : 3; // ≤3 new topics (4 if all-QUICK)
-        if (count >= maxTopics) break;
-        const m = passMinutes(s, p);
-        if (count > 0 && used + m > cap) break;
-        q.shift();
-        used += m;
-        count += 1;
-        allQuickSoFar = allQuickSoFar && isQuick;
-        placements.push({ dateISO, subjectCode: subject, id: s.id, pass: p });
-      }
-    };
-    for (const slot of subjectSlots) {
-      const owner = slot.owner;
-      // §5 PLACEMENT — SUNDAY carries TWO dedicated study blocks: a protected
-      // Modern-History block (H-modern) and a Polity block (Polity's SECOND
-      // weekly slot). Both scale with the Sunday budget; the Polity block is cut
-      // first below the 360-min default (at 240 → H-modern only, the old shape).
-      // Runtime catch-up of the week's missed items still takes precedence over
-      // these plan-time blocks; the plan assumes nothing missed.
-      if (slot.dow === 0) {
-        slotSubject.set(slot.dateISO, 'HIST');
-        const hmodQ = histModernQ.length > 0 ? histModernQ : histEarlyQ;
-        fillBlock(slot.dateISO, 'HIST', hmodQ, sunHmodCap(weekendScale));
-        const polCap = sunPolCap(weekendScale);
-        if (polCap > 0) fillBlock(slot.dateISO, 'POL', queues['POL']!, polCap);
-        continue;
-      }
-      // A weekday block teaches its OWN subject first; it is DONATED only once its
-      // owner has placed all its topics AND is a SPARE donor (every topic FULL).
-      // An owner done but still below FULL leaves the block idle (§3 — never
-      // donate while below FULL).
-      let effective: string | null;
-      if (remCount(owner) > 0) {
-        effective = owner;
-      } else if (allFull(owner)) {
-        effective = neediest();
-      } else {
-        slotSubject.set(slot.dateISO, owner); // done but below FULL — idle, never donate
-        continue;
-      }
-      if (effective === null) {
-        slotSubject.set(slot.dateISO, owner); // everything placed — no new topics
-        continue;
-      }
-      if (effective !== owner) {
-        reallocations.push({ dateISO: slot.dateISO, fromSubject: owner, toSubject: effective });
-        reallocatedInto[effective]!.push(slot.dateISO);
-      }
-      slotSubject.set(slot.dateISO, effective);
-      const cap = slotCap(slot, weekendScale);
-      const q = effective === 'HIST' ? histQueueFor(slot) : queues[effective]!;
-      fillBlock(slot.dateISO, effective, q, cap);
-    }
-    const leftoverIds = [
-      ...SUBJECT_ORDER.filter((c) => c !== 'HIST').flatMap((code) => queues[code]!.map((s) => s.id)),
-      ...histEarlyQ.map((s) => s.id),
-      ...histModernQ.map((s) => s.id),
-    ];
-    return { placements, reallocations, reallocatedInto, slotSubject, leftoverIds };
+    const leftoverIds = queues.flatMap((q) => q.map((s) => s.id));
+    return { placements, reallocations: [], reallocatedInto, slotSubject, leftoverIds, wrapups };
   };
 
-  // ---- FIT = depth-v3 (own-fill + pool) THEN downgrade-to-fit --------------
-  // A pure function of the weekend scale, so the feasibility OPTIONS can re-fit
-  // at a higher weekend budget and report only the ones that ACTUALLY make it
-  // fit (defect 3). Deterministic. @internal
+  // ---- FIT: target FULL for everything, then downgrade / defer to fit -----
+  // The real scenario (long window, 240 weekday + 360 Sunday) seats EVERY topic
+  // at FULL in its unit's run. A tighter budget or short window can leave a tail
+  // of main-block slots short: shed the lowest-priority non-protected topic one
+  // tier at a time (never below its depth floor), then DEFER the lowest-priority
+  // non-protected QUICK topic into the post-coverage spill buffer (AP / band-A
+  // are always placed in-window). The final-window DEEPEN passes later lift any
+  // below-floor tail to its floor. Pure in `scale` (= sundayBudget / 240), so
+  // the option probe can re-fit at a higher Sunday budget. Deterministic.
+  const buildDepthTarget = (): Map<string, PlanPass> => {
+    const pass = new Map<string, PlanPass>();
+    for (const s of allUnitTopics) pass.set(s.id, 'full'); // target FULL for all
+    return pass;
+  };
   const computeFit = (
-    weekendScale: number,
+    scale: number,
   ): { pass: Map<string, PlanPass>; res: PackResult; deferred: Set<string> } => {
+    const sundayBudget = Math.round(scale * 240);
     const pass = buildDepthTarget();
-    const subjTotalOf = (code: string): number =>
-      subjectLists[code]!.reduce((a, s) => a + passMinutes(s, pass.get(s.id)!), 0);
-    const allFull = (code: string): boolean =>
-      subjectLists[code]!.every((s) => pass.get(s.id) === 'full');
-    // Per-subject leftover count of a pack result — how many of a subject's own
-    // topics the packer could NOT seat. @internal
-    const leftoverCountBySubject = (r: PackResult): Map<string, number> => {
-      const m = new Map<string, number>();
-      for (const id of r.leftoverIds) {
-        const c = byId.get(id)?.subjectCode ?? '';
-        m.set(c, (m.get(c) ?? 0) + 1);
-      }
-      return m;
-    };
-    // POOL = the Sunday pool P + every SPARE (all-FULL, total < C_s) subject's
-    // surplus. It funds the single best remaining upgrade across all below-FULL
-    // subjects, ranked AP → floor → STANDARD-target → PYQ desc → lowest Paper-I
-    // minute share, applied only while it does NOT push more topics past the
-    // window. Deterministic.
-    const p1MinuteShare = (code: string): number => {
-      const p1 = SUBJECT_ORDER.filter((c) => subjectIsP1[c]);
-      const tot = p1.reduce((a, c) => a + subjTotalOf(c), 0);
-      return tot > 0 ? subjTotalOf(code) / tot : 0;
-    };
-    const poolRank = (s: PlanSubtopic): number[] => [
-      isAP(s) ? 0 : 1,
-      isFloorTopic(s) ? 0 : 1,
-      pass.get(s.id) === 'quick' ? 0 : 1, // STANDARD target before FULL target
-      -(pyq[s.id] ?? 0),
-      p1MinuteShare(s.subjectCode),
-    ];
-    // Polity does NOT get FULL on a non-band-A topic while ANY History PYQ>0
-    // topic is still below STANDARD — the shared pool must lift History to its
-    // floor before it over-deepens Polity (STANDARDS §8a, pool rule).
-    const histPyqBelowStandard = (): boolean =>
-      (subjectLists['HIST'] ?? []).some(
-        (s) => (pyq[s.id] ?? 0) > 0 && PASS_RANK[pass.get(s.id)!] < PASS_RANK.standard,
-      );
-    const poolBlocked = (s: PlanSubtopic, next: PlanPass, overflows: boolean): boolean =>
-      (s.subjectCode === 'POL' &&
-        !(isAP(s) || s.band === 'A') &&
-        next === 'full' &&
-        histPyqBelowStandard()) ||
-      // Never spend the shared pool taking a non-protected topic to FULL in a
-      // subject that STILL overflows its own placement — extra FULL there just
-      // burns block capacity (a 60-min FULL crowds out lighter topics) and
-      // inflates the deferred buffer (defect 1). A subject deepens to FULL only
-      // once its own topics all pack.
-      (next === 'full' && !(isAP(s) || s.band === 'A') && overflows);
-    let res = packAllScaled(pass, weekendScale);
-    // POOL = ALL Sunday study minutes over the coverage window (scaled with the
-    // Sunday budget) + every SPARE (all-FULL, total < C_s) subject's surplus.
-    let pool = numCoverageSundays * sundayStudyCap(weekendScale);
-    for (const code of SUBJECT_ORDER) {
-      if (allFull(code)) pool += Math.max(0, (ownCapacity[code] ?? 0) - subjTotalOf(code));
-    }
-    const poolSkip = new Set<string>();
-    while (pool > 0) {
-      const overflowBySubj = leftoverCountBySubject(res);
-      let best: PlanSubtopic | null = null;
-      let bestKey: number[] | null = null;
-      for (const s of allSubjectTopics) {
-        if (pass.get(s.id) === 'full' || poolSkip.has(s.id)) continue;
-        const next: PlanPass = pass.get(s.id) === 'quick' ? 'standard' : 'full';
-        if (poolBlocked(s, next, (overflowBySubj.get(s.subjectCode) ?? 0) > 0)) continue;
-        if (passMinutes(s, next) - passMinutes(s, pass.get(s.id)!) > pool) continue;
-        const key = poolRank(s);
-        if (bestKey === null || cmpKey(key, bestKey) < 0) {
-          bestKey = key;
-          best = s;
-        }
-      }
-      if (!best) break;
-      const prev = pass.get(best.id)!;
-      const next: PlanPass = prev === 'quick' ? 'standard' : 'full';
-      const delta = passMinutes(best, next) - passMinutes(best, prev);
-      pass.set(best.id, next);
-      const trial = packAllScaled(pass, weekendScale);
-      if (trial.leftoverIds.length > res.leftoverIds.length) {
-        // Deepening here would push MORE topics past 4 Nov — skip and keep looking.
-        pass.set(best.id, prev);
-        poolSkip.add(best.id);
-        continue;
-      }
-      pool -= delta;
-      res = trial;
-    }
-    // ---- DOWNGRADE-TO-FIT (defect 2): the real integer packing can leave a
-    // tail even when the minute-fit "fits" (e.g. 60-min topics wasting 15 min in
-    // a 135-min block). Downgrade the LOWEST-priority topic that is still ABOVE
-    // its depth floor (never below — AP stays FULL, band A FULL, POL/ECON/GEO/SCI
-    // + History-PYQ ≥ STANDARD) in an over-subscribed subject one tier at a time
-    // and re-pack, before anything is deferred.
-    const downgradeRank = (s: PlanSubtopic): number[] => [
-      pyq[s.id] ?? 0,
-      s.examPointCount ?? 0,
-      -(seqIndex.get(s.id) ?? 0),
-    ];
+    let res = packUnits(pass, sundayBudget);
     let guard = 0;
-    // ---- DOWNGRADE-TO-FIT (defect 2 — OWN-CAPACITY-FIRST): shed depth ONLY in a
-    // subject that is genuinely OVER its own packable capacity, and ONLY while a
-    // shed actually relieves THAT subject's overflow. A subject whose own topics
-    // already pack keeps its own-capacity FULL depth — the old loop ran until the
-    // (unreachable) GLOBAL leftover count hit 0 and so collapsed every leftover
-    // subject (e.g. Economy) down to its floor even though its own Wednesdays fit
-    // ~10 FULL. `settled` freezes a subject once shedding no longer seats more of
-    // its own topics, so only the truly tight subject (History, block-count
-    // bound) keeps shedding toward its QUICK floor. Deterministic.
-    const settled = new Set<string>();
-    while (res.leftoverIds.length > 0 && guard < 5000) {
-      guard += 1;
-      const leftBySubj = leftoverCountBySubject(res);
-      let victim: PlanSubtopic | null = null;
-      let victimKey: number[] | null = null;
-      for (const s of allSubjectTopics) {
-        if ((leftBySubj.get(s.subjectCode) ?? 0) === 0) continue; // subject fits — keep its depth
-        if (settled.has(s.subjectCode)) continue; // shedding no longer seats its topics
-        if (!canDowngrade(s, pass)) continue; // never below the depth floor
-        const key = downgradeRank(s);
-        if (victimKey === null || cmpKey(key, victimKey) < 0) {
-          victimKey = key;
-          victim = s;
-        }
-      }
-      if (!victim) break; // every overflowing subject is at floor — densify/defer next
-      const code = victim.subjectCode;
-      const before = leftBySubj.get(code) ?? 0;
-      const prev = pass.get(victim.id)!;
-      pass.set(victim.id, prev === 'full' ? 'standard' : 'quick');
-      const trial = packAllScaled(pass, weekendScale);
-      const after = leftoverCountBySubject(trial).get(code) ?? 0;
-      if (after >= before && trial.leftoverIds.length >= res.leftoverIds.length) {
-        // Shedding this topic seated no more of the subject's own topics AND did
-        // not help globally — revert and freeze the subject so we don't needlessly
-        // starve its depth (its residual overflow is a genuine QUICK tail handled
-        // by densify/defer). History (block-count bound) keeps shedding via its
-        // own still-unfrozen topics.
-        pass.set(victim.id, prev);
-        settled.add(code);
-        continue;
-      }
-      res = trial;
-    }
-    // ---- DENSIFY-TO-FIT (defect 2, step A): History's binding constraint is the
-    // block COUNT (~47 topics, ~10–14 blocks). A QUICK block holds 4 topics vs 3,
-    // so relaxing the LOWEST-priority non-AP / non-band-A topic (lowest PYQ first)
-    // to QUICK IN-WINDOW raises packing density and lets the packer reach the
-    // LATER protected topics (AP / band A) without spilling anything. A relaxed
-    // STANDARD-floor topic is REPORTED as a floor shortfall.
-    //
-    // MINIMAL densify (defect 3 — depth must scale with the Sunday budget):
-    // relax a STANDARD topic to QUICK ONLY when it actually lets the packer seat
-    // more topics. The old loop densified EVERY leftover-subject STANDARD topic
-    // to QUICK (History never packs all 47, so it collapsed the whole subject to
-    // QUICK regardless of budget → a bigger Sunday budget bought no depth). With
-    // the revert-if-it-does-not-help guard, extra Sunday capacity KEEPS more
-    // History topics at STANDARD, so depth rises with the Sunday budget.
-    // Deterministic.
-    const densifySettled = new Set<string>();
     while (res.leftoverIds.length > 0 && guard < 8000) {
       guard += 1;
-      const leftSubjects = new Set(res.leftoverIds.map((id) => byId.get(id)?.subjectCode ?? ''));
       let victim: PlanSubtopic | null = null;
       let victimKey: number[] | null = null;
-      for (const s of allSubjectTopics) {
-        if (!leftSubjects.has(s.subjectCode)) continue;
-        if (densifySettled.has(s.id)) continue;
-        if (isProtected(s) || pass.get(s.id) === 'quick') continue; // AP / band A never relaxed
+      for (const s of allUnitTopics) {
+        if (!canDowngrade(s, pass)) continue;
         const key = downgradeRank(s);
         if (victimKey === null || cmpKey(key, victimKey) < 0) {
           victimKey = key;
           victim = s;
         }
       }
-      if (!victim) break; // nothing left to densify — fall through to defer
-      const prev = pass.get(victim.id)!;
-      pass.set(victim.id, 'quick');
-      const trial = packAllScaled(pass, weekendScale);
-      if (trial.leftoverIds.length >= res.leftoverIds.length) {
-        // Relaxing this topic to QUICK did not seat any more topics — keep its
-        // STANDARD depth and try the next candidate (so spare Sunday capacity is
-        // spent on depth, not needlessly flattened to QUICK).
-        pass.set(victim.id, prev);
-        densifySettled.add(victim.id);
-        continue;
-      }
-      res = trial;
+      if (!victim) break; // everything is at its floor — defer next
+      pass.set(victim.id, pass.get(victim.id) === 'full' ? 'standard' : 'quick');
+      res = packUnits(pass, sundayBudget);
     }
-    // ---- DEFER-TO-FIT (defect 2, step B): even at all-QUICK the block COUNT can
-    // be short — DEFER the lowest-priority non-AP / non-band-A QUICK topic into
-    // the Thu 5 / Fri 6 buffer so the packer reaches the LATER protected topics
-    // (AP / band A), which must always be placed IN-WINDOW. Deferred topics are
-    // the reported QUICK-only spill — never an AP or band-A topic. Deterministic.
     const deferred = new Set<string>();
-    while (res.leftoverIds.length > 0 && guard < 12000) {
+    while (res.leftoverIds.length > 0 && guard < 16000) {
       guard += 1;
-      const leftSubjects = new Set(res.leftoverIds.map((id) => byId.get(id)?.subjectCode ?? ''));
       let victim: PlanSubtopic | null = null;
       let victimKey: number[] | null = null;
-      for (const s of allSubjectTopics) {
-        if (!leftSubjects.has(s.subjectCode)) continue;
+      for (const s of allUnitTopics) {
         if (isProtected(s) || deferred.has(s.id)) continue; // AP / band A never deferred
         const key = downgradeRank(s);
         if (victimKey === null || cmpKey(key, victimKey) < 0) {
@@ -1771,31 +1581,10 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
           victim = s;
         }
       }
-      if (!victim) break; // only AP / band-A remain unplaced → genuine shortfall
+      if (!victim) break; // only protected topics remain unplaced → genuine shortfall
       pass.set(victim.id, 'quick'); // buffer tier is always QUICK
       deferred.add(victim.id);
-      res = packAllScaled(pass, weekendScale, deferred);
-    }
-    // ---- FINAL POLITY-vs-HISTORY FLOOR RULE (STANDARDS §8a): Polity must NOT
-    // sit at FULL on a non-protected (non-AP, non-band-A) topic while ANY History
-    // PYQ>0 topic is still below STANDARD — the shared pool has to lift History
-    // to its floor before it over-deepens Polity. History's PYQ>0 topics are only
-    // relaxed to QUICK by densify/defer ABOVE (after the pool ran), so the rule is
-    // re-checked here on the FINAL state and any offending Polity FULL is pulled
-    // back to STANDARD (band A / AP stay FULL), then re-packed. Deterministic.
-    const histPyqBelowStandardFinal = (): boolean =>
-      (subjectLists['HIST'] ?? []).some(
-        (s) => (pyq[s.id] ?? 0) > 0 && PASS_RANK[pass.get(s.id)!] < PASS_RANK.standard,
-      );
-    if (histPyqBelowStandardFinal()) {
-      let changed = false;
-      for (const s of subjectLists['POL'] ?? []) {
-        if (!(isAP(s) || s.band === 'A') && pass.get(s.id) === 'full') {
-          pass.set(s.id, 'standard');
-          changed = true;
-        }
-      }
-      if (changed) res = packAllScaled(pass, weekendScale, deferred);
+      res = packUnits(pass, sundayBudget, deferred);
     }
     return { pass, res, deferred };
   };
@@ -1805,21 +1594,17 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   // ---- DAY-1 ORIENTATION first pass (STANDARDS §8a) -----------------------
   // When the plan's first day is a Saturday it opens with ORIENTATION whose
   // Mental Ability + History STUDY blocks ARE the first pass of those topics —
-  // not a duplicate preview. Pick the orientation topics here (in sequence
-  // order, at their PLANNED tier) and REMOVE them from the packer queues so the
-  // next MENT day and Monday's History block CONTINUE the sequence instead of
-  // re-teaching the same topics (a beginner must never study a topic twice).
-  //   • MENT: the first Mental Ability topic (ment-number-system), always FULL.
-  //   • HIST: the first H-early topics that FIT the 120-min orientation block at
-  //     their planned tier (≤ 3 new topics, 4 if all QUICK). A topic that cannot
-  //     fit stays for Monday — never first-passed on two days.
+  // not a duplicate preview. The History block teaches the FIRST unit's opening
+  // topics that fit the 120-min orientation block (Stone Age, then IVC); they
+  // are REMOVED from the packer so the unit CONTINUES from the next topic on the
+  // following main-block days — a beginner never studies a topic twice.
   const orientationMentId = orientationISO !== undefined ? mentList[0]?.id : undefined;
   const orientationHistIds: string[] = [];
-  if (orientationISO !== undefined) {
+  if (orientationISO !== undefined && units.length > 0) {
     let used = 0;
     let count = 0;
     let allQuick = true;
-    for (const s of histEarlySrc) {
+    for (const s of units[0]!.topics) {
       if (deferredIds.has(s.id)) continue; // never pull a buffer-spill topic forward
       const p = passByTopic.get(s.id) ?? 'quick';
       const m = passMinutes(s, p);
@@ -1835,27 +1620,23 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   }
   const orientationExcluded = new Set<string>(orientationHistIds);
 
-  // Re-pack with the orientation History topics removed from the queues so the
-  // in-window placement (Monday onward) continues from the NEXT sequence topic.
-  // With no orientation (non-Saturday start) this reproduces the fit result
-  // exactly (packAllScaled is pure), so non-orientation plans are unchanged.
+  // Re-pack with the orientation topics removed so the unit continues from the
+  // NEXT topic on the first main-block day. With no orientation this reproduces
+  // the fit result exactly (packUnits is pure), so non-orientation plans match.
   const result =
     orientationExcluded.size > 0
-      ? packAllScaled(
-          passByTopic,
-          weekendBudgetMin / 240,
-          new Set([...deferredIds, ...orientationExcluded]),
-        )
+      ? packUnits(passByTopic, weekendBudgetMin, new Set([...deferredIds, ...orientationExcluded]))
       : fitResult;
 
-  // Explicit placements for the orientation History first pass (on the Saturday
-  // orientation day), each at its planned tier.
+  // Explicit placements for the orientation History first pass (unit 0).
   const orientationPlacements: Placement[] = orientationHistIds.map((id) => ({
     dateISO: orientationISO!,
-    subjectCode: 'HIST',
+    subjectCode: units[0]!.subjectCode,
     id,
     pass: passByTopic.get(id) ?? 'quick',
+    unitIndex: 0,
   }));
+
 
   // The reported SPILL = intentionally DEFERRED low-priority QUICK topics PLUS
   // any topic the packer still could not place (a genuine shortfall — protected).
@@ -1900,7 +1681,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   const subjectMinutes = (code: string): number =>
     subjectLists[code]!.reduce((a, s) => a + minutesFor(s), 0);
 
-  const { placements, reallocations, reallocatedInto, slotSubject } = result;
+  const { placements, reallocations, reallocatedInto } = result;
 
   // ---- Spill: any topic still unplaced by coverage-end → Thu 5 / Fri 6 Nov -
   // ---- Spill: any topic still unplaced by coverage-end → Thu 5 / Fri 6 Nov -
@@ -2143,6 +1924,90 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     placedByDate.set(p.dateISO, arr);
   }
 
+  // ---- Unit schedule (first pass) ----------------------------------------
+  // Which UNIT(s) each coverage main-block day teaches — normally ONE (clean
+  // breaks), but a unit-end day that starts the NEXT unit after its wrap-up
+  // carries TWO, in teaching order. Each unit's run of dates lets views show
+  // "day 2 of 4" and the summary report each unit's calendar window. Spill-
+  // buffer first passes keep their unit too. @internal
+  const unitsByDate = new Map<string, number[]>();
+  for (const p of [...placements, ...spillPlacements, ...orientationPlacements]) {
+    if (p.unitIndex === undefined) continue;
+    const arr = unitsByDate.get(p.dateISO) ?? [];
+    if (!arr.includes(p.unitIndex)) arr.push(p.unitIndex);
+    unitsByDate.set(p.dateISO, arr);
+  }
+  /** The day's PRIMARY unit — the one its first main block continues/finishes. */
+  const primaryUnitOf = (dateISO: string): number | undefined => unitsByDate.get(dateISO)?.[0];
+  const unitDates: string[][] = units.map(() => []);
+  for (const [dateISO, uis] of unitsByDate) for (const ui of uis) unitDates[ui]!.push(dateISO);
+  for (const arr of unitDates) arr.sort();
+  // UNIT WRAP-UPS from the final pack: date → (unitIndex → wrap-up minutes). The
+  // day loop turns each into a `unit-wrapup` block consolidating that unit.
+  const wrapupByDate = new Map<string, Map<number, number>>();
+  for (const w of result.wrapups) {
+    const m = wrapupByDate.get(w.dateISO) ?? new Map<number, number>();
+    m.set(w.unitIndex, w.size);
+    wrapupByDate.set(w.dateISO, m);
+  }
+  /** Set a day's unit fields from the first-pass unit schedule. @internal */
+  const setUnitFields = (day: PlanDay, ui: number | undefined): void => {
+    if (ui === undefined || ui < 0 || ui >= units.length) return;
+    const u = units[ui]!;
+    const run = unitDates[ui]!;
+    day.unitId = u.id;
+    day.unitTitle = u.title;
+    day.unitSubjectCode = u.subjectCode;
+    day.unitDay = Math.max(1, run.indexOf(day.dateISO) + 1);
+    day.unitDays = run.length;
+    day.nextUnitTitle = units[ui + 1]?.title ?? null;
+  };
+
+  // ---- Revision-cycle unit schedule --------------------------------------
+  // The revision cycle REVISITS units in the SAME order (weakest topics first
+  // within a unit) at ~25 min/topic in the main block, so subjects come back in
+  // coherent weekly runs. We pre-pack the revisit over the revision-region main
+  // slots here (one unit per block, clean breaks, ≤ cap/25 topics per block).
+  const REVISIT_MIN = 25;
+  const revisionSlots = slots
+    .filter((sl) => sl.region === 'revision' && !sl.isMock && !sl.preStart && (sl.dow === 0 || (sl.dow >= 1 && sl.dow <= 5)))
+    .sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+  const revisitByDate = new Map<string, { unitIndex: number; topicIds: string[] }>();
+  const revisitUnitDates: string[][] = units.map(() => []);
+  {
+    // Each unit's topics, weakest-first (lowest mastery), to revisit in order.
+    const queues = units.map((u) =>
+      u.topics.slice().sort((a, b) => ctx.masteryOf(a.id) - ctx.masteryOf(b.id)).map((s) => s.id),
+    );
+    let cursor = 0;
+    const advance = (): void => { while (cursor < units.length && queues[cursor]!.length === 0) cursor += 1; };
+    advance();
+    for (const sl of revisionSlots) {
+      advance();
+      if (cursor >= units.length) break;
+      const ui = cursor;
+      const q = queues[ui]!;
+      const cap = mainCapFor(sl.dow, weekendBudgetMin);
+      const take = Math.max(1, Math.floor(cap / REVISIT_MIN));
+      const topicIds = q.splice(0, Math.min(take, q.length));
+      if (topicIds.length > 0) {
+        revisitByDate.set(sl.dateISO, { unitIndex: ui, topicIds });
+        revisitUnitDates[ui]!.push(sl.dateISO);
+      }
+    }
+  }
+  const setRevisitUnitFields = (day: PlanDay, ui: number): void => {
+    const u = units[ui];
+    if (!u) return;
+    const run = revisitUnitDates[ui]!;
+    day.unitId = u.id;
+    day.unitTitle = u.title;
+    day.unitSubjectCode = u.subjectCode;
+    day.unitDay = Math.max(1, run.indexOf(day.dateISO) + 1);
+    day.unitDays = run.length;
+    day.nextUnitTitle = units[ui + 1]?.title ?? null;
+  };
+
   // ---- Budget scaling helpers --------------------------------------------
   const toTopic = (id: string, pass: PlanPass): PlanTopic => {
     const s = byId.get(id);
@@ -2174,6 +2039,112 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     kind: 'practice',
     practiceSubtopicIds: [...ids],
   });
+
+  // ---- UNIT WRAP-UP block (STANDARDS §8a) --------------------------------
+  // A `size`-minute consolidation of a just-finished unit: WRAPUP_GLANCE_MIN
+  // "Topic at a glance", a timed UNIT TEST of `unitTestCountForWrapup(size)`
+  // questions drawn ONLY from this unit's topics' MCQs (deterministic seed =
+  // the day), then WRAPUP_REVIEW_MIN of review. One tap launches the test
+  // (reusing the scoped mock runner). @internal
+  const unitWrapupBlock = (ui: number, size: number, dateISO: string): PlanBlock => {
+    const u = units[ui]!;
+    const count = unitTestCountForWrapup(size);
+    return {
+      kind: 'unit-wrapup',
+      label: `Unit wrap-up \u00b7 ${u.title}`,
+      minutes: size,
+      subjectCode: u.subjectCode,
+      unitId: u.id,
+      unitTitle: u.title,
+      unitTestSubtopicIds: u.topics.map((s) => s.id),
+      unitTestCount: count,
+      unitTestMinutes: count,
+      unitTestDateISO: dateISO,
+    };
+  };
+
+  // ---- Coverage MAIN-BLOCK builder (STANDARDS §8a) -----------------------
+  // Turn a coverage day's placements into the ordered main blocks: one `subject`
+  // block per unit taught that day (minutes = its own topics' minutes, so the
+  // teaching block itself carries NO idle), a `unit-wrapup` block right after
+  // each unit that finished with room, and a trailing `Catch up or rest`
+  // `catchup` block for any minutes still free — so no first-pass main block is
+  // left ≥ 30 min idle. Returns the blocks, the day's first-pass topics (union),
+  // and the day's PRIMARY unit index. @internal
+  const buildCoverageMainBlocks = (
+    dateISO: string,
+    mainMin: number,
+  ): { blocks: PlanBlock[]; topics: PlanTopic[]; primaryUi: number | undefined } => {
+    const placed = placedByDate.get(dateISO) ?? [];
+    const uis = unitsByDate.get(dateISO) ?? [];
+    const wraps = wrapupByDate.get(dateISO);
+    const blocks: PlanBlock[] = [];
+    const allTopics: PlanTopic[] = [];
+    if (uis.length === 0) {
+      // No unit teaches here (first pass complete) → early consolidation block.
+      blocks.push({ kind: 'targeted-revision', label: 'Revise your studied units \u2014 first pass complete', minutes: Math.max(1, mainMin) });
+      return { blocks, topics: allTopics, primaryUi: undefined };
+    }
+    let used = 0;
+    for (const ui of uis) {
+      const unit = units[ui]!;
+      const unitPlaced = placed.filter((p) => p.unitIndex === ui);
+      const unitTopics = unitPlaced.map((p) => toTopic(p.id, p.pass));
+      const tmin = Math.max(1, unitTopics.reduce((a, t) => a + t.estMinutes, 0));
+      blocks.push({
+        kind: 'subject',
+        label: unit.title,
+        minutes: tmin,
+        subjectCode: unit.subjectCode,
+        topics: unitTopics,
+        buildsOn: buildsOnFor(unitPlaced[0]?.id, seqOrder, unit.subjectCode, nameById),
+      });
+      used += tmin;
+      for (const t of unitTopics) allTopics.push(t);
+      const wsize = wraps?.get(ui);
+      if (wsize !== undefined && wsize > 0) {
+        blocks.push(unitWrapupBlock(ui, wsize, dateISO));
+        used += wsize;
+      }
+    }
+    const remaining = mainMin - used;
+    if (remaining >= WRAPUP_MIN_IDLE_MIN) {
+      blocks.push({ kind: 'catchup', label: 'Catch up or rest', minutes: remaining });
+    }
+    return { blocks, topics: allTopics, primaryUi: uis[0] };
+  };
+
+  // ---- Revision-cycle MAIN-BLOCK builder (STANDARDS §8a) -----------------
+  // The revision cycle revisits one unit per block. On a unit's LAST revision
+  // day, if the block has ≥ 30 min to spare after the revisit, consolidate with
+  // a short UNIT TEST wrap-up (point 4); otherwise the revisit block keeps the
+  // full main-block minutes. @internal
+  const revisionMainBlocks = (
+    dateISO: string,
+    mainMin: number,
+    revisit: { unitIndex: number; topicIds: string[] } | undefined,
+  ): PlanBlock[] => {
+    const revUnit = revisit ? units[revisit.unitIndex] : undefined;
+    const topics = revisit?.topicIds.map((id) => toTopic(id, 'standard'));
+    if (!revisit || !revUnit || !topics || topics.length === 0) {
+      return [
+        { kind: 'targeted-revision', label: revUnit ? `Revise \u00b7 ${revUnit.title}` : 'Revise your studied units \u2014 weakest first', minutes: Math.max(1, mainMin) },
+      ];
+    }
+    const run = revisitUnitDates[revisit.unitIndex] ?? [];
+    const isLast = run.length > 0 && run[run.length - 1] === dateISO;
+    const tmin = topics.reduce((a, t) => a + t.estMinutes, 0);
+    const leftover = mainMin - tmin;
+    if (isLast && leftover >= WRAPUP_MIN_IDLE_MIN) {
+      return [
+        { kind: 'targeted-revision', label: `Revise \u00b7 ${revUnit.title}`, minutes: Math.max(1, tmin), subjectCode: revUnit.subjectCode, topics },
+        unitWrapupBlock(revisit.unitIndex, Math.min(leftover, WRAPUP_MAX_MIN), dateISO),
+      ];
+    }
+    return [
+      { kind: 'targeted-revision', label: `Revise \u00b7 ${revUnit.title}`, minutes: Math.max(1, mainMin), subjectCode: revUnit.subjectCode, topics },
+    ];
+  };
 
   // ---- Materialise the day list ------------------------------------------
   const statusFor = (dateISO: string): PlanDayStatus => {
@@ -2257,6 +2228,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       const orientationTopics = [...mentTopics, ...histTopics];
       recordFirstPass(day, orientationTopics);
       day.topics = orientationTopics;
+      setUnitFields(day, primaryUnitOf(orientationISO));
       day.drillTarget = orientationTopics.reduce((a, t) => a + availableDrill(t.mcqCount), 0);
       finaliseBlocks(day, slot.budgetMin);
       days.push(day);
@@ -2348,49 +2320,43 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
 
     if (slot.region === 'revision') {
       // REVISION CYCLE (long window only, ~4 weeks between coverage and the
-      // final window): the SAME weekly rhythm, but the subject block REVISITS
-      // already-first-passed topics in sequence order (weakest-first, ~25 min
-      // each: notes skim + cards + mistakes + 10 Qs) instead of teaching new
-      // ones — so NO new topics are first-passed here (coverage is done).
+      // final window): the SAME weekly rhythm, but the MAIN BLOCK now REVISITS
+      // the WEEKLY SUBJECT UNITS in the same order (weakest topics first within
+      // a unit, ~25 min each: notes skim + cards + mistakes + ~10 Qs) instead of
+      // teaching new ones — so subjects come back in coherent weekly runs and NO
+      // new topics are first-passed here (coverage is done). STANDARDS §8a.
       day.phase = 'revise';
-      // Weakest-first slice of a subject's topics for the day's revision list.
-      const revisitPick = (code: string, n: number): string[] =>
-        [...(subjectLists[code] ?? [])]
-          .sort((a, b) => ctx.masteryOf(a.id) - ctx.masteryOf(b.id))
-          .slice(0, n)
-          .map((s) => s.id);
+      const revisit = revisitByDate.get(slot.dateISO);
+      const mainMin = mainCapFor(slot.dow, slot.budgetMin);
 
       if (slot.dow === 0) {
-        // SUNDAY revision: Modern History + Polity revision blocks, then the
-        // fixed weekly revision + CA round-up + Telugu.
+        // SUNDAY revision: a unit-revisit MAIN block (240, + a last-day UNIT
+        // wrap-up when there is room), then the fixed weekly revision + CA
+        // round-up + Telugu.
         const blocks: PlanBlock[] = [
-          { kind: 'targeted-revision', label: 'Modern History revision — sequence order, weakest first', minutes: Math.max(1, sunHmodCap(scale)), subjectCode: 'HIST' },
+          ...revisionMainBlocks(slot.dateISO, mainMin, revisit),
+          { kind: 'weekly-revision', label: 'Weekly revision (mistakes + flashcards)', minutes: 60 },
+          { kind: 'ca-roundup', label: 'Current Affairs weekly round-up', minutes: 45, caSubtopicId: 'ca-national' },
+          { kind: 'telugu', label: 'Telugu script practice', minutes: 15 },
         ];
-        if (sunPolCap(scale) > 0) {
-          blocks.push({ kind: 'targeted-revision', label: 'Polity revision — sequence order, weakest first', minutes: Math.max(1, sunPolCap(scale)), subjectCode: 'POL' });
-        }
-        blocks.push({ kind: 'weekly-revision', label: 'Weekly revision (mistakes + flashcards)', minutes: 60 });
-        blocks.push({ kind: 'ca-roundup', label: 'Current Affairs weekly round-up', minutes: 45, caSubtopicId: 'ca-national' });
-        blocks.push({ kind: 'telugu', label: 'Telugu script practice', minutes: 15 });
         day.blocks = blocks;
         day.teluguBlock = true;
         day.weeklyRevision = true;
         day.caRevision = true;
-        day.reviseSubtopicIds = [...revisitPick('HIST', 4), ...revisitPick('POL', 3)];
+        day.reviseSubtopicIds = revisit?.topicIds ?? [];
+        if (revisit) setRevisitUnitFields(day, revisit.unitIndex);
         finaliseBlocks(day, slot.budgetMin);
         days.push(day);
         continue;
       }
 
-      // WEEKDAY revision (Mon–Fri): MENT practice + the owner subject's revision
-      // block + optional Telugu + Revise + Current Affairs.
+      // WEEKDAY revision (Mon–Fri): MENT practice + the unit-revisit MAIN block +
+      // optional Telugu + Revise + Current Affairs.
       const covered = coveredMentUpTo(slot.dateISO);
       const scope = practiceScope(covered.length > 0 ? covered : mentList.map((s) => s.id));
-      const subj = SUBJECT_BY_DOW[slot.dow]!;
-      const subjBaseMin = SUBJECT_BASE_MIN[slot.dow]!;
       const blocks: PlanBlock[] = [
         { kind: 'ment-practice', label: 'Mental Ability practice', minutes: sm(60), practiceSubtopicIds: scope, topics: [practiceTopic(scope)] },
-        { kind: 'targeted-revision', label: `${SUBJECT_LABEL[subj] ?? subj} revision — sequence order, weakest first`, minutes: sm(subjBaseMin), subjectCode: subj },
+        ...revisionMainBlocks(slot.dateISO, mainMin, revisit),
       ];
       if (slot.dow === 2 || slot.dow === 4) {
         blocks.push({ kind: 'telugu', label: 'Telugu script practice', minutes: sm(15) });
@@ -2401,7 +2367,8 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       blocks.push({ kind: 'ca', label: CA_LABEL[caId] ?? 'Current Affairs', minutes: sm(25), caSubtopicId: caId });
       day.caRevision = true;
       day.blocks = blocks;
-      day.reviseSubtopicIds = revisitPick(subj, 6);
+      day.reviseSubtopicIds = revisit?.topicIds ?? [];
+      if (revisit) setRevisitUnitFields(day, revisit.unitIndex);
       finaliseBlocks(day, slot.budgetMin);
       days.push(day);
       continue;
@@ -2476,36 +2443,31 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
 
     // ---- COVERAGE region ----
     day.phase = 'learn';
+    const mainMin = mainCapFor(slot.dow, slot.budgetMin);
+    // The main block(s): the current unit's topics, a UNIT WRAP-UP when a unit
+    // finishes with room, the next unit when its first topic still fits, and a
+    // 'Catch up or rest' filler for any remainder (STANDARDS §8a).
+    const main = buildCoverageMainBlocks(slot.dateISO, mainMin);
+    const ui = main.primaryUi;
+
     if (slot.dow === 0) {
-      // SUNDAY: two study blocks — Modern History (H-modern) + Polity (Polity's
-      // second weekly slot) — then weekly revision 60 + CA round-up 45 + Telugu
-      // 15. The two study blocks scale with the Sunday budget (Polity cut first
-      // below the 360-min default); the fixed blocks stay 60/45/15.
-      const placed = placedByDate.get(slot.dateISO) ?? [];
-      const histPlaced = placed.filter((p) => p.subjectCode === 'HIST');
-      const polPlaced = placed.filter((p) => p.subjectCode === 'POL');
-      const histTopics = histPlaced.map((p) => toTopic(p.id, p.pass));
-      const polTopics = polPlaced.map((p) => toTopic(p.id, p.pass));
-      const topics = [...histTopics, ...polTopics];
-      const hmodMin = sunHmodCap(scale);
-      const polMin = sunPolCap(scale);
-      const blocks: PlanBlock[] = [
-        { kind: 'catchup', label: 'Modern History', minutes: Math.max(1, hmodMin), subjectCode: 'HIST', topics: histTopics, buildsOn: buildsOnFor(histPlaced[0]?.id, seqOrder, 'HIST', nameById) },
+      // SUNDAY: the WEEKLY SUBJECT UNIT main block(s) teaching the current unit —
+      // then weekly revision 60 + CA round-up 45 + Telugu 15. Once every unit is
+      // first-passed the main block becomes an early consolidation revise block.
+      day.blocks = [
+        ...main.blocks,
+        { kind: 'weekly-revision', label: 'Weekly revision (mistakes + flashcards)', minutes: 60 },
+        { kind: 'ca-roundup', label: 'Current Affairs weekly round-up', minutes: 45, caSubtopicId: 'ca-national' },
+        { kind: 'telugu', label: 'Telugu script practice', minutes: 15 },
       ];
-      if (polMin > 0 || polTopics.length > 0) {
-        blocks.push({ kind: 'catchup', label: 'Polity', minutes: Math.max(1, polMin), subjectCode: 'POL', topics: polTopics, buildsOn: buildsOnFor(polPlaced[0]?.id, seqOrder, 'POL', nameById) });
-      }
-      blocks.push({ kind: 'weekly-revision', label: 'Weekly revision (mistakes + flashcards)', minutes: 60 });
-      blocks.push({ kind: 'ca-roundup', label: 'Current Affairs weekly round-up', minutes: 45, caSubtopicId: 'ca-national' });
-      blocks.push({ kind: 'telugu', label: 'Telugu script practice', minutes: 15 });
-      day.blocks = blocks;
       day.teluguBlock = true;
       day.weeklyRevision = true;
       day.caRevision = true;
-      recordFirstPass(day, topics);
-      day.topics = topics;
+      recordFirstPass(day, main.topics);
+      day.topics = main.topics;
+      setUnitFields(day, ui);
       day.reviseSubtopicIds = spacedReviseFor(slot.dateISO, firstPassByDate, isApOrBandA);
-      day.drillTarget = topics.reduce((a, t) => a + availableDrill(t.mcqCount), 0) + 15;
+      day.drillTarget = main.topics.reduce((a, t) => a + availableDrill(t.mcqCount), 0) + 15;
       finaliseBlocks(day, slot.budgetMin);
       days.push(day);
       continue;
@@ -2523,12 +2485,12 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       const scope = practiceScope(covered.length > 0 ? covered : mentList.map((s) => s.id));
       blocks.push({ kind: 'ment-practice', label: 'Mental Ability practice', minutes: sm(60), practiceSubtopicIds: scope, topics: [practiceTopic(scope)] });
     }
-    // 2) SUBJECT block (the day's owner or its reallocated winner).
-    const subjBaseMin = SUBJECT_BASE_MIN[slot.dow]!;
-    const subj = slotSubject.get(slot.dateISO) ?? SUBJECT_BY_DOW[slot.dow]!;
-    const subjPlaced = (placedByDate.get(slot.dateISO) ?? []).filter((p) => p.subjectCode === subj);
-    const subjTopics = subjPlaced.map((p) => toTopic(p.id, p.pass));
-    blocks.push({ kind: 'subject', label: SUBJECT_LABEL[subj] ?? subj, minutes: sm(subjBaseMin), subjectCode: subj, topics: subjTopics, buildsOn: buildsOnFor(subjPlaced[0]?.id, seqOrder, subj, nameById) });
+    // 2) MAIN BLOCK(s) — the CURRENT weekly subject unit (135, Tue/Thu 120); a
+    //    unit continues day after day. When it finishes with room, a UNIT
+    //    WRAP-UP consolidates it and the next unit may start in the same block;
+    //    any remainder is a 'Catch up or rest' filler. Once every unit is
+    //    first-passed the block becomes an early consolidation revise block.
+    for (const b of main.blocks) blocks.push(b);
     // 3) Telugu (Tue/Thu only).
     if (slot.dow === 2 || slot.dow === 4) {
       blocks.push({ kind: 'telugu', label: 'Telugu script practice', minutes: sm(15) });
@@ -2544,12 +2506,13 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     day.blocks = blocks;
 
     // Legacy field mapping + topics union.
-    const allTopics = [...(mentTopics?.map((s) => toTopic(s.id, 'full')) ?? []), ...subjTopics];
+    const allTopics = [...(mentTopics?.map((s) => toTopic(s.id, 'full')) ?? []), ...main.topics];
     // CA first-pass topic (aptitude) counts toward today's first-pass set.
     const caFirst = caFirstPassByDate.get(slot.dateISO);
     if (caFirst) allTopics.push(toTopic(caFirst, 'quick'));
     recordFirstPass(day, allTopics);
     day.topics = allTopics;
+    setUnitFields(day, ui);
     day.reviseSubtopicIds = spacedReviseFor(slot.dateISO, firstPassByDate, isApOrBandA);
     // Drill target: first-pass topic drillables + CA 15 (+ practice 15 when no MENT topic).
     let drill = allTopics.reduce((a, t) => a + availableDrill(t.mcqCount), 0) + 15;
@@ -2672,6 +2635,21 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     newTopicMinutes: subjectMinutes(code),
   }));
 
+  // ---- WEEKLY SUBJECT UNITS read-out --------------------------------------
+  // Each unit's calendar window (first → last coverage day its main block runs)
+  // and topic count, in teaching order, for the Planner unit timeline.
+  const unitsSummary = units.map((u, ui) => {
+    const run = unitDates[ui]!;
+    return {
+      id: u.id,
+      title: u.title,
+      subjectCode: u.subjectCode,
+      startISO: run[0] ?? '',
+      endISO: run[run.length - 1] ?? '',
+      topicCount: u.topics.length,
+    };
+  });
+
   // PAPER-I (theory) new-topic minutes per subject + each subject's whole-percent
   // share of the Paper-I total (the 20–32% balance read-out; History is
   // structurally the largest, Geography the smallest — see the design spec).
@@ -2780,6 +2758,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       behindBy: 0,
       projectedFinishISO,
       subjectFit,
+      units: unitsSummary,
       mentAllPassedISO,
       mockList,
       weekTests,
@@ -2949,6 +2928,12 @@ function blankDay(slot: DaySlot, status: PlanDayStatus): PlanDay {
     plannedMinutes: 0,
     drillTarget: 0,
     topics: [],
+    unitId: null,
+    unitTitle: null,
+    unitSubjectCode: null,
+    unitDay: 0,
+    unitDays: 0,
+    nextUnitTitle: null,
     status,
   };
   return day;
@@ -3023,6 +3008,12 @@ function buildPostPrelims(p: {
       plannedMinutes,
       drillTarget: 0,
       topics: [],
+      unitId: null,
+      unitTitle: null,
+      unitSubjectCode: null,
+      unitDay: 0,
+      unitDays: 0,
+      nextUnitTitle: null,
       status: di === 0 ? 'today' : 'upcoming',
     });
   }
@@ -3076,6 +3067,7 @@ function buildPostPrelims(p: {
       behindBy: 0,
       projectedFinishISO: p.todayISO,
       subjectFit: [],
+      units: [],
       mentAllPassedISO: '',
       mockList: [],
       weekTests: 0,

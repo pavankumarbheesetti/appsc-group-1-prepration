@@ -7,19 +7,19 @@ import { getMindmap } from '../../content/loader';
 import { __resetForTests, setPlanStartDate } from '../../state/store';
 import { addDaysISO, dayOfWeekISO, todayISO } from '../../lib/dates';
 
-describe('today view — Start today\u2019s study CTA', () => {
+describe('today view — "Now" hero + Start CTA', () => {
   beforeEach(() => {
     __resetForTests();
     location.hash = '';
   });
 
-  it('offers a primary "Start today\u2019s study" action that jumps into study', () => {
+  it('offers a primary "Start" action that jumps into study', () => {
     const root = document.createElement('div');
     document.body.appendChild(root);
     today.render(root);
 
-    const cta = [...root.querySelectorAll<HTMLButtonElement>('button')].find((b) =>
-      b.textContent?.includes("Start today\u2019s study"),
+    const cta = [...root.querySelectorAll<HTMLButtonElement>('.hero-actions button')].find((b) =>
+      b.textContent?.trim() === 'Start',
     );
     // Pre-Prelims the CTA is present and one-taps into a topic / mock / drill.
     if (cta) {
@@ -32,11 +32,34 @@ describe('today view — Start today\u2019s study CTA', () => {
     root.remove();
   });
 
-  it('renders the day\u2019s rhythm blocks as cards (when studying)', () => {
+  it('shows a single focal "Up now" block in the hero (not a wall of rings)', () => {
     const root = document.createElement('div');
     today.render(root);
-    // Either the block cards render, or a graceful state does — never a crash.
-    expect(root.querySelector('.today-budget')).toBeTruthy();
+    // The empty-gauge rings are gone from Today; the hero carries the focus.
+    expect(root.querySelector('.rings')).toBeFalsy();
+    expect(root.querySelector('.hero-now')).toBeTruthy();
+  });
+
+  it('places today in its weekly subject unit via the hero unit line', () => {
+    const root = document.createElement('div');
+    today.render(root);
+    const unitLine = root.querySelector('.hero-unit-line');
+    // When the current day teaches a unit, the line reads "This week: … · day X of Y".
+    if (unitLine) {
+      expect(unitLine.textContent).toMatch(/^This week: .+ · day \d+ of \d+$/);
+    }
+  });
+
+  it('renders the day\u2019s rhythm as a slim ordered checklist (when studying)', () => {
+    const root = document.createElement('div');
+    today.render(root);
+    // Either the checklist renders, or a graceful state does — never a crash.
+    // The duplicate "Today's plan" budget card is gone.
+    expect(root.querySelector('.today-budget')).toBeFalsy();
+    const checklist = root.querySelector('.today-checklist');
+    if (checklist) {
+      expect(checklist.querySelectorAll('.today-check').length).toBeGreaterThan(0);
+    }
   });
 });
 
@@ -54,8 +77,8 @@ describe('today view — plan has not started yet (free pre-start days)', () => 
     expect(root.textContent).toContain('Tomorrow is Day 1');
     expect(root.textContent).toContain(prettyDowDate(start));
     expect(root.textContent).toContain('Days before the start date are free');
-    // The day's rhythm block budget is NOT rendered before the plan starts.
-    expect(root.querySelector('.today-budget')).toBeFalsy();
+    // The day's rhythm checklist is NOT rendered before the plan starts.
+    expect(root.querySelector('.today-checklist')).toBeFalsy();
   });
 
   it('describes day 1 as an ORIENTATION day when it is a Saturday (no baseline mock)', () => {

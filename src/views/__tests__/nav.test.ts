@@ -1,4 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { renderApp } from '../../app';
 import { __resetForTests } from '../../state/store';
 
@@ -30,7 +32,7 @@ describe('app shell nav', () => {
   it('groups the primary nav into labelled sections', () => {
     const root = document.createElement('div');
     renderApp(root);
-    expect(navSections(root)).toEqual(['Plan', 'Learn', 'Practice', 'Revise', 'Skills', 'Track']);
+    expect(navSections(root)).toEqual(['Plan', 'Study', 'More']);
   });
 
   it('lists the grouped nav destinations in order (Timeline & Weak areas removed)', () => {
@@ -38,8 +40,8 @@ describe('app shell nav', () => {
     renderApp(root);
     expect(navLabels(root)).toEqual([
       'Today',
-      'Start here',
       'Planner',
+      'Start here',
       'Syllabus',
       'Drill',
       'Mock',
@@ -58,7 +60,7 @@ describe('app shell nav', () => {
     expect(root.querySelector('#view')?.textContent).toContain('days to Prelims');
   });
 
-  it('routes Planner to #/planner and shows the editable exam date', () => {
+  it('routes Planner to #/planner with the this-week default (exam date lives in Settings)', () => {
     const root = document.createElement('div');
     renderApp(root);
     const planner = [...root.querySelectorAll<HTMLElement>('.sidebar .nav-item')].find(
@@ -67,9 +69,12 @@ describe('app shell nav', () => {
     expect(planner).toBeDefined();
     planner!.click();
     expect(location.hash).toBe('#/planner');
-    const dateInput = root.querySelector<HTMLInputElement>('#view input[type="date"]');
-    expect(dateInput).not.toBeNull();
-    expect(dateInput!.value).toBe('2027-01-24');
+    const view = root.querySelector('#view')!;
+    // The default view leads with THIS WEEK (not the dense 15-week grid) and no
+    // longer embeds an editable exam-date input (that duplicated Settings).
+    expect(view.querySelector('.planner-week')).not.toBeNull();
+    expect(view.querySelector('input[type="date"]')).toBeNull();
+    expect(view.textContent).toContain('Change in Settings');
   });
 
   it('routes Progress to #/progress and renders the analytics view', () => {
@@ -236,5 +241,21 @@ describe('app shell nav', () => {
     expect(view?.textContent).toContain('QUALIFYING');
     // Languages stays the active nav item for the English module.
     expect(languages!.getAttribute('aria-current')).toBe('page');
+  });
+});
+
+describe('app shell — sidebar is an internal scroll container (trapped-footer fix)', () => {
+  it('declares overflow-y:auto + dynamic viewport height on .sidebar', () => {
+    const css = readFileSync(resolve(process.cwd(), 'src/styles/components.css'), 'utf8');
+    // Isolate the first `.sidebar { … }` rule block.
+    const start = css.indexOf('.sidebar {');
+    expect(start).toBeGreaterThan(-1);
+    const block = css.slice(start, css.indexOf('}', start));
+    // The root fix: the rail scrolls internally (so Settings/Theme/Text-size are
+    // always reachable) and sizes to the dynamic viewport.
+    expect(block).toMatch(/overflow-y:\s*auto/);
+    expect(block).toMatch(/overscroll-behavior:\s*contain/);
+    expect(block).toMatch(/height:\s*100dvh/);
+    expect(block).not.toMatch(/height:\s*100vh/);
   });
 });

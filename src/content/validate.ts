@@ -31,7 +31,7 @@ import {
 import { TaxonomySchema, type Taxonomy } from './taxonomy';
 import { PyqMapSchema, PyqWeightsSchema, SyllabusMapSchema } from './audit-types';
 import { TimelineBankSchema } from './timeline-types';
-import { LearningSequenceSchema, type LearningSequence } from './plan-types';
+import { LearningSequenceSchema, UnitsSchema, type LearningSequence, type Units } from './plan-types';
 
 /* -------------------------------------------------------------------------- */
 /* Paths                                                                       */
@@ -189,6 +189,7 @@ export function validateAllContent(): FileValidationResult[] {
   const pyqWeightsGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'pyq-weights.json'));
   const timelineGlob = toGlobPath(join(CONTENT_DIR, 'timeline', 'events.json'));
   const planGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'learning-sequence.json'));
+  const unitsGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'units.json'));
 
   /** Taxonomy subtopic ids, captured for the timeline cross-check. */
   const taxonomySubtopicIds = new Set<string>();
@@ -200,6 +201,8 @@ export function validateAllContent(): FileValidationResult[] {
   let pyqWeights: import('./audit-types').PyqWeights | undefined;
   /** The parsed learning sequence (for the completeness/ordering cross-check). */
   let learningSequence: LearningSequence | undefined;
+  /** The parsed units file (for the unit completeness/contiguity cross-check). */
+  let units: Units | undefined;
 
   for (const abs of jsonFiles) {
     const file = toGlobPath(abs);
@@ -304,9 +307,26 @@ export function validateAllContent(): FileValidationResult[] {
       }
       continue;
     }
+    // The units file under content/plan/ is validated against its OWN schema
+    // and EXCLUDED from the bank/orphan/manifest checks. Cross-file integrity
+    // (every non-MENT/CA Prelims subtopic present exactly once; each unit a
+    // contiguous run of its subject's learning sequence; subject-unit order and
+    // History chronology respected) is checked after the taxonomy + sequence.
+    if (file === unitsGlob) {
+      const raw = readJson(abs);
+      if (raw === undefined) continue;
+      const parsed = UnitsSchema.safeParse(raw);
+      if (parsed.success) {
+        units = parsed.data;
+        resultFor(file); // show as PASS unless a cross-check fails below
+      } else {
+        resultFor(file).errors.push(...formatIssues(parsed.error));
+      }
+      continue;
+    }
     if (file.startsWith('/content/plan/')) {
       resultFor(file).warnings.push(
-        'unrecognised file under content/plan/ (not learning-sequence.json) — ignored',
+        'unrecognised file under content/plan/ (not learning-sequence.json or units.json) \u2014 ignored',
       );
       continue;
     }
@@ -626,6 +646,109 @@ export function validateAllContent(): FileValidationResult[] {
       }
     }
   } else if (existsSync(join(CONTENT_DIR, 'plan', 'learning-sequence.json'))) {
+    // File exists but failed to parse (or taxonomy failed) above; already reported.
+  }
+
+  /* ----- 11. Cross-check (i): weekly-units integrity ---------------------- */
+
+  // The units file must (a) key only real taxonomy Prelims subtopic ids of the
+  // declared subject, (b) cover EVERY non-MENT/CA Prelims subtopic EXACTLY ONCE
+  // across all units, (c) list each unit's topicIds as a CONTIGUOUS run of that
+  // subject's learning sequence, (d) keep each subject's units in sequence order
+  // and the HISTORY units in chronological (sequence) order relative to one
+  // another, and (e) begin with a History unit (day-1 orientation is History).
+  if (units && taxonomyParsed) {
+    const us = resultFor(unitsGlob);
+    const subjectTrack = new Map(
+      taxonomyParsed.subjects.map((s) => [s.code, s.track] as const),
+    );
+    const metaById = new Map(taxonomyParsed.subtopics.map((s) => [s.id, s] as const));
+    const isPrelims = (s: (typeof taxonomyParsed.subtopics)[number]): boolean => {
+      const track = s.track ?? subjectTrack.get(s.subjectCode);
+      return track === 'paper1' || track === 'paper2';
+    };
+    // Expected = every Prelims subtopic whose subject is one the units carry
+    // (HIST/POL/ECON/GEO/SCI — MENT + CA are their own lanes, excluded).
+    const UNIT_SUBJECTS = new Set(['HIST', 'POL', 'ECON', 'GEO', 'SCI']);
+    const expected = new Set<string>();
+    for (const s of taxonomyParsed.subtopics) {
+      if (isPrelims(s) && UNIT_SUBJECTS.has(s.subjectCode)) expected.add(s.id);
+    }
+
+    // (a) + id/subject validity, and build the seen multiset.
+    const seenCount = new Map<string, number>();
+    for (const unit of units.units) {
+      for (const id of unit.topicIds) {
+        seenCount.set(id, (seenCount.get(id) ?? 0) + 1);
+        const meta = metaById.get(id);
+        if (!meta) {
+          us.errors.push(`${unit.id}: topic '${id}' is not in the taxonomy`);
+        } else if (meta.subjectCode !== unit.subjectCode) {
+          us.errors.push(
+            `${unit.id}: topic '${id}' belongs to ${meta.subjectCode}, not the unit's subject ${unit.subjectCode}`,
+          );
+        } else if (!isPrelims(meta)) {
+          us.errors.push(`${unit.id}: topic '${id}' is not a Prelims subtopic`);
+        }
+      }
+    }
+    // (b) exactly-once completeness over the expected set.
+    for (const [id, n] of seenCount) {
+      if (n > 1) us.errors.push(`units: subtopic '${id}' appears ${n} times across units (must be once)`);
+      if (!expected.has(id) && metaById.has(id)) {
+        us.errors.push(`units: subtopic '${id}' is MENT/CA or out of scope and must not be unitised`);
+      }
+    }
+    for (const id of expected) {
+      if (!seenCount.has(id)) us.errors.push(`units: missing Prelims subtopic '${id}' (every non-MENT/CA topic must be in a unit)`);
+    }
+
+    // (c) contiguity: each unit is a contiguous slice of its subject's sequence.
+    if (learningSequence) {
+      const seqOf = (code: string): string[] =>
+        (learningSequence!.subjects as Record<string, { id: string }[]>)[code]?.map((st) => st.id) ?? [];
+      for (const unit of units.units) {
+        const seq = seqOf(unit.subjectCode);
+        const start = seq.indexOf(unit.topicIds[0] ?? '');
+        if (start < 0) {
+          // first id not in sequence — already reported as a bad id above.
+          continue;
+        }
+        for (let i = 0; i < unit.topicIds.length; i += 1) {
+          if (seq[start + i] !== unit.topicIds[i]) {
+            us.errors.push(
+              `${unit.id}: topicIds are not a contiguous run of the ${unit.subjectCode} learning sequence (at '${unit.topicIds[i]}')`,
+            );
+            break;
+          }
+        }
+      }
+      // (d) subject units in sequence order; HISTORY units chronological too.
+      const lastSeqIdxBySubject = new Map<string, number>();
+      const histOrder: number[] = [];
+      for (const unit of units.units) {
+        const seq = seqOf(unit.subjectCode);
+        const idx = seq.indexOf(unit.topicIds[0] ?? '');
+        if (idx < 0) continue;
+        const prev = lastSeqIdxBySubject.get(unit.subjectCode);
+        if (prev !== undefined && idx <= prev) {
+          us.errors.push(`units: ${unit.subjectCode} unit '${unit.id}' is out of learning-sequence order`);
+        }
+        lastSeqIdxBySubject.set(unit.subjectCode, idx);
+        if (unit.subjectCode === 'HIST') histOrder.push(idx);
+      }
+      for (let i = 1; i < histOrder.length; i += 1) {
+        if (histOrder[i]! <= histOrder[i - 1]!) {
+          us.errors.push('units: History units are not in chronological (learning-sequence) order');
+          break;
+        }
+      }
+    }
+    // (e) the first unit is History (day-1 orientation studies History).
+    if (units.units[0]?.subjectCode !== 'HIST') {
+      us.errors.push(`units: the first unit must be History (got ${units.units[0]?.subjectCode ?? 'none'})`);
+    }
+  } else if (existsSync(join(CONTENT_DIR, 'plan', 'units.json'))) {
     // File exists but failed to parse (or taxonomy failed) above; already reported.
   }
 

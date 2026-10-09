@@ -23,7 +23,15 @@
   position: sticky;
   top: 0;
   z-index: var(--z-sidebar);
-  height: 100vh;
+  /* Dynamic viewport unit so the rail is exactly one visual viewport tall on
+     mobile browsers where the URL bar collapses/expands. */
+  height: 100dvh;
+  /* ROOT FIX for the trapped-footer bug: when the brand + nav groups + footer
+     controls are taller than the viewport, the sidebar scrolls INTERNALLY so
+     Settings / Theme / Text-size are always reachable. `overscroll-behavior`
+     stops the scroll chaining to the page behind a sticky rail. */
+  overflow-y: auto;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -622,6 +630,28 @@ input[type='checkbox'] {
 }
 .hero .btn-primary:hover {
   transform: translateY(-1px);
+}
+/* Secondary / ghost hero buttons sat as dark-on-gradient text (fails 4.5:1).
+   On the accent gradient they render as a legible white outline "chip" so the
+   secondary CTA is clearly readable without competing with the solid primary. */
+.hero .btn-secondary,
+.hero .btn-ghost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4px);
+}
+.hero .btn-secondary:hover,
+.hero .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+/* Hero sub/lead text at full-opacity white (the faint 0.85 "First up:" line
+   dropped below 4.5:1 on the lighter gradient stop). */
+.hero .hero-start-hint,
+.hero .hero-unit-line {
+  color: #fff;
+  opacity: 0.95;
 }
 
 /* Countdown card sits at the right of the hero. */
@@ -6014,4 +6044,343 @@ button.tel-lang-card {
 }
 .plan-study-pill.is-standard .plan-pill-fast {
   color: var(--muted);
+}
+
+/* ========================================================================== */
+/* Today declutter — "Now" hero, slim checklist, checkpoint, unit line         */
+/* ========================================================================== */
+
+.hero-unit-line {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  margin: calc(-1 * var(--space-2)) 0 var(--space-3);
+}
+
+/* The single focal "Up now" block inside the hero. */
+.hero-now {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(4px);
+}
+.hero-now-eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+}
+.hero-now-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+.hero-now-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  opacity: 0.95;
+}
+.hero-now .chip {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Slim ordered checklist of the day's blocks. */
+.today-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.today-check {
+  list-style: none;
+}
+.today-check-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 2.75rem; /* >=44px touch target */
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+.today-check-btn:hover {
+  background: var(--bg-2);
+}
+.today-check-box {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  color: var(--surface);
+}
+.today-check.is-done .today-check-box {
+  background: var(--ok, var(--accent));
+  border-color: var(--ok, var(--accent));
+  color: #fff;
+}
+.today-check-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+}
+.today-check-label {
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+}
+.today-check.is-done .today-check-label {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.today-check-detail {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.today-check-btn .track-row-go {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* "This week's checkpoint" secondary card. */
+.today-checkpoint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.today-checkpoint-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.today-checkpoint-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+.today-checkpoint-title {
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+}
+
+/* ========================================================================== */
+/* Planner declutter — unit header, this-week table, road strip, disclosures   */
+/* ========================================================================== */
+
+.planner-exam-line {
+  margin-top: var(--space-2);
+}
+.link-btn {
+  color: inherit;
+  text-decoration: underline;
+  font: inherit;
+}
+.link-btn:hover {
+  color: var(--accent);
+}
+
+.unit-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.unit-head-eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.unit-head-title {
+  font-size: var(--fs-xl);
+  margin: 0;
+}
+.unit-head-sub {
+  margin: 0;
+}
+.unit-head-progress {
+  font-weight: var(--fw-semibold);
+  color: var(--text-2);
+}
+.unit-head-next {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* This-week table. */
+.planner-week-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.planner-week-table th,
+.planner-week-table td {
+  text-align: left;
+  padding: var(--space-3) var(--space-2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.planner-week-table thead th {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: var(--fw-semibold);
+}
+.pw-row.is-today {
+  background: var(--accent-soft);
+}
+.pw-row.is-event .pw-focus-label {
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+}
+.pw-day {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+}
+.pw-dow {
+  font-weight: var(--fw-bold);
+  color: var(--text);
+}
+.pw-date {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.pw-focus-label {
+  display: block;
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+}
+.pw-focus-topics {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.pw-min {
+  white-space: nowrap;
+  color: var(--text-2);
+}
+
+/* Collapsible disclosures (road strip, all weeks, plan details). */
+.road-strip,
+.all-weeks,
+.plan-details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  padding: var(--space-3) var(--space-4);
+}
+.road-summary,
+.all-weeks-summary,
+.plan-details-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+  list-style: none;
+  min-height: 2.75rem;
+}
+.road-summary::-webkit-details-marker,
+.all-weeks-summary::-webkit-details-marker,
+.plan-details-summary::-webkit-details-marker {
+  display: none;
+}
+.road-summary .section-lead {
+  margin-left: auto;
+}
+.road-summary .nav-icon,
+.all-weeks-summary .nav-icon,
+.plan-details-summary .nav-icon {
+  transition: transform var(--dur-base) var(--ease-out);
+  color: var(--muted);
+}
+.all-weeks-summary .nav-icon,
+.plan-details-summary .nav-icon {
+  margin-left: auto;
+}
+.road-strip[open] .road-summary .nav-icon,
+.all-weeks[open] .all-weeks-summary .nav-icon,
+.plan-details[open] .plan-details-summary .nav-icon {
+  transform: rotate(90deg);
+}
+.road-body,
+.plan-details-body {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.road-subhead {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0;
+}
+.road-units {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.road-unit {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+}
+.road-unit-name {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+.road-unit-dates {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.road-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.road-event {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--bg-2);
+}
+.road-event .nav-icon {
+  color: var(--accent);
 }

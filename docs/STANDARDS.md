@@ -106,24 +106,42 @@ confidence) · Mock (timed, −1/3 net, full review; full & sub‑topic) · Revi
 notebook + weak areas) · Progress (real analytics) · Mains (writing‑skill trainer) · Languages
 (Telugu from scratch + English qualifying) · Timeline · Settings/Data (export/import/reset).
 
-## 8a. Planner rules — FIXED WEEKLY RHYTHM, PRELIMS‑FIRST (LOCKED)
+## 8a. Planner rules — FIXED WEEKLY RHYTHM, WEEKLY SUBJECT UNITS, PRELIMS‑FIRST (LOCKED)
 The planner (`src/engine/planner.ts`, pure/deterministic) runs a FIXED WEEKLY RHYTHM to Prelims
 (default **24 Jan 2027**), scaling every block to the daily budget (Settings, default 240) and the Sunday
-budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ that day's budget.
+budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ that day's budget. The FIRST
+PASS teaches **WEEKLY SUBJECT UNITS** — one coherent chapter/era run of a single subject at a time — instead
+of rotating a different subject each weekday, so a beginner learns connected material (the chapters of a
+story) in a sustained run rather than a slot a week apart.
+- **WEEKLY SUBJECT UNITS (`content/plan/units.json`, LOCKED):** an ORDERED list of units
+  `{id, subjectCode, title, topicIds, why}`. Each unit's `topicIds` is a CONTIGUOUS run of that subject's
+  `learning-sequence.json` order, cut at natural chapter/era boundaries (~4–8 study days at FULL depth); EVERY
+  Prelims subtopic EXCEPT Mental Ability (MENT) and Current Affairs (CA) appears EXACTLY ONCE across the units
+  (validated in `validate:content`). The order ALTERNATES subjects so no Paper‑I subject waits more than ~4
+  weeks between units, while each subject's units stay in sequence order and the History units stay
+  chronological relative to each other; it starts with **Ancient India I** (day‑1 orientation). The 14 units:
+  Ancient I → Polity I → Economy I → Ancient II → Geography → Polity II → Ancient III → Science & Tech →
+  Medieval → Economy II → Modern I → Polity III → Modern II → Art & Culture. The planner teaches ONE unit at a
+  time in the MAIN study block: a unit CONTINUES across days and weeks until done, the next unit begins in the
+  NEXT main block (CLEAN BREAKS — a block teaches only one unit; the next unit starts on a fresh day), and no
+  block ever teaches more than **3 new topics (4 only if all QUICK)**. `PlanDay` carries the current unit
+  (`unitId`, `unitTitle`, `unitSubjectCode`, `unitDay` 1‑based, `unitDays`, `nextUnitTitle`); `PlanSummary.units`
+  lists each unit's `{id, title, subjectCode, startISO, endISO, topicCount}`.
 - **DERIVED CALENDAR — no hardcoded dates (LOCKED):** every phase anchor is computed from
   `settings.examDate` (+ plan start / today) by `computePlanAnchors`, so changing the exam date just works —
   there are NO hardcoded calendar dates in the planner. **Exam day = examDate (empty); light day = exam−1
   (≤90, no mock); FINAL WINDOW = the last 21 days before the exam (exam−21 … exam−2), no new topics;
   REVISION CYCLE = ~4 weeks immediately before the final window; COVERAGE END = final‑window start − the
-  revision cycle (28 d).** With the detailed‑notification 24 Jan 2027 date, re‑planning from 9 Oct 2026
-  gives: first pass **9 Oct → ~6 Dec 2026**, revision cycle **~7 Dec 2026 → ~2 Jan 2027**, final window
+  revision cycle (28 d).** With the detailed‑notification 24 Jan 2027 date, re‑planning from 10 Oct 2026
+  gives: first pass **10 Oct → ~6 Dec 2026**, revision cycle **~7 Dec 2026 → ~2 Jan 2027**, final window
   **3 Jan → 22 Jan 2027**, light **23 Jan**, exam **24 Jan**. SHORT‑WINDOW FALLBACK (exam < 8 weeks away):
   no revision cycle and a compressed 10‑day final window — the old pre‑2027 behaviour.
 - **Weekdays Mon–Fri (coverage window):** 60 Mental Ability (next MENT sequence topic; after all MENT
-  first‑passed → mixed practice weighted to mistakes) · 135 SUBJECT (Mon History, Tue Polity, Wed Economy,
-  Thu Geography, Fri Science&Tech; Tue/Thu = 120 + 15 Telugu) · 20 Revise (due cards + mistakes + topics
+  first‑passed → mixed practice weighted to mistakes) · **135 MAIN BLOCK — the CURRENT UNIT** (the next topics
+  of whichever unit is in progress; Tue/Thu = 120 + 15 Telugu) · 20 Revise (due cards + mistakes + topics
   first‑passed ~3/~10 days ago; AP/band‑A also ~21) · 25 Current Affairs (Mon/Wed/Fri AP, Tue national,
-  Thu international; ~15 new Qs + next notes).
+  Thu international; ~15 new Qs + next notes). The weekday→subject MAPPING of the old rhythm is RETIRED — the
+  weekday no longer picks the subject; the current unit does.
 - **DAY‑1 ORIENTATION — beginner‑friendly start (LOCKED):** the plan's FIRST day (`planStartDate` when it is
   today or in the future), **when it falls on a Saturday** (the opening‑mock case — e.g. the real
   planStartDate Sat 10 Oct 2026), is an **ORIENTATION day**, NOT a full mock: a **Start here** block (30 min,
@@ -147,9 +165,9 @@ budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ t
   During the first pass (coverage window) each Saturday — EXCEPT the day‑1 orientation Saturday above and the
   single dress rehearsal below — is a **WEEK TEST**, not a full mock: a timed **45‑question / 55‑minute**
   test (−1/3 marking, per‑paper net marks like the mock results) drawn ONLY from the MCQs of topics the plan
-  has first‑passed on or before that Saturday (≈ 2/3 from that week's topics, 1/3 from earlier; Paper‑I /
-  Paper‑II in proportion to what was covered; deterministic seed per date; no question repeats across week
-  tests where the pool allows — see `buildWeekTest` / `buildWeekTestSeries` in `engine/mock.ts`). The day is
+  has first‑passed on or before that Saturday (≈ 2/3 from **that week's UNIT topics**, 1/3 from earlier;
+  Paper‑I / Paper‑II in proportion to what was covered; deterministic seed per date; no question repeats across
+  week tests where the pool allows — see `buildWeekTest` / `buildWeekTestSeries` in `engine/mock.ts`). The day is
   **week test 55 + "Review every wrong or guessed answer" 45 + catch‑up of missed items** (runtime, else the
   next topics of the biggest‑backlog subject). One tap from Today and the Planner launches it (reuses the mock
   runner with a scoped pool, custom count + time — `openWeekTest`).
@@ -163,14 +181,11 @@ budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ t
   `mockSeriesLength` the section WRAPS and is flagged `wrapped` (the UI surfaces the reuse). The old
   **"Paper‑II baseline mock"** labelling is RETIRED. (Short window < 8 weeks: the old shape — every Saturday a
   full mock, no week tests, no dress rehearsal.)
-- **Sunday (SETTINGS "Sunday study time", default 360 = 6 h; presets 4/5/6/7 h + custom):** TWO study
-  blocks — **Modern History** (the H‑modern stream, 120–240 min) + **Polity** (Polity's SECOND weekly slot,
-  next Polity topics in sequence, 60–120 min) — then 60 weekly revision + 45 CA round‑up + 15 Telugu. The two
-  study blocks scale with the Sunday budget: **Polity is cut FIRST below 360** (at a 240 Sunday budget →
-  Modern History only, the previous shape) and is capped at 120 (its own weekday base); ABOVE 360 the
-  **SURPLUS goes to Modern History** (H‑modern is NOT hard‑capped at 120 — that cap was the bug that made a
-  larger Sunday budget buy no History depth). **Saturday is a mock day and follows the daily budget.** Runtime
-  catch‑up of the week's missed items still takes precedence.
+- **Sunday (SETTINGS "Sunday study time", default 360 = 6 h; presets 4/5/6/7 h + custom):** ONE study block
+  — the **MAIN BLOCK (240 min) teaching the CURRENT UNIT** (the same unit the weekdays are advancing) — then
+  60 weekly revision + 45 CA round‑up + 15 Telugu. The main block scales with the Sunday budget (budget − the
+  fixed 120 = weekly revision 60 + CA round‑up 45 + Telugu 15): at 360 → 240, at 240 → 120. **Saturday is a
+  mock day and follows the daily budget.** Runtime catch‑up of the week's missed items still takes precedence.
   (Stored `weekendStudyMinutes` migrates to `sundayStudyMinutes`: kept if greater than the daily budget, else
   360.)
 - **EARLY REVISE block (beginner‑friendly):** while fewer than **10 curated cards are due** across the deck
@@ -195,49 +210,43 @@ budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ t
   so its lowest‑priority floor topics are relaxed to QUICK (in‑window first, then the buffer) and REPORTED in
   `summary.infeasibleFloorTopicIds`. **Polity's second Sunday slot lifts every Polity topic to ≥ STANDARD
   (band A FULL) at 240 weekday + 360 Sunday.**
-- **History = TWO parallel chronological streams (fixes priority inversion):** History is split by a
-  `stream` tag in `content/plan/learning-sequence.json` — **H‑early** = ancient + medieval + AP early
-  dynasties (Satavahanas‑Ikshvakus, Kakatiyas, Reddi, Qutb Shahis); **H‑modern** = modern + AP
-  freedom/statehood + art & culture. **Monday advances H‑early, Sunday advances H‑modern** (each strictly in
-  its OWN order; cross‑stream prereqs not required); a donated/pooled slot feeds whichever stream has the
-  larger remaining backlog. This keeps the high‑yield Modern + AP topics from landing last.
-- **Depth allocation — OWN CAPACITY, then a shared POOL (deterministic):**
-  1. **Own capacity `C_s`** = the sum of a subject's OWN weekday subject‑block minutes over the coverage
-     window (HIST Mon, POL Tue, ECON Wed, GEO Thu, SCI Fri). Sunday adds two dedicated study blocks — **Modern
-     History (H‑modern)** and **Polity** — on top of those weekday slots.
-  2. **Own fill:** start every topic at QUICK, then upgrade WITHIN the subject in depth priority
-     (AP → band A → PYQ desc → examPoints desc) — AP to FULL (always), then every floor topic to STANDARD,
-     then floor to FULL, then non‑floor to STANDARD, then to FULL — each step only while the subject's own
-     total stays `≤ C_s`. So a small subject spends its OWN slots on its OWN depth: **Geography's 8 topics
-     are all FULL from its own ~600 min of Thursdays** (the old water‑fill bug starved GEO to 1 FULL and made
-     it donate its Thursdays to History — fixed).
-  3. **Spare + pool:** a subject that is ALL FULL with `total < C_s` has `SPARE = C_s − total`. **A subject
-     NEVER donates while any of its topics is below FULL.** `POOL = P + Σ SPARE`, where **`P` = ALL of the
-     Sunday STUDY minutes over the coverage window** = `(sundayBudget − 120 fixed) × #coverage‑Sundays` — so
-     `P` SCALES with the Sunday budget (it was previously frozen at 600, which is why a bigger Sunday budget
-     bought no depth). The pool funds the single best remaining upgrade across all below‑FULL subjects —
-     ranked AP first, floor before non‑floor, a STANDARD target before a FULL target, then PYQ desc, then the
-     subject with the lowest Paper‑I minute share — while the calendar can still place the added depth. The
-     pool **never takes a non‑protected topic to FULL in a subject that still overflows its own placement**
-     (extra FULL there just burns block capacity), and **Polity never reaches FULL on a non‑band‑A topic
-     while any History PYQ>0 topic is still below STANDARD** — the shared pool lifts History to its floor
-     before it over‑deepens Polity, so at 240 weekday + 360 Sunday Polity settles at **band A FULL + the rest
-     STANDARD** (not all‑FULL).
-- **Block size:** no block teaches **more than 3 new topics — 4 only if they are all QUICK.**
-- **Integer‑packing fit + budget‑scaled capacity (deterministic):** the fit SIMULATES real placement (block
-  minutes, ≤ 3 new topics — 4 if all QUICK, no splitting), not just a minute sum. Packing CAPACITY scales
-  with the budget — **weekday blocks with the daily budget, the two Sunday study blocks (Modern History +
-  Polity) with the Sunday budget** (Saturday stays a mock day on the daily budget). When the real packing
-  leaves a tail: (a) **downgrade‑to‑floor (OWN‑CAPACITY‑FIRST)** — shed depth ONLY in a subject that is
-  genuinely OVER its own packable capacity, one tier at a time (never below its floor), and stop once its own
-  topics pack (so Economy keeps ~10+ FULL on its own six Wednesdays instead of being collapsed to its floor
-  because History overflows); (b) **densify‑to‑fit** — relax the lowest‑priority non‑AP/non‑band‑A topic to
-  QUICK IN‑WINDOW (a QUICK block holds 4 vs 3) ONLY when that actually seats more topics (so spare Sunday
-  capacity is spent on depth, not needlessly flattened to QUICK); then (c) **defer‑to‑fit** — move the
-  lowest‑priority non‑AP/non‑band‑A QUICK topic into the **post‑coverage spill buffer** (AP/band‑A are always
-  placed IN‑WINDOW). The buffer is **QUICK‑only AND block‑legal**: a spill block never claims fewer minutes
-  than the topics it teaches (≤ 3 new topics, 4 if all QUICK), and a buffer day never plans past its budget —
-  the old buffer crammed the whole reported tail into one day with 60‑min blocks holding 75 min of QUICK.
+- **UNIT‑STREAM placement (replaces the old lane packer):** the first pass walks the ORDERED units and fills
+  each coverage MAIN block from the front of the current unit's topics, in sequence order, **one unit per
+  block (clean breaks)** — a block never mixes two units, and the next unit begins on the next main‑block day.
+  Topics run strictly in sequence (never before a prereq); a topic never spans days; a block holds ≤ 3 new
+  topics (4 if all QUICK). The old **two parallel History streams** and the **weekday→subject mapping** are
+  RETIRED — History is now ordered chronologically across its units (Ancient → Medieval → Modern → Art), and
+  the current unit (not the weekday) picks the subject.
+- **UNIT WRAP‑UP — consolidate a unit right after finishing it (LOCKED):** a beginner closes each unit before
+  moving on, so a unit‑end main block is never left idle. On a unit's **last first‑pass day**, if the main
+  block has **≥ 30 min free** after the unit's last topic(s), the planner adds a **`unit-wrapup` block**
+  "Unit wrap‑up · <unit title>" sized **min(leftover, 90)**: ~15 min **"Topic at a glance"** recap of every
+  topic in the unit (links to each topic's glance card / notes), then a timed **UNIT TEST** of
+  **round(size − 15 − 15)** questions (1 Q/min, −1/3 marking) drawn **ONLY from that unit's own topics' MCQs**
+  (deterministic seed = the day; prefers questions not already used in the week tests), then ~15 min reviewing
+  wrong/guessed answers. The packer **reserves ≥ 30 min** on a unit's final block (deferring only its last
+  topic to the next block when needed), so **every unit gets exactly one wrap‑up in the first pass**. The
+  teaching `subject` block's minutes equal its own topics' minutes — it carries **no ≥ 30‑min idle**; the
+  leftover becomes the wrap‑up, then (point below) the next unit, then a **`catchup` "Catch up or rest"**
+  filler. If, after the wrap‑up, the minutes still free are **≥ the next unit's first topic**, that unit
+  **STARTS in the same block** (a separate one‑unit `subject` block after the wrap‑up — typically on Sundays,
+  so the larger Sunday budget isn't wasted; still ≤ 3 new topics per block, no topic split); otherwise the
+  remainder is **"Catch up or rest"**. **One tap** from Today/Planner launches the unit test — it reuses the
+  week‑test / scoped mock runner (scoped pool + custom count + time + per‑paper net results) via
+  `openUnitTest`. `PlanBlock` carries `unitId`, `unitTestSubtopicIds`, `unitTestCount`, `unitTestMinutes`,
+  `unitTestDateISO`. The **revision cycle** applies the same idea: a unit's **last revision day** gets a short
+  wrap‑up (unit test) when the revisit block has ≥ 30 min to spare.
+- **Depth target + fit (deterministic):** every topic TARGETS **FULL**; with the real long window (240 weekday
+  + 360 Sunday) the unit runs seat every topic FULL. When a tighter budget or the short‑window fallback leaves
+  the main‑block slots short, the fit (a) **downgrades** the lowest‑priority non‑protected topic one tier at a
+  time — never below its depth floor (AP FULL, band A FULL, POL/ECON/GEO/SCI + History‑PYQ ≥ STANDARD) — then
+  (b) **defers** the lowest‑priority non‑protected QUICK topic into the post‑coverage spill buffer. **AP and
+  band‑A topics are PROTECTED: always FULL and always placed IN‑WINDOW.** The final‑window **deepen passes**
+  then lift any below‑floor tail to its floor. Everything is budget‑scaled (weekday blocks with the daily
+  budget, the Sunday main block with the Sunday budget) and re‑runnable so the feasibility options can probe a
+  higher Sunday budget.
+- **Block size:** no block teaches **more than 3 new topics — 4 only if they are all QUICK.** The spill buffer
+  obeys the same rule and a buffer day never plans past its budget.
 - **Feasibility + options:** the plan is **FEASIBLE** when the whole DEPTH FLOOR is met — every AP/band‑A
   topic FULL and every POL/ECON/GEO/SCI + History‑PYQ topic ≥ STANDARD (counting a scheduled **deepen** as
   meeting its floor) — with no AP/band‑A spill. The coverage window alone does NOT fully seat the floor at
@@ -258,10 +267,11 @@ budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ t
   post‑coverage spill buffer (the first two days after coverage end) only (reported, ≤ 3 new topics per
   spill block), never later.
 - **Revision cycle (long window only, ~4 weeks before the final window):** the SAME weekly rhythm, but the
-  subject block REVISITS already‑first‑passed topics in sequence order (weakest‑first, ~25 min each: notes
-  skim + cards + mistakes + ~10 Qs) instead of teaching new ones — NO new first passes. MENT practice, Revise,
-  CA, Telugu and the Saturday mock keep running; Sunday revisits Modern History + Polity. `segment` =
-  `'revision'`; `summary.revisionDays` reports its length (0 in the short‑window fallback).
+  MAIN BLOCK **revisits the WEEKLY SUBJECT UNITS in the same order** (weakest topics first WITHIN each unit,
+  ~25 min each: notes skim + cards + mistakes + ~10 Qs) instead of teaching new ones — so subjects come back
+  in coherent weekly runs and there are NO new first passes. MENT practice, Revise, CA, Telugu and the
+  Saturday mock keep running. `segment` = `'revision'`; `summary.revisionDays` reports its length (0 in the
+  short‑window fallback).
 - **Final window (last 21 days, exam−21 … exam−2):** no new topics; daily 60 MENT practice + 120 targeted
   revision (weakest by accuracy; AP + band A first) + 45 CA/AP refresh + 15 Telugu (Tue/Thu/Sun); full mocks
   on **3 days a week (Tue/Thu/Sat), alternating Paper‑I / Paper‑II** (120/60/60). The light day (exam−1) is
@@ -286,8 +296,10 @@ budget (Settings "Sunday study time", default 360). Each day's minutes are ≤ t
 - **No Mains before Prelims** (English + essay deferred; post‑prelims Mains kick‑start unchanged).
 - **Views:** Today = the day's blocks in order (minutes, exact topics, one‑tap start, "builds on: …");
   Planner = weekly grid with Full/Standard/Quick‑pass badges, per‑subject progress (`History 12/47 · next: …`), mock
-  dates, and a fit summary (FULL/STANDARD/QUICK counts, coverage end, spills). Re‑plans live on budget/date
-  change. Accessible; mobile OK.
+  dates, and a fit summary (FULL/STANDARD/QUICK counts, coverage end, spills). The current UNIT is available on
+  every day (`PlanDay.unitTitle` / `unitDay` / `unitDays` / `nextUnitTitle`) and the whole unit timeline on
+  `PlanSummary.units`, so Today can show "Unit 3 of 14 · day 2 of 4 · next: …" and the Planner a unit ribbon.
+  Re‑plans live on budget/date change. Accessible; mobile OK.
 
 
 ## 9. Exam‑relevance decisions (researched — apply when choosing what to author)

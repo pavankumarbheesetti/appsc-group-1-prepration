@@ -127,7 +127,12 @@ function summarize(rows: Row[]): Summary {
  * @internal
  */
 function summaryText(sum: Summary): string {
-  return `${sum.withMaterial}/${sum.total} have material · ${sum.mastered} mastered · ${sum.progress}% progress`;
+  // On a fresh install nothing is mastered/progressed yet — show a calm em-dash
+  // instead of repeating "0 mastered · 0% progress" on every row.
+  const masteryPart = sum.mastered === 0 && sum.progress === 0
+    ? '\u2014 mastered'
+    : `${sum.mastered} mastered · ${sum.progress}% progress`;
+  return `${sum.withMaterial}/${sum.total} have material · ${masteryPart}`;
 }
 
 /** Render the tracker into `root`. */

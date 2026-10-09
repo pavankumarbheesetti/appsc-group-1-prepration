@@ -61,8 +61,11 @@ describe('syllabus tracker', () => {
     // (now 47 of 47), then mastery — never a misleading "% covered".
     expect(stat).toContain('have material');
     expect(stat).toContain('mastered');
-    expect(stat).toContain('% progress');
     expect(stat).not.toContain('covered');
     expect(stat).toMatch(/47\/47 have material/);
+    // On a FRESH profile the mastery part is a calm "— mastered" em-dash rather
+    // than the noisy "0 mastered · 0% progress" repeated on every subject.
+    expect(stat).toContain('\u2014 mastered');
+    expect(stat).not.toContain('0% progress');
   });
 });

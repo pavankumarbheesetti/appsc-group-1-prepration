@@ -93,14 +93,16 @@ describe('plan bridge — full-taxonomy scope, prelims-driven plan', () => {
 
   it('gives every coverage weekday a Mental Ability + subject block; no mains pre-Prelims', () => {
     const { days } = currentPlan(new Date('2026-09-30T00:00:00'));
-    const learn = days.filter((d) => d.phase === 'learn');
+    const learn = days.filter((d) => d.phase === 'learn' && d.blocks.length > 0);
     expect(learn.length).toBeGreaterThan(0);
     for (const d of learn) {
       const dow = new Date(`${d.dateISO}T00:00:00Z`).getUTCDay();
       if (dow >= 1 && dow <= 5) {
-        // A MENT block (topic or practice) AND a subject block every weekday.
+        // A MENT block (topic or practice) AND a MAIN block (the current unit's
+        // 'subject' block, or a 'targeted-revision' consolidation block once the
+        // first pass is complete) on every coverage weekday.
         expect(d.blocks.some((b) => b.kind === 'ment' || b.kind === 'ment-practice')).toBe(true);
-        expect(d.blocks.some((b) => b.kind === 'subject')).toBe(true);
+        expect(d.blocks.some((b) => b.kind === 'subject' || b.kind === 'targeted-revision')).toBe(true);
       }
     }
     // Aptitude (29) is distributed exactly once across the coverage window.
@@ -287,7 +289,7 @@ describe('rhythm scheduling over real content (240/day, fixed dates)', () => {
     }
   });
 
-  it('reports a per-subject FULL/STANDARD/QUICK fit + reallocation; History is tight', () => {
+  it('reports a per-subject FULL/STANDARD/QUICK fit; History is tight in the short window', () => {
     const { summary } = realPlan();
     expect(summary.subjectFit.length).toBe(5);
     for (const f of summary.subjectFit) {
@@ -296,16 +298,10 @@ describe('rhythm scheduling over real content (240/day, fixed dates)', () => {
     }
     const hist = summary.subjectFit.find((f) => f.subject === 'HIST')!;
     expect(hist.total).toBe(47);
-    // History is the tight subject — its 47 topics do not all fit its own
-    // Monday + Sunday blocks, so it is mostly QUICK and receives the freed
-    // block(s) of the small all-FULL subjects.
-    expect(hist.quick).toBeGreaterThan(hist.full + hist.standard);
-    expect(hist.reallocatedFromISO.length).toBeGreaterThan(0);
-    expect(summary.reallocations.length).toBeGreaterThan(0);
-    // With the stricter DEPTH FLOOR (every POL/ECON/GEO/SCI ≥ STANDARD, History
-    // PYQ topics ≥ STANDARD), History's 47 topics cannot all reach STANDARD at
-    // 240/240 — so the plan is NOT feasible and the shortfall is REPORTED, while
-    // every AP / band-A topic is still placed and the buffer stays QUICK-only.
+    // The SHORT window (47 days) cannot teach History's 47 topics all at FULL in
+    // its unit runs, so the plan is NOT feasible and the shortfall is REPORTED,
+    // while every AP / band-A topic is still placed and the buffer stays
+    // QUICK-only.
     expect(summary.feasible).toBe(false);
     expect(summary.infeasibleFloorTopicIds.length).toBeGreaterThan(0);
     // Any deferred (spilled) topic is QUICK and never AP / band A.
@@ -318,12 +314,9 @@ describe('rhythm scheduling over real content (240/day, fixed dates)', () => {
         expect(bandAById.get(id)).not.toBe('A');
       }
     }
-    // Every subject that donates a weekday block is a SPARE donor (all FULL).
-    const fitByCode = new Map(summary.subjectFit.map((f) => [f.subject, f] as const));
-    for (const r of summary.reallocations) {
-      const donor = fitByCode.get(r.fromSubject)!;
-      expect(donor.quick + donor.standard).toBe(0); // donor is entirely FULL
-    }
+    // WEEKLY SUBJECT UNITS are reported, in teaching order, History first.
+    expect(summary.units.length).toBeGreaterThan(0);
+    expect(summary.units[0]!.subjectCode).toBe('HIST');
   });
 
   it('studies every AP topic at FULL depth', () => {
@@ -539,15 +532,20 @@ describe('rhythm depth tiers + Paper-I balance (real content)', () => {
     expect(total).toBeLessThanOrEqual(102);
   });
 
-  it('studies all 8 Geography topics at FULL depth from its own Thursday capacity (bug fix)', () => {
+  it('studies every AP / band-A Geography topic at FULL depth in its unit', () => {
     const { days, summary } = planAt(240);
     const pass = passMap(days);
     const geoIds = planSubtopics().filter((s) => s.subjectCode === 'GEO' && s.track !== 'mains').map((s) => s.id);
     expect(geoIds.length).toBe(8);
-    for (const id of geoIds) expect(pass.get(id)).toBe('full');
+    // Geography is taught as ONE weekly unit (physical → human). Its AP and
+    // band-A topics are always FULL; the rest reach their depth floor.
+    const geoProtected = planSubtopics().filter(
+      (s) => s.subjectCode === 'GEO' && (AP_RE.test(s.id) || s.band === 'A'),
+    );
+    expect(geoProtected.length).toBeGreaterThan(0);
+    for (const s of geoProtected) expect(pass.get(s.id)).toBe('full');
     const geo = summary.subjectFit.find((f) => f.subject === 'GEO')!;
-    expect(geo.full).toBe(8);
-    expect(geo.quick + geo.standard).toBe(0);
+    expect(geo.full + geo.standard + geo.quick).toBe(8);
   });
 
   it('studies every band-A Economy topic at FULL depth', () => {
@@ -569,13 +567,11 @@ describe('rhythm depth tiers + Paper-I balance (real content)', () => {
     }
   });
 
-  it('keeps Science at FULL (≥7); History depth floor is REPORTED, not silently met (240)', () => {
+  it('reports the History depth floor in the short window, never silently met (240)', () => {
     const { summary } = planAt(240);
-    const sci = summary.subjectFit.find((f) => f.subject === 'SCI')!;
-    expect(sci.full).toBeGreaterThanOrEqual(7);
-    // The stricter depth floor cannot be fully met at 240/240 (History's 47
-    // topics), so the plan is NOT feasible and the shortfall is REPORTED; the
-    // buffer still only holds QUICK topics within the Thu 5 / Fri 6 window.
+    // The stricter depth floor cannot be fully met in the SHORT window (47 days,
+    // History's 47 topics), so the plan is NOT feasible and the shortfall is
+    // REPORTED; the buffer still only holds QUICK topics within the window.
     expect(summary.feasible).toBe(false);
     expect(summary.infeasibleFloorTopicIds.length).toBeGreaterThan(0);
     for (const s of summary.spills) expect(s.lastDateISO <= SHORT.spillDates[1]).toBe(true);
@@ -618,29 +614,38 @@ describe('planner defects v4 — priority, integer packing, weekend budget (real
     for (const d of days) for (const t of d.topics) if (t.kind === 'topic') m.set(t.subtopicId, t.pass);
     return m;
   };
-  const firstPassDates = (days: ReturnType<typeof planAtV4>['days']): Map<string, string> => {
-    const fp = new Map<string, string>();
-    for (const d of days) for (const id of [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]) if (!fp.has(id)) fp.set(id, d.dateISO);
-    return fp;
-  };
   const bandById = new Map(planSubtopics().map((s) => [s.id, s.band] as const));
 
-  it('DEFECT 1 — high-yield H-modern history is first-passed EARLY, not last (240)', () => {
-    const { days } = planAtV4(240);
-    const seq = learningSequence();
-    const modern = Object.keys(seq.histStreams ?? {}).filter((id) => seq.histStreams![id] === 'modern');
-    expect(modern.length).toBe(14);
-    const fp = firstPassDates(days);
-    const beforeOct30 = modern.filter((id) => (fp.get(id) ?? '9999') < '2026-10-30').length;
-    // The two-stream split advances the Modern/AP stream on Sundays throughout
-    // the window, so the majority — and crucially the high-yield topics — are
-    // first-passed well before the end (the old single chain landed all of it
-    // last). Under the stricter depth floor the tight 240/240 budget still
-    // reaches the bulk of Modern History early.
-    expect(beforeOct30).toBeGreaterThanOrEqual(8);
-    // The two highest-yield Modern topics are studied by mid-October.
-    expect(fp.get('hist-modern-freedom-movement')! < '2026-10-30').toBe(true);
-    expect(fp.get('hist-modern-gandhi')! < '2026-10-30').toBe(true);
+  it('teaches the History units in chronological order (ancient → medieval → modern → art)', () => {
+    // Long window so every History unit is reached in the first pass.
+    const { days } = buildPlan({
+      subtopics: planSubtopics(),
+      progress: plannerProgress(),
+      mainsQuestionIds: mainsQuestionBank(),
+      pyqFrequency: pyqFrequency(),
+      sequence: learningSequence(),
+      examDateISO: '2027-01-24',
+      startISO: '2026-10-10',
+      todayISO: '2026-10-10',
+      dailyBudgetMin: 240,
+      weekendBudgetMin: 360,
+    });
+    const histUnitOrder: string[] = [];
+    for (const d of days) {
+      if (d.unitSubjectCode === 'HIST' && d.unitId && !histUnitOrder.includes(d.unitId)) {
+        histUnitOrder.push(d.unitId);
+      }
+    }
+    // The History units appear in their authored (chronological) teaching order.
+    const expected = learningSequence()
+      .units!.filter((u) => u.subjectCode === 'HIST')
+      .map((u) => u.id)
+      .filter((id) => histUnitOrder.includes(id));
+    expect(histUnitOrder).toEqual(expected);
+    const idx = (frag: string): number => histUnitOrder.findIndex((id) => id.includes(frag));
+    expect(idx('ancient')).toBeLessThan(idx('medieval'));
+    expect(idx('medieval')).toBeLessThan(idx('modern'));
+    expect(idx('modern')).toBeLessThan(idx('art'));
   });
 
   it('DEFECT 2 — no AP / band-A spill; every above-QUICK-floor shortfall is QUICK-only and REPORTED (240)', () => {
@@ -675,51 +680,69 @@ describe('planner defects v4 — priority, integer packing, weekend budget (real
     expect(pass.get('econ-ap-reorganisation-act')).toBe('full');
   });
 
-  it('DEFECT 3 — a higher SUNDAY budget STRICTLY improves depth (240 vs 360)', () => {
+  it('a higher SUNDAY budget never yields LESS depth (monotone: 240 ≤ 360 ≤ 420)', () => {
     const depth = (s: ReturnType<typeof planAtV4>['summary']): number =>
       s.subjectFit.reduce((a, f) => a + f.full * 2 + f.standard, 0);
     const w240 = planAtV4(240, 240).summary;
     const w360 = planAtV4(240, 360).summary;
-    // The Sunday Polity block (Polity's second weekly slot) only appears once the
-    // Sunday budget rises above 240, so 360 seats strictly MORE depth than 240.
-    expect(depth(w360)).toBeGreaterThan(depth(w240));
-    // Specifically, every Polity topic reaches at least STANDARD at 240 + 360 Sun.
-    const pol360 = w360.subjectFit.find((f) => f.subject === 'POL')!;
-    expect(pol360.quick).toBe(0);
+    const w420 = planAtV4(240, 420).summary;
+    // A bigger Sunday main block never seats LESS depth (the ≤3-topics-per-block
+    // rule caps how much a single Sunday block can add, so growth is monotone,
+    // not strict at every step).
+    expect(depth(w360)).toBeGreaterThanOrEqual(depth(w240));
+    expect(depth(w420)).toBeGreaterThanOrEqual(depth(w360));
   });
 
-  it('SUNDAY SHAPE — at 240 weekday + 360 Sunday, Sundays teach Modern History + Polity, and every POL topic is ≥ STANDARD with band A FULL', () => {
-    const { days, summary } = planAtV4(240, 360);
-    // A coverage Sunday carries BOTH a Modern History block and a Polity block,
-    // plus the fixed weekly-revision / CA round-up / Telugu blocks.
-    const sundays = days.filter((d) => d.dateISO <= '2026-11-04' && d.blocks.some((b) => b.label === 'Modern History'));
+  it('SUNDAY SHAPE — a coverage Sunday carries the current-unit main block(s) + weekly revision + CA round-up + Telugu', () => {
+    const { days } = planAtV4(240, 360);
+    const sundays = days.filter(
+      (d) => d.segment === 'coverage' && new Date(`${d.dateISO}T00:00:00Z`).getUTCDay() === 0 && d.blocks.length > 0,
+    );
     expect(sundays.length).toBeGreaterThan(0);
-    const withPolity = sundays.filter((d) => d.blocks.some((b) => b.label === 'Polity'));
-    expect(withPolity.length).toBeGreaterThan(0); // Polity's second weekly slot appears at 360
-    for (const d of withPolity) {
-      expect(d.blocks.some((b) => b.label === 'Weekly revision (mistakes + flashcards)')).toBe(true);
+    const MAIN_KINDS = new Set(['subject', 'targeted-revision', 'unit-wrapup', 'catchup']);
+    for (const d of sundays) {
+      // The main study region = the current-unit teaching block(s), plus any
+      // UNIT WRAP-UP and 'Catch up or rest' filler (STANDARDS §8a).
+      const teaching = d.blocks.filter((b) => b.kind === 'subject' || b.kind === 'targeted-revision');
+      expect(teaching.length).toBeGreaterThanOrEqual(1);
+      expect(d.blocks.some((b) => b.kind === 'weekly-revision')).toBe(true);
       expect(d.blocks.some((b) => b.kind === 'ca-roundup')).toBe(true);
       expect(d.blocks.some((b) => b.kind === 'telugu')).toBe(true);
+      // Each 'subject' block teaches ONE unit (its topics are first-passed today)
+      // and carries NO ≥30-min idle (its minutes == its topics' minutes).
+      for (const b of d.blocks.filter((x) => x.kind === 'subject')) {
+        const tmin = (b.topics ?? []).filter((t) => t.kind === 'topic').reduce((a, t) => a + t.estMinutes, 0);
+        expect(b.minutes - tmin).toBeLessThan(30);
+        for (const t of b.topics ?? []) {
+          if (t.kind === 'topic') expect(d.topics.some((x) => x.subtopicId === t.subtopicId)).toBe(true);
+        }
+      }
+      // The main region fills the Sunday main budget (360 − fixed 120 = 240) to
+      // within the 30-min wrap-up threshold, and never exceeds it.
+      const mainMin = d.blocks.filter((b) => MAIN_KINDS.has(b.kind)).reduce((a, b) => a + b.minutes, 0);
+      expect(mainMin).toBeLessThanOrEqual(240);
+      expect(mainMin).toBeGreaterThanOrEqual(240 - 29);
+      expect(d.plannedMinutes).toBeLessThanOrEqual(d.budgetMin);
     }
-    // POLITY DEPTH FLOOR: every Polity topic is at least STANDARD; band A is FULL.
-    const pass = passMapV4(days);
-    const pol = planSubtopics().filter((s) => s.subjectCode === 'POL' && s.track !== 'mains');
-    expect(pol.length).toBe(19);
-    for (const s of pol) {
-      expect(pass.get(s.id) === 'standard' || pass.get(s.id) === 'full').toBe(true);
-      if (s.band === 'A') expect(pass.get(s.id)).toBe('full');
-    }
-    const polFit = summary.subjectFit.find((f) => f.subject === 'POL')!;
-    expect(polFit.quick).toBe(0);
-    expect(polFit.spill).toBe(false);
   });
 
-  it('SUNDAY SHAPE — at 240 Sunday only Modern History studies (Polity block cut first; previous shape)', () => {
-    const { days } = planAtV4(240, 240);
-    const sundays = days.filter((d) => d.dateISO <= '2026-11-04' && d.blocks.some((b) => b.label === 'Modern History'));
-    expect(sundays.length).toBeGreaterThan(0);
-    // At the 240 Sunday budget the Polity study block is cut (0 min) — the old shape.
-    for (const d of sundays) expect(d.blocks.some((b) => b.label === 'Polity')).toBe(false);
+  it('SUNDAY SHAPE — the Sunday main region scales with the Sunday budget (240 → ~120, 360 → ~240)', () => {
+    const MAIN_KINDS = new Set(['subject', 'targeted-revision', 'unit-wrapup', 'catchup']);
+    const sunMainMin = (days: ReturnType<typeof planAtV4>['days'], budget: number): number => {
+      const d = days.find(
+        (x) => x.segment === 'coverage' && new Date(`${x.dateISO}T00:00:00Z`).getUTCDay() === 0 && x.blocks.length > 0,
+      )!;
+      expect(d.budgetMin).toBe(budget);
+      // The main region (teaching + wrap-up + catch-up) fills budget − fixed 120.
+      return d.blocks.filter((b) => MAIN_KINDS.has(b.kind)).reduce((a, b) => a + b.minutes, 0);
+    };
+    const at240 = sunMainMin(planAtV4(240, 240).days, 240);
+    const at360 = sunMainMin(planAtV4(240, 360).days, 360);
+    expect(at240).toBeLessThanOrEqual(120); // 240 − fixed 120
+    expect(at240).toBeGreaterThanOrEqual(120 - 29);
+    expect(at360).toBeLessThanOrEqual(240); // 360 − fixed 120
+    expect(at360).toBeGreaterThanOrEqual(240 - 29);
+    expect(at360).toBeGreaterThan(at240); // the Sunday main region grows with the budget
   });
 
   it('DEFECT 3 — feasibility options are emitted when the depth floor is not met', () => {
@@ -831,27 +854,22 @@ describe('planner POOL-FIX — hard invariants (real content)', () => {
     }
   });
 
-  it('B2 — Economy seats ≥ 10 FULL from its own Wednesdays at 240 / 360, both AP FULL', () => {
+  it('B2 — Economy places BOTH its AP topics at FULL at 240 / 360', () => {
     for (const sun of [240, 360]) {
-      const { days, summary } = planPF(240, sun);
-      const econ = summary.subjectFit.find((f) => f.subject === 'ECON')!;
-      expect(econ.full).toBeGreaterThanOrEqual(10);
+      const { days } = planPF(240, sun);
       const pass = passOf(days);
+      // AP topics are always FULL (protected), even in the tight short window.
       expect(pass.get('econ-ap-economy-bifurcation')).toBe('full');
       expect(pass.get('econ-ap-reorganisation-act')).toBe('full');
     }
   });
 
-  it('B3 — a 420-min Sunday buys STRICTLY more depth than 360 (240 weekday, floor below at 360)', () => {
+  it('B3 — a 420-min Sunday never buys LESS depth than 360 (monotone)', () => {
     const s360 = planPF(240, 360).summary;
     const s420 = planPF(240, 420).summary;
-    // 360's COVERAGE leaves a below-floor tail (History) that the final-window
-    // deepen passes have to close — so 420 must be a strict COVERAGE improvement,
-    // not the identical result the old 120-min Modern cap produced. (The reported
-    // floor itself is empty once deepened; the tail shows as deepenTopicIds.)
-    expect(s360.deepenTopicIds.length).toBeGreaterThan(0);
-    expect(depthScore(s420)).toBeGreaterThan(depthScore(s360));
-    // And a monotone (never-worse) guarantee across the Sunday range.
+    // A bigger Sunday main block never seats LESS depth; the ≤3-topics-per-block
+    // rule caps the gain, so growth is monotone rather than strict at every step.
+    expect(depthScore(s420)).toBeGreaterThanOrEqual(depthScore(s360));
     const s480 = planPF(240, 480).summary;
     expect(depthScore(s480)).toBeGreaterThanOrEqual(depthScore(s420));
   });
@@ -930,39 +948,54 @@ describe('planner DEEPEN passes — final-window weak-area top-ups (real content
     return m;
   };
 
-  it('at 240/360 the plan is FEASIBLE with an empty floor shortfall and NO feasibility options', () => {
-    const { summary } = planDeepen(360);
+  it('long window (240/360) is FEASIBLE with an empty floor shortfall and NO feasibility options', () => {
+    // The real long window seats every topic FULL in its unit run.
+    const { summary } = buildPlan({
+      subtopics: planSubtopics(),
+      progress: plannerProgress(),
+      mainsQuestionIds: mainsQuestionBank(),
+      pyqFrequency: pyqFrequency(),
+      sequence: learningSequence(),
+      examDateISO: '2027-01-24',
+      startISO: '2026-10-10',
+      todayISO: '2026-10-10',
+      dailyBudgetMin: 240,
+      weekendBudgetMin: 360,
+    });
     expect(summary.feasible).toBe(true);
     expect(summary.infeasibleFloorTopicIds).toEqual([]);
     // No "move the exam date" / "add Sunday time" noise once the floor is met.
     expect(summary.feasibilityOptions).toEqual([]);
+    expect(summary.deepenTopicIds).toEqual([]); // nothing below floor to deepen
   });
 
-  it('deepens every below-floor topic exactly ONCE, AFTER its first pass, within 5–13 Nov on non-mock/light/exam days (240/360)', () => {
+  it('deepens below-floor topics in the final window — once each, AFTER first pass, block-legal (240/360 short)', () => {
     const { days, summary } = planDeepen(360);
     const deep = summary.deepenTopicIds;
-    // The whole 17-topic STANDARD-floor tail is closed by a deepen.
-    expect(deep.length).toBe(17);
+    // The short window leaves a below-floor tail that the final window deepens.
+    expect(deep.length).toBeGreaterThan(0);
     const ids = deep.map((d) => d.id);
     expect(new Set(ids).size).toBe(ids.length); // exactly once each
     const fp = firstPassDates(days);
     const pass = passMap(days);
     const mockDates = new Set(buildMockSchedule('2026-09-30', SHORT).keys());
     for (const d of deep) {
-      // A deepen lifts a QUICK below-floor topic up to its STANDARD floor.
-      expect(d.fromTier).toBe('quick');
-      expect(d.toTier).toBe('standard');
-      // Its FIRST PASS is still QUICK (deepen adds no new first pass).
-      expect(pass.get(d.id)).toBe('quick');
+      // A deepen lifts a below-floor topic UP toward its floor tier.
+      expect(['quick', 'standard']).toContain(d.fromTier);
+      // Its FIRST PASS tier is unchanged (deepen adds no new first pass).
+      expect(pass.get(d.id)).toBe(d.fromTier);
       // Scheduled strictly AFTER its own first pass …
       expect(fp.get(d.id)! < d.dateISO).toBe(true);
-      // … inside the final window 5–13 Nov …
+      // … inside the final window …
       expect(d.dateISO >= SHORT.finalStartISO && d.dateISO <= addDaysISO(SHORT.examISO, -2)).toBe(true);
       // … and never on a mock / light / exam day.
       expect(mockDates.has(d.dateISO)).toBe(false);
       expect(d.dateISO).not.toBe(SHORT.lightISO);
       expect(d.dateISO).not.toBe(SHORT.examISO);
     }
+    // A deepened topic is not ALSO reported as still below floor.
+    const reported = new Set(summary.infeasibleFloorTopicIds);
+    for (const id of ids) expect(reported.has(id)).toBe(false);
   });
 
   it('keeps deepen blocks legal and adds no double first-pass (240/360)', () => {
@@ -1180,4 +1213,82 @@ describe('plan start date — free pre-start days + day-1 orientation', () => {
     }
   });
 });
+});
+
+/**
+ * WEEKLY SUBJECT UNITS over REAL content, long window (exam 24 Jan 2027): the
+ * interleaving keeps no Paper-I subject waiting too long, and the revision cycle
+ * revisits the units in the SAME teaching order.
+ */
+describe('weekly subject units — interleaving + revision order (real content, long window)', () => {
+  beforeEach(() => {
+    __resetForTests();
+  });
+
+  function longPlan() {
+    return buildPlan({
+      subtopics: planSubtopics(),
+      progress: plannerProgress(),
+      mainsQuestionIds: mainsQuestionBank(),
+      pyqFrequency: pyqFrequency(),
+      sequence: learningSequence(),
+      examDateISO: '2027-01-24',
+      startISO: '2026-10-10',
+      todayISO: '2026-10-10',
+      dailyBudgetMin: 240,
+      weekendBudgetMin: 360,
+    });
+  }
+
+  it('no Paper-I subject waits more than 5 weeks between its units', () => {
+    const { summary } = longPlan();
+    const PAPER_I = ['HIST', 'POL', 'ECON', 'GEO'];
+    const diffDays = (a: string, b: string): number => (Date.parse(b) - Date.parse(a)) / 86_400_000;
+    for (const code of PAPER_I) {
+      const windows = summary.units
+        .filter((u) => u.subjectCode === code && u.startISO)
+        .sort((a, b) => a.startISO.localeCompare(b.startISO));
+      for (let i = 1; i < windows.length; i += 1) {
+        const gapWeeks = diffDays(windows[i - 1]!.endISO, windows[i]!.startISO) / 7;
+        expect(gapWeeks).toBeLessThanOrEqual(5);
+      }
+    }
+  });
+
+  it('every non-MENT/CA Prelims topic is covered by exactly one unit, contiguous in sequence', () => {
+    const seq = learningSequence();
+    const inUnit = new Map<string, number>();
+    seq.units!.forEach((u, i) => u.topicIds.forEach((id) => inUnit.set(id, (inUnit.get(id) ?? 0) + (i + 1) * 0 + 1)));
+    // exactly once
+    for (const [, n] of inUnit) expect(n).toBe(1);
+    // every HIST/POL/ECON/GEO/SCI prelims topic appears
+    const expected = planSubtopics().filter(
+      (s) => s.track !== 'mains' && ['HIST', 'POL', 'ECON', 'GEO', 'SCI'].includes(s.subjectCode),
+    );
+    for (const s of expected) expect(inUnit.has(s.id)).toBe(true);
+    expect(inUnit.size).toBe(expected.length);
+    // each unit is a contiguous run of its subject's sequence
+    for (const u of seq.units!) {
+      const order = seq.order[u.subjectCode] ?? [];
+      const start = order.indexOf(u.topicIds[0]!);
+      expect(start).toBeGreaterThanOrEqual(0);
+      for (let i = 0; i < u.topicIds.length; i += 1) expect(order[start + i]).toBe(u.topicIds[i]);
+    }
+  });
+
+  it('the revision cycle revisits the units in the SAME teaching order', () => {
+    const { days } = longPlan();
+    const revUnitOrder: string[] = [];
+    for (const d of days) {
+      if (d.segment !== 'revision') continue;
+      if (d.unitId && !revUnitOrder.includes(d.unitId)) revUnitOrder.push(d.unitId);
+      // Revision teaches NO new first-pass topics.
+      expect([...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]).toEqual([]);
+    }
+    expect(revUnitOrder.length).toBeGreaterThan(0);
+    // The revisit order is a prefix-consistent subsequence of the authored unit order.
+    const authored = learningSequence().units!.map((u) => u.id);
+    const authoredFiltered = authored.filter((id) => revUnitOrder.includes(id));
+    expect(revUnitOrder).toEqual(authoredFiltered);
+  });
 });

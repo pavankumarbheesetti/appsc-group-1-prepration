@@ -14,10 +14,10 @@
  * On mobile the grid stacks into a single column. All numbers come from the
  * pure rhythm engine.
  */
-import { feasibilityLine, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic, type SubjectFit } from '../engine/planner';
+import { type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic, type SubjectFit } from '../engine/planner';
 import { getLearningSequence, getSubtopic, getSubtopics } from '../content/loader';
 import { SUBJECTS, type SubjectCode } from '../content/types';
-import { getExamDate, setExamDate, getPlanStartDate } from '../state/store';
+import { getPlanStartDate } from '../state/store';
 import { currentPlan } from '../lib/plan';
 import { mockSectionPools } from '../lib/plan';
 import { mockSeriesLength } from '../engine/mock';
@@ -30,65 +30,64 @@ import { card } from './components/card';
 import { chip } from './components/chip';
 import { progressBar } from './components/progress';
 import { icon } from './components/icon';
+import { navigate } from '../router/router';
 import { openLearn } from './learn';
-import { openPaperMock, openWeekTest } from './mock';
+import { openPaperMock, openWeekTest, openUnitTest } from './mock';
 import { prettyDate, prettyDowDate, fmtDuration, startPracticeDrill } from './today';
 
 /** Render the Planner view into `root`. */
 export function render(root: HTMLElement): void {
-  const draw = (): void => {
-    const now = new Date();
-    const plan = currentPlan(now);
-    if (plan.summary.postPrelims) {
-      mount(root, buildHeader(plan.summary, draw), buildPostPrelims());
-      return;
-    }
-    mount(
-      root,
-      buildHeader(plan.summary, draw),
-      buildCoverage(plan.summary),
-      buildFitSummary(plan.summary),
-      buildSubjectProgress(plan.summary),
-      buildGrid(plan),
-    );
-  };
-  draw();
+  const now = new Date();
+  const plan = currentPlan(now);
+  const summary = plan.summary;
+  if (summary.postPrelims) {
+    mount(root, buildHeader(summary), buildPostPrelims());
+    return;
+  }
+  mount(
+    root,
+    buildHeader(summary),
+    buildUnitHeader(plan),
+    buildThisWeek(plan),
+    buildRoadStrip(plan),
+    buildAllWeeks(plan),
+    buildPlanDetails(summary),
+  );
 }
 
 /* -------------------------------------------------------------------------- */
-/* Header: editable exam date + countdown + feasibility                        */
+/* Header: countdown + plain feasibility (exam date lives in Settings)         */
 /* -------------------------------------------------------------------------- */
 
-/** Header with the editable exam date, countdown and feasibility line. @internal */
-function buildHeader(summary: PlanSummary, rerender: () => void): HTMLElement {
+/**
+ * Header with the countdown and a PLAIN-language fit line. The editable exam
+ * date was removed (it duplicated the Settings control); a "Change in Settings"
+ * link is offered instead. @internal
+ */
+function buildHeader(summary: PlanSummary): HTMLElement {
   const today = todayISO();
   const daysToExam = daysToGo(summary.examDateISO, today);
 
-  const dateInput = el('input', {
-    class: 'exam-date-input',
-    type: 'date',
-    value: getExamDate(),
-    ariaLabel: 'Target exam date',
-  }) as HTMLInputElement;
-  dateInput.value = getExamDate();
-  dateInput.addEventListener('change', () => {
-    const before = getExamDate();
-    setExamDate(dateInput.value);
-    if (getExamDate() === before) dateInput.value = before;
-    rerender();
-  });
-
-  const field = el('label', { class: 'field exam-date-field' }, [
-    el('span', { class: 'field-label', text: 'Exam date' }),
-    dateInput,
-  ]);
+  const fit = summary.onTrack
+    ? `On track — new topics finish by ${prettyDate(summary.coverageEndISO)}.`
+    : `Behind by ${summary.behindBy} topic${summary.behindBy === 1 ? '' : 's'} — a little more each day catches up before ${prettyDate(summary.examDateISO)}.`;
 
   const feasibility = el('p', {
     class: summary.onTrack ? 'feasibility is-ok' : 'feasibility is-warn',
     attrs: { role: 'status' },
   }, [
     icon(summary.onTrack ? 'check' : 'flame', 16),
-    el('span', { text: feasibilityLine(summary) }),
+    el('span', { text: fit }),
+  ]);
+
+  const examLine = el('p', { class: 'planner-exam-line section-lead' }, [
+    el('span', { text: `Prelims · ${prettyDate(summary.examDateISO)} · ` }),
+    el('button', {
+      class: 'link-btn',
+      type: 'button',
+      text: 'Change in Settings',
+      onClick: () => navigate('/settings'),
+    }),
   ]);
 
   const countdownCard = el('div', { class: 'countdown countdown-sm' }, [
@@ -99,11 +98,218 @@ function buildHeader(summary: PlanSummary, rerender: () => void): HTMLElement {
 
   const left = el('div', { class: 'hero-body' }, [
     el('h2', { class: 'hero-title', text: 'Study planner' }),
-    field,
     feasibility,
+    examLine,
   ]);
 
   return el('section', { class: 'hero planner-hero' }, [left, countdownCard]);
+}
+
+/* -------------------------------------------------------------------------- */
+/* This week — the default view (unit header + 7-row table)                    */
+/* -------------------------------------------------------------------------- */
+
+/** The 7-day week that contains today (or the first upcoming/first week). @internal */
+function thisWeekDays(plan: Plan): PlanDay[] {
+  if (plan.days.length === 0) return [];
+  const anchor =
+    plan.days.find((d) => d.status === 'today') ??
+    plan.days.find((d) => d.status === 'upcoming') ??
+    plan.days[0]!;
+  const w = Math.floor(anchor.dayIndex / 7);
+  return plan.days.filter((d) => Math.floor(d.dayIndex / 7) === w);
+}
+
+/** The short unit name — the part before the em-dash (e.g. "Ancient India I"). @internal */
+function unitShortTitle(title: string): string {
+  const i = title.indexOf('\u2014');
+  return (i > 0 ? title.slice(0, i) : title).trim();
+}
+
+/**
+ * The unit header for the current week: the unit being taught, its day index in
+ * the unit run, and a muted "Next week" line. @internal
+ */
+function buildUnitHeader(plan: Plan): HTMLElement | null {
+  const week = thisWeekDays(plan);
+  const unitDay = week.find((d) => d.unitId && d.status !== 'past') ?? week.find((d) => d.unitId);
+  if (!unitDay || !unitDay.unitTitle) return null;
+
+  const title = unitShortTitle(unitDay.unitTitle);
+  const subtitle = unitDay.unitTitle.includes('\u2014')
+    ? unitDay.unitTitle.slice(unitDay.unitTitle.indexOf('\u2014') + 1).trim()
+    : '';
+
+  const children: Child[] = [
+    el('span', { class: 'unit-head-eyebrow', text: 'This week' }),
+    el('h3', { class: 'unit-head-title', text: title }),
+    subtitle ? el('p', { class: 'unit-head-sub section-lead', text: subtitle }) : null,
+    el('p', { class: 'unit-head-progress tnum', text: `Day ${unitDay.unitDay} of ${unitDay.unitDays}` }),
+  ];
+  if (unitDay.nextUnitTitle) {
+    children.push(el('p', { class: 'unit-head-next section-lead', text: `Next: ${unitShortTitle(unitDay.nextUnitTitle)}` }));
+  }
+  return el('section', { class: 'card unit-head' }, children);
+}
+
+/** Human focus (label + topic names) for one day in the week table. @internal */
+function dayFocus(day: PlanDay): { label: string; topics: string } {
+  if (day.mockPaper) {
+    return { label: day.mockPaper === 'paper1' ? 'Paper-I full mock' : 'Paper-II full mock', topics: '' };
+  }
+  if (day.blocks.some((b) => b.kind === 'week-test')) return { label: 'Week test', topics: '' };
+  if (day.light) return { label: 'Light day', topics: '' };
+  if (day.blocks.length === 0) return { label: 'Rest', topics: '' };
+  const names = day.topics.map((t) => (t.kind === 'practice' ? 'Mental Ability practice' : t.name || t.subtopicId));
+  const label = day.unitTitle ? unitShortTitle(day.unitTitle) : (day.blocks[0]?.label ?? 'Study');
+  return { label, topics: names.join(', ') };
+}
+
+/** Day-of-week short label from an ISO date (shared with the full grid below). */
+
+/**
+ * The default THIS-WEEK table: 7 rows of `day · focus · topics · minutes`, the
+ * today-row highlighted. Replaces the dense 15-week grid as the landing view.
+ * @internal
+ */
+function buildThisWeek(plan: Plan): HTMLElement {
+  const week = thisWeekDays(plan);
+  if (week.length === 0) {
+    return card({ title: 'This week' }, [
+      el('p', { class: 'section-lead', text: 'No days to plan — set an exam date in the future (Settings).' }),
+    ]);
+  }
+  const start = getPlanStartDate();
+  const rows = week.map((day) => {
+    const preStart = diffDaysISO(day.dateISO, start) > 0;
+    const focus = preStart ? { label: 'Free day', topics: 'Plan starts soon' } : dayFocus(day);
+    const cls = ['pw-row', `is-${day.status}`];
+    if (day.mockPaper || day.blocks.some((b) => b.kind === 'week-test')) cls.push('is-event');
+    return el('tr', { class: cls.join(' ') }, [
+      el('th', { attrs: { scope: 'row' }, class: 'pw-day' }, [
+        el('span', { class: 'pw-dow', text: dowLabel(day.dateISO) }),
+        el('span', { class: 'pw-date tnum', text: prettyDate(day.dateISO).replace(/ \d{4}$/, '') }),
+        day.status === 'today' ? chip({ text: 'Today', tone: 'ok' }) : null,
+      ]),
+      el('td', { class: 'pw-focus' }, [
+        el('span', { class: 'pw-focus-label', text: focus.label }),
+        focus.topics ? el('span', { class: 'pw-focus-topics', text: focus.topics }) : null,
+      ]),
+      el('td', { class: 'pw-min tnum', text: preStart ? '—' : fmtDuration(day.plannedMinutes) }),
+    ]);
+  });
+
+  const table = el('table', { class: 'planner-week-table' }, [
+    el('thead', {}, [
+      el('tr', {}, [
+        el('th', { attrs: { scope: 'col' }, text: 'Day' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Focus' }),
+        el('th', { attrs: { scope: 'col' }, text: 'Time' }),
+      ]),
+    ]),
+    el('tbody', {}, rows),
+  ]);
+  return el('section', { class: 'card planner-week' }, [
+    el('h3', { class: 'card-title', text: 'This week' }),
+    table,
+  ]);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Road to the exam — collapsible phase/unit/event strip                       */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * A collapsible "Road to <exam date>" strip: the study PHASES as date-ranged
+ * bands, every weekly subject UNIT as a labelled segment, and the Saturday
+ * checkpoints (week tests + full mocks). Collapsed by default. @internal
+ */
+function buildRoadStrip(plan: Plan): HTMLElement {
+  const summary = plan.summary;
+  const details = el('details', { class: 'road-strip' }) as HTMLDetailsElement;
+
+  const unitSegs = summary.units.map((u) =>
+    el('li', { class: 'road-unit', attrs: { title: `${u.title} · ${u.topicCount} topics` } }, [
+      el('span', { class: 'road-unit-name', text: unitShortTitle(u.title) }),
+      el('span', { class: 'road-unit-dates tnum', text: `${prettyDate(u.startISO).replace(/ \d{4}$/, '')}–${prettyDate(u.endISO).replace(/ \d{4}$/, '')}` }),
+    ]),
+  );
+
+  const events = summary.mockList.map((m) =>
+    el('li', { class: 'road-event' }, [
+      icon('timer', 13),
+      el('span', { text: `${prettyDate(m.dateISO).replace(/ \d{4}$/, '')} · ${m.paper === 'paper1' ? 'Paper-I' : 'Paper-II'} mock` }),
+    ]),
+  );
+  const weekTestCount = plan.days.filter((d) => d.blocks.some((b) => b.kind === 'week-test')).length;
+
+  details.append(
+    el('summary', { class: 'road-summary' }, [
+      el('span', { class: 'road-summary-title', text: `Road to ${prettyDate(summary.examDateISO)}` }),
+      el('span', { class: 'section-lead', text: `${summary.units.length} units · ${weekTestCount} week tests · ${summary.mockSittings} full mocks` }),
+      icon('chevron', 16),
+    ]),
+    el('div', { class: 'road-body' }, [
+      el('p', { class: 'road-phase-line section-lead', text: phaseLine(summary) }),
+      el('h4', { class: 'road-subhead', text: 'Units, in order' }),
+      el('ol', { class: 'road-units' }, unitSegs),
+      events.length > 0 ? el('h4', { class: 'road-subhead', text: 'Saturday checkpoints' }) : null,
+      events.length > 0 ? el('ul', { class: 'road-events' }, events) : null,
+    ]),
+  );
+  return details;
+}
+
+/** A plain-language phase line derived from the segment day counts. @internal */
+function phaseLine(summary: PlanSummary): string {
+  const parts: string[] = [];
+  if (summary.coverageDays > 0) parts.push(`learn new topics to ${prettyDate(summary.coverageEndISO)}`);
+  if (summary.revisionDays > 0) parts.push(`revise everything (${summary.revisionDays} days)`);
+  if (summary.finalDays > 0) parts.push(`final mocks + polish (${summary.finalDays} days)`);
+  return parts.length > 0 ? `Phases: ${parts.join(' → ')}.` : '';
+}
+
+/* -------------------------------------------------------------------------- */
+/* See all weeks — the full grid, lazy behind a disclosure                     */
+/* -------------------------------------------------------------------------- */
+
+/** The full 15-week grid, rendered only when "See all weeks" is opened. @internal */
+function buildAllWeeks(plan: Plan): HTMLElement {
+  const details = el('details', { class: 'all-weeks' }) as HTMLDetailsElement;
+  const summaryRow = el('summary', { class: 'all-weeks-summary' }, [
+    el('span', { text: 'See all weeks' }),
+    icon('chevron', 16),
+  ]);
+  details.append(summaryRow);
+  let built = false;
+  details.addEventListener('toggle', () => {
+    if (details.open && !built) {
+      details.append(buildGrid(plan));
+      built = true;
+    }
+  });
+  return details;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Plan details — coverage + fit + per-subject, folded into one disclosure     */
+/* -------------------------------------------------------------------------- */
+
+/** The former coverage/fit/subject cards, collapsed into one "Plan details". @internal */
+function buildPlanDetails(summary: PlanSummary): HTMLElement {
+  const details = el('details', { class: 'plan-details' }) as HTMLDetailsElement;
+  details.append(
+    el('summary', { class: 'plan-details-summary' }, [
+      el('span', { text: 'Plan details' }),
+      icon('chevron', 16),
+    ]),
+    el('div', { class: 'plan-details-body' }, [
+      buildCoverage(summary),
+      buildFitSummary(summary),
+      buildSubjectProgress(summary),
+    ]),
+  );
+  return details;
 }
 
 /** Post-prelims placeholder. @internal */
@@ -328,6 +534,17 @@ function cellBlock(block: PlanBlock): HTMLElement {
       type: 'button',
       ariaLabel: 'Start this week’s test — questions from topics you have studied',
       onClick: () => openWeekTest(block),
+    }, [icon('timer', 13), el('span', { text: block.label })]);
+  }
+  if (block.kind === 'unit-wrapup') {
+    const q = block.unitTestCount ?? 0;
+    return el('button', {
+      class: 'plan-cell-mock',
+      type: 'button',
+      ariaLabel: q > 0
+        ? `Start the unit test — ${q} question${q === 1 ? '' : 's'} from this unit only`
+        : 'Open the unit wrap-up',
+      onClick: () => openUnitTest(block),
     }, [icon('timer', 13), el('span', { text: block.label })]);
   }
 

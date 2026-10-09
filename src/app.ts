@@ -80,24 +80,18 @@ interface NavSection {
 const NAV_SECTIONS: ReadonlyArray<NavSection> = [
   { eyebrow: 'Plan', items: [
     { label: 'Today', path: '/', iconName: 'dashboard' },
-    { label: 'Start here', path: '/start', iconName: 'sparkles' },
     { label: 'Planner', path: '/planner', iconName: 'calendar' },
+    { label: 'Start here', path: '/start', iconName: 'sparkles' },
   ] },
-  { eyebrow: 'Learn', items: [
+  { eyebrow: 'Study', items: [
     { label: 'Syllabus', path: '/syllabus', iconName: 'syllabus' },
-  ] },
-  { eyebrow: 'Practice', items: [
     { label: 'Drill', path: '/drill', iconName: 'drill' },
     { label: 'Mock', path: '/mock', iconName: 'timer' },
-  ] },
-  { eyebrow: 'Revise', items: [
     { label: 'Revise', path: '/revise', iconName: 'revise' },
   ] },
-  { eyebrow: 'Skills', items: [
+  { eyebrow: 'More', items: [
     { label: 'Mains', path: '/mains', iconName: 'notes' },
     { label: 'Languages', path: '/languages', iconName: 'globe' },
-  ] },
-  { eyebrow: 'Track', items: [
     { label: 'Progress', path: '/progress', iconName: 'notebook' },
   ] },
 ];
