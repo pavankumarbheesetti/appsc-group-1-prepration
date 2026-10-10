@@ -73,15 +73,85 @@ export function mount(root: HTMLElement, ...children: Child[]): void {
 }
 
 /**
- * Render a single line of inline markdown (`**bold**`) into safe DOM nodes.
- * Splitting on `**` means even segments are plain text and odd segments are
- * bold — no HTML is ever parsed. @internal
+ * Inline CODE SPAN delimiter: a backtick-wrapped run (no nested backticks).
+ * Code spans are rendered verbatim — NO bold/superscript/subscript transforms
+ * are applied inside them, so e.g. `a^b` in code stays literal. @internal
+ */
+const CODE_SPAN_RE = /`([^`]+)`/g;
+
+/**
+ * SUPERSCRIPT / SUBSCRIPT inline math.
+ *
+ * The BASE char (a digit, letter, or a closing bracket `)`/`]`/`}`) is kept as
+ * normal text; the exponent/index that follows is lifted into a real `<sup>` /
+ * `<sub>`. Superscripts accept either a BRACED body `^{...}` or — for backwards
+ * safety with existing numeric content such as `10^4`, `10^-4`, `2^80` — a bare
+ * run of (optionally signed) digits `^-?\d+`. Subscripts accept ONLY the braced
+ * form `_{...}`, so ordinary snake_case prose is never mangled. @internal
+ */
+const MATH_RE = /([0-9A-Za-z)\]}])(?:\^(\{[^}]*\}|-?\d+)|_(\{[^}]*\}))/g;
+
+/** Strip the outer `{ }` from a braced math body; leave a bare body unchanged. @internal */
+function stripBraces(s: string): string {
+  return s.startsWith('{') ? s.slice(1, -1) : s;
+}
+
+/**
+ * Lift `base^exp` / `base_{idx}` runs in a plain-text (no code, no bold)
+ * fragment into real `<sup>`/`<sub>` nodes. The base character is re-emitted as
+ * ordinary text and only the exponent/index is wrapped, so `2^80` renders as
+ * "2" + `<sup>80</sup>`. Everything is a text node / element — never HTML. @internal
+ */
+function mathNodes(text: string): Node[] {
+  const out: Node[] = [];
+  let last = 0;
+  MATH_RE.lastIndex = 0;
+  let m: RegExpExecArray | null;
+  while ((m = MATH_RE.exec(text)) !== null) {
+    if (m.index > last) out.push(document.createTextNode(text.slice(last, m.index)));
+    out.push(document.createTextNode(m[1]!)); // base stays as normal text
+    if (m[2] !== undefined) out.push(el('sup', { text: stripBraces(m[2]) }));
+    else if (m[3] !== undefined) out.push(el('sub', { text: stripBraces(m[3]) }));
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) out.push(document.createTextNode(text.slice(last)));
+  return out;
+}
+
+/**
+ * Apply `**bold**` splitting then inline math to a CODE-FREE fragment. Even
+ * segments are plain text, odd segments are bold — no HTML is ever parsed. Both
+ * flow through {@link mathNodes} so superscripts/subscripts work inside and
+ * outside bold spans. @internal
+ */
+function boldAndMath(text: string): Node[] {
+  const out: Node[] = [];
+  const parts = text.split('**');
+  parts.forEach((part, i) => {
+    if (i % 2 === 1) out.push(el('strong', {}, mathNodes(part)));
+    else out.push(...mathNodes(part));
+  });
+  return out;
+}
+
+/**
+ * Render a single line of inline markdown into safe DOM nodes. Supports inline
+ * `` `code` `` spans (verbatim), `**bold**`, and `base^{exp}`/`base^digits`
+ * superscripts + `x_{i}` subscripts. No HTML is ever parsed — every segment is a
+ * text node or an element built via {@link el}. @internal
  */
 function inlineNodes(line: string): Node[] {
-  const parts = line.split('**');
-  return parts.map((part, i) =>
-    i % 2 === 1 ? el('strong', { text: part }) : document.createTextNode(part),
-  );
+  const out: Node[] = [];
+  let last = 0;
+  CODE_SPAN_RE.lastIndex = 0;
+  let m: RegExpExecArray | null;
+  while ((m = CODE_SPAN_RE.exec(line)) !== null) {
+    if (m.index > last) out.push(...boldAndMath(line.slice(last, m.index)));
+    out.push(el('code', { class: 'md-code', text: m[1]! }));
+    last = m.index + m[0].length;
+  }
+  if (last < line.length) out.push(...boldAndMath(line.slice(last)));
+  return out;
 }
 
 /**
@@ -107,6 +177,17 @@ function tableCells(line: string): string[] {
   if (s.startsWith('|')) s = s.slice(1);
   if (s.endsWith('|')) s = s.slice(0, -1);
   return s.split('|').map((c) => c.trim());
+}
+
+/**
+ * Pad with empty cells (or truncate) so a body row matches the header's column
+ * count. This makes a single malformed row (too few/too many cells) harmless:
+ * the table still renders as a tidy grid instead of collapsing. @internal
+ */
+function normaliseRow(cells: string[], cols: number): string[] {
+  if (cells.length === cols) return cells;
+  if (cells.length > cols) return cells.slice(0, cols);
+  return [...cells, ...Array<string>(cols - cells.length).fill('')];
 }
 
 /**
@@ -145,16 +226,21 @@ export function renderMarkdown(md: string): Node[] {
     const next = lines[i + 1];
     if (trimmed.includes('|') && next !== undefined && isTableSeparator(next)) {
       flushList();
+      const header = tableCells(line);
+      const cols = header.length;
       const table = el('table', { class: 'md-table' });
       const thead = el('thead', {}, [
-        el('tr', {}, tableCells(line).map((c) => el('th', {}, inlineNodes(c)))),
+        el('tr', {}, header.map((c) => el('th', { attrs: { scope: 'col' } }, inlineNodes(c)))),
       ]);
       const tbody = el('tbody');
       let j = i + 2;
       for (; j < lines.length; j += 1) {
         const row = (lines[j] ?? '').trimEnd();
         if (row.trim() === '' || !row.includes('|')) break;
-        tbody.append(el('tr', {}, tableCells(row).map((c) => el('td', {}, inlineNodes(c)))));
+        // Pad/truncate every row to the header width so one bad row can't break
+        // the grid (fewer cells → padded empty; more cells → extras dropped).
+        const cells = normaliseRow(tableCells(row), cols);
+        tbody.append(el('tr', {}, cells.map((c) => el('td', {}, inlineNodes(c)))));
       }
       table.append(thead, tbody);
       out.push(el('div', { class: 'md-table-wrap' }, [table]));

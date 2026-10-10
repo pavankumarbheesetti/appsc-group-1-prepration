@@ -18,7 +18,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "front": "Prime, composite, co-prime — the key facts?",
-      "back": "2 is the only even prime & smallest prime; 1 is neither prime nor composite; co-prime ⇔ HCF = 1 (e.g. 8 & 15).",
+      "back": "2 is the only even prime & smallest prime; 1 is neither prime nor composite; co-prime means HCF = 1 (e.g. 8 & 15).",
       "examPoint": "Prime, composite & co-prime identification",
       "source": "APPSC Quantitative Reasoning — Number System",
       "verified": true
@@ -38,7 +38,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "front": "How to count the factors of a number?",
-      "back": "If N = pᵃ·qᵇ·rᶜ, number of factors = (a+1)(b+1)(c+1), counting 1 and N. E.g. 360 = 2³·3²·5 → 4·3·2 = 24.",
+      "back": "If N = p^{a}·q^{b}·r^{c}, number of factors = (a+1)(b+1)(c+1), counting 1 and N. E.g. 360 = 2³·3²·5 → 4·3·2 = 24.",
       "examPoint": "Number of factors via prime factorisation",
       "source": "APPSC Quantitative Reasoning — Number System",
       "verified": true
@@ -68,7 +68,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "front": "Unit digit of a sum/product of powers — method?",
-      "back": "Reduce each power to its unit digit via cyclicity, then add/multiply. E.g. 17^23 + 24^24 → 3 + 6 = 9.",
+      "back": "Reduce each power to its unit digit via cyclicity, then add/multiply. E.g. 17^{23} + 24^{24} → 3 + 6 = 9.",
       "examPoint": "Unit digit of an expression (sum/product of powers)",
       "source": "APPSC Quantitative Reasoning — Number System",
       "verified": true
@@ -88,7 +88,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "front": "Trailing zeros in a product/power — method?",
-      "back": "Prime-factorise, total the 2s and 5s, take the minimum. E.g. 15^50·20^40·25^30 → min(80, 150) = 80.",
+      "back": "Prime-factorise, total the 2s and 5s, take the minimum. E.g. 15^{50}·20^{40}·25^{30} → min(80, 150) = 80.",
       "examPoint": "Trailing zeros in a product/power",
       "source": "APPSC Quantitative Reasoning — Number System",
       "verified": true
@@ -97,8 +97,8 @@
       "id": "ment-number-system-card-10",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
-      "front": "Remainder of a power (e.g. 2^100 ÷ 7)?",
-      "back": "List power-remainders to find the cycle: 2,4,1 (length 3). 100 mod 3 = 1 → 2^1 ≡ 2. Remainder = 2.",
+      "front": "Remainder of a power (e.g. 2^{100} ÷ 7)?",
+      "back": "List the power-remainders to find the cycle: 2, 4, 1 (length 3). 100 ÷ 3 leaves 1, so 2^{100} matches 2^{1} = 2. Remainder = 2.",
       "examPoint": "Remainder of powers — cyclicity/pattern method",
       "source": "APPSC Quantitative Reasoning — Number System",
       "verified": true
@@ -128,7 +128,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-number-system",
       "front": "How to compare/order fractions quickly?",
-      "back": "Convert to decimals, or cross-multiply (a/b vs c/d ⇒ a·d vs b·c), or use a common denominator, then compare.",
+      "back": "Convert to decimals, or cross-multiply (a/b vs c/d → a·d vs b·c), or use a common denominator, then compare.",
       "examPoint": "Fractions & decimals — comparison and ordering",
       "source": "APPSC Quantitative Reasoning — Number System",
       "verified": true

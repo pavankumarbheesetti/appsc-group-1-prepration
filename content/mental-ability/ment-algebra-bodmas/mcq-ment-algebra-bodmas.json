@@ -16,7 +16,7 @@
         "20"
       ],
       "answerIndex": 1,
-      "explanation": "Apply BODMAS: brackets → orders (powers) → division/multiplication (left→right) → addition/subtraction.\n\nStep 1: Bracket (7 − 4) = 3.\nStep 2: Order 3² = 9.\nStep 3: Division/Multiplication left to right: 48 ÷ 8 = 6, then 6 × 3 = 18.\nStep 4: Now 18 + 9 − 5 = 22.\n\n**Why not the others**\n- 18 — stops after the ÷ and × step, forgetting to add 9 and subtract 5.\n- 26 — does 48 ÷ (8 × 3) = 2 wrongly, or mis-adds.\n- 20 — treats 7 − 4² as (7−4)²=9 correctly but then does 6+9+5.\n\n**Key facts**\n- Order: **B**rackets, **O**rders (powers/roots), **D**ivision & **M**ultiplication (left→right, equal rank), **A**ddition & **S**ubtraction (left→right).\n- ÷ and × are done in the order they appear, NOT × before ÷.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
+      "explanation": "Follow BODMAS, which fixes the order of operations.\nFirst the bracket: 7 − 4 = 3, so the expression becomes 48 ÷ 8 × 3 + 3² − 5.\nNext the power (an \"order\"): 3² = 9, giving 48 ÷ 8 × 3 + 9 − 5.\nNow division and multiplication, taken left to right because they are equal in rank: 48 ÷ 8 = 6, and then 6 × 3 = 18.\nFinally addition and subtraction, left to right: 18 + 9 = 27, and 27 − 5 = 22. So the answer is 22.\n\n**Why not the others**\n- 18 — you stopped after the ÷ and × step and forgot to add the 9 and subtract the 5.\n- 26 — you did 48 ÷ (8 × 3) = 2 instead of working left to right, then mis-added.\n- 20 — you handled the bracket and power correctly but then wrongly computed 6 + 9 + 5 instead of 6 × 3 + 9 − 5.\n\n**Key facts**\n- Order of operations: Brackets, Orders (powers and roots), Division and Multiplication left to right, Addition and Subtraction left to right.\n- Division and multiplication share one rank, so do whichever comes first from the left — never × before ÷ as a blanket rule.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bodmas Rule",
       "verified": true,
       "covers": [
@@ -41,7 +41,7 @@
         "60"
       ],
       "answerIndex": 2,
-      "explanation": "Use the AP nth-term formula aₙ = a + (n − 1)d.\n\nStep 1: First term a = 7, common difference d = 11 − 7 = 4.\nStep 2: a₁₅ = 7 + (15 − 1) × 4 = 7 + 14 × 4 = 7 + 56 = 63.\n\n**Why not the others**\n- 59 — uses (n − 1) = 13 instead of 14 (13 × 4 = 52; 7 + 52 = 59).\n- 67 — uses n = 15 directly (7 + 15 × 4).\n- 60 — adds 7 + 53, an arithmetic slip.\n\n**Key facts**\n- nth term: **aₙ = a + (n − 1)d**.\n- Sum of n terms: Sₙ = n/2 [2a + (n − 1)d] = n/2 (a + l).\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression.*",
+      "explanation": "Use the arithmetic-progression rule for the nth term, aₙ = a + (n − 1)d.\nThe first term is a = 7, and the common difference is d = 11 − 7 = 4 (each term is 4 more than the one before).\nFor the 15th term, n = 15, so there are 15 − 1 = 14 steps after the first term.\na₁₅ = 7 + 14 × 4 = 7 + 56 = 63. So the 15th term is 63.\n\n**Why not the others**\n- 59 — you used 13 steps instead of 14 (13 × 4 = 52, and 7 + 52 = 59); the nth term has (n − 1) steps, not (n − 2).\n- 67 — you multiplied by n = 15 directly (7 + 15 × 4) instead of by (n − 1) = 14.\n- 60 — this is an arithmetic slip, adding 7 + 53 instead of 7 + 56.\n\n**Key facts**\n- nth term of an AP: aₙ = a + (n − 1)d.\n- Sum of n terms: Sₙ = n/2 [2a + (n − 1)d], which also equals n/2 × (first term + last term).\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression.*",
       "source": "local APPSC Quantitative Reasoning PDF — Arithmetic Progression",
       "verified": true,
       "covers": [
@@ -65,7 +65,7 @@
         "4"
       ],
       "answerIndex": 0,
-      "explanation": "Substitute the given values into the defined rule.\n\nStep 1: a = 9, b = 5, so a + b = 14 and a − b = 4.\nStep 2: 9 △ 5 = 14 ÷ 4 = 3.5.\n\n**Why not the others**\n- 2.5 — computes (a − b) ÷ (a + b) = 4/14... or reverses; a mis-read of the rule.\n- 1.75 — divides (a − b) into (a + b) as 7/4 after halving wrongly.\n- 4 — returns only the denominator (a − b), ignoring the division.\n\n**Key facts**\n- In symbol-substitution problems, replace the operator with its definition exactly, then apply BODMAS.\n- Watch operand order: a △ b need not equal b △ a.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
+      "explanation": "The symbol △ is just a label for the rule you are given, a △ b = (a + b) ÷ (a − b). Keep a and b in the exact slots.\nHere a = 9 and b = 5.\nThe top is a + b = 9 + 5 = 14.\nThe bottom is a − b = 9 − 5 = 4.\nSo 9 △ 5 = 14 ÷ 4 = 3.5.\n\n**Why not the others**\n- 2.5 — you computed the rule upside down, (a − b) ÷ (a + b) = 4 ÷ 14, or swapped a and b.\n- 1.75 — you divided 7 by 4, halving the top before dividing.\n- 4 — you reported only the bottom value (a − b) and never carried out the division.\n\n**Key facts**\n- In a made-up-symbol question, replace the symbol with its definition first, then simplify by BODMAS.\n- Operand order matters: a △ b need not equal b △ a, because swapping flips the sign of the bottom here.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bodmas Rule",
       "verified": true,
       "covers": [
@@ -88,7 +88,7 @@
         "63"
       ],
       "answerIndex": 0,
-      "explanation": "Use the identity (a + b)² = a² + b² + 2ab, rearranged to a² + b² = (a + b)² − 2ab.\n\nStep 1: (a + b)² = 12² = 144.\nStep 2: 2ab = 2 × 27 = 54.\nStep 3: a² + b² = 144 − 54 = 90.\n\n**Why not the others**\n- 108 — subtracts only ab (27) instead of 2ab: 144 − 36 is also wrong; a mis-application.\n- 117 — computes 144 − 27, forgetting the factor 2 on ab.\n- 63 — subtracts 2ab twice or uses (a − b)² path incorrectly.\n\n**Key facts**\n- (a + b)² = a² + 2ab + b²; (a − b)² = a² − 2ab + b².\n- a² + b² = (a + b)² − 2ab; also a² − b² = (a + b)(a − b).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "explanation": "You are given the sum and the product of two numbers, so use a² + b² = (a + b)² − 2ab (you do not need the numbers themselves).\nFirst square the sum: (a + b)² = 12² = 144.\nThen take twice the product: 2ab = 2 × 27 = 54.\nSubtract, because (a + b)² already contains an extra 2ab beyond a² + b²: a² + b² = 144 − 54 = 90.\n\n**Why not the others**\n- 108 — you subtracted only ab (36) instead of 2ab, mis-applying the identity.\n- 117 — you subtracted just 27 (one ab) instead of 2 × 27, forgetting the factor of 2 on the cross term.\n- 63 — you subtracted 2ab twice (144 − 54 − 27) or confused the sum and difference forms.\n\n**Key facts**\n- (a + b)² = a² + 2ab + b²; rearranged, a² + b² = (a + b)² − 2ab.\n- When the difference is given instead, use a² + b² = (a − b)² + 2ab.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
       "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
       "verified": true,
       "covers": [
@@ -111,7 +111,7 @@
         "259"
       ],
       "answerIndex": 2,
-      "explanation": "Use the identity a³ + b³ = (a + b)³ − 3ab(a + b).\n\nStep 1: (a + b)³ = 7³ = 343.\nStep 2: 3ab(a + b) = 3 × 10 × 7 = 210.\nStep 3: a³ + b³ = 343 − 210 = 133.\n\n**Why not the others**\n- 147 — uses (a + b)³ − 3ab = 343 − 30... or a mis-count of terms.\n- 210 — reports only the subtracted term 3ab(a + b).\n- 259 — adds instead of subtracts, or drops the (a + b) factor: 343 − 84.\n\n**Key facts**\n- a³ + b³ = (a + b)³ − 3ab(a + b) = (a + b)(a² − ab + b²).\n- a³ − b³ = (a − b)³ + 3ab(a − b) = (a − b)(a² + ab + b²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "explanation": "With the sum and product known, use a³ + b³ = (a + b)³ − 3ab(a + b).\nCube the sum: (a + b)³ = 7³ = 343.\nWork out the correction term: 3ab(a + b) = 3 × 10 × 7 = 210.\nSubtract it, because expanding (a + b)³ adds an extra 3ab(a + b) on top of a³ + b³: a³ + b³ = 343 − 210 = 133.\n\n**Why not the others**\n- 147 — you used (a + b)³ − 3ab = 343 − 30 and dropped the (a + b) factor in the correction.\n- 210 — you reported only the subtracted correction term, not the final difference.\n- 259 — you added instead of subtracting, or used 343 − 84.\n\n**Key facts**\n- a³ + b³ = (a + b)³ − 3ab(a + b), which also equals (a + b)(a² − ab + b²).\n- a³ − b³ = (a − b)³ + 3ab(a − b).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
       "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
       "verified": true,
       "covers": [
@@ -127,7 +127,7 @@
       "id": "ment-algebra-bodmas-mcq-6",
       "subjectCode": "MENT",
       "subtopicId": "ment-algebra-bodmas",
-      "question": "Solve for x:  3(x + 4) = 5x − 2",
+      "question": "Solve for x: 3(x + 4) = 5x − 2",
       "options": [
         "5",
         "6",
@@ -135,7 +135,7 @@
         "7"
       ],
       "answerIndex": 3,
-      "explanation": "Expand, collect like terms, and isolate x.\n\nStep 1: 3(x + 4) = 3x + 12, so 3x + 12 = 5x − 2.\nStep 2: 12 + 2 = 5x − 3x → 14 = 2x.\nStep 3: x = 14 ÷ 2 = 7.\n\n**Why not the others**\n- 5 — arises from 3x + 12 = 5x − 2 solved as 10 = 2x (dropping the +2 sign).\n- 6 — from 12 = 2x, forgetting to move the −2.\n- 8 — from 16 = 2x, a sign slip when transposing.\n\n**Key facts**\n- Transpose terms across '=' by changing their sign; divide by the coefficient of x last.\n- Always expand brackets first (BODMAS) before collecting terms.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
+      "explanation": "Expand the bracket first, then gather the x-terms on one side and the plain numbers on the other.\nExpand: 3(x + 4) = 3x + 12, so the equation is 3x + 12 = 5x − 2.\nMove the numbers to the left and the x-terms to the right, flipping each sign as it crosses the equals sign: 12 + 2 = 5x − 3x, which is 14 = 2x.\nDivide both sides by 2: x = 14 ÷ 2 = 7.\nCheck: 3(7 + 4) = 33 and 5 × 7 − 2 = 33, so x = 7 is correct.\n\n**Why not the others**\n- 5 — you dropped the +2 when transposing and solved 10 = 2x.\n- 6 — you forgot to move the −2 across and solved 12 = 2x.\n- 8 — you made a sign slip and solved 16 = 2x.\n\n**Key facts**\n- Transpose a term across \"=\" by changing its sign; divide by the coefficient of x only at the end.\n- Always expand brackets (BODMAS) before collecting like terms.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
       "source": "local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable",
       "verified": true,
       "covers": [
@@ -158,7 +158,7 @@
         "x = 2, y = 3"
       ],
       "answerIndex": 0,
-      "explanation": "Use substitution (or elimination).\n\nStep 1: From 2x − y = 5, y = 2x − 5.\nStep 2: Substitute into 4x + 3y = 25: 4x + 3(2x − 5) = 25 → 4x + 6x − 15 = 25.\nStep 3: 10x = 40 → x = 4; then y = 2(4) − 5 = 3.\n\n**Why not the others**\n- x = 3, y = 4 — swaps the values; check 4(3) + 3(4) = 24 ≠ 25.\n- x = 5, y = 1 — satisfies 2x − y = 9, not 5.\n- x = 2, y = 3 — gives 4(2) + 3(3) = 17 ≠ 25.\n\n**Key facts**\n- Elimination: make one variable's coefficients equal, then add/subtract.\n- Always verify the pair in BOTH original equations.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
+      "explanation": "Solve by substitution. From the second equation, 2x − y = 5, make y the subject: y = 2x − 5.\nPut this into the first equation, 4x + 3y = 25: 4x + 3(2x − 5) = 25.\nExpand: 4x + 6x − 15 = 25, so 10x − 15 = 25, giving 10x = 40 and x = 4.\nNow find y: y = 2 × 4 − 5 = 3.\nCheck in both: 4 × 4 + 3 × 3 = 25, and 2 × 4 − 3 = 5. Both hold, so x = 4, y = 3.\n\n**Why not the others**\n- x = 3, y = 4 — the values are swapped; this gives 4 × 3 + 3 × 4 = 24, not 25.\n- x = 5, y = 1 — this satisfies 2x − y = 9, not 5.\n- x = 2, y = 3 — this gives 4 × 2 + 3 × 3 = 17, not 25.\n\n**Key facts**\n- Substitution: express one variable from one equation and put it into the other.\n- Always verify the pair in BOTH original equations before choosing.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
       "source": "local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable",
       "verified": true,
       "covers": [
@@ -181,7 +181,7 @@
         "3 and 6"
       ],
       "answerIndex": 2,
-      "explanation": "Factorise by splitting the middle term into two numbers that multiply to +20 and add to −9.\n\nStep 1: −4 and −5 satisfy (−4)(−5) = 20 and (−4) + (−5) = −9.\nStep 2: x² − 4x − 5x + 20 = 0 → (x − 4)(x − 5) = 0.\nStep 3: x = 4 or x = 5.\n\n**Why not the others**\n- 2 and 10 — multiply to 20 but add to 12, not 9.\n- −4 and −5 — these are the factor numbers, not the roots (roots take the opposite sign).\n- 3 and 6 — add to 9 but multiply to 18, not 20.\n\n**Key facts**\n- For x² − Sx + P = 0, look for two numbers with sum S and product P; roots are those numbers.\n- Quadratic formula fallback: x = [−b ± √(b² − 4ac)] / 2a.\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
+      "explanation": "Factorise by splitting the middle term. You need two numbers whose product is +20 (the constant) and whose sum is −9 (the middle coefficient).\nThose numbers are −4 and −5, because (−4) × (−5) = 20 and (−4) + (−5) = −9.\nSo x² − 4x − 5x + 20 = 0, which groups as (x − 4)(x − 5) = 0.\nA product is zero only when a factor is zero, so x − 4 = 0 or x − 5 = 0, giving x = 4 or x = 5.\n\n**Why not the others**\n- 2 and 10 — they multiply to 20 but add to 12, not −9.\n- −4 and −5 — these are the split numbers, not the roots; the factor (x − 4) gives the root +4, not −4.\n- 3 and 6 — they add to 9 but multiply to 18, not 20.\n\n**Key facts**\n- For x² − Sx + P = 0, find two numbers with sum S and product P; the roots are those numbers (with the right sign).\n- Fallback: the quadratic formula x = [−b ± √(b² − 4ac)] ÷ 2a.\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Quadratic Equation",
       "verified": true,
       "covers": [
@@ -204,7 +204,7 @@
         "Real and irrational"
       ],
       "answerIndex": 2,
-      "explanation": "The nature of roots is decided by the discriminant D = b² − 4ac.\n\nStep 1: a = 1, b = −6, c = 11.\nStep 2: D = (−6)² − 4(1)(11) = 36 − 44 = −8.\nStep 3: D < 0, so the roots are imaginary (complex conjugates), with no real value.\n\n**Why not the others**\n- Real and equal — requires D = 0.\n- Real and distinct — requires D > 0.\n- Real and irrational — requires D > 0 and not a perfect square; here D is negative.\n\n**Key facts**\n- D > 0 → real & distinct; D = 0 → real & equal; D < 0 → imaginary.\n- Sum of roots = −b/a, product = c/a (here sum = 6, product = 11).\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
+      "explanation": "The nature of the roots is decided by the discriminant D = b² − 4ac.\nHere a = 1, b = −6 and c = 11.\nCompute: D = (−6)² − 4 × 1 × 11 = 36 − 44 = −8.\nBecause D is less than 0, the equation has no real roots; the roots are imaginary (a complex conjugate pair).\n\n**Why not the others**\n- Real and equal — this needs D = 0, but here D = −8.\n- Real and distinct — this needs D greater than 0, but here D is negative.\n- Real and irrational — this also needs D greater than 0 (and not a perfect square); a negative D cannot give real roots at all.\n\n**Key facts**\n- D greater than 0 means real and distinct; D = 0 means real and equal; D less than 0 means imaginary.\n- Even for imaginary roots the sum is −b/a = 6 and the product is c/a = 11.\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Quadratic Equation",
       "verified": true,
       "covers": [
@@ -228,7 +228,7 @@
         "3"
       ],
       "answerIndex": 1,
-      "explanation": "By the Remainder Theorem, the remainder on division by (x − a) equals f(a).\n\nStep 1: Here a = 2, so evaluate f(2).\nStep 2: f(2) = 2(2)³ − 3(2)² + 4(2) − 7 = 16 − 12 + 8 − 7.\nStep 3: = 5.\n\n**Why not the others**\n- −1 — evaluates at x = 1 (f(1) = 2 − 3 + 4 − 7).\n- 9 — mis-computes 2(8) − 3(4) + 8 − 7 as 16 − 4...; an arithmetic slip.\n- 3 — drops the −7 constant or mis-signs a term.\n\n**Key facts**\n- Remainder Theorem: dividing f(x) by (x − a) gives remainder f(a).\n- Factor Theorem: (x − a) is a factor iff f(a) = 0.\n\n*Source: local APPSC Quantitative Reasoning PDF — Polynomials.*",
+      "explanation": "Use the Remainder Theorem: the remainder when f(x) is divided by (x − a) is simply f(a), so no long division is needed.\nThe divisor is (x − 2), so a = 2 and you evaluate f(2).\nf(2) = 2 × 2³ − 3 × 2² + 4 × 2 − 7.\nWork it out term by term: 2 × 8 = 16, 3 × 4 = 12, 4 × 2 = 8, so f(2) = 16 − 12 + 8 − 7.\nAdd left to right: 16 − 12 = 4, 4 + 8 = 12, 12 − 7 = 5. The remainder is 5.\n\n**Why not the others**\n- −1 — you evaluated at x = 1 (f(1) = 2 − 3 + 4 − 7), using the wrong value of a.\n- 9 — an arithmetic slip in combining 16 − 12 + 8 − 7.\n- 3 — you dropped the −7 constant or mis-signed one term.\n\n**Key facts**\n- Remainder Theorem: dividing f(x) by (x − a) leaves the remainder f(a).\n- For a divisor (x − 2), use x = +2 (the sign is already accounted for).\n\n*Source: local APPSC Quantitative Reasoning PDF — Polynomials.*",
       "source": "local APPSC Quantitative Reasoning PDF — Polynomials",
       "verified": true,
       "covers": [
@@ -252,7 +252,7 @@
         "765"
       ],
       "answerIndex": 3,
-      "explanation": "Use the finite GP sum Sₙ = a(rⁿ − 1)/(r − 1) for r > 1.\n\nStep 1: a = 3, r = 6/3 = 2, n = 8.\nStep 2: 2⁸ = 256, so 2⁸ − 1 = 255.\nStep 3: S₈ = 3 × 255 ÷ (2 − 1) = 765.\n\n**Why not the others**\n- 768 — uses 3 × 256, forgetting to subtract 1 (uses rⁿ instead of rⁿ − 1).\n- 381 — sums only 7 terms (a(2⁷ − 1) = 3 × 127).\n- 384 — 3 × 128, an off-by-one in the exponent.\n\n**Key facts**\n- GP nth term: aₙ = a·rⁿ⁻¹.\n- Sum: Sₙ = a(rⁿ − 1)/(r − 1) if r > 1; a(1 − rⁿ)/(1 − r) if r < 1.\n\n*Source: local APPSC Quantitative Reasoning PDF — Geometric Progression.*",
+      "explanation": "Use the finite geometric-progression sum, Sₙ = a(r^{n} − 1)/(r − 1), valid when the ratio r is more than 1.\nThe first term is a = 3 and the ratio is r = 6 ÷ 3 = 2, with n = 8 terms.\nWork out the power: 2^{8} = 256, so 2^{8} − 1 = 255.\nThen S₈ = 3 × 255 ÷ (2 − 1) = 765 ÷ 1 = 765.\n\n**Why not the others**\n- 768 — you used 3 × 256, forgetting to subtract 1 (that is r^{n}, not r^{n} − 1).\n- 381 — you summed only 7 terms, using 2^{7} − 1 = 127 and 3 × 127.\n- 384 — an off-by-one in the exponent, using 3 × 128.\n\n**Key facts**\n- GP nth term: aₙ = a·r^{n-1}.\n- GP sum: Sₙ = a(r^{n} − 1)/(r − 1) when r is more than 1.\n\n*Source: local APPSC Quantitative Reasoning PDF — Geometric Progression.*",
       "source": "local APPSC Quantitative Reasoning PDF — Geometric Progression",
       "verified": true,
       "covers": [
@@ -275,7 +275,7 @@
         "16"
       ],
       "answerIndex": 3,
-      "explanation": "An infinite GP with |r| < 1 has sum S∞ = a/(1 − r).\n\nStep 1: a = 8, r = 4/8 = 1/2 (and |1/2| < 1, so the sum converges).\nStep 2: 1 − r = 1 − 1/2 = 1/2.\nStep 3: S∞ = 8 ÷ (1/2) = 16.\n\n**Why not the others**\n- 12 — adds only the first few terms (8 + 4) without the tail.\n- 20 — over-counts, e.g. treats r as larger.\n- 8 — reports only the first term.\n\n**Key facts**\n- S∞ = a/(1 − r), valid ONLY when |r| < 1.\n- If |r| ≥ 1 the infinite sum does not converge (no finite value).\n\n*Source: local APPSC Quantitative Reasoning PDF — Geometric Progression.*",
+      "explanation": "An infinite geometric progression adds up to a finite number only when the ratio lies strictly between −1 and 1; then the sum is S∞ = a/(1 − r).\nThe first term is a = 8, and the ratio is r = 4 ÷ 8 = 1/2, which is between −1 and 1, so the series converges.\nCompute the denominator: 1 − r = 1 − 1/2 = 1/2.\nThen S∞ = 8 ÷ (1/2) = 8 × 2 = 16.\n\n**Why not the others**\n- 12 — you added only the first two terms (8 + 4) and ignored the endless tail.\n- 20 — you treated the ratio as larger than it is, over-counting the tail.\n- 8 — you reported only the first term.\n\n**Key facts**\n- S∞ = a/(1 − r), valid only when r is strictly between −1 and 1.\n- If the ratio is 1 or more (in size), the infinite sum has no finite value.\n\n*Source: local APPSC Quantitative Reasoning PDF — Geometric Progression.*",
       "source": "local APPSC Quantitative Reasoning PDF — Geometric Progression",
       "verified": true,
       "covers": [
@@ -299,7 +299,7 @@
         "1/2"
       ],
       "answerIndex": 2,
-      "explanation": "A sequence is in HP if the reciprocals of its terms form an AP.\n\nStep 1: Reciprocals: 1/6, 1/4, 1/3. Common difference d = 1/4 − 1/6 = 1/12.\nStep 2: 4th reciprocal (AP) = 1/3 + 1/12 = 4/12 + 1/12 = 5/12.\nStep 3: 4th HP term = reciprocal of 5/12 = 12/5.\n\n**Why not the others**\n- 2 — assumes the HP itself is arithmetic (3 − 1 = 2), ignoring reciprocals.\n- 5/2 — takes the AP term 5/12 mis-scaled, or a slip.\n- 1/2 — gives the AP 4th term's neighbour, not its reciprocal.\n\n**Key facts**\n- HP: convert to AP via reciprocals, solve, then invert back.\n- AGP term = (AP term) × (GP term), e.g. 1, 2x, 3x², …; sum uses the S − rS shift method.\n\n*Source: local APPSC Quantitative Reasoning PDF — Harmonic Progression (HP).*",
+      "explanation": "A sequence is in harmonic progression when the reciprocals of its terms form an arithmetic progression, so flip the terms first.\nThe reciprocals are 1/6, 1/4, 1/3. Their common difference is 1/4 − 1/6 = 3/12 − 2/12 = 1/12.\nThe 4th reciprocal continues the arithmetic progression: 1/3 + 1/12 = 4/12 + 1/12 = 5/12.\nFlip back to get the 4th harmonic term: the reciprocal of 5/12 is 12/5.\n\n**Why not the others**\n- 2 — you treated 6, 4, 3 as an arithmetic progression (step −1 from 4 to 3) and continued it, ignoring the reciprocal rule.\n- 5/2 — you mishandled the fraction 5/12 when inverting.\n- 1/2 — you reported a neighbouring arithmetic-progression value, not the inverted term.\n\n**Key facts**\n- Harmonic progression: take reciprocals to get an arithmetic progression, solve, then invert back.\n- An arithmetic-geometric progression multiplies an arithmetic term by a geometric term; its sum uses the subtract-a-shifted-copy method.\n\n*Source: local APPSC Quantitative Reasoning PDF — Harmonic Progression (HP).*",
       "source": "local APPSC Quantitative Reasoning PDF — Harmonic Progression (HP)",
       "verified": true,
       "covers": [
@@ -323,7 +323,7 @@
         "5"
       ],
       "answerIndex": 0,
-      "explanation": "Use the two-set inclusion–exclusion formula, then subtract from the total.\n\nStep 1: n(C ∪ T) = n(C) + n(T) − n(C ∩ T) = 60 + 45 − 20 = 85.\nStep 2: Neither = Total − n(C ∪ T) = 100 − 85 = 15.\n\n**Why not the others**\n- 25 — subtracts only one set's overlap, e.g. 100 − (60 + 45 − 40).\n- 35 — forgets to add back the 'both' correctly: 100 − (60 + 45 − 20) miscomputed.\n- 5 — double-subtracts the intersection (100 − 60 − 45 + 20 − 20).\n\n**Key facts**\n- n(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n- Neither = Universal − n(A ∪ B); 'only A' = n(A) − n(A ∩ B).\n\n*Source: local APPSC Quantitative Reasoning PDF — Sets and Type of Sets / Union, Intersection using venn diagram.*",
+      "explanation": "Use two-set inclusion–exclusion, then subtract from the whole class.\nThe number playing at least one game is n(C ∪ T) = n(C) + n(T) − n(C ∩ T) = 60 + 45 − 20 = 85. You subtract the 20 \"both\" because they were counted inside the 60 and inside the 45, that is twice.\nThose playing neither = total − at least one = 100 − 85 = 15.\n\n**Why not the others**\n- 25 — you subtracted the wrong overlap, e.g. 100 − (60 + 45 − 40).\n- 35 — you mis-combined the figures when applying inclusion–exclusion.\n- 5 — you subtracted the 20 overlap twice (100 − 60 − 45 + 20 − 20).\n\n**Key facts**\n- n(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n- Neither = total − n(A ∪ B); only A = n(A) − n(A ∩ B).\n\n*Source: local APPSC Quantitative Reasoning PDF — Sets and Type of Sets.*",
       "source": "local APPSC Quantitative Reasoning PDF — Sets and Type of Sets",
       "verified": true,
       "covers": [
@@ -339,7 +339,7 @@
       "id": "ment-algebra-bodmas-mcq-15",
       "subjectCode": "MENT",
       "subtopicId": "ment-algebra-bodmas",
-      "question": "Simplify:  36 ÷ 6 + 4 × 3 − (5 − 2)²",
+      "question": "Simplify: 36 ÷ 6 + 4 × 3 − (5 − 2)²",
       "options": [
         "3",
         "9",
@@ -347,7 +347,7 @@
         "21"
       ],
       "answerIndex": 1,
-      "explanation": "Apply BODMAS in order.\n\nStep 1: Bracket (5 − 2) = 3.\nStep 2: Order 3² = 9.\nStep 3: Division/Multiplication (left→right): 36 ÷ 6 = 6, and 4 × 3 = 12.\nStep 4: Addition/Subtraction: 6 + 12 − 9 = 9.\n\n**Why not the others**\n- 3 — subtracts 9 from 6 first, then adds 12 wrongly ordered.\n- 15 — forgets to subtract the 9 (stops at 6 + 12 − 3).\n- 21 — adds the bracket value 3 instead of its square 9 (6 + 12 + 3).\n\n**Key facts**\n- Order: Brackets → Orders (powers) → ÷ and × (left→right) → + and − (left→right).\n- ÷ and × share rank and are done as they appear.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
+      "explanation": "Apply BODMAS in order.\nBracket first: 5 − 2 = 3, so the expression is 36 ÷ 6 + 4 × 3 − 3².\nPower next: 3² = 9, giving 36 ÷ 6 + 4 × 3 − 9.\nDivision and multiplication, left to right: 36 ÷ 6 = 6, and 4 × 3 = 12, giving 6 + 12 − 9.\nAddition and subtraction, left to right: 6 + 12 = 18, and 18 − 9 = 9. The answer is 9.\n\n**Why not the others**\n- 3 — you did the subtraction out of order, subtracting 9 from 6 before adding 12.\n- 15 — you forgot to subtract the 9 and stopped at 6 + 12 − 3.\n- 21 — you used the bracket value 3 instead of its square 9, giving 6 + 12 + 3.\n\n**Key facts**\n- Order: Brackets, Orders (powers), Division and Multiplication left to right, Addition and Subtraction left to right.\n- Division and multiplication are equal in rank and done as they appear.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bodmas Rule.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bodmas Rule",
       "verified": true,
       "covers": [
@@ -370,7 +370,7 @@
         "27"
       ],
       "answerIndex": 1,
-      "explanation": "Square the given expression: (x + 1/x)² = x² + 2·x·(1/x) + 1/x² = x² + 1/x² + 2.\n\nStep 1: (x + 1/x)² = 5² = 25.\nStep 2: x² + 1/x² = 25 − 2 = 23.\n\n**Why not the others**\n- 21 — subtracts 4 (uses 2·2) instead of 2.\n- 25 — forgets to subtract the middle term 2.\n- 27 — adds 2 instead of subtracting it.\n\n**Key facts**\n- x² + 1/x² = (x + 1/x)² − 2.\n- x² + 1/x² = (x − 1/x)² + 2 (useful when the difference is given).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "explanation": "Square the whole given expression. Squaring x + 1/x gives (x + 1/x)² = x² + 1/x² + 2, because the cross term is 2 × x × (1/x) = 2 (since x × 1/x = 1).\nSo (x + 1/x)² = 5² = 25.\nThat equals x² + 1/x² + 2, so x² + 1/x² = 25 − 2 = 23.\n\n**Why not the others**\n- 21 — you subtracted 4 instead of 2, using a cross term of 2 × 2.\n- 25 — you forgot to subtract the middle term 2 altogether.\n- 27 — you added 2 instead of subtracting it.\n\n**Key facts**\n- x² + 1/x² = (x + 1/x)² − 2.\n- When the difference is given, x² + 1/x² = (x − 1/x)² + 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
       "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
       "verified": true,
       "covers": [
@@ -394,7 +394,7 @@
         "45"
       ],
       "answerIndex": 2,
-      "explanation": "Use a³ − b³ = (a − b)³ + 3ab(a − b) with a = x, b = 1/x (so ab = 1).\n\nStep 1: (x − 1/x)³ = 3³ = 27.\nStep 2: 3·(x)(1/x)·(x − 1/x) = 3 × 1 × 3 = 9.\nStep 3: x³ − 1/x³ = 27 + 9 = 36.\n\n**Why not the others**\n- 27 — reports only (x − 1/x)³, omitting the 3ab(a − b) term.\n- 30 — an arithmetic slip (27 + 3).\n- 45 — adds 27 + 18, doubling the correction term.\n\n**Key facts**\n- x³ − 1/x³ = (x − 1/x)³ + 3(x − 1/x).\n- x³ + 1/x³ = (x + 1/x)³ − 3(x + 1/x).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
+      "explanation": "Use the cube identity for a difference, with x and 1/x: x³ − 1/x³ = (x − 1/x)³ + 3(x − 1/x), because x × 1/x = 1 makes the correction term simply 3 × (x − 1/x).\nCube the given value: (x − 1/x)³ = 3³ = 27.\nThe correction is 3 × (x − 1/x) = 3 × 3 = 9.\nAdd them: x³ − 1/x³ = 27 + 9 = 36.\n\n**Why not the others**\n- 27 — you reported only (x − 1/x)³ and left out the +3(x − 1/x) correction.\n- 30 — an arithmetic slip, adding 27 + 3 instead of 27 + 9.\n- 45 — you doubled the correction, adding 27 + 18.\n\n**Key facts**\n- x³ − 1/x³ = (x − 1/x)³ + 3(x − 1/x).\n- x³ + 1/x³ = (x + 1/x)³ − 3(x + 1/x).\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Identities.*",
       "source": "local APPSC Quantitative Reasoning PDF — Basic Identities",
       "verified": true,
       "covers": [
@@ -419,7 +419,7 @@
         "k = 9, other root 3"
       ],
       "answerIndex": 0,
-      "explanation": "Substitute the known root, then use sum/product of roots.\n\nStep 1: x = 3 is a root, so 3² − 7(3) + k = 0 → 9 − 21 + k = 0 → k = 12.\nStep 2: Sum of roots = 7, so other root = 7 − 3 = 4 (check product = 3 × 4 = 12 = k). ✓\n\n**Why not the others**\n- k = 10, other root 4 — product 3×4 = 12 ≠ 10; k is wrong.\n- k = 12, other root 5 — sum 3 + 5 = 8 ≠ 7.\n- k = 9, other root 3 — sum would be 6, not 7.\n\n**Key facts**\n- For ax² + bx + c = 0: sum of roots = −b/a, product = c/a.\n- Here sum = 7, product = k, so the roots are 3 and 4 with k = 12.\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
+      "explanation": "Put the known root into the equation, then use the sum and product of roots.\nSince x = 3 is a root, it satisfies x² − 7x + k = 0: 3² − 7 × 3 + k = 0, so 9 − 21 + k = 0, which gives k = 12.\nFor x² − 7x + k = 0 the sum of the two roots is 7 (that is −b/a). One root is 3, so the other is 7 − 3 = 4.\nCheck with the product: the two roots multiply to k, and 3 × 4 = 12 = k. Correct.\n\n**Why not the others**\n- k = 10, other root 4 — the product 3 × 4 = 12, not 10, so k is wrong.\n- k = 12, other root 5 — the sum 3 + 5 = 8, not 7.\n- k = 9, other root 3 — the sum would be 6, not 7.\n\n**Key facts**\n- For ax² + bx + c = 0: sum of roots = −b/a, product of roots = c/a.\n- Here the sum is 7 and the product is k, so the roots are 3 and 4 with k = 12.\n\n*Source: local APPSC Quantitative Reasoning PDF — Quadratic Equation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Quadratic Equation",
       "verified": true,
       "covers": [
@@ -443,7 +443,7 @@
         "1025"
       ],
       "answerIndex": 2,
-      "explanation": "Use Sₙ = n/2 [2a + (n − 1)d].\n\nStep 1: a = 4, d = 3, n = 25.\nStep 2: Sₙ = 25/2 [2(4) + 24(3)] = 25/2 [8 + 72] = 25/2 × 80.\nStep 3: = 25 × 40 = 1000.\n\n**Why not the others**\n- 900 — uses (n − 1) = 23 or drops a term.\n- 980 — arithmetic slip in 2a + (n − 1)d.\n- 1025 — uses n = 25 with 2a + n·d instead of (n − 1)d.\n\n**Key facts**\n- Sₙ = n/2 [2a + (n − 1)d] = n/2 (first + last term).\n- Last term l = a + (n − 1)d = 4 + 72 = 76; S = 25/2 (4 + 76) = 1000.\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression.*",
+      "explanation": "Use the arithmetic-progression sum, Sₙ = n/2 [2a + (n − 1)d].\nHere a = 4, d = 3 and n = 25.\nInside the bracket: 2a = 8, and (n − 1)d = 24 × 3 = 72, so the bracket is 8 + 72 = 80.\nThen S₂₅ = 25/2 × 80 = 25 × 40 = 1000.\n\n**Why not the others**\n- 900 — you used (n − 1) = 23 or otherwise dropped a term.\n- 980 — an arithmetic slip inside 2a + (n − 1)d.\n- 1025 — you used n × d instead of (n − 1) × d, over-counting one step.\n\n**Key facts**\n- Sₙ = n/2 [2a + (n − 1)d] = n/2 × (first term + last term).\n- The last term here is l = 4 + 24 × 3 = 76, and 25/2 × (4 + 76) = 1000.\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression.*",
       "source": "local APPSC Quantitative Reasoning PDF — Arithmetic Progression",
       "verified": true,
       "covers": [
@@ -467,7 +467,7 @@
         "1, 2 and 3"
       ],
       "answerIndex": 3,
-      "explanation": "All three are standard, correct results: the AP sum formula (1), the convergent infinite-GP sum for |r| < 1 (2), and the arithmetic-mean property of three AP terms (3).\n\n**Why not the others**\n- 1 and 2 only — omits the true AP arithmetic-mean property (3).\n- 2 and 3 only — drops the correct AP sum formula (1).\n- 1 and 3 only — drops the correct infinite-GP sum (2).\n\n**Key facts**\n- AP: Sₙ = n/2 [2a + (n − 1)d]; middle of three AP terms = (a + c)/2.\n- GP: S∞ = a/(1 − r) only when |r| < 1.\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression; Geometric Progression.*",
+      "explanation": "Take each statement in turn.\nStatement 1 is the standard arithmetic-progression sum, Sₙ = n/2 [2a + (n − 1)d] — correct.\nStatement 2 is the convergent infinite geometric sum, a/(1 − r), which does hold when the ratio is strictly between −1 and 1 — correct.\nStatement 3 says the middle of three arithmetic-progression terms is the average of the outer two; since the middle is a + d and the outer two are a and a + 2d, their average is (a + a + 2d)/2 = a + d — correct.\nAll three are true, so the answer is \"1, 2 and 3\".\n\n**Why not the others**\n- 1 and 2 only — this wrongly drops the true arithmetic-mean property in statement 3.\n- 2 and 3 only — this wrongly drops the correct arithmetic-progression sum in statement 1.\n- 1 and 3 only — this wrongly drops the correct infinite geometric sum in statement 2.\n\n**Key facts**\n- Arithmetic progression: Sₙ = n/2 [2a + (n − 1)d]; the middle of three terms is (first + third)/2.\n- Geometric progression: S∞ = a/(1 − r) only when the ratio is between −1 and 1.\n\n*Source: local APPSC Quantitative Reasoning PDF — Arithmetic Progression; Geometric Progression.*",
       "source": "local APPSC Quantitative Reasoning PDF — Arithmetic Progression; Geometric Progression",
       "verified": true,
       "covers": [
@@ -492,7 +492,7 @@
         "24 and 11"
       ],
       "answerIndex": 1,
-      "explanation": "Set up two equations: x + y = 35 and x − y = 9.\n\nStep 1: Add them: 2x = 44 → x = 22.\nStep 2: Subtract: 2y = 26 → y = 13. Check: 22 + 13 = 35, 22 − 13 = 9. ✓\n\n**Why not the others**\n- 20 and 15 — difference is 5, not 9.\n- 23 and 12 — difference is 11.\n- 24 and 11 — difference is 13.\n\n**Key facts**\n- For sum S and difference D: larger = (S + D)/2, smaller = (S − D)/2.\n- Here (35 + 9)/2 = 22 and (35 − 9)/2 = 13.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
+      "explanation": "Call the numbers x and y, with x the larger. You are told x + y = 35 and x − y = 9.\nAdd the two equations straight down: the y-terms cancel, giving 2x = 35 + 9 = 44, so x = 22.\nSubtract the second from the first: the x-terms cancel, giving 2y = 35 − 9 = 26, so y = 13.\nCheck: 22 + 13 = 35 and 22 − 13 = 9. So the numbers are 22 and 13.\n\n**Why not the others**\n- 20 and 15 — their difference is 5, not 9.\n- 23 and 12 — their difference is 11, not 9.\n- 24 and 11 — their difference is 13, not 9.\n\n**Key facts**\n- For a given sum S and difference D: larger number = (S + D)/2, smaller = (S − D)/2.\n- Here (35 + 9)/2 = 22 and (35 − 9)/2 = 13.\n\n*Source: local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable.*",
       "source": "local APPSC Quantitative Reasoning PDF — Linear Equation in One & Two Variable",
       "verified": true,
       "covers": [
@@ -516,7 +516,7 @@
         "4"
       ],
       "answerIndex": 2,
-      "explanation": "By the Factor Theorem, (x − 2) is a factor iff f(2) = 0.\n\nStep 1: f(2) = 2³ − 3(2²) + k(2) − 2 = 8 − 12 + 2k − 2.\nStep 2: = 2k − 6. Set 2k − 6 = 0 → k = 3.\n\n**Why not the others**\n- 1 — gives f(2) = 2(1) − 6 = −4 ≠ 0.\n- 2 — gives f(2) = 4 − 6 = −2 ≠ 0.\n- 4 — gives f(2) = 8 − 6 = 2 ≠ 0.\n\n**Key facts**\n- Factor Theorem: (x − a) is a factor of f(x) iff f(a) = 0.\n- Remainder Theorem: dividing f(x) by (x − a) leaves remainder f(a).\n\n*Source: local APPSC Quantitative Reasoning PDF — Polynomials.*",
+      "explanation": "Use the Factor Theorem: (x − 2) is a factor only when f(2) = 0, so substitute x = 2 and set the result to zero.\nf(2) = 2³ − 3 × 2² + k × 2 − 2.\nWork out the number terms: 2³ = 8, 3 × 2² = 12, so f(2) = 8 − 12 + 2k − 2 = 2k − 6.\nSet 2k − 6 = 0, giving 2k = 6 and k = 3.\nCheck with k = 3: f(2) = 8 − 12 + 6 − 2 = 0, so (x − 2) is indeed a factor.\n\n**Why not the others**\n- 1 — gives f(2) = 2 × 1 − 6 = −4, not 0.\n- 2 — gives f(2) = 4 − 6 = −2, not 0.\n- 4 — gives f(2) = 8 − 6 = 2, not 0.\n\n**Key facts**\n- Factor Theorem: (x − a) is a factor of f(x) only when f(a) = 0.\n- Remainder Theorem: dividing f(x) by (x − a) leaves remainder f(a).\n\n*Source: local APPSC Quantitative Reasoning PDF — Polynomials.*",
       "source": "local APPSC Quantitative Reasoning PDF — Polynomials",
       "verified": true,
       "covers": [
@@ -540,7 +540,7 @@
         "55"
       ],
       "answerIndex": 0,
-      "explanation": "Convert each term: 25% of 480 = 120, 30% of 500 = 150, 35% of 900 = 315, and x% of 90 = 0.9x. So 120 + 150 + 0.9x = 315 ⇒ 0.9x = 45 ⇒ x = 50.\n\n**Why not the others**\n- 45 — equals 0.9x, i.e. the value before dividing by 0.9.\n- 40 — arises from mis-adding the constants.\n- 55 — over-solves; 0.9×55 = 49.5, giving 319.5 ≠ 315.\n\n**Key facts**\n- k% of N = kN/100.\n- Solve the linear equation after collecting constants.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "explanation": "Turn every \"% of\" into a product, remembering that p% of N means (p/100) × N.\n25% of 480 = 0.25 × 480 = 120. 30% of 500 = 0.30 × 500 = 150. 35% of 900 = 0.35 × 900 = 315.\nThe unknown term x% of 90 = (x/100) × 90 = 0.9x (the ÷ 100 stays on the unknown too).\nSo the equation is 120 + 150 + 0.9x = 315, that is 270 + 0.9x = 315.\nThen 0.9x = 315 − 270 = 45, so x = 45 ÷ 0.9 = 50.\nCheck: 50% of 90 = 45, and 120 + 150 + 45 = 315.\n\n**Why not the others**\n- 45 — this is the value of 0.9x, before dividing by 0.9.\n- 40 — this comes from mis-adding the known constants.\n- 55 — too large: 0.9 × 55 = 49.5 gives 319.5, not 315.\n\n**Key facts**\n- p% of N = (p/100) × N.\n- Collect the known numbers first, then divide by the coefficient of x.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -564,7 +564,7 @@
         "15"
       ],
       "answerIndex": 0,
-      "explanation": "20% of 150 = 30, 50% of 100 = 50, and x% of 80 = 0.8x. So 30 + 0.8x = 50 ⇒ 0.8x = 20 ⇒ x = 25.\n\n**Why not the others**\n- 20 — that is 0.8x, not x.\n- 30 — the constant term on the left, not the answer.\n- 15 — 0.8×15 = 12, giving 42 ≠ 50.\n\n**Key facts**\n- Turn every '% of' into kN/100 before solving.\n- Isolate x by dividing by its coefficient (0.8).\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "explanation": "Convert each \"% of\" into a product, with p% of N = (p/100) × N.\n20% of 150 = 0.20 × 150 = 30. 50% of 100 = 0.50 × 100 = 50.\nThe unknown term x% of 80 = (x/100) × 80 = 0.8x.\nSo 30 + 0.8x = 50, which gives 0.8x = 50 − 30 = 20, so x = 20 ÷ 0.8 = 25.\nCheck: 25% of 80 = 20, and 30 + 20 = 50.\n\n**Why not the others**\n- 20 — this is the value of 0.8x, not x itself.\n- 30 — this is the constant term on the left, not the answer.\n- 15 — too small: 0.8 × 15 = 12 gives 42, not 50.\n\n**Key facts**\n- Rewrite every \"% of\" as (p/100) × N before solving.\n- Isolate x by dividing by its coefficient, here 0.8.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [

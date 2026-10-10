@@ -8,7 +8,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "How do you combine a:b and b:c into a:b:c?",
-      "back": "Scale each so the shared term b matches (use LCM of the b-terms), then read a:b:c. e.g. 2:3 & 4:5 → 8:12:15.",
+      "back": "Scale each so the shared term b matches (use the LCM of the b-terms), then read a:b:c. For 2:3 and 4:5 this gives 8:12:15.",
       "examPoint": "Ratio — simplification & combining (a:b, b:c → a:b:c)",
       "source": "APPSC Quantitative Reasoning — Types of Ratios",
       "verified": true
@@ -18,7 +18,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "Compound ratio of a:b, c:d, e:f?",
-      "back": "(a×c×e) : (b×d×f) — product of antecedents : product of consequents, then simplify.",
+      "back": "(a × c × e) : (b × d × f) — the product of the first terms to the product of the second terms, then simplify.",
       "examPoint": "Compound & mixed ratio",
       "source": "APPSC Quantitative Reasoning — Types of Ratios",
       "verified": true
@@ -28,7 +28,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "Third, fourth and mean proportional?",
-      "back": "Third to a,b = b²/a; fourth to a,b,c = bc/a; mean proportional of a,b = √(ab). Proportion: ad = bc.",
+      "back": "Third to a, b = b × b ÷ a; fourth to a, b, c = b × c ÷ a; mean proportional of a, b = √(a × b). In any proportion a × d = b × c.",
       "examPoint": "Mean proportional",
       "source": "APPSC Quantitative Reasoning — Proportional",
       "verified": true
@@ -38,7 +38,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "Direct vs inverse proportion?",
-      "back": "Direct: x/y constant (more→more). Inverse: xy constant (more→less), e.g. men×days = constant.",
+      "back": "Direct: x ÷ y stays constant (more gives more). Inverse: x × y stays constant (more gives less), as with men × days.",
       "examPoint": "Inverse proportion",
       "source": "APPSC Quantitative Reasoning — Direct/Inverse Proportion",
       "verified": true
@@ -48,7 +48,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "Componendo & dividendo, and its typical use?",
-      "back": "If a/b = c/d then (a+b)/(a−b) = (c+d)/(c−d). Turns (sum):(difference) into the base ratio, e.g. (m+n):(m−n)=7:3 ⇒ m:n=5:2.",
+      "back": "If a/b = c/d then (a + b)/(a − b) = (c + d)/(c − d). It turns a sum-to-difference ratio into the base ratio: (m + n):(m − n) = 7:3 gives m:n = 5:2.",
       "examPoint": "Componendo & dividendo",
       "source": "APPSC Quantitative Reasoning — Componendo and Dividendo",
       "verified": true
@@ -58,7 +58,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "How is partnership profit shared?",
-      "back": "In the ratio of capital×time for each partner; share = (their term/total)×profit. Equal periods ⇒ ratio of capitals only.",
+      "back": "In the ratio of capital × time for each partner; each share = (their term ÷ total) × profit. Equal periods make it the ratio of capitals only.",
       "examPoint": "Partnership — profit sharing by capital × time",
       "source": "APPSC Quantitative Reasoning — Partnership",
       "verified": true
@@ -68,7 +68,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "Combined (weighted) mean of two groups?",
-      "back": "(n₁x̄₁ + n₂x̄₂)/(n₁+n₂). Never just average the two means when the group sizes differ.",
+      "back": "(size1 × mean1 + size2 × mean2) ÷ (size1 + size2). Never simply average the two means when the group sizes differ.",
       "examPoint": "Weighted average / combined mean",
       "source": "APPSC Quantitative Reasoning — Combined Mean",
       "verified": true
@@ -77,8 +77,8 @@
       "id": "ment-ratio-proportion-averages-card-8",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "front": "Average of consecutive/equally-spaced numbers; first n naturals?",
-      "back": "= middle term = (first+last)/2. Average of first n naturals = (n+1)/2.",
+      "front": "Average of equally-spaced numbers; first n natural numbers?",
+      "back": "Equally-spaced average = middle term = (first + last) ÷ 2. Average of the first n natural numbers = (n + 1) ÷ 2.",
       "examPoint": "Average of first n natural numbers",
       "source": "APPSC Quantitative Reasoning — Averages",
       "verified": true
@@ -87,8 +87,8 @@
       "id": "ment-ratio-proportion-averages-card-9",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "front": "Average change on inclusion / replacement of a member?",
-      "back": "New value = new_avg×(n+1) − old_avg×n. Replacement: new = old + (Δavg × count). e.g. 16th innings raises avg by 3.",
+      "front": "Average change on inclusion or replacement of a member?",
+      "back": "New entry = new average × (n + 1) − old average × n. On a swap, new value = old value + (change in average × count), as in the 16th-innings type.",
       "examPoint": "Average change on inclusion / exclusion / replacement of a member",
       "source": "APPSC Quantitative Reasoning — Average (inclusion)",
       "verified": true
@@ -98,7 +98,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "front": "Rule of alligation?",
-      "back": "qty(cheap):qty(dear) = (dear−mean):(mean−cheap). The mean always lies between the two component values.",
+      "back": "quantity(cheaper) : quantity(dearer) = (dearer − mean) : (mean − cheaper). The mean always lies between the two component values.",
       "examPoint": "Mixtures & alligation (rule of alligation)",
       "source": "APPSC Quantitative Reasoning — Mixtures & Alligation",
       "verified": true
@@ -107,9 +107,9 @@
       "id": "ment-ratio-proportion-averages-card-11",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "front": "Successive replacement of liquid — milk left after n draws?",
-      "back": "milk left = initial × (1 − r/T)ⁿ (r drawn each time, T total). e.g. 20 L, draw 4 twice ⇒ 20×0.8²=12.8 L.",
-      "examPoint": "Successive replacement of liquid in a mixture — (1 − r/T)ⁿ",
+      "front": "Successive replacement of liquid — how much milk is left after n draws?",
+      "back": "milk left = initial × (1 − r/T)^{n}, where r is drawn each time and T is the total. For 20 litres, drawing 4 twice, 20 × (0.8)^{2} = 12.8 litres.",
+      "examPoint": "Successive replacement of liquid in a mixture — (1 − r/T) each step",
       "source": "APPSC Quantitative Reasoning — Replacement N Times",
       "verified": true
     },
@@ -117,9 +117,9 @@
       "id": "ment-ratio-proportion-averages-card-12",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "front": "Ratio a:b as a percentage of the whole; overlapping-group average?",
-      "back": "a as % of whole = a/(a+b)×100 (not a/b). Overlap term = (Σgroup1 + Σgroup2) − Σall.",
-      "examPoint": "Ratio ↔ percentage conversion",
+      "front": "Ratio a:b as a percentage of the whole; overlapping-group count?",
+      "back": "a as a percentage of the whole = a ÷ (a + b) × 100, not a ÷ b. Overlap count = (group 1 total + group 2 total) − overall total.",
+      "examPoint": "Ratio to percentage conversion",
       "source": "APPSC Quantitative Reasoning — Ratios / Percentage",
       "verified": true
     }

@@ -8,7 +8,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "front": "Laws of indices: product, quotient, power-of-power, zero, negative, fractional?",
-      "back": "aᵐ·aⁿ=aᵐ⁺ⁿ; aᵐ÷aⁿ=aᵐ⁻ⁿ; (aᵐ)ⁿ=aᵐⁿ; a⁰=1; a⁻ⁿ=1/aⁿ; aᵐ⁄ⁿ=(ⁿ√a)ᵐ.",
+      "back": "a^{m} × a^{n} = a^{m+n}; a^{m} ÷ a^{n} = a^{m-n}; (a^{m})^{n} = a^{mn}; a^{0} = 1; a^{-n} = 1 ÷ a^{n}; a^{m/n} = the n-th root of a, to the power m.",
       "examPoint": "Laws of indices — product, quotient and power-of-power",
       "source": "APPSC Quantitative Reasoning — Surds & Indices",
       "verified": true
@@ -17,8 +17,8 @@
       "id": "ment-powers-roots-hcf-lcm-card-2",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "front": "How do you solve an exponential equation like 7^(x−y)=343?",
-      "back": "Write both sides to the same base, then equate the exponents. 343=7³ ⇒ x−y=3.",
+      "front": "How do you solve an exponential equation like 7^{x-y} = 343?",
+      "back": "Write both sides to the same base, then equate the exponents. Here 343 = 7^{3}, so x − y = 3.",
       "examPoint": "Exponential equations — solve for the unknown",
       "source": "APPSC Quantitative Reasoning — Surds & Indices",
       "verified": true
@@ -27,8 +27,8 @@
       "id": "ment-powers-roots-hcf-lcm-card-3",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "front": "Rationalise 1/(√3−√2); and how to compare surds?",
-      "back": "Multiply by conjugate (√3+√2): denominator = 3−2 = 1 ⇒ √3+√2. Compare surds via a common index = LCM of the roots.",
+      "front": "Rationalise 1 ÷ (√3 − √2); and how do you compare surds?",
+      "back": "Multiply top and bottom by the conjugate √3 + √2: the bottom becomes 3 − 2 = 1, giving √3 + √2. Compare surds using a common index equal to the LCM of the root orders.",
       "examPoint": "Surds — rationalisation of the denominator",
       "source": "APPSC Quantitative Reasoning — Surds & Indices",
       "verified": true
@@ -38,7 +38,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "front": "Log laws: product, quotient, power, change of base?",
-      "back": "log(xy)=log x+log y; log(x/y)=log x−log y; log(xⁿ)=n log x; logₐb=(log꜀b)/(log꜀a).",
+      "back": "log(xy) = log x + log y; log(x/y) = log x − log y; log(x^{n}) = n × log x; log base a of b = (log b) ÷ (log a) in any common base.",
       "examPoint": "Logarithm laws — product, quotient, power and evaluation",
       "source": "APPSC Quantitative Reasoning — Logarithm",
       "verified": true
@@ -48,7 +48,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "front": "Characteristic & mantissa; digits in a large power?",
-      "back": "Characteristic = integer part = (digits−1); mantissa = positive decimal part. Digits of N = ⌊log₁₀N⌋ + 1.",
+      "back": "Characteristic = whole-number part = (digits − 1); mantissa = the positive decimal part. Digit count of N = characteristic of its base-10 log, plus 1.",
       "examPoint": "Logarithm — characteristic and mantissa",
       "source": "APPSC Quantitative Reasoning — Logarithm",
       "verified": true
@@ -58,7 +58,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "front": "HCF & LCM by prime factorization, and the product relation?",
-      "back": "HCF = product of lowest powers of common primes; LCM = highest powers of all primes. For two numbers, A×B = HCF×LCM.",
+      "back": "HCF = product of the lowest powers of common primes; LCM = product of the highest powers of all primes. For two numbers, A × B = HCF × LCM.",
       "examPoint": "Product of two numbers = HCF × LCM",
       "source": "APPSC Quantitative Reasoning — LCM and HCF",
       "verified": true
@@ -68,7 +68,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "front": "HCF and LCM of fractions?",
-      "back": "HCF of fractions = HCF(numerators)/LCM(denominators); LCM of fractions = LCM(numerators)/HCF(denominators).",
+      "back": "HCF of fractions = HCF of numerators ÷ LCM of denominators; LCM of fractions = LCM of numerators ÷ HCF of denominators.",
       "examPoint": "HCF and LCM of fractions",
       "source": "APPSC Quantitative Reasoning — LCM and HCF",
       "verified": true
@@ -77,8 +77,8 @@
       "id": "ment-powers-roots-hcf-lcm-card-8",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "front": "Remainder word-problem formulas (same remainder / (divisor−remainder) constant)?",
-      "back": "Smallest with common remainder R = LCM+R. Greatest dividing x,y,z with same remainder = HCF of differences. Constant (div−rem)=k ⇒ LCM−k.",
+      "front": "Remainder word-problem formulas (same remainder / constant gap)?",
+      "back": "Smallest number with common remainder R = LCM + R. Greatest number dividing x, y, z with the same remainder = HCF of their differences. Constant (divisor − remainder) = k gives LCM − k.",
       "examPoint": "HCF and LCM — remainder and word problems",
       "source": "APPSC Quantitative Reasoning — LCM and HCF",
       "verified": true
@@ -88,7 +88,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "front": "HCF vs LCM: which word problems use which?",
-      "back": "HCF: largest tape/tile, greatest equal distribution, min rows without mixing. LCM: bells/lights coincide, runners meet at start, least common number.",
+      "back": "HCF: longest tape or tile, greatest equal distribution, fewest rows without mixing. LCM: bells or lights coinciding, runners meeting at the start, the least common number.",
       "examPoint": "LCM word problems — bells / lights coinciding",
       "source": "APPSC Quantitative Reasoning — LCM and HCF",
       "verified": true
@@ -97,8 +97,8 @@
       "id": "ment-powers-roots-hcf-lcm-card-10",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "front": "Units digit of aⁿ by cyclicity?",
-      "back": "Depends only on base's units digit; reduce exponent mod 4 (remainder 0 = last term). 7→7,9,3,1; 2→2,4,8,6. So 7¹⁰⁵→7.",
+      "front": "Units digit of a power by cyclicity?",
+      "back": "It depends only on the base's last digit; divide the exponent by 4 and use the remainder (remainder 0 means the last term). Cycle 7 is 7, 9, 3, 1, so 7^{105} gives 7.",
       "examPoint": "Units digit of a power (cyclicity)",
       "source": "APPSC Quantitative Reasoning — Cyclicity of Units Digit",
       "verified": true
@@ -107,8 +107,8 @@
       "id": "ment-powers-roots-hcf-lcm-card-11",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "front": "Trailing zeros at the end of n! ?",
-      "back": "Count the power of 5: ⌊n/5⌋+⌊n/25⌋+⌊n/125⌋+… For 100! = 20+4+0 = 24.",
+      "front": "Trailing zeros at the end of n factorial?",
+      "back": "Count the power of 5: add the whole-number parts of n ÷ 5, n ÷ 25, n ÷ 125 and so on. For 100 factorial this is 20 + 4 + 0 = 24.",
       "examPoint": "Trailing zeros / power of a prime in a factorial",
       "source": "APPSC Quantitative Reasoning — Factorials / Power of a Prime",
       "verified": true

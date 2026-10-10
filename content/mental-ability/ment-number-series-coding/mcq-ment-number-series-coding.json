@@ -16,7 +16,7 @@
         "19"
       ],
       "answerIndex": 0,
-      "explanation": "Using the EJOTY landmarks (E-5, J-10, O-15, T-20, Y-25), T is the 20th letter.\n\n**Why not the others**\n- 18 — that is R, two places before T.\n- 21 — that is U, one place after T.\n- 19 — that is S, one place before T.\n\n**Key facts**\n- EJOTY: E=5, J=10, O=15, T=20, Y=25 give quick anchor positions.\n- Reverse position = 27 - forward position (T: 27-20 = 7 from the right).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (positional value / EJOTY).*",
+      "explanation": "Give each letter its place in the alphabet, A = 1 up to Z = 26. The easiest way is to count from the nearest EJOTY landmark, which fixes E = 5, J = 10, O = 15, T = 20, Y = 25.\nT is itself a landmark, so T = 20 directly. The position counted from the left is 20.\n\n**Why not the others**\n- 18 — that is R, which comes two places before T.\n- 21 — that is U, one place after T.\n- 19 — that is S, one place before T.\n\n**Key facts**\n- EJOTY landmarks: E = 5, J = 10, O = 15, T = 20, Y = 25.\n- The position from the right is 27 − the position from the left (for T, 27 − 20 = 7).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (positional value / EJOTY).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (EJOTY)",
       "verified": true,
       "covers": [
@@ -41,7 +41,7 @@
         "W"
       ],
       "answerIndex": 3,
-      "explanation": "D is the 4th letter; its opposite is 27 - 4 = 23, which is W.\n\n**Why not the others**\n- U — position 21, the opposite of F (27-6).\n- V — position 22, the opposite of E (27-5).\n- X — position 24, the opposite of C (27-3).\n\n**Key facts**\n- Opposite-pair rule: letter n pairs with letter (27 - n).\n- Handy pairs: A-Z, B-Y, C-X, D-W, E-V, M-N.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (opposite letters).*",
+      "explanation": "The opposite of a letter is its mirror from the far end, found by the rule \"opposite of position n is position 27 − n\".\nD is the 4th letter, so its opposite is at position 27 − 4 = 23.\nCounting to position 23 on the alphabet ruler gives W. So D pairs with W.\n\n**Why not the others**\n- U — that is position 21, which is the opposite of F (27 − 6).\n- V — that is position 22, the opposite of E (27 − 5).\n- X — that is position 24, the opposite of C (27 − 3).\n\n**Key facts**\n- Opposite pairs add to 27, so the partner of position n is 27 − n.\n- Useful pairs: A–Z, B–Y, C–X, D–W, E–V, M–N.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (opposite letters).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (opposite letters)",
       "verified": true,
       "covers": [
@@ -66,7 +66,7 @@
         "24"
       ],
       "answerIndex": 2,
-      "explanation": "The series adds a constant 4 each time, so 19 + 4 = 23.\n\n**Why not the others**\n- 21 — only +2, breaks the fixed common difference.\n- 22 — +3, not the established +4 step.\n- 24 — +5, overshoots the constant step.\n\n**Key facts**\n- Arithmetic (addition) series: check the first differences; if constant, next term = last term + that difference.\n- Common difference here d = 4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (addition pattern).*",
+      "explanation": "Write the jump under each gap by subtracting one term from the next: 7 − 3 = 4, 11 − 7 = 4, 15 − 11 = 4, 19 − 15 = 4.\nThe jump is a steady +4, so this is an arithmetic series. The next term is the last term plus that step: 19 + 4 = 23.\n\n**Why not the others**\n- 21 — this is only +2 from 19 and breaks the fixed step of 4.\n- 22 — this is +3, not the established +4.\n- 24 — this is +5, overshooting the constant step.\n\n**Key facts**\n- Arithmetic series: equal first differences; the next term is the last term plus the common difference.\n- Here the common difference is 4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (addition pattern).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -90,7 +90,7 @@
         "320"
       ],
       "answerIndex": 1,
-      "explanation": "Each term is the previous term multiplied by 2 (geometric ratio r = 2), so 80 x 2 = 160.\n\n**Why not the others**\n- 120 — comes from adding 40 (mistaking a geometric series for arithmetic).\n- 200 — no consistent operation yields it from 80.\n- 320 — that is 80 x 4, doubling the ratio by mistake.\n\n**Key facts**\n- Geometric series: ratio between consecutive terms is constant (here 10/5 = 20/10 = 2).\n- Next term = last term x common ratio.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (multiplication pattern).*",
+      "explanation": "The jumps 5, 10, 20, 40 are not equal, so it is not arithmetic; test the ratio instead. 10 ÷ 5 = 2, 20 ÷ 10 = 2, 40 ÷ 20 = 2, 80 ÷ 40 = 2.\nThe ratio is a steady 2, so this is a geometric series and the next term is 80 × 2 = 160.\n\n**Why not the others**\n- 120 — this comes from adding 40, mistaking a doubling series for an adding one.\n- 200 — no single consistent operation turns 80 into 200.\n- 320 — this is 80 × 4, doubling the ratio by mistake.\n\n**Key facts**\n- Geometric series: the ratio between consecutive terms is constant (here 10/5 = 20/10 = 2).\n- Next term = last term × common ratio.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (multiplication pattern).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -114,7 +114,7 @@
         "37"
       ],
       "answerIndex": 3,
-      "explanation": "Each term is n squared + 1 for n = 1,2,3,...: 1+1=2, 4+1=5, 9+1=10, 16+1=17, 25+1=26, and 36+1 = 37.\n\n**Why not the others**\n- 34 — would need 33+1; 33 is not a perfect square.\n- 35 — assumes a fixed +9 step, but the differences (3,5,7,9,11) grow.\n- 36 — the perfect square itself, forgetting the +1.\n\n**Key facts**\n- Square-based series: consecutive differences are consecutive odd numbers (3,5,7,9,11).\n- Pattern here: term = n^2 + 1.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (square/cube pattern).*",
+      "explanation": "List the jumps: 5 − 2 = 3, 10 − 5 = 5, 17 − 10 = 7, 26 − 17 = 9. The jumps 3, 5, 7, 9 are consecutive odd numbers, which is the fingerprint of a square-based series.\nCompare the terms to the squares 1, 4, 9, 16, 25: each term is exactly one more, so the rule is n² + 1. The sixth term is 6² + 1 = 36 + 1 = 37.\n\n**Why not the others**\n- 34 — this would need 33 + 1, but 33 is not a perfect square.\n- 35 — this assumes a fixed +9 step, but the jumps keep growing (3, 5, 7, 9, 11).\n- 36 — this is the perfect square itself, forgetting the +1.\n\n**Key facts**\n- Square-based series: consecutive differences are consecutive odd numbers.\n- The rule here is term = n² + 1.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (square/cube pattern).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -138,7 +138,7 @@
         "120"
       ],
       "answerIndex": 0,
-      "explanation": "The successive differences are 13, 17, 19, 23 — consecutive prime numbers; the next prime is 29, so 89 + 29 = 118.\n\n**Why not the others**\n- 112 — uses +23 again, repeating a prime instead of advancing.\n- 116 — uses +27, which is not prime.\n- 120 — uses +31, skipping the prime 29.\n\n**Key facts**\n- Prime-difference series: check whether first differences form the prime sequence 2,3,5,7,11,13,17,19,23,29,31.\n- Here differences = 13,17,19,23,29.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (prime-difference pattern).*",
+      "explanation": "Write the jumps: 30 − 17 = 13, 47 − 30 = 17, 66 − 47 = 19, 89 − 66 = 23. The jumps 13, 17, 19, 23 are consecutive prime numbers, so the rule lives in the differences.\nThe next prime after 23 is 29, so the next term is 89 + 29 = 118.\n\n**Why not the others**\n- 112 — this uses +23 again, repeating a prime instead of advancing to 29.\n- 116 — this uses +27, but 27 = 3 × 9 is not prime.\n- 120 — this uses +31, skipping the prime 29.\n\n**Key facts**\n- Prime-difference series: check whether the jumps form the prime list 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31.\n- Here the jumps are 13, 17, 19, 23, 29.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (prime-difference pattern).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -162,7 +162,7 @@
         "121.5"
       ],
       "answerIndex": 2,
-      "explanation": "The operations alternate: divide by 2, then multiply by 3. 36/2=18, 18x3=54, 54/2=27, 27x3=81, so 81/2 = 40.5.\n\n**Why not the others**\n- 27 — repeats an earlier term; ignores the alternating rule.\n- 108 — applies x3 (wrong step; a division is due next).\n- 121.5 — that is 81 x 1.5, an invented ratio.\n\n**Key facts**\n- Alternating/mixed series: two operations applied turn by turn (here /2 and x3).\n- Identify by testing operations on alternate gaps rather than a single common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
+      "explanation": "Check each gap in turn rather than looking for one rule. 36 ÷ 2 = 18, 18 × 3 = 54, 54 ÷ 2 = 27, 27 × 3 = 81.\nThe operations alternate ÷ 2 and × 3. After a × 3 (the step that made 81), the next operation is ÷ 2, so 81 ÷ 2 = 40.5.\n\n**Why not the others**\n- 27 — this just repeats an earlier term and ignores the alternating rule.\n- 108 — this applies × 3, but a division is due next.\n- 121.5 — this is 81 × 1.5, an invented ratio.\n\n**Key facts**\n- Alternating series: two operations are applied turn by turn (here ÷ 2 and × 3).\n- Identify it by testing operations on alternate gaps, not one common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -186,7 +186,7 @@
         "34"
       ],
       "answerIndex": 3,
-      "explanation": "Each term is the sum of the previous two (Fibonacci-type): 13 + 21 = 34.\n\n**Why not the others**\n- 30 — comes from +9, no consistent single difference exists.\n- 32 — assumes doubling minus a constant; does not fit earlier terms.\n- 33 — 12 + 21, using the wrong earlier term.\n\n**Key facts**\n- Sum-of-previous-terms (Fibonacci) series: term(n) = term(n-1) + term(n-2).\n- Spot it when neither a constant difference nor a constant ratio works.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (sum of previous terms).*",
+      "explanation": "Neither a constant difference nor a constant ratio fits, so test the sum rule: each term is the two before it added together. Check: 2 + 3 = 5, 3 + 5 = 8, 5 + 8 = 13, 8 + 13 = 21 — all hold.\nSo the next term is 13 + 21 = 34.\n\n**Why not the others**\n- 30 — this comes from a guessed +9 step; no single difference fits the series.\n- 32 — this assumes doubling minus a constant, which does not match the earlier terms.\n- 33 — this uses 12 + 21, taking the wrong earlier term.\n\n**Key facts**\n- Fibonacci-type series: term(n) = term(n−1) + term(n−2).\n- Suspect it whenever neither a fixed difference nor a fixed ratio works.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (sum of previous terms).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -210,7 +210,7 @@
         "255"
       ],
       "answerIndex": 1,
-      "explanation": "The rule is term x 2 + 1: 3->7, 7->15, 15->31, 31->63, 63->127. The series shows 128 where 127 belongs, so 128 is the wrong term.\n\n**Why not the others**\n- 15 — correct: 7 x 2 + 1 = 15.\n- 31 — correct: 15 x 2 + 1 = 31.\n- 255 — correct: 127 x 2 + 1 = 255 (it follows the intended 127).\n\n**Key facts**\n- Wrong-term type: find the governing rule from the majority of terms, then flag the single deviation.\n- Rule here: next = 2 x current + 1; expected 127, printed 128.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (wrong term).*",
+      "explanation": "Fix the rule from the terms you trust, then flag the one that breaks it. Testing \"double and add 1\": 3 × 2 + 1 = 7, 7 × 2 + 1 = 15, 15 × 2 + 1 = 31, 31 × 2 + 1 = 63, and 63 × 2 + 1 = 127.\nThe series prints 128 where 127 is expected, so 128 is the wrong term.\n\n**Why not the others**\n- 15 — correct, because 7 × 2 + 1 = 15.\n- 31 — correct, because 15 × 2 + 1 = 31.\n- 255 — correct, because the intended 127 gives 127 × 2 + 1 = 255.\n\n**Key facts**\n- Wrong-term questions: derive the rule from the majority of terms, then flag the single deviation.\n- The rule here is next = 2 × current + 1; expected 127, printed 128.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (wrong term).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -234,7 +234,7 @@
         "96"
       ],
       "answerIndex": 0,
-      "explanation": "The rule is term x 2 + 2: 10->22, 22->46, 46->94, 94->190, 190->382. So the missing term is 94.\n\n**Why not the others**\n- 88 — that is 46 x 2 - 4; wrong constant.\n- 92 — that is 46 x 2; forgets the +2.\n- 96 — that is 46 x 2 + 4; wrong constant.\n\n**Key facts**\n- Missing-term type: establish the rule from surrounding terms, then compute the gap.\n- Verify forward: 94 x 2 + 2 = 190 and 190 x 2 + 2 = 382 confirm the rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (missing term).*",
+      "explanation": "Find the rule from the surrounding terms. Testing \"double and add 2\": 10 × 2 + 2 = 22, 22 × 2 + 2 = 46, so the rule is × 2 + 2.\nThe missing term follows 46: 46 × 2 + 2 = 94. Verify forward: 94 × 2 + 2 = 190 and 190 × 2 + 2 = 382, which match the given terms, so the missing term is 94.\n\n**Why not the others**\n- 88 — this is 46 × 2 − 4, using the wrong constant.\n- 92 — this is 46 × 2, forgetting the + 2.\n- 96 — this is 46 × 2 + 4, using the wrong constant.\n\n**Key facts**\n- Missing-term questions: establish the rule from neighbours, then compute the gap.\n- Always verify forward: 94 → 190 → 382 confirms the rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (missing term).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -258,7 +258,7 @@
         "W"
       ],
       "answerIndex": 1,
-      "explanation": "The gaps between letters increase: +2, +3, +4, +5, +6. From O (15), 15 + 6 = 21 = U.\n\n**Why not the others**\n- T — position 20, only +5 from O.\n- V — position 22, +7 from O (overshoots).\n- W — position 23, +8 from O.\n\n**Key facts**\n- Single-sequence alphabet series: convert letters to positions (A=1...Z=26) and read the gap pattern.\n- Gaps here form 2,3,4,5,6.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (single sequence).*",
+      "explanation": "Turn the letters into positions: A = 1, C = 3, F = 6, J = 10, O = 15. The jumps are 3 − 1 = 2, 6 − 3 = 3, 10 − 6 = 4, 15 − 10 = 5 — growing by one each time.\nSo the next jump is 6, giving 15 + 6 = 21, and position 21 is U.\n\n**Why not the others**\n- T — position 20, only +5 from O, repeating the previous jump.\n- V — position 22, which is +7 from O and overshoots.\n- W — position 23, which is +8 from O.\n\n**Key facts**\n- Single-sequence alphabet series: convert letters to positions (A = 1 … Z = 26) and read the gap pattern.\n- The gaps here are 2, 3, 4, 5, 6.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (single sequence).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
       "verified": true,
       "covers": [
@@ -281,7 +281,7 @@
         "QVD"
       ],
       "answerIndex": 2,
-      "explanation": "Treat each position separately. 1st letters: B,F,J,N (+4 each) -> R. 2nd letters: O,Q,S,U (+2 each) -> W. 3rd letters: J,O,T,Y (+5 each) -> D (25+5=30, 30-26=4=D). So the group is RWD.\n\n**Why not the others**\n- RVD — 2nd letter V (+1) breaks the +2 column pattern.\n- SWC — 1st letter S (+5) and 3rd letter C break both columns.\n- QVD — 1st letter Q (+3) and 2nd letter V (+1) break the pattern.\n\n**Key facts**\n- Grouped/combination series: split into columns and solve each column's own pattern.\n- Column steps here: +4, +2, +5 (with wrap-around after Z).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
+      "explanation": "Treat each of the three positions as its own column and read it in alphabet numbers.\nFirst letters B(2), F(6), J(10), N(14) rise by 4 each, so the next is 18 = R.\nSecond letters O(15), Q(17), S(19), U(21) rise by 2 each, so the next is 23 = W.\nThird letters J(10), O(15), T(20), Y(25) rise by 5 each, so the next is 25 + 5 = 30; since that passes Z, subtract 26 to get 4 = D.\nThe group is RWD.\n\n**Why not the others**\n- RVD — the second letter V is only +1 from U and breaks the +2 column.\n- SWC — the first letter S (+5) and the third letter C both break their columns.\n- QVD — the first letter Q (+3) and second letter V (+1) break their columns.\n\n**Key facts**\n- Grouped series: split into columns and solve each column's own step.\n- The column steps are +4, +2, +5, with wrap-around (subtract 26) after Z.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
       "verified": true,
       "covers": [
@@ -305,7 +305,7 @@
         "K11"
       ],
       "answerIndex": 3,
-      "explanation": "Letters advance by 2 (C,E,G,I,K) and numbers are the odd sequence 3,5,7,9,11. So the next term is K11.\n\n**Why not the others**\n- J11 — J is +1 from I, not +2.\n- K10 — number should be the odd value 11, not 10.\n- L12 — L is +3 from I and 12 breaks the odd sequence.\n\n**Key facts**\n- Alphanumeric series: track the letter pattern and the number pattern independently.\n- Here letters +2; numbers = consecutive odd numbers.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Mixed Series (alphanumeric).*",
+      "explanation": "Separate the letter track from the number track.\nLetters C, E, G, I are at positions 3, 5, 7, 9, each +2, so the next letter is position 11 = K.\nNumbers 3, 5, 7, 9 are consecutive odd numbers, so the next number is 11.\nPutting the two next values together gives K11.\n\n**Why not the others**\n- J11 — J is only +1 from I, not +2.\n- K10 — the number should be the odd value 11, not 10.\n- L12 — L is +3 from I, and 12 breaks the odd-number sequence.\n\n**Key facts**\n- Alphanumeric series: track the letter pattern and the number pattern independently.\n- Here the letters advance by 2 and the numbers are consecutive odd numbers.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Mixed Series (alphanumeric).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Mixed Series",
       "verified": true,
       "covers": [
@@ -328,7 +328,7 @@
         "APLCZX"
       ],
       "answerIndex": 0,
-      "explanation": "The letters shift alternately -1, +1: K-1=J, A+1=B, N-1=M, P+1=Q, U-1=T, R+1=S. Applying -1,+1 to BOMBAY: B-1=A, O+1=P, M-1=L, B+1=C, A-1=Z (wrap), Y+1=Z. Result: APLCZZ.\n\n**Why not the others**\n- ANLCZZ — 2nd letter treated as O-1=N instead of O+1=P.\n- APKDZZ — 3rd/4th letters mis-shifted (M-2, B+2).\n- APLCZX — last letter taken as Y-1=X instead of Y+1=Z.\n\n**Key facts**\n- Letter-shift coding: find the position change per letter, watching for alternating signs.\n- Wrap-around: after Z go to A (A-1 -> Z).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
+      "explanation": "Find the shift by writing positions for KANPUR and JBMQTS: K(11)→J(10) is −1, A(1)→B(2) is +1, N(14)→M(13) is −1, P(16)→Q(17) is +1, U(21)→T(20) is −1, R(18)→S(19) is +1. The shift alternates −1, +1.\nApply the same −1, +1 to BOMBAY: B(2)−1 = A, O(15)+1 = P, M(13)−1 = L, B(2)+1 = C, A(1)−1 wraps to Z, Y(25)+1 = Z. The code is APLCZZ.\n\n**Why not the others**\n- ANLCZZ — this takes the second letter as O − 1 = N instead of O + 1 = P.\n- APKDZZ — this mis-shifts the third and fourth letters by −2 and +2.\n- APLCZX — this takes the last letter as Y − 1 = X instead of Y + 1 = Z.\n\n**Key facts**\n- Letter-shift coding: find the position change per letter, watching for alternating signs.\n- Wrap-around: stepping back from A lands on Z.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting)",
       "verified": true,
       "covers": [
@@ -352,7 +352,7 @@
         "ECORSU"
       ],
       "answerIndex": 1,
-      "explanation": "The rule rearranges the letters of the word into ascending alphabetical order. COURSE -> C, E, O, R, S, U = CEORSU.\n\n**Why not the others**\n- CEOURS — U placed before R; not fully sorted.\n- CORSEU — keeps near-original order rather than alphabetical.\n- ECORSU — starts with E; sorting must start with C.\n\n**Key facts**\n- Rearrangement coding: the code is the same letters reordered by a rule (here ascending A-Z).\n- Check the sample: BEHOLD sorted = BDEHLO confirms the rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (alphabetical rearrangement).*",
+      "explanation": "Confirm the rule on the sample: BEHOLD sorted into alphabetical order is B, D, E, H, L, O = BDEHLO, which matches the given code. So the rule is \"arrange the letters A to Z\".\nApply it to COURSE: sort C, O, U, R, S, E into C, E, O, R, S, U, giving CEORSU.\n\n**Why not the others**\n- CEOURS — here U is placed before R, so the letters are not fully sorted.\n- CORSEU — this keeps a near-original order instead of sorting alphabetically.\n- ECORSU — this starts with E, but sorting must begin with C.\n\n**Key facts**\n- Rearrangement coding: the code is the same letters reordered by a rule (here ascending A to Z).\n- Always confirm the rule on the sample before applying it.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (alphabetical rearrangement).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (rearrangement)",
       "verified": true,
       "covers": [
@@ -376,7 +376,7 @@
         "5786"
       ],
       "answerIndex": 3,
-      "explanation": "Map each letter to its digit from PUNCTUAL=47819765: P=4, U=7, N=8, C=1, T=9, U=7, A=6, L=5. Then LUNA = L(5) U(7) N(8) A(6) = 5786.\n\n**Why not the others**\n- 5876 — swaps the U and N digits (7 and 8).\n- 6785 — reverses the order of the digits.\n- 5768 — replaces A's digit 6 with N's 8 at the end.\n\n**Key facts**\n- Letter-to-number coding: build a letter->digit table from the given pair, then substitute.\n- Keep letter order; only substitute the mapped digits.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
+      "explanation": "Line up PUNCTUAL with its code 47819765 letter by letter: P = 4, U = 7, N = 8, C = 1, T = 9, U = 7, A = 6, L = 5. The repeated U gives 7 both times, which confirms the mapping.\nNow spell LUNA with those digits, keeping the order: L = 5, U = 7, N = 8, A = 6, giving 5786.\n\n**Why not the others**\n- 5876 — this swaps the digits for U and N (7 and 8).\n- 6785 — this reverses the order of the digits.\n- 5768 — this ends with N's digit 8 instead of A's digit 6.\n\n**Key facts**\n- Letter-to-number coding: build a letter → digit table from the given pair, then substitute.\n- Keep the letter order and substitute only the mapped digits.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
       "verified": true,
       "covers": [
@@ -400,7 +400,7 @@
         "51533"
       ],
       "answerIndex": 0,
-      "explanation": "Each digit is reduced by 1: 6-1=5, 4-1=3, 9-1=8, 5-1=4, 8-1=7 gives 53847. Applying to 62654: 5,1,5,4,3 = 51543.\n\n**Why not the others**\n- 51443 — treats the 3rd digit 6 as 4 (should be 5).\n- 71543 — leaves the first digit as 7 instead of 6-1=5.\n- 51533 — mis-reduces the 4th digit 5 to 3 instead of 4.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation (here -1) from the sample.\n- Apply the same operation digit-by-digit.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
+      "explanation": "Compare 64958 with 53847 digit by digit: 6→5, 4→3, 9→8, 5→4, 8→7. Every digit drops by 1, so the operation is \"subtract 1 from each digit\".\nApply it to 62654: 6→5, 2→1, 6→5, 5→4, 4→3, giving 51543.\n\n**Why not the others**\n- 51443 — this treats the third digit 6 as 4 instead of 5.\n- 71543 — this leaves the first digit as 7 instead of 6 − 1 = 5.\n- 51533 — this mis-reduces the fourth digit 5 to 3 instead of 4.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation (here −1) from the sample.\n- Apply the same operation to each digit on its own.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
       "verified": true,
       "covers": [
@@ -424,7 +424,7 @@
         "la"
       ],
       "answerIndex": 2,
-      "explanation": "Compare statements sharing words. 'sky is blue'=ta na ka and 'blue is high'=na ka pa share 'is' and 'blue' -> {na, ka}; the extra word in the second is 'high'=pa. 'high and dry'=pa la ja also contains pa, confirming high=pa.\n\n**Why not the others**\n- na — a shared code for 'is' or 'blue', not unique to high.\n- ka — the other shared code for 'is'/'blue'.\n- la — appears only in 'high and dry' and maps to 'and' or 'dry', not high.\n\n**Key facts**\n- Substitution / fictitious-language coding: intersect sentences to isolate the code of a common word.\n- The word common to two sentences shares the common code(s); the odd code is the odd word.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding and Decoding in Fictitious Language.*",
+      "explanation": "Compare the sentences that share words. 'sky is blue' = ta na ka and 'blue is high' = na ka pa both contain 'is' and 'blue', and both share the codes na and ka, so {is, blue} map to {na, ka}.\nThat leaves 'high' as the only new word in the second sentence, matched to the only new code, pa. The third sentence 'high and dry' = pa la ja also contains pa, confirming high = pa.\n\n**Why not the others**\n- na — this is a shared code for 'is' or 'blue', not unique to 'high'.\n- ka — this is the other shared code for 'is' or 'blue'.\n- la — this appears only in 'high and dry' and codes 'and' or 'dry', not 'high'.\n\n**Key facts**\n- Fictitious-language coding: intersect sentences to isolate a shared word's code.\n- The leftover code in a sentence names its leftover word.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding and Decoding in Fictitious Language.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language",
       "verified": true,
       "covers": [
@@ -448,7 +448,7 @@
         "VSRU£"
       ],
       "answerIndex": 1,
-      "explanation": "Base codes: 7=V, 4=S, 3=R, 6=U, 9=X. Check the condition: first digit 7 is odd and last digit 9 is odd, so BOTH are recoded as the pound sign. Result: £ S R U £.\n\n**Why not the others**\n- VSRUX — ignores the condition entirely (plain substitution).\n- £SRUX — recodes only the first digit, not the last.\n- VSRU£ — recodes only the last digit, not the first.\n\n**Key facts**\n- Conditional coding: apply base substitution first, then override with the stated condition.\n- Condition triggers only when BOTH ends are odd (7 and 9 here).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Conditional Matrix / Coding.*",
+      "explanation": "First apply the base table: 7 = V, 4 = S, 3 = R, 6 = U, 9 = X, giving VSRUX.\nNow read the condition: if BOTH the first and last digit are odd, replace each of them with the pound sign. The first digit 7 is odd and the last digit 9 is odd, so the condition fires on both ends. Overriding only those ends gives £SRU£.\n\n**Why not the others**\n- VSRUX — this ignores the condition and leaves the plain code.\n- £SRUX — this recodes only the first digit, not the last.\n- VSRU£ — this recodes only the last digit, not the first.\n\n**Key facts**\n- Conditional coding: apply the base substitution first, then override by the stated condition.\n- The condition here needs BOTH ends to be odd (7 and 9 are).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Conditional Matrix / Coding.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Conditional Matrix",
       "verified": true,
       "covers": [
@@ -472,7 +472,7 @@
         "XPSE"
       ],
       "answerIndex": 3,
-      "explanation": "Each letter of BOOK moves +1 to give CPPL (B->C, O->P, O->P, K->L). Apply +1 to WORD: W->X, O->P, R->S, D->E = XPSE.\n\n**Why not the others**\n- XPSD — leaves the last letter D unchanged instead of +1=E.\n- VNQC — shifts -1 (wrong direction).\n- XQTE — shifts the 2nd and 3rd letters by +2 instead of +1.\n\n**Key facts**\n- Coding by analogy: find the transformation in the first pair, then apply the identical rule to the second.\n- Rule here: shift each letter +1 in the alphabet.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding By Analogy.*",
+      "explanation": "Find the rule from the first pair: BOOK → CPPL moves B→C, O→P, O→P, K→L, which is +1 on every letter.\nApply the same +1 to WORD: W→X, O→P, R→S, D→E, giving XPSE.\n\n**Why not the others**\n- XPSD — this leaves the last letter D unchanged instead of +1 = E.\n- VNQC — this shifts −1, the wrong direction.\n- XQTE — this shifts the second and third letters by +2 instead of +1.\n\n**Key facts**\n- Coding by analogy: find the transformation in the first pair, then apply the identical rule to the second.\n- The rule here is \"shift each letter one place forward\".\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding By Analogy.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding By Analogy",
       "verified": true,
       "covers": [
@@ -496,7 +496,7 @@
         "84"
       ],
       "answerIndex": 1,
-      "explanation": "First differences are 5, 10, 16, 23 and their differences (second level) are 5, 6, 7 — increasing by 1. The next second difference is 8, so the next first difference is 23 + 8 = 31, giving 58 + 31 = **89**.\n\n**Why not the others**\n- 88 — uses a next difference of 30 (mis-reading the second-level step).\n- 90 — uses 32, over-stepping the second difference.\n- 84 — repeats the last difference 23 + 3 instead of following the pattern.\n\n**Key facts**\n- Two-tier series: if first differences are irregular, examine the second differences.\n- Here second differences are 5, 6, 7, 8 (arithmetic), so first differences are 5, 10, 16, 23, 31.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (double difference).*",
+      "explanation": "The first differences are 9 − 4 = 5, 19 − 9 = 10, 35 − 19 = 16, 58 − 35 = 23 — not constant, so look at the differences of those differences: 10 − 5 = 5, 16 − 10 = 6, 23 − 16 = 7, which rise by 1.\nSo the next second difference is 8, making the next first difference 23 + 8 = 31, and the next term 58 + 31 = 89.\n\n**Why not the others**\n- 88 — this uses a next first difference of 30, misreading the second-level step.\n- 90 — this uses 32, over-stepping the second difference.\n- 84 — this repeats a difference of 26 instead of following the pattern.\n\n**Key facts**\n- Two-tier series: when first differences are irregular, examine the second differences.\n- Here the second differences are 5, 6, 7, 8, so the first differences are 5, 10, 16, 23, 31.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (double difference).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -520,7 +520,7 @@
         "15"
       ],
       "answerIndex": 3,
-      "explanation": "Two operations alternate: ×3 then −3. 2×3=6, 6−3=3, 3×3=9, 9−3=6, 6×3=18, and the next step is 18−3 = **15**.\n\n**Why not the others**\n- 12 — applies −6 instead of the established −3.\n- 9 — repeats an earlier term, ignoring the alternating rule.\n- 21 — adds 3 (×3 step) when a subtraction is due next.\n\n**Key facts**\n- Alternating series: two rules applied turn by turn (here ×3 and −3).\n- Detect by testing operations on alternate gaps rather than one common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
+      "explanation": "Check each gap in turn. 2 × 3 = 6, 6 − 3 = 3, 3 × 3 = 9, 9 − 3 = 6, 6 × 3 = 18. The operations alternate × 3 and − 3.\nThe step that made 18 was a × 3, so the next operation is − 3, giving 18 − 3 = 15.\n\n**Why not the others**\n- 12 — this applies − 6 instead of the established − 3.\n- 9 — this repeats an earlier term and ignores the alternating rule.\n- 21 — this adds 3 when a subtraction is due next.\n\n**Key facts**\n- Alternating series: two rules applied turn by turn (here × 3 and − 3).\n- Detect it by testing operations on alternate gaps, not one common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -544,7 +544,7 @@
         "125"
       ],
       "answerIndex": 2,
-      "explanation": "The set consists of perfect cubes — 2³=8, 3³=27, 4³=64, 5³=125 — but 100 = 10² is a perfect square, not a cube, so **100** is the odd one out.\n\n**Why not the others**\n- 27 — 3³, a perfect cube (fits the pattern).\n- 64 — 4³, a perfect cube.\n- 125 — 5³, a perfect cube.\n\n**Key facts**\n- Classification/odd-one-out: find the single common property, then flag the term that breaks it.\n- Perfect cubes here: 8, 27, 64, 125; 100 is only a perfect square.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Classification (odd one out).*",
+      "explanation": "Look for the single property the set shares. The numbers 8, 27, 64 and 125 are perfect cubes: 2³ = 8, 3³ = 27, 4³ = 64, 5³ = 125.\nBut 100 = 10² is a perfect square, not a cube, so 100 is the odd one out.\n\n**Why not the others**\n- 27 — this is 3³, a perfect cube, so it fits the pattern.\n- 64 — this is 4³, a perfect cube.\n- 125 — this is 5³, a perfect cube.\n\n**Key facts**\n- Odd-one-out: find the common property, then flag the term that breaks it.\n- The cubes here are 8, 27, 64, 125; 100 is only a perfect square.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Classification (odd one out).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Classification",
       "verified": true,
       "covers": [
@@ -568,7 +568,7 @@
         "99"
       ],
       "answerIndex": 0,
-      "explanation": "The relation is n × (n+1): 6 × 7 = 42. Applying the same rule, 9 × 10 = **90**.\n\n**Why not the others**\n- 72 — that is 8 × 9, using the wrong base.\n- 81 — 9², ignoring the (n+1) multiplier.\n- 99 — 9 × 11, over-stepping to (n+2).\n\n**Key facts**\n- Number analogy: identify the operation linking the first pair, then apply it to the second.\n- Here first term × (first term + 1): 6×7 and 9×10.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Analogy (number analogy).*",
+      "explanation": "Find the link in the first pair: 6 relates to 42, and 6 × 7 = 42, which is n × (n + 1).\nApply the same rule to 9: 9 × (9 + 1) = 9 × 10 = 90.\n\n**Why not the others**\n- 72 — this is 8 × 9, using the wrong base number.\n- 81 — this is 9², ignoring the (n + 1) multiplier.\n- 99 — this is 9 × 11, over-stepping to (n + 2).\n\n**Key facts**\n- Number analogy: identify the operation linking the first pair, then apply it to the second.\n- Here the rule is first number × (first number + 1): 6 × 7 and 9 × 10.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Analogy (number analogy).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Analogy",
       "verified": true,
       "covers": [
@@ -592,7 +592,7 @@
         "OLRQ"
       ],
       "answerIndex": 3,
-      "explanation": "Each letter shifts +3 places: T→W, I→L, G→J, E→H, R→U gives WLJHU. Applying +3 to LION: L→O, I→L, O→R, N→Q = **OLRQ**.\n\n**Why not the others**\n- OLQR — swaps the last two letters (R and Q).\n- PLRQ — shifts the first letter +4 instead of +3.\n- OKRQ — shifts the second letter +2 (I→K) instead of +3.\n\n**Key facts**\n- Letter-shift coding: find the constant position change from the sample word.\n- Shift here = +3 for every letter (no wrap needed for LION).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
+      "explanation": "Find the shift from TIGER → WLJHU: T(20)→W(23), I(9)→L(12), G(7)→J(10), E(5)→H(8), R(18)→U(21). Every letter moves +3.\nApply +3 to LION: L(12)→O(15), I(9)→L(12), O(15)→R(18), N(14)→Q(17), giving OLRQ.\n\n**Why not the others**\n- OLQR — this swaps the last two letters R and Q.\n- PLRQ — this shifts the first letter by +4 instead of +3.\n- OKRQ — this shifts the second letter by +2 (I→K) instead of +3.\n\n**Key facts**\n- Letter-shift coding: find the constant position change from the sample word.\n- The shift here is +3 for every letter, and LION needs no wrap-around.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting)",
       "verified": true,
       "covers": [
@@ -616,7 +616,7 @@
         "7025"
       ],
       "answerIndex": 1,
-      "explanation": "Each digit increases by 1: 3→4, 5→6, 7→8, 2→3 gives 4683. Applying +1 to each digit of 6014: 6→7, 0→1, 1→2, 4→5 = **7125**.\n\n**Why not the others**\n- 7124 — leaves the last digit 4 as 4 instead of +1 = 5.\n- 6125 — leaves the first digit 6 unchanged instead of +1 = 7.\n- 7025 — treats the 0 as staying 0 instead of becoming 1.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation from the sample (here +1).\n- Apply the same operation digit by digit.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
+      "explanation": "Compare 3572 with 4683 digit by digit: 3→4, 5→6, 7→8, 2→3. Every digit increases by 1.\nApply +1 to each digit of 6014: 6→7, 0→1, 1→2, 4→5, giving 7125.\n\n**Why not the others**\n- 7124 — this leaves the last digit 4 as 4 instead of +1 = 5.\n- 6125 — this leaves the first digit 6 unchanged instead of +1 = 7.\n- 7025 — this keeps the 0 as 0 instead of making it 1.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation from the sample (here +1).\n- Apply the same operation to each digit.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
       "verified": true,
       "covers": [
@@ -640,7 +640,7 @@
         "ta"
       ],
       "answerIndex": 2,
-      "explanation": "The only word appearing in all three sentences is 'is', and the only code common to all three is 'mo'. Hence 'is' = **mo**.\n\n**Why not the others**\n- re — common only to the first two sentences; it codes 'blue'.\n- la — common only to the last two sentences; it codes 'sky'.\n- ta — appears only in the first sentence; it codes 'pen'.\n\n**Key facts**\n- Fictitious-language coding: intersect the sentences to isolate the code of the shared word.\n- 'is' occurs in all three ⇒ its code is the one common to all three sets = mo.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language.*",
+      "explanation": "Find the word that appears in every sentence and the code that appears in every sentence. 'is' is the only word in all three, and 'mo' is the only code in all three ('pen is blue' = mo ta re, 'blue is sky' = re mo la, 'sky is high' = la mo pa).\nSo 'is' = mo.\n\n**Why not the others**\n- re — this is common only to the first two sentences, so it codes 'blue'.\n- la — this is common only to the last two sentences, so it codes 'sky'.\n- ta — this appears only in the first sentence, so it codes 'pen'.\n\n**Key facts**\n- Fictitious-language coding: intersect the sentences to isolate the shared word's code.\n- A word in all three sentences has the code common to all three.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language",
       "verified": true,
       "covers": [
@@ -664,7 +664,7 @@
         "TVR"
       ],
       "answerIndex": 0,
-      "explanation": "Solve each column separately. 1st letters D, H, L, P (+4 each) → T. 2nd letters E, I, M, Q (+4 each) → U. 3rd letters B, F, J, N (+4 each) → R. So the group is **TUR**.\n\n**Why not the others**\n- TUS — 3rd letter should be R (+4 from N), not S.\n- SUR — 1st letter should be T (+4 from P), not S.\n- TVR — 2nd letter should be U (+4 from Q), not V.\n\n**Key facts**\n- Grouped/combination series: split into columns and solve each column's pattern.\n- Every column here advances by +4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
+      "explanation": "Read each position as its own column in alphabet numbers.\nFirst letters D(4), H(8), L(12), P(16) rise by 4 each, so the next is 20 = T.\nSecond letters E(5), I(9), M(13), Q(17) rise by 4 each, so the next is 21 = U.\nThird letters B(2), F(6), J(10), N(14) rise by 4 each, so the next is 18 = R.\nThe group is TUR.\n\n**Why not the others**\n- TUS — the third letter should be R (+4 from N), not S.\n- SUR — the first letter should be T (+4 from P), not S.\n- TVR — the second letter should be U (+4 from Q), not V.\n\n**Key facts**\n- Grouped series: split into columns and solve each column's own pattern.\n- Every column here advances by +4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
       "verified": true,
       "covers": [
@@ -688,7 +688,7 @@
         "48"
       ],
       "answerIndex": 0,
-      "explanation": "The rule is third = first² − second²: 5²−3² = 25−9 = 16 ✓ and 7²−4² = 49−16 = 33 ✓. So 8²−6² = 64 − 36 = 28.\n\n**Why not the others**\n- 26 — arises from 64−38, an arithmetic slip.\n- 14 — that is 8+6, the wrong (sum) rule.\n- 48 — that is 8×6, the product rule, which fails on the first two rows.\n\n**Key facts**\n- Confirm one rule fits every complete row before applying it.\n- Here third = a² − b² = (a+b)(a−b).\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
+      "explanation": "Test rules on the complete rows until one fits both. The sum 5 + 3 = 8 and the product 5 × 3 = 15 do not give 16, but 5² − 3² = 25 − 9 = 16 does, and 7² − 4² = 49 − 16 = 33 confirms it.\nSo the rule is third = first² − second². For the last row, 8² − 6² = 64 − 36 = 28.\n\n**Why not the others**\n- 26 — this comes from 64 − 38, an arithmetic slip.\n- 14 — this is 8 + 6, the sum rule, which fails on the first two rows.\n- 48 — this is 8 × 6, the product rule, which also fails the first two rows.\n\n**Key facts**\n- Confirm one rule fits every complete row before applying it.\n- Here third = a² − b² = (a + b)(a − b).\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
       "source": "local APPSC Group 1 PDFs — Logical Reasoning: Matrix",
       "verified": true,
       "covers": [
@@ -712,7 +712,7 @@
         "6"
       ],
       "answerIndex": 0,
-      "explanation": "Each complete row totals 12+5+7 = 24 and 9+8+7 = 24. So the third row must also total 24: 10 + ? + 6 = 24 ⇒ ? = 8.\n\n**Why not the others**\n- 7 — gives a row total of 23, not 24.\n- 9 — gives 25.\n- 6 — gives 22.\n\n**Key facts**\n- Constant-row-total grids: missing = common total − sum of the other cells.\n- Common total is read off any complete row.\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
+      "explanation": "Add the complete rows: 12 + 5 + 7 = 24 and 9 + 8 + 7 = 24. Each row has the same total, 24.\nThe third row must also total 24, so 10 + ? + 6 = 24, which gives ? = 24 − 16 = 8.\n\n**Why not the others**\n- 7 — this makes the row total 23, not 24.\n- 9 — this makes the row total 25.\n- 6 — this makes the row total 22.\n\n**Key facts**\n- Constant-row-total grids: missing cell = common total − the sum of the other cells.\n- The common total is read off any complete row.\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
       "source": "local APPSC Group 1 PDFs — Logical Reasoning: Matrix",
       "verified": true,
       "covers": [

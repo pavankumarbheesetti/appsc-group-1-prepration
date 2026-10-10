@@ -78,7 +78,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-algebra-bodmas",
       "front": "GP: finite sum and sum to infinity?",
-      "back": "aₙ = a·rⁿ⁻¹; Sₙ = a(rⁿ−1)/(r−1). S∞ = a/(1−r) valid ONLY when |r|<1 (else it diverges).",
+      "back": "aₙ = a·r^{n-1}; Sₙ = a(r^{n}−1)/(r−1). S∞ = a/(1−r) valid ONLY when |r|<1 (else it diverges).",
       "examPoint": "Geometric Progression — sum to infinity",
       "source": "APPSC Quantitative Reasoning — Geometric Progression",
       "verified": true
@@ -98,7 +98,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-algebra-bodmas",
       "front": "Remainder & Factor theorems for f(x) divided by (x−a)?",
-      "back": "Remainder = f(a) (just substitute). (x−a) is a factor ⇔ f(a)=0. For divisor (ax−b) evaluate f(b/a).",
+      "back": "Remainder = f(a) (just substitute). (x−a) is a factor means f(a)=0. For divisor (ax−b) evaluate f(b/a).",
       "examPoint": "Polynomials — remainder & factor theorem",
       "source": "APPSC Quantitative Reasoning — Polynomials",
       "verified": true

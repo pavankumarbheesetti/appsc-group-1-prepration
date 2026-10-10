@@ -26,7 +26,7 @@ import {
 import { newCard, review, type Grade } from '../engine/spaced-repetition';
 import { navigate } from '../router/router';
 import { loadState, updateState } from '../state/store';
-import { el, mount } from './dom';
+import { el, mount, renderInline } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
 import { icon, type IconName } from './components/icon';
@@ -279,7 +279,7 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
     const reveal = (): void => {
       const rated = el('div', { class: 'flashcard-answer' }, [
         el('p', { class: 'flashcard-answer-label', text: 'Answer' }),
-        el('p', { class: 'flashcard-answer-text', text: cardItem.back }),
+        el('p', { class: 'flashcard-answer-text' }, renderInline(cardItem.back)),
       ]);
       const controls = el('div', { class: 'focus-advance', attrs: { style: 'flex-wrap:wrap' } }, [
         button({ label: 'Again', variant: 'secondary', onClick: () => rate(cardItem, 'wrong') }),
@@ -290,7 +290,7 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
         statusLine(),
         el('div', { class: 'card question-card flashcard' }, [
           el('p', { class: 'flashcard-cue-label', text: cueLabel(cardItem.source) }),
-          el('h2', { class: 'flashcard-cue', text: cardItem.front }),
+          el('h2', { class: 'flashcard-cue' }, renderInline(cardItem.front)),
           rated,
         ]),
         controls,
@@ -302,7 +302,7 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
       statusLine(),
       el('div', { class: 'card question-card flashcard' }, [
         el('p', { class: 'flashcard-cue-label', text: cueLabel(cardItem.source) }),
-        el('h2', { class: 'flashcard-cue', text: cardItem.front }),
+        el('h2', { class: 'flashcard-cue' }, renderInline(cardItem.front)),
       ]),
       el('div', { class: 'focus-advance' }, [revealBtn]),
     );

@@ -1935,6 +1935,8 @@ input[type='checkbox'] {
   border-bottom: 1px solid var(--border);
   vertical-align: top;
   line-height: var(--lh-snug);
+  /* Figures in fact tables line up in neat columns. */
+  font-variant-numeric: tabular-nums;
 }
 .md-table thead th {
   background: transparent;
@@ -1952,6 +1954,56 @@ input[type='checkbox'] {
   border: none;
   border-top: 1px solid var(--border);
   margin: var(--space-3) 0;
+}
+
+/* Real superscripts/subscripts from the markdown renderer (e.g. 10^{4}, x_{i}).
+   `line-height: 0` keeps them from stretching the surrounding line's height. */
+.note-body sup,
+.note-body sub,
+.md sup,
+.md sub,
+.question-text sup,
+.question-text sub,
+.option-body sup,
+.option-body sub,
+.flashcard-cue sup,
+.flashcard-cue sub,
+.flashcard-answer-text sup,
+.flashcard-answer-text sub,
+.md-table sup,
+.md-table sub {
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: baseline;
+  position: relative;
+}
+.note-body sup,
+.md sup,
+.question-text sup,
+.option-body sup,
+.flashcard-cue sup,
+.flashcard-answer-text sup,
+.md-table sup {
+  top: -0.5em;
+}
+.note-body sub,
+.md sub,
+.question-text sub,
+.option-body sub,
+.flashcard-cue sub,
+.flashcard-answer-text sub,
+.md-table sub {
+  bottom: -0.25em;
+}
+
+/* Inline `code` spans rendered verbatim by the markdown renderer. */
+.md-code {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
 }
 
 /* The elegant "Key facts" panel: a subtle tinted surface with a slim accent

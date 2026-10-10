@@ -682,9 +682,11 @@ function stemTableStartsAt(lines: readonly string[], i: number): boolean {
  * rather than literal `| Month | … |` text. @internal
  */
 function renderPlainStem(question: string): Child[] {
-  // Fast path: a genuine single-line question is rendered exactly as before.
+  // Fast path: a genuine single-line question is rendered exactly as before,
+  // but through the vetted inline renderer so superscripts/subscripts/code and
+  // bold are shown (still a single `<h2 class="question-text">`).
   if (!question.includes('\n')) {
-    return [el('h2', { class: 'question-text', text: question })];
+    return [el('h2', { class: 'question-text' }, renderInline(question))];
   }
 
   const lines = question.split('\n');
@@ -751,7 +753,7 @@ function buildOptions(
       onClick: revealed || !onChoose ? undefined : () => onChoose(i),
     }, [
       el('span', { class: 'option-key', text: LETTERS[i] ?? String(i + 1) }),
-      el('span', { class: 'option-body', text: opt }),
+      el('span', { class: 'option-body' }, renderInline(opt)),
       revealed && i === revealed.answerIndex
         ? el('span', { class: 'option-mark', attrs: { 'aria-hidden': 'true' } }, [icon('check', 18)])
         : revealed && i === revealed.chosen

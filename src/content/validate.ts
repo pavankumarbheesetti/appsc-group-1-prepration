@@ -782,3 +782,485 @@ export function validateAllContent(): FileValidationResult[] {
   });
   return results;
 }
+
+/* ========================================================================== */
+/* Content-formatting LINT                                                     */
+/*                                                                             */
+/* A readability lint over authored PROSE (note bodies + keyPoints, MCQ        */
+/* question/options/explanation, curated card front/back, and mind-map leaves).*/
+/* It is advisory: `validate:content` prints each hit as a WARNING and counts  */
+/* it, so finalizers can require the count to reach 0, and a `--strict` run     */
+/* promotes the hits to a non-zero exit. The rules deliberately mirror the      */
+/* reader's pain points: textbook JARGON tokens, BARE carets (exponents written */
+/* without braces), broken markdown TABLES, and a short OBVIOUS-TYPO list.      */
+/* ========================================================================== */
+
+/** The four lint rule families. */
+export type LintRule = 'jargon' | 'bare-caret' | 'table-shape' | 'typo';
+
+/** One lint hit, carrying enough context for a content agent to fix it. */
+export interface LintFinding {
+  /** Glob-style bank path, e.g. `/content/mental-ability/.../notes-....json`. */
+  file: string;
+  /** The item id (or mind-map branch label) the text belongs to. */
+  itemId: string;
+  /** Which field held the offending text, e.g. `body`, `options[2]`, `front`. */
+  field: string;
+  /** The rule that fired. */
+  rule: LintRule;
+  /** A short, single-line excerpt around the match. */
+  snippet: string;
+}
+
+/**
+ * JARGON tokens that read as textbook shorthand in running prose. Each is a
+ * global regex so every occurrence is reported. The dotted abbreviations use a
+ * LEADING `\b` only (they already end in a period, where a trailing `\b` would
+ * fail against a following space), with a negative word-char lookahead so they
+ * are not matched mid-token. @internal
+ */
+const JARGON_RULES: readonly RegExp[] = [
+  /\biff\b/g,
+  /⇔/g,
+  /⇒/g,
+  /∴/g,
+  /∵/g,
+  /≡/g,
+  /\bw\.r\.t\.(?!\w)/g,
+  /\bs\.t\.(?!\w)/g,
+];
+
+/** A BARE caret: an exponent written without braces, e.g. `2^80`, `10^-4`. @internal */
+const BARE_CARET_RE = /\w\^(?!\{)/g;
+
+/** The short OBVIOUS-TYPO allow… denylist (case-insensitive, whole words). @internal */
+const TYPO_RE = /\b(?:teh|recieve|seperate|occured|acheive|untill|wich)\b/gi;
+
+/** A GFM table separator row, e.g. `|---|:--:|` (must contain a dash). @internal */
+function isLintTableSeparator(line: string): boolean {
+  return /^\s*\|?\s*:?-{1,}:?\s*(?:\|\s*:?-{1,}:?\s*)*\|?\s*$/.test(line) && line.includes('-');
+}
+
+/** Split a pipe-table row into trimmed cells, tolerating optional edge pipes. @internal */
+function lintTableCells(line: string): string[] {
+  let s = line.trim();
+  if (s.startsWith('|')) s = s.slice(1);
+  if (s.endsWith('|')) s = s.slice(0, -1);
+  return s.split('|').map((c) => c.trim());
+}
+
+/** A short, single-line excerpt around `[index, index+length)`. @internal */
+function snippetAt(text: string, index: number, length: number): string {
+  const start = Math.max(0, index - 24);
+  const end = Math.min(text.length, index + length + 24);
+  return `${start > 0 ? '…' : ''}${text.slice(start, end)}${end < text.length ? '…' : ''}`
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Scan one text value for every lint rule and return the hits (rule + snippet).
+ * Pure and side-effect-free, so each rule is unit-testable in isolation.
+ */
+export function lintText(text: string): { rule: LintRule; snippet: string }[] {
+  const found: { rule: LintRule; snippet: string }[] = [];
+
+  for (const re of JARGON_RULES) {
+    re.lastIndex = 0;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(text)) !== null) {
+      found.push({ rule: 'jargon', snippet: snippetAt(text, m.index, m[0].length) });
+      if (m[0].length === 0) re.lastIndex += 1; // defensive (never for these)
+    }
+  }
+
+  BARE_CARET_RE.lastIndex = 0;
+  for (let m = BARE_CARET_RE.exec(text); m !== null; m = BARE_CARET_RE.exec(text)) {
+    found.push({ rule: 'bare-caret', snippet: snippetAt(text, m.index, m[0].length) });
+  }
+
+  TYPO_RE.lastIndex = 0;
+  for (let m = TYPO_RE.exec(text); m !== null; m = TYPO_RE.exec(text)) {
+    found.push({ rule: 'typo', snippet: snippetAt(text, m.index, m[0].length) });
+  }
+
+  // TABLE-SHAPE: for each markdown table, flag a separator whose column count
+  // differs from the header, and any body row whose cell count differs from it.
+  const lines = text.split('\n');
+  for (let i = 0; i < lines.length; i += 1) {
+    const header = lines[i];
+    const sep = lines[i + 1];
+    if (
+      header === undefined ||
+      !header.includes('|') ||
+      sep === undefined ||
+      !isLintTableSeparator(sep)
+    ) {
+      continue;
+    }
+    const cols = lintTableCells(header).length;
+    const sepCols = lintTableCells(sep).length;
+    if (sepCols !== cols) {
+      found.push({
+        rule: 'table-shape',
+        snippet: `header ${cols} cols vs separator ${sepCols} cols: ${header.trim()}`,
+      });
+    }
+    let j = i + 2;
+    for (; j < lines.length; j += 1) {
+      const row = lines[j];
+      if (row === undefined || row.trim() === '' || !row.includes('|')) break;
+      const n = lintTableCells(row).length;
+      if (n !== cols) {
+        found.push({
+          rule: 'table-shape',
+          snippet: `row ${n} cells, expected ${cols}: ${row.trim()}`,
+        });
+      }
+    }
+    i = j - 1;
+  }
+
+  return found;
+}
+
+/**
+ * The prose fields of a single bank, as `(itemId, field, text)` tuples, per the
+ * lint scope: note `body` + `keyPoints`, MCQ `question`/`options`/`explanation`,
+ * curated card `front`/`back`, and mind-map leaves. @internal
+ */
+function lintTargets(bank: unknown): { itemId: string; field: string; text: string }[] {
+  const out: { itemId: string; field: string; text: string }[] = [];
+  const b = bank as { kind?: string; items?: unknown[]; branches?: unknown[]; root?: string };
+
+  if (b.kind === 'notes' && Array.isArray(b.items)) {
+    for (const it of b.items as Array<{ id?: string; body?: string; keyPoints?: string[] }>) {
+      const id = it.id ?? '(no id)';
+      if (typeof it.body === 'string') out.push({ itemId: id, field: 'body', text: it.body });
+      if (Array.isArray(it.keyPoints)) {
+        it.keyPoints.forEach((kp, k) => {
+          if (typeof kp === 'string') out.push({ itemId: id, field: `keyPoints[${k}]`, text: kp });
+        });
+      }
+    }
+  } else if (b.kind === 'mcq' && Array.isArray(b.items)) {
+    for (const it of b.items as Array<{
+      id?: string;
+      question?: string;
+      options?: string[];
+      explanation?: string;
+    }>) {
+      const id = it.id ?? '(no id)';
+      if (typeof it.question === 'string') out.push({ itemId: id, field: 'question', text: it.question });
+      if (Array.isArray(it.options)) {
+        it.options.forEach((opt, k) => {
+          if (typeof opt === 'string') out.push({ itemId: id, field: `options[${k}]`, text: opt });
+        });
+      }
+      if (typeof it.explanation === 'string') {
+        out.push({ itemId: id, field: 'explanation', text: it.explanation });
+      }
+    }
+  } else if (b.kind === 'cards' && Array.isArray(b.items)) {
+    for (const it of b.items as Array<{ id?: string; front?: string; back?: string }>) {
+      const id = it.id ?? '(no id)';
+      if (typeof it.front === 'string') out.push({ itemId: id, field: 'front', text: it.front });
+      if (typeof it.back === 'string') out.push({ itemId: id, field: 'back', text: it.back });
+    }
+  } else if (b.kind === 'mindmap' && Array.isArray(b.branches)) {
+    (b.branches as Array<{ label?: string; leaves?: string[] }>).forEach((br, bi) => {
+      const label = br.label ?? `branch[${bi}]`;
+      if (Array.isArray(br.leaves)) {
+        br.leaves.forEach((leaf, li) => {
+          if (typeof leaf === 'string') {
+            out.push({ itemId: label, field: `branches[${bi}].leaves[${li}]`, text: leaf });
+          }
+        });
+      }
+    });
+  }
+  return out;
+}
+
+/**
+ * Run the content-formatting lint over every bank on disk and return a flat list
+ * of findings. Shared by the `validate:content` reporter (as warnings) and by
+ * the Vitest suite. Never throws for content problems — unparseable JSON is
+ * simply skipped (the schema gate reports it separately).
+ */
+export function lintAllContent(): LintFinding[] {
+  const findings: LintFinding[] = [];
+  for (const abs of walkJsonFiles(CONTENT_DIR)) {
+    const file = toGlobPath(abs);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(readFileSync(abs, 'utf8')) as unknown;
+    } catch {
+      continue; // the schema gate reports unparseable JSON
+    }
+    for (const { itemId, field, text } of lintTargets(raw)) {
+      for (const { rule, snippet } of lintText(text)) {
+        findings.push({ file, itemId, field, rule, snippet });
+      }
+    }
+  }
+  findings.sort((a, b) => a.file.localeCompare(b.file) || a.itemId.localeCompare(b.itemId));
+  return findings;
+}
+
+/* ========================================================================== */
+/* EXPLANATION-STRUCTURE lint                                                  */
+/*                                                                             */
+/* An OBJECTIVE lint over authored NOTE bodies, checking that explanations are */
+/* organised the way the GOLD-EXEMPLAR requires (idea → slow way → formula),   */
+/* rather than left as a bare rule. Like the formatting lint it is advisory:   */
+/* `validate:content` prints each hit as a WARNING and counts it per file, and */
+/* it is deliberately NOT wired into `npm run check` as a hard gate yet.       */
+/*                                                                             */
+/* Three rule families (see the task spec / GOLD-EXEMPLAR.md):                 */
+/*   1. MENT notes (subjectCode MENT, excluding items tagged `mains`): every   */
+/*      body must be organised into `### ` sections; each section must carry   */
+/*      the seven bold sub-headings and be >= 220 words. A note with NO `### `  */
+/*      section but > 0 formula characters is THIN_RULE (a rule dumped with no  */
+/*      explanation around it).                                                */
+/*   2. Theory notes (HIST/POL/ECON/GEO/SCI/CA, excluding `mains`): each note   */
+/*      must contain 'In one line' + 'TL;DR' + >= 1 of 'The story' /            */
+/*      'Terms explained' → else MISSING_STRUCTURE.                            */
+/*   3. Any note using a hard symbol (⌊ ⌈ ∑ ∏ ≡ or the word `mod`) must         */
+/*      explain it with the phrase 'means' inside the SAME `### ` section →     */
+/*      else UNEXPLAINED_SYMBOL.                                               */
+/* ========================================================================== */
+
+/** The structure-lint flags. @see auditAllStructure */
+export type StructureFlag =
+  | 'THIN_RULE'
+  | 'MISSING_SUBHEADING'
+  | 'SHORT_SECTION'
+  | 'MISSING_STRUCTURE'
+  | 'UNEXPLAINED_SYMBOL';
+
+/** One structure-lint hit against a single note item. */
+export interface StructureFinding {
+  /** Glob-style bank path. */
+  file: string;
+  /** The note item id. */
+  itemId: string;
+  /** The owning subject code (MENT / HIST / …). */
+  subjectCode: string;
+  /** Which structural rule fired. */
+  flag: StructureFlag;
+  /** Human-readable detail (which section / sub-heading / word count). */
+  detail: string;
+}
+
+/** The seven required bold sub-headings for a MENT `### ` section (case-insensitive, substring). @internal */
+const MENT_SUBHEADINGS: readonly string[] = [
+  'The idea in one sentence',
+  'Do it the slow way first',
+  'What the symbols mean',
+  'The formula',
+  'Exam-level example',
+  'Common traps',
+  'TL;DR',
+];
+
+/** Minimum words per MENT `### ` section. @internal */
+const MENT_MIN_SECTION_WORDS = 220;
+
+/** The theory subject codes rule 2 applies to. @internal */
+const THEORY_SUBJECTS: ReadonlySet<string> = new Set([
+  'HIST',
+  'POL',
+  'ECON',
+  'GEO',
+  'SCI',
+  'CA',
+]);
+
+/** A note-like value — the only fields the structure lint reads. */
+export interface StructureNoteLike {
+  subjectCode: string;
+  body: string;
+  tags?: string[];
+}
+
+/** Count the formula characters/tokens (⌊ ⌈ = ÷ × ^{ mod) in `text`. @internal */
+function formulaCharCount(text: string): number {
+  let n = 0;
+  for (const ch of ['⌊', '⌈', '=', '÷', '×']) {
+    n += text.split(ch).length - 1;
+  }
+  n += text.split('^{').length - 1;
+  n += (text.match(/\bmod\b/g) ?? []).length;
+  return n;
+}
+
+/** Count whitespace-delimited words in `text`. @internal */
+function wordCount(text: string): number {
+  return (text.trim().match(/\S+/g) ?? []).length;
+}
+
+/** True when any `**bold**` span in `text` contains `phrase` (case-insensitive). @internal */
+function hasBoldSubheading(text: string, phrase: string): boolean {
+  const needle = phrase.toLowerCase();
+  const re = /\*\*([^*]+)\*\*/g;
+  for (let m = re.exec(text); m !== null; m = re.exec(text)) {
+    if ((m[1] ?? '').toLowerCase().includes(needle)) return true;
+  }
+  return false;
+}
+
+/**
+ * Split a note body into `### ` segments. The text BEFORE the first `### ` is
+ * returned as a `(preamble)` segment so the symbol check (rule 3) can still
+ * reason about "the same section" even when a note has no headings at all.
+ * @internal
+ */
+function noteSegments(body: string): { heading: string; text: string }[] {
+  const out: { heading: string; text: string }[] = [];
+  const lines = body.split('\n');
+  let heading = '(preamble)';
+  let buf: string[] = [];
+  const flush = (): void => {
+    if (buf.length > 0) out.push({ heading, text: buf.join('\n') });
+    buf = [];
+  };
+  for (const line of lines) {
+    if (/^### /.test(line)) {
+      flush();
+      heading = line.replace(/^###\s+/, '').trim();
+      buf = [line];
+    } else {
+      buf.push(line);
+    }
+  }
+  flush();
+  return out;
+}
+
+/** The `### ` sections of a body (excludes any leading preamble). @internal */
+function noteSections(body: string): { heading: string; text: string }[] {
+  return noteSegments(body).filter((s) => s.heading !== '(preamble)');
+}
+
+/**
+ * Audit ONE note item against the three structure rules and return its hits.
+ * Pure and side-effect-free, so every rule is unit-testable with a fixture.
+ */
+export function lintNoteStructure(
+  note: StructureNoteLike,
+): { flag: StructureFlag; detail: string }[] {
+  const findings: { flag: StructureFlag; detail: string }[] = [];
+  const isMains = note.tags?.includes('mains') ?? false;
+  const body = note.body ?? '';
+
+  /* ----- Rule 1: MENT notes ------------------------------------------------ */
+  if (note.subjectCode === 'MENT' && !isMains) {
+    const sections = noteSections(body);
+    if (sections.length === 0) {
+      if (formulaCharCount(body) > 0) {
+        findings.push({
+          flag: 'THIN_RULE',
+          detail: 'no `### ` section but contains formula characters (bare rule, no explanation)',
+        });
+      }
+    } else {
+      for (const sec of sections) {
+        const missing = MENT_SUBHEADINGS.filter((h) => !hasBoldSubheading(sec.text, h));
+        if (missing.length > 0) {
+          findings.push({
+            flag: 'MISSING_SUBHEADING',
+            detail: `### ${sec.heading}: missing bold sub-heading(s) ${missing.map((m) => `'${m}'`).join(', ')}`,
+          });
+        }
+        const words = wordCount(sec.text);
+        if (words < MENT_MIN_SECTION_WORDS) {
+          findings.push({
+            flag: 'SHORT_SECTION',
+            detail: `### ${sec.heading}: ${words} words (< ${MENT_MIN_SECTION_WORDS})`,
+          });
+        }
+      }
+    }
+  }
+
+  /* ----- Rule 2: theory notes --------------------------------------------- */
+  if (THEORY_SUBJECTS.has(note.subjectCode) && !isMains) {
+    const hasInOneLine = /in one line/i.test(body);
+    const hasTldr = /tl;dr/i.test(body);
+    const hasStoryOrTerms = /the story/i.test(body) || /terms explained/i.test(body);
+    if (!(hasInOneLine && hasTldr && hasStoryOrTerms)) {
+      const missing: string[] = [];
+      if (!hasInOneLine) missing.push("'In one line'");
+      if (!hasTldr) missing.push("'TL;DR'");
+      if (!hasStoryOrTerms) missing.push("one of 'The story' / 'Terms explained'");
+      findings.push({
+        flag: 'MISSING_STRUCTURE',
+        detail: `missing ${missing.join(', ')}`,
+      });
+    }
+  }
+
+  /* ----- Rule 3: unexplained symbols (all notes) -------------------------- */
+  for (const seg of noteSegments(body)) {
+    const usesSymbol = /[⌊⌈∑∏≡]/.test(seg.text) || /\bmod\b/.test(seg.text);
+    if (usesSymbol && !/means/i.test(seg.text)) {
+      findings.push({
+        flag: 'UNEXPLAINED_SYMBOL',
+        detail: `${seg.heading === '(preamble)' ? '(preamble)' : `### ${seg.heading}`}: uses ⌊/⌈/∑/∏/≡/'mod' without the word 'means' in the same section`,
+      });
+    }
+  }
+
+  return findings;
+}
+
+/**
+ * Run the structure lint over every note bank on disk and return a flat list of
+ * findings. Shared by the `validate:content` reporter (as warnings) and by the
+ * Vitest suite. Never throws — unparseable JSON is skipped (the schema gate
+ * reports it separately). Only `kind:"notes"` banks are scanned.
+ */
+export function auditAllStructure(): StructureFinding[] {
+  const findings: StructureFinding[] = [];
+  for (const abs of walkJsonFiles(CONTENT_DIR)) {
+    const file = toGlobPath(abs);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(readFileSync(abs, 'utf8')) as unknown;
+    } catch {
+      continue; // the schema gate reports unparseable JSON
+    }
+    const bank = raw as { kind?: unknown; subjectCode?: unknown; items?: unknown };
+    if (bank.kind !== 'notes' || !Array.isArray(bank.items)) continue;
+    for (const rawItem of bank.items) {
+      const it = rawItem as {
+        id?: unknown;
+        subjectCode?: unknown;
+        body?: unknown;
+        tags?: unknown;
+      };
+      if (typeof it.body !== 'string') continue;
+      const subjectCode =
+        typeof it.subjectCode === 'string'
+          ? it.subjectCode
+          : typeof bank.subjectCode === 'string'
+            ? bank.subjectCode
+            : '(unknown)';
+      const tags = Array.isArray(it.tags)
+        ? it.tags.filter((t): t is string => typeof t === 'string')
+        : undefined;
+      const itemId = typeof it.id === 'string' ? it.id : '(no id)';
+      for (const { flag, detail } of lintNoteStructure({ subjectCode, body: it.body, tags })) {
+        findings.push({ file, itemId, subjectCode, flag, detail });
+      }
+    }
+  }
+  findings.sort(
+    (a, b) =>
+      a.file.localeCompare(b.file) ||
+      a.itemId.localeCompare(b.itemId) ||
+      a.flag.localeCompare(b.flag),
+  );
+  return findings;
+}

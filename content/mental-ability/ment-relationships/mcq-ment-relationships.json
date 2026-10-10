@@ -16,7 +16,7 @@
         "Father-in-law"
       ],
       "answerIndex": 2,
-      "explanation": "Your father's father is your **grandfather** (paternal grandfather).\n\n**Why not the others**\n- Uncle — the brother of your father or mother, one generation above you (not two).\n- Nephew — the son of your sibling, one generation below you.\n- Father-in-law — the father of your spouse, gained through marriage.\n\n**Key facts**\n- Move up one generation = parent; up two = grandparent.\n- Paternal = father's side; maternal = mother's side.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based).*",
+      "explanation": "Move up the generations one step at a time. Your father is one step above you (a parent). Your father's father is one more step up, which makes him two generations above you, and that is a grandfather. Since he is on your father's side, he is your paternal grandfather.\n\n**Why not the others**\n- Uncle — that is the brother of your father or mother, only one generation above you, not two.\n- Nephew — that is the son of your sibling, one generation below you.\n- Father-in-law — that is the father of your spouse, gained through marriage, not by blood.\n\n**Key facts**\n- One step up is a parent; two steps up is a grandparent.\n- Paternal means the father's side, maternal the mother's side.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based)",
       "verified": true,
       "covers": [
@@ -40,7 +40,7 @@
         "Grandmother"
       ],
       "answerIndex": 1,
-      "explanation": "Maternal grandmother = your mother's mother; her **only daughter** must be your **mother** (that is the line through which you descend from her).\n\n**Why not the others**\n- Aunt — would be your mother's sister, but she is the *only* daughter, so no such sister exists.\n- Sister — a child of your own parents, not of your grandmother directly.\n- Grandmother — the person we started from, one generation higher.\n\n**Key facts**\n- 'Maternal' fixes the side: work up to mother's mother, then down her only daughter.\n- 'Only' removes sibling alternatives — a key trap-defusing word.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based).*",
+      "explanation": "Work up to the maternal grandmother, then back down. Your maternal grandmother is your mother's mother. The question says she has only one daughter, so that daughter cannot be an aunt — she must be the very person through whom you descend, that is, your mother.\n```\n   maternal grandmother\n          |\n      her only daughter = your mother\n          |\n         you\n```\n\n**Why not the others**\n- Aunt — an aunt would be your mother's sister, but the grandmother has only one daughter, so no such sister exists.\n- Sister — a sister is a child of your own parents, not a direct child of your grandmother.\n- Grandmother — that is the person we started from, one generation higher.\n\n**Key facts**\n- \"Maternal\" fixes the side: go up to the mother's mother, then down her only daughter.\n- \"Only\" removes any sibling alternative, which defuses the trap.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based)",
       "verified": true,
       "covers": [
@@ -65,7 +65,7 @@
         "A married couple"
       ],
       "answerIndex": 3,
-      "explanation": "The horizontal '=' link is the standard notation for a **married couple** (spouses); a vertical line below it drops down to their children.\n\n**Why not the others**\n- Siblings — shown by a horizontal bracket linking children of the same parents, not by '='.\n- Parent and child — shown by a vertical line, not a horizontal one.\n- Cousins — not drawn with a direct link; they connect only via shared grandparents.\n\n**Key facts**\n- Square = male, circle = female.\n- '=' horizontal = marriage; '|' vertical = descent (parent→child).\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Chart).*",
+      "explanation": "In a family chart each person is a box: a square for a male, a circle for a female. A horizontal double line joining two people shows they are married, and a vertical line drawn down from that couple leads to their children. So the \"=\" link means a married couple.\n\n**Why not the others**\n- Siblings — these are shown by a horizontal bracket joining children of the same parents, not by \"=\".\n- Parent and child — this is shown by a vertical line going down, not a horizontal one.\n- Cousins — these are never joined directly; they connect only through shared grandparents.\n\n**Key facts**\n- Square means male, circle means female.\n- Horizontal \"=\" means marriage; a vertical line means descent from parent to child.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Chart).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Chart)",
       "verified": true,
       "covers": [
@@ -88,7 +88,7 @@
         "Niece"
       ],
       "answerIndex": 0,
-      "explanation": "Grandmother's **only child** is Rohit's own parent (father or mother). The lady is the **daughter of Rohit's parent**, hence Rohit's **sister**.\n\n**Why not the others**\n- Mother — the lady is a daughter of Rohit's parent, i.e. Rohit's generation, not one above.\n- Aunt — would need the grandmother to have another child (the lady's parent), but she has only one.\n- Niece — would need the lady to be a child of Rohit's sibling, which is not stated.\n\n**Key facts**\n- 'Only child of my grandmother' = my father or my mother.\n- Daughter of my parent = my sister.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Introduction).*",
+      "explanation": "Resolve the inner phrase first. \"The only child of my grandmother\" is Rohit's own parent, because his grandmother had just one child. The lady is the daughter of that parent, so she is a daughter of Rohit's own father or mother — that is, Rohit's sister.\n```\n     grandmother\n          |\n   her only child = Rohit's parent\n        /      \\\n     Rohit     the lady (daughter)\n```\n\n**Why not the others**\n- Mother — the lady is a daughter of Rohit's parent, so she is in Rohit's own generation, not one above.\n- Aunt — an aunt would need the grandmother to have a second child, but she has only one.\n- Niece — a niece would be the daughter of Rohit's sibling, which the statement never says.\n\n**Key facts**\n- \"Only child of my grandmother\" is the speaker's father or mother.\n- The daughter of one's parent is one's sister.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Introduction).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Introduction)",
       "verified": true,
       "covers": [
@@ -111,7 +111,7 @@
         "Grandmother"
       ],
       "answerIndex": 2,
-      "explanation": "The **only daughter of Latha's mother** is Latha herself (Latha is female and the sole daughter). So the man's mother is Latha — Latha is his **mother**.\n\n**Why not the others**\n- Sister — would require the man and Latha to share parents; instead Latha *is* his mother.\n- Aunt — would need the man's mother to be Latha's sister, but Latha's mother has only one daughter.\n- Grandmother — Latha is only one generation above the man, not two.\n\n**Key facts**\n- 'Only daughter of my mother' = the (female) speaker herself.\n- Resolve self-reference first; it collapses the whole chain.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference).*",
+      "explanation": "Collapse the self-referring phrase first. \"The only daughter of my mother\", spoken by Latha, must be Latha herself, since she is female and the sole daughter. So \"his mother is the only daughter of my mother\" simply means \"the man's mother is Latha\". Therefore Latha is the man's mother.\n```\n   Latha's mother\n        |\n   Latha (only daughter) = the man's mother\n        |\n       the man\n```\n\n**Why not the others**\n- Sister — this would need Latha and the man to share parents, but instead Latha is his mother.\n- Aunt — this would need the man's mother to be Latha's sister, yet Latha's mother has only one daughter.\n- Grandmother — Latha is only one generation above the man, not two.\n\n**Key facts**\n- \"Only daughter of my mother\" is the female speaker herself.\n- Resolve the self-reference first; it collapses the whole chain.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference)",
       "verified": true,
       "covers": [
@@ -134,7 +134,7 @@
         "P × R − Q"
       ],
       "answerIndex": 1,
-      "explanation": "Paternal uncle = father's brother, so P must be the **brother of Q's father**. In 'P − R × Q': R × Q → R is Q's father; P − R → P is R's brother. Hence P is Q's father's brother = **paternal uncle**.\n\n**Why not the others**\n- P + R × Q — P is mother of R and R is father of Q, so P is Q's paternal grandmother.\n- P − R + Q — R is Q's mother, so P (R's brother) is Q's *maternal* uncle, not paternal.\n- P × R − Q — R is brother of Q and P is father of R, so P is simply Q's father.\n\n**Key facts**\n| Symbol | Meaning |\n|---|---|\n| A + B | A is mother of B |\n| A − B | A is brother of B |\n| A × B | A is father of B |\n| A ÷ B | A is sister of B |\n\nPaternal uncle needs the link to reach Q through the **father** (×), not the mother (+).\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded).*",
+      "explanation": "A paternal uncle is the brother of someone's father, so P must be the brother of Q's father. Test \"P − R × Q\": the right link R × Q means R is the father of Q, and the left link P − R means P is the brother of R. So P is the brother of Q's father, which is exactly a paternal uncle.\n```\n   P --(brother)-- R\n                    |\n                    Q   (R is Q's father, P is R's brother)\n```\n\n**Why not the others**\n- P + R × Q — here P is the mother of R and R is the father of Q, so P is Q's paternal grandmother.\n- P − R + Q — here R is the mother of Q, so P (R's brother) is Q's maternal uncle, not paternal.\n- P × R − Q — here R is the brother of Q and P is the father of R, so P is simply Q's father.\n\n**Key facts**\n| Symbol | Meaning |\n|---|---|\n| A + B | A is mother of B |\n| A − B | A is brother of B |\n| A × B | A is father of B |\n| A ÷ B | A is sister of B |\n\nA paternal uncle must reach Q through the father (×), not the mother (+).\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded)",
       "verified": true,
       "covers": [
@@ -158,7 +158,7 @@
         "Husband"
       ],
       "answerIndex": 3,
-      "explanation": "P × Q → P is Q's father. Q ÷ R → Q is R's daughter, so R is also Q's parent. Since Q's father is P, R must be Q's **mother**; therefore P (father) is the **husband** of R.\n\n**Why not the others**\n- Brother — nothing links P and R as siblings.\n- Son — P is a parent of Q, not a child of R.\n- Father — P is the father of Q, not of R.\n\n**Key facts**\n- Two people who are both parents of the same child are spouses.\n- Read the chain right-to-left through the shared child Q.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded).*",
+      "explanation": "Read the chain link by link. \"P × Q\" means P is the father of Q. \"Q ÷ R\" means Q is the daughter of R, so R is also a parent of Q. Q already has P as father, so R must be Q's mother. Two people who are both parents of the same child are married, so P is the husband of R.\n```\n   P --(husband)-- R\n        \\         /\n          Q (child of both)\n```\n\n**Why not the others**\n- Brother — nothing in the chain links P and R as siblings.\n- Son — P is a parent of Q, not a child of R.\n- Father — P is the father of Q, not of R.\n\n**Key facts**\n- Two people who are both parents of the same child are spouses.\n- Read the chain through the shared child Q.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded)",
       "verified": true,
       "covers": [
@@ -182,7 +182,7 @@
         "Niece"
       ],
       "answerIndex": 0,
-      "explanation": "A and B are siblings (A is B's sister → A is female). C is their mother, and D is C's father, i.e. A's maternal grandfather. So A is D's **granddaughter**.\n\n**Why not the others**\n- Grandmother — D is two generations above A, not below.\n- Daughter — A is D's daughter's child, one more generation down.\n- Niece — would need A to be the child of D's sibling, not of D's daughter.\n\n**Key facts**\n- Chain: D → (father of) C → (mother of) A.\n- Two steps down from D = grandchild; A female = granddaughter.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Tree).*",
+      "explanation": "Draw the tree from the clues. A is B's sister, so A is female and A and B are siblings. C is their mother. D is C's father, so D is the grandparent of A and B through their mother.\n```\n          D\n          |\n          C  (mother)\n         / \\\n        A   B\n```\nA sits two descent steps below D and is female, so A is D's granddaughter.\n\n**Why not the others**\n- Grandmother — D is two generations above A, not below.\n- Daughter — A is D's daughter's child, which is one more generation down than a daughter.\n- Niece — a niece would be the child of D's sibling, not of D's daughter.\n\n**Key facts**\n- The chain is D (father of) C (mother of) A.\n- Two steps down from D is a grandchild; A female makes it granddaughter.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Tree).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Tree)",
       "verified": true,
       "covers": [
@@ -206,7 +206,7 @@
         "Great-grandmother"
       ],
       "answerIndex": 1,
-      "explanation": "Chain A → F → B → C spans three descent steps: A is F's father, F is B's father (A is B's grandfather), and B is C's mother, so A is C's **great-grandfather**.\n\n**Why not the others**\n- Grandfather — that is A's relation to B, one generation short of C.\n- Father — A is C's ancestor three generations up, not one.\n- Great-grandmother — A is male ('father of F'), so grandmother forms are wrong.\n\n**Key facts**\n- Count descent links: 3 links up = great-grandparent.\n- Track gender from the given words ('father' → male).\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations).*",
+      "explanation": "Count the descent steps down the chain. A is the father of F, F is the father of B, and B is the mother of C.\n```\nA\n|\nF\n|\nB\n|\nC\n```\nFrom A to C there are three downward steps, and one step is a parent, two a grandparent, three a great-grandparent. A is male (he is a \"father\"), so A is C's great-grandfather.\n\n**Why not the others**\n- Grandfather — that is A's relation to B, one generation short of C.\n- Father — A is three generations above C, not one.\n- Great-grandmother — A is male, so any grandmother form is wrong.\n\n**Key facts**\n- Count descent links: three links up is a great-grandparent.\n- Track gender from the given words; \"father\" fixes A as male.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations)",
       "verified": true,
       "covers": [
@@ -229,7 +229,7 @@
         "Grandmother"
       ],
       "answerIndex": 2,
-      "explanation": "R is the mother of Q, and P is Q's husband; the mother of one's spouse is one's **mother-in-law**, so R is P's mother-in-law.\n\n**Why not the others**\n- Mother — R is P's mother by *marriage*, not by blood; 'mother' would mean P's own parent.\n- Sister-in-law — that is the spouse's sister or brother's wife, not the spouse's mother.\n- Grandmother — R is one generation above P, an in-law, not a grandparent.\n\n**Key facts**\n- Relatives gained through marriage carry the '-in-law' tag.\n- Spouse's parent = parent-in-law.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws).*",
+      "explanation": "R is the mother of Q, and P is Q's husband. The mother of one's spouse is one's mother-in-law, so R is P's mother-in-law.\n```\n   R (mother)\n      |\n      Q --(married)-- P\n```\n\n**Why not the others**\n- Mother — R is related to P only through marriage, not by blood; \"mother\" would mean P's own parent.\n- Sister-in-law — that is a spouse's sister or a brother's wife, not the spouse's mother.\n- Grandmother — R is one generation above P as an in-law, not a grandparent.\n\n**Key facts**\n- Relatives gained through marriage carry the \"in-law\" tag.\n- A spouse's parent is a parent-in-law.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws)",
       "verified": true,
       "covers": [
@@ -252,7 +252,7 @@
         "Both statements together are still not sufficient"
       ],
       "answerIndex": 3,
-      "explanation": "The exact relation needs M's **gender** (son vs daughter). Statement I gives 'child' (gender unknown); Statement II fixes N as the mother but says nothing about M's gender. Even together, M could be a son or a daughter, so the exact relation cannot be pinned down — **both together are still not sufficient**.\n\n**Why not the others**\n- 'I alone' — 'child' leaves son/daughter open; not sufficient.\n- 'II alone' — describes N, not M's relation at all.\n- 'Both together sufficient' — combining them still leaves M's gender undetermined.\n\n**Key facts**\n- In DS blood-relation items, always check whether the target person's **gender** is fixed.\n- 'Child' / 'parent' are gender-neutral traps.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Data Sufficiency in Blood Relation.*",
+      "explanation": "The exact relation needs M's gender (son or daughter). Statement I says M is the \"child\" of N, which leaves the gender open. Statement II fixes N as the mother but says nothing about M. Even combining them, M could be a son or a daughter, so the exact relation cannot be named.\n```\n   N (mother)\n      |\n      M = son OR daughter?  (still unknown)\n```\nSo both statements together are still not sufficient.\n\n**Why not the others**\n- Statement I alone — \"child\" leaves son or daughter open, so it is not sufficient.\n- Statement II alone — it describes N, not M's relation at all.\n- Both together sufficient — combining them still leaves M's gender undetermined.\n\n**Key facts**\n- In data-sufficiency relation items, check whether the target person's gender is fixed.\n- \"Child\" and \"parent\" are gender-neutral traps.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Data Sufficiency in Blood Relation.*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Data Sufficiency in Blood Relation",
       "verified": true,
       "covers": [
@@ -276,7 +276,7 @@
         "Grandfather"
       ],
       "answerIndex": 1,
-      "explanation": "D is the daughter of A, and E is A's brother; the brother of one's father is one's paternal **uncle**, so E is D's uncle.\n\n**Why not the others**\n- Father — D's father is A, not E.\n- Brother — E and D belong to different generations (E is A's generation).\n- Grandfather — E is one generation above D, not two.\n\n**Key facts**\n- C, B and D are all children of A (same generation).\n- Parent's brother = paternal uncle.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle).*",
+      "explanation": "Place everyone on the tree. A is the father of C; B is C's sister and D is A's daughter, so C, B and D are all A's children (one generation). E is A's brother, so E is in A's own generation.\n```\n   E --(brother)-- A\n                   |\n            +------+------+\n            C      B      D\n```\nD is A's daughter, and E is A's brother, so E is the brother of D's father, which is a paternal uncle.\n\n**Why not the others**\n- Father — D's father is A, not E.\n- Brother — E is in A's generation, one above D, so not D's brother.\n- Grandfather — E is only one generation above D, not two.\n\n**Key facts**\n- C, B and D are all children of A, so they share one generation.\n- A parent's brother is a paternal uncle.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle)",
       "verified": true,
       "covers": [
@@ -300,7 +300,7 @@
         "1 and 3 only"
       ],
       "answerIndex": 3,
-      "explanation": "Grandfather's **only son** is Nisha's father. The boy is that son's son, i.e. Nisha's **brother**, so statement 1 is correct. Since the father is described as the grandfather's only son, statement 3 is also correct. The boy cannot be a cousin, because a cousin would require the grandfather to have another son.\n\n**Why not the others**\n- '2 only' — a cousin needs a second son of the grandfather, contradicting 'only son'.\n- '1 only' — omits statement 3, which is directly asserted.\n- '1 and 2 only' — statements 1 and 2 are mutually exclusive; the boy is a brother, not a cousin.\n\n**Key facts**\n- 'Only son' blocks any cousin branch on that side.\n- Son of my father = my brother.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Traps).*",
+      "explanation": "Resolve \"grandfather's only son\" first: since the grandfather has only one son, that son is Nisha's father. The boy is the son of that man, so the boy is Nisha's brother — statement 1 is correct. The description itself says Nisha's father is the grandfather's only son, so statement 3 is correct. A cousin would need the grandfather to have a second son, which \"only son\" forbids, so statement 2 is false.\n```\n     grandfather\n          |\n   only son = Nisha's father\n        /      \\\n    Nisha      the boy (brother)\n```\n\n**Why not the others**\n- 2 only — a cousin needs a second son of the grandfather, contradicting \"only son\".\n- 1 only — this omits statement 3, which is directly asserted.\n- 1 and 2 only — statements 1 and 2 cannot both hold; the boy is a brother, not a cousin.\n\n**Key facts**\n- \"Only son\" blocks any cousin branch on that side.\n- The son of one's father is one's brother.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Traps).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Traps)",
       "verified": true,
       "covers": [
@@ -323,7 +323,7 @@
         "1 only"
       ],
       "answerIndex": 0,
-      "explanation": "B is the **daughter** of C, so B is female (statement 3 correct) and C is B's parent. A is B's child, so C is A's **grandparent** (statement 1 correct). But A is only a 'child' — gender unknown — so A being a *grandson* cannot be concluded (statement 2 uncertain).\n\n**Why not the others**\n- '1, 2 and 3' — wrongly assumes A is male.\n- '2 and 3 only' — grandson is not certain, and it drops the safe statement 1.\n- '1 only' — ignores that 'daughter' fixes B as female.\n\n**Key facts**\n- 'Daughter/son' fixes gender; 'child' does not.\n- Two descent links up = grandparent, regardless of gender.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Gender/Ambiguity).*",
+      "explanation": "Take each statement in turn. B is the \"daughter\" of C, so B is female — statement 3 is correct — and C is B's parent. A is B's child, so C is two steps above A, which makes C a grandparent of A — statement 1 is correct. But A is called only a \"child\", so A's gender is unknown and \"A is the grandson of C\" cannot be concluded — statement 2 is uncertain.\n```\n   C\n   |\n   B (female)\n   |\n   A (child: son or daughter?)\n```\n\n**Why not the others**\n- 1, 2 and 3 — this wrongly assumes A is male.\n- 2 and 3 only — grandson is not certain, and this drops the safe statement 1.\n- 1 only — this ignores that \"daughter\" fixes B as female.\n\n**Key facts**\n- \"Daughter\" or \"son\" fixes gender; \"child\" does not.\n- Two descent links up is a grandparent, whatever the gender.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Gender/Ambiguity).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Gender/Ambiguity)",
       "verified": true,
       "covers": [
@@ -345,7 +345,7 @@
         "Father-in-law"
       ],
       "answerIndex": 2,
-      "explanation": "P # Q → P is Q's father. Q @ R → Q is R's wife, so Q is female (P's daughter) and R is her husband. R is thus the husband of P's daughter = P's **son-in-law**.\n\n**Why not the others**\n- Son — R marries into the family; he is not P's own child.\n- Brother-in-law — that is a spouse's sibling or a sister's husband, not a daughter's husband.\n- Father-in-law — that is how P relates to R, i.e. the reverse direction.\n\n**Key facts**\n- Direction matters: daughter's husband = son-in-law (of the girl's parent).\n- 'A @ B' (wife) fixes A as female and B as her husband.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded/In-laws).*",
+      "explanation": "Read the chain. \"P # Q\" means P is the father of Q. \"Q @ R\" means Q is the wife of R, so Q is female (P's daughter) and R is her husband. R is therefore the husband of P's daughter, which is a son-in-law.\n```\n   P (father)\n     |\n     Q --(wife of)-- R\n```\n\n**Why not the others**\n- Son — R marries into the family and is not P's own child.\n- Brother-in-law — that is a spouse's sibling or a sister's husband, not a daughter's husband.\n- Father-in-law — that is how P relates to R, the opposite direction.\n\n**Key facts**\n- Direction matters: the husband of one's daughter is a son-in-law.\n- \"A @ B\" (wife) fixes A as female and B as her husband.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded/In-laws).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded/In-laws)",
       "verified": true,
       "covers": [
@@ -370,7 +370,7 @@
         "Husband"
       ],
       "answerIndex": 3,
-      "explanation": "Read right to left: C − D → C is D's daughter, so D is a parent of C. B × C → B is C's brother, so B and C are siblings. A + B → A is B's father, hence A is the father of both B and C. Since C's two parents are A (father) and D, D must be C's mother, so A is D's **husband**.\n\n**Why not the others**\n- Father — A is the father of C, not of D.\n- Brother — nothing makes A and D siblings.\n- Son — A is a parent's generation, not a child of D.\n\n**Key facts**\n| Symbol | Meaning |\n|---|---|\n| ÷ | mother of |\n| × | brother of |\n| + | father of |\n| − | daughter of |\n- Two people who are both parents of the same child are spouses.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded).*",
+      "explanation": "Read the chain from the right. \"C − D\" means C is the daughter of D, so D is a parent of C. \"B × C\" means B is the brother of C, so B and C are siblings. \"A + B\" means A is the father of B, so A is the father of both B and C. C's two parents are A (father) and D, so D must be C's mother, and A is the husband of D.\n```\n   A --(husband)-- D\n        \\         /\n       +--+-----+--+\n       B          C\n```\n\n**Why not the others**\n- Father — A is the father of C, not of D.\n- Brother — nothing makes A and D siblings.\n- Son — A is in the parents' generation, not a child of D.\n\n**Key facts**\n| Symbol | Meaning |\n|---|---|\n| ÷ | mother of |\n| × | brother of |\n| + | father of |\n| − | daughter of |\n\nTwo people who are both parents of the same child are spouses.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded)",
       "verified": true,
       "covers": [
@@ -394,7 +394,7 @@
         "His nephew"
       ],
       "answerIndex": 1,
-      "explanation": "Since the speaker has no brother, 'my father's son' can only be the speaker himself. So 'that man's father is the speaker', which makes the man in the photo the speaker's **son**.\n\n**Why not the others**\n- His father — that would reverse the generations; the speaker is the father here.\n- Himself — the photo is of a person whose father is the speaker, i.e. one generation below.\n- His nephew — would need a sibling, but the speaker has none.\n\n**Key facts**\n- With no siblings, 'my father's son' = the speaker himself.\n- 'That man's father is me' ⇒ that man is my son.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference).*",
+      "explanation": "The speaker has no brother or sister, so \"my father's son\" can only be the speaker himself. The clue then reads \"that man's father is the speaker\", which means the man in the photo is the speaker's son.\n```\n   speaker (my father's son = me)\n        |\n     the man in the photo (his son)\n```\n\n**Why not the others**\n- His father — that reverses the generations; here the speaker is the father.\n- Himself — the photo shows someone whose father is the speaker, so one generation below.\n- His nephew — a nephew would need a sibling, but the speaker has none.\n\n**Key facts**\n- With no siblings, \"my father's son\" is the speaker himself.\n- \"That man's father is me\", so that man is my son.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference)",
       "verified": true,
       "covers": [
@@ -418,7 +418,7 @@
         "2 and 3 only"
       ],
       "answerIndex": 2,
-      "explanation": "A and B are the parents; A is father of C and D, so B (A's wife) is their mother — statement 2 is correct. C is the sister of D and D is B's son, so C and D are siblings — statement 3 is correct. E is A's mother, hence the paternal grandmother of C and D — statement 1 is correct. All three follow.\n\n**Why not the others**\n- 3 only — omits the equally valid statements 1 and 2.\n- 1 and 3 only — drops statement 2, though B is clearly the children's mother.\n- 2 and 3 only — drops statement 1, though E is A's mother and so D's grandmother.\n\n**Key facts**\n- A married couple who are the parents of a child are that child's mother and father.\n- A parent's mother = the child's grandmother.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle).*",
+      "explanation": "Build the tree. A and B are a married couple; A is the father of C, and D is the son of B with C as D's sister, so C and D are both children of A and B.\n```\n   E (A's mother)\n   |\n   A --(married)-- B\n        \\         /\n       +--+-----+--+\n       C          D\n```\nStatement 2: B, the wife of their father A, is the mother of C — correct. Statement 3: C and D share parents, so they are siblings — correct. Statement 1: E is A's mother, so E is the paternal grandmother of C and D — correct. All three hold.\n\n**Why not the others**\n- 3 only — this omits the equally valid statements 1 and 2.\n- 1 and 3 only — this drops statement 2, though B is clearly the children's mother.\n- 2 and 3 only — this drops statement 1, though E is A's mother and so D's grandmother.\n\n**Key facts**\n- A married couple who are the parents of a child are that child's mother and father.\n- A parent's mother is the child's grandmother.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle)",
       "verified": true,
       "covers": [
@@ -442,7 +442,7 @@
         "Sister"
       ],
       "answerIndex": 0,
-      "explanation": "A is the mother of B and C is the father of B (B is C's son), so A and C are the parents — i.e. spouses. C is the father of D and E (D is E's sister), so E is C's child, and therefore A is the **mother** of E.\n\n**Why not the others**\n- Aunt — A is a parent of E, not a parent's sibling.\n- Grandmother — A is one generation above E, not two.\n- Sister — A belongs to the parents' generation, not E's.\n\n**Key facts**\n- Both parents of the same child (B) are husband and wife.\n- All children of C (D and E) are also children of C's wife A.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations).*",
+      "explanation": "A is the mother of B, and C is the father of B (B is C's son), so A and C are both parents of B and therefore spouses. C is the father of D and E (D is E's sister), so E is C's child, and A — as C's wife — is also E's mother.\n```\n   A --(married)-- C\n        \\         /\n      +--+---+---+--+\n      B      D      E\n```\n\n**Why not the others**\n- Aunt — A is a parent of E, not a parent's sibling.\n- Grandmother — A is one generation above E, not two.\n- Sister — A is in the parents' generation, not E's.\n\n**Key facts**\n- Both parents of the same child (B) are husband and wife.\n- All of C's children (D and E) are also children of C's wife A.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations)",
       "verified": true,
       "covers": [
@@ -466,7 +466,7 @@
         "Sister-in-law"
       ],
       "answerIndex": 3,
-      "explanation": "Suresh is Mohan's brother and Priya is Suresh's sister, so Priya is also Mohan's sister. Rekha is Mohan's wife, and the husband's sister is a **sister-in-law**, so Priya is Rekha's sister-in-law.\n\n**Why not the others**\n- Sister — Priya and Rekha are related only through marriage, not by blood.\n- Daughter-in-law — that is a son's wife, a different relation.\n- Aunt — Priya is of the same generation as Rekha, not one above.\n\n**Key facts**\n- Siblings of one's spouse are one's brothers/sisters-in-law.\n- Priya (Mohan's sister) → sister-in-law of Mohan's wife Rekha.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws).*",
+      "explanation": "Suresh is Mohan's brother and Priya is Suresh's sister, so Priya is also Mohan's sister. Rekha is Mohan's wife, and the sister of one's husband is a sister-in-law, so Priya is Rekha's sister-in-law.\n```\n   Priya -- Suresh -- Mohan --(married)-- Rekha\n   (all three siblings)              (wife)\n```\n\n**Why not the others**\n- Sister — Priya and Rekha are related only through marriage, not by blood.\n- Daughter-in-law — that is a son's wife, a different relation.\n- Aunt — Priya is in the same generation as Rekha, not one above.\n\n**Key facts**\n- The siblings of one's spouse are one's brothers-in-law and sisters-in-law.\n- Priya, being Mohan's sister, is the sister-in-law of Mohan's wife Rekha.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws)",
       "verified": true,
       "covers": [
@@ -490,7 +490,7 @@
         "Both together are still not sufficient"
       ],
       "answerIndex": 1,
-      "explanation": "The question asks how T is related to S, which needs T's gender. Statement I ('T is the daughter of S') fixes T as female and gives the relation directly — **daughter** — so I alone is sufficient. Statement II ('S is the father of T') describes S and leaves T's gender open (son or daughter), so II alone is not sufficient.\n\n**Why not the others**\n- II alone sufficient — it does not fix T's gender, so T's relation to S is ambiguous.\n- Either alone — II fails, so 'either' is wrong.\n- Both still not sufficient — I already settles it on its own.\n\n**Key facts**\n- To name a person's relation you must know that person's gender.\n- 'Daughter/son' fixes gender; 'father of T' fixes only S's gender, not T's.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Data Sufficiency).*",
+      "explanation": "The question asks how T relates to S, which needs T's gender. Statement I says \"T is the daughter of S\", which fixes T as female and gives the relation directly as daughter, so statement I alone is sufficient. Statement II says \"S is the father of T\", which fixes S's gender but leaves T open to being a son or a daughter, so statement II alone is not sufficient.\n\n**Why not the others**\n- Statement II alone sufficient — it does not fix T's gender, so T's relation stays ambiguous.\n- Either statement alone — statement II fails, so \"either\" is wrong.\n- Both still not sufficient — statement I already settles it on its own.\n\n**Key facts**\n- To name a person's relation you must know that person's gender.\n- \"Daughter\" fixes T's gender; \"father of T\" fixes only S's gender.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Data Sufficiency).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Data Sufficiency)",
       "verified": true,
       "covers": [
@@ -514,7 +514,7 @@
         "Neither 1 nor 2"
       ],
       "answerIndex": 2,
-      "explanation": "The boy is his father's only son, so 'my father's only son' = the boy himself (statement 2 correct). The grandmother of the boy is his paternal grandmother; her daughter-in-law is the wife of her son (the boy's father) = the boy's mother (statement 1 correct). Both statements hold.\n\n**Why not the others**\n- 1 only — statement 2 is explicitly true by the 'only son' phrasing.\n- 2 only — the daughter-in-law of the boy's grandmother is precisely his mother.\n- Neither — both follow directly from the description.\n\n**Key facts**\n- 'My father's only son' (spoken by a boy) = the speaker himself.\n- Daughter-in-law of one's grandmother = one's mother (the son's wife).\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Traps).*",
+      "explanation": "The boy is his father's only son, so \"my father's only son\" is the boy himself — statement 2 is correct. The \"grandmother of my father's only son\" is the boy's own grandmother; her daughter-in-law is the wife of her son (the boy's father), who is the boy's mother — statement 1 is correct. Both hold.\n```\n     grandmother\n          |\n     her son = boy's father --(married)-- daughter-in-law = boy's mother\n                      |\n                   the boy (father's only son)\n```\n\n**Why not the others**\n- 1 only — statement 2 is clearly true from the \"only son\" phrasing.\n- 2 only — the daughter-in-law of the boy's grandmother is exactly his mother.\n- Neither — both follow directly from the description.\n\n**Key facts**\n- \"My father's only son\", spoken by a boy, is the speaker himself.\n- The daughter-in-law of one's grandmother is one's mother (the son's wife).\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Traps).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Traps)",
       "verified": true,
       "covers": [
@@ -538,7 +538,7 @@
         "1, 2 and 3"
       ],
       "answerIndex": 0,
-      "explanation": "B is the sister of C, so B is female — statement 1 is certain. C is D's mother and B is C's sibling, so B is D's aunt; A (B's child) and D (C's child) are therefore cousins — statement 2 is certain. A is only called a 'child', so A's gender is unknown and 'A is male' is NOT certain — statement 3 fails.\n\n**Why not the others**\n- 1 and 3 only — drops the certain cousin relation and keeps the unproven gender of A.\n- 2 and 3 only — 'A is male' cannot be concluded from 'child'.\n- 1, 2 and 3 — statement 3 is uncertain, so all-three is wrong.\n\n**Key facts**\n- 'Sister/daughter' fixes gender; 'child' does not.\n- Children of two siblings are cousins.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Gender/Ambiguity).*",
+      "explanation": "B is the \"sister\" of C, so B is female — statement 1 is certain. C is D's mother and B is C's sibling, so B is D's aunt; A (B's child) and D (C's child) are children of two siblings, which makes them cousins — statement 2 is certain. A is only called a \"child\", so A's gender is unknown and \"A is male\" is not certain — statement 3 fails.\n```\n   B --(siblings)-- C\n   |                |\n   A                D      (A and D are cousins)\n```\n\n**Why not the others**\n- 1 and 3 only — this drops the certain cousin relation and keeps the unproven gender of A.\n- 2 and 3 only — \"A is male\" cannot be concluded from \"child\".\n- 1, 2 and 3 — statement 3 is uncertain, so all three cannot be right.\n\n**Key facts**\n- \"Sister\" or \"daughter\" fixes gender; \"child\" does not.\n- The children of two siblings are cousins.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Gender/Ambiguity).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Gender/Ambiguity)",
       "verified": true,
       "covers": [
@@ -561,7 +561,7 @@
         "E"
       ],
       "answerIndex": 1,
-      "explanation": "With five seats (positions 1–5 from left), C is at 3. A is immediately left of C → 2; D immediately right of C → 4; E at extreme right → 5. The only child left, B, must take position 1 — the **extreme left end**.\n\n**Why not the others**\n- A — A sits at position 2, immediately left of C, not at the end.\n- D — D sits at position 4, immediately right of C.\n- E — E is fixed at the extreme right end, position 5.\n\n**Key facts**\n- Fix the person with the most definite clue (the middle seat) first.\n- 'Facing north' makes each person's left = observer's left, so no flip is needed.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (linear, facing north).*",
+      "explanation": "Number the five seats 1 to 5 from the left and fix the most definite clue first — the middle. C is in the middle, seat 3. A is immediately left of C, seat 2; D is immediately right of C, seat 4; E is at the extreme right, seat 5. Only B is left, so B takes seat 1, the extreme left end.\n```\nseat: 1  2  3  4  5\n      B  A  C  D  E\n```\n\n**Why not the others**\n- A — A is at seat 2, immediately left of C, not at the end.\n- D — D is at seat 4, immediately right of C.\n- E — E is fixed at the extreme right end, seat 5.\n\n**Key facts**\n- Fix the person with the most definite clue (the middle seat) first.\n- Facing north means each person's left is the same as your left, so no swap is needed.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (linear, facing north).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -584,7 +584,7 @@
         "D"
       ],
       "answerIndex": 2,
-      "explanation": "F fixes position 1 and C fixes position 6. Positions 2–5 must hold the blocks (A,B) and (E,D). Since A is left of E, the order is A, B, E, D → positions 2, 3, 4, 5. Thus the person **fourth from the left** is **E**.\n\n**Why not the others**\n- A — A is second from the left (position 2).\n- B — B is third from the left (position 3).\n- D — D is fifth from the left (position 5).\n\n**Key facts**\n- Anchor the fixed ends first, then place the adjacent-pair 'blocks'.\n- A tie-breaking clue ('A left of E') removes the mirror-image alternative.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (linear, statement-based).*",
+      "explanation": "Anchor the fixed ends: F is at seat 1 and C at seat 6. Seats 2 to 5 must hold the two adjacent blocks (A then B) and (E then D). The clue \"A is left of E\" forces the order A, B, E, D into seats 2, 3, 4, 5.\n```\nseat: 1  2  3  4  5  6\n      F  A  B  E  D  C\n```\nSo the person fourth from the left is E.\n\n**Why not the others**\n- A — A is second from the left, seat 2.\n- B — B is third from the left, seat 3.\n- D — D is fifth from the left, seat 5.\n\n**Key facts**\n- Anchor the fixed ends first, then place the adjacent-pair blocks.\n- A tie-breaking clue (\"A left of E\") removes the mirror-image alternative.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (linear, statement-based).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -608,7 +608,7 @@
         "S"
       ],
       "answerIndex": 0,
-      "explanation": "The 'immediate right' links give one cyclic order: P → Q → R → S, and the only remaining person T sits between S and P. Going once more around, the person to the immediate right of T closes the circle — it is **P**.\n\n**Why not the others**\n- Q — Q is to the immediate right of P, not of T.\n- R — R is to the immediate right of Q.\n- S — S is to the immediate right of R.\n\n**Key facts**\n- A chain of 'immediate right' statements fixes a single cyclic seating order.\n- In a circle the order wraps around: after the last named person the sequence returns to the first.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (circular, facing centre).*",
+      "explanation": "Follow the \"immediate right\" clues around the circle: Q is right of P, R is right of Q, S is right of R, so the order clockwise is P, Q, R, S. The only person left, T, sits between S and P. Going on round, the person to the immediate right of T is the next one, which closes the loop back to P.\n```\n        P\n    T       Q\n    S       R\n       (clockwise: P Q R S T, then back to P)\n```\n\n**Why not the others**\n- Q — Q is to the immediate right of P, not of T.\n- R — R is to the immediate right of Q.\n- S — S is to the immediate right of R.\n\n**Key facts**\n- A chain of \"immediate right\" statements fixes one cyclic order.\n- In a circle the order wraps round: after the last named person it returns to the first.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (circular, facing centre).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -631,7 +631,7 @@
         "Neither 1 nor 2"
       ],
       "answerIndex": 2,
-      "explanation": "With 8 equally spaced seats, counting k places one way equals counting (8 − k) the other way. So 'third to the left' = '(8−3) = fifth to the right' — statement 1 is correct. The opposite seat is 8÷2 = 4 places away whichever way you count — statement 2 is correct. **Both hold.**\n\n**Why not the others**\n- 1 only — ignores that the diametrically opposite seat is indeed 4 places away.\n- 2 only — ignores the valid left/right equivalence (k and n−k).\n- Neither — both are standard consequences of n = 8 equal seats.\n\n**Key facts**\n- In a circle of n seats, 'k to the left' = '(n−k) to the right'.\n- The opposite seat exists only when n is even, and is n/2 places away either side.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (circular, opposite & left/right).*",
+      "explanation": "There are 8 equally spaced seats. Counting k places one way is the same seat as counting (8 − k) places the other way. So \"third to the left\" is the same as \"8 − 3 = fifth to the right\" — statement 1 is correct. The seat directly opposite is half the circle away, 8 ÷ 2 = 4 places, counted either way — statement 2 is correct. Both hold.\n```\n8 seats: going 3 left = going 5 right (3 + 5 = 8)\nopposite seat = 8 / 2 = 4 places away\n```\n\n**Why not the others**\n- 1 only — this ignores that the opposite seat really is 4 places away.\n- 2 only — this ignores the valid left/right equivalence (k and 8 − k).\n- Neither — both are standard consequences of 8 equal seats.\n\n**Key facts**\n- In a circle of n seats, \"k to the left\" equals \"(n − k) to the right\".\n- The opposite seat exists only when n is even and is n/2 places away either side.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (circular, opposite & left/right).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -656,7 +656,7 @@
         "20"
       ],
       "answerIndex": 0,
-      "explanation": "When one person's positions from both ends are given, total = (position from left) + (position from right) − 1, because that person is counted in both. So total = 7 + 12 − 1 = **18**.\n\n**Why not the others**\n- 19 — from adding 7 + 12 without subtracting the double-counted child.\n- 17 — from subtracting 2 instead of 1.\n- 20 — unrelated over-count.\n\n**Key facts**\n- Total = L + R − 1 (the person is counted from both ends).\n- Subtract exactly one to remove the double count.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (positions from both ends).*",
+      "explanation": "When one person's positions from both ends are given, that person is counted in both the left count and the right count, so add the two and subtract the one duplicate. Total = 7 + 12 − 1 = 18.\n```\nleft of Ravi: 6 | Ravi: 1 | right of Ravi: 11  ->  6 + 1 + 11 = 18\n```\n\n**Why not the others**\n- 19 — this adds 7 + 12 without subtracting the double-counted child.\n- 17 — this subtracts 2 instead of 1.\n- 20 — this is an unrelated over-count.\n\n**Key facts**\n- Total = (position from left) + (position from right) − 1.\n- Subtract exactly one to remove the double count.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (positions from both ends).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -679,7 +679,7 @@
         "15th"
       ],
       "answerIndex": 1,
-      "explanation": "Position from right = total − position from left + 1 = 40 − 16 + 1 = **25th**.\n\n**Why not the others**\n- 24th — from 40 − 16 without adding 1.\n- 26th — from adding 2 instead of 1.\n- 15th — mistakenly mirrors the left position.\n\n**Key facts**\n- Position from right = N − (position from left) + 1.\n- Equivalently L + R − 1 = N, rearranged for R.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (other-end position).*",
+      "explanation": "Use the rule that the two end positions and the total are linked: position from the right = total − position from the left + 1. So Sita's position from the right = 40 − 16 + 1 = 25th.\n\n**Why not the others**\n- 24th — this comes from 40 − 16 without adding 1.\n- 26th — this adds 2 instead of 1.\n- 15th — this mistakenly mirrors the left position.\n\n**Key facts**\n- Position from the right = N − (position from the left) + 1.\n- Equivalently, (left) + (right) − 1 = N, rearranged for the right position.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (other-end position).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -702,7 +702,7 @@
         "20"
       ],
       "answerIndex": 0,
-      "explanation": "After interchange Amit occupies Sunil's original seat, which is 8th from the right. Amit is now also 15th from the left, so total = 15 + 8 − 1 = **22**.\n\n**Why not the others**\n- 23 — forgets to subtract the double-counted seat.\n- 21 — subtracts 2 instead of 1.\n- 20 — wrongly uses Amit's original 10th-from-left position.\n\n**Key facts**\n- On interchange, each person takes the other's fixed position.\n- Total = (new position from left) + (that seat's position from right) − 1.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (interchange).*",
+      "explanation": "After the swap, Amit sits in Sunil's old seat, which was 8th from the right. Amit is now also 15th from the left. Those two counts share Amit's single seat, so total = 15 + 8 − 1 = 22.\n```\nAmit now: 15th from left AND 8th from right  ->  15 + 8 - 1 = 22\n```\n\n**Why not the others**\n- 23 — this forgets to subtract the double-counted seat.\n- 21 — this subtracts 2 instead of 1.\n- 20 — this wrongly uses Amit's original 10th-from-left position.\n\n**Key facts**\n- On an interchange, each person takes the other's fixed seat.\n- Total = (new position from left) + (that seat's position from right) − 1.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (interchange).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -725,7 +725,7 @@
         "19th"
       ],
       "answerIndex": 0,
-      "explanation": "Anu is 12th from the top; '5 places below' makes Bina 12 + 5 = 17th from the top. Rank from the bottom = 30 − 17 + 1 = **14th**.\n\n**Why not the others**\n- 15th — from 30 − 17 + 2, adding one too many.\n- 13th — from 30 − 17, forgetting the +1.\n- 19th — uses Anu's 12th-from-top with a sign slip (30−12+1).\n\n**Key facts**\n- 'k places below the top rank r' means rank (r + k) from the top.\n- Rank from bottom = N − (rank from top) + 1.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (rank among n).*",
+      "explanation": "Anu is 12th from the top. \"5 places below\" means 5 ranks further down, so Bina is 12 + 5 = 17th from the top. To turn a top rank into a bottom rank in a class of 30, use bottom = total − top + 1 = 30 − 17 + 1 = 14th from the bottom.\n\n**Why not the others**\n- 15th — this comes from 30 − 17 + 2, adding one too many.\n- 13th — this comes from 30 − 17, forgetting the +1.\n- 19th — this uses Anu's 12th-from-top with a sign slip (30 − 12 + 1).\n\n**Key facts**\n- \"k places below the top rank r\" means rank (r + k) from the top.\n- Rank from the bottom = N − (rank from the top) + 1.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (rank among n).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -748,7 +748,7 @@
         "Aunt"
       ],
       "answerIndex": 0,
-      "explanation": "Work outward from the innermost phrase. A's brother's father = A's own father. A's father's wife = A's mother. P is the mother of A's mother, i.e. A's maternal grandmother.\n\n**Why not the others**\n- Paternal grandmother — that would be the mother of A's father, but P is the mother of A's mother.\n- Mother — P is one generation above A's mother.\n- Aunt — no sibling link is stated.\n\n**Key facts**\n- 'A's brother's father' resolves to A's father.\n- Mother of one's mother = maternal grandmother.\n\n*Source: AP State Govt / APPSC Group-2 22.12.2022.*",
+      "explanation": "Work outward from the innermost phrase. \"A's brother's father\" is A's own father, because a brother and A share the same father. \"A's father's wife\" is A's mother. So P is the mother of A's mother, which makes P the maternal grandmother of A.\n```\n   P (maternal grandmother)\n      |\n   A's mother  (= A's father's wife)\n      |\n      A\n```\n\n**Why not the others**\n- Paternal grandmother — that would be the mother of A's father, but P is the mother of A's mother.\n- Mother — P is one generation above A's mother.\n- Aunt — no sibling link is stated.\n\n**Key facts**\n- \"A's brother's father\" resolves to A's own father.\n- The mother of one's mother is the maternal grandmother.\n\n*Source: AP State Govt / APPSC Group-2 22.12.2022.*",
       "source": "AP State Govt / APPSC Group-2 22.12.2022",
       "verified": true,
       "covers": [
@@ -772,7 +772,7 @@
         "Cousin"
       ],
       "answerIndex": 0,
-      "explanation": "Ram's maternal great-grandfather is his mother's grandfather. His 'only granddaughter' (on that maternal line) is Ram's mother. The lady is the daughter of Ram's mother — so she is Ram's sister.\n\n**Why not the others**\n- Mother — the lady is the mother's daughter, i.e. one generation below.\n- Aunt — an aunt would be the mother's sister, not her daughter.\n- Cousin — no uncle/aunt branch is involved; 'only granddaughter' forces the mother.\n\n**Key facts**\n- 'only granddaughter of the maternal great-grandfather' = Ram's mother.\n- Daughter of one's mother = sister.\n\n*Source: AP State Govt / APPSC Group-2 14.12.2022.*",
+      "explanation": "Unpack from the inside. Ram's maternal great-grandfather is his mother's grandfather. His \"only granddaughter\" on that maternal line is Ram's mother (the word \"only\" forces this single identity). The lady is the daughter of Ram's mother, so she is Ram's sister.\n```\n   maternal great-grandfather\n            |\n   only granddaughter = Ram's mother\n          /     \\\n        Ram     the lady (daughter)\n```\n\n**Why not the others**\n- Mother — the lady is the mother's daughter, one generation below the mother.\n- Aunt — an aunt would be the mother's sister, not her daughter.\n- Cousin — no uncle or aunt branch is involved; \"only granddaughter\" forces the mother.\n\n**Key facts**\n- \"Only granddaughter of the maternal great-grandfather\" is Ram's mother.\n- The daughter of one's mother is one's sister.\n\n*Source: AP State Govt / APPSC Group-2 14.12.2022.*",
       "source": "AP State Govt / APPSC Group-2 14.12.2022",
       "verified": true,
       "covers": [

@@ -6,12 +6,28 @@
  * PASS/FAIL report and a final tally, and exits non-zero if anything FAILS so it
  * works as a CI gate.
  *
+ * On top of the hard schema/integrity gate it ALSO runs the advisory
+ * content-formatting LINT (`lintAllContent`) — textbook jargon, bare carets,
+ * broken tables, obvious typos — and prints each hit as a WARNING, counted in
+ * the final tally. Finalizers can require that count to reach 0. Passing
+ * `--strict` promotes the lint hits to hard failures (non-zero exit) so a later
+ * `npm run check` can enforce zero formatting debt once content is clean — it is
+ * NOT wired into `check` yet.
+ *
  * The validation logic lives in `src/content/validate.ts` and is shared with the
  * Vitest suite (`content-integrity.test.ts`) — this file is only the reporter.
  *
  * Run via `npm run validate:content` (executed with vite-node, matching gen:schema).
  */
-import { validateAllContent } from '../src/content/validate';
+import {
+  auditAllStructure,
+  lintAllContent,
+  validateAllContent,
+  type LintRule,
+  type StructureFlag,
+} from '../src/content/validate';
+
+const strict = process.argv.includes('--strict');
 
 const results = validateAllContent();
 
@@ -30,7 +46,55 @@ for (const r of results) {
   if (!r.ok) failed += 1;
 }
 
-const passed = results.length - failed;
+/* ----- Content-formatting lint (advisory, or hard under --strict) ---------- */
+
+const lint = lintAllContent();
+const byRule = new Map<LintRule, number>();
+if (lint.length > 0) {
+  console.log('');
+  console.log(`content formatting lint: ${lint.length} issue(s)${strict ? ' (STRICT — treated as errors)' : ' (warnings)'}`);
+  let currentFile = '';
+  for (const f of lint) {
+    if (f.file !== currentFile) {
+      currentFile = f.file;
+      console.log(`  ${f.file}`);
+    }
+    const mark = strict ? '✗' : '⚠';
+    console.log(`        ${mark} [${f.rule}] ${f.itemId} ${f.field}: ${f.snippet}`);
+    byRule.set(f.rule, (byRule.get(f.rule) ?? 0) + 1);
+  }
+  const rules = [...byRule.entries()].map(([r, n]) => `${r}=${n}`).join(', ');
+  console.log(`  lint by rule: ${rules}`);
+  if (strict) failed += lint.length;
+  else warned += lint.length;
+}
+
+/* ----- Explanation-structure lint (advisory warnings; NOT strict in check) - */
+
+const structure = auditAllStructure();
+const byStructureFlag = new Map<StructureFlag, number>();
+if (structure.length > 0) {
+  console.log('');
+  console.log(`explanation-structure lint: ${structure.length} issue(s) (warnings)`);
+  let currentFile = '';
+  const perFile = new Map<string, number>();
+  for (const f of structure) {
+    if (f.file !== currentFile) {
+      currentFile = f.file;
+      console.log(`  ${f.file}`);
+    }
+    console.log(`        ⚠ [${f.flag}] ${f.itemId} (${f.subjectCode}): ${f.detail}`);
+    byStructureFlag.set(f.flag, (byStructureFlag.get(f.flag) ?? 0) + 1);
+    perFile.set(f.file, (perFile.get(f.file) ?? 0) + 1);
+  }
+  const flags = [...byStructureFlag.entries()].map(([r, n]) => `${r}=${n}`).join(', ');
+  console.log(`  structure by flag: ${flags}`);
+  // Structure findings are advisory only — they are counted as warnings and are
+  // deliberately NOT promoted under --strict, so `npm run check` stays green.
+  warned += structure.length;
+}
+
+const passed = results.length - results.filter((r) => !r.ok).length;
 console.log('');
 console.log(
   `content validation: ${passed}/${results.length} files OK` +
@@ -39,7 +103,7 @@ console.log(
 );
 
 if (failed > 0) {
-  console.error(`\n✗ content validation FAILED: ${failed} file(s) with errors`);
+  console.error(`\n✗ content validation FAILED: ${failed} issue(s)`);
   process.exit(1);
 }
 
