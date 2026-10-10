@@ -268,15 +268,15 @@
       "id": "ment-venn-nonverbal-mcq-12",
       "subjectCode": "MENT",
       "subtopicId": "ment-venn-nonverbal",
-      "question": "An open dice (net) is laid out as a cross:\n\n```\n        [ S ]\n[ P ] [ Q ] [ R ] [ U ]\n        [ T ]\n```\n\nWhen folded into a cube (with the standard opposite pairs P↔R, Q↔S, U↔T), which face is OPPOSITE to Q?",
+      "question": "An open dice (net) is laid out as a cross:\n\n```\n        [ S ]\n[ P ] [ Q ] [ R ] [ U ]\n        [ T ]\n```\n\nWhen this net is folded into a cube, which face ends up OPPOSITE to Q?",
       "options": [
-        "S",
+        "U",
         "R",
-        "T",
-        "P"
+        "P",
+        "T"
       ],
       "answerIndex": 0,
-      "explanation": "In a net, faces that are ONE step apart in the same row/column become adjacent on folding; the opposite face is the one that cannot touch it.\n\nStep 1 — Q is the centre of the horizontal strip; P and R fold up to become its left/right neighbours (adjacent), and U becomes the far face opposite P.\nStep 2 — S (directly above Q in the net) folds to sit opposite Q → answer **S**.\n\n**Why not the others**\n- R — folds to become adjacent to Q (and opposite P).\n- T — folds opposite U, not Q.\n- P — becomes adjacent to Q and opposite R.\n\n**Key facts**\n- Opposite pairs here: P↔R, Q↔S, U↔T.\n- Net rule: faces separated by exactly one face in a straight line are OPPOSITE when folded.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Open Dice.*",
+      "explanation": "When a straight strip of four faces is folded into a cube it wraps right around the four sides, so faces two apart in the strip finish opposite each other.\n\nStep 1 — The horizontal strip P-Q-R-U wraps into the four side faces, so the pairs two apart are opposite: P with R, and Q with U.\nStep 2 — S (above Q) and T (below Q) fold onto the top and bottom, so they are opposite each other.\nStep 3 — Therefore the face opposite Q is **U**.\n\n**Why not the others**\n- R — folds to sit next to Q, not opposite it; R is opposite P.\n- P — also a side face next to Q, and it is opposite R.\n- T — folds to the bottom, opposite S, not Q.\n\n**Key facts**\n- In a straight line of four faces, the 1st and 3rd are opposite, and the 2nd and 4th are opposite.\n- Opposite pairs here: P and R, Q and U, S and T.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Open Dice.*",
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Open Dice",
       "verified": true,
       "covers": [
@@ -292,15 +292,15 @@
       "id": "ment-venn-nonverbal-mcq-13",
       "subjectCode": "MENT",
       "subtopicId": "ment-venn-nonverbal",
-      "question": "Two views of the SAME dice are given, both with 5 on top:\n\n| View | Front | Right |\n|---|---|---|\n| A | 3 | 2 |\n| B | 2 | 6 |\n\nWhich number lies OPPOSITE to 2?",
+      "question": "Two views of the SAME dice are given, both with 5 on top:\n\n| View | Front | Right |\n|---|---|---|\n| A | 3 | 2 |\n| B | 2 | 6 |\n\nWhich number lies OPPOSITE to 3?",
       "options": [
         "6",
-        "3",
+        "2",
         "4",
         "1"
       ],
-      "answerIndex": 2,
-      "explanation": "Top (5) is fixed in both views, so the die was rotated about the vertical axis; the four side faces cycle.\n\nStep 1 — In View A (seen from top, clockwise): Front 3 → Right 2. In View B the old Right (2) has become the Front, and its new Right is 6, so 6 was the Back.\nStep 2 — Clockwise cycle of the four sides: 3 → 2 → 6 → 4 (the leftover of {2,3,4,6}). Opposite = two steps apart: 2 ↔ 4.\nStep 3 — Face opposite 2 is **4**.\n\n**Why not the others**\n- 6 — this is opposite 3, not 2.\n- 3 — 3 is adjacent to 2, not opposite.\n- 1 — with 5 on top, 1 is on the bottom, unrelated to 2.\n\n**Key facts**\n- Fix the common face; the other faces cycle around it.\n- In a 4-face cycle, opposites are the pair two positions apart.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problems on Closed Dice.*",
+      "answerIndex": 0,
+      "explanation": "The top face (5) is the same in both views, so the die was only turned about its upright axis and the four side faces keep a fixed ring order.\n\nStep 1 — View A shows 3 and 2 side by side, so 3 and 2 are neighbours. View B shows 2 and 6 side by side, so 2 and 6 are neighbours.\nStep 2 — The number 2 therefore sits between 3 and 6 in the ring of four side faces, which places 3 and 6 two steps apart.\nStep 3 — Two steps apart in a ring of four means opposite, so the face opposite 3 is **6**.\n\n**Why not the others**\n- 2 — it appears beside 3 in View A, so it is a neighbour of 3 and never its opposite.\n- 4 — 4 is one of the two faces never shown; the opposite of 3 must be one of the seen side faces.\n- 1 — 1 is the other unshown face (the hidden bottom or the fourth side), so it is not opposite 3.\n\n**Key facts**\n- Keep the shared face fixed; the other faces turn around it in a fixed ring.\n- In a ring of four side faces, opposite faces are the pair two steps apart.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Problems on Closed Dice.*",
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problems on Closed Dice",
       "verified": true,
       "covers": [
@@ -323,7 +323,7 @@
         "8"
       ],
       "answerIndex": 0,
-      "explanation": "Every triangle here is formed by the apex A plus any two of the base points; the side of each triangle is the base segment between the chosen points.\n\nStep 1 — The apex is joined to 4 base points (B, C, D, E).\nStep 2 — Choosing any 2 of these 4 lines defines one triangle: ⁴C₂ = 4!/(2!·2!) = 6.\nStep 3 — So there are **6** triangles.\n\n**Why not the others**\n- 3 — counts only the three smallest triangles (ABC, ACD, ADE).\n- 4 — miscounts the combined triangles.\n- 8 — over-counts; only 6 valid apex-based triangles exist.\n\n**Key facts**\n- Triangles from one apex to k base points = ᵏC₂ = k(k−1)/2.\n- Here k = 4 → 4·3/2 = 6.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures.*",
+      "explanation": "Every triangle here is formed by the apex A plus any two of the base points; the side of each triangle is the base segment between the chosen points.\n\nStep 1 — The apex is joined to 4 base points (B, C, D, E).\nStep 2 — Choosing any 2 of these 4 points defines one triangle: C(4, 2) = 4 × 3 ÷ 2 = 6.\nStep 3 — So there are **6** triangles.\n\n**Why not the others**\n- 3 — counts only the three smallest triangles (ABC, ACD, ADE).\n- 4 — miscounts the combined triangles.\n- 8 — over-counts; only 6 valid apex-based triangles exist.\n\n**Key facts**\n- Triangles from one apex to k base points = C(k, 2) = k × (k − 1) ÷ 2.\n- Here k = 4, so 4 × 3 ÷ 2 = 6.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures.*",
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures",
       "verified": true,
       "covers": [
@@ -346,7 +346,7 @@
         "36"
       ],
       "answerIndex": 2,
-      "explanation": "Count squares by size and add.\n\nStep 1 — 1×1 squares: 3² = 9.\nStep 2 — 2×2 squares: 2² = 4.\nStep 3 — 3×3 square: 1² = 1.\nStep 4 — Total = 9 + 4 + 1 = **14**.\n\n**Why not the others**\n- 9 — counts only the unit (1×1) squares.\n- 13 — drops the single 3×3 square.\n- 36 — this is the number of RECTANGLES (⁴C₂ × ⁴C₂ = 6 × 6), not squares.\n\n**Key facts**\n- Squares in an n×n grid = 1² + 2² + … + n² = n(n+1)(2n+1)/6.\n- Rectangles in an n×n grid = [n(n+1)/2]².\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (Quadrilateral).*",
+      "explanation": "Count squares by size and add.\n\nStep 1 — 1×1 squares: 3² = 9.\nStep 2 — 2×2 squares: 2² = 4.\nStep 3 — 3×3 square: 1² = 1.\nStep 4 — Total = 9 + 4 + 1 = **14**.\n\n**Why not the others**\n- 9 — counts only the unit (1×1) squares.\n- 13 — drops the single 3×3 square.\n- 36 — this is the number of RECTANGLES (C(4, 2) × C(4, 2) = 6 × 6), not squares.\n\n**Key facts**\n- Squares in an n×n grid = 1² + 2² + … + n² = n(n + 1)(2n + 1) ÷ 6.\n- Rectangles in an n×n grid = [n(n + 1) ÷ 2]².\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (Quadrilateral).*",
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (Quadrilateral)",
       "verified": true,
       "covers": [
@@ -369,7 +369,7 @@
         "1"
       ],
       "answerIndex": 1,
-      "explanation": "Each fold doubles the number of paper layers; a punch through all layers makes one hole per layer.\n\nStep 1 — Number of layers after f folds = 2^f.\nStep 2 — Here f = 2 folds → 2² = 4 layers.\nStep 3 — One punch through 4 layers → **4** holes on unfolding (arranged symmetrically about both fold lines).\n\n**Why not the others**\n- 2 — would be the result of only one fold (2 layers).\n- 8 — would need three folds (2³ layers).\n- 1 — ignores that folding stacks multiple layers.\n\n**Key facts**\n- Holes = 2^(number of folds), provided the punch is not on a fold line.\n- Holes appear as mirror images across each fold crease.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding.*",
+      "explanation": "Each fold doubles the number of paper layers, and a punch through all layers makes one hole per layer.\n\nStep 1 — Layers after f folds = 2^{f} (each fold doubles the stack).\nStep 2 — Here f = 2 folds, so 2^{2} = 4 layers.\nStep 3 — One punch through 4 layers gives **4** holes on unfolding, placed symmetrically about both fold lines.\n\n**Why not the others**\n- 2 — the result of only one fold (2 layers).\n- 8 — would need three folds (2^{3} layers).\n- 1 — ignores that folding stacks several layers.\n\n**Key facts**\n- Holes = 2^{f}, where f is the number of folds, if the punch is off the fold lines.\n- The holes appear as mirror images across each fold crease.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding.*",
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding",
       "verified": true,
       "covers": [
@@ -601,7 +601,7 @@
         "8"
       ],
       "answerIndex": 3,
-      "explanation": "Each fold doubles the number of layers, so after 3 folds there are 2³ = 8 layers. One punch through 8 layers gives **8** holes on unfolding.\n\n**Why not the others**\n- 6 — treats folds as additive (2 × 3) rather than doubling.\n- 4 — the result of only two folds (2² layers).\n- 16 — would need four folds (2⁴ layers).\n\n**Key facts**\n- Holes = 2^(number of folds), provided the punch is not on a fold line.\n- The holes appear symmetrically about each fold crease.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding.*",
+      "explanation": "Each fold doubles the number of layers, so after f = 3 folds there are 2^{3} = 8 layers. One punch through 8 layers gives **8** holes when the paper is unfolded.\n\n**Why not the others**\n- 6 — treats folds as additive (2 × 3) rather than doubling.\n- 4 — the result of only two folds (2^{2} layers).\n- 16 — would need four folds (2^{4} layers).\n\n**Key facts**\n- Holes = 2^{f}, where f is the number of folds, if the punch is off the fold lines.\n- The holes appear symmetrically about each fold crease.\n\n*Source: local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding.*",
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding",
       "verified": true,
       "covers": [

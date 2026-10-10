@@ -88,7 +88,7 @@
         "2% decrease"
       ],
       "answerIndex": 2,
-      "explanation": "Chain the multipliers: 1.20 x 0.80 = 0.96, i.e. 96% of the original — a **4% decrease**. By the successive-change formula, net = +20 - 20 + (20)(-20)/100 = -4%.\n\n**Why not the others**\n- No change — the +20% and -20% act on *different* bases, so they never cancel.\n- 4% increase — right magnitude, wrong sign; a rise-then-fall of equal % always ends lower.\n- 2% decrease — halves the correct answer; forgets the ab/100 term is 4, not 2.\n\n**Key facts**\n- Equal +x% then -x% gives net -x^2/100 % (here -400/100 = -4%).\n- Successive change: a + b + ab/100 with signs.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.txt.*",
+      "explanation": "Chain the multipliers: 1.20 x 0.80 = 0.96, i.e. 96% of the original — a **4% decrease**. By the successive-change formula, net = +20 - 20 + (20)(-20)/100 = -4%.\n\n**Why not the others**\n- No change — the +20% and -20% act on *different* bases, so they never cancel.\n- 4% increase — right magnitude, wrong sign; a rise-then-fall of equal % always ends lower.\n- 2% decrease — halves the correct answer; forgets the ab/100 term is 4, not 2.\n\n**Key facts**\n- Equal +x% then −x% gives a net fall of x² ÷ 100 % (here 400 ÷ 100 = 4%).\n- Successive change: a + b + ab/100 with signs.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.txt",
       "verified": true,
       "covers": [
@@ -456,7 +456,7 @@
         "5 : 4"
       ],
       "answerIndex": 1,
-      "explanation": "15% of A = 20% of B ⇒ 15A/100 = 20B/100 ⇒ 15A = 20B ⇒ A/B = 20/15 = 4/3. So A : B = **4 : 3**.\n\n**Why not the others**\n- 3 : 4 — the reciprocal; it makes 15% of A smaller than 20% of B.\n- 15 : 20 — just copies the percentages; A:B is the inverse, 20:15.\n- 5 : 4 — no valid reduction of 20:15 gives 5:4.\n\n**Key facts**\n- x% of A = y% of B ⇒ A : B = y : x.\n- Cross-multiply then reduce: 20 : 15 = 4 : 3.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage.*",
+      "explanation": "15% of A equals 20% of B, so 15A ÷ 100 = 20B ÷ 100, which gives 15A = 20B. Dividing, A ÷ B = 20 ÷ 15 = 4/3, so A : B = **4 : 3**.\n\n**Why not the others**\n- 3 : 4 — the reciprocal; it makes 15% of A smaller than 20% of B.\n- 15 : 20 — just copies the percentages; A : B is the inverse, 20 : 15.\n- 5 : 4 — no valid reduction of 20 : 15 gives 5 : 4.\n\n**Key facts**\n- x% of A = y% of B means A : B = y : x.\n- Cross-multiply then reduce: 20 : 15 = 4 : 3.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage",
       "verified": true,
       "covers": [
@@ -502,7 +502,7 @@
         "10%"
       ],
       "answerIndex": 1,
-      "explanation": "A = P(1+R/100)² ⇒ 2205/2000 = (1+R/100)² ⇒ 1.1025 = (1+R/100)² ⇒ 1+R/100 = 1.05 ⇒ R = **5%**.\n\n**Why not the others**\n- 4% — gives (1.04)² = 1.0816 ⇒ ₹2,163.20, not ₹2,205.\n- 6% — gives (1.06)² = 1.1236 ⇒ ₹2,247.20.\n- 10% — gives (1.10)² = 1.21 ⇒ ₹2,420.\n\n**Key facts**\n- From A/P = (1+R/100)ⁿ, take the n-th root to isolate the rate.\n- √1.1025 = 1.05 ⇒ R = 5%.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.*",
+      "explanation": "Using A = P × (1 + R ÷ 100)², divide both sides by P: 2205 ÷ 2000 = (1 + R ÷ 100)², so 1.1025 = (1 + R ÷ 100)². Take the square root: 1 + R ÷ 100 = 1.05, so R = **5%**.\n\n**Why not the others**\n- 4% — gives (1.04)² = 1.0816, so ₹2,163.20, not ₹2,205.\n- 6% — gives (1.06)² = 1.1236, so ₹2,247.20.\n- 10% — gives (1.10)² = 1.21, so ₹2,420.\n\n**Key facts**\n- From A ÷ P = (1 + R ÷ 100)ⁿ, take the n-th root to isolate the rate.\n- √1.1025 = 1.05, so R = 5%.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest",
       "verified": true,
       "covers": [
@@ -525,7 +525,7 @@
         "2% loss"
       ],
       "answerIndex": 1,
-      "explanation": "CP₁ = 1200/1.2 = ₹1000; CP₂ = 1200/0.8 = ₹1500; total CP = ₹2500; total SP = ₹2400; loss = ₹100 on ₹2500 = **4% loss**. (Shortcut: equal +x% and −x% at the same SP give a net loss of x²/100 = 400/100 = 4%.)\n\n**Why not the others**\n- No profit no loss — the gain and loss act on different cost prices, so they do not cancel.\n- 4% profit — right magnitude, wrong sign; this situation always ends in a loss.\n- 2% loss — halves the correct loss; the x²/100 term is 4, not 2.\n\n**Key facts**\n- Same SP, +x% and −x%: net effect is always a loss of x²/100 %.\n- Here x = 20 ⇒ 400/100 = 4% loss.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss.*",
+      "explanation": "CP₁ = 1200/1.2 = ₹1000; CP₂ = 1200/0.8 = ₹1500; total CP = ₹2500; total SP = ₹2400; loss = ₹100 on ₹2500 = **4% loss**. (Shortcut: equal +x% and −x% at the same SP give a net loss of x²/100 = 400/100 = 4%.)\n\n**Why not the others**\n- No profit no loss — the gain and loss act on different cost prices, so they do not cancel.\n- 4% profit — right magnitude, wrong sign; this situation always ends in a loss.\n- 2% loss — halves the correct loss; the x²/100 term is 4, not 2.\n\n**Key facts**\n- Same SP, +x% and −x%: net effect is always a loss of x²/100 %.\n- Here x = 20, so 400 ÷ 100 = 4% loss.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss",
       "verified": true,
       "covers": [
@@ -596,7 +596,7 @@
         "₹60"
       ],
       "answerIndex": 3,
-      "explanation": "Let CP of one ball = c. Loss = 17c − 720 = 5c ⇒ 12c = 720 ⇒ c = **₹60**.\n\n**Why not the others**\n- ₹45 — gives 17×45 − 720 = 45, not 5×45 = 225.\n- ₹50 — gives loss 130 ≠ 5×50 = 250.\n- ₹55 — gives loss 215 ≠ 5×55 = 275.\n\n**Key facts**\n- SP = (N − n)·c when loss = cost of n articles: 720 = (17 − 5)c = 12c.\n- Solve the linear equation for c.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss.*",
+      "explanation": "Let the cost price of one ball be c. The loss in rupees is 17c − 720, and this equals the cost of 5 balls, 5c. So 17c − 720 = 5c, which gives 12c = 720 and c = **₹60**.\n\n**Why not the others**\n- ₹45 — gives 17×45 − 720 = 45, not 5×45 = 225.\n- ₹50 — gives loss 130 ≠ 5×50 = 250.\n- ₹55 — gives loss 215 ≠ 5×55 = 275.\n\n**Key facts**\n- SP = (N − n)·c when loss = cost of n articles: 720 = (17 − 5)c = 12c.\n- Solve the linear equation for c.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss",
       "verified": true,
       "covers": [
@@ -619,7 +619,7 @@
         "10% decrease"
       ],
       "answerIndex": 1,
-      "explanation": "Successive change = a + b + ab/100 = (−10) + 20 + (−10×20)/100 = 10 − 2 = **+8%** (net 8% increase). Check: 100 → 90 → 108.\n\n**Why not the others**\n- 10% increase — just adds −10 + 20, ignoring the −2 cross term.\n- 12% increase — adds the cross term with the wrong sign.\n- 10% decrease — wrong direction; the +20% outweighs the −10%.\n\n**Key facts**\n- Successive percentage change: net = a + b + ab/100 (use signs).\n- −10% then +20%: 0.90 × 1.20 = 1.08 ⇒ +8%.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.*",
+      "explanation": "Successive change = a + b + ab/100 = (−10) + 20 + (−10×20)/100 = 10 − 2 = **+8%** (net 8% increase). Check: 100 → 90 → 108.\n\n**Why not the others**\n- 10% increase — just adds −10 + 20, ignoring the −2 cross term.\n- 12% increase — adds the cross term with the wrong sign.\n- 10% decrease — wrong direction; the +20% outweighs the −10%.\n\n**Key facts**\n- Successive percentage change: net = a + b + ab/100 (use signs).\n- −10% then +20%: 0.90 × 1.20 = 1.08, so +8%.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change",
       "verified": true,
       "covers": [
@@ -711,7 +711,7 @@
         "2 : 3"
       ],
       "answerIndex": 0,
-      "explanation": "Apply alligation about the mean price ₹20.\n\n**Worked steps**\n- Cheaper : dearer = (24 − 20) : (20 − 18) = 4 : 2 = **2 : 1**.\n\n**Why not the others**\n- 1 : 2 — inverts the ratio.\n- 3 : 2 and 2 : 3 — arithmetic slips; 4 : 2 reduces to 2 : 1.\n\n**Key facts**\n- The blend price (20) is nearer the cheaper tea (18), so more of the cheaper variety is used ⇒ ratio favours the cheaper (2 : 1).\n- Alligation gives quantities, not prices.\n\n*Source: standard APPSC/SSC arithmetic — Mixtures & Alligation.*",
+      "explanation": "Apply alligation about the mean price ₹20.\n\n**Worked steps**\n- Cheaper : dearer = (24 − 20) : (20 − 18) = 4 : 2 = **2 : 1**.\n\n**Why not the others**\n- 1 : 2 — inverts the ratio.\n- 3 : 2 and 2 : 3 — arithmetic slips; 4 : 2 reduces to 2 : 1.\n\n**Key facts**\n- The blend price (20) is nearer the cheaper tea (18), so more of the cheaper variety is used, which means the ratio favours the cheaper (2 : 1).\n- Alligation gives quantities, not prices.\n\n*Source: standard APPSC/SSC arithmetic — Mixtures & Alligation.*",
       "source": "standard APPSC/SSC arithmetic — Mixtures & Alligation",
       "verified": true,
       "covers": [

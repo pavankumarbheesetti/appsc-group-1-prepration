@@ -78,7 +78,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
       "front": "How much does a date advance to next year? When does a calendar repeat?",
-      "back": "+1 day after an ordinary year, +2 after a leap year. Repeats when odd days ≡0 mod7 & leap-status matches (ordinary 6/11 yr, leap 28 yr).",
+      "back": "+1 day after an ordinary year, +2 after a leap year. Repeats when the odd days total a whole number of weeks and the leap-status matches (ordinary 6/11 yr, leap 28 yr).",
       "examPoint": "Calendar — repetition of a calendar (same-calendar year)",
       "source": "APPSC Logical Reasoning — Calendar",
       "verified": true
@@ -108,7 +108,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
       "front": "Added member's age from a change in average?",
-      "back": "Added age = new_avg×(n+1) − old_avg×n; shortcut = new_avg + (rise × old count). e.g. 11 avg 29, +1 ⇒ coach = 41.",
+      "back": "Added age = new_avg × (n+1) − old_avg × n; shortcut = new_avg + (rise × old count). e.g. 11 avg 29, rise 1 gives coach = 41.",
       "examPoint": "Ages — average age (team/family, member added or replaced)",
       "source": "APPSC Quantitative Reasoning — Based on Cricket and Age",
       "verified": true

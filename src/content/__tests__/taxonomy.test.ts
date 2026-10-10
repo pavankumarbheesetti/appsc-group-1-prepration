@@ -101,7 +101,7 @@ describe('taxonomy loader', () => {
     expect(books).toBeDefined();
     expect(books?.meta.name).toBe('Books & Authors of Ancient India');
     expect(books?.mcqs).toHaveLength(19);
-    expect(books?.notes).toHaveLength(13);
+    expect(books?.notes).toHaveLength(14);
     expect(books?.mains).toHaveLength(2);
 
     const travelers = getSubtopic('hist-ancient-travelers');
@@ -109,7 +109,7 @@ describe('taxonomy loader', () => {
     expect(travelers?.meta.name).toBe('Travelers in Ancient India');
     // Re-authored to a lean, coverage-driven exam-level bank (3 refreshers + 13 exam).
     expect(travelers?.mcqs).toHaveLength(18);
-    expect(travelers?.notes).toHaveLength(11);
+    expect(travelers?.notes).toHaveLength(12);
     expect(travelers?.mains).toHaveLength(3);
     // Rollout: the subtopic now declares an examPoints checklist that its bank
     // covers 100% (exam-point coverage, not the band-target fallback).

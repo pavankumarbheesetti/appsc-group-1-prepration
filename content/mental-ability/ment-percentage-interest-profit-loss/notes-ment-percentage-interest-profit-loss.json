@@ -7,17 +7,17 @@
       "id": "ment-percentage-interest-profit-loss-note-percentage-methods",
       "subjectCode": "MENT",
       "subtopicId": "ment-percentage-interest-profit-loss",
-      "title": "Percentage — conversions, change & the comparison trap",
-      "body": "## Core relations\n\n- **x% = x/100**; percentage *of* a quantity = quantity x %/100; whole = part x 100/%.\n- **Increase / decrease%** = (change / original value) x 100 — always on the *original*.\n\n## Fraction <-> percentage table (memorise)\n\n| Fraction | % | Fraction | % |\n|---|---|---|---|\n| 1/2 | 50% | 1/8 | 12.5% |\n| 1/3 | 33.33% | 3/8 | 37.5% |\n| 1/4 | 25% | 5/8 | 62.5% |\n| 1/5 | 20% | 1/6 | 16.66% |\n| 1/16 | 6.25% | 1/20 | 5% |\n\n## Successive change (net single %)\n\n- Two changes a% then b%: **net = a + b + ab/100** (use + for rise, - for fall).\n- Equal +x% then -x% => net **-x^2/100 %** (never zero): +20% then -20% = -4%.\n\n## The comparison / base-change trap\n\n- 'A is x% more than B' => **B is x/(100+x) x 100 % less than A** (25% more => 20% less).\n- Price up x% => **cut consumption by x/(100+x) x 100 %** to hold expenditure (25% up => 20% cut).\n\n**Worked example:** A number is increased by 25% then decreased by 20%. Net = 25 - 20 + (25)(-20)/100 = 5 - 5 = **0%** — the number is unchanged.",
+      "title": "Percentage — conversions, change and the comparison trap",
+      "body": "### Working with percentages\n\n**The idea in one sentence**\nA percentage is simply a number out of 100, so \"25%\" means 25 for every 100, and every percentage question is really a fraction with 100 on the bottom.\n\n**Do it the slow way first (no formula)**\nQuestion: write 5/8 as a percentage.\n1. \"Per cent\" means \"per hundred\", so you want to know how many parts out of 100 the fraction 5/8 is.\n2. Work out the fraction as a decimal: 5 ÷ 8 = 0.625.\n3. 0.625 means 0.625 of every 1, which is 62.5 of every 100, so 5/8 = 62.5%.\n4. Check by going back: 62.5% of 8 = 62.5/100 × 8 = 5. Correct.\n\n**Why does a rise then an equal fall not return to the start?**\nSalary goes up 20%, then down 20%. The rise is 20% of the small starting number, but the fall is 20% of the bigger new number, so you take away more than you added, and you end a little lower.\n\n**What the symbols mean**\n\"x%\" means x ÷ 100. The word \"of\" means multiply. \"Net change\" means the single change that has the same final effect as the two separate changes together.\n\n| Fraction | Percentage | Fraction | Percentage |\n|---|---|---|---|\n| 1/2 | 50% | 1/8 | 12.5% |\n| 1/4 | 25% | 3/8 | 37.5% |\n| 1/5 | 20% | 5/8 | 62.5% |\n| 1/3 | 33.33% | 1/6 | 16.66% |\n\n**The formula (now that you know what it does)**\nPart = whole × (% ÷ 100); whole = part × (100 ÷ %). Two changes a% then b% combine to a + b + ab ÷ 100 (use plus for a rise, minus for a fall). \"A is x% more than B\" means B is x ÷ (100 + x) × 100 % less than A.\n\n**Exam-level example**\nThe price of sugar rises 25%; by how much must a family cut consumption to spend the same? Cut = 25 ÷ (100 + 25) × 100 = 25/125 × 100 = 20%. Check: price 100, use 100, spend 10000; new price 125, use 80, spend 10000. Correct.\n\n**Common traps**\n- Taking the increase or decrease on the new value instead of the original.\n- Adding two successive percentages (20 + 20) and forgetting the ab ÷ 100 cross term.\n- Assuming \"A is 25% more than B\" means \"B is 25% less than A\" — the base changes, so it is 20%.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| 5 ÷ 8 = 0.625 = 62.5% | turn a fraction into per-hundred |\n| a + b + ab ÷ 100 | combine two percentage changes |\n| x ÷ (100 + x) × 100 | the reverse \"% less\" after a \"% more\" |",
       "keyPoints": [
-        "x% = x/100; part = whole x %/100; whole = part x 100/%.",
-        "Increase/decrease% is always computed on the ORIGINAL value.",
-        "Successive change a% then b% = a + b + ab/100 (with signs).",
-        "Equal +x% then -x% gives a net -x^2/100 %, never zero.",
-        "A is x% more than B => B is x/(100+x)x100 % less than A.",
-        "Price up x% => reduce consumption by x/(100+x)x100 % to keep expenditure constant."
+        "A percentage is a number out of 100: x% means x ÷ 100.",
+        "Increase or decrease percentage is always taken on the original value.",
+        "Successive change a% then b% = a + b + ab ÷ 100 (plus for rise, minus for fall).",
+        "Equal rise then equal fall of x% gives a net fall of x² ÷ 100 %, never zero.",
+        "'A is x% more than B' means B is x ÷ (100 + x) × 100 % less than A.",
+        "Price up x% needs a consumption cut of x ÷ (100 + x) × 100 % to spend the same."
       ],
-      "mnemonic": "Rise-then-equal-fall always LOSES: +20/-20 -> -4%, not 0.",
+      "mnemonic": "A rise then an equal fall always loses: up 20 then down 20 ends at a 4% loss.",
       "source": "local APPSC Group-1 Quantitative Reasoning PDFs — Basic Percentage.txt, Successive Percentage Change.txt, Comparison of Percentage.txt",
       "verified": true,
       "tags": ["percentage", "successive", "comparison"]
@@ -26,16 +26,16 @@
       "id": "ment-percentage-interest-profit-loss-note-simple-interest",
       "subjectCode": "MENT",
       "subtopicId": "ment-percentage-interest-profit-loss",
-      "title": "Simple Interest — formula, rearrangements & multiples",
-      "body": "## Formula\n\n- **SI = P x R x T / 100**;  Amount **A = P + SI = P(1 + RT/100)**.\n- Interest accrues on the **original principal only** — the base never grows.\n\n## Rearranged forms\n\n| Find | Formula |\n|---|---|\n| Principal P | 100 x SI / (R x T) |\n| Rate R | 100 x SI / (P x T) |\n| Time T | 100 x SI / (P x R) |\n\n## Becoming a multiple of itself\n\n- A sum **doubles** when total SI = P, i.e. **R x T = 100** (doubles in 8 yrs => R = 12.5%).\n- To become **n times**: **R x T = (n - 1) x 100** (triples => RT = 200).\n\n**Worked example:** A sum yields Rs 400 SI in 4 years at 5%. P = 100 x 400/(5 x 4) = 40000/20 = **Rs 2,000**.\n\n**Common trap:** confusing the *time* (years) with the *rate* (%) in doubling problems.",
+      "title": "Simple Interest — formula, rearrangements and multiples",
+      "body": "### Simple interest\n\n**The idea in one sentence**\nSimple interest is a fixed rent you pay (or earn) on the original sum every year, and because it is always worked out on that same starting sum, the amount added is identical each year.\n\n**Do it the slow way first (no formula)**\nQuestion: the simple interest on 5000 rupees at 8% a year for 3 years.\n1. Interest for one year = 8% of 5000 = 8/100 × 5000 = 400 rupees.\n2. The sum never changes under simple interest, so every year adds the same 400 rupees.\n3. Three years add 400 × 3 = 1200 rupees of interest.\n4. The final amount is 5000 + 1200 = 6200 rupees.\n\n**Why does a sum double when rate times time equals 100?**\nDoubling means the interest earned equals the original sum. Interest is (rate × time ÷ 100) of the sum, so to make that equal to the whole sum you need rate × time = 100.\n\n**What the symbols mean**\nP means the principal (the sum you start with), R means the rate per year as a percentage, T means the time in years, and SI means the simple interest earned.\n\n**The formula (now that you know what it does)**\nSI = P × R × T ÷ 100, and the amount A = P + SI. Rearranged: P = 100 × SI ÷ (R × T), R = 100 × SI ÷ (P × T), T = 100 × SI ÷ (P × R). A sum becomes n times itself when R × T = (n − 1) × 100.\n\n**Exam-level example**\nAt what rate does a sum double in 8 years under simple interest? Doubling needs R × T = 100, so R × 8 = 100 and R = 12.5%. Check: 12.5% of any sum for 8 years = 12.5 × 8 ÷ 100 = 1 times the sum, so it exactly doubles. Correct.\n\n**Common traps**\n- Confusing the time (8 years) with the rate (12.5%) in doubling questions.\n- Adding interest to the principal each year — that is compound interest, not simple.\n- Using R × T = 100 for tripling; tripling needs R × T = 200.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| SI = P × R × T ÷ 100 | the yearly rent on the original sum |\n| R × T = 100 | the sum doubles |\n| R × T = (n − 1) × 100 | the sum becomes n times |",
       "keyPoints": [
-        "SI = PRT/100; Amount = P(1 + RT/100); interest is on the original principal only.",
-        "P = 100xSI/(RxT); R = 100xSI/(PxT); T = 100xSI/(PxR).",
-        "A sum doubles under SI when R x T = 100.",
-        "To become n times under SI: R x T = (n - 1) x 100.",
-        "Doubling in 8 years under SI needs R = 12.5%."
+        "SI = P × R × T ÷ 100; Amount = P + SI; the base never grows.",
+        "P = 100 × SI ÷ (R × T); R = 100 × SI ÷ (P × T); T = 100 × SI ÷ (P × R).",
+        "A sum doubles under simple interest when R × T = 100.",
+        "A sum becomes n times itself when R × T = (n − 1) × 100.",
+        "Doubling in 8 years needs a rate of 12.5%."
       ],
-      "mnemonic": "Double => RT=100; n-times => RT=(n-1)x100.",
+      "mnemonic": "To double, rate times time hits 100; to go n times, rate times time hits (n minus 1) hundred.",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Simple Interest.txt",
       "verified": true,
       "tags": ["simple-interest", "formula"]
@@ -44,17 +44,16 @@
       "id": "ment-percentage-interest-profit-loss-note-compound-interest",
       "subjectCode": "MENT",
       "subtopicId": "ment-percentage-interest-profit-loss",
-      "title": "Compound Interest — compounding, CI-SI gap & growth/decay",
-      "body": "## Formula\n\n- **A = P(1 + R/100)^n**;  **CI = A - P = P[(1 + R/100)^n - 1]**.\n- Interest is added to the principal each period, so the base grows.\n\n## Compounding frequency\n\n| Frequency | Rate per period | No. of periods |\n|---|---|---|\n| Annual | R | n |\n| Half-yearly | R/2 | 2n |\n| Quarterly | R/4 | 4n |\n\n## CI - SI difference (same P, R, T)\n\n- **2 years: CI - SI = P(R/100)^2.**\n- **3 years: CI - SI = P(R/100)^2 x (3 + R/100).**\n\n## Growth & decay (same machinery)\n\n- Population / appreciation: **P(1 + R/100)^n**;  depreciation / decay: **P(1 - R/100)^n**.\n\n**Worked example:** CI on Rs 10,000 at 10% p.a., compounded half-yearly for 1 year: rate 5%, periods 2 => 10000 x (1.05)^2 = 11,025 => CI = **Rs 1,025** (vs Rs 1,000 annual SI).\n\n**Common trap:** for half-yearly, halve the rate AND double the periods — doing only one is the usual error.",
+      "title": "Compound Interest — compounding, the CI minus SI gap and growth/decay",
+      "body": "### Compound interest\n\n**The idea in one sentence**\nCompound interest adds each year's interest back onto the sum, so the next year's interest is worked out on a slightly bigger amount, and the growth speeds up over time.\n\n**Do it the slow way first (no formula)**\nQuestion: compound interest on 8000 rupees at 10% a year for 2 years.\n1. Year 1 interest = 10% of 8000 = 800 rupees. New amount = 8000 + 800 = 8800.\n2. Year 2 interest = 10% of 8800 (not 8000) = 880 rupees. New amount = 8800 + 880 = 9680.\n3. Total interest = 9680 − 8000 = 1680 rupees.\n4. Simple interest would have given 800 + 800 = 1600; the extra 80 is the interest on the first year's 800.\n\n**Why is half-yearly interest more than yearly?**\nCompounding twice a year adds the first half-year's interest back sooner, so the second half-year earns a little interest on it. More frequent adding means a higher final amount.\n\n**What the symbols mean**\nP is the principal, R is the yearly rate as a percentage, n is the number of compounding periods, and A is the final amount. \"Compounded half-yearly\" means you use half the rate and twice as many periods.\n\n**The formula (now that you know what it does)**\nA = P × (1 + R ÷ 100) multiplied by itself n times; CI = A − P. Half-yearly uses rate R ÷ 2 for 2n periods; quarterly uses R ÷ 4 for 4n periods. For the same P, R and 2 years, CI minus SI = P × (R ÷ 100) × (R ÷ 100).\n\n**Exam-level example**\nCompound interest on 10000 rupees at 10% for 1 year, compounded half-yearly. Rate per half-year = 5%, periods = 2. Half 1: 5% of 10000 = 500, amount 10500. Half 2: 5% of 10500 = 525, amount 11025. CI = 11025 − 10000 = 1025 rupees, which beats the 1000 rupees of yearly simple interest. Correct.\n\n**Common traps**\n- For half-yearly, halving the rate but forgetting to double the periods (or the reverse).\n- Using the original sum again in year 2 instead of the grown amount.\n- Treating population growth or depreciation as simple when they compound.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| A = P × (1 + R ÷ 100) each period | add interest back, then grow again |\n| half-yearly: R ÷ 2, 2n | half the rate, twice the periods |\n| CI − SI (2 yr) = P × (R ÷ 100)² | interest earned on the first year's interest |",
       "keyPoints": [
-        "A = P(1 + R/100)^n; CI = P[(1 + R/100)^n - 1].",
-        "Half-yearly => rate R/2 for 2n periods; quarterly => R/4 for 4n periods.",
-        "CI - SI (2 yrs) = P(R/100)^2.",
-        "CI - SI (3 yrs) = P(R/100)^2 x (3 + R/100).",
-        "Compound growth = P(1+R/100)^n; depreciation/decay = P(1-R/100)^n.",
-        "More frequent compounding gives a higher effective yield."
+        "A = P × (1 + R ÷ 100) applied n times; CI = A − P; the base grows each period.",
+        "Half-yearly uses rate R ÷ 2 for 2n periods; quarterly uses R ÷ 4 for 4n periods.",
+        "CI minus SI over 2 years = P × (R ÷ 100)², the interest on the first year's interest.",
+        "Compound growth = P × (1 + R ÷ 100) per year; depreciation uses (1 − R ÷ 100).",
+        "More frequent compounding gives a higher final amount."
       ],
-      "mnemonic": "Half-yearly = HALF the rate, DOUBLE the periods.",
+      "mnemonic": "Half-yearly means half the rate and double the periods.",
       "source": "local APPSC Group-1 Quantitative Reasoning PDFs — Compound Interest.txt, Depreciation.txt",
       "verified": true,
       "tags": ["compound-interest", "depreciation", "ci-si-difference"]
@@ -63,17 +62,16 @@
       "id": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
       "subjectCode": "MENT",
       "subtopicId": "ment-percentage-interest-profit-loss",
-      "title": "Profit, Loss, Discount & the CP=100 shortcut",
-      "body": "## Core formulae (percentages on Cost Price)\n\n- **Profit% = (SP - CP)/CP x 100**;  **Loss% = (CP - SP)/CP x 100**.\n- **SP = CP(1 + profit%/100)** or CP(1 - loss%/100).\n- Marked price & discount: **SP = MP(1 - discount%/100)** — discount is on **MP**, profit on **CP**.\n\n## Handy shortcuts\n\n- **Successive discounts** a%, b% => single equivalent **a + b - ab/100** (multiply (1-a/100)(1-b/100)).\n- **Dishonest dealer** selling at CP with a false weight: **gain% = error/(true value - error) x 100** (900 g 'kg' => 100/900 = 11.11%).\n- **Successive selling** through sellers: final price = CP x (1+p1/100)(1+p2/100)...\n- **CP = 100 method:** set cost price to 100 to turn mark-up + discount into one clean SP.\n\n**Worked example:** Marked 50% above cost, 20% discount. CP=100 => MP=150 => SP = 150 x 0.8 = 120 => **profit 20%**.\n\n**Common trap:** subtracting the discount% from the mark-up% (50 - 20 = 30%) — wrong, because they act on different bases.",
+      "title": "Profit, Loss, Discount and the cost-price-100 shortcut",
+      "body": "### Profit, loss and discount\n\n**The idea in one sentence**\nProfit and loss are always measured against the cost price (what you paid), while a discount is measured against the marked price (the sticker price), so the first job is always to know which base a percentage sits on.\n\n**Do it the slow way first (no formula)**\nQuestion: an article bought for 400 rupees is sold for 500 rupees; find the profit percentage.\n1. The gain in rupees = selling price − cost price = 500 − 400 = 100 rupees.\n2. Profit percentage compares this gain to the cost price, not the selling price.\n3. So profit % = 100 ÷ 400 × 100 = 25%.\n4. Check: 25% of 400 = 100, and 400 + 100 = 500. Correct.\n\n**Why not just subtract the discount from the mark-up?**\nMarking up 50% then giving 20% off does not leave 30% profit, because the 50% is added to the cost price but the 20% is taken off the larger marked price. The two percentages sit on different bases, so they cannot be added or subtracted directly.\n\n**What the symbols mean**\nCP means cost price (what you paid), SP means selling price (what you sold for), and MP means marked price (the sticker price before any discount). \"Discount\" means the cut taken off the marked price.\n\n**The formula (now that you know what it does)**\nProfit % = (SP − CP) ÷ CP × 100; SP = CP × (1 + profit % ÷ 100); SP = MP × (1 − discount % ÷ 100). Two successive discounts a% and b% equal a single a + b − ab ÷ 100. The quickest route is to set CP = 100 and turn the mark-up and discount into one clean selling price.\n\n**Exam-level example**\nGoods marked 50% above cost, then 20% discount. Set CP = 100, so MP = 150. SP = 150 × (1 − 20 ÷ 100) = 150 × 0.8 = 120. Profit = 120 − 100 = 20 on a cost of 100, so 20%. Check: the discount acted on 150, not 100, which is why it is not 30%. Correct.\n\n**Common traps**\n- Dividing the gain by the selling price instead of the cost price.\n- Subtracting the discount percentage from the mark-up percentage.\n- Adding two successive discounts (20 + 10) instead of using a + b − ab ÷ 100.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| profit % on CP, discount on MP | always check which base |\n| SP = MP × (1 − d ÷ 100) | price after a discount |\n| a + b − ab ÷ 100 | one discount equal to two |",
       "keyPoints": [
-        "Profit%/Loss% are computed on Cost Price; SP = CP(1 +/- pct/100).",
-        "SP = MP(1 - discount%/100): discount on MP, profit on CP.",
-        "Successive discounts a%, b% = single a + b - ab/100.",
-        "Dishonest dealer at CP with false weight: gain% = error/(true - error) x 100.",
-        "Successive selling: final = CP x (1+p1/100)(1+p2/100)...",
-        "CP=100 shortcut converts any mark-up + discount into a direct profit%."
+        "Profit % and loss % are taken on the cost price; SP = CP × (1 ± percentage ÷ 100).",
+        "Discount is taken on the marked price: SP = MP × (1 − discount % ÷ 100).",
+        "Two successive discounts a% and b% equal a single a + b − ab ÷ 100.",
+        "A dishonest dealer at cost price with a false weight gains error ÷ (true weight − error) × 100.",
+        "Setting CP = 100 turns any mark-up plus discount into a direct profit percentage."
       ],
-      "mnemonic": "Discount is on MP, profit is on CP — never mix the bases.",
+      "mnemonic": "Discount sits on the marked price, profit sits on the cost price — never swap the base.",
       "source": "local APPSC Group-1 Quantitative Reasoning PDFs — Discount & MP.txt, Successive discount.txt, Successive Selling.txt",
       "verified": true,
       "tags": ["profit-loss", "discount", "dishonest-dealer"]
@@ -82,16 +80,16 @@
       "id": "ment-percentage-interest-profit-loss-note-partnership-alligation",
       "subjectCode": "MENT",
       "subtopicId": "ment-percentage-interest-profit-loss",
-      "title": "Partnership & Mixtures/Alligation",
-      "body": "## Partnership (profit sharing)\n\n- Each partner's share of profit is **proportional to Capital × Time invested**.\n- Equal time ⇒ share ratio = **capital ratio**. Different times ⇒ use **capital-months** (capital × months).\n- Steps: form the ratio C₁T₁ : C₂T₂ : …, add the parts, take each partner's fraction of the profit.\n\n**Worked example.** A ₹5,000 for 12 mo, B ₹6,000 for 6 mo → 60,000 : 36,000 = 5 : 3. On ₹9,600, B = 3/8 × 9,600 = **₹3,600**.\n\n## Mixtures & Alligation\n\n- To blend two ingredients of cost c (cheaper) and d (dearer) to a **mean price m**:\n\n$$\\frac{\\text{quantity of cheaper}}{\\text{quantity of dearer}} = \\frac{d - m}{m - c}$$\n\n- The mean price sits **closer** to the ingredient present in greater quantity.\n\n**Worked example.** ₹30/kg and ₹40/kg blended to ₹36/kg → (40−36):(36−30) = 4:6 = **2:3** (cheaper : dearer).\n\n**Trap:** alligation gives the **quantity ratio**, not a price; and the cross-differences go 'dearer−mean over mean−cheaper'.",
+      "title": "Partnership and Mixtures/Alligation",
+      "body": "### Partnership and alligation\n\n**The idea in one sentence**\nIn a partnership the profit is split in proportion to how much money each person put in and for how long; in alligation you work out how to blend two priced items so the mixture hits a target price, by comparing distances from that target.\n\n**Do it the slow way first (no formula)**\nQuestion: A puts in 5000 rupees for 12 months, B puts in 6000 rupees for 6 months; split a profit of 9600.\n1. Money alone is not fair, because A left it in twice as long, so multiply each sum by its months.\n2. A counts as 5000 × 12 = 60000; B counts as 6000 × 6 = 36000.\n3. The ratio is 60000 to 36000, which cuts down to 5 to 3, so 8 equal parts in all.\n4. B gets 3 of those 8 parts: 3 ÷ 8 × 9600 = 3600 rupees.\n\n**Why does the mean price sit closer to the larger quantity?**\nIf you use more of the cheaper item, the blend is pulled down near the cheaper price; the ingredient you use more of drags the average towards itself.\n\n**What the symbols mean**\n\"Capital-months\" means the money multiplied by the number of months it stayed in. In alligation, \"cheaper\" is the lower price c, \"dearer\" is the higher price d, and \"mean\" is the target blend price m.\n\n**The formula (now that you know what it does)**\nPartnership share is in the ratio of capital × time for each partner; with equal time it is just the ratio of the money. For alligation, quantity of cheaper divided by quantity of dearer = (d − m) divided by (m − c).\n\n**Exam-level example**\nMix rice at 30 rupees a kg with rice at 40 rupees a kg to get 36 rupees a kg. Cheaper to dearer = (40 − 36) to (36 − 30) = 4 to 6 = 2 to 3. Check: take 2 kg and 3 kg: cost = 2 × 30 + 3 × 40 = 60 + 120 = 180 over 5 kg = 36 a kg. Correct.\n\n**Common traps**\n- Using the plain money ratio when the partners invested for different times.\n- Writing the alligation differences upside down (cheaper over dearer).\n- Reading the alligation answer as a price; it is a quantity ratio.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| share is money × months | partnership profit split |\n| (d − m) : (m − c) | cheaper to dearer quantity |\n| nearer price = more used | the blend leans to the bigger quantity |",
       "keyPoints": [
-        "Partnership share ∝ Capital × Time; equal time ⇒ just the capital ratio.",
-        "Different periods: use capital-months (capital × months) before forming the ratio.",
-        "Alligation: (dearer − mean):(mean − cheaper) = qty cheaper : qty dearer.",
+        "Partnership profit is split in the ratio of capital × time; equal time means just the money ratio.",
+        "For different periods, multiply each sum by its months before forming the ratio.",
+        "Alligation: quantity of cheaper to quantity of dearer = (dearer − mean) to (mean − cheaper).",
         "The mean price lies nearer the ingredient used in greater quantity.",
-        "Alligation yields a quantity ratio, not a price."
+        "Alligation gives a quantity ratio, not a price."
       ],
-      "mnemonic": "Partnership = money × months; Alligation = cross the differences.",
+      "mnemonic": "Partnership is money times months; alligation crosses the price gaps.",
       "source": "standard APPSC/SSC arithmetic — Partnership; Mixtures & Alligation",
       "verified": true,
       "tags": ["partnership", "alligation", "mixture"]

@@ -90,7 +90,7 @@
         "4:23 7/11 min"
       ],
       "answerIndex": 2,
-      "explanation": "Hands coincide when 30H = 5.5M ⇒ M = 60H/11. For H = 4: M = 240/11 = **21 9/11**, i.e. 4:21 9/11.\n\n**Why not the others**\n- 4:20 — the rough guess ignoring the hour hand's own movement.\n- 4:22 2/11 — arises from using 5H·(12/11) with the wrong base.\n- 4:23 7/11 — the overlap time for the 5–6 window, not 4–5.\n\n**Key facts**\n- The hands coincide once each ~65 5/11 minutes (720/11 min) → 11 times in 12 h, 22 times in 24 h.\n- Coincidence minute past hour H = 60H/11.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence of hands).*",
+      "explanation": "The hands overlap when the minute hand catches up to the hour hand. At 4:00 the hour hand is 4 × 30 = 120 degrees ahead, and the minute hand gains 5.5 degrees every minute, so it needs 120 ÷ 5.5 minutes. That is 240/11 = 21 and 9/11 minutes, so the time is **4:21 9/11**.\n\n**Why not the others**\n- 4:20 — the rough guess ignoring the hour hand's own movement.\n- 4:22 2/11 — arises from using 5H·(12/11) with the wrong base.\n- 4:23 7/11 — the overlap time for the 5–6 window, not 4–5.\n\n**Key facts**\n- The hands coincide once each ~65 5/11 minutes (720/11 min) → 11 times in 12 h, 22 times in 24 h.\n- Coincidence minute past hour H = 60H/11.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence of hands).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -113,7 +113,7 @@
         "2:28 8/11 min"
       ],
       "answerIndex": 1,
-      "explanation": "Need |30×2 − 5.5M| = 90 ⇒ |60 − 5.5M| = 90. Taking 5.5M − 60 = 90 gives M = 150/5.5 = 300/11 = **27 3/11**, so 2:27 3/11.\n\n**Why not the others**\n- 2:25 5/11 — solves 60 − 5.5M = 60 (a 60° gap), not 90°.\n- 2:30 — a rough guess; at 2:30 the angle is |60 − 165| = 105°, not 90°.\n- 2:28 8/11 — uses 5.5M − 60 = 95, an arithmetic slip.\n\n**Key facts**\n- Right-angle condition: |30H − 5.5M| = 90.\n- Hands are at right angles 22 times in 12 hours and 44 times in 24 hours.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (right angles).*",
+      "explanation": "At 2 o'clock the hour hand is 60 degrees from the 12, so the gap is the size of (60 − 5.5M). Setting 5.5M − 60 = 90 gives 5.5M = 150, so M = 150 ÷ 5.5 = 300/11 = **27 3/11**, giving 2:27 3/11.\n\n**Why not the others**\n- 2:25 5/11 — solves 60 − 5.5M = 60 (a 60° gap), not 90°.\n- 2:30 — a rough guess; at 2:30 the angle is |60 − 165| = 105°, not 90°.\n- 2:28 8/11 — uses 5.5M − 60 = 95, an arithmetic slip.\n\n**Key facts**\n- Right-angle condition: |30H − 5.5M| = 90.\n- Hands are at right angles 22 times in 12 hours and 44 times in 24 hours.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (right angles).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -182,7 +182,7 @@
         "0"
       ],
       "answerIndex": 0,
-      "explanation": "100 years have 5 odd days, so 200 years have 5 × 2 = 10 odd days ≡ 10 − 7 = **3** odd days.\n\n**Why not the others**\n- 5 — that is the count for 100 years, not 200.\n- 1 — the count for 300 years (15 mod 7).\n- 0 — the count for 400 years (28 mod 7), which is fully divisible.\n\n**Key facts**\n- Odd days: 100 yrs = 5, 200 yrs = 3, 300 yrs = 1, 400 yrs = 0.\n- 'Odd days' = days left over after counting complete weeks; 1 ordinary year = 1 odd day, 1 leap year = 2.\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
+      "explanation": "100 years have 5 odd days, so 200 years have 5 × 2 = 10 odd days. Take out one whole week (7 days): 10 − 7 = **3** odd days.\n\n**Why not the others**\n- 5 — that is the count for 100 years, not 200.\n- 1 — the count for 300 years (15 mod 7).\n- 0 — the count for 400 years (28 mod 7), which is fully divisible.\n\n**Key facts**\n- Odd days: 100 yrs = 5, 200 yrs = 3, 300 yrs = 1, 400 yrs = 0.\n- 'Odd days' = days left over after counting complete weeks; 1 ordinary year = 1 odd day, 1 leap year = 2.\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
       "source": "local APPSC Logical Reasoning PDF — Calendar",
       "verified": true,
       "covers": [
@@ -205,7 +205,7 @@
         "Wednesday"
       ],
       "answerIndex": 2,
-      "explanation": "Counting odd days up to 15 Aug 1947 (1600 yrs = 0, 300 yrs = 1, 46 yrs = 46 + 11 leap = 57 ≡ 1, plus days of 1947 to 15 Aug) gives a total ≡ 5 odd days from Sunday ⇒ **Friday**.\n\n**Why not the others**\n- Thursday — one odd day short (an off-by-one in the month totals).\n- Saturday — one odd day extra.\n- Wednesday — miscounts the leap years in 1901–1947.\n\n**Key facts**\n- Day = (total odd days) counted from a reference; 0→Sunday, 1→Monday … 5→Friday, 6→Saturday.\n- Month odd-days (Jan..): 3,0,3,2,3,2,3,3,2,3,2,3 for an ordinary year.\n\n*Source: standard calendar computation (verified with datetime).*",
+      "explanation": "Counting odd days up to 15 August 1947: 1600 years give 0, 300 years give 1, the 46 completed years give 46 + 11 leap days = 57 which leaves 1 after whole weeks, and the days of 1947 up to 15 August add the rest. The running total leaves 5 odd days counted from Sunday, which lands on **Friday**.\n\n**Why not the others**\n- Thursday — one odd day short (an off-by-one in the month totals).\n- Saturday — one odd day extra.\n- Wednesday — miscounts the leap years in 1901–1947.\n\n**Key facts**\n- Day = (total odd days) counted from a reference; 0→Sunday, 1→Monday … 5→Friday, 6→Saturday.\n- Month odd-days (Jan..): 3,0,3,2,3,2,3,3,2,3,2,3 for an ordinary year.\n\n*Source: standard calendar computation (verified with datetime).*",
       "source": "standard calendar computation (verified with datetime)",
       "verified": true,
       "covers": [
@@ -251,7 +251,7 @@
         "2033"
       ],
       "answerIndex": 2,
-      "explanation": "2023 is an ordinary year. Adding odd days year by year (1+2+1+1+1+2+1+1+1+2 = 13 ≡ 6, then +1 more for 2034 alignment), the running odd-day total first returns to a multiple of 7 with matching leap-status at **2034**.\n\n**Why not the others**\n- 2028 — is a leap year, so its calendar cannot match an ordinary year like 2023.\n- 2029 — running odd days = 7 (≡0) but it follows a different Jan-1 weekday; check fails.\n- 2033 — one year short; the odd-day sum is not yet a multiple of 7 with matching type.\n\n**Key facts**\n- A calendar repeats when total odd days since the year ≡ 0 (mod 7) AND leap-year status matches.\n- Ordinary years usually repeat after 6 or 11 years; leap years after 28.\n\n*Source: standard calendar computation (verified with datetime).*",
+      "explanation": "2023 is an ordinary year that starts on a Sunday. Adding the odd days year by year (1, 2, 1, 1, 1, 2, 1, 1, 1, 2), the first later year that again starts on a Sunday and is also an ordinary year is **2034**. A datetime check confirms 1 January 2023 and 1 January 2034 are both Sundays.\n\n**Why not the others**\n- 2028 — is a leap year, so its calendar cannot match an ordinary year like 2023.\n- 2029 — its running odd days reach a full week, but it starts on a different weekday, so the check fails.\n- 2033 — one year short; the odd-day sum is not yet a whole number of weeks with the matching year type.\n\n**Key facts**\n- A calendar repeats when the total odd days since the year make a whole number of weeks AND the leap-year status matches.\n- Ordinary years usually repeat after 6 or 11 years; leap years after 28.\n\n*Source: standard calendar computation (verified with datetime).*",
       "source": "standard calendar computation (verified with datetime)",
       "verified": true,
       "covers": [
@@ -274,7 +274,7 @@
         "30 and 42 years"
       ],
       "answerIndex": 3,
-      "explanation": "Let ages be 5x and 7x. Then (5x+6)/(7x+6) = 3/4 ⇒ 4(5x+6) = 3(7x+6) ⇒ 20x+24 = 21x+18 ⇒ x = 6. Ages = 5×6 and 7×6 = **30 and 42 years**.\n\n**Why not the others**\n- 25 and 35 — x = 5, but then 31/41 ≠ 3/4.\n- 35 and 49 — x = 7, giving 41/55 ≠ 3/4.\n- 20 and 28 — x = 4, giving 26/34 ≠ 3/4.\n\n**Key facts**\n- Set ratio parts as 5x, 7x; add the time to both, equate to the new ratio, solve the linear equation.\n- Check by substituting x back into the future ratio.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the ages be 5x and 7x. Six years later they are 5x + 6 and 7x + 6, in the ratio 3 : 4, so 4 × (5x + 6) = 3 × (7x + 6). That gives 20x + 24 = 21x + 18, so x = 6. The ages are 5 × 6 and 7 × 6 = **30 and 42 years**.\n\n**Why not the others**\n- 25 and 35 — x = 5, but then 31/41 ≠ 3/4.\n- 35 and 49 — x = 7, giving 41/55 ≠ 3/4.\n- 20 and 28 — x = 4, giving 26/34 ≠ 3/4.\n\n**Key facts**\n- Set ratio parts as 5x, 7x; add the time to both, equate to the new ratio, solve the linear equation.\n- Check by substituting x back into the future ratio.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -297,7 +297,7 @@
         "15 years"
       ],
       "answerIndex": 2,
-      "explanation": "Let son = S, father = S + 30. In 12 years: (S+30)+12 = 2(S+12) ⇒ S+42 = 2S+24 ⇒ S = **18 years**.\n\n**Why not the others**\n- 16 — gives father 46; in 12 yrs 58 vs 2×28 = 56, not equal.\n- 20 — gives father 50; in 12 yrs 62 vs 2×32 = 64, not equal.\n- 15 — gives father 45; in 12 yrs 57 vs 2×27 = 54, not equal.\n\n**Key facts**\n- The age difference stays constant; use it to write one age in terms of the other.\n- 'Twice as old' → form the equation at the stated future/past time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the son be S, so the father is S + 30. In 12 years the father is twice the son: (S + 30) + 12 = 2 × (S + 12). That gives S + 42 = 2S + 24, so S = **18 years**.\n\n**Why not the others**\n- 16 — gives father 46; in 12 yrs 58 vs 2×28 = 56, not equal.\n- 20 — gives father 50; in 12 yrs 62 vs 2×32 = 64, not equal.\n- 15 — gives father 45; in 12 yrs 57 vs 2×27 = 54, not equal.\n\n**Key facts**\n- The age difference stays constant; use it to write one age in terms of the other.\n- 'Twice as old' → form the equation at the stated future/past time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -343,7 +343,7 @@
         "49 years"
       ],
       "answerIndex": 0,
-      "explanation": "Let ages be 7x and x. Then (7x+5)/(x+5) = 4/1 ⇒ 7x+5 = 4x+20 ⇒ 3x = 15 ⇒ x = 5. Mother = 7×5 = **35 years**.\n\n**Why not the others**\n- 42 — x = 6, but 47/11 ≠ 4.\n- 28 — x = 4, giving 33/9 ≠ 4.\n- 49 — x = 7, giving 54/12 ≠ 4.\n\n**Key facts**\n- Ratios change over time because the SAME number of years is added to both ages.\n- Equate the future ratio to a single fraction and solve for x.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the ages be 7x and x. Five years later they are 7x + 5 and x + 5, in the ratio 4 : 1, so 7x + 5 = 4 × (x + 5). That gives 7x + 5 = 4x + 20, so 3x = 15 and x = 5. The mother is 7 × 5 = **35 years**.\n\n**Why not the others**\n- 42 — x = 6, but 47/11 ≠ 4.\n- 28 — x = 4, giving 33/9 ≠ 4.\n- 49 — x = 7, giving 54/12 ≠ 4.\n\n**Key facts**\n- Ratios change over time because the SAME number of years is added to both ages.\n- Equate the future ratio to a single fraction and solve for x.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -366,7 +366,7 @@
         "40 years"
       ],
       "answerIndex": 1,
-      "explanation": "Let present ages be 3k and 4k. Ten years ago: 3k − 10 = (4k − 10)/2 ⇒ 6k − 20 = 4k − 10 ⇒ 2k = 10 ⇒ k = 5. Ages = 15 and 20; sum = **35 years**.\n\n**Why not the others**\n- 30 — k = 4.28…, not integer; fails the 'half' condition.\n- 45 — k = 6.43…, does not satisfy 3k−10 = (4k−10)/2.\n- 40 — k = 5.71…, again inconsistent with the past condition.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the stated relation.\n- Combine the present ratio (3k, 4k) with the past equation to solve for k.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the present ages be 3k and 4k. Ten years ago A was half of B, so 3k − 10 = (4k − 10) ÷ 2. Multiply both sides by 2: 6k − 20 = 4k − 10, so 2k = 10 and k = 5. The ages are 15 and 20, and the sum is **35 years**.\n\n**Why not the others**\n- 30 — k = 4.28…, not integer; fails the 'half' condition.\n- 45 — k = 6.43…, does not satisfy 3k−10 = (4k−10)/2.\n- 40 — k = 5.71…, again inconsistent with the past condition.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the stated relation.\n- Combine the present ratio (3k, 4k) with the past equation to solve for k.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -458,7 +458,7 @@
         "Saturday"
       ],
       "answerIndex": 2,
-      "explanation": "Counting odd days up to 26 January 1950 (1600 yrs → 0, 300 yrs → 1, 49 yrs with 12 leap years → 61 ≡ 5, plus 26 days of January → 26 ≡ 5) totals 11 ≡ 4 odd days from the reference, which lands on **Thursday** (a standard calendar computation confirms 26-Jan-1950 = Thursday).\n\n**Why not the others**\n- Wednesday — one odd day short (an off-by-one in the January day count).\n- Friday — one odd day extra.\n- Saturday — miscounts the leap years in 1901–1949.\n\n**Key facts**\n- Day = total odd days counted from the reference; map 0→Sunday … 4→Thursday.\n- Republic Day 26 Jan 1950 fell on a Thursday.\n\n*Source: standard calendar computation (verified with datetime).*",
+      "explanation": "Counting odd days up to 26 January 1950: 1600 years give 0, 300 years give 1, the 49 completed years with 12 leap years give 61 which leaves 5 after whole weeks, and 26 days of January leave 5. The total leaves 4 odd days from the reference, which lands on **Thursday**. A datetime check confirms 26 January 1950 was a Thursday.\n\n**Why not the others**\n- Wednesday — one odd day short (an off-by-one in the January day count).\n- Friday — one odd day extra.\n- Saturday — miscounts the leap years in 1901–1949.\n\n**Key facts**\n- Day = total odd days counted from the reference; map 0→Sunday … 4→Thursday.\n- Republic Day 26 Jan 1950 fell on a Thursday.\n\n*Source: standard calendar computation (verified with datetime).*",
       "source": "standard calendar computation (verified with datetime)",
       "verified": true,
       "covers": [
@@ -481,7 +481,7 @@
         "0"
       ],
       "answerIndex": 3,
-      "explanation": "100 years give 5 odd days, so 400 years give 5 × 4 = 20; adding the extra leap day of the 400th century year makes 21 ≡ 0 (i.e. 400 years contain exactly a whole number of weeks). So **0** odd days.\n\n**Why not the others**\n- 1 — the count for 300 years (15 mod 7).\n- 2 — no standard century block gives 2 odd days.\n- 3 — the count for 200 years (10 mod 7).\n\n**Key facts**\n- Odd days: 100 → 5, 200 → 3, 300 → 1, 400 → 0.\n- Every 400-year cycle repeats the calendar exactly (0 odd days).\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
+      "explanation": "100 years give 5 odd days, so four of them give 5 × 4 = 20; the 400th year is itself a leap year (divisible by 400), adding 1 more to make 21. 21 is exactly 3 whole weeks, so 400 years contain a whole number of weeks and leave **0** odd days.\n\n**Why not the others**\n- 1 — the count for 300 years (15 mod 7).\n- 2 — no standard century block gives 2 odd days.\n- 3 — the count for 200 years (10 mod 7).\n\n**Key facts**\n- Odd days: 100 → 5, 200 → 3, 300 → 1, 400 → 0.\n- Every 400-year cycle repeats the calendar exactly (0 odd days).\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
       "source": "local APPSC Logical Reasoning PDF — Calendar",
       "verified": true,
       "covers": [
@@ -504,7 +504,7 @@
         "12 years"
       ],
       "answerIndex": 1,
-      "explanation": "Let the ages be 3x and 5x. Then (3x+10)/(5x+10) = 5/7 ⇒ 7(3x+10) = 5(5x+10) ⇒ 21x+70 = 25x+50 ⇒ 4x = 20 ⇒ x = 5. So A = 3×5 = **15 years**.\n\n**Why not the others**\n- 20 — x = 6.67 does not satisfy the future ratio.\n- 25 — that is B's present age (5x = 25), not A's.\n- 12 — x = 4 gives 22/30 ≠ 5/7.\n\n**Key facts**\n- Set the ratio parts as 3x, 5x; add the elapsed time to both, equate to the new ratio.\n- Check: (15+10)/(25+10) = 25/35 = 5/7. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the ages be 3x and 5x. Ten years later they are 3x + 10 and 5x + 10, in the ratio 5 : 7, so 7 × (3x + 10) = 5 × (5x + 10). That gives 21x + 70 = 25x + 50, so 4x = 20 and x = 5. So A is 3 × 5 = **15 years**.\n\n**Why not the others**\n- 20 — x = 6.67 does not satisfy the future ratio.\n- 25 — that is B's present age (5x = 25), not A's.\n- 12 — x = 4 gives 22/30 ≠ 5/7.\n\n**Key facts**\n- Set the ratio parts as 3x, 5x; add the elapsed time to both, equate to the new ratio.\n- Check: (15+10)/(25+10) = 25/35 = 5/7. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -550,7 +550,7 @@
         "10 years"
       ],
       "answerIndex": 2,
-      "explanation": "Let son = s and father = 60 − s. Six years ago: (60 − s) − 6 = 5(s − 6) ⇒ 54 − s = 5s − 30 ⇒ 6s = 84 ⇒ s = **14 years**.\n\n**Why not the others**\n- 12 — gives father 48; 6 yrs ago 42 vs 5×6 = 30, not equal.\n- 16 — gives father 44; 6 yrs ago 38 vs 5×10 = 50, not equal.\n- 10 — gives father 50; 6 yrs ago 44 vs 5×4 = 20, not equal.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the ratio/multiple.\n- Check: father now 46, son 14; 6 yrs ago 40 = 5 × 8. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the son be s, so the father is 60 − s. Six years ago the father was five times the son: (60 − s) − 6 = 5 × (s − 6). That gives 54 − s = 5s − 30, so 6s = 84 and s = **14 years**.\n\n**Why not the others**\n- 12 — gives father 48; 6 yrs ago 42 vs 5×6 = 30, not equal.\n- 16 — gives father 44; 6 yrs ago 38 vs 5×10 = 50, not equal.\n- 10 — gives father 50; 6 yrs ago 44 vs 5×4 = 20, not equal.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the ratio/multiple.\n- Check: father now 46, son 14; 6 yrs ago 40 = 5 × 8. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -597,7 +597,7 @@
         "Saturday"
       ],
       "answerIndex": 0,
-      "explanation": "The 21st is 21 − 5 = 16 days after the 5th. 16 mod 7 = 2, so the weekday advances two places from Tuesday: Tuesday → Wednesday → Thursday.\n\n**Why not the others**\n- Wednesday — only one day's advance (would need a 15-day gap).\n- Friday — three days' advance, i.e. a 17-day gap.\n- Saturday — four days' advance, not 16 mod 7 = 2.\n\n**Key facts**\n- Weekday advances by (date difference mod 7).\n- 16 mod 7 = 2 ⇒ Tuesday + 2 = Thursday.\n\n*Source: APPSC Quantitative Reasoning PDF — Calendar date-shift.*",
+      "explanation": "The 21st is 21 − 5 = 16 days after the 5th. Whole weeks do not change the weekday, so take out 14 days (two weeks) from 16, leaving 2. Move two weekdays on from Tuesday: Tuesday, Wednesday, Thursday, so the 21st is a **Thursday**.\n\n**Why not the others**\n- Wednesday — only one day's advance (would need a 15-day gap).\n- Friday — three days' advance, i.e. a 17-day gap.\n- Saturday — four days' advance, not a gap of 16 days.\n\n**Key facts**\n- The weekday moves on by the gap between the dates after taking out whole weeks.\n- 16 days is two weeks plus 2 days, so Tuesday plus 2 = Thursday.\n\n*Source: APPSC Quantitative Reasoning PDF — Calendar date-shift.*",
       "source": "APPSC Quantitative Reasoning PDF — Calendar",
       "verified": true,
       "covers": [
