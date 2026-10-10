@@ -38,7 +38,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
       "front": "Triangle centres — centroid, circumcentre, incentre, orthocentre?",
-      "back": "Centroid: medians, divides 2:1 from vertex. Circumcentre: perp-bisectors (right △ ⇒ hypotenuse midpoint). Incentre: angle bisectors. Orthocentre: altitudes (right △ ⇒ right-angle vertex).",
+      "back": "Centroid: medians, 2:1 from vertex. Circumcentre: perpendicular bisectors (right triangle: hypotenuse midpoint). Incentre: angle bisectors. Orthocentre: altitudes (right triangle: right-angle vertex).",
       "examPoint": "Triangle centres properties",
       "source": "Quantitative Reasoning — Centroid; Circumcentre",
       "verified": true
@@ -88,7 +88,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
       "front": "Coordinate geometry — distance, section, slope, triangle area?",
-      "back": "d=√(Δx²+Δy²); section (m:n) = ((mx₂+nx₁)/(m+n),…); slope=Δy/Δx (⊥ ⇒ m₁m₂=−1); area=½|x₁(y₂−y₃)+…|, zero ⇒ collinear.",
+      "back": "d=√(Δx²+Δy²); section (m:n) = ((mx₂+nx₁)/(m+n),…); slope=Δy/Δx (perpendicular lines: m₁m₂=−1); area=½|x₁(y₂−y₃)+…|, and zero area means collinear.",
       "examPoint": "Coordinate geometry — distance, section, slope, area",
       "source": "Quantitative Reasoning — Co-ordinate Geometry",
       "verified": true
@@ -98,7 +98,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
       "front": "Counting integer-sided triangles for perimeter P?",
-      "back": "List a ≤ b ≤ c with a+b+c=P and a+b>c (so c < P/2). Perimeter 14 ⇒ 4 triangles; perimeter 11 ⇒ 4.",
+      "back": "List a ≤ b ≤ c with a+b+c=P and a+b>c (so c < P/2). Perimeter 14 gives 4 triangles; perimeter 11 gives 4.",
       "examPoint": "Integer-sided triangle counting",
       "source": "Quantitative Reasoning — Triangle inequality",
       "verified": true

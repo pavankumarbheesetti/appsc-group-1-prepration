@@ -386,7 +386,7 @@
         "112.5%"
       ],
       "answerIndex": 1,
-      "explanation": "Surface area scales as the square of the linear factor. New edge = 1.5a, so SA scales by (1.5)² = 2.25, i.e. the new SA is 225% of the old. Increase = 225% − 100% = **125%**.\n\n**Why not the others**\n- 225% — this is the ratio of new to old SA, not the increase (which is 125%).\n- 237.5% — this is the volume increase, since volume scales by (1.5)³ = 3.375 → +237.5%.\n- 112.5% — this halves the correct increase.\n\n**Key facts**\n- Linear ×k ⇒ area ×k², volume ×k³. Here k = 1.5: area ×2.25 (+125%), volume ×3.375 (+237.5%).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
+      "explanation": "Surface area scales as the square of the linear factor. New edge = 1.5a, so SA scales by (1.5)² = 2.25, i.e. the new SA is 225% of the old. Increase = 225% − 100% = **125%**.\n\n**Why not the others**\n- 225% — this is the ratio of new to old SA, not the increase (which is 125%).\n- 237.5% — this is the volume increase, since volume scales by (1.5)³ = 3.375 → +237.5%.\n- 112.5% — this halves the correct increase.\n\n**Key facts**\n- Scaling every length by k gives area × k² and volume × k³. Here k = 1.5: area ×2.25 (+125%), volume ×3.375 (+237.5%).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
       "source": "local APPSC Quantitative Reasoning PDF — Cube",
       "verified": true,
       "covers": [
@@ -478,7 +478,7 @@
         "2 : 1 : 3"
       ],
       "answerIndex": 0,
-      "explanation": "With height = r: cone = ⅓πr²·r = ⅓πr³; hemisphere = ⅔πr³; cylinder = πr²·r = πr³. Dividing by ⅓πr³ gives 1 : 2 : 3 ⇒ cone : hemisphere : cylinder = **1 : 2 : 3**.\n\n**Why not the others**\n- 3 : 2 : 1 — reverses the order; the cylinder is the largest, not the smallest.\n- 1 : 1 : 1 — the three solids do not have equal volumes.\n- 2 : 1 : 3 — mis-assigns the hemisphere's ⅔ share.\n\n**Key facts**\n- Same base r and height r: cone ⅓πr³, hemisphere ⅔πr³, cylinder πr³.\n- Ratio 1 : 2 : 3 (a classic mensuration result).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cone / Hemisphere / Cylinder.*",
+      "explanation": "With height = r: cone = ⅓πr²·r = ⅓πr³; hemisphere = ⅔πr³; cylinder = πr²·r = πr³. Dividing each by ⅓πr³ gives 1 : 2 : 3, so cone : hemisphere : cylinder = **1 : 2 : 3**.\n\n**Why not the others**\n- 3 : 2 : 1 — reverses the order; the cylinder is the largest, not the smallest.\n- 1 : 1 : 1 — the three solids do not have equal volumes.\n- 2 : 1 : 3 — mis-assigns the hemisphere's ⅔ share.\n\n**Key facts**\n- Same base r and height r: cone ⅓πr³, hemisphere ⅔πr³, cylinder πr³.\n- Ratio 1 : 2 : 3 (a classic mensuration result).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cone / Hemisphere / Cylinder.*",
       "source": "local APPSC Quantitative Reasoning PDF — Cone / Hemisphere / Cylinder",
       "verified": true,
       "covers": [
@@ -618,7 +618,7 @@
         "halved"
       ],
       "answerIndex": 1,
-      "explanation": "Cylinder volume V = πr²h, so the factor change = (radius factor)² × (height factor).\n\n**Worked steps**\n- Radius ×2 ⇒ r² factor = 2² = 4; height ×½.\n- New/old = 4 × ½ = 2 ⇒ volume is **doubled**.\n\n**Why not the others**\n- unchanged — assumes the ×4 and ×½ cancel to 1, but 4 × ½ = 2.\n- four times — counts only the radius effect, ignoring the halved height.\n- halved — uses the height change only.\n\n**Key facts**\n- V ∝ r²h: radius enters as a square, height linearly.\n- Combine the factors multiplicatively: 4 × 0.5 = 2.\n\n*Source: standard APPSC/SSC mensuration — scaling of cylinder volume.*",
+      "explanation": "Cylinder volume V = πr²h, so the factor change = (radius factor)² × (height factor).\n\n**Worked steps**\n- Radius × 2 makes the r² factor 2² = 4; height × ½.\n- New ÷ old = 4 × ½ = 2, so the volume is **doubled**.\n\n**Why not the others**\n- unchanged — assumes the ×4 and ×½ cancel to 1, but 4 × ½ = 2.\n- four times — counts only the radius effect, ignoring the halved height.\n- halved — uses the height change only.\n\n**Key facts**\n- V ∝ r²h: radius enters as a square, height linearly.\n- Combine the factors multiplicatively: 4 × 0.5 = 2.\n\n*Source: standard APPSC/SSC mensuration — scaling of cylinder volume.*",
       "source": "standard APPSC/SSC mensuration — scaling",
       "verified": true,
       "covers": [

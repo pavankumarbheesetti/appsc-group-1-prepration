@@ -8,122 +8,153 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-logical-reasoning",
       "title": "Syllogism — Venn method, either-or & possibility",
-      "body": "## Method\n\nAssume all statements are 100% true and draw the **least possible** Venn diagram. A definite conclusion must hold in *every* possible diagram; a **possibility** conclusion holds if it is true in *any one* diagram.\n\n## Quantifier → diagram\n\n| Statement | Meaning |\n|---|---|\n| All A are B | A wholly inside B (definite converse: Some B are A) |\n| Some A are B | A and B overlap |\n| Some A are not B | part of A lies outside B |\n| No A is B | A and B disjoint (No B is A too) |\n\n## Either-Or (complementary pairs)\n\nWhen two conclusions have the **same subject & predicate**, are **individually false**, and form the pair **Some + No** or **All + Some-not**, the answer is *Either I or II follows*.\n\n## Worked example\n\nStatements: All bottles are black; Some black are white. Conclusions: I. All blacks are bottles; II. Some blacks are not bottles. Both are only *possible* (individually false) and form the All + Some-not pair → **Either I or II follows**.\n\n## Common traps\n\n- Treating a possible conclusion as definite.\n- Reading 'Some + Some-not' or 'All + No' as an either-or pair (they are NOT).\n- Forgetting 'Only a few A are B' = Some are + Some are not (both definite).",
+      "body": "### Syllogism — the Venn-diagram method\n\n**The idea in one sentence**\nTake every statement as fully true, draw the smallest (least committed) circle picture that fits them, and then a conclusion \"follows\" only if it is forced to be true in every such picture you could draw.\n\n**Do it the slow way first (no formula)**\nStatements: All bottles are black; Some black things are white. Draw it step by step.\n1. \"All bottles are black\" means the bottle circle sits wholly inside the black circle.\n2. \"Some black things are white\" means the black circle and the white circle overlap a little.\n3. Now test \"All black things are bottles.\" I can draw black much bigger than the bottle part, so this is only possible, not forced — it fails as a definite conclusion.\n4. Test \"Some black things are not bottles.\" I can also draw black with a part outside bottles, so this too is only possible.\nBecause the two together are \"All\" and \"Some-not\" on the same pair and each is only possible, exactly one of them must be true — the answer is Either/Or.\n\n**Why must a conclusion hold in every picture?**\nIf even one valid picture makes it false, the examiner can choose that picture, so you cannot call the conclusion certain.\n\n**Picture**\n```\n black  (............................)\n bottles   (all bottles here)   white (.....) overlaps black\n```\n\n**What the symbols mean**\n| Phrase | Picture |\n|---|---|\n| All A are B | A circle wholly inside B |\n| Some A are B | A and B circles overlap |\n| No A is B | A and B circles kept apart |\n| Only a few A are B | some A are B AND some A are not B |\n\n**The formula (now that you know what it does)**\nDraw the least picture; a definite conclusion is one true in all pictures; a possibility is true if it holds in any one picture; an Either/Or appears only for the complementary pairs \"Some + No\" or \"All + Some-not\" on the same subject and predicate when each alone is false.\n\n**Exam-level example**\nStatements: All roses are flowers; All flowers are plants; No plant is a stone. Roses sit inside flowers inside plants, and the plant circle is kept apart from stones. So no rose is a stone (true), some plants are roses (the forced reverse of \"all roses are plants\", true), and some flowers are not stones (true) — all three follow.\n\n**Common traps**\n- Treating a merely possible conclusion as if it were definite.\n- Reading \"Some + Some-not\" or \"All + No\" as an Either/Or pair — they are not.\n- Forgetting that \"Only a few A are B\" already fixes both \"some are\" and \"some are not\".\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| least diagram | draw the smallest picture that fits |\n| follows | true in every picture |\n| possibility | true in at least one picture |\n| Either/Or | Some+No or All+Some-not, each alone false |",
       "keyPoints": [
-        "Always draw the least possible Venn diagram; a definite conclusion must hold in every diagram.",
-        "'All A are B' gives the definite converse 'Some B are A'.",
-        "Either-Or pairs are only Some+No and All+Some-not, with same subject/predicate and both individually false.",
-        "A possibility conclusion is true if it holds in any one valid diagram.",
-        "'Only a few A are B' means Some A are B AND Some A are not B (both definitely true).",
-        "If all statements are positive, all negative definite conclusions are false, and vice versa."
+        "Draw the least (smallest) Venn picture; a conclusion follows only if true in every such picture.",
+        "'All A are B' forces the reverse 'Some B are A'.",
+        "A possibility is true if it holds in even one valid picture.",
+        "Either/Or appears only for 'Some + No' or 'All + Some-not' on the same pair, each alone false.",
+        "'Only a few A are B' means some A are B and some A are not B, both certain."
       ],
       "source": "APPSC GK — Logical Reasoning: Syllogism",
       "verified": true,
-      "tags": ["syllogism", "venn", "method"]
+      "tags": [
+        "syllogism",
+        "venn",
+        "method"
+      ]
     },
     {
       "id": "ment-logical-reasoning-note-inequality-method",
       "subjectCode": "MENT",
       "subtopicId": "ment-logical-reasoning",
       "title": "Coded inequalities — decoding & either-or",
-      "body": "## Method\n\nFirst **decode** any symbols into <, >, ≤, ≥, =, then combine only when every link points the **same direction**. A relation is definite only if the chain is unbroken and one-directional.\n\n## Direction rules\n\n| Chain | Definite conclusion |\n|---|---|\n| P > Q > R / P > Q ≥ R / P = Q > R | P > R |\n| P < Q < R / P < Q ≤ R / P = Q < R | P < R |\n| P ≥ Q ≥ R / P = Q ≥ R | P ≥ R (P > R or P = R) |\n| P ≤ Q ≤ R | P ≤ R |\n| P < Q > R (opposite arrows meet) | No conclusion |\n\nA single strict '>' in an otherwise '≥/=' chain makes the end relation strict '>'.\n\n## Either-Or\n\nWhen two elements can't be fixed and the two conclusions form **≤ + >** (or **> + ≤**) on the same pair, both are individually false but together exhaust all cases → *Either/Or*.\n\n## Worked example\n\nH = T > U ≤ I: the '>' and '≤' meet at U, so H vs I is undetermined. 'H > I' and 'H ≤ I' → **Either I or II follows**.\n\n## Common traps\n\n- Concluding a strict '>' from a '≥' link (equality is allowed).\n- Combining across opposite-facing arrows (P < Q > R gives nothing).",
+      "body": "### Coded inequalities — decoding and chaining\n\n**The idea in one sentence**\nTurn every coded symbol back into a plain greater-than or less-than sign, then join the links only while they all point the same way, because a comparison is certain only along an unbroken one-way chain.\n\n**Do it the slow way first (no formula)**\nStatement: P is greater than Q, Q equals R, R is greater than or equal to S. Find how P compares with S.\n1. Write the chain in one line: P greater than Q, Q equal to R, R greater than or equal to S.\n2. All links push downward from P towards S, so P is above everything to its right.\n3. There is at least one strict \"greater than\" in the chain (P greater than Q), so the overall link cannot be a mere equality.\n4. Therefore P is strictly greater than S. The answer is \"P greater than S\".\n\n**Why can \"greater than or equal to\" never give a strict \"greater than\" on its own?**\nBecause equality is allowed by that link; if the two values happen to be equal, a strict \"greater than\" would be false, so it is not forced.\n\n**Picture**\n```\n P  >  Q  =  R  >=  S\n \\________ same direction ________/   so P > S\n```\n\n**What the symbols mean**\n| Code sign | Plain meaning |\n|---|---|\n| greater than | the left value is bigger |\n| less than | the left value is smaller |\n| greater than or equal to | bigger or the same |\n| less than or equal to | smaller or the same |\n| equals | exactly the same value |\n\n**The formula (now that you know what it does)**\nCombine links only when every arrow points the same way; one strict sign anywhere in an otherwise equal-or-weak chain makes the end result strict; when a \"greater than\" meets a \"less than or equal to\" nose-to-nose at one element, that pair is undetermined and gives an Either/Or.\n\n**Exam-level example**\nStatement: H equals T, T greater than U, U less than or equal to I. The \"greater than\" and the \"less than or equal to\" both point into U, so H against I cannot be fixed. \"H greater than I\" and \"H less than or equal to I\" are each individually unprovable, but together they cover every case, so the answer is Either I or II follows.\n\n**Common traps**\n- Reading a strict \"greater than\" out of a \"greater than or equal to\" link, which ignores the equality case.\n- Joining across opposite-facing arrows that meet at one element, which proves nothing.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| same-direction chain | a certain comparison |\n| one strict link | whole result is strict |\n| > meets <= at one point | undetermined, often Either/Or |",
       "keyPoints": [
-        "Decode symbols to <,>,≤,≥,= before combining any relations.",
-        "Combine only same-direction links; opposite arrows meeting at an element break the relation.",
-        "A '≥' link can never yield a strict '>' conclusion by itself.",
-        "One strict '>' in a ≥/= chain forces the overall relation to be '>'.",
-        "Inequality either-or pairs are ≤+> and >+≤ on the same two elements, both individually false."
+        "Decode each coded sign to a plain greater/less/equal sign before joining links.",
+        "Combine links only while every arrow points the same way.",
+        "A 'greater than or equal to' link alone can never yield a strict 'greater than'.",
+        "One strict link in an otherwise weak chain makes the whole result strict.",
+        "A '>' meeting a '<=' at one element is undetermined and often gives Either/Or."
       ],
       "source": "APPSC GK — Logical Reasoning: Inequality",
       "verified": true,
-      "tags": ["inequality", "coded", "method"]
+      "tags": [
+        "inequality",
+        "coded",
+        "method"
+      ]
     },
     {
       "id": "ment-logical-reasoning-note-venn-numerical",
       "subjectCode": "MENT",
       "subtopicId": "ment-logical-reasoning",
       "title": "Logical Venn — representation & region counts",
-      "body": "## Representation\n\nChoose the diagram from the class relationship: a strict 'is-a' chain (Pigeon ⊂ Bird ⊂ Living thing) = **nested/concentric** circles; two co-ordinate subclasses of one class (Gold, Silver ⊂ Metal) = **separate** circles inside it; classes that only sometimes coincide (Doctors, Females) = **overlapping** circles.\n\n## Numerical formula\n\nTwo sets: **n(A ∪ B) = n(A) + n(B) − n(A ∩ B)**; *neither* = Total − n(A ∪ B).\n\nThree sets: **n(A ∪ B ∪ C) = n(A)+n(B)+n(C) − n(A∩B) − n(B∩C) − n(A∩C) + n(A∩B∩C)**.\n\n## Worked example\n\n100 students, 60 tea, 50 coffee, 30 both. At least one = 60 + 50 − 30 = 80; **neither = 100 − 80 = 20**.\n\n## Common traps\n\n- Forgetting to subtract the overlap (double-counting 'both').\n- Confusing 'only A' (n(A) − n(A∩B)) with n(A).",
+      "body": "### Logical Venn — picking the diagram and counting regions\n\n**The idea in one sentence**\nChoose circles that match how the classes really relate, and when numbers are given, add the group sizes but subtract whatever you have counted twice.\n\n**Do it the slow way first (no formula)**\nQuestion: in a class of 100, 60 like tea, 50 like coffee, 30 like both; how many like neither?\n1. The 30 who like both are counted once inside tea and again inside coffee, so 60 + 50 = 110 double-counts them.\n2. Remove that double count: 110 minus 30 equals 80 like at least one drink.\n3. The rest like neither: 100 minus 80 equals 20.\nSo 20 students like neither tea nor coffee.\n\n**Why subtract the overlap?**\nBecause a person who likes both is one person, not two; adding the two group totals records that person twice, so you take the overlap back out once.\n\n**Picture**\n```\n Tea (30 only)[ 30 both ] Coffee (20 only)      Neither = 20 outside\n      60 total        50 total\n```\n\n**What the symbols mean**\n| Term | Plain meaning |\n|---|---|\n| n(A) | how many are in group A |\n| n(A and B) | how many are in both groups |\n| n(A or B) | how many are in at least one group |\n| only A | in A but not in B |\n\n**The formula (now that you know what it does)**\nFor two groups, n(A or B) equals n(A) plus n(B) minus n(A and B), and \"neither\" equals the total minus n(A or B); for three groups you add the three singles, subtract each of the three pair-overlaps, then add back the triple overlap once.\n\n**Exam-level example**\nIn a survey of 200 people, 120 read English papers, 90 read Telugu, and 40 read both. Readers of at least one equals 120 plus 90 minus 40, which is 170, so 200 minus 170 equals 30 read neither; the English-only count is 120 minus 40 equals 80.\n\n**Common traps**\n- Forgetting to subtract the overlap and so double-counting the \"both\" people.\n- Confusing \"only A\", which is n(A) minus the overlap, with the full n(A).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| n(A)+n(B)−n(A and B) | at least one, overlap removed once |\n| Total − n(A or B) | how many are in neither |\n| n(A) − overlap | the \"only A\" slice |",
       "keyPoints": [
-        "Nested circles = strict subset chain; separate circles = disjoint co-ordinate classes; overlap = partial coincidence.",
-        "Two-set union: n(A∪B) = n(A) + n(B) − n(A∩B).",
-        "Neither = Total − n(A∪B).",
-        "Only-A region = n(A) − n(A∩B); subtract overlaps to avoid double counting.",
-        "Three-set count adds back the triple overlap n(A∩B∩C)."
+        "Two groups: at least one = n(A) + n(B) minus the overlap counted once.",
+        "Neither = total minus the 'at least one' count.",
+        "'Only A' = n(A) minus the overlap, not the full n(A).",
+        "Subtract overlaps so people in both groups are not counted twice.",
+        "Three groups: add singles, subtract the three pair-overlaps, add back the triple overlap."
       ],
       "source": "APPSC GK — Logical Reasoning: Logical Venn & Venn Diagram Problems",
       "verified": true,
-      "tags": ["venn", "numerical", "method"]
+      "tags": [
+        "venn",
+        "numerical",
+        "method"
+      ]
     },
     {
       "id": "ment-logical-reasoning-note-arrangement-puzzles",
       "subjectCode": "MENT",
       "subtopicId": "ment-logical-reasoning",
       "title": "Seating, floor & grouping puzzles — approach",
-      "body": "## General approach\n\nPlace **definite clues first** (ends, fixed floors, 'directly opposite'), then fit relative clues ('immediately right/below', 'between'). Keep a slot grid and eliminate.\n\n## Linear rows\n\nFacing **north**: person's left = your left. Facing **south**: left/right flip. 'Between X and Y' fixes order once one end is known.\n\n## Circular tables\n\nFacing the **centre**: a person's left is clockwise-neighbour's side; facing **outward** it reverses. In an n-seat circle the person opposite seat i sits at seat **i + n/2**.\n\n## Floor puzzles\n\nNumber floors bottom = 1 to top = n; 'immediately above/below' = adjacent floors; 'topmost/ground' are hard anchors.\n\n## Grouping & selection\n\nCount with combinations C(n,r); apply constraints by **subtracting** invalid groups (e.g. 'A and B never together', 'at least one woman').\n\n## Common traps\n\n- Mixing up left/right for south-facing or outward-facing people.\n- Assuming adjacency when only 'near' (not 'immediately next') is stated.",
+      "body": "### Seating, floor and grouping puzzles — a fixed order of attack\n\n**The idea in one sentence**\nLock down the clues that pin a person to one exact place first, then slot in the \"next to\" and \"between\" clues around them, because fixed clues shrink the number of possible layouts fastest.\n\n**Do it the slow way first (no formula)**\nFive people P, Q, R, S, T face north in a row; R is at the extreme left, T at the extreme right, Q is immediately right of P, and S is between Q and T.\n1. Fixed ends first: seat 1 is R, seat 5 is T.\n2. Q immediately right of P keeps the block P then Q together.\n3. S between Q and T, with T at seat 5, puts S at seat 4, so Q is seat 3 and P is seat 2.\n4. Final order: R, P, Q, S, T; the middle seat 3 is Q.\n\n**Why place the fixed clues before the relative ones?**\nA fixed clue leaves only one choice, so it never has to be guessed and re-tried; a relative clue often has several options until the anchors remove them.\n\n**Picture**\n```\n seat:  1   2   3   4   5\n who:   R   P   Q   S   T   (all facing north)\n```\n\n**What the symbols mean**\n| Clue word | Plain meaning |\n|---|---|\n| immediately right/left | the very next seat on that side |\n| between X and Y | somewhere with X on one side, Y on the other |\n| facing north | the person's left is also your left |\n| facing south | the person's left and right are swapped from yours |\n\n**The formula (now that you know what it does)**\nAnchor the ends and any fixed floor or \"directly opposite\" clue, then fit relative clues; in a circle of n seats the person opposite seat i sits at seat i plus n divided by 2; for grouping, count with combinations and subtract the groups that break a rule.\n\n**Exam-level example**\nA committee of 3 is chosen from 3 men A, B, C and 2 women X, Y, needing at least one woman, with A and B never together. All 3-member groups number 10; drop the all-men group ABC to leave 9 with a woman; drop the two groups holding both A and B (ABX, ABY) to leave 9 minus 2 equals 7 valid committees.\n\n**Common traps**\n- Flipping left and right for a south-facing or outward-facing person.\n- Assuming two people are adjacent when the clue only says \"near\", not \"immediately next to\".\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| anchor fixed clues | ends, fixed floor, opposite first |\n| opposite seat i = i + n/2 | the facing seat in a circle |\n| combinations minus bad groups | the grouping count |",
       "keyPoints": [
-        "Anchor definite clues (ends, fixed floors, opposite) before relative clues.",
-        "North-facing: person's left = your left; south-facing reverses.",
-        "In an n-seat circle, seat opposite i is seat i + n/2.",
-        "Floor 'immediately above/below' means adjacent floors; top/ground are hard anchors.",
-        "Grouping: use C(n,r) and subtract groups that break constraints.",
-        "'Near' is not the same as 'immediately next to' — do not assume adjacency."
+        "Anchor fixed clues (ends, fixed floors, directly opposite) before relative clues.",
+        "North-facing: person's left equals your left; south-facing swaps left and right.",
+        "In an n-seat circle, the seat opposite seat i is seat i plus n divided by 2.",
+        "'Immediately above/below' means adjacent floors; top and ground are hard anchors.",
+        "Grouping: count with combinations and subtract groups that break a rule.",
+        "'Near' is not 'immediately next to' — do not assume adjacency."
       ],
       "source": "APPSC GK — Logical Reasoning: Seating, Floor & Grouping puzzles",
       "verified": true,
-      "tags": ["seating", "puzzle", "method"]
+      "tags": [
+        "seating",
+        "puzzle",
+        "method"
+      ]
     },
     {
       "id": "ment-logical-reasoning-note-statement-based",
       "subjectCode": "MENT",
       "subtopicId": "ment-logical-reasoning",
       "title": "Statement-based verbal reasoning — arguments, assumptions, conclusions, inferences",
-      "body": "## Statement & Arguments\n\n**Strong** = relevant + directly related to the issue + real practical import. **Weak** = trivial, ambiguous, superficial, or merely restating the question.\n\n## Statement & Assumptions\n\nAn assumption is something **taken for granted** for the statement to hold. Test by **negation**: if denying it collapses the statement, it is implicit. Reject assumptions that are extreme, comparative-opinion, or bring in outside facts.\n\n## Statement & Conclusions\n\nAccept **moderate, hedged** conclusions ('may', 'likely') that follow reasonably; reject **absolute** claims ('always', 'completely', 'never') and anything needing facts beyond the statement.\n\n## Statement & Inferences\n\nAn inference must be a **logically certain** deduction from the data, adding nothing external. Distinguish **percentage points** (75 − 60 = 15) from **percent change** (15/60 = 25%).\n\n## Common traps\n\n- Marking an extreme conclusion/course as valid.\n- Treating a debatable value-judgement as an implicit assumption.",
+      "body": "### Statement-based verbal reasoning — arguments, assumptions, conclusions, inferences\n\n**The idea in one sentence**\nFor each of these four question types you accept only what the statement truly forces and reject anything extreme, outside the text, or merely restating the question.\n\n**Do it the slow way first (no formula)**\nStatement: the school will run all classes online from next week. Which assumption is implicit — (I) students can access internet devices, (II) online is as good as in person?\n1. Test I by denying it: if students cannot get online, the decision is pointless, so I is taken for granted — it is implicit.\n2. Test II by denying it: the school may still go online for cost or safety even if it is not \"as good\", so II is a debatable opinion, not something assumed.\n3. Therefore only assumption I is implicit.\n\n**Why does the \"negate it\" test work?**\nAn assumption is what the statement silently needs; if denying a claim destroys the statement, the statement was leaning on it, so it must have been assumed.\n\n**Picture**\n```\n Argument : relevant + weighty -> STRONG ; trivial/restates -> WEAK\n Conclusion: hedged (may/likely) -> accept ; absolute (always) -> reject\n```\n\n**What the symbols mean**\n| Term | Plain meaning |\n|---|---|\n| strong argument | relevant and with real practical weight |\n| implicit assumption | taken for granted for the statement to make sense |\n| conclusion | something that reasonably follows |\n| inference | a logically certain deduction from the data only |\n\n**The formula (now that you know what it does)**\nJudge an argument strong only when it is relevant and consequential; accept an assumption only when denying it breaks the statement; accept hedged conclusions and reject absolute ones; accept an inference only when it must be true from the passage with nothing added.\n\n**Exam-level example**\nA passage says a state's literacy rose from 60 percent in 2011 to 75 percent in 2021. The only certain inference is that literacy rose by 15 percentage points, because 75 minus 60 equals 15; \"highest in India\", \"female literacy rose most\", and \"illiteracy fully removed\" all need outside facts and are rejected.\n\n**Common traps**\n- Marking an extreme conclusion or course of action as valid.\n- Treating a value-judgement, such as \"online is as good as offline\", as an implicit assumption.\n- Confusing percentage points (75 minus 60 equals 15) with percent increase (15 divided by 60 equals 25 percent).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| negate it | the test for an implicit assumption |\n| hedged accepted | \"may/likely\" conclusions follow |\n| absolute rejected | \"always/never\" conclusions fail |",
       "keyPoints": [
-        "Strong argument = relevant + directly related + real practical import; weak = trivial/ambiguous/restates question.",
-        "Assumption test: negate it — if the statement fails, it is implicit.",
-        "Reject extreme, comparative-opinion, or outside-fact assumptions.",
-        "Conclusions: accept hedged ('may/likely'), reject absolute ('always/never/completely').",
-        "Inference must be logically certain from the passage, adding no external data.",
-        "Percentage points (75−60=15) differ from percent increase (15/60=25%)."
+        "Strong argument = relevant and weighty; weak = trivial, vague or restates the question.",
+        "Assumption test: deny it; if the statement collapses it is implicit.",
+        "Reject extreme, comparative-opinion or outside-fact assumptions.",
+        "Accept hedged conclusions ('may/likely'); reject absolute ones ('always/never').",
+        "An inference must be certain from the passage with nothing added.",
+        "Percentage points (75 minus 60 = 15) differ from percent increase (15/60 = 25 percent)."
       ],
       "source": "APPSC GK — Verbal Reasoning: Statements & Arguments/Assumptions/Conclusions/Inferences",
       "verified": true,
-      "tags": ["verbal", "statement-based", "method"]
+      "tags": [
+        "verbal",
+        "statement-based",
+        "method"
+      ]
     },
     {
       "id": "ment-logical-reasoning-note-ar-cause-coa",
       "subjectCode": "MENT",
       "subtopicId": "ment-logical-reasoning",
       "title": "Assertion-Reason, Cause-Effect & Course of Action frameworks",
-      "body": "## Assertion & Reason (standard 4 options)\n\n1. Both A and R true, **R correctly explains A**.\n2. Both A and R true, but R is **NOT** the correct explanation.\n3. A true, R false.\n4. A false, R true.\n\nMethod: judge each statement's truth first, then test whether R is the *cause* of A.\n\n## Cause & Effect\n\nIdentify which event realistically **triggers** the other and check the **time order**. Options usually include: I cause/II effect; II cause/I effect; independent causes; both effects of a common cause.\n\n## Course of Action\n\nA valid course of action is **feasible, proportionate, and improves** the situation. Reject actions that are extreme, escapist, or create bigger problems.\n\n## Worked cues\n\n- Water boils lower at altitude *because* pressure falls → A-R option 1.\n- Petrol price rises → public-transport use rises → I is cause, II is effect.\n- Many fail Maths → arrange remedial coaching (valid); removing Maths (invalid, extreme).",
+      "body": "### Assertion-Reason, Cause-Effect and Course of Action\n\n**The idea in one sentence**\nFirst decide whether each statement is true, then decide whether one statement actually causes or explains the other, and for a course of action keep only what is practical and proportionate.\n\n**Do it the slow way first (no formula)**\nAssertion: water boils at a lower temperature high in the mountains. Reason: air pressure falls as you go higher.\n1. Is the assertion true? Yes — climbers know water boils cooler on a peak.\n2. Is the reason true? Yes — pressure really does drop with altitude.\n3. Does the reason explain the assertion? A liquid boils when its vapour pressure equals the surrounding pressure, so lower pressure means a lower boiling point — yes, it explains it.\n4. So the answer is: both true and the reason is the correct explanation.\n\n**Why check truth before explanation?**\nIf either statement is false, the \"does it explain\" question never arises; truth is the gate you pass before testing cause.\n\n**Picture**\n```\n A true? --no--> options 3/4 ; A,R true -> does R cause A? yes=1 no=2\n```\n\n**What the symbols mean**\n| Term | Plain meaning |\n|---|---|\n| assertion | the claim being tested |\n| reason | the proposed cause of the claim |\n| cause and effect | which event triggers the other |\n| course of action | a step proposed to fix a problem |\n\n**The formula (now that you know what it does)**\nFor Assertion-Reason, grade each statement true or false, then ask only if both are true whether the reason is the real cause; for Cause-Effect find the realistic trigger and check the time order; a course of action follows only when it is feasible, proportionate and genuinely improves things.\n\n**Exam-level example**\nStatement: many students fail Mathematics in the board exam each year. Course I: arrange remedial coaching for weak students. Course II: remove Mathematics from the syllabus. Course I tackles the root cause and is practical, so it follows; Course II is extreme and harmful, dropping a core subject, so it does not follow — only Course I follows.\n\n**Common traps**\n- Marking Assertion-Reason option 1 when both are merely true but the reason is not the cause.\n- Accepting an escapist or extreme course of action, such as scrapping a subject rather than teaching it better.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| truth first | grade A and R before explaining |\n| real trigger | the cause in cause-effect |\n| feasible and proportionate | a valid course of action |",
       "keyPoints": [
-        "A-R: decide truth of A and R separately, then whether R explains A.",
-        "A-R option 1 requires R to be the actual cause of A, not just co-true.",
-        "Cause-Effect: find the realistic trigger and check chronological order.",
-        "Course of action must be feasible, proportionate and improve the situation.",
-        "Reject extreme or escapist courses of action (e.g. removing a core subject)."
+        "Assertion-Reason: grade each statement true/false, then test if the reason causes the assertion.",
+        "Option 1 needs the reason to be the actual cause, not just also true.",
+        "Cause-Effect: find the realistic trigger and check the time order.",
+        "A course of action must be feasible, proportionate and improve the situation.",
+        "Reject extreme or escapist courses, such as removing a core subject."
       ],
       "source": "APPSC GK — Verbal Reasoning: Assertion-Reason, Cause & Effect, Course of Action",
       "verified": true,
-      "tags": ["assertion-reason", "cause-effect", "course-of-action", "method"]
+      "tags": [
+        "assertion-reason",
+        "cause-effect",
+        "course-of-action",
+        "method"
+      ]
     },
     {
       "id": "ment-logical-reasoning-note-truth-cause-indeterminacy",
       "subjectCode": "MENT",
       "subtopicId": "ment-logical-reasoning",
       "title": "Truth-functional logic, cause-elimination & indeterminacy traps",
-      "body": "## Falsifying a disjunction or conditional (UPSC CSAT favourite)\n\n| Claim | It is FALSE only when |\n|---|---|\n| 'A or B' (inclusive) | BOTH A and B are false |\n| 'A and B' | at least ONE of A, B is false |\n| 'If P then Q' | P is TRUE and Q is FALSE |\n\n- An inclusive 'or' is still true when both happen; only 'neither' breaks it.\n- A conditional is never falsified by a false antecedent (it is vacuously true).\n\n## Cause-elimination / data logic\n\nGiven who consumed what and who was affected, the **cause** is the single item that is common to **every affected** case AND absent from **every unaffected** case. One healthy consumer eliminates an item.\n\nWorked cue: sick ate {rice,curd},{rice,salad},{rice,juice}; healthy ate {curd,salad},{juice,salad}. Only *rice* is in all sick and no healthy set ⇒ rice is the cause.\n\n## Indeterminacy ('cannot be determined')\n\nWhen the data is consistent with **more than one** answer, the correct response is *nothing definite can be said*. Test-writers dress an underdetermined split (e.g. gender of a music-free subset drawn from 30 non-music men + some non-music women) as though a definite option existed.\n\n## Common traps\n\n- Reading inclusive 'or' as exclusive (marking 'both' as a falsifier).\n- Treating a false-antecedent case as violating a conditional.\n- Picking a definite-sounding option when the data underdetermines it.",
+      "body": "### Truth-functional logic, cause elimination and the \"cannot be determined\" trap\n\n**The idea in one sentence**\nLearn exactly when an \"or\", an \"and\" and an \"if-then\" count as false, find a cause as the one item shared by all the affected and by none of the unaffected, and answer \"cannot be determined\" whenever the data fits more than one answer.\n\n**Do it the slow way first (no formula)**\nTeacher says: this weekend we will go either for a picnic or for a trek. When is she proved wrong?\n1. If they go for a picnic, at least one promised thing happened, so she is right.\n2. If they go for a trek, again one thing happened, so she is right.\n3. If they do both, an inclusive \"or\" still counts as kept, so she is right.\n4. Only if they do neither is the \"or\" broken — that single case makes it false.\n\n**Why does a false \"if\" need the first part true?**\n\"If it rains the match is cancelled\" only promises something about rainy days; on a dry day the rule says nothing, so a dry day can never break it — it breaks only when it rains yet the match is held.\n\n**Picture**\n```\n A or B  : false only when BOTH false (neither)\n if P then Q : false only when P true AND Q false\n```\n\n**What the symbols mean**\n| Term | Plain meaning |\n|---|---|\n| inclusive or | true when either part, or both, happen |\n| conditional | an \"if P then Q\" promise |\n| vacuously true | automatically true because the \"if\" part did not happen |\n| cause | the single item common to every affected case and absent from every well case |\n\n**The formula (now that you know what it does)**\nAn \"or\" is false only when both parts are false; an \"and\" is false when at least one part is false; an \"if P then Q\" is false only when P is true and Q is false; the cause is the lone item in every sick set and no healthy set, and one healthy eater clears an item.\n\n**Exam-level example**\nSick students ate the sets {rice, curd}, {rice, salad}, {rice, juice}; healthy students ate {curd, salad} and {juice, salad}. Rice is the only item in all three sick sets, and no healthy student ate rice, so rice is the suspect; curd, salad and juice each appear in a healthy set and are cleared.\n\n**Common traps**\n- Reading an inclusive \"or\" as exclusive and wrongly calling \"both\" a falsifier.\n- Treating a dry-day case as breaking the rain rule, when a false \"if\" part leaves it true.\n- Picking a definite-looking option when the data actually supports several, where the honest answer is \"cannot be determined\".\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| or false = neither | both parts must fail |\n| if-then false = P true, Q false | only that case breaks it |\n| shared by all sick, none well | the cause |",
       "keyPoints": [
         "'A or B' is false only when both are false; 'if P then Q' is false only when P is true and Q is false.",
-        "A false antecedent leaves a conditional vacuously true — it cannot falsify the rule.",
-        "Cause = item common to every affected case and absent from every unaffected case; one healthy consumer eliminates it.",
-        "When data fits several answers, the correct choice is 'cannot be determined'.",
-        "Inclusive 'or' stays true when both parts occur — only 'neither' breaks it."
+        "A false 'if' part leaves a conditional automatically true.",
+        "Cause = the item in every affected case and absent from every unaffected case.",
+        "One healthy consumer clears an item from suspicion.",
+        "When the data fits several answers, the honest answer is 'cannot be determined'."
       ],
       "source": "UPSC CSE (CSAT) 2016 patterns (via UPSCprep); APPSC GK — Verbal Reasoning: Logic",
       "verified": true,
-      "tags": ["logic", "disjunction", "conditional", "cause-elimination", "indeterminacy", "method"]
+      "tags": [
+        "logic",
+        "disjunction",
+        "conditional",
+        "cause-elimination",
+        "indeterminacy",
+        "method"
+      ]
     }
   ]
 }

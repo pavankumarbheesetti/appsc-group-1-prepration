@@ -8,97 +8,124 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
       "title": "Lines, Angles & Parallel-Line Pairs",
-      "body": "When two **parallel lines** are cut by a transversal, eight angles form in predictable pairs. Picture two horizontal parallel lines with a slanting transversal crossing both: at each crossing there are four angles, and the two crossings mirror each other.\n\n| Angle pair | Position | Relation |\n|---|---|---|\n| Corresponding | same corner at each crossing | equal |\n| Alternate interior | opposite sides, between the lines | equal |\n| Alternate exterior | opposite sides, outside the lines | equal |\n| Co-interior (allied) | same side, between the lines | supplementary (180\u00b0) |\n\n**Basic angle facts:** complementary sum to 90\u00b0, supplementary to 180\u00b0; a linear pair on a straight line sums to 180\u00b0; vertically opposite angles are equal; angles round a point sum to 360\u00b0.\n\n**Worked example:** allied angles (2x+20) and (3x\u221230) between parallel lines \u2192 sum 180\u00b0 \u2192 5x\u221210=180 \u2192 x=38 \u2192 angles 96\u00b0 and 84\u00b0.\n\n**Trap:** co-interior angles are supplementary, NOT equal \u2014 only corresponding/alternate pairs are equal.",
+      "body": "### Lines, angles and parallel-line pairs\n\n**The idea in one sentence**\nWhen one slanting line crosses two parallel lines, the eight angles it makes fall into just a few families, and inside each family the angles are either exactly equal or add up to 180 degrees.\n\n**Do it the slow way first (no formula)**\nQuestion: two allied (same-side interior) angles between parallel lines are (2x + 20) and (3x − 30); find them.\n1. Same-side interior angles add to 180 degrees, so write (2x + 20) + (3x − 30) = 180.\n2. Collect: 5x − 10 = 180.\n3. Add 10: 5x = 190, so x = 38.\n4. Put x back: 2(38) + 20 = 96 degrees and 3(38) − 30 = 84 degrees; check 96 + 84 = 180.\n\n**Why are same-side interior angles supplementary, not equal?**\nThey sit on the same side of the crossing line and together they wrap along one straight edge between the parallels, so they must fill a straight angle of 180 degrees rather than match each other.\n\n**Picture**\n```\n      \\\n ------a\\b------   line 1\n        \\\n ------c\\d------   line 2    corresponding: a and c equal\n          \\                  alternate interior: b and c equal\n                             same-side interior: b and d add to 180\n```\n\n**What the symbols mean**\n| Term | Plain meaning |\n|---|---|\n| transversal | the line that cuts across both parallels |\n| corresponding | same corner at each crossing |\n| alternate | opposite sides of the transversal |\n| supplementary | two angles adding to 180 degrees |\n\n**The formula (now that you know what it does)**\nCorresponding, alternate-interior and alternate-exterior angles are equal; same-side interior (allied) angles add to 180 degrees; a linear pair on a straight line adds to 180 degrees; vertically opposite angles are equal; angles around a single point add to 360 degrees.\n\n**Exam-level example**\nA transversal makes an angle of 65 degrees with the first parallel line; find the same-side interior angle at the second line. Equal pairs would give 65 degrees, but the same-side interior partner is supplementary, so it is 180 − 65 = 115 degrees. Check: 65 + 115 = 180, which is the straight angle the two share.\n\n**Common traps**\n- Treating same-side interior angles as equal when they are supplementary.\n- Using the complement (90 minus the angle) instead of the supplement (180 minus the angle).\n- Forgetting that only parallel lines guarantee these equalities.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| corresponding, alternate = equal | same angle on parallels |\n| same-side interior = 180 | they add to a straight angle |\n| vertically opposite = equal | the X-cross angles match |\n| round a point = 360 | full turn |",
       "keyPoints": [
         "Corresponding and alternate angles between parallel lines are equal.",
-        "Co-interior (same-side interior) angles are supplementary, summing to 180\u00b0.",
-        "Complementary angles sum to 90\u00b0; supplementary and linear-pair angles sum to 180\u00b0.",
-        "Vertically opposite angles are equal; angles around a point total 360\u00b0."
+        "Same-side interior (allied) angles are supplementary, adding to 180 degrees.",
+        "Complementary angles add to 90 degrees; linear pairs add to 180 degrees.",
+        "Vertically opposite angles are equal; angles around a point total 360 degrees."
       ],
-      "source": "Quantitative Reasoning \u2014 Concept of Point and Line; Angles",
+      "source": "Quantitative Reasoning — Concept of Point and Line; Angles",
       "verified": true,
-      "tags": ["geometry", "angles", "parallel-lines"]
+      "tags": [
+        "geometry",
+        "angles",
+        "parallel-lines"
+      ]
     },
     {
       "id": "ment-geometry-note-triangle-facts",
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
-      "title": "Triangles \u2014 Angles, Pythagoras, Similarity",
-      "body": "**Angle rules:** interior angles sum to 180\u00b0; an exterior angle equals the sum of the two remote interior angles; the largest angle faces the longest side.\n\n**Triangle inequality:** each side lies strictly between the difference and sum of the other two. With sides 5 and 9, the third side satisfies 4 < s < 14.\n\n**Pythagoras (right triangles only):** hyp\u00b2 = base\u00b2 + height\u00b2. Memorise triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25 (and their multiples, e.g. 9-12-15).\n\n**Similarity vs congruence:** similar = same shape, sides proportional (tests AA, SSS-proportional, SAS-proportional); congruent = identical (SSS, SAS, ASA, AAS, RHS).\n\n| Ratio quantity | Scaling with side ratio k |\n|---|---|\n| Corresponding sides / perimeter | k |\n| Area | k\u00b2 |\n| Volume (solids) | k\u00b3 |\n\n**Worked example:** similar triangles with sides 3:5, smaller area 36 \u2192 larger area = 36\u00d7(5/3)\u00b2 = 36\u00d725/9 = 100.\n\n**Trap:** when sides scale by k, area scales by k\u00b2 (not k) \u2014 do not apply the side ratio directly to areas.",
+      "title": "Triangles — Angles, Pythagoras, Similarity",
+      "body": "### Triangles — angles, Pythagoras and similarity\n\n**The idea in one sentence**\nEvery triangle obeys fixed angle and side rules, a right-angled one lets you find the slanting side by Pythagoras, and two same-shape triangles have sides in one ratio but areas in that ratio squared.\n\n**Do it the slow way first (no formula)**\nQuestion: a right triangle has the two shorter sides 9 cm and 12 cm; find the longest side.\n1. In a right triangle the longest side (hypotenuse) faces the right angle.\n2. Pythagoras says the hypotenuse squared equals the sum of the other two squared: 9 × 9 + 12 × 12 = 81 + 144 = 225.\n3. Take the square root: √225 = 15.\n4. So the hypotenuse is 15 cm — this is just the 3-4-5 triangle enlarged three times.\n\n**Why does area scale as the ratio squared, not the ratio itself?**\nArea covers two directions at once; if every length is k times bigger, both directions stretch by k, so the area grows by k times k.\n\n**Picture**\n```\n     |\\\n   9 | \\  hypotenuse = sqrt(9^{2} + 12^{2}) = 15\n     |__\\\n      12\n```\n\n**What the symbols mean**\n| Symbol | Plain meaning |\n|---|---|\n| hypotenuse | the longest side, opposite the right angle |\n| k | the ratio of matching sides of two similar triangles |\n| k² | k multiplied by itself, the area ratio |\n| remote interior | the two inside angles away from an exterior angle |\n\n**The formula (now that you know what it does)**\nInterior angles add to 180 degrees; an exterior angle equals the sum of the two remote interior angles; each side lies strictly between the difference and the sum of the other two; for right triangles hypotenuse² = base² + height² (triples 3-4-5, 5-12-13, 8-15-17, 7-24-25); for similar triangles sides scale by k, perimeter by k, area by k².\n\n**Exam-level example**\nTwo similar triangles have sides in the ratio 3 to 5 and the smaller one has area 36 cm². The area ratio is (5 ÷ 3)² = 25 ÷ 9, so the larger area is 36 × 25 ÷ 9 = 100 cm². Check: taking the square root of the area ratio, √(100 ÷ 36) = 10 ÷ 6 = 5 ÷ 3, which matches the side ratio.\n\n**Common traps**\n- Applying the side ratio straight to areas instead of squaring it first.\n- Using Pythagoras on a triangle that is not right-angled.\n- Breaking the triangle inequality, for example calling 9, 12 and 21 a triangle when 9 + 12 is only 21.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| angles add to 180 | the triangle angle sum |\n| hyp² = base² + height² | right-triangle side rule |\n| sides × k, area × k² | similar-triangle scaling |\n| diff < c < sum | the triangle inequality |",
       "keyPoints": [
-        "Triangle interior angles sum to 180\u00b0; exterior angle = sum of two remote interior angles.",
-        "Triangle inequality: third side lies strictly between the difference and sum of the other two.",
-        "Pythagoras applies only to right triangles: hyp\u00b2 = base\u00b2 + height\u00b2.",
-        "For similar triangles, areas scale as the square of the side ratio (k\u00b2)."
+        "Interior angles add to 180 degrees; an exterior angle equals the two remote interior angles.",
+        "A side lies strictly between the difference and the sum of the other two.",
+        "Right triangles only: hypotenuse² = base² + height² (triples 3-4-5, 5-12-13).",
+        "Similar triangles: sides and perimeter scale by k, area by k²."
       ],
-      "source": "Quantitative Reasoning \u2014 Basic concept of Triangle; Similarity & Congruency",
+      "source": "Quantitative Reasoning — Basic concept of Triangle; Similarity & Congruency",
       "verified": true,
-      "tags": ["geometry", "triangle", "pythagoras", "similarity"]
+      "tags": [
+        "geometry",
+        "triangle",
+        "pythagoras",
+        "similarity"
+      ]
     },
     {
       "id": "ment-geometry-note-triangle-centres",
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
       "title": "Triangle Centres & the Angle Bisector Theorem",
-      "body": "A triangle has four classic concurrency points:\n\n| Centre | Formed by | Key property |\n|---|---|---|\n| Centroid (G) | the 3 medians | divides each median 2:1 from the vertex; centre of mass |\n| Incentre (I) | the 3 angle bisectors | equidistant from the sides; centre of inscribed circle |\n| Circumcentre (O) | perpendicular bisectors of sides | equidistant from vertices; centre of circumscribed circle |\n| Orthocentre (H) | the 3 altitudes | intersection of altitudes |\n\n**Right-triangle specials:** circumcentre = midpoint of the hypotenuse; orthocentre = the right-angle vertex. Inradius of a right triangle r = (a + b \u2212 c)/2 (legs a, b; hypotenuse c), equivalently r = Area/s.\n\n**Angle bisector theorem:** the bisector from A meets BC at D with BD : DC = AB : AC.\n\n**Worked example:** AB=6, AC=8, BC=14 \u2192 BD:DC = 6:8 = 3:4 \u2192 BD = 14\u00d73/7 = 6, DC = 8.\n\n**Trap:** the centroid split is 2:1 measured *from the vertex*, so vertex-to-G is the larger (2/3) part.",
+      "body": "### Triangle centres and the angle bisector theorem\n\n**The idea in one sentence**\nThree special lines of a triangle each meet at one point, giving four named centres, and the bisector of a corner splits the opposite side in the ratio of the two sides beside it.\n\n**Do it the slow way first (no formula)**\nQuestion: in triangle ABC the bisector from A meets BC at D; AB = 6, AC = 8, BC = 14; find BD.\n1. The bisector theorem says BD to DC equals AB to AC, which is 6 to 8, simplified to 3 to 4.\n2. The whole base BC of 14 is split into 3 + 4 = 7 equal parts.\n3. One part is 14 ÷ 7 = 2.\n4. BD takes 3 parts: 3 × 2 = 6, and DC takes 4 parts: 4 × 2 = 8; check 6 + 8 = 14.\n\n**Why does the centroid sit two-thirds of the way from the vertex?**\nThe centroid is the balance point of the triangle; it must sit closer to the heavier spread of area away from a vertex, and geometry fixes that split at exactly 2 parts from the vertex to 1 part to the opposite side.\n\n**Picture**\n```\n        A\n       /|\\\n      / G \\     G = centroid, AG : G-to-midpoint = 2 : 1\n     /__|__\\\n    B   D   C    AD is a median; bisector gives BD:DC = AB:AC\n```\n\n**What the symbols mean**\n| Centre | How it is built |\n|---|---|\n| centroid | the three medians meet |\n| incentre | the three angle bisectors meet |\n| circumcentre | the three side perpendicular-bisectors meet |\n| orthocentre | the three altitudes meet |\n\n**The formula (now that you know what it does)**\nThe centroid divides each median 2 to 1 from the vertex; the incentre is equidistant from the sides and holds the inscribed circle; the circumcentre is equidistant from the vertices (and in a right triangle sits at the midpoint of the hypotenuse); the orthocentre is where the altitudes meet (the right-angle vertex in a right triangle); the bisector from A gives BD to DC equal to AB to AC.\n\n**Exam-level example**\nA median of a triangle is 18 cm long; how far is the vertex from the centroid? The centroid takes the 2-part of the 2-to-1 split, so the vertex-to-centroid distance is (2 ÷ 3) × 18 = 12 cm, leaving 6 cm to the opposite side. Check: 12 + 6 = 18, and 12 to 6 is indeed 2 to 1.\n\n**Common traps**\n- Measuring the 2-to-1 centroid split from the wrong end (the 2-part is from the vertex).\n- Placing the circumcentre inside every triangle; in an obtuse triangle it lies outside.\n- Confusing the incentre (bisectors) with the circumcentre (perpendicular bisectors).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| centroid 2:1 | from vertex, bigger part first |\n| circumcentre = hyp midpoint | in a right triangle |\n| BD:DC = AB:AC | angle bisector split |\n| incentre inside always | holds the inscribed circle |",
       "keyPoints": [
-        "Centroid divides each median in ratio 2:1 from the vertex.",
-        "Circumcentre of a right triangle is the midpoint of the hypotenuse; orthocentre is the right-angle vertex.",
-        "Incentre is the meeting of angle bisectors and is always inside the triangle.",
-        "Angle bisector theorem: BD:DC = AB:AC for the bisector from A to BC."
+        "The centroid divides each median 2 to 1 measured from the vertex.",
+        "A right triangle's circumcentre is the hypotenuse midpoint; its orthocentre is the right-angle vertex.",
+        "The incentre is where the angle bisectors meet and is always inside.",
+        "Angle bisector theorem: the bisector from A gives BD to DC equal to AB to AC."
       ],
-      "source": "Quantitative Reasoning \u2014 Centroid; Circumcentre; Angle Bisector",
+      "source": "Quantitative Reasoning — Centroid; Circumcentre; Angle Bisector",
       "verified": true,
-      "tags": ["geometry", "triangle-centres", "angle-bisector"]
+      "tags": [
+        "geometry",
+        "triangle-centres",
+        "angle-bisector"
+      ]
     },
     {
       "id": "ment-geometry-note-circle-polygon",
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
       "title": "Circles & Polygon Angles",
-      "body": "**Circle angle theorems:** the central angle is twice any inscribed angle on the same arc; the angle in a semicircle is 90\u00b0; angles in the same segment are equal; opposite angles of a cyclic quadrilateral sum to 180\u00b0.\n\n**Tangent & chord:** a tangent is perpendicular to the radius at the point of contact, so tangent length from an external point at distance d = \u221a(d\u00b2 \u2212 r\u00b2); the two tangents from an external point are equal. Alternate-segment: the angle between a tangent and a chord equals the inscribed angle in the alternate segment.\n\n**Worked example (tangent):** d=13, r=5 \u2192 tangent = \u221a(169\u221225) = \u221a144 = 12.\n\n**Polygon angles:** for n sides \u2014 sum of interior angles = (n\u22122)\u00d7180\u00b0; sum of exterior angles = 360\u00b0 (always). Regular polygon: each interior = (n\u22122)\u00d7180\u00b0/n, each exterior = 360\u00b0/n.\n\n**Worked example (polygon):** each exterior 24\u00b0 \u2192 n = 360/24 = 15 sides; interior sum = 13\u00d7180 = 2340\u00b0.\n\n**Trap:** exterior angles always total 360\u00b0 regardless of n \u2014 use that to find sides quickly.",
+      "body": "### Circles and polygon angles\n\n**The idea in one sentence**\nAngles made by a circle follow a doubling rule between the centre and the edge, and the angles of any many-sided figure are fixed by its number of sides.\n\n**Do it the slow way first (no formula)**\nQuestion: a regular polygon has each exterior angle 24 degrees; how many sides, and what is the interior-angle sum?\n1. As you walk once around any polygon you turn through a full 360 degrees in total.\n2. Each corner turns you by one exterior angle, here 24 degrees, so the number of corners is 360 ÷ 24 = 15.\n3. So the polygon has 15 sides.\n4. Interior-angle sum is (number of sides − 2) × 180 = (15 − 2) × 180 = 13 × 180 = 2340 degrees.\n\n**Why is the central angle twice the inscribed angle?**\nBoth stand on the same arc, but the centre sees the arc from inside while an edge point sees it from farther back; the geometry of the isosceles radii shows the inside view is always exactly double the edge view.\n\n**Picture**\n```\n        O (centre)         central angle at O = 2 x inscribed angle\n       / \\                 angle in a semicircle = 90 degrees\n      /   \\\n   A .--arc--. B\n       \\   /\n        \\ /\n         P (on circle)   inscribed angle at P\n```\n\n**What the symbols mean**\n| Term | Plain meaning |\n|---|---|\n| inscribed angle | an angle with its corner on the circle |\n| central angle | an angle with its corner at the centre |\n| tangent | a line touching the circle at one point |\n| n | the number of sides of a polygon |\n\n**The formula (now that you know what it does)**\nCentral angle is twice any inscribed angle on the same arc; the angle in a semicircle is 90 degrees; opposite angles of a cyclic quadrilateral add to 180 degrees; a tangent meets the radius at a right angle so the tangent length from a point at distance d is √(d² − r²); an n-gon has interior-angle sum (n − 2) × 180 and exterior-angle sum 360.\n\n**Exam-level example**\nFrom a point 13 cm from the centre of a circle of radius 5 cm, find the tangent length. The tangent and radius meet at a right angle, so the tangent is √(13² − 5²) = √(169 − 25) = √144 = 12 cm. Check: 5² + 12² = 25 + 144 = 169 = 13², the right-triangle relation.\n\n**Common traps**\n- Taking the central angle as equal to, rather than double, the inscribed angle.\n- Forgetting the exterior angles always total 360 degrees whatever the number of sides.\n- Using the full distance d as the tangent length instead of √(d² − r²).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| central = 2 × inscribed | same-arc doubling rule |\n| semicircle angle = 90 | angle on a diameter |\n| tangent = √(d² − r²) | length from an outside point |\n| (n−2) × 180 | interior-angle sum |",
       "keyPoints": [
-        "Central angle = 2 \u00d7 inscribed angle on the same arc; angle in a semicircle = 90\u00b0.",
-        "Tangent \u22a5 radius at contact; tangent length = \u221a(d\u00b2 \u2212 r\u00b2); two tangents from a point are equal.",
-        "Sum of interior angles of an n-gon = (n\u22122)\u00d7180\u00b0.",
-        "Sum of exterior angles of any polygon = 360\u00b0; regular polygon exterior = 360\u00b0/n."
+        "Central angle is twice any inscribed angle on the same arc; a semicircle angle is 90 degrees.",
+        "A tangent meets the radius at a right angle; tangent length is √(d² − r²).",
+        "An n-gon has interior-angle sum (n − 2) × 180 degrees.",
+        "Every polygon's exterior angles total 360 degrees; a regular one has each exterior 360 ÷ n."
       ],
-      "source": "Quantitative Reasoning \u2014 Basic concept of Circle; Theorems of circle; Angles",
+      "source": "Quantitative Reasoning — Basic concept of Circle; Theorems of circle; Angles",
       "verified": true,
-      "tags": ["geometry", "circle", "polygon"]
+      "tags": [
+        "geometry",
+        "circle",
+        "polygon"
+      ]
     },
     {
       "id": "ment-geometry-note-coordinate",
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
-      "title": "Coordinate Geometry \u2014 Distance, Section, Slope & Area",
-      "body": "Core formulas for points in the plane:\n\n| Quantity | Formula |\n|---|---|\n| Distance A(x\u2081,y\u2081)\u2013B(x\u2082,y\u2082) | \u221a[(x\u2082\u2212x\u2081)\u00b2 + (y\u2082\u2212y\u2081)\u00b2] |\n| Midpoint | ((x\u2081+x\u2082)/2, (y\u2081+y\u2082)/2) |\n| Section (ratio m:n internally) | ((mx\u2082+nx\u2081)/(m+n), (my\u2082+ny\u2081)/(m+n)) |\n| Slope | m = (y\u2082\u2212y\u2081)/(x\u2082\u2212x\u2081) |\n| Area of triangle | \u00bd\u00b7\\|x\u2081(y\u2082\u2212y\u2083)+x\u2082(y\u2083\u2212y\u2081)+x\u2083(y\u2081\u2212y\u2082)\\| |\n\n**Line relations:** parallel lines have equal slopes; perpendicular lines have m\u2081\u00b7m\u2082 = \u22121; three points are collinear iff the triangle area = 0.\n\n**Worked examples:** distance (2,3)\u2013(7,15) = \u221a(25+144)=13; point dividing (2,3)\u2013(7,\u22122) in 2:3 = (4,1); slope of (1,2)\u2013(4,11) = 9/3 = 3; area of (0,0),(4,0),(0,6) = \u00bd\u00d74\u00d76 = 12.\n\n**Trap:** in the section formula the ratio weights cross over \u2014 m multiplies the *second* point's coordinates, n the first.",
+      "title": "Coordinate Geometry — Distance, Section, Slope & Area",
+      "body": "### Coordinate geometry — distance, section, slope and area\n\n**The idea in one sentence**\nOnce points are given as number pairs, every length, dividing point, steepness and enclosed area can be read straight off the coordinates with a small set of formulas.\n\n**Do it the slow way first (no formula)**\nQuestion: find the distance between A(2, 3) and B(7, 15).\n1. Find how far apart they are left-to-right: 7 − 2 = 5.\n2. Find how far apart they are up-and-down: 15 − 3 = 12.\n3. These two gaps make a right angle, so the straight distance is the hypotenuse: √(5² + 12²) = √(25 + 144) = √169.\n4. √169 = 13, so the distance is 13 units.\n\n**Why does the section formula weight the far point by the near ratio?**\nTo land a point one-third of the way from A to B you must lean mostly on A, so the formula multiplies each endpoint by the opposite share; the ratio numbers cross over, which is the detail most learners slip on.\n\n**Picture**\n```\n  B(7,15)\n     |\\\n  12 | \\  distance = sqrt(5^{2} + 12^{2}) = 13\n     |__\\\n  A(2,3) 5\n```\n\n**What the symbols mean**\n| Symbol | Plain meaning |\n|---|---|\n| Δx, Δy | the left-right and up-down gaps between two points |\n| slope | how steep a line is, up-down gap over left-right gap |\n| m : n | the ratio in which a point splits a segment |\n| collinear | three points lying on one straight line |\n\n**The formula (now that you know what it does)**\nDistance is √(Δx² + Δy²); the midpoint is the average of the two x values and of the two y values; the internal section point for ratio m to n is ((m·x₂ + n·x₁) ÷ (m + n), (m·y₂ + n·y₁) ÷ (m + n)); slope is Δy ÷ Δx; parallel lines share a slope and perpendicular lines have slopes multiplying to −1; the triangle area is half the absolute value of x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂), and a zero area means the three points are collinear.\n\n**Exam-level example**\nDivide A(2, 3) and B(8, 15) internally in the ratio 1 to 2. x = (1 × 8 + 2 × 2) ÷ 3 = 12 ÷ 3 = 4; y = (1 × 15 + 2 × 3) ÷ 3 = 21 ÷ 3 = 7, giving (4, 7). Check: the point is one-third of the way from A, nearer A as the ratio 1 to 2 demands.\n\n**Common traps**\n- Crossing the ratio weights the wrong way in the section formula.\n- Taking only Δy as the distance and forgetting Δx.\n- Expecting equal slopes for perpendicular lines when their slopes multiply to −1.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| √(Δx² + Δy²) | distance between two points |\n| average the coordinates | the midpoint |\n| Δy ÷ Δx | the slope |\n| area 0 | the three points are collinear |",
       "keyPoints": [
-        "Distance = \u221a[(\u0394x)\u00b2 + (\u0394y)\u00b2]; midpoint = average of the coordinates.",
-        "Section formula (m:n internally): ((mx\u2082+nx\u2081)/(m+n), (my\u2082+ny\u2081)/(m+n)).",
-        "Slope m = \u0394y/\u0394x; parallel lines equal slopes, perpendicular lines m\u2081\u00b7m\u2082 = \u22121.",
-        "Triangle area = \u00bd|x\u2081(y\u2082\u2212y\u2083)+x\u2082(y\u2083\u2212y\u2081)+x\u2083(y\u2081\u2212y\u2082)|; zero area means collinear."
+        "Distance is √(Δx² + Δy²); the midpoint is the average of the coordinates.",
+        "Internal section point for m to n: ((m·x₂ + n·x₁) ÷ (m + n), (m·y₂ + n·y₁) ÷ (m + n)).",
+        "Slope is Δy ÷ Δx; parallel lines share slopes, perpendicular slopes multiply to −1.",
+        "Triangle area uses the coordinate formula; a zero area means the points are collinear."
       ],
-      "source": "Quantitative Reasoning \u2014 Co-ordinate Geometry",
+      "source": "Quantitative Reasoning — Co-ordinate Geometry",
       "verified": true,
-      "tags": ["geometry", "coordinate", "slope", "distance"]
+      "tags": [
+        "geometry",
+        "coordinate",
+        "slope",
+        "distance"
+      ]
     },
     {
       "id": "ment-geometry-note-tangent-extras-counting",
       "subjectCode": "MENT",
       "subtopicId": "ment-geometry",
       "title": "Tangent pairs, tangential quadrilaterals & integer-triangle counting",
-      "body": "## Two tangents from an external point\n\n- The two tangents from a point P are **equal in length**, and each is ⟂ to the radius at its contact point.\n- In quadrilateral P–A–O–B (A, B contact points, O centre): **∠APB + ∠AOB = 180°** (two right angles at A and B use up the rest).\n\n**Worked example.** Angle between tangents ∠P = 70° ⇒ central angle ∠AOB = 180° − 70° = **110°**.\n\n## Tangential quadrilateral (incircle touching all sides)\n\n- **AB + CD = BC + AD** — the two sums of opposite sides are equal (equal tangent lengths from each vertex).\n\n**Worked example.** AB = 8, BC = 9, CD = 7 ⇒ AD = (8 + 7) − 9 = **6**.\n\n## Counting integer-sided triangles for a fixed perimeter\n\n- List unordered triples **a ≤ b ≤ c** with a + b + c = P and the triangle inequality **a + b > c**.\n- Shortcut: the largest side satisfies **c < P/2**.\n\n**Worked example (P = 14).** c ≤ 6 → (2,6,6),(3,5,6),(4,4,6),(4,5,5) = **4 triangles** (not 5 — (2,5,7) fails 2+5>7).",
+      "body": "### Tangent pairs, tangential quadrilaterals and counting integer triangles\n\n**The idea in one sentence**\nTwo tangents from one outside point are equal and set up a neat right-angle quadrilateral, a four-sided figure with an inscribed circle has equal sums of opposite sides, and counting whole-number triangles for a fixed perimeter is a short, careful list.\n\n**Do it the slow way first (no formula)**\nQuestion: how many triangles with whole-number sides have perimeter 14?\n1. Write sides smallest to largest, a ≤ b ≤ c, adding to 14, with a + b greater than c.\n2. Because a + b is greater than c and all three add to 14, c must be below 7, so c is at most 6.\n3. For c = 6: (2,6,6), (3,5,6), (4,4,6) — three triangles.\n4. For c = 5: (4,5,5) — one more. Total four. Note (2,5,7) fails because 2 + 5 is not greater than 7.\n\n**Why must the largest side be below half the perimeter?**\nIf the largest side reached half the perimeter, the other two together would only equal it, making a flat line, not a triangle; staying below half keeps the two shorter sides long enough to close up.\n\n**Picture**\n```\n        A ______ B\n        /        \\     tangents PA, PB from P are equal\n    P .<   O (centre)   angle P + angle O = 180\n        \\________/      tangential quad: AB + CD = BC + AD\n```\n\n**What the symbols mean**\n| Symbol | Plain meaning |\n|---|---|\n| P | the external point the tangents come from |\n| O | the centre of the circle |\n| tangential quadrilateral | a four-sided figure with a circle touching all sides |\n| P (perimeter) | the total of all sides |\n\n**The formula (now that you know what it does)**\nTwo tangents from a point are equal and the angle between them plus the central angle equals 180 degrees; in a tangential quadrilateral the sums of opposite sides are equal, AB + CD = BC + AD; to count whole-number triangles of perimeter P, list a ≤ b ≤ c adding to P with a + b greater than c, where the largest side c stays below P ÷ 2.\n\n**Exam-level example**\nA circle touches all four sides of quadrilateral ABCD with AB = 8, BC = 9, CD = 7; find AD. Equal sums of opposite sides give AB + CD = BC + AD, so 8 + 7 = 9 + AD, which means 15 = 9 + AD and AD = 6 cm. Check: 8 + 7 = 15 and 9 + 6 = 15, the two sums match.\n\n**Common traps**\n- Forgetting to keep a ≤ b ≤ c, which double-counts the same triangle.\n- Including a flat set such as (2,5,7) where the two shorter sides only equal the longest.\n- Mixing up the tangent angle with the central angle, which are supplementary, not equal.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| two tangents equal | same length from one point |\n| angle P + angle O = 180 | tangent and central angle |\n| AB + CD = BC + AD | tangential quadrilateral |\n| c below P ÷ 2 | largest side limit when counting |",
       "keyPoints": [
-        "Two tangents from a point are equal; ∠between tangents + central angle = 180°.",
-        "Tangential quadrilateral: AB + CD = BC + AD (opposite-side sums equal).",
-        "Integer-triangle count: list a ≤ b ≤ c, sum = P, with a + b > c.",
-        "Largest side c < P/2; perimeter 14 gives exactly 4 integer triangles."
+        "Two tangents from a point are equal; the tangent angle plus the central angle is 180 degrees.",
+        "Tangential quadrilateral: AB + CD = BC + AD (equal sums of opposite sides).",
+        "Count integer triangles by listing a ≤ b ≤ c adding to P with a + b greater than c.",
+        "The largest side stays below P ÷ 2; perimeter 14 and perimeter 11 each give 4 triangles."
       ],
       "mnemonic": "Tangents: ∠P + ∠O = 180°. Tangential quad: opposite sides sum equal. Counting: c < P/2 and a+b>c.",
       "source": "Quantitative Reasoning — Theorems of circle; Triangle inequality",
       "verified": true,
-      "tags": ["geometry", "circle", "tangent", "counting"]
+      "tags": [
+        "geometry",
+        "circle",
+        "tangent",
+        "counting"
+      ]
     }
   ]
 }

@@ -9,13 +9,24 @@
       "subtopicId": "ment-data-interpretation-probability",
       "refresher": true,
       "question": "The table shows the number of cars sold by a dealer:\n\n| Month | Cars sold |\n|---|---|\n| January | 45 |\n| February | 60 |\n| March | 55 |\n| April | 70 |\n\nHow many cars were sold in April?",
-      "options": ["45", "60", "70", "55"],
+      "options": [
+        "45",
+        "60",
+        "70",
+        "55"
+      ],
       "answerIndex": 2,
       "explanation": "Read the April row directly: **70** cars.\n\n**Why not the others**\n- 45 — the January figure.\n- 60 — the February figure.\n- 55 — the March figure.\n\n**Key facts**\n- Table DI step 1 is always: locate the correct row and column before any calculation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Tabulation",
       "verified": true,
-      "covers": ["Table DI — reading & computation"],
-      "tags": ["di", "table", "refresher"]
+      "covers": [
+        "Table DI — reading & computation"
+      ],
+      "tags": [
+        "di",
+        "table",
+        "refresher"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-2",
@@ -23,13 +34,25 @@
       "subtopicId": "ment-data-interpretation-probability",
       "refresher": true,
       "question": "A fair six-faced die is rolled once. What is the probability of getting an even number?",
-      "options": ["1/3", "1/2", "1/6", "2/3"],
+      "options": [
+        "1/3",
+        "1/2",
+        "1/6",
+        "2/3"
+      ],
       "answerIndex": 1,
       "explanation": "Even outcomes = {2, 4, 6} = 3 favourable; total = 6. P = 3/6 = **1/2**.\n\n**Why not the others**\n- 1/3 — that is P(a specific pair) or 2/6, not the count of evens.\n- 1/6 — probability of a single specific face.\n- 2/3 — 4/6, which would need 4 favourable outcomes.\n\n**Key facts**\n- P(event) = favourable / total equally-likely outcomes.\n- One die: sample space = 6 outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
-      "covers": ["Probability — basic (favourable/total)", "Probability — dice"],
-      "tags": ["probability", "dice", "refresher"]
+      "covers": [
+        "Probability — basic (favourable/total)",
+        "Probability — dice"
+      ],
+      "tags": [
+        "probability",
+        "dice",
+        "refresher"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-3",
@@ -37,299 +60,544 @@
       "subtopicId": "ment-data-interpretation-probability",
       "refresher": true,
       "question": "In how many ways can a committee of 2 be selected from 6 people?",
-      "options": ["15", "12", "30", "20"],
+      "options": [
+        "15",
+        "12",
+        "30",
+        "20"
+      ],
       "answerIndex": 0,
-      "explanation": "Order does not matter, so use combinations: 6C2 = 6!/(2!·4!) = (6×5)/(2×1) = **15**.\n\n**Why not the others**\n- 12 — no standard count; a mis-multiplication.\n- 30 — this is 6P2 = 6×5, the ordered count (arrangements, not selections).\n- 20 — 6C3, selecting 3 not 2.\n\n**Key facts**\n- nCr = n!/(r!(n−r)!); selection ⇒ combination, arrangement ⇒ permutation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "explanation": "Order does not matter, so use combinations: 6C2 = 6!/(2!·4!) = (6×5)/(2×1) = **15**.\n\n**Why not the others**\n- 12 — no standard count; a mis-multiplication.\n- 30 — this is 6P2 = 6×5, the ordered count (arrangements, not selections).\n- 20 — 6C3, selecting 3 not 2.\n\n**Key facts**\n- nCr = n!/(r!(n−r)!); a selection uses a combination, an arrangement uses a permutation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
-      "covers": ["Combinations — selection (nCr)"],
-      "tags": ["combination", "refresher"]
+      "covers": [
+        "Combinations — selection (nCr)"
+      ],
+      "tags": [
+        "combination",
+        "refresher"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-4",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The bar graph data below shows production (in units) of four factories:\n\n| Factory | 2021 | 2022 |\n|---|---|---|\n| P | 1200 | 1500 |\n| Q | 800 | 1000 |\n| R | 1500 | 1350 |\n| S | 600 | 750 |\n\nWhat is the percentage increase in the production of Factory P from 2021 to 2022?",
-      "options": ["20%", "25%", "30%", "33.3%"],
+      "options": [
+        "20%",
+        "25%",
+        "30%",
+        "33.3%"
+      ],
       "answerIndex": 1,
       "explanation": "%change = (new − old)/old × 100 = (1500 − 1200)/1200 × 100 = 300/1200 × 100 = **25%**.\n\n**Why not the others**\n- 20% — dividing the change by the new value (300/1500), the classic base-error.\n- 30% — misreads the increase as 360 or wrong base.\n- 33.3% — would need the change to equal 400 (i.e. 1200→1600).\n\n**Key facts**\n- Always divide the change by the ORIGINAL (older) value.\n- %change = (new − old)/old × 100.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bar Graph",
       "verified": true,
-      "covers": ["Table DI — reading & computation", "DI — percentage change / growth"],
-      "tags": ["di", "bar-graph", "percentage"]
+      "covers": [
+        "Table DI — reading & computation",
+        "DI — percentage change / growth"
+      ],
+      "tags": [
+        "di",
+        "bar-graph",
+        "percentage"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-5",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Using the same production data:\n\n| Factory | 2021 | 2022 |\n|---|---|---|\n| P | 1200 | 1500 |\n| Q | 800 | 1000 |\n| R | 1500 | 1350 |\n| S | 600 | 750 |\n\nWhat is the average production per factory in 2022?",
-      "options": ["1150", "1100", "1200", "1050"],
+      "options": [
+        "1150",
+        "1100",
+        "1200",
+        "1050"
+      ],
       "answerIndex": 0,
       "explanation": "Average = sum ÷ count = (1500 + 1000 + 1350 + 750)/4 = 4600/4 = **1150**.\n\n**Why not the others**\n- 1100 — uses total 4400 (drops 200 somewhere).\n- 1200 — total 4800, over-counts.\n- 1050 — total 4200, under-counts.\n\n**Key facts**\n- Average across categories = (Σ values) / (number of categories).\n- 2022 total = 4600 over 4 factories.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph / Basic Concept Averages.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bar Graph",
       "verified": true,
-      "covers": ["DI — ratio & average across categories"],
-      "tags": ["di", "average"]
+      "covers": [
+        "DI — ratio & average across categories"
+      ],
+      "tags": [
+        "di",
+        "average"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-6",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The bar graph values below show a company's annual revenue (₹ crore):\n\n| Year | Revenue |\n|---|---|\n| 2019 | 40 |\n| 2020 | 55 |\n| 2021 | 50 |\n| 2022 | 70 |\n| 2023 | 85 |\n\nIn which year was the percentage growth over the previous year the highest?",
-      "options": ["2020", "2022", "2023", "2021"],
+      "options": [
+        "2020",
+        "2022",
+        "2023",
+        "2021"
+      ],
       "answerIndex": 1,
       "explanation": "Compute year-on-year %growth: 2020 = 15/40 = 37.5%; 2021 = −5/55 (decline); 2022 = 20/50 = 40%; 2023 = 15/70 ≈ 21.4%. Highest is **2022** at 40%.\n\n**Why not the others**\n- 2020 — 37.5%, high but below 2022's 40%.\n- 2023 — only ≈21.4% (15 on a base of 70).\n- 2021 — revenue fell (55→50), a negative growth.\n\n**Key facts**\n- Compare growth as a RATIO (change/base), not the absolute change.\n- 2020 and 2022 both rose 15–20 units but on different bases.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bar Graph",
       "verified": true,
-      "covers": ["Bar graph DI", "DI — percentage change / growth"],
-      "tags": ["di", "bar-graph", "growth"]
+      "covers": [
+        "Bar graph DI",
+        "DI — percentage change / growth"
+      ],
+      "tags": [
+        "di",
+        "bar-graph",
+        "growth"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-7",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The line graph data below shows monthly sales (in units):\n\n| Month | Sales |\n|---|---|\n| Jan | 120 |\n| Feb | 150 |\n| Mar | 135 |\n| Apr | 180 |\n| May | 165 |\n\nWhat is the average monthly sales over these five months?",
-      "options": ["145", "148", "152", "150"],
+      "options": [
+        "145",
+        "148",
+        "152",
+        "150"
+      ],
       "answerIndex": 3,
       "explanation": "Total = 120 + 150 + 135 + 180 + 165 = 750; average = 750/5 = **150**.\n\n**Why not the others**\n- 145 — total 725, an addition slip.\n- 148 — total 740.\n- 152 — total 760.\n\n**Key facts**\n- Average = Σ values / number of periods.\n- Sum the line-graph points first, then divide by 5.\n\n*Source: local APPSC Quantitative Reasoning PDF — Line Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Line Graph",
       "verified": true,
-      "covers": ["Line graph DI", "DI — ratio & average across categories"],
-      "tags": ["di", "line-graph", "average"]
+      "covers": [
+        "Line graph DI",
+        "DI — ratio & average across categories"
+      ],
+      "tags": [
+        "di",
+        "line-graph",
+        "average"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-8",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A family's monthly budget of ₹60,000 is distributed as shown in the pie chart below:\n\n| Head | Share |\n|---|---|\n| Food | 30% |\n| Rent | 25% |\n| Education | 20% |\n| Savings | 15% |\n| Others | 10% |\n\nHow much is spent on Rent?",
-      "options": ["₹12,000", "₹18,000", "₹15,000", "₹9,000"],
+      "options": [
+        "₹12,000",
+        "₹18,000",
+        "₹15,000",
+        "₹9,000"
+      ],
       "answerIndex": 2,
       "explanation": "Rent = 25% of 60,000 = 0.25 × 60,000 = **₹15,000**.\n\n**Why not the others**\n- ₹12,000 — 20% (the Education share).\n- ₹18,000 — 30% (the Food share).\n- ₹9,000 — 15% (the Savings share).\n\n**Key facts**\n- Pie amount = (share% / 100) × total.\n- Central angle for a slice = share% × 360° (Rent = 90°).\n\n*Source: local APPSC Quantitative Reasoning PDF — Pie Chart.*",
       "source": "local APPSC Quantitative Reasoning PDF — Pie Chart",
       "verified": true,
-      "covers": ["Pie chart DI"],
-      "tags": ["di", "pie-chart"]
+      "covers": [
+        "Pie chart DI"
+      ],
+      "tags": [
+        "di",
+        "pie-chart"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-9",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The combined chart data below shows a company's Revenue (bars) and Profit (line), in ₹ lakh:\n\n| Year | Revenue | Profit |\n|---|---|---|\n| 2020 | 200 | 30 |\n| 2021 | 250 | 45 |\n| 2022 | 300 | 60 |\n| 2023 | 350 | 63 |\n\nIn which year was profit the highest percentage of revenue?",
-      "options": ["2020", "2021", "2022", "2023"],
+      "options": [
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
       "answerIndex": 2,
       "explanation": "Profit/Revenue: 2020 = 30/200 = 15%; 2021 = 45/250 = 18%; 2022 = 60/300 = 20%; 2023 = 63/350 = 18%. Highest ratio is **2022** at 20%.\n\n**Why not the others**\n- 2020 — lowest margin (15%).\n- 2021 — 18%.\n- 2023 — highest absolute profit (63) but only 18% of a larger revenue.\n\n**Key facts**\n- \"Profit as % of revenue\" (margin) = Profit/Revenue × 100 — a RATIO, not the raw profit.\n- Largest absolute profit ≠ largest margin.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph & Line Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bar Graph & Line Graph",
       "verified": true,
-      "covers": ["Combined / mixed graph DI", "DI — percentage change / growth"],
-      "tags": ["di", "combined", "margin"]
+      "covers": [
+        "Combined / mixed graph DI",
+        "DI — percentage change / growth"
+      ],
+      "tags": [
+        "di",
+        "combined",
+        "margin"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-10",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Caselet: A survey of 500 people recorded their preferred mode of transport as below:\n\n| Mode | People |\n|---|---|\n| Bus | 175 |\n| Car | 125 |\n| Train | 150 |\n| Bike | 50 |\n\nWhat percentage of the surveyed people prefer the Train?",
-      "options": ["25%", "35%", "20%", "30%"],
+      "options": [
+        "25%",
+        "35%",
+        "20%",
+        "30%"
+      ],
       "answerIndex": 3,
       "explanation": "Train share = 150/500 × 100 = **30%**.\n\n**Why not the others**\n- 25% — that is Car (125/500).\n- 35% — that is Bus (175/500).\n- 20% — no category matches; 100 people would be needed.\n\n**Key facts**\n- Caselet DI: pull each quantity from the text/table, then share% = part/whole × 100.\n- All shares must sum to 100% (35+25+30+10 = 100).\n\n*Source: local APPSC Quantitative Reasoning PDF — Caselet DI.*",
       "source": "local APPSC Quantitative Reasoning PDF — Caselet DI",
       "verified": true,
-      "covers": ["Caselet DI", "DI — percentage change / growth"],
-      "tags": ["di", "caselet", "percentage"]
+      "covers": [
+        "Caselet DI",
+        "DI — percentage change / growth"
+      ],
+      "tags": [
+        "di",
+        "caselet",
+        "percentage"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-11",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A radar chart rates two models on five parameters (score out of 100):\n\n| Parameter | Model X | Model Y |\n|---|---|---|\n| Price | 80 | 60 |\n| Design | 70 | 85 |\n| Battery | 90 | 75 |\n| Camera | 65 | 80 |\n| Speed | 75 | 70 |\n\nOn how many parameters does Model Y score higher than Model X?",
-      "options": ["1", "3", "2", "4"],
+      "options": [
+        "1",
+        "3",
+        "2",
+        "4"
+      ],
       "answerIndex": 2,
       "explanation": "Compare row by row: Design (85>70) ✓ and Camera (80>65) ✓; Price (60<80), Battery (75<90) and Speed (70<75) all favour X. So Y wins on **2** parameters.\n\n**Why not the others**\n- 1 — misses either Design or Camera.\n- 3 — wrongly counts Speed (70<75) for Y.\n- 4 — counts all but Price, ignoring Battery and Speed.\n\n**Key facts**\n- Radar DI = spoke-by-spoke comparison; a higher point on a spoke = larger value.\n\n*Source: local APPSC Quantitative Reasoning PDF — Radar.*",
       "source": "local APPSC Quantitative Reasoning PDF — Radar",
       "verified": true,
-      "covers": ["Radar chart DI"],
-      "tags": ["di", "radar"]
+      "covers": [
+        "Radar chart DI"
+      ],
+      "tags": [
+        "di",
+        "radar"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-12",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A scatter plot shows hours studied (x) against marks (y) for six students:\n\n| Student | Hours | Marks |\n|---|---|---|\n| A | 2 | 40 |\n| B | 4 | 55 |\n| C | 6 | 65 |\n| D | 3 | 50 |\n| E | 5 | 60 |\n| F | 7 | 75 |\n\nHow many students scored MORE than 55 marks?",
-      "options": ["2", "4", "5", "3"],
+      "options": [
+        "2",
+        "4",
+        "5",
+        "3"
+      ],
       "answerIndex": 3,
       "explanation": "Marks strictly above 55: C (65), E (60), F (75) = **3** students. B is exactly 55 (not 'more than').\n\n**Why not the others**\n- 2 — omits one of C/E/F.\n- 4 — wrongly includes B (=55, not >55).\n- 5 — includes B and D (50), both ≤55.\n\n**Key facts**\n- Scatter DI: read each (x, y) point; 'more than' means strictly greater — exclude the boundary value.\n\n*Source: local APPSC Quantitative Reasoning PDF — Scatter.*",
       "source": "local APPSC Quantitative Reasoning PDF — Scatter",
       "verified": true,
-      "covers": ["Scatter plot DI"],
-      "tags": ["di", "scatter"]
+      "covers": [
+        "Scatter plot DI"
+      ],
+      "tags": [
+        "di",
+        "scatter"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-13",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The table shows units sold of four products; one value is missing but the total is given:\n\n| Product | Units |\n|---|---|\n| A | 120 |\n| B | ? |\n| C | 150 |\n| D | 90 |\n| Total | 500 |\n\nHow many units of Product B were sold?",
-      "options": ["130", "150", "120", "140"],
+      "options": [
+        "130",
+        "150",
+        "120",
+        "140"
+      ],
       "answerIndex": 3,
-      "explanation": "B = Total − (A + C + D) = 500 − (120 + 150 + 90) = 500 − 360 = **140**.\n\n**Why not the others**\n- 130 — subtracts to 370.\n- 150 — equals C, not the residual.\n- 120 — equals A, not the residual.\n\n**Key facts**\n- Missing-data DI: known parts sum + missing = grand total ⇒ missing = total − Σ(known).\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
+      "explanation": "B = Total − (A + C + D) = 500 − (120 + 150 + 90) = 500 − 360 = **140**.\n\n**Why not the others**\n- 130 — subtracts to 370.\n- 150 — equals C, not the residual.\n- 120 — equals A, not the residual.\n\n**Key facts**\n- Missing-data DI: known parts sum + missing entry, so missing = total − (sum of the known values).\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Tabulation",
       "verified": true,
-      "covers": ["Missing-data DI"],
-      "tags": ["di", "missing-data"]
+      "covers": [
+        "Missing-data DI"
+      ],
+      "tags": [
+        "di",
+        "missing-data"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-14",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Data Sufficiency — What is the value of x? Consider the statements:\nI. x is an even prime number.\nII. x is a positive integer less than 5.\nWhich statement(s) alone is/are sufficient to determine x uniquely?",
-      "options": ["Statement I alone is sufficient", "Statement II alone is sufficient", "Both statements together are needed", "Either statement alone is sufficient"],
+      "options": [
+        "Statement I alone is sufficient",
+        "Statement II alone is sufficient",
+        "Both statements together are needed",
+        "Either statement alone is sufficient"
+      ],
       "answerIndex": 0,
       "explanation": "The only even prime number is 2, so Statement I alone fixes x = 2 — sufficient. Statement II allows x ∈ {1, 2, 3, 4} — not unique, insufficient.\n\n**Why not the others**\n- Statement II alone — leaves four possible values.\n- Both together — unnecessary, since I already determines x.\n- Either alone — false, because II alone is not sufficient.\n\n**Key facts**\n- DS convention: a statement is sufficient only if it yields ONE value.\n- 2 is the unique even prime.\n\n*Source: local APPSC Quantitative Reasoning PDF — Data Sufficiency.*",
       "source": "local APPSC Quantitative Reasoning PDF — Data Sufficiency",
       "verified": true,
-      "covers": ["Data Sufficiency — 4-option convention"],
-      "tags": ["data-sufficiency"]
+      "covers": [
+        "Data Sufficiency — 4-option convention"
+      ],
+      "tags": [
+        "data-sufficiency"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-15",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Data Sufficiency — What is the two-digit number? Consider the statements:\nI. The sum of its digits is 9.\nII. The tens digit exceeds the units digit by 3.\nWhich of the following is correct?",
-      "options": ["Statement I alone is sufficient", "Statement II alone is sufficient", "Both statements together are sufficient (but neither alone)", "Neither statement, even together, is sufficient"],
+      "options": [
+        "Statement I alone is sufficient",
+        "Statement II alone is sufficient",
+        "Both statements together are sufficient (but neither alone)",
+        "Neither statement, even together, is sufficient"
+      ],
       "answerIndex": 2,
-      "explanation": "I alone: sum 9 gives 18, 27, 36, 45, 54, 63, 72, 81, 90 — many. II alone: tens − units = 3 gives 30, 41, 52, … — many. Together: tens + units = 9 and tens − units = 3 ⇒ tens = 6, units = 3 ⇒ the number is 63 — unique. So **both together** are needed.\n\n**Why not the others**\n- I alone — nine possibilities.\n- II alone — several possibilities.\n- Neither even together — false; two equations in two unknowns solve uniquely.\n\n**Key facts**\n- Two independent linear conditions on two digits pin a unique answer.\n- t + u = 9, t − u = 3 ⇒ t = 6, u = 3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Data Sufficiency.*",
+      "explanation": "I alone: sum 9 gives 18, 27, 36, 45, 54, 63, 72, 81, 90 — many. II alone: tens − units = 3 gives 30, 41, 52, … — many. Together: tens + units = 9 and tens − units = 3, so tens = 6 and units = 3, giving the number 63 — unique. So **both together** are needed.\n\n**Why not the others**\n- I alone — nine possibilities.\n- II alone — several possibilities.\n- Neither even together — false; two equations in two unknowns solve uniquely.\n\n**Key facts**\n- Two independent linear conditions on two digits pin a unique answer.\n- t + u = 9 and t − u = 3, so t = 6 and u = 3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Data Sufficiency.*",
       "source": "local APPSC Quantitative Reasoning PDF — Data Sufficiency",
       "verified": true,
-      "covers": ["Data Sufficiency — both statements needed"],
-      "tags": ["data-sufficiency"]
+      "covers": [
+        "Data Sufficiency — both statements needed"
+      ],
+      "tags": [
+        "data-sufficiency"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-16",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In how many ways can a 3-letter code (no letter repeated) be formed from 5 distinct letters?",
-      "options": ["60", "120", "20", "10"],
+      "options": [
+        "60",
+        "120",
+        "20",
+        "10"
+      ],
       "answerIndex": 0,
-      "explanation": "Order matters (a code), no repetition ⇒ permutation: 5P3 = 5 × 4 × 3 = **60**.\n\n**Why not the others**\n- 120 — that is 5! (arranging all five letters).\n- 20 — 5 × 4, only two positions filled.\n- 10 — 5C3 = 10, selection without order (ignores arrangement).\n\n**Key facts**\n- nPr = n!/(n−r)! = n(n−1)…(r terms).\n- 'Code/word/rank' ⇒ order matters ⇒ permutation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "explanation": "Order matters (a code), no repetition, so use a permutation: 5P3 = 5 × 4 × 3 = **60**.\n\n**Why not the others**\n- 120 — that is 5! (arranging all five letters).\n- 20 — 5 × 4, only two positions filled.\n- 10 — 5C3 = 10, selection without order (ignores arrangement).\n\n**Key facts**\n- nPr = n!/(n−r)! = n(n−1)…(r terms).\n- 'Code/word/rank' means order matters, so use a permutation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
-      "covers": ["Permutations — linear arrangement (nPr)"],
-      "tags": ["permutation"]
+      "covers": [
+        "Permutations — linear arrangement (nPr)"
+      ],
+      "tags": [
+        "permutation"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-17",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In how many distinct ways can 6 people be seated around a circular table?",
-      "options": ["720", "24", "120", "60"],
+      "options": [
+        "720",
+        "24",
+        "120",
+        "60"
+      ],
       "answerIndex": 2,
       "explanation": "Circular arrangements of n people = (n − 1)! Fixing one person removes rotational duplicates: (6 − 1)! = 5! = **120**.\n\n**Why not the others**\n- 720 — 6!, the count for a straight line (row), not a circle.\n- 24 — 4! (would be five people in a circle).\n- 60 — no standard circular count here.\n\n**Key facts**\n- Linear arrangement = n!; circular = (n−1)! because rotations are identical.\n- If clockwise and anticlockwise are the same, divide further by 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
-      "covers": ["Permutations — circular arrangement"],
-      "tags": ["permutation", "circular"]
+      "covers": [
+        "Permutations — circular arrangement"
+      ],
+      "tags": [
+        "permutation",
+        "circular"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-18",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "From a squad of 8 players, in how many ways can a team of 3 be selected?",
-      "options": ["336", "56", "112", "24"],
+      "options": [
+        "336",
+        "56",
+        "112",
+        "24"
+      ],
       "answerIndex": 1,
-      "explanation": "Selection (order irrelevant) ⇒ combination: 8C3 = (8 × 7 × 6)/(3 × 2 × 1) = 336/6 = **56**.\n\n**Why not the others**\n- 336 — 8P3 = 8×7×6, the ordered count (arrangements).\n- 112 — a doubling error of 56.\n- 24 — 4! or a mis-cancellation.\n\n**Key facts**\n- nCr = nPr / r!; here 336/6 = 56.\n- 'Team/committee/group' ⇒ order irrelevant ⇒ combination.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "explanation": "Selection (order irrelevant), so use a combination: 8C3 = (8 × 7 × 6)/(3 × 2 × 1) = 336/6 = **56**.\n\n**Why not the others**\n- 336 — 8P3 = 8×7×6, the ordered count (arrangements).\n- 112 — a doubling error of 56.\n- 24 — 4! or a mis-cancellation.\n\n**Key facts**\n- nCr = nPr / r!; here 336/6 = 56.\n- 'Team/committee/group' means order is irrelevant, so use a combination.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
-      "covers": ["Combinations — selection (nCr)"],
-      "tags": ["combination"]
+      "covers": [
+        "Combinations — selection (nCr)"
+      ],
+      "tags": [
+        "combination"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-19",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Two fair dice are thrown together. What is the probability that the sum of the numbers shown is 8?",
-      "options": ["1/6", "5/36", "7/36", "1/9"],
+      "options": [
+        "1/6",
+        "5/36",
+        "7/36",
+        "1/9"
+      ],
       "answerIndex": 1,
       "explanation": "Favourable outcomes for a sum of 8: (2,6), (3,5), (4,4), (5,3), (6,2) = 5. Total outcomes = 6 × 6 = 36. P = **5/36**.\n\n**Why not the others**\n- 1/6 — that is 6/36, the count for a sum of 7 (the most likely sum).\n- 7/36 — over-counts favourable outcomes.\n- 1/9 — 4/36, misses one ordered pair.\n\n**Key facts**\n- Two dice: sample space = 36 ordered outcomes.\n- Order matters: (2,6) and (6,2) are distinct outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
-      "covers": ["Probability — dice", "Probability — basic (favourable/total)"],
-      "tags": ["probability", "dice"]
+      "covers": [
+        "Probability — dice",
+        "Probability — basic (favourable/total)"
+      ],
+      "tags": [
+        "probability",
+        "dice"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-20",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A bag contains 4 red and 3 green balls. Two balls are drawn at random together. What is the probability that both are red?",
-      "options": ["1/7", "3/7", "4/7", "2/7"],
+      "options": [
+        "1/7",
+        "3/7",
+        "4/7",
+        "2/7"
+      ],
       "answerIndex": 3,
       "explanation": "Model as combinations: favourable = 4C2 = 6; total = 7C2 = 21. P = 6/21 = **2/7**.\n\n**Why not the others**\n- 1/7 — would need only 3 favourable ways.\n- 3/7 — 9/21, not the value of 4C2/7C2.\n- 4/7 — the raw red fraction (4/7), ignores drawing two without replacement.\n\n**Key facts**\n- P = (favourable combinations)/(total combinations) = 4C2 / 7C2.\n- Total balls = 4 + 3 = 7; 7C2 = 21.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
-      "covers": ["Probability — balls / committee (via combinations)", "Combinations — selection (nCr)"],
-      "tags": ["probability", "combination", "balls"]
+      "covers": [
+        "Probability — balls / committee (via combinations)",
+        "Combinations — selection (nCr)"
+      ],
+      "tags": [
+        "probability",
+        "combination",
+        "balls"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-21",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "One card is drawn at random from a well-shuffled standard pack of 52 cards. What is the probability that it is a king OR a heart?",
-      "options": ["17/52", "4/13", "1/4", "16/13"],
+      "options": [
+        "17/52",
+        "4/13",
+        "1/4",
+        "16/13"
+      ],
       "answerIndex": 1,
       "explanation": "Addition rule: P(K ∪ H) = P(K) + P(H) − P(K ∩ H) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**. (The king of hearts is subtracted once to avoid double counting.)\n\n**Why not the others**\n- 17/52 — 4/52 + 13/52 without subtracting the overlap (double counts the king of hearts).\n- 1/4 — 13/52, hearts only.\n- 16/13 — a nonsensical value greater than 1.\n\n**Key facts**\n- P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n- Deck: 4 kings, 13 hearts, 1 card is both.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
-      "covers": ["Probability — cards", "Probability — addition / union rule"],
-      "tags": ["probability", "cards", "addition-rule"]
+      "covers": [
+        "Probability — cards",
+        "Probability — addition / union rule"
+      ],
+      "tags": [
+        "probability",
+        "cards",
+        "addition-rule"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-22",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A bag has 5 red and 3 blue balls. Two balls are drawn one after another WITHOUT replacement. What is the probability that the first is red and the second is blue?",
-      "options": ["15/64", "15/56", "5/56", "8/56"],
+      "options": [
+        "15/64",
+        "15/56",
+        "5/56",
+        "8/56"
+      ],
       "answerIndex": 1,
       "explanation": "Dependent events: P(1st red) = 5/8; after removing a red, 7 balls remain with 3 blue, so P(2nd blue | 1st red) = 3/7. Multiply: 5/8 × 3/7 = **15/56**.\n\n**Why not the others**\n- 15/64 — uses 8 in the second draw too (i.e. WITH replacement), ignoring the removed ball.\n- 5/56 — drops the factor 3 in the numerator.\n- 8/56 — unrelated simplification error.\n\n**Key facts**\n- Without replacement, the second draw's total shrinks by 1: P(A then B) = P(A) × P(B|A).\n- Total balls = 8; after one drawn = 7.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
-      "covers": ["Probability — multiplication & conditional"],
-      "tags": ["probability", "conditional"]
+      "covers": [
+        "Probability — multiplication & conditional"
+      ],
+      "tags": [
+        "probability",
+        "conditional"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-23",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The table shows the sales (in units) of a company across four zones:\n\n| Zone | Sales |\n|---|---|\n| North | 4500 |\n| South | 3000 |\n| East | 2500 |\n| West | 2000 |\n\nWhat is the ratio of North zone sales to West zone sales?",
-      "options": ["9 : 4", "4 : 9", "5 : 2", "3 : 2"],
+      "options": [
+        "9 : 4",
+        "4 : 9",
+        "5 : 2",
+        "3 : 2"
+      ],
       "answerIndex": 0,
-      "explanation": "Ratio = North : West = 4500 : 2000. Divide both by 500 → 9 : 4.\n\n**Why not the others**\n- 4 : 9 — the inverse ratio (West : North).\n- 5 : 2 — that is North : South (4500 : 3000... actually 3:2); not the West comparison.\n- 3 : 2 — that is the North : South ratio (4500 : 3000).\n\n**Key facts**\n- Ratio DI: divide both quantities by their HCF to get the simplest form.\n- HCF(4500, 2000) = 500 ⇒ 9 : 4.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
+      "explanation": "Ratio = North : West = 4500 : 2000. Divide both by 500 → 9 : 4.\n\n**Why not the others**\n- 4 : 9 — the inverse ratio (West : North).\n- 5 : 2 — does not match any pair of these zones.\n- 3 : 2 — that is the North : South ratio (4500 : 3000), not North : West.\n\n**Key facts**\n- Ratio DI: divide both quantities by their HCF to get the simplest form.\n- HCF(4500, 2000) = 500, so the ratio is 9 : 4.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Tabulation",
       "verified": true,
-      "covers": ["Table DI — reading & computation", "DI — ratio & average across categories"],
-      "tags": ["di", "table", "ratio"]
+      "covers": [
+        "Table DI — reading & computation",
+        "DI — ratio & average across categories"
+      ],
+      "tags": [
+        "di",
+        "table",
+        "ratio"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-24",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A company's annual expenditure is shown as a pie chart:\n\n| Head | Share |\n|---|---|\n| Salaries | 40% |\n| Rent | 20% |\n| Utilities | 15% |\n| Marketing | 15% |\n| Misc | 10% |\n\nWhat is the central angle (in degrees) of the sector representing Salaries?",
-      "options": ["144°", "120°", "150°", "90°"],
+      "options": [
+        "144°",
+        "120°",
+        "150°",
+        "90°"
+      ],
       "answerIndex": 0,
       "explanation": "A pie chart spans 360°, so central angle = share% × 360°. Salaries = 40% × 360° = 0.40 × 360 = **144°**.\n\n**Why not the others**\n- 120° — corresponds to a 33.3% share.\n- 150° — corresponds to a 41.7% share.\n- 90° — corresponds to a 25% share.\n\n**Key facts**\n- Central angle of a slice = (share% / 100) × 360°.\n- The five angles must total 360° (144+72+54+54+36 = 360).\n\n*Source: local APPSC Quantitative Reasoning PDF — Pie Chart.*",
       "source": "local APPSC Quantitative Reasoning PDF — Pie Chart",
       "verified": true,
-      "covers": ["Pie chart DI"],
-      "tags": ["di", "pie-chart", "central-angle"]
+      "covers": [
+        "Pie chart DI"
+      ],
+      "tags": [
+        "di",
+        "pie-chart",
+        "central-angle"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-25",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The line graph data below shows a firm's yearly profit (₹ crore):\n\n| Year | Profit |\n|---|---|\n| 2019 | 20 |\n| 2020 | 35 |\n| 2021 | 30 |\n| 2022 | 50 |\n| 2023 | 45 |\n\nBetween which pair of consecutive years was the ABSOLUTE increase in profit the greatest?",
-      "options": ["2019 and 2020", "2020 and 2021", "2021 and 2022", "2022 and 2023"],
+      "options": [
+        "2019 and 2020",
+        "2020 and 2021",
+        "2021 and 2022",
+        "2022 and 2023"
+      ],
       "answerIndex": 2,
       "explanation": "Year-on-year changes: 2019→2020 = +15; 2020→2021 = −5; 2021→2022 = +20; 2022→2023 = −5. The greatest absolute increase is **+20, between 2021 and 2022**.\n\n**Why not the others**\n- 2019 and 2020 — a rise of +15, less than +20.\n- 2020 and 2021 — a decline (−5), not an increase.\n- 2022 and 2023 — a decline (−5).\n\n**Key facts**\n- Absolute change = later value − earlier value; compare the raw differences.\n- Only two intervals rose (2019→20 and 2021→22); the larger jump is +20.\n\n*Source: local APPSC Quantitative Reasoning PDF — Line Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Line Graph",
       "verified": true,
-      "covers": ["Line graph DI"],
-      "tags": ["di", "line-graph", "change"]
+      "covers": [
+        "Line graph DI"
+      ],
+      "tags": [
+        "di",
+        "line-graph",
+        "change"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-26",
@@ -343,115 +611,209 @@
         "Both statements together are needed"
       ],
       "answerIndex": 2,
-      "explanation": "I alone: perimeter 40 ⇒ side = 10 ⇒ area = 100 cm² — sufficient. II alone: diagonal = side√2 = 10√2 ⇒ side = 10 ⇒ area = 100 cm² — also sufficient. So EITHER statement alone works.\n\n**Why not the others**\n- I alone only — false; II alone also fixes the side.\n- II alone only — false; I alone also fixes the side.\n- Both together needed — unnecessary, since each alone determines the area.\n\n**Key facts**\n- Square: side = perimeter/4 = diagonal/√2; area = side².\n- DS 'either' case: each statement independently yields the same unique answer.\n\n*Source: local APPSC Quantitative Reasoning PDF — Data Sufficiency.*",
+      "explanation": "I alone: perimeter 40, so side = 40 ÷ 4 = 10, giving area = 100 cm² — sufficient. II alone: diagonal = side√2 = 10√2, so side = 10, giving area = 100 cm² — also sufficient. So EITHER statement alone works.\n\n**Why not the others**\n- I alone only — false; II alone also fixes the side.\n- II alone only — false; I alone also fixes the side.\n- Both together needed — unnecessary, since each alone determines the area.\n\n**Key facts**\n- Square: side = perimeter/4 = diagonal/√2; area = side².\n- DS 'either' case: each statement independently yields the same unique answer.\n\n*Source: local APPSC Quantitative Reasoning PDF — Data Sufficiency.*",
       "source": "local APPSC Quantitative Reasoning PDF — Data Sufficiency",
       "verified": true,
-      "covers": ["Data Sufficiency — 4-option convention"],
-      "tags": ["data-sufficiency", "either"]
+      "covers": [
+        "Data Sufficiency — 4-option convention"
+      ],
+      "tags": [
+        "data-sufficiency",
+        "either"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-27",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In how many distinct ways can the letters of the word 'LEVEL' be arranged?",
-      "options": ["30", "60", "120", "20"],
+      "options": [
+        "30",
+        "60",
+        "120",
+        "20"
+      ],
       "answerIndex": 0,
-      "explanation": "'LEVEL' has 5 letters with L repeated twice and E repeated twice. Arrangements = 5! / (2! × 2!) = 120 / 4 = **30**.\n\n**Why not the others**\n- 60 — divides by only one 2! (accounts for one repeated letter, not both).\n- 120 — 5!, treating all letters as distinct.\n- 20 — an incorrect division of 120.\n\n**Key facts**\n- Arrangements of n letters with repeats = n! / (p! q! …) where p, q are the repeat counts.\n- LEVEL: n = 5, L twice, E twice ⇒ 5!/(2!2!) = 30.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "explanation": "'LEVEL' has 5 letters with L repeated twice and E repeated twice. Arrangements = 5! / (2! × 2!) = 120 / 4 = **30**.\n\n**Why not the others**\n- 60 — divides by only one 2! (accounts for one repeated letter, not both).\n- 120 — 5!, treating all letters as distinct.\n- 20 — an incorrect division of 120.\n\n**Key facts**\n- Arrangements of n letters with repeats = n! / (p! q! …) where p, q are the repeat counts.\n- LEVEL: n = 5, L twice and E twice, so arrangements = 5!/(2!2!) = 30.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
-      "covers": ["Permutations — arrangements with repeated letters"],
-      "tags": ["permutation", "repeated-letters"]
+      "covers": [
+        "Permutations — arrangements with repeated letters"
+      ],
+      "tags": [
+        "permutation",
+        "repeated-letters"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-28",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A fair coin is tossed three times. What is the probability of getting AT LEAST one head?",
-      "options": ["7/8", "1/8", "1/2", "3/8"],
+      "options": [
+        "7/8",
+        "1/8",
+        "1/2",
+        "3/8"
+      ],
       "answerIndex": 0,
-      "explanation": "Use the complement. P(no head) = P(all three tails) = (1/2)³ = 1/8. So P(at least one head) = 1 − 1/8 = **7/8**.\n\n**Why not the others**\n- 1/8 — that is P(no head at all), the complement itself.\n- 1/2 — the probability of a head on a single toss, not across three.\n- 3/8 — the probability of exactly one head, not 'at least one'.\n\n**Key facts**\n- 'At least one' ⇒ 1 − P(none) is the fastest route.\n- Three tosses: sample space = 2³ = 8 equally likely outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
+      "explanation": "Use the complement. P(no head) = P(all three tails) = (1/2)³ = 1/8. So P(at least one head) = 1 − 1/8 = **7/8**.\n\n**Why not the others**\n- 1/8 — that is P(no head at all), the complement itself.\n- 1/2 — the probability of a head on a single toss, not across three.\n- 3/8 — the probability of exactly one head, not 'at least one'.\n\n**Key facts**\n- 'At least one' means 1 − P(none) is the fastest route.\n- Three tosses: sample space = 2³ = 8 equally likely outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
-      "covers": ["Probability — complement / at least one", "Probability — basic (favourable/total)"],
-      "tags": ["probability", "complement", "at-least-one"]
+      "covers": [
+        "Probability — complement / at least one",
+        "Probability — basic (favourable/total)"
+      ],
+      "tags": [
+        "probability",
+        "complement",
+        "at-least-one"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-29",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "One card is drawn at random from a well-shuffled standard pack of 52 cards. What is the probability that it is a face card (Jack, Queen or King)?",
-      "options": ["3/13", "1/13", "4/13", "1/4"],
+      "options": [
+        "3/13",
+        "1/13",
+        "4/13",
+        "1/4"
+      ],
       "answerIndex": 0,
       "explanation": "A deck has 3 face cards (J, Q, K) in each of the 4 suits = 12 face cards. P = 12/52 = **3/13**.\n\n**Why not the others**\n- 1/13 — that is P(a specific rank, e.g. a King) = 4/52.\n- 4/13 — that is 16/52, e.g. face cards plus aces mis-counted.\n- 1/4 — that is 13/52, the probability of a chosen suit.\n\n**Key facts**\n- Face cards = J, Q, K → 3 × 4 = 12 cards; 12/52 = 3/13.\n- Deck: 52 cards, 4 suits × 13 ranks, 4 of each rank.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
-      "covers": ["Probability — cards", "Probability — basic (favourable/total)"],
-      "tags": ["probability", "cards", "face-cards"]
+      "covers": [
+        "Probability — cards",
+        "Probability — basic (favourable/total)"
+      ],
+      "tags": [
+        "probability",
+        "cards",
+        "face-cards"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-30",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A committee of 3 is to be formed from 4 men and 3 women. In how many ways can it be formed if it must contain EXACTLY one woman?",
-      "options": ["18", "12", "9", "30"],
+      "options": [
+        "18",
+        "12",
+        "9",
+        "30"
+      ],
       "answerIndex": 0,
-      "explanation": "Choose 1 woman from 3 AND 2 men from 4 (multiply the independent selections): 3C1 × 4C2 = 3 × 6 = **18**.\n\n**Why not the others**\n- 12 — uses 4C2 alone or 3 × 4, ignoring one selection.\n- 9 — 3 × 3, a mis-count of the men's combinations.\n- 30 — 3 × 10, using 5C2 instead of 4C2.\n\n**Key facts**\n- 'Exactly one woman' ⇒ (ways to pick women) × (ways to pick remaining men).\n- 3C1 = 3 and 4C2 = 6, so 3 × 6 = 18.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "explanation": "Choose 1 woman from 3 AND 2 men from 4 (multiply the independent selections): 3C1 × 4C2 = 3 × 6 = **18**.\n\n**Why not the others**\n- 12 — uses 4C2 alone or 3 × 4, ignoring one selection.\n- 9 — 3 × 3, a mis-count of the men's combinations.\n- 30 — 3 × 10, using 5C2 instead of 4C2.\n\n**Key facts**\n- 'Exactly one woman' means (ways to pick the woman) × (ways to pick the remaining men).\n- 3C1 = 3 and 4C2 = 6, so 3 × 6 = 18.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
-      "covers": ["Combinations — selection (nCr)"],
-      "tags": ["combination", "committee", "constraint"]
+      "covers": [
+        "Combinations — selection (nCr)"
+      ],
+      "tags": [
+        "combination",
+        "committee",
+        "constraint"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-31",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Three bells ring at intervals of 3, 4 and 6 minutes and ring together at 9:00 a.m. In the next 72 minutes (up to and including 10:12 a.m.), how many more times do all three ring together?",
-      "options": ["6", "5", "4", "12"],
+      "options": [
+        "6",
+        "5",
+        "4",
+        "12"
+      ],
       "answerIndex": 0,
       "explanation": "They coincide every LCM(3,4,6) = 12 minutes. In 72 minutes that is at 12, 24, 36, 48, 60 and 72 minutes = **6** times.\n\n**Why not the others**\n- 5 — drops the coincidence at the 72nd minute.\n- 4 — uses a wrong LCM (e.g. 18).\n- 12 — counts every 6 minutes instead of every 12.\n\n**Key facts**\n- Periodic events with periods p, q, r coincide every LCM(p, q, r).\n- Number of coincidences in time T = floor(T / LCM).\n\n*Source: UPSC CSE (CSAT) 2016 pattern — LCM coincidence (via UPSCprep); APPSC Quantitative Reasoning.*",
       "source": "UPSC CSE (CSAT) 2016 (via UPSCprep); APPSC Quantitative Reasoning",
       "verified": true,
-      "covers": ["Counting — LCM coincidence (how many times events coincide)"],
-      "tags": ["lcm", "coincidence", "counting"]
+      "covers": [
+        "Counting — LCM coincidence (how many times events coincide)"
+      ],
+      "tags": [
+        "lcm",
+        "coincidence",
+        "counting"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-32",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A student must choose 2 subjects out of five: Maths-I, Maths-II, Physics, Chemistry, Biology. Maths-II can be chosen ONLY if Maths-I is also chosen. In how many ways can the two subjects be selected?",
-      "options": ["10", "7", "8", "9"],
+      "options": [
+        "10",
+        "7",
+        "8",
+        "9"
+      ],
       "answerIndex": 1,
       "explanation": "Total unrestricted selections = 5C2 = 10. Invalid selections pair Maths-II with a non-Maths-I subject (Physics, Chemistry or Biology) = 3. Valid = 10 - 3 = **7**.\n\n**Why not the others**\n- 10 — ignores the dependency constraint entirely.\n- 8 or 9 — remove too few invalid pairs (only 3 must go).\n\n**Key facts**\n- With a dependency, count all C(n, r) then subtract the selections that violate it.\n- Here 5C2 = 10 and 10 - 3 = 7.\n\n*Source: UPSC CSE (CSAT) 2015 — constrained selection (via UPSCprep).*",
       "source": "UPSC CSE (CSAT) 2015 (via UPSCprep)",
       "verified": true,
-      "covers": ["Combinations — constrained / dependent selection (case split)"],
-      "tags": ["combination", "constraint", "dependency"]
+      "covers": [
+        "Combinations — constrained / dependent selection (case split)"
+      ],
+      "tags": [
+        "combination",
+        "constraint",
+        "dependency"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-33",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "At a party there are 3 men and 4 women. Every pair of the OPPOSITE sex shakes hands, while every pair of the SAME sex hugs. How many hugs take place?",
-      "options": ["12", "9", "7", "21"],
+      "options": [
+        "12",
+        "9",
+        "7",
+        "21"
+      ],
       "answerIndex": 1,
       "explanation": "Hugs happen within each sex: 3C2 + 4C2 = 3 + 6 = **9**.\n\n**Why not the others**\n- 12 — that is the number of handshakes (3 x 4 opposite-sex pairs).\n- 7 — simply 3 + 4, not a count of pairs.\n- 21 — 7C2, i.e. ALL pairs regardless of sex.\n\n**Key facts**\n- Same-sex pairs (hugs) = mC2 + wC2; opposite-sex pairs (handshakes) = m x w.\n- 3C2 = 3 and 4C2 = 6.\n\n*Source: UPSC CSE (CSAT) 2015 pattern — handshakes vs hugs counting (via UPSCprep).*",
       "source": "UPSC CSE (CSAT) 2015 (via UPSCprep)",
       "verified": true,
-      "covers": ["Counting — handshakes vs hugs (opposite vs same sex)"],
-      "tags": ["counting", "combination", "handshake"]
+      "covers": [
+        "Counting — handshakes vs hugs (opposite vs same sex)"
+      ],
+      "tags": [
+        "counting",
+        "combination",
+        "handshake"
+      ]
     },
     {
       "id": "ment-data-interpretation-probability-mcq-34",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
       "question": "X and Y are respectively 20% and 28% less than a third number Z. By what percentage is Y less than X?",
-      "options": ["8%", "10%", "12%", "28%"],
+      "options": [
+        "8%",
+        "10%",
+        "12%",
+        "28%"
+      ],
       "answerIndex": 1,
       "explanation": "Take Z = 100, so X = 80 and Y = 72. Y is less than X by (80 - 72)/80 x 100 = 8/80 x 100 = **10%** (the base is X, not Z).\n\n**Why not the others**\n- 8% — wrongly subtracts the two percentages (28 - 20) or uses Z as the base.\n- 12% or 28% — misuse of base; the comparison must be relative to X.\n\n**Key facts**\n- 'Y is x% less than Z' means Y = Z(1 - x/100).\n- 'Y less than X' uses X as the base: (X - Y)/X x 100.\n\n*Source: UPSC CSE (CSAT) 2016 — percentage-less base comparison (via UPSCprep).*",
       "source": "UPSC CSE (CSAT) 2016 (via UPSCprep)",
       "verified": true,
-      "covers": ["DI — percentage-less base comparison"],
-      "tags": ["percentage", "base", "comparison"]
+      "covers": [
+        "DI — percentage-less base comparison"
+      ],
+      "tags": [
+        "percentage",
+        "base",
+        "comparison"
+      ]
     }
   ]
 }

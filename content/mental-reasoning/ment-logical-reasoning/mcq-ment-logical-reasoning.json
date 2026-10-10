@@ -157,7 +157,7 @@
         "Neither follows"
       ],
       "answerIndex": 1,
-      "explanation": "'Only a few Plumbers are Taxi drivers' means Some plumbers ARE and Some plumbers are NOT taxi drivers — so **not all plumbers can be taxi drivers** (II follows). Adults and Taxi drivers share no direct link, so 'Some Adults are Taxi drivers' is only possible, not definite (I fails).\n\n**Why not the others**\n- Only I follows — Adult↔Taxi has no guaranteed overlap; I is not definite.\n- Both I and II follow — I is merely possible, so it cannot be reported as following.\n- Neither follows — II is forced by the 'Some-not' half baked into 'Only a few'.\n\n**Key facts**\n- 'Only a few X are Y' ⇒ Some X are Y AND Some X are not Y (both definite).\n- Hence 'All X are Y' is ruled out whenever 'Only a few X are Y' is stated.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism ('Only a few').*",
+      "explanation": "'Only a few Plumbers are Taxi drivers' means Some plumbers ARE and Some plumbers are NOT taxi drivers — so **not all plumbers can be taxi drivers** (II follows). Adults and Taxi drivers share no direct link, so 'Some Adults are Taxi drivers' is only possible, not definite (I fails).\n\n**Why not the others**\n- Only I follows — Adult↔Taxi has no guaranteed overlap; I is not definite.\n- Both I and II follow — I is merely possible, so it cannot be reported as following.\n- Neither follows — II is forced by the 'Some-not' half baked into 'Only a few'.\n\n**Key facts**\n- 'Only a few X are Y' means Some X are Y AND Some X are not Y (both definite).\n- Hence 'All X are Y' is ruled out whenever 'Only a few X are Y' is stated.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism ('Only a few').*",
       "source": "APPSC GK — Logical Reasoning: Syllogism",
       "verified": true,
       "covers": [
@@ -180,7 +180,7 @@
         "Females and Mothers separate, both lying inside Doctors"
       ],
       "answerIndex": 1,
-      "explanation": "Every Mother is a Female, so Mothers ⊂ Females. A Doctor may be male or female, and a mother may or may not be a doctor, so Doctors **partially overlaps** both Females and Mothers.\n\n**Why not the others**\n- Three mutually separate circles — false, since all mothers are females (they must overlap/nest).\n- Doctors inside Mothers inside Females — wrong: not every doctor is a mother or even female.\n- Females and Mothers inside Doctors — reverses reality; not all females/mothers are doctors.\n\n**Key facts**\n- 'All A are B' ⇒ A nested inside B.\n- Two classes that only *sometimes* coincide (Doctors with Females/Mothers) ⇒ intersecting circles.\n\n*Source: APPSC GK — Logical Reasoning: Logical Venn Diagram (representation).*",
+      "explanation": "Every Mother is a Female, so Mothers ⊂ Females. A Doctor may be male or female, and a mother may or may not be a doctor, so Doctors **partially overlaps** both Females and Mothers.\n\n**Why not the others**\n- Three mutually separate circles — false, since all mothers are females (they must overlap/nest).\n- Doctors inside Mothers inside Females — wrong: not every doctor is a mother or even female.\n- Females and Mothers inside Doctors — reverses reality; not all females/mothers are doctors.\n\n**Key facts**\n- 'All A are B' puts A nested inside B.\n- Two classes that only *sometimes* coincide (Doctors with Females/Mothers) are shown as intersecting circles.\n\n*Source: APPSC GK — Logical Reasoning: Logical Venn Diagram (representation).*",
       "source": "APPSC GK — Logical Reasoning: Logical Venn Diagram",
       "verified": true,
       "covers": [
@@ -226,7 +226,7 @@
         "Neither follows"
       ],
       "answerIndex": 1,
-      "explanation": "Decode: P ≥ Q, Q = R, R < S, giving P ≥ Q = R < S. So S > R = Q ⇒ **S > Q (II true)**. But P ≥ R only (P could equal R), so **P > R is not definite (I false)**.\n\n**Why not the others**\n- Only I follows — P ≥ R allows equality, so strict P > R can't be guaranteed.\n- Both I and II follow — I fails on the equality case.\n- Neither follows — II is forced because S > R and R = Q.\n\n**Key facts**\n| Code | Meaning |\n|---|---|\n| # | ≥ |\n| $ | = |\n| % | < |\n| * | > |\n- A '≥' link can never yield a strict '>' conclusion by itself.\n\n*Source: APPSC GK — Logical Reasoning: Coded Inequality.*",
+      "explanation": "Decode: P ≥ Q, Q = R, R < S, giving P ≥ Q = R < S. So S > R and R = Q, so **S > Q (II true)**. But P ≥ R only (P could equal R), so **P > R is not definite (I false)**.\n\n**Why not the others**\n- Only I follows — P ≥ R allows equality, so strict P > R can't be guaranteed.\n- Both I and II follow — I fails on the equality case.\n- Neither follows — II is forced because S > R and R = Q.\n\n**Key facts**\n| Code | Meaning |\n|---|---|\n| # | ≥ |\n| $ | = |\n| % | < |\n| * | > |\n- A '≥' link can never yield a strict '>' conclusion by itself.\n\n*Source: APPSC GK — Logical Reasoning: Coded Inequality.*",
       "source": "APPSC GK — Logical Reasoning: Inequality",
       "verified": true,
       "covers": [
@@ -479,7 +479,7 @@
         "A is false but R is true"
       ],
       "answerIndex": 0,
-      "explanation": "Both statements are factually true, and the lower pressure at altitude is precisely *why* the boiling point falls (a liquid boils when its vapour pressure equals ambient pressure). So R correctly explains A.\n\n**Why not the others**\n- Both true but R not the explanation — R is exactly the cause of A, so this is wrong.\n- A true, R false — R (pressure falls with altitude) is a true fact.\n- A false, R true — A (lower boiling point at altitude) is also true.\n\n**Key facts**\n- Boiling occurs when vapour pressure = surrounding pressure; lower ambient pressure ⇒ lower boiling point.\n- A-R method: judge each statement's truth first, then test whether R *causes* A.\n\n*Source: APPSC GK — Verbal Reasoning: Assertion and Reason.*",
+      "explanation": "Both statements are factually true, and the lower pressure at altitude is precisely *why* the boiling point falls (a liquid boils when its vapour pressure equals ambient pressure). So R correctly explains A.\n\n**Why not the others**\n- Both true but R not the explanation — R is exactly the cause of A, so this is wrong.\n- A true, R false — R (pressure falls with altitude) is a true fact.\n- A false, R true — A (lower boiling point at altitude) is also true.\n\n**Key facts**\n- Boiling occurs when vapour pressure = surrounding pressure; lower surrounding pressure gives a lower boiling point.\n- A-R method: judge each statement's truth first, then test whether R *causes* A.\n\n*Source: APPSC GK — Verbal Reasoning: Assertion and Reason.*",
       "source": "APPSC GK — Verbal Reasoning: Assertion and Reason",
       "verified": true,
       "covers": [
@@ -664,7 +664,7 @@
         "All three follow"
       ],
       "answerIndex": 3,
-      "explanation": "Roses ⊂ flowers ⊂ plants, and no plant is a stone. So every rose is a plant and hence no rose is a stone (**I follows**). 'All roses are plants' gives the definite converse 'Some plants are roses' (**II follows**). All flowers are plants and no plant is a stone, so no flower is a stone, which certainly means some flowers are not stones (**III follows**).\n\n**Why not the others**\n- Only I and II — III is equally guaranteed once flowers are shown to be non-stones.\n- Only I and III — II is the valid converse of a universal and cannot be dropped.\n- Only II and III — I is forced because roses are plants and no plant is a stone.\n\n**Key facts**\n- 'All A are B' + 'No B is C' ⇒ 'No A is C'.\n- 'All A are B' always yields the converse 'Some B are A'.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism (three-statement).*",
+      "explanation": "Roses ⊂ flowers ⊂ plants, and no plant is a stone. So every rose is a plant and hence no rose is a stone (**I follows**). 'All roses are plants' gives the definite converse 'Some plants are roses' (**II follows**). All flowers are plants and no plant is a stone, so no flower is a stone, which certainly means some flowers are not stones (**III follows**).\n\n**Why not the others**\n- Only I and II — III is equally guaranteed once flowers are shown to be non-stones.\n- Only I and III — II is the valid converse of a universal and cannot be dropped.\n- Only II and III — I is forced because roses are plants and no plant is a stone.\n\n**Key facts**\n- 'All A are B' together with 'No B is C' gives 'No A is C'.\n- 'All A are B' always yields the converse 'Some B are A'.\n\n*Source: APPSC GK — Logical Reasoning: Syllogism (three-statement).*",
       "source": "APPSC GK — Logical Reasoning: Syllogism",
       "verified": true,
       "covers": [
@@ -710,7 +710,7 @@
         "Neither follows"
       ],
       "answerIndex": 2,
-      "explanation": "Take each conclusion against the chain. A ≥ B and B > C give A > C, so **I follows**. C ≤ D and D = E give C ≤ E, i.e. E ≥ C, so **II follows**. Both are definite.\n\n**Why not the others**\n- Only I follows — II is also definite because D = E lets C ≤ D transfer to C ≤ E.\n- Only II follows — I is definite: a '≥' followed by a strict '>' yields a strict '>'.\n- Neither follows — both relations are fully determined by the chain.\n\n**Key facts**\n- A ≥ B > C ⇒ A > C (one strict link makes the whole strict).\n- Equality (D = E) lets a relation with D carry over unchanged to E.\n\n*Source: APPSC GK — Logical Reasoning: Inequality (chained relations).*",
+      "explanation": "Take each conclusion against the chain. A ≥ B and B > C give A > C, so **I follows**. C ≤ D and D = E give C ≤ E, i.e. E ≥ C, so **II follows**. Both are definite.\n\n**Why not the others**\n- Only I follows — II is also definite because D = E lets C ≤ D transfer to C ≤ E.\n- Only II follows — I is definite: a '≥' followed by a strict '>' yields a strict '>'.\n- Neither follows — both relations are fully determined by the chain.\n\n**Key facts**\n- A ≥ B and B > C give A > C (one strict link makes the whole strict).\n- Equality (D = E) lets a relation with D carry over unchanged to E.\n\n*Source: APPSC GK — Logical Reasoning: Inequality (chained relations).*",
       "source": "APPSC GK — Logical Reasoning: Inequality",
       "verified": true,
       "covers": [

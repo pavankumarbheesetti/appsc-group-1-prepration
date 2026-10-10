@@ -66,7 +66,7 @@
         "15"
       ],
       "answerIndex": 2,
-      "explanation": "The mode is the value with the highest frequency.\n\n**Worked steps**\n- 9 occurs 3 times; 5 occurs twice; every other value once.\n- Highest frequency ⇒ mode = **9**.\n\n**Why not the others**\n- 5 — occurs only twice, less than 9.\n- 8 — occurs once.\n- 15 — the maximum value, but frequency 1; mode is about frequency, not size.\n\n**Key facts**\n- Mode = most frequently occurring value.\n- A data set can be unimodal, bimodal, or have no mode if all frequencies are equal.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mode.*",
+      "explanation": "The mode is the value with the highest frequency.\n\n**Worked steps**\n- 9 occurs 3 times; 5 occurs twice; every other value once.\n- 9 has the highest frequency, so the mode is **9**.\n\n**Why not the others**\n- 5 — occurs only twice, less than 9.\n- 8 — occurs once.\n- 15 — the maximum value, but frequency 1; mode is about frequency, not size.\n\n**Key facts**\n- Mode = most frequently occurring value.\n- A data set can be unimodal, bimodal, or have no mode if all frequencies are equal.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mode.*",
       "source": "local APPSC Quantitative Reasoning PDF — Mode",
       "verified": true,
       "covers": [
@@ -159,7 +159,7 @@
         "40.2"
       ],
       "answerIndex": 0,
-      "explanation": "Corrected mean = old mean + (Σcorrect − Σwrong)/n.\n\n**Worked steps**\n- Σwrong = 82 + 23 = 105; Σcorrect = 28 + 32 = 60.\n- Change in sum = 60 − 105 = −45.\n- Corrected mean = 40 + (−45)/25 = 40 − 1.8 = **38.2**.\n\n**Why not the others**\n- 39.8 — from dividing the difference by a wrong count.\n- 41.8 — adds the correction instead of subtracting (wrong sign).\n- 40.2 — uses +45/25 instead of −45/25.\n\n**Key facts**\n- Corrected Σ = old Σ − wrong values + correct values.\n- Old Σ = 25 × 40 = 1000; corrected Σ = 1000 − 105 + 60 = 955 ⇒ 955/25 = 38.2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mean.*",
+      "explanation": "Corrected mean = old mean + (Σcorrect − Σwrong)/n.\n\n**Worked steps**\n- Σwrong = 82 + 23 = 105; Σcorrect = 28 + 32 = 60.\n- Change in sum = 60 − 105 = −45.\n- Corrected mean = 40 + (−45)/25 = 40 − 1.8 = **38.2**.\n\n**Why not the others**\n- 39.8 — from dividing the difference by a wrong count.\n- 41.8 — adds the correction instead of subtracting (wrong sign).\n- 40.2 — uses +45/25 instead of −45/25.\n\n**Key facts**\n- Corrected Σ = old Σ − wrong values + correct values.\n- Old Σ = 25 × 40 = 1000; corrected Σ = 1000 − 105 + 60 = 955, so 955 ÷ 25 = 38.2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mean.*",
       "source": "local APPSC Quantitative Reasoning PDF — Mean",
       "verified": true,
       "covers": [
@@ -228,7 +228,7 @@
         "34"
       ],
       "answerIndex": 1,
-      "explanation": "Median (grouped) = L + [(N/2 − C)/f] × h.\n\n**Worked steps**\n- N = 4+5+7+10+12+8 = 46; N/2 = 23.\n- Cumulative freq: 4, 9, 16, 26, … ⇒ first cf ≥ 23 is 26 ⇒ median class = 30–40.\n- L = 30, C = 16 (cf before class), f = 10, h = 10.\n- Median = 30 + [(23 − 16)/10] × 10 = 30 + 7 = **37**.\n\n**Why not the others**\n- 35 — the mid-value of the median class, not the interpolated median.\n- 38 — uses C = 26 (cf of the median class itself) instead of the preceding cf.\n- 34 — from N/2 taken as 20 rather than 23.\n\n**Key facts**\n| Symbol | Meaning |\n|---|---|\n| L | lower limit of median class |\n| C | cf of class before median class |\n| f | frequency of median class |\n| h | class width |\n\n*Source: local APPSC Quantitative Reasoning PDF — Median.*",
+      "explanation": "Median (grouped) = L + [(N/2 − C)/f] × h.\n\n**Worked steps**\n- N = 4+5+7+10+12+8 = 46; N/2 = 23.\n- Cumulative frequencies: 4, 9, 16, 26, …; the first one that reaches 23 is 26, so the median class is 30–40.\n- L = 30, C = 16 (cf before class), f = 10, h = 10.\n- Median = 30 + [(23 − 16)/10] × 10 = 30 + 7 = **37**.\n\n**Why not the others**\n- 35 — the mid-value of the median class, not the interpolated median.\n- 38 — uses C = 26 (cf of the median class itself) instead of the preceding cf.\n- 34 — from N/2 taken as 20 rather than 23.\n\n**Key facts**\n| Symbol | Meaning |\n|---|---|\n| L | lower limit of median class |\n| C | cf of class before median class |\n| f | frequency of median class |\n| h | class width |\n\n*Source: local APPSC Quantitative Reasoning PDF — Median.*",
       "source": "local APPSC Quantitative Reasoning PDF — Median",
       "verified": true,
       "covers": [
@@ -251,7 +251,7 @@
         "3.0"
       ],
       "answerIndex": 0,
-      "explanation": "Mode (grouped) = l + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × h.\n\n**Worked steps**\n- Highest frequency 9 ⇒ modal class = 2–3, so l = 2, f₁ = 9.\n- f₀ = 5 (class before), f₂ = 3 (class after), h = 1.\n- Mode = 2 + [(9 − 5)/(2×9 − 5 − 3)] × 1 = 2 + (4/10) = **2.4**.\n\n**Why not the others**\n- 2.5 — the mid-value of the modal class, not the formula result.\n- 2.8 — from mis-taking f₀ or f₂.\n- 3.0 — the upper limit of the modal class.\n\n**Key facts**\n- f₁ = modal-class frequency, f₀/f₂ = preceding/following frequencies.\n- The mode lies inside the modal class, pulled toward the neighbour with higher frequency.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mode.*",
+      "explanation": "Mode (grouped) = l + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × h.\n\n**Worked steps**\n- The highest frequency is 9, so the modal class is 2–3, giving l = 2, f₁ = 9.\n- f₀ = 5 (class before), f₂ = 3 (class after), h = 1.\n- Mode = 2 + [(9 − 5)/(2×9 − 5 − 3)] × 1 = 2 + (4/10) = **2.4**.\n\n**Why not the others**\n- 2.5 — the mid-value of the modal class, not the formula result.\n- 2.8 — from mis-taking f₀ or f₂.\n- 3.0 — the upper limit of the modal class.\n\n**Key facts**\n- f₁ = modal-class frequency, f₀/f₂ = preceding/following frequencies.\n- The mode lies inside the modal class, pulled toward the neighbour with higher frequency.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mode.*",
       "source": "local APPSC Quantitative Reasoning PDF — Mode",
       "verified": true,
       "covers": [
@@ -490,7 +490,7 @@
         "50%"
       ],
       "answerIndex": 1,
-      "explanation": "Coefficient of variation = (SD / Mean) × 100 = (10/50) × 100 = **20%**.\n\n**Why not the others**\n- 10% — this is SD/(2×Mean); the divisor should be the mean, giving 20%.\n- 25% — uses mean 40, not 50.\n- 50% — this is SD as a fraction with no ×100/mean, or SD/20; incorrect.\n\n**Key facts**\n- CV = (SD / Mean) × 100; it is unitless, used to compare consistency across data sets.\n- Lower CV ⇒ more consistent/uniform data.\n\n*Source: local APPSC Quantitative Reasoning PDF — Variance and Standard Deviation.*",
+      "explanation": "Coefficient of variation = (SD / Mean) × 100 = (10/50) × 100 = **20%**.\n\n**Why not the others**\n- 10% — this is SD/(2×Mean); the divisor should be the mean, giving 20%.\n- 25% — uses mean 40, not 50.\n- 50% — this is SD as a fraction with no ×100/mean, or SD/20; incorrect.\n\n**Key facts**\n- CV = (SD / Mean) × 100; it is unitless, used to compare consistency across data sets.\n- Lower CV means more consistent/uniform data.\n\n*Source: local APPSC Quantitative Reasoning PDF — Variance and Standard Deviation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Variance and Standard Deviation",
       "verified": true,
       "covers": [
@@ -609,7 +609,7 @@
         "36.3"
       ],
       "answerIndex": 1,
-      "explanation": "Empirical relation: Mode = 3·Median − 2·Mean ⇒ Median = (Mode + 2·Mean)/3 = (32.1 + 2×35.4)/3 = (32.1 + 70.8)/3 = 102.9/3 = **34.3**.\n\n**Why not the others**\n- 33.4 — from averaging mean and mode, not the empirical relation.\n- 33.75 — the simple mean of 35.4 and 32.1.\n- 36.3 — uses Median = (2·Mode + Mean)/3, the wrong rearrangement.\n\n**Key facts**\n- Rearranged empirical relation: Median = (Mode + 2·Mean)/3.\n- Median always lies between the mean and the mode in a skewed distribution.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mean / Median / Mode.*",
+      "explanation": "Empirical relation: Mode = 3·Median − 2·Mean, so rearranging gives Median = (Mode + 2·Mean)/3 = (32.1 + 2×35.4)/3 = (32.1 + 70.8)/3 = 102.9/3 = **34.3**.\n\n**Why not the others**\n- 33.4 — from averaging mean and mode, not the empirical relation.\n- 33.75 — the simple mean of 35.4 and 32.1.\n- 36.3 — uses Median = (2·Mode + Mean)/3, the wrong rearrangement.\n\n**Key facts**\n- Rearranged empirical relation: Median = (Mode + 2·Mean)/3.\n- Median always lies between the mean and the mode in a skewed distribution.\n\n*Source: local APPSC Quantitative Reasoning PDF — Mean / Median / Mode.*",
       "source": "local APPSC Quantitative Reasoning PDF — Mean / Median / Mode",
       "verified": true,
       "covers": [
