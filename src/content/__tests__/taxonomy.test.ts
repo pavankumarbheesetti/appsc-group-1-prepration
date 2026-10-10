@@ -72,7 +72,7 @@ describe('taxonomy loader', () => {
     expect(ivc?.meta.band).toBe('A');
     // The IVC banks are grouped in by subtopicId.
     expect(ivc?.mcqs).toHaveLength(19);
-    expect(ivc?.notes).toHaveLength(21);
+    expect(ivc?.notes).toHaveLength(22);
     expect(ivc?.mains).toHaveLength(8);
   });
 
@@ -84,7 +84,7 @@ describe('taxonomy loader', () => {
     // Re-authored to a lean, coverage-driven exam-level bank (3 refreshers + 16 exam,
     // incl. an added chronology item from the review pipeline).
     expect(stone?.mcqs).toHaveLength(22);
-    expect(stone?.notes).toHaveLength(13);
+    expect(stone?.notes).toHaveLength(14);
     expect(stone?.mains).toHaveLength(3);
     // Batch-1 rollout: the subtopic now declares an examPoints checklist that its
     // bank covers 100% (exam-point coverage, not the band-target fallback).

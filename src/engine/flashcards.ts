@@ -34,6 +34,19 @@ export const CLOZE_CARDS_PER_NOTE = 2;
 /** The blank rendered in a cloze prompt where the masked token used to be. */
 export const CLOZE_BLANK = '_____';
 
+/**
+ * The tag that marks a "For Mains" angle note (id `<subtopicId>-note-mains-angle`).
+ * Such notes carry analytical MAINS dimensions, not Prelims facts, so NO
+ * flashcards or cloze cards are ever generated from them (STANDARDS §8a). They
+ * are read as prose in the collapsed "For Mains" section, never drilled.
+ */
+export const MAINS_NOTE_TAG = 'mains';
+
+/** True when `note` is a "For Mains" angle note (tagged {@link MAINS_NOTE_TAG}). */
+export function isMainsNote(note: NoteItem): boolean {
+  return note.tags?.includes(MAINS_NOTE_TAG) === true;
+}
+
 /** A single derived review card. */
 export interface Flashcard {
   /** Stable id, e.g. `fc:<noteId>#<index>` (note) or `fc:<mcqId>` (mcq). */
@@ -63,6 +76,7 @@ export function buildFlashcards(
   const cards: Flashcard[] = [];
 
   for (const note of notes) {
+    if (isMainsNote(note)) continue; // For-Mains notes never seed cards (STANDARDS §8a)
     const points = note.keyPoints ?? [];
     points.forEach((point, index) => {
       cards.push({
@@ -163,6 +177,7 @@ function pickClozeToken(sentence: string): Token | undefined {
 export function buildClozeCards(notes: readonly NoteItem[]): Flashcard[] {
   const cards: Flashcard[] = [];
   for (const note of notes) {
+    if (isMainsNote(note)) continue; // For-Mains notes never seed cloze cards (STANDARDS §8a)
     const points = note.keyPoints ?? [];
     let made = 0;
     for (let index = 0; index < points.length; index += 1) {

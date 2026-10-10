@@ -6,6 +6,8 @@ import {
   buildCuratedDeck,
   selectDue,
   selectSession,
+  isMainsNote,
+  MAINS_NOTE_TAG,
   DAILY_SESSION_CAP,
   CLOZE_CARDS_PER_NOTE,
   CLOZE_BLANK,
@@ -248,5 +250,47 @@ describe('flashcards — buildDeck (key-point + cloze + mcq)', () => {
     };
     expect(selectDue(deck, srMap, NOW).map((c) => c.id)).not.toContain(cloze.id);
     expect(selectDue(deck, srMap, NOW + 3 * DAY).map((c) => c.id)).toContain(cloze.id);
+  });
+});
+
+describe('flashcards — For-Mains notes never seed cards (STANDARDS §8a)', () => {
+  /** A mains-angle note: tagged `mains`, with key points that WOULD seed cards. */
+  function mainsNote(id: string): NoteItem {
+    return {
+      id,
+      subjectCode: 'HIST',
+      title: 'For Mains — Mauryan administration',
+      body: 'Analytical dimensions...',
+      keyPoints: ['Ashoka ruled from 268 BCE', 'Dhamma shaped the Mauryan state'],
+      tags: [MAINS_NOTE_TAG],
+    };
+  }
+
+  it('recognises a mains-tagged note via isMainsNote', () => {
+    expect(isMainsNote(mainsNote('n-mains'))).toBe(true);
+    expect(isMainsNote(note('n1', 'Prelims note', ['a point']))).toBe(false);
+  });
+
+  it('excludes mains-tagged notes from key-point, cloze and full-deck cards', () => {
+    const prelims = note('p1', 'Prelims note', ['Harappa had the Great Bath']);
+    const mains = mainsNote('p1-note-mains-angle');
+    const notes = [prelims, mains];
+
+    const kp = buildFlashcards(notes);
+    expect(kp.every((c) => !c.id.includes('mains-angle'))).toBe(true);
+    expect(kp.length).toBe(1); // only the prelims note's single key point
+
+    const cz = buildClozeCards(notes);
+    expect(cz.every((c) => !c.id.includes('mains-angle'))).toBe(true);
+
+    const deck = buildDeck(notes);
+    expect(deck.every((c) => !c.id.includes('mains-angle'))).toBe(true);
+  });
+
+  it('generates zero cards when the ONLY note is a mains-angle note', () => {
+    const notes = [mainsNote('x-note-mains-angle')];
+    expect(buildFlashcards(notes)).toEqual([]);
+    expect(buildClozeCards(notes)).toEqual([]);
+    expect(buildDeck(notes)).toEqual([]);
   });
 });

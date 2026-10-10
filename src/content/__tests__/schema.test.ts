@@ -21,7 +21,7 @@ describe('content schemas', () => {
   it('accepts the seed notes bank', () => {
     const bank = parseBank(notesBank);
     expect(bank.kind).toBe('notes');
-    expect(bank.items).toHaveLength(21);
+    expect(bank.items).toHaveLength(22);
   });
 
   it('accepts the seed mains bank', () => {

@@ -21,10 +21,12 @@ import type { SectionPools } from '../engine/mock';
 import {
   buildPlan,
   type Plan,
+  type PlanMainsPaper,
   type PlanSequence,
   type PlanSubtopic,
   type PlannerProgress,
 } from '../engine/planner';
+import { isMainsNote } from '../engine/flashcards';
 
 /**
  * All taxonomy subtopics as engine inputs, joined with authored MCQ counts and
@@ -47,6 +49,7 @@ export function planSubtopics(): PlanSubtopic[] {
         mcqCount: mcqs,
         examPointCount: meta.examPoints?.length ?? 0,
         hasMaterial: notes + mcqs + mains > 0,
+        hasMainsAngleNote: (view?.notes ?? []).some(isMainsNote),
       };
     }),
   );
@@ -62,6 +65,61 @@ export function mainsQuestionBank(): string[] {
   for (const loaded of getBanks('mains')) {
     if (loaded.bank.kind !== 'mains') continue;
     for (const item of loaded.bank.items) out.push(item.id);
+  }
+  return out;
+}
+
+/** Human labels for the five descriptive Mains papers (I–V). @internal */
+const MAINS_PAPER_TITLES: Record<string, string> = {
+  'mains-1': 'Mains Paper I',
+  'mains-2': 'Mains Paper II',
+  'mains-3': 'Mains Paper III',
+  'mains-4': 'Mains Paper IV',
+  'mains-5': 'Mains Paper V',
+};
+
+/**
+ * The POST-PRELIMS per-paper Mains-revision mapping (STANDARDS §8a): each Mains
+ * paper (I–V) joined to the Prelims subtopics that cover it — read from
+ * `content/audit/syllabus-map.json`'s `mains-1`..`mains-5` clauses — plus the
+ * authored Mains question ids whose answers to write for that paper. A mapped
+ * subtopic is kept only when it ACTUALLY has a "For Mains" angle note OR authored
+ * Mains questions, so the kick-start never points at an empty topic. The planner
+ * cycles one paper per day across the first four weeks of the kick-start.
+ */
+export function mainsRevisionPapers(): PlanMainsPaper[] {
+  const map = getContentIndex().auditSyllabusMap;
+  // Authored Mains question ids grouped by their owning subtopic.
+  const qBySubtopic = new Map<string, string[]>();
+  for (const loaded of getBanks('mains')) {
+    if (loaded.bank.kind !== 'mains') continue;
+    for (const item of loaded.bank.items) {
+      if (!item.subtopicId) continue;
+      const arr = qBySubtopic.get(item.subtopicId) ?? [];
+      arr.push(item.id);
+      qBySubtopic.set(item.subtopicId, arr);
+    }
+  }
+  const hasMainsNote = (id: string): boolean => (getSubtopic(id)?.notes ?? []).some(isMainsNote);
+
+  const out: PlanMainsPaper[] = [];
+  for (const paper of ['mains-1', 'mains-2', 'mains-3', 'mains-4', 'mains-5'] as const) {
+    const subtopicIds: string[] = [];
+    const mainsQuestionIds: string[] = [];
+    const seen = new Set<string>();
+    for (const clause of map) {
+      if (clause.paper !== paper) continue;
+      for (const sid of clause.subtopicIds) {
+        if (seen.has(sid)) continue;
+        seen.add(sid);
+        const qs = qBySubtopic.get(sid) ?? [];
+        if (!hasMainsNote(sid) && qs.length === 0) continue; // skip empty topics
+        subtopicIds.push(sid);
+        mainsQuestionIds.push(...qs);
+      }
+    }
+    if (subtopicIds.length === 0 && mainsQuestionIds.length === 0) continue;
+    out.push({ paper, title: MAINS_PAPER_TITLES[paper]!, subtopicIds, mainsQuestionIds });
   }
   return out;
 }
@@ -176,6 +234,7 @@ export function currentPlan(now: Date = new Date()): Plan {
     subtopics: planSubtopics(),
     progress: plannerProgress(),
     mainsQuestionIds: mainsQuestionBank(),
+    mainsPapers: mainsRevisionPapers(),
     pyqFrequency: pyqFrequency(),
     sequence: learningSequence(),
     examDateISO: settings.examDate,

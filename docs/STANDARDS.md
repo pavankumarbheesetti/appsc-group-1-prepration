@@ -372,7 +372,29 @@ story) in a sustained run rather than a slot a week apart.
   FEASIBLE; at the tighter 240/240 the window cannot deepen them all and the remainder stays REPORTED.
   Views (Today + Planner) show a deepen item in plain language: **"Deepen · &lt;topic&gt; · 15 min"** (no tier
   jargon), alongside the block's generic revision entry.
-- **No Mains before Prelims** (English + essay deferred; post‑prelims Mains kick‑start unchanged).
+- **No Mains before Prelims** (English + essay deferred to the post‑prelims kick‑start).
+- **STUDY ONCE FOR PRELIMS, REVISE FOR MAINS LATER (LOCKED):** content authors add to many
+  notes files a note item `id = <subtopicId>-note-mains-angle`, `tags: ['mains']`, title
+  `For Mains — <topic>` (analytical Mains dimensions). The app supports the two‑cycle strategy:
+  - **Notes tab (`src/views/notes.ts` + `learn.ts`):** mains‑tagged notes render **LAST**, inside a
+    **collapsed** `<details>` **"For Mains (read in the December revision)"** with a short explainer —
+    NEVER mixed into the Prelims reading order or the TOC. **No flashcards/cloze are ever generated
+    from a mains‑tagged note** (`isMainsNote` guard in `engine/flashcards.ts`). Prelims coverage
+    metrics (examPoints / mastery) are unaffected.
+  - **Revision cycle (7 Dec → 2 Jan) — `MAINS_ANGLE_MIN = 5`:** when a topic with a mains‑angle note
+    is revisited in the marks‑based revision MAIN block, the revisit gets **+5 min "read the For
+    Mains note"** (`PlanTopic.mainsAngle`, `estMinutes` already includes the +5) — but **ONLY while the
+    block stays within its minutes** (Σ topic minutes ≤ block minutes; otherwise the +5 is skipped).
+    The **first pass and the final window NEVER** include this reading. `PlanSubtopic.hasMainsAngleNote`
+    carries the flag into the pure engine; Today/Planner label it "incl. For Mains note".
+  - **Post‑prelims kick‑start (after 24 Jan) — first `POST_PRELIMS_MAINS_REVISION_DAYS = 28` days:**
+    **"Mains revision of what you studied"** — one Mains paper **(I–V)** per day, round‑robin
+    (`PlanDay.mainsPaperRevision`), revisiting that paper's mapped Prelims subtopics' For‑Mains notes +
+    writing answers from `mains-<id>.json`, PLUS Ethics/Law/Essay/English as now. Subtopics are mapped
+    to Mains papers from `content/audit/syllabus-map.json` (the `mains-1`..`mains-5` clauses), kept only
+    when they actually have a For‑Mains note or authored Mains questions (`mainsRevisionPapers` in
+    `lib/plan.ts`, threaded via `BuildPlanOpts.mainsPapers`). The Start‑here guide's **"After Prelims:
+    Mains"** section explains the two‑cycle strategy in three lines.
 - **Views:** Today = the day's blocks in order (minutes, exact topics, one‑tap start, "builds on: …");
   Planner = weekly grid with Full/Standard/Quick‑pass badges, per‑subject progress (`History 12/47 · next: …`), mock
   dates, and a fit summary (FULL/STANDARD/QUICK counts, coverage end, spills). The current UNIT is available on

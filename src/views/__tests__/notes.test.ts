@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { buildNoteArticle } from '../notes';
+import { buildNoteArticle, buildMainsNotesSection } from '../notes';
 import { __resetForTests, loadState } from '../../state/store';
 import type { NoteItem } from '../../content/types';
 
@@ -98,5 +98,32 @@ describe('notes — Memory hook (demoted mnemonic)', () => {
     delete note.mnemonic;
     const article = buildNoteArticle(note, 'note-1');
     expect(article.querySelector('.note-mnemonic')).toBeNull();
+  });
+});
+
+describe('notes — "For Mains" collapsed section (STANDARDS §8a)', () => {
+  beforeEach(() => __resetForTests());
+
+  function mainsNote(id: string, title: string): NoteItem {
+    return { id, subjectCode: 'HIST', title, body: 'Analytical Mains dimensions.', tags: ['mains'] };
+  }
+
+  it('renders mains-tagged notes inside a collapsed <details> with an explainer', () => {
+    const section = buildMainsNotesSection(
+      [mainsNote('a-note-mains-angle', 'For Mains — Mauryan state')],
+      'learn-note-mains',
+    )!;
+    expect(section).not.toBeNull();
+    expect(section.tagName.toLowerCase()).toBe('details');
+    expect((section as HTMLDetailsElement).open).toBe(false); // collapsed by default
+    const summary = section.querySelector('summary');
+    expect(summary?.textContent).toContain('For Mains (read in the December revision)');
+    expect(section.querySelector('.notes-for-mains-lead')?.textContent).toContain('December revision');
+    // The note article is present inside the collapsed section.
+    expect(section.querySelector('.note-title')?.textContent).toContain('For Mains — Mauryan state');
+  });
+
+  it('returns null when there are no mains notes (robust whether or not one exists)', () => {
+    expect(buildMainsNotesSection([], 'learn-note-mains')).toBeNull();
   });
 });

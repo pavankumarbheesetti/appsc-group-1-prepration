@@ -77,6 +77,15 @@ export interface PlanSubtopic {
    * Drives the honest MATERIAL coverage figure. Optional; defaults to `false`.
    */
   hasMaterial?: boolean;
+  /**
+   * Whether this subtopic has an authored "For Mains" angle note (a note item
+   * tagged `mains`, id `<subtopicId>-note-mains-angle`). Drives the
+   * "study once for Prelims, revise for Mains later" strategy: a REVISION-CYCLE
+   * revisit of such a topic gets a +{@link MAINS_ANGLE_MIN}-min "read the For
+   * Mains note" add-on (see {@link PlanTopic.mainsAngle}). The first pass and the
+   * final window NEVER include this reading. Optional; defaults to `false`.
+   */
+  hasMainsAngleNote?: boolean;
 }
 
 /** Per-subtopic progress summary keyed by subtopic id. */
@@ -171,6 +180,14 @@ export interface PlanTopic {
    * the block starts a drill scoped to these ids. Absent for a real `topic`.
    */
   practiceSubtopicIds?: readonly string[];
+  /**
+   * REVISION-CYCLE only (STANDARDS §8a): true when this revisit carries the
+   * +{@link MAINS_ANGLE_MIN}-min "read the For Mains note" add-on because the
+   * topic has an authored mains-angle note AND the +5 still fit inside the
+   * block's minutes. Its {@link estMinutes} already INCLUDES the +5. Views label
+   * it "+ For Mains note". The first pass and the final window never set it.
+   */
+  mainsAngle?: boolean;
 }
 
 /** Which qualifying-language block a day carries (post-prelims only). */
@@ -346,6 +363,14 @@ export interface PlanDay {
   unitDays: number;
   /** The NEXT unit's title after this one finishes, or `null` when it is the last. */
   nextUnitTitle: string | null;
+  /**
+   * POST-PRELIMS kick-start only (STANDARDS §8a): the Mains paper (I–V) this day
+   * is doing "Mains revision of what you studied" for — the mapped Prelims
+   * subtopics' For-Mains notes + the answers to write. One paper per day,
+   * round-robin over the first {@link POST_PRELIMS_MAINS_REVISION_DAYS} days;
+   * `null`/absent on pre-Prelims days and later kick-start days.
+   */
+  mainsPaperRevision?: PlanMainsPaper | null;
   status: PlanDayStatus;
 }
 
@@ -607,6 +632,14 @@ export interface BuildPlanOpts {
   progress: PlannerProgress;
   /** The mains question bank (ids) the post-prelims daily quota cycles through. */
   mainsQuestionIds?: readonly string[];
+  /**
+   * POST-PRELIMS kick-start (STANDARDS §8a): the Mains papers (I–V) mapped to the
+   * studied Prelims subtopics whose For-Mains notes are revisited + the answers
+   * to write. Built by the view layer from `content/audit/syllabus-map.json`
+   * (`mains-1`..`mains-5` clauses). Absent → the kick-start has no per-paper
+   * Mains-revision days (the old behaviour).
+   */
+  mainsPapers?: readonly PlanMainsPaper[];
   /** Target exam date, ISO `YYYY-MM-DD`. */
   examDateISO: string;
   /** Today's date, ISO `YYYY-MM-DD`. */
@@ -661,6 +694,41 @@ export const MAINS_PER_DAY = 3;
 
 /** How many days forward the post-prelims MAINS kick-start plan lays out. */
 export const POST_PRELIMS_HORIZON_DAYS = 30;
+
+/**
+ * The "study once for Prelims, revise for Mains later" add-on: MINUTES added to
+ * a REVISION-CYCLE revisit of a topic that has an authored "For Mains" note, to
+ * read that analytical note. Applied ONLY in the revision cycle (7 Dec – 2 Jan
+ * for the real plan) and ONLY while the revisit block stays within its minutes;
+ * the first pass and the final window never include this reading (STANDARDS §8a).
+ */
+export const MAINS_ANGLE_MIN = 5;
+
+/**
+ * POST-PRELIMS kick-start: the first N days are "Mains revision of what you
+ * studied" — one Mains paper (I–V) per day, round-robin, revisiting that paper's
+ * mapped Prelims subtopics' For-Mains notes + writing their answers (STANDARDS
+ * §8a). Four weeks = 28 days. Later kick-start days carry no per-paper revision.
+ */
+export const POST_PRELIMS_MAINS_REVISION_DAYS = 28;
+
+/**
+ * One Mains PAPER (I–V) for the post-prelims kick-start, mapping the paper to the
+ * ALREADY-STUDIED Prelims subtopics whose "For Mains" notes are revisited and the
+ * authored Mains questions whose answers are written. Built by the view layer
+ * from `content/audit/syllabus-map.json` (the `mains-1`..`mains-5` clauses) and
+ * threaded into {@link buildPlan} via {@link BuildPlanOpts.mainsPapers}.
+ */
+export interface PlanMainsPaper {
+  /** Audit paper id, `mains-1`..`mains-5`. */
+  paper: string;
+  /** Human label, e.g. `Mains Paper I`. */
+  title: string;
+  /** Mapped Prelims subtopic ids to revisit the For-Mains notes of. */
+  subtopicIds: readonly string[];
+  /** Authored Mains question ids (from `mains-<id>.json`) to write answers for. */
+  mainsQuestionIds: readonly string[];
+}
 
 /** Default daily study-time budget (minutes) for a working professional — 4 h. */
 export const DEFAULT_DAILY_BUDGET_MIN = 240;
@@ -1286,6 +1354,7 @@ export function buildPlan(opts: BuildPlanOpts): Plan {
       weekendBudgetMin,
       postMainsPerDay,
       mainsSliceFor,
+      mainsPapers: opts.mainsPapers ?? [],
       theoryTotal,
       aptitudeTotal,
       theoryStudied,
@@ -2822,6 +2891,22 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     // so Σ topic minutes ≤ block minutes stays legal (REVISIT_MIN each).
     const maxTopics = Math.max(0, Math.floor(min / REVISIT_MIN));
     const topics = (revisit?.topicIds ?? []).slice(0, maxTopics).map((id) => toRevisitTopic(id));
+    // "Study once for Prelims, revise for Mains later" (STANDARDS §8a): in the
+    // REVISION CYCLE only, a revisit of a topic that has an authored "For Mains"
+    // note gets +MAINS_ANGLE_MIN to READ that analytical note — but ONLY while
+    // the block stays within its minutes (Σ topic minutes ≤ block minutes);
+    // otherwise the +5 is skipped (the plain revisit still runs). The first pass
+    // and the final window never add this reading.
+    {
+      let used = topics.reduce((a, t) => a + t.estMinutes, 0);
+      for (const t of topics) {
+        if (byId.get(t.subtopicId)?.hasMainsAngleNote !== true) continue;
+        if (used + MAINS_ANGLE_MIN > min) break; // keep the block legal
+        t.estMinutes += MAINS_ANGLE_MIN;
+        t.mainsAngle = true;
+        used += MAINS_ANGLE_MIN;
+      }
+    }
     if (!revisit || topics.length === 0) {
       return [
         { kind: 'targeted-revision', label: 'Revise your studied topics \u2014 weakest + high-yield first', minutes: min },
@@ -3801,6 +3886,7 @@ function buildPostPrelims(p: {
   weekendBudgetMin: number;
   postMainsPerDay: number;
   mainsSliceFor: (dayIndex: number, count: number) => string[];
+  mainsPapers: readonly PlanMainsPaper[];
   theoryTotal: number;
   aptitudeTotal: number;
   theoryStudied: number;
@@ -3823,9 +3909,17 @@ function buildPostPrelims(p: {
     const caRefresh = di % 3 === 0; // keep current-affairs warm for the Mains essay
     const languageBlock: LanguageBlock = di % 2 === 0 ? 'telugu' : 'english';
     const essayPractice = di % 7 === 6;
+    // POST-PRELIMS "Mains revision of what you studied" (STANDARDS §8a): the first
+    // 4 weeks do one Mains paper (I–V) per day, round-robin — revisit that
+    // paper's mapped Prelims subtopics' For-Mains notes + write their answers.
+    const mainsPaperRevision: PlanMainsPaper | null =
+      p.mainsPapers.length > 0 && di < POST_PRELIMS_MAINS_REVISION_DAYS
+        ? p.mainsPapers[di % p.mainsPapers.length]!
+        : null;
     const plannedMinutes = Math.min(
       budgetMin,
-      mainsIds.length * TIME.mainsAnswer +
+      (mainsPaperRevision ? TIME.caRefresh + TIME.mainsAnswer : 0) +
+        mainsIds.length * TIME.mainsAnswer +
         (caRefresh ? TIME.caRefresh : 0) +
         TIME.languageBlock +
         (essayPractice ? TIME.essay : 0),
@@ -3861,6 +3955,7 @@ function buildPostPrelims(p: {
       unitDay: 0,
       unitDays: 0,
       nextUnitTitle: null,
+      mainsPaperRevision,
       status: di === 0 ? 'today' : 'upcoming',
     });
   }

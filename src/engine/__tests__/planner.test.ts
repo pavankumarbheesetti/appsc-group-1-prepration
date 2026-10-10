@@ -9,7 +9,9 @@ import {
   TIME,
   PER_TOPIC_DRILL_QUOTA,
   MAINS_PER_DAY,
+  MAINS_ANGLE_MIN,
   POST_PRELIMS_HORIZON_DAYS,
+  POST_PRELIMS_MAINS_REVISION_DAYS,
   computePlanAnchors,
   buildMockSchedule,
   QUICK_MIN,
@@ -17,6 +19,7 @@ import {
   WRAPUP_MAX_MIN,
   type BuildPlanOpts,
   type PlanDay,
+  type PlanMainsPaper,
   type PlanSequence,
   type PlanSubtopic,
 } from '../planner';
@@ -975,5 +978,134 @@ describe('re-audit 1 — N1 first-pass order non-decreasing (fixture, long windo
         }
       }
     }
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* "Study once for Prelims, revise for Mains later" — mains-angle + 5 min       */
+/* -------------------------------------------------------------------------- */
+
+/** A LONG-window opts with mains-angle notes set on a given id set. */
+function mainsAngleOpts(mainsAngleIds: ReadonlySet<string> = new Set()): BuildPlanOpts {
+  const base = longOpts('2027-01-24');
+  const subtopics = base.subtopics.map((s) =>
+    mainsAngleIds.has(s.id) ? { ...s, hasMainsAngleNote: true } : s,
+  );
+  return { ...base, subtopics };
+}
+
+/** Every REVISION-CYCLE targeted-revision block across the plan. @internal */
+function revisionTargetedBlocks(days: PlanDay[]): PlanDay['blocks'] {
+  const out: PlanDay['blocks'] = [];
+  for (const d of days) {
+    if (d.segment !== 'revision') continue;
+    for (const b of d.blocks) if (b.kind === 'targeted-revision') out.push(b);
+  }
+  return out;
+}
+
+describe('mains-angle revisit (+5 min) — revision cycle only (STANDARDS §8a)', () => {
+  const MAINS_IDS = new Set(['hist-0', 'hist-1', 'hist-2', 'pol-0', 'pol-1', 'econ-0']);
+
+  it('adds exactly +MAINS_ANGLE_MIN to a revision-cycle revisit that has a For-Mains note', () => {
+    // A/B: hasMainsAngleNote only ADDS +5 after selection, so the two plans pick
+    // identical revisit topics in identical order — the ONLY difference is the +5.
+    const planA = buildPlan(mainsAngleOpts(new Set())); // no mains notes
+    const planB = buildPlan(mainsAngleOpts(MAINS_IDS)); // same, with mains notes
+    const blocksA = revisionTargetedBlocks(planA.days);
+    const blocksB = revisionTargetedBlocks(planB.days);
+    expect(blocksB.length).toBe(blocksA.length);
+    expect(blocksB.length).toBeGreaterThan(0);
+
+    let flagged = 0;
+    for (let i = 0; i < blocksB.length; i += 1) {
+      const a = blocksA[i]!;
+      const b = blocksB[i]!;
+      const ta = a.topics ?? [];
+      const tb = b.topics ?? [];
+      expect(tb.map((t) => t.subtopicId)).toEqual(ta.map((t) => t.subtopicId)); // same selection
+      // Σ topic minutes ≤ block minutes stays legal with the +5 add-ons.
+      expect(tb.reduce((x, t) => x + t.estMinutes, 0)).toBeLessThanOrEqual(b.minutes);
+      for (let j = 0; j < tb.length; j += 1) {
+        const topicA = ta[j]!;
+        const topicB = tb[j]!;
+        if (topicB.mainsAngle === true) {
+          expect(MAINS_IDS.has(topicB.subtopicId)).toBe(true);
+          expect(topicB.estMinutes).toBe(topicA.estMinutes + MAINS_ANGLE_MIN);
+          flagged += 1;
+        } else {
+          expect(topicB.estMinutes).toBe(topicA.estMinutes); // untouched
+        }
+      }
+    }
+    expect(flagged).toBeGreaterThan(0); // at least one mains-angle revisit got the +5
+  });
+
+  it('never adds the For-Mains read on the FIRST PASS or in the FINAL WINDOW', () => {
+    const { days } = buildPlan(mainsAngleOpts(MAINS_IDS));
+    // First pass (coverage): no subject/first-pass topic is ever a mains-angle read.
+    for (const d of days) {
+      if (d.segment !== 'coverage') continue;
+      for (const b of d.blocks) {
+        for (const t of b.topics ?? []) expect(t.mainsAngle ?? false).toBe(false);
+      }
+    }
+    // Final window: targeted revision never carries the +5 either.
+    for (const d of days) {
+      if (d.segment !== 'final') continue;
+      for (const b of d.blocks) {
+        for (const t of b.topics ?? []) expect(t.mainsAngle ?? false).toBe(false);
+      }
+    }
+  });
+
+  it('is robust whether or not any subtopic has a mains-angle note', () => {
+    // No mains-angle notes anywhere → the plan still builds and flags nothing.
+    const { days } = buildPlan(mainsAngleOpts(new Set()));
+    const anyFlag = days.some((d) => d.blocks.some((b) => (b.topics ?? []).some((t) => t.mainsAngle)));
+    expect(anyFlag).toBe(false);
+    expect(revisionTargetedBlocks(days).length).toBeGreaterThan(0);
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* Post-prelims per-paper Mains revision (first 4 weeks)                        */
+/* -------------------------------------------------------------------------- */
+
+describe('post-prelims Mains revision of what you studied (STANDARDS §8a)', () => {
+  const PAPERS: PlanMainsPaper[] = [
+    { paper: 'mains-1', title: 'Mains Paper I', subtopicIds: ['hist-0'], mainsQuestionIds: ['mq1'] },
+    { paper: 'mains-2', title: 'Mains Paper II', subtopicIds: ['pol-0'], mainsQuestionIds: ['mq2'] },
+    { paper: 'mains-3', title: 'Mains Paper III', subtopicIds: ['econ-0'], mainsQuestionIds: ['mq3'] },
+    { paper: 'mains-4', title: 'Mains Paper IV', subtopicIds: ['geo-0'], mainsQuestionIds: ['mq4'] },
+    { paper: 'mains-5', title: 'Mains Paper V', subtopicIds: ['sci-0'], mainsQuestionIds: ['mq5'] },
+  ];
+
+  /** Opts with the exam already passed → post-prelims kick-start. */
+  function postOpts(overrides: Partial<BuildPlanOpts> = {}): BuildPlanOpts {
+    return baseOpts({ startISO: '2026-09-30', todayISO: '2026-12-01', examDateISO: '2026-11-15', ...overrides });
+  }
+
+  it('assigns one Mains paper per day, round-robin, across the first 4 weeks', () => {
+    const { days, summary } = buildPlan(postOpts({ mainsPapers: PAPERS }));
+    expect(summary.postPrelims).toBe(true);
+    expect(days.length).toBe(POST_PRELIMS_HORIZON_DAYS);
+    for (let di = 0; di < days.length; di += 1) {
+      const pr = days[di]!.mainsPaperRevision ?? null;
+      if (di < POST_PRELIMS_MAINS_REVISION_DAYS) {
+        expect(pr).not.toBeNull();
+        expect(pr!.paper).toBe(PAPERS[di % PAPERS.length]!.paper);
+      } else {
+        expect(pr).toBeNull();
+      }
+    }
+    // All five papers are represented in the first four weeks.
+    const seen = new Set(days.slice(0, POST_PRELIMS_MAINS_REVISION_DAYS).map((d) => d.mainsPaperRevision!.paper));
+    expect(seen).toEqual(new Set(PAPERS.map((p) => p.paper)));
+  });
+
+  it('carries no per-paper revision when no mains papers are supplied', () => {
+    const { days } = buildPlan(postOpts());
+    expect(days.every((d) => (d.mainsPaperRevision ?? null) === null)).toBe(true);
   });
 });

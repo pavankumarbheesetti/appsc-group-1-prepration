@@ -293,6 +293,12 @@ function afterPrelimsMains(): HTMLElement {
       el('strong', { text: 'June–July 2027' }),
       el('span', { text: ' (dates TBA), giving a comfortable 4–5 month runway after Prelims.' }),
     ]),
+    el('p', { class: 'section-lead', text: 'Study once, revise for Mains later — the two-cycle plan in three lines:' }),
+    el('ol', { class: 'start-two-cycle' }, [
+      el('li', {}, [el('strong', { text: 'First cycle (now, for Prelims):' }), el('span', { text: ' you learn each topic once — the same facts also build your Mains foundation.' })]),
+      el('li', {}, [el('strong', { text: 'December revision:' }), el('span', { text: ' when you revisit a topic you also read its collapsed “For Mains” note — the analytical angle, no new facts.' })]),
+      el('li', {}, [el('strong', { text: 'Second cycle (after Prelims):' }), el('span', { text: ' four weeks of Mains revision of what you studied — per paper (I–V), re-read the For-Mains notes and write answers.' })]),
+    ]),
     el('ul', {}, [
       el('li', {}, [el('strong', { text: 'Telugu and English are qualifying papers.' }), el('span', { text: ' You only need to pass them; the marks don’t add to your merit. English is low-risk for most; Telugu is a slow motor skill, so we seed it early.' })]),
       el('li', {}, [el('strong', { text: 'Before Prelims we keep Mains light:' }), el('span', { text: ' Telugu practice 15 minutes, three times a week, plus one Mains answer per fortnight (Sundays, in December) on a topic you’ve already studied.' })]),

@@ -2484,6 +2484,66 @@ input[type='checkbox'] {
   color: var(--muted);
 }
 
+/* ---- "For Mains" collapsed section (study once, revise for Mains later) --- */
+.notes-for-mains {
+  margin: var(--space-6) 0 0;
+  border-top: 1px dashed var(--border, #d8d8d8);
+  padding-top: var(--space-4);
+}
+.notes-for-mains-summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  color: var(--muted);
+}
+.notes-for-mains-summary::-webkit-details-marker {
+  display: none;
+}
+.notes-for-mains-summary::before {
+  content: '▸';
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.notes-for-mains[open] .notes-for-mains-summary::before {
+  content: '▾';
+}
+.notes-for-mains-lead {
+  margin: var(--space-2) 0 var(--space-3);
+}
+.today-mains-paper {
+  border-left: 3px solid var(--accent, #6b4ef0);
+}
+.today-mains-sub {
+  margin: var(--space-3) 0 var(--space-1);
+  font-weight: 600;
+}
+.planner-mains-papers {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.planner-mains-paper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.planner-mains-paper-title {
+  font-weight: 600;
+}
+.start-two-cycle {
+  margin: var(--space-2) 0 var(--space-3);
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
 /* ---- Memory hook (optional, de-emphasized disclosure) -------------------- */
 .note-mnemonic {
   margin: var(--space-3) 0 0;

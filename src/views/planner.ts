@@ -41,7 +41,7 @@ export function render(root: HTMLElement): void {
   const plan = currentPlan(now);
   const summary = plan.summary;
   if (summary.postPrelims) {
-    mount(root, buildHeader(summary), buildPostPrelims());
+    mount(root, buildHeader(summary), buildPostPrelims(plan));
     return;
   }
   mount(
@@ -184,7 +184,11 @@ function dayFocus(day: PlanDay): { label: string; topics: string } {
   if (day.blocks.length === 0) return { label: 'Rest', topics: '' };
   const names = day.topics.map((t) => (t.kind === 'practice' ? 'Mental Ability practice' : t.name || t.subtopicId));
   const label = day.unitTitle ? unitShortTitle(day.unitTitle) : (day.blocks[0]?.label ?? 'Study');
-  return { label, topics: names.join(', ') };
+  // Revision cycle: flag a day whose revisit carries the +5-min For-Mains read.
+  const mainsAngle = day.blocks.some((b) => (b.topics ?? []).some((t) => t.mainsAngle));
+  let topics = names.join(', ');
+  if (mainsAngle) topics = topics ? `${topics} · incl. For Mains note` : 'incl. For Mains note';
+  return { label, topics };
 }
 
 /** Day-of-week short label from an ISO date (shared with the full grid below). */
@@ -334,11 +338,29 @@ function buildPlanDetails(summary: PlanSummary): HTMLElement {
   return details;
 }
 
-/** Post-prelims placeholder. @internal */
-function buildPostPrelims(): HTMLElement {
-  return card({ title: 'Mains kick-start' }, [
-    el('p', { class: 'section-lead', text: 'Prelims is behind you — the plan now runs descriptive Mains practice, the weekly General Essay, and the qualifying Telugu / English blocks.' }),
+/** Post-prelims kick-start: intro + the first-4-weeks per-paper Mains revision. @internal */
+function buildPostPrelims(plan: Plan): HTMLElement {
+  const intro = card({ title: 'Mains kick-start' }, [
+    el('p', { class: 'section-lead', text: 'Prelims is behind you \u2014 the second cycle. The first four weeks are Mains revision of what you studied: per Mains paper (I\u2013V), revisit the mapped topics\u2019 For-Mains notes and write answers. The weekly General Essay and the qualifying Telugu / English blocks run alongside.' }),
   ]);
+  // The distinct papers scheduled across the first four weeks, in first-seen order.
+  const seen = new Map<string, NonNullable<PlanDay['mainsPaperRevision']>>();
+  for (const d of plan.days) {
+    const pr = d.mainsPaperRevision;
+    if (pr && !seen.has(pr.paper)) seen.set(pr.paper, pr);
+  }
+  if (seen.size === 0) return intro;
+  const rows = [...seen.values()].map((pr) =>
+    el('li', { class: 'planner-mains-paper' }, [
+      el('span', { class: 'planner-mains-paper-title', text: pr.title }),
+      el('span', { class: 'section-lead', text: `${pr.subtopicIds.length} topic${pr.subtopicIds.length === 1 ? '' : 's'} to revisit \u00b7 ${pr.mainsQuestionIds.length} answer${pr.mainsQuestionIds.length === 1 ? '' : 's'} to write` }),
+    ]),
+  );
+  const papersCard = card({ title: 'Mains revision of what you studied (first 4 weeks)' }, [
+    el('p', { class: 'section-lead', text: 'One paper per day, cycling through all five. Open Today to start the current paper.' }),
+    el('ul', { class: 'planner-mains-papers' }, rows),
+  ]);
+  return el('div', {}, [intro, papersCard]);
 }
 
 /* -------------------------------------------------------------------------- */

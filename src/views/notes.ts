@@ -8,7 +8,7 @@
 import { getBanks } from '../content/loader';
 import { SUBJECTS, type Figure, type NoteItem, type SubjectCode } from '../content/types';
 import { resolveImage } from '../content/assets';
-import { buildClozeCards, buildFlashcards } from '../engine/flashcards';
+import { buildClozeCards, buildFlashcards, isMainsNote } from '../engine/flashcards';
 import { newCard, review, type Grade } from '../engine/spaced-repetition';
 import { updateState } from '../state/store';
 import { el, mount, renderMarkdown, type Child } from './dom';
@@ -171,26 +171,61 @@ export function buildNoteArticle(note: NoteItem, anchorId: string): HTMLElement 
   return el('article', { class: 'note card', attrs: { id: anchorId } }, kids);
 }
 
+/**
+ * The collapsed "For Mains" section rendered AFTER all Prelims notes (STANDARDS
+ * §8a). Mains-tagged notes carry analytical MAINS dimensions, not Prelims facts,
+ * so they are kept out of the Prelims reading order and tucked into a
+ * `<details>` (closed by default) with a short explainer: read them in the
+ * December revision, not during the first-pass Prelims study. Returns `null`
+ * when there are no mains notes, so callers can append it unconditionally.
+ */
+export function buildMainsNotesSection(notes: readonly NoteItem[], anchorPrefix: string): HTMLElement | null {
+  if (notes.length === 0) return null;
+  const articles = notes.map((n, i) => buildNoteArticle(n, `${anchorPrefix}-${n.id}-${i}`));
+  return el('details', { class: 'notes-for-mains' }, [
+    el('summary', { class: 'notes-for-mains-summary' }, [
+      icon('notebook', 16),
+      el('span', { text: `For Mains (read in the December revision) \u00b7 ${notes.length}` }),
+    ]),
+    el('p', { class: 'section-lead notes-for-mains-lead', text: 'These are the analytical Mains angles for topics you studied for Prelims. Skip them on your first pass \u2014 read them in the December revision cycle, when you revisit each topic for Mains. They are not drilled as flashcards.' }),
+    el('div', { class: 'reading' }, articles),
+  ]);
+}
+
+/** Split notes into Prelims (reading order) and For-Mains (collapsed, last). @internal */
+function partitionMainsNotes(notes: readonly NoteItem[]): { prelims: NoteItem[]; mains: NoteItem[] } {
+  const prelims: NoteItem[] = [];
+  const mains: NoteItem[] = [];
+  for (const n of notes) (isMainsNote(n) ? mains : prelims).push(n);
+  return { prelims, mains };
+}
+
 /** Render the notes view into `root`. */
 export function render(root: HTMLElement): void {
-  // Group notes: subject → topic → items, and collect a flat TOC.
+  // Group notes: subject → topic → items, and collect a flat TOC. Mains-tagged
+  // notes are held OUT of the Prelims reading order + TOC and rendered LAST in
+  // one collapsed "For Mains" section (STANDARDS §8a).
   const bySubject = new Map<SubjectCode, Map<string, NoteItem[]>>();
+  const mainsNotes: NoteItem[] = [];
   const toc: TocEntry[] = [];
   let n = 0;
   for (const { bank } of getBanks('notes')) {
     if (bank.kind !== 'notes') continue;
+    const { prelims, mains } = partitionMainsNotes(bank.items);
+    mainsNotes.push(...mains);
+    if (prelims.length === 0) continue;
     const topics = bySubject.get(bank.subjectCode) ?? new Map<string, NoteItem[]>();
     const list = topics.get(bank.topic) ?? [];
-    list.push(...bank.items);
+    list.push(...prelims);
     topics.set(bank.topic, list);
     bySubject.set(bank.subjectCode, topics);
-    for (const note of bank.items) {
+    for (const note of prelims) {
       n += 1;
       toc.push({ anchor: `note-${n}`, title: note.title, subject: bank.subjectCode, note });
     }
   }
 
-  if (toc.length === 0) {
+  if (toc.length === 0 && mainsNotes.length === 0) {
     mount(
       root,
       card({ title: 'Notes' }, [
@@ -217,6 +252,10 @@ export function render(root: HTMLElement): void {
       }
     }
   }
+
+  // The collapsed "For Mains" section always comes LAST (STANDARDS §8a).
+  const mainsSection = buildMainsNotesSection(mainsNotes, 'note-mains');
+  if (mainsSection) reading.appendChild(mainsSection);
 
   const tocNav = el('nav', { class: 'toc', ariaLabel: 'Notes contents' }, [
     el('span', { class: 'toc-eyebrow', text: 'Contents' }),

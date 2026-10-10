@@ -33,7 +33,8 @@ import { icon } from './components/icon';
 import { progressBar } from './components/progress';
 import { bandBadge, statusChip } from './components/badges';
 import { buildAtAGlance } from './components/atglance';
-import { buildNoteArticle } from './notes';
+import { buildNoteArticle, buildMainsNotesSection } from './notes';
+import { isMainsNote } from '../engine/flashcards';
 import { buildCuratedDeck, mountFlashcards } from './revise';
 import { mountQuiz } from './quiz';
 import { openMock } from './mock';
@@ -337,9 +338,16 @@ function notesPanel(sub: SubtopicView, root: HTMLElement): HTMLElement {
   if (sub.notes.length === 0 && kids.length === 0) {
     return emptyPanel('book-open', 'No notes yet', 'Notes for this subtopic will appear here once authored.');
   }
-  if (sub.notes.length > 0) {
-    kids.push(...sub.notes.map((n) => buildNoteArticle(n, `learn-note-${n.id}`)));
+  // Prelims notes render in reading order; the For-Mains angle note(s) go LAST
+  // in a collapsed "For Mains" section, never mixed into the Prelims order and
+  // never drilled as cards (STANDARDS §8a).
+  const prelimsNotes = sub.notes.filter((n) => !isMainsNote(n));
+  const mainsNotes = sub.notes.filter((n) => isMainsNote(n));
+  if (prelimsNotes.length > 0) {
+    kids.push(...prelimsNotes.map((n) => buildNoteArticle(n, `learn-note-${n.id}`)));
   }
+  const mainsSection = buildMainsNotesSection(mainsNotes, 'learn-note-mains');
+  if (mainsSection) kids.push(mainsSection);
   return el('div', { class: 'reading' }, kids);
 }
 

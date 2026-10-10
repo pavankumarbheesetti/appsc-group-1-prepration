@@ -473,7 +473,9 @@ function topicSummary(topics: readonly PlanTopic[]): string {
   const name = first.kind === 'practice'
     ? 'Mental Ability practice'
     : first.name || getSubtopic(first.subtopicId)?.meta.name || first.subtopicId;
-  return topics.length > 1 ? `${name} +${topics.length - 1} more` : name;
+  const base = topics.length > 1 ? `${name} +${topics.length - 1} more` : name;
+  // Revision cycle: flag when the revisit includes the +5-min For-Mains read.
+  return topics.some((t) => t.mainsAngle) ? `${base} · incl. For Mains note (+5 min)` : base;
 }
 
 /** A plain-language detail line for a topic-less block. @internal */
@@ -650,7 +652,65 @@ function firstStart(day: PlanDay): { onClick: () => void; hint: string } | null 
 
 /** Full-width "Mains practice" section for the post-Prelims kick-start. @internal */
 function buildMainsSection(day: PlanDay | undefined): HTMLElement {
-  return el('div', { class: 'today-mains' }, [buildMainsToday(day)]);
+  const kids: Child[] = [];
+  const paper = day?.mainsPaperRevision;
+  if (paper) kids.push(buildMainsPaperRevision(paper));
+  kids.push(buildMainsToday(day));
+  return el('div', { class: 'today-mains' }, kids);
+}
+
+/**
+ * The post-prelims "Mains revision of what you studied" card for ONE paper
+ * (I–V): revisit the mapped Prelims subtopics' For-Mains notes + write their
+ * answers (STANDARDS §8a). Links deep into each topic's Learn → Notes (where the
+ * collapsed "For Mains" section lives) and into the Mains writing trainer. @internal
+ */
+function buildMainsPaperRevision(paper: NonNullable<PlanDay['mainsPaperRevision']>): HTMLElement {
+  const bank = mainsById();
+  const noteLinks = paper.subtopicIds
+    .map((id) => ({ id, view: getSubtopic(id) }))
+    .filter((x) => x.view !== undefined)
+    .slice(0, 6)
+    .map(({ id, view }) =>
+      el('button', {
+        class: 'study-link',
+        type: 'button',
+        ariaLabel: `Revisit the For Mains note for ${view!.meta.name}`,
+        onClick: () => openLearn(id, { tab: 'notes' }),
+      }, [
+        el('span', { class: 'study-link-name', text: view!.meta.name }),
+        el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
+      ]),
+    );
+  const answerLinks = paper.mainsQuestionIds
+    .map((id) => bank.get(id))
+    .filter((m): m is MainsItem => m !== undefined)
+    .slice(0, 4)
+    .map((item) =>
+      el('button', {
+        class: 'study-link',
+        type: 'button',
+        ariaLabel: `Write this Mains answer: ${item.question}`,
+        onClick: () => openMainsQuestion(item.id),
+      }, [
+        el('span', { class: 'study-link-name', text: truncate(item.question, 90) }),
+        el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
+      ]),
+    );
+  const body: Child[] = [
+    el('span', { class: 'empty-icon' }, [icon('notebook', 24)]),
+    el('h3', { class: 'revise-hub-title', text: `${paper.title} — Mains revision of what you studied` }),
+    el('p', { class: 'section-lead', text: 'Second cycle: revisit the For-Mains notes of the Prelims topics that feed this paper, then write answers. You already studied the facts for Prelims — now add the Mains angle.' }),
+  ];
+  if (noteLinks.length > 0) {
+    body.push(el('p', { class: 'section-lead today-mains-sub', text: 'Revisit these For-Mains notes:' }));
+    body.push(el('div', { class: 'study-list' }, noteLinks));
+  }
+  if (answerLinks.length > 0) {
+    body.push(el('p', { class: 'section-lead today-mains-sub', text: 'Write these answers:' }));
+    body.push(el('div', { class: 'study-list' }, answerLinks));
+  }
+  return el('div', { class: 'card today-mains-card today-mains-paper' }, body);
 }
 
 /** "Mains practice" card: the kick-start's 2–4 mains questions → Mains workspace. @internal */
