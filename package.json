@@ -17,7 +17,7 @@
     "gen:manifest": "vite-node scripts/gen-manifest.ts",
     "validate:content": "vite-node scripts/validate-content.ts",
     "audit:coverage": "vite-node scripts/audit-coverage.ts",
-    "check": "npm run typecheck && npm run lint && npm run validate:content && npm run audit:coverage && npm test"
+    "check": "npm run typecheck && npm run lint && npm run validate:content -- --strict && npm run audit:coverage && npm test"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

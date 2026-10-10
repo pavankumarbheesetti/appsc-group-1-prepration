@@ -7,12 +7,13 @@
  * works as a CI gate.
  *
  * On top of the hard schema/integrity gate it ALSO runs the advisory
- * content-formatting LINT (`lintAllContent`) — textbook jargon, bare carets,
- * broken tables, obvious typos — and prints each hit as a WARNING, counted in
- * the final tally. Finalizers can require that count to reach 0. Passing
- * `--strict` promotes the lint hits to hard failures (non-zero exit) so a later
- * `npm run check` can enforce zero formatting debt once content is clean — it is
- * NOT wired into `check` yet.
+ * content-formatting LINT (`lintAllContent`) and the explanation-STRUCTURE lint
+ * (`auditAllStructure`) — textbook jargon, bare carets, broken tables, obvious
+ * typos, missing beginner-note structure — and prints each hit as a WARNING,
+ * counted in the final tally. Finalizers can require that count to reach 0.
+ * Passing `--strict` promotes BOTH the formatting and structure hits to hard
+ * failures (non-zero exit); `npm run check` runs with `--strict` so any
+ * formatting or structure regression fails the gate now that content is clean.
  *
  * The validation logic lives in `src/content/validate.ts` and is shared with the
  * Vitest suite (`content-integrity.test.ts`) — this file is only the reporter.
@@ -89,9 +90,12 @@ if (structure.length > 0) {
   }
   const flags = [...byStructureFlag.entries()].map(([r, n]) => `${r}=${n}`).join(', ');
   console.log(`  structure by flag: ${flags}`);
-  // Structure findings are advisory only — they are counted as warnings and are
-  // deliberately NOT promoted under --strict, so `npm run check` stays green.
-  warned += structure.length;
+  // Under --strict, structure findings are promoted to hard failures alongside
+  // the formatting lint so `npm run check` fails on any formatting OR structure
+  // regression once content is clean. Without --strict they remain advisory
+  // warnings.
+  if (strict) failed += structure.length;
+  else warned += structure.length;
 }
 
 const passed = results.length - results.filter((r) => !r.ok).length;
