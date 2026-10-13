@@ -64,6 +64,6 @@ describe('revise flashcard runner — curated deck + Again re-queue', () => {
   it('shows the ready-topics empty state when there are no curated cards', () => {
     const root = document.createElement('div');
     mountFlashcards(root, []);
-    expect(root.textContent).toContain('Flashcards appear here once a topic has been reviewed');
+    expect(root.textContent).toContain('Flashcards appear here once you study a topic');
   });
 });

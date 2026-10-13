@@ -25,6 +25,7 @@ import { answerQuestion, scoreSession, type ScoredAnswer, type SessionScore } fr
 import { recordAnswer } from '../engine/notebook';
 import { newCard, review } from '../engine/spaced-repetition';
 import { updateState } from '../state/store';
+import { syncAutoStudied } from '../lib/study-status';
 import { formatDuration, type Confidence, type SessionAnswerDetail } from '../lib/metrics';
 import { computeNavCells } from '../lib/navigator';
 import { splitExplanation, type KeyFacts, type WhyNotRow } from '../lib/explanation';
@@ -86,7 +87,8 @@ function recordOutcome(item: MCQItem, correct: boolean): void {
     // Notebook: wrong adds/refreshes; correct advances/graduates a tracked entry.
     const entry = recordAnswer(item.id, s.notebook[item.id], result, now);
     if (entry) s.notebook[item.id] = entry;
-  });
+  });  // Auto-studied at 10 answered: stamp the date the topic crossed the line.
+  if (item.subtopicId) syncAutoStudied([item.subtopicId]);
 }
 
 /**

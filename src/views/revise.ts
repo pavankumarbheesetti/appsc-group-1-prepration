@@ -15,7 +15,8 @@
  * `'correct'`) — scheduled via {@link review} into the store's `flashcards` SR
  * map. DOM-only; all logic is pure/engine code.
  */
-import { getCards, getSubtopics } from '../content/loader';
+import { getCards, getSubtopic, getSubtopics } from '../content/loader';
+import { isRevisable } from '../lib/study-status';
 import { activeEntries } from '../engine/notebook';
 import {
   buildCuratedDeck,
@@ -31,11 +32,44 @@ import { card } from './components/card';
 import { button } from './components/button';
 import { icon, type IconName } from './components/icon';
 
-/** Collect every CURATED card across all subtopics, in taxonomy order. @internal */
-function collectCuratedCards(): Flashcard[] {
+/**
+ * The subtopic ids whose curated cards may be reviewed: studied, or in progress
+ * with at least one practice question answered (see {@link isRevisable}). Cards
+ * of topics the learner has not studied are NEVER due. Taxonomy order.
+ */
+export function revisableTopicIds(): string[] {
+  const state = loadState();
+  return getSubtopics()
+    .filter((sub) => getCards(sub.id).length > 0 && isRevisable(sub.id, state))
+    .map((sub) => sub.id);
+}
+
+/** Collect every CURATED card of the REVISABLE (studied) topics, in taxonomy order. */
+export function collectCuratedCards(): Flashcard[] {
   const out: Flashcard[] = [];
-  for (const sub of getSubtopics()) out.push(...buildCuratedDeck(getCards(sub.id)));
+  for (const id of revisableTopicIds()) out.push(...buildCuratedDeck(getCards(id)));
   return out;
+}
+
+/** Topic names the given cards come from, in first-seen order. @internal */
+function topicNamesOf(cards: readonly Flashcard[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const c of cards) {
+    const id = c.subtopicId;
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
+    out.push(getSubtopic(id)?.meta.name ?? id);
+  }
+  return out;
+}
+
+/** "Cards from: Stone Age, Indus Valley (+2 more)". @internal */
+export function cardsFromLine(cards: readonly Flashcard[]): string {
+  const names = topicNamesOf(cards);
+  if (names.length === 0) return '';
+  const shown = names.slice(0, 3).join(', ');
+  return `Cards from: ${shown}${names.length > 3 ? ` (+${names.length - 3} more)` : ''}`;
 }
 
 /** How many subtopics have at least one curated card authored. @internal */
@@ -82,12 +116,13 @@ export function render(root: HTMLElement): void {
   const ready = readyTopicCount();
   const mistakes = activeEntries(state.notebook).length;
 
+  const from = cardsFromLine(session);
   const flashStatus =
     session.length > 0
-      ? `${session.length} card${session.length === 1 ? '' : 's'} for today — test yourself before you peek`
+      ? `${session.length} card${session.length === 1 ? '' : 's'} for today — test yourself before you peek.${from ? ` ${from}.` : ''}`
       : deck.length > 0
         ? 'Nothing due right now — you\u2019re ahead on recall'
-        : `Flashcards appear here once a topic has been reviewed — ${ready} topic${ready === 1 ? '' : 's'} ready`;
+        : `Flashcards appear once you study a topic (Mark as studied, or answer its practice questions) — ${ready} topic${ready === 1 ? '' : 's'} have cards`;
 
   mount(
     root,
@@ -153,8 +188,10 @@ export function openReviseScope(subtopicIds: readonly string[]): void {
 
 /** The curated deck for a specific set of subtopic ids, in order. @internal */
 function scopedDeck(ids: readonly string[]): Flashcard[] {
+  const state = loadState();
   const out: Flashcard[] = [];
-  for (const id of ids) out.push(...buildCuratedDeck(getCards(id)));
+  // Even a scoped session never includes a topic the learner has not studied.
+  for (const id of ids) if (isRevisable(id, state)) out.push(...buildCuratedDeck(getCards(id)));
   return out;
 }
 
@@ -186,7 +223,7 @@ export function mountFlashcards(
     emptyState(
       root,
       'No flashcards yet',
-      `Flashcards appear here once a topic has been reviewed — ${ready} topic${ready === 1 ? '' : 's'} ready.`,
+      `Flashcards appear here once you study a topic — tap Mark as studied on its Learn page, or answer its practice questions. ${ready} topic${ready === 1 ? '' : 's'} have cards.`,
     );
     return;
   }
@@ -231,8 +268,12 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
     ]);
 
   /** Header line: the day's session size (not the raw due count). */
+  const fromLine = cardsFromLine(initial);
   const statusLine = (): HTMLElement =>
-    el('p', { class: 'focus-count tnum', text: `${sessionSize} card${sessionSize === 1 ? '' : 's'} for today · ${reviewed} reviewed` });
+    el('div', {}, [
+      el('p', { class: 'focus-count tnum', text: `${sessionSize} card${sessionSize === 1 ? '' : 's'} for today · ${reviewed} reviewed` }),
+      fromLine ? el('p', { class: 'section-lead revise-from', text: fromLine }) : null,
+    ]);
 
   const rate = (cardItem: Flashcard, grade: Grade): void => {
     recordFlashcard(cardItem.id, grade);

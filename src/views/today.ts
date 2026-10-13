@@ -16,18 +16,29 @@
 import { getBanks, getCards, getSubtopic, getSubtopics } from '../content/loader';
 import type { MainsItem } from '../content/types';
 import { buildSession } from '../engine/drill';
-import { buildCuratedDeck, selectSession } from '../engine/flashcards';
+import { selectSession } from '../engine/flashcards';
 import { isDue } from '../engine/spaced-repetition';
 import { planDayFor, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic } from '../engine/planner';
 import { WEEK_TEST_COUNT, WEEK_TEST_MINUTES } from '../engine/mock';
 import { navigate } from '../router/router';
-import { loadState, getPrelimsDateMigrationNotice, dismissPrelimsDateNotice, isAdminDone, setAdminDone } from '../state/store';
+import {
+  loadState,
+  getPrelimsDateMigrationNotice,
+  dismissPrelimsDateNotice,
+  isAdminDone,
+  setAdminDone,
+  setPlanStartDate,
+  getTeluguLessonsDone,
+} from '../state/store';
+import { isTopicStudied, markTopicStudied, topicStudyFrom } from '../lib/study-status';
+import { lessonForDay, lessonHeadline, lessonProgressLine, lessonTarget } from '../lib/telugu';
+import { openTelugu, openTeluguLesson } from './telugu';
 import { currentPlan } from '../lib/plan';
 import { diffDaysISO, daysToGo, todayISO, addDaysISO } from '../lib/dates';
 import { openLearn } from './learn';
 import { openMainsQuestion } from './mains';
 import { openPaperMock, openWeekTest, openUnitTest } from './mock';
-import { openReviseScope } from './revise';
+import { collectCuratedCards, openReviseScope } from './revise';
 import { mountQuiz } from './quiz';
 import { el, mount, type Child } from './dom';
 import { card } from './components/card';
@@ -48,7 +59,7 @@ export function render(root: HTMLElement): void {
 
   // Graceful state: the plan has not started yet.
   if (diffDaysISO(today, start) > 0) {
-    mount(root, dateNotice, buildNowHero(summary, today, undefined), startsSoonCard(plan, start, today));
+    mount(root, dateNotice, buildNowHero(null, summary, today, undefined), startsSoonCard(plan, start, today));
     return;
   }
   // Graceful state: the exam date has passed — switch to MAINS kick-start.
@@ -58,13 +69,13 @@ export function render(root: HTMLElement): void {
       mount(
         root,
         dateNotice,
-        buildNowHero(summary, today, undefined),
+        buildNowHero(null, summary, today, undefined),
         mainsKickstartCard(),
         buildMainsSection(kickstartDay),
       );
       return;
     }
-    mount(root, dateNotice, buildNowHero(summary, today, undefined), examPassedCard());
+    mount(root, dateNotice, buildNowHero(null, summary, today, undefined), examPassedCard());
     return;
   }
 
@@ -72,13 +83,14 @@ export function render(root: HTMLElement): void {
   const allMastered =
     summary.prelimsTotal > 0 && summary.prelimsMastered >= summary.prelimsTotal;
 
+  const reviseCtx = computeReviseCtx(today, todayDay);
   mount(
     root,
     dateNotice,
-    buildRecoveryBanner(summary),
-    buildNowHero(summary, today, todayDay),
+    buildRecoveryBanner(root, summary, today),
+    buildNowHero(root, summary, today, todayDay, reviseCtx),
     ...buildAdminCards(root, today, todayDay),
-    allMastered ? masteredCard() : buildChecklist(todayDay),
+    allMastered ? masteredCard() : buildChecklist(root, todayDay, reviseCtx),
     allMastered ? null : buildNextSaturdayCard(plan, today),
     buildMainsParallelNote(summary),
   );
@@ -218,19 +230,51 @@ function buildPrelimsDateNotice(root: HTMLElement, summary: PlanSummary): HTMLEl
 }
 
 /**
- * RE-AUDIT 2 — the calm RECOVERY banner (no alarm wording). Shown only when the
- * learner is genuinely behind (`summary.daysBehind ≥ 1`) and the plan was
- * adjusted to stay feasible: "You're N days behind — the plan has been adjusted:
- * …". Returns `null` otherwise. @internal
+ * RE-AUDIT 2 — the calm "behind" banner (no alarm wording). Shown only when the
+ * learner is genuinely behind (`summary.daysBehind ≥ 1`, counted from topics
+ * actually marked studied): "You're N days behind — the plan has been
+ * adjusted". A secondary action, "I'm only starting now — restart my plan from
+ * today", moves the plan start to today after an inline confirm (all progress is
+ * kept; the plan is recomputed). Returns `null` when not behind. @internal
  */
-function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
-  if (!summary.recovery || summary.daysBehind < 1) return null;
+function buildRecoveryBanner(root: HTMLElement, summary: PlanSummary, today: string): HTMLElement | null {
+  if (summary.daysBehind < 1) return null;
   const n = summary.daysBehind;
   const detail =
-    summary.recoveryChanges.length > 0
+    summary.recovery && summary.recoveryChanges.length > 0
       ? `${summary.recoveryChanges.join('; ')}. You can still finish on time.`
       : 'The plan has been rebalanced so you can still finish on time.';
-  return el('section', { class: 'today-banner is-ok', attrs: { role: 'status' } }, [
+  const actions = el('div', { class: 'today-banner-actions' });
+  const idle = (): void => {
+    actions.replaceChildren(
+      button({
+        label: 'I\u2019m only starting now \u2014 restart my plan from today',
+        variant: 'ghost',
+        onClick: confirm,
+      }),
+    );
+  };
+  const confirm = (): void => {
+    actions.replaceChildren(
+      el('span', {
+        class: 'today-banner-detail',
+        text: `Start the plan from today (${prettyDowDate(today)})? Everything you have done so far is kept \u2014 only the schedule moves.`,
+      }),
+      el('div', { class: 'today-banner-confirm' }, [
+        button({
+          label: 'Yes, restart from today',
+          variant: 'primary',
+          onClick: () => {
+            setPlanStartDate(today);
+            render(root);
+          },
+        }),
+        button({ label: 'Cancel', variant: 'ghost', onClick: idle }),
+      ]),
+    );
+  };
+  idle();
+  return el('section', { class: 'today-banner is-ok today-behind', attrs: { role: 'status' } }, [
     el('span', { class: 'today-banner-icon' }, [icon('calendar', 22)]),
     el('div', { class: 'today-banner-text' }, [
       el('span', {
@@ -238,6 +282,7 @@ function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
         text: `You\u2019re ${n} ${n === 1 ? 'day' : 'days'} behind \u2014 the plan has been adjusted`,
       }),
       el('span', { class: 'today-banner-detail', text: detail }),
+      actions,
     ]),
   ]);
 }
@@ -246,27 +291,49 @@ function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
 /* Hero + banner                                                               */
 /* -------------------------------------------------------------------------- */
 /**
- * The "Now" hero — the single focal point of Today. It names the day's FIRST
- * actionable block (unit/topic title · its block · minutes) and offers ONE
- * primary button, "Start", that jumps straight into it (→ {@link firstStart}).
- * A compact plain-text "N days to Prelims" sits in the eyebrow (the big
- * countdown card is gone), and a muted "This week: <unit> · day X of Y" line
- * places today inside the current weekly subject unit. Before the plan starts /
- * post-exam there is no day, so it falls back to "Open planner" as the primary.
- * @internal
+ * The "Now" hero — the single focal point of Today. It names the day's NEXT
+ * UNFINISHED row (a topic not yet studied, then the mock / test / Telugu lesson,
+ * then the remaining topic-less blocks) and offers ONE primary "Start" that
+ * jumps straight into it. For a topic it also offers a "Mark as studied" tick
+ * and the hint "Read the notes, do the practice, then tap Mark as studied"; once
+ * marked, the hero moves on to the next unfinished row. A compact "N days to
+ * Prelims" sits in the eyebrow and a muted "This week: <unit> · day X of Y" line
+ * places today in its unit. Before the plan starts / post-exam there is no day,
+ * so it falls back to "Open planner" as the primary. @internal
  */
-function buildNowHero(summary: PlanSummary, today: string, day: PlanDay | undefined): HTMLElement {
+function buildNowHero(
+  root: HTMLElement | null,
+  summary: PlanSummary,
+  today: string,
+  day: PlanDay | undefined,
+  reviseCtx?: ReviseCtx,
+): HTMLElement {
   const daysToExam = daysToGo(summary.examDateISO, today);
-  const startAction = day ? firstStart(day) : null;
-  const focus = day ? nowFocus(day) : null;
+  const rows = day ? dayRows(day) : [];
+  const focusRow = day && reviseCtx ? nextUnfinishedRow(rows, today) : undefined;
+  const focus = focusRow && reviseCtx ? rowView(focusRow, reviseCtx, today) : null;
+  const realTopic = focusRow?.topic && focusRow.topic.kind !== 'practice' ? focusRow.topic : undefined;
 
-  const actions: Child[] = startAction
+  const actions: Child[] = focus
     ? [
-        button({ label: 'Start', onClick: startAction.onClick, variant: 'primary', large: true, iconName: 'arrow-right' }),
-        button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: 'secondary' }),
+        button({ label: 'Start', onClick: focus.onClick, variant: 'primary', large: true, iconName: 'arrow-right' }),
+        realTopic && root
+          ? button({
+              label: 'Mark as studied',
+              variant: 'secondary',
+              iconName: 'check',
+              ariaLabel: `Mark ${focus.title} as studied`,
+              onClick: () => {
+                markTopicStudied(realTopic.subtopicId, true, today);
+                render(root);
+              },
+            })
+          : null,
+        button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: realTopic ? 'ghost' : 'secondary' }),
       ]
     : [button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: 'primary', large: true, iconName: 'arrow-right' })];
 
+  const allDone = day !== undefined && rows.length > 0 && !focus;
   const left = el('div', { class: 'hero-body' }, [
     el('p', {
       class: 'hero-greeting',
@@ -282,8 +349,17 @@ function buildNowHero(summary: PlanSummary, today: string, day: PlanDay | undefi
             el('span', { text: focus.context }),
             chip({ text: fmtDuration(focus.minutes), tone: 'default', iconName: 'timer' }),
           ]),
+          el('span', {
+            class: 'hero-now-hint',
+            text: realTopic ? 'Read the notes, do the practice, then tap Mark as studied' : focus.hint,
+          }),
         ])
-      : null,
+      : allDone
+        ? el('div', { class: 'hero-now' }, [
+            el('span', { class: 'hero-now-eyebrow', text: 'All done' }),
+            el('span', { class: 'hero-now-title', text: 'Today\u2019s topics are studied \u2713' }),
+          ])
+        : null,
     el('div', { class: 'hero-actions' }, actions),
   ]);
 
@@ -299,26 +375,6 @@ function buildUnitLine(day: PlanDay | undefined): HTMLElement | null {
   if (!day || !day.unitId || !day.unitTitle) return null;
   const text = `This week: ${unitShortTitle(day.unitTitle)} · day ${day.unitDay} of ${day.unitDays}`;
   return el('p', { class: 'hero-unit-line', text });
-}
-
-/** The day's FIRST actionable focus — the block/topic the "Start" button opens. @internal */
-function nowFocus(day: PlanDay): { title: string; context: string; minutes: number } | null {
-  for (const b of day.blocks) {
-    const t = (b.topics ?? [])[0];
-    if (t) {
-      const name = t.kind === 'practice'
-        ? 'Mental Ability practice'
-        : t.name || getSubtopic(t.subtopicId)?.meta.name || t.subtopicId;
-      return { title: name, context: b.label, minutes: t.estMinutes || b.minutes };
-    }
-    if (b.kind === 'mock' && b.mockPaper) {
-      return { title: b.mockPaper === 'paper1' ? 'Full Paper-I mock' : 'Full Paper-II mock', context: b.label, minutes: b.minutes };
-    }
-    if (b.kind === 'week-test') {
-      return { title: 'This week\u2019s test', context: `${WEEK_TEST_COUNT} questions`, minutes: b.minutes };
-    }
-  }
-  return null;
 }
 
 /**
@@ -344,82 +400,266 @@ export function fmtDuration(min: number): string {
 }
 
 /**
- * The EARLY-REVISE context for a day's blocks. Before ~10 curated cards are due
- * across the whole deck, the weekday 20-min Revise block becomes "Flashcards for
- * what you studied yesterday" — seeded with the previous plan day's topics (or
- * the most recent studied topic's cards) so it is never empty. @internal
+ * The REVISE context for a day. Before ~10 curated cards are due for a scheduled
+ * recall, the weekday Revise block becomes an EARLY-REVISE block scoped to what
+ * the learner has ACTUALLY studied (never the plan's schedule):
+ *   - `previous` — cards of topics marked studied on PREVIOUS days, most recent
+ *     first ("Review yesterday's flashcards" when the newest is yesterday);
+ *   - `today`    — none before today, but today's topic(s) are now studied →
+ *     "Flashcards for today's topic" opens their cards;
+ *   - `waiting`  — nothing studied yet → "Flashcards for today's topic — after
+ *     you mark it studied", with a short explanation instead of cards.
+ * `none` = not early (the block opens the full studied-only Revise deck). @internal
  */
 interface ReviseCtx {
   early: boolean;
-  /** Subtopic ids (with authored curated cards) to scope the early session to. */
-  yesterdayIds: string[];
+  mode: 'none' | 'previous' | 'today' | 'waiting';
+  /** Subtopic ids (studied, with curated cards) the early session is scoped to. */
+  ids: string[];
+  /** Row label for the early block. */
+  label: string;
+  /** Row detail (topic names, or the explanation while waiting). */
+  detail: string;
+  /** Today's main topic (the waiting state links to its Learn page). */
+  mainTopicId?: string;
 }
 
 /**
- * How many curated cards are DUE for a SCHEDULED recall right now — i.e. cards
- * the learner has already reviewed at least once (they carry a spaced-repetition
- * entry) and whose next review has come due. Brand-new, never-reviewed cards are
- * NOT counted: early in the plan this is < 10, which is exactly when the Revise
- * block should fall back to "what you studied yesterday". @internal
+ * How many curated cards of STUDIED topics are DUE for a SCHEDULED recall right
+ * now — cards already reviewed at least once (they carry a spaced-repetition
+ * entry) whose next review has come due. Never-reviewed cards and cards of
+ * unstudied topics are not counted. @internal
  */
 function curatedDueCount(): number {
   const sr = loadState().flashcards;
   const now = Date.now();
   let n = 0;
-  for (const s of getSubtopics()) {
-    for (const c of buildCuratedDeck(getCards(s.id))) {
-      const entry = sr[c.id];
-      if (entry && isDue(entry, now)) n += 1;
-    }
+  for (const c of collectCuratedCards()) {
+    const entry = sr[c.id];
+    if (entry && isDue(entry, now)) n += 1;
   }
   return n;
 }
 
-/**
- * Build the early-revise context for `today`: the previous plan day's
- * first-passed topics (falling back to the most recent studied day), filtered
- * to those that actually have curated cards so the session is never empty.
- *
- * The LIVE plan starts at today, so "yesterday" is not in it; we read a
- * CANONICAL plan anchored at the plan START date, where the topic→date schedule
- * is identical but every day (including yesterday) is present. @internal
- */
-function computeReviseCtx(today: string): ReviseCtx {
-  const EARLY_THRESHOLD = 10;
-  const early = curatedDueCount() < EARLY_THRESHOLD;
-  if (!early) return { early, yesterdayIds: [] };
+/** Names of `ids` as "A +N more". @internal */
+function namesLine(ids: readonly string[]): string {
+  const names = ids.map((id) => getSubtopic(id)?.meta.name ?? id);
+  if (names.length === 0) return '';
+  return names.length > 1 ? `${names[0]} +${names.length - 1} more` : names[0]!;
+}
 
-  const startISO = loadState().settings.planStartDate;
-  const canonical = currentPlan(new Date(`${startISO}T00:00:00`));
-  const withCards = (ids: readonly string[]): string[] => ids.filter((id) => getCards(id).length > 0);
-  const dayTopics = (dateISO: string): string[] => {
-    const d = canonical.days.find((x) => x.dateISO === dateISO);
-    return d ? [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds] : [];
-  };
-
-  // Candidate lists, newest-first: yesterday, then earlier studied days.
-  const candidates: string[][] = [dayTopics(addDaysISO(today, -1))];
-  const studiedBefore = canonical.days
-    .filter((d) => d.dateISO < today && [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds].length > 0)
-    .sort((a, b) => b.dateISO.localeCompare(a.dateISO));
-  for (const d of studiedBefore) candidates.push([...d.theorySubtopicIds, ...d.aptitudeSubtopicIds]);
-
-  for (const ids of candidates) {
-    const scoped = withCards(ids);
-    if (scoped.length > 0) return { early, yesterdayIds: scoped };
-  }
-  return { early, yesterdayIds: [] };
+/** The day's main topic: the first real topic of its subject block (else any block). @internal */
+function mainTopicOf(day: PlanDay | undefined): string | undefined {
+  if (!day) return undefined;
+  const real = (b: PlanBlock): PlanTopic | undefined => (b.topics ?? []).find((t) => t.kind !== 'practice');
+  const subject = day.blocks.find((b) => b.kind === 'subject' && real(b));
+  return (subject ? real(subject) : day.blocks.map(real).find((t) => t !== undefined))?.subtopicId;
 }
 
 /**
- * The day's rhythm as a SLIM ORDERED CHECKLIST — one row per block
- * (`block · topic · minutes · done`), replacing the old per-block cards and the
- * duplicate budget card. Each row one-taps into its study target; a row is
- * ticked "done" when every first-pass topic in it has been studied. @internal
+ * Build the revise context for `today` from the learner's STUDY STATUS: topics
+ * marked studied before today (most recent first), else today's studied topics,
+ * else the waiting explanation. Exported for tests.
  */
-function buildChecklist(day: PlanDay | undefined): HTMLElement {
+export function computeReviseCtx(today: string, day?: PlanDay): ReviseCtx {
+  const EARLY_THRESHOLD = 10;
+  const early = curatedDueCount() < EARLY_THRESHOLD;
+  const mainTopicId = mainTopicOf(day);
+  if (!early) return { early, mode: 'none', ids: [], label: '', detail: '', mainTopicId };
+
+  const state = loadState();
+  const studied = getSubtopics()
+    .filter((s) => getCards(s.id).length > 0)
+    .map((s) => ({ id: s.id, info: topicStudyFrom(state, s.id) }))
+    .filter((x) => x.info.status === 'studied');
+
+  // Studied on PREVIOUS days (an unknown date counts as earlier), newest first.
+  const previous = studied
+    .filter((x) => (x.info.studiedOn ?? '') < today)
+    .sort((a, b) => (b.info.studiedOn ?? '').localeCompare(a.info.studiedOn ?? ''));
+  if (previous.length > 0) {
+    const ids = previous.map((x) => x.id);
+    const newest = previous[0]!.info.studiedOn;
+    const label = newest === addDaysISO(today, -1)
+      ? 'Review yesterday\u2019s flashcards'
+      : 'Review flashcards of what you studied';
+    return { early, mode: 'previous', ids, label, detail: namesLine(ids), mainTopicId };
+  }
+
+  // Nothing before today: today's studied topics (the main topic first).
+  const todays = studied.filter((x) => x.info.studiedOn === today || x.info.studiedOn === undefined).map((x) => x.id);
+  if (todays.length > 0) {
+    const ids = mainTopicId && todays.includes(mainTopicId) ? [mainTopicId, ...todays.filter((id) => id !== mainTopicId)] : todays;
+    return { early, mode: 'today', ids, label: 'Flashcards for today\u2019s topic', detail: namesLine(ids), mainTopicId };
+  }
+
+  const mainName = mainTopicId ? getSubtopic(mainTopicId)?.meta.name ?? mainTopicId : 'today\u2019s topic';
+  return {
+    early,
+    mode: 'waiting',
+    ids: [],
+    label: 'Flashcards for today\u2019s topic \u2014 after you mark it studied',
+    detail: `Cards only come from topics you have studied. Mark ${mainName} studied and its flashcards open here.`,
+    mainTopicId,
+  };
+}
+
+/**
+ * One checklist ROW: a block, or ONE topic of a multi-topic block (so every
+ * topic gets its own "Mark as studied" tick). @internal
+ */
+interface DayRow {
+  block: PlanBlock;
+  /** The topic this row teaches (absent for topic-less blocks). */
+  topic?: PlanTopic;
+}
+
+/** Flatten a day's blocks into checklist rows (one per real topic). @internal */
+function dayRows(day: PlanDay): DayRow[] {
+  const out: DayRow[] = [];
+  for (const block of day.blocks) {
+    const topics = block.topics ?? [];
+    const real = topics.filter((t) => t.kind !== 'practice');
+    if (real.length > 0) for (const topic of real) out.push({ block, topic });
+    else out.push({ block, topic: topics[0] });
+  }
+  return out;
+}
+
+/** Whether a row is FINISHED: its topic is studied / its Telugu lesson done today. @internal */
+function rowDone(row: DayRow, today: string): boolean {
+  if (row.topic) return row.topic.kind !== 'practice' && isTopicStudied(row.topic.subtopicId);
+  if (row.block.kind === 'telugu') return lessonForDay(getTeluguLessonsDone(), today).doneToday;
+  return false;
+}
+
+/** Kinds the hero visits first (trackable work), before the topic-less extras. @internal */
+const PRIMARY_KINDS: ReadonlySet<string> = new Set(['mock', 'week-test', 'unit-wrapup', 'telugu']);
+
+/**
+ * The hero's row: the first unfinished topic / mock / test / Telugu lesson in
+ * day order, else the first remaining topic-less block (revise, CA, …) after
+ * the last finished row. `undefined` when everything trackable is done and no
+ * extras remain. @internal
+ */
+function nextUnfinishedRow(rows: readonly DayRow[], today: string): DayRow | undefined {
+  const primary = rows.find((r) => {
+    if (r.topic && r.topic.kind !== 'practice') return !rowDone(r, today);
+    if (!r.topic && PRIMARY_KINDS.has(r.block.kind)) return !rowDone(r, today);
+    return false;
+  });
+  if (primary) return primary;
+  return rows.find((r) => !rowDone(r, today) && !(r.topic && r.topic.kind !== 'practice') && !PRIMARY_KINDS.has(r.block.kind));
+}
+
+/** What a row shows + does (label, detail, minutes, start). @internal */
+interface RowView {
+  /** Row label (block label, or the early-revise / Telugu lesson label). */
+  label: string;
+  /** Hero title (topic / lesson / block name). */
+  title: string;
+  /** Hero context line. */
+  context: string;
+  detail: string;
+  minutes: number;
+  onClick: () => void;
+  /** A one-line "what to do" hint for non-topic rows. */
+  hint: string;
+}
+
+/** Resolve a row's labels and start action. @internal */
+function rowView(row: DayRow, reviseCtx: ReviseCtx, today: string): RowView {
+  const { block, topic } = row;
+  if (topic) {
+    if (topic.kind === 'practice') {
+      return {
+        label: block.label,
+        title: 'Mental Ability practice',
+        context: block.label,
+        detail: topicSummary([topic]),
+        minutes: topic.estMinutes || block.minutes,
+        onClick: () => startPracticeDrill(topic.practiceSubtopicIds ?? [], topic.mcqCount > 0 ? topic.mcqCount : 20),
+        hint: 'A mixed set from topics you have covered.',
+      };
+    }
+    const name = topic.name || getSubtopic(topic.subtopicId)?.meta.name || topic.subtopicId;
+    const id = topic.subtopicId;
+    const mains = topic.mainsAngle ? ' \u00b7 incl. For Mains note (+5 min)' : '';
+    return {
+      // The TOPIC leads the row (it is what gets ticked); the block is context.
+      label: name,
+      title: name,
+      context: block.label,
+      detail: `${unitShortTitle(block.label)}${mains}`,
+      minutes: topic.estMinutes || block.minutes,
+      onClick: () => openLearn(id),
+      hint: '',
+    };
+  }
+  if (block.kind === 'telugu') {
+    const { lesson } = lessonForDay(getTeluguLessonsDone(), today);
+    if (lesson) {
+      const id = lesson.id;
+      return {
+        label: lessonProgressLine(lesson),
+        title: lessonHeadline(lesson),
+        context: lessonProgressLine(lesson),
+        detail: `${lessonHeadline(lesson)} \u00b7 ${lessonTarget(lesson)}`,
+        minutes: block.minutes,
+        onClick: () => openTeluguLesson(id),
+        hint: `Target: ${lessonTarget(lesson)}`,
+      };
+    }
+    return {
+      label: block.label,
+      title: 'Telugu practice',
+      context: block.label,
+      detail: 'All lessons done \u2014 trace words and sentences',
+      minutes: block.minutes,
+      onClick: () => openTelugu('words'),
+      hint: 'Keep your hand in: trace a few words and sentences.',
+    };
+  }
+  if (block.kind === 'revise' && reviseCtx.early) {
+    const ids = reviseCtx.ids;
+    const main = reviseCtx.mainTopicId;
+    return {
+      label: reviseCtx.label,
+      title: reviseCtx.label,
+      context: block.label,
+      detail: reviseCtx.detail,
+      minutes: block.minutes,
+      onClick: reviseCtx.mode === 'waiting'
+        ? () => (main ? openLearn(main) : navigate('/revise'))
+        : () => openReviseScope(ids),
+      hint: reviseCtx.mode === 'waiting' ? reviseCtx.detail : 'Recall each answer before you peek.',
+    };
+  }
+  const nav = blockStart(block);
+  const nowTitle =
+    block.kind === 'mock' && block.mockPaper
+      ? block.mockPaper === 'paper1' ? 'Full Paper-I mock' : 'Full Paper-II mock'
+      : block.kind === 'week-test' ? 'This week\u2019s test' : block.label;
+  return {
+    label: block.label,
+    title: nowTitle,
+    context: block.kind === 'week-test' ? `${WEEK_TEST_COUNT} questions` : block.label,
+    detail: blockDetail(block),
+    minutes: block.minutes,
+    onClick: nav,
+    hint: blockDetail(block),
+  };
+}
+
+/**
+ * The day's rhythm as a SLIM ORDERED CHECKLIST — one row per block, and one row
+ * per topic of a multi-topic block. Each row one-taps into its study target;
+ * a topic row carries a "Mark as studied" tick and shows "Studied ✓" once done.
+ * @internal
+ */
+function buildChecklist(root: HTMLElement, day: PlanDay | undefined, reviseCtx: ReviseCtx): HTMLElement {
   const blocks = day?.blocks ?? [];
-  if (blocks.length === 0) {
+  if (!day || blocks.length === 0) {
     return card({ title: 'Today' }, [
       el('div', { class: 'empty-state is-compact' }, [
         el('span', { class: 'empty-icon' }, [icon('sparkles', 22)]),
@@ -427,44 +667,59 @@ function buildChecklist(day: PlanDay | undefined): HTMLElement {
       ]),
     ]);
   }
-  const reviseCtx = computeReviseCtx(day?.dateISO ?? todayISO());
-  const budget = day?.budgetMin ?? 0;
-  const planned = day?.plannedMinutes ?? 0;
+  const today = day.dateISO;
+  const budget = day.budgetMin ?? 0;
+  const planned = day.plannedMinutes ?? 0;
   return card(
     {
       title: 'Today\u2019s plan',
       subtitle: budget > 0 ? `${fmtDuration(planned)} of ${fmtDuration(budget)}` : undefined,
     },
-    [el('ul', { class: 'today-checklist' }, blocks.map((b) => checklistRow(b, reviseCtx)))],
+    [el('ul', { class: 'today-checklist' }, dayRows(day).map((r) => checklistRow(root, r, reviseCtx, today)))],
   );
 }
 
-/** One slim checklist row for a rhythm block. @internal */
-function checklistRow(block: PlanBlock, reviseCtx: ReviseCtx): HTMLElement {
-  const earlyRevise = block.kind === 'revise' && reviseCtx.early && reviseCtx.yesterdayIds.length > 0;
-  const label = earlyRevise ? 'Review yesterday\u2019s flashcards' : block.label;
-  const topics = block.topics ?? [];
-  const detail = topics.length > 0 ? topicSummary(topics) : blockDetail(block);
-  const done = blockDone(block);
-  const nav = blockStart(block, reviseCtx);
+/** One slim checklist row (+ a "Mark as studied" tick for a topic). @internal */
+function checklistRow(root: HTMLElement, row: DayRow, reviseCtx: ReviseCtx, today: string): HTMLElement {
+  const view = rowView(row, reviseCtx, today);
+  const done = rowDone(row, today);
+  const { label, detail } = view;
+  const topic = row.topic && row.topic.kind !== 'practice' ? row.topic : undefined;
+  const doneText = row.block.kind === 'telugu' ? 'Done \u2713' : 'Studied \u2713';
 
-  const row = el('li', { class: done ? 'today-check is-done' : 'today-check' }, [
+  const kids: Child[] = [
     el('button', {
       class: 'today-check-btn',
       type: 'button',
-      ariaLabel: `${label}${detail ? ` — ${detail}` : ''}, about ${fmtDuration(block.minutes)}${done ? ', done' : ''}`,
-      onClick: nav,
+      ariaLabel: `${label}${detail ? ` — ${detail}` : ''}, about ${fmtDuration(view.minutes)}${done ? `, ${doneText}` : ''}`,
+      onClick: view.onClick,
     }, [
-      el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : []),
+      topic ? null : el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : []),
       el('span', { class: 'today-check-main' }, [
         el('span', { class: 'today-check-label', text: label }),
         detail ? el('span', { class: 'today-check-detail', text: detail }) : null,
       ]),
-      chip({ text: fmtDuration(block.minutes), tone: 'muted', iconName: 'timer' }),
+      done
+        ? chip({ text: doneText, tone: 'ok' })
+        : chip({ text: fmtDuration(view.minutes), tone: 'muted', iconName: 'timer' }),
       el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
     ]),
-  ]);
-  return row;
+  ];
+  if (topic) {
+    const name = topic.name || getSubtopic(topic.subtopicId)?.meta.name || topic.subtopicId;
+    const tick = el('button', {
+      class: done ? 'today-check-tick is-done' : 'today-check-tick',
+      type: 'button',
+      ariaLabel: done ? `${name} is studied — mark as not studied` : `Mark ${name} as studied`,
+      attrs: { 'aria-pressed': String(done), title: done ? 'Mark as not studied' : 'Mark as studied' },
+      onClick: () => {
+        markTopicStudied(topic.subtopicId, !done, today);
+        render(root);
+      },
+    }, [el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : [])]);
+    kids.unshift(tick);
+  }
+  return el('li', { class: done ? 'today-check is-done' : 'today-check', attrs: { 'data-kind': row.block.kind } }, kids);
 }
 
 /** A compact "first topic (+N more)" detail line for a block's topics. @internal */
@@ -505,36 +760,15 @@ function blockDetail(block: PlanBlock): string {
       return 'Key facts — keep it light';
     case 'start-here':
       return 'Orientation guide';
+    case 'revise':
+      return 'Flashcards of topics you have studied';
     default:
       return '';
   }
 }
 
-/**
- * Whether a block counts as DONE from recorded progress — true when it carries
- * first-pass topics and every one has been studied (any MCQ seen). Topic-less
- * blocks (mock / revise / CA) are never auto-ticked. @internal
- */
-function blockDone(block: PlanBlock): boolean {
-  const topics = block.topics ?? [];
-  if (topics.length === 0) return false;
-  const progress = loadState().progress;
-  return topics.every((t) => {
-    if (t.kind === 'practice') return false;
-    const ids = getSubtopic(t.subtopicId)?.mcqs.map((m) => m.id) ?? [];
-    return ids.length > 0 && ids.some((id) => (progress[id]?.seen ?? 0) > 0);
-  });
-}
-
-/** The one-tap start handler for a checklist row (topic or topic-less block). @internal */
-function blockStart(block: PlanBlock, reviseCtx: ReviseCtx): () => void {
-  const first = (block.topics ?? [])[0];
-  if (first) {
-    if (first.kind === 'practice') {
-      return () => startPracticeDrill(first.practiceSubtopicIds ?? [], first.mcqCount > 0 ? first.mcqCount : 20);
-    }
-    return () => openLearn(first.subtopicId);
-  }
+/** The one-tap start handler for a topic-less block. @internal */
+function blockStart(block: PlanBlock): () => void {
   switch (block.kind) {
     case 'ca':
     case 'ca-refresh':
@@ -557,11 +791,6 @@ function blockStart(block: PlanBlock, reviseCtx: ReviseCtx): () => void {
     case 'unit-wrapup':
       return () => openUnitTest(block);
     case 'revise':
-      if (reviseCtx.early && reviseCtx.yesterdayIds.length > 0) {
-        const ids = reviseCtx.yesterdayIds;
-        return () => openReviseScope(ids);
-      }
-      return () => navigate('/revise');
     case 'targeted-revision':
     case 'weekly-revision':
       return () => navigate('/revise');
@@ -611,39 +840,6 @@ function dayOfWeek(iso: string): number {
   const [y, m, d] = iso.split('-').map(Number);
   if (!y || !m || !d) return -1;
   return new Date(Date.UTC(y, m - 1, d)).getUTCDay();
-}
-
-/**
- * The PRIMARY "Start" action — the first scheduled topic's Learn workspace (or
- * the first mock/practice block). Returns `null` when there is nothing
- * actionable. @internal
- */
-function firstStart(day: PlanDay): { onClick: () => void; hint: string } | null {
-  for (const b of day.blocks) {
-    const topics = b.topics ?? [];
-    const first = topics[0];
-    if (first) {
-      if (first.kind === 'practice') {
-        return {
-          onClick: () => startPracticeDrill(first.practiceSubtopicIds ?? [], first.mcqCount > 0 ? first.mcqCount : 20),
-          hint: `First up: ${b.label} · Mental Ability practice`,
-        };
-      }
-      const name = first.name || getSubtopic(first.subtopicId)?.meta.name || first.subtopicId;
-      return { onClick: () => openLearn(first.subtopicId), hint: `First up: ${b.label} · ${name}` };
-    }
-    if (b.kind === 'mock' && b.mockPaper) {
-      const paper = b.mockPaper;
-      return { onClick: () => openPaperMock(paper), hint: `First up: full ${paper === 'paper1' ? 'Paper-I' : 'Paper-II'} mock` };
-    }
-    if (b.kind === 'week-test') {
-      return {
-        onClick: () => openWeekTest(b),
-        hint: `First up: week test · ${WEEK_TEST_COUNT} Q · ${WEEK_TEST_MINUTES} min`,
-      };
-    }
-  }
-  return null;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -805,7 +1001,8 @@ export function startPracticeDrill(subtopicIds: readonly string[], questions: nu
  * Revise entry ever moves onto Today). Exported to keep one source of truth.
  */
 export function todaysCuratedSession(): number {
-  const deck = getSubtopics().flatMap((s) => buildCuratedDeck(getCards(s.id)));
+  // Only cards of topics the learner has studied are ever due.
+  const deck = collectCuratedCards();
   return selectSession(deck, loadState().flashcards, Date.now()).length;
 }
 

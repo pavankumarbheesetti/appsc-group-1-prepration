@@ -19,7 +19,8 @@ import { getCards, getCaUpdatedThrough, getMindmap, getSubtopic, getSubtopicCove
 import { buildSession } from '../engine/drill';
 import type { SessionScore } from '../engine/drill';
 import { navigate, routeParam } from '../router/router';
-import { loadState } from '../state/store';
+import { loadState, noteTopicOpened } from '../state/store';
+import { markTopicStudied, topicStudy, AUTO_STUDIED_ANSWERS } from '../lib/study-status';
 import { nextTabIndex } from '../lib/tabs';
 import {
   subtopicMasteryPct,
@@ -106,6 +107,8 @@ export function render(root: HTMLElement): void {
   let activeTab: LearnTab = focus.tab && tabs.includes(focus.tab) ? focus.tab : tabs[0]!;
 
   const draw = (): void => {
+    // Opening the notes moves a not-started topic to "in progress".
+    if (activeTab === 'notes') noteTopicOpened(sub.meta.id);
     mount(root, el('div', { class: 'learn' }, [buildHeader(sub), buildTabs(sub, tabs, activeTab, select), buildPanel(sub, activeTab, root, draw)]));
     // Scroll to a requested note once the Notes panel is in the DOM.
     if (activeTab === 'notes' && focus.noteId) {
@@ -130,9 +133,11 @@ function buildHeader(sub: SubtopicView): HTMLElement {
   const mastery = subtopicMasteryPct(state.progress, mcqIds);
   const status = statusFromMastery(mastery);
 
+  const study = topicStudy(sub.meta.id);
   const badges = el('div', { class: 'learn-badges' }, [
     sub.meta.band ? bandBadge(sub.meta.band) : null,
     statusChip(status),
+    studyChip(study.status),
   ]);
 
   const counts = el('div', { class: 'learn-counts' }, [
@@ -348,6 +353,7 @@ function notesPanel(sub: SubtopicView, root: HTMLElement): HTMLElement {
   }
   const mainsSection = buildMainsNotesSection(mainsNotes, 'learn-note-mains');
   if (mainsSection) kids.push(mainsSection);
+  kids.push(studyMarkBar(sub));
   return el('div', { class: 'reading' }, kids);
 }
 
@@ -376,7 +382,7 @@ function drillPanel(sub: SubtopicView, root: HTMLElement, back: () => void): HTM
       onClick: () => openMock({ scopeKind: 'subtopic', subtopicId: sub.meta.id }),
     }),
   ]);
-  return el('div', { class: 'learn-drill' }, [practice, mockRow]);
+  return el('div', { class: 'learn-drill' }, [practice, mockRow, studyMarkBar(sub)]);
 }
 
 /** End-of-drill results for the subtopic-scoped drill. @internal */
@@ -387,6 +393,7 @@ function drillResults(root: HTMLElement, sub: SubtopicView, score: SessionScore,
     el('div', { class: 'results' }, [
       card({ title: 'Drill complete' }, [
         el('p', { class: 'section-lead', text: `${sub.meta.name} — ${line}` }),
+        studyMarkBar(sub),
         el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
           button({ label: 'Back to subtopic', variant: 'primary', onClick: () => back() }),
           button({ label: 'Syllabus', variant: 'ghost', onClick: () => navigate('/syllabus') }),
@@ -463,4 +470,54 @@ function emptyPanel(iconName: Parameters<typeof icon>[0], heading: string, body:
     el('h3', { text: heading }),
     el('p', { text: body }),
   ]);
+}
+
+/**
+ * The "Mark as studied" bar shown after the Notes, on the Practice tab and at
+ * the end of a drill. Shows the topic's study status and toggles it: "Mark as
+ * studied" ↔ "Mark as not studied". Answering {@link AUTO_STUDIED_ANSWERS}
+ * practice questions (or the whole bank) marks it studied automatically.
+ * The bar re-renders itself (and the header's study chip) in place, so the
+ * reading position is kept. Exported for tests.
+ */
+export function studyMarkBar(sub: SubtopicView): HTMLElement {
+  const info = topicStudy(sub.meta.id);
+  const studied = info.status === 'studied';
+  const auto = Math.min(AUTO_STUDIED_ANSWERS, info.bankSize);
+  const lead = studied
+    ? `Studied \u2713 — ${sub.meta.name} counts as covered in your plan.`
+    : info.bankSize > 0
+      ? `Done with ${sub.meta.name}? Mark it studied (or answer ${auto} practice questions — ${info.answered}/${auto} so far).`
+      : `Done with ${sub.meta.name}? Mark it studied so your plan counts it.`;
+  const bar: HTMLElement = el('div', { class: studied ? 'learn-study-mark is-studied' : 'learn-study-mark', attrs: { 'data-study-status': info.status, role: 'group', 'aria-label': 'Study status' } }, [
+    el('p', { class: 'section-lead' }, [icon(studied ? 'check' : 'target', 15), el('span', { text: lead })]),
+    el('div', { class: 'learn-study-actions' }, [
+      button({
+        label: studied ? 'Mark as not studied' : 'Mark as studied',
+        variant: studied ? 'ghost' : 'primary',
+        iconName: studied ? undefined : 'check',
+        ariaLabel: `${studied ? 'Mark as not studied' : 'Mark as studied'}: ${sub.meta.name}`,
+        onClick: () => {
+          markTopicStudied(sub.meta.id, !studied);
+          const status = topicStudy(sub.meta.id).status;
+          for (const c of document.querySelectorAll('.learn-study-chip')) c.replaceWith(studyChip(status));
+          const fresh = studyMarkBar(sub);
+          bar.replaceWith(fresh);
+          fresh.querySelector<HTMLButtonElement>('button')?.focus();
+        },
+      }),
+      studied ? button({ label: 'Back to Today', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/') }) : null,
+    ]),
+  ]);
+  return bar;
+}
+
+/** The header's small study-status chip. @internal */
+function studyChip(status: ReturnType<typeof topicStudy>['status']): HTMLElement {
+  const c = chip({
+    text: status === 'studied' ? 'Studied \u2713' : status === 'in-progress' ? 'In progress' : 'Not started',
+    tone: status === 'studied' ? 'ok' : 'muted',
+  });
+  c.classList.add('learn-study-chip');
+  return c;
 }

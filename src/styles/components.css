@@ -6784,3 +6784,145 @@ button.tel-lang-card {
   gap: 0.5rem;
   align-items: center;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Study status — Mark as studied (Today ticks, hero hint, Learn bar)         */
+/* -------------------------------------------------------------------------- */
+.today-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.today-check-btn {
+  flex: 1;
+  min-width: 0;
+}
+.today-check-tick {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.75rem; /* >=44px touch target */
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  color: var(--muted);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+.today-check-tick:hover {
+  background: var(--bg-2);
+}
+.today-check-tick:hover .today-check-box {
+  border-color: var(--success);
+}
+.today-check-tick:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.today-check.is-done .today-check-box {
+  background: var(--success);
+  border-color: var(--success);
+}
+.hero-now-hint {
+  font-size: var(--fs-sm);
+  opacity: 0.92;
+  margin-top: var(--space-1);
+}
+.today-banner-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+.today-banner-actions .btn {
+  white-space: normal;
+  text-align: left;
+  height: auto;
+  min-height: 2.75rem;
+  padding-left: 0;
+}
+.today-banner-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.learn-study-mark {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.learn-study-mark.is-studied {
+  background: var(--success-soft);
+  border-color: color-mix(in srgb, var(--success) 40%, transparent);
+}
+.learn-study-mark .section-lead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  flex: 1 1 16rem;
+}
+.learn-study-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.revise-from {
+  margin: var(--space-1) 0 0;
+  font-size: var(--fs-sm);
+}
+
+/* Telugu lesson path */
+.tel-continue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.tel-lesson-head .hero-now-eyebrow {
+  color: var(--accent);
+  margin: 0;
+}
+.tel-lesson-target {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--fw-semibold);
+}
+.tel-lesson-target > span:not(.chip) {
+  flex: 1 1 12rem;
+}
+.tel-lesson-done {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--success);
+  font-weight: var(--fw-semibold);
+}
+.tel-lesson .tel-grid,
+.tel-check-host {
+  margin-top: var(--space-4);
+}
+.tel-check-glyph {
+  text-align: center;
+  margin: var(--space-3) 0;
+}
+.tel-check-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: var(--space-2);
+}
+.tel-check-feedback {
+  min-height: 1.5em;
+  margin: var(--space-3) 0;
+  font-weight: var(--fw-semibold);
+}

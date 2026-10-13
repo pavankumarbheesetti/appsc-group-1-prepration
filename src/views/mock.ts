@@ -31,6 +31,7 @@ import { recordAnswer } from '../engine/notebook';
 import { newCard, review } from '../engine/spaced-repetition';
 import { navigate } from '../router/router';
 import { updateState, loadState, recordTestAttempt } from '../state/store';
+import { syncAutoStudied, isRevisable } from '../lib/study-status';
 import { mockScore, formatNet, formatDuration, pct, type MockAnswer } from '../lib/metrics';
 import {
   EXAM_PATTERNS,
@@ -214,8 +215,11 @@ function weekTestInputFromBlock(block: PlanBlock): WeekTestInput | null {
     thisWeek: { paper1: [], paper2: [] },
     earlier: { paper1: [], paper2: [] },
   };
+  const state = loadState();
   for (const [id, fp] of firstPass) {
     if (fp > dateISO) continue;
+    // Only topics the learner has actually studied (status), never plan-only ones.
+    if (!isRevisable(id, state)) continue;
     const tier = fp >= weekStartISO ? pools.thisWeek : pools.earlier;
     (tier[paperOf(id)] as MCQItem[]).push(...mcqsOf(id));
   }
@@ -1146,6 +1150,9 @@ function recordMock(
       if (entry) s.notebook[item.id] = entry;
     });
   });
+
+  // Auto-studied at 10 answered: stamp topics that just crossed the line.
+  syncAutoStudied(items.flatMap((it) => (it.subtopicId ? [it.subtopicId] : [])));
 
   // Append the finished-test roll-up (guess accuracy + marks lost → trend).
   const summary = negativeMarkingSummary(

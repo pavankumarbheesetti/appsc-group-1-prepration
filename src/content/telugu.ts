@@ -377,3 +377,64 @@ export const STARTER_SENTENCES: readonly TeluguSentence[] = [
   { id: 'tel-s-05', glyph: 'అమ్మ అన్నం వండింది.', translit: 'amma annaṃ vanḍindi.', meaning: 'Mother cooked the food.' },
   { id: 'tel-s-06', glyph: 'మీరు ఎలా ఉన్నారు?', translit: 'mīru elā unnāru?', meaning: 'How are you?' },
 ];
+
+/* -------------------------------------------------------------------------- */
+/* Lesson index — the ordered 15-minute lesson path over the data above        */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * One 15-minute LESSON of the course: an ordered slice of an existing stage's
+ * glyphs (by id — no content is duplicated or changed) plus what to do with it.
+ * The planner's Telugu blocks walk these in order, one lesson per block.
+ */
+export interface TeluguLesson {
+  /** Stable id, e.g. `tel-lesson-03`. */
+  id: string;
+  /** 1-based position in the path. */
+  number: number;
+  /** Short title, e.g. `Vowels ఋ–ఔ`. */
+  title: string;
+  /** The course stage the lesson's cards come from. */
+  stage: TeluguStage;
+  /** Glyph ids taught in this lesson (empty for the reading-only intro). */
+  glyphIds: readonly string[];
+  /** How many times to trace each item (0 = reading lesson, no tracing). */
+  traceTimes: number;
+  /** One-line goal shown with the lesson. */
+  goal: string;
+}
+
+/** The ids of `items[from..to)` (a slice of one stage's glyphs). @internal */
+function idsOf(items: readonly { id: string }[], from: number, to: number): string[] {
+  return items.slice(from, to).map((x) => x.id);
+}
+
+/** The lesson specs in teaching order (ids + numbers are derived below). @internal */
+const LESSON_SPECS: readonly Omit<TeluguLesson, 'id' | 'number'>[] = [
+  { stage: 'intro', title: 'How Telugu writing works', glyphIds: [], traceTimes: 0, goal: 'Read the five short intro sections — syllables, the three building blocks, how writing works.' },
+  { stage: 'vowels', title: 'Vowels అ–ఊ', glyphIds: idsOf(VOWELS, 0, 6), traceTimes: 3, goal: 'The first six vowels and their sounds.' },
+  { stage: 'vowels', title: 'Vowels ఋ–ఔ', glyphIds: idsOf(VOWELS, 6, 13), traceTimes: 3, goal: 'The remaining seven vowels.' },
+  { stage: 'vowels', title: 'Sunna & visarga అం అః', glyphIds: idsOf(VOWELS, 13, 15), traceTimes: 3, goal: 'The nasal ం and breath ః — and a check on every vowel.' },
+  { stage: 'consonants', title: 'Consonants క–ఙ', glyphIds: idsOf(CONSONANTS, 0, 5), traceTimes: 3, goal: 'The velar row (throat sounds).' },
+  { stage: 'consonants', title: 'Consonants చ–ఞ', glyphIds: idsOf(CONSONANTS, 5, 10), traceTimes: 3, goal: 'The palatal row.' },
+  { stage: 'consonants', title: 'Consonants ట–ణ', glyphIds: idsOf(CONSONANTS, 10, 15), traceTimes: 3, goal: 'The retroflex row (tongue curled back).' },
+  { stage: 'consonants', title: 'Consonants త–న', glyphIds: idsOf(CONSONANTS, 15, 20), traceTimes: 3, goal: 'The dental row.' },
+  { stage: 'consonants', title: 'Consonants ప–మ', glyphIds: idsOf(CONSONANTS, 20, 25), traceTimes: 3, goal: 'The labial row (lip sounds).' },
+  { stage: 'consonants', title: 'Consonants య–వ', glyphIds: idsOf(CONSONANTS, 25, 29), traceTimes: 3, goal: 'The semivowels.' },
+  { stage: 'consonants', title: 'Consonants శ–హ', glyphIds: idsOf(CONSONANTS, 29, 33), traceTimes: 3, goal: 'The sibilants and హ.' },
+  { stage: 'consonants', title: 'Consonants ళ క్ష ఱ', glyphIds: idsOf(CONSONANTS, 33, 36), traceTimes: 3, goal: 'The three extra letters.' },
+  { stage: 'gunintalu', title: 'Gunintalu క–కూ', glyphIds: idsOf(GUNINTALU, 0, 6), traceTimes: 3, goal: 'How vowel signs attach to a consonant (first six).' },
+  { stage: 'gunintalu', title: 'Gunintalu కృ–కః', glyphIds: idsOf(GUNINTALU, 6, 15), traceTimes: 2, goal: 'The rest of the క family.' },
+  { stage: 'vattulu', title: 'Vattulu (conjuncts)', glyphIds: idsOf(VATTULU, 0, 6), traceTimes: 2, goal: 'Two consonants joined with a subscript.' },
+  { stage: 'numbers', title: 'Numbers ౦–౯', glyphIds: idsOf(NUMBERS, 0, 10), traceTimes: 2, goal: 'The ten Telugu digits and their names.' },
+  { stage: 'words', title: 'Words 1–8', glyphIds: idsOf(STARTER_WORDS, 0, 8), traceTimes: 2, goal: 'Read, hear and write everyday words.' },
+  { stage: 'words', title: 'Words 9–15', glyphIds: idsOf(STARTER_WORDS, 8, 15), traceTimes: 2, goal: 'More everyday words.' },
+  { stage: 'sentences', title: 'First sentences', glyphIds: idsOf(STARTER_SENTENCES, 0, 6), traceTimes: 1, goal: 'Trace full sentences toward the qualifying paper.' },
+];
+
+/** The ordered lesson path (each ≈ 15 min), numbered from 1. */
+export const TELUGU_LESSONS: readonly TeluguLesson[] = LESSON_SPECS.map((l, i) => ({
+  ...l,
+  number: i + 1,
+  id: `tel-lesson-${String(i + 1).padStart(2, '0')}`,
+}));

@@ -88,9 +88,14 @@ export interface PlanSubtopic {
   hasMainsAngleNote?: boolean;
 }
 
-/** Per-subtopic progress summary keyed by subtopic id. */
+/**
+ * Per-subtopic progress summary keyed by subtopic id. `studied` is the learner's
+ * explicit/derived STUDY STATUS (see `lib/study-status.ts`) and, when present,
+ * is the sole test of "studied" (days behind, recovery, coverage). When absent
+ * (older callers / tests) a topic counts as studied once `seen > 0`.
+ */
 export type PlannerProgress = Readonly<
-  Record<string, { seen: number; masteryPct: number }>
+  Record<string, { seen: number; masteryPct: number; studied?: boolean }>
 >;
 
 /**
@@ -1316,7 +1321,12 @@ export function buildPlan(opts: BuildPlanOpts): Plan {
   const prelimsTotal = prelims.length;
 
   // Per-subtopic study status derived from the summary progress map.
-  const isStudied = (id: string): boolean => (progress[id]?.seen ?? 0) > 0;
+  // The explicit study status wins; legacy summaries fall back to `seen > 0`.
+  const isStudied = (id: string): boolean => {
+    const p = progress[id];
+    if (!p) return false;
+    return p.studied ?? p.seen > 0;
+  };
   const masteryOf = (id: string): number => progress[id]?.masteryPct ?? 0;
 
   const theoryStudied = theoryAll.filter((s) => isStudied(s.id)).length;

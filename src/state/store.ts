@@ -95,6 +95,27 @@ export interface EnglishDraft {
   updatedAt: number;
 }
 
+/**
+ * The learner's explicit per-SUBTOPIC study record, keyed by subtopic id in
+ * {@link AppState.study}. The derived status (not-started / in-progress /
+ * studied) lives in `src/lib/study-status.ts`; this record only holds the facts
+ * the learner produced: whether they opened the notes, an explicit "Mark as
+ * studied" / "Mark as not studied" choice, and the ISO date the topic became
+ * studied (manual mark, or auto once enough practice questions were answered).
+ */
+export interface TopicStudyEntry {
+  /** The learner opened this topic's Notes at least once. */
+  notesOpened?: boolean;
+  /**
+   * An explicit learner choice. `studied` = tapped "Mark as studied";
+   * `not-studied` = tapped "Mark as not studied" (overrides the automatic
+   * 10-answers rule until they mark it studied again). Absent = no choice yet.
+   */
+  mark?: 'studied' | 'not-studied';
+  /** ISO `YYYY-MM-DD` the topic became studied (manual or automatic). */
+  studiedOn?: string;
+}
+
 /** User-facing display settings. */
 export interface Settings {
   theme: 'light' | 'dark';
@@ -204,6 +225,19 @@ export interface AppState {
    * `[]`, so it is fully backward-compatible.
    */
   testAttempts: TestAttemptRecord[];
+  /**
+   * Per-SUBTOPIC study record (see {@link TopicStudyEntry}), keyed by subtopic
+   * id. OPTIONAL on disk / import — an older blob without this key normalises to
+   * `{}`; existing per-question progress then derives "in progress" (or
+   * "studied" at ≥ 10 answered) so nothing is lost.
+   */
+  study: Record<string, TopicStudyEntry>;
+  /**
+   * Telugu LESSON completion, keyed by lesson id (`tel-lesson-01` …) → the ISO
+   * `YYYY-MM-DD` it was completed (lesson check passed, or "Mark lesson done").
+   * OPTIONAL on disk / import — older blobs normalise to `{}`.
+   */
+  teluguLessons: Record<string, string>;
 }
 
 /** A mutator receives a mutable draft and edits it in place. */
@@ -279,6 +313,13 @@ const TestAttemptRecordSchema: z.ZodType<TestAttemptRecord> = z.object({
   marksLostToWrong: z.number(),
 });
 
+/** One per-subtopic study record (see {@link TopicStudyEntry}). @internal */
+const TopicStudyEntrySchema: z.ZodType<TopicStudyEntry> = z.object({
+  notesOpened: z.boolean().optional(),
+  mark: z.enum(['studied', 'not-studied']).optional(),
+  studiedOn: z.string().optional(),
+});
+
 /** Cap on the retained finished-test history (most recent kept). */
 export const MAX_TEST_ATTEMPTS = 60;
 
@@ -350,6 +391,8 @@ export function defaultState(): AppState {
     english: {},
     adminDone: {},
     testAttempts: [],
+    study: {},
+    teluguLessons: {},
   };
 }
 
@@ -409,6 +452,10 @@ function normalize(input: unknown): AppState {
     testAttempts: Array.isArray((obj as { testAttempts?: unknown }).testAttempts)
       ? ((obj as { testAttempts: unknown }).testAttempts as AppState['testAttempts'])
       : [],
+    study: isRecord((obj as { study?: unknown }).study) ? ((obj as { study: unknown }).study as AppState['study']) : {},
+    teluguLessons: isRecord((obj as { teluguLessons?: unknown }).teluguLessons)
+      ? ((obj as { teluguLessons: unknown }).teluguLessons as AppState['teluguLessons'])
+      : {},
   };
 }
 
@@ -795,6 +842,32 @@ export function toggleTeluguLearned(id: string): boolean {
   return next;
 }
 
+/** Telugu lesson completion map (`lessonId → ISO date done`). */
+export function getTeluguLessonsDone(): Readonly<Record<string, string>> {
+  return loadState().teluguLessons;
+}
+
+/**
+ * Mark Telugu lesson `lessonId` done on `dateISO` (keeping the first date if it
+ * was already done), optionally also flagging its `glyphIds` learned; `false`
+ * clears it. Returns the updated state.
+ */
+export function setTeluguLessonDone(
+  lessonId: string,
+  done: boolean,
+  dateISO: string,
+  glyphIds: readonly string[] = [],
+): AppState {
+  return updateState((s) => {
+    if (done) {
+      if (!s.teluguLessons[lessonId]) s.teluguLessons[lessonId] = isValidISODate(dateISO) ? dateISO : todayISO();
+      for (const g of glyphIds) s.telugu[g] = true;
+    } else {
+      delete s.teluguLessons[lessonId];
+    }
+  });
+}
+
 /* -------------------------------------------------------------------------- */
 /* English writing-practice accessors (draft + self-eval checklist)            */
 /* -------------------------------------------------------------------------- */
@@ -857,6 +930,53 @@ export function recordTestAttempt(rec: TestAttemptRecord): AppState {
   });
 }
 
+/* -------------------------------------------------------------------------- */
+/* Per-subtopic study record (Mark as studied / notes opened)                  */
+/* -------------------------------------------------------------------------- */
+
+/** The stored study record for subtopic `id` (or `undefined`). */
+export function getTopicStudy(id: string): TopicStudyEntry | undefined {
+  return loadState().study[id];
+}
+
+/**
+ * Explicitly mark subtopic `id` studied (`true`, stamped `dateISO`) or not
+ * studied (`false`, an override of the automatic rule; the date is cleared).
+ * Returns the updated state.
+ */
+export function setTopicStudied(id: string, studied: boolean, dateISO: string): AppState {
+  return updateState((s) => {
+    const prev = s.study[id] ?? {};
+    if (studied) {
+      s.study[id] = { ...prev, mark: 'studied', studiedOn: isValidISODate(dateISO) ? dateISO : todayISO() };
+    } else {
+      const next: TopicStudyEntry = { ...prev, mark: 'not-studied' };
+      delete next.studiedOn;
+      s.study[id] = next;
+    }
+  });
+}
+
+/** Record that the learner opened subtopic `id`'s Notes (idempotent). */
+export function noteTopicOpened(id: string): AppState {
+  if (loadState().study[id]?.notesOpened === true) return loadState();
+  return updateState((s) => {
+    s.study[id] = { ...(s.study[id] ?? {}), notesOpened: true };
+  });
+}
+
+/**
+ * Stamp the date a topic became studied AUTOMATICALLY (enough practice answered)
+ * — a no-op when a date is already set or the learner chose "not studied".
+ */
+export function stampTopicStudiedOn(id: string, dateISO: string): AppState {
+  const prev = loadState().study[id];
+  if (prev?.studiedOn || prev?.mark === 'not-studied' || !isValidISODate(dateISO)) return loadState();
+  return updateState((s) => {
+    s.study[id] = { ...(s.study[id] ?? {}), studiedOn: dateISO };
+  });
+}
+
 /** Serialize the current state as pretty JSON (for laptop↔phone transfer). */
 export function exportStateJSON(): string {
   return JSON.stringify(loadState(), null, 2);
@@ -891,6 +1011,9 @@ export function importStateJSON(str: string): AppState {
   validateEntries('english', EnglishDraftSchema, next.english);
   // The admin-task flags map: every entry must be a boolean done-flag.
   validateEntries('adminDone', AdminFlagSchema, next.adminDone);
+  // The per-subtopic study records.
+  validateEntries('study', TopicStudyEntrySchema, next.study);
+  validateEntries('teluguLessons', z.string(), next.teluguLessons);
   // The finished-test history: validate every record in the array.
   next.testAttempts.forEach((rec, i) => {
     const result = TestAttemptRecordSchema.safeParse(rec);
@@ -922,6 +1045,8 @@ export function resetProgress(): AppState {
     s.telugu = {};
     s.english = {};
     s.testAttempts = [];
+    s.study = {};
+    s.teluguLessons = {};
   });
 }
 

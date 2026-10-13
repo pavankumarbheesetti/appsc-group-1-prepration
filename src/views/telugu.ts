@@ -35,11 +35,33 @@ import {
   VATTULU,
   VATTULU_EXPLANATION,
   VOWELS,
+  TELUGU_LESSONS,
+  type TeluguLesson,
   type TeluguStage,
 } from '../content/telugu';
-import { courseTally, stageTally } from '../lib/telugu';
+import {
+  buildLessonCheck,
+  courseTally,
+  lessonById,
+  lessonCheckPassed,
+  lessonHeadline,
+  lessonProgressLine,
+  lessonTarget,
+  nextLesson,
+  stageTally,
+  LESSON_CHECK_PASS,
+  LESSON_CHECK_SIZE,
+  LESSON_MINUTES,
+} from '../lib/telugu';
+import { todayISO } from '../lib/dates';
 import { navigate } from '../router/router';
-import { getTeluguProgress, isTeluguLearned, toggleTeluguLearned } from '../state/store';
+import {
+  getTeluguLessonsDone,
+  getTeluguProgress,
+  isTeluguLearned,
+  setTeluguLessonDone,
+  toggleTeluguLearned,
+} from '../state/store';
 import { el, mount, renderMarkdown, type Child } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
@@ -358,15 +380,41 @@ function glyphCard(spec: CardSpec): HTMLElement {
 
 /** A pending stage to open, set by {@link openTelugu}. @internal */
 let pendingStage: TeluguStage | undefined;
+/** A pending LESSON to open, set by {@link openTeluguLesson}. @internal */
+let pendingLesson: string | undefined;
 
 /** Open the Telugu course, optionally at a specific stage. */
 export function openTelugu(stage?: TeluguStage): void {
   pendingStage = stage;
+  pendingLesson = undefined;
+  navigate('/telugu');
+}
+
+/**
+ * Open one LESSON of the path (the Today/Planner Telugu block's target). If the
+ * course is already showing, re-render it in place (same-hash navigation does
+ * not fire a route change).
+ */
+export function openTeluguLesson(lessonId: string): void {
+  pendingLesson = lessonId;
+  pendingStage = undefined;
+  const view = document.getElementById('view');
+  if (location.hash === '#/telugu' && view) {
+    render(view);
+    return;
+  }
   navigate('/telugu');
 }
 
 /** Render the Telugu course into `root`. */
 export function render(root: HTMLElement): void {
+  const lesson = pendingLesson !== undefined ? lessonById(pendingLesson) : undefined;
+  pendingLesson = undefined;
+  if (lesson) {
+    pendingStage = undefined;
+    renderLesson(root, lesson);
+    return;
+  }
   let active: TeluguStage = pendingStage ?? 'intro';
   pendingStage = undefined;
 
@@ -394,6 +442,7 @@ export function render(root: HTMLElement): void {
           caption: `${course.learned}/${course.total}`,
           success: course.total > 0 && course.learned === course.total,
         }),
+        continueLessonRow(),
       ]),
     );
 
@@ -627,4 +676,144 @@ export function renderLanguagesHub(root: HTMLElement): void {
       el('div', { class: 'tel-lang-grid' }, [teluguCard, englishCard]),
     ]),
   );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Lesson path — one 15-minute lesson with a target and a 10-question check    */
+/* -------------------------------------------------------------------------- */
+
+/** "Continue: Lesson N · title" row on the course summary. @internal */
+function continueLessonRow(): HTMLElement {
+  const next = nextLesson(getTeluguLessonsDone());
+  if (!next) {
+    return el('p', { class: 'section-lead tel-continue', text: `All ${TELUGU_LESSONS.length} lessons done — keep tracing words and sentences.` });
+  }
+  return el('div', { class: 'tel-continue' }, [
+    el('span', { class: 'section-lead', text: `${lessonProgressLine(next)} · ${next.title}` }),
+    button({ label: `Continue lesson ${next.number}`, variant: 'primary', iconName: 'arrow-right', onClick: () => openTeluguLesson(next.id) }),
+  ]);
+}
+
+/** Render ONE lesson: target, the lesson's tracing cards, the check, mark-done. @internal */
+function renderLesson(root: HTMLElement, lesson: TeluguLesson): void {
+  const done = getTeluguLessonsDone()[lesson.id];
+  const next = TELUGU_LESSONS[lesson.number] as TeluguLesson | undefined;
+  const checkHost = el('div', { class: 'tel-check-host' });
+
+  const markDone = (): void => {
+    setTeluguLessonDone(lesson.id, true, todayISO(), lesson.glyphIds);
+    pendingLesson = lesson.id;
+    render(root);
+  };
+
+  const header = card({ class: 'tel-lesson-head' }, [
+    el('p', { class: 'hero-now-eyebrow', text: lessonProgressLine(lesson) }),
+    el('h2', { class: 'card-title', text: lessonHeadline(lesson) }),
+    el('p', { class: 'section-lead', text: lesson.goal }),
+    el('p', { class: 'tel-lesson-target' }, [
+      icon('target', 15),
+      el('span', { text: `Target: ${lessonTarget(lesson)}` }),
+      chip({ text: `${LESSON_MINUTES} m`, tone: 'muted', iconName: 'timer' }),
+    ]),
+    done
+      ? el('p', { class: 'tel-lesson-done', attrs: { role: 'status' } }, [icon('check', 15), el('span', { text: 'Lesson done ✓' })])
+      : null,
+    el('div', { class: 'hero-actions' }, [
+      done && next
+        ? button({ label: `Next: lesson ${next.number}`, variant: 'primary', iconName: 'arrow-right', onClick: () => openTeluguLesson(next.id) })
+        : null,
+      done
+        ? button({
+            label: 'Mark lesson not done',
+            variant: 'ghost',
+            onClick: () => {
+              setTeluguLessonDone(lesson.id, false, todayISO());
+              pendingLesson = lesson.id;
+              render(root);
+            },
+          })
+        : button({ label: 'Mark lesson done', variant: lesson.glyphIds.length === 0 ? 'primary' : 'ghost', iconName: 'check', onClick: markDone }),
+      button({ label: 'Back to Today', variant: 'ghost', onClick: () => navigate('/') }),
+      button({ label: 'Whole course', variant: 'ghost', onClick: () => openTelugu(lesson.stage) }),
+    ]),
+  ]);
+
+  const body: Child[] = [];
+  if (lesson.glyphIds.length === 0) {
+    body.push(buildIntro());
+  } else {
+    const only = new Set(lesson.glyphIds);
+    const cards = stageCards(lesson.stage, () => undefined).filter((c) => only.has(c.getAttribute('data-glyph-id') ?? ''));
+    body.push(el('div', { class: 'tel-grid' }, cards));
+    checkHost.replaceChildren(checkIntro(lesson, checkHost, markDone));
+    body.push(checkHost);
+  }
+  mount(root, el('div', { class: 'tel-course tel-lesson' }, [header, ...body]));
+}
+
+/** The "take the check" call-to-action. @internal */
+function checkIntro(lesson: TeluguLesson, host: HTMLElement, onPass: () => void): HTMLElement {
+  return card({ title: `Lesson check · ${LESSON_CHECK_SIZE} questions` }, [
+    el('p', { class: 'section-lead', text: `After tracing, check yourself: what does each glyph say? Pass with ${LESSON_CHECK_PASS}/${LESSON_CHECK_SIZE} to finish the lesson.` }),
+    button({ label: 'Start the check', variant: 'primary', iconName: 'arrow-right', onClick: () => runCheck(lesson, host, onPass, 1) }),
+  ]);
+}
+
+/** Run the lesson check one question at a time inside `host`. @internal */
+function runCheck(lesson: TeluguLesson, host: HTMLElement, onPass: () => void, seed: number): void {
+  const questions = buildLessonCheck(lesson, seed);
+  let i = 0;
+  let correct = 0;
+  const draw = (): void => {
+    const q = questions[i];
+    if (!q) {
+      const passed = lessonCheckPassed(correct);
+      // Passing the check COMPLETES the lesson (and flags its glyphs learned).
+      if (passed) setTeluguLessonDone(lesson.id, true, todayISO(), lesson.glyphIds);
+      const next = TELUGU_LESSONS[lesson.number] as TeluguLesson | undefined;
+      host.replaceChildren(
+        card({ title: passed ? 'Check passed ✓' : 'Not quite yet' }, [
+          el('p', { class: 'section-lead', attrs: { role: 'status' }, text: `${correct}/${questions.length} correct — ${passed ? 'lesson complete.' : `you need ${LESSON_CHECK_PASS}. Trace the letters you missed and try again.`}` }),
+          el('div', { class: 'hero-actions' }, [
+            passed && next
+              ? button({ label: `Next: lesson ${next.number}`, variant: 'primary', iconName: 'arrow-right', onClick: () => openTeluguLesson(next.id) })
+              : null,
+            passed
+              ? button({ label: 'Back to Today', variant: passed && next ? 'ghost' : 'primary', onClick: () => navigate('/') })
+              : button({ label: 'Try again', variant: 'primary', onClick: () => runCheck(lesson, host, onPass, seed + 1) }),
+            passed ? null : button({ label: 'Mark lesson done anyway', variant: 'ghost', onClick: onPass }),
+          ]),
+        ]),
+      );
+      return;
+    }
+    const feedback = el('p', { class: 'tel-check-feedback', attrs: { 'aria-live': 'polite' } });
+    const opts = q.options.map((opt, oi) =>
+      button({
+        label: opt,
+        variant: 'secondary',
+        onClick: () => {
+          const right = oi === q.answerIndex;
+          if (right) correct += 1;
+          for (const b of optsWrap.querySelectorAll('button')) b.setAttribute('disabled', 'true');
+          feedback.textContent = right ? 'Correct ✓' : `Not quite — it is “${q.options[q.answerIndex]}”.`;
+          nextBtn.removeAttribute('hidden');
+          nextBtn.focus();
+        },
+      }),
+    );
+    const optsWrap = el('div', { class: 'tel-check-options' }, opts);
+    const nextBtn = button({ label: i + 1 < questions.length ? 'Next' : 'See result', variant: 'primary', iconName: 'arrow-right', onClick: () => { i += 1; draw(); } });
+    nextBtn.setAttribute('hidden', '');
+    host.replaceChildren(
+      card({ title: `Question ${i + 1} of ${questions.length}` }, [
+        el('p', { class: 'section-lead', text: 'What does this say?' }),
+        el('div', { class: 'tel-glyph tel-check-glyph', attrs: { lang: 'te' }, text: q.glyph }),
+        optsWrap,
+        feedback,
+        nextBtn,
+      ]),
+    );
+  };
+  draw();
 }

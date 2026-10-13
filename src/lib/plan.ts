@@ -11,6 +11,7 @@
  */
 import { getBanks, getContentIndex, getLearningSequence, getSubjects, getSubtopic, getSubtopics, getUnits } from '../content/loader';
 import { subtopicMasteryPct } from './metrics';
+import { deriveStudyStatus } from './study-status';
 import { loadState } from '../state/store';
 import { todayISO } from './dates';
 import { buildSession } from '../engine/drill';
@@ -145,13 +146,15 @@ export function mockSectionPools(pattern: ExamPattern): SectionPools {
 
 /**
  * Summarise the per-MCQ progress map into the engine's per-subtopic progress:
- * `seen` counts distinct MCQs attempted at least once; `masteryPct` reuses the
+ * `seen` counts distinct MCQs attempted at least once; `studied` is the study
+ * STATUS (see `lib/study-status.ts`); `masteryPct` reuses the
  * shared {@link subtopicMasteryPct} so "studied"/"mastered" match the rest of
  * the app exactly.
  */
 export function plannerProgress(): PlannerProgress {
-  const progress = loadState().progress;
-  const out: Record<string, { seen: number; masteryPct: number }> = {};
+  const state = loadState();
+  const progress = state.progress;
+  const out: Record<string, { seen: number; masteryPct: number; studied: boolean }> = {};
   for (const s of getSubjects()) {
     for (const meta of getSubtopics(s.code)) {
       const view = getSubtopic(meta.id);
@@ -161,7 +164,13 @@ export function plannerProgress(): PlannerProgress {
         const p = progress[id];
         if (p && p.seen > 0) seen += 1;
       }
-      out[meta.id] = { seen, masteryPct: subtopicMasteryPct(progress, ids) };
+      out[meta.id] = {
+        seen,
+        masteryPct: subtopicMasteryPct(progress, ids),
+        // The explicit study status (Mark as studied / ≥ 10 answered) — NOT just
+        // "one question seen" — drives days-behind, recovery and coverage.
+        studied: deriveStudyStatus(state.study[meta.id], seen, ids.length) === 'studied',
+      };
     }
   }
   return out;
