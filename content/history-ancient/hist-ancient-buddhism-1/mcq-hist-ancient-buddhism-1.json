@@ -30,7 +30,8 @@
         "buddhism",
         "refresher",
         "sacred-places"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-enlightenment-bodh-gaya"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-2",
@@ -56,7 +57,8 @@
         "buddhism",
         "refresher",
         "triratna"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-triratna"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-3",
@@ -82,22 +84,63 @@
         "buddhism",
         "refresher",
         "founder"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-origin-founder"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-4",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the life-event of the Buddha (List-I) with its place (List-II) and choose the correct answer:\nList-I: (1) Birth (2) Enlightenment (3) First Sermon (4) Mahaparinirvana\nList-II: (i) Sarnath (ii) Kushinagar (iii) Lumbini (iv) Bodh Gaya",
+      "question": "Match the life-event of the Buddha (List-I) with its place (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Life-event of the Buddha)",
+        "rightTitle": "List-II (Place)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Birth"
+          },
+          {
+            "key": "B",
+            "text": "Enlightenment"
+          },
+          {
+            "key": "C",
+            "text": "First Sermon"
+          },
+          {
+            "key": "D",
+            "text": "Mahaparinirvana"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Sarnath"
+          },
+          {
+            "key": "2",
+            "text": "Kushinagar"
+          },
+          {
+            "key": "3",
+            "text": "Lumbini"
+          },
+          {
+            "key": "4",
+            "text": "Bodh Gaya"
+          }
+        ]
+      },
       "options": [
-        "1-iii, 2-iv, 3-i, 4-ii",
-        "1-iv, 2-iii, 3-ii, 4-i",
-        "1-iii, 2-i, 3-iv, 4-ii",
-        "1-ii, 2-iv, 3-i, 4-iii"
+        "A-3, B-4, C-1, D-2",
+        "A-4, B-3, C-2, D-1",
+        "A-3, B-1, C-4, D-2",
+        "A-2, B-4, C-1, D-3"
       ],
       "answerIndex": 0,
-      "explanation": "The correct chain is **Birth — Lumbini; Enlightenment — Bodh Gaya; First Sermon — Sarnath; Mahaparinirvana — Kushinagar**.\n\n**Why not the others**\n- 1-iv, 2-iii, 3-ii, 4-i — swaps birth and enlightenment, and misplaces the sermon and death.\n- 1-iii, 2-i, 3-iv, 4-ii — puts enlightenment at Sarnath and the first sermon at Bodh Gaya (reversed).\n- 1-ii, 2-iv, 3-i, 4-iii — assigns birth to Kushinagar and death to Lumbini (reversed).\n\n**Key facts — life-event → place**\n| Event | Place |\n|---|---|\n| Birth | Lumbini (Nepal) |\n| Enlightenment | Bodh Gaya (Bihar) |\n| First Sermon | Sarnath (UP) |\n| Mahaparinirvana | Kushinagar (UP) |\n\n*Source: APPSC GK — Buddhism I (Origin; Enlightenment; First Sermon; Mahaparinirvana).*",
+      "explanation": "The correct chain is **Birth — Lumbini; Enlightenment — Bodh Gaya; First Sermon — Sarnath; Mahaparinirvana — Kushinagar**.\n\n**Why not the others**\n- A-4, B-3, C-2, D-1 — swaps birth and enlightenment, and misplaces the sermon and death.\n- A-3, B-1, C-4, D-2 — puts enlightenment at Sarnath and the first sermon at Bodh Gaya (reversed).\n- A-2, B-4, C-1, D-3 — assigns birth to Kushinagar and death to Lumbini (reversed).\n\n**Key facts — life-event → place**\n| Event | Place |\n|---|---|\n| Birth | Lumbini (Nepal) |\n| Enlightenment | Bodh Gaya (Bihar) |\n| First Sermon | Sarnath (UP) |\n| Mahaparinirvana | Kushinagar (UP) |\n\n*Source: APPSC GK — Buddhism I (Origin; Enlightenment; First Sermon; Mahaparinirvana).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism I (Origin; Enlightenment; First Sermon; Mahaparinirvana)",
       "verified": true,
       "covers": [
@@ -110,14 +153,20 @@
         "buddhism",
         "sacred-places",
         "matching"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-life-events-places"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-5",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about the origin of the Buddha:\n1. He was born into the Sakya clan of Kapilvastu.\n2. His parents were King Suddhodana and Queen Mahamaya.\n3. He was born in 483 BCE.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the origin of the Buddha:\nWhich of the statements is/are correct?",
+      "statements": [
+        "He was born into the Sakya clan of Kapilvastu.",
+        "His parents were King Suddhodana and Queen Mahamaya.",
+        "He was born in 483 BCE."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -137,7 +186,8 @@
         "buddhism",
         "origin",
         "chronology"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-origin-founder"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-6",
@@ -163,7 +213,8 @@
         "buddhism",
         "four-sights",
         "odd-one-out"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-early-life-four-sights"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-7",
@@ -189,14 +240,20 @@
       "tags": [
         "buddhism",
         "middle-path"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-middle-path"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-8",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about the Buddha's enlightenment:\n1. He meditated under a pipal tree, later called the Bodhi tree.\n2. Enlightenment came after 49 days of meditation at Bodh Gaya.\n3. On attaining Bodhi he came to be called the Buddha, 'the Enlightened One'.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Buddha's enlightenment:\nWhich of the statements is/are correct?",
+      "statements": [
+        "He meditated under a pipal tree, later called the Bodhi tree.",
+        "Enlightenment came after 49 days of meditation at Bodh Gaya.",
+        "On attaining Bodhi he came to be called the Buddha, 'the Enlightened One'."
+      ],
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -215,14 +272,20 @@
         "buddhism",
         "enlightenment",
         "bodhi-tree"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-enlightenment-bodh-gaya"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-9",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about the Buddha's first sermon:\n1. It was delivered at Sarnath, near Varanasi.\n2. The event is called Dharma-Chakra-Pravartana ('turning the wheel of law').\n3. In it he expounded the Four Noble Truths and the Eightfold Path.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Buddha's first sermon:\nWhich of the statements is/are correct?",
+      "statements": [
+        "It was delivered at Sarnath, near Varanasi.",
+        "The event is called Dharma-Chakra-Pravartana ('turning the wheel of law').",
+        "In it he expounded the Four Noble Truths and the Eightfold Path."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -242,22 +305,63 @@
         "buddhism",
         "first-sermon",
         "dharma-chakra-pravartana"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-first-sermon-sarnath"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-10",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the Noble Truth (List-I) with its meaning (List-II) and choose the correct answer:\nList-I: (1) Dukkha (2) Samudaya (3) Nirodha (4) Ashtangika-Marga\nList-II: (i) Cause of suffering is craving (ii) Life is full of suffering (iii) The Eightfold Path ends suffering (iv) Suffering ceases on attaining Nirvana",
+      "question": "Match the Noble Truth (List-I) with its meaning (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Noble Truth)",
+        "rightTitle": "List-II (Meaning)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Dukkha"
+          },
+          {
+            "key": "B",
+            "text": "Samudaya"
+          },
+          {
+            "key": "C",
+            "text": "Nirodha"
+          },
+          {
+            "key": "D",
+            "text": "Ashtangika-Marga"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Cause of suffering is craving"
+          },
+          {
+            "key": "2",
+            "text": "Life is full of suffering"
+          },
+          {
+            "key": "3",
+            "text": "The Eightfold Path ends suffering"
+          },
+          {
+            "key": "4",
+            "text": "Suffering ceases on attaining Nirvana"
+          }
+        ]
+      },
       "options": [
-        "1-ii, 2-i, 3-iv, 4-iii",
-        "1-i, 2-ii, 3-iii, 4-iv",
-        "1-ii, 2-iv, 3-i, 4-iii",
-        "1-iv, 2-i, 3-ii, 4-iii"
+        "A-2, B-1, C-4, D-3",
+        "A-1, B-2, C-3, D-4",
+        "A-2, B-4, C-1, D-3",
+        "A-4, B-1, C-2, D-3"
       ],
       "answerIndex": 0,
-      "explanation": "The correct pairing is **Dukkha — life is suffering; Samudaya — craving is the cause; Nirodha — cessation via Nirvana; Ashtangika-Marga — the Eightfold Path ends it**.\n\n**Why not the others**\n- 1-i, 2-ii, 3-iii, 4-iv — swaps Dukkha and Samudaya, and misplaces Nirodha and Marga.\n- 1-ii, 2-iv, 3-i, 4-iii — gives Samudaya the Nirvana meaning and Nirodha the craving meaning (reversed).\n- 1-iv, 2-i, 3-ii, 4-iii — mislabels Dukkha as Nirvana and Nirodha as suffering.\n\n**Key facts — the Four Noble Truths (Ariya-Sacchani)**\n| Truth | Meaning |\n|---|---|\n| Dukkha | life is full of suffering (Sabbam Dukham) |\n| Samudaya | cause is **Trishna** (craving) |\n| Nirodha | ends by attaining **Nirvana** |\n| Ashtangika-Marga | the **Eightfold Path** is the way |\n\n*Source: APPSC GK — Buddhism I (The Four Noble Truths).*",
+      "explanation": "The correct pairing is **Dukkha — life is suffering; Samudaya — craving is the cause; Nirodha — cessation via Nirvana; Ashtangika-Marga — the Eightfold Path ends it**.\n\n**Why not the others**\n- A-1, B-2, C-3, D-4 — swaps Dukkha and Samudaya, and misplaces Nirodha and Marga.\n- A-2, B-4, C-1, D-3 — gives Samudaya the Nirvana meaning and Nirodha the craving meaning (reversed).\n- A-4, B-1, C-2, D-3 — mislabels Dukkha as Nirvana and Nirodha as suffering.\n\n**Key facts — the Four Noble Truths (Ariya-Sacchani)**\n| Truth | Meaning |\n|---|---|\n| Dukkha | life is full of suffering (Sabbam Dukham) |\n| Samudaya | cause is **Trishna** (craving) |\n| Nirodha | ends by attaining **Nirvana** |\n| Ashtangika-Marga | the **Eightfold Path** is the way |\n\n*Source: APPSC GK — Buddhism I (The Four Noble Truths).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism I (The Four Noble Truths)",
       "verified": true,
       "covers": [
@@ -269,7 +373,8 @@
         "buddhism",
         "four-noble-truths",
         "matching"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-four-noble-truths"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-11",
@@ -294,7 +399,8 @@
         "buddhism",
         "samudaya",
         "trishna"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-four-noble-truths"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-12",
@@ -319,7 +425,8 @@
         "buddhism",
         "nirodha",
         "nirvana"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-four-noble-truths"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-13",
@@ -344,22 +451,63 @@
         "buddhism",
         "eightfold-path",
         "odd-one-out"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-eightfold-path"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-14",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the Eightfold Path step (List-I) with its Pali name (List-II) and choose the correct answer:\nList-I: (1) Right Vision (2) Right Speech (3) Right Livelihood (4) Right Concentration\nList-II: (i) Samma Vacca (ii) Samma Samadhi (iii) Samma Ditthi (iv) Samma Ajiva",
+      "question": "Match the Eightfold Path step (List-I) with its Pali name (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Eightfold Path step)",
+        "rightTitle": "List-II (Pali name)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Right Vision"
+          },
+          {
+            "key": "B",
+            "text": "Right Speech"
+          },
+          {
+            "key": "C",
+            "text": "Right Livelihood"
+          },
+          {
+            "key": "D",
+            "text": "Right Concentration"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Samma Vacca"
+          },
+          {
+            "key": "2",
+            "text": "Samma Samadhi"
+          },
+          {
+            "key": "3",
+            "text": "Samma Ditthi"
+          },
+          {
+            "key": "4",
+            "text": "Samma Ajiva"
+          }
+        ]
+      },
       "options": [
-        "1-iii, 2-i, 3-iv, 4-ii",
-        "1-i, 2-iii, 3-ii, 4-iv",
-        "1-iii, 2-iv, 3-i, 4-ii",
-        "1-ii, 2-i, 3-iv, 4-iii"
+        "A-3, B-1, C-4, D-2",
+        "A-1, B-3, C-2, D-4",
+        "A-3, B-4, C-1, D-2",
+        "A-2, B-1, C-4, D-3"
       ],
       "answerIndex": 0,
-      "explanation": "The correct pairing is **Right Vision — Samma Ditthi; Right Speech — Samma Vacca; Right Livelihood — Samma Ajiva; Right Concentration — Samma Samadhi**.\n\n**Why not the others**\n- 1-i, 2-iii, 3-ii, 4-iv — swaps Ditthi and Vacca, and misplaces Samadhi and Ajiva.\n- 1-iii, 2-iv, 3-i, 4-ii — gives Right Speech the Ajiva label and Right Livelihood the Vacca label (reversed).\n- 1-ii, 2-i, 3-iv, 4-iii — mislabels Right Vision as Samadhi and Right Concentration as Ditthi.\n\n**Key facts — Eightfold Path (Pali)**\n| Step | Pali |\n|---|---|\n| Right Vision | Samma Ditthi |\n| Right Speech | Samma Vacca |\n| Right Livelihood | Samma Ajiva |\n| Right Concentration | Samma Samadhi |\n\n*Source: APPSC GK — Buddhism I (The Eightfold Path).*",
+      "explanation": "The correct pairing is **Right Vision — Samma Ditthi; Right Speech — Samma Vacca; Right Livelihood — Samma Ajiva; Right Concentration — Samma Samadhi**.\n\n**Why not the others**\n- A-1, B-3, C-2, D-4 — swaps Ditthi and Vacca, and misplaces Samadhi and Ajiva.\n- A-3, B-4, C-1, D-2 — gives Right Speech the Ajiva label and Right Livelihood the Vacca label (reversed).\n- A-2, B-1, C-4, D-3 — mislabels Right Vision as Samadhi and Right Concentration as Ditthi.\n\n**Key facts — Eightfold Path (Pali)**\n| Step | Pali |\n|---|---|\n| Right Vision | Samma Ditthi |\n| Right Speech | Samma Vacca |\n| Right Livelihood | Samma Ajiva |\n| Right Concentration | Samma Samadhi |\n\n*Source: APPSC GK — Buddhism I (The Eightfold Path).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism I (The Eightfold Path)",
       "verified": true,
       "covers": [
@@ -369,7 +517,8 @@
         "buddhism",
         "eightfold-path",
         "matching"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-eightfold-path"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-15",
@@ -395,14 +544,20 @@
         "buddhism",
         "sangha",
         "triratna"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-triratna"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-16",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following as reasons for the rapid rise of Buddhism in the 6th century BCE:\n1. Its simple doctrines were easy for common people to follow.\n2. The Buddha taught in Prakrit, the language of the masses.\n3. It admitted people of all castes into the Sangha.\nWhich of the statements is/are correct?",
+      "question": "Consider the following as reasons for the rapid rise of Buddhism in the 6th century BCE:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Its simple doctrines were easy for common people to follow.",
+        "The Buddha taught in Prakrit, the language of the masses.",
+        "It admitted people of all castes into the Sangha."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -420,7 +575,8 @@
         "buddhism",
         "causes-of-rise",
         "prakrit"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-causes-rise"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-17",
@@ -445,7 +601,8 @@
         "buddhism",
         "anatman",
         "beliefs"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-key-beliefs"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-18",
@@ -470,14 +627,17 @@
         "buddhism",
         "doctrines",
         "odd-one-out"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-key-beliefs"
     },
     {
       "id": "hist-ancient-buddhism-1-mcq-19",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-1",
       "syllabusRef": "hist-scr-a1",
-      "question": "Assertion (A): 'Ariya-Sacchani' is the collective term for the Four Noble Truths.\nReason (R): The last of these truths, Ashtangika-Marga, is the Eightfold Path that leads to the end of suffering.\nChoose the correct option:",
+      "question": "Consider the following Assertion (A) and Reason (R):\nChoose the correct option:",
+      "assertion": "'Ariya-Sacchani' is the collective term for the Four Noble Truths.",
+      "reason": "The last of these truths, Ashtangika-Marga, is the Eightfold Path that leads to the end of suffering.",
       "options": [
         "Both A and R are true, and R is the correct explanation of A",
         "Both A and R are true, but R is not the correct explanation of A",
@@ -496,7 +656,8 @@
         "buddhism",
         "four-noble-truths",
         "assertion-reason"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-1-note-four-noble-truths"
     }
   ]
 }

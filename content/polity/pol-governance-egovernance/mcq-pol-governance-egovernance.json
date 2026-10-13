@@ -9,6 +9,7 @@
       "subtopicId": "pol-governance-egovernance",
       "refresher": true,
       "question": "'Good Governance Day' (Sushasan Diwas) is observed in India on 25 December to mark the birth anniversary of which leader?",
+      "noteRef": "pol-governance-egovernance-note-good-governance",
       "options": [
         "Sardar Vallabhbhai Patel",
         "Jawaharlal Nehru",
@@ -34,6 +35,7 @@
       "subtopicId": "pol-governance-egovernance",
       "refresher": true,
       "question": "The conduct of a social audit is a statutory mandate under which of the following programmes?",
+      "noteRef": "pol-governance-egovernance-note-social-audit",
       "options": [
         "Pradhan Mantri Awas Yojana (PMAY)",
         "Ayushman Bharat",
@@ -59,6 +61,7 @@
       "subtopicId": "pol-governance-egovernance",
       "refresher": true,
       "question": "The concept of the 'Citizen's Charter' — a public declaration of service standards — originated in which country?",
+      "noteRef": "pol-governance-egovernance-note-citizen-charter-sevottam",
       "options": [
         "United States of America",
         "United Kingdom",
@@ -82,7 +85,14 @@
       "id": "pol-governance-egovernance-mcq-4",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Consider the following as attributes of 'good governance' as commonly listed by the United Nations (UNESCAP):\n1. Participation\n2. Rule of law\n3. Transparency and accountability\n4. Concentration of authority in the executive\nWhich of the statements are correct?",
+      "question": "Consider the following as attributes of 'good governance' as commonly listed by the United Nations (UNESCAP):\nWhich of the statements are correct?",
+      "statements": [
+        "Participation",
+        "Rule of law",
+        "Transparency and accountability",
+        "Concentration of authority in the executive"
+      ],
+      "noteRef": "pol-governance-egovernance-note-good-governance",
       "options": [
         "1 and 4 only",
         "2, 3 and 4 only",
@@ -107,6 +117,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
       "question": "Under the RTI Act 2005, if an applicant is dissatisfied with the Public Information Officer's (PIO) response, the correct order of appeal is:",
+      "noteRef": "pol-governance-egovernance-note-rti",
       "options": [
         "First appeal to the Information Commission, then to the First Appellate Authority",
         "First appeal to the First Appellate Authority, then second appeal to the Information Commission",
@@ -130,7 +141,13 @@
       "id": "pol-governance-egovernance-mcq-6",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "With reference to the RTI Act 2005, consider the following statements:\n1. Section 8 lists categories of information exempt from disclosure.\n2. Section 4 requires public authorities to proactively (suo motu) publish specified information.\n3. There is no provision allowing disclosure of exempt information in larger public interest.\nWhich of the statements is/are correct?",
+      "question": "With reference to the RTI Act 2005, consider the following statements:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Section 8 lists categories of information exempt from disclosure.",
+        "Section 4 requires public authorities to proactively (suo motu) publish specified information.",
+        "There is no provision allowing disclosure of exempt information in larger public interest."
+      ],
+      "noteRef": "pol-governance-egovernance-note-rti",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -155,6 +172,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
       "question": "What was the principal change brought about by the RTI (Amendment) Act, 2019?",
+      "noteRef": "pol-governance-egovernance-note-rti",
       "options": [
         "It abolished the office of the State Information Commissions",
         "It made the Right to Information a Fundamental Right",
@@ -179,6 +197,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
       "question": "The 'Sevottam' model of the Department of Administrative Reforms (DARPG) is built on three components. Which of the following is NOT one of them?",
+      "noteRef": "pol-governance-egovernance-note-citizen-charter-sevottam",
       "options": [
         "Citizen's Charter and service standards",
         "Public grievance redress mechanism",
@@ -203,6 +222,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
       "question": "Andhra Pradesh is widely regarded as a pioneer of social audits in India. The dedicated institution set up in the (undivided) state to conduct independent social audits of MGNREGA works is known as:",
+      "noteRef": "pol-governance-egovernance-note-social-audit",
       "options": [
         "SSAAT (Society for Social Audit, Accountability and Transparency)",
         "SERP (Society for Elimination of Rural Poverty)",
@@ -226,7 +246,48 @@
       "id": "pol-governance-egovernance-mcq-10",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Match List-I (e-Governance interaction type) with List-II (example):\nList-I\nA. G2C\nB. G2B\nC. G2G\nD. G2E\nList-II\n1. Filing corporate returns on the MCA21 portal\n2. A citizen downloading a caste certificate online\n3. Inter-departmental data sharing between two ministries\n4. An online pay-slip/leave portal for government staff",
+      "question": "Match List-I (e-Governance interaction type) with List-II (example):",
+      "match": {
+        "leftTitle": "List-I (e-Governance interaction type)",
+        "rightTitle": "List-II (example)",
+        "left": [
+          {
+            "key": "A",
+            "text": "G2C"
+          },
+          {
+            "key": "B",
+            "text": "G2B"
+          },
+          {
+            "key": "C",
+            "text": "G2G"
+          },
+          {
+            "key": "D",
+            "text": "G2E"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Filing corporate returns on the MCA21 portal"
+          },
+          {
+            "key": "2",
+            "text": "A citizen downloading a caste certificate online"
+          },
+          {
+            "key": "3",
+            "text": "Inter-departmental data sharing between two ministries"
+          },
+          {
+            "key": "4",
+            "text": "An online pay-slip/leave portal for government staff"
+          }
+        ]
+      },
+      "noteRef": "pol-governance-egovernance-note-egovernance",
       "options": [
         "A-1, B-2, C-4, D-3",
         "A-2, B-3, C-1, D-4",
@@ -250,7 +311,13 @@
       "id": "pol-governance-egovernance-mcq-11",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Consider the following statements about the National e-Governance Plan (NeGP) and e-Kranti:\n1. NeGP was approved in 2006 and was built around a set of Mission Mode Projects (MMPs).\n2. e-Kranti (NeGP 2.0) was approved as a pillar of the Digital India programme.\n3. NeGP aimed to make government services accessible to citizens through common service-delivery outlets.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the National e-Governance Plan (NeGP) and e-Kranti:\nWhich of the statements are correct?",
+      "statements": [
+        "NeGP was approved in 2006 and was built around a set of Mission Mode Projects (MMPs).",
+        "e-Kranti (NeGP 2.0) was approved as a pillar of the Digital India programme.",
+        "NeGP aimed to make government services accessible to citizens through common service-delivery outlets."
+      ],
+      "noteRef": "pol-governance-egovernance-note-egovernance",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -276,6 +343,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
       "question": "Which Indian state was the first to enact a Public Service Delivery Guarantee (time-bound service) law, providing penalties for delay?",
+      "noteRef": "pol-governance-egovernance-note-citizen-charter-sevottam",
       "options": [
         "Bihar",
         "Madhya Pradesh",
@@ -300,6 +368,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
       "question": "The Second Administrative Reforms Commission (2nd ARC) is associated with which of the following reports?",
+      "noteRef": "pol-governance-egovernance-note-2nd-arc-ap",
       "options": [
         "'Right to Information — Master Key to Good Governance' and 'Citizen Centric Administration — The Heart of Governance'",
         "'India Vision 2020' and the 'National Knowledge Commission Report'",
@@ -323,7 +392,14 @@
       "id": "pol-governance-egovernance-mcq-14",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Consider the following statements about Andhra Pradesh's citizen-service-delivery initiatives:\n1. The Real Time Governance Society (RTGS) runs an integrated command-and-control centre for real-time monitoring and grievance handling.\n2. MeeSeva is a single-window platform for delivering government certificates and services.\n3. Mana Mitra delivers a range of government services to citizens through WhatsApp.\n4. MeeSeva was launched by the Union Ministry of Home Affairs under the National e-Governance Plan.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's citizen-service-delivery initiatives:\nWhich of the statements are correct?",
+      "statements": [
+        "The Real Time Governance Society (RTGS) runs an integrated command-and-control centre for real-time monitoring and grievance handling.",
+        "MeeSeva is a single-window platform for delivering government certificates and services.",
+        "Mana Mitra delivers a range of government services to citizens through WhatsApp.",
+        "MeeSeva was launched by the Union Ministry of Home Affairs under the National e-Governance Plan."
+      ],
+      "noteRef": "pol-governance-egovernance-note-2nd-arc-ap",
       "options": [
         "1 and 4 only",
         "2, 3 and 4 only",
@@ -349,16 +425,22 @@
       "id": "pol-governance-egovernance-mcq-15",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Consider the following statements about the Andhra Pradesh Real Time Governance Society (RTGS):\n1. It was given a statutory footing under the Andhra Pradesh Real Time Governance Society Act, 2019.\n2. It runs an integrated command-and-control centre that monitors government schemes and handles citizen grievances in real time.\n3. Citizens can reach it through the state's dedicated call-centre number 1902.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the Andhra Pradesh Real Time Governance Society (RTGS):\nWhich of the statements is/are correct?",
+      "statements": [
+        "It was set up on 6 September 2017 by a State Government Order (G.O.Ms. No. 2) as a society, not by an Act of the Legislature.",
+        "It runs an integrated command-and-control centre that monitors government schemes and handles citizen grievances in real time.",
+        "It is an agency of the Union Ministry of Electronics and Information Technology."
+      ],
+      "noteRef": "pol-governance-egovernance-note-2nd-arc-ap",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
         "1 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "All three are correct. RTGS was placed on a **statutory footing by the AP RTGS Act, 2019**, operates an **integrated real-time command-and-control centre** for scheme monitoring and grievances, and is reachable on the state's **1902** call-centre number.\n\n**Why not the others**\n- 1 and 2 only — drops the correct 1902 call-centre channel.\n- 2 and 3 only — drops the correct statutory-basis statement.\n- 1 and 3 only — drops the correct command-and-control-centre function.\n\n**Key facts**\n- RTGS integrates data across departments for evidence-based, real-time decision-making.\n- It is one of the earliest state 'real-time governance' bodies in India.\n\n*Source: AP Real Time Governance Society (rtgs.ap.gov.in); AP RTGS Act, 2019.*",
-      "source": "AP Real Time Governance Society (rtgs.ap.gov.in); AP RTGS Act 2019",
+      "answerIndex": 0,
+      "explanation": "Statements 1 and 2 are correct. RTGS was **formed on 6 September 2017 under G.O.Ms. No. 2** of the Andhra Pradesh government as a **society** — it rests on a Government Order, not on a law passed by the Legislature. It runs an **integrated real-time command-and-control centre** that monitors schemes and handles grievances. Statement 3 is wrong: RTGS is a **State** body of Andhra Pradesh, not an agency of the Union government.\n\n**Why not the others**\n- 2 and 3 only — drops the correct statement 1 and includes the false statement 3.\n- 1 and 3 only — includes the false statement 3 (RTGS is a State body).\n- 1, 2 and 3 — statement 3 is false.\n\n**Key facts**\n- RTGS integrates data across departments for evidence-based, real-time decision-making.\n- It is Andhra Pradesh's own body; do not confuse it with the banking RTGS (Real Time Gross Settlement).\n\n*Source: AP Real Time Governance Society (rtgs.ap.gov.in) — established 6 September 2017 under G.O.Ms. No. 2.*",
+      "source": "AP Real Time Governance Society (rtgs.ap.gov.in) — established 6 September 2017 under G.O.Ms. No. 2",
       "verified": true,
       "covers": [
         "AP Real Time Governance Society (RTGS) — AP RTGS Act 2019, integrated command centre & 1902 call centre"
@@ -374,6 +456,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
       "question": "Andhra Pradesh's 'Mana Mitra' initiative is best described as:",
+      "noteRef": "pol-governance-egovernance-note-2nd-arc-ap",
       "options": [
         "A WhatsApp-based platform that delivers government (G2C) services to citizens",
         "A rural road-connectivity programme",
@@ -398,7 +481,13 @@
       "id": "pol-governance-egovernance-mcq-17",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "With reference to social audit in India, consider the following statements:\n1. Andhra Pradesh was the first state to institutionalise the social audit of MGNREGS works.\n2. The independent body created for this purpose in Andhra Pradesh is the Society for Social Audit, Accountability and Transparency (SSAAT).\n3. Social audit under MGNREGA is conducted directly by the Comptroller and Auditor General (CAG) of India.\nWhich of the statements are correct?",
+      "question": "With reference to social audit in India, consider the following statements:\nWhich of the statements are correct?",
+      "statements": [
+        "Andhra Pradesh was the first state to institutionalise the social audit of MGNREGS works.",
+        "The independent body created for this purpose in Andhra Pradesh is the Society for Social Audit, Accountability and Transparency (SSAAT).",
+        "Social audit under MGNREGA is conducted directly by the Comptroller and Auditor General (CAG) of India."
+      ],
+      "noteRef": "pol-governance-egovernance-note-social-audit",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -423,7 +512,13 @@
       "id": "pol-governance-egovernance-mcq-18",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Consider the following statements about citizen-centric service delivery in Andhra Pradesh:\n1. A Citizen's Charter is a public declaration of an organisation's service standards, timelines and grievance-redress channels.\n2. Andhra Pradesh delivers a wide range of government certificates and services through the single-window MeeSeva platform, which specifies service timelines.\n3. A Citizen's Charter is a legally enforceable contract between the citizen and the government.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about citizen-centric service delivery in Andhra Pradesh:\nWhich of the statements are correct?",
+      "statements": [
+        "A Citizen's Charter is a public declaration of an organisation's service standards, timelines and grievance-redress channels.",
+        "Andhra Pradesh delivers a wide range of government certificates and services through the single-window MeeSeva platform, which specifies service timelines.",
+        "A Citizen's Charter is a legally enforceable contract between the citizen and the government."
+      ],
+      "noteRef": "pol-governance-egovernance-note-citizen-charter-sevottam",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -452,7 +547,13 @@
         "Civil society & NGOs in the development process",
         "Pressure groups & stakeholders in policy-making"
       ],
-      "question": "Consider the following statements about actors in the development process:\n1. Civil society refers to voluntary associations that operate independently of the state and the market.\n2. NGOs are non-profit bodies engaged in service delivery and advocacy.\n3. Pressure groups primarily aim to capture political office and form governments.\nWhich of the above is/are correct?",
+      "question": "Consider the following statements about actors in the development process:\nWhich of the above is/are correct?",
+      "statements": [
+        "Civil society refers to voluntary associations that operate independently of the state and the market.",
+        "NGOs are non-profit bodies engaged in service delivery and advocacy.",
+        "Pressure groups primarily aim to capture political office and form governments."
+      ],
+      "noteRef": "pol-governance-egovernance-note-civil-society-ngos-shgs",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -477,7 +578,40 @@
       "covers": [
         "AP SHG model — DWCRA, SERP/Velugu (Indira Kranthi Patham) & MEPMA"
       ],
-      "question": "Match List-I (Andhra Pradesh body/scheme) with List-II (role) and select the correct answer:\nList-I\nA. DWCRA\nB. SERP\nC. MEPMA\nList-II\n1. Society for Elimination of Rural Poverty — runs Velugu/Indira Kranthi Patham\n2. Urban poverty / SHG mission\n3. Early women & children rural SHG scheme (1982-83)",
+      "question": "Match List-I (Andhra Pradesh body/scheme) with List-II (role) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Andhra Pradesh body/scheme)",
+        "rightTitle": "List-II (role)",
+        "left": [
+          {
+            "key": "A",
+            "text": "DWCRA"
+          },
+          {
+            "key": "B",
+            "text": "SERP"
+          },
+          {
+            "key": "C",
+            "text": "MEPMA"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Society for Elimination of Rural Poverty — runs Velugu/Indira Kranthi Patham"
+          },
+          {
+            "key": "2",
+            "text": "Urban poverty / SHG mission"
+          },
+          {
+            "key": "3",
+            "text": "Early women & children rural SHG scheme (1982-83)"
+          }
+        ]
+      },
+      "noteRef": "pol-governance-egovernance-note-civil-society-ngos-shgs",
       "options": [
         "A-1, B-3, C-2",
         "A-2, B-1, C-3",
@@ -503,7 +637,13 @@
       "covers": [
         "Self-Help Groups (SHGs) — structure & role in poverty reduction"
       ],
-      "question": "Consider the following statements about Self-Help Groups (SHGs):\n1. An SHG is typically a small voluntary group of 10-20 members who pool savings.\n2. In India, SHGs are commonly federated as SHG → Village Organisation → Mandal Samakhya.\n3. SHGs are legally barred from linking with banks for credit.\nWhich of the above is/are correct?",
+      "question": "Consider the following statements about Self-Help Groups (SHGs):\nWhich of the above is/are correct?",
+      "statements": [
+        "An SHG is typically a small voluntary group of 10-20 members who pool savings.",
+        "In India, SHGs are commonly federated as SHG → Village Organisation → Mandal Samakhya.",
+        "SHGs are legally barred from linking with banks for credit."
+      ],
+      "noteRef": "pol-governance-egovernance-note-civil-society-ngos-shgs",
       "options": [
         "2 and 3 only",
         "1 and 3 only",
@@ -524,7 +664,12 @@
       "id": "pol-governance-egovernance-mcq-22",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Consider the following statements about the Aadhaar Act, 2016:\n1. It was passed by Parliament as a Money Bill.\n2. Its stated purpose is the targeted delivery of subsidies, benefits and services financed from the Consolidated Fund of India.\nWhich of the statements given above is/are correct?",
+      "question": "Consider the following statements about the Aadhaar Act, 2016:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "It was passed by Parliament as a Money Bill.",
+        "Its stated purpose is the targeted delivery of subsidies, benefits and services financed from the Consolidated Fund of India."
+      ],
+      "noteRef": "pol-governance-egovernance-note-pyq-precision",
       "options": [
         "1 only",
         "2 only",
@@ -542,7 +687,13 @@
       "id": "pol-governance-egovernance-mcq-23",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "With reference to the Aspirational Districts Programme, consider the following statements:\n1. It is anchored by NITI Aayog.\n2. It was launched in 2018.\n3. It ranks districts on themes including health & nutrition and education.\nWhich of the statements given above are correct?",
+      "question": "With reference to the Aspirational Districts Programme, consider the following statements:\nWhich of the statements given above are correct?",
+      "statements": [
+        "It is anchored by NITI Aayog.",
+        "It was launched in 2018.",
+        "It ranks districts on themes including health & nutrition and education."
+      ],
+      "noteRef": "pol-governance-egovernance-note-pyq-precision",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -560,7 +711,48 @@
       "id": "pol-governance-egovernance-mcq-24",
       "subjectCode": "POL",
       "subtopicId": "pol-governance-egovernance",
-      "question": "Match List-I (e-governance platform) with List-II (function):\nList-I: A) UMANG  B) DigiLocker  C) MyGov  D) CPGRAMS\nList-II: 1) Citizen engagement/participation  2) Public grievance redress  3) Unified mobile app for government services  4) Digital storage of documents\nSelect the correct answer:",
+      "question": "Match List-I (e-governance platform) with List-II (function):\nSelect the correct answer:",
+      "match": {
+        "leftTitle": "List-I (e-governance platform)",
+        "rightTitle": "List-II (function)",
+        "left": [
+          {
+            "key": "A",
+            "text": "UMANG"
+          },
+          {
+            "key": "B",
+            "text": "DigiLocker"
+          },
+          {
+            "key": "C",
+            "text": "MyGov"
+          },
+          {
+            "key": "D",
+            "text": "CPGRAMS"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Citizen engagement/participation"
+          },
+          {
+            "key": "2",
+            "text": "Public grievance redress"
+          },
+          {
+            "key": "3",
+            "text": "Unified mobile app for government services"
+          },
+          {
+            "key": "4",
+            "text": "Digital storage of documents"
+          }
+        ]
+      },
+      "noteRef": "pol-governance-egovernance-note-pyq-precision",
       "options": [
         "A-3, B-4, C-1, D-2",
         "A-1, B-4, C-3, D-2",
@@ -581,7 +773,12 @@
       "covers": [
         "MPLADS — non-lapsable funds, durable assets & inspection norms"
       ],
-      "question": "Under the MPLAD Scheme, consider:\n1. Funds are non-lapsable and carried forward across years.\n2. At least a tenth of the implemented works are inspected at the district level.\nWhich are correct?",
+      "question": "Consider the following statements about the MPLAD Scheme:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Funds are non-lapsable and carried forward across years.",
+        "At least a tenth of the implemented works are inspected at the district level."
+      ],
+      "noteRef": "pol-governance-egovernance-note-mplads-niua",
       "options": [
         "1 only",
         "2 only",
@@ -601,6 +798,7 @@
         "N. Gopalaswami Ayyangar Committee & Department of Personnel (1970)"
       ],
       "question": "The Department of Personnel (1970), the nodal agency for civil-service reform, was placed under:",
+      "noteRef": "pol-governance-egovernance-note-mplads-niua",
       "options": [
         "The Prime Minister",
         "The Ministry of Finance",
@@ -619,7 +817,12 @@
       "covers": [
         "NIUA & India Sanitation Coalition"
       ],
-      "question": "Consider the following:\n1. The National Institute of Urban Affairs (NIUA) is the apex body of the Ministry of Housing and Urban Affairs.\n2. The India Sanitation Coalition mobilises funding for sustainable sanitation.\nWhich are correct?",
+      "question": "Consider the following statements about urban-sector bodies:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The National Institute of Urban Affairs (NIUA) is the apex body of the Ministry of Housing and Urban Affairs.",
+        "The India Sanitation Coalition mobilises funding for sustainable sanitation."
+      ],
+      "noteRef": "pol-governance-egovernance-note-mplads-niua",
       "options": [
         "1 only",
         "2 only",

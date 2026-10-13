@@ -278,3 +278,105 @@ describe('quiz — structured question stems', () => {
     expect(host.querySelector('.stmt-item')?.textContent).toContain('<img src=x onerror=alert(1)>');
   });
 });
+
+describe('quiz — STRUCTURED stem fields', () => {
+  function host(nodes: ReturnType<typeof renderQuestionStem>): HTMLElement {
+    const h = document.createElement('div');
+    for (const n of nodes) if (n) h.append(typeof n === 'string' ? document.createTextNode(n) : n);
+    return h;
+  }
+
+  it('renders `match` as an aligned two-column table with titled headers', () => {
+    const h = host(
+      renderQuestionStem({
+        question: 'Match List-I with List-II and select the correct answer:',
+        match: {
+          leftTitle: 'List-I (Post)',
+          rightTitle: 'List-II (Incumbent)',
+          left: [
+            { key: 'A', text: 'Vice-President' },
+            { key: 'B', text: 'RBI Governor' },
+          ],
+          right: [
+            { key: '1', text: 'Sanjay Malhotra' },
+            { key: '2', text: 'C. P. Radhakrishnan' },
+            { key: '3', text: 'Extra item' },
+          ],
+        },
+      }),
+    );
+    expect(h.querySelector('.question-text.stem-intro')?.textContent).toBe('Match List-I with List-II and select the correct answer:');
+    expect([...h.querySelectorAll('thead th')].map((t) => t.textContent)).toEqual(['List-I (Post)', 'List-II (Incumbent)']);
+    expect([...h.querySelectorAll('thead th')].every((t) => t.getAttribute('scope') === 'col')).toBe(true);
+    const rows = [...h.querySelectorAll('tbody tr')].map((r) => [...r.querySelectorAll('td')].map((td) => td.textContent));
+    expect(rows).toEqual([
+      ['A. Vice-President', '1. Sanjay Malhotra'],
+      ['B. RBI Governor', '2. C. P. Radhakrishnan'],
+      ['—', '3. Extra item'],
+    ]);
+  });
+
+  it('renders `statements` as a numbered list and the closing prompt below it', () => {
+    const h = host(
+      renderQuestionStem({
+        question: 'Consider the following statements:\nWhich of the statements given above is/are correct?',
+        statements: ['ECLGS 5.0 was approved in 2026.', 'Second.'],
+      }),
+    );
+    expect([...h.querySelectorAll('ol.stmt-list > li')].map((li) => li.textContent)).toEqual([
+      'ECLGS 5.0 was approved in 2026.',
+      'Second.',
+    ]);
+    expect(h.querySelector('.stmt-prompt')?.textContent).toBe('Which of the statements given above is/are correct?');
+    // The prompt comes AFTER the list.
+    const kids = [...h.children];
+    expect(kids.indexOf(h.querySelector('.stmt-prompt')!)).toBeGreaterThan(kids.indexOf(h.querySelector('ol')!));
+  });
+
+  it('renders Assertion / Reason as two labelled blocks', () => {
+    const h = host(
+      renderQuestionStem({
+        question: 'Consider the following Assertion (A) and Reason (R):\nChoose the correct option:',
+        assertion: 'A is so.',
+        reason: 'Because R.',
+      }),
+    );
+    expect(h.querySelector('.ar-assertion')?.textContent).toBe('Assertion (A): A is so.');
+    expect(h.querySelector('.ar-reason')?.textContent).toBe('Reason (R): Because R.');
+  });
+});
+
+describe('quiz — compact navigator', () => {
+  beforeEach(() => __resetForTests());
+
+  it('hides the question grid by default behind an accessible "Show all questions" toggle', () => {
+    const root = document.createElement('div');
+    mountQuiz(root, items(), () => {});
+    const toggle = root.querySelector<HTMLButtonElement>('.q-nav-toggle')!;
+    const track = root.querySelector<HTMLElement>('.q-nav-track')!;
+    expect(toggle.textContent).toBe('Show all questions');
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(toggle.getAttribute('aria-controls')).toBe(track.id);
+    expect(track.hidden).toBe(true);
+    expect(root.querySelector('.focus-count')?.textContent).toBe('Question 1 of 3');
+
+    toggle.click();
+    expect(track.hidden).toBe(false);
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    expect(toggle.textContent).toBe('Hide all questions');
+
+    // The open state survives a redraw (jump via the grid).
+    root.querySelectorAll<HTMLElement>('.q-nav-item')[1]!.click();
+    expect(root.querySelector('.focus-count')?.textContent).toBe('Question 2 of 3');
+    expect(root.querySelector<HTMLElement>('.q-nav-track')!.hidden).toBe(false);
+  });
+
+  it('keeps Enter on the toggle from advancing the question', () => {
+    const root = document.createElement('div');
+    mountQuiz(root, items(), () => {});
+    root.querySelectorAll<HTMLElement>('.option-card')[0]!.click(); // answer → locked view
+    const toggle = root.querySelector<HTMLButtonElement>('.q-nav-toggle')!;
+    toggle.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+    expect(root.querySelector('.focus-count')?.textContent).toBe('Question 1 of 3');
+  });
+});

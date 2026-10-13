@@ -1077,6 +1077,40 @@ input[type='checkbox'] {
   color: var(--accent);
 }
 
+/* Structured match cells: the key (A. / 1.) sits in a fixed, tabular slot so
+   both columns line up row by row; a filler cell (shorter list) is muted. */
+.match-key {
+  display: inline-block;
+  min-width: 1.6em;
+  font-weight: var(--fw-semibold);
+  color: var(--accent);
+}
+.match-cell.is-filler {
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Assertion (A) / Reason (R): two labelled blocks with a quiet accent rule. */
+.ar-block {
+  max-width: var(--reading);
+  margin: 0 0 var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.ar-line {
+  margin: 0;
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--accent-soft);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-normal);
+  color: var(--text);
+}
+.ar-label {
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+}
+
 /* Compact scale for structured stems inside REVIEW lists (drill wrong-answers,
    mock review), where the stem sits above the answered options rather than as a
    focus-mode headline. */
@@ -1087,6 +1121,8 @@ input[type='checkbox'] {
   letter-spacing: normal;
   margin: 0 0 var(--space-2);
 }
+.wrong-row-q .ar-line,
+.mock-review-q .ar-line,
 .wrong-row-q .stmt-item,
 .mock-review-q .stmt-item,
 .wrong-row-q .stmt-prompt,
@@ -1805,6 +1841,15 @@ input[type='checkbox'] {
 /* Horizontally-scrollable strip of numbered chips; jumps to any question. */
 .q-nav {
   margin-bottom: var(--space-4);
+}
+/* Compact disclosure toggle: the grid is collapsed by default (hidden). */
+.q-nav-toggle {
+  font-size: var(--fs-sm);
+  padding-inline: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.q-nav-track[hidden] {
+  display: none;
 }
 .q-nav-track {
   display: flex;

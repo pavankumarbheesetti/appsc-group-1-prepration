@@ -1100,7 +1100,7 @@ function runMock(
       el('div', { class: 'mock-banner mock-banner-slim', attrs: { role: 'note' } }, [icon('timer', 14), el('span', { text: MOCK_BANNER })]),
       topline,
       el('div', { class: 'card question-card' }, [
-        ...renderQuestionStem(item.question),
+        ...renderQuestionStem(item),
         optionList,
         el('div', { class: 'mock-flag-row' }, [confSeg, flagBtn]),
       ]),
@@ -1365,7 +1365,7 @@ function reviewItem(item: MCQItem, chosen: number | null, num: number): HTMLElem
       el('span', { class: 'mock-review-num tnum', text: `Q${num}` }),
       verdictChip,
     ]),
-    el('div', { class: 'mock-review-q' }, renderQuestionStem(item.question)),
+    el('div', { class: 'mock-review-q' }, renderQuestionStem(item)),
     opts,
   ];
 
@@ -1720,7 +1720,7 @@ function runOmrMock(
       el('div', { class: 'omr-layout' }, [
         el('div', { class: 'omr-question-col' }, [
           el('div', { class: 'card question-card' }, [
-            ...renderQuestionStem(item.question),
+            ...renderQuestionStem(item),
             optionList,
             el('div', { class: 'mock-flag-row' }, [scratchSeg]),
           ]),

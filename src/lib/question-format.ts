@@ -98,12 +98,24 @@ function markerValue(body: string): number | null {
 }
 
 /**
+ * Where a list marker may START (group 1 = the consumed boundary). A marker is
+ * only recognised at a LINE START, after a newline, after `;` or `:`, after a
+ * run of 2+ spaces (the inline-list separator authors use), after a genuine
+ * sentence end (`word. `), or — for the unambiguous parenthesised `(1)` / `(i)`
+ * form only — after a single space. Combined with the mandatory FOLLOWING
+ * whitespace this keeps decimals (`ECLGS 5.0`), initials (`C. P. Radhakrishnan`)
+ * and abbreviations from ever being split as list items.
+ * @internal
+ */
+const MARKER_LEAD = '(^|\\n|[;:]\\s*|\\s{2,}|(?<=[A-Za-z0-9)\\]]{2}[.?!])\\s+|\\s(?=\\())';
+
+/**
  * A list marker: an optional `(`, a digit/roman body, and a `.`/`)` — bounded by
  * whitespace (or string ends) so it never fires mid-word. Group 1 is the
  * leading boundary char, 2 the optional `(`, 3 the body, 4 the closing `.`/`)`.
  * @internal
  */
-const STMT_MARKER_RE = /(^|\s)(\(?)(\d{1,2}|[ivxIVX]{1,6})([.)])(?=\s|$)/g;
+const STMT_MARKER_RE = new RegExp(`${MARKER_LEAD}(\\(?)(\\d{1,2}|[ivxIVX]{1,6})([.)])(?=\\s|$)`, 'g');
 
 /** A recognised trailing "prompt" cue that follows the statements. @internal */
 const PROMPT_CUE_RE =
@@ -222,7 +234,7 @@ export function parseStatementQuestion(stem: string): StatementQuestion | null {
  * @internal
  */
 const LIST_HEADER_RE =
-  /List[\s-]*(I{1,2})\b\s*(?:\(([^)]*)\))?\s*[:.-]?\s*(?=\(?[A-Za-z0-9]{1,4}[.)]|List[\s-]*I)/gi;
+  /List[\s-]*(I{1,2})\b\s*(?:\(([^)]*)\))?\s*[:.-]?\s*(?=\(?(?:[A-Fa-f]|\d{1,2}|[ivx]{1,4})[.)]\s|List[\s-]*I)/gi;
 
 /** A located List header. @internal */
 interface ListHeader {
@@ -235,7 +247,7 @@ interface ListHeader {
 }
 
 /** An item marker at the START of a list item: optional `(`, body, `.`/`)`. @internal */
-const ITEM_MARKER_RE = /(^|\s)(\(?)([A-Za-z0-9]{1,4})([.)])/g;
+const ITEM_MARKER_RE = new RegExp(`${MARKER_LEAD}(\\(?)([A-Za-z0-9]{1,4})([.)])(?=\\s)`, 'g');
 
 /** One parsed list item: its marker label and text. @internal */
 interface ListItem {
@@ -282,6 +294,9 @@ const CAPTION_STOPWORDS = new Set([
  * capitalise. Returns null when nothing meaningful precedes it. @internal
  */
 function captionFromIntro(intro: string, numeral: 'I' | 'II'): string | null {
+  // "Match List-I (Post) with List-II (Incumbent)" — the caption follows the label.
+  const direct = (numeral === 'I' ? /List[\s-]*I(?!I)\s*\(([^)]+)\)/i : /List[\s-]*II\s*\(([^)]+)\)/i).exec(intro);
+  if (direct?.[1]) return direct[1].trim();
   const re =
     numeral === 'I'
       ? /([A-Za-z][A-Za-z /-]*?)\s*\(\s*List[\s-]*I\s*\)/i
@@ -331,8 +346,13 @@ export function parseMatchQuestion(stem: string): MatchQuestion | null {
     });
   }
 
-  const headI = heads.find((h) => h.numeral === 'I');
-  const headII = heads.find((h) => h.numeral === 'II');
+  // Headers that open a LINE are authoritative: when present, ignore in-sentence
+  // mentions such as "Match List-I (post) with List-II (incumbent):".
+  const atLineStart = (h: ListHeader): boolean => h.start === 0 || text[h.start - 1] === '\n';
+  const lineHeads = heads.filter(atLineStart);
+  const usable = lineHeads.some((h) => h.numeral === 'I') && lineHeads.some((h) => h.numeral === 'II') ? lineHeads : heads;
+  const headI = usable.find((h) => h.numeral === 'I');
+  const headII = usable.find((h) => h.numeral === 'II');
   if (!headI || !headII) return null;
 
   // Order the two headers as they appear so the segments slice cleanly.

@@ -9,6 +9,7 @@
       "subtopicId": "sci-ict-egovernance-cyber",
       "refresher": true,
       "question": "The Digital India programme, the flagship initiative to transform India into a digitally empowered society, was launched in which year?",
+      "noteRef": "sci-ict-egovernance-cyber-note-digital-india",
       "options": [
         "2009",
         "2015",
@@ -34,6 +35,7 @@
       "subtopicId": "sci-ict-egovernance-cyber",
       "refresher": true,
       "question": "Unified Payments Interface (UPI), a core layer of the India Stack, is developed and operated by:",
+      "noteRef": "sci-ict-egovernance-cyber-note-india-stack",
       "options": [
         "Reserve Bank of India",
         "National Payments Corporation of India (NPCI)",
@@ -61,6 +63,7 @@
       "subtopicId": "sci-ict-egovernance-cyber",
       "refresher": true,
       "question": "The Digital Personal Data Protection (DPDP) Act, India's dedicated data-protection legislation, was enacted in:",
+      "noteRef": "sci-ict-egovernance-cyber-note-data-protection-law",
       "options": [
         "2023",
         "2019",
@@ -84,7 +87,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-4",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about Information and Communication Technology (ICT):\n1. ICT refers only to computer hardware, excluding telecommunication and internet technologies.\n2. Convergence of computing and telecommunication is a defining feature of modern ICT.\n3. ICT is a key enabler of e-governance, financial inclusion and digital service delivery.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Information and Communication Technology (ICT):\nWhich of the statements is/are correct?",
+      "statements": [
+        "ICT refers only to computer hardware, excluding telecommunication and internet technologies.",
+        "Convergence of computing and telecommunication is a defining feature of modern ICT.",
+        "ICT is a key enabler of e-governance, financial inclusion and digital service delivery."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-digital-india",
       "options": [
         "1 and 3 only",
         "2 only",
@@ -108,6 +117,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "Which of the following is NOT one of the nine pillars of the Digital India programme?",
+      "noteRef": "sci-ict-egovernance-cyber-note-digital-india",
       "options": [
         "Broadband Highways",
         "Electronics Manufacturing",
@@ -131,7 +141,48 @@
       "id": "sci-ict-egovernance-cyber-mcq-6",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Match List-I (e-Governance interaction model) with List-II (example):\nList-I\nA. G2C\nB. G2B\nC. G2G\nD. G2E\nList-II\n1. Inter-departmental data exchange via API Setu\n2. Citizen downloading a certificate on DigiLocker\n3. Employee payroll / HR portal for government staff\n4. e-procurement / GeM for vendors\nSelect the correct answer:",
+      "question": "Match List-I (e-Governance interaction model) with List-II (example):\nSelect the correct answer:",
+      "match": {
+        "leftTitle": "List-I (e-Governance interaction model)",
+        "rightTitle": "List-II (example)",
+        "left": [
+          {
+            "key": "A",
+            "text": "G2C"
+          },
+          {
+            "key": "B",
+            "text": "G2B"
+          },
+          {
+            "key": "C",
+            "text": "G2G"
+          },
+          {
+            "key": "D",
+            "text": "G2E"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Inter-departmental data exchange via API Setu"
+          },
+          {
+            "key": "2",
+            "text": "Citizen downloading a certificate on DigiLocker"
+          },
+          {
+            "key": "3",
+            "text": "Employee payroll / HR portal for government staff"
+          },
+          {
+            "key": "4",
+            "text": "e-procurement / GeM for vendors"
+          }
+        ]
+      },
+      "noteRef": "sci-ict-egovernance-cyber-note-digital-india",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-1, B-2, C-3, D-4",
@@ -155,7 +206,48 @@
       "id": "sci-ict-egovernance-cyber-mcq-7",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Match List-I (platform) with List-II (function):\nList-I\nA. UMANG\nB. DigiLocker\nC. e-Sign\nD. API Setu\nList-II\n1. Aadhaar-based online electronic signature\n2. Single mobile app for multiple government services\n3. Cloud storage & issuance of verified digital documents\n4. Open API exchange enabling system interoperability\nSelect the correct answer:",
+      "question": "Match List-I (platform) with List-II (function):\nSelect the correct answer:",
+      "match": {
+        "leftTitle": "List-I (platform)",
+        "rightTitle": "List-II (function)",
+        "left": [
+          {
+            "key": "A",
+            "text": "UMANG"
+          },
+          {
+            "key": "B",
+            "text": "DigiLocker"
+          },
+          {
+            "key": "C",
+            "text": "e-Sign"
+          },
+          {
+            "key": "D",
+            "text": "API Setu"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Aadhaar-based online electronic signature"
+          },
+          {
+            "key": "2",
+            "text": "Single mobile app for multiple government services"
+          },
+          {
+            "key": "3",
+            "text": "Cloud storage & issuance of verified digital documents"
+          },
+          {
+            "key": "4",
+            "text": "Open API exchange enabling system interoperability"
+          }
+        ]
+      },
+      "noteRef": "sci-ict-egovernance-cyber-note-digital-india",
       "options": [
         "A-2, B-3, C-1, D-4",
         "A-3, B-2, C-1, D-4",
@@ -180,7 +272,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-8",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about the 'India Stack':\n1. It is a set of open APIs and digital public infrastructure built around identity, payments and data.\n2. The Account Aggregator framework enables consent-based sharing of financial data.\n3. ONDC (Open Network for Digital Commerce) is a proprietary e-commerce app owned by a single company.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the 'India Stack':\nWhich of the statements is/are correct?",
+      "statements": [
+        "It is a set of open APIs and digital public infrastructure built around identity, payments and data.",
+        "The Account Aggregator framework enables consent-based sharing of financial data.",
+        "ONDC (Open Network for Digital Commerce) is a proprietary e-commerce app owned by a single company."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-india-stack",
       "options": [
         "1 and 3 only",
         "1 and 2 only",
@@ -204,7 +302,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-9",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about UPI in 2024-25:\n1. UPI is India's largest retail digital-payment system by transaction volume.\n2. Monthly UPI transaction volumes crossed the 16-billion mark during 2024-25.\n3. UPI transactions are settled only through physical cheque clearing.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about UPI in 2024-25:\nWhich of the statements is/are correct?",
+      "statements": [
+        "UPI is India's largest retail digital-payment system by transaction volume.",
+        "Monthly UPI transaction volumes crossed the 16-billion mark during 2024-25.",
+        "UPI transactions are settled only through physical cheque clearing."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-india-stack",
       "options": [
         "1 only",
         "1 and 2 only",
@@ -228,7 +332,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-10",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about the Digital Personal Data Protection (DPDP) Act, 2023:\n1. It establishes the Data Protection Board of India.\n2. It provides for financial penalties that can extend up to ₹250 crore.\n3. Processing of a child's personal data generally requires verifiable parental consent.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Digital Personal Data Protection (DPDP) Act, 2023:\nWhich of the statements is/are correct?",
+      "statements": [
+        "It establishes the Data Protection Board of India.",
+        "It provides for financial penalties that can extend up to ₹250 crore.",
+        "Processing of a child's personal data generally requires verifiable parental consent."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-data-protection-law",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -253,6 +363,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "The DPDP Rules, which operationalise the DPDP Act 2023 (covering consent managers, breach notification and functioning of the Data Protection Board), were notified in:",
+      "noteRef": "sci-ict-egovernance-cyber-note-data-protection-law",
       "options": [
         "2025",
         "2023",
@@ -276,7 +387,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-12",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about the Information Technology (IT) Act, 2000:\n1. It is India's primary law governing electronic commerce and cyber offences.\n2. Section 66A, which penalised 'offensive' online messages, was struck down by the Supreme Court.\n3. The Act was substantially amended in 2008.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Information Technology (IT) Act, 2000:\nWhich of the statements is/are correct?",
+      "statements": [
+        "It is India's primary law governing electronic commerce and cyber offences.",
+        "Section 66A, which penalised 'offensive' online messages, was struck down by the Supreme Court.",
+        "The Act was substantially amended in 2008."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-data-protection-law",
       "options": [
         "1 and 2 only",
         "1, 2 and 3",
@@ -300,7 +417,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-13",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "With reference to CERT-In, consider the following statements:\n1. It is the national nodal agency for responding to cyber-security incidents.\n2. It functions under the Ministry of Electronics and Information Technology.\n3. Its 2022 directions require certain cyber incidents to be reported within six hours of detection.\nWhich of the statements is/are correct?",
+      "question": "With reference to CERT-In, consider the following statements:\nWhich of the statements is/are correct?",
+      "statements": [
+        "It is the national nodal agency for responding to cyber-security incidents.",
+        "It functions under the Ministry of Electronics and Information Technology.",
+        "Its 2022 directions require certain cyber incidents to be reported within six hours of detection."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -325,6 +448,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "The National Critical Information Infrastructure Protection Centre (NCIIPC), which protects sectors like power, banking and telecom, was established under which provision, and under which parent organisation?",
+      "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
         "Section 66A of IT Act; under RBI",
         "Section 43A of IT Act; under TRAI",
@@ -349,7 +473,12 @@
       "id": "sci-ict-egovernance-cyber-mcq-15",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements:\n1. The Cyber Swachhta Kendra is a botnet-cleaning and malware-analysis centre operated under CERT-In.\n2. India's first National Cyber Security Policy was adopted in 2013.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The Cyber Swachhta Kendra is a botnet-cleaning and malware-analysis centre operated under CERT-In.",
+        "India's first National Cyber Security Policy was adopted in 2013."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
         "1 only",
         "2 only",
@@ -373,7 +502,48 @@
       "id": "sci-ict-egovernance-cyber-mcq-16",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Match List-I (cyber threat) with List-II (description):\nList-I\nA. Phishing\nB. Ransomware\nC. DDoS\nD. Man-in-the-middle\nList-II\n1. Malware that encrypts files and demands payment\n2. Fraudulent messages tricking users into revealing credentials\n3. Interception/alteration of communication between two parties\n4. Flooding a server with traffic to deny service\nSelect the correct answer:",
+      "question": "Match List-I (cyber threat) with List-II (description):\nSelect the correct answer:",
+      "match": {
+        "leftTitle": "List-I (cyber threat)",
+        "rightTitle": "List-II (description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Phishing"
+          },
+          {
+            "key": "B",
+            "text": "Ransomware"
+          },
+          {
+            "key": "C",
+            "text": "DDoS"
+          },
+          {
+            "key": "D",
+            "text": "Man-in-the-middle"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Malware that encrypts files and demands payment"
+          },
+          {
+            "key": "2",
+            "text": "Fraudulent messages tricking users into revealing credentials"
+          },
+          {
+            "key": "3",
+            "text": "Interception/alteration of communication between two parties"
+          },
+          {
+            "key": "4",
+            "text": "Flooding a server with traffic to deny service"
+          }
+        ]
+      },
+      "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
         "A-2, B-1, C-4, D-3",
         "A-1, B-2, C-3, D-4",
@@ -398,7 +568,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-17",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about India's cyber-crime redressal architecture:\n1. The Indian Cyber Crime Coordination Centre (I4C) functions under the Ministry of Home Affairs.\n2. '1930' is the national helpline number for reporting financial cyber fraud.\n3. The CFCFRMS enables rapid reporting to freeze fraudulently transferred money.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about India's cyber-crime redressal architecture:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The Indian Cyber Crime Coordination Centre (I4C) functions under the Ministry of Home Affairs.",
+        "'1930' is the national helpline number for reporting financial cyber fraud.",
+        "The CFCFRMS enables rapid reporting to freeze fraudulently transferred money."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -422,7 +598,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-18",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about the IndiaAI Mission (approved 2024) and AI governance:\n1. The Mission has an outlay of about ₹10,372 crore over five years.\n2. Building AI compute capacity (GPUs) is one of its key pillars.\n3. MeitY has issued advisories on labelling AI-generated content amid concerns over deepfakes.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the IndiaAI Mission (approved 2024) and AI governance:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The Mission has an outlay of about ₹10,372 crore over five years.",
+        "Building AI compute capacity (GPUs) is one of its key pillars.",
+        "MeitY has issued advisories on labelling AI-generated content amid concerns over deepfakes."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-tech-missions",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -447,7 +629,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-19",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about India's next-generation connectivity:\n1. Commercial 5G services were launched in India in October 2022.\n2. The Bharat 6G Vision document sets out India's ambition to be a leader in 6G technology.\n3. The National Quantum Mission supports development of quantum-secure communication.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about India's next-generation connectivity:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Commercial 5G services were launched in India in October 2022.",
+        "The Bharat 6G Vision document sets out India's ambition to be a leader in 6G technology.",
+        "The National Quantum Mission supports development of quantum-secure communication."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-tech-missions",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -473,6 +661,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "Under the India Semiconductor Mission, which of the following locations has been approved for semiconductor units?",
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-tech-missions",
       "options": [
         "Dholera (Gujarat), Sanand (Gujarat) and Jagiroad/Morigaon (Assam)",
         "Sriharikota (AP), Kalpakkam (TN) and Trombay (Maharashtra)",
@@ -498,6 +687,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "'PARAM Rudra', a series of indigenous supercomputers dedicated to the nation in 2024, is associated with which mission?",
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-tech-missions",
       "options": [
         "National Supercomputing Mission",
         "National Quantum Mission",
@@ -521,7 +711,48 @@
       "id": "sci-ict-egovernance-cyber-mcq-22",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Match List-I (initiative) with List-II (objective):\nList-I\nA. BharatNet\nB. PM-WANI\nC. Common Service Centres (CSC)\nD. MeghRaj (GI Cloud)\nList-II\n1. Public Wi-Fi hotspots for last-mile internet access\n2. Broadband connectivity to all gram panchayats via optical fibre\n3. Government cloud-computing services\n4. Rural digital access points delivering G2C services\nSelect the correct answer:",
+      "question": "Match List-I (initiative) with List-II (objective):\nSelect the correct answer:",
+      "match": {
+        "leftTitle": "List-I (initiative)",
+        "rightTitle": "List-II (objective)",
+        "left": [
+          {
+            "key": "A",
+            "text": "BharatNet"
+          },
+          {
+            "key": "B",
+            "text": "PM-WANI"
+          },
+          {
+            "key": "C",
+            "text": "Common Service Centres (CSC)"
+          },
+          {
+            "key": "D",
+            "text": "MeghRaj (GI Cloud)"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Public Wi-Fi hotspots for last-mile internet access"
+          },
+          {
+            "key": "2",
+            "text": "Broadband connectivity to all gram panchayats via optical fibre"
+          },
+          {
+            "key": "3",
+            "text": "Government cloud-computing services"
+          },
+          {
+            "key": "4",
+            "text": "Rural digital access points delivering G2C services"
+          }
+        ]
+      },
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "A-1, B-2, C-4, D-3",
         "A-2, B-1, C-4, D-3",
@@ -548,7 +779,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-23",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about e-governance initiatives in Andhra Pradesh:\n1. The Real Time Governance Society (RTGS) operates a centre for integrated, real-time monitoring of schemes and grievances.\n2. e-Pragati is AP's core enterprise-architecture platform integrating departmental services.\n3. The Praja Sadhikara Survey was a household socio-economic data-collection exercise.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about e-governance initiatives in Andhra Pradesh:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The Real Time Governance Society (RTGS) operates a centre for integrated, real-time monitoring of schemes and grievances.",
+        "e-Pragati is AP's core enterprise-architecture platform integrating departmental services.",
+        "The Praja Sadhikara Survey was a household socio-economic data-collection exercise."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -574,6 +811,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "'Mana Mitra', an initiative launched by the Government of Andhra Pradesh, delivers government services to citizens primarily through:",
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "WhatsApp",
         "Physical kiosks only",
@@ -597,7 +835,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-25",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about Andhra Pradesh State FiberNet Limited (AP FiberNet / APSFL):\n1. It is a state-government initiative to provide fibre-optic broadband, internet and cable-TV services to households.\n2. It aims to extend affordable last-mile broadband connectivity across the state.\n3. It is a privately owned telecom company head-quartered outside Andhra Pradesh.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Andhra Pradesh State FiberNet Limited (AP FiberNet / APSFL):\nWhich of the statements is/are correct?",
+      "statements": [
+        "It is a state-government initiative to provide fibre-optic broadband, internet and cable-TV services to households.",
+        "It aims to extend affordable last-mile broadband connectivity across the state.",
+        "It is a privately owned telecom company head-quartered outside Andhra Pradesh."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -623,6 +867,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "The 'Amaravati Quantum Valley', envisaged as a hub for quantum computing and allied technologies, is being developed in which state?",
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "Telangana",
         "Andhra Pradesh",
@@ -646,7 +891,48 @@
       "id": "sci-ict-egovernance-cyber-mcq-27",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Match List-I (Andhra Pradesh digital initiative) with List-II (function):\nList-I\nA. Real Time Governance Society (RTGS)\nB. e-Pragati\nC. AP FiberNet\nD. Mana Mitra\nList-II\n1. State enterprise-architecture platform integrating departmental services\n2. Real-time monitoring of schemes and citizen grievances\n3. Fibre-optic broadband to households\n4. WhatsApp-based delivery of citizen services\nSelect the correct answer:",
+      "question": "Match List-I (Andhra Pradesh digital initiative) with List-II (function):\nSelect the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Andhra Pradesh digital initiative)",
+        "rightTitle": "List-II (function)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Real Time Governance Society (RTGS)"
+          },
+          {
+            "key": "B",
+            "text": "e-Pragati"
+          },
+          {
+            "key": "C",
+            "text": "AP FiberNet"
+          },
+          {
+            "key": "D",
+            "text": "Mana Mitra"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "State enterprise-architecture platform integrating departmental services"
+          },
+          {
+            "key": "2",
+            "text": "Real-time monitoring of schemes and citizen grievances"
+          },
+          {
+            "key": "3",
+            "text": "Fibre-optic broadband to households"
+          },
+          {
+            "key": "4",
+            "text": "WhatsApp-based delivery of citizen services"
+          }
+        ]
+      },
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "A-2, B-1, C-3, D-4",
         "A-1, B-2, C-3, D-4",
@@ -675,7 +961,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-28",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about Andhra Pradesh's digital and emerging-technology initiatives:\n1. The Amaravati Quantum Valley is intended to attract investment in quantum computing.\n2. AP FiberNet provides fibre-based broadband connectivity in the state.\n3. The Real Time Governance Society enables integrated, real-time monitoring of government services.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's digital and emerging-technology initiatives:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The Amaravati Quantum Valley is intended to attract investment in quantum computing.",
+        "AP FiberNet provides fibre-based broadband connectivity in the state.",
+        "The Real Time Governance Society enables integrated, real-time monitoring of government services."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -702,7 +994,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-29",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about the Amaravati Quantum Valley:\n1. It is being developed as India's first quantum-computing hub, in Andhra Pradesh.\n2. It is set to host an IBM Quantum System Two powered by a 156-qubit 'Heron' processor.\n3. TCS and L&T are among the industry partners associated with the project.\nWhich of the statements given above are correct?",
+      "question": "Consider the following statements about the Amaravati Quantum Valley:\nWhich of the statements given above are correct?",
+      "statements": [
+        "It is being developed as India's first quantum-computing hub, in Andhra Pradesh.",
+        "It is set to host an IBM Quantum System Two powered by a 156-qubit 'Heron' processor.",
+        "TCS and L&T are among the industry partners associated with the project."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -728,6 +1026,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "A large artificial-intelligence data-centre hub, involving Google along with Adani and Bharti Airtel, is being developed in Andhra Pradesh. It is located at:",
+      "noteRef": "sci-ict-egovernance-cyber-note-mains-angle",
       "options": [
         "Tirupati",
         "Visakhapatnam",
@@ -751,7 +1050,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-31",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following statements about Andhra Pradesh's 'Mana Mitra' initiative:\n1. It is a WhatsApp-based governance platform that lets citizens access government services through a single mobile number.\n2. It is anchored in the state's Real Time Governance Society (RTGS) framework.\n3. It is an example of the Government-to-Citizen (G2C) service-delivery model.\nWhich of the statements given above are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's 'Mana Mitra' initiative:\nWhich of the statements given above are correct?",
+      "statements": [
+        "It is a WhatsApp-based governance platform that lets citizens access government services through a single mobile number.",
+        "It is anchored in the state's Real Time Governance Society (RTGS) framework.",
+        "It is an example of the Government-to-Citizen (G2C) service-delivery model."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -777,7 +1082,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-32",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "With reference to blockchain technology, consider the following statements:\n1. It is a public ledger that everyone can inspect, but which no single user controls.\n2. All the data on a blockchain are necessarily about cryptocurrency transactions only.\n3. Applications that depend on the basic features of a blockchain can be built without anyone's permission.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to blockchain technology, consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "It is a public ledger that everyone can inspect, but which no single user controls.",
+        "All the data on a blockchain are necessarily about cryptocurrency transactions only.",
+        "Applications that depend on the basic features of a blockchain can be built without anyone's permission."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
       "options": [
         "1 only",
         "1 and 2 only",
@@ -796,7 +1107,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-33",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "With reference to Non-Fungible Tokens (NFTs), consider the following statements:\n1. They can enable digital representation of physical assets.\n2. They are unique cryptographic tokens recorded on a blockchain.\n3. They can be traded at equivalency and used as a medium of routine transactions like currency.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to Non-Fungible Tokens (NFTs), consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "They can enable digital representation of physical assets.",
+        "They are unique cryptographic tokens recorded on a blockchain.",
+        "They can be traded at equivalency and used as a medium of routine transactions like currency."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -815,7 +1132,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-34",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "'Software as a Service (SaaS)' is a cloud model in which:\n1. Users can customise the user interface and change some data fields.\n2. Users can access their data from any device that can connect to the internet.\n3. Common web-based email services such as Outlook and Yahoo Mail are examples of it.\nWhich of the statements given above is/are correct?",
+      "question": "'Software as a Service (SaaS)' is a cloud model in which:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "Users can customise the user interface and change some data fields.",
+        "Users can access their data from any device that can connect to the internet.",
+        "Common web-based email services such as Outlook and Yahoo Mail are examples of it."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
       "options": [
         "1 only",
         "2 and 3 only",
@@ -834,7 +1157,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-35",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "With reference to Near Field Communication (NFC) technology, consider the following statements:\n1. It is a contactless communication technology that uses electromagnetic radio fields.\n2. It can reliably transfer data even when the two devices are up to one metre apart.\n3. It can be used for encryption when sensitive information is being sent.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to Near Field Communication (NFC) technology, consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "It is a contactless communication technology that uses electromagnetic radio fields.",
+        "It can reliably transfer data even when the two devices are up to one metre apart.",
+        "It can be used for encryption when sensitive information is being sent."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -853,7 +1182,12 @@
       "id": "sci-ict-egovernance-cyber-mcq-36",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "'Li-Fi' technology, sometimes contrasted with Wi-Fi, is best described by which of the following?\n1. It uses light as the medium to transmit high-speed data.\n2. It is wireless and can be several times faster than Wi-Fi.\nSelect the correct answer using the code given below:",
+      "question": "'Li-Fi' technology, sometimes contrasted with Wi-Fi, is best described by which of the following?\nSelect the correct answer using the code given below:",
+      "statements": [
+        "It uses light as the medium to transmit high-speed data.",
+        "It is wireless and can be several times faster than Wi-Fi."
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
       "options": [
         "1 only",
         "2 only",
@@ -872,7 +1206,13 @@
       "id": "sci-ict-egovernance-cyber-mcq-37",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "Consider the following pairs of communication terms and their meaning:\n1. VoLTE — carrying voice calls as data over a 4G LTE network\n2. Project Loon — a balloon-based wireless internet-delivery technology\n3. RFID — a short-range technology used for identification and tracking\nHow many of the pairs given above are correctly matched?",
+      "question": "Consider the following pairs of communication terms and their meaning:\nHow many of the pairs given above are correctly matched?",
+      "statements": [
+        "VoLTE — carrying voice calls as data over a 4G LTE network",
+        "Project Loon — a balloon-based wireless internet-delivery technology",
+        "RFID — a short-range technology used for identification and tracking"
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
       "options": [
         "Only one",
         "Only two",
@@ -893,7 +1233,14 @@
       "id": "sci-ict-egovernance-cyber-mcq-38",
       "subjectCode": "SCI",
       "subtopicId": "sci-ict-egovernance-cyber",
-      "question": "With the present state of development, Artificial Intelligence can effectively do which of the following?\n1. Diagnose diseases from medical images\n2. Convert text to speech\n3. Generate short stories and songs\n4. Wirelessly transmit electrical energy over long distances\nSelect the correct answer using the code given below:",
+      "question": "With the present state of development, Artificial Intelligence can effectively do which of the following?\nSelect the correct answer using the code given below:",
+      "statements": [
+        "Diagnose diseases from medical images",
+        "Convert text to speech",
+        "Generate short stories and songs",
+        "Wirelessly transmit electrical energy over long distances"
+      ],
+      "noteRef": "sci-ict-egovernance-cyber-note-emerging-digital-tech",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",

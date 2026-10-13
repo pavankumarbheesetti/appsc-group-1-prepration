@@ -27,7 +27,8 @@
         "buddhism",
         "refresher",
         "tripitaka"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-literature"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-2",
@@ -55,7 +56,8 @@
         "refresher",
         "mahayana",
         "kanishka"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-schools"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-3",
@@ -82,22 +84,63 @@
         "refresher",
         "sarnath",
         "ashoka"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-architecture"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-4",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the Buddhist Council (List-I) with its venue and patron (List-II) and choose the correct answer:\nList-I: (1) First Council (2) Second Council (3) Third Council (4) Fourth Council\nList-II: (i) Rajgriha — Ajatashatru (ii) Vaishali — Kalashoka (iii) Pataliputra — Ashoka (iv) Kashmir — Kanishka",
+      "question": "Match the Buddhist Council (List-I) with its venue and patron (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Buddhist Council)",
+        "rightTitle": "List-II (Venue — Patron)",
+        "left": [
+          {
+            "key": "A",
+            "text": "First Council"
+          },
+          {
+            "key": "B",
+            "text": "Second Council"
+          },
+          {
+            "key": "C",
+            "text": "Third Council"
+          },
+          {
+            "key": "D",
+            "text": "Fourth Council"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Rajgriha — Ajatashatru"
+          },
+          {
+            "key": "2",
+            "text": "Vaishali — Kalashoka"
+          },
+          {
+            "key": "3",
+            "text": "Pataliputra — Ashoka"
+          },
+          {
+            "key": "4",
+            "text": "Kashmir — Kanishka"
+          }
+        ]
+      },
       "options": [
-        "1-ii, 2-i, 3-iv, 4-iii",
-        "1-i, 2-ii, 3-iii, 4-iv",
-        "1-i, 2-ii, 3-iv, 4-iii",
-        "1-iv, 2-i, 3-ii, 4-iii"
+        "A-2, B-1, C-4, D-3",
+        "A-1, B-2, C-3, D-4",
+        "A-1, B-2, C-4, D-3",
+        "A-4, B-1, C-2, D-3"
       ],
       "answerIndex": 1,
-      "explanation": "The correct order is **1st Rajgriha–Ajatashatru; 2nd Vaishali–Kalashoka; 3rd Pataliputra–Ashoka; 4th Kashmir–Kanishka**.\n\n**Why not the others**\n- 1-ii, 2-i, 3-iv, 4-iii — swaps the first two venues and misplaces the 3rd/4th patrons.\n- 1-i, 2-ii, 3-iv, 4-iii — gives the Third Council to Kanishka and the Fourth to Ashoka; reversed.\n- 1-iv, 2-i, 3-ii, 4-iii — puts the First Council in Kashmir; wrong.\n\n**Key facts — The Four Buddhist Councils**\n| Council | Venue | Patron | President |\n|---|---|---|---|\n| 1st | Rajgriha | Ajatashatru | Mahakassapa |\n| 2nd | Vaishali | Kalashoka | Sabakami |\n| 3rd | Pataliputra | Ashoka | Moggaliputta Tissa |\n| 4th | Kashmir | Kanishka | Vasumitra |\n\n*Source: APPSC GK — Buddhism I (Buddhist Councils table).*",
+      "explanation": "The correct order is **1st Rajgriha–Ajatashatru; 2nd Vaishali–Kalashoka; 3rd Pataliputra–Ashoka; 4th Kashmir–Kanishka**.\n\n**Why not the others**\n- A-2, B-1, C-4, D-3 — swaps the first two venues and misplaces the 3rd/4th patrons.\n- A-1, B-2, C-4, D-3 — gives the Third Council to Kanishka and the Fourth to Ashoka; reversed.\n- A-4, B-1, C-2, D-3 — puts the First Council in Kashmir; wrong.\n\n**Key facts — The Four Buddhist Councils**\n| Council | Venue | Patron | President |\n|---|---|---|---|\n| 1st | Rajgriha | Ajatashatru | Mahakassapa |\n| 2nd | Vaishali | Kalashoka | Sabakami |\n| 3rd | Pataliputra | Ashoka | Moggaliputta Tissa |\n| 4th | Kashmir | Kanishka | Vasumitra |\n\n*Source: APPSC GK — Buddhism I (Buddhist Councils table).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism - I (Buddhist Councils table)",
       "verified": true,
       "covers": [
@@ -107,14 +150,20 @@
         "buddhism",
         "buddhist-councils",
         "match"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-councils"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-5",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about the Hinayana (Theravada) school:\n1. Its scriptures are composed primarily in Pali.\n2. It regards the Buddha as a human teacher and discourages idol worship.\n3. Kanishka was its chief royal patron.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Hinayana (Theravada) school:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Its scriptures are composed primarily in Pali.",
+        "It regards the Buddha as a human teacher and discourages idol worship.",
+        "Kanishka was its chief royal patron."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -132,7 +181,8 @@
         "buddhism",
         "hinayana",
         "pali"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-schools"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-6",
@@ -157,14 +207,20 @@
         "buddhism",
         "mahayana",
         "sanskrit"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-schools"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-7",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "With reference to the Vajrayana school of Buddhism, consider the following:\n1. It literally means 'Vehicle of the Thunderbolt' and is also called Tantric Buddhism.\n2. It uses a symbolic, coded language known as Sandhya-bhasa.\n3. It arose in Bengal and Bihar and gained prominence in the 11th century.\nWhich of the statements is/are correct?",
+      "question": "With reference to the Vajrayana school of Buddhism, consider the following:\nWhich of the statements is/are correct?",
+      "statements": [
+        "It literally means 'Vehicle of the Thunderbolt' and is also called Tantric Buddhism.",
+        "It uses a symbolic, coded language known as Sandhya-bhasa.",
+        "It arose in Bengal and Bihar and gained prominence in the 11th century."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -182,22 +238,63 @@
         "buddhism",
         "vajrayana",
         "tantric"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-schools"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-8",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the Bodhisattva (List-I) with the virtue he embodies (List-II) and choose the correct answer:\nList-I: (1) Manjushri (2) Avalokiteshvara (3) Vajrapani (4) Maitreya\nList-II: (i) Infinite compassion (ii) Power/energy of all Buddhas (iii) Wisdom (iv) The future Buddha",
+      "question": "Match the Bodhisattva (List-I) with the virtue he embodies (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Bodhisattva)",
+        "rightTitle": "List-II (Virtue he embodies)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Manjushri"
+          },
+          {
+            "key": "B",
+            "text": "Avalokiteshvara"
+          },
+          {
+            "key": "C",
+            "text": "Vajrapani"
+          },
+          {
+            "key": "D",
+            "text": "Maitreya"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Infinite compassion"
+          },
+          {
+            "key": "2",
+            "text": "Power/energy of all Buddhas"
+          },
+          {
+            "key": "3",
+            "text": "Wisdom"
+          },
+          {
+            "key": "4",
+            "text": "The future Buddha"
+          }
+        ]
+      },
       "options": [
-        "1-i, 2-iii, 3-ii, 4-iv",
-        "1-iii, 2-ii, 3-i, 4-iv",
-        "1-iv, 2-i, 3-ii, 4-iii",
-        "1-iii, 2-i, 3-ii, 4-iv"
+        "A-1, B-3, C-2, D-4",
+        "A-3, B-2, C-1, D-4",
+        "A-4, B-1, C-2, D-3",
+        "A-3, B-1, C-2, D-4"
       ],
       "answerIndex": 3,
-      "explanation": "The correct pairing is **Manjushri — wisdom; Avalokiteshvara — compassion; Vajrapani — power; Maitreya — the future Buddha**.\n\n**Why not the others**\n- 1-i, 2-iii, 3-ii, 4-iv — swaps Manjushri (wisdom) and Avalokiteshvara (compassion).\n- 1-iii, 2-ii, 3-i, 4-iv — swaps Avalokiteshvara (compassion) and Vajrapani (power).\n- 1-iv, 2-i, 3-ii, 4-iii — wrongly makes Manjushri the future Buddha and Maitreya wisdom.\n\n**Key facts — Eight Great Bodhisattvas (signatures)**\n| Bodhisattva | Known for |\n|---|---|\n| **Manjushri** | wisdom (blazing sword) |\n| **Avalokiteshvara** | compassion (lotus) |\n| **Vajrapani** | power of all Buddhas |\n| **Maitreya** | future Buddha |\n| Kshitigarbha | vow to save beings in hell |\n\n*Source: APPSC GK — Buddhism I (The Eight Great Bodhisattvas).*",
+      "explanation": "The correct pairing is **Manjushri — wisdom; Avalokiteshvara — compassion; Vajrapani — power; Maitreya — the future Buddha**.\n\n**Why not the others**\n- A-1, B-3, C-2, D-4 — swaps Manjushri (wisdom) and Avalokiteshvara (compassion).\n- A-3, B-2, C-1, D-4 — swaps Avalokiteshvara (compassion) and Vajrapani (power).\n- A-4, B-1, C-2, D-3 — wrongly makes Manjushri the future Buddha and Maitreya wisdom.\n\n**Key facts — Eight Great Bodhisattvas (signatures)**\n| Bodhisattva | Known for |\n|---|---|\n| **Manjushri** | wisdom (blazing sword) |\n| **Avalokiteshvara** | compassion (lotus) |\n| **Vajrapani** | power of all Buddhas |\n| **Maitreya** | future Buddha |\n| Kshitigarbha | vow to save beings in hell |\n\n*Source: APPSC GK — Buddhism I (The Eight Great Bodhisattvas).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism - I (The Eight Great Bodhisattvas)",
       "verified": true,
       "covers": [
@@ -207,7 +304,8 @@
         "buddhism",
         "bodhisattva",
         "match"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-bodhisattvas"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-9",
@@ -232,22 +330,55 @@
         "buddhism",
         "buddhist-councils",
         "kanishka"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-councils"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-10",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the school of ancient Indian art (List-I) with its defining feature (List-II) and choose the correct answer:\nList-I: (1) Gandhara (2) Mathura (3) Amaravati\nList-II: (i) Delicate narrative carvings (ii) Greco-Roman realistic Buddha images (iii) Indigenous images and yakshas",
+      "question": "Match the school of ancient Indian art (List-I) with its defining feature (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (School of art)",
+        "rightTitle": "List-II (Defining feature)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Gandhara"
+          },
+          {
+            "key": "B",
+            "text": "Mathura"
+          },
+          {
+            "key": "C",
+            "text": "Amaravati"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Delicate narrative carvings"
+          },
+          {
+            "key": "2",
+            "text": "Greco-Roman realistic Buddha images"
+          },
+          {
+            "key": "3",
+            "text": "Indigenous images and yakshas"
+          }
+        ]
+      },
       "options": [
-        "1-ii, 2-i, 3-iii",
-        "1-ii, 2-iii, 3-i",
-        "1-iii, 2-ii, 3-i",
-        "1-i, 2-iii, 3-ii"
+        "A-2, B-1, C-3",
+        "A-2, B-3, C-1",
+        "A-3, B-2, C-1",
+        "A-1, B-3, C-2"
       ],
       "answerIndex": 1,
-      "explanation": "The correct pairing is **Gandhara — Greco-Roman realism; Mathura — indigenous images & yakshas; Amaravati — delicate narrative carvings**.\n\n**Why not the others**\n- 1-ii, 2-i, 3-iii — gives Mathura the narrative carvings and Amaravati the yakshas; swapped.\n- 1-iii, 2-ii, 3-i — makes Gandhara indigenous and Mathura Greco-Roman; reversed.\n- 1-i, 2-iii, 3-ii — assigns narrative carving to Gandhara and Greco-Roman realism to Amaravati; wrong.\n\n**Key facts — Three sculptural schools**\n| School | Character |\n|---|---|\n| **Gandhara** | Greco-Roman, realistic Buddha |\n| **Mathura** | indigenous; Buddha & yakshas |\n| **Amaravati** | delicate narrative carving |\n\n*Source: APPSC GK — Buddhism II (Gandhara, Mathura, Amaravati Styles).*",
+      "explanation": "The correct pairing is **Gandhara — Greco-Roman realism; Mathura — indigenous images & yakshas; Amaravati — delicate narrative carvings**.\n\n**Why not the others**\n- A-2, B-1, C-3 — gives Mathura the narrative carvings and Amaravati the yakshas; swapped.\n- A-3, B-2, C-1 — makes Gandhara indigenous and Mathura Greco-Roman; reversed.\n- A-1, B-3, C-2 — assigns narrative carving to Gandhara and Greco-Roman realism to Amaravati; wrong.\n\n**Key facts — Three sculptural schools**\n| School | Character |\n|---|---|\n| **Gandhara** | Greco-Roman, realistic Buddha |\n| **Mathura** | indigenous; Buddha & yakshas |\n| **Amaravati** | delicate narrative carving |\n\n*Source: APPSC GK — Buddhism II (Gandhara, Mathura, Amaravati Styles).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism - II (Gandhara, Mathura, Amaravati Styles)",
       "verified": true,
       "covers": [
@@ -257,7 +388,8 @@
         "buddhism",
         "art",
         "match"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-architecture"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-11",
@@ -282,14 +414,20 @@
         "buddhism",
         "stupa",
         "harmika"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-architecture"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-12",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about Buddhist stupas:\n1. The tradition of stupa-building originated in India, evolving from burial mounds around the 6th century BCE.\n2. Emperor Ashoka is said to have erected 84,000 stupas after the Third Buddhist Council.\n3. The Sanchi Stupa was originally commissioned by Ashoka.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Buddhist stupas:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The tradition of stupa-building originated in India, evolving from burial mounds around the 6th century BCE.",
+        "Emperor Ashoka is said to have erected 84,000 stupas after the Third Buddhist Council.",
+        "The Sanchi Stupa was originally commissioned by Ashoka."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -308,7 +446,8 @@
         "buddhism",
         "stupa",
         "sanchi"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-stupa-types"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-13",
@@ -333,22 +472,55 @@
         "buddhism",
         "chaitya",
         "vihara"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-architecture"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-14",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "As stupa architecture spread across Asia, match the region (List-I) with the local form of the stupa (List-II):\nList-I: (1) Sri Lanka (2) Tibet (3) China and Japan\nList-II: (i) Pagoda (ii) Dagoba (iii) Chorten",
+      "question": "As stupa architecture spread across Asia, match the region (List-I) with the local form of the stupa (List-II):",
+      "match": {
+        "leftTitle": "List-I (Region)",
+        "rightTitle": "List-II (Local form of the stupa)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Sri Lanka"
+          },
+          {
+            "key": "B",
+            "text": "Tibet"
+          },
+          {
+            "key": "C",
+            "text": "China and Japan"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Pagoda"
+          },
+          {
+            "key": "2",
+            "text": "Dagoba"
+          },
+          {
+            "key": "3",
+            "text": "Chorten"
+          }
+        ]
+      },
       "options": [
-        "1-ii, 2-i, 3-iii",
-        "1-i, 2-iii, 3-ii",
-        "1-ii, 2-iii, 3-i",
-        "1-iii, 2-ii, 3-i"
+        "A-2, B-1, C-3",
+        "A-1, B-3, C-2",
+        "A-2, B-3, C-1",
+        "A-3, B-2, C-1"
       ],
       "answerIndex": 2,
-      "explanation": "The correct pairing is **Sri Lanka — dagoba; Tibet — chorten; China & Japan — pagoda**.\n\n**Why not the others**\n- 1-ii, 2-i, 3-iii — gives Tibet the pagoda and East Asia the chorten; swapped.\n- 1-i, 2-iii, 3-ii — makes the Sri Lankan form a pagoda and the East Asian form a dagoba; wrong.\n- 1-iii, 2-ii, 3-i — assigns the chorten to Sri Lanka and the dagoba to Tibet; reversed.\n\n**Key facts — Regional stupa forms**\n| Region | Form |\n|---|---|\n| **Sri Lanka** | Dagoba (central to monasteries) |\n| **Tibet** | Chorten (multi-tiered) |\n| **China / Japan** | Pagoda (tiered tower) |\n\n*Source: APPSC GK — Buddhism II (Spread of Stupa Architecture).*",
+      "explanation": "The correct pairing is **Sri Lanka — dagoba; Tibet — chorten; China & Japan — pagoda**.\n\n**Why not the others**\n- A-2, B-1, C-3 — gives Tibet the pagoda and East Asia the chorten; swapped.\n- A-1, B-3, C-2 — makes the Sri Lankan form a pagoda and the East Asian form a dagoba; wrong.\n- A-3, B-2, C-1 — assigns the chorten to Sri Lanka and the dagoba to Tibet; reversed.\n\n**Key facts — Regional stupa forms**\n| Region | Form |\n|---|---|\n| **Sri Lanka** | Dagoba (central to monasteries) |\n| **Tibet** | Chorten (multi-tiered) |\n| **China / Japan** | Pagoda (tiered tower) |\n\n*Source: APPSC GK — Buddhism II (Spread of Stupa Architecture).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism - II (Spread of Stupa Architecture)",
       "verified": true,
       "covers": [
@@ -358,7 +530,8 @@
         "buddhism",
         "stupa",
         "match"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-stupa-types"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-15",
@@ -383,22 +556,63 @@
         "buddhism",
         "ashoka",
         "spread"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-spread-patrons"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-16",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the Buddhist UNESCO World Heritage Site (List-I) with the year of its inscription (List-II):\nList-I: (1) Ajanta Caves (2) Sanchi Monuments (3) Mahabodhi Temple, Bodh Gaya (4) Nalanda Mahavihara\nList-II: (i) 1989 (ii) 1983 (iii) 2016 (iv) 2002",
+      "question": "Match the Buddhist UNESCO World Heritage Site (List-I) with the year of its inscription (List-II):",
+      "match": {
+        "leftTitle": "List-I (Buddhist UNESCO World Heritage Site)",
+        "rightTitle": "List-II (Year of inscription)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Ajanta Caves"
+          },
+          {
+            "key": "B",
+            "text": "Sanchi Monuments"
+          },
+          {
+            "key": "C",
+            "text": "Mahabodhi Temple, Bodh Gaya"
+          },
+          {
+            "key": "D",
+            "text": "Nalanda Mahavihara"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "1989"
+          },
+          {
+            "key": "2",
+            "text": "1983"
+          },
+          {
+            "key": "3",
+            "text": "2016"
+          },
+          {
+            "key": "4",
+            "text": "2002"
+          }
+        ]
+      },
       "options": [
-        "1-i, 2-ii, 3-iv, 4-iii",
-        "1-ii, 2-i, 3-iv, 4-iii",
-        "1-ii, 2-i, 3-iii, 4-iv",
-        "1-iii, 2-i, 3-iv, 4-ii"
+        "A-1, B-2, C-4, D-3",
+        "A-2, B-1, C-4, D-3",
+        "A-2, B-1, C-3, D-4",
+        "A-3, B-1, C-4, D-2"
       ],
       "answerIndex": 1,
-      "explanation": "The correct pairing is **Ajanta — 1983; Sanchi — 1989; Mahabodhi (Bodh Gaya) — 2002; Nalanda — 2016**.\n\n**Why not the others**\n- 1-i, 2-ii, 3-iv, 4-iii — swaps Ajanta (1983) and Sanchi (1989).\n- 1-ii, 2-i, 3-iii, 4-iv — gives Mahabodhi 2016 and Nalanda 2002; swapped.\n- 1-iii, 2-i, 3-iv, 4-ii — dates Ajanta to 2016 and Nalanda to 1983; wrong.\n\n**Key facts — Buddhist UNESCO sites**\n| Site | State | Year |\n|---|---|---|\n| Ajanta | Maharashtra | 1983 |\n| Sanchi | Madhya Pradesh | 1989 |\n| Mahabodhi (Bodh Gaya) | Bihar | 2002 |\n| Nalanda | Bihar | 2016 |\n\n*Source: APPSC GK — Buddhism II (UNESCO Heritage Sites).*",
+      "explanation": "The correct pairing is **Ajanta — 1983; Sanchi — 1989; Mahabodhi (Bodh Gaya) — 2002; Nalanda — 2016**.\n\n**Why not the others**\n- A-1, B-2, C-4, D-3 — swaps Ajanta (1983) and Sanchi (1989).\n- A-2, B-1, C-3, D-4 — gives Mahabodhi 2016 and Nalanda 2002; swapped.\n- A-3, B-1, C-4, D-2 — dates Ajanta to 2016 and Nalanda to 1983; wrong.\n\n**Key facts — Buddhist UNESCO sites**\n| Site | State | Year |\n|---|---|---|\n| Ajanta | Maharashtra | 1983 |\n| Sanchi | Madhya Pradesh | 1989 |\n| Mahabodhi (Bodh Gaya) | Bihar | 2002 |\n| Nalanda | Bihar | 2016 |\n\n*Source: APPSC GK — Buddhism II (UNESCO Heritage Sites).*",
       "source": "local APPSC GK PDF — Ancient History: Buddhism - II (UNESCO Heritage Sites)",
       "verified": true,
       "covers": [
@@ -408,7 +622,8 @@
         "buddhism",
         "unesco",
         "match"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-unesco-sites"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-17",
@@ -432,7 +647,8 @@
       "tags": [
         "buddhism",
         "decline"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-decline"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-18",
@@ -457,14 +673,20 @@
         "buddhism",
         "mudra",
         "dhyani-buddha"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-mudras"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-19",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about Buddhist literature and learning:\n1. The Tripitaka comprises the Vinaya, Sutta and Abhidhamma Pitakas.\n2. The Buddhacharita was composed by Ashvaghosha.\n3. Nalanda, Taxila, Valabhi and Vikramasila developed as major Buddhist centres of learning.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Buddhist literature and learning:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The Tripitaka comprises the Vinaya, Sutta and Abhidhamma Pitakas.",
+        "The Buddhacharita was composed by Ashvaghosha.",
+        "Nalanda, Taxila, Valabhi and Vikramasila developed as major Buddhist centres of learning."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -483,14 +705,20 @@
         "buddhism",
         "literature",
         "nalanda"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-literature"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-20",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-buddhism-2",
       "syllabusRef": "hist-scr-a1",
-      "question": "With reference to Buddhism, consider the following statements:\n1. The Paramitas are the perfections a Bodhisattva cultivates on the path to Buddhahood.\n2. The Mahasanghika school's tendency to deify the Buddha contributed to the rise of Mahayana.\n3. The Sthaviravadins were the founders of the Mahayana school.\nWhich of the statements given above are correct?",
+      "question": "With reference to Buddhism, consider the following statements:\nWhich of the statements given above are correct?",
+      "statements": [
+        "The Paramitas are the perfections a Bodhisattva cultivates on the path to Buddhahood.",
+        "The Mahasanghika school's tendency to deify the Buddha contributed to the rise of Mahayana.",
+        "The Sthaviravadins were the founders of the Mahayana school."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -509,7 +737,8 @@
         "mahayana",
         "paramita",
         "mahasanghika"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-schools"
     },
     {
       "id": "hist-ancient-buddhism-2-mcq-21",
@@ -535,7 +764,8 @@
         "kanganahalli",
         "ashoka",
         "art"
-      ]
+      ],
+      "noteRef": "hist-ancient-buddhism-2-note-architecture"
     }
   ]
 }

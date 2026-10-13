@@ -8,17 +8,22 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-venn-nonverbal",
       "title": "Venn diagrams — class relationships and region counts",
-      "body": "### Venn diagrams — class relationships and region counts\n\n**The idea in one sentence**\nA Venn diagram draws one circle for each group so you can either pick the picture that matches the words or read the numbers region by region.\n\n**Do it the slow way first (no formula)**\nTake a tiny class of 10 children: 6 like tea, 5 like coffee, 3 like both. How many like at least one drink? List it out. The 3 who like both are already counted inside the 6 tea-lovers and again inside the 5 coffee-lovers. If you just add 6 + 5 = 11 you have counted those 3 children twice. Remove that double-count once: 11 − 3 = 8 like at least one drink, and the remaining 10 − 8 = 2 like neither. Nothing was memorised — you simply refused to count the same child twice.\n\n**Why remove the overlap only once?**\nThe 3 who like both sit in the lens where the two circles cross. Adding the two circle totals counts that lens twice, so you subtract it exactly one time to put the count right.\n\n```\n Tea(6)        Coffee(5)\n [ 3 ]  ( 3 )  [ 2 ]\n only    both   only   -> 3 + 3 + 2 = 8\n```\n\n**What the symbols mean**\n- n(A) means the number of things in group A.\n- A union B means everything in A or B or both.\n- A intersection B means the things in both A and B (the overlap).\n- only A means in A but in no other group.\n\n**The formula (now that you know what it does)**\nTwo groups: n(A or B) = n(A) + n(B) − n(both); people in neither = total − n(A or B). Three groups: at least one = (sum of the three singles) − (sum of the three pair-overlaps) + (all three). Reading regions: exactly one = the three only-slices added; exactly two = the three only-two slices added, and this does NOT include the all-three centre.\n\n**Exam-level example**\nSurvey of 120: English 65, Hindi 45, Telugu 42; English and Hindi 20, Hindi and Telugu 25, English and Telugu 15, all three 8. At least one = 65 + 45 + 42 − 20 − 25 − 15 + 8 = 152 − 60 + 8 = 100. Check the slow way: start at 152, strip the double-counted pair readers (60); that strips the all-three readers one time too many, so add them back once (+8) to reach 100.\n\n**Common traps**\n- Adding the circle totals but forgetting to subtract the overlap, which over-counts.\n- Treating exactly two as if it included the all-three centre.\n- Mixing at least one (anyone in a circle) with exactly one (only the three single slices).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| n(A or B) = n(A) + n(B) − n(both) | add the two groups, remove the shared part once |\n| exactly one = only A + only B + only C | add just the three outer slices |\n| at least one = total − neither | everyone who is in some circle |",
+      "body": "### Venn diagrams — class relationships and region counts\n\n**The idea in one sentence**\nA Venn diagram draws one circle for each group so you can either pick the picture that matches the words or read the numbers region by region.\n\n**Do it the slow way first (no formula)**\nTake a tiny class of 10 children: 6 like tea, 5 like coffee, 3 like both. How many like at least one drink? List it out. The 3 who like both are already counted inside the 6 tea-lovers and again inside the 5 coffee-lovers. If you just add 6 + 5 = 11 you have counted those 3 children twice. Remove that double-count once: 11 − 3 = 8 like at least one drink, and the remaining 10 − 8 = 2 like neither. Nothing was memorised — you simply refused to count the same child twice.\n\n**Why remove the overlap only once?**\nThe 3 who like both sit in the lens where the two circles cross. Adding the two circle totals counts that lens twice, so you subtract it exactly one time to put the count right.\n\n```\n Tea(6)        Coffee(5)\n [ 3 ]  ( 3 )  [ 2 ]\n only    both   only   -> 3 + 3 + 2 = 8\n```\n\n**What the symbols mean**\n- n(A) means the number of things in group A.\n- A union B means everything in A or B or both.\n- A intersection B means the things in both A and B (the overlap).\n- only A means in A but in no other group.\n\n**The formula (now that you know what it does)**\nTwo groups: n(A or B) = n(A) + n(B) − n(both); people in neither = total − n(A or B). Three groups: at least one = (sum of the three singles) − (sum of the three pair-overlaps) + (all three). Picking the class diagram: 'all A are B' → A's circle inside B's; a chain of these (Pigeon, Bird, Living thing) → three concentric circles; two different kinds of one class (Table, Chair under Furniture) → two separate circles inside one big circle; 'some A are B' → two overlapping circles; nothing in common → separate circles. Mixed case: every Mother is a Woman (Mothers inside Women), and some women and some mothers are Doctors, so Doctors is a circle that partly overlaps both — not concentric, because not every doctor is a mother or a woman. Reading regions: exactly one = the three only-slices added; exactly two = the three only-two slices added, and this does NOT include the all-three centre.\n\n**Exam-level example**\nSurvey of 120: English 65, Hindi 45, Telugu 42; English and Hindi 20, Hindi and Telugu 25, English and Telugu 15, all three 8. At least one = 65 + 45 + 42 − 20 − 25 − 15 + 8 = 152 − 60 + 8 = 100. Check the slow way: start at 152, strip the double-counted pair readers (60); that strips the all-three readers one time too many, so add them back once (+8) to reach 100.\n\n**Common traps**\n- Adding the circle totals but forgetting to subtract the overlap, which over-counts.\n- Treating exactly two as if it included the all-three centre.\n- Mixing at least one (anyone in a circle) with exactly one (only the three single slices).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| n(A or B) = n(A) + n(B) − n(both) | add the two groups, remove the shared part once |\n| exactly one = only A + only B + only C | add just the three outer slices |\n| at least one = total − neither | everyone who is in some circle |",
       "keyPoints": [
         "Subset (all A are B) is a small circle inside a big one; some-are is two overlapping circles; no-A-is-B is two separate circles.",
         "Two coordinate classes under one genus (Table, Chair under Furniture) are two separate circles inside a larger circle.",
         "Exactly one = the three only-slices added; exactly two excludes the all-three centre.",
         "Two groups: n(A or B) = n(A) + n(B) − n(both); neither = total − n(A or B).",
-        "At least one = total − the neither region."
+        "At least one = total − the neither region.",
+        "Women, Mothers, Doctors: Mothers inside Women; Doctors overlaps both (some doctors are women/mothers, some are not)."
       ],
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Logical Venn Diagram; Venn Diagram Problems",
       "verified": true,
-      "tags": ["venn", "class-relationship", "numerical"]
+      "tags": [
+        "venn",
+        "class-relationship",
+        "numerical"
+      ]
     },
     {
       "id": "ment-venn-nonverbal-note-mirror-water",
@@ -36,24 +41,32 @@
       "mnemonic": "Side mirror = write it backwards; water = flip top to bottom.",
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Mirror Image; Water Image",
       "verified": true,
-      "tags": ["mirror-image", "water-image"]
+      "tags": [
+        "mirror-image",
+        "water-image"
+      ]
     },
     {
       "id": "ment-venn-nonverbal-note-cube-dice",
       "subjectCode": "MENT",
       "subtopicId": "ment-venn-nonverbal",
       "title": "Painted cubes, cube stacks and dice",
-      "body": "### Painted cubes, cube stacks and dice\n\n**The idea in one sentence**\nA big painted cube cut into small cubes gives four kinds of small cube depending on how many painted faces show, and dice puzzles are solved by tracking which faces end up opposite one another.\n\n**Do it the slow way first (no formula)**\nPaint a cube red and slice it into a 3-by-3-by-3 block of 27 small cubes. Walk around it and sort the little cubes by hand. The 8 corner cubes each touch three outer faces, so they have 3 painted faces. The cubes in the middle of each edge (not corners) touch two outer faces, so 2 painted. The cube at the centre of each big face touches one outer face, so 1 painted. The single cube buried inside touches nothing, so 0 painted. Counting: corners 8, edge-middles 12, face-centres 6, hidden 1, and 8 + 12 + 6 + 1 = 27, every cube accounted for.\n\n**Why does the count split like that?**\nPaint only reaches the outer surfaces. A corner meets three surfaces, an edge two, a face one, and the buried core none, so a small cube's position alone fixes how many painted faces it has.\n\n```\n corner = 3 faces | edge = 2 | face-centre = 1 | core = 0\n```\n\n**What the symbols mean**\n- n means how many small cubes lie along one edge, so the total is n times n times n.\n- (n − 2) means the edge cubes that are left after dropping the two corners at the ends.\n\n**The formula (now that you know what it does)**\nFor n small cubes per edge: three-face corners = 8 (always); two-face edges = 12 × (n − 2); one-face centres = 6 × (n − 2)²; zero-face core = (n − 2)³. The four counts add back to n × n × n. A cube itself has 6 faces, 12 edges and 8 vertices. For a stepped stack, count each layer and add; a stack holds fewer cubes than its boxy outline.\n\n**Exam-level example**\nA cube is painted and cut into 125 equal cubes; how many show exactly one face? Here 125 = 5 × 5 × 5, so n = 5. One-face cubes = 6 × (5 − 2)² = 6 × 9 = 54. Check: corners 8, edges 12 × 3 = 36, faces 54, core 3 × 3 × 3 = 27, and 8 + 36 + 54 + 27 = 125. Dice tip: with two views that share one face, the shared face stays put while the others turn around it, and two faces are opposite when they can never sit side by side.\n\n**Common traps**\n- Using 6 × (n − 2) instead of 6 × (n − 2)² for the one-face cubes.\n- Calling 12 (the number of edges) the edge-cube count; it is 12 × (n − 2).\n- Assuming a stepped stack fills its full bounding box.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| 8 corners | always three painted faces |\n| 12(n − 2) | cubes along the edges, two painted |\n| 6(n − 2)² | face-centre cubes, one painted |\n| (n − 2)³ | hidden core, no paint |",
+      "body": "### Painted cubes, cube stacks and dice\n\n**The idea in one sentence**\nA big painted cube cut into small cubes gives four kinds of small cube depending on how many painted faces show, and dice puzzles are solved by tracking which faces end up opposite one another.\n\n**Do it the slow way first (no formula)**\nPaint a cube red and slice it into a 3-by-3-by-3 block of 27 small cubes. Walk around it and sort the little cubes by hand. The 8 corner cubes each touch three outer faces, so they have 3 painted faces. The cubes in the middle of each edge (not corners) touch two outer faces, so 2 painted. The cube at the centre of each big face touches one outer face, so 1 painted. The single cube buried inside touches nothing, so 0 painted. Counting: corners 8, edge-middles 12, face-centres 6, hidden 1, and 8 + 12 + 6 + 1 = 27, every cube accounted for.\n\n**Why does the count split like that?**\nPaint only reaches the outer surfaces. A corner meets three surfaces, an edge two, a face one, and the buried core none, so a small cube's position alone fixes how many painted faces it has.\n\n```\n corner = 3 faces | edge = 2 | face-centre = 1 | core = 0\n```\n\n**What the symbols mean**\n- n means how many small cubes lie along one edge, so the total is n times n times n.\n- (n − 2) means the edge cubes that are left after dropping the two corners at the ends.\n\n**The formula (now that you know what it does)**\nFor n small cubes per edge: three-face corners = 8 (always); two-face edges = 12 × (n − 2); one-face centres = 6 × (n − 2)²; zero-face core = (n − 2)³. The four counts add back to n × n × n. A cube itself has 6 faces, 12 edges and 8 vertices. Open dice (cross-shaped net): in the straight row of four squares, faces one apart are opposite (1st with 3rd, 2nd with 4th), and the square above the row is opposite the square below it — two faces sharing an edge in the net can never be opposite. For a stepped stack, count each layer and add (4 × 4 + 3 × 3 + 2 × 2 = 16 + 9 + 4 = 29); a stack holds fewer cubes than its boxy outline.\n\n**Exam-level example**\nA cube is painted and cut into 125 equal cubes; how many show exactly one face? Here 125 = 5 × 5 × 5, so n = 5. One-face cubes = 6 × (5 − 2)² = 6 × 9 = 54. Check: corners 8, edges 12 × 3 = 36, faces 54, core 3 × 3 × 3 = 27, and 8 + 36 + 54 + 27 = 125. Dice tip: with two views that share one face, the shared face stays put while the others turn around it, and two faces are opposite when they can never sit side by side.\n\n**Common traps**\n- Using 6 × (n − 2) instead of 6 × (n − 2)² for the one-face cubes.\n- Calling 12 (the number of edges) the edge-cube count; it is 12 × (n − 2).\n- Assuming a stepped stack fills its full bounding box.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| 8 corners | always three painted faces |\n| 12(n − 2) | cubes along the edges, two painted |\n| 6(n − 2)² | face-centre cubes, one painted |\n| (n − 2)³ | hidden core, no paint |",
       "keyPoints": [
         "A cube has 6 faces, 12 edges and 8 vertices; the 8 corner cubes always show 3 painted faces.",
         "Painted-cube counts: 3-face = 8, 2-face = 12(n − 2), 1-face = 6(n − 2)², 0-face = (n − 2)³.",
         "The four painted-face counts add back to n times n times n (n = cubes per edge).",
         "Count a stack layer by layer; a stepped stack has fewer cubes than its bounding box.",
-        "Dice: keep the shared face fixed; opposite faces are the pair that never sit side by side."
+        "Dice: keep the shared face fixed; opposite faces are the pair that never sit side by side.",
+        "Cross net: in the row of four, 1st ↔ 3rd and 2nd ↔ 4th are opposite; the squares above and below the row are opposite."
       ],
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Problem on Cube; Open Dice; Closed Dice",
       "verified": true,
-      "tags": ["cube", "dice", "painted-cube"]
+      "tags": [
+        "cube",
+        "dice",
+        "painted-cube"
+      ]
     },
     {
       "id": "ment-venn-nonverbal-note-fold-dot-pattern-hidden",
@@ -70,7 +83,12 @@
       ],
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Paper Cutting & Folding; Dot section; Completion of Incomplete Pattern; Hidden Image",
       "verified": true,
-      "tags": ["paper-folding", "dot-situation", "pattern-completion", "hidden-figure"]
+      "tags": [
+        "paper-folding",
+        "dot-situation",
+        "pattern-completion",
+        "hidden-figure"
+      ]
     },
     {
       "id": "ment-venn-nonverbal-note-counting-figures",
@@ -87,24 +105,37 @@
       ],
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Counting Figures (Quadrilateral)",
       "verified": true,
-      "tags": ["counting-figures", "triangles", "squares", "rectangles"]
+      "tags": [
+        "counting-figures",
+        "triangles",
+        "squares",
+        "rectangles"
+      ]
     },
     {
       "id": "ment-venn-nonverbal-note-figure-series-analogy-classification",
       "subjectCode": "MENT",
       "subtopicId": "ment-venn-nonverbal",
       "title": "Figure series, analogy, classification and set overlap",
-      "body": "### Figure series, analogy, classification and set overlap\n\n**The idea in one sentence**\nMost figure puzzles ask you to spot ONE change and then continue it, copy it, or find the figure that breaks it, while overlap questions ask how small or large a shared part can be.\n\n**Do it the slow way first (no formula)**\nWatch a dot move around the four corners of a square, one corner clockwise at each step. Figure 1 top-left; step clockwise to top-right (Figure 2); again to bottom-right (Figure 3); again to bottom-left (Figure 4). You found Figure 4 just by applying the single move four times, with no trick. The same habit works for a rotating arrow: North, then a quarter-turn clockwise to East, then to South, so three figures land on South.\n\n**Why look for only one change?**\nA well-set series applies a single, consistent transformation; inventing a second change is the commonest way people pick the wrong option.\n\n```\n dot: TL -> TR -> BR -> BL   (clockwise, repeats every 4 steps)\n```\n\n**What the symbols mean**\n- analogy A : B :: C : ? means A becomes B in some way, so do the same thing to C.\n- overlap means the part common to two groups.\n- minimum and maximum mean the smallest and largest the overlap can be.\n\n**The formula (now that you know what it does)**\nSeries: extend the one transformation (rotate, move, add or remove, grow). Analogy: apply the exact A-to-B change to C; it may act on the shape (a square loses one side to become a triangle) or on a count (2 dots become 4, a doubling). Classification: keep the property most figures share and drop the exception. Two-group overlap: maximum = the smaller group; minimum = group A + group B − 100% when the two add to more than 100%.\n\n**Exam-level example**\nIn a town 70% like tea and 80% like coffee; what is the least percentage who like both? Together they total 150%, which overflows 100% by 50%, so at least 50% must like both: minimum = 70 + 80 − 100 = 50%. The most who could like both is capped by the smaller group, 70%. Check the slow way: if only 50% liked both, then tea-only is 20% and coffee-only is 30%, filling exactly 20 + 30 + 50 = 100% with nobody spare, so any smaller overlap would need more than the whole town.\n\n**Common traps**\n- Applying two changes in a series that uses only one rule.\n- In classification, fixing on the shape when the real odd feature is a dot's position or a count.\n- Swapping the minimum overlap (A + B − 100) with the maximum (the smaller group).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| one change, extended | gives the next figure in a series |\n| same change on C | gives the analogy answer |\n| maximum = smaller group | the most two groups can share |\n| minimum = A + B − 100% | the least they must share |",
+      "body": "### Figure series, analogy, classification and set overlap\n\n**The idea in one sentence**\nMost figure puzzles ask you to spot ONE change and then continue it, copy it, or find the figure that breaks it, while overlap questions ask how small or large a shared part can be.\n\n**Do it the slow way first (no formula)**\nWatch a dot move around the four corners of a square, one corner clockwise at each step. Figure 1 top-left; step clockwise to top-right (Figure 2); again to bottom-right (Figure 3); again to bottom-left (Figure 4). You found Figure 4 just by applying the single move four times, with no trick. The same habit works for a rotating arrow: North, then a quarter-turn clockwise to East, then to South, so three figures land on South.\n\n**Why look for only one change?**\nA well-set series applies a single, consistent transformation; inventing a second change is the commonest way people pick the wrong option.\n\n```\n dot: TL -> TR -> BR -> BL   (clockwise, repeats every 4 steps)\n```\n\n**What the symbols mean**\n- analogy A : B :: C : ? means A becomes B in some way, so do the same thing to C.\n- overlap means the part common to two groups.\n- minimum and maximum mean the smallest and largest the overlap can be.\n\n**The formula (now that you know what it does)**\nSeries: extend the one transformation (rotate, move, add or remove, grow). Analogy: apply the exact A-to-B change to C; it may act on the shape (a square loses one side to become a triangle) or on a count (2 dots become 4, a doubling). A count change can be read as adding (+2) or multiplying (×2), so test both on EVERY solved pair: if 5 dots also become 10, only ×2 fits (adding 2 would give 7), and 3 dots must become 6. Classification: keep the property most figures share and drop the exception. Two-group overlap: maximum = the smaller group; minimum = group A + group B − 100% when the two add to more than 100%.\n\n**Exam-level example**\nIn a town 70% like tea and 80% like coffee; what is the least percentage who like both? Together they total 150%, which overflows 100% by 50%, so at least 50% must like both: minimum = 70 + 80 − 100 = 50%. The most who could like both is capped by the smaller group, 70%. Check the slow way: if only 50% liked both, then tea-only is 20% and coffee-only is 30%, filling exactly 20 + 30 + 50 = 100% with nobody spare, so any smaller overlap would need more than the whole town.\n\n**Common traps**\n- Applying two changes in a series that uses only one rule.\n- In classification, fixing on the shape when the real odd feature is a dot's position or a count.\n- Swapping the minimum overlap (A + B − 100) with the maximum (the smaller group).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| one change, extended | gives the next figure in a series |\n| same change on C | gives the analogy answer |\n| maximum = smaller group | the most two groups can share |\n| minimum = A + B − 100% | the least they must share |",
       "keyPoints": [
         "Figure series: find the single constant change (rotation, movement, add or remove) and extend it.",
         "Figure analogy: apply the exact A-to-B change to C; it may act on the shape or on a count.",
         "Figure classification: keep the property most figures share; the odd one breaks it, often by position or count, not shape.",
         "Maximum overlap of two groups = the smaller group; minimum = A + B − 100% when they add past 100%.",
-        "For 70% and 80%: the minimum overlap is 50% and the maximum is 70%."
+        "For 70% and 80%: the minimum overlap is 50% and the maximum is 70%.",
+        "Count analogies: test +k and ×k on every solved pair; keep the rule that fits all of them."
       ],
       "source": "local APPSC Group-1 PDF — Non-Verbal Reasoning: Series, Analogy, Classification; Logical Reasoning: set overlap",
       "verified": true,
-      "tags": ["non-verbal", "figure-series", "figure-analogy", "classification", "overlap", "method"]
+      "tags": [
+        "non-verbal",
+        "figure-series",
+        "figure-analogy",
+        "classification",
+        "overlap",
+        "method"
+      ]
     }
   ]
 }

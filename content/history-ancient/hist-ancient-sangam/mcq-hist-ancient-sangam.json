@@ -17,6 +17,7 @@
         "3000–1500 BCE"
       ],
       "answerIndex": 1,
+      "noteRef": "hist-ancient-sangam-note-intro",
       "explanation": "The Sangam Age is dated **c. 300 BCE – 300 CE**, the era of Tamil literary flowering in South India.\n\n**Why not the others**\n- 1500–600 BCE — the **Vedic Age** of the north, not the Sangam Age.\n- 600–1200 CE — the **imperial Chola–Pallava–Pandya** period, long after the Sangam era.\n- 3000–1500 BCE — the **Indus Valley Civilization** timeframe.\n\n**Key facts**\n- Named after the **Sangams (Muchchangam)** — assemblies of poets under royal patronage.\n- Ruled by the **Muvendar** (three crowned kings): **Chera, Chola, Pandya**.\n- Sources: **Tolkappiyam, Ettuthokai, Pattuppattu** and the epics **Silappathikaram & Manimekalai**.\n\n*Source: APPSC GK — Sangam Age (Introduction).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Introduction)",
       "verified": true,
@@ -43,6 +44,7 @@
         "Kalabhras, Cheras and Cholas"
       ],
       "answerIndex": 1,
+      "noteRef": "hist-ancient-sangam-note-muvendar",
       "explanation": "The **Muvendar** — the three crowned kings of **Tamilakam** — were the **Cheras, Cholas and Pandyas**.\n\n**Why not the others**\n- Pallavas, Chalukyas and Rashtrakutas — **later** peninsular dynasties, post-Sangam.\n- Satavahanas, Ikshvakus and Pallavas — **Deccan/Andhra** powers, not the Tamil crowned kings.\n- Kalabhras, Cheras and Cholas — the **Kalabhras** were the tribal *invaders* who ended the Sangam order, not a crowned dynasty.\n\n**Key facts**\n- Each dynasty had a distinct **capital, port, emblem and titles**.\n- Chera → bow; Chola → tiger; Pandya → fish.\n\n*Source: APPSC GK — Sangam Age (Kingdoms During the Sangam Age).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Kingdoms During the Sangam Age)",
       "verified": true,
@@ -69,6 +71,7 @@
         "Tirukkural"
       ],
       "answerIndex": 2,
+      "noteRef": "hist-ancient-sangam-note-epics",
       "explanation": "**Silappathikaram**, by **Ilango Adigal**, tells of **Kannagi's** devotion to **Kovalan** and its themes of love, betrayal and justice.\n\n**Why not the others**\n- Manimekalai — a **Buddhist epic** by Sittalai Sattanar, about Kovalan's daughter.\n- Tolkappiyam — the earliest **Tamil grammar** (by Tolkappiyar).\n- Tirukkural — a collection of **ethical couplets** by Thiruvalluvar.\n\n**Key facts**\n- One of the **twin Tamil epics** (with Manimekalai).\n- Records the deeds of **Cheran Senguttuvan** and the **Pattini Cult** of Kannagi.\n\n*Source: APPSC GK — Sangam Age (Sangam Literature – Epics).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Literature – Epics)",
       "verified": true,
@@ -94,6 +97,7 @@
         "First Sangam — Madurai — Nakkirar"
       ],
       "answerIndex": 2,
+      "noteRef": "hist-ancient-sangam-note-assemblies",
       "explanation": "The **Third Sangam** was held at **Madurai** under **Nakkirar**, producing the Ettuthokai and Pattuppattu.\n\n**Why not the others**\n- 'First Sangam — Kapadapuram — Tolkappiyar' — the **First** was at **Madurai** under **Agastya**; Kapadapuram/Tolkappiyar belong to the **Second**.\n- 'Second Sangam — Madurai — Nakkirar' — the **Second** was at **Kapadapuram** under **Tolkappiyar**.\n- 'First Sangam — Madurai — Nakkirar' — right venue but wrong president; the First was presided by **Agastya**.\n\n**Key facts**\n| Sangam | Venue | President | Surviving work |\n|---|---|---|---|\n| First | Madurai | Agastya | none (Agayattiyam lost) |\n| Second | Kapadapuram | Tolkappiyar | Tolkappiyam |\n| Third | Madurai | Nakkirar | Ettuthokai, Pattuppattu |\n\n*Source: APPSC GK — Sangam Age (Sangam Assemblies).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Assemblies)",
       "verified": true,
@@ -111,15 +115,48 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the dynasty with its royal emblem and choose the correct answer:\nList-I: (1) Chera (2) Chola (3) Pandya\nList-II: (i) Tiger (ii) Fish (iii) Bow",
+      "question": "Match the dynasty with its royal emblem and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Dynasty)",
+        "rightTitle": "List-II (Royal emblem)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Chera"
+          },
+          {
+            "key": "B",
+            "text": "Chola"
+          },
+          {
+            "key": "C",
+            "text": "Pandya"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Tiger"
+          },
+          {
+            "key": "2",
+            "text": "Fish"
+          },
+          {
+            "key": "3",
+            "text": "Bow"
+          }
+        ]
+      },
       "options": [
-        "1-i, 2-ii, 3-iii",
-        "1-iii, 2-i, 3-ii",
-        "1-ii, 2-iii, 3-i",
-        "1-i, 2-iii, 3-ii"
+        "A-1, B-2, C-3",
+        "A-3, B-1, C-2",
+        "A-2, B-3, C-1",
+        "A-1, B-3, C-2"
       ],
       "answerIndex": 1,
-      "explanation": "Correct emblems: **Chera–Bow, Chola–Tiger, Pandya–Fish** (1-iii, 2-i, 3-ii).\n\n**Why not the others**\n- '1-i, 2-ii, 3-iii' — gives Chera the tiger, Chola the fish and Pandya the bow — all three swapped.\n- '1-ii, 2-iii, 3-i' — assigns fish to Chera, bow to Chola and tiger to Pandya, all wrong.\n- '1-i, 2-iii, 3-ii' — only Pandya–fish is right; Chera should bear the **bow** and Chola the **tiger**.\n\n**Key facts**\n| Dynasty | Emblem |\n|---|---|\n| Chera | Bow (kings titled *Villavar*) |\n| Chola | Tiger |\n| Pandya | Fish |\n\n*Source: APPSC GK — Sangam Age (Kingdoms During the Sangam Age).*",
+      "noteRef": "hist-ancient-sangam-note-muvendar",
+      "explanation": "Correct emblems: **Chera–Bow, Chola–Tiger, Pandya–Fish** (A-3, B-1, C-2).\n\n**Why not the others**\n- 'A-1, B-2, C-3' — gives Chera the tiger, Chola the fish and Pandya the bow — all three swapped.\n- 'A-2, B-3, C-1' — assigns fish to Chera, bow to Chola and tiger to Pandya, all wrong.\n- 'A-1, B-3, C-2' — only Pandya–fish is right; Chera should bear the **bow** and Chola the **tiger**.\n\n**Key facts**\n| Dynasty | Emblem |\n|---|---|\n| Chera | Bow (kings titled *Villavar*) |\n| Chola | Tiger |\n| Pandya | Fish |\n\n*Source: APPSC GK — Sangam Age (Kingdoms During the Sangam Age).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Kingdoms During the Sangam Age)",
       "verified": true,
       "covers": [
@@ -141,15 +178,48 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the dynasty with its capital and choose the correct answer:\nList-I: (1) Chera (2) Chola (3) Pandya\nList-II: (i) Uraiyur (ii) Madurai (iii) Vanji (Karur)",
+      "question": "Match the dynasty with its capital and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Dynasty)",
+        "rightTitle": "List-II (Capital)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Chera"
+          },
+          {
+            "key": "B",
+            "text": "Chola"
+          },
+          {
+            "key": "C",
+            "text": "Pandya"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Uraiyur"
+          },
+          {
+            "key": "2",
+            "text": "Madurai"
+          },
+          {
+            "key": "3",
+            "text": "Vanji (Karur)"
+          }
+        ]
+      },
       "options": [
-        "1-iii, 2-i, 3-ii",
-        "1-i, 2-ii, 3-iii",
-        "1-ii, 2-iii, 3-i",
-        "1-iii, 2-ii, 3-i"
+        "A-3, B-1, C-2",
+        "A-1, B-2, C-3",
+        "A-2, B-3, C-1",
+        "A-3, B-2, C-1"
       ],
       "answerIndex": 0,
-      "explanation": "Correct capitals: **Chera–Vanji (Karur), Chola–Uraiyur, Pandya–Madurai** (1-iii, 2-i, 3-ii).\n\n**Why not the others**\n- '1-i, 2-ii, 3-iii' — makes Uraiyur a Chera capital and Vanji a Pandya capital; both wrong.\n- '1-ii, 2-iii, 3-i' — assigns Madurai to Chera and Uraiyur to Pandya, all misplaced.\n- '1-iii, 2-ii, 3-i' — right for Chera–Vanji, but swaps **Chola (Uraiyur)** and **Pandya (Madurai)**.\n\n**Key facts**\n| Dynasty | Capital |\n|---|---|\n| Chera | Vanji (Karur) |\n| Chola | Uraiyur (cotton trade) |\n| Pandya | Madurai (on the Vaigai) |\n\n*Source: APPSC GK — Sangam Age (Kingdoms During the Sangam Age).*",
+      "noteRef": "hist-ancient-sangam-note-muvendar",
+      "explanation": "Correct capitals: **Chera–Vanji (Karur), Chola–Uraiyur, Pandya–Madurai** (A-3, B-1, C-2).\n\n**Why not the others**\n- 'A-1, B-2, C-3' — makes Uraiyur a Chera capital and Vanji a Pandya capital; both wrong.\n- 'A-2, B-3, C-1' — assigns Madurai to Chera and Uraiyur to Pandya, all misplaced.\n- 'A-3, B-2, C-1' — right for Chera–Vanji, but swaps **Chola (Uraiyur)** and **Pandya (Madurai)**.\n\n**Key facts**\n| Dynasty | Capital |\n|---|---|\n| Chera | Vanji (Karur) |\n| Chola | Uraiyur (cotton trade) |\n| Pandya | Madurai (on the Vaigai) |\n\n*Source: APPSC GK — Sangam Age (Kingdoms During the Sangam Age).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Kingdoms During the Sangam Age)",
       "verified": true,
       "covers": [
@@ -170,15 +240,48 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the dynasty with its chief port and choose the correct answer:\nList-I: (1) Chera (2) Chola (3) Pandya\nList-II: (i) Korkai (ii) Muziris (iii) Puhar (Kaveripattinam)",
+      "question": "Match the dynasty with its chief port and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Dynasty)",
+        "rightTitle": "List-II (Chief port)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Chera"
+          },
+          {
+            "key": "B",
+            "text": "Chola"
+          },
+          {
+            "key": "C",
+            "text": "Pandya"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Korkai"
+          },
+          {
+            "key": "2",
+            "text": "Muziris"
+          },
+          {
+            "key": "3",
+            "text": "Puhar (Kaveripattinam)"
+          }
+        ]
+      },
       "options": [
-        "1-i, 2-ii, 3-iii",
-        "1-iii, 2-i, 3-ii",
-        "1-ii, 2-iii, 3-i",
-        "1-ii, 2-i, 3-iii"
+        "A-1, B-2, C-3",
+        "A-3, B-1, C-2",
+        "A-2, B-3, C-1",
+        "A-2, B-1, C-3"
       ],
       "answerIndex": 2,
-      "explanation": "Correct ports: **Chera–Muziris, Chola–Puhar (Kaveripattinam), Pandya–Korkai** (1-ii, 2-iii, 3-i).\n\n**Why not the others**\n- '1-i, 2-ii, 3-iii' — gives Korkai to Chera and Puhar to Pandya; both wrong.\n- '1-iii, 2-i, 3-ii' — makes Puhar a Chera port and Korkai a Chola port, all misplaced.\n- '1-ii, 2-i, 3-iii' — right for Chera–Muziris, but swaps **Chola (Puhar)** and **Pandya (Korkai)**.\n\n**Key facts**\n| Dynasty | Chief port | Note |\n|---|---|---|\n| Chera | Muziris (& Tondi) | Roman spice trade |\n| Chola | Puhar (Kaveripattinam) | Karikala's trade hub |\n| Pandya | Korkai | pearl fishing |\n\n*Source: APPSC GK — Sangam Age (Chera/Chola/Pandya Dynasties).*",
+      "noteRef": "hist-ancient-sangam-note-muvendar",
+      "explanation": "Correct ports: **Chera–Muziris, Chola–Puhar (Kaveripattinam), Pandya–Korkai** (A-2, B-3, C-1).\n\n**Why not the others**\n- 'A-1, B-2, C-3' — gives Korkai to Chera and Puhar to Pandya; both wrong.\n- 'A-3, B-1, C-2' — makes Puhar a Chera port and Korkai a Chola port, all misplaced.\n- 'A-2, B-1, C-3' — right for Chera–Muziris, but swaps **Chola (Puhar)** and **Pandya (Korkai)**.\n\n**Key facts**\n| Dynasty | Chief port | Note |\n|---|---|---|\n| Chera | Muziris (& Tondi) | Roman spice trade |\n| Chola | Puhar (Kaveripattinam) | Karikala's trade hub |\n| Pandya | Korkai | pearl fishing |\n\n*Source: APPSC GK — Sangam Age (Chera/Chola/Pandya Dynasties).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Chera, Chola & Pandya Dynasties)",
       "verified": true,
       "covers": [
@@ -200,7 +303,12 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about Karikala Chola:\n1. He defeated a confederacy of the Chera, Pandya and eleven minor chieftains at the Battle of Venni.\n2. He built the Kallanai Dam (Grand Anicut) across the Cauvery.\n3. He developed the port of Puhar into a centre of foreign trade.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Karikala Chola:\nWhich of the statements are correct?",
+      "statements": [
+        "He defeated a confederacy of the Chera, Pandya and eleven minor chieftains at the Battle of Venni.",
+        "He built the Kallanai Dam (Grand Anicut) across the Cauvery.",
+        "He developed the port of Puhar into a centre of foreign trade."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -208,6 +316,7 @@
         "1, 2 and 3"
       ],
       "answerIndex": 3,
+      "noteRef": "hist-ancient-sangam-note-karikala",
       "explanation": "All three statements are correct — they describe the well-attested achievements of **Karikala Chola**.\n\n**Why not the others**\n- '1 and 2 only' — omits the true fact that Karikala made **Puhar** a foreign-trade hub.\n- '2 and 3 only' — omits his decisive victory at the **Battle of Venni**.\n- '1 and 3 only' — omits the **Kallanai Dam (Grand Anicut)**, among the oldest dams still in use.\n\n**Key facts**\n- Also won the **Battle of Vahaipparandalai** (defeated nine chieftains).\n- Built irrigation tanks and canals, promoting agriculture.\n- Rome/Greece merchants at Puhar traded gold, wine and horses.\n\n*Source: APPSC GK — Sangam Age (Karikala Chola).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Karikala Chola)",
       "verified": true,
@@ -234,6 +343,7 @@
         "Kalinga"
       ],
       "answerIndex": 1,
+      "noteRef": "hist-ancient-sangam-note-chola",
       "explanation": "**Elara** was an early Chola king who ruled **Sri Lanka** with fairness (praised in the **Mahavamsa**) until the Sinhalese prince **Dutugemunu** defeated him.\n\n**Why not the others**\n- The Kerala coast — the **Chera** realm, not Elara's domain.\n- The Cauvery delta — the Chola **heartland** in Tamil Nadu; Elara's fame rests on his rule *in Sri Lanka*.\n- Kalinga — the eastern kingdom of **Kharavela**, unconnected to Elara.\n\n**Key facts**\n- His just rule earned respect from both **Sinhalese and Tamils**.\n- Illustrates early **South India–Sri Lanka** political links.\n\n*Source: APPSC GK — Sangam Age (Chola Dynasty – Elara).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Chola Dynasty – Elara)",
       "verified": true,
@@ -251,7 +361,11 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about the Chera king Cheran Senguttuvan:\n1. He established the Pattini Cult, deifying Kannagi as a goddess of chastity.\n2. He was a contemporary of the Sri Lankan king Gajabahu, a synchronism used to date the Sangam Age.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Chera king Cheran Senguttuvan:\nWhich of the statements is/are correct?",
+      "statements": [
+        "He established the Pattini Cult, deifying Kannagi as a goddess of chastity.",
+        "He was a contemporary of the Sri Lankan king Gajabahu, a synchronism used to date the Sangam Age."
+      ],
       "options": [
         "1 only",
         "2 only",
@@ -259,6 +373,7 @@
         "Neither 1 nor 2"
       ],
       "answerIndex": 2,
+      "noteRef": "hist-ancient-sangam-note-senguttuvan",
       "explanation": "Both statements are correct: **Senguttuvan** founded the **Pattini Cult** and was a contemporary of the Sri Lankan king **Gajabahu** — the key **'Gajabahu synchronism'**.\n\n**Why not the others**\n- '1 only' — the Gajabahu synchronism (statement 2) is a genuine and important dating anchor.\n- '2 only' — Senguttuvan did found the **Pattini Cult** worshipping Kannagi (statement 1 is true).\n- 'Neither 1 nor 2' — both are attested facts.\n\n**Key facts**\n- His deeds are recorded in the **Silappathikaram**.\n- He led a **Himalayan expedition**, defeating northern monarchs.\n- The synchronism highlights **South India–Sri Lanka** interconnection.\n\n*Source: APPSC GK — Sangam Age (Cheran Senguttuvan).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Cheran Senguttuvan)",
       "verified": true,
@@ -286,6 +401,7 @@
         "Tolkappiyam"
       ],
       "answerIndex": 0,
+      "noteRef": "hist-ancient-sangam-note-chera",
       "explanation": "The victories of **Imayavaramban Nedum Cheralathan** are recorded in **Pathitrupathu (Pathitrupattu)**, a Sangam work.\n\n**Why not the others**\n- Manimekalai — a **Buddhist epic** by Sittalai Sattanar.\n- Tirukkural — a work of **ethical couplets** by Thiruvalluvar.\n- Tolkappiyam — the earliest **Tamil grammar**.\n\n**Key facts**\n- His title means 'he who had the **Himalayas** as his boundary'.\n- (Perumchotru Udhiyan Cheralathan is remembered for **feeding both armies** in the Mahabharata legend.)\n\n*Source: APPSC GK — Sangam Age (Chera Dynasty).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Chera Dynasty)",
       "verified": true,
@@ -311,6 +427,7 @@
         "Elara"
       ],
       "answerIndex": 1,
+      "noteRef": "hist-ancient-sangam-note-pandya",
       "explanation": "**Aryappadai Kadantha Neduncheliyan** ordered **Kovalan's** execution on false accusations, leading to the **burning of Madurai** by Kannagi.\n\n**Why not the others**\n- Uggira Peruvaludhi — the **last** Sangam-age Pandya king (reign saw the Kalabhra invasion).\n- Karikala — the great **Chola** king (Venni, Kallanai Dam).\n- Elara — an early **Chola** king who ruled justly in **Sri Lanka**.\n\n**Key facts**\n- His title reflects his **defeat of Aryan forces**.\n- Another Pandya, **Thalaiyalanganaattu Neduncheliyan**, won the **Battle of Thalaiyalanganam**.\n\n*Source: APPSC GK — Sangam Age (Pandya Dynasty).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Pandya Dynasty)",
       "verified": true,
@@ -337,6 +454,7 @@
         "Western Gangas"
       ],
       "answerIndex": 1,
+      "noteRef": "hist-ancient-sangam-note-religion-decline",
       "explanation": "The **Kalabhras**, a tribal dynasty, invaded Tamil Nadu around the **3rd century CE** and ruled for over **250 years** — a period termed the **'dark age'**.\n\n**Why not the others**\n- Pallavas — the **later** power that (with the Pandyas) *ended* Kalabhra rule by the 6th century CE.\n- Kadambas — a **Karnataka** dynasty, not the destroyers of the Sangam order.\n- Western Gangas — a **Karnataka** dynasty, unconnected to this invasion.\n\n**Key facts**\n- Displaced the **Cheras, Cholas and Pandyas**; **Uggira Peruvaludhi** was the last Sangam Pandya.\n- Favoured **Buddhism and Jainism**; yet the **Tirukkural** was composed in this era.\n- **Pallavas** (north TN) and **Pandyas** (south) re-emerged by the **6th century CE**.\n\n*Source: APPSC GK — Sangam Age (Decline of the Sangam Age).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Decline of the Sangam Age)",
       "verified": true,
@@ -355,7 +473,12 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about Sangam literature:\n1. The Tolkappiyam is the earliest extant Tamil grammar.\n2. Ettuthokai refers to the 'Eight Anthologies'.\n3. Pattuppattu refers to the 'Ten Idylls' (Ten Long Poems).\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Sangam literature:\nWhich of the statements are correct?",
+      "statements": [
+        "The Tolkappiyam is the earliest extant Tamil grammar.",
+        "Ettuthokai refers to the 'Eight Anthologies'.",
+        "Pattuppattu refers to the 'Ten Idylls' (Ten Long Poems)."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -363,6 +486,7 @@
         "1, 2 and 3"
       ],
       "answerIndex": 3,
+      "noteRef": "hist-ancient-sangam-note-literature",
       "explanation": "All three statements are correct descriptions of the core Sangam corpus.\n\n**Why not the others**\n- '1 and 2 only' — omits the true identification of **Pattuppattu** as the Ten Idylls.\n- '2 and 3 only' — omits the **Tolkappiyam** as the earliest Tamil grammar.\n- '1 and 3 only' — omits **Ettuthokai** as the Eight Anthologies.\n\n**Key facts**\n- **Tolkappiyam** (by Tolkappiyar) also records political, social and economic life and the five-fold land division.\n- **Ettuthokai** poets include **Kapilar, Nakkirar, Avvaiyar**.\n- **Pattuppattu** focuses on heroic deeds and kingship.\n\n*Source: APPSC GK — Sangam Age (Sangam Literature).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Literature)",
       "verified": true,
@@ -390,6 +514,7 @@
         "Dharma, Artha and Moksha"
       ],
       "answerIndex": 1,
+      "noteRef": "hist-ancient-sangam-note-literature",
       "explanation": "The **Tirukkural's** 1,330 couplets are divided into **Virtue (Aram), Wealth (Porul) and Love (Inbam)**.\n\n**Why not the others**\n- War, Peace and Diplomacy — not the text's scheme; it is an **ethical/moral** treatise.\n- Earth, Water and Sky — an invented triad, unrelated to the Kural's structure.\n- Dharma, Artha and Moksha — a plausible-looking trap; the Kural's third section is **Inbam (Love/pleasure)**, not Moksha.\n\n**Key facts**\n- Part of the **Pathinenkilkanakku** (Eighteen Lesser Works).\n- The most revered Tamil text on **ethics and morality**.\n\n*Source: APPSC GK — Sangam Age (Sangam Literature – Tirukkural).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Literature – Tirukkural)",
       "verified": true,
@@ -415,6 +540,7 @@
         "Manimekalai — Ilango Adigal"
       ],
       "answerIndex": 1,
+      "noteRef": "hist-ancient-sangam-note-epics",
       "explanation": "**Manimekalai**, by **Sittalai Sattanar**, is a **Buddhist epic** about Manimekalai, daughter of Kovalan and Madhavi.\n\n**Why not the others**\n- 'Silappathikaram — Sittalai Sattanar' — the Silappathikaram was written by **Ilango Adigal**.\n- 'Tolkappiyam — Ilango Adigal' — the Tolkappiyam (grammar) was composed by **Tolkappiyar**.\n- 'Manimekalai — Ilango Adigal' — Manimekalai is by **Sittalai Sattanar**, not Ilango Adigal.\n\n**Key facts**\n- Manimekalai traces the heroine's **transformation into a Buddhist nun**; themes of spirituality, dharma and Nirvana.\n- It is a **sequel** to the Silappathikaram.\n\n*Source: APPSC GK — Sangam Age (Sangam Literature – Epics).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Literature – Epics)",
       "verified": true,
@@ -433,15 +559,56 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "In the Tinai (five-fold land division) of the Tolkappiyam, match the landscape with its presiding deity:\nList-I: (1) Kurinji (hills) (2) Marudam (agricultural) (3) Neydal (coastal) (4) Palai (desert)\nList-II: (i) Indra (ii) Varuna (iii) Korravai (iv) Murugan",
+      "question": "In the Tinai (five-fold land division) of the Tolkappiyam, match the landscape with its presiding deity:",
+      "match": {
+        "leftTitle": "List-I (Tinai landscape)",
+        "rightTitle": "List-II (Presiding deity)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Kurinji (hills)"
+          },
+          {
+            "key": "B",
+            "text": "Marudam (agricultural)"
+          },
+          {
+            "key": "C",
+            "text": "Neydal (coastal)"
+          },
+          {
+            "key": "D",
+            "text": "Palai (desert)"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Indra"
+          },
+          {
+            "key": "2",
+            "text": "Varuna"
+          },
+          {
+            "key": "3",
+            "text": "Korravai"
+          },
+          {
+            "key": "4",
+            "text": "Murugan"
+          }
+        ]
+      },
       "options": [
-        "1-iv, 2-i, 3-ii, 4-iii",
-        "1-i, 2-iv, 3-iii, 4-ii",
-        "1-iv, 2-ii, 3-i, 4-iii",
-        "1-ii, 2-i, 3-iv, 4-iii"
+        "A-4, B-1, C-2, D-3",
+        "A-1, B-4, C-3, D-2",
+        "A-4, B-2, C-1, D-3",
+        "A-2, B-1, C-4, D-3"
       ],
       "answerIndex": 0,
-      "explanation": "Correct pairing: **Kurinji–Murugan, Marudam–Indra, Neydal–Varuna, Palai–Korravai** (1-iv, 2-i, 3-ii, 4-iii).\n\n**Why not the others**\n- '1-i, 2-iv, 3-iii, 4-ii' — gives Kurinji to Indra and Palai to Varuna; both wrong.\n- '1-iv, 2-ii, 3-i, 4-iii' — right for Kurinji, but swaps **Marudam (Indra)** and **Neydal (Varuna)**.\n- '1-ii, 2-i, 3-iv, 4-iii' — assigns Varuna to the hills and Murugan to the coast, misplaced.\n\n**Key facts**\n| Land | Deity | Occupation |\n|---|---|---|\n| Kurinji (hills) | Murugan | hunting, honey |\n| Mullai (pastoral) | Vishnu/Mayon | cattle rearing |\n| Marudam (agri.) | Indra | agriculture |\n| Neydal (coastal) | Varuna | fishing, salt |\n| Palai (desert) | Korravai | robbery |\n\n*Source: APPSC GK — Sangam Age (Sangam Society – Panchitanai).*",
+      "noteRef": "hist-ancient-sangam-note-society-tinai",
+      "explanation": "Correct pairing: **Kurinji–Murugan, Marudam–Indra, Neydal–Varuna, Palai–Korravai** (A-4, B-1, C-2, D-3).\n\n**Why not the others**\n- 'A-1, B-4, C-3, D-2' — gives Kurinji to Indra and Palai to Varuna; both wrong.\n- 'A-4, B-2, C-1, D-3' — right for Kurinji, but swaps **Marudam (Indra)** and **Neydal (Varuna)**.\n- 'A-2, B-1, C-4, D-3' — assigns Varuna to the hills and Murugan to the coast, misplaced.\n\n**Key facts**\n| Land | Deity | Occupation |\n|---|---|---|\n| Kurinji (hills) | Murugan | hunting, honey |\n| Mullai (pastoral) | Vishnu/Mayon | cattle rearing |\n| Marudam (agri.) | Indra | agriculture |\n| Neydal (coastal) | Varuna | fishing, salt |\n| Palai (desert) | Korravai | robbery |\n\n*Source: APPSC GK — Sangam Age (Sangam Society – Panchitanai).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Society – Panchitanai)",
       "verified": true,
       "covers": [
@@ -467,6 +634,7 @@
         "Sirur"
       ],
       "answerIndex": 2,
+      "noteRef": "hist-ancient-sangam-note-polity",
       "explanation": "**Mandalam** was the largest administrative division — equivalent to a **province**.\n\n**Why not the others**\n- Nadu — a **district** under local chiefs, below Mandalam.\n- Ur — a **town** of trade/cultural importance.\n- Sirur — the **smallest village** unit.\n\n**Key facts**\n- Hierarchy (largest → smallest): **Mandalam > Nadu > Ur > Perur > Sirur**.\n- Kings were aided by councils: **Amaichar** (ministers), **Anthanar** (priests), **Senathipathi** (commanders), **Otrar** (spies), **Thuthar** (envoys).\n- **Pattinam** = coastal trade towns (e.g. Puhar).\n\n*Source: APPSC GK — Sangam Age (Sangam Polity and Administration).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Polity and Administration)",
       "verified": true,
@@ -484,15 +652,48 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the Sangam revenue term with its meaning:\nList-I: (1) Karai (2) Ulgu (3) Irai\nList-II: (i) Tribute from feudatory chiefs (ii) Land tax (iii) Custom duties",
+      "question": "Match the Sangam revenue term with its meaning:",
+      "match": {
+        "leftTitle": "List-I (Revenue term)",
+        "rightTitle": "List-II (Meaning)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Karai"
+          },
+          {
+            "key": "B",
+            "text": "Ulgu"
+          },
+          {
+            "key": "C",
+            "text": "Irai"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Tribute from feudatory chiefs"
+          },
+          {
+            "key": "2",
+            "text": "Land tax"
+          },
+          {
+            "key": "3",
+            "text": "Custom duties"
+          }
+        ]
+      },
       "options": [
-        "1-i, 2-ii, 3-iii",
-        "1-ii, 2-iii, 3-i",
-        "1-iii, 2-i, 3-ii",
-        "1-ii, 2-i, 3-iii"
+        "A-1, B-2, C-3",
+        "A-2, B-3, C-1",
+        "A-3, B-1, C-2",
+        "A-2, B-1, C-3"
       ],
       "answerIndex": 1,
-      "explanation": "Correct: **Karai–land tax, Ulgu–custom duties, Irai–tribute** (1-ii, 2-iii, 3-i).\n\n**Why not the others**\n- '1-i, 2-ii, 3-iii' — makes Karai a tribute and Ulgu a land tax; both wrong.\n- '1-iii, 2-i, 3-ii' — assigns customs to Karai and tribute to Ulgu, misplaced.\n- '1-ii, 2-i, 3-iii' — right for Karai, but swaps **Ulgu (customs)** and **Irai (tribute)**.\n\n**Key facts**\n- **Karai** = land tax (chief revenue); **Ulgu** = port/trade customs.\n- **Irai** = tribute from feudatory chiefs; **Iravu** = extra/forced demand in festivals/emergencies.\n- **War booty** supplemented the treasury.\n\n*Source: APPSC GK — Sangam Age (Sangam Polity – Revenue System).*",
+      "noteRef": "hist-ancient-sangam-note-polity",
+      "explanation": "Correct: **Karai–land tax, Ulgu–custom duties, Irai–tribute** (A-2, B-3, C-1).\n\n**Why not the others**\n- 'A-1, B-2, C-3' — makes Karai a tribute and Ulgu a land tax; both wrong.\n- 'A-3, B-1, C-2' — assigns customs to Karai and tribute to Ulgu, misplaced.\n- 'A-2, B-1, C-3' — right for Karai, but swaps **Ulgu (customs)** and **Irai (tribute)**.\n\n**Key facts**\n- **Karai** = land tax (chief revenue); **Ulgu** = port/trade customs.\n- **Irai** = tribute from feudatory chiefs; **Iravu** = extra/forced demand in festivals/emergencies.\n- **War booty** supplemented the treasury.\n\n*Source: APPSC GK — Sangam Age (Sangam Polity – Revenue System).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Polity – Revenue System)",
       "verified": true,
       "covers": [
@@ -511,7 +712,12 @@
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about the Sangam economy:\n1. Cotton textiles from Uraiyur were prized in Roman markets.\n2. 'Umanar' were salt merchants.\n3. Roman gold and silver coins found across Tamil Nadu attest to robust Indo-Roman trade.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the Sangam economy:\nWhich of the statements are correct?",
+      "statements": [
+        "Cotton textiles from Uraiyur were prized in Roman markets.",
+        "'Umanar' were salt merchants.",
+        "Roman gold and silver coins found across Tamil Nadu attest to robust Indo-Roman trade."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -519,6 +725,7 @@
         "1, 2 and 3"
       ],
       "answerIndex": 3,
+      "noteRef": "hist-ancient-sangam-note-economy-rome",
       "explanation": "All three statements are correct features of the trade-rich Sangam economy.\n\n**Why not the others**\n- '1 and 2 only' — omits the true fact that **Roman coins** attest robust Indo-Roman trade.\n- '2 and 3 only' — omits **Uraiyur** cotton being prized in Rome.\n- '1 and 3 only' — omits **Umanar** as salt merchants.\n\n**Key facts**\n- Exports: **spices (pepper, turmeric), textiles, pearls, ivory**; imports: **gold, Roman wine, horses**.\n- Roman coins served both as **currency and ornament**, enriching ports like Puhar.\n- Craft centres: **Arikamedu** (beads/ceramics), **Madurai** (jewellery), **Kanchipuram** (textiles); merchant terms **Vanikan**, **Chattan/Nigama**, **Chattu**.\n\n*Source: APPSC GK — Sangam Age (Sangam Economy).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Economy – Trade, Roman Coins)",
       "verified": true,
@@ -546,6 +753,7 @@
         "Society's four broad classes were Brahmana, Kshatriya, Vaishya and Shudra."
       ],
       "answerIndex": 0,
+      "noteRef": "hist-ancient-sangam-note-religion-decline",
       "explanation": "**Murugan (Seyon)** was the chief Sangam deity — god of war, valour and youth — honoured with six abodes, the **Arupadai Veedu**.\n\n**Why not the others**\n- 'Tirukkural... by Avvaiyar' — the Tirukkural is by **Thiruvalluvar**; Avvaiyar was a celebrated woman poet but not its author.\n- 'Hero stones... victorious merchants' — **Nadu Kal** commemorated **fallen warriors** (a form of hero/ancestor worship), not merchants.\n- 'Brahmana, Kshatriya, Vaishya, Shudra' — the Sangam four broad classes were **Arasar, Anthanar, Vanigar, Vellalar**, not the northern varna names.\n\n**Key facts**\n- Murugan linked to the **Kurinji** (hilly) landscape.\n- Women enjoyed relative freedom; poets **Avvaiyar, Nachchellaiyar, Kakkaipadiniyar**; **Karpu** (chastity) idealised, **Sati** occasional among aristocracy.\n- Other deities: **Mayon/Vishnu, Indra, Varuna, Korravai**.\n\n*Source: APPSC GK — Sangam Age (Sangam Society & Religion).*",
       "source": "local APPSC GK PDF — Ancient History: Sangam Age (Sangam Society; Sangam Religion)",
       "verified": true,
@@ -563,7 +771,12 @@
       "id": "hist-ancient-sangam-mcq-22",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-sangam",
-      "question": "Consider the following statements about Sangam-age archaeology:\n1. Excavations at Keeladi (Keezhadi) on the Vaigai revealed a literate urban settlement with Tamil-Brahmi graffiti.\n2. Arikamedu near Puducherry was an Indo-Roman trade emporium yielding Roman pottery and amphorae.\n3. The tank-land term 'Eripatti' and formal land grants are characteristic of the Sangam-age Cholas.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Sangam-age archaeology:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Excavations at Keeladi (Keezhadi) on the Vaigai revealed a literate urban settlement with Tamil-Brahmi graffiti.",
+        "Arikamedu near Puducherry was an Indo-Roman trade emporium yielding Roman pottery and amphorae.",
+        "The tank-land term 'Eripatti' and formal land grants are characteristic of the Sangam-age Cholas."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -571,6 +784,7 @@
         "1, 2 and 3"
       ],
       "answerIndex": 0,
+      "noteRef": "hist-ancient-sangam-note-archaeology-keeladi",
       "explanation": "Statements 1 and 2 are correct; statement 3 is wrong because 'Eripatti' and formal land grants belong to the LATER Imperial Cholas (9th–13th c. CE), not the Sangam Cholas.\n\n**Why not the others**\n- '2 and 3 only' — includes the false Eripatti/Sangam-Chola link and drops the true Keeladi finding.\n- '1 and 3 only' — includes the false statement 3 and drops the true Arikamedu point.\n- '1, 2 and 3' — statement 3 is a classic period-confusion trap and is incorrect.\n\n**Key facts**\n- Keeladi's carbon dates push Tamil urban literacy back to c. 6th century BCE; a major 2025–26 CA topic.\n- Arikamedu yielded Roman Arretine ware, amphorae and beads — proof of Indo-Roman trade.\n- Adichanallur is a related Iron Age megalithic urn-burial site.\n\n*Source: ASI / TN State Archaeology reports on Keeladi; standard facts on Arikamedu.*",
       "source": "https://www.asi.nic.in/",
       "verified": true,

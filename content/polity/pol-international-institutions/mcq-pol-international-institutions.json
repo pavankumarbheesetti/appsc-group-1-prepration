@@ -9,6 +9,7 @@
       "subtopicId": "pol-international-institutions",
       "refresher": true,
       "question": "Where is the headquarters of the United Nations located?",
+      "noteRef": "pol-international-institutions-note-un-system",
       "options": [
         "Geneva",
         "New York City",
@@ -35,6 +36,7 @@
       "subtopicId": "pol-international-institutions",
       "refresher": true,
       "question": "The IMF and the World Bank were both established in 1944 at a conference held at:",
+      "noteRef": "pol-international-institutions-note-bretton-woods-wto",
       "options": [
         "San Francisco",
         "Bretton Woods",
@@ -61,6 +63,7 @@
       "subtopicId": "pol-international-institutions",
       "refresher": true,
       "question": "The World Trade Organization (WTO), which succeeded the GATT in 1995, is headquartered in:",
+      "noteRef": "pol-international-institutions-note-bretton-woods-wto",
       "options": [
         "Geneva",
         "Brussels",
@@ -84,7 +87,13 @@
       "id": "pol-international-institutions-mcq-4",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "Consider the following statements about the principal organs of the United Nations:\n1. The Trusteeship Council remains one of the currently active principal organs.\n2. The Economic and Social Council (ECOSOC) coordinates the work of the UN's specialised agencies.\n3. The Secretariat is headed by the Secretary-General, who is appointed by the General Assembly on the recommendation of the Security Council.\nWhich of the statements given above is/are correct?",
+      "question": "Consider the following statements about the principal organs of the United Nations:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "The Trusteeship Council remains one of the currently active principal organs.",
+        "The Economic and Social Council (ECOSOC) coordinates the work of the UN's specialised agencies.",
+        "The Secretariat is headed by the Secretary-General, who is appointed by the General Assembly on the recommendation of the Security Council."
+      ],
+      "noteRef": "pol-international-institutions-note-un-system",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -109,7 +118,13 @@
       "id": "pol-international-institutions-mcq-5",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "With reference to the United Nations Security Council (UNSC), consider the following statements:\n1. It has five permanent members with veto power and ten non-permanent members.\n2. Non-permanent members are elected for a two-year term by the General Assembly.\n3. India is a permanent member seeking abolition of the veto.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to the United Nations Security Council (UNSC), consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "It has five permanent members with veto power and ten non-permanent members.",
+        "Non-permanent members are elected for a two-year term by the General Assembly.",
+        "India is a permanent member seeking abolition of the veto."
+      ],
+      "noteRef": "pol-international-institutions-note-un-system",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -134,6 +149,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
       "question": "As of September 2026, who is the Secretary-General of the United Nations?",
+      "noteRef": "pol-international-institutions-note-un-system",
       "options": [
         "Ban Ki-moon",
         "António Guterres",
@@ -157,7 +173,13 @@
       "id": "pol-international-institutions-mcq-7",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "With reference to the International Court of Justice (ICJ), consider the following statements:\n1. It is the principal judicial organ of the UN and sits at The Hague.\n2. It consists of 15 judges elected for nine-year terms.\n3. Its President as of September 2026 is Yuji Iwasawa of Japan.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to the International Court of Justice (ICJ), consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "It is the principal judicial organ of the UN and sits at The Hague.",
+        "It consists of 15 judges elected for nine-year terms.",
+        "Its President as of September 2026 is Yuji Iwasawa of Japan."
+      ],
+      "noteRef": "pol-international-institutions-note-un-system",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -181,7 +203,48 @@
       "id": "pol-international-institutions-mcq-8",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "Match List-I (UN specialised agency) with List-II (headquarters) and select the correct answer:\nList-I\nA. WHO\nB. UNESCO\nC. ILO\nD. FAO\nList-II\n1. Rome\n2. Geneva\n3. Paris\n4. Geneva",
+      "question": "Match List-I (UN specialised agency) with List-II (headquarters and focus) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (UN specialised agency)",
+        "rightTitle": "List-II (headquarters and focus)",
+        "left": [
+          {
+            "key": "A",
+            "text": "WHO"
+          },
+          {
+            "key": "B",
+            "text": "UNESCO"
+          },
+          {
+            "key": "C",
+            "text": "ILO"
+          },
+          {
+            "key": "D",
+            "text": "FAO"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Rome — food and agriculture"
+          },
+          {
+            "key": "2",
+            "text": "Geneva — global public health"
+          },
+          {
+            "key": "3",
+            "text": "Paris — education, science and culture"
+          },
+          {
+            "key": "4",
+            "text": "Geneva — labour standards"
+          }
+        ]
+      },
+      "noteRef": "pol-international-institutions-note-un-system",
       "options": [
         "A-2, B-3, C-4, D-1",
         "A-3, B-2, C-1, D-4",
@@ -189,7 +252,7 @@
         "A-2, B-1, C-3, D-4"
       ],
       "answerIndex": 0,
-      "explanation": "**WHO and ILO are in Geneva, UNESCO in Paris, and FAO in Rome** — giving A-2, B-3, C-4, D-1.\n\n**Why not the others**\n- A-3, B-2, C-1, D-4 — wrongly places WHO in Paris and FAO out of Rome.\n- A-1, B-3, C-2, D-4 — wrongly places WHO in Rome.\n- A-2, B-1, C-3, D-4 — wrongly places UNESCO in Rome and ILO in Paris.\n\n**Key facts**\n| Agency | HQ | Focus |\n|---|---|---|\n| WHO | Geneva | Global health |\n| UNESCO | Paris | Education, science, culture |\n| ILO | Geneva | Labour standards |\n| FAO | Rome | Food & agriculture |\n\n*Source: UN system agency websites (who.int, unesco.org, ilo.org, fao.org); verified Sep 2026.*",
+      "explanation": "**WHO (global public health) and ILO (labour standards) are both in Geneva, UNESCO (education, science and culture) is in Paris, and FAO (food and agriculture) is in Rome** — giving A-2, B-3, C-4, D-1. Because two agencies share Geneva, List-II also names each body's focus so that every item is distinct.\n\n**Why not the others**\n- A-3, B-2, C-1, D-4 — wrongly places WHO in Paris and FAO out of Rome.\n- A-1, B-3, C-2, D-4 — wrongly places WHO in Rome.\n- A-2, B-1, C-3, D-4 — wrongly places UNESCO in Rome and ILO in Paris.\n\n**Key facts**\n| Agency | HQ | Focus |\n|---|---|---|\n| WHO | Geneva | Global health |\n| UNESCO | Paris | Education, science, culture |\n| ILO | Geneva | Labour standards |\n| FAO | Rome | Food & agriculture |\n\n*Source: UN system agency websites (who.int, unesco.org, ilo.org, fao.org); verified Sep 2026.*",
       "source": "UN specialised agency official sites, verified Sep 2026",
       "verified": true,
       "covers": [
@@ -208,6 +271,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
       "question": "As of September 2026, the Managing Director of the International Monetary Fund (IMF) is:",
+      "noteRef": "pol-international-institutions-note-bretton-woods-wto",
       "options": [
         "Christine Lagarde",
         "Kristalina Georgieva",
@@ -230,7 +294,13 @@
       "id": "pol-international-institutions-mcq-10",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "Consider the following statements about the World Bank Group:\n1. The IBRD and IDA together form what is commonly called the World Bank.\n2. The IFC lends to private-sector enterprises in developing countries.\n3. Its President as of September 2026 is Ajay Banga.\nWhich of the statements given above is/are correct?",
+      "question": "Consider the following statements about the World Bank Group:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "The IBRD and IDA together form what is commonly called the World Bank.",
+        "The IFC lends to private-sector enterprises in developing countries.",
+        "Its President as of September 2026 is Ajay Banga."
+      ],
+      "noteRef": "pol-international-institutions-note-bretton-woods-wto",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -257,6 +327,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
       "question": "As of September 2026, who is the Director-General of the World Trade Organization?",
+      "noteRef": "pol-international-institutions-note-bretton-woods-wto",
       "options": [
         "Roberto Azevêdo",
         "Pascal Lamy",
@@ -280,7 +351,13 @@
       "id": "pol-international-institutions-mcq-12",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "With reference to the Asian Development Bank (ADB), consider the following statements:\n1. It was established in 1966 and is headquartered in Manila, Philippines.\n2. By convention its President has always been Japanese.\n3. Its President as of September 2026 is Masato Kanda.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to the Asian Development Bank (ADB), consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "It was established in 1966 and is headquartered in Manila, Philippines.",
+        "By convention its President has always been Japanese.",
+        "Its President as of September 2026 is Masato Kanda."
+      ],
+      "noteRef": "pol-international-institutions-note-development-banks",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -304,7 +381,48 @@
       "id": "pol-international-institutions-mcq-13",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "Match List-I (financial institution) with List-II (headquarters) and select the correct answer:\nList-I\nA. AIIB\nB. New Development Bank\nC. Asian Development Bank\nD. IMF\nList-II\n1. Manila\n2. Beijing\n3. Washington D.C.\n4. Shanghai",
+      "question": "Match List-I (financial institution) with List-II (headquarters) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (financial institution)",
+        "rightTitle": "List-II (headquarters)",
+        "left": [
+          {
+            "key": "A",
+            "text": "AIIB"
+          },
+          {
+            "key": "B",
+            "text": "New Development Bank"
+          },
+          {
+            "key": "C",
+            "text": "Asian Development Bank"
+          },
+          {
+            "key": "D",
+            "text": "IMF"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Manila"
+          },
+          {
+            "key": "2",
+            "text": "Beijing"
+          },
+          {
+            "key": "3",
+            "text": "Washington D.C."
+          },
+          {
+            "key": "4",
+            "text": "Shanghai"
+          }
+        ]
+      },
+      "noteRef": "pol-international-institutions-note-development-banks",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-4, B-2, C-1, D-3",
@@ -332,6 +450,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
       "question": "The New Development Bank (NDB), headquartered in Shanghai, is associated with which grouping, and who is its President as of September 2026?",
+      "noteRef": "pol-international-institutions-note-development-banks",
       "options": [
         "ASEAN; Jin Liqun",
         "BRICS; Dilma Rousseff",
@@ -355,7 +474,48 @@
       "id": "pol-international-institutions-mcq-15",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "Match List-I (regional organisation) with List-II (headquarters) and select the correct answer:\nList-I\nA. SAARC\nB. ASEAN\nC. BIMSTEC\nD. European Union\nList-II\n1. Jakarta\n2. Dhaka\n3. Kathmandu\n4. Brussels",
+      "question": "Match List-I (regional organisation) with List-II (headquarters) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (regional organisation)",
+        "rightTitle": "List-II (headquarters)",
+        "left": [
+          {
+            "key": "A",
+            "text": "SAARC"
+          },
+          {
+            "key": "B",
+            "text": "ASEAN"
+          },
+          {
+            "key": "C",
+            "text": "BIMSTEC"
+          },
+          {
+            "key": "D",
+            "text": "European Union"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Jakarta"
+          },
+          {
+            "key": "2",
+            "text": "Dhaka"
+          },
+          {
+            "key": "3",
+            "text": "Kathmandu"
+          },
+          {
+            "key": "4",
+            "text": "Brussels"
+          }
+        ]
+      },
+      "noteRef": "pol-international-institutions-note-regional-plurilateral",
       "options": [
         "A-3, B-1, C-2, D-4",
         "A-2, B-1, C-3, D-4",
@@ -381,7 +541,13 @@
       "id": "pol-international-institutions-mcq-16",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "Consider the following statements about plurilateral groupings involving India:\n1. India hosted the G20 summit in New Delhi in 2023, at which the African Union was admitted as a permanent member.\n2. The QUAD comprises India, the United States, Japan and Australia.\n3. India became a full member of the Shanghai Cooperation Organisation (SCO) in 2017.\nWhich of the statements given above is/are correct?",
+      "question": "Consider the following statements about plurilateral groupings involving India:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "India hosted the G20 summit in New Delhi in 2023, at which the African Union was admitted as a permanent member.",
+        "The QUAD comprises India, the United States, Japan and Australia.",
+        "India became a full member of the Shanghai Cooperation Organisation (SCO) in 2017."
+      ],
+      "noteRef": "pol-international-institutions-note-regional-plurilateral",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -406,7 +572,13 @@
       "id": "pol-international-institutions-mcq-17",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "With reference to multilateral export-control regimes and climate bodies, consider the following statements:\n1. India is a member of the Missile Technology Control Regime (MTCR) and the Wassenaar Arrangement.\n2. India is a full member of the Nuclear Suppliers Group (NSG).\n3. The IPCC, which assesses climate science, functions under the UNFCCC.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to multilateral export-control regimes and climate bodies, consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "India is a member of the Missile Technology Control Regime (MTCR) and the Wassenaar Arrangement.",
+        "India is a full member of the Nuclear Suppliers Group (NSG).",
+        "The IPCC, which assesses climate science, functions under the UNFCCC."
+      ],
+      "noteRef": "pol-international-institutions-note-regional-plurilateral",
       "options": [
         "1 only",
         "1 and 3 only",
@@ -431,7 +603,48 @@
       "id": "pol-international-institutions-mcq-18",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "Match List-I (report) with List-II (publishing body):\nList-I: A) Human Development Report  B) World Investment Report  C) Global Competitiveness Report  D) Global Financial Stability Report\nList-II: 1) IMF  2) UNDP  3) World Economic Forum  4) UNCTAD\nSelect the correct answer:",
+      "question": "Match List-I (report) with List-II (publishing body):\nSelect the correct answer:",
+      "match": {
+        "leftTitle": "List-I (report)",
+        "rightTitle": "List-II (publishing body)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Human Development Report"
+          },
+          {
+            "key": "B",
+            "text": "World Investment Report"
+          },
+          {
+            "key": "C",
+            "text": "Global Competitiveness Report"
+          },
+          {
+            "key": "D",
+            "text": "Global Financial Stability Report"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "IMF"
+          },
+          {
+            "key": "2",
+            "text": "UNDP"
+          },
+          {
+            "key": "3",
+            "text": "World Economic Forum"
+          },
+          {
+            "key": "4",
+            "text": "UNCTAD"
+          }
+        ]
+      },
+      "noteRef": "pol-international-institutions-note-pyq-precision",
       "options": [
         "A-2, B-4, C-3, D-1",
         "A-2, B-3, C-4, D-1",
@@ -449,7 +662,13 @@
       "id": "pol-international-institutions-mcq-19",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "India is NOT a member of which of the following?\n1. Organisation for Economic Co-operation and Development (OECD)\n2. Organization of the Petroleum Exporting Countries (OPEC)\n3. Asian Infrastructure Investment Bank (AIIB)\nSelect the correct answer:",
+      "question": "India is NOT a member of which of the following?\nSelect the correct answer:",
+      "statements": [
+        "Organisation for Economic Co-operation and Development (OECD)",
+        "Organization of the Petroleum Exporting Countries (OPEC)",
+        "Asian Infrastructure Investment Bank (AIIB)"
+      ],
+      "noteRef": "pol-international-institutions-note-pyq-precision",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -467,7 +686,13 @@
       "id": "pol-international-institutions-mcq-20",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "The headquarters of which of the following organisations is/are located in Vienna?\n1. International Atomic Energy Agency (IAEA)\n2. Organization of the Petroleum Exporting Countries (OPEC)\n3. World Health Organization (WHO)\nSelect the correct answer:",
+      "question": "The headquarters of which of the following organisations is/are located in Vienna?\nSelect the correct answer:",
+      "statements": [
+        "International Atomic Energy Agency (IAEA)",
+        "Organization of the Petroleum Exporting Countries (OPEC)",
+        "World Health Organization (WHO)"
+      ],
+      "noteRef": "pol-international-institutions-note-pyq-precision",
       "options": [
         "1 only",
         "1 and 2 only",
@@ -486,6 +711,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
       "question": "The term 'Base Erosion and Profit Shifting (BEPS)' is most closely associated with which organisation?",
+      "noteRef": "pol-international-institutions-note-pyq-precision",
       "options": [
         "World Trade Organization",
         "Organisation for Economic Co-operation and Development",
@@ -503,7 +729,12 @@
       "id": "pol-international-institutions-mcq-22",
       "subjectCode": "POL",
       "subtopicId": "pol-international-institutions",
-      "question": "With reference to international economic bodies, consider the following statements:\n1. The Trade Facilitation Agreement (TFA) was concluded under the World Trade Organization.\n2. 'Masala bonds' are rupee-denominated bonds issued outside India by the International Finance Corporation (a World Bank Group arm) and others.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to international economic bodies, consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "The Trade Facilitation Agreement (TFA) was concluded under the World Trade Organization.",
+        "'Masala bonds' are rupee-denominated bonds issued outside India by the International Finance Corporation (a World Bank Group arm) and others."
+      ],
+      "noteRef": "pol-international-institutions-note-pyq-precision",
       "options": [
         "1 only",
         "2 only",

@@ -12,6 +12,7 @@
  * {@link isDue} decides whether an existing entry is due. This keeps flashcards
  * and MCQ drills on one identical algorithm.
  */
+import { stemPlainText } from '../lib/question-structure';
 import type { CardItem, MCQItem, NoteItem } from '../content/types';
 import { isDue, newCard, type SrCard } from './spaced-repetition';
 
@@ -95,7 +96,7 @@ export function buildFlashcards(
     const back = mcq.explanation ? `${answer} — ${mcq.explanation}` : answer;
     cards.push({
       id: `fc:${mcq.id}`,
-      front: mcq.question,
+      front: stemPlainText(mcq),
       back,
       source: 'mcq',
     });

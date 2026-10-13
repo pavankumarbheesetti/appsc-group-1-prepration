@@ -31,7 +31,8 @@
         "ivc",
         "refresher",
         "architecture"
-      ]
+      ],
+      "noteRef": "ivc-note-water-drainage"
     },
     {
       "id": "ivc-mcq-2",
@@ -60,7 +61,8 @@
         "ivc",
         "refresher",
         "sites"
-      ]
+      ],
+      "noteRef": "ivc-note-major-sites"
     },
     {
       "id": "ivc-mcq-3",
@@ -90,22 +92,63 @@
         "ivc",
         "refresher",
         "sites"
-      ]
+      ],
+      "noteRef": "ivc-note-major-sites"
     },
     {
       "id": "ivc-mcq-4",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the site (List-I) with its signature find (List-II) and choose the correct answer:\nList-I: (1) Mohenjo-daro (2) Lothal (3) Kalibangan (4) Dholavira\nList-II: (i) Tidal dockyard (ii) Great Bath (iii) Cascading stone reservoirs (iv) Ploughed field",
+      "question": "Match the site (List-I) with its signature find (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Site)",
+        "rightTitle": "List-II (Signature find)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Mohenjo-daro"
+          },
+          {
+            "key": "B",
+            "text": "Lothal"
+          },
+          {
+            "key": "C",
+            "text": "Kalibangan"
+          },
+          {
+            "key": "D",
+            "text": "Dholavira"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Tidal dockyard"
+          },
+          {
+            "key": "2",
+            "text": "Great Bath"
+          },
+          {
+            "key": "3",
+            "text": "Cascading stone reservoirs"
+          },
+          {
+            "key": "4",
+            "text": "Ploughed field"
+          }
+        ]
+      },
       "options": [
-        "1-ii, 2-i, 3-iv, 4-iii",
-        "1-i, 2-ii, 3-iii, 4-iv",
-        "1-ii, 2-iv, 3-i, 4-iii",
-        "1-iii, 2-i, 3-iv, 4-ii"
+        "A-2, B-1, C-4, D-3",
+        "A-1, B-2, C-3, D-4",
+        "A-2, B-4, C-1, D-3",
+        "A-3, B-1, C-4, D-2"
       ],
       "answerIndex": 0,
-      "explanation": "The correct pairing is **Mohenjo-daro — Great Bath; Lothal — tidal dockyard; Kalibangan — ploughed field; Dholavira — cascading stone reservoirs**.\n\n**Why not the others**\n- 1-i, 2-ii, 3-iii, 4-iv — gives Mohenjo-daro a dockyard and Lothal the Great Bath; both are swapped.\n- 1-ii, 2-iv, 3-i, 4-iii — assigns the ploughed field to Lothal and the dockyard to Kalibangan, which is wrong.\n- 1-iii, 2-i, 3-iv, 4-ii — puts the reservoirs at Mohenjo-daro and the Great Bath at Dholavira, reversing the two.\n\n**Key facts**\n- Great Bath = Mohenjo-daro only; tidal dockyard = Lothal.\n- Ploughed field with double cropping = Kalibangan.\n- Cascading reservoirs (jala durga) = Dholavira.\n\n*Source: APPSC GK — IVC (Major Sites); UNESCO (Dholavira).*",
+      "explanation": "The correct pairing is **Mohenjo-daro — Great Bath; Lothal — tidal dockyard; Kalibangan — ploughed field; Dholavira — cascading stone reservoirs**.\n\n**Why not the others**\n- A-1, B-2, C-3, D-4 — gives Mohenjo-daro a dockyard and Lothal the Great Bath; both are swapped.\n- A-2, B-4, C-1, D-3 — assigns the ploughed field to Lothal and the dockyard to Kalibangan, which is wrong.\n- A-3, B-1, C-4, D-2 — puts the reservoirs at Mohenjo-daro and the Great Bath at Dholavira, reversing the two.\n\n**Key facts**\n- Great Bath = Mohenjo-daro only; tidal dockyard = Lothal.\n- Ploughed field with double cropping = Kalibangan.\n- Cascading reservoirs (jala durga) = Dholavira.\n\n*Source: APPSC GK — IVC (Major Sites); UNESCO (Dholavira).*",
       "source": "local APPSC GK PDF — Ancient History: IVC (Major Sites table); Dholavira per UNESCO — https://whc.unesco.org/en/list/1645/",
       "verified": true,
       "covers": [
@@ -119,22 +162,63 @@
         "ivc",
         "sites",
         "match"
-      ]
+      ],
+      "noteRef": "ivc-note-major-sites"
     },
     {
       "id": "ivc-mcq-5",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "Match the archaeologist (List-I) with the site he excavated (List-II) and choose the correct answer:\nList-I: (1) Daya Ram Sahni (2) Rakhaldas Banerjee (3) Jagat Pati Joshi (4) Amlanand Ghosh\nList-II: (i) Mohenjo-daro (ii) Kalibangan (iii) Harappa (iv) Dholavira",
+      "question": "Match the archaeologist (List-I) with the site he excavated (List-II) and choose the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Archaeologist)",
+        "rightTitle": "List-II (Site he excavated)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Daya Ram Sahni"
+          },
+          {
+            "key": "B",
+            "text": "Rakhaldas Banerjee"
+          },
+          {
+            "key": "C",
+            "text": "Jagat Pati Joshi"
+          },
+          {
+            "key": "D",
+            "text": "Amlanand Ghosh"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Mohenjo-daro"
+          },
+          {
+            "key": "2",
+            "text": "Kalibangan"
+          },
+          {
+            "key": "3",
+            "text": "Harappa"
+          },
+          {
+            "key": "4",
+            "text": "Dholavira"
+          }
+        ]
+      },
       "options": [
-        "1-i, 2-iii, 3-ii, 4-iv",
-        "1-iii, 2-i, 3-ii, 4-iv",
-        "1-iii, 2-i, 3-iv, 4-ii",
-        "1-ii, 2-iv, 3-i, 4-iii"
+        "A-1, B-3, C-2, D-4",
+        "A-3, B-1, C-2, D-4",
+        "A-3, B-1, C-4, D-2",
+        "A-2, B-4, C-1, D-3"
       ],
       "answerIndex": 2,
-      "explanation": "The correct pairing is **Sahni — Harappa; Banerjee — Mohenjo-daro; Joshi — Dholavira; Ghosh — Kalibangan**.\n\n**Why not the others**\n- 1-i, 2-iii, 3-ii, 4-iv — swaps Sahni (Harappa) and Banerjee (Mohenjo-daro), and misplaces the rest.\n- 1-iii, 2-i, 3-ii, 4-iv — correctly starts with Sahni–Harappa and Banerjee–Mohenjo-daro but wrongly gives Joshi Kalibangan and Ghosh Dholavira.\n- 1-ii, 2-iv, 3-i, 4-iii — matches none of the four archaeologists to the right site.\n\n**Key facts**\n- Daya Ram Sahni dug Harappa (1920–21); R. D. Banerjee dug Mohenjo-daro (1921–22).\n- Jagat Pati Joshi discovered Dholavira (1968); A. Ghosh found Kalibangan (1953).\n- John Marshall announced the civilization to the world in 1924.\n\n*Source: APPSC GK — IVC (Discovery; Major Sites).*",
+      "explanation": "The correct pairing is **Sahni — Harappa; Banerjee — Mohenjo-daro; Joshi — Dholavira; Ghosh — Kalibangan**.\n\n**Why not the others**\n- A-1, B-3, C-2, D-4 — swaps Sahni (Harappa) and Banerjee (Mohenjo-daro), and misplaces the rest.\n- A-3, B-1, C-2, D-4 — correctly starts with Sahni–Harappa and Banerjee–Mohenjo-daro but wrongly gives Joshi Kalibangan and Ghosh Dholavira.\n- A-2, B-4, C-1, D-3 — matches none of the four archaeologists to the right site.\n\n**Key facts**\n- Daya Ram Sahni dug Harappa (1920–21); R. D. Banerjee dug Mohenjo-daro (1921–22).\n- Jagat Pati Joshi discovered Dholavira (1968); A. Ghosh found Kalibangan (1953).\n- John Marshall announced the civilization to the world in 1924.\n\n*Source: APPSC GK — IVC (Discovery; Major Sites).*",
       "source": "local APPSC GK PDF — Ancient History: IVC (Origin & Discovery; Major Sites); also NCERT Class XII 'Bricks, Beads and Bones' — https://ncert.nic.in/textbook/pdf/lehs101.pdf",
       "verified": true,
       "covers": [
@@ -148,22 +232,63 @@
         "ivc",
         "discovery",
         "match"
-      ]
+      ],
+      "noteRef": "ivc-note-major-sites"
     },
     {
       "id": "ivc-mcq-6",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "The four cardinal boundary sites of the Indus Valley Civilization are matched with their directions below. Choose the correct set:\nList-I: (1) West (2) East (3) North (4) South\nList-II: (i) Alamgirpur (ii) Manda (iii) Daimabad (iv) Sutkagendor",
+      "question": "The four cardinal boundary sites of the Indus Valley Civilization are matched with their directions below. Choose the correct set:",
+      "match": {
+        "leftTitle": "List-I (Direction)",
+        "rightTitle": "List-II (Boundary site)",
+        "left": [
+          {
+            "key": "A",
+            "text": "West"
+          },
+          {
+            "key": "B",
+            "text": "East"
+          },
+          {
+            "key": "C",
+            "text": "North"
+          },
+          {
+            "key": "D",
+            "text": "South"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Alamgirpur"
+          },
+          {
+            "key": "2",
+            "text": "Manda"
+          },
+          {
+            "key": "3",
+            "text": "Daimabad"
+          },
+          {
+            "key": "4",
+            "text": "Sutkagendor"
+          }
+        ]
+      },
       "options": [
-        "1-i, 2-iv, 3-iii, 4-ii",
-        "1-ii, 2-iii, 3-iv, 4-i",
-        "1-iv, 2-iii, 3-ii, 4-i",
-        "1-iv, 2-i, 3-ii, 4-iii"
+        "A-1, B-4, C-3, D-2",
+        "A-2, B-3, C-4, D-1",
+        "A-4, B-3, C-2, D-1",
+        "A-4, B-1, C-2, D-3"
       ],
       "answerIndex": 3,
-      "explanation": "The correct set is **West — Sutkagendor; East — Alamgirpur; North — Manda; South — Daimabad**.\n\n**Why not the others**\n- 1-i, 2-iv, 3-iii, 4-ii — swaps the eastern (Alamgirpur) and western (Sutkagendor) sites and misplaces the rest.\n- 1-ii, 2-iii, 3-iv, 4-i — assigns the wrong site to every direction.\n- 1-iv, 2-iii, 3-ii, 4-i — keeps Sutkagendor in the west but puts Daimabad in the east and Alamgirpur in the south.\n\n**Key facts**\n- Sutkagendor (Balochistan) is the westernmost site and a trade link with Mesopotamia.\n- Alamgirpur (UP) is the easternmost; Manda (Jammu, Chenab) the northernmost.\n- Daimabad (Maharashtra) is the southernmost — mnemonic 'MASD'.\n\n*Source: APPSC GK — IVC (Boundary extent).*",
+      "explanation": "The correct set is **West — Sutkagendor; East — Alamgirpur; North — Manda; South — Daimabad**.\n\n**Why not the others**\n- A-1, B-4, C-3, D-2 — swaps the eastern (Alamgirpur) and western (Sutkagendor) sites and misplaces the rest.\n- A-2, B-3, C-4, D-1 — assigns the wrong site to every direction.\n- A-4, B-3, C-2, D-1 — keeps Sutkagendor in the west but puts Daimabad in the east and Alamgirpur in the south.\n\n**Key facts**\n- Sutkagendor (Balochistan) is the westernmost site and a trade link with Mesopotamia.\n- Alamgirpur (UP) is the easternmost; Manda (Jammu, Chenab) the northernmost.\n- Daimabad (Maharashtra) is the southernmost — mnemonic 'MASD'.\n\n*Source: APPSC GK — IVC (Boundary extent).*",
       "source": "local APPSC GK PDF — Ancient History: IVC (Sites — boundary extent)",
       "verified": true,
       "covers": [
@@ -174,14 +299,21 @@
         "ivc",
         "geography",
         "match"
-      ]
+      ],
+      "noteRef": "ivc-note-extent"
     },
     {
       "id": "ivc-mcq-7",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about the Harappan economy and society:\n1. Wheat and barley were the principal food crops.\n2. Trade was carried on with the Persian Gulf and the Sumerians.\n3. Lapis lazuli was imported through trade with Afghanistan.\n4. Iron tools were in everyday use.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the Harappan economy and society:\nWhich of the statements are correct?",
+      "statements": [
+        "Wheat and barley were the principal food crops.",
+        "Trade was carried on with the Persian Gulf and the Sumerians.",
+        "Lapis lazuli was imported through trade with Afghanistan.",
+        "Iron tools were in everyday use."
+      ],
       "options": [
         "1, 2 and 3 only",
         "1, 2 and 4 only",
@@ -201,7 +333,8 @@
         "ivc",
         "economy",
         "statements"
-      ]
+      ],
+      "noteRef": "ivc-note-economy-trade"
     },
     {
       "id": "ivc-mcq-8",
@@ -228,14 +361,17 @@
         "seals",
         "script",
         "statements"
-      ]
+      ],
+      "noteRef": "ivc-note-crafts-seals-script"
     },
     {
       "id": "ivc-mcq-9",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "Assertion (A): Dholavira is described as a 'jala durga' (water fort).\nReason (R): It possessed an elaborate system of cascading stone reservoirs to store monsoon and stream water.\nSelect the correct answer:",
+      "question": "Consider the following Assertion (A) and Reason (R):\nSelect the correct answer:",
+      "assertion": "Dholavira is described as a 'jala durga' (water fort).",
+      "reason": "It possessed an elaborate system of cascading stone reservoirs to store monsoon and stream water.",
       "options": [
         "A is true, but R is false",
         "Both A and R are true, and R is the correct explanation of A",
@@ -254,7 +390,8 @@
         "ivc",
         "assertion-reason",
         "dholavira"
-      ]
+      ],
+      "noteRef": "ivc-note-major-sites"
     },
     {
       "id": "ivc-mcq-10",
@@ -280,7 +417,8 @@
         "ivc",
         "weights",
         "economy"
-      ]
+      ],
+      "noteRef": "ivc-note-standardisation"
     },
     {
       "id": "ivc-mcq-11",
@@ -306,14 +444,20 @@
         "ivc",
         "trade",
         "mesopotamia"
-      ]
+      ],
+      "noteRef": "ivc-note-mesopotamia-trade"
     },
     {
       "id": "ivc-mcq-12",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about Harappan religion:\n1. The Pashupati (proto-Siva) seal shows a seated figure surrounded by an elephant, a tiger, a rhinoceros and a buffalo.\n2. Terracotta figurines of heavily jewelled women are generally interpreted as mother goddesses.\n3. Numerous monumental temples have been excavated at the major Harappan cities.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Harappan religion:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The Pashupati (proto-Siva) seal shows a seated figure surrounded by an elephant, a tiger, a rhinoceros and a buffalo.",
+        "Terracotta figurines of heavily jewelled women are generally interpreted as mother goddesses.",
+        "Numerous monumental temples have been excavated at the major Harappan cities."
+      ],
       "options": [
         "1 only",
         "1 and 2 only",
@@ -333,7 +477,8 @@
         "ivc",
         "religion",
         "statements"
-      ]
+      ],
+      "noteRef": "ivc-note-religion"
     },
     {
       "id": "ivc-mcq-13",
@@ -360,7 +505,8 @@
         "ivc",
         "art",
         "bronze"
-      ]
+      ],
+      "noteRef": "ivc-note-art"
     },
     {
       "id": "ivc-mcq-14",
@@ -384,7 +530,8 @@
       "tags": [
         "ivc",
         "decline"
-      ]
+      ],
+      "noteRef": "ivc-note-decline"
     },
     {
       "id": "ivc-mcq-15",
@@ -413,14 +560,20 @@
         "ivc",
         "late-harappan",
         "chronology"
-      ]
+      ],
+      "noteRef": "ivc-note-late-harappan"
     },
     {
       "id": "ivc-mcq-16",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about Harappan crafts:\n1. Chanhudaro was a small settlement almost wholly devoted to crafts such as bead-making, shell-cutting and seal-making, and it had no citadel.\n2. Nageshwar and Balakot were important shell-working centres.\n3. The red colour of carnelian beads was obtained by firing the raw material.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Harappan crafts:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Chanhudaro was a small settlement almost wholly devoted to crafts such as bead-making, shell-cutting and seal-making, and it had no citadel.",
+        "Nageshwar and Balakot were important shell-working centres.",
+        "The red colour of carnelian beads was obtained by firing the raw material."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -439,14 +592,20 @@
         "ivc",
         "crafts",
         "statements"
-      ]
+      ],
+      "noteRef": "ivc-note-craft-centres"
     },
     {
       "id": "ivc-mcq-17",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "Consider the following statements about Harappan society and polity:\n1. No temples or palaces have been conclusively identified.\n2. The remarkable uniformity of weights, seals and the 4:2:1 brick ratio across the region suggests a standardising authority.\n3. Numerous royal tombs with rich grave goods, like those of Egypt, have been excavated.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Harappan society and polity:\nWhich of the statements is/are correct?",
+      "statements": [
+        "No temples or palaces have been conclusively identified.",
+        "The remarkable uniformity of weights, seals and the 4:2:1 brick ratio across the region suggests a standardising authority.",
+        "Numerous royal tombs with rich grave goods, like those of Egypt, have been excavated."
+      ],
       "options": [
         "1 only",
         "1 and 2 only",
@@ -468,7 +627,8 @@
         "society",
         "polity",
         "statements"
-      ]
+      ],
+      "noteRef": "ivc-note-authority"
     },
     {
       "id": "ivc-mcq-18",
@@ -490,14 +650,24 @@
         "Odd-one-out non-Harappan sites & inference facts (Sohgaura, boustrophedon script, spindle-whorls/home-spinning, secular society, horse/iron absent, Rakhigarhi largest)",
         "Geographical extent & boundary sites"
       ],
-      "tags": ["ivc", "odd-one-out", "sites"]
+      "tags": [
+        "ivc",
+        "odd-one-out",
+        "sites"
+      ],
+      "noteRef": "ivc-note-odd-one-out-inference"
     },
     {
       "id": "ivc-mcq-19",
       "subjectCode": "HIST",
       "subtopicId": "hist-ancient-ivc",
       "syllabusRef": "hist-scr-a1",
-      "question": "With reference to the Harappan towns, consider the following observations:\n1. Spindle-whorls are common at sites but spinning wheels have not been found.\n2. Houses were built of baked bricks with wells and bathing platforms.\n3. Iron tools were widely used for craft production.\nWhich of the statements is/are correct?",
+      "question": "With reference to the Harappan towns, consider the following observations:\nWhich of the statements is/are correct?",
+      "statements": [
+        "Spindle-whorls are common at sites but spinning wheels have not been found.",
+        "Houses were built of baked bricks with wells and bathing platforms.",
+        "Iron tools were widely used for craft production."
+      ],
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -513,7 +683,12 @@
         "Crafts (beads, shell, cotton)",
         "Society & polity"
       ],
-      "tags": ["ivc", "inference", "statements"]
+      "tags": [
+        "ivc",
+        "inference",
+        "statements"
+      ],
+      "noteRef": "ivc-note-odd-one-out-inference"
     }
   ]
 }

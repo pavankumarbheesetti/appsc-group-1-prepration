@@ -151,6 +151,29 @@ export type Syllabus = z.infer<typeof SyllabusSchema>;
 /* Content items                                                               */
 /* -------------------------------------------------------------------------- */
 
+/* -------------------------------------------------------------------------- */
+/* Structured MCQ stems (match / statements / assertion-reason)                */
+/* -------------------------------------------------------------------------- */
+
+/** List-I key of a match question: `A`..`F`. */
+export const MatchLeftKeySchema = z.enum(['A', 'B', 'C', 'D', 'E', 'F']);
+/** List-II key of a match question: `1`..`6`. */
+export const MatchRightKeySchema = z.enum(['1', '2', '3', '4', '5', '6']);
+
+/**
+ * The structured lists of a MATCH-THE-FOLLOWING question (see
+ * `.research/plan/QUESTION-FORMAT.md`). `leftTitle`/`rightTitle` are the column
+ * headers (e.g. "List-I (Article)"); each list has 2–6 keyed entries and is
+ * COMPLETE — every key the option codes (`A-2, B-4, …`) reference must exist.
+ */
+export const MatchFieldSchema = z.object({
+  leftTitle: z.string().min(1),
+  rightTitle: z.string().min(1),
+  left: z.array(z.object({ key: MatchLeftKeySchema, text: z.string().min(1) })).min(2).max(6),
+  right: z.array(z.object({ key: MatchRightKeySchema, text: z.string().min(1) })).min(2).max(6),
+});
+export type MatchField = z.infer<typeof MatchFieldSchema>;
+
 /**
  * A multiple-choice question.
  *
@@ -190,7 +213,27 @@ export const MCQItemSchema = z
      * learner warms up before the exam-level questions. Backward-compatible.
      */
     refresher: z.boolean().optional(),
+    /**
+     * The stem. For a structured item (`match` / `statements` / `assertion`)
+     * this is the LEAD-IN only (line 1), optionally followed by a closing prompt
+     * on its own line (e.g. "Which of the statements given above is/are
+     * correct?") that renders BELOW the structured block.
+     */
     question: z.string(),
+    /** OPTIONAL structured match-the-following lists (additive). */
+    match: MatchFieldSchema.optional(),
+    /** OPTIONAL numbered statements (2–6), rendered as 1., 2., … (additive). */
+    statements: z.array(z.string().min(1)).min(2).max(6).optional(),
+    /** OPTIONAL Assertion (A) text of an Assertion–Reason item (with `reason`). */
+    assertion: z.string().min(1).optional(),
+    /** OPTIONAL Reason (R) text of an Assertion–Reason item (with `assertion`). */
+    reason: z.string().min(1).optional(),
+    /**
+     * OPTIONAL id of the NOTE item that teaches the tested fact (taught-before-
+     * tested). Must be a note of the same subtopic or an earlier one in
+     * `content/plan/learning-sequence.json` (checked under VALIDATE_ALIGN=1).
+     */
+    noteRef: z.string().optional(),
     /** At least two options are required for a meaningful choice. */
     options: z.array(z.string()).min(2),
     /** Zero-based index into `options`; validated by the refine below. */

@@ -61,6 +61,9 @@ export interface QuizOpts {
 /** Letter badges for the first four options; falls back to the index+1. */
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'] as const;
 
+/** Monotonic counter giving each mounted navigator grid a unique DOM id. */
+let navSeq = 0;
+
 /** Pace thresholds (seconds): calm → AMBER → RED. Visual pacing only. */
 const PACE_AMBER_S = 60;
 const PACE_RED_S = 90;
@@ -312,15 +315,28 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
   };
 
   /**
-   * NUMBERED, horizontally-scrollable, clickable navigator — one chip per
-   * question. Answered chips show green (correct) / red (wrong), the current
-   * question is ringed, the rest are neutral. Clicking a chip JUMPS to that
-   * question via {@link jumpTo}. State mapping is the pure {@link computeNavCells}.
+   * Whether the full question grid is expanded. COLLAPSED by default so a long
+   * session (e.g. 85 questions) does not push every question below a wall of
+   * numbered buttons; the learner opens it with the "Show all questions" toggle
+   * and the choice is kept for the rest of the session (across redraws).
+   */
+  let navOpen = false;
+  const navGridId = `q-nav-grid-${(navSeq += 1)}`;
+
+  /**
+   * NUMBERED, clickable navigator — one chip per question — behind a compact
+   * disclosure toggle. Answered chips show green (correct) / red (wrong), the
+   * current question is ringed, the rest are neutral. Clicking a chip JUMPS to
+   * that question via {@link jumpTo}. State mapping is the pure
+   * {@link computeNavCells}. The toggle is a real button with `aria-expanded` /
+   * `aria-controls`; Enter/Space on any navigator control is kept from bubbling
+   * to the stage (where Enter means "next question").
    */
   const buildNavigator = (): HTMLElement => {
     const results = new Map<number, boolean>();
     for (const [i, rec] of answered) results.set(i, rec.correct);
-    const track = el('div', { class: 'q-nav-track' });
+    const track = el('div', { class: 'q-nav-track', attrs: { id: navGridId } });
+    if (!navOpen) track.hidden = true;
     for (const cell of computeNavCells(items.length, idx, results)) {
       const stateLabel =
         cell.state === 'correct'
@@ -343,7 +359,24 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
         }),
       );
     }
-    return el('nav', { class: 'q-nav', ariaLabel: 'Question navigator — jump to any question' }, [track]);
+    const toggle = el('button', {
+      class: 'btn btn-ghost q-nav-toggle',
+      type: 'button',
+      text: navOpen ? 'Hide all questions' : 'Show all questions',
+      attrs: { 'aria-expanded': String(navOpen), 'aria-controls': navGridId },
+    }) as HTMLButtonElement;
+    toggle.addEventListener('click', () => {
+      navOpen = !navOpen;
+      track.hidden = !navOpen;
+      toggle.textContent = navOpen ? 'Hide all questions' : 'Show all questions';
+      toggle.setAttribute('aria-expanded', String(navOpen));
+      if (navOpen) scrollIntoViewSafe(track.querySelector('.q-nav-item.is-current'));
+    });
+    const nav = el('nav', { class: 'q-nav', ariaLabel: 'Question navigator — jump to any question' }, [toggle, track]);
+    nav.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') e.stopPropagation();
+    });
+    return nav;
   };
 
   /**
@@ -499,10 +532,10 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
     const stage = makeStage(onKey);
     stage.append(
       progressBar(answered.size),
-      buildNavigator(),
       el('div', { class: 'focus-topline' }, [sessionHead(), buildPaceTimer()]),
+      buildNavigator(),
       el('div', { class: 'card question-card' }, [
-        ...renderQuestionStem(item.question),
+        ...renderQuestionStem(item),
         buildOptions(item, null, (chosen) => reveal(item, chosen)),
         buildConfidence(),
       ]),
@@ -560,7 +593,7 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
     }, [icon(rec.correct ? 'check' : 'x', 20), el('span', { text: rec.correct ? 'Correct' : 'Incorrect' })]);
 
     const cardBody: Child[] = [
-      ...renderQuestionStem(item.question),
+      ...renderQuestionStem(item),
       buildOptions(item, { chosen: rec.chosen, answerIndex: rec.answerIndex }, null),
       verdict,
       renderExplanation(item),
@@ -568,8 +601,8 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
 
     stage.append(
       progressBar(answered.size),
-      buildNavigator(),
       el('div', { class: 'focus-topline' }, [sessionHead()]),
+      buildNavigator(),
       el('div', { class: 'card question-card' }, cardBody),
       el('div', { class: 'focus-advance' }, [
         (() => {
@@ -716,16 +749,105 @@ function renderPlainStem(question: string): Child[] {
   return nodes;
 }
 
+/** The structured-stem fields {@link renderQuestionStem} reads from an item. */
+export type StemSource = Pick<MCQItem, 'question'> &
+  Partial<Pick<MCQItem, 'match' | 'statements' | 'assertion' | 'reason'>>;
+
+/**
+ * Split a structured item's `question` into its LEAD-IN (first line, shown above
+ * the structured block) and any closing PROMPT lines (shown below it). @internal
+ */
+function leadAndPrompt(question: string): { lead: string; prompt: string[] } {
+  const lines = question.split('\n').map((l) => l.trim()).filter((l) => l !== '');
+  return { lead: lines[0] ?? '', prompt: lines.slice(1) };
+}
+
+/** The lead-in heading + the closing prompt lines around a structured block. @internal */
+function wrapStructured(question: string, block: Child[]): Child[] {
+  const { lead, prompt } = leadAndPrompt(question);
+  const nodes: Child[] = [];
+  if (lead !== '') nodes.push(el('h2', { class: 'question-text stem-intro' }, renderInline(lead)));
+  nodes.push(...block);
+  for (const p of prompt) nodes.push(el('p', { class: 'stmt-prompt' }, renderInline(p)));
+  return nodes;
+}
+
+/**
+ * Render the STRUCTURED `match` field as an accessible two-column table: a
+ * header row (`th scope="col"`) with the two list titles and ONE ROW PER KEY,
+ * the List-I entry (`A. …`) and the List-II entry (`1. …`) aligned side by side.
+ * When one list is longer (an exam-style extra List-II item) the shorter column
+ * shows an explicit "—" filler cell (never an empty cell). @internal
+ */
+function renderMatchField(m: NonNullable<MCQItem['match']>): HTMLElement {
+  const cellFor = (entry: { key: string; text: string } | undefined): HTMLElement => {
+    if (!entry) return el('td', { class: 'match-cell is-filler', attrs: { 'aria-label': 'no item' } }, ['—']);
+    return el('td', { class: 'match-cell' }, [
+      el('span', { class: 'match-key tnum', text: `${entry.key}.` }),
+      ' ',
+      el('span', { class: 'match-text' }, renderInline(entry.text)),
+    ]);
+  };
+  const rows = Math.max(m.left.length, m.right.length);
+  const body: HTMLElement[] = [];
+  for (let i = 0; i < rows; i += 1) body.push(el('tr', {}, [cellFor(m.left[i]), cellFor(m.right[i])]));
+  const table = el('table', { class: 'md-table match-table' }, [
+    el('thead', {}, [
+      el('tr', {}, [
+        el('th', { attrs: { scope: 'col' } }, [el('span', { text: m.leftTitle })]),
+        el('th', { attrs: { scope: 'col' } }, [el('span', { text: m.rightTitle })]),
+      ]),
+    ]),
+    el('tbody', {}, body),
+  ]);
+  return el('div', { class: 'md-table-wrap match-table-wrap' }, [table]);
+}
+
+/** Render the STRUCTURED `statements` field as a numbered (1., 2., …) list. @internal */
+function renderStatementsField(statements: readonly string[]): HTMLElement {
+  const ol = el('ol', { class: 'stmt-list' });
+  for (const s of statements) ol.appendChild(el('li', { class: 'stmt-item' }, renderInline(s)));
+  return ol;
+}
+
+/** Render the STRUCTURED Assertion (A) / Reason (R) pair as two labelled blocks. @internal */
+function renderARField(assertion: string, reason: string): HTMLElement {
+  const block = (cls: string, label: string, text: string): HTMLElement =>
+    el('p', { class: `ar-line ${cls}` }, [
+      el('strong', { class: 'ar-label', text: label }),
+      ' ',
+      el('span', { class: 'ar-text' }, renderInline(text)),
+    ]);
+  return el('div', { class: 'ar-block' }, [
+    block('ar-assertion', 'Assertion (A):', assertion),
+    block('ar-reason', 'Reason (R):', reason),
+  ]);
+}
+
 /**
  * Render an MCQ stem into readable DOM nodes, applied everywhere the quiz shows a
- * question (live drill, drill results review, mock running + review). Structures
- * STATEMENT-BASED and MATCH-THE-FOLLOWING stems (see {@link parseQuestion}), and
- * renders a plain stem that embeds a markdown TABLE (or line breaks) through the
- * vetted markdown renderer; an ordinary single-line question still falls back to
- * the plain `.question-text` heading exactly as before. XSS-safe — text nodes /
- * the vetted inline + markdown renderers only, never innerHTML.
+ * question (live drill, drill results review, mock running + review + OMR).
+ *
+ * Pass the ITEM: when it carries STRUCTURED fields (`match`, `statements`,
+ * `assertion`/`reason` — see `.research/plan/QUESTION-FORMAT.md`) those are
+ * rendered directly (lead-in heading → table / numbered list / A-R blocks →
+ * closing prompt). Otherwise — or when given a bare string — it FALLS BACK to
+ * parsing the stem text (see {@link parseQuestion}) for statement / match stems,
+ * renders an embedded markdown TABLE (or line breaks) through the vetted
+ * markdown renderer, and an ordinary single-line question still becomes the
+ * plain `.question-text` heading. XSS-safe — text nodes / the vetted inline +
+ * markdown renderers only, never innerHTML.
  */
-export function renderQuestionStem(question: string): Child[] {
+export function renderQuestionStem(source: StemSource | string): Child[] {
+  const item: StemSource = typeof source === 'string' ? { question: source } : source;
+  if (item.match) return wrapStructured(item.question, [renderMatchField(item.match)]);
+  if (item.statements && item.statements.length > 0) {
+    return wrapStructured(item.question, [renderStatementsField(item.statements)]);
+  }
+  if (item.assertion !== undefined && item.reason !== undefined) {
+    return wrapStructured(item.question, [renderARField(item.assertion, item.reason)]);
+  }
+  const question = item.question;
   const parsed = parseQuestion(question);
   if (parsed.kind === 'match') return renderMatchStem(parsed);
   if (parsed.kind === 'statements') return renderStatementStem(parsed);

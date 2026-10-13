@@ -9,6 +9,7 @@
       "subtopicId": "ment-relationships",
       "refresher": true,
       "question": "The father of your father is your:",
+      "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
         "Uncle",
         "Nephew",
@@ -33,6 +34,7 @@
       "subtopicId": "ment-relationships",
       "refresher": true,
       "question": "The only daughter of your maternal grandmother is your:",
+      "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Aunt",
         "Mother",
@@ -58,6 +60,7 @@
       "subtopicId": "ment-relationships",
       "refresher": true,
       "question": "In a family-tree diagram, males and females are drawn as squares and circles; a horizontal double line (=) joining two people denotes:",
+      "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
         "Siblings",
         "Parent and child",
@@ -81,6 +84,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Pointing to a lady, Rohit said, \"She is the daughter of the only child of my grandmother.\" How is the lady related to Rohit?",
+      "noteRef": "ment-relationships-note-pointing-photo",
       "options": [
         "Sister",
         "Mother",
@@ -104,6 +108,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Pointing to a man in a photograph, Latha said, \"His mother is the only daughter of my mother.\" How is Latha related to the man?",
+      "noteRef": "ment-relationships-note-pointing-photo",
       "options": [
         "Sister",
         "Aunt",
@@ -127,6 +132,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "In a certain code, 'A + B' means A is the mother of B; 'A − B' means A is the brother of B; 'A × B' means A is the father of B; 'A ÷ B' means A is the sister of B. Which expression means 'P is the paternal uncle of Q'?",
+      "noteRef": "ment-relationships-note-coded-relations",
       "options": [
         "P + R × Q",
         "P − R × Q",
@@ -151,6 +157,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "'A × B' means A is the father of B; 'A ÷ B' means A is the daughter of B; 'A + B' means A is the sister of B; 'A − B' means A is the son of B. If 'P × Q ÷ R' is true, how is P related to R?",
+      "noteRef": "ment-relationships-note-coded-relations",
       "options": [
         "Brother",
         "Son",
@@ -175,6 +182,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "A is B's sister. C is B's mother. D is C's father. How is A related to D?",
+      "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
         "Granddaughter",
         "Grandmother",
@@ -199,6 +207,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "A is the father of F. F is the father of B. B is the mother of C. How is A related to C?",
+      "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Grandfather",
         "Great-grandfather",
@@ -222,6 +231,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "P is the husband of Q. R is the mother of Q. How is R related to P?",
+      "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Mother",
         "Sister-in-law",
@@ -245,6 +255,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Question: How is M related to N?\nStatement I: M is the child of N.\nStatement II: N is the mother of two children.\nWhich of the following is correct about the sufficiency of the statements?",
+      "noteRef": "ment-relationships-note-data-sufficiency",
       "options": [
         "Statement I alone is sufficient, but II alone is not",
         "Statement II alone is sufficient, but I alone is not",
@@ -269,6 +280,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "In a family, A is the father of C. B is the sister of C. D is the daughter of A. E is the brother of A. How is E related to D?",
+      "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
         "Father",
         "Uncle",
@@ -292,7 +304,13 @@
       "id": "ment-relationships-mcq-13",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "Pointing to a boy, Nisha said, \"He is the son of my grandfather's only son.\" Consider the following statements:\n1. The boy is Nisha's brother.\n2. The boy is Nisha's cousin.\n3. Nisha's father is his grandfather's only son.\nWhich of the statements is/are correct?",
+      "question": "Pointing to a boy, Nisha said, \"He is the son of my grandfather's only son.\" Consider the following statements:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The boy is Nisha's brother.",
+        "The boy is Nisha's cousin.",
+        "Nisha's father is his grandfather's only son."
+      ],
+      "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "1 only",
         "2 only",
@@ -315,7 +333,13 @@
       "id": "ment-relationships-mcq-14",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "Given: A is the child of B, and B is the daughter of C. Which of the following can be concluded with certainty?\n1. C is a grandparent of A.\n2. A is the grandson of C.\n3. B is a female.",
+      "question": "Given: A is the child of B, and B is the daughter of C. Consider the following statements:\nWhich of the statements can be concluded with certainty?",
+      "statements": [
+        "C is a grandparent of A.",
+        "A is the grandson of C.",
+        "B is a female."
+      ],
+      "noteRef": "ment-relationships-note-data-sufficiency",
       "options": [
         "1 and 3 only",
         "1, 2 and 3",
@@ -338,6 +362,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "'A @ B' means A is the wife of B; 'A # B' means A is the father of B; 'A % B' means A is the sister of B; 'A & B' means A is the brother of B. If 'P # Q @ R' is true, how is R related to P?",
+      "noteRef": "ment-relationships-note-coded-relations",
       "options": [
         "Son",
         "Brother-in-law",
@@ -363,6 +388,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "In a code, 'P ÷ Q' means P is the mother of Q; 'P × Q' means P is the brother of Q; 'P + Q' means P is the father of Q; 'P − Q' means P is the daughter of Q. If 'A + B × C − D' is true, how is A related to D?",
+      "noteRef": "ment-relationships-note-coded-relations",
       "options": [
         "Father",
         "Brother",
@@ -387,6 +413,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Pointing to a photograph, a man said, \"I have no brother or sister, but that man's father is my father's son.\" Whose photograph is it?",
+      "noteRef": "ment-relationships-note-pointing-photo",
       "options": [
         "His father",
         "His son",
@@ -410,7 +437,13 @@
       "id": "ment-relationships-mcq-18",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "A and B are a married couple. A is the father of C. C is the sister of D. D is the son of B. E is the mother of A. Consider the following statements:\n1. E is the grandmother of D.\n2. B is the mother of C.\n3. C and D are siblings.\nWhich of the statements is/are correct?",
+      "question": "A and B are a married couple. A is the father of C. C is the sister of D. D is the son of B. E is the mother of A. Consider the following statements:\nWhich of the statements is/are correct?",
+      "statements": [
+        "E is the grandmother of D.",
+        "B is the mother of C.",
+        "C and D are siblings."
+      ],
+      "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
         "3 only",
         "1 and 3 only",
@@ -435,6 +468,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "A is the mother of B. B is the son of C. C is the father of D. D is the sister of E. How is A related to E?",
+      "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
         "Mother",
         "Aunt",
@@ -459,6 +493,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Rekha is the wife of Mohan. Suresh is the brother of Mohan. Priya is the sister of Suresh. How is Priya related to Rekha?",
+      "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Sister",
         "Daughter-in-law",
@@ -483,6 +518,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Question: How is T related to S?\nStatement I: T is the daughter of S.\nStatement II: S is the father of T.\nWhich of the following about the sufficiency of the statements is correct?",
+      "noteRef": "ment-relationships-note-data-sufficiency",
       "options": [
         "Statement II alone is sufficient, but I alone is not",
         "Statement I alone is sufficient, but II alone is not",
@@ -506,7 +542,12 @@
       "id": "ment-relationships-mcq-22",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "Pointing to a woman, a boy said, \"She is the daughter-in-law of the grandmother of my father's only son.\" Consider the following statements:\n1. The woman is the boy's mother.\n2. 'My father's only son' refers to the boy himself.\nWhich of the statements is/are correct?",
+      "question": "Pointing to a woman, a boy said, \"She is the daughter-in-law of the grandmother of my father's only son.\" Consider the following statements:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The woman is the boy's mother.",
+        "'My father's only son' refers to the boy himself."
+      ],
+      "noteRef": "ment-relationships-note-pointing-photo",
       "options": [
         "1 only",
         "2 only",
@@ -530,7 +571,13 @@
       "id": "ment-relationships-mcq-23",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "A is the child of B. B is the sister of C. C is the mother of D. Which of the following is/are certainly true?\n1. B is female.\n2. A and D are cousins.\n3. A is male.",
+      "question": "A is the child of B. B is the sister of C. C is the mother of D. Consider the following statements:\nWhich of the statements is/are certainly true?",
+      "statements": [
+        "B is female.",
+        "A and D are cousins.",
+        "A is male."
+      ],
+      "noteRef": "ment-relationships-note-data-sufficiency",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -554,6 +601,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Five children A, B, C, D and E are sitting in a row facing north. C is exactly in the middle. A is sitting immediately to the left of C. D is immediately to the right of C. E is at the extreme right end. Who is sitting at the extreme left end?",
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "A",
         "B",
@@ -576,7 +624,13 @@
       "id": "ment-relationships-mcq-25",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "Six friends A, B, C, D, E and F sit in a row facing north. Consider the following:\n1. F is at the extreme left end and C is at the extreme right end.\n2. A is immediately to the left of B, and E is immediately to the left of D.\n3. A sits somewhere to the left of E.\nWho is sitting fourth from the left end?",
+      "question": "Six friends A, B, C, D, E and F sit in a row facing north. Consider the following:\nWho is sitting fourth from the left end?",
+      "statements": [
+        "F is at the extreme left end and C is at the extreme right end.",
+        "A is immediately to the left of B, and E is immediately to the left of D.",
+        "A sits somewhere to the left of E."
+      ],
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "A",
         "B",
@@ -601,6 +655,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Five friends P, Q, R, S and T are seated around a circular table facing the centre. Q is to the immediate right of P; R is to the immediate right of Q; S is to the immediate right of R. Who is to the immediate right of T?",
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "P",
         "Q",
@@ -623,7 +678,12 @@
       "id": "ment-relationships-mcq-27",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "Eight persons are seated at equal spacing around a circular table, all facing the centre. Consider the following statements:\n1. The person third to the left of any given person is the same as the one fifth to that person's right.\n2. The person sitting exactly opposite a given person is four places away on either side.\nWhich of the statements is/are correct?",
+      "question": "Eight persons are seated at equal spacing around a circular table, all facing the centre. Consider the following statements:\nWhich of the statements is/are correct?",
+      "statements": [
+        "The person third to the left of any given person is the same as the one fifth to that person's right.",
+        "The person sitting exactly opposite a given person is four places away on either side."
+      ],
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "1 only",
         "2 only",
@@ -649,6 +709,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "In a row of children, Ravi is 7th from the left end and 12th from the right end. How many children are there in the row?",
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "18",
         "19",
@@ -672,6 +733,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "In a row of 40 students, Sita is 16th from the left end. What is her position from the right end?",
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "24th",
         "25th",
@@ -695,6 +757,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "In a row, Amit is 10th from the left and Sunil is 8th from the right. When they interchange their seats, Amit becomes 15th from the left. How many persons are there in the row?",
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "22",
         "23",
@@ -718,6 +781,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "In a class of 30 students, Anu's rank is 12th from the top. Bina's rank is 5 places below Anu's. What is Bina's rank from the bottom?",
+      "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "14th",
         "15th",
@@ -741,6 +805,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "P is the mother of A's brother's father's wife. How is P related to A?",
+      "noteRef": "ment-relationships-note-chained-riddle",
       "options": [
         "Maternal grandmother",
         "Paternal grandmother",
@@ -765,6 +830,7 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "question": "Pointing to a lady, Ram said, \"She is the daughter of the only granddaughter of my maternal great-grandfather.\" How is the lady related to Ram?",
+      "noteRef": "ment-relationships-note-chained-riddle",
       "options": [
         "Sister",
         "Mother",

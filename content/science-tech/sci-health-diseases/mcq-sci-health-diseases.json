@@ -9,6 +9,7 @@
       "subtopicId": "sci-health-diseases",
       "refresher": true,
       "question": "Deficiency of which vitamin causes scurvy, marked by bleeding gums and poor wound healing?",
+      "noteRef": "sci-health-diseases-note-nutrition",
       "options": [
         "Vitamin A",
         "Vitamin C",
@@ -34,6 +35,7 @@
       "subtopicId": "sci-health-diseases",
       "refresher": true,
       "question": "Malaria in humans is caused by the parasite Plasmodium, which is transmitted by the bite of:",
+      "noteRef": "sci-health-diseases-note-diseases",
       "options": [
         "Female Aedes mosquito",
         "Female Culex mosquito",
@@ -59,6 +61,7 @@
       "subtopicId": "sci-health-diseases",
       "refresher": true,
       "question": "Under Ayushman Bharat PM-JAY (launched 2018), what is the annual health-cover amount per eligible family for secondary and tertiary care?",
+      "noteRef": "sci-health-diseases-note-missions",
       "options": [
         "₹1 lakh",
         "₹3 lakh",
@@ -82,7 +85,14 @@
       "id": "sci-health-diseases-mcq-4",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about a balanced diet:\n1. Carbohydrates and fats are the body's main sources of energy.\n2. Proteins are the primary energy source and are needed only for growth.\n3. Vitamins and minerals are required in large (macro) quantities.\n4. Fats yield more energy per gram than carbohydrates.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about a balanced diet:\nWhich of the statements are correct?",
+      "statements": [
+        "Carbohydrates and fats are the body's main sources of energy.",
+        "Proteins are the primary energy source and are needed only for growth.",
+        "Vitamins and minerals are required in large (macro) quantities.",
+        "Fats yield more energy per gram than carbohydrates."
+      ],
+      "noteRef": "sci-health-diseases-note-nutrition",
       "options": [
         "1 and 4 only",
         "1, 2 and 3",
@@ -105,7 +115,48 @@
       "id": "sci-health-diseases-mcq-5",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Match List-I (deficiency) with List-II (nutrient lacking):\nList-I\nA. Goitre\nB. Beriberi\nC. Pellagra\nD. Rickets\nList-II\n1. Vitamin B1 (thiamine)\n2. Iodine\n3. Vitamin D\n4. Vitamin B3 (niacin)",
+      "question": "Match List-I (deficiency) with List-II (nutrient lacking):",
+      "match": {
+        "leftTitle": "List-I (deficiency)",
+        "rightTitle": "List-II (nutrient lacking)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Goitre"
+          },
+          {
+            "key": "B",
+            "text": "Beriberi"
+          },
+          {
+            "key": "C",
+            "text": "Pellagra"
+          },
+          {
+            "key": "D",
+            "text": "Rickets"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Vitamin B1 (thiamine)"
+          },
+          {
+            "key": "2",
+            "text": "Iodine"
+          },
+          {
+            "key": "3",
+            "text": "Vitamin D"
+          },
+          {
+            "key": "4",
+            "text": "Vitamin B3 (niacin)"
+          }
+        ]
+      },
+      "noteRef": "sci-health-diseases-note-nutrition",
       "options": [
         "A-2, B-1, C-4, D-3",
         "A-1, B-2, C-3, D-4",
@@ -130,7 +181,14 @@
       "id": "sci-health-diseases-mcq-6",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about communicable diseases:\n1. Tuberculosis is caused by a bacterium and spreads through the air.\n2. Cholera is a viral disease spread by mosquito bites.\n3. Dengue, COVID-19 and Nipah are all caused by viruses.\n4. Nipah virus is associated with fruit bats as a natural reservoir.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about communicable diseases:\nWhich of the statements are correct?",
+      "statements": [
+        "Tuberculosis is caused by a bacterium and spreads through the air.",
+        "Cholera is a viral disease spread by mosquito bites.",
+        "Dengue, COVID-19 and Nipah are all caused by viruses.",
+        "Nipah virus is associated with fruit bats as a natural reservoir."
+      ],
+      "noteRef": "sci-health-diseases-note-diseases",
       "options": [
         "1 and 2 only",
         "1, 3 and 4",
@@ -153,7 +211,48 @@
       "id": "sci-health-diseases-mcq-7",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Match List-I (vector-borne disease) with List-II (vector):\nList-I\nA. Kala-azar\nB. Lymphatic filariasis\nC. Chikungunya\nD. Japanese encephalitis\nList-II\n1. Aedes mosquito\n2. Sandfly\n3. Culex mosquito\n4. Culex mosquito (pig-amplifying)",
+      "question": "Match List-I (vector-borne disease) with List-II (vector):",
+      "match": {
+        "leftTitle": "List-I (vector-borne disease)",
+        "rightTitle": "List-II (vector)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Kala-azar"
+          },
+          {
+            "key": "B",
+            "text": "Lymphatic filariasis"
+          },
+          {
+            "key": "C",
+            "text": "Chikungunya"
+          },
+          {
+            "key": "D",
+            "text": "Malaria"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Aedes mosquito"
+          },
+          {
+            "key": "2",
+            "text": "Sandfly"
+          },
+          {
+            "key": "3",
+            "text": "Culex mosquito"
+          },
+          {
+            "key": "4",
+            "text": "Female Anopheles mosquito"
+          }
+        ]
+      },
+      "noteRef": "sci-health-diseases-note-diseases",
       "options": [
         "A-1, B-3, C-2, D-4",
         "A-2, B-3, C-1, D-4",
@@ -161,7 +260,7 @@
         "A-3, B-2, C-1, D-4"
       ],
       "answerIndex": 1,
-      "explanation": "Correct: **A-2, B-3, C-1, D-4** — kala-azar by sandfly, filariasis by Culex, chikungunya by Aedes, and Japanese encephalitis by Culex (with pigs/water birds as amplifying hosts).\n\n**Why not the others**\n- A-1/A-3 — kala-azar (Leishmania) is transmitted by the **sandfly** (Phlebotomus), not a mosquito.\n- B-1 — lymphatic filariasis (Wuchereria) is spread by **Culex**, not Aedes.\n- C-2/C-3 — chikungunya is an **Aedes**-borne viral disease.\n\n**Key facts**\n- Aedes: dengue, chikungunya, Zika. Culex: filariasis, JE. Anopheles: malaria. Sandfly: kala-azar.\n- Elimination programmes target kala-azar and filariasis via vector control + MDA.\n\n*Source: NCVBDC, MoHFW; WHO.*",
+      "explanation": "Correct: **A-2, B-3, C-1, D-4** — kala-azar is spread by the sandfly, lymphatic filariasis by the Culex mosquito, chikungunya by the Aedes mosquito, and malaria by the female Anopheles mosquito.\n\n**Why not the others**\n- A-1, B-3, C-2, D-4 — kala-azar (Leishmania) is spread by the **sandfly**, not the Aedes mosquito, and chikungunya is not sandfly-borne.\n- A-2, B-1, C-3, D-4 — lymphatic filariasis is spread by **Culex**, not Aedes; chikungunya is Aedes-borne.\n- A-3, B-2, C-1, D-4 — kala-azar is not Culex-borne and filariasis is not spread by sandflies.\n\n**Key facts**\n- Aedes: dengue, chikungunya, Zika. Culex: filariasis, Japanese encephalitis. Anopheles: malaria. Sandfly: kala-azar.\n- Elimination programmes target kala-azar and filariasis through vector control and mass drug administration.\n\n*Source: NCVBDC, MoHFW; WHO.*",
       "source": "NCVBDC, MoHFW; WHO",
       "verified": true,
       "covers": [
@@ -176,7 +275,14 @@
       "id": "sci-health-diseases-mcq-8",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about non-communicable diseases (NCDs):\n1. They are transmitted from person to person by pathogens.\n2. Diabetes, hypertension, cancer and cardiovascular disease are major NCDs.\n3. Tobacco use, unhealthy diet, physical inactivity and alcohol are key risk factors.\n4. NCDs account for the majority of deaths in India.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about non-communicable diseases (NCDs):\nWhich of the statements are correct?",
+      "statements": [
+        "They are transmitted from person to person by pathogens.",
+        "Diabetes, hypertension, cancer and cardiovascular disease are major NCDs.",
+        "Tobacco use, unhealthy diet, physical inactivity and alcohol are key risk factors.",
+        "NCDs account for the majority of deaths in India."
+      ],
+      "noteRef": "sci-health-diseases-note-diseases",
       "options": [
         "1, 2 and 3",
         "2, 3 and 4",
@@ -199,7 +305,14 @@
       "id": "sci-health-diseases-mcq-9",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about immunity:\n1. Active immunity is developed when the body makes its own antibodies after infection or vaccination.\n2. Passive immunity, as from mother's milk or antiserum, is long-lasting.\n3. Herd immunity protects the unvaccinated when a large fraction of the population is immune.\n4. Vaccines usually contain weakened, killed, or parts of a pathogen to trigger memory cells.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about immunity:\nWhich of the statements are correct?",
+      "statements": [
+        "Active immunity is developed when the body makes its own antibodies after infection or vaccination.",
+        "Passive immunity, as from mother's milk or antiserum, is long-lasting.",
+        "Herd immunity protects the unvaccinated when a large fraction of the population is immune.",
+        "Vaccines usually contain weakened, killed, or parts of a pathogen to trigger memory cells."
+      ],
+      "noteRef": "sci-health-diseases-note-immunity-uip",
       "options": [
         "1, 2 and 4",
         "2, 3 and 4",
@@ -222,7 +335,14 @@
       "id": "sci-health-diseases-mcq-10",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about India's Universal Immunization Programme (UIP):\n1. It was launched in 1985.\n2. It currently provides free vaccines against 12 diseases.\n3. Mission Indradhanush was launched in 2014 to raise full-immunization coverage.\n4. U-WIN is a digital platform to register and track vaccinations.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about India's Universal Immunization Programme (UIP):\nWhich of the statements are correct?",
+      "statements": [
+        "It was launched in 1985.",
+        "It currently provides free vaccines against 12 diseases.",
+        "Mission Indradhanush was launched in 2014 to raise full-immunization coverage.",
+        "U-WIN is a digital platform to register and track vaccinations."
+      ],
+      "noteRef": "sci-health-diseases-note-immunity-uip",
       "options": [
         "1, 2 and 3 only",
         "1, 3 and 4 only",
@@ -247,7 +367,48 @@
       "id": "sci-health-diseases-mcq-11",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Match List-I (Ayushman Bharat / digital health component) with List-II (description):\nList-I\nA. PM-JAY\nB. Ayushman Arogya Mandir\nC. ABDM / ABHA\nD. Ayushman Vay Vandana\nList-II\n1. Health & Wellness Centres for primary care\n2. Unique digital health ID for citizens\n3. ₹5 lakh hospitalisation cover\n4. Free cover for all citizens aged 70 and above",
+      "question": "Match List-I (Ayushman Bharat / digital health component) with List-II (description):",
+      "match": {
+        "leftTitle": "List-I (Ayushman Bharat / digital health component)",
+        "rightTitle": "List-II (description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "PM-JAY"
+          },
+          {
+            "key": "B",
+            "text": "Ayushman Arogya Mandir"
+          },
+          {
+            "key": "C",
+            "text": "ABDM / ABHA"
+          },
+          {
+            "key": "D",
+            "text": "Ayushman Vay Vandana"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Health & Wellness Centres for primary care"
+          },
+          {
+            "key": "2",
+            "text": "Unique digital health ID for citizens"
+          },
+          {
+            "key": "3",
+            "text": "₹5 lakh hospitalisation cover"
+          },
+          {
+            "key": "4",
+            "text": "Free cover for all citizens aged 70 and above"
+          }
+        ]
+      },
+      "noteRef": "sci-health-diseases-note-missions",
       "options": [
         "A-3, B-1, C-2, D-4",
         "A-1, B-3, C-2, D-4",
@@ -272,7 +433,14 @@
       "id": "sci-health-diseases-mcq-12",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about India's National Health Mission (NHM) and health policy:\n1. The National Rural Health Mission (NRHM) was launched in 2005.\n2. The National Urban Health Mission (NUHM) was added as a sub-mission in 2013.\n3. ASHAs (Accredited Social Health Activists) are community health volunteers under NHM.\n4. The National Health Policy 2017 targets public health spending of 2.5% of GDP.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about India's National Health Mission (NHM) and health policy:\nWhich of the statements are correct?",
+      "statements": [
+        "The National Rural Health Mission (NRHM) was launched in 2005.",
+        "The National Urban Health Mission (NUHM) was added as a sub-mission in 2013.",
+        "ASHAs (Accredited Social Health Activists) are community health volunteers under NHM.",
+        "The National Health Policy 2017 targets public health spending of 2.5% of GDP."
+      ],
+      "noteRef": "sci-health-diseases-note-missions",
       "options": [
         "1, 2 and 3 only",
         "1, 3 and 4 only",
@@ -296,7 +464,14 @@
       "id": "sci-health-diseases-mcq-13",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about disease eradication and elimination in India:\n1. Smallpox was declared globally eradicated by the WHO in 1980.\n2. India (with the WHO South-East Asia Region) was certified polio-free in 2014.\n3. Guinea worm disease (dracunculiasis) has been eliminated from India.\n4. India was the first country validated by the WHO for eliminating yaws.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about disease eradication and elimination in India:\nWhich of the statements are correct?",
+      "statements": [
+        "Smallpox was declared globally eradicated by the WHO in 1980.",
+        "India (with the WHO South-East Asia Region) was certified polio-free in 2014.",
+        "Guinea worm disease (dracunculiasis) has been eliminated from India.",
+        "India was the first country validated by the WHO for eliminating yaws."
+      ],
+      "noteRef": "sci-health-diseases-note-eradication",
       "options": [
         "1 and 2 only",
         "2, 3 and 4 only",
@@ -320,7 +495,14 @@
       "id": "sci-health-diseases-mcq-14",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements:\n1. India set a target to eliminate tuberculosis by 2025, ahead of the global SDG target of 2030.\n2. In 2024, India was validated by the WHO for eliminating trachoma as a public health problem.\n3. Kala-azar (visceral leishmaniasis) is one of the diseases India aims to eliminate.\n4. India was certified free of maternal and neonatal tetanus in 2015.\nWhich of the statements are correct?",
+      "question": "Consider the following statements:\nWhich of the statements are correct?",
+      "statements": [
+        "India set a target to eliminate tuberculosis by 2025, ahead of the global SDG target of 2030.",
+        "In 2024, India was validated by the WHO for eliminating trachoma as a public health problem.",
+        "Kala-azar (visceral leishmaniasis) is one of the diseases India aims to eliminate.",
+        "India was certified free of maternal and neonatal tetanus in 2015."
+      ],
+      "noteRef": "sci-health-diseases-note-eradication",
       "options": [
         "1 and 3 only",
         "2 and 4 only",
@@ -346,7 +528,14 @@
       "id": "sci-health-diseases-mcq-15",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "With reference to antimicrobial resistance (AMR), consider the following statements:\n1. AMR occurs when microbes evolve to resist the drugs used against them.\n2. Overuse and misuse of antibiotics in humans and livestock accelerate AMR.\n3. India adopted a National Action Plan on AMR in 2017.\n4. The 'Red Line' campaign marks prescription-only antibiotics to curb self-medication.\nWhich of the statements are correct?",
+      "question": "With reference to antimicrobial resistance (AMR), consider the following statements:\nWhich of the statements are correct?",
+      "statements": [
+        "AMR occurs when microbes evolve to resist the drugs used against them.",
+        "Overuse and misuse of antibiotics in humans and livestock accelerate AMR.",
+        "India adopted a National Action Plan on AMR in 2017.",
+        "The 'Red Line' campaign marks prescription-only antibiotics to curb self-medication."
+      ],
+      "noteRef": "sci-health-diseases-note-eradication",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",
@@ -370,7 +559,48 @@
       "id": "sci-health-diseases-mcq-16",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Match List-I (nutrition/health programme) with List-II (focus):\nList-I\nA. POSHAN Abhiyaan\nB. PM POSHAN\nC. Anaemia Mukt Bharat\nD. ICDS\nList-II\n1. Hot cooked mid-day meal in schools\n2. Reducing anaemia across life-cycle groups\n3. Overall reduction of malnutrition/stunting\n4. Anganwadi services for children under 6 & mothers",
+      "question": "Match List-I (nutrition/health programme) with List-II (focus):",
+      "match": {
+        "leftTitle": "List-I (nutrition/health programme)",
+        "rightTitle": "List-II (focus)",
+        "left": [
+          {
+            "key": "A",
+            "text": "POSHAN Abhiyaan"
+          },
+          {
+            "key": "B",
+            "text": "PM POSHAN"
+          },
+          {
+            "key": "C",
+            "text": "Anaemia Mukt Bharat"
+          },
+          {
+            "key": "D",
+            "text": "ICDS"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Hot cooked mid-day meal in schools"
+          },
+          {
+            "key": "2",
+            "text": "Reducing anaemia across life-cycle groups"
+          },
+          {
+            "key": "3",
+            "text": "Overall reduction of malnutrition/stunting"
+          },
+          {
+            "key": "4",
+            "text": "Anganwadi services for children under 6 & mothers"
+          }
+        ]
+      },
+      "noteRef": "sci-health-diseases-note-programmes-outbreaks",
       "options": [
         "A-3, B-1, C-2, D-4",
         "A-1, B-3, C-2, D-4",
@@ -394,7 +624,14 @@
       "id": "sci-health-diseases-mcq-17",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about recent disease outbreaks and the One Health approach:\n1. Nipah virus outbreaks in India have been reported mainly from Kerala.\n2. In 2024 the WHO declared Mpox (monkeypox) a Public Health Emergency of International Concern.\n3. HMPV (human metapneumovirus) drew public attention in early 2025.\n4. The One Health approach links human, animal and environmental health.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about recent disease outbreaks and the One Health approach:\nWhich of the statements are correct?",
+      "statements": [
+        "Nipah virus outbreaks in India have been reported mainly from Kerala.",
+        "In 2024 the WHO declared Mpox (monkeypox) a Public Health Emergency of International Concern.",
+        "HMPV (human metapneumovirus) drew public attention in early 2025.",
+        "The One Health approach links human, animal and environmental health."
+      ],
+      "noteRef": "sci-health-diseases-note-programmes-outbreaks",
       "options": [
         "1 and 4 only",
         "2, 3 and 4 only",
@@ -420,6 +657,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
       "question": "The 'Dr NTR Vaidya Seva' (earlier Rajiv Aarogyasri) scheme of Andhra Pradesh is best described as:",
+      "noteRef": "sci-health-diseases-note-missions",
       "options": [
         "A free-medicines-only scheme at government pharmacies",
         "A cashless health-insurance/assurance scheme covering secondary and tertiary care for eligible families",
@@ -443,7 +681,13 @@
       "id": "sci-health-diseases-mcq-19",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about health-service helplines associated with Andhra Pradesh:\n1. The '108' emergency-response ambulance service originated in Andhra Pradesh before spreading to other states.\n2. '104' is used as a health information helpline and for fixed-day mobile medical services in rural areas.\n3. Both services are examples of public-private / PPP delivery in emergency and primary healthcare.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about health-service helplines associated with Andhra Pradesh:\nWhich of the statements are correct?",
+      "statements": [
+        "The '108' emergency-response ambulance service originated in Andhra Pradesh before spreading to other states.",
+        "'104' is used as a health information helpline and for fixed-day mobile medical services in rural areas.",
+        "Both services are examples of public-private / PPP delivery in emergency and primary healthcare."
+      ],
+      "noteRef": "sci-health-diseases-note-programmes-outbreaks",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -468,7 +712,13 @@
       "id": "sci-health-diseases-mcq-20",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about Andhra Pradesh's demographic and health indicators (as per the Sample Registration System, SRS):\n1. Andhra Pradesh's Total Fertility Rate (TFR) is below the replacement level of 2.1.\n2. Andhra Pradesh's Infant Mortality Rate (IMR) is lower than the all-India average.\n3. Andhra Pradesh's Maternal Mortality Ratio (MMR) is lower than the all-India figure.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's demographic and health indicators (as per the Sample Registration System, SRS):\nWhich of the statements are correct?",
+      "statements": [
+        "Andhra Pradesh's Total Fertility Rate (TFR) is below the replacement level of 2.1.",
+        "Andhra Pradesh's Infant Mortality Rate (IMR) is lower than the all-India average.",
+        "Andhra Pradesh's Maternal Mortality Ratio (MMR) is lower than the all-India figure."
+      ],
+      "noteRef": "sci-health-diseases-note-missions",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -494,7 +744,13 @@
       "id": "sci-health-diseases-mcq-21",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about diseases with regional significance in Andhra Pradesh:\n1. Fluorosis, caused by excess fluoride in drinking water, is endemic in parts of Andhra Pradesh.\n2. Lymphatic filariasis, a mosquito-borne disease, has been endemic in several coastal districts.\n3. Fluorosis is a communicable disease spread from person to person.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about diseases with regional significance in Andhra Pradesh:\nWhich of the statements are correct?",
+      "statements": [
+        "Fluorosis, caused by excess fluoride in drinking water, is endemic in parts of Andhra Pradesh.",
+        "Lymphatic filariasis, a mosquito-borne disease, has been endemic in several coastal districts.",
+        "Fluorosis is a communicable disease spread from person to person."
+      ],
+      "noteRef": "sci-health-diseases-note-diseases",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -518,7 +774,13 @@
       "id": "sci-health-diseases-mcq-22",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about Andhra Pradesh's health indicators as per the National Family Health Survey-5 (NFHS-5, 2019-21):\n1. The state's Total Fertility Rate (TFR) is below the replacement level of 2.1.\n2. The share of institutional births is very high (around 96–98%).\n3. The Infant Mortality Rate (IMR) is of the order of 30 per 1,000 live births.\nWhich of the statements given above are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's health indicators as per the National Family Health Survey-5 (NFHS-5, 2019-21):\nWhich of the statements given above are correct?",
+      "statements": [
+        "The state's Total Fertility Rate (TFR) is below the replacement level of 2.1.",
+        "The share of institutional births is very high (around 96–98%).",
+        "The Infant Mortality Rate (IMR) is of the order of 30 per 1,000 live births."
+      ],
+      "noteRef": "sci-health-diseases-note-eradication",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -543,7 +805,13 @@
       "id": "sci-health-diseases-mcq-23",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about Andhra Pradesh's Dr NTR Vaidya Seva (Aarogyasri) health scheme:\n1. It provides cashless secondary and tertiary hospital care to eligible families through empanelled hospitals.\n2. It descends from the earlier Rajiv Aarogyasri community health-insurance scheme.\n3. It is among the larger health-sector allocations in the AP state budget.\nWhich of the statements given above are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's Dr NTR Vaidya Seva (Aarogyasri) health scheme:\nWhich of the statements given above are correct?",
+      "statements": [
+        "It provides cashless secondary and tertiary hospital care to eligible families through empanelled hospitals.",
+        "It descends from the earlier Rajiv Aarogyasri community health-insurance scheme.",
+        "It is among the larger health-sector allocations in the AP state budget."
+      ],
+      "noteRef": "sci-health-diseases-note-missions",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -568,7 +836,48 @@
       "id": "sci-health-diseases-mcq-24",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Match List-I (Andhra Pradesh health initiative/source) with List-II (feature) and select the correct answer:\nList-I\nA. 108\nB. 104\nC. Dr NTR Vaidya Seva\nD. NFHS-5\nList-II\n1. Emergency-response ambulance service, pioneered in AP via EMRI\n2. Health information helpline and fixed-day mobile medical services\n3. Cashless secondary/tertiary hospital care\n4. Survey source for state health indicators (TFR, IMR)",
+      "question": "Match List-I (Andhra Pradesh health initiative/source) with List-II (feature) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Andhra Pradesh health initiative/source)",
+        "rightTitle": "List-II (feature)",
+        "left": [
+          {
+            "key": "A",
+            "text": "108"
+          },
+          {
+            "key": "B",
+            "text": "104"
+          },
+          {
+            "key": "C",
+            "text": "Dr NTR Vaidya Seva"
+          },
+          {
+            "key": "D",
+            "text": "NFHS-5"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Emergency-response ambulance service, pioneered in AP via EMRI"
+          },
+          {
+            "key": "2",
+            "text": "Health information helpline and fixed-day mobile medical services"
+          },
+          {
+            "key": "3",
+            "text": "Cashless secondary/tertiary hospital care"
+          },
+          {
+            "key": "4",
+            "text": "Survey source for state health indicators (TFR, IMR)"
+          }
+        ]
+      },
+      "noteRef": "sci-health-diseases-note-missions",
       "options": [
         "A-1, B-2, C-4, D-3",
         "A-1, B-2, C-3, D-4",
@@ -595,6 +904,7 @@
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
       "question": "Which one of the following best describes the role of B cells and T cells in the human body?",
+      "noteRef": "sci-health-diseases-note-immunity-uip",
       "options": [
         "They protect the body from environmental allergens",
         "They alter the body's temperature-regulating capacity",
@@ -613,7 +923,13 @@
       "id": "sci-health-diseases-mcq-26",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "With reference to COVID-19 vaccines, consider the following statements:\n1. Covishield uses an mRNA platform.\n2. Sputnik V uses a viral-vector-based platform.\n3. COVAXIN is based on an inactivated pathogen.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to COVID-19 vaccines, consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "Covishield uses an mRNA platform.",
+        "Sputnik V uses a viral-vector-based platform.",
+        "COVAXIN is based on an inactivated pathogen."
+      ],
+      "noteRef": "sci-health-diseases-note-immunity-microbiology",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -632,7 +948,13 @@
       "id": "sci-health-diseases-mcq-27",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "With reference to biofilms, consider the following statements:\n1. They can form on medical implants within the human body.\n2. They can form on food and on food-processing surfaces.\n3. They can exhibit greater resistance to antibiotics.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to biofilms, consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "They can form on medical implants within the human body.",
+        "They can form on food and on food-processing surfaces.",
+        "They can exhibit greater resistance to antibiotics."
+      ],
+      "noteRef": "sci-health-diseases-note-immunity-microbiology",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -651,7 +973,13 @@
       "id": "sci-health-diseases-mcq-28",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about probiotics:\n1. They can contain both bacteria and yeast.\n2. They are organisms found in ingested foods but do not naturally occur in the gut.\n3. They can help in the digestion of milk sugars.\nWhich of the statements given above is/are correct?",
+      "question": "Consider the following statements about probiotics:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "They can contain both bacteria and yeast.",
+        "They are organisms found in ingested foods but do not naturally occur in the gut.",
+        "They can help in the digestion of milk sugars."
+      ],
+      "noteRef": "sci-health-diseases-note-immunity-microbiology",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -670,7 +998,12 @@
       "id": "sci-health-diseases-mcq-29",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following statements about adenoviruses and retroviruses:\n1. Adenoviruses have single-stranded DNA genomes whereas retroviruses have double-stranded DNA genomes.\n2. The common cold can sometimes be caused by an adenovirus, whereas AIDS is caused by a retrovirus.\nWhich of the statements given above is/are correct?",
+      "question": "Consider the following statements about adenoviruses and retroviruses:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "Adenoviruses have single-stranded DNA genomes whereas retroviruses have double-stranded DNA genomes.",
+        "The common cold can sometimes be caused by an adenovirus, whereas AIDS is caused by a retrovirus."
+      ],
+      "noteRef": "sci-health-diseases-note-immunity-microbiology",
       "options": [
         "1 only",
         "2 only",
@@ -689,7 +1022,13 @@
       "id": "sci-health-diseases-mcq-30",
       "subjectCode": "SCI",
       "subtopicId": "sci-health-diseases",
-      "question": "Consider the following:\n1. Bacteria\n2. Fungi\n3. Flowering plants\nViruses are capable of infecting which of the above?",
+      "question": "Consider the following:\nViruses are capable of infecting which of the above?",
+      "statements": [
+        "Bacteria",
+        "Fungi",
+        "Flowering plants"
+      ],
+      "noteRef": "sci-health-diseases-note-immunity-microbiology",
       "options": [
         "1 only",
         "1 and 2 only",

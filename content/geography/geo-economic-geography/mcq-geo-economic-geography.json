@@ -9,6 +9,7 @@
       "subtopicId": "geo-economic-geography",
       "refresher": true,
       "question": "Which crop season in India spans roughly June to September, coinciding with the south-west monsoon?",
+      "noteRef": "geo-economic-geography-note-agriculture-systems",
       "options": [
         "Rabi",
         "Zaid",
@@ -34,6 +35,7 @@
       "subtopicId": "geo-economic-geography",
       "refresher": true,
       "question": "Which coalfield belt in India contains the Raniganj, Jharia and Bokaro coalfields?",
+      "noteRef": "geo-economic-geography-note-minerals",
       "options": [
         "Godavari Valley",
         "Damodar Valley",
@@ -59,6 +61,7 @@
       "subtopicId": "geo-economic-geography",
       "refresher": true,
       "question": "Which is the only major port of Andhra Pradesh among India's 13 major (central) ports?",
+      "noteRef": "geo-economic-geography-note-transport",
       "options": [
         "Krishnapatnam Port",
         "Gangavaram Port",
@@ -84,7 +87,14 @@
       "id": "geo-economic-geography-mcq-4",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about farming systems in India:\n1. Slash-and-burn shifting cultivation is called Podu in Andhra Pradesh and Jhumming in the north-east.\n2. Intensive subsistence farming is labour-intensive and practised where population pressure on land is high.\n3. Plantation farming grows a single crop over a large area, largely as raw material for industry.\n4. Rice is a commercial crop everywhere it is grown in India.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about farming systems in India:\nWhich of the statements are correct?",
+      "statements": [
+        "Slash-and-burn shifting cultivation is called Podu in Andhra Pradesh and Jhumming in the north-east.",
+        "Intensive subsistence farming is labour-intensive and practised where population pressure on land is high.",
+        "Plantation farming grows a single crop over a large area, largely as raw material for industry.",
+        "Rice is a commercial crop everywhere it is grown in India."
+      ],
+      "noteRef": "geo-economic-geography-note-agriculture-systems",
       "options": [
         "1, 2 and 3 only",
         "1 and 4 only",
@@ -107,15 +117,56 @@
       "id": "geo-economic-geography-mcq-5",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (Crop) with List-II (Leading producer state) and select the correct answer:\nList-I\nA. Rice\nB. Wheat\nC. Sugarcane\nD. Jute\nList-II\n1. Uttar Pradesh\n2. West Bengal\n3. Uttar Pradesh (wheat)\n4. West Bengal (jute)",
+      "question": "Match List-I (Crop) with List-II (Leading producer state) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Crop)",
+        "rightTitle": "List-II (Leading producer state)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Rice"
+          },
+          {
+            "key": "B",
+            "text": "Wheat"
+          },
+          {
+            "key": "C",
+            "text": "Cotton"
+          },
+          {
+            "key": "D",
+            "text": "Tea"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Gujarat"
+          },
+          {
+            "key": "2",
+            "text": "West Bengal"
+          },
+          {
+            "key": "3",
+            "text": "Uttar Pradesh"
+          },
+          {
+            "key": "4",
+            "text": "Assam"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-major-crops",
       "options": [
-        "A-2, B-1, C-1, D-2",
-        "A-1, B-2, C-2, D-1",
+        "A-2, B-1, C-3, D-4",
+        "A-3, B-2, C-1, D-4",
         "A-2, B-3, C-1, D-4",
         "A-3, B-1, C-4, D-2"
       ],
       "answerIndex": 2,
-      "explanation": "Rice — **West Bengal** (largest); Wheat — **Uttar Pradesh**; Sugarcane — **Uttar Pradesh**; Jute — **West Bengal**.\n\n**Why not the others**\n- A-2, B-1, C-1, D-2 — labels are internally inconsistent with the list numbering used here.\n- A-1, B-2, C-2, D-1 — swaps rice and wheat leaders wrongly.\n- A-3, B-1, C-4, D-2 — misassigns rice to a wheat entry.\n\n**Key facts**\n| Crop | No.1 producer |\n|---|---|\n| Rice | West Bengal |\n| Wheat | Uttar Pradesh |\n| Sugarcane | Uttar Pradesh |\n| Jute (golden fibre) | West Bengal |\n\n*Source: local APPSC GK PDF — Indian Geography: Major Crops of India.*",
+      "explanation": "Rice — **West Bengal** (largest producer); Wheat — **Uttar Pradesh**; Cotton — **Gujarat**; Tea — **Assam**. So the code is A-2, B-3, C-1, D-4.\n\n**Why not the others**\n- A-2, B-1, C-3, D-4 — gives wheat to Gujarat and cotton to Uttar Pradesh; the two are swapped.\n- A-3, B-2, C-1, D-4 — swaps the rice and wheat leaders (West Bengal leads rice, Uttar Pradesh leads wheat).\n- A-3, B-1, C-4, D-2 — places cotton in Assam and tea in West Bengal; Assam leads tea and Gujarat leads cotton.\n\n**Key facts**\n| Crop | No. 1 producer |\n|---|---|\n| Rice | West Bengal |\n| Wheat | Uttar Pradesh |\n| Cotton | Gujarat |\n| Tea | Assam |\n\n*Source: local APPSC GK PDF — Indian Geography: Major Crops of India.*",
       "source": "local APPSC GK PDF — Indian Geography: Major Crops of India",
       "verified": true,
       "covers": [
@@ -132,7 +183,14 @@
       "id": "geo-economic-geography-mcq-6",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about plantation crops in India:\n1. Karnataka is the leading coffee-producing state.\n2. Kerala is the leading natural-rubber producing state.\n3. Assam is the leading tea-producing state.\n4. Coffee was first introduced in India on the Baba Budan Hills.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about plantation crops in India:\nWhich of the statements are correct?",
+      "statements": [
+        "Karnataka is the leading coffee-producing state.",
+        "Kerala is the leading natural-rubber producing state.",
+        "Assam is the leading tea-producing state.",
+        "Coffee was first introduced in India on the Baba Budan Hills."
+      ],
+      "noteRef": "geo-economic-geography-note-major-crops",
       "options": [
         "1 and 3 only",
         "2 and 4 only",
@@ -156,7 +214,14 @@
       "id": "geo-economic-geography-mcq-7",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Which of the following statements about pulses, oilseeds and millets in India is/are correct?\n1. India is the world's largest producer as well as consumer of pulses.\n2. Groundnut is a rabi crop that accounts for almost half of India's oilseeds.\n3. Jowar is the third most important food crop by area and production.\n4. Pulses (except arhar) fix atmospheric nitrogen and help restore soil fertility.",
+      "question": "Consider the following statements about pulses, oilseeds and millets in India:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "India is the world's largest producer as well as consumer of pulses.",
+        "Groundnut is a rabi crop that accounts for almost half of India's oilseeds.",
+        "Jowar is the third most important food crop by area and production.",
+        "Pulses (except arhar) fix atmospheric nitrogen and help restore soil fertility."
+      ],
+      "noteRef": "geo-economic-geography-note-major-crops",
       "options": [
         "1, 3 and 4 only",
         "1 and 2 only",
@@ -181,7 +246,48 @@
       "id": "geo-economic-geography-mcq-8",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (Revolution) with List-II (Product) and select the correct answer:\nList-I\nA. White Revolution\nB. Yellow Revolution\nC. Blue Revolution\nD. Golden Fibre Revolution\nList-II\n1. Oilseeds\n2. Milk\n3. Jute\n4. Fisheries",
+      "question": "Match List-I (Revolution) with List-II (Product) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Revolution)",
+        "rightTitle": "List-II (Product)",
+        "left": [
+          {
+            "key": "A",
+            "text": "White Revolution"
+          },
+          {
+            "key": "B",
+            "text": "Yellow Revolution"
+          },
+          {
+            "key": "C",
+            "text": "Blue Revolution"
+          },
+          {
+            "key": "D",
+            "text": "Golden Fibre Revolution"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Oilseeds"
+          },
+          {
+            "key": "2",
+            "text": "Milk"
+          },
+          {
+            "key": "3",
+            "text": "Jute"
+          },
+          {
+            "key": "4",
+            "text": "Fisheries"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-major-crops",
       "options": [
         "A-2, B-1, C-4, D-3",
         "A-1, B-2, C-3, D-4",
@@ -205,7 +311,14 @@
       "id": "geo-economic-geography-mcq-9",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about iron ore and ferrous minerals in India:\n1. Odisha is the leading producer of iron ore in India.\n2. Magnetite has a higher iron content than hematite.\n3. Sukinda Valley in Odisha is India's primary chromite mining area.\n4. The Bailadila mines lie in Karnataka.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about iron ore and ferrous minerals in India:\nWhich of the statements are correct?",
+      "statements": [
+        "Odisha is the leading producer of iron ore in India.",
+        "Magnetite has a higher iron content than hematite.",
+        "Sukinda Valley in Odisha is India's primary chromite mining area.",
+        "The Bailadila mines lie in Karnataka."
+      ],
+      "noteRef": "geo-economic-geography-note-minerals",
       "options": [
         "1, 2 and 3 only",
         "1 and 4 only",
@@ -229,7 +342,14 @@
       "id": "geo-economic-geography-mcq-10",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Which of the following pairings of mineral and its notable Indian source location is/are correct?\n1. Bauxite — Koraput (Odisha)\n2. Copper — Malanjkhand (Madhya Pradesh)\n3. Mica — Gudur (Andhra Pradesh)\n4. Barytes — Mangampeta (Andhra Pradesh)",
+      "question": "Consider the following pairs of a mineral and its notable Indian source location:\nWhich of the pairs given above is/are correctly matched?",
+      "statements": [
+        "Bauxite — Koraput (Odisha)",
+        "Copper — Malanjkhand (Madhya Pradesh)",
+        "Mica — Gudur (Andhra Pradesh)",
+        "Barytes — Mangampeta (Andhra Pradesh)"
+      ],
+      "noteRef": "geo-economic-geography-note-minerals",
       "options": [
         "1 and 2 only",
         "3 and 4 only",
@@ -255,7 +375,14 @@
       "id": "geo-economic-geography-mcq-11",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about petroleum and natural gas in India:\n1. Mumbai High is an offshore oilfield discovered in 1973.\n2. India's first oil refinery was set up at Digboi, Assam.\n3. The Krishna-Godavari Basin is an important east-coast hydrocarbon province.\n4. GAIL is India's largest natural-gas company and a Maharatna PSU.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about petroleum and natural gas in India:\nWhich of the statements are correct?",
+      "statements": [
+        "Mumbai High is an offshore oilfield discovered in 1973.",
+        "India's first oil refinery was set up at Digboi, Assam.",
+        "The Krishna-Godavari Basin is an important east-coast hydrocarbon province.",
+        "GAIL is India's largest natural-gas company and a Maharatna PSU."
+      ],
+      "noteRef": "geo-economic-geography-note-minerals",
       "options": [
         "1 and 3 only",
         "2 and 4 only",
@@ -280,7 +407,14 @@
       "id": "geo-economic-geography-mcq-12",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "With reference to power plants in Andhra Pradesh, which pairing is correct?\n1. Simhadri — Super Thermal Power Plant\n2. Srisailam — Hydroelectric Power Plant\n3. Nagarjunasagar — Hydroelectric Power Plant\n4. Kurnool — Ultra Mega Solar Park",
+      "question": "With reference to power plants in Andhra Pradesh, consider the following pairs:\nWhich of the pairs given above is/are correctly matched?",
+      "statements": [
+        "Simhadri — Super Thermal Power Plant",
+        "Srisailam — Hydroelectric Power Plant",
+        "Nagarjunasagar — Hydroelectric Power Plant",
+        "Kurnool — Ultra Mega Solar Park"
+      ],
+      "noteRef": "geo-economic-geography-note-energy",
       "options": [
         "1 and 2 only",
         "3 and 4 only",
@@ -306,7 +440,14 @@
       "id": "geo-economic-geography-mcq-13",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about India's three-stage nuclear power programme:\n1. It was formulated by Dr. Homi Bhabha.\n2. Stage 1 uses Pressurised Heavy Water Reactors fuelled by natural uranium.\n3. Stage 3 aims to exploit India's abundant thorium reserves.\n4. NPCIL is the exclusive operator of India's nuclear power plants (except the PFBR).\nWhich of the statements are correct?",
+      "question": "Consider the following statements about India's three-stage nuclear power programme:\nWhich of the statements are correct?",
+      "statements": [
+        "It was formulated by Dr. Homi Bhabha.",
+        "Stage 1 uses Pressurised Heavy Water Reactors fuelled by natural uranium.",
+        "Stage 3 aims to exploit India's abundant thorium reserves.",
+        "NPCIL is the exclusive operator of India's nuclear power plants (except the PFBR)."
+      ],
+      "noteRef": "geo-economic-geography-note-energy",
       "options": [
         "1, 2 and 3 only",
         "2 and 4 only",
@@ -330,7 +471,14 @@
       "id": "geo-economic-geography-mcq-14",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Which of the following statements about renewable energy in India is/are correct?\n1. Bhadla Solar Park in Rajasthan is one of the world's largest solar parks.\n2. India is among the top producers of wind energy globally.\n3. Muppandal Wind Farm is located in Tamil Nadu.\n4. The National Solar Mission was launched under the National Action Plan on Climate Change.",
+      "question": "Consider the following statements about renewable energy in India:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "Bhadla Solar Park in Rajasthan is one of the world's largest solar parks.",
+        "India is among the top producers of wind energy globally.",
+        "Muppandal Wind Farm is located in Tamil Nadu.",
+        "The National Solar Mission was launched under the National Action Plan on Climate Change."
+      ],
+      "noteRef": "geo-economic-geography-note-energy",
       "options": [
         "1 and 3 only",
         "2 and 4 only",
@@ -357,6 +505,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
       "question": "Which of the following is correctly classified as a non-conventional (renewable) source of energy?",
+      "noteRef": "geo-economic-geography-note-energy",
       "options": [
         "Natural gas (CNG)",
         "Anthracite coal",
@@ -380,7 +529,14 @@
       "id": "geo-economic-geography-mcq-16",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about Indian Railways:\n1. Broad gauge measures 1,676 mm between the inner faces of the rails.\n2. The headquarters of the South Coast Railway zone is at Visakhapatnam.\n3. The railway Golden Quadrilateral links Delhi, Mumbai, Chennai and Kolkata.\n4. India's first passenger train ran between Mumbai and Thane in 1853.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Indian Railways:\nWhich of the statements are correct?",
+      "statements": [
+        "Broad gauge measures 1,676 mm between the inner faces of the rails.",
+        "The headquarters of the South Coast Railway zone is at Visakhapatnam.",
+        "The railway Golden Quadrilateral links Delhi, Mumbai, Chennai and Kolkata.",
+        "India's first passenger train ran between Mumbai and Thane in 1853."
+      ],
+      "noteRef": "geo-economic-geography-note-transport",
       "options": [
         "1, 2 and 3 only",
         "2 and 4 only",
@@ -404,7 +560,14 @@
       "id": "geo-economic-geography-mcq-17",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about India's road network:\n1. National Highways are only about 2% of total road length but carry about 40% of road traffic.\n2. NH-44 (Srinagar to Kanyakumari) is India's longest national highway.\n3. The Golden Quadrilateral connects Delhi, Mumbai, Chennai and Kolkata.\n4. Bharatmala Pariyojana is a rural-connectivity scheme managed by the Border Roads Organisation.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about India's road network:\nWhich of the statements are correct?",
+      "statements": [
+        "National Highways are only about 2% of total road length but carry about 40% of road traffic.",
+        "NH-44 (Srinagar to Kanyakumari) is India's longest national highway.",
+        "The Golden Quadrilateral connects Delhi, Mumbai, Chennai and Kolkata.",
+        "Bharatmala Pariyojana is a rural-connectivity scheme managed by the Border Roads Organisation."
+      ],
+      "noteRef": "geo-economic-geography-note-transport",
       "options": [
         "1, 2 and 3 only",
         "1 and 4 only",
@@ -428,7 +591,48 @@
       "id": "geo-economic-geography-mcq-18",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (National Waterway) with List-II (River/route) and select the correct answer:\nList-I\nA. NW-1\nB. NW-2\nC. NW-3\nD. NW-4\nList-II\n1. Brahmaputra (Dhubri–Sadiya)\n2. Ganga-Bhagirathi-Hooghly (Prayagraj–Haldia)\n3. Krishna-Godavari-Buckingham Canal (Kakinada–Puducherry)\n4. West Coast Canal (Kottapuram–Kollam)",
+      "question": "Match List-I (National Waterway) with List-II (River/route) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (National Waterway)",
+        "rightTitle": "List-II (River/route)",
+        "left": [
+          {
+            "key": "A",
+            "text": "NW-1"
+          },
+          {
+            "key": "B",
+            "text": "NW-2"
+          },
+          {
+            "key": "C",
+            "text": "NW-3"
+          },
+          {
+            "key": "D",
+            "text": "NW-4"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Brahmaputra (Dhubri–Sadiya)"
+          },
+          {
+            "key": "2",
+            "text": "Ganga-Bhagirathi-Hooghly (Prayagraj–Haldia)"
+          },
+          {
+            "key": "3",
+            "text": "Krishna-Godavari-Buckingham Canal (Kakinada–Puducherry)"
+          },
+          {
+            "key": "4",
+            "text": "West Coast Canal (Kottapuram–Kollam)"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-transport",
       "options": [
         "A-2, B-1, C-4, D-3",
         "A-1, B-2, C-3, D-4",
@@ -452,7 +656,14 @@
       "id": "geo-economic-geography-mcq-19",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about the economic geography of Andhra Pradesh:\n1. The Visakhapatnam-Chennai Industrial Corridor (VCIC) is a key industrial corridor of the state.\n2. Andhra Pradesh is a leading state in shrimp/aquaculture exports.\n3. The Godavari and Krishna deltas support intensive rice cultivation.\n4. Gangavaram and Krishnapatnam are deep-water ports of Andhra Pradesh.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the economic geography of Andhra Pradesh:\nWhich of the statements are correct?",
+      "statements": [
+        "The Visakhapatnam-Chennai Industrial Corridor (VCIC) is a key industrial corridor of the state.",
+        "Andhra Pradesh is a leading state in shrimp/aquaculture exports.",
+        "The Godavari and Krishna deltas support intensive rice cultivation.",
+        "Gangavaram and Krishnapatnam are deep-water ports of Andhra Pradesh."
+      ],
+      "noteRef": "geo-economic-geography-note-ap-economic",
       "options": [
         "1 and 3 only",
         "2 and 4 only",
@@ -477,7 +688,48 @@
       "id": "geo-economic-geography-mcq-20",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (Sobriquet) with List-II (Place) and select the correct answer:\nList-I\nA. City of Destiny\nB. Manchester of India\nC. Steel City of India\nD. Queen of the Arabian Sea\nList-II\n1. Ahmedabad\n2. Jamshedpur\n3. Visakhapatnam\n4. Kochi",
+      "question": "Match List-I (Sobriquet) with List-II (Place) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Sobriquet)",
+        "rightTitle": "List-II (Place)",
+        "left": [
+          {
+            "key": "A",
+            "text": "City of Destiny"
+          },
+          {
+            "key": "B",
+            "text": "Manchester of India"
+          },
+          {
+            "key": "C",
+            "text": "Steel City of India"
+          },
+          {
+            "key": "D",
+            "text": "Queen of the Arabian Sea"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Ahmedabad"
+          },
+          {
+            "key": "2",
+            "text": "Jamshedpur"
+          },
+          {
+            "key": "3",
+            "text": "Visakhapatnam"
+          },
+          {
+            "key": "4",
+            "text": "Kochi"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-ap-economic",
       "options": [
         "A-3, B-1, C-2, D-4",
         "A-1, B-3, C-2, D-4",
@@ -501,7 +753,14 @@
       "id": "geo-economic-geography-mcq-21",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about India's cropping seasons:\n1. Kharif crops are sown with the onset of the south-west monsoon (June-July) and harvested in September-October; they include rice, jowar, bajra and cotton.\n2. Rabi crops are sown in winter (October-December) and harvested in spring (April-May); they include wheat, gram and mustard.\n3. Zaid crops are grown in the short summer season between rabi and kharif and include watermelon, muskmelon and cucumber.\n4. Wheat is the principal kharif crop of India.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about India's cropping seasons:\nWhich of the statements are correct?",
+      "statements": [
+        "Kharif crops are sown with the onset of the south-west monsoon (June-July) and harvested in September-October; they include rice, jowar, bajra and cotton.",
+        "Rabi crops are sown in winter (October-December) and harvested in spring (April-May); they include wheat, gram and mustard.",
+        "Zaid crops are grown in the short summer season between rabi and kharif and include watermelon, muskmelon and cucumber.",
+        "Wheat is the principal kharif crop of India."
+      ],
+      "noteRef": "geo-economic-geography-note-agriculture-systems",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",
@@ -527,7 +786,48 @@
       "id": "geo-economic-geography-mcq-22",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (mineral) with List-II (notable Indian source) and select the correct answer:\nList-I\nA. Monazite\nB. Uranium\nC. Gold\nD. Diamond\nList-II\n1. Jaduguda (Jharkhand)\n2. Kolar and Hutti (Karnataka)\n3. Kerala and Odisha beach sands (thorium-bearing)\n4. Panna (Madhya Pradesh)\nSelect the correct answer:",
+      "question": "Match List-I (mineral) with List-II (notable Indian source) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (mineral)",
+        "rightTitle": "List-II (notable Indian source)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Monazite"
+          },
+          {
+            "key": "B",
+            "text": "Uranium"
+          },
+          {
+            "key": "C",
+            "text": "Gold"
+          },
+          {
+            "key": "D",
+            "text": "Diamond"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Jaduguda (Jharkhand)"
+          },
+          {
+            "key": "2",
+            "text": "Kolar and Hutti (Karnataka)"
+          },
+          {
+            "key": "3",
+            "text": "Kerala and Odisha beach sands (thorium-bearing)"
+          },
+          {
+            "key": "4",
+            "text": "Panna (Madhya Pradesh)"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-minerals",
       "options": [
         "A-3, B-1, C-2, D-4",
         "A-1, B-3, C-2, D-4",
@@ -553,7 +853,14 @@
       "id": "geo-economic-geography-mcq-23",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about India's ports and the Andhra Pradesh coast:\n1. India classifies its ports into major (central) ports and non-major (state) ports.\n2. Visakhapatnam is Andhra Pradesh's only major port.\n3. The Sagarmala programme, launched in 2015, promotes port-led development and coastal economic zones.\n4. Krishnapatnam and Gangavaram are non-major ports of Andhra Pradesh.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about India's ports and the Andhra Pradesh coast:\nWhich of the statements are correct?",
+      "statements": [
+        "India classifies its ports into major (central) ports and non-major (state) ports.",
+        "Visakhapatnam is Andhra Pradesh's only major port.",
+        "The Sagarmala programme, launched in 2015, promotes port-led development and coastal economic zones.",
+        "Krishnapatnam and Gangavaram are non-major ports of Andhra Pradesh."
+      ],
+      "noteRef": "geo-economic-geography-note-transport",
       "options": [
         "1 and 2 only",
         "2, 3 and 4 only",
@@ -579,7 +886,48 @@
       "id": "geo-economic-geography-mcq-24",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (geographical sobriquet) with List-II (country) and select the correct answer:\nList-I\nA. Land of the Rising Sun\nB. Land of the Midnight Sun\nC. Land of the Thunder Dragon\nD. Emerald Isle\nList-II\n1. Norway\n2. Japan\n3. Ireland\n4. Bhutan\nSelect the correct answer:",
+      "question": "Match List-I (geographical sobriquet) with List-II (country) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (geographical sobriquet)",
+        "rightTitle": "List-II (country)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Land of the Rising Sun"
+          },
+          {
+            "key": "B",
+            "text": "Land of the Midnight Sun"
+          },
+          {
+            "key": "C",
+            "text": "Land of the Thunder Dragon"
+          },
+          {
+            "key": "D",
+            "text": "Emerald Isle"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Norway"
+          },
+          {
+            "key": "2",
+            "text": "Japan"
+          },
+          {
+            "key": "3",
+            "text": "Ireland"
+          },
+          {
+            "key": "4",
+            "text": "Bhutan"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-ap-economic",
       "options": [
         "A-2, B-1, C-4, D-3",
         "A-1, B-2, C-4, D-3",
@@ -603,7 +951,14 @@
       "id": "geo-economic-geography-mcq-25",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about world agricultural regions:\n1. The temperate grasslands (Prairies, Steppes, Pampas, Downs) are the world's great wheat and livestock belts.\n2. Commercial grain (wheat) farming is highly mechanised and extensive.\n3. Plantation agriculture (tea, rubber, coffee) is confined to the temperate latitudes.\n4. Monsoon Asia is the world's chief region of intensive wet-rice cultivation.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about world agricultural regions:\nWhich of the statements are correct?",
+      "statements": [
+        "The temperate grasslands (Prairies, Steppes, Pampas, Downs) are the world's great wheat and livestock belts.",
+        "Commercial grain (wheat) farming is highly mechanised and extensive.",
+        "Plantation agriculture (tea, rubber, coffee) is confined to the temperate latitudes.",
+        "Monsoon Asia is the world's chief region of intensive wet-rice cultivation."
+      ],
+      "noteRef": "geo-economic-geography-note-world-agri-industry",
       "options": [
         "1, 2 and 3 only",
         "1, 2 and 4 only",
@@ -628,7 +983,48 @@
       "id": "geo-economic-geography-mcq-26",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (industrial region) with List-II (description) and select the correct answer:\nList-I\nA. Ruhr\nB. North American Manufacturing Belt\nC. Kanto region\nD. Lancashire\nList-II\n1. Cotton-textile industry, United Kingdom\n2. Tokyo-Yokohama industrial belt, Japan\n3. Coal and steel region, Germany\n4. Great Lakes-north-eastern USA heavy industry",
+      "question": "Match List-I (industrial region) with List-II (description) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (industrial region)",
+        "rightTitle": "List-II (description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Ruhr"
+          },
+          {
+            "key": "B",
+            "text": "North American Manufacturing Belt"
+          },
+          {
+            "key": "C",
+            "text": "Kanto region"
+          },
+          {
+            "key": "D",
+            "text": "Lancashire"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Cotton-textile industry, United Kingdom"
+          },
+          {
+            "key": "2",
+            "text": "Tokyo-Yokohama industrial belt, Japan"
+          },
+          {
+            "key": "3",
+            "text": "Coal and steel region, Germany"
+          },
+          {
+            "key": "4",
+            "text": "Great Lakes-north-eastern USA heavy industry"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-world-agri-industry",
       "options": [
         "A-3, B-4, C-1, D-2",
         "A-4, B-3, C-2, D-1",
@@ -653,7 +1049,14 @@
       "id": "geo-economic-geography-mcq-27",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about the leading world producers of minerals and energy:\n1. Australia is the world's largest producer of iron ore, chiefly from the Pilbara region.\n2. Chile is the world's largest copper producer, with the Escondida mine in the Atacama.\n3. Kazakhstan is the world's largest uranium producer.\n4. China is the world's largest coal producer.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the leading world producers of minerals and energy:\nWhich of the statements are correct?",
+      "statements": [
+        "Australia is the world's largest producer of iron ore, chiefly from the Pilbara region.",
+        "Chile is the world's largest copper producer, with the Escondida mine in the Atacama.",
+        "Kazakhstan is the world's largest uranium producer.",
+        "China is the world's largest coal producer."
+      ],
+      "noteRef": "geo-economic-geography-note-world-agri-industry",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",
@@ -677,7 +1080,48 @@
       "id": "geo-economic-geography-mcq-28",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Match List-I (agricultural system) with List-II (region/feature) and select the correct answer:\nList-I\nA. Corn Belt\nB. Dairy farming\nC. Mediterranean agriculture\nD. Extensive commercial grain farming\nList-II\n1. North-west Europe and north-eastern USA\n2. Central USA (the Midwest)\n3. Citrus, vine and olive cultivation\n4. Wheat on the Canadian Prairies and Argentine Pampas",
+      "question": "Match List-I (agricultural system) with List-II (region/feature) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (agricultural system)",
+        "rightTitle": "List-II (region/feature)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Corn Belt"
+          },
+          {
+            "key": "B",
+            "text": "Dairy farming"
+          },
+          {
+            "key": "C",
+            "text": "Mediterranean agriculture"
+          },
+          {
+            "key": "D",
+            "text": "Extensive commercial grain farming"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "North-west Europe and north-eastern USA"
+          },
+          {
+            "key": "2",
+            "text": "Central USA (the Midwest)"
+          },
+          {
+            "key": "3",
+            "text": "Citrus, vine and olive cultivation"
+          },
+          {
+            "key": "4",
+            "text": "Wheat on the Canadian Prairies and Argentine Pampas"
+          }
+        ]
+      },
+      "noteRef": "geo-economic-geography-note-world-agri-industry",
       "options": [
         "A-2, B-1, C-3, D-4",
         "A-1, B-2, C-3, D-4",
@@ -702,7 +1146,14 @@
       "id": "geo-economic-geography-mcq-29",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about the South Coast Railway (SCoR) zone:\n1. It is Indian Railways' 18th zone, headquartered at Visakhapatnam.\n2. It was gazette-notified and became operational in 2026.\n3. Its divisions include Guntakal, Guntur and Vijayawada.\n4. It fulfils a commitment under the Andhra Pradesh Reorganisation Act, 2014.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the South Coast Railway (SCoR) zone:\nWhich of the statements are correct?",
+      "statements": [
+        "It is Indian Railways' 18th zone, headquartered at Visakhapatnam.",
+        "It was gazette-notified and became operational in 2026.",
+        "Its divisions include Guntakal, Guntur and Vijayawada.",
+        "It fulfils a commitment under the Andhra Pradesh Reorganisation Act, 2014."
+      ],
+      "noteRef": "geo-economic-geography-note-transport",
       "options": [
         "1 and 2 only",
         "1, 3 and 4 only",
@@ -728,7 +1179,14 @@
       "id": "geo-economic-geography-mcq-30",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about Andhra Pradesh's ports:\n1. The state is developing greenfield ports at Ramayapatnam, Mulapeta, Machilipatnam and Kakinada SEZ.\n2. Visakhapatnam remains the state's only major (Union-administered) port.\n3. The new ports are being built by the Centre because AP has no minor ports.\n4. Andhra Pradesh has India's second-longest coastline.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's ports:\nWhich of the statements are correct?",
+      "statements": [
+        "The state is developing greenfield ports at Ramayapatnam, Mulapeta, Machilipatnam and Kakinada SEZ.",
+        "Visakhapatnam remains the state's only major (Union-administered) port.",
+        "The new ports are being built by the Centre because AP has no minor ports.",
+        "Andhra Pradesh has India's second-longest coastline."
+      ],
+      "noteRef": "geo-economic-geography-note-ap-economic",
       "options": [
         "1 and 2 only",
         "1, 2 and 4 only",
@@ -754,7 +1212,14 @@
       "id": "geo-economic-geography-mcq-31",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about airports in Andhra Pradesh:\n1. Bhogapuram (near Visakhapatnam, in Vizianagaram district) is a new greenfield international airport.\n2. It has been named the Alluri Sitarama Raju International Airport.\n3. AP's existing airports include Visakhapatnam, Vijayawada (Gannavaram), Tirupati, Rajahmundry, Kadapa and Kurnool (Orvakal).\n4. Bhogapuram is Andhra Pradesh's oldest airport, in operation since the 1950s.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about airports in Andhra Pradesh:\nWhich of the statements are correct?",
+      "statements": [
+        "Bhogapuram (near Visakhapatnam, in Vizianagaram district) is a new greenfield international airport.",
+        "It has been named the Alluri Sitarama Raju International Airport.",
+        "AP's existing airports include Visakhapatnam, Vijayawada (Gannavaram), Tirupati, Rajahmundry, Kadapa and Kurnool (Orvakal).",
+        "Bhogapuram is Andhra Pradesh's oldest airport, in operation since the 1950s."
+      ],
+      "noteRef": "geo-economic-geography-note-ap-economic",
       "options": [
         "1, 2 and 3 only",
         "1 and 2 only",
@@ -780,6 +1245,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
       "question": "The most important fishing grounds of the world are found in regions where:",
+      "noteRef": "geo-economic-geography-note-location-resources-agro",
       "options": [
         "Warm and cold ocean currents meet over broad continental shelves",
         "Rivers discharge large volumes of freshwater into deep trenches",
@@ -798,7 +1264,13 @@
       "id": "geo-economic-geography-mcq-33",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "With reference to the location of industries, consider the following statements:\n1. Weber's theory seeks to locate industry at the point of least transport and labour cost.\n2. Iron and steel is typically a raw-material-oriented industry located near coal and iron sources.\n3. Cotton textiles are typically located near markets and labour rather than the fibre source.\nWhich of the statements given above is/are correct?",
+      "question": "With reference to the location of industries, consider the following statements:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "Weber's theory seeks to locate industry at the point of least transport and labour cost.",
+        "Iron and steel is typically a raw-material-oriented industry located near coal and iron sources.",
+        "Cotton textiles are typically located near markets and labour rather than the fibre source."
+      ],
+      "noteRef": "geo-economic-geography-note-location-resources-agro",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -817,7 +1289,13 @@
       "id": "geo-economic-geography-mcq-34",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following statements about coal in India:\n1. Nearly all of India's coal reserves are of Gondwana age and are bituminous in rank.\n2. Tertiary coal deposits are largely lignite and include the Neyveli field.\n3. The Singareni coalfield lies in the Godavari valley.\nWhich of the statements given above is/are correct?",
+      "question": "Consider the following statements about coal in India:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "Nearly all of India's coal reserves are of Gondwana age and are bituminous in rank.",
+        "Tertiary coal deposits are largely lignite and include the Neyveli field.",
+        "The Singareni coalfield lies in the Godavari valley."
+      ],
+      "noteRef": "geo-economic-geography-note-minerals",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -836,7 +1314,13 @@
       "id": "geo-economic-geography-mcq-35",
       "subjectCode": "GEO",
       "subtopicId": "geo-economic-geography",
-      "question": "Consider the following pairs relating to agriculture and agro-inputs:\n1. Neem-coated urea — slows the rate of dissolution of urea in the soil\n2. Maize — used for starch, biodiesel feedstock and alcoholic beverages\n3. Excessive riverbed sand-mining — lowering of the local water table\nHow many of the pairs given above are correctly matched?",
+      "question": "Consider the following pairs relating to agriculture and agro-inputs:\nHow many of the pairs given above are correctly matched?",
+      "statements": [
+        "Neem-coated urea — slows the rate of dissolution of urea in the soil",
+        "Maize — used for starch, biodiesel feedstock and alcoholic beverages",
+        "Excessive riverbed sand-mining — lowering of the local water table"
+      ],
+      "noteRef": "geo-economic-geography-note-location-resources-agro",
       "options": [
         "Only one",
         "Only two",

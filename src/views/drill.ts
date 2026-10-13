@@ -429,7 +429,7 @@ function reviewWrongCard(wrongItems: readonly MCQItem[]): HTMLElement {
   const rows = wrongItems.map((item) => {
     const kids: Child[] = [
       el('div', { class: 'wrong-row-head' }, [
-        el('div', { class: 'wrong-row-q' }, renderQuestionStem(item.question)),
+        el('div', { class: 'wrong-row-q' }, renderQuestionStem(item)),
       ]),
     ];
     const exp = renderExplanation(item);

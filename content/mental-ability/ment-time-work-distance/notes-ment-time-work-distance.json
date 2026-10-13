@@ -19,7 +19,11 @@
       "mnemonic": "Think units, not fractions — the LCM turns every rate into a clean whole number.",
       "source": "local APPSC Quantitative Reasoning PDF — Fractions of Work / Efficiency and Work Comparison",
       "verified": true,
-      "tags": ["time-work", "lcm-method", "efficiency"]
+      "tags": [
+        "time-work",
+        "lcm-method",
+        "efficiency"
+      ]
     },
     {
       "id": "ment-time-work-distance-note-alternate-days",
@@ -35,7 +39,10 @@
       ],
       "source": "local APPSC Quantitative Reasoning PDF — Alternate Days Work",
       "verified": true,
-      "tags": ["time-work", "alternate-days"]
+      "tags": [
+        "time-work",
+        "alternate-days"
+      ]
     },
     {
       "id": "ment-time-work-distance-note-wages-mandays",
@@ -52,7 +59,11 @@
       "mnemonic": "M × D × H stays constant — more men or hours means fewer days.",
       "source": "local APPSC Quantitative Reasoning PDF — Work and Wages / Man-Hours Concept",
       "verified": true,
-      "tags": ["wages", "man-days", "man-hours"]
+      "tags": [
+        "wages",
+        "man-days",
+        "man-hours"
+      ]
     },
     {
       "id": "ment-time-work-distance-note-pipes-cistern",
@@ -68,43 +79,56 @@
       ],
       "source": "local APPSC Quantitative Reasoning PDF — Pipes and Cistern",
       "verified": true,
-      "tags": ["pipes-cistern", "inlet-outlet"]
+      "tags": [
+        "pipes-cistern",
+        "inlet-outlet"
+      ]
     },
     {
       "id": "ment-time-work-distance-note-speed-distance-trains",
       "subjectCode": "MENT",
       "subtopicId": "ment-time-work-distance",
       "title": "Speed, distance, time and trains",
-      "body": "### Speed, distance, time and trains\n\n**The idea in one sentence**\nDistance equals speed times time, and most train questions are just this one rule once you choose the right distance to cover and the right relative speed.\n\n**Do it the slow way first (no formula)**\nA 150 m train runs at 54 km/h and crosses a 210 m platform — how long? First change the speed to metres per second so it matches the lengths: 54 km/h means 54 × 1000 metres in 3600 seconds, which is 54000 ÷ 3600 = 15 m/s. The front of the train must travel the whole platform plus the whole train before the train is clear: 210 + 150 = 360 m. At 15 m every second, that takes 360 ÷ 15 = 24 seconds. Each step was simply distance = speed × time, rearranged to time = distance ÷ speed.\n\n**Why add both lengths for a platform?**\nThe train has fully crossed only when its tail leaves the far end, so the front travels the platform length plus the train's own length — add both.\n\n```\n 54 km/h = 54 × 5/18 = 15 m/s\n distance = platform 210 + train 150 = 360 ; time = 360 ÷ 15 = 24 s\n```\n\n**What the symbols mean**\n- relative speed means how fast one object closes on another.\n- same direction means subtract the speeds; opposite directions means add them.\n- 5/18 is the fixed number that turns km/h into m/s (and 18/5 does the reverse).\n\n**The formula (now that you know what it does)**\nChange km/h to m/s by multiplying by 5/18. Average speed over equal distances = 2 × x × y ÷ (x + y), always smaller than the plain average. For crossings: a pole or person needs just the train length; a platform needs train + platform length; another train needs the sum of both lengths divided by the relative speed (sum of speeds if opposite, difference if same direction).\n\n**Exam-level example**\nTwo trains 120 m and 180 m long move towards each other at 40 and 50 km/h — how long to cross? Opposite directions, so relative speed = 40 + 50 = 90 km/h = 90 × 5/18 = 25 m/s. Together they must clear 120 + 180 = 300 m, taking 300 ÷ 25 = 12 seconds. Check: at 25 m/s, 12 seconds covers 300 m, exactly both lengths.\n\n**Common traps**\n- Forgetting to convert km/h to m/s before dividing by seconds.\n- Using the plain average of two speeds instead of 2xy ÷ (x + y) for equal distances.\n- Adding speeds for same-direction motion, or subtracting them for opposite directions.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| km/h × 5/18 | changes to metres per second |\n| platform: train + platform | distance to fully cross |\n| opposite: add, same: subtract | the relative-speed rule |",
+      "body": "### Speed, distance, time and trains\n\n**The idea in one sentence**\nDistance equals speed times time, and most train questions are just this one rule once you choose the right distance to cover and the right relative speed.\n\n**Do it the slow way first (no formula)**\nA 150 m train runs at 54 km/h and crosses a 210 m platform — how long? First change the speed to metres per second so it matches the lengths: 54 km/h means 54 × 1000 metres in 3600 seconds, which is 54000 ÷ 3600 = 15 m/s. The front of the train must travel the whole platform plus the whole train before the train is clear: 210 + 150 = 360 m. At 15 m every second, that takes 360 ÷ 15 = 24 seconds. Each step was simply distance = speed × time, rearranged to time = distance ÷ speed.\n\n**Why add both lengths for a platform?**\nThe train has fully crossed only when its tail leaves the far end, so the front travels the platform length plus the train's own length — add both.\n\n```\n 54 km/h = 54 × 5/18 = 15 m/s\n distance = platform 210 + train 150 = 360 ; time = 360 ÷ 15 = 24 s\n```\n\n**What the symbols mean**\n- relative speed means how fast one object closes on another.\n- same direction means subtract the speeds; opposite directions means add them.\n- 5/18 is the fixed number that turns km/h into m/s (and 18/5 does the reverse).\n\n**The formula (now that you know what it does)**\nChange km/h to m/s by multiplying by 5/18. Average speed over equal distances = 2 × x × y ÷ (x + y), always smaller than the plain average. For crossings: a pole or person needs just the train length; a platform needs train + platform length; another train needs the sum of both lengths divided by the relative speed (sum of speeds if opposite, difference if same direction). Chase: when a faster runner starts g metres behind a slower one going the same way, time to catch = g ÷ (difference of speeds); the chaser's distance = his own speed × that time. Example: a policeman at 12 km/h is 200 m behind a thief at 10 km/h; gap closes at 2 km/h = 2 × 5/18 = 5/9 m/s, so time = 200 ÷ 5/9 = 360 s and the policeman runs 12 × 5/18 × 360 = 1200 m (not just the 200 m gap).\n\n**Exam-level example**\nTwo trains 120 m and 180 m long move towards each other at 40 and 50 km/h — how long to cross? Opposite directions, so relative speed = 40 + 50 = 90 km/h = 90 × 5/18 = 25 m/s. Together they must clear 120 + 180 = 300 m, taking 300 ÷ 25 = 12 seconds. Check: at 25 m/s, 12 seconds covers 300 m, exactly both lengths.\n\n**Common traps**\n- Forgetting to convert km/h to m/s before dividing by seconds.\n- Using the plain average of two speeds instead of 2xy ÷ (x + y) for equal distances.\n- Adding speeds for same-direction motion, or subtracting them for opposite directions.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| km/h × 5/18 | changes to metres per second |\n| platform: train + platform | distance to fully cross |\n| opposite: add, same: subtract | the relative-speed rule |",
       "keyPoints": [
         "Convert km/h to m/s by multiplying by 5/18; m/s to km/h by multiplying by 18/5.",
         "Average speed for equal distances = 2 × x × y ÷ (x + y), not the plain average.",
         "Same direction means relative speed is the difference; opposite means the sum.",
         "Crossing a pole or person uses the train length; a platform adds the platform length; another train adds both lengths.",
-        "Early or late: distance ÷ v1 − distance ÷ v2 = the total time gap in hours."
+        "Early or late: distance ÷ v1 − distance ÷ v2 = the total time gap in hours.",
+        "Chase: time to catch = starting gap ÷ (difference of speeds); the chaser's distance = chaser's speed × that time."
       ],
       "mnemonic": "5/18 to go down to m/s, 18/5 to go up; same direction subtract, opposite add.",
       "source": "local APPSC Quantitative Reasoning PDF — Average Speed / Relative speed / Problem on Train",
       "verified": true,
-      "tags": ["speed-distance", "average-speed", "trains", "relative-speed"]
+      "tags": [
+        "speed-distance",
+        "average-speed",
+        "trains",
+        "relative-speed"
+      ]
     },
     {
       "id": "ment-time-work-distance-note-boats-races",
       "subjectCode": "MENT",
       "subtopicId": "ment-time-work-distance",
       "title": "Boats and streams, and races",
-      "body": "### Boats and streams, and races\n\n**The idea in one sentence**\nA stream speeds a boat up going downstream and slows it by the same amount going upstream, and a race 'beats by' tells you how far the loser got while the winner finished.\n\n**Do it the slow way first (no formula)**\nA boat does 30 km downstream in 2 hours and the same 30 km upstream in 3 hours; find the boat's own speed and the stream's. Downstream speed = 30 ÷ 2 = 15 km/h; upstream speed = 30 ÷ 3 = 10 km/h. Downstream is boat plus stream and upstream is boat minus stream, so their average removes the stream: boat = (15 + 10) ÷ 2 = 12.5 km/h, and half their gap is the stream = (15 − 10) ÷ 2 = 2.5 km/h. Quick check: 12.5 + 2.5 = 15 (downstream) and 12.5 − 2.5 = 10 (upstream), both correct.\n\n**Why does averaging give the boat's own speed?**\nDownstream carries one extra stream-speed and upstream loses one stream-speed, so averaging the two cancels the stream and leaves the boat alone; half their difference is the stream.\n\n```\n down = boat + stream = 15 ; up = boat - stream = 10\n boat = (15+10) ÷ 2 = 12.5 ; stream = (15-10) ÷ 2 = 2.5\n```\n\n**What the symbols mean**\n- B means the boat's speed in still water.\n- S means the stream's (current's) speed.\n- 'beats by d metres' means the winner finishes while the loser is still d metres short.\n\n**The formula (now that you know what it does)**\nDownstream speed = B + S; upstream speed = B − S. Recover them with B = (down + up) ÷ 2 and S = (down − up) ÷ 2. In an L-metre race, if A beats B by d metres then in equal time A runs L while B runs L − d, so the speed ratio is L to (L − d). A 'start of x metres' means the opponent runs only L − x.\n\n**Exam-level example**\nIn a 100 m race A beats B by 20 metres; what is the speed ratio A to B? While A runs the full 100 m, B runs only 100 − 20 = 80 m in the same time, and equal time means speed is proportional to distance, so A to B = 100 : 80 = 5 : 4. Check: if A's speed is 5 units and B's is 4, then in the time A covers 100 m, B covers 80 m — a 20 m gap, exactly as given.\n\n**Common traps**\n- Swapping downstream and upstream; downstream is always the faster one.\n- Forgetting that upstream is the slower effective speed when solving for time.\n- Reading 'beats by 20 m' as B's total distance instead of the gap.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| down = B + S, up = B − S | stream adds going down, subtracts going up |\n| B = (down + up) ÷ 2 | averaging cancels the stream |\n| beats by d in an L race | speed ratio is L to (L − d) |",
+      "body": "### Boats and streams, and races\n\n**The idea in one sentence**\nA stream speeds a boat up going downstream and slows it by the same amount going upstream, and a race 'beats by' tells you how far the loser got while the winner finished.\n\n**Do it the slow way first (no formula)**\nA boat does 30 km downstream in 2 hours and the same 30 km upstream in 3 hours; find the boat's own speed and the stream's. Downstream speed = 30 ÷ 2 = 15 km/h; upstream speed = 30 ÷ 3 = 10 km/h. Downstream is boat plus stream and upstream is boat minus stream, so their average removes the stream: boat = (15 + 10) ÷ 2 = 12.5 km/h, and half their gap is the stream = (15 − 10) ÷ 2 = 2.5 km/h. Quick check: 12.5 + 2.5 = 15 (downstream) and 12.5 − 2.5 = 10 (upstream), both correct.\n\n**Why does averaging give the boat's own speed?**\nDownstream carries one extra stream-speed and upstream loses one stream-speed, so averaging the two cancels the stream and leaves the boat alone; half their difference is the stream.\n\n```\n down = boat + stream = 15 ; up = boat - stream = 10\n boat = (15+10) ÷ 2 = 12.5 ; stream = (15-10) ÷ 2 = 2.5\n```\n\n**What the symbols mean**\n- B means the boat's speed in still water.\n- S means the stream's (current's) speed.\n- 'beats by d metres' means the winner finishes while the loser is still d metres short.\n\n**The formula (now that you know what it does)**\nDownstream speed = B + S; upstream speed = B − S. Recover them with B = (down + up) ÷ 2 and S = (down − up) ÷ 2. In an L-metre race, if A beats B by d metres then in equal time A runs L while B runs L − d, so the speed ratio is L to (L − d). A 'start of x metres' means the opponent runs only L − x. 'Beats by d metres or t seconds' means the loser needs t seconds to run those last d metres, so the loser's speed = d ÷ t and the loser's time for the race = L ÷ (d ÷ t). Example: in a 200 m race A beats B by 20 m or 5 s → B's speed = 20 ÷ 5 = 4 m/s → B's time = 200 ÷ 4 = 50 s (and A's time = 50 − 5 = 45 s).\n\n**Exam-level example**\nIn a 100 m race A beats B by 20 metres; what is the speed ratio A to B? While A runs the full 100 m, B runs only 100 − 20 = 80 m in the same time, and equal time means speed is proportional to distance, so A to B = 100 : 80 = 5 : 4. Check: if A's speed is 5 units and B's is 4, then in the time A covers 100 m, B covers 80 m — a 20 m gap, exactly as given.\n\n**Common traps**\n- Swapping downstream and upstream; downstream is always the faster one.\n- Forgetting that upstream is the slower effective speed when solving for time.\n- Reading 'beats by 20 m' as B's total distance instead of the gap.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| down = B + S, up = B − S | stream adds going down, subtracts going up |\n| B = (down + up) ÷ 2 | averaging cancels the stream |\n| beats by d in an L race | speed ratio is L to (L − d) |",
       "keyPoints": [
         "Downstream speed = B + S; upstream speed = B − S.",
         "Boat speed = (down + up) ÷ 2; stream speed = (down − up) ÷ 2.",
         "Upstream is always the slower (smaller) effective speed.",
         "Beaten by d metres in an L-metre race means a speed ratio of L to (L − d).",
-        "A start of x metres means the opponent runs only L − x."
+        "A start of x metres means the opponent runs only L − x.",
+        "Beats by d metres or t seconds: loser's speed = d ÷ t; loser's race time = L ÷ that speed; winner's time = loser's time − t."
       ],
       "mnemonic": "Down adds, up subtracts; boat is the average of the two speeds, stream is half their gap.",
       "source": "local APPSC Quantitative Reasoning PDF — Boat and Stream / Race",
       "verified": true,
-      "tags": ["boats-streams", "races"]
+      "tags": [
+        "boats-streams",
+        "races"
+      ]
     },
     {
       "id": "ment-time-work-distance-note-worker-equivalence",
@@ -121,7 +145,11 @@
       "mnemonic": "One currency first — convert men, women and boys before you count days.",
       "source": "standard APPSC/SSC arithmetic — Men–Women–Boys equivalence",
       "verified": true,
-      "tags": ["time-work", "equivalence", "man-days"]
+      "tags": [
+        "time-work",
+        "equivalence",
+        "man-days"
+      ]
     }
   ]
 }

@@ -21,6 +21,9 @@
  * Run via `npm run validate:content` (executed with vite-node, matching gen:schema).
  */
 import {
+  alignEnabled,
+  auditAlignment,
+  type AlignRule,
   auditAllStructure,
   lintAllContent,
   validateAllContent,
@@ -96,6 +99,32 @@ if (structure.length > 0) {
   // warnings.
   if (strict) failed += structure.length;
   else warned += structure.length;
+}
+
+/* ----- Question-format + taught-before-tested alignment (VALIDATE_ALIGN=1) - */
+// OFF by default so `npm run check` stays green until the content round lands;
+// the content finalizer enables it (VALIDATE_ALIGN=1), and under --strict every
+// alignment finding then fails the gate. `--align-verbose` prints each finding.
+
+if (alignEnabled()) {
+  const align = auditAlignment();
+  const byRule = new Map<AlignRule, number>();
+  const notTaughtBySubject = new Map<string, number>();
+  for (const f of align) {
+    byRule.set(f.rule, (byRule.get(f.rule) ?? 0) + 1);
+    if (f.rule === 'not-taught') notTaughtBySubject.set(f.subjectCode, (notTaughtBySubject.get(f.subjectCode) ?? 0) + 1);
+  }
+  console.log('');
+  console.log(`question alignment (VALIDATE_ALIGN=1): ${align.length} finding(s)${strict ? ' (STRICT — treated as errors)' : ' (warnings)'}`);
+  if (process.argv.includes('--align-verbose')) {
+    for (const f of align) console.log(`        ${strict ? '✗' : '⚠'} [${f.rule}] ${f.itemId} (${f.subjectCode}): ${f.detail}`);
+  }
+  console.log(`  alignment by rule: ${[...byRule.entries()].map(([r, n]) => `${r}=${n}`).join(', ') || 'none'}`);
+  console.log(
+    `  possibly-not-taught by subject: ${[...notTaughtBySubject.entries()].sort().map(([s, n]) => `${s}=${n}`).join(', ') || 'none'}`,
+  );
+  if (strict) failed += align.length;
+  else warned += align.length;
 }
 
 const passed = results.length - results.filter((r) => !r.ok).length;

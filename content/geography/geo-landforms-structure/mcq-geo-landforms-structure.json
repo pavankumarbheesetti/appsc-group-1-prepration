@@ -9,6 +9,7 @@
       "subtopicId": "geo-landforms-structure",
       "refresher": true,
       "question": "The innermost layer of the Earth, rich in nickel and iron, is known as the:",
+      "noteRef": "geo-landforms-structure-note-interior",
       "options": [
         "SIAL",
         "SIMA",
@@ -35,6 +36,7 @@
       "subtopicId": "geo-landforms-structure",
       "refresher": true,
       "question": "The discontinuity that separates the Earth's crust from the mantle is the:",
+      "noteRef": "geo-landforms-structure-note-interior",
       "options": [
         "Conrad discontinuity",
         "Mohorovicic (Moho) discontinuity",
@@ -60,6 +62,7 @@
       "subtopicId": "geo-landforms-structure",
       "refresher": true,
       "question": "Who proposed the Continental Drift Theory, which held that all continents once formed a single landmass called Pangaea?",
+      "noteRef": "geo-landforms-structure-note-plate-tectonics",
       "options": [
         "Harry Hess",
         "Arthur Holmes",
@@ -83,7 +86,14 @@
       "id": "geo-landforms-structure-mcq-4",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about the Earth's crust:\n1. Oceanic crust is composed mainly of basaltic rocks and is denser than continental crust.\n2. Continental crust is made of granitic rocks and is thicker than oceanic crust.\n3. Oceanic crust is generally older than continental crust.\n4. Oxygen is the most abundant element in the crust.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the Earth's crust:\nWhich of the statements are correct?",
+      "statements": [
+        "Oceanic crust is composed mainly of basaltic rocks and is denser than continental crust.",
+        "Continental crust is made of granitic rocks and is thicker than oceanic crust.",
+        "Oceanic crust is generally older than continental crust.",
+        "Oxygen is the most abundant element in the crust."
+      ],
+      "noteRef": "geo-landforms-structure-note-interior",
       "options": [
         "1, 2 and 4 only",
         "1, 2 and 3 only",
@@ -107,7 +117,13 @@
       "id": "geo-landforms-structure-mcq-5",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about seismic waves and the Earth's interior:\n1. P-waves are longitudinal and can travel through solids, liquids and gases.\n2. S-waves cannot pass through liquids, which indicates that the outer core is molten.\n3. Seismic waves are a major source of information about the Earth's interior.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about seismic waves and the Earth's interior:\nWhich of the statements are correct?",
+      "statements": [
+        "P-waves are longitudinal and can travel through solids, liquids and gases.",
+        "S-waves cannot pass through liquids, which indicates that the outer core is molten.",
+        "Seismic waves are a major source of information about the Earth's interior."
+      ],
+      "noteRef": "geo-landforms-structure-note-interior",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -134,6 +150,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "The theory of sea-floor spreading, which explains the creation of new oceanic crust at mid-ocean ridges, was proposed by:",
+      "noteRef": "geo-landforms-structure-note-plate-tectonics",
       "options": [
         "Alfred Wegener",
         "Harry Hess",
@@ -158,6 +175,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "Which of the following is NOT one of the seven major tectonic plates?",
+      "noteRef": "geo-landforms-structure-note-plate-tectonics",
       "options": [
         "Pacific plate",
         "India-Australia-New Zealand plate",
@@ -181,7 +199,48 @@
       "id": "geo-landforms-structure-mcq-8",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Match List-I (Plate boundary) with List-II (Feature/Example) and select the correct answer:\nList-I\nA. Divergent boundary\nB. Convergent boundary\nC. Transform boundary\nD. Continental divergence\nList-II\n1. San Andreas Fault\n2. Mid-ocean ridge (constructive edge)\n3. East African Rift Valley\n4. Ocean trench / subduction (destructive edge)",
+      "question": "Match List-I (Plate boundary) with List-II (Feature/Example) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Plate boundary)",
+        "rightTitle": "List-II (Feature/Example)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Divergent boundary"
+          },
+          {
+            "key": "B",
+            "text": "Convergent boundary"
+          },
+          {
+            "key": "C",
+            "text": "Transform boundary"
+          },
+          {
+            "key": "D",
+            "text": "Continental divergence"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "San Andreas Fault"
+          },
+          {
+            "key": "2",
+            "text": "Mid-ocean ridge (constructive edge)"
+          },
+          {
+            "key": "3",
+            "text": "East African Rift Valley"
+          },
+          {
+            "key": "4",
+            "text": "Ocean trench / subduction (destructive edge)"
+          }
+        ]
+      },
+      "noteRef": "geo-landforms-structure-note-plate-tectonics",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-4, B-2, C-3, D-1",
@@ -205,7 +264,13 @@
       "id": "geo-landforms-structure-mcq-9",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about the movement of the Indian Plate:\n1. India collided with the Asiatic plate about 40-50 million years ago, uplifting the Himalayas.\n2. The Himalayas are still rising because the Indian plate keeps pushing northward.\n3. The outpouring of lava during this movement formed the Deccan Traps.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the movement of the Indian Plate:\nWhich of the statements are correct?",
+      "statements": [
+        "India collided with the Asiatic plate about 40-50 million years ago, uplifting the Himalayas.",
+        "The Himalayas are still rising because the Indian plate keeps pushing northward.",
+        "The outpouring of lava during this movement formed the Deccan Traps."
+      ],
+      "noteRef": "geo-landforms-structure-note-plate-tectonics",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -230,6 +295,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "The point within the Earth where the energy of an earthquake is first released is called the focus (hypocentre). The point on the surface directly above it is the:",
+      "noteRef": "geo-landforms-structure-note-earthquakes",
       "options": [
         "Fault line",
         "Epicentre",
@@ -254,6 +320,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "Which type of earthquake wave is the slowest, confined to the surface, and the most destructive?",
+      "noteRef": "geo-landforms-structure-note-earthquakes",
       "options": [
         "Primary (P) waves",
         "Secondary (S) waves",
@@ -278,6 +345,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "On the Richter scale, how much more energy does an earthquake of magnitude 7.0 release compared with one of magnitude 5.0?",
+      "noteRef": "geo-landforms-structure-note-earthquakes",
       "options": [
         "About 32 times",
         "About 100 times",
@@ -301,7 +369,13 @@
       "id": "geo-landforms-structure-mcq-13",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements:\n1. The Circum-Pacific Belt, or 'Pacific Ring of Fire', accounts for about 68% of all earthquakes.\n2. The Alpine (Himalayan) belt releases about 15% of the world's earthquake energy.\n3. Nearly 59% of India's land area is prone to moderate or severe earthquakes.\nWhich of the statements are correct?",
+      "question": "Consider the following statements:\nWhich of the statements are correct?",
+      "statements": [
+        "The Circum-Pacific Belt, or 'Pacific Ring of Fire', accounts for about 68% of all earthquakes.",
+        "The Alpine (Himalayan) belt releases about 15% of the world's earthquake energy.",
+        "Nearly 59% of India's land area is prone to moderate or severe earthquakes."
+      ],
+      "noteRef": "geo-landforms-structure-note-earthquakes",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -326,6 +400,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "Broad, gently sloping volcanoes made of highly fluid, low-viscosity basaltic lava, such as Mauna Loa in Hawaii, are called:",
+      "noteRef": "geo-landforms-structure-note-volcanoes-rocks",
       "options": [
         "Composite volcanoes",
         "Shield volcanoes",
@@ -349,7 +424,48 @@
       "id": "geo-landforms-structure-mcq-15",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Match List-I (Intrusive landform) with List-II (Description):\nList-I\nA. Batholith\nB. Dyke\nC. Sill\nD. Laccolith\nList-II\n1. Horizontal intrusion between rock layers\n2. Largest intrusive body, coarse-grained (granite)\n3. Lens/dome-shaped intrusion bulging overlying rocks upward\n4. Narrow near-vertical intrusion cutting across rock layers",
+      "question": "Match List-I (Intrusive landform) with List-II (Description):",
+      "match": {
+        "leftTitle": "List-I (Intrusive landform)",
+        "rightTitle": "List-II (Description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Batholith"
+          },
+          {
+            "key": "B",
+            "text": "Dyke"
+          },
+          {
+            "key": "C",
+            "text": "Sill"
+          },
+          {
+            "key": "D",
+            "text": "Laccolith"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Horizontal intrusion between rock layers"
+          },
+          {
+            "key": "2",
+            "text": "Largest intrusive body, coarse-grained (granite)"
+          },
+          {
+            "key": "3",
+            "text": "Lens/dome-shaped intrusion bulging overlying rocks upward"
+          },
+          {
+            "key": "4",
+            "text": "Narrow near-vertical intrusion cutting across rock layers"
+          }
+        ]
+      },
+      "noteRef": "geo-landforms-structure-note-volcanoes-rocks",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-2, B-1, C-4, D-3",
@@ -376,7 +492,48 @@
       "id": "geo-landforms-structure-mcq-16",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Match List-I (Original rock) with List-II (Metamorphosed rock):\nList-I\nA. Limestone\nB. Sandstone\nC. Coal\nD. Granite\nList-II\n1. Quartzite\n2. Gneiss\n3. Marble\n4. Graphite / Anthracite",
+      "question": "Match List-I (Original rock) with List-II (Metamorphosed rock):",
+      "match": {
+        "leftTitle": "List-I (Original rock)",
+        "rightTitle": "List-II (Metamorphosed rock)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Limestone"
+          },
+          {
+            "key": "B",
+            "text": "Sandstone"
+          },
+          {
+            "key": "C",
+            "text": "Coal"
+          },
+          {
+            "key": "D",
+            "text": "Granite"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Quartzite"
+          },
+          {
+            "key": "2",
+            "text": "Gneiss"
+          },
+          {
+            "key": "3",
+            "text": "Marble"
+          },
+          {
+            "key": "4",
+            "text": "Graphite / Anthracite"
+          }
+        ]
+      },
+      "noteRef": "geo-landforms-structure-note-volcanoes-rocks",
       "options": [
         "A-3, B-1, C-4, D-2",
         "A-1, B-3, C-2, D-4",
@@ -402,6 +559,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "In the geological time scale, the mass extinction of the dinosaurs marks the end of which period?",
+      "noteRef": "geo-landforms-structure-note-time-scale-forces",
       "options": [
         "Jurassic",
         "Cretaceous",
@@ -425,7 +583,13 @@
       "id": "geo-landforms-structure-mcq-18",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about the forces shaping the Earth's surface:\n1. Endogenic forces originate within the Earth and are powered mainly by internal heat.\n2. Orogeny is the process of mountain building through folding and faulting.\n3. Exogenic processes such as weathering and erosion are ultimately powered by the Sun's energy.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the forces shaping the Earth's surface:\nWhich of the statements are correct?",
+      "statements": [
+        "Endogenic forces originate within the Earth and are powered mainly by internal heat.",
+        "Orogeny is the process of mountain building through folding and faulting.",
+        "Exogenic processes such as weathering and erosion are ultimately powered by the Sun's energy."
+      ],
+      "noteRef": "geo-landforms-structure-note-time-scale-forces",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -451,6 +615,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "A crescent-shaped bend of a river that becomes cut off from the main channel and survives as an isolated water body is called a/an:",
+      "noteRef": "geo-landforms-structure-note-exogenic-landforms",
       "options": [
         "Alluvial fan",
         "Oxbow lake",
@@ -475,7 +640,48 @@
       "id": "geo-landforms-structure-mcq-20",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Match List-I (Glacial landform) with List-II (Description):\nList-I\nA. Cirque\nB. Arete\nC. Esker\nD. Fjord\nList-II\n1. Winding ridge of glacial debris on a till plain\n2. Steep-sided narrow drowned glacial valley at the coast\n3. Armchair-shaped hollow that may hold a tarn lake\n4. Steep-sided sharp ridge between two glacial valleys",
+      "question": "Match List-I (Glacial landform) with List-II (Description):",
+      "match": {
+        "leftTitle": "List-I (Glacial landform)",
+        "rightTitle": "List-II (Description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Cirque"
+          },
+          {
+            "key": "B",
+            "text": "Arete"
+          },
+          {
+            "key": "C",
+            "text": "Esker"
+          },
+          {
+            "key": "D",
+            "text": "Fjord"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Winding ridge of glacial debris on a till plain"
+          },
+          {
+            "key": "2",
+            "text": "Steep-sided narrow drowned glacial valley at the coast"
+          },
+          {
+            "key": "3",
+            "text": "Armchair-shaped hollow that may hold a tarn lake"
+          },
+          {
+            "key": "4",
+            "text": "Steep-sided sharp ridge between two glacial valleys"
+          }
+        ]
+      },
+      "noteRef": "geo-landforms-structure-note-exogenic-landforms",
       "options": [
         "A-3, B-4, C-1, D-2",
         "A-4, B-3, C-2, D-1",
@@ -503,6 +709,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
       "question": "Crescent-shaped sand dunes whose tips (horns) point downwind are called:",
+      "noteRef": "geo-landforms-structure-note-exogenic-landforms",
       "options": [
         "Seif dunes",
         "Barchan dunes",
@@ -527,7 +734,48 @@
       "id": "geo-landforms-structure-mcq-22",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Match List-I (Landform) with List-II (Agent/Region) and select the correct answer:\nList-I\nA. Stalactite and stalagmite\nB. Sea stack\nC. Sinkhole\nD. Tombolo\nList-II\n1. A bar connecting an island to the mainland\n2. Karst (limestone dissolution)\n3. Marine erosion (collapse of a sea arch)\n4. Funnel-shaped karst depression",
+      "question": "Match List-I (Landform) with List-II (Agent/Region) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Landform)",
+        "rightTitle": "List-II (Agent/Region)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Stalactite and stalagmite"
+          },
+          {
+            "key": "B",
+            "text": "Sea stack"
+          },
+          {
+            "key": "C",
+            "text": "Sinkhole"
+          },
+          {
+            "key": "D",
+            "text": "Tombolo"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "A bar connecting an island to the mainland"
+          },
+          {
+            "key": "2",
+            "text": "Karst (limestone dissolution)"
+          },
+          {
+            "key": "3",
+            "text": "Marine erosion (collapse of a sea arch)"
+          },
+          {
+            "key": "4",
+            "text": "Funnel-shaped karst depression"
+          }
+        ]
+      },
+      "noteRef": "geo-landforms-structure-note-exogenic-landforms",
       "options": [
         "A-2, B-3, C-4, D-1",
         "A-4, B-3, C-2, D-1",
@@ -554,7 +802,14 @@
       "id": "geo-landforms-structure-mcq-23",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about the three major rock types:\n1. Igneous rocks form by the solidification of magma or lava and are regarded as the primary (parent) rocks.\n2. Sedimentary rocks form by the deposition and compaction of sediments and often show strata and fossils.\n3. Metamorphic rocks form from pre-existing rocks under great heat and pressure.\n4. Basalt is an example of a metamorphic rock.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the three major rock types:\nWhich of the statements are correct?",
+      "statements": [
+        "Igneous rocks form by the solidification of magma or lava and are regarded as the primary (parent) rocks.",
+        "Sedimentary rocks form by the deposition and compaction of sediments and often show strata and fossils.",
+        "Metamorphic rocks form from pre-existing rocks under great heat and pressure.",
+        "Basalt is an example of a metamorphic rock."
+      ],
+      "noteRef": "geo-landforms-structure-note-volcanoes-rocks",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",
@@ -578,7 +833,48 @@
       "id": "geo-landforms-structure-mcq-24",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Match List-I (type of mountain) with List-II (example) and select the correct answer:\nList-I\nA. Fold mountains\nB. Block mountains\nC. Volcanic mountains\nD. Residual (relict) mountains\nList-II\n1. Aravalli Range (India)\n2. Himalayas and the Alps\n3. Mount Kilimanjaro and Fujiyama\n4. Black Forest and Vosges (Rhine rift valley)\nSelect the correct answer:",
+      "question": "Match List-I (type of mountain) with List-II (example) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (type of mountain)",
+        "rightTitle": "List-II (example)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Fold mountains"
+          },
+          {
+            "key": "B",
+            "text": "Block mountains"
+          },
+          {
+            "key": "C",
+            "text": "Volcanic mountains"
+          },
+          {
+            "key": "D",
+            "text": "Residual (relict) mountains"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Aravalli Range (India)"
+          },
+          {
+            "key": "2",
+            "text": "Himalayas and the Alps"
+          },
+          {
+            "key": "3",
+            "text": "Mount Kilimanjaro and Fujiyama"
+          },
+          {
+            "key": "4",
+            "text": "Black Forest and Vosges (Rhine rift valley)"
+          }
+        ]
+      },
+      "noteRef": "geo-landforms-structure-note-time-scale-forces",
       "options": [
         "A-2, B-4, C-3, D-1",
         "A-2, B-3, C-4, D-1",
@@ -603,7 +899,14 @@
       "id": "geo-landforms-structure-mcq-25",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about weathering:\n1. Physical (mechanical) weathering, such as frost wedging and exfoliation, breaks rock without changing its chemical composition.\n2. Chemical weathering alters rock minerals through processes such as carbonation, oxidation and hydrolysis.\n3. Weathering is the in-situ breakdown of rock, whereas erosion involves the removal and transport of the debris.\n4. All weathering processes are powered by the Earth's internal (endogenic) heat.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about weathering:\nWhich of the statements are correct?",
+      "statements": [
+        "Physical (mechanical) weathering, such as frost wedging and exfoliation, breaks rock without changing its chemical composition.",
+        "Chemical weathering alters rock minerals through processes such as carbonation, oxidation and hydrolysis.",
+        "Weathering is the in-situ breakdown of rock, whereas erosion involves the removal and transport of the debris.",
+        "All weathering processes are powered by the Earth's internal (endogenic) heat."
+      ],
+      "noteRef": "geo-landforms-structure-note-time-scale-forces",
       "options": [
         "1 and 3 only",
         "1, 2 and 3 only",
@@ -627,7 +930,48 @@
       "id": "geo-landforms-structure-mcq-26",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Match List-I (arid/aeolian landform) with List-II (description) and select the correct answer:\nList-I\nA. Barchan\nB. Yardang\nC. Loess\nD. Playa\nList-II\n1. Wind-deposited fine silt forming fertile plains (e.g. the Hwang-Ho basin)\n2. Crescent-shaped sand dune whose horns point downwind\n3. Temporary shallow salt lake in a desert basin (bolson)\n4. Streamlined rock ridge carved parallel to the prevailing wind\nSelect the correct answer:",
+      "question": "Match List-I (arid/aeolian landform) with List-II (description) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (arid/aeolian landform)",
+        "rightTitle": "List-II (description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Barchan"
+          },
+          {
+            "key": "B",
+            "text": "Yardang"
+          },
+          {
+            "key": "C",
+            "text": "Loess"
+          },
+          {
+            "key": "D",
+            "text": "Playa"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Wind-deposited fine silt forming fertile plains (e.g. the Hwang-Ho basin)"
+          },
+          {
+            "key": "2",
+            "text": "Crescent-shaped sand dune whose horns point downwind"
+          },
+          {
+            "key": "3",
+            "text": "Temporary shallow salt lake in a desert basin (bolson)"
+          },
+          {
+            "key": "4",
+            "text": "Streamlined rock ridge carved parallel to the prevailing wind"
+          }
+        ]
+      },
+      "noteRef": "geo-landforms-structure-note-exogenic-landforms",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-2, B-1, C-4, D-3",
@@ -652,7 +996,13 @@
       "id": "geo-landforms-structure-mcq-27",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about Barren Island:\n1. It is India's only confirmed active volcano.\n2. It lies in the Andaman Sea, part of Indian territory.\n3. It last erupted in 1991 and has been dormant since.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Barren Island:\nWhich of the statements are correct?",
+      "statements": [
+        "It is India's only confirmed active volcano.",
+        "It lies in the Andaman Sea, part of Indian territory.",
+        "It last erupted in 1991 and has been dormant since."
+      ],
+      "noteRef": "geo-landforms-structure-note-rock-systems-minerals",
       "options": [
         "1 only",
         "1 and 2 only",
@@ -676,7 +1026,13 @@
       "id": "geo-landforms-structure-mcq-28",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "Consider the following statements about Indian rock systems and their minerals:\n1. India's major coal reserves occur in the Gondwana rock system.\n2. Kodarma in Jharkhand is famous for mica.\n3. The Dharwar system is famous for petroleum.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Indian rock systems and their minerals:\nWhich of the statements are correct?",
+      "statements": [
+        "India's major coal reserves occur in the Gondwana rock system.",
+        "Kodarma in Jharkhand is famous for mica.",
+        "The Dharwar system is famous for petroleum."
+      ],
+      "noteRef": "geo-landforms-structure-note-rock-systems-minerals",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -701,7 +1057,13 @@
       "id": "geo-landforms-structure-mcq-29",
       "subjectCode": "GEO",
       "subtopicId": "geo-landforms-structure",
-      "question": "In which of the following regions are shale gas resources found?\n1. Cambay Basin\n2. Cauvery Basin\n3. Krishna-Godavari Basin\nSelect the correct answer:",
+      "question": "In which of the following regions are shale gas resources found?\nSelect the correct answer:",
+      "statements": [
+        "Cambay Basin",
+        "Cauvery Basin",
+        "Krishna-Godavari Basin"
+      ],
+      "noteRef": "geo-landforms-structure-note-rock-systems-minerals",
       "options": [
         "1 and 2 only",
         "2 and 3 only",

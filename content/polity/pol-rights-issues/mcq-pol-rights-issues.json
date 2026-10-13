@@ -9,6 +9,7 @@
       "subtopicId": "pol-rights-issues",
       "refresher": true,
       "question": "The Universal Declaration of Human Rights (UDHR) was adopted by the UN General Assembly on which date, now observed as Human Rights Day?",
+      "noteRef": "pol-rights-issues-note-human-rights-nhrc",
       "options": [
         "24 October 1945",
         "10 December 1948",
@@ -34,6 +35,7 @@
       "subtopicId": "pol-rights-issues",
       "refresher": true,
       "question": "The Right to Information Act came into force in which year?",
+      "noteRef": "pol-rights-issues-note-rti",
       "options": [
         "2002",
         "2005",
@@ -58,6 +60,7 @@
       "subtopicId": "pol-rights-issues",
       "refresher": true,
       "question": "The Right to Education became a Fundamental Right (Article 21A) through which constitutional amendment?",
+      "noteRef": "pol-rights-issues-note-rte-consumer",
       "options": [
         "42nd Amendment, 1976",
         "44th Amendment, 1978",
@@ -81,7 +84,13 @@
       "id": "pol-rights-issues-mcq-4",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Consider the following statements about the National Human Rights Commission (NHRC):\n1. It was established under the Protection of Human Rights Act, 1993.\n2. Its recommendations are legally binding on the government.\n3. The 2019 amendment reduced the term of the chairperson and members from five years to three years.\nWhich of the statements given above are correct?",
+      "question": "Consider the following statements about the National Human Rights Commission (NHRC):\nWhich of the statements given above are correct?",
+      "statements": [
+        "It was established under the Protection of Human Rights Act, 1993.",
+        "Its recommendations are legally binding on the government.",
+        "The 2019 amendment reduced the term of the chairperson and members from five years to three years."
+      ],
+      "noteRef": "pol-rights-issues-note-human-rights-nhrc",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -107,6 +116,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "What was the principal change introduced by the Right to Information (Amendment) Act, 2019?",
+      "noteRef": "pol-rights-issues-note-rti",
       "options": [
         "It abolished the State Information Commissions",
         "It empowered the Central Government to prescribe the tenure, salaries and allowances of the Chief Information Commissioner and Information Commissioners",
@@ -130,6 +140,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "The Digital Personal Data Protection (DPDP) Act, 2023 amended which provision of the RTI Act, 2005, drawing criticism that it dilutes transparency?",
+      "noteRef": "pol-rights-issues-note-rti",
       "options": [
         "Section 4 — proactive disclosure",
         "Section 6 — request procedure",
@@ -154,6 +165,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "Under the Right of Children to Free and Compulsory Education (RTE) Act, 2009, what minimum percentage of seats must private unaided schools reserve for children from economically weaker and disadvantaged groups?",
+      "noteRef": "pol-rights-issues-note-rte-consumer",
       "options": [
         "10 percent",
         "15 percent",
@@ -177,6 +189,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "Which regulatory body was newly established by the Consumer Protection Act, 2019 (which replaced the 1986 Act)?",
+      "noteRef": "pol-rights-issues-note-rte-consumer",
       "options": [
         "Central Consumer Protection Authority (CCPA)",
         "National Consumer Disputes Redressal Commission (NCDRC)",
@@ -199,7 +212,40 @@
       "id": "pol-rights-issues-mcq-9",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Match List-I (consumer redressal forum) with List-II (revised pecuniary jurisdiction, 2021 rules) and select the correct answer:\nList-I\nA. District Commission\nB. State Commission\nC. National Commission\nList-II\n1. Above ₹2 crore\n2. Up to ₹50 lakh\n3. ₹50 lakh to ₹2 crore",
+      "question": "Match List-I (consumer redressal forum) with List-II (revised pecuniary jurisdiction, 2021 rules) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (consumer redressal forum)",
+        "rightTitle": "List-II (revised pecuniary jurisdiction, 2021 rules)",
+        "left": [
+          {
+            "key": "A",
+            "text": "District Commission"
+          },
+          {
+            "key": "B",
+            "text": "State Commission"
+          },
+          {
+            "key": "C",
+            "text": "National Commission"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Above ₹2 crore"
+          },
+          {
+            "key": "2",
+            "text": "Up to ₹50 lakh"
+          },
+          {
+            "key": "3",
+            "text": "₹50 lakh to ₹2 crore"
+          }
+        ]
+      },
+      "noteRef": "pol-rights-issues-note-rte-consumer",
       "options": [
         "A-2, B-3, C-1",
         "A-1, B-3, C-2",
@@ -224,6 +270,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "Which of the following is NOT among the consumer rights recognised under India's consumer protection framework?",
+      "noteRef": "pol-rights-issues-note-rte-consumer",
       "options": [
         "Right to Safety",
         "Right to be Informed",
@@ -246,7 +293,12 @@
       "id": "pol-rights-issues-mcq-11",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Consider the following about the National Commission for Women (NCW):\n1. It is a statutory body set up under the National Commission for Women Act, 1990.\n2. Article 15(3) of the Constitution enables the State to make special provisions for women and children.\nWhich of the statements is/are correct?",
+      "question": "Consider the following about the National Commission for Women (NCW):\nWhich of the statements is/are correct?",
+      "statements": [
+        "It is a statutory body set up under the National Commission for Women Act, 1990.",
+        "Article 15(3) of the Constitution enables the State to make special provisions for women and children."
+      ],
+      "noteRef": "pol-rights-issues-note-women-rights",
       "options": [
         "1 only",
         "2 only",
@@ -271,6 +323,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "The Maternity Benefit (Amendment) Act, 2017 increased paid maternity leave for women in the organised sector from 12 weeks to:",
+      "noteRef": "pol-rights-issues-note-women-rights",
       "options": [
         "16 weeks",
         "20 weeks",
@@ -295,6 +348,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 codified the guidelines laid down by the Supreme Court in which case?",
+      "noteRef": "pol-rights-issues-note-women-rights",
       "options": [
         "Maneka Gandhi v Union of India (1978)",
         "Vishaka v State of Rajasthan (1997)",
@@ -319,6 +373,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "The Criminal Law (Amendment) Act, 2013 (the 'Nirbhaya Act') was enacted on the recommendations of which committee?",
+      "noteRef": "pol-rights-issues-note-women-rights",
       "options": [
         "Justice J.S. Verma Committee",
         "Justice B.N. Srikrishna Committee",
@@ -343,6 +398,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "Under which Act was the National Commission for Protection of Child Rights (NCPCR) constituted?",
+      "noteRef": "pol-rights-issues-note-child-rights",
       "options": [
         "Juvenile Justice Act, 2015",
         "Commissions for Protection of Child Rights Act, 2005",
@@ -365,7 +421,13 @@
       "id": "pol-rights-issues-mcq-16",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Consider the following statements about child-protection laws:\n1. The Juvenile Justice Act, 2015 permits children aged 16-18 to be tried as adults for heinous offences.\n2. The POCSO Act, 2012 is gender-neutral in defining child victims.\n3. The Child Labour (Amendment) Act, 2016 prohibits employment of children below 14 years in all occupations.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about child-protection laws:\nWhich of the statements are correct?",
+      "statements": [
+        "The Juvenile Justice Act, 2015 permits children aged 16-18 to be tried as adults for heinous offences.",
+        "The POCSO Act, 2012 is gender-neutral in defining child victims.",
+        "The Child Labour (Amendment) Act, 2016 prohibits employment of children below 14 years in all occupations."
+      ],
+      "noteRef": "pol-rights-issues-note-child-rights",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -391,6 +453,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "Which pair of constitutional articles establishes the National Commission for Scheduled Castes and the National Commission for Scheduled Tribes respectively?",
+      "noteRef": "pol-rights-issues-note-scst-disability",
       "options": [
         "Article 330 and Article 332",
         "Article 338 and Article 338A",
@@ -415,6 +478,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "The Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Amendment Act, 2018 was enacted primarily to:",
+      "noteRef": "pol-rights-issues-note-scst-disability",
       "options": [
         "Extend the Act to Jammu and Kashmir",
         "Restore the bar on anticipatory bail and immediate arrest that a Supreme Court ruling had diluted",
@@ -437,7 +501,13 @@
       "id": "pol-rights-issues-mcq-19",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Consider the following statements about the Rights of Persons with Disabilities (RPwD) Act, 2016:\n1. It increased the number of recognised disabilities from 7 to 21.\n2. It provides 4% reservation in government jobs for persons with benchmark disabilities.\n3. It was enacted to give effect to the UN Convention on the Rights of Persons with Disabilities.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the Rights of Persons with Disabilities (RPwD) Act, 2016:\nWhich of the statements are correct?",
+      "statements": [
+        "It increased the number of recognised disabilities from 7 to 21.",
+        "It provides 4% reservation in government jobs for persons with benchmark disabilities.",
+        "It was enacted to give effect to the UN Convention on the Rights of Persons with Disabilities."
+      ],
+      "noteRef": "pol-rights-issues-note-scst-disability",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -461,6 +531,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "The Transgender Persons (Protection of Rights) Act, 2019 followed the Supreme Court judgment that first recognised transgender persons as a 'third gender'. That judgment was:",
+      "noteRef": "pol-rights-issues-note-scst-disability",
       "options": [
         "Navtej Singh Johar v Union of India (2018)",
         "NALSA v Union of India (2014)",
@@ -484,7 +555,40 @@
       "id": "pol-rights-issues-mcq-21",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Match List-I (international convention) with List-II (subject) and select the correct answer:\nList-I\nA. CEDAW\nB. CRC\nC. CRPD\nList-II\n1. Rights of the Child\n2. Rights of Persons with Disabilities\n3. Elimination of Discrimination against Women",
+      "question": "Match List-I (international convention) with List-II (subject) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (international convention)",
+        "rightTitle": "List-II (subject)",
+        "left": [
+          {
+            "key": "A",
+            "text": "CEDAW"
+          },
+          {
+            "key": "B",
+            "text": "CRC"
+          },
+          {
+            "key": "C",
+            "text": "CRPD"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Rights of the Child"
+          },
+          {
+            "key": "2",
+            "text": "Rights of Persons with Disabilities"
+          },
+          {
+            "key": "3",
+            "text": "Elimination of Discrimination against Women"
+          }
+        ]
+      },
+      "noteRef": "pol-rights-issues-note-international-conventions",
       "options": [
         "A-3, B-1, C-2",
         "A-1, B-2, C-3",
@@ -510,7 +614,12 @@
       "id": "pol-rights-issues-mcq-22",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Consider the following statements about the Andhra Pradesh Land Titling (Repeal) Act, 2024:\n1. It repealed the earlier Andhra Pradesh Land Titling Act, 2022.\n2. It received the Governor's assent in 2024.\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Andhra Pradesh Land Titling (Repeal) Act, 2024:\nWhich of the statements is/are correct?",
+      "statements": [
+        "It repealed the earlier Andhra Pradesh Land Titling Act, 2022.",
+        "It received the Governor's assent in 2024."
+      ],
+      "noteRef": "pol-rights-issues-note-pyq-precision",
       "options": [
         "1 only",
         "2 only",
@@ -536,6 +645,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "The Andhra Pradesh Agricultural Land (Conversion for Non-Agricultural Purposes) (Repeal) Act, 2025 is best described as a law that:",
+      "noteRef": "pol-rights-issues-note-pyq-precision",
       "options": [
         "Repealed the earlier state law governing conversion of agricultural land for non-agricultural use",
         "Imposed a new one-time tax on all agricultural land",
@@ -560,7 +670,13 @@
       "id": "pol-rights-issues-mcq-24",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "With reference to the Right to Property in India, consider the following statements:\n1. It was removed as a Fundamental Right by the 44th Amendment, 1978.\n2. It now exists as a constitutional/legal right under Article 300A.\n3. It is available only to citizens of India.\nWhich of the statements given above are correct?",
+      "question": "With reference to the Right to Property in India, consider the following statements:\nWhich of the statements given above are correct?",
+      "statements": [
+        "It was removed as a Fundamental Right by the 44th Amendment, 1978.",
+        "It now exists as a constitutional/legal right under Article 300A.",
+        "It is available only to citizens of India."
+      ],
+      "noteRef": "pol-rights-issues-note-pyq-precision",
       "options": [
         "1 and 3 only",
         "2 and 3 only",
@@ -579,6 +695,7 @@
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
       "question": "If a particular area is brought under the Fifth Schedule of the Constitution of India, which one of the following statements best reflects the consequence?",
+      "noteRef": "pol-rights-issues-note-pyq-precision",
       "options": [
         "It provides for the transfer of land in that area to private companies for mining",
         "It enables the transfer of tribal land to non-tribals",
@@ -596,7 +713,13 @@
       "id": "pol-rights-issues-mcq-26",
       "subjectCode": "POL",
       "subtopicId": "pol-rights-issues",
-      "question": "Other than the Fundamental Rights, which of the following parts of the Constitution of India reflect(s) the principles and provisions of the Universal Declaration of Human Rights (1948)?\n1. Preamble\n2. Directive Principles of State Policy\n3. Fundamental Duties\nSelect the correct answer:",
+      "question": "Other than the Fundamental Rights, which of the following parts of the Constitution of India reflect(s) the principles and provisions of the Universal Declaration of Human Rights (1948)?\nSelect the correct answer:",
+      "statements": [
+        "Preamble",
+        "Directive Principles of State Policy",
+        "Fundamental Duties"
+      ],
+      "noteRef": "pol-rights-issues-note-pyq-precision",
       "options": [
         "1 and 2 only",
         "2 only",

@@ -9,6 +9,7 @@
       "subtopicId": "geo-atmosphere-climatology",
       "refresher": true,
       "question": "By volume, the two most abundant gases in dry air are:",
+      "noteRef": "geo-atmosphere-climatology-note-composition-layers",
       "options": [
         "Oxygen (78%) and Nitrogen (21%)",
         "Nitrogen (78%) and Oxygen (21%)",
@@ -34,6 +35,7 @@
       "subtopicId": "geo-atmosphere-climatology",
       "refresher": true,
       "question": "In which layer of the atmosphere do almost all weather phenomena (clouds, rainfall, fog) occur?",
+      "noteRef": "geo-atmosphere-climatology-note-composition-layers",
       "options": [
         "Stratosphere",
         "Troposphere",
@@ -59,6 +61,7 @@
       "subtopicId": "geo-atmosphere-climatology",
       "refresher": true,
       "question": "Tropical cyclones over the Indian Ocean, the Atlantic and the Western Pacific are respectively known as:",
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "Hurricanes, Typhoons, Cyclones",
         "Cyclones, Hurricanes, Typhoons",
@@ -82,7 +85,14 @@
       "id": "geo-atmosphere-climatology-mcq-4",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about atmospheric gases:\n1. Carbon dioxide absorbs terrestrial long-wave radiation and re-radiates it, warming the lower atmosphere.\n2. Ozone in the stratosphere absorbs most incoming ultraviolet radiation.\n3. Water vapour is transparent to incoming short-wave solar radiation but absorbs outgoing long-wave radiation.\n4. Nitrogen is highly reactive and drives most atmospheric chemistry.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about atmospheric gases:\nWhich of the statements are correct?",
+      "statements": [
+        "Carbon dioxide absorbs terrestrial long-wave radiation and re-radiates it, warming the lower atmosphere.",
+        "Ozone in the stratosphere absorbs most incoming ultraviolet radiation.",
+        "Water vapour is transparent to incoming short-wave solar radiation but absorbs outgoing long-wave radiation.",
+        "Nitrogen is highly reactive and drives most atmospheric chemistry."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-composition-layers",
       "options": [
         "1, 2 and 3 only",
         "1 and 4 only",
@@ -106,7 +116,48 @@
       "id": "geo-atmosphere-climatology-mcq-5",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Match List-I (Atmospheric layer) with List-II (Characteristic) and select the correct code:\nList-I\nA. Stratosphere\nB. Mesosphere\nC. Ionosphere\nD. Exosphere\nList-II\n1. Reflects radio waves back to earth\n2. Contains the ozone layer; ideal for flying\n3. Light gases like helium and hydrogen escape to space\n4. Meteorites burn up here",
+      "question": "Match List-I (Atmospheric layer) with List-II (Characteristic) and select the correct code:",
+      "match": {
+        "leftTitle": "List-I (Atmospheric layer)",
+        "rightTitle": "List-II (Characteristic)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Stratosphere"
+          },
+          {
+            "key": "B",
+            "text": "Mesosphere"
+          },
+          {
+            "key": "C",
+            "text": "Ionosphere"
+          },
+          {
+            "key": "D",
+            "text": "Exosphere"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Reflects radio waves back to earth"
+          },
+          {
+            "key": "2",
+            "text": "Contains the ozone layer; ideal for flying"
+          },
+          {
+            "key": "3",
+            "text": "Light gases like helium and hydrogen escape to space"
+          },
+          {
+            "key": "4",
+            "text": "Meteorites burn up here"
+          }
+        ]
+      },
+      "noteRef": "geo-atmosphere-climatology-note-composition-layers",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-4, B-2, C-3, D-1",
@@ -130,7 +181,13 @@
       "id": "geo-atmosphere-climatology-mcq-6",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about the earth's heat budget:\n1. Of the insolation reaching the top of the atmosphere, about 35 units are reflected back to space (the earth's albedo).\n2. The earth's surface absorbs about 51 units of the incoming radiation.\n3. The earth radiates back energy in long-wave (terrestrial) form.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the earth's heat budget:\nWhich of the statements are correct?",
+      "statements": [
+        "Of the insolation reaching the top of the atmosphere, about 35 units are reflected back to space (the earth's albedo).",
+        "The earth's surface absorbs about 51 units of the incoming radiation.",
+        "The earth radiates back energy in long-wave (terrestrial) form."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-insolation-heat-budget",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -155,6 +212,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
       "question": "Which of the following conditions favours the formation of a temperature inversion near the ground?",
+      "noteRef": "geo-atmosphere-climatology-note-insolation-heat-budget",
       "options": [
         "A cloudy, windy summer afternoon",
         "A long winter night with clear skies and calm air",
@@ -177,7 +235,13 @@
       "id": "geo-atmosphere-climatology-mcq-8",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about global pressure belts:\n1. The equatorial low-pressure belt (ITCZ) is thermally induced and is a zone of calm called the doldrums.\n2. The subtropical high-pressure belts near 30°N and 30°S are called the Horse latitudes.\n3. The subpolar low-pressure belts are thermally induced by intense surface heating.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about global pressure belts:\nWhich of the statements are correct?",
+      "statements": [
+        "The equatorial low-pressure belt (ITCZ) is thermally induced and is a zone of calm called the doldrums.",
+        "The subtropical high-pressure belts near 30°N and 30°S are called the Horse latitudes.",
+        "The subpolar low-pressure belts are thermally induced by intense surface heating."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-pressure-winds",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -202,6 +266,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
       "question": "The mid-latitude westerlies of the Southern Hemisphere are far stronger and more consistent than those of the Northern Hemisphere mainly because:",
+      "noteRef": "geo-atmosphere-climatology-note-pressure-winds",
       "options": [
         "The Coriolis force is stronger in the Southern Hemisphere",
         "There is little land between 40°S and 60°S to obstruct them",
@@ -225,7 +290,48 @@
       "id": "geo-atmosphere-climatology-mcq-10",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Match List-I (Local wind) with List-II (Region) and select the correct code:\nList-I\nA. Loo\nB. Chinook\nC. Mistral\nD. Foehn\nList-II\n1. Leeward slopes of the Alps\n2. Northern plains of India\n3. Eastern slopes of the Rockies\n4. Rhone valley, France",
+      "question": "Match List-I (Local wind) with List-II (Region) and select the correct code:",
+      "match": {
+        "leftTitle": "List-I (Local wind)",
+        "rightTitle": "List-II (Region)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Loo"
+          },
+          {
+            "key": "B",
+            "text": "Chinook"
+          },
+          {
+            "key": "C",
+            "text": "Mistral"
+          },
+          {
+            "key": "D",
+            "text": "Foehn"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Leeward slopes of the Alps"
+          },
+          {
+            "key": "2",
+            "text": "Northern plains of India"
+          },
+          {
+            "key": "3",
+            "text": "Eastern slopes of the Rockies"
+          },
+          {
+            "key": "4",
+            "text": "Rhone valley, France"
+          }
+        ]
+      },
+      "noteRef": "geo-atmosphere-climatology-note-pressure-winds",
       "options": [
         "A-2, B-3, C-4, D-1",
         "A-3, B-2, C-1, D-4",
@@ -250,7 +356,13 @@
       "id": "geo-atmosphere-climatology-mcq-11",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements distinguishing extratropical (temperate) cyclones from tropical cyclones:\n1. Extratropical cyclones have a clear frontal system, which tropical cyclones lack.\n2. Tropical cyclones originate only over warm seas, while extratropical cyclones can form over land and sea.\n3. Extratropical cyclones move from east to west, whereas tropical cyclones move from west to east.\nWhich of the statements are correct?",
+      "question": "Consider the following statements distinguishing extratropical (temperate) cyclones from tropical cyclones:\nWhich of the statements are correct?",
+      "statements": [
+        "Extratropical cyclones have a clear frontal system, which tropical cyclones lack.",
+        "Tropical cyclones originate only over warm seas, while extratropical cyclones can form over land and sea.",
+        "Extratropical cyclones move from east to west, whereas tropical cyclones move from west to east."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -275,6 +387,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
       "question": "Which of the following is NOT a favourable condition for the formation and intensification of a tropical cyclone?",
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "Sea-surface temperature higher than 27°C",
         "Presence of the Coriolis force",
@@ -298,7 +411,13 @@
       "id": "geo-atmosphere-climatology-mcq-13",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about the naming of cyclones over the north Indian Ocean:\n1. The India Meteorological Department (IMD) is the Regional Specialised Meteorological Centre that names these cyclones.\n2. The naming system is coordinated under the WMO/ESCAP panel by a group of member countries.\n3. IMD also issues cyclone advisories to other countries in the region.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the naming of cyclones over the north Indian Ocean:\nWhich of the statements are correct?",
+      "statements": [
+        "The India Meteorological Department (IMD) is the Regional Specialised Meteorological Centre that names these cyclones.",
+        "The naming system is coordinated under the WMO/ESCAP panel by a group of member countries.",
+        "IMD also issues cyclone advisories to other countries in the region."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -322,7 +441,13 @@
       "id": "geo-atmosphere-climatology-mcq-14",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about cyclones affecting the Andhra Pradesh coast:\n1. The Bay of Bengal generates far more cyclones than the Arabian Sea, making the AP east coast highly cyclone-prone.\n2. Cyclone Hudhud (2014) made landfall near Visakhapatnam and caused severe damage.\n3. The peak season for cyclones striking the AP coast is October–November (post-monsoon).\nWhich of the statements are correct?",
+      "question": "Consider the following statements about cyclones affecting the Andhra Pradesh coast:\nWhich of the statements are correct?",
+      "statements": [
+        "The Bay of Bengal generates far more cyclones than the Arabian Sea, making the AP east coast highly cyclone-prone.",
+        "Cyclone Hudhud (2014) made landfall near Visakhapatnam and caused severe damage.",
+        "The peak season for cyclones striking the AP coast is October–November (post-monsoon)."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -348,6 +473,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
       "question": "The heavy rainfall associated with the ascent of moist air along a mountain barrier, with a dry rain-shadow on the leeward side, is called:",
+      "noteRef": "geo-atmosphere-climatology-note-condensation-koppen",
       "options": [
         "Convectional rainfall",
         "Orographic rainfall",
@@ -371,7 +497,13 @@
       "id": "geo-atmosphere-climatology-mcq-16",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about forms of condensation:\n1. Dew forms when the dew point is above the freezing point.\n2. White frost forms when the dew point is at or below the freezing point.\n3. Fog mixed with smoke in industrial areas is called smog.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about forms of condensation:\nWhich of the statements are correct?",
+      "statements": [
+        "Dew forms when the dew point is above the freezing point.",
+        "White frost forms when the dew point is at or below the freezing point.",
+        "Fog mixed with smoke in industrial areas is called smog."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-condensation-koppen",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -396,7 +528,48 @@
       "id": "geo-atmosphere-climatology-mcq-17",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Match List-I (Köppen climate type) with List-II (Description) and select the correct code:\nList-I\nA. Af\nB. Am\nC. BWh\nD. Cs\nList-II\n1. Tropical monsoon — heavy summer rain, dry winter\n2. Tropical wet — rain throughout the year\n3. Mediterranean — dry summer, wet winter\n4. Hot subtropical desert",
+      "question": "Match List-I (Köppen climate type) with List-II (Description) and select the correct code:",
+      "match": {
+        "leftTitle": "List-I (Köppen climate type)",
+        "rightTitle": "List-II (Description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Af"
+          },
+          {
+            "key": "B",
+            "text": "Am"
+          },
+          {
+            "key": "C",
+            "text": "BWh"
+          },
+          {
+            "key": "D",
+            "text": "Cs"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Tropical monsoon — heavy summer rain, dry winter"
+          },
+          {
+            "key": "2",
+            "text": "Tropical wet — rain throughout the year"
+          },
+          {
+            "key": "3",
+            "text": "Mediterranean — dry summer, wet winter"
+          },
+          {
+            "key": "4",
+            "text": "Hot subtropical desert"
+          }
+        ]
+      },
+      "noteRef": "geo-atmosphere-climatology-note-monsoon-enso",
       "options": [
         "A-2, B-1, C-4, D-3",
         "A-1, B-2, C-3, D-4",
@@ -420,7 +593,13 @@
       "id": "geo-atmosphere-climatology-mcq-18",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about the Indian monsoon:\n1. The apparent northward shift of the ITCZ over the Indo-Gangetic plain in summer helps draw in the moisture-laden south-west monsoon.\n2. The south-west monsoon normally sets in over Kerala around 1 June and withdraws by October.\n3. The retreating (north-east) monsoon brings most of the rainfall to coastal Andhra Pradesh and Tamil Nadu in October–December.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the Indian monsoon:\nWhich of the statements are correct?",
+      "statements": [
+        "The apparent northward shift of the ITCZ over the Indo-Gangetic plain in summer helps draw in the moisture-laden south-west monsoon.",
+        "The south-west monsoon normally sets in over Kerala around 1 June and withdraws by October.",
+        "The retreating (north-east) monsoon brings most of the rainfall to coastal Andhra Pradesh and Tamil Nadu in October–December."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-monsoon-enso",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -444,7 +623,13 @@
       "id": "geo-atmosphere-climatology-mcq-19",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about ENSO and the Indian Ocean Dipole (IOD):\n1. El Niño (warming of the central-eastern Pacific) is generally associated with weaker Indian monsoon rainfall.\n2. La Niña conditions are generally associated with a good or above-normal Indian monsoon.\n3. A positive Indian Ocean Dipole tends to favour Indian monsoon rainfall.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about ENSO and the Indian Ocean Dipole (IOD):\nWhich of the statements are correct?",
+      "statements": [
+        "El Niño (warming of the central-eastern Pacific) is generally associated with weaker Indian monsoon rainfall.",
+        "La Niña conditions are generally associated with a good or above-normal Indian monsoon.",
+        "A positive Indian Ocean Dipole tends to favour Indian monsoon rainfall."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-monsoon-enso",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -470,6 +655,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
       "question": "Which of the following statements about climate change and the greenhouse effect is INCORRECT?",
+      "noteRef": "geo-atmosphere-climatology-note-composition-layers",
       "options": [
         "Carbon dioxide, methane and nitrous oxide are major greenhouse gases",
         "The Intergovernmental Panel on Climate Change (IPCC) assesses the science of climate change",
@@ -493,7 +679,48 @@
       "id": "geo-atmosphere-climatology-mcq-21",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Match List-I (Cyclone that struck the Andhra Pradesh coast) with List-II (Landfall area) and select the correct code:\nList-I\nA. Hudhud (2014)\nB. Titli (2018)\nC. Michaung (2023)\nD. Montha (2025)\nList-II\n1. Near Bapatla\n2. Visakhapatnam\n3. Near Narasapuram\n4. Northern Andhra Pradesh (Srikakulam belt)",
+      "question": "Match List-I (Cyclone that struck the Andhra Pradesh coast) with List-II (Landfall area) and select the correct code:",
+      "match": {
+        "leftTitle": "List-I (Cyclone that struck the Andhra Pradesh coast)",
+        "rightTitle": "List-II (Landfall area)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Hudhud (2014)"
+          },
+          {
+            "key": "B",
+            "text": "Titli (2018)"
+          },
+          {
+            "key": "C",
+            "text": "Michaung (2023)"
+          },
+          {
+            "key": "D",
+            "text": "Montha (2025)"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Near Bapatla"
+          },
+          {
+            "key": "2",
+            "text": "Visakhapatnam"
+          },
+          {
+            "key": "3",
+            "text": "Near Narasapuram"
+          },
+          {
+            "key": "4",
+            "text": "Northern Andhra Pradesh (Srikakulam belt)"
+          }
+        ]
+      },
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-2, B-1, C-4, D-3",
@@ -521,7 +748,13 @@
       "id": "geo-atmosphere-climatology-mcq-22",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about Cyclone Hudhud:\n1. It made landfall near Visakhapatnam in October 2014.\n2. It was classified by the IMD as an Extremely Severe Cyclonic Storm.\n3. Its remnants caused a deadly snowstorm disaster in Nepal.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Cyclone Hudhud:\nWhich of the statements are correct?",
+      "statements": [
+        "It made landfall near Visakhapatnam in October 2014.",
+        "It was classified by the IMD as an Extremely Severe Cyclonic Storm.",
+        "Its remnants caused a deadly snowstorm disaster in Nepal."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -545,7 +778,13 @@
       "id": "geo-atmosphere-climatology-mcq-23",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about recent cyclones on the Andhra Pradesh coast:\n1. Cyclone Michaung (December 2023) made landfall near Bapatla after flooding Chennai.\n2. Cyclone Montha (October 2025) made landfall near Narasapuram in Andhra Pradesh.\n3. Both were classified by the IMD as Severe Cyclonic Storms.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about recent cyclones on the Andhra Pradesh coast:\nWhich of the statements are correct?",
+      "statements": [
+        "Cyclone Michaung (December 2023) made landfall near Bapatla after flooding Chennai.",
+        "Cyclone Montha (October 2025) made landfall near Narasapuram in Andhra Pradesh.",
+        "Both were classified by the IMD as Severe Cyclonic Storms."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -570,7 +809,13 @@
       "id": "geo-atmosphere-climatology-mcq-24",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about air masses and fronts:\n1. A continental polar (cP) air mass is cold and dry, whereas a maritime tropical (mT) air mass is warm and moist.\n2. At a cold front, dense cold air undercuts warm air steeply, producing towering cumulonimbus and brief heavy rain.\n3. An occluded front forms when a cold front overtakes and lifts the warm sector off the ground.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about air masses and fronts:\nWhich of the statements are correct?",
+      "statements": [
+        "A continental polar (cP) air mass is cold and dry, whereas a maritime tropical (mT) air mass is warm and moist.",
+        "At a cold front, dense cold air undercuts warm air steeply, producing towering cumulonimbus and brief heavy rain.",
+        "An occluded front forms when a cold front overtakes and lifts the warm sector off the ground."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-air-masses-fronts",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -595,7 +840,13 @@
       "id": "geo-atmosphere-climatology-mcq-25",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about India's disaster-management set-up:\n1. The National Disaster Management Authority (NDMA) was constituted under the Disaster Management Act, 2005 and is chaired by the Prime Minister.\n2. The National Disaster Response Force (NDRF) is the specialised force for on-ground response.\n3. The Andhra Pradesh State Disaster Management Authority (APSDMA) is chaired by the Chief Minister.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about India's disaster-management set-up:\nWhich of the statements are correct?",
+      "statements": [
+        "The National Disaster Management Authority (NDMA) was constituted under the Disaster Management Act, 2005 and is chaired by the Prime Minister.",
+        "The National Disaster Response Force (NDRF) is the specialised force for on-ground response.",
+        "The Andhra Pradesh State Disaster Management Authority (APSDMA) is chaired by the Chief Minister."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-mains-angle",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -620,7 +871,13 @@
       "id": "geo-atmosphere-climatology-mcq-26",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about the Sendai Framework for Disaster Risk Reduction:\n1. It was adopted in 2015 at Sendai, Japan, and runs to 2030.\n2. It succeeded the Hyogo Framework for Action.\n3. It sets out four priorities for action and seven global targets.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the Sendai Framework for Disaster Risk Reduction:\nWhich of the statements are correct?",
+      "statements": [
+        "It was adopted in 2015 at Sendai, Japan, and runs to 2030.",
+        "It succeeded the Hyogo Framework for Action.",
+        "It sets out four priorities for action and seven global targets."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-mains-angle",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -645,7 +902,48 @@
       "id": "geo-atmosphere-climatology-mcq-27",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Match List-I (cloud type) with List-II (description) and select the correct answer:\nList-I\nA. Cirrus\nB. Cumulus\nC. Nimbostratus\nD. Cumulonimbus\nList-II\n1. Low, thick grey layer giving continuous steady rain or snow\n2. High, thin, wispy ice-crystal clouds ('mare's tails')\n3. Heaped fair-weather clouds with a flat base and cauliflower top\n4. Towering thunderstorm cloud producing heavy rain, hail and lightning\nSelect the correct answer:",
+      "question": "Match List-I (cloud type) with List-II (description) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (cloud type)",
+        "rightTitle": "List-II (description)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Cirrus"
+          },
+          {
+            "key": "B",
+            "text": "Cumulus"
+          },
+          {
+            "key": "C",
+            "text": "Nimbostratus"
+          },
+          {
+            "key": "D",
+            "text": "Cumulonimbus"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Low, thick grey layer giving continuous steady rain or snow"
+          },
+          {
+            "key": "2",
+            "text": "High, thin, wispy ice-crystal clouds ('mare's tails')"
+          },
+          {
+            "key": "3",
+            "text": "Heaped fair-weather clouds with a flat base and cauliflower top"
+          },
+          {
+            "key": "4",
+            "text": "Towering thunderstorm cloud producing heavy rain, hail and lightning"
+          }
+        ]
+      },
+      "noteRef": "geo-atmosphere-climatology-note-condensation-koppen",
       "options": [
         "A-2, B-3, C-1, D-4",
         "A-1, B-3, C-2, D-4",
@@ -670,7 +968,14 @@
       "id": "geo-atmosphere-climatology-mcq-28",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about jet streams and the Indian monsoon:\n1. Jet streams are fast, narrow bands of geostrophic westerly winds in the upper troposphere.\n2. The subtropical westerly jet steers the winter western disturbances that bring rain to north-west India.\n3. The Tropical Easterly Jet develops over the Indian subcontinent in summer and aids the south-west monsoon.\n4. The northward shift of the subtropical westerly jet to the north of the Himalayas signals the onset of the monsoon.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about jet streams and the Indian monsoon:\nWhich of the statements are correct?",
+      "statements": [
+        "Jet streams are fast, narrow bands of geostrophic westerly winds in the upper troposphere.",
+        "The subtropical westerly jet steers the winter western disturbances that bring rain to north-west India.",
+        "The Tropical Easterly Jet develops over the Indian subcontinent in summer and aids the south-west monsoon.",
+        "The northward shift of the subtropical westerly jet to the north of the Himalayas signals the onset of the monsoon."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-monsoon-enso",
       "options": [
         "1 and 3 only",
         "2, 3 and 4 only",
@@ -694,7 +999,14 @@
       "id": "geo-atmosphere-climatology-mcq-29",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about humidity and precipitation:\n1. Relative humidity is the ratio of the water vapour actually present in the air to the maximum it can hold at that temperature.\n2. The dew point is the temperature at which the air becomes saturated.\n3. Convectional rainfall, typical of the equatorial belt, occurs in the afternoon due to strong daytime heating.\n4. Orographic rainfall falls chiefly on the leeward (rain-shadow) side of a mountain barrier.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about humidity and precipitation:\nWhich of the statements are correct?",
+      "statements": [
+        "Relative humidity is the ratio of the water vapour actually present in the air to the maximum it can hold at that temperature.",
+        "The dew point is the temperature at which the air becomes saturated.",
+        "Convectional rainfall, typical of the equatorial belt, occurs in the afternoon due to strong daytime heating.",
+        "Orographic rainfall falls chiefly on the leeward (rain-shadow) side of a mountain barrier."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-condensation-koppen",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",
@@ -719,7 +1031,48 @@
       "id": "geo-atmosphere-climatology-mcq-30",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Match List-I (local wind) with List-II (region) and select the correct answer:\nList-I\nA. Sirocco\nB. Harmattan\nC. Santa Ana\nD. Berg\nList-II\n1. Hot, dry, dusty north-easterly of West Africa (nicknamed 'the Doctor')\n2. Hot, dry wind blowing from the Sahara towards the Mediterranean\n3. Hot, dry offshore wind of southern California\n4. Hot, dry wind descending to the coast of South Africa\nSelect the correct answer:",
+      "question": "Match List-I (local wind) with List-II (region) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (local wind)",
+        "rightTitle": "List-II (region)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Sirocco"
+          },
+          {
+            "key": "B",
+            "text": "Harmattan"
+          },
+          {
+            "key": "C",
+            "text": "Santa Ana"
+          },
+          {
+            "key": "D",
+            "text": "Berg"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Hot, dry, dusty north-easterly of West Africa (nicknamed 'the Doctor')"
+          },
+          {
+            "key": "2",
+            "text": "Hot, dry wind blowing from the Sahara towards the Mediterranean"
+          },
+          {
+            "key": "3",
+            "text": "Hot, dry offshore wind of southern California"
+          },
+          {
+            "key": "4",
+            "text": "Hot, dry wind descending to the coast of South Africa"
+          }
+        ]
+      },
+      "noteRef": "geo-atmosphere-climatology-note-pressure-winds",
       "options": [
         "A-2, B-1, C-3, D-4",
         "A-1, B-2, C-3, D-4",
@@ -744,7 +1097,48 @@
       "id": "geo-atmosphere-climatology-mcq-31",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Match List-I (air mass type) with List-II (source region and character) and select the correct answer:\nList-I\nA. Continental Polar (cP)\nB. Maritime Tropical (mT)\nC. Continental Tropical (cT)\nD. Maritime Polar (mP)\nList-II\n1. Warm tropical oceans — warm and humid\n2. Siberia / northern Canada in winter — cold and dry\n3. Sahara and other desert interiors — hot and dry\n4. Cold high-latitude oceans (North Atlantic/Pacific) — cold and moist\nSelect the correct answer:",
+      "question": "Match List-I (air mass type) with List-II (source region and character) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (air mass type)",
+        "rightTitle": "List-II (source region and character)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Continental Polar (cP)"
+          },
+          {
+            "key": "B",
+            "text": "Maritime Tropical (mT)"
+          },
+          {
+            "key": "C",
+            "text": "Continental Tropical (cT)"
+          },
+          {
+            "key": "D",
+            "text": "Maritime Polar (mP)"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Warm tropical oceans — warm and humid"
+          },
+          {
+            "key": "2",
+            "text": "Siberia / northern Canada in winter — cold and dry"
+          },
+          {
+            "key": "3",
+            "text": "Sahara and other desert interiors — hot and dry"
+          },
+          {
+            "key": "4",
+            "text": "Cold high-latitude oceans (North Atlantic/Pacific) — cold and moist"
+          }
+        ]
+      },
+      "noteRef": "geo-atmosphere-climatology-note-air-masses-fronts",
       "options": [
         "A-2, B-1, C-3, D-4",
         "A-1, B-2, C-3, D-4",
@@ -768,7 +1162,14 @@
       "id": "geo-atmosphere-climatology-mcq-32",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about a warm front:\n1. A warm front has a gentle slope, so the advancing warm air glides gradually up over the retreating cold air.\n2. Its approach is marked by an orderly cloud sequence: cirrus → cirrostratus → altostratus → nimbostratus.\n3. It brings prolonged, steady rain over a wide area, and temperature rises after the front passes.\n4. A warm front typically produces brief, violent thunderstorms like those of a cold front.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about a warm front:\nWhich of the statements are correct?",
+      "statements": [
+        "A warm front has a gentle slope, so the advancing warm air glides gradually up over the retreating cold air.",
+        "Its approach is marked by an orderly cloud sequence: cirrus → cirrostratus → altostratus → nimbostratus.",
+        "It brings prolonged, steady rain over a wide area, and temperature rises after the front passes.",
+        "A warm front typically produces brief, violent thunderstorms like those of a cold front."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-air-masses-fronts",
       "options": [
         "1 and 2 only",
         "1 and 4 only",
@@ -792,7 +1193,14 @@
       "id": "geo-atmosphere-climatology-mcq-33",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about an occluded front:\n1. It forms when a faster-moving cold front overtakes the warm front ahead, lifting the entire warm sector off the ground.\n2. In a cold occlusion the air behind the cold front is colder than the air ahead, so it undercuts both.\n3. In a warm occlusion the air behind the front is milder than the cold air ahead, so it rides up over it.\n4. Occlusion marks the final, dissipating stage in the life cycle of a mid-latitude (temperate) cyclone.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about an occluded front:\nWhich of the statements are correct?",
+      "statements": [
+        "It forms when a faster-moving cold front overtakes the warm front ahead, lifting the entire warm sector off the ground.",
+        "In a cold occlusion the air behind the cold front is colder than the air ahead, so it undercuts both.",
+        "In a warm occlusion the air behind the front is milder than the cold air ahead, so it rides up over it.",
+        "Occlusion marks the final, dissipating stage in the life cycle of a mid-latitude (temperate) cyclone."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-air-masses-fronts",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -817,6 +1225,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
       "question": "Which one of the following statements about fronts is NOT correct?",
+      "noteRef": "geo-atmosphere-climatology-note-air-masses-fronts",
       "options": [
         "A stationary front occurs when neither of the two air masses has enough force to displace the other.",
         "A warm front has a steeper slope than a cold front and produces brief, violent showers.",
@@ -841,7 +1250,14 @@
       "id": "geo-atmosphere-climatology-mcq-35",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about Cyclone Montha:\n1. It crossed the Andhra Pradesh coast near Narasapuram in late October 2025.\n2. The IMD classified it as a Severe Cyclonic Storm.\n3. It damaged crops over tens of thousands of hectares, prompting the state to seek central relief.\n4. It struck as a super cyclonic storm causing thousands of deaths.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Cyclone Montha:\nWhich of the statements are correct?",
+      "statements": [
+        "It crossed the Andhra Pradesh coast near Narasapuram in late October 2025.",
+        "The IMD classified it as a Severe Cyclonic Storm.",
+        "It damaged crops over tens of thousands of hectares, prompting the state to seek central relief.",
+        "It struck as a super cyclonic storm causing thousands of deaths."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",
@@ -868,7 +1284,14 @@
       "id": "geo-atmosphere-climatology-mcq-36",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about the naming of tropical cyclones over the north Indian Ocean:\n1. Names are assigned by the India Meteorological Department, the RSMC at New Delhi.\n2. The names are drawn from lists contributed by the member countries of the WMO/ESCAP panel.\n3. The panel expanded to 13 member countries, each contributing a set of names.\n4. The name 'Montha' (used for the 2025 AP cyclone) was contributed by Thailand.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about the naming of tropical cyclones over the north Indian Ocean:\nWhich of the statements are correct?",
+      "statements": [
+        "Names are assigned by the India Meteorological Department, the RSMC at New Delhi.",
+        "The names are drawn from lists contributed by the member countries of the WMO/ESCAP panel.",
+        "The panel expanded to 13 member countries, each contributing a set of names.",
+        "The name 'Montha' (used for the 2025 AP cyclone) was contributed by Thailand."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-cyclones",
       "options": [
         "1 and 2 only",
         "1, 2 and 3 only",
@@ -894,6 +1317,7 @@
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
       "question": "Arrange the following cyclones that struck the Andhra Pradesh coast in chronological order (earliest first): Michaung, Hudhud, Montha, Titli.",
+      "noteRef": "geo-atmosphere-climatology-note-mains-angle",
       "options": [
         "Titli → Hudhud → Michaung → Montha",
         "Hudhud → Michaung → Titli → Montha",
@@ -918,25 +1342,59 @@
       "id": "geo-atmosphere-climatology-mcq-38",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about clouds and radiation:\n1. High-altitude clouds primarily reflect incoming solar radiation and cool the Earth's surface.\n2. Low-altitude clouds have a high absorption of infrared radiation emitted by the Earth's surface and thereby warm it.\nWhich of the statements is/are correct?",
-      "options": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+      "question": "Consider the following statements about clouds and radiation:\nWhich of the statements is/are correct?",
+      "statements": [
+        "High-altitude clouds primarily reflect incoming solar radiation and cool the Earth's surface.",
+        "Low-altitude clouds have a high absorption of infrared radiation emitted by the Earth's surface and thereby warm it."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-insolation-heat-budget",
+      "options": [
+        "1 only",
+        "2 only",
+        "Both 1 and 2",
+        "Neither 1 nor 2"
+      ],
       "answerIndex": 3,
       "explanation": "**Neither** is correct — both are reversed. **High, thin clouds** (cirrus) let sunlight through but **trap outgoing infrared, so they warm** the surface. **Low, thick clouds** (stratus/stratocumulus) have high albedo and **reflect incoming sunlight, so they cool** the surface.\n\n**Why not the others**\n- 1 only — high clouds warm (trap IR), not cool.\n- 2 only — low clouds cool (reflect sunlight), not warm.\n- Both 1 and 2 — both statements reverse the true effect.\n\n**Key facts**\n- Cloud effect depends on altitude/thickness: high thin clouds → net warming; low thick clouds → net cooling.\n- Albedo (reflection) dominates for low clouds; greenhouse (IR trapping) dominates for high clouds.\n- This is the net cloud radiative forcing tested by UPSC 2022.\n\n*Source: UPSC CSE Prelims 2022; IPCC AR6*",
       "verified": true,
-      "covers": ["Insolation, albedo, heat budget & greenhouse effect"],
-      "tags": ["clouds", "radiative-effect", "albedo", "statements"]
+      "covers": [
+        "Insolation, albedo, heat budget & greenhouse effect"
+      ],
+      "tags": [
+        "clouds",
+        "radiative-effect",
+        "albedo",
+        "statements"
+      ]
     },
     {
       "id": "geo-atmosphere-climatology-mcq-39",
       "subjectCode": "GEO",
       "subtopicId": "geo-atmosphere-climatology",
-      "question": "Consider the following statements about the Indian Ocean Dipole (IOD):\n1. It is characterised by the sea-surface-temperature difference between the tropical western Indian Ocean and the tropical eastern Pacific Ocean.\n2. An IOD event can influence the impact of El Ni\u00f1o on the Indian monsoon.\nWhich of the statements is/are correct?",
-      "options": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+      "question": "Consider the following statements about the Indian Ocean Dipole (IOD):\nWhich of the statements is/are correct?",
+      "statements": [
+        "It is characterised by the sea-surface-temperature difference between the tropical western Indian Ocean and the tropical eastern Pacific Ocean.",
+        "An IOD event can influence the impact of El Niño on the Indian monsoon."
+      ],
+      "noteRef": "geo-atmosphere-climatology-note-monsoon-enso",
+      "options": [
+        "1 only",
+        "2 only",
+        "Both 1 and 2",
+        "Neither 1 nor 2"
+      ],
       "answerIndex": 1,
-      "explanation": "Only statement 2 is correct. The IOD is the SST difference between the tropical **western Indian Ocean and the south-eastern Indian Ocean** (near Indonesia) — **not the eastern Pacific** — so statement 1 is false. A **positive IOD can offset an El Ni\u00f1o** and support the monsoon, so statement 2 is true.\n\n**Why not the others**\n- 1 only — statement 1 wrongly brings in the eastern Pacific (that is ENSO, not IOD).\n- Both 1 and 2 — statement 1 is incorrect.\n- Neither — statement 2 is correct.\n\n**Key facts**\n- Positive IOD: warm western Indian Ocean → more rain over India/East Africa.\n- Negative IOD: warm eastern pole (Indonesia) → drier for India.\n- IOD and ENSO together modulate monsoon strength.\n\n*Source: UPSC CSE Prelims 2017; India Meteorological Department*",
+      "explanation": "Only statement 2 is correct. The IOD is the SST difference between the tropical **western Indian Ocean and the south-eastern Indian Ocean** (near Indonesia) — **not the eastern Pacific** — so statement 1 is false. A **positive IOD can offset an El Niño** and support the monsoon, so statement 2 is true.\n\n**Why not the others**\n- 1 only — statement 1 wrongly brings in the eastern Pacific (that is ENSO, not IOD).\n- Both 1 and 2 — statement 1 is incorrect.\n- Neither — statement 2 is correct.\n\n**Key facts**\n- Positive IOD: warm western Indian Ocean → more rain over India/East Africa.\n- Negative IOD: warm eastern pole (Indonesia) → drier for India.\n- IOD and ENSO together modulate monsoon strength.\n\n*Source: UPSC CSE Prelims 2017; India Meteorological Department*",
       "verified": true,
-      "covers": ["ENSO (El Ni\u00f1o/La Ni\u00f1a) & Indian Ocean Dipole"],
-      "tags": ["iod", "enso", "monsoon", "statements"]
+      "covers": [
+        "ENSO (El Niño/La Niña) & Indian Ocean Dipole"
+      ],
+      "tags": [
+        "iod",
+        "enso",
+        "monsoon",
+        "statements"
+      ]
     }
   ]
 }

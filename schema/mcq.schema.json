@@ -62,6 +62,106 @@
               "question": {
                 "type": "string"
               },
+              "match": {
+                "type": "object",
+                "properties": {
+                  "leftTitle": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rightTitle": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "left": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "enum": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E",
+                            "F"
+                          ]
+                        },
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 2,
+                    "maxItems": 6
+                  },
+                  "right": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6"
+                          ]
+                        },
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 2,
+                    "maxItems": 6
+                  }
+                },
+                "required": [
+                  "leftTitle",
+                  "rightTitle",
+                  "left",
+                  "right"
+                ],
+                "additionalProperties": false
+              },
+              "statements": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 2,
+                "maxItems": 6
+              },
+              "assertion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "noteRef": {
+                "type": "string"
+              },
               "options": {
                 "type": "array",
                 "items": {

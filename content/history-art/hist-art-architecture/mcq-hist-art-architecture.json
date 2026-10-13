@@ -9,6 +9,7 @@
       "subtopicId": "hist-art-architecture",
       "refresher": true,
       "question": "In a Hindu temple, the small cubicle that houses the main deity (the 'womb-house') is called the:",
+      "noteRef": "hist-art-architecture-note-temple-styles",
       "options": [
         "Mandapa",
         "Garbhagriha",
@@ -22,7 +23,11 @@
       "covers": [
         "Temple parts — garbhagriha, shikhara/vimana, mandapa, gopuram"
       ],
-      "tags": ["architecture", "temple", "refresher"]
+      "tags": [
+        "architecture",
+        "temple",
+        "refresher"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-2",
@@ -30,6 +35,7 @@
       "subtopicId": "hist-art-architecture",
       "refresher": true,
       "question": "Which pair correctly distinguishes a chaitya from a vihara in Buddhist cave architecture?",
+      "noteRef": "hist-art-architecture-note-cave-architecture",
       "options": [
         "Chaitya = residence of monks; Vihara = prayer hall with stupa",
         "Chaitya = prayer hall with a stupa; Vihara = monastery/residence for monks",
@@ -43,7 +49,11 @@
       "covers": [
         "Cave architecture — chaitya vs vihara"
       ],
-      "tags": ["architecture", "caves", "refresher"]
+      "tags": [
+        "architecture",
+        "caves",
+        "refresher"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-3",
@@ -51,6 +61,7 @@
       "subtopicId": "hist-art-architecture",
       "refresher": true,
       "question": "The shift from India's older trabeate (post-and-lintel) building to arches and domes is the hallmark of which architectural tradition?",
+      "noteRef": "hist-art-architecture-note-indo-islamic",
       "options": [
         "Nagara temple architecture",
         "Indo-Islamic architecture",
@@ -64,13 +75,23 @@
       "covers": [
         "Indo-Islamic architecture — trabeate vs arcuate & key features"
       ],
-      "tags": ["architecture", "indo-islamic", "refresher"]
+      "tags": [
+        "architecture",
+        "indo-islamic",
+        "refresher"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-4",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Consider the following statements about Indian temple styles:\n1. The Nagara style has a curvilinear shikhara and is predominant in North India.\n2. The Dravida style is enclosed within a compound wall entered through gateway towers called gopurams.\n3. The Vesara style is a hybrid of Nagara and Dravida forms, found mainly in the Deccan.\nWhich of the statements are correct?",
+      "question": "Consider the following statements about Indian temple styles:\nWhich of the statements are correct?",
+      "statements": [
+        "The Nagara style has a curvilinear shikhara and is predominant in North India.",
+        "The Dravida style is enclosed within a compound wall entered through gateway towers called gopurams.",
+        "The Vesara style is a hybrid of Nagara and Dravida forms, found mainly in the Deccan."
+      ],
+      "noteRef": "hist-art-architecture-note-temple-styles",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -86,13 +107,58 @@
         "Dravida style — vimana, gopuram & temple enclosures",
         "Vesara style & Hoysala/Chalukya temples"
       ],
-      "tags": ["architecture", "temple", "styles"]
+      "tags": [
+        "architecture",
+        "temple",
+        "styles"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-5",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Match List-I (Temple) with List-II (Style/Region) and select the correct answer:\nList-I\nA. Kandariya Mahadeva, Khajuraho\nB. Brihadeeswarar, Thanjavur\nC. Konark Sun Temple\nD. Hoysaleswara, Halebidu\nList-II\n1. Dravida\n2. Kalinga (Nagara sub-style)\n3. Nagara\n4. Vesara",
+      "question": "Match List-I (Temple) with List-II (Style/Region) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Temple)",
+        "rightTitle": "List-II (Style/Region)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Kandariya Mahadeva, Khajuraho"
+          },
+          {
+            "key": "B",
+            "text": "Brihadeeswarar, Thanjavur"
+          },
+          {
+            "key": "C",
+            "text": "Konark Sun Temple"
+          },
+          {
+            "key": "D",
+            "text": "Hoysaleswara, Halebidu"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Dravida"
+          },
+          {
+            "key": "2",
+            "text": "Kalinga (Nagara sub-style)"
+          },
+          {
+            "key": "3",
+            "text": "Nagara"
+          },
+          {
+            "key": "4",
+            "text": "Vesara"
+          }
+        ]
+      },
+      "noteRef": "hist-art-architecture-note-temple-styles",
       "options": [
         "A-3, B-1, C-2, D-4",
         "A-1, B-3, C-4, D-2",
@@ -108,13 +174,23 @@
         "Kalinga (Odisha) temple architecture — deula, jagamohana, Konark & Lingaraj",
         "Vesara style & Hoysala/Chalukya temples"
       ],
-      "tags": ["architecture", "temple", "match"]
+      "tags": [
+        "architecture",
+        "temple",
+        "match"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-6",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Consider the following statements about Kalinga temple architecture of Odisha:\n1. The curvilinear tower over the sanctum is called the deula.\n2. The pillared assembly hall in front of the sanctum is the jagamohana.\n3. The Lingaraj Temple at Bhubaneswar was built by the Somavamsi rulers.\nWhich are correct?",
+      "question": "Consider the following statements about Kalinga temple architecture of Odisha:\nWhich are correct?",
+      "statements": [
+        "The curvilinear tower over the sanctum is called the deula.",
+        "The pillared assembly hall in front of the sanctum is the jagamohana.",
+        "The Lingaraj Temple at Bhubaneswar was built by the Somavamsi rulers."
+      ],
+      "noteRef": "hist-art-architecture-note-temple-styles",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -128,13 +204,18 @@
       "covers": [
         "Kalinga (Odisha) temple architecture — deula, jagamohana, Konark & Lingaraj"
       ],
-      "tags": ["architecture", "kalinga", "odisha"]
+      "tags": [
+        "architecture",
+        "kalinga",
+        "odisha"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-7",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
       "question": "The towering, ornate gateway (gopuram) reaching its most colossal scale, and vast temple complexes such as the Virupaksha temple at Hampi, are most associated with which phase of Dravidian architecture?",
+      "noteRef": "hist-art-architecture-note-temple-styles",
       "options": [
         "Pallava style",
         "Chola style",
@@ -148,13 +229,23 @@
       "covers": [
         "Dravida sub-styles — Pallava, Chola, Pandya, Vijayanagara"
       ],
-      "tags": ["architecture", "dravida", "vijayanagara"]
+      "tags": [
+        "architecture",
+        "dravida",
+        "vijayanagara"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-8",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Consider the following statements about the Ellora Caves:\n1. They contain Buddhist, Hindu and Jain rock-cut monuments together.\n2. The Kailasa Temple, the world's largest monolithic excavation, was carved under the Rashtrakuta king Krishna I.\n3. They are a UNESCO World Heritage Site.\nWhich are correct?",
+      "question": "Consider the following statements about the Ellora Caves:\nWhich are correct?",
+      "statements": [
+        "They contain Buddhist, Hindu and Jain rock-cut monuments together.",
+        "The Kailasa Temple, the world's largest monolithic excavation, was carved under the Rashtrakuta king Krishna I.",
+        "They are a UNESCO World Heritage Site."
+      ],
+      "noteRef": "hist-art-architecture-note-cave-architecture",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -168,13 +259,18 @@
       "covers": [
         "Rock-cut caves — Ajanta, Ellora, Elephanta, Badami (Buddhist/Jain/Hindu)"
       ],
-      "tags": ["architecture", "caves", "ellora"]
+      "tags": [
+        "architecture",
+        "caves",
+        "ellora"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-9",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
       "question": "The Barabar Caves near Gaya, representing the earliest examples of rock-cut architecture in India, were excavated during which period and for which sect?",
+      "noteRef": "hist-art-architecture-note-cave-architecture",
       "options": [
         "Gupta period, for Vaishnavas",
         "Mauryan period, for the Ajivika sect",
@@ -188,13 +284,50 @@
       "covers": [
         "Mauryan rock-cut caves — Barabar & Lomas Rishi"
       ],
-      "tags": ["architecture", "caves", "mauryan"]
+      "tags": [
+        "architecture",
+        "caves",
+        "mauryan"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-10",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Match List-I (Sculpture school) with List-II (Feature) and select the correct answer:\nList-I\nA. Gandhara\nB. Mathura\nC. Amaravati\nList-II\n1. Indigenous red sandstone images of the Buddha; Kushana heartland on the Yamuna\n2. Greco-Roman (Hellenistic) influence; grey schist Buddha images\n3. White marble narrative reliefs on the Krishna delta, patronised by Satavahanas",
+      "question": "Match List-I (Sculpture school) with List-II (Feature) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Sculpture school)",
+        "rightTitle": "List-II (Feature)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Gandhara"
+          },
+          {
+            "key": "B",
+            "text": "Mathura"
+          },
+          {
+            "key": "C",
+            "text": "Amaravati"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Indigenous red sandstone images of the Buddha; Kushana heartland on the Yamuna"
+          },
+          {
+            "key": "2",
+            "text": "Greco-Roman (Hellenistic) influence; grey schist Buddha images"
+          },
+          {
+            "key": "3",
+            "text": "White marble narrative reliefs on the Krishna delta, patronised by Satavahanas"
+          }
+        ]
+      },
+      "noteRef": "hist-art-architecture-note-sculpture-pottery-edicts",
       "options": [
         "A-2, B-1, C-3",
         "A-1, B-2, C-3",
@@ -208,13 +341,18 @@
       "covers": [
         "Sculpture schools — Gandhara, Mathura, Amaravati"
       ],
-      "tags": ["architecture", "sculpture", "amaravati"]
+      "tags": [
+        "architecture",
+        "sculpture",
+        "amaravati"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-11",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
       "question": "The correct chronological sequence of ancient Indian pottery cultures is:",
+      "noteRef": "hist-art-architecture-note-sculpture-pottery-edicts",
       "options": [
         "NBPW → PGW → OCP",
         "PGW → OCP → NBPW",
@@ -228,13 +366,23 @@
       "covers": [
         "Stupa architecture & pottery sequence (OCP/PGW/NBPW)"
       ],
-      "tags": ["architecture", "pottery", "stupa"]
+      "tags": [
+        "architecture",
+        "pottery",
+        "stupa"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-12",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Consider the following statements about Ashokan inscriptions:\n1. Most were composed in Prakrit and written in the Brahmi script.\n2. In the north-west, some were written in the Kharoshthi script and Aramaic language.\n3. In Afghanistan, edicts were engraved in both Aramaic and Greek.\nWhich are correct?",
+      "question": "Consider the following statements about Ashokan inscriptions:\nWhich are correct?",
+      "statements": [
+        "Most were composed in Prakrit and written in the Brahmi script.",
+        "In the north-west, some were written in the Kharoshthi script and Aramaic language.",
+        "In Afghanistan, edicts were engraved in both Aramaic and Greek."
+      ],
+      "noteRef": "hist-art-architecture-note-sculpture-pottery-edicts",
       "options": [
         "1 and 2 only",
         "1 and 3 only",
@@ -248,13 +396,18 @@
       "covers": [
         "Ashokan pillars, edicts & scripts"
       ],
-      "tags": ["architecture", "ashoka", "edicts"]
+      "tags": [
+        "architecture",
+        "ashoka",
+        "edicts"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-13",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
       "question": "Which of the following is NOT a characteristic decorative or structural feature introduced by Indo-Islamic architecture in India?",
+      "noteRef": "hist-art-architecture-note-indo-islamic",
       "options": [
         "Charbagh (four-quartered) garden layout",
         "Pietra dura inlay with semi-precious stones",
@@ -268,13 +421,58 @@
       "covers": [
         "Indo-Islamic architecture — trabeate vs arcuate & key features"
       ],
-      "tags": ["architecture", "indo-islamic", "features"]
+      "tags": [
+        "architecture",
+        "indo-islamic",
+        "features"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-14",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Match List-I (Monument) with List-II (Style/Location) and select the correct answer:\nList-I\nA. Gol Gumbaz\nB. Qutub Minar\nC. Taj Mahal\nD. Adhai Din Ka Jhopra\nList-II\n1. Mughal style, Agra\n2. Deccani style, Bijapur\n3. Provincial style using temple material, Ajmer\n4. Imperial (Delhi Sultanate) style, Delhi",
+      "question": "Match List-I (Monument) with List-II (Style/Location) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Monument)",
+        "rightTitle": "List-II (Style/Location)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Gol Gumbaz"
+          },
+          {
+            "key": "B",
+            "text": "Qutub Minar"
+          },
+          {
+            "key": "C",
+            "text": "Taj Mahal"
+          },
+          {
+            "key": "D",
+            "text": "Adhai Din Ka Jhopra"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "Mughal style, Agra"
+          },
+          {
+            "key": "2",
+            "text": "Deccani style, Bijapur"
+          },
+          {
+            "key": "3",
+            "text": "Provincial style using temple material, Ajmer"
+          },
+          {
+            "key": "4",
+            "text": "Imperial (Delhi Sultanate) style, Delhi"
+          }
+        ]
+      },
+      "noteRef": "hist-art-architecture-note-indo-islamic",
       "options": [
         "A-2, B-4, C-1, D-3",
         "A-4, B-2, C-1, D-3",
@@ -288,13 +486,24 @@
       "covers": [
         "Indo-Islamic styles — Imperial (Sultanate), Provincial, Mughal, Deccani"
       ],
-      "tags": ["architecture", "indo-islamic", "styles", "match"]
+      "tags": [
+        "architecture",
+        "indo-islamic",
+        "styles",
+        "match"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-15",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Consider the following statements about Indian painting:\n1. The Ajanta cave murals are the finest surviving examples of ancient Buddhist fresco painting.\n2. The Mughal miniature school reached its zenith under Jahangir.\n3. Pahari and Rajput (Rajasthani) schools are traditions of miniature painting.\nWhich are correct?",
+      "question": "Consider the following statements about Indian painting:\nWhich are correct?",
+      "statements": [
+        "The Ajanta cave murals are the finest surviving examples of ancient Buddhist fresco painting.",
+        "The Mughal miniature school reached its zenith under Jahangir.",
+        "Pahari and Rajput (Rajasthani) schools are traditions of miniature painting."
+      ],
+      "noteRef": "hist-art-architecture-note-painting-colonial-modern",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -308,13 +517,18 @@
       "covers": [
         "Indian painting — Ajanta frescoes & miniature schools (Mughal/Rajput/Pahari/Tanjore)"
       ],
-      "tags": ["architecture", "painting", "miniatures"]
+      "tags": [
+        "architecture",
+        "painting",
+        "miniatures"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-16",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
       "question": "The style seen in Chennai's Chhatrapati-style railway terminus and in buildings that fuse Indian domes, chhatris and jaalis with European Gothic/Classical forms is called:",
+      "noteRef": "hist-art-architecture-note-painting-colonial-modern",
       "options": [
         "Indo-Saracenic style",
         "Baroque style",
@@ -328,13 +542,50 @@
       "covers": [
         "Colonial architecture — Indo-Gothic, Indo-Saracenic, Neo-Classical & Lutyens' Delhi"
       ],
-      "tags": ["architecture", "colonial", "indo-saracenic"]
+      "tags": [
+        "architecture",
+        "colonial",
+        "indo-saracenic"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-17",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Match List-I (Architect) with List-II (Work/Epithet) and select the correct answer:\nList-I\nA. Le Corbusier\nB. Laurie Baker\nC. Charles Correa\nList-II\n1. 'Architect of the Poor'; filler-slab, eco-friendly housing in Kerala\n2. Master plan of Chandigarh, India's first planned city\n3. Jawahar Kala Kendra, Jaipur; Padma Vibhushan (2006)",
+      "question": "Match List-I (Architect) with List-II (Work/Epithet) and select the correct answer:",
+      "match": {
+        "leftTitle": "List-I (Architect)",
+        "rightTitle": "List-II (Work/Epithet)",
+        "left": [
+          {
+            "key": "A",
+            "text": "Le Corbusier"
+          },
+          {
+            "key": "B",
+            "text": "Laurie Baker"
+          },
+          {
+            "key": "C",
+            "text": "Charles Correa"
+          }
+        ],
+        "right": [
+          {
+            "key": "1",
+            "text": "'Architect of the Poor'; filler-slab, eco-friendly housing in Kerala"
+          },
+          {
+            "key": "2",
+            "text": "Master plan of Chandigarh, India's first planned city"
+          },
+          {
+            "key": "3",
+            "text": "Jawahar Kala Kendra, Jaipur; Padma Vibhushan (2006)"
+          }
+        ]
+      },
+      "noteRef": "hist-art-architecture-note-painting-colonial-modern",
       "options": [
         "A-2, B-1, C-3",
         "A-1, B-2, C-3",
@@ -348,13 +599,24 @@
       "covers": [
         "Modern Indian architects — Le Corbusier, Laurie Baker, Charles Correa"
       ],
-      "tags": ["architecture", "modern", "architects", "match"]
+      "tags": [
+        "architecture",
+        "modern",
+        "architects",
+        "match"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-18",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Consider the following statements about UNESCO World Heritage Sites in India (as of 2026):\n1. 'Maratha Military Landscapes of India' was inscribed in 2025.\n2. The 'Ancient Buddhist Site of Sarnath' was the most recent Indian inscription, added in 2026.\n3. The very first Indian sites (1983) included the Ajanta Caves, Ellora Caves, Agra Fort and the Taj Mahal.\nWhich are correct?",
+      "question": "Consider the following statements about UNESCO World Heritage Sites in India (as of 2026):\nWhich are correct?",
+      "statements": [
+        "'Maratha Military Landscapes of India' was inscribed in 2025.",
+        "The 'Ancient Buddhist Site of Sarnath' was the most recent Indian inscription, added in 2026.",
+        "The very first Indian sites (1983) included the Ajanta Caves, Ellora Caves, Agra Fort and the Taj Mahal."
+      ],
+      "noteRef": "hist-art-architecture-note-unesco-ap",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -368,13 +630,23 @@
       "covers": [
         "UNESCO World Heritage Sites of India (incl. 2024–2026 inscriptions)"
       ],
-      "tags": ["architecture", "unesco", "heritage"]
+      "tags": [
+        "architecture",
+        "unesco",
+        "heritage"
+      ]
     },
     {
       "id": "hist-art-architecture-mcq-19",
       "subjectCode": "HIST",
       "subtopicId": "hist-art-architecture",
-      "question": "Consider the following statements about Andhra Pradesh's art and architecture:\n1. The Amaravati school of sculpture, on the Krishna river, was patronised by the Satavahanas.\n2. The Veerabhadra temple at Lepakshi (Vijayanagara period) is famous for a 'hanging pillar' and ceiling murals.\n3. The Srisailam (Mallikarjuna) temple is a Dravidian temple in Andhra Pradesh.\nWhich are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's art and architecture:\nWhich are correct?",
+      "statements": [
+        "The Amaravati school of sculpture, on the Krishna river, was patronised by the Satavahanas.",
+        "The Veerabhadra temple at Lepakshi (Vijayanagara period) is famous for a 'hanging pillar' and ceiling murals.",
+        "The Srisailam (Mallikarjuna) temple is a Dravidian temple in Andhra Pradesh."
+      ],
+      "noteRef": "hist-art-architecture-note-unesco-ap",
       "options": [
         "1 and 2 only",
         "2 and 3 only",
@@ -388,7 +660,12 @@
       "covers": [
         "Andhra Pradesh art & architecture — Amaravati school, Lepakshi, Srisailam"
       ],
-      "tags": ["architecture", "andhra-pradesh", "lepakshi", "amaravati"]
+      "tags": [
+        "architecture",
+        "andhra-pradesh",
+        "lepakshi",
+        "amaravati"
+      ]
     }
   ]
 }

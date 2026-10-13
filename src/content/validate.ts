@@ -26,12 +26,21 @@ import {
   MindmapBankSchema,
   SyllabusBankSchema,
   type ContentBank,
+  type MCQItem,
   type Manifest,
   type SyllabusBank,
 } from './types';
 import { TaxonomySchema, type Taxonomy } from './taxonomy';
 import { PyqMapSchema, PyqWeightsSchema, SyllabusMapSchema } from './audit-types';
 import { TimelineBankSchema } from './timeline-types';
+import {
+  classifyStem,
+  hasStructured,
+  isStatementCode,
+  parseMatchOptions,
+  statementNumbersIn,
+  structuredProblems,
+} from '../lib/question-structure';
 import { LearningSequenceSchema, UnitsSchema, type LearningSequence, type Units } from './plan-types';
 
 /* -------------------------------------------------------------------------- */
@@ -949,9 +958,22 @@ function lintTargets(bank: unknown): { itemId: string; field: string; text: stri
       question?: string;
       options?: string[];
       explanation?: string;
+      statements?: string[];
+      assertion?: string;
+      reason?: string;
+      match?: { left?: { text?: string }[]; right?: { text?: string }[] };
     }>) {
       const id = it.id ?? '(no id)';
       if (typeof it.question === 'string') out.push({ itemId: id, field: 'question', text: it.question });
+      // Structured stem fields are learner-facing text too — lint them.
+      it.statements?.forEach((st, k) => out.push({ itemId: id, field: `statements[${k}]`, text: st }));
+      if (typeof it.assertion === 'string') out.push({ itemId: id, field: 'assertion', text: it.assertion });
+      if (typeof it.reason === 'string') out.push({ itemId: id, field: 'reason', text: it.reason });
+      for (const side of ['left', 'right'] as const) {
+        it.match?.[side]?.forEach((e, k) => {
+          if (typeof e.text === 'string') out.push({ itemId: id, field: `match.${side}[${k}]`, text: e.text });
+        });
+      }
       if (Array.isArray(it.options)) {
         it.options.forEach((opt, k) => {
           if (typeof opt === 'string') out.push({ itemId: id, field: `options[${k}]`, text: opt });
@@ -1262,5 +1284,244 @@ export function auditAllStructure(): StructureFinding[] {
       a.itemId.localeCompare(b.itemId) ||
       a.flag.localeCompare(b.flag),
   );
+  return findings;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Question-format + taught-before-tested ALIGNMENT audit (VALIDATE_ALIGN=1)   */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Alignment rule ids:
+ * - `structure-missing`  (a) stem reads like match / statements / A-R but the
+ *                        structured field is absent;
+ * - `structure-integrity`(b) structured lists incomplete / option keys or
+ *                        statement numbers that do not exist;
+ * - `noteref-missing`    (c) no `noteRef`;
+ * - `noteref-invalid`    (c) `noteRef` is not a note of the same subtopic or of
+ *                        an earlier subtopic in `content/plan/learning-sequence.json`;
+ * - `not-taught`         (d) ANSWER-TAUGHT heuristic: significant tokens of the
+ *                        correct answer are absent from the teaching note(s) —
+ *                        reported as "possibly not taught".
+ */
+export type AlignRule =
+  | 'structure-missing'
+  | 'structure-integrity'
+  | 'noteref-missing'
+  | 'noteref-invalid'
+  | 'not-taught';
+
+/** One alignment finding. */
+export interface AlignFinding {
+  file: string;
+  itemId: string;
+  subjectCode: string;
+  rule: AlignRule;
+  detail: string;
+}
+
+/** Is the alignment audit switched on (`VALIDATE_ALIGN=1`)? */
+export function alignEnabled(env: Record<string, string | undefined> = process.env): boolean {
+  return env.VALIDATE_ALIGN === '1';
+}
+
+/** Words never counted as "significant" by the answer-taught heuristic. */
+const ALIGN_STOPWORDS = new Set(
+  (
+    'the a an and or of to in on at by for from with as is are was were be been being this that these those ' +
+    'its it their his her which who whom whose what when where why how not no nor only both neither either ' +
+    'all any each other than then into over under about after before between during also more most less ' +
+    'such same very can could may might must shall should will would has have had does did done first second ' +
+    'third fourth one two three four five correct statement statements above following given true false ' +
+    'reason assertion explanation india indian state states government national scheme ' +
+    'there they them were what while upon within without whereas being made make known called'
+  ).split(/\s+/),
+);
+
+/** Normalise text for token matching: lower-case, unify dashes/quotes, collapse space. */
+function alignNormalise(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[‐-―−]/g, '-')
+    .replace(/[‘’`]/g, "'")
+    .replace(/\*\*|__|[*_#>|]/g, ' ')
+    .replace(/\s+/g, ' ');
+}
+
+/**
+ * Significant tokens of a fact string: words of 4+ letters (light plural /
+ * possessive stripping) and numbers of 2+ digits (years, sizes, ranks), minus
+ * stopwords.
+ */
+export function significantTokens(text: string): string[] {
+  const out = new Set<string>();
+  for (const raw of alignNormalise(text).split(/[^\p{L}\p{N}.]+/u)) {
+    const t = raw.replace(/^\.+|\.+$/g, '');
+    if (t === '') continue;
+    if (/^\d[\d.,]*$/.test(t)) {
+      if (t.replace(/\D/g, '').length >= 2) out.add(t);
+      continue;
+    }
+    if (t.length < 4 || ALIGN_STOPWORDS.has(t)) continue;
+    out.add(t.replace(/'s$/, '').replace(/(?<=\p{L}{4})(es|s)$/u, ''));
+  }
+  return [...out];
+}
+
+/** Share of `tokens` present in `haystack` (1 when there are no tokens). */
+function tokenCoverage(tokens: readonly string[], haystack: string): number {
+  if (tokens.length === 0) return 1;
+  let hit = 0;
+  for (const t of tokens) if (haystack.includes(t)) hit += 1;
+  return hit / tokens.length;
+}
+
+/** A unit counts as taught when at least this share of its tokens is in the note. */
+const TAUGHT_THRESHOLD = 0.5;
+
+/** Subjects whose MCQs test computation/skills rather than a taught fact. */
+const ALIGN_SKIP_TAUGHT: ReadonlySet<string> = new Set(['MENT', 'ENG', 'TEL']);
+
+/**
+ * The FACT UNITS the answer-taught heuristic checks for an item: for a match,
+ * each correct pair's List-II text (paired with its List-I text for context);
+ * for statements, the statements named by the correct option code; for A-R, the
+ * assertion and the reason; otherwise the correct option text. @internal
+ */
+function factUnits(item: {
+  options: string[];
+  answerIndex: number;
+  match?: { left: { key: string; text: string }[]; right: { key: string; text: string }[] };
+  statements?: string[];
+  assertion?: string;
+  reason?: string;
+}): string[] {
+  const correct = item.options[item.answerIndex] ?? '';
+  if (item.match) {
+    const pairs = parseMatchOptions([correct])?.[0] ?? [];
+    return pairs
+      .map((p) => item.match!.right.find((e) => e.key === p.right)?.text ?? '')
+      .filter((t) => t !== '');
+  }
+  if (item.statements) {
+    if (!isStatementCode(correct)) return [];
+    return statementNumbersIn(correct)
+      .map((n) => item.statements![n - 1] ?? '')
+      .filter((t) => t !== '');
+  }
+  if (item.assertion !== undefined) return [item.assertion, item.reason ?? ''].filter((t) => t !== '');
+  return [correct];
+}
+
+/**
+ * Run the alignment audit over every MCQ bank on disk. Pure w.r.t. the
+ * filesystem; never throws for content problems. The CLI only calls this under
+ * `VALIDATE_ALIGN=1` (the content finalizer's gate), so `npm run check` stays
+ * green until the content round lands.
+ */
+export function auditAlignment(): AlignFinding[] {
+  type Note = { id: string; subtopicId?: string; text: string };
+  type Mcq = MCQItem & { file: string; bankSubject: string };
+  const notesById = new Map<string, Note>();
+  const notesBySubtopic = new Map<string, Note[]>();
+  const mcqs: Mcq[] = [];
+
+  for (const abs of walkJsonFiles(CONTENT_DIR)) {
+    let raw: unknown;
+    try {
+      raw = JSON.parse(readFileSync(abs, 'utf8')) as unknown;
+    } catch {
+      continue;
+    }
+    const parsed = ContentBankSchema.safeParse(raw);
+    if (!parsed.success) continue;
+    const bank = parsed.data;
+    if (bank.kind === 'notes') {
+      for (const n of bank.items) {
+        const note: Note = {
+          id: n.id,
+          subtopicId: n.subtopicId,
+          text: alignNormalise([n.title, n.body, ...(n.keyPoints ?? []), n.mnemonic ?? ''].join(' \n ')),
+        };
+        notesById.set(n.id, note);
+        if (n.subtopicId) {
+          const list = notesBySubtopic.get(n.subtopicId) ?? [];
+          list.push(note);
+          notesBySubtopic.set(n.subtopicId, list);
+        }
+      }
+    } else if (bank.kind === 'mcq') {
+      for (const q of bank.items) mcqs.push({ ...q, file: toGlobPath(abs), bankSubject: bank.subjectCode });
+    }
+  }
+
+  // Learning-sequence order: subtopic id → (subject, position).
+  const seqPos = new Map<string, { subject: string; index: number }>();
+  const seqPath = join(CONTENT_DIR, 'plan', 'learning-sequence.json');
+  if (existsSync(seqPath)) {
+    const seq = LearningSequenceSchema.safeParse(JSON.parse(readFileSync(seqPath, 'utf8')) as unknown);
+    if (seq.success) {
+      for (const [subject, steps] of Object.entries(seq.data.subjects)) {
+        (steps ?? []).forEach((step, index) => seqPos.set(step.id, { subject, index }));
+      }
+    }
+  }
+  /** May a note of subtopic `noteSub` teach a question of subtopic `qSub`? */
+  const teachable = (qSub: string | undefined, noteSub: string | undefined): boolean => {
+    if (!qSub || !noteSub) return false;
+    if (qSub === noteSub) return true;
+    const a = seqPos.get(qSub);
+    const b = seqPos.get(noteSub);
+    return a !== undefined && b !== undefined && a.subject === b.subject && b.index < a.index;
+  };
+
+  const findings: AlignFinding[] = [];
+  for (const q of mcqs) {
+    const base = { file: q.file, itemId: q.id, subjectCode: q.subjectCode ?? q.bankSubject };
+    const push = (rule: AlignRule, detail: string): void => {
+      findings.push({ ...base, rule, detail });
+    };
+
+    // (a) looks structured but is not.
+    if (!hasStructured(q)) {
+      const kind = classifyStem(q.question);
+      if (kind) push('structure-missing', `stem reads as ${kind} but has no structured field`);
+    }
+    // (b) structured-field integrity.
+    for (const p of structuredProblems(q)) push('structure-integrity', p);
+
+    // (c) noteRef.
+    let teachingNotes: Note[] = [];
+    let viaRef = false;
+    if (!q.noteRef) {
+      push('noteref-missing', 'no noteRef');
+    } else {
+      const note = notesById.get(q.noteRef);
+      if (!note) push('noteref-invalid', `noteRef ${q.noteRef} is not a note id`);
+      else if (!teachable(q.subtopicId, note.subtopicId)) {
+        push('noteref-invalid', `noteRef ${q.noteRef} (${note.subtopicId ?? 'no subtopic'}) is not this or an earlier subtopic`);
+      } else {
+        teachingNotes = [note];
+        viaRef = true;
+      }
+    }
+    // Without a valid noteRef the heuristic falls back to every note of the
+    // item's own subtopic, so it is informative before noteRefs are authored.
+    if (!viaRef) teachingNotes = q.subtopicId ? (notesBySubtopic.get(q.subtopicId) ?? []) : [];
+
+    // (d) answer-taught heuristic.
+    if (ALIGN_SKIP_TAUGHT.has(base.subjectCode)) continue;
+    const haystack = teachingNotes.map((n) => n.text).join(' \n ');
+    if (haystack === '') {
+      push('not-taught', 'possibly not taught: no teaching note found for this subtopic');
+      continue;
+    }
+    const missed = factUnits(q).filter((u) => tokenCoverage(significantTokens(u), haystack) < TAUGHT_THRESHOLD);
+    if (missed.length > 0) {
+      const where = viaRef ? `note ${q.noteRef}` : `${q.subtopicId} notes (no valid noteRef)`;
+      push('not-taught', `possibly not taught in ${where}: ${missed.map((m) => `"${m.slice(0, 60)}"`).join('; ')}`);
+    }
+  }
+  findings.sort((a, b) => a.file.localeCompare(b.file) || a.itemId.localeCompare(b.itemId) || a.rule.localeCompare(b.rule));
   return findings;
 }

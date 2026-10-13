@@ -17,6 +17,7 @@
  * authors' own `examPoints`: a clause/topic only counts as covered when its
  * declared KEYWORDS are actually EVIDENCED in the mapped content.
  */
+import { stemPlainText, type StructuredLike } from './question-structure';
 import type { SubjectCode } from '../content/types';
 import {
   isPrelimsPaper,
@@ -64,6 +65,11 @@ export interface EvidenceItemLike {
   options?: string[];
   keyPoints?: string[];
   covers?: string[];
+  /** Structured stem fields (see `question-structure.ts`). */
+  match?: StructuredLike['match'];
+  statements?: string[];
+  assertion?: string;
+  reason?: string;
   tags?: string[];
 }
 
@@ -77,8 +83,14 @@ function joinLower(parts: Array<string | undefined>, arrays: Array<string[] | un
 
 /** Searchable text of an MCQ item (question, options, explanation, covers, tags). */
 export function mcqEvidenceText(item: EvidenceItemLike): string {
+  // Structured stems keep their lists outside `question`; fold them back in so
+  // coverage evidence is unchanged by the question-format migration.
+  const stem =
+    item.question === undefined
+      ? undefined
+      : stemPlainText({ ...(item as StructuredLike), question: item.question, options: item.options ?? [] });
   return joinLower(
-    [item.question, item.explanation],
+    [stem, item.explanation],
     [item.options, item.covers, item.tags],
   );
 }

@@ -118,8 +118,10 @@ describe('parseMatchQuestion', () => {
 
   it('parses the interleaved "A. x 1. y" form (variant markers)', () => {
     const stem =
-      'Match the following: List-I (Site) List-II (Finding) ' +
-      'A. Lothal 1. Dockyard B. Kalibangan 2. Ploughed field C. Dholavira 3. Reservoirs';
+      // Inline items are separated by 2+ spaces (single-space bare markers are
+      // NOT list markers — see the decimal / initials regressions below).
+      'Match the following: List-I (Site) List-II (Finding)\n' +
+      'A. Lothal  1. Dockyard  B. Kalibangan  2. Ploughed field  C. Dholavira  3. Reservoirs';
     const q = parseMatchQuestion(stem)!;
     expect(q.leftLabel).toBe('Site');
     expect(q.rightLabel).toBe('Finding');
@@ -167,5 +169,38 @@ describe('parseQuestion (classifier)', () => {
   it('classifies an ordinary question as plain', () => {
     const q = parseQuestion('Who founded the Mauryan empire?');
     expect(q.kind).toBe('plain');
+  });
+});
+
+describe('list-marker boundaries (regressions)', () => {
+  it('never splits a decimal such as "ECLGS 5.0" into a list marker', () => {
+    const q = parseMatchQuestion(
+      'Match List-I (scheme) with List-II (focus):\n' +
+        'List-I: A) PM Surya Sarovar Yojana  B) MPMS  C) ECLGS 5.0  D) Small Hydro Power Scheme\n' +
+        'List-II: 1) Guaranteed credit line  2) Floating solar  3) Small hydro  4) Electronics',
+    )!;
+    expect(q.rows).toHaveLength(4);
+    expect(q.rows[2]!.left).toBe('C. ECLGS 5.0');
+  });
+
+  it('keeps initials ("C. P. Radhakrishnan") inside one item', () => {
+    const q = parseMatchQuestion(
+      'Match List-I (post) with List-II (incumbent):\n' +
+        'List-I: A) Vice-President  B) Chief Election Commissioner  C) RBI Governor  D) Lok Sabha Speaker\n' +
+        'List-II: 1) Om Birla  2) C. P. Radhakrishnan  3) Sanjay Malhotra  4) Gyanesh Kumar',
+    )!;
+    expect(q.rows.map((r) => r.right)).toEqual([
+      '1. Om Birla',
+      '2. C. P. Radhakrishnan',
+      '3. Sanjay Malhotra',
+      '4. Gyanesh Kumar',
+    ]);
+  });
+
+  it('does not treat "5.0" in a statement as a new statement', () => {
+    const q = parseStatementQuestion(
+      'Consider the following:\n1. ECLGS 5.0 was approved in May 2026.\n2. Another fact.\nWhich is correct?',
+    )!;
+    expect(q.statements).toEqual(['ECLGS 5.0 was approved in May 2026.', 'Another fact.']);
   });
 });
