@@ -23,6 +23,7 @@
 import {
   alignEnabled,
   auditAlignment,
+  loadAlignExceptions,
   type AlignRule,
   auditAllStructure,
   lintAllContent,
@@ -101,12 +102,13 @@ if (structure.length > 0) {
   else warned += structure.length;
 }
 
-/* ----- Question-format + taught-before-tested alignment (VALIDATE_ALIGN=1) - */
-// OFF by default so `npm run check` stays green until the content round lands;
-// the content finalizer enables it (VALIDATE_ALIGN=1), and under --strict every
-// alignment finding then fails the gate. `--align-verbose` prints each finding.
+/* ----- Question-format + taught-before-tested alignment ------------------- */
+// ALWAYS on under --strict (so `npm run check` gates it permanently: every
+// finding fails); otherwise opt-in via VALIDATE_ALIGN=1 as advisory warnings.
+// Justified heuristic false positives live in content/audit/align-exceptions.json.
+// `--align-verbose` prints each finding.
 
-if (alignEnabled()) {
+if (alignEnabled(process.env, strict)) {
   const align = auditAlignment();
   const byRule = new Map<AlignRule, number>();
   const notTaughtBySubject = new Map<string, number>();
@@ -115,7 +117,7 @@ if (alignEnabled()) {
     if (f.rule === 'not-taught') notTaughtBySubject.set(f.subjectCode, (notTaughtBySubject.get(f.subjectCode) ?? 0) + 1);
   }
   console.log('');
-  console.log(`question alignment (VALIDATE_ALIGN=1): ${align.length} finding(s)${strict ? ' (STRICT — treated as errors)' : ' (warnings)'}`);
+  console.log(`question alignment: ${align.length} finding(s)${strict ? ' (STRICT — treated as errors)' : ' (warnings)'}`);
   if (process.argv.includes('--align-verbose')) {
     for (const f of align) console.log(`        ${strict ? '✗' : '⚠'} [${f.rule}] ${f.itemId} (${f.subjectCode}): ${f.detail}`);
   }
@@ -123,6 +125,7 @@ if (alignEnabled()) {
   console.log(
     `  possibly-not-taught by subject: ${[...notTaughtBySubject.entries()].sort().map(([s, n]) => `${s}=${n}`).join(', ') || 'none'}`,
   );
+  console.log(`  justified heuristic exceptions: ${loadAlignExceptions().size}`);
   if (strict) failed += align.length;
   else warned += align.length;
 }

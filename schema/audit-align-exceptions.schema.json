@@ -1,0 +1,51 @@
+{
+  "$ref": "#/definitions/audit-align-exceptions",
+  "definitions": {
+    "audit-align-exceptions": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "itemId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rule": {
+                "type": "string",
+                "const": "not-taught"
+              },
+              "why": {
+                "type": "string",
+                "minLength": 10
+              }
+            },
+            "required": [
+              "itemId",
+              "rule",
+              "why"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "version",
+        "source",
+        "exceptions"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

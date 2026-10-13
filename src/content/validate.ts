@@ -31,7 +31,7 @@ import {
   type SyllabusBank,
 } from './types';
 import { TaxonomySchema, type Taxonomy } from './taxonomy';
-import { PyqMapSchema, PyqWeightsSchema, SyllabusMapSchema } from './audit-types';
+import { AlignExceptionsSchema, PyqMapSchema, PyqWeightsSchema, SyllabusMapSchema } from './audit-types';
 import { TimelineBankSchema } from './timeline-types';
 import {
   classifyStem,
@@ -197,6 +197,7 @@ export function validateAllContent(): FileValidationResult[] {
   const syllabusMapGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'syllabus-map.json'));
   const pyqMapGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'pyq-map.json'));
   const pyqWeightsGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'pyq-weights.json'));
+  const alignExceptionsGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'align-exceptions.json'));
   const timelineGlob = toGlobPath(join(CONTENT_DIR, 'timeline', 'events.json'));
   const planGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'learning-sequence.json'));
   const unitsGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'units.json'));
@@ -255,10 +256,11 @@ export function validateAllContent(): FileValidationResult[] {
     // The audit maps under content/audit/ are validated against their OWN
     // schemas and EXCLUDED from the bank/orphan/manifest checks (they are the
     // independent-audit inputs, not content banks and not manifest entries).
-    if (file === syllabusMapGlob || file === pyqMapGlob) {
+    if (file === syllabusMapGlob || file === pyqMapGlob || file === alignExceptionsGlob) {
       const raw = readJson(abs);
       if (raw === undefined) continue;
-      const schema = file === syllabusMapGlob ? SyllabusMapSchema : PyqMapSchema;
+      const schema =
+        file === syllabusMapGlob ? SyllabusMapSchema : file === pyqMapGlob ? PyqMapSchema : AlignExceptionsSchema;
       const parsed = schema.safeParse(raw);
       if (parsed.success) {
         resultFor(file); // show as PASS
@@ -272,7 +274,7 @@ export function validateAllContent(): FileValidationResult[] {
     // neither a bank nor a manifest entry, so don't fail the gate on it.
     if (file.startsWith('/content/audit/')) {
       resultFor(file).warnings.push(
-        'unrecognised file under content/audit/ (not the syllabus-map or pyq-map) — ignored by the audit',
+        'unrecognised file under content/audit/ (not the syllabus-map, pyq-map, pyq-weights or align-exceptions) — ignored by the audit',
       );
       continue;
     }
@@ -1302,14 +1304,18 @@ export function auditAllStructure(): StructureFinding[] {
  *                        an earlier subtopic in `content/plan/learning-sequence.json`;
  * - `not-taught`         (d) ANSWER-TAUGHT heuristic: significant tokens of the
  *                        correct answer are absent from the teaching note(s) —
- *                        reported as "possibly not taught".
+ *                        reported as "possibly not taught". Justified false
+ *                        positives are listed in `content/audit/align-exceptions.json`;
+ * - `exception-stale`    an exceptions entry names an unknown MCQ or no longer
+ *                        suppresses a `not-taught` finding (remove it).
  */
 export type AlignRule =
   | 'structure-missing'
   | 'structure-integrity'
   | 'noteref-missing'
   | 'noteref-invalid'
-  | 'not-taught';
+  | 'not-taught'
+  | 'exception-stale';
 
 /** One alignment finding. */
 export interface AlignFinding {
@@ -1320,9 +1326,30 @@ export interface AlignFinding {
   detail: string;
 }
 
-/** Is the alignment audit switched on (`VALIDATE_ALIGN=1`)? */
-export function alignEnabled(env: Record<string, string | undefined> = process.env): boolean {
-  return env.VALIDATE_ALIGN === '1';
+/**
+ * Is the alignment audit switched on? Always under `--strict` (so `npm run check`
+ * gates it permanently); otherwise only with `VALIDATE_ALIGN=1`.
+ */
+export function alignEnabled(env: Record<string, string | undefined> = process.env, strict = false): boolean {
+  return strict || env.VALIDATE_ALIGN === '1';
+}
+
+/**
+ * Read the justified `not-taught` exceptions (itemId → why) from
+ * `content/audit/align-exceptions.json`. Missing or schema-invalid file → empty
+ * map (the schema error itself is reported by `validateAllContent`).
+ */
+export function loadAlignExceptions(): Map<string, string> {
+  const out = new Map<string, string>();
+  const path = join(CONTENT_DIR, 'audit', 'align-exceptions.json');
+  if (!existsSync(path)) return out;
+  try {
+    const parsed = AlignExceptionsSchema.safeParse(JSON.parse(readFileSync(path, 'utf8')) as unknown);
+    if (parsed.success) for (const e of parsed.data.exceptions) out.set(e.itemId, e.why);
+  } catch {
+    /* unreadable JSON is reported by validateAllContent */
+  }
+  return out;
 }
 
 /** Words never counted as "significant" by the answer-taught heuristic. */
@@ -1475,6 +1502,9 @@ export function auditAlignment(): AlignFinding[] {
     return a !== undefined && b !== undefined && a.subject === b.subject && b.index < a.index;
   };
 
+  const exceptions = loadAlignExceptions();
+  /** Exceptions that actually suppressed a `not-taught` finding. */
+  const usedExceptions = new Set<string>();
   const findings: AlignFinding[] = [];
   for (const q of mcqs) {
     const base = { file: q.file, itemId: q.id, subjectCode: q.subjectCode ?? q.bankSubject };
@@ -1518,9 +1548,26 @@ export function auditAlignment(): AlignFinding[] {
     }
     const missed = factUnits(q).filter((u) => tokenCoverage(significantTokens(u), haystack) < TAUGHT_THRESHOLD);
     if (missed.length > 0) {
+      // A justified false positive (listed with a reason) is suppressed.
+      if (exceptions.has(q.id)) {
+        usedExceptions.add(q.id);
+        continue;
+      }
       const where = viaRef ? `note ${q.noteRef}` : `${q.subtopicId} notes (no valid noteRef)`;
       push('not-taught', `possibly not taught in ${where}: ${missed.map((m) => `"${m.slice(0, 60)}"`).join('; ')}`);
     }
+  }
+  // Stale exceptions: unknown id, or the item no longer trips the heuristic.
+  const mcqIds = new Set(mcqs.map((q) => q.id));
+  for (const id of exceptions.keys()) {
+    if (usedExceptions.has(id)) continue;
+    findings.push({
+      file: '/content/audit/align-exceptions.json',
+      itemId: id,
+      subjectCode: '-',
+      rule: 'exception-stale',
+      detail: mcqIds.has(id) ? 'exception no longer needed (item is taught) — remove it' : 'exception names an unknown MCQ id',
+    });
   }
   findings.sort((a, b) => a.file.localeCompare(b.file) || a.itemId.localeCompare(b.itemId) || a.rule.localeCompare(b.rule));
   return findings;

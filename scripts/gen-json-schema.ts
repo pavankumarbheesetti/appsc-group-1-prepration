@@ -21,7 +21,7 @@ import {
   MindmapBankSchema,
   SyllabusBankSchema,
 } from '../src/content/types';
-import { PyqMapSchema, PyqWeightsSchema, SyllabusMapSchema } from '../src/content/audit-types';
+import { AlignExceptionsSchema, PyqMapSchema, PyqWeightsSchema, SyllabusMapSchema } from '../src/content/audit-types';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const outDir = resolve(here, '../schema');
@@ -39,6 +39,7 @@ const targets = [
   ['audit-syllabus-map', SyllabusMapSchema],
   ['audit-pyq-map', PyqMapSchema],
   ['audit-pyq-weights', PyqWeightsSchema],
+  ['audit-align-exceptions', AlignExceptionsSchema],
 ] as const;
 
 for (const [name, schema] of targets) {

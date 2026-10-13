@@ -149,6 +149,43 @@ export const PyqWeightsSchema = z.object({
 /** The whole PYQ-weights document. */
 export type PyqWeights = z.infer<typeof PyqWeightsSchema>;
 
+/**
+ * `content/audit/align-exceptions.json` — JUSTIFIED false positives of the
+ * answer-taught (`not-taught`) alignment heuristic. Each entry names one MCQ id
+ * whose correct answer IS taught by its noteRef note but whose wording the token
+ * heuristic cannot match (paraphrase, symbols, computation). Only `not-taught`
+ * may be excepted — structure and noteRef rules have no exceptions. Mirrored for
+ * humans in `.research/question-align/HEURISTIC-EXCEPTIONS.md`. An entry that no
+ * longer suppresses anything is itself reported (`exception-stale`).
+ */
+export const AlignExceptionsSchema = z
+  .object({
+    version: z.number().int().positive(),
+    source: z.string().min(1),
+    exceptions: z.array(
+      z
+        .object({
+          /** The MCQ item id (e.g. `geo-earth-solar-system-mcq-31`). */
+          itemId: z.string().min(1),
+          /** The rule being excepted — only the heuristic may be excepted. */
+          rule: z.literal('not-taught'),
+          /** Why this is a false positive (where/how the note teaches it). */
+          why: z.string().min(10),
+        })
+        .strict(),
+    ),
+  })
+  .strict()
+  .superRefine((doc, ctx) => {
+    const seen = new Set<string>();
+    doc.exceptions.forEach((e, i) => {
+      if (seen.has(e.itemId)) ctx.addIssue({ code: 'custom', path: ['exceptions', i, 'itemId'], message: `duplicate itemId ${e.itemId}` });
+      seen.add(e.itemId);
+    });
+  });
+/** The whole alignment-exceptions document. */
+export type AlignExceptions = z.infer<typeof AlignExceptionsSchema>;
+
 /* -------------------------------------------------------------------------- */
 /* Parse helpers                                                               */
 /* -------------------------------------------------------------------------- */
