@@ -33,7 +33,7 @@ import { icon } from './components/icon';
 import { navigate } from '../router/router';
 import { prettyDate } from './today';
 import { isRowKeyDone, markRowKeyDone, START_HERE_KEY } from '../lib/day-tasks';
-import { todayISO } from '../lib/dates';
+import { addDaysISO, todayISO } from '../lib/dates';
 
 /**
  * The application deadline, verbatim from the detailed Notification 07/2026
@@ -164,10 +164,13 @@ function howYourPlanWorks(
       'Learn every topic once, subject by subject, in the right order.',
     ],
   ];
-  if (anchors.revisionStartISO) {
+  // D31: ranges never overlap — each phase ends the day before the next starts.
+  const dayAfterFirstPass = addDaysISO(coverageEndISO, 1);
+  const revisionStart = anchors.revisionStartISO && anchors.revisionStartISO > dayAfterFirstPass ? anchors.revisionStartISO : dayAfterFirstPass;
+  if (anchors.revisionStartISO && revisionStart < anchors.finalStartISO) {
     phaseRows.push([
       'Revision cycle',
-      `${prettyDate(anchors.revisionStartISO)} – ${prettyDate(anchors.finalStartISO)}`,
+      `${prettyDate(revisionStart)} – ${prettyDate(addDaysISO(anchors.finalStartISO, -1))}`,
       'Go back over everything, weakest topics first, with full mocks.',
     ]);
   }

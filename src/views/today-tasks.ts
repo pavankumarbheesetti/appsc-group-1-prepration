@@ -19,9 +19,9 @@
  */
 import { getBanks, getCards, getSubjects, getSubtopic, getSubtopics } from '../content/loader';
 import type { MCQItem, MainsItem } from '../content/types';
-import type { PlanBlock, PlanDay, PlanTopic } from '../engine/planner';
+import { planDayFor, type PlanBlock, type PlanDay, type PlanTopic } from '../engine/planner';
 import { WEEK_TEST_COUNT, WEEK_TEST_MINUTES } from '../engine/mock';
-import { navigate } from '../router/router';
+import { navigate, pushUrl } from '../router/router';
 import { getTeluguLessonsDone, loadState } from '../state/store';
 import { isTopicStudied, markTopicStudied, studiedTopicIds, topicStudyFrom } from '../lib/study-status';
 import { lessonForDay, lessonHeadline, lessonProgressLine, lessonTarget } from '../lib/telugu';
@@ -57,9 +57,10 @@ import {
 import type { WeakSubtopicInput } from '../lib/weak';
 import { openLearn } from './learn';
 import { openMainsQuestion } from './mains';
-import { openPaperMock, openUnitTest, openWeekTest } from './mock';
+import { openPaperMock, openTestResults, openUnitTest, openWeekTest } from './mock';
+import { weekTestNumber } from '../lib/test-number';
 import { openScopedReview } from './notebook';
-import { openReviseScope } from './revise';
+import { openReviseScope, openRevisionSession, weekMistakeIds } from './revise';
 import { openTelugu, openTeluguLesson } from './telugu';
 import { openEnglish } from './english';
 import { howCurrentAffairsIsAsked } from './start';
@@ -185,6 +186,8 @@ export interface DayRow {
   dueISO?: string;
   /** For a weak row on the catch-up block with nothing missed. */
   nothingMissed?: boolean;
+  /** The catch-up block's revision row (this week's topics), N10. */
+  weekRevision?: boolean;
   /** For split light-day rows: which CA bank the set uses. */
   caSubtopicId?: string;
   /** For language rows. */
@@ -244,7 +247,14 @@ export function dayRows(day: PlanDay, today: string = todayISO()): DayRow[] {
     switch (block.kind) {
       case 'catchup': {
         const missed = catchupTopics(day, block.minutes, today);
-        if (missed.length === 0) out.push(row('weak', { nothingMissed: true }));
+        if (missed.length === 0) {
+          // N10: a 20-question drill is ~30–40 min, not the whole block; the
+          // rest becomes an explicit revision row of this week's topics.
+          const drillMin = Math.min(block.minutes, WEAK_DRILL_MINUTES);
+          out.push(row('weak', { nothingMissed: true, minutes: drillMin }));
+          const rest = block.minutes - drillMin;
+          if (rest >= 15) out.push(row('flashcards', { key: `${base}:revise`, minutes: rest, weekRevision: true }));
+        }
         else for (const m of missed) out.push(row('missed', { topic: m.topic, dueISO: m.dueISO, key: `missed:${m.topic.subtopicId}`, minutes: m.topic.estMinutes }));
         return;
       }
@@ -516,6 +526,22 @@ function mcqIdsOf(id: string): string[] {
   return getSubtopic(id)?.mcqs.map((m) => m.id) ?? [];
 }
 
+/** Minutes a weakest-area drill takes (20 Q ≈ 30–40 min), N10. */
+export const WEAK_DRILL_MINUTES = 35;
+
+/** Topics studied on a day in `[fromISO, toISO]` (inclusive). @internal */
+function topicsStudiedSince(fromISO: string, toISO: string): string[] {
+  const state = loadState();
+  const out: string[] = [];
+  for (const s of getSubjects()) {
+    for (const meta of getSubtopics(s.code)) {
+      const info = topicStudyFrom(state, meta.id);
+      if (info.status === 'studied' && info.studiedOn !== undefined && info.studiedOn >= fromISO && info.studiedOn <= toISO) out.push(meta.id);
+    }
+  }
+  return out;
+}
+
 /** Weak-area ranking inputs. @internal */
 function weakInputs(): WeakSubtopicInput[] {
   return getSubjects().flatMap((s) =>
@@ -625,8 +651,10 @@ export function rowView(row: DayRow, ctx: RowCtx): RowView {
       };
     case 'flashcards':
       return flashcardsView(row, ctx, base);
-    case 'test':
-      return testView(row, dateISO, base);
+    case 'test': {
+      const v = testView(row, dateISO, base);
+      return rowDone(row, dateISO) ? { ...v, hint: 'Submitted \u2014 tap to see your results and review every answer. Retake is on the results page.' } : v;
+    }
     case 'review': {
       const mock = block.kind === 'mock-review';
       const kinds = mock ? MOCK_KINDS : WEEK_TEST_KINDS;
@@ -733,6 +761,24 @@ function flashcardsView(row: DayRow, ctx: RowCtx, base: Pick<RowView, 'minutes' 
   const dateISO = ctx.day.dateISO;
   const rc = ctx.reviseCtx;
   const begin = (): void => beginTask(row.key, 'flashcards', dateISO);
+  if (row.weekRevision) {
+    const week = topicsStudiedSince(addDaysISO(dateISO, -6), dateISO);
+    const detail = week.length > 0
+      ? `Flashcards of this week\u2019s topics: ${namesLine(week)}`
+      : 'Re-read the notes of the topics you studied most recently';
+    return {
+      ...base,
+      label: 'Revision \u2014 this week\u2019s topics',
+      title: 'Revision \u2014 this week\u2019s topics',
+      detail,
+      onClick: () => {
+        begin();
+        if (week.length > 0) openReviseScope(week);
+        else navigate('/revise');
+      },
+      hint: 'Recall each answer before you peek. Done when the session ends.',
+    };
+  }
   const line = flashcardTodayLine(liveFlashcardDue());
   if (row.block.kind === 'revise' && rc.early) {
     const ids = rc.ids;
@@ -753,15 +799,22 @@ function flashcardsView(row: DayRow, ctx: RowCtx, base: Pick<RowView, 'minutes' 
   }
   const label = row.key === 'light:flashcards'
     ? 'Flashcards \u2014 due cards of topics you studied'
-    : row.block.kind === 'weekly-revision' ? row.block.label : row.block.label;
+    : row.block.label;
+  const withMistakes = row.key !== 'light:flashcards' && (row.block.kind === 'weekly-revision' || row.block.kind === 'revise');
+  const mistakes = withMistakes ? weekMistakeIds().length : 0;
   return {
     ...base,
     label,
     title: label,
-    detail: `${line || 'Due cards of topics you have studied'} \u00b7 done when the session ends`,
+    detail: withMistakes
+      ? `${line || 'Due cards of topics you have studied'} \u00b7 ${mistakes} mistake${mistakes === 1 ? '' : 's'} from this week \u00b7 done when both are done`
+      : `${line || 'Due cards of topics you have studied'} \u00b7 done when the session ends`,
     onClick: () => {
       begin();
-      navigate('/revise/flashcards');
+      // N15: the revision rows that promise mistakes open ONE session of due
+      // flashcards + this week's mistakes; light-day rows are flashcards only.
+      if (withMistakes) openRevisionSession(label);
+      else navigate('/revise/flashcards');
     },
     hint: line || 'Recall each answer before you peek.',
   };
@@ -773,6 +826,11 @@ function testView(row: DayRow, dateISO: string, base: Pick<RowView, 'minutes' | 
   const done = rowDone(row, dateISO);
   const score = done ? testScoreLine(row, dateISO) : '';
   const doneText = 'Submitted \u2713';
+  // A SUBMITTED test row opens that sitting's RESULTS (never a new attempt);
+  // "Retake" is offered there as a separate secondary action.
+  const last = done ? attemptsOn(dateISO, testKinds(block)).at(-1) : undefined;
+  const openOr = (start: () => void): (() => void) =>
+    last ? () => openTestResults(last.at, start) : start;
   if (block.kind === 'unit-wrapup') {
     const ids = block.unitTestSubtopicIds ?? [];
     const left = ids.filter((id) => !isTopicStudied(id));
@@ -795,19 +853,21 @@ function testView(row: DayRow, dateISO: string, base: Pick<RowView, 'minutes' | 
       label: block.label,
       title: `Unit test \u00b7 ${unit}`,
       detail: score || (q > 0 ? `Recap + ${q}-question unit test` : 'Recap your finished unit'),
-      onClick: () => openUnitTest({ ...block, unitTestSubtopicIds: studiedTopicIds(ids) }),
+      onClick: openOr(() => openUnitTest({ ...block, unitTestSubtopicIds: studiedTopicIds(ids) })),
       hint: 'Timed, \u22121/3 for a wrong answer. Done when you submit.',
       doneText,
     };
   }
   if (block.kind === 'week-test') {
+    // Numbered from the learner's OWN first week test (not the schedule's).
+    const n = weekTestNumber(block.weekTestDateISO ?? dateISO, loadState().testAttempts as ReviewableAttempt[], loadState().settings.planStartDate);
     return {
       ...base,
-      label: block.label,
-      title: 'This week\u2019s test',
+      label: `Week test ${n}`,
+      title: `Week test ${n}`,
       context: `${WEEK_TEST_COUNT} questions`,
       detail: score || `${WEEK_TEST_COUNT} questions \u00b7 ${WEEK_TEST_MINUTES} min \u00b7 from topics you studied`,
-      onClick: () => openWeekTest(block),
+      onClick: openOr(() => openWeekTest(block)),
       hint: 'Timed, \u22121/3 for a wrong answer. Done when you submit.',
       doneText,
     };
@@ -820,7 +880,7 @@ function testView(row: DayRow, dateISO: string, base: Pick<RowView, 'minutes' | 
     label: block.label,
     title,
     detail: score || `${title} \u00b7 exam timing`,
-    onClick: () => (paper ? openPaperMock(paper) : navigate('/practice/mock')),
+    onClick: openOr(() => (paper ? openPaperMock(paper) : navigate('/practice/mock'))),
     hint: 'Exam conditions: one sitting, timed. Done when you submit.',
     doneText,
   };
@@ -899,10 +959,101 @@ export interface SetSpec {
  * row and shows "Set done" with the score and a way back to Today.
  */
 export function runSet(spec: SetSpec): void {
+  const route = setRoute(spec);
+  setSpecs.set(route, spec);
+  // A fresh tap on the row starts the set again (its last result is kept only
+  // while the learner is away from the set page).
+  if (!reconstructing) setResults.delete(route);
+  // N11: every set has its OWN URL, so Back / Today / reload work and the
+  // result survives navigation.
   const view = viewEl();
   if (!view) return;
+  drawSet(view, route);
+  // The set is drawn; give it its URL (no re-render) so Back returns to Today.
+  if (normalizeHashPath(location.hash) !== route) pushUrl(route);
+}
+
+/** Specs of the sets opened this session, by route. @internal */
+const setSpecs = new Map<string, SetSpec>();
+/** Last result of each set route (results survive navigation). @internal */
+const setResults = new Map<string, { correct: number; total: number }>();
+/** True while a set route rebuilds its spec from the Today row. @internal */
+let reconstructing = false;
+
+/** `#/set/<kind>/<date>` for a set (kind = the row key, `:` → `~`). */
+export function setRoute(spec: Pick<SetSpec, 'key' | 'dateISO'>): string {
+  return `/set/${encodeURIComponent(spec.key.replace(/:/g, '~'))}/${spec.dateISO}`;
+}
+
+/** The path part of a hash (`#/a/b?x` → `/a/b`). @internal */
+function normalizeHashPath(hash: string): string {
+  const raw = hash.replace(/^#/, '') || '/';
+  const q = raw.indexOf('?');
+  return q >= 0 ? raw.slice(0, q) : raw;
+}
+
+/**
+ * Route handler for `#/set/:kind/:date` (N11): draw the set (or its last
+ * result). After a reload the spec is rebuilt from that day's Today row.
+ */
+export function renderSetRoute(root: HTMLElement): void {
+  const route = normalizeHashPath(location.hash);
+  if (!setSpecs.has(route)) {
+    const m = /^\/set\/([^/]+)\/(\d{4}-\d{2}-\d{2})$/.exec(route);
+    if (m) {
+      const kind = decodeURIComponent(m[1]!);
+      const dateISO = m[2]!;
+      const day = planDayFor(currentPlan(), dateISO) ?? planDayFor(onTimePlan(), dateISO);
+      const row = day ? dayRows(day, dateISO).find((r) => r.key.replace(/:/g, '~') === kind) : undefined;
+      if (day && row) {
+        reconstructing = true;
+        try {
+          rowView(row, { reviseCtx: computeReviseCtx(dateISO, day), day }).onClick();
+        } finally {
+          reconstructing = false;
+        }
+        // The row may lead elsewhere (e.g. nothing studied yet) — done.
+        if (normalizeHashPath(location.hash) !== route || setSpecs.has(route)) return;
+      }
+    }
+    mount(root, card({ title: 'Practice set' }, [
+      el('p', { class: 'section-lead', text: 'This set is no longer available \u2014 open it again from Today.' }),
+      el('div', { class: 'hero-actions' }, [button({ label: 'Back to Today', variant: 'primary', onClick: () => navigate('/') })]),
+    ]));
+    return;
+  }
+  drawSet(root, route);
+}
+
+/** Draw a set's brief, or its last result, into `view`. @internal */
+function drawSet(view: HTMLElement, route: string): void {
+  const spec = setSpecs.get(route)!;
   const items = itemsFor(spec.ids);
   const back = button({ label: 'Back to Today', variant: 'ghost', onClick: () => navigate('/') });
+  const showResult = (score: { correct: number; total: number }): void => {
+    mount(view, card({ title: spec.title }, [
+      el('div', { class: 'empty-state', attrs: { 'data-state': 'set-done' } }, [
+        el('h3', { text: score.total > 0 ? 'Set done \u2713' : 'Set not started' }),
+        el('p', { text: score.total > 0 ? `${score.correct} of ${score.total} correct.` : 'Answer at least one question to finish the set.' }),
+        el('div', { class: 'hero-actions', attrs: { style: 'justify-content:center' } }, [
+          button({ label: 'Back to Today', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/') }),
+          button({
+            label: 'Practise this set again',
+            variant: 'ghost',
+            onClick: () => {
+              setResults.delete(route);
+              drawSet(view, route);
+            },
+          }),
+        ]),
+      ]),
+    ]));
+  };
+  const last = setResults.get(route);
+  if (last) {
+    showResult(last);
+    return;
+  }
   if (items.length === 0) {
     mount(view, card({ title: spec.title }, [
       el('p', { class: 'section-lead', text: 'No questions are available for this set yet.' }),
@@ -916,15 +1067,9 @@ export function runSet(spec: SetSpec): void {
         markRowKeyDone(spec.dateISO, spec.key, true);
         if (spec.studyTopicId && !isTopicStudied(spec.studyTopicId)) markTopicStudied(spec.studyTopicId, true, spec.dateISO);
       }
-      mount(view, card({ title: spec.title }, [
-        el('div', { class: 'empty-state', attrs: { 'data-state': 'set-done' } }, [
-          el('h3', { text: score.total > 0 ? 'Set done \u2713' : 'Set not started' }),
-          el('p', { text: score.total > 0 ? `${score.correct} of ${score.total} correct.` : 'Answer at least one question to finish the set.' }),
-          el('div', { class: 'hero-actions', attrs: { style: 'justify-content:center' } }, [
-            button({ label: 'Back to Today', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/') }),
-          ]),
-        ]),
-      ]));
+      const result = { correct: score.correct, total: score.total };
+      setResults.set(route, result);
+      showResult(result);
     }, { allowEndSession: true });
   const kids: Child[] = [];
   if (spec.intro) kids.push(spec.intro);

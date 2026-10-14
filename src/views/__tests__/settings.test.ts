@@ -164,3 +164,37 @@ describe('settings view — study-time bounds (D21)', () => {
     expect(studyMinutesError('daily', 59)).not.toBeNull();
   });
 });
+
+describe('exam date warning (D38)', () => {
+  beforeEach(() => {
+    __resetForTests();
+    document.body.innerHTML = '';
+  });
+
+  it('warns when the date is < 30 days away or in the past', () => {
+    expect(settings.examDateWarning('2026-10-25', '2026-10-19')).toBe(
+      '25 Oct 2026 is only 6 days away. Prelims is officially 24 Jan 2027 \u2014 are you sure?',
+    );
+    expect(settings.examDateWarning('2026-10-01', '2026-10-19')).toContain('is in the past');
+    expect(settings.examDateWarning('2027-01-24', '2026-10-19')).toBeNull();
+    expect(settings.examDateWarning('2026-11-18', '2026-10-19')).toBeNull(); // exactly 30 days
+  });
+
+  it('choosing a close date asks first; cancel keeps the old date, confirm applies it', () => {
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+    settings.render(root);
+    const before = getExamDate();
+    const input = root.querySelector<HTMLInputElement>('.exam-date-input')!;
+    input.value = addDaysISO(todayISO(), 5);
+    input.dispatchEvent(new Event('change'));
+    const dialog = document.querySelector('.confirm-panel')!;
+    expect(dialog.textContent).toContain('Prelims is officially 24 Jan 2027');
+    [...dialog.querySelectorAll<HTMLButtonElement>('button')].find((b) => b.textContent === 'Keep the current date')!.click();
+    expect(getExamDate()).toBe(before);
+    input.value = addDaysISO(todayISO(), 5);
+    input.dispatchEvent(new Event('change'));
+    [...document.querySelectorAll<HTMLButtonElement>('.confirm-panel button')].find((b) => b.textContent === 'Yes, use this date')!.click();
+    expect(getExamDate()).toBe(addDaysISO(todayISO(), 5));
+  });
+});

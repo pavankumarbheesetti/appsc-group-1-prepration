@@ -6,6 +6,7 @@ import { PAPER_I, PAPER_II } from '../exam-pattern';
 import { buildPaperMock, mockSeriesLength } from '../../engine/mock';
 import { __resetForTests, getPlanStartDate, setPlanStartDate } from '../../state/store';
 import { addDaysISO, dayOfWeekISO } from '../dates';
+import { markTopicStudied } from '../study-status';
 
 /** Derived anchors for the explicit short-window test harness (30 Sep → 15 Nov 2026). */
 const SHORT = computePlanAnchors('2026-11-15', '2026-09-30');
@@ -1615,6 +1616,8 @@ describe('audit-3 PART B — MENT daily, marks-based revision + touch rules, moc
 
   // ---- Item 12 — fortnightly Mains answer ---------------------------------
   it('Item 12 — one Mains answer per fortnight on alternate revision Sundays only (25 min)', () => {
+    // N6: Mains practice only picks questions of STUDIED topics.
+    markTopicStudied('econ-agriculture', true, '2026-10-09');
     const { days, summary } = plan();
     const mains = days.filter((d) => d.blocks.some((b) => b.kind === 'mains-write'));
     expect(mains.map((d) => d.dateISO)).toEqual(['2026-12-13', '2026-12-27']);
@@ -1624,7 +1627,7 @@ describe('audit-3 PART B — MENT daily, marks-based revision + touch rules, moc
       expect(new Date(`${d.dateISO}T00:00:00Z`).getUTCDay()).toBe(0); // Sunday
       const b = d.blocks.find((x) => x.kind === 'mains-write')!;
       expect(b.minutes).toBe(25);
-      expect(typeof b.mainsQuestionId).toBe('string');
+      expect(b.mainsQuestionId?.startsWith('econ-agriculture')).toBe(true);
     }
     // None in the coverage or final windows.
     for (const d of days) {
@@ -1632,6 +1635,7 @@ describe('audit-3 PART B — MENT daily, marks-based revision + touch rules, moc
         expect(d.blocks.some((b) => b.kind === 'mains-write')).toBe(false);
       }
     }
+    markTopicStudied('econ-agriculture', false);
     void diffDays;
   });
 });

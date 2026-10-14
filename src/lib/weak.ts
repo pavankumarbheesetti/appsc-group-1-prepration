@@ -12,6 +12,7 @@
  * questions, `wrong` is the total wrong attempts, `mastery` reuses the shared
  * {@link subtopicMasteryPct}. Nothing here is fabricated or smoothed.
  */
+import { accuracyPct } from './accuracy';
 import { weakQuestionIds } from '../engine/drill';
 import { statusFromMastery, subtopicMasteryPct, type SubtopicStatus } from './metrics';
 import type { Band } from '../content/taxonomy';
@@ -90,7 +91,8 @@ function rowFor(
     correct,
     seen,
     wrong,
-    accuracy: seen > 0 ? correct / seen : 0,
+    // The ONE accuracy definition (lib/accuracy): correct ÷ all attempts.
+    accuracy: (accuracyPct(correct, seen) ?? 0) / 100,
     mastery,
     status: statusFromMastery(mastery),
     wrongQuestionIds: weakQuestionIds(progress, input.mcqIds),

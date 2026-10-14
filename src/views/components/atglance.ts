@@ -17,7 +17,7 @@
  * and screen-reader-accessible. DOM-only; the map data is pure content.
  */
 import type { MindmapBank } from '../../content/types';
-import { el } from '../dom';
+import { el, renderInline } from '../dom';
 import { icon } from './icon';
 
 /**
@@ -72,20 +72,20 @@ export function buildAtAGlance(map: MindmapBank): HTMLElement {
           const nowRevealed = li.classList.toggle('is-revealed');
           (ev.currentTarget as HTMLElement).setAttribute('aria-expanded', String(nowRevealed));
         },
-      }, [el('span', { class: 'atg-branch-label-text', text: b.label })]);
+      }, [el('span', { class: 'atg-branch-label-text' }, renderInline(b.label))]);
       if (hasLeaves) branchButtons.push(label as HTMLButtonElement);
 
       return el('li', { class: 'atg-branch is-revealed' }, [
         label,
         hasLeaves
-          ? el('p', { class: 'atg-leaves', attrs: { id: leavesId }, text: b.leaves.join(', ') })
+          ? el('p', { class: 'atg-leaves', attrs: { id: leavesId } }, renderInline(b.leaves.join(', ')))
           : null,
       ]);
     }),
   );
 
   const grid = el('div', { class: 'atg-map' }, [
-    el('div', { class: 'atg-root' }, [el('span', { text: map.root })]),
+    el('div', { class: 'atg-root' }, [el('span', {}, renderInline(map.root))]),
     branches,
   ]);
 

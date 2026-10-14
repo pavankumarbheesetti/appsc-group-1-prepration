@@ -12,6 +12,13 @@ import { localISO } from '../../lib/review-scope';
 import { newCard, review } from '../../engine/spaced-repetition';
 import { getSubtopic } from '../../content/loader';
 
+/** Press Start on the pre-test instructions screen (shown before every timed test). */
+function startTimer(root: HTMLElement): void {
+  const b = [...root.querySelectorAll<HTMLButtonElement>('button')].find((x) => x.textContent?.includes('Start the test'));
+  if (!b) throw new Error('instructions screen missing');
+  b.click();
+}
+
 /**
  * Fix C view behaviour: D14 inline math in MCQ options/lists, D11/H5 one study
  * status model, D13 shared due counts (no same-day refill), M5 scoped review
@@ -48,6 +55,7 @@ describe('D14 — MCQ options render ^{} as superscripts everywhere', () => {
     const lens = [...root.querySelectorAll<HTMLElement>('.mock-len-btn')];
     lens[lens.length - 1]!.click(); // the whole bank ("All")
     byText(root, 'button', 'Start mock')!.click();
+    startTimer(root);
     // Jump through the grid until the exponent question is shown.
     const cells = [...root.querySelectorAll<HTMLElement>('.mock-grid-cell')];
     let found = false;
@@ -147,7 +155,9 @@ describe('D13 — one due count; the daily 20 does not refill', () => {
     renderFlashcards(root);
     const done = root.querySelector('[data-state="done-for-today"]');
     expect(done).not.toBeNull();
-    expect(root.textContent).toMatch(/Done for today \u2014 \d+ more due tomorrow/);
+    expect(root.textContent).toContain('Done for today');
+    // Unseen cards queue (≤ 15 new a day) — they are never claimed as "due tomorrow".
+    expect(root.textContent).not.toMatch(/more due tomorrow/);
     const keep = byText(root, 'a', 'Keep going')!;
     expect(keep).not.toBeUndefined();
     keep.click();

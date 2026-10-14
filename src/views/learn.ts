@@ -15,15 +15,15 @@
  * chip + sheet below that), a `Next: … ↓` link after each note and the
  * "Next up" footer after the last one.
  */
+import { ACCURACY_LABEL, accuracyCaption, formatAccuracy, topicAccuracy } from '../lib/accuracy';
 import { getCards, getCaUpdatedThrough, getMindmap, getSubjects, getSubtopic, getSubtopicCoverage, getTaxonomy, type SubtopicView } from '../content/loader';
 import type { NoteItem } from '../content/types';
 import { buildSession } from '../engine/drill';
 import type { SessionScore } from '../engine/drill';
 import { navigate, pushUrl, routeQuery, setDocumentTitle } from '../router/router';
 import { loadState, noteTopicOpened } from '../state/store';
-import { markTopicStudied, topicStudy, AUTO_STUDIED_ANSWERS } from '../lib/study-status';
+import { markTopicStudied, topicStudy, lowAccuracyNote, AUTO_STUDIED_ANSWERS, AUTO_STUDIED_MIN_ACCURACY } from '../lib/study-status';
 import { nextTabIndex } from '../lib/tabs';
-import { subtopicMasteryPct } from '../lib/metrics';
 import { el, mount, renderMarkdown, type Child } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
@@ -341,7 +341,7 @@ function buildHeader(
   toc: readonly TocEntry[] = [],
 ): HTMLElement {
   const state = loadState();
-  const mastery = subtopicMasteryPct(state.progress, sub.mcqs.map((m) => m.id));
+  const acc = topicAccuracy(state.progress, sub.mcqs.map((m) => m.id));
   const study = topicStudy(sub.meta.id);
   const { subject, chapter } = trailOf(sub);
 
@@ -381,7 +381,7 @@ function buildHeader(
     el('h1', { class: 'learn-title', attrs: { tabindex: '-1' }, text: sub.meta.name }),
     el('p', { class: 'learn-trail', text: chapter ? `${subject} \u203a ${chapter}` : subject }),
     el('div', { class: 'learn-badges' }, [sub.meta.band ? bandBadge(sub.meta.band) : null, studyChip(study.status)]),
-    progressBar({ value: mastery / 100, label: 'Accuracy', caption: `${mastery}%`, success: mastery >= 100 }),
+    progressBar({ value: (acc.pct ?? 0) / 100, label: ACCURACY_LABEL, caption: accuracyCaption(acc), success: acc.pct === 100 }),
     continueLink,
     buildExamPointCoverage(sub),
   ]);
@@ -758,7 +758,8 @@ function drawResults(
     { label: 'Back to notes', onClick: () => goTab(sub, 'notes', route) },
   ].filter((x): x is { label: string; onClick: () => void } => x !== null);
   const footer = nextUpFooter({
-    eyebrow: `${sub.meta.name} \u2014 ${line}`,
+    // N12: the score is stated ONCE (in the card); the footer is just next-up.
+    eyebrow: studied ? 'Studied \u2713 \u2014 next up' : 'Next up',
     primary: studied
       ? { label: next.label, onClick: next.go }
       : { label: 'Mark studied & go to next topic', ariaLabel: `Mark ${sub.meta.name} studied and go to the next topic`, onClick: () => markAndNext(sub) },
@@ -829,11 +830,16 @@ export function studyMarkBar(sub: SubtopicView): HTMLElement {
   const lead = studied
     ? `Studied \u2713 \u2014 ${sub.meta.name} counts as covered in your plan.`
     : info.bankSize > 0
-      ? `Done with ${sub.meta.name}? Mark it studied (or answer ${auto} practice questions \u2014 ${info.answered}/${auto} so far).`
+      ? info.answered >= auto
+        ? `Done with ${sub.meta.name}? It counts as studied automatically at ${AUTO_STUDIED_MIN_ACCURACY}% accuracy (you're at ${formatAccuracy(info.accuracy)}) \u2014 or mark it studied yourself.`
+        : `Done with ${sub.meta.name}? Mark it studied (or answer ${auto} practice questions with ${AUTO_STUDIED_MIN_ACCURACY}%+ accuracy \u2014 ${info.answered}/${auto} so far).`
       : `Done with ${sub.meta.name}? Mark it studied so your plan counts it.`;
+  // D12: a hand-marked topic with low accuracy gets a gentle nudge (never a block).
+  const note = studied ? lowAccuracyNote(info) : null;
   const next = studied ? nextStep(sub.meta.id) : null;
   const bar: HTMLElement = el('div', { class: studied ? 'learn-study-mark is-studied' : 'learn-study-mark', attrs: { 'data-study-status': info.status, role: 'group', 'aria-label': 'Study status' } }, [
     el('p', { class: 'section-lead' }, [icon(studied ? 'check' : 'target', 15), el('span', { text: lead })]),
+    note ? el('p', { class: 'section-lead learn-study-note', attrs: { role: 'note' }, text: note }) : null,
     el('div', { class: 'learn-study-actions' }, [
       button({
         label: studied ? 'Mark as not studied' : 'Mark as studied',

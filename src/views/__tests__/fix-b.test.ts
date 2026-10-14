@@ -295,6 +295,8 @@ describe('Today rows — task, amount, destination and completion (D5–D9, H1)'
   });
 
   it('mains-write row opens THAT question; "I\u2019ve written it" ticks it', () => {
+    // N6: Mains practice only uses studied topics.
+    markTopicStudied('econ-agriculture', true);
     const plan = currentPlan(new Date());
     const day = plan.days.find((d) => d.blocks.some((b) => b.kind === 'mains-write' && b.mainsQuestionId));
     expect(day).toBeTruthy();

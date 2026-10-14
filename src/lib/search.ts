@@ -9,7 +9,7 @@
  */
 
 /** Which kind of thing a search document points at. */
-export type SearchKind = 'subtopic' | 'note' | 'mcq';
+export type SearchKind = 'subtopic' | 'note' | 'mcq' | 'language';
 
 /** One searchable document. */
 export interface SearchDoc {
@@ -22,6 +22,10 @@ export interface SearchDoc {
   subtopicId?: string;
   /** Optional secondary line (e.g. the owning subtopic's name). */
   subtitle?: string;
+  /** For `language` docs: the hash path the result opens (e.g. `/languages/telugu/lesson/3`). */
+  path?: string;
+  /** Extra text matched but not shown (e.g. a lesson's goal / glyph names). */
+  keywords?: string;
 }
 
 /** Search results grouped by kind, each already ranked + capped. */
@@ -29,6 +33,8 @@ export interface GroupedResults {
   subtopics: SearchDoc[];
   notes: SearchDoc[];
   mcqs: SearchDoc[];
+  /** Telugu lessons / stages and English sections (D35). */
+  languages: SearchDoc[];
 }
 
 /** A doc paired with its computed relevance score (lower = better). @internal */
@@ -65,13 +71,13 @@ export function searchDocs(
   docs: readonly SearchDoc[],
   limitPerGroup = 8,
 ): GroupedResults {
-  const empty: GroupedResults = { subtopics: [], notes: [], mcqs: [] };
+  const empty: GroupedResults = { subtopics: [], notes: [], mcqs: [], languages: [] };
   const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   if (terms.length === 0) return empty;
 
-  const buckets: Record<SearchKind, Scored[]> = { subtopic: [], note: [], mcq: [] };
+  const buckets: Record<SearchKind, Scored[]> = { subtopic: [], note: [], mcq: [], language: [] };
   for (const doc of docs) {
-    const score = scoreTitle(doc.title, terms);
+    const score = scoreTitle(doc.keywords ? `${doc.title} \u00b7 ${doc.keywords}` : doc.title, terms);
     if (score !== null) buckets[doc.kind].push({ doc, score });
   }
 
@@ -85,10 +91,11 @@ export function searchDocs(
     subtopics: rank(buckets.subtopic),
     notes: rank(buckets.note),
     mcqs: rank(buckets.mcq),
+    languages: rank(buckets.language),
   };
 }
 
 /** Total number of matches across all groups — handy for empty-state checks. */
 export function totalResults(results: GroupedResults): number {
-  return results.subtopics.length + results.notes.length + results.mcqs.length;
+  return results.subtopics.length + results.notes.length + results.mcqs.length + results.languages.length;
 }

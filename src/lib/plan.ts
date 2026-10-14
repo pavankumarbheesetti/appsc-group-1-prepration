@@ -12,6 +12,7 @@
 import { getBanks, getContentIndex, getLearningSequence, getSubjects, getSubtopic, getSubtopics, getUnits } from '../content/loader';
 import { subtopicMasteryPct } from './metrics';
 import { deriveStudyStatus } from './study-status';
+import { topicAccuracy } from './accuracy';
 import { loadState } from '../state/store';
 import { todayISO } from './dates';
 import { buildSession } from '../engine/drill';
@@ -66,6 +67,44 @@ export function mainsQuestionBank(): string[] {
   for (const loaded of getBanks('mains')) {
     if (loaded.bank.kind !== 'mains') continue;
     for (const item of loaded.bank.items) out.push(item.id);
+  }
+  return out;
+}
+
+/** The ids of the subtopics whose study status is `studied`. */
+export function studiedSubtopicIds(progress: PlannerProgress = plannerProgress()): Set<string> {
+  const out = new Set<string>();
+  for (const [id, p] of Object.entries(progress)) if (p.studied) out.add(id);
+  return out;
+}
+
+/**
+ * The Mains practice bank restricted to questions whose topic the learner has
+ * STUDIED (FLOW-QA-2 N6): Mains practice — before and after Prelims — only
+ * asks for answers on topics already learnt. Bank order is kept.
+ */
+export function studiedMainsQuestionBank(studied: ReadonlySet<string>): string[] {
+  const out: string[] = [];
+  for (const loaded of getBanks('mains')) {
+    if (loaded.bank.kind !== 'mains') continue;
+    for (const item of loaded.bank.items) if (item.subtopicId && studied.has(item.subtopicId)) out.push(item.id);
+  }
+  return out;
+}
+
+/** {@link mainsRevisionPapers} restricted to studied topics; empty papers dropped. */
+export function studiedMainsPapers(studied: ReadonlySet<string>, papers: readonly PlanMainsPaper[] = mainsRevisionPapers()): PlanMainsPaper[] {
+  const bySub = new Map<string, string>();
+  for (const loaded of getBanks('mains')) {
+    if (loaded.bank.kind !== 'mains') continue;
+    for (const item of loaded.bank.items) if (item.subtopicId) bySub.set(item.id, item.subtopicId);
+  }
+  const out: PlanMainsPaper[] = [];
+  for (const p of papers) {
+    const subtopicIds = p.subtopicIds.filter((id) => studied.has(id));
+    const mainsQuestionIds = p.mainsQuestionIds.filter((q) => studied.has(bySub.get(q) ?? ''));
+    if (subtopicIds.length === 0 && mainsQuestionIds.length === 0) continue;
+    out.push({ ...p, subtopicIds, mainsQuestionIds });
   }
   return out;
 }
@@ -164,7 +203,10 @@ export function plannerProgress(): PlannerProgress {
         const p = progress[id];
         if (p && p.seen > 0) seen += 1;
       }
-      const studied = deriveStudyStatus(state.study[meta.id], seen, ids.length) === 'studied';
+      // N20: pass the topic accuracy so the planner applies the SAME D12 rule
+      // as the UI — a 0/10 topic stays "in progress" and stays on the plan.
+      const accuracy = topicAccuracy(progress, ids);
+      const studied = deriveStudyStatus(state.study[meta.id], seen, ids.length, accuracy.pct) === 'studied';
       const studiedOn = studied ? state.study[meta.id]?.studiedOn : undefined;
       out[meta.id] = {
         seen,
@@ -244,11 +286,15 @@ export function learningSequence(): PlanSequence {
  */
 export function currentPlan(now: Date = new Date()): Plan {
   const settings = loadState().settings;
+  const progress = plannerProgress();
+  const studied = studiedSubtopicIds(progress);
   return buildPlan({
     subtopics: planSubtopics(),
-    progress: plannerProgress(),
+    progress,
+    // Mains practice only draws on topics the learner has studied (N6).
     mainsQuestionIds: mainsQuestionBank(),
-    mainsPapers: mainsRevisionPapers(),
+    mainsPracticeIds: studiedMainsQuestionBank(studied),
+    mainsPapers: studiedMainsPapers(studied),
     pyqFrequency: pyqFrequency(),
     sequence: learningSequence(),
     examDateISO: settings.examDate,

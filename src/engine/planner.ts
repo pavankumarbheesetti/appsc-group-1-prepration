@@ -651,6 +651,13 @@ export interface BuildPlanOpts {
   /** The mains question bank (ids) the post-prelims daily quota cycles through. */
   mainsQuestionIds?: readonly string[];
   /**
+   * The subset of {@link mainsQuestionIds} the learner may PRACTISE now — the
+   * questions of topics already studied (FLOW-QA-2 N6). Mains practice (the
+   * fortnightly pre-Prelims answer and the post-Prelims daily quota) only picks
+   * from this list; the full bank still drives the totals. Absent → the whole bank.
+   */
+  mainsPracticeIds?: readonly string[];
+  /**
    * POST-PRELIMS kick-start (STANDARDS §8a): the Mains papers (I–V) mapped to the
    * studied Prelims subtopics whose For-Mains notes are revisited + the answers
    * to write. Built by the view layer from `content/audit/syllabus-map.json`
@@ -1335,6 +1342,7 @@ const FULL_MOCK_QUESTIONS = 120;
 export function buildPlan(opts: BuildPlanOpts): Plan {
   const { progress, examDateISO, todayISO } = opts;
   const mainsQuestionIds = opts.mainsQuestionIds ?? [];
+  const mainsPracticeIds = opts.mainsPracticeIds ?? mainsQuestionIds;
   const dailyBudgetMin = Math.max(1, Math.round(opts.dailyBudgetMin ?? DEFAULT_DAILY_BUDGET_MIN));
   const weekendBudgetMin = Math.max(1, Math.round(opts.weekendBudgetMin ?? dailyBudgetMin));
   const all = [...opts.subtopics];
@@ -1375,13 +1383,14 @@ export function buildPlan(opts: BuildPlanOpts): Plan {
   const daysLeft = daysUntilExam(examDateISO, todayISO);
 
   // ---- Post-prelims daily MAINS quota (parallel track) --------------------
+  // Only questions of STUDIED topics are practised (N6).
   const postMainsPerDay =
-    mainsQuestionIds.length === 0 ? 0 : Math.min(mainsQuestionIds.length, MAINS_PER_DAY);
+    mainsPracticeIds.length === 0 ? 0 : Math.min(mainsPracticeIds.length, MAINS_PER_DAY);
   const mainsSliceFor = (dayIndex: number, count: number): string[] => {
-    if (count === 0 || mainsQuestionIds.length === 0) return [];
-    const len = mainsQuestionIds.length;
+    if (count === 0 || mainsPracticeIds.length === 0) return [];
+    const len = mainsPracticeIds.length;
     const out: string[] = [];
-    for (let k = 0; k < count; k += 1) out.push(mainsQuestionIds[(dayIndex * MAINS_PER_DAY + k) % len]!);
+    for (let k = 0; k < count; k += 1) out.push(mainsPracticeIds[(dayIndex * MAINS_PER_DAY + k) % len]!);
     return out;
   };
 
@@ -1443,6 +1452,22 @@ export function buildPlan(opts: BuildPlanOpts): Plan {
     }
     daysBehind = missed.size;
     behindBy = missedIds.size;
+    // FLOW-QA-2 N7 — the count must not FREEZE once the on-time first pass has
+    // ended: every elapsed study day after the on-time coverage end on which the
+    // learner studied nothing (while first-pass topics are still missing) costs
+    // the revision time it was meant for, so it adds a day. Recomputed on every
+    // build from the actual study dates.
+    if (missedIds.size > 0) {
+      const activeDates = new Set<string>();
+      for (const p of Object.values(progress)) if (p.studiedOn) activeDates.add(p.studiedOn);
+      const onTimeEnd = retro.summary.coverageEndISO;
+      for (const d of retro.days) {
+        if (d.dateISO <= onTimeEnd || d.dateISO >= todayISO || d.dateISO < opts.startISO) continue;
+        if (d.mockPaper || d.dayOff || d.light || d.blocks.length === 0) continue;
+        if (activeDates.has(d.dateISO)) continue;
+        daysBehind += 1;
+      }
+    }
   }
 
   return buildRhythmPlan(opts, {
@@ -2325,8 +2350,13 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       for (let i = spillIdSet.length - 1; i >= 0; i -= 1) if (recovered.has(spillIdSet[i]!)) spillIdSet.splice(i, 1);
       result.leftoverIds = result.leftoverIds.filter((id) => !recovered.has(id));
       const shiftDays = Math.max(0, diffDaysISO(anchors.coverageEndISO, recoveryLastDateISO));
+      // Honest wording (D4): "first week" only when every recovered topic fits it.
+      const inFirstWeek = recoveredPlacements.every((p) => diffDaysISO(anchors.revisionStartISO!, p.dateISO) <= 6);
+      const n = `${recovered.size} new ${recovered.size === 1 ? 'topic' : 'topics'}`;
       recoveryChanges.push(
-        `moved ${recovered.size} ${recovered.size === 1 ? 'topic' : 'topics'} into the revision cycle\u2019s first week`,
+        inFirstWeek
+          ? `moved ${n} into the revision cycle\u2019s first week`
+          : `moved ${n} into the revision cycle (until ${shortDateISO(recoveryLastDateISO)})`,
       );
       if (shiftDays > 0) {
         recoveryChanges.push(`the revision cycle is ${shiftDays} ${shiftDays === 1 ? 'day' : 'days'} shorter`);
@@ -2751,6 +2781,39 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     day.unitDays = 0;
     day.nextUnitTitle = null;
   };
+  /**
+   * Label a REVISION-CYCLE day from what it ACTUALLY holds (FLOW-QA-2 N7/D29):
+   * new first passes moved in by recovery → "Catch up · <subjects> (new
+   * topics)" (the revisit block stays a separate, labelled block); a real
+   * revisit → "Revise · <part>"; a revision block without revisit topics →
+   * "Revise · your studied topics". Call AFTER finaliseBlocks. @internal
+   */
+  const labelRevisionDay = (day: PlanDay, revisit: { subjectCode: string } | undefined): void => {
+    const newCodes: string[] = [];
+    for (const b of day.blocks) {
+      if (b.kind !== 'subject' || (b.topics ?? []).length === 0 || !b.subjectCode) continue;
+      if (!newCodes.includes(b.subjectCode)) newCodes.push(b.subjectCode);
+    }
+    const hasRevisits = day.blocks.some((b) => b.kind === 'targeted-revision' && (b.topics ?? []).length > 0);
+    if (newCodes.length > 0) {
+      day.unitId = `catchup-${newCodes.join('-').toLowerCase()}`;
+      day.unitTitle = `Catch up \u00b7 ${newCodes.map(partLabel).join(' + ')} (new topics)`;
+      day.unitSubjectCode = newCodes[0]!;
+      day.unitDay = 0;
+      day.unitDays = 0;
+      day.nextUnitTitle = null;
+      return;
+    }
+    if (revisit && hasRevisits) {
+      setRevisitSubjectFields(day, revisit.subjectCode);
+      return;
+    }
+    if (revisit) {
+      setRevisitSubjectFields(day, revisit.subjectCode);
+      day.unitId = 'revise-studied';
+      day.unitTitle = 'Revise \u00b7 your studied topics';
+    }
+  };
 
   // ---- Fortnightly Mains answer dates (STANDARDS §8a, item 12) ------------
   // One Mains answer per fortnight, on ALTERNATE revision Sundays only (never in
@@ -2758,7 +2821,8 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   // bank (every such topic is already first-passed by the revision cycle).
   const mainsWriteByDate = new Map<string, string>();
   {
-    const mainsBank = opts.mainsQuestionIds ?? [];
+    // Only questions of topics the learner has STUDIED (N6).
+    const mainsBank = opts.mainsPracticeIds ?? opts.mainsQuestionIds ?? [];
     const revisionSundays = revisionSlots.filter((sl) => sl.dow === 0).map((sl) => sl.dateISO).sort();
     let fortnight = 0;
     for (let i = 0; i < revisionSundays.length; i += 2) {
@@ -3073,7 +3137,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
         const chunkMinutes = chunk.reduce((a, t) => a + t.estMinutes, 0);
         blocks.push({
           kind: 'subject',
-          label: `${SUBJECT_LABEL[subj] ?? subj} (spill)`,
+          label: `${SUBJECT_LABEL[subj] ?? subj} (moved from earlier)`,
           minutes: chunkMinutes,
           subjectCode: subj,
           topics: chunk,
@@ -3342,8 +3406,8 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
         day.weeklyRevision = true;
         day.caRevision = true;
         day.reviseSubtopicIds = mergeRevise(revisit?.topicIds ?? [], sweepByDate.get(slot.dateISO) ?? [], spacedReviseFor(slot.dateISO, firstPassByDate, isApOrBandA));
-        if (revisit) setRevisitSubjectFields(day, revisit.subjectCode);
         finaliseBlocks(day, slot.budgetMin);
+        labelRevisionDay(day, revisit);
         days.push(day);
         continue;
       }
@@ -3369,8 +3433,8 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       day.caRevision = true;
       day.blocks = blocks;
       day.reviseSubtopicIds = mergeRevise(revisit?.topicIds ?? [], sweepByDate.get(slot.dateISO) ?? [], spacedReviseFor(slot.dateISO, firstPassByDate, isApOrBandA));
-      if (revisit) setRevisitSubjectFields(day, revisit.subjectCode);
       finaliseBlocks(day, slot.budgetMin);
+      labelRevisionDay(day, revisit);
       days.push(day);
       continue;
     }
@@ -3585,6 +3649,38 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     }
   }
 
+  // ---- Revision-cycle labels stay TRUE after the wrap-up repair (N7/D29) ---
+  // The wrap-up pass above can pop revisit topics off a revision block, so a
+  // "Revise · X" day must still hold revisits; otherwise it is relabelled. Then
+  // every revision / catch-up run gets a real "day X of Y" within its week
+  // (never "day 0 of 0").
+  {
+    for (const d of days) {
+      if (d.segment !== 'revision' || !d.unitTitle?.startsWith('Revise \u00b7 ')) continue;
+      if (d.unitId === 'revise-studied') continue;
+      const hasRevisits = d.blocks.some((b) => b.kind === 'targeted-revision' && (b.topics ?? []).length > 0);
+      if (!hasRevisits) {
+        d.unitId = 'revise-studied';
+        d.unitTitle = 'Revise \u00b7 your studied topics';
+      }
+    }
+    const weekKey = (iso: string): string => addDaysISO(iso, -((dayOfWeekISO(iso) + 6) % 7));
+    const runs = new Map<string, PlanDay[]>();
+    for (const d of days) {
+      if (!d.unitId || d.unitDays > 0) continue;
+      const k = `${weekKey(d.dateISO)}|${d.unitId}`;
+      const arr = runs.get(k) ?? [];
+      arr.push(d);
+      runs.set(k, arr);
+    }
+    for (const run of runs.values()) {
+      run.forEach((d, i) => {
+        d.unitDay = i + 1;
+        d.unitDays = run.length;
+      });
+    }
+  }
+
   // ---- Summary ------------------------------------------------------------
   const coverageEndISO = effectiveCoverageEndISO;
 
@@ -3621,7 +3717,9 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
           : `Raise the Sunday budget to ${feasibleAt} min (+${addMin}) — that meets the depth floor`;
       feasibilityOptions.push(label);
     } else {
-      feasibilityOptions.push('Move the exam date later to open more study days');
+      // The exam date is fixed by APPSC (FLOW-QA-3 N22) — never suggest moving
+      // it; the remaining lever is a quicker first read for low-priority topics.
+      feasibilityOptions.push(QUICK_PASS_OPTION);
     }
   }
 
@@ -4248,8 +4346,22 @@ export interface BehindBanner {
   finishOnTime: boolean;
 }
 
+/** "13 Dec" from an ISO date. @internal */
+function shortDateISO(iso: string): string {
+  const [, m, d] = iso.split('-').map(Number);
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${d} ${MONTHS[(m ?? 1) - 1]}`;
+}
+
+/** Behind option: more study time (Settings). */
+export const ADD_TIME_OPTION = 'Add study time \u2014 30\u201360 minutes a day, or more on Sundays (Settings)';
+/** Behind option: quick pass for the remaining low-priority topics. */
+export const QUICK_PASS_OPTION = 'Switch the remaining low-priority topics to a quick pass \u2014 high-yield topics keep a full read';
+
 /** Days behind beyond which the banner switches to the "reduced plan" wording. */
 export const BEHIND_CALM_MAX_DAYS = 7;
+/** Days behind beyond which the reduced plan offers the far-behind options. */
+export const BEHIND_FAR_DAYS = 14;
 
 /**
  * The honest behind banner (D4), or `null` when not behind (or ≤ 1 day to the
@@ -4259,8 +4371,16 @@ export const BEHIND_CALM_MAX_DAYS = 7;
  * genuine spill, depth floor met), and never offers a restart once the
  * first-pass coverage window has ended. PURE — regenerated on every render.
  */
-export function behindBanner(s: PlanSummary, todayISO: string): BehindBanner | null {
-  if (s.postPrelims || s.daysBehind < 1 || s.daysLeft <= 1) return null;
+export function behindBanner(
+  s: PlanSummary,
+  todayISO: string,
+  day?: Pick<PlanDay, 'dayOff' | 'light'> | null,
+): BehindBanner | null {
+  // daysLeft is inclusive (exam eve = 2): no banner on the eve or exam day.
+  if (s.postPrelims || s.daysBehind < 1 || s.daysLeft <= 2) return null;
+  // FLOW-QA-3 D4/N22 — a day off or the light day is a rest by design: no
+  // behind / reduced-plan banner on it.
+  if (day && (day.dayOff || day.light)) return null;
   const n = s.daysBehind;
   const days = `${n} ${n === 1 ? 'day' : 'days'}`;
   const finishOnTime = s.feasible && s.spills.length === 0;
@@ -4281,10 +4401,11 @@ export function behindBanner(s: PlanSummary, todayISO: string): BehindBanner | n
       finishOnTime,
     };
   }
-  const options: string[] = [...s.feasibilityOptions];
-  options.push('Add 30\u201360 minutes a day (Settings \u2192 Daily study time)');
-  options.push('Give Sunday more time (Settings \u2192 Sunday study time)');
-  options.push('Use the Saturday catch-up block for the topics you missed');
+  // The exam date is set by APPSC — never offered as an option (N22). The two
+  // levers are more study time and a quick pass for low-priority topics.
+  const options: string[] = [ADD_TIME_OPTION];
+  for (const o of s.feasibilityOptions) if (!options.includes(o) && o !== QUICK_PASS_OPTION) options.push(o);
+  if (n > BEHIND_FAR_DAYS || s.feasibilityOptions.includes(QUICK_PASS_OPTION)) options.push(QUICK_PASS_OPTION);
   if (showRestart) options.push('Restart the plan from today \u2014 your progress is kept');
   return {
     tone: 'reduced',

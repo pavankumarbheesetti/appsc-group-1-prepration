@@ -4556,6 +4556,17 @@ input[type='checkbox'] {
   font-weight: var(--fw-semibold);
   color: var(--accent);
 }
+/* Framework is a collapsed helper below the writing pad (D25). */
+.mains-fw-summary {
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.mains-model-gate .mains-practice-actions {
+  flex-wrap: wrap;
+}
 
 /* Annotated model: two-column on desktop. */
 .mains-model-grid {
@@ -5539,6 +5550,40 @@ button.tel-lang-card {
   color: var(--muted);
   font-size: var(--fs-xs);
   line-height: 1.4;
+}
+/* D38: exam date suspiciously close / in the past. */
+.settings-hint.settings-warn {
+  color: var(--danger);
+  font-weight: var(--fw-semibold);
+}
+/* Telugu lesson brief (D27): what / how long / how to pass. */
+.tel-lesson-brief {
+  display: grid;
+  grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
+  gap: var(--space-1) var(--space-3);
+  margin: var(--space-2) 0;
+}
+.tel-lesson-brief dt {
+  font-weight: var(--fw-semibold);
+}
+.tel-lesson-brief dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .tel-lesson-brief {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tel-lesson-brief dd {
+    margin-bottom: var(--space-2);
+  }
+}
+.pw-group {
+  display: block;
+}
+.pw-group-label {
+  font-weight: var(--fw-semibold);
 }
 .settings-data-row {
   display: flex;
@@ -6675,6 +6720,29 @@ button.tel-lang-card {
 .omr-question-col {
   min-width: 0;
 }
+/* N19: the OMR runner holds the question AND the 320 px sheet side by side, so
+   it gets a wider stage than a plain mock (question column >= 560 px at 1440)
+   and a calmer question size (exam booklets are not headline type). */
+@media (min-width: 721px) {
+  .mock-running.omr-running {
+    max-width: 1040px;
+  }
+  /* Side by side when 560 + 320 fit; otherwise the sheet wraps below. */
+  .omr-layout {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .omr-question-col {
+    flex: 1 1 560px;
+  }
+  .omr-sheet-panel {
+    flex: 0 0 320px;
+  }
+  .omr-question-col .question-text {
+    font-size: var(--fs-lg);
+    letter-spacing: -0.01em;
+  }
+}
 
 .omr-sheet-panel {
   border: 1px solid var(--color-border);
@@ -7707,4 +7775,179 @@ details.learn-coverage[open] > .exam-points {
 .keypoint-list,
 .mains-q {
   overflow-wrap: anywhere;
+}
+
+/* ========================================================================== */
+/* Max text size guards (FLOW-QA-2 D32): no horizontal overflow at Aa 160%     */
+/* on 320–390 px. Grids never demand more than the container; tables wrap.     */
+/* ========================================================================== */
+.tel-lang-grid,
+.tel-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+}
+.tel-lang-card,
+.tel-card {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.tel-card-head {
+  flex-wrap: wrap;
+}
+.tel-meta,
+.tel-lang-meta,
+.atg-leaves,
+.pw-focus,
+.pw-focus-topics {
+  overflow-wrap: anywhere;
+}
+.seg {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.mains-budget {
+  table-layout: fixed;
+}
+.mains-budget th,
+.mains-budget td {
+  overflow-wrap: anywhere;
+}
+
+/* Plan "This week" table: stacks into cards on narrow screens. */
+@media (max-width: 640px) {
+  .planner-week-table,
+  .planner-week-table tbody,
+  .planner-week-table tr,
+  .planner-week-table th,
+  .planner-week-table td {
+    display: block;
+    width: auto;
+  }
+  .planner-week-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .planner-week-table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-1) var(--space-3);
+    padding: var(--space-3) var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .planner-week-table th,
+  .planner-week-table td {
+    padding: 0;
+    border-bottom: 0;
+    min-width: 0;
+  }
+  .planner-week-table .pw-day {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2);
+    white-space: normal;
+  }
+  .planner-week-table .pw-focus {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .planner-week-table .pw-min {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+}
+.note-source,
+.note-title,
+.note-head {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.exam-date-input,
+.settings-field input,
+.settings-field select {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.tel-card-actions,
+.tel-lesson .hero-actions {
+  flex-wrap: wrap;
+}
+.tel-trace-actions,
+.note-keypoints-head {
+  flex-wrap: wrap;
+}
+.tel-tracer,
+.note-figure,
+.note-keypoints {
+  min-width: 0;
+  max-width: 100%;
+}
+.note-figcaption,
+.section-title {
+  overflow-wrap: anywhere;
+}
+/* Narrow screens: settings rows stack label over control so segmented
+   controls (Theme, Text size) stay on one line at large text sizes. */
+@media (max-width: 640px) {
+  .settings-field.field-row {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* D32 / N24 — no horizontal overflow at the largest text size (320 / 390)     */
+/* -------------------------------------------------------------------------- */
+/* The hero's grid track and body may shrink below their min-content (a large
+   button), and on phones the hero padding and button insets tighten so the
+   actions wrap inside the card instead of being clipped. */
+.hero,
+.hero > .hero-body {
+  min-width: 0;
+}
+@media (max-width: 839px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-4);
+  }
+  .hero-actions .btn {
+    min-width: 0;
+    max-width: 100%;
+    padding-inline: 0.9em;
+    white-space: normal;
+    text-align: center;
+  }
+}
+/* The Mains writer's stopwatch bar wraps (Start / Reset never push the page). */
+.mains-timer,
+.mains-word-row {
+  flex-wrap: wrap;
+}
+.mains-timer .btn {
+  min-width: 0;
+  max-width: 100%;
+}
+/* Weak-topics view (now routed, N16): long names wrap instead of widening the page. */
+.weak-gap {
+  min-width: 0;
+  max-width: 100%;
+}
+.weak-gap-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.weak-row-badges {
+  flex-wrap: wrap;
+  min-width: 0;
 }

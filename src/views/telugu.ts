@@ -46,7 +46,6 @@ import {
   lessonCheckPassed,
   lessonHeadline,
   lessonProgressLine,
-  lessonTarget,
   nextLesson,
   stageTally,
   LESSON_CHECK_PASS,
@@ -54,7 +53,7 @@ import {
   LESSON_MINUTES,
 } from '../lib/telugu';
 import { todayISO } from '../lib/dates';
-import { navigate } from '../router/router';
+import { navigate, routeParam } from '../router/router';
 import {
   getTeluguLessonsDone,
   getTeluguProgress,
@@ -390,20 +389,75 @@ export function openTelugu(stage?: TeluguStage): void {
   navigate('/telugu');
 }
 
+/** The deep-link path of a lesson, e.g. `/languages/telugu/lesson/3` (D24). */
+export function teluguLessonPath(lesson: TeluguLesson): string {
+  return `/languages/telugu/lesson/${lesson.number}`;
+}
+
 /**
- * Open one LESSON of the path (the Today/Planner Telugu block's target). If the
- * course is already showing, re-render it in place (same-hash navigation does
- * not fire a route change).
+ * Open one LESSON of the path (the Today/Planner Telugu block's target) at its
+ * own URL (`#/languages/telugu/lesson/N`), so Back/reload/sharing keep it.
  */
 export function openTeluguLesson(lessonId: string): void {
-  pendingLesson = lessonId;
-  pendingStage = undefined;
-  const view = document.getElementById('view');
-  if (location.hash === '#/telugu' && view) {
-    render(view);
+  const lesson = lessonById(lessonId);
+  if (!lesson) {
+    openTelugu();
     return;
   }
-  navigate('/telugu');
+  pendingLesson = undefined;
+  pendingStage = undefined;
+  navigate(teluguLessonPath(lesson));
+}
+
+/** Render the lesson route `#/languages/telugu/lesson/:n` into `root`. */
+export function renderLessonRoute(root: HTMLElement): void {
+  const n = Number(routeParam('/languages/telugu/lesson/:n', 'n'));
+  const lesson = Number.isInteger(n) ? TELUGU_LESSONS[n - 1] : undefined;
+  if (!lesson) {
+    mount(
+      root,
+      card({ title: 'Lesson not found' }, [
+        el('p', { class: 'section-lead', text: `The Telugu course has lessons 1\u2013${TELUGU_LESSONS.length}.` }),
+        button({ label: 'Open the Telugu course', variant: 'primary', iconName: 'arrow-right', onClick: () => openTelugu() }),
+      ]),
+    );
+    return;
+  }
+  renderLesson(root, lesson);
+}
+
+/** The intro's section headings (plain text). @internal */
+function introSections(): string[] {
+  return TELUGU_INTRO.filter((p) => p.startsWith('## ')).map((p) => p.slice(3).replace(/\*/g, '').trim());
+}
+
+/** The intro prose with beginner-friendly headings (no raw markdown emphasis). @internal */
+function introMarkdown(): string {
+  return TELUGU_INTRO.map((p) =>
+    p.startsWith('## ')
+      ? p.replace(/\ban \*abugida\*,? not an alphabet/i, 'a syllable script (an abugida), not an alphabet').replace(/\*/g, '')
+      : p,
+  ).join('\n\n');
+}
+
+/**
+ * Beginner copy for a lesson (D27): what it teaches, how long, how to pass. @internal
+ */
+export function lessonBrief(lesson: TeluguLesson): { teaches: string; howLong: string; howToPass: string } {
+  if (lesson.glyphIds.length === 0) {
+    const secs = introSections();
+    return {
+      teaches: `How Telugu writing works \u2014 ${secs.length} short sections: ${secs.join('; ')}.`,
+      howLong: `About ${LESSON_MINUTES} minutes of reading. No tracing yet.`,
+      howToPass: 'Read the sections, then tap \u201cMark lesson done\u201d. There is no check for this lesson.',
+    };
+  }
+  const n = lesson.glyphIds.length;
+  return {
+    teaches: `${lesson.goal} (${n} new ${n === 1 ? 'item' : 'items'})`,
+    howLong: `About ${LESSON_MINUTES} minutes.`,
+    howToPass: `Trace each one ${lesson.traceTimes === 1 ? 'once' : `${lesson.traceTimes} times`} over the grey guide, then answer the ${LESSON_CHECK_SIZE}-question check \u2014 ${LESSON_CHECK_PASS} right to pass.`,
+  };
 }
 
 /** Render the Telugu course into `root`. */
@@ -434,7 +488,7 @@ export function render(root: HTMLElement): void {
             el('h2', { class: 'card-title', text: 'Telugu from scratch' }),
             el('p', { class: 'section-lead', text: 'A tracing-first path from the script up to writing full sentences.' }),
           ]),
-          chip({ text: `${course.stagesComplete}/${STAGES.length - 1} stages`, tone: 'accent', iconName: 'target' }),
+          chip({ text: `${Object.keys(getTeluguLessonsDone()).filter((id) => lessonById(id)).length}/${TELUGU_LESSONS.length} lessons done`, tone: 'accent', iconName: 'target' }),
         ]),
         progressBar({
           value: course.total === 0 ? 0 : course.learned / course.total,
@@ -502,7 +556,7 @@ function buildStagePanel(stage: TeluguStage, onToggle: () => void): HTMLElement 
 
 /** The intro stage: prose + a "start with vowels" CTA. @internal */
 function buildIntro(): HTMLElement {
-  const article = el('div', { class: 'tel-intro note-body' }, renderMarkdown(TELUGU_INTRO.join('\n\n')));
+  const article = el('div', { class: 'tel-intro note-body' }, renderMarkdown(introMarkdown()));
   return el('div', { class: 'reading' }, [
     el('div', { class: 'card tel-intro-card' }, [article]),
   ]);
@@ -688,9 +742,10 @@ function continueLessonRow(): HTMLElement {
   if (!next) {
     return el('p', { class: 'section-lead tel-continue', text: `All ${TELUGU_LESSONS.length} lessons done — keep tracing words and sentences.` });
   }
+  const started = Object.keys(getTeluguLessonsDone()).some((id) => lessonById(id));
   return el('div', { class: 'tel-continue' }, [
-    el('span', { class: 'section-lead', text: `${lessonProgressLine(next)} · ${next.title}` }),
-    button({ label: `Continue lesson ${next.number}`, variant: 'primary', iconName: 'arrow-right', onClick: () => openTeluguLesson(next.id) }),
+    el('span', { class: 'section-lead', text: `${lessonProgressLine(next)} · ${next.title} · about ${LESSON_MINUTES} min` }),
+    button({ label: `${started ? 'Continue with' : 'Start'} lesson ${next.number}`, variant: 'primary', iconName: 'arrow-right', onClick: () => openTeluguLesson(next.id) }),
   ]);
 }
 
@@ -699,21 +754,23 @@ function renderLesson(root: HTMLElement, lesson: TeluguLesson): void {
   const done = getTeluguLessonsDone()[lesson.id];
   const next = TELUGU_LESSONS[lesson.number] as TeluguLesson | undefined;
   const checkHost = el('div', { class: 'tel-check-host' });
+  const brief = lessonBrief(lesson);
 
   const markDone = (): void => {
     setTeluguLessonDone(lesson.id, true, todayISO(), lesson.glyphIds);
-    pendingLesson = lesson.id;
-    render(root);
+    renderLesson(root, lesson);
   };
 
   const header = card({ class: 'tel-lesson-head' }, [
     el('p', { class: 'hero-now-eyebrow', text: lessonProgressLine(lesson) }),
     el('h2', { class: 'card-title', text: lessonHeadline(lesson) }),
-    el('p', { class: 'section-lead', text: lesson.goal }),
-    el('p', { class: 'tel-lesson-target' }, [
-      icon('target', 15),
-      el('span', { text: `Target: ${lessonTarget(lesson)}` }),
-      chip({ text: `${LESSON_MINUTES} m`, tone: 'muted', iconName: 'timer' }),
+    el('dl', { class: 'tel-lesson-brief' }, [
+      el('dt', { text: 'What this lesson teaches' }),
+      el('dd', { text: brief.teaches }),
+      el('dt', { text: 'How long' }),
+      el('dd', { text: brief.howLong }),
+      el('dt', { text: 'How to pass' }),
+      el('dd', { text: brief.howToPass }),
     ]),
     done
       ? el('p', { class: 'tel-lesson-done', attrs: { role: 'status' } }, [icon('check', 15), el('span', { text: 'Lesson done ✓' })])
@@ -728,8 +785,7 @@ function renderLesson(root: HTMLElement, lesson: TeluguLesson): void {
             variant: 'ghost',
             onClick: () => {
               setTeluguLessonDone(lesson.id, false, todayISO());
-              pendingLesson = lesson.id;
-              render(root);
+              renderLesson(root, lesson);
             },
           })
         : button({ label: 'Mark lesson done', variant: lesson.glyphIds.length === 0 ? 'primary' : 'ghost', iconName: 'check', onClick: markDone }),

@@ -14,7 +14,7 @@
  * On mobile the grid stacks into a single column. All numbers come from the
  * pure rhythm engine.
  */
-import { behindBanner, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic, type SubjectFit } from '../engine/planner';
+import { behindBanner, planDayFor, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic, type SubjectFit } from '../engine/planner';
 import { getLearningSequence, getSubtopic, getSubtopics } from '../content/loader';
 import { SUBJECTS, type SubjectCode } from '../content/types';
 import { getPlanStartDate } from '../state/store';
@@ -43,13 +43,13 @@ export function render(root: HTMLElement): void {
   const plan = currentPlan(now);
   const summary = plan.summary;
   if (summary.postPrelims) {
-    mount(root, buildHeader(summary), buildPostPrelims(plan));
+    mount(root, buildHeader(summary, plan), buildPostPrelims(plan));
     return;
   }
   mount(
     root,
-    buildHeader(summary),
-    buildRecoveryBanner(summary),
+    buildHeader(summary, plan),
+    buildRecoveryBanner(summary, planDayFor(plan, todayISO())),
     buildUnitHeader(plan),
     buildThisWeek(plan),
     buildRoadStrip(plan),
@@ -67,14 +67,12 @@ export function render(root: HTMLElement): void {
  * date was removed (it duplicated the Settings control); a "Change in Settings"
  * link is offered instead. @internal
  */
-function buildHeader(summary: PlanSummary): HTMLElement {
+function buildHeader(summary: PlanSummary, plan?: Plan): HTMLElement {
   const today = todayISO();
   const daysToExam = daysToGo(summary.examDateISO, today);
 
   // H2: `onTrack` is derived from the SAME `daysBehind` Today's banner uses.
-  const fit = summary.onTrack
-    ? `On track — new topics finish by ${prettyDate(summary.coverageEndISO)}.`
-    : `${summary.daysBehind} ${summary.daysBehind === 1 ? 'day' : 'days'} behind (${summary.behindBy} topic${summary.behindBy === 1 ? '' : 's'}) — new topics now finish by ${prettyDate(summary.coverageEndISO)}.`;
+  const fit = planFitLine(summary, plan, today);
 
   const feasibility = el('p', {
     class: summary.onTrack ? 'feasibility is-ok' : 'feasibility is-warn',
@@ -110,13 +108,50 @@ function buildHeader(summary: PlanSummary): HTMLElement {
 }
 
 /**
+ * The last plan day (from `today`) that still teaches a topic the learner has
+ * not studied — the RECOMPUTED finish date of the first pass — or `null` when
+ * no such day is scheduled. PURE over the plan + study state. @internal
+ */
+export function newTopicsFinishISO(plan: Plan, today: string): string | null {
+  let last: string | null = null;
+  for (const d of plan.days) {
+    if (d.dateISO < today) continue;
+    if (d.topics.some((t) => t.kind === 'topic' && !isTopicStudied(t.subtopicId))) last = d.dateISO;
+  }
+  return last;
+}
+
+/**
+ * The Planner fit line (FLOW-QA-3 N21): never a finish date that has already
+ * passed. "All topics covered" once every Prelims topic is studied; on track →
+ * the scheduled finish; behind → the date recomputed from the live plan, or an
+ * honest "won't all get a first read" when nothing new is scheduled. @internal
+ */
+export function planFitLine(summary: PlanSummary, plan: Plan | undefined, today: string): string {
+  if (summary.prelimsTotal > 0 && summary.prelimsStudied >= summary.prelimsTotal) return 'All topics covered.';
+  const recomputed = plan ? newTopicsFinishISO(plan, today) : null;
+  const finish = recomputed ?? (summary.coverageEndISO >= today ? summary.coverageEndISO : null);
+  const left = summary.prelimsTotal - summary.prelimsStudied;
+  if (summary.onTrack) {
+    return finish
+      ? `On track \u2014 new topics finish by ${prettyDate(finish)}.`
+      : `On track \u2014 ${left} topic${left === 1 ? '' : 's'} still to study.`;
+  }
+  const behind = `${summary.daysBehind} ${summary.daysBehind === 1 ? 'day' : 'days'} behind (${summary.behindBy} topic${summary.behindBy === 1 ? '' : 's'})`;
+  return finish
+    ? `Behind \u2014 new finish date ${prettyDate(finish)} \u00b7 ${behind}.`
+    : `Behind \u2014 ${left} topic${left === 1 ? '' : 's'} won\u2019t get a first read before Prelims \u00b7 ${behind}. Focus on revision and high-yield topics.`;
+}
+
+/**
  * The behind banner on the Planner — the SAME copy as Today ({@link
  * behindBanner}, D4): calm "plan adjusted" for 1–7 days, "here is the reduced
  * plan" + options beyond a week, and never "finish on time" unless feasible.
  * Returns `null` when not behind. @internal
  */
-function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
-  const copy = behindBanner(summary, todayISO());
+function buildRecoveryBanner(summary: PlanSummary, day?: PlanDay): HTMLElement | null {
+  // D4/N22: no banner on a day off, the light day or exam eve.
+  const copy = behindBanner(summary, todayISO(), day);
   if (!copy) return null;
   return el('section', { class: copy.tone === 'calm' ? 'feasibility is-ok' : 'feasibility is-warn', attrs: { role: 'status' } }, [
     icon('calendar', 16),
@@ -176,6 +211,8 @@ function buildUnitHeader(plan: Plan): HTMLElement | null {
   const unitDay = week.find((d) => d.unitId && d.status !== 'past') ?? week.find((d) => d.unitId);
   if (!unitDay || !unitDay.unitTitle) return null;
 
+  const start = getPlanStartDate();
+  const preStart = diffDaysISO(todayISO(), start) > 0;
   const title = unitShortTitle(unitDay.unitTitle);
   const subtitle = unitDay.unitTitle.includes('\u2014')
     ? unitDay.unitTitle.slice(unitDay.unitTitle.indexOf('\u2014') + 1).trim()
@@ -185,7 +222,13 @@ function buildUnitHeader(plan: Plan): HTMLElement | null {
     el('span', { class: 'unit-head-eyebrow', text: 'This week' }),
     el('h3', { class: 'unit-head-title', text: title }),
     subtitle ? el('p', { class: 'unit-head-sub section-lead', text: subtitle }) : null,
-    el('p', { class: 'unit-head-progress tnum', text: `Day ${unitDay.unitDay} of ${unitDay.unitDays}` }),
+    // D30: before the plan starts there is no "Day 1 of 6" yet — say when it
+    // starts. N28: a one-day unit shows no "Day 1 of 1".
+    preStart
+      ? el('p', { class: 'unit-head-progress', text: `Plan starts ${prettyDowDate(start)}` })
+      : unitDay.unitDays > 1
+        ? el('p', { class: 'unit-head-progress tnum', text: `Day ${unitDay.unitDay} of ${unitDay.unitDays}` })
+        : null,
   ];
   if (unitDay.nextUnitTitle) {
     children.push(el('p', { class: 'unit-head-next section-lead', text: `Next: ${unitShortTitle(unitDay.nextUnitTitle)}` }));
@@ -289,27 +332,44 @@ function buildThisWeek(plan: Plan): HTMLElement {
  * destinations as the Today rows. @internal
  */
 function weekFocusCell(day: PlanDay, focus: { label: string; topics: string }): Child[] {
-  const topics: Array<{ id: string; name: string; index: number }> = [];
+  type Group = 'new' | 'revisit' | 'plain';
+  const topics: Array<{ id: string; name: string; index: number; group: Group }> = [];
+  const revision = day.phase === 'revise';
   day.blocks.forEach((b, index) => {
     if (b.kind.startsWith('ca')) return;
-    for (const t of b.topics ?? []) if (t.kind !== 'practice') topics.push({ id: t.subtopicId, name: t.name || t.subtopicId, index });
+    const group: Group = !revision ? 'plain' : b.kind === 'subject' ? 'new' : b.kind === 'targeted-revision' ? 'revisit' : 'plain';
+    for (const t of b.topics ?? []) if (t.kind !== 'practice') topics.push({ id: t.subtopicId, name: t.name || t.subtopicId, index, group });
   });
   const first = day.blocks.findIndex(() => true);
   const label = topics.length === 0 && first >= 0
     ? el('button', { class: 'pw-focus-label pw-link', type: 'button', ariaLabel: `Open ${focus.label}`, onClick: () => openRow(day, first) }, [el('span', { text: focus.label })])
     : el('span', { class: 'pw-focus-label', text: focus.label });
   if (topics.length === 0) return [label, focus.topics ? el('span', { class: 'pw-focus-topics', text: focus.topics }) : null];
-  return [
-    label,
-    el('span', { class: 'pw-focus-topics' }, topics.map((t, i) =>
+  const links = (list: typeof topics): HTMLElement[] =>
+    list.map((t, i) =>
       el('button', {
         class: 'pw-link pw-topic-link',
         type: 'button',
         ariaLabel: `Study ${t.name}${isTopicStudied(t.id) ? ', studied' : ''}`,
         onClick: () => openRow(day, t.index, t.id),
-      }, [el('span', { text: `${t.name}${isTopicStudied(t.id) ? ' \u2713' : ''}${i < topics.length - 1 ? ',' : ''}` })]),
-    )),
-  ];
+      }, [el('span', { text: `${t.name}${isTopicStudied(t.id) ? ' \u2713' : ''}${i < list.length - 1 ? ',' : ''}` })]),
+    );
+  const fresh = topics.filter((t) => t.group === 'new');
+  const revisits = topics.filter((t) => t.group === 'revisit');
+  if (revision && fresh.length > 0) {
+    // N7: a revision-cycle day that recovery filled with NEW topics shows them
+    // apart from its revisits, in plain words.
+    const rest = topics.filter((t) => t.group === 'plain');
+    return [
+      label,
+      el('span', { class: 'pw-focus-topics pw-group' }, [el('span', { class: 'pw-group-label', text: 'New topics (moved from earlier): ' }), ...links(fresh)]),
+      revisits.length > 0
+        ? el('span', { class: 'pw-focus-topics pw-group' }, [el('span', { class: 'pw-group-label', text: 'Revisit: ' }), ...links(revisits)])
+        : null,
+      rest.length > 0 ? el('span', { class: 'pw-focus-topics' }, links(rest)) : null,
+    ];
+  }
+  return [label, el('span', { class: 'pw-focus-topics' }, links(topics))];
 }
 
 /* -------------------------------------------------------------------------- */

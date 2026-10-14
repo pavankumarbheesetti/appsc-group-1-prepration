@@ -590,6 +590,9 @@ export function loadState(): AppState {
   const raw = readRaw();
   if (raw === null) {
     current = defaultState();
+    // D40: a first load SAVES the defaults (plan start, exam date, days off),
+    // so they are fixed from day one instead of drifting until a first change.
+    writeRaw(JSON.stringify(current));
     return current;
   }
   try {
@@ -1067,9 +1070,133 @@ export function setBlockDone(dateISO: string, key: string, done: boolean): AppSt
   });
 }
 
-/** Serialize the current state as pretty JSON (for laptop↔phone transfer). */
+/**
+ * Serialize the current state as pretty JSON (for laptop↔phone transfer). The
+ * blob carries an extra top-level `exportedAt` (local ISO `YYYY-MM-DD`) so an
+ * import can tell the learner how old the backup is; {@link normalize} ignores it.
+ */
 export function exportStateJSON(): string {
-  return JSON.stringify(loadState(), null, 2);
+  return JSON.stringify({ ...loadState(), exportedAt: todayISO() }, null, 2);
+}
+
+/** The message shown when a file/paste is not a recognisable APPSC backup. */
+export const NOT_A_BACKUP_MESSAGE = "This file isn't an APPSC backup — nothing was changed.";
+
+/** Thrown by {@link parseBackupJSON} when a blob is not a valid backup. */
+export class BackupError extends Error {
+  constructor(public readonly detail: string) {
+    super(`${NOT_A_BACKUP_MESSAGE} (${detail})`);
+    this.name = 'BackupError';
+  }
+}
+
+/** A validated, not-yet-applied backup (see {@link parseBackupJSON}). */
+export interface ParsedBackup {
+  state: AppState;
+  /** `exportedAt` ISO date from the blob, when present and valid. */
+  exportedAt?: string;
+  /** Number of studied topics / answered questions — for the confirm copy. */
+  summary: { studied: number; answered: number; tests: number };
+}
+
+/** Top-level keys of a backup that hold `Record<string, …>` maps. @internal */
+const RECORD_KEYS = [
+  'progress', 'sr', 'notebook', 'flashcards', 'mains', 'telugu', 'english',
+  'adminDone', 'study', 'teluguLessons', 'blocksDone',
+] as const;
+
+/**
+ * Top-level shape check shared by both import paths: the value must be a plain
+ * object, carry at least one known state key, and every KNOWN key present must
+ * have the right container type. Anything else (e.g. `{"bad":1}`, an array, a
+ * number) is rejected before {@link normalize} could turn it into defaults.
+ * @internal
+ */
+function assertStateShape(parsed: unknown, strict: boolean): void {
+  if (!isRecord(parsed)) throw new BackupError('not a JSON object');
+  const obj = parsed as Record<string, unknown>;
+  const known = ['version', 'settings', 'testAttempts', ...RECORD_KEYS];
+  if (!known.some((k) => k in obj)) throw new BackupError('no APPSC progress data found');
+  if ('version' in obj && typeof obj.version !== 'number') throw new BackupError('version must be a number');
+  if ('settings' in obj && !isRecord(obj.settings)) throw new BackupError('settings must be an object');
+  for (const k of RECORD_KEYS) {
+    if (k in obj && !isRecord(obj[k])) throw new BackupError(`${k} must be an object`);
+  }
+  if ('testAttempts' in obj && !Array.isArray(obj.testAttempts)) throw new BackupError('testAttempts must be a list');
+  if (strict) {
+    // A real export ALWAYS carries these (every export is a normalized state).
+    for (const k of ['version', 'settings', 'progress', 'sr', 'notebook'] as const) {
+      if (!(k in obj)) throw new BackupError(`missing "${k}"`);
+    }
+    if (typeof obj.version === 'number' && obj.version > STATE_VERSION) {
+      throw new BackupError(`made by a newer app version (v${obj.version})`);
+    }
+    const st = obj.settings as Record<string, unknown>;
+    if (typeof st.examDate !== 'string' || typeof st.planStartDate !== 'string') {
+      throw new BackupError('settings are incomplete');
+    }
+  }
+}
+
+/** Validate every entry of a normalized blob; throws on the first bad entry. @internal */
+function validateAllEntries(next: AppState): void {
+  validateEntries('progress', ProgressEntrySchema, next.progress);
+  validateEntries('sr', SrCardSchema, next.sr);
+  validateEntries('notebook', NotebookEntrySchema, next.notebook);
+  // The flashcards SR map reuses the same per-entry card schema as `sr`.
+  validateEntries('flashcards', SrCardSchema, next.flashcards);
+  validateEntries('mains', MainsDraftSchema, next.mains);
+  validateEntries('telugu', TeluguFlagSchema, next.telugu);
+  validateEntries('english', EnglishDraftSchema, next.english);
+  validateEntries('adminDone', AdminFlagSchema, next.adminDone);
+  validateEntries('study', TopicStudyEntrySchema, next.study);
+  validateEntries('teluguLessons', z.string(), next.teluguLessons);
+  validateEntries('blocksDone', BlocksDoneDaySchema, next.blocksDone);
+  next.testAttempts.forEach((rec, i) => {
+    const result = TestAttemptRecordSchema.safeParse(rec);
+    if (!result.success) {
+      const detail = result.error.issues
+        .map((issue) => `${issue.path.join('.') || '(root)'}: ${issue.message}`)
+        .join('; ');
+      throw new Error(`Invalid testAttempts entry [${i}]: ${detail}`);
+    }
+  });
+}
+
+/**
+ * STRICT backup parse used by Settings → Import. Validates the WHOLE blob —
+ * JSON syntax, the full top-level schema of a real export (`version`,
+ * `settings` with dates, `progress`, `sr`, `notebook`) and every entry — and
+ * returns it WITHOUT touching the stored state. Call {@link applyBackup} only
+ * after the learner confirms.
+ *
+ * @throws BackupError for anything that is not a complete APPSC backup.
+ */
+export function parseBackupJSON(str: string): ParsedBackup {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(str);
+  } catch {
+    throw new BackupError('not valid JSON — the file may be cut off');
+  }
+  assertStateShape(parsed, true);
+  const next = normalize(parsed);
+  try {
+    validateAllEntries(next);
+  } catch (err) {
+    throw new BackupError(err instanceof Error ? err.message : 'malformed entry');
+  }
+  const rawAt = (parsed as { exportedAt?: unknown }).exportedAt;
+  const exportedAt = typeof rawAt === 'string' && isValidISODate(rawAt) ? rawAt : undefined;
+  const studied = Object.values(next.study).filter((e) => e.mark === 'studied' || !!e.studiedOn).length;
+  const answered = Object.values(next.progress).reduce((n, p) => n + p.seen, 0);
+  return { state: next, exportedAt, summary: { studied, answered, tests: next.testAttempts.length } };
+}
+
+/** Persist a backup previously validated by {@link parseBackupJSON}. */
+export function applyBackup(backup: ParsedBackup): AppState {
+  saveState(backup.state);
+  return backup.state;
 }
 
 /**
@@ -1081,40 +1208,21 @@ export function exportStateJSON(): string {
  * against its Zod schema. A single malformed entry rejects the whole import
  * (nothing is persisted) — the simplest, safest behavior for untrusted blobs.
  *
+ * LENIENT on missing keys (an older/partial blob is back-filled from
+ * defaults) but never on a wrong SHAPE: a value with no known state key
+ * (e.g. `{"bad":1}`) or a known key of the wrong type is rejected before
+ * anything is persisted. The Settings UI uses the stricter
+ * {@link parseBackupJSON} + {@link applyBackup} pair instead.
+ *
  * @throws SyntaxError if `str` is not valid JSON.
- * @throws Error if any progress/sr/notebook entry is malformed.
+ * @throws Error if the shape is wrong or any entry is malformed.
  */
 export function importStateJSON(str: string): AppState {
   const parsed: unknown = JSON.parse(str);
+  assertStateShape(parsed, false);
   const next = normalize(parsed);
   // Reject the whole import if any record entry violates its type.
-  validateEntries('progress', ProgressEntrySchema, next.progress);
-  validateEntries('sr', SrCardSchema, next.sr);
-  validateEntries('notebook', NotebookEntrySchema, next.notebook);
-  // The flashcards SR map reuses the same per-entry card schema as `sr`.
-  validateEntries('flashcards', SrCardSchema, next.flashcards);
-  // The Mains writing map: validate every draft/rubric entry.
-  validateEntries('mains', MainsDraftSchema, next.mains);
-  // The Telugu course map: every entry must be a boolean learned-flag.
-  validateEntries('telugu', TeluguFlagSchema, next.telugu);
-  // The English writing map: validate every draft/checks entry.
-  validateEntries('english', EnglishDraftSchema, next.english);
-  // The admin-task flags map: every entry must be a boolean done-flag.
-  validateEntries('adminDone', AdminFlagSchema, next.adminDone);
-  // The per-subtopic study records.
-  validateEntries('study', TopicStudyEntrySchema, next.study);
-  validateEntries('teluguLessons', z.string(), next.teluguLessons);
-  validateEntries('blocksDone', BlocksDoneDaySchema, next.blocksDone);
-  // The finished-test history: validate every record in the array.
-  next.testAttempts.forEach((rec, i) => {
-    const result = TestAttemptRecordSchema.safeParse(rec);
-    if (!result.success) {
-      const detail = result.error.issues
-        .map((issue) => `${issue.path.join('.') || '(root)'}: ${issue.message}`)
-        .join('; ');
-      throw new Error(`Invalid testAttempts entry [${i}]: ${detail}`);
-    }
-  });
+  validateAllEntries(next);
   saveState(next);
   return next;
 }

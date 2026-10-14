@@ -74,7 +74,8 @@ import {
   type TestSession,
 } from '../lib/test-session';
 import { reviewIdsOf, localISO, type ReviewableAttempt } from '../lib/review-scope';
-import { renderExplanation, renderQuestionStem } from './quiz';
+import { weekTestNumber } from '../lib/test-number';
+import { displayMatch, optionKeyFor, renderExplanation, renderQuestionStem } from './quiz';
 import { card } from './components/card';
 import { button } from './components/button';
 import { chip } from './components/chip';
@@ -88,9 +89,6 @@ const MOCK_BANNER = 'This is a timed mock — -1/3 negative marking · no compen
 
 /** Length presets offered when the scope pool is large enough. */
 const LENGTH_PRESETS = [25, 50] as const;
-
-/** Letter badges for the first options; falls back to the index+1. */
-const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'] as const;
 
 /** How the mock question pool is scoped. */
 type ScopeKind = 'full' | 'subject' | 'subtopic';
@@ -961,8 +959,20 @@ function beginWeekTest(
     (r, _items, selected, confidences, elapsed, onRetake, back) =>
       drawWeekTestResults(r, test, selected, confidences, elapsed, onRetake, back),
     kind,
-    { title: kind === 'unit-test' ? `Unit test \u00b7 ${test.count} Q` : `Week test \u00b7 ${test.count} Q`, results: weekSpec(test) },
+    {
+      title: kind === 'unit-test'
+        ? `Unit test \u00b7 ${test.count} Q`
+        : `Week test ${weekTestNumber(test.dateISO, loadState().testAttempts as ReviewableAttempt[], loadState().settings.planStartDate)} \u00b7 ${test.count} Q`,
+      results: weekSpec(test),
+    },
   );
+}
+
+/** The learner-facing "Week test N" heading of a built week test. @internal */
+function weekTestHeading(test: BuiltWeekTest): string {
+  const st = loadState();
+  // Results are drawn AFTER the attempt is recorded, so exclude this sitting's day.
+  return `Week test ${weekTestNumber(test.dateISO, st.testAttempts as ReviewableAttempt[], st.settings.planStartDate)}`;
 }
 
 /**
@@ -1028,14 +1038,14 @@ function drawWeekTestResults(
   ]);
 
   const actions = el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
-    button({ label: 'Retake', variant: 'primary', iconName: 'timer', onClick: onRetake }),
+    button({ label: 'Retake', variant: 'secondary', iconName: 'timer', onClick: onRetake }),
     reviewAnswersButton(),
     button({ label: 'Back', variant: 'ghost', onClick: onBack }),
     button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
   ]);
 
   const summaryCard = card({}, [
-    el('h2', { class: 'card-title', attrs: { style: 'text-align:center' }, text: `Week test · ${test.count} questions` }),
+    el('h2', { class: 'card-title', attrs: { style: 'text-align:center' }, text: `${weekTestHeading(test)} · ${test.count} questions` }),
     hero,
     breakdown,
     sectionTable,
@@ -1075,17 +1085,104 @@ function runMock(
   minutes: number,
   onRetake: () => void,
   onBack: () => void,
-  onResults: (
-    root: HTMLElement,
-    items: readonly MCQItem[],
-    selected: ReadonlyArray<number | null>,
-    confidences: ReadonlyArray<MockConfidence | null>,
-    elapsedMs: number,
-    onRetake: () => void,
-    onBack: () => void,
-  ) => void = drawResults,
+  onResults: ResultsRenderer = drawResults,
   kind = 'mock',
   meta: RunMeta = { title: 'Mock', results: { type: 'generic' } },
+  resume?: TestSession,
+): void {
+  // A RESUMED test goes straight back to the paper (the learner already saw
+  // the instructions); every fresh sitting gets the instructions screen first,
+  // and the clock only starts on its Start button.
+  if (resume) {
+    runMockTimed(root, items, minutes, onRetake, onBack, onResults, kind, meta, resume);
+    return;
+  }
+  drawTestInstructions(root, {
+    title: meta.title,
+    questions: items.length,
+    minutes,
+    onStart: () => runMockTimed(root, items, minutes, onRetake, onBack, onResults, kind, meta),
+    onBack,
+  });
+}
+
+/** The results-screen renderer signature shared by every runner. @internal */
+type ResultsRenderer = (
+  root: HTMLElement,
+  items: readonly MCQItem[],
+  selected: ReadonlyArray<number | null>,
+  confidences: ReadonlyArray<MockConfidence | null>,
+  elapsedMs: number,
+  onRetake: () => void,
+  onBack: () => void,
+) => void;
+
+/** Inputs of {@link drawTestInstructions}. @internal */
+interface InstructionsOpts {
+  title: string;
+  questions: number;
+  minutes: number;
+  onStart: () => void;
+  onBack: () => void;
+  /** OMR mode: answers go on a separate bubble sheet. */
+  omr?: boolean;
+}
+
+/** Accessible label of the instructions screen's Start button. */
+export const START_TIMER_LABEL = 'Start the test';
+
+/**
+ * The INSTRUCTIONS screen shown before every timed test (week / unit test,
+ * custom mock, full paper, OMR): how many questions, how long, the −1/3 rule,
+ * and how to use the Sure / 50-50 / Guess tags. The timer starts only when the
+ * learner presses Start. @internal
+ */
+function drawTestInstructions(root: HTMLElement, o: InstructionsOpts): void {
+  const neg = (1 / 3).toFixed(2);
+  const list = el('ul', { class: 'test-instructions-list' }, [
+    el('li', { text: `${o.questions} question${o.questions === 1 ? '' : 's'} \u00b7 ${o.minutes} minute${o.minutes === 1 ? '' : 's'} on one overall clock. When time runs out the test submits itself.` }),
+    el('li', { text: `Marking: +1 for a correct answer, \u22121/3 (about \u2212${neg}) for a wrong one, 0 for a blank. Skip a question when you can\u2019t narrow it down.` }),
+    o.omr
+      ? el('li', { text: 'OMR mode: first bubble your roll number and booklet series, then darken each answer on the bubble sheet \u2014 a booklet mark alone is not scored.' })
+      : el('li', { text: 'Tag each answer with how sure you are: Sure (you know it), 50-50 (down to two options) or Guess. The results show how your guesses scored, and every 50-50 / Guess answer goes into your review list \u2014 even the lucky correct ones.' }),
+    el('li', { text: 'Flag a question to come back to it. Your answers are saved as you go \u2014 if you leave, you can resume with the clock paused.' }),
+    el('li', { text: 'Answers are not shown until you submit.' }),
+  ]);
+  const startBtn = button({
+    label: START_TIMER_LABEL,
+    variant: 'primary',
+    iconName: 'timer',
+    ariaLabel: `${START_TIMER_LABEL} \u2014 ${o.questions} questions, ${o.minutes} minutes`,
+    onClick: o.onStart,
+  });
+  mount(root, el('div', { class: 'mock-setup test-instructions' }, [
+    card({ title: o.title, subtitle: 'Read this before you start \u2014 the clock starts when you press Start.' }, [
+      el('div', { class: 'results-breakdown' }, [
+        metric(String(o.questions), 'questions', null),
+        metric(`${o.minutes} min`, 'time', null),
+        metric('\u22121/3', 'per wrong answer', null),
+      ]),
+      list,
+      el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
+        startBtn,
+        button({ label: 'Not now', variant: 'ghost', onClick: o.onBack }),
+      ]),
+    ]),
+  ]));
+  root.querySelector<HTMLElement>('h2')?.setAttribute('tabindex', '-1');
+  root.querySelector<HTMLElement>('h2')?.focus();
+}
+
+/** The timed runner proper (called by {@link runMock} after the instructions). @internal */
+function runMockTimed(
+  root: HTMLElement,
+  items: readonly MCQItem[],
+  minutes: number,
+  onRetake: () => void,
+  onBack: () => void,
+  onResults: ResultsRenderer,
+  kind: string,
+  meta: RunMeta,
   resume?: TestSession,
 ): void {
   const selected: Array<number | null> = resume ? [...resume.selected] : items.map(() => null);
@@ -1237,7 +1334,7 @@ function runMock(
     // Keyboard accessible (real buttons; clicking the active tag clears it).
     const confSeg = el('div', {
       class: 'mock-confidence',
-      attrs: { role: 'radiogroup', 'aria-label': 'How confident are you?' },
+      attrs: { role: 'group', 'aria-label': 'How confident are you? (optional)' },
     }, [
       el('span', { class: 'mock-confidence-label', text: 'Confidence:' }),
       ...MOCK_CONFIDENCES.map((c) => {
@@ -1245,7 +1342,8 @@ function runMock(
         return el('button', {
           class: active ? 'mock-conf-btn is-active' : 'mock-conf-btn',
           type: 'button',
-          attrs: { role: 'radio', 'aria-checked': String(active) },
+          // D26: toggle buttons, like the drill's — aria-pressed true/false.
+          attrs: { 'aria-pressed': String(active) },
           onClick: () => {
             confidences[idx] = confidences[idx] === c ? null : c;
             draw();
@@ -1255,7 +1353,7 @@ function runMock(
     ]);
 
     // Options — selectable, NO correctness feedback while running.
-    const optionList = el('div', { class: 'option-list' }, item.options.map((opt, i) => {
+    const optionList = el('div', { class: 'option-list' }, displayMatch(item).options.map((opt, i) => {
       const isSel = selected[idx] === i;
       return el('button', {
         class: isSel ? 'option-card is-selected' : 'option-card',
@@ -1266,7 +1364,7 @@ function runMock(
           draw();
         },
       }, [
-        el('span', { class: 'option-key', text: LETTERS[i] ?? String(i + 1) }),
+        el('span', { class: 'option-key', text: optionKeyFor(item, i) }),
         el('span', { class: 'option-body' }, renderInline(opt)),
       ]);
     }));
@@ -1333,7 +1431,7 @@ function runMock(
     const stage = el('section', { class: 'focus-stage mock-running', attrs: { tabindex: '-1', 'aria-live': 'polite' } });
     stage.addEventListener('keydown', onKey);
     stage.append(
-      el('div', { class: 'mock-banner mock-banner-slim', attrs: { role: 'note' } }, [icon('timer', 14), el('span', { text: MOCK_BANNER })]),
+      el('div', { class: 'mock-banner mock-banner-slim', attrs: { role: 'note' } }, [icon('timer', 14), el('span', { text: `${meta.title} \u2014 \u22121/3 for a wrong answer \u00b7 no compensatory time` })]),
       topline,
       el('div', { class: 'card question-card' }, [
         ...renderQuestionStem(item),
@@ -1416,6 +1514,11 @@ function recordMock(
     dateISO: localISO(now),
     // Wrong ∪ Guess/50-50 (correct guesses kept) → the scoped review block.
     reviewIds: reviewIdsOf(items, selected, confidences),
+    // The full sitting, so a submitted test can be reopened as RESULTS later
+    // (Today's finished test row, a reload of the results URL).
+    itemIds: items.map((it) => it.id),
+    answers: items.map((_, i) => selected[i] ?? null),
+    confidences: items.map((_, i) => confidences[i] ?? null),
     kind,
     total: items.length,
     attempted: summary.attempted,
@@ -1500,7 +1603,7 @@ function drawResults(
   ]);
 
   const actions = el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
-    button({ label: 'Retake', variant: 'primary', iconName: 'timer', onClick: onRetake }),
+    button({ label: 'Retake', variant: 'secondary', iconName: 'timer', onClick: onRetake }),
     reviewAnswersButton(),
     button({ label: 'Back', variant: 'ghost', onClick: onBack }),
     button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
@@ -1586,7 +1689,7 @@ function drawPaperResults(
   ]);
 
   const actions = el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
-    button({ label: 'Retake', variant: 'primary', iconName: 'timer', onClick: onRetake }),
+    button({ label: 'Retake', variant: 'secondary', iconName: 'timer', onClick: onRetake }),
     reviewAnswersButton(),
     button({ label: 'Back', variant: 'ghost', onClick: onBack }),
     button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
@@ -1617,12 +1720,12 @@ function reviewItem(item: MCQItem, chosen: number | null, num: number): HTMLElem
       ? chip({ text: 'Correct', tone: 'ok', iconName: 'check' })
       : chip({ text: 'Incorrect', tone: 'danger', iconName: 'x' });
 
-  const opts = el('div', { class: 'option-list mock-review-options' }, item.options.map((opt, i) => {
+  const opts = el('div', { class: 'option-list mock-review-options' }, displayMatch(item).options.map((opt, i) => {
     const cls = ['option-card', 'is-static'];
     if (i === item.answerIndex) cls.push('is-correct');
     else if (i === chosen) cls.push('is-wrong');
     return el('div', { class: cls.join(' ') }, [
-      el('span', { class: 'option-key', text: LETTERS[i] ?? String(i + 1) }),
+      el('span', { class: 'option-key', text: optionKeyFor(item, i) }),
       el('span', { class: 'option-body' }, renderInline(opt)),
       i === item.answerIndex
         ? el('span', { class: 'option-mark', attrs: { 'aria-hidden': 'true' } }, [icon('check', 16)])
@@ -1768,7 +1871,14 @@ function beginOmrMock(root: HTMLElement, setup: PaperSetup, onBack: () => void):
     onBack();
     return;
   }
-  runOmrMock(root, mock, () => beginOmrMock(root, setup, onBack), onBack);
+  drawTestInstructions(root, {
+    title: `${paperTitle(mock)} \u00b7 OMR`,
+    questions: mock.items.length,
+    minutes: mock.items.length,
+    omr: true,
+    onStart: () => runOmrMock(root, mock, () => beginOmrMock(root, setup, onBack), onBack),
+    onBack,
+  });
 }
 
 /**
@@ -1977,7 +2087,8 @@ function runOmrMock(
         return el('button', {
           class: active ? 'omr-scratch-btn is-active' : 'omr-scratch-btn',
           type: 'button',
-          attrs: { role: 'radio', 'aria-checked': String(active) },
+          // D26: toggle buttons, like the drill's — aria-pressed true/false.
+          attrs: { 'aria-pressed': String(active) },
           onClick: () => {
             scratch[idx] = scratch[idx] === i ? null : i;
             draw();
@@ -2163,7 +2274,7 @@ function drawOmrResults(
   ]);
 
   const actions = el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
-    button({ label: 'Retake', variant: 'primary', iconName: 'timer', onClick: opts.onRetake }),
+    button({ label: 'Retake', variant: 'secondary', iconName: 'timer', onClick: opts.onRetake }),
     reviewAnswersButton(),
     button({ label: 'Print OMR sheet', variant: 'secondary', iconName: 'arrow-right', onClick: () => printOmrSheet() }),
     button({ label: 'Back', variant: 'ghost', onClick: opts.onBack }),
@@ -2293,6 +2404,7 @@ function afterResults(root: HTMLElement, items: readonly MCQItem[], selected: Re
   const first = container?.firstElementChild;
   if (first) first.after(footer);
   else root.append(footer);
+  dedupeResultActions(root, footer);
   if (!last) return;
   const id = String(last.at);
   resultsDom.set(id, [...root.childNodes]);
@@ -2301,13 +2413,64 @@ function afterResults(root: HTMLElement, items: readonly MCQItem[], selected: Re
 }
 
 /**
+ * N12: the Next-up footer already offers "Review answers" / "Today": drop the
+ * same actions from the summary's action row so each appears ONCE. @internal
+ */
+function dedupeResultActions(root: ParentNode, footer: HTMLElement): void {
+  const labels = new Set<string>();
+  for (const b of footer.querySelectorAll('button, a')) {
+    const t = (b.textContent ?? '').trim();
+    labels.add(t);
+    if (t === 'Back to Today') labels.add('Today');
+  }
+  for (const b of root.querySelectorAll<HTMLElement>('.results-actions button, .results-actions a')) {
+    if (labels.has((b.textContent ?? '').trim())) b.remove();
+  }
+}
+
+/**
+ * Retake launchers registered by {@link openTestResults}, keyed by attempt id,
+ * so a stored attempt's results page can offer "Retake" as a SEPARATE,
+ * secondary action (never the row's default). @internal
+ */
+const retakeByAttempt = new Map<string, () => void>();
+
+/**
+ * Open the RESULTS of a submitted attempt (`at` = its record id). Today's
+ * finished test rows call this so tapping a "Submitted ✓" row reviews the
+ * test instead of starting a new one; `retake`, when given, is offered as a
+ * secondary "Retake" button on that page.
+ */
+export function openTestResults(at: number, retake?: () => void): void {
+  const id = String(at);
+  if (retake) retakeByAttempt.set(id, retake);
+  else retakeByAttempt.delete(id);
+  navigate(`${PATHS.mock}/results/${id}`);
+}
+
+/** Human title of a stored attempt's kind. @internal */
+function attemptTitle(kind: string): string {
+  switch (kind) {
+    case 'week-test': return 'Week test results';
+    case 'unit-test': return 'Unit test results';
+    case 'full-mock': return 'Full mock results';
+    case 'sectional-mock': return 'Sectional mock results';
+    case 'full-mock-omr': return 'OMR mock results';
+    default: return 'Mock results';
+  }
+}
+
+/**
  * `#/practice/mock/results/<attempt>`: the results drawn in this session, or —
- * after a reload — a summary of the stored attempt with the same footer.
+ * after a reload / from Today's finished test row — the stored attempt redrawn
+ * from its record: score, the Sure / 50-50 / Guess table and the FULL
+ * question-by-question review (when the record carries the sitting).
  */
 export function renderResultsRoute(root: HTMLElement): void {
   const id = routeParam('/practice/mock/results/:attemptId', 'attemptId') ?? '';
+  const retake = retakeByAttempt.get(id);
   const nodes = resultsDom.get(id);
-  if (nodes) {
+  if (nodes && !retake) {
     mount(root, ...nodes);
     return;
   }
@@ -2319,15 +2482,36 @@ export function renderResultsRoute(root: HTMLElement): void {
     ]));
     return;
   }
-  mount(root, el('div', { class: 'results mock-results' }, [
-    card({ title: 'Mock results' }, [
+  const index = mcqIndex();
+  const items = (attempt.itemIds ?? []).map((q) => index.get(q));
+  const full = items.length > 0 && items.every((it) => it !== undefined);
+  const list = full ? (items as MCQItem[]) : [];
+  const answers = list.map((_, i) => attempt.answers?.[i] ?? null);
+  const confs = list.map((_, i) => (attempt.confidences?.[i] ?? null) as MockConfidence | null);
+  const when = attempt.dateISO ? ` \u00b7 ${attempt.dateISO}` : '';
+  const actions = el('div', { class: 'focus-advance results-actions', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
+    retake ? button({ label: 'Retake', variant: 'secondary', iconName: 'timer', onClick: retake }) : null,
+    button({ label: 'Today', variant: 'ghost', onClick: () => navigate(PATHS.today) }),
+  ]);
+  const footer = mockNextUp(attempt.net, attempt.total, attempt.wrong, full ? weakestSubtopic(list, answers) : undefined, attempt.reviewIds ?? []);
+  const kids: Child[] = [
+    card({ title: `${attemptTitle(attempt.kind)}${when}`, subtitle: 'Submitted \u2713 \u2014 your answers are saved; nothing here changes your score.' }, [
       el('div', { class: 'results-breakdown' }, [
         metric(formatNet(attempt.net), 'net score', null),
-        metric(String(attempt.correct), 'correct', 'ok'),
+        metric(`${attempt.correct}/${attempt.total}`, 'correct', 'ok'),
         metric(String(attempt.wrong), 'wrong', 'bad'),
         metric(String(attempt.skipped), 'skipped', null),
       ]),
+      actions,
     ]),
-    mockNextUp(attempt.net, attempt.total, attempt.wrong, undefined, attempt.reviewIds ?? []),
-  ]));
+    footer,
+  ];
+  dedupeResultActions(actions.parentElement ?? actions, footer);
+  if (full) {
+    kids.push(negMarkingCard(list, answers, confs));
+    kids.push(card({ title: 'Full review', subtitle: `${list.length} question${list.length === 1 ? '' : 's'} \u2014 your answer vs the correct one` }, [
+      el('ol', { class: 'mock-review' }, list.map((item, i) => reviewItem(item, answers[i] ?? null, i + 1))),
+    ]));
+  }
+  mount(root, el('div', { class: 'results mock-results' }, kids));
 }

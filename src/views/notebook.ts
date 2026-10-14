@@ -19,6 +19,7 @@ import { button } from './components/button';
 import { chip } from './components/chip';
 import { icon } from './components/icon';
 import { completeActiveTask } from '../lib/day-tasks';
+import { attemptVerdict, type ReviewableAttempt } from '../lib/review-scope';
 
 /** Build an id → MCQItem lookup across every MCQ bank. @internal */
 function mcqById(): Map<string, MCQItem> {
@@ -105,14 +106,20 @@ function drawScoped(root: HTMLElement, scoped: ScopedReview): void {
     ]),
   ]);
   const stack = el('div', { class: 'review-stack', attrs: { 'data-scope': 'test-review' } }, list.map((item) => {
-    const p = state.progress[item.id];
-    const wrong = p?.lastResult === 'wrong';
+    // N14: the label comes from the ORIGINAL attempt (its answer + tag), never
+    // from a later re-answer in review. Only lists with no recorded sitting
+    // (legacy records, practice mistakes) fall back to the last result.
+    const verdict = attemptVerdict(state.testAttempts as ReviewableAttempt[], item.id, item.answerIndex)
+      ?? (state.progress[item.id]?.lastResult === 'correct' ? 'guess-correct' : 'wrong');
+    const tag = verdict === 'wrong'
+      ? chip({ text: 'Wrong', tone: 'danger', iconName: 'x' })
+      : verdict === 'guess-correct'
+        ? chip({ text: 'Guessed \u2014 correct', tone: 'warn', iconName: 'target' })
+        : verdict === 'fifty-correct'
+          ? chip({ text: '50-50 \u2014 correct', tone: 'warn', iconName: 'target' })
+          : chip({ text: 'Correct', tone: 'muted', iconName: 'check' });
     return el('div', { class: 'review-card' }, [
-      el('div', { class: 'subject-head' }, [
-        wrong
-          ? chip({ text: 'Wrong', tone: 'danger', iconName: 'x' })
-          : chip({ text: 'Guessed \u2014 correct', tone: 'warn', iconName: 'target' }),
-      ]),
+      el('div', { class: 'subject-head' }, [tag]),
       el('p', { class: 'review-q' }, renderPreview(item.question, 220)),
     ]);
   }));

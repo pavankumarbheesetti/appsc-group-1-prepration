@@ -98,3 +98,48 @@ describe('mains writing workspace (#/mains/:id)', () => {
     expect(root.textContent).toContain('Question not found');
   });
 });
+
+describe('mains writer — pad first, model gated (D25)', () => {
+  beforeEach(() => {
+    __resetForTests();
+  });
+
+  const open = (): HTMLElement => {
+    location.hash = `#/mains/${firstMainsId()}`;
+    const root = document.createElement('div');
+    renderWorkspace(root);
+    return root;
+  };
+  const byLabel = (root: HTMLElement, text: string): HTMLButtonElement | undefined =>
+    [...root.querySelectorAll<HTMLButtonElement>('button')].find((b) => b.textContent?.includes(text));
+
+  it('the writing pad comes before the framework and the model; the model starts hidden', () => {
+    const root = open();
+    const pad = root.querySelector('.mains-practice')!;
+    const fw = root.querySelector('.mains-fw')!;
+    const gate = root.querySelector('.mains-model-gate')!;
+    expect(pad.compareDocumentPosition(fw) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(pad.compareDocumentPosition(gate) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(gate.getAttribute('data-state')).toBe('hidden');
+    expect(root.querySelector('.mains-model-body')).toBeNull();
+    expect(byLabel(root, 'Show model answer')!.disabled).toBe(true);
+  });
+
+  it('"Show model answer" unlocks after the learner writes', () => {
+    const root = open();
+    const ta = root.querySelector<HTMLTextAreaElement>('.mains-textarea')!;
+    ta.value = Array.from({ length: 30 }, (_, i) => `w${i}`).join(' ');
+    ta.dispatchEvent(new Event('input'));
+    const show = byLabel(root, 'Show model answer')!;
+    expect(show.disabled).toBe(false);
+    show.click();
+    expect(root.querySelector('.mains-model-gate')!.getAttribute('data-state')).toBe('shown');
+    expect(root.querySelector('.mains-model-body')).not.toBeNull();
+  });
+
+  it('"I\u2019m stuck" reveals the model at once', () => {
+    const root = open();
+    byLabel(root, 'I\u2019m stuck')!.click();
+    expect(root.querySelector('.mains-model-body')).not.toBeNull();
+  });
+});

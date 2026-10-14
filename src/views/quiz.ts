@@ -20,6 +20,7 @@
  * DOM-only module (the pure logic lives in engine/* and lib/metrics.ts); it
  * takes a mount element and rebuilds it as the session advances.
  */
+import { learnerSource } from '../lib/source-label';
 import type { MCQItem } from '../content/types';
 import { answerQuestion, scoreSession, type ScoredAnswer, type SessionScore } from '../engine/drill';
 import { recordAnswer } from '../engine/notebook';
@@ -130,7 +131,10 @@ export function renderExplanation(item: MCQItem): HTMLElement | null {
   }
 
   // De-duplicated citation: structured field wins; inline is the fallback.
-  const sourceText = item.source ?? inlineSource;
+  // Shown as a LEARNER-FRIENDLY label: internal file names / PDF digests are
+  // mapped (see lib/source-label) and purely internal tags are hidden.
+  const rawSource = item.source ?? inlineSource;
+  const sourceText = rawSource ? learnerSource(rawSource) : null;
   if (sourceText) panel.appendChild(renderSource(sourceText));
 
   return panel;
@@ -230,7 +234,7 @@ function renderSource(text: string): HTMLElement {
     }
   }
   return el('p', { class: 'explanation-source' }, [
-    el('span', { class: 'src-label', text: 'Source' }),
+    el('span', { class: 'src-label', text: 'Source:' }),
     body,
   ]);
 }
@@ -426,9 +430,12 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
   };
 
   /** The persistent, subtle keyboard-hint bar shown under every question. */
-  const hintBar = (): HTMLElement =>
+  const hintBar = (current?: Pick<MCQItem, 'question' | 'match'>): HTMLElement =>
     el('div', { class: 'focus-hints' }, [
-      el('span', { class: 'khint' }, [el('kbd', { text: 'A–D' }), el('span', { text: 'or' }), el('kbd', { text: '1–4' }), el('span', { text: 'to answer' })]),
+      // N25: match options are labelled (i)–(iv), so the hint names 1–4 for them.
+      current && isMatchItem(current)
+        ? el('span', { class: 'khint' }, [el('kbd', { text: '1–4' }), el('span', { text: 'to answer (i)–(iv)' })])
+        : el('span', { class: 'khint' }, [el('kbd', { text: 'A–D' }), el('span', { text: 'or' }), el('kbd', { text: '1–4' }), el('span', { text: 'to answer' })]),
       el('span', { class: 'khint-sep', text: '·' }),
       el('span', { class: 'khint' }, [el('kbd', { text: 'S' }), el('span', { text: '/' }), el('kbd', { text: 'G' }), el('span', { text: 'to rate' })]),
       el('span', { class: 'khint-sep', text: '·' }),
@@ -539,7 +546,7 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
         buildOptions(item, null, (chosen) => reveal(item, chosen)),
         buildConfidence(),
       ]),
-      hintBar(),
+      hintBar(item),
     );
     mount(root, stage);
     scrollIntoViewSafe(stage.querySelector('.q-nav-item.is-current'));
@@ -616,7 +623,7 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
           return btn;
         })(),
       ]),
-      hintBar(),
+      hintBar(item),
     );
     mount(root, stage);
     scrollIntoViewSafe(stage.querySelector('.q-nav-item.is-current'));
@@ -840,7 +847,10 @@ function renderARField(assertion: string, reason: string): HTMLElement {
  */
 export function renderQuestionStem(source: StemSource | string): Child[] {
   const item: StemSource = typeof source === 'string' ? { question: source } : source;
-  if (item.match) return wrapStructured(item.question, [renderMatchField(item.match)]);
+  if (item.match) {
+    const shown = displayMatch({ options: [], ...item } as StemSource & { options: string[] }).match ?? item.match;
+    return wrapStructured(item.question, [renderMatchField(shown)]);
+  }
   if (item.statements && item.statements.length > 0) {
     return wrapStructured(item.question, [renderStatementsField(item.statements)]);
   }
@@ -854,6 +864,57 @@ export function renderQuestionStem(source: StemSource | string): Child[] {
   return renderPlainStem(question);
 }
 
+/** Option keys for MATCH questions — distinct from List-I (A–D) and List-II (1–4). */
+const MATCH_OPTION_KEYS = ['(i)', '(ii)', '(iii)', '(iv)', '(v)', '(vi)'] as const;
+
+/** Whether `item` is a match-the-following question (structured or parsed). */
+export function isMatchItem(item: Pick<MCQItem, 'question' | 'match'>): boolean {
+  return !!item.match || parseQuestion(item.question).kind === 'match';
+}
+
+/**
+ * The key shown on option `i`: A–D normally, but (i)–(iv) on a MATCH question,
+ * where A–D already name the List-I entries and 1–4 the List-II entries (so
+ * "A  A-2, B-4, …" never reads as a clash). Keyboard A–D / 1–4 still answer.
+ */
+export function optionKeyFor(item: Pick<MCQItem, 'question' | 'match'>, i: number): string {
+  if (isMatchItem(item)) return MATCH_OPTION_KEYS[i] ?? String(i + 1);
+  return LETTERS[i] ?? String(i + 1);
+}
+
+/** Warn once per item id about letter-keyed List-II data. @internal */
+const warnedMatch = new Set<string>();
+
+/**
+ * RENDER-SIDE guard for match data whose List-II keys are LETTERS (List-I and
+ * List-II both A–D): List-II keys are mapped to 1..n and every option code
+ * (`A-B, B-D, …`) is rewritten to the numbers (`A-2, B-4, …`). A validator
+ * warning is logged; the content itself is untouched. Returns the item as-is
+ * when its keys are already distinct.
+ */
+export function displayMatch<T extends Pick<MCQItem, 'options'> & Partial<Pick<MCQItem, 'match' | 'id'>>>(item: T): T {
+  const m = item.match;
+  if (!m || !m.right.some((r) => /^[A-Za-z]$/.test(r.key))) return item;
+  const map = new Map<string, string>();
+  m.right.forEach((r, i) => map.set(r.key.toUpperCase(), String(i + 1)));
+  const id = item.id ?? m.right.map((r) => r.text).join('|');
+  if (!warnedMatch.has(id)) {
+    warnedMatch.add(id);
+    console.warn(`[content-validator] match item ${id}: List-II keys are letters; mapped to 1..${m.right.length} at render`);
+  }
+  const leftKeys = new Set(m.left.map((l) => l.key.toUpperCase()));
+  const options = item.options.map((o) =>
+    o.replace(/\b([A-Za-z])\s*([-\u2013\u2192])\s*([A-Za-z])\b/g, (all, l: string, sep: string, r: string) =>
+      leftKeys.has(l.toUpperCase()) && map.has(r.toUpperCase()) ? `${l}${sep === '-' ? '-' : sep}${map.get(r.toUpperCase())}` : all,
+    ),
+  );
+  return {
+    ...item,
+    match: { ...m, right: m.right.map((r) => ({ ...r, key: map.get(r.key.toUpperCase()) ?? r.key })) },
+    options,
+  };
+}
+
 /**
  * Build the option-card list. When `revealed` is null the cards are live
  * (clickable); otherwise they show the correct/wrong result and are disabled.
@@ -865,7 +926,7 @@ function buildOptions(
   onChoose: ((index: number) => void) | null,
 ): HTMLElement {
   const list = el('div', { class: 'option-list' });
-  item.options.forEach((opt, i) => {
+  displayMatch(item).options.forEach((opt, i) => {
     const cls = ['option-card'];
     if (revealed) {
       if (i === revealed.answerIndex) cls.push('is-correct');
@@ -876,7 +937,7 @@ function buildOptions(
       type: 'button',
       onClick: revealed || !onChoose ? undefined : () => onChoose(i),
     }, [
-      el('span', { class: 'option-key', text: LETTERS[i] ?? String(i + 1) }),
+      el('span', { class: 'option-key', text: optionKeyFor(item, i) }),
       el('span', { class: 'option-body' }, renderInline(opt)),
       revealed && i === revealed.answerIndex
         ? el('span', { class: 'option-mark', attrs: { 'aria-hidden': 'true' } }, [icon('check', 18)])

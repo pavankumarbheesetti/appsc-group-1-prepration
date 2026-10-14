@@ -13,6 +13,7 @@
  *     opening the subtopic's Learn workspace to drill it.
  * A friendly empty state invites the first drill when nothing is attempted yet.
  */
+import { ACCURACY_LABEL, accuracyCaption, accuracyPct, formatAccuracy } from '../lib/accuracy';
 import { getSubjects, getSubtopic, getSubtopicCoverage, getSubtopics } from '../content/loader';
 import type { TaxonomySubtopic } from '../content/taxonomy';
 import { activeEntries } from '../engine/notebook';
@@ -33,7 +34,8 @@ import { ring } from './components/ring';
 import { progressBar } from './components/progress';
 import { bandBadge, studyStatusChip } from './components/badges';
 import { topicStudyFrom, type StudyStatus } from '../lib/study-status';
-import { studySummary, studiedLine, anyStudyActivity, type StudySummary } from '../lib/study-summary';
+import { caUpToDateLine, studySummary, studiedLine, anyStudyActivity, type StudySummary } from '../lib/study-summary';
+import { chip } from './components/chip';
 import { liveFlashcardDue, questionsDue, flashcardTodayLine, type FlashcardDue } from '../lib/due';
 import { openLearn } from './learn';
 
@@ -90,21 +92,13 @@ function subRowFor(meta: TaxonomySubtopic): SubRow {
     answered,
     attempts,
     correct,
-    accuracy: attempts > 0 ? correct / attempts : 0,
+    accuracy: (accuracyPct(correct, attempts) ?? 0) / 100,
     mastery,
     status: statusFromMastery(mastery),
     study: topicStudyFrom(state, meta.id).status,
     examCoverage: cov ? { pct: cov.pct, covered: cov.covered.length, total: cov.total } : undefined,
   };
 }
-
-/** Status → weakness rank (weakest first). @internal */
-const STATUS_RANK: Record<SubtopicStatus, number> = {
-  'not-started': 0,
-  learning: 1,
-  revised: 2,
-  mastered: 3,
-};
 
 /** Overall roll-up across every subtopic row. @internal */
 interface Overall {
@@ -305,10 +299,13 @@ function buildNegMarkingHabit(attempts: readonly TestAttemptRecord[]): HTMLEleme
 function buildBreakdown(rows: SubRow[], rerender: () => void, subjectStudy?: StudySummary): HTMLElement {
   const sorted = (list: SubRow[]): SubRow[] => {
     if (breakdownSort === 'weakest') {
+      // Weakest = lowest ACCURACY among answered topics (the same number the
+      // rows show); topics with no answers yet follow, in syllabus order.
       return [...list].sort((a, b) => {
-        const st = STATUS_RANK[a.status] - STATUS_RANK[b.status];
-        if (st !== 0) return st;
-        if (a.mastery !== b.mastery) return a.mastery - b.mastery;
+        const aa = a.attempts > 0 ? 0 : 1;
+        const bb = b.attempts > 0 ? 0 : 1;
+        if (aa !== bb) return aa - bb;
+        if (a.accuracy !== b.accuracy) return a.accuracy - b.accuracy;
         return a.meta.order - b.meta.order;
       });
     }
@@ -365,17 +362,18 @@ function breakdownRow(row: SubRow): HTMLElement {
   return el('button', {
     class: 'track-row',
     type: 'button',
-    ariaLabel: `${row.meta.name} — ${STUDY_WORD[row.study]}, Accuracy ${row.mastery}%, ${row.answered} attempted`,
+    ariaLabel: `${row.meta.name} — ${STUDY_WORD[row.study]}, ${ACCURACY_LABEL} ${formatAccuracy({ pct: accuracyPct(row.correct, row.attempts) })}, ${row.answered} attempted`,
     onClick: () => openLearn(row.meta.id),
   }, [
     el('div', { class: 'track-row-main' }, [
       el('span', { class: 'track-row-name', text: row.meta.name }),
       el('div', { class: 'track-row-badges' }, [
         row.meta.band ? bandBadge(row.meta.band) : null,
-        studyStatusChip(row.study),
+        // N18: current affairs is a continuous stream, never "studied".
+        row.meta.subjectCode === 'CA' ? chip({ text: caUpToDateLine(), tone: 'default', iconName: 'calendar' }) : studyStatusChip(row.study),
       ]),
     ]),
-    el('div', { class: 'track-row-cov' }, [progressBar({ value: row.mastery / 100, label: 'Accuracy', caption: `${row.mastery}%`, success: row.mastery >= 100 })]),
+    el('div', { class: 'track-row-cov' }, [progressBar({ value: row.accuracy, label: ACCURACY_LABEL, caption: accuracyCaption({ correct: row.correct, answered: row.attempts, pct: accuracyPct(row.correct, row.attempts) }), success: row.attempts > 0 && row.correct === row.attempts })]),
     el('div', { class: 'track-row-counts' }, [
       statPill('drill', `${row.answered} tried`),
       row.examCoverage ? statPill('target', `${row.examCoverage.pct}% cov`) : null,

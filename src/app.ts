@@ -21,13 +21,13 @@ import { el } from './views/dom';
 import { icon, type IconName } from './views/components/icon';
 import { PATHS, registerTopbar } from './views/shell';
 import * as today from './views/today';
+import * as todayTasks from './views/today-tasks';
 import * as planner from './views/planner';
 import * as startGuide from './views/start';
 import * as drill from './views/drill';
 import * as mock from './views/mock';
 import * as notebook from './views/notebook';
 import * as syllabus from './views/syllabus';
-import * as notes from './views/notes';
 import * as revise from './views/revise';
 import * as learn from './views/learn';
 import * as mains from './views/mains';
@@ -36,6 +36,7 @@ import * as telugu from './views/telugu';
 import * as english from './views/english';
 import * as settings from './views/settings';
 import * as formulaSheet from './views/formula-sheet';
+import * as weakView from './views/weak';
 import { openSearch } from './views/search';
 import { openDialog, type DialogController } from './views/dialog';
 
@@ -77,14 +78,14 @@ interface NavSection {
   items: NavItem[];
 }
 
-const TODAY: NavItem = { label: 'Today', path: PATHS.today, iconName: 'dashboard', owns: ['/today', '/start'] };
+const TODAY: NavItem = { label: 'Today', path: PATHS.today, iconName: 'dashboard', owns: ['/today', '/start', '/set/'] };
 const PLAN: NavItem = { label: 'Plan', path: PATHS.plan, iconName: 'calendar' };
 const TOPICS: NavItem = { label: 'Topics', path: PATHS.topics, iconName: 'syllabus', owns: ['/learn/', '/notes'] };
 const PRACTICE: NavItem = { label: 'Practice', path: PATHS.practice, iconName: 'drill', owns: ['/q/'] };
 const REVISE: NavItem = { label: 'Revise', path: PATHS.revise, iconName: 'revise', owns: ['/formula-sheet'] };
 const PROGRESS: NavItem = { label: 'Progress', path: PATHS.progress, iconName: 'notebook' };
 const MAINS: NavItem = { label: 'Mains', path: PATHS.mains, iconName: 'notes' };
-const LANGUAGES: NavItem = { label: 'Languages', path: PATHS.languages, iconName: 'globe', owns: ['/telugu', '/english'] };
+const LANGUAGES: NavItem = { label: 'Languages', path: PATHS.languages, iconName: 'globe', owns: ['/telugu', '/english', '/languages/telugu'] };
 
 /**
  * The single source of nav truth: (no eyebrow) Today · Plan — Study: Topics ·
@@ -495,10 +496,11 @@ export function renderApp(root: HTMLElement): void {
   };
 
   page(PATHS.today, 'Today', today.render);
+  // N11: every Today practice set has its own URL.
+  page('/set/:kind/:date', 'Practice set', todayTasks.renderSetRoute, ['Practice set', 'Today']);
   page(PATHS.plan, 'Plan', planner.render);
   page('/start', 'How this app works', startGuide.render);
   page(PATHS.topics, 'Topics', syllabus.render);
-  page('/notes', 'All notes', notes.render, ['All notes', 'Topics']);
   page(PATHS.practice, 'Practice', drill.render, ['Quick practice', 'Practice']);
   page(PATHS.mock, 'Practice', mock.render, ['Timed mock', 'Practice']);
   page('/practice/mock/results/:attemptId', 'Mock results', mock.renderResultsRoute, ['Mock results', 'Practice']);
@@ -506,12 +508,18 @@ export function renderApp(root: HTMLElement): void {
   page(PATHS.revise, 'Revise', revise.render);
   page(PATHS.flashcards, 'Flashcards', revise.renderFlashcards, ['Flashcards', 'Revise']);
   page(PATHS.mistakes, 'My mistakes', notebook.render, ['My mistakes', 'Revise']);
+  // N15: weekly revision = due flashcards + this week's mistakes, one session.
+  page(PATHS.weekly, 'Weekly revision', revise.renderWeekly, ['Weekly revision', 'Revise']);
+  // N16: the weak-topics view has its own page.
+  page(PATHS.weak, 'Weak topics', weakView.render, ['Weak topics', 'Revise']);
   page('/formula-sheet', 'Formula sheet', formulaSheet.render, ['Formula sheet', 'Revise']);
   page(PATHS.progress, 'Progress', progress.render);
   page(PATHS.mains, 'Mains', mains.render);
   page('/mains/:id', 'Mains', mains.renderWorkspace, ['Answer writing', 'Mains']);
   page(PATHS.languages, 'Languages', telugu.renderLanguagesHub);
   page('/telugu', 'Telugu', telugu.render, ['Telugu', 'Languages']);
+  // D24: each Telugu lesson has its own URL (Back / reload / share keep it).
+  page('/languages/telugu/lesson/:n', 'Telugu', telugu.renderLessonRoute, ['Telugu lesson', 'Languages']);
   page('/english', 'English', english.render, ['English', 'Languages']);
   page(PATHS.settings, 'Settings', settings.render);
   // Learn: the view owns the h1 (topic name), the breadcrumb and the back link.
@@ -531,6 +539,9 @@ export function renderApp(root: HTMLElement): void {
   registerRedirect('/drill', PATHS.practice);
   registerRedirect('/mock', PATHS.mock);
   registerRedirect('/notebook', PATHS.mistakes);
+  registerRedirect('/weak', PATHS.weak);
+  // D34: the orphan "All notes" page (CA notes only) is gone — Topics lists every subject's notes.
+  registerRedirect('/notes', PATHS.topics);
   registerRedirect('/learn/:id', (p) => learn.defaultLearnPath(p.id ?? ''));
 
   if (!globalsBound) {

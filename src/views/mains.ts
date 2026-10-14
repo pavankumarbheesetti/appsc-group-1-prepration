@@ -475,17 +475,62 @@ export function renderWorkspace(root: HTMLElement): void {
   }
 
   const { item } = entry;
+  // Writing pad FIRST (D25): the model answer stays hidden until the learner
+  // has written something or taps "I'm stuck".
+  const gate = modelGate(item);
   mount(
     root,
     el('div', { class: 'mains-ws' }, [
       workspaceHeader(entry),
+      workspacePractice(item, gate.onWords),
       workspaceFramework(item),
-      workspaceModel(item),
-      workspacePractice(item),
+      gate.el,
       workspaceRubric(item),
       workspaceActions(item),
     ]),
   );
+}
+
+/** Words the learner must write before "Show model answer" unlocks. */
+export const MODEL_UNLOCK_WORDS = 30;
+
+/**
+ * The model-answer GATE: a card that keeps the annotated model hidden behind
+ * "Show model answer" (enabled once the draft has {@link MODEL_UNLOCK_WORDS}
+ * words) or "I'm stuck" (reveals at once). `onWords` is fed by the pad. @internal
+ */
+function modelGate(item: MainsItem): { el: HTMLElement; onWords: (n: number) => void } {
+  const wrap = el('div', { class: 'mains-model-gate', attrs: { 'data-state': 'hidden' } });
+  let words = countWords(getMainsEntry(item.id)?.draft ?? '');
+  const reveal = (): void => {
+    wrap.setAttribute('data-state', 'shown');
+    wrap.replaceChildren(workspaceModel(item));
+  };
+  const show = button({ label: 'Show model answer', variant: 'primary', onClick: () => reveal() });
+  const stuck = button({ label: 'I\u2019m stuck', variant: 'ghost', onClick: () => reveal() });
+  const hint = el('p', { class: 'section-lead mains-gate-hint', attrs: { 'aria-live': 'polite' } });
+  const paint = (): void => {
+    const ready = words >= MODEL_UNLOCK_WORDS;
+    show.disabled = !ready;
+    show.setAttribute('aria-disabled', String(!ready));
+    hint.textContent = ready
+      ? 'Now compare your answer with the model.'
+      : `Write your answer first (${words}/${MODEL_UNLOCK_WORDS} words) \u2014 or tap \u201cI\u2019m stuck\u201d to see the model now.`;
+  };
+  paint();
+  wrap.append(
+    card({ title: 'Model answer', class: 'mains-model-locked' }, [
+      hint,
+      el('div', { class: 'mains-practice-actions' }, [show, stuck]),
+    ]),
+  );
+  return {
+    el: wrap,
+    onWords: (n) => {
+      words = n;
+      if (wrap.getAttribute('data-state') === 'hidden') paint();
+    },
+  };
 }
 
 /** Header: question, paper/marks, detected directive + demand. @internal */
@@ -533,8 +578,9 @@ function workspaceFramework(item: MainsItem): HTMLElement {
       el('h4', { text: title }),
       el('ul', { class: 'mains-tech-list' }, points.map((p) => el('li', { text: p }))),
     ]);
-  return card({ title: 'Framework — a scaffold to write against', class: 'mains-fw' }, [
-    el('p', { class: 'section-lead', text: 'Plan your answer against this skeleton before you write.' }),
+  return el('details', { class: 'card mains-fw' }, [
+    el('summary', { class: 'mains-fw-summary', text: 'Need a plan? Framework to write against' }),
+    el('p', { class: 'section-lead', text: 'An Intro / Body / Conclusion skeleton for this question.' }),
     block('Introduction', fw.intro),
     block('Body — main points', fw.body),
     block('Conclusion', fw.conclusion),
@@ -580,7 +626,7 @@ function workspaceModel(item: MainsItem): HTMLElement {
     ]);
   } else {
     body = el('div', { class: 'mains-model-body' }, [
-      el('p', { class: 'section-lead', text: 'No model answer or key points authored for this question yet — write against the framework above.' }),
+      el('p', { class: 'section-lead', text: 'No model answer or key points authored for this question yet — check your answer against the framework.' }),
     ]);
   }
 
@@ -590,7 +636,7 @@ function workspaceModel(item: MainsItem): HTMLElement {
 }
 
 /** Practice textarea with live word count + stopwatch (persisted draft). @internal */
-function workspacePractice(item: MainsItem): HTMLElement {
+function workspacePractice(item: MainsItem, onWords: (n: number) => void = () => {}): HTMLElement {
   const saved = getMainsEntry(item.id);
   const budget = budgetFor(item.marks);
 
@@ -614,9 +660,11 @@ function workspacePractice(item: MainsItem): HTMLElement {
 
   // Autosave the draft on input (offline localStorage) and update the count.
   textarea.addEventListener('input', () => {
-    countEl.textContent = `${countWords(textarea.value)} words`;
+    const n = countWords(textarea.value);
+    countEl.textContent = `${n} words`;
     saveMainsDraft(item.id, textarea.value);
     status.textContent = '';
+    onWords(n);
   });
 
   // Stopwatch (ephemeral — not persisted).
@@ -637,6 +685,7 @@ function workspacePractice(item: MainsItem): HTMLElement {
     onClick: () => {
       textarea.value = '';
       countEl.textContent = '0 words';
+      onWords(0);
       clearMains(item.id);
       status.textContent = 'Cleared';
       // Reset the rubric UI too, since clearMains removes its scores.
@@ -834,7 +883,7 @@ function workspaceActions(item: MainsItem): HTMLElement {
             },
           }),
       done ? button({ label: 'Back to Today', variant: 'primary', onClick: () => navigate('/') }) : null,
-      button({ label: 'Back to list', variant: 'secondary', onClick: () => navigate('/mains') }),
+      button({ label: 'Back to library', variant: 'secondary', onClick: () => navigate('/mains') }),
     ];
     box.replaceChildren(...parts.filter((p): p is HTMLElement => p !== null));
   };

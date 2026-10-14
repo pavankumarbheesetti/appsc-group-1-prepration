@@ -138,6 +138,8 @@ describe('Sunday shape at the 360-min default (D20)', () => {
   });
 
   it('the fortnightly Mains answer is on the first December revision Sunday — also when behind', () => {
+    // N6: only questions of studied topics are practised.
+    markTopicStudied('econ-agriculture', true, START);
     const mainsOn = (iso: string): boolean =>
       planDayFor(currentPlan(at(iso)), '2026-12-13')?.blocks.some((b) => b.kind === 'mains-write') ?? false;
     expect(mainsOn(START)).toBe(true);
@@ -157,5 +159,73 @@ describe('Planner "This week" = the Mon–Sun calendar week with what was done (
     expect(rows[0]!.textContent).toContain('\u2713');
     expect(rows[2]!.className).toContain('is-today');
     expect(addDaysISO('2026-10-12', 6)).toBe('2026-10-18');
+  });
+});
+
+describe('Mains practice scope + revision-cycle labels + live behind count (N6/N7/D29)', () => {
+  it('Mains practice only picks questions of studied topics (pre- and post-Prelims)', async () => {
+    const { getBanks } = await import('../../content/loader');
+    const subOf = new Map<string, string>();
+    for (const l of getBanks('mains')) if (l.bank.kind === 'mains') for (const it of l.bank.items) if (it.subtopicId) subOf.set(it.id, it.subtopicId);
+    // Nothing studied → no Mains answer row anywhere in the plan.
+    expect(currentPlan(at(START)).days.some((d) => d.blocks.some((b) => b.kind === 'mains-write'))).toBe(false);
+    markTopicStudied('econ-agriculture', true, START);
+    const pre = currentPlan(at(START)).days.flatMap((d) => d.blocks).filter((b) => b.kind === 'mains-write');
+    expect(pre.length).toBeGreaterThan(0);
+    for (const b of pre) expect(subOf.get(b.mainsQuestionId!)).toBe('econ-agriculture');
+    setClock('2027-01-25');
+    const post = currentPlan(at('2027-01-25'));
+    expect(post.summary.postPrelims).toBe(true);
+    const ids = post.days.flatMap((d) => d.mainsQuestionIds);
+    expect(ids.length).toBeGreaterThan(0);
+    for (const id of ids) expect(subOf.get(id)).toBe('econ-agriculture');
+    for (const d of post.days) {
+      const p = d.mainsPaperRevision;
+      if (p) for (const sid of p.subtopicIds) expect(sid).toBe('econ-agriculture');
+    }
+  });
+
+  it('December labels: "Revise · X" days hold revisits, recovery days say "Catch up · X (new topics)", never day 0 of 0 / (spill)', () => {
+    setClock('2026-12-07'); // nothing studied → recovery moves new topics into the revision cycle
+    const plan = currentPlan(at('2026-12-07'));
+    const dec = plan.days.filter((d) => d.dateISO >= '2026-12-07' && d.dateISO <= '2026-12-20');
+    expect(dec.length).toBeGreaterThan(0);
+    let catchUp = 0;
+    for (const d of dec) {
+      for (const b of d.blocks) expect(b.label).not.toContain('(spill)');
+      if (!d.unitId) continue;
+      expect(d.unitDays, d.dateISO).toBeGreaterThan(0);
+      expect(d.unitDay).toBeGreaterThan(0);
+      const fresh = d.blocks.some((b) => b.kind === 'subject' && (b.topics ?? []).length > 0);
+      if (d.unitTitle?.startsWith('Revise \u00b7 ') && d.unitId !== 'revise-studied') {
+        expect(fresh, d.dateISO).toBe(false);
+        expect(d.blocks.some((b) => b.kind === 'targeted-revision' && (b.topics ?? []).length > 0), d.dateISO).toBe(true);
+      }
+      if (fresh) {
+        expect(d.unitTitle, d.dateISO).toMatch(/^Catch up \u00b7 .+ \(new topics\)$/);
+        catchUp += 1;
+      }
+    }
+    expect(catchUp).toBeGreaterThan(0);
+    const root = renderInto(planner);
+    expect(root.textContent).not.toContain('(spill)');
+    expect(root.textContent).not.toMatch(/day 0 of 0/i);
+    const t = renderInto(today);
+    expect(t.textContent).not.toMatch(/day 0 of 0/i);
+  });
+
+  it('the behind count keeps moving with nothing studied after the on-time coverage end, and >14 days shows the far-behind options', () => {
+    const a = currentPlan(at('2026-12-14')).summary.daysBehind;
+    setClock('2026-12-21');
+    const b = currentPlan(at('2026-12-21')).summary;
+    expect(b.daysBehind).toBeGreaterThan(a);
+    const banner = behindBanner(b, '2026-12-21')!;
+    expect(banner.tone).toBe('reduced');
+    const opts = banner.options.join(' | ');
+    expect(opts).toMatch(/study time/i);
+    // N22 — the exam date is fixed by APPSC: never offered.
+    expect(opts).not.toMatch(/exam date/i);
+    expect(opts).toMatch(/quick pass/i);
+    expect(opts).not.toMatch(/Saturday catch-up/);
   });
 });

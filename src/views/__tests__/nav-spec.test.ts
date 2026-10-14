@@ -277,7 +277,9 @@ describe('Practice results — own URL, Next up, browser Back', () => {
     expect(location.hash).toBe(`#/learn/${STONE}/practice/results?from=today`);
     expect(view(root).textContent).toContain('Practice complete');
     const footer = view(root).querySelector<HTMLElement>('.next-up')!;
-    expect(footer.querySelector('.next-up-eyebrow')?.textContent).toMatch(/^Stone Age \u2014 /);
+    // N12: the score line is stated once (the card), the footer just says next up.
+    expect(footer.querySelector('.next-up-eyebrow')?.textContent).toBe('Next up');
+    expect((view(root).textContent ?? '').match(/Stone Age \u2014 /g)?.length ?? 0).toBeLessThanOrEqual(1);
     expect(footer.querySelector('.next-up-primary')?.textContent).toBe('Mark studied & go to next topic');
     expect([...footer.querySelectorAll('.next-up-link')].map((b) => b.textContent)).toContain('Back to notes');
 

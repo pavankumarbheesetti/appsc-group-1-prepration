@@ -61,6 +61,7 @@ describe('mock setup — full official paper by section weight', () => {
   it('running a full Paper-I mock draws exactly 120 questions by section weight', () => {
     const root = render();
     byText(root, 'button', 'Start Paper-I')!.click();
+    startTimer(root);
     expect(root.querySelector('.mock-running')).not.toBeNull();
     // Exactly the official 120-question paper.
     expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(120);
@@ -84,6 +85,7 @@ describe('mock setup — full official paper by section weight', () => {
     // Pick the History & Culture section (30 Q).
     byText(root, '.mock-len-btn', 'History & Culture')!.click();
     byText(root, 'button', 'Start section')!.click();
+    startTimer(root);
     expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(30);
   });
 
@@ -92,6 +94,7 @@ describe('mock setup — full official paper by section weight', () => {
     byText(root, '.mock-scope-btn', 'Paper-II')!.click();
     expect(root.textContent).toContain('A 60 · B(i) 30 · B(ii) 30');
     byText(root, 'button', 'Start Paper-II')!.click();
+    startTimer(root);
     expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(120);
     submitAndConfirm(root);
     // Paper-II has three sections.
@@ -106,6 +109,7 @@ describe('mock engine — non-repeating series (deterministic)', () => {
     // assert the running paper is deterministic by re-rendering the same mock.
     const rootA = render();
     byText(rootA, 'button', 'Start Paper-I')!.click();
+    startTimer(rootA);
     const a = [...rootA.querySelectorAll('.mock-grid-cell')].length;
     expect(a).toBe(120);
   });
@@ -159,6 +163,7 @@ describe('mock running — no per-question feedback + submit', () => {
 
     // Start.
     byText(root, 'button', 'Start mock')!.click();
+    startTimer(root);
     expect(root.querySelector('.mock-running')).not.toBeNull();
     // Overall countdown is shown (not a per-question timer).
     expect(root.querySelector('.mock-countdown')).not.toBeNull();
@@ -214,6 +219,7 @@ describe('mock running — confidence tags → skip-guesses on results', () => {
     select.dispatchEvent(new Event('change'));
     byText(root, '.mock-len-btn', '19')!.click();
     byText(root, 'button', 'Start mock')!.click();
+    startTimer(root);
 
     // The confidence segmented control is present with the three tags.
     expect(root.querySelector('.mock-confidence')).not.toBeNull();
@@ -262,6 +268,7 @@ describe('mock setup — OMR mode on full papers', () => {
 
     // Start → the roll-number + booklet-series bubbling drill first.
     byText(root, 'button', 'Start Paper-I')!.click();
+    startTimer(root);
     expect(root.querySelector('.omr-identity')).not.toBeNull();
     expect(root.querySelectorAll('.omr-roll .omr-bubble').length).toBeGreaterThan(0);
 
@@ -325,6 +332,13 @@ import { loadTestSession, saveTestSession } from '../../lib/test-session';
 import { loadState } from '../../state/store';
 import { vi, afterEach } from 'vitest';
 
+/** Press Start on the pre-test instructions screen (shown before every timed test). */
+function startTimer(root: HTMLElement): void {
+  const b = [...root.querySelectorAll<HTMLButtonElement>('button')].find((x) => x.textContent?.includes('Start the test'));
+  if (!b) throw new Error('instructions screen missing');
+  b.click();
+}
+
 describe('mock — submit asks for confirmation; leaving autosaves; resume restores', () => {
   beforeEach(() => {
     __resetForTests();
@@ -344,6 +358,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     select.dispatchEvent(new Event('change'));
     byText(root, '.mock-len-btn', '19')!.click();
     byText(root, 'button', 'Start mock')!.click();
+    startTimer(root);
   }
 
   it('Submit opens a confirm showing the unanswered count; Keep working cancels', () => {
@@ -423,6 +438,7 @@ describe('mock — OMR identity must be completed or explicitly skipped', () => 
     const root = render();
     root.querySelector<HTMLElement>('.mock-omr-toggle')!.click();
     byText(root, 'button', 'Start Paper-I')!.click();
+    startTimer(root);
     const cols = [...root.querySelectorAll<HTMLElement>('.omr-roll-col')];
     cols.forEach((_, c) => {
       root.querySelectorAll<HTMLElement>('.omr-roll-col')[c]!.querySelectorAll<HTMLElement>('.omr-bubble')[c]!.click();

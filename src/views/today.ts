@@ -15,7 +15,7 @@
  */
 import { getBanks, getSubtopic } from '../content/loader';
 import type { MainsItem } from '../content/types';
-import { behindBanner, planDayFor, type Plan, type PlanDay, type PlanSummary } from '../engine/planner';
+import { BEGINNER_RAMP_BUDGET_MIN, behindBanner, planDayFor, type Plan, type PlanDay, type PlanSummary } from '../engine/planner';
 import { navigate } from '../router/router';
 import {
   loadState,
@@ -26,6 +26,9 @@ import {
   setPlanStartDate,
 } from '../state/store';
 import { currentPlan } from '../lib/plan';
+import { weekTestNumber } from '../lib/test-number';
+import type { ReviewableAttempt } from '../lib/review-scope';
+import { isTopicStudied } from '../lib/study-status';
 import { diffDaysISO, daysToGo, todayISO, addDaysISO } from '../lib/dates';
 import { adminCardsFor, isExamDay, type AdminCardId } from '../lib/day-tasks';
 import { continueHint, openLearn } from './learn';
@@ -99,7 +102,7 @@ export function render(root: HTMLElement): void {
     root,
     dateNotice,
     resumeTestCard(() => openResumeTest(), () => render(root)),
-    buildRecoveryBanner(root, summary, today),
+    buildRecoveryBanner(root, summary, today, todayDay),
     buildNowHero(root, summary, today, todayDay, reviseCtx, rows, plan),
     ...buildAdminCards(root, today, todayDay, summary.examDateISO),
     allMastered ? masteredCard() : buildChecklist(root, todayDay, reviseCtx, rows),
@@ -255,8 +258,9 @@ function buildPrelimsDateNotice(root: HTMLElement, summary: PlanSummary): HTMLEl
  * confirm (all progress is kept) — offered only before the first-pass coverage
  * end. Returns `null` when not behind. @internal
  */
-function buildRecoveryBanner(root: HTMLElement, summary: PlanSummary, today: string): HTMLElement | null {
-  const copy = behindBanner(summary, today);
+function buildRecoveryBanner(root: HTMLElement, summary: PlanSummary, today: string, day?: PlanDay): HTMLElement | null {
+  // D4/N22: no banner on a day off, the light day or exam eve.
+  const copy = behindBanner(summary, today, day);
   if (!copy) return null;
   const actions = el('div', { class: 'today-banner-actions' });
   const idle = (): void => {
@@ -364,7 +368,7 @@ function buildNowHero(
           el('span', { class: 'hero-now-eyebrow', text: 'Up now' }),
           el('span', { class: 'hero-now-title', text: focus.title }),
           el('span', { class: 'hero-now-meta' }, [
-            el('span', { text: focus.context }),
+            el('span', { text: heroContext(focus.title, focus.context) }),
             chip({ text: fmtDuration(focus.minutes), tone: 'default', iconName: 'timer' }),
           ]),
           el('span', { class: 'hero-now-hint', text: focus.hint }),
@@ -383,6 +387,20 @@ function buildNowHero(
   return el('section', { class: 'hero' }, [left]);
 }
 
+/**
+ * D28: the hero's context line without repeating its title ("Dress rehearsal"
+ * / "Dress rehearsal — practise the 2-hour format…" → "Practise the 2-hour
+ * format…"). Empty when the context IS the title. PURE. @internal
+ */
+export function heroContext(title: string, context: string): string {
+  const t = title.trim();
+  const c = context.trim();
+  if (c.toLowerCase() === t.toLowerCase()) return '';
+  if (!c.toLowerCase().startsWith(t.toLowerCase())) return c;
+  const rest = c.slice(t.length).replace(/^[\s\u00b7:\u2014\u2013-]+/, '');
+  return rest ? `${rest.charAt(0).toUpperCase()}${rest.slice(1)}` : '';
+}
+
 /** `Continue at <section> →` for a topic already part-read (else null). @internal */
 function continueLink(row: DayRow | undefined): HTMLElement | null {
   const id = row?.topic?.subtopicId;
@@ -398,14 +416,23 @@ function continueLink(row: DayRow | undefined): HTMLElement | null {
 }
 
 /** "Tomorrow: A · B · C" — a one-line preview of the next plan day. @internal */
-function tomorrowPreview(plan: Plan, today: string): HTMLElement | null {
-  const next = planDayFor(plan, addDaysISO(today, 1));
+export function tomorrowPreview(plan: Plan, today: string): HTMLElement | null {
+  const nextISO = addDaysISO(today, 1);
+  // N8: re-plan AS OF tomorrow so topics finished today (incl. ones studied
+  // ahead of schedule) drop out — the preview shows what is really next.
+  const [y, m, d] = nextISO.split('-').map(Number);
+  const replanned = y && m && d ? planDayFor(currentPlan(new Date(y, m - 1, d, 12)), nextISO) : undefined;
+  const next = replanned ?? planDayFor(plan, nextISO);
   if (!next) return null;
   const names: string[] = [];
   for (const b of next.blocks) {
-    const real = (b.topics ?? []).filter((t) => t.kind !== 'practice');
+    const real = (b.topics ?? []).filter((t) => t.kind !== 'practice' && !isTopicStudied(t.subtopicId));
     if (real.length > 0) names.push(...real.map((t) => t.name || getSubtopic(t.subtopicId)?.meta.name || t.subtopicId));
-    else names.push(b.label);
+    else if (b.kind === 'week-test') {
+      // N23: the same learner-facing number as the row and the test itself.
+      const st = loadState();
+      names.push(`Week test ${weekTestNumber(b.weekTestDateISO ?? next.dateISO, st.testAttempts as ReviewableAttempt[], st.settings.planStartDate)}`);
+    } else if ((b.topics ?? []).length === 0) names.push(b.label);
   }
   const text = names.length > 0
     ? `Tomorrow (${prettyDowDate(next.dateISO)}): ${names.slice(0, 4).join(' \u00b7 ')}${names.length > 4 ? ` +${names.length - 4} more` : ''}`
@@ -419,7 +446,10 @@ function tomorrowPreview(plan: Plan, today: string): HTMLElement | null {
  */
 function buildUnitLine(day: PlanDay | undefined): HTMLElement | null {
   if (!day || !day.unitId || !day.unitTitle) return null;
-  const text = `This week: ${unitShortTitle(day.unitTitle)} · day ${day.unitDay} of ${day.unitDays}`;
+  // N28: a one-day unit (revision-cycle / catch-up days) has no week progress
+  // to show — "day 1 of 1" every day meant nothing.
+  const progress = day.unitDays > 1 ? ` · day ${day.unitDay} of ${day.unitDays}` : '';
+  const text = `This week: ${unitShortTitle(day.unitTitle)}${progress}`;
   return el('p', { class: 'hero-unit-line', text });
 }
 
@@ -460,14 +490,38 @@ function buildChecklist(root: HTMLElement, day: PlanDay | undefined, reviseCtx: 
   const today = day.dateISO;
   const budget = day.budgetMin ?? 0;
   const planned = day.plannedMinutes ?? 0;
-  const doneCount = rows.filter((r) => rowDone(r, today)).length;
+  const doneRows = rows.filter((r) => rowDone(r, today));
+  const doneCount = doneRows.length;
+  // N9: the time actually used today (done rows) against the day's plan, and
+  // the day's REAL budget — with the beginner ramp explained.
+  const usedMin = doneRows.reduce((a, r) => a + rowView(r, { reviseCtx, day }).minutes, 0);
+  const daily = loadState().settings.dailyStudyMinutes;
+  const ramp = isRampDay(day, daily);
+  const timeLine = budget > 0
+    ? ` \u00b7 ${fmtDuration(usedMin)} used of ${fmtDuration(planned)} planned \u00b7 today\u2019s budget ${fmtDuration(budget)}`
+    : '';
   return card(
     {
       title: 'Today\u2019s plan',
-      subtitle: `${doneCount} of ${rows.length} done${budget > 0 ? ` \u00b7 ${fmtDuration(planned)} of ${fmtDuration(budget)}` : ''}`,
+      subtitle: `${doneCount} of ${rows.length} done${timeLine}`,
     },
-    [el('ul', { class: 'today-checklist' }, rows.map((r) => checklistRow(root, r, { reviseCtx, day }, today)))],
+    [
+      ramp
+        ? el('p', {
+            class: 'today-ramp-note section-lead',
+            text: `First week: ${fmtDuration(BEGINNER_RAMP_BUDGET_MIN)} days to ease you in \u2014 your ${fmtDuration(daily)} weekday budget (Settings) starts after that.`,
+          })
+        : null,
+      el('ul', { class: 'today-checklist' }, rows.map((r) => checklistRow(root, r, { reviseCtx, day }, today))),
+    ],
   );
+}
+
+/** True on a beginner-ramp weekday (budget capped below the learner's own). @internal */
+export function isRampDay(day: PlanDay, dailyBudgetMin: number): boolean {
+  const dow = new Date(`${day.dateISO}T12:00:00`).getDay();
+  return dow >= 1 && dow <= 5 && !day.dayOff && !day.light
+    && day.budgetMin === Math.min(BEGINNER_RAMP_BUDGET_MIN, dailyBudgetMin) && day.budgetMin < dailyBudgetMin;
 }
 
 /** One slim checklist row with its tick. @internal */
@@ -653,7 +707,7 @@ function buildMainsToday(day: PlanDay | undefined): HTMLElement {
       class: 'section-lead',
       text: rows.length > 0
         ? `Mains practice: ${rows.length} question${rows.length === 1 ? '' : 's'} for today.`
-        : 'Mains practice continues here after Prelims.',
+        : 'Mains practice only uses topics you have studied \u2014 none of your studied topics has a Mains question yet. Study a topic (Mark as studied) and its Mains questions appear here.',
     }),
     rows.length > 0
       ? el('div', { class: 'study-list today-mains-list' }, rows)

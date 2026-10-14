@@ -11,6 +11,7 @@
 import { planSubtopics } from './plan';
 import { topicStudyFrom, type StudyStatus } from './study-status';
 import type { AppState } from '../state/store';
+import { getCaUpdatedThrough } from '../content/loader';
 
 /** Studied / in-progress counts over a set of subtopics. */
 export interface StudyCounts {
@@ -69,4 +70,11 @@ export function studiedLine(c: Pick<StudyCounts, 'studied' | 'total'>): string {
 /** True when the learner has studied/started ANY topic (status, not answers). */
 export function anyStudyActivity(state: AppState): boolean {
   return Object.values(state.study).some((e) => e.mark === 'studied' || e.notesOpened === true);
+}
+
+/** "Up to date through Oct 2026" — the CA banks' coverage (N18). */
+export function caUpToDateLine(): string {
+  const [y, m] = getCaUpdatedThrough().split('-').map(Number);
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `Up to date through ${MONTHS[(m ?? 1) - 1]} ${y}`;
 }

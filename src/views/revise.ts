@@ -15,7 +15,9 @@
  * `'correct'`) — scheduled via {@link review} into the store's `flashcards` SR
  * map. DOM-only; all logic is pure/engine code.
  */
-import { getCards, getSubtopic, getSubtopics } from '../content/loader';
+import { getBanks, getCards, getSubtopic, getSubtopics } from '../content/loader';
+import type { MCQItem } from '../content/types';
+import { mountQuiz } from './quiz';
 import { isRevisable } from '../lib/study-status';
 import { activeEntries } from '../engine/notebook';
 import {
@@ -24,10 +26,10 @@ import {
   DAILY_SESSION_CAP,
   type Flashcard,
 } from '../engine/flashcards';
-import { newCard, review, type Grade } from '../engine/spaced-repetition';
+import { type Grade } from '../engine/spaced-repetition';
 import { navigate } from '../router/router';
 import { loadState, updateState } from '../state/store';
-import { flashcardDue, flashcardTodayLine, revisableCuratedCards, todaysSession } from '../lib/due';
+import { flashcardDue, flashcardTodayLine, gradeFlashcard, revisableCuratedCards, todaysSession } from '../lib/due';
 import { completeActiveTask } from '../lib/day-tasks';
 import { el, mount, renderInline } from './dom';
 import { card } from './components/card';
@@ -104,8 +106,7 @@ function readyTopicCount(): number {
 function recordFlashcard(id: string, grade: Grade): void {
   const now = Date.now();
   updateState((s) => {
-    const existing = s.flashcards[id] ?? newCard(id, now);
-    s.flashcards[id] = review(existing, grade, now);
+    s.flashcards[id] = gradeFlashcard(s.flashcards[id], id, grade, now);
   });
 }
 
@@ -172,7 +173,8 @@ export function render(root: HTMLElement): void {
             `Weak topics (${weak})`,
             'Your weakest topics by accuracy',
             'View weak topics',
-            () => navigate(PATHS.progress),
+            // N16: the weak-topics view itself, not Progress.
+            () => navigate(PATHS.weak),
           ),
         ]),
       ],
@@ -236,7 +238,7 @@ export function renderFlashcards(root: HTMLElement): void {
 let keepGoingOnce = false;
 
 /**
- * "Done for today — N more due tomorrow" after the day's capped session, with
+ * "Done for today — N due tomorrow" after the day's capped session, with
  * an optional "Keep going" link when cards are still due now. @internal
  */
 function doneForTodayState(
@@ -245,7 +247,7 @@ function doneForTodayState(
   dueNow: number,
   onKeepGoing: (() => void) | null,
 ): void {
-  const heading = dueTomorrow > 0 ? `Done for today \u2014 ${dueTomorrow} more due tomorrow` : 'Done for today';
+  const heading = dueTomorrow > 0 ? `Done for today \u2014 ${dueTomorrow} due tomorrow` : 'Done for today';
   mount(
     root,
     card({ title: 'Revise' }, [
@@ -259,7 +261,7 @@ function doneForTodayState(
             ? el('a', {
                 class: 'btn btn-ghost',
                 href: '#/revise/flashcards',
-                text: `Keep going (${dueNow} due now)`,
+                text: `Keep going (${dueNow} waiting)`,
                 onClick: (e) => {
                   e.preventDefault();
                   onKeepGoing();
@@ -283,8 +285,12 @@ export function mountFlashcards(
   root: HTMLElement,
   deck: readonly Flashcard[],
   onMore: () => void = () => render(root),
-  opts: { daily?: boolean } = {},
+  opts: { daily?: boolean; onComplete?: (reviewed: number) => void } = {},
 ): void {
+  if (deck.length === 0 && opts.onComplete) {
+    opts.onComplete(0);
+    return;
+  }
   if (deck.length === 0) {
     const ready = readyTopicCount();
     emptyState(
@@ -303,14 +309,18 @@ export function mountFlashcards(
     keepGoingOnce = false;
     const daily = todaysSession(deck, sr, now, keepGoing);
     if (daily.length > 0) {
-      runReview(root, daily, onMore);
+      runReview(root, daily, onMore, opts.onComplete);
+      return;
+    }
+    if (opts.onComplete) {
+      opts.onComplete(0);
       return;
     }
     const due = flashcardDue(deck, sr, now);
     if (due.doneForToday) {
       // Nothing left for today: the Today row that opened this session is done.
       completeActiveTask('flashcards');
-      doneForTodayState(root, due.dueTomorrow, due.due, () => {
+      doneForTodayState(root, due.dueTomorrow, due.scheduled + due.newWaiting, () => {
         keepGoingOnce = true;
         mountFlashcards(root, deck, onMore, opts);
       });
@@ -318,12 +328,16 @@ export function mountFlashcards(
     }
   }
   const session = opts.daily ? [] : selectSession(deck, sr, now);
+  if (session.length === 0 && opts.onComplete) {
+    opts.onComplete(0);
+    return;
+  }
   if (session.length === 0) {
     completeActiveTask('flashcards');
     emptyState(root, "You're all caught up", 'Nothing is due for recall right now — spaced repetition will resurface these at the right time. 🎉');
     return;
   }
-  runReview(root, session, onMore);
+  runReview(root, session, onMore, opts.onComplete);
 }
 
 /**
@@ -343,7 +357,7 @@ function cueLabel(source: Flashcard['source']): string {
  * honest "N cards for today"; the progress bar fills as cards are cleared.
  * @internal
  */
-function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () => void): void {
+function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () => void, onComplete?: (reviewed: number) => void): void {
   const queue: Flashcard[] = [...initial];
   const sessionSize = queue.length;
   let idx = 0;
@@ -378,13 +392,18 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
   const draw = (): void => {
     const cardItem = queue[idx];
     if (!cardItem) {
+      // A multi-part session (weekly revision) continues with its next part.
+      if (onComplete) {
+        onComplete(reviewed);
+        return;
+      }
       // Session complete: tick the Today row that started it (if any).
       completeActiveTask('flashcards');
       const after = flashcardDue(revisableCuratedCards(), loadState().flashcards, Date.now());
       const next = nextStep();
       // When the day's plan is done, the next step is a weak topic (if any).
       const primary = next.kind === 'done' && weakTopicCount() > 0
-        ? { label: `Practise weak topics (${weakTopicCount()})`, onClick: () => navigate(PATHS.progress) }
+        ? { label: `Practise weak topics (${weakTopicCount()})`, onClick: () => navigate(PATHS.weak) }
         : next.kind === 'done'
           ? { label: 'Back to Today', onClick: () => navigate(PATHS.today) }
           : { label: next.kind === 'topic' ? `Next: today\u2019s topic \u2014 ${next.name ?? ''}` : next.label, onClick: next.go };
@@ -453,6 +472,100 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
   };
 
   draw();
+}
+
+/** One week, in ms (the weekly-revision mistakes window). */
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+
+/**
+ * The ids of the ACTIVE mistakes first made in the 7 days up to `now` — the
+ * weekly revision's mistakes part (N15). Oldest first.
+ */
+export function weekMistakeIds(now: number = Date.now()): string[] {
+  return activeEntries(loadState().notebook)
+    .filter((e) => e.addedAt >= now - WEEK_MS && e.addedAt <= now)
+    .sort((a, b) => a.addedAt - b.addedAt)
+    .map((e) => e.id);
+}
+
+/** MCQs by id across every bank. @internal */
+function mcqsByIds(ids: readonly string[]): MCQItem[] {
+  const want = new Set(ids);
+  const map = new Map<string, MCQItem>();
+  for (const { bank } of getBanks('mcq')) {
+    if (bank.kind !== 'mcq') continue;
+    for (const item of bank.items) if (want.has(item.id)) map.set(item.id, item);
+  }
+  return ids.flatMap((id) => (map.has(id) ? [map.get(id)!] : []));
+}
+
+/** One-shot title for the next {@link renderWeekly} (the Today row's name). @internal */
+let pendingSessionTitle: string | null = null;
+
+/** Open the flashcards + this week's mistakes session under `title`. */
+export function openRevisionSession(title: string): void {
+  pendingSessionTitle = title;
+  navigate(PATHS.weekly);
+}
+
+/**
+ * WEEKLY REVISION (`#/revise/weekly`, N15): ONE session of (1) the due
+ * flashcards, then (2) this week's mistakes (scoped to the last 7 days). The
+ * Today row that opened it ticks when both parts are done.
+ */
+export function renderWeekly(root: HTMLElement): void {
+  const title = pendingSessionTitle ?? 'Weekly revision';
+  pendingSessionTitle = null;
+  const deck = collectCuratedCards();
+  const mistakes = mcqsByIds(weekMistakeIds());
+  const due = flashcardDue(deck, loadState().flashcards, Date.now()).today;
+  const intro = card(
+    { title, subtitle: 'Part 1: due flashcards \u00b7 Part 2: this week\u2019s mistakes' },
+    [
+      el('p', { class: 'section-lead', text: `${due} card${due === 1 ? '' : 's'} due \u00b7 ${mistakes.length} mistake${mistakes.length === 1 ? '' : 's'} from the last 7 days.` }),
+      el('div', { class: 'focus-advance' }, [
+        button({ label: 'Start', variant: 'primary', iconName: 'arrow-right', onClick: () => partOne() }),
+      ]),
+    ],
+  );
+  const finish = (cards: number, answered: number): void => {
+    completeActiveTask('flashcards');
+    mount(
+      root,
+      el('div', { class: 'results' }, [
+        card({ title: `${title} complete` }, [
+          el('div', { class: 'empty-state', attrs: { 'data-state': 'weekly-done' } }, [
+            el('span', { class: 'empty-icon' }, [icon('check', 26)]),
+            el('h3', { text: `${cards} card${cards === 1 ? '' : 's'} \u00b7 ${answered} mistake${answered === 1 ? '' : 's'} revisited` }),
+            el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
+              button({ label: 'Back to Today', variant: 'primary', onClick: () => navigate(PATHS.today) }),
+            ]),
+          ]),
+        ]),
+      ]),
+    );
+  };
+  const partTwo = (cards: number): void => {
+    if (mistakes.length === 0) {
+      finish(cards, 0);
+      return;
+    }
+    mount(
+      root,
+      card({ title: 'Part 2 \u2014 this week\u2019s mistakes', subtitle: `${mistakes.length} question${mistakes.length === 1 ? '' : 's'} you got wrong in the last 7 days` }, [
+        el('div', { class: 'focus-advance' }, [
+          button({
+            label: `Review these ${mistakes.length}`,
+            variant: 'primary',
+            iconName: 'arrow-right',
+            onClick: () => mountQuiz(root, mistakes, () => finish(cards, mistakes.length)),
+          }),
+        ]),
+      ]),
+    );
+  };
+  const partOne = (): void => mountFlashcards(root, deck, () => renderWeekly(root), { daily: true, onComplete: partTwo });
+  mount(root, intro);
 }
 
 /** Re-export for callers that scope a curated deck to a subtopic. */

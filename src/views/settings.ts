@@ -8,14 +8,14 @@
  *   - THEME — light/dark segmented toggle, applied live to the document root;
  *   - FONT scale — A− / A+ within the same bounds the shell uses;
  *   - DATA — JSON export (download {@link exportStateJSON}), JSON import
- *     (file picker OR paste → {@link importStateJSON} with validation + an
+ *     (file picker OR paste → {@link parseBackupJSON} full-schema validation, then a confirm + an
  *     inline error on bad data), and a guarded RESET ALL progress;
  *   - an "About" panel with app info + real content stats.
  *
  * All numbers/counts are REAL (derived from the loaded content). DOM-only; the
  * store/loader do the actual work.
  */
-import { APP_NAME, EXAM_NOTIFICATION } from '../config';
+import { APP_NAME, DEFAULT_EXAM_DATE, EXAM_NOTIFICATION } from '../config';
 import { getBanks, getSubtopics } from '../content/loader';
 import {
   STATE_VERSION,
@@ -28,7 +28,11 @@ import {
   addDayOff,
   removeDayOff,
   resetDaysOff,
-  importStateJSON,
+  applyBackup,
+  BackupError,
+  NOT_A_BACKUP_MESSAGE,
+  parseBackupJSON,
+  type ParsedBackup,
   loadState,
   resetProgress,
   setDailyStudyMinutes,
@@ -47,6 +51,7 @@ import { button } from './components/button';
 import { chip } from './components/chip';
 import { icon } from './components/icon';
 import { showToast } from './components/toast';
+import { confirmDialog } from './confirm';
 
 /** Font-scale bounds/step — mirror the shell's A−/A+ control. */
 const FONT_MIN = 0.8;
@@ -316,27 +321,86 @@ function prettyDayOff(iso: string): string {
   return `${dows[dow]} ${d} ${months[m - 1]} ${y}`;
 }
 
+/** Days ahead below which a chosen exam date gets the "are you sure?" warning (D38). */
+export const EXAM_DATE_WARN_DAYS = 30;
+
+/** "24 Jan 2027" from an ISO date. @internal */
+function shortPretty(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${d} ${months[(m ?? 1) - 1]} ${y}`;
+}
+
+/**
+ * The warning for a chosen exam date (D38): before today, or fewer than
+ * {@link EXAM_DATE_WARN_DAYS} days away → the official-date reminder; else
+ * `null`. PURE.
+ */
+export function examDateWarning(chosenISO: string, today: string = todayISO()): string | null {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(chosenISO)) return null;
+  const days = Math.round((Date.parse(`${chosenISO}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 86_400_000);
+  if (days >= EXAM_DATE_WARN_DAYS) return null;
+  const when = days < 0 ? 'is in the past' : days === 0 ? 'is today' : `is only ${days} day${days === 1 ? '' : 's'} away`;
+  return `${shortPretty(chosenISO)} ${when}. Prelims is officially ${shortPretty(DEFAULT_EXAM_DATE)} \u2014 are you sure?`;
+}
+
 /** Editable exam date (syncs `settings.examDate`, same as the Planner). @internal */
 function examDateField(rerender: () => void): HTMLElement {
+  const current = examDateWarning(getExamDate());
   const input = el('input', {
     class: 'exam-date-input',
     type: 'date',
     value: getExamDate(),
     ariaLabel: 'Target exam date',
+    attrs: current ? { 'aria-describedby': 'exam-date-warning' } : {},
   }) as HTMLInputElement;
   input.value = getExamDate();
-  input.addEventListener('change', () => {
+  const apply = (value: string): void => {
     const before = getExamDate();
-    setExamDate(input.value);
+    setExamDate(value);
     // Invalid/cleared input is a no-op in the store — restore the field.
     if (getExamDate() === before) input.value = before;
     rerender();
+  };
+  let asking = false;
+  input.addEventListener('change', () => {
+    const chosen = input.value;
+    const warning = examDateWarning(chosen);
+    if (!warning) {
+      apply(chosen);
+      return;
+    }
+    if (asking) return; // one confirm at a time (a repeated change event must not stack dialogs)
+    asking = true;
+    confirmDialog({
+      title: 'Change the exam date?',
+      lines: [warning, 'The whole plan is rebuilt around this date.'],
+      confirmLabel: 'Yes, use this date',
+      cancelLabel: 'Keep the current date',
+      warn: true,
+      onConfirm: () => {
+        asking = false;
+        apply(chosen);
+      },
+      onCancel: () => {
+        asking = false;
+        input.value = getExamDate();
+      },
+    });
   });
   return el('label', { class: 'field settings-field' }, [
     el('span', { class: 'field-label', text: 'Exam date' }),
     el('span', { class: 'settings-hint', text: 'Drives the Planner countdown and day-by-day plan.' }),
     input,
+    current
+      ? el('span', { class: 'settings-hint settings-warn', attrs: { id: 'exam-date-warning', role: 'status' }, text: current })
+      : null,
   ]);
+}
+
+/** The plan-start input's `min`: the earlier of the current start and today (N17). */
+export function planStartMin(currentStartISO: string, today: string): string {
+  return currentStartISO < today ? currentStartISO : today;
 }
 
 /**
@@ -356,7 +420,8 @@ function planStartField(rerender: () => void): HTMLElement {
     type: 'date',
     value: getPlanStartDate(),
     ariaLabel: 'Plan start date',
-    attrs: { min: today, max: maxStart },
+    // N17: the current (already past) start date must stay a VALID value.
+    attrs: { min: planStartMin(getPlanStartDate(), today), max: maxStart },
   }) as HTMLInputElement;
   input.value = getPlanStartDate();
   input.addEventListener('change', () => {
@@ -458,7 +523,7 @@ function buildDataCard(rerender: () => void): HTMLElement {
 function exportRow(): HTMLElement {
   const download = (): void => {
     const json = exportStateJSON();
-    const stamp = new Date().toISOString().slice(0, 10);
+    const stamp = todayISO();
     const filename = `appsc-g1-progress-${stamp}.json`;
     try {
       const blob = new Blob([json], { type: 'application/json' });
@@ -489,9 +554,36 @@ function exportRow(): HTMLElement {
   ]);
 }
 
-/** Import state from a pasted blob or a chosen file, with validation. @internal */
+/**
+ * The last import outcome, kept at module level so it SURVIVES the full
+ * Settings redraw that follows a successful import (otherwise the
+ * confirmation line was wiped by `rerender()` and the learner saw nothing).
+ * @internal
+ */
+let lastImportStatus: { text: string; tone: 'ok' | 'warn' | 'err' } | null = null;
+
+/** Human date for a backup's `exportedAt` (e.g. "14 Oct 2026"). @internal */
+function backupDateLabel(iso: string | undefined): string {
+  if (!iso) return 'an unknown date';
+  const [y, m, d] = iso.split('-').map(Number);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${d} ${months[(m ?? 1) - 1]} ${y}`;
+}
+
+/**
+ * Import state from a pasted blob or a chosen file. The WHOLE blob is
+ * validated first ({@link parseBackupJSON}); anything that is not a complete
+ * APPSC backup is rejected with "nothing was changed". A valid backup asks
+ * for confirmation before it replaces the current progress. @internal
+ */
 function importRow(rerender: () => void): HTMLElement {
   const status = el('p', { class: 'settings-import-status', attrs: { role: 'status', 'aria-live': 'polite' } });
+  const setStatus = (text: string, tone: 'ok' | 'warn' | 'err'): void => {
+    status.textContent = text;
+    status.className = `settings-import-status is-${tone}`;
+  };
+  if (lastImportStatus) setStatus(lastImportStatus.text, lastImportStatus.tone);
+  lastImportStatus = null;
   const textarea = el('textarea', {
     class: 'settings-import-text',
     ariaLabel: 'Paste exported JSON here',
@@ -501,24 +593,40 @@ function importRow(rerender: () => void): HTMLElement {
   const applyImport = (raw: string): void => {
     const trimmed = raw.trim();
     if (trimmed === '') {
-      status.textContent = 'Nothing to import — paste JSON or choose a file first.';
-      status.className = 'settings-import-status is-warn';
+      setStatus('Nothing to import — paste JSON or choose a file first.', 'warn');
       return;
     }
+    let backup: ParsedBackup;
     try {
-      importStateJSON(trimmed);
-      applyDisplay();
-      status.textContent = 'Import successful — your progress has been restored.';
-      status.className = 'settings-import-status is-ok';
-      showToast('Progress imported', { tone: 'success' });
-      // Redraw so exam date / theme / font fields reflect the imported values.
-      rerender();
+      backup = parseBackupJSON(trimmed);
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Unknown error';
-      status.textContent = `Import failed: ${msg}`;
-      status.className = 'settings-import-status is-err';
-      showToast('Import failed — check the JSON and try again', { tone: 'error' });
+      const detail = err instanceof BackupError ? err.detail : '';
+      setStatus(detail ? `${NOT_A_BACKUP_MESSAGE} (${detail})` : NOT_A_BACKUP_MESSAGE, 'err');
+      showToast("Not an APPSC backup — nothing was changed", { tone: 'error' });
+      return;
     }
+    const when = backupDateLabel(backup.exportedAt);
+    const { studied, answered, tests } = backup.summary;
+    confirmDialog({
+      title: 'Replace your progress?',
+      lines: [
+        `Replace your current progress with this backup from ${when}? Current progress will be lost — export first?`,
+        `The backup has ${studied} studied topic${studied === 1 ? '' : 's'}, ${answered} answered question${answered === 1 ? '' : 's'} and ${tests} finished test${tests === 1 ? '' : 's'}.`,
+      ],
+      confirmLabel: 'Replace my progress',
+      cancelLabel: 'Cancel',
+      warn: true,
+      onConfirm: () => {
+        applyBackup(backup);
+        applyDisplay();
+        lastImportStatus = { text: `Import successful — your progress from ${when} has been restored.`, tone: 'ok' };
+        showToast('Progress imported', { tone: 'success' });
+        // Redraw so exam date / theme / font fields reflect the imported values;
+        // the status line is restored from `lastImportStatus`.
+        rerender();
+      },
+      onCancel: () => setStatus('Import cancelled — nothing was changed.', 'warn'),
+    });
   };
 
   const fileInput = el('input', {
@@ -533,16 +641,16 @@ function importRow(rerender: () => void): HTMLElement {
     file
       .text()
       .then((text) => applyImport(text))
-      .catch(() => {
-        status.textContent = 'Import failed: could not read the selected file.';
-        status.className = 'settings-import-status is-err';
+      .catch(() => setStatus('Import failed: could not read the selected file. Nothing was changed.', 'err'))
+      .finally(() => {
+        fileInput.value = '';
       });
   });
 
   return el('div', { class: 'settings-data-row settings-data-col' }, [
     el('div', { class: 'settings-data-text' }, [
       el('span', { class: 'settings-data-title', text: 'Import progress' }),
-      el('span', { class: 'settings-hint', text: 'Restore from a backup: paste the JSON or choose a file. Bad data is rejected safely.' }),
+      el('span', { class: 'settings-hint', text: 'Restore from a backup: paste the JSON or choose a file. Anything that is not a complete APPSC backup is rejected and nothing is changed; you confirm before a backup replaces your progress.' }),
     ]),
     textarea,
     el('div', { class: 'settings-import-actions' }, [

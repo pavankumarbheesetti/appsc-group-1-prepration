@@ -13,6 +13,7 @@
  * subtopic's Learn workspace. The verified OFFICIAL syllabus wording is kept in
  * a collapsible reference section below.
  */
+import { ACCURACY_LABEL, accuracyCaption, accuracyPct, formatAccuracy, topicAccuracy, type Accuracy } from '../lib/accuracy';
 import { getSubtopic, getSubtopicCoverage, getSubjects, getSubtopics, getTaxonomy, getSyllabus, getAudit } from '../content/loader';
 import type { TaxonomyChapter, TaxonomySubtopic } from '../content/taxonomy';
 import { SUBJECTS, type SubjectCode } from '../content/types';
@@ -28,7 +29,7 @@ import { chip } from './components/chip';
 import { progressBar } from './components/progress';
 import { bandBadge, studyStatusChip } from './components/badges';
 import { topicStudyFrom, type StudyStatus } from '../lib/study-status';
-import { prelimsScope, studySummary, studiedLine } from '../lib/study-summary';
+import { caUpToDateLine, prelimsScope, studySummary, studiedLine } from '../lib/study-summary';
 import { openLearn } from './learn';
 import { routeQuery } from '../router/router';
 
@@ -51,6 +52,8 @@ interface Row {
   seen: number;
   /** Learner-progress percent (mastery), 0–100. */
   mastery: number;
+  /** The ONE accuracy (lib/accuracy): correct ÷ all attempts. */
+  accuracy: Accuracy;
   status: SubtopicStatus;
   /** The study status (the ONE vocabulary shared with the plan / Today / Learn). */
   study: StudyStatus;
@@ -98,6 +101,7 @@ function rowFor(meta: TaxonomySubtopic): Row {
     mains,
     seen,
     mastery,
+    accuracy: topicAccuracy(progress, ids),
     status: statusFromMastery(mastery),
     study: topicStudyFrom(state, meta.id).status,
     inScope: scopeIds().has(meta.id),
@@ -142,7 +146,11 @@ function summarize(rows: Row[]): Summary {
   const withMaterial = rows.filter((r) => r.hasMaterial).length;
   const started = rows.filter((r) => r.seen > 0).length;
   const mastered = rows.filter((r) => r.status === 'mastered').length;
-  const progress = total === 0 ? 0 : Math.round(rows.reduce((s, r) => s + r.mastery, 0) / total);
+  // Subject/chapter accuracy = correct ÷ all attempts across its topics.
+  const progress = accuracyPct(
+    rows.reduce((s, r) => s + r.accuracy.correct, 0),
+    rows.reduce((s, r) => s + r.accuracy.answered, 0),
+  ) ?? 0;
   const questions = rows.reduce((s, r) => s + r.mcqs, 0);
   return { total, withMaterial, started, mastered, progress, questions, scopeTotal, studied };
 }
@@ -152,7 +160,9 @@ function summarize(rows: Row[]): Summary {
  * subtopics actually have authored material (most don't yet), then mastery.
  * @internal
  */
-function summaryText(sum: Summary): string {
+function summaryText(sum: Summary, ca = false): string {
+  // N18: current affairs is a continuous stream — never "studied N of N".
+  if (ca) return `${caUpToDateLine()}${sum.progress > 0 ? ` · Accuracy ${sum.progress}%` : ''}`;
   // On a fresh install nothing is mastered/progressed yet — show a calm em-dash
   // instead of repeating "0 mastered · 0% progress" on every row.
   // Lead with the study status (same source as the plan); accuracy is separate.
@@ -183,7 +193,7 @@ export function render(root: HTMLElement): void {
         attrs: { role: 'note' },
       }, [
         icon('target', 14),
-        el('span', { text: 'Studied = marked studied (or 10 practice answers). Accuracy = % of a topic\u2019s questions you\u2019ve answered correctly. Priority = High-yield / Medium / Low.' }),
+        el('span', { text: 'Studied = marked studied, or 10 practice answers with at least 50% correct. Current affairs is a continuous stream, shown as \u201cup to date through\u201d. Accuracy = correct \u00f7 answered, over all your attempts at a topic\u2019s questions. Priority = High-yield / Medium / Low.' }),
       ]),
       buildSortBar(draw),
     ]);
@@ -254,7 +264,7 @@ function buildSubject(code: SubjectCode, name: string, rerender: () => void): HT
   }, [
     el('span', { class: 'chevron' }, [icon('chevron', 18)]),
     el('span', { class: 'track-subject-name', text: name }),
-    el('span', { class: 'track-summary-stat', text: summaryText(sum) }),
+    el('span', { class: 'track-summary-stat', text: summaryText(sum, code === 'CA') }),
   ]);
 
   const section = el('section', { class: open ? 'track-subject open' : 'track-subject', attrs: { 'data-anchor': code } }, [summary, body]);
@@ -282,7 +292,7 @@ function buildChapter(chapter: TaxonomyChapter, rerender: () => void): HTMLEleme
   }, [
     el('span', { class: 'chevron' }, [icon('chevron', 16)]),
     el('span', { class: 'track-chapter-name', text: chapter.name }),
-    el('span', { class: 'track-summary-stat', text: summaryText(sum) }),
+    el('span', { class: 'track-summary-stat', text: summaryText(sum, chapter.subjectCode === 'CA') }),
   ]);
 
   return el('section', { class: open ? 'track-chapter open' : 'track-chapter', attrs: { 'data-anchor': chapter.id } }, [summary, body]);
@@ -294,7 +304,7 @@ function buildRow(row: Row): HTMLElement {
     class: row.hasMaterial ? 'track-row' : 'track-row is-empty',
     type: 'button',
     ariaLabel: row.hasMaterial
-      ? `${row.meta.name} — ${STUDY_LABEL[row.study]}, Accuracy ${row.mastery}%`
+      ? `${row.meta.name} — ${row.meta.subjectCode === 'CA' ? caUpToDateLine() : STUDY_LABEL[row.study]}, ${ACCURACY_LABEL} ${formatAccuracy(row.accuracy)}`
       : `${row.meta.name} — material coming soon`,
     onClick: () => openLearn(row.meta.id),
   }, [
@@ -302,11 +312,13 @@ function buildRow(row: Row): HTMLElement {
       el('span', { class: 'track-row-name', text: row.meta.name }),
       el('div', { class: 'track-row-badges' }, [
         row.meta.band ? bandBadge(row.meta.band) : null,
-        studyStatusChip(row.study),
+        row.meta.subjectCode === 'CA'
+          ? chip({ text: caUpToDateLine(), tone: 'default', iconName: 'calendar' })
+          : studyStatusChip(row.study),
       ]),
     ]),
     el('div', { class: 'track-row-cov' }, [
-      progressBar({ value: row.mastery / 100, label: 'Accuracy', caption: `${row.mastery}%`, success: row.mastery >= 100 }),
+      progressBar({ value: (row.accuracy.pct ?? 0) / 100, label: ACCURACY_LABEL, caption: accuracyCaption(row.accuracy), success: row.accuracy.pct === 100 }),
       row.examCoverage
         ? el('span', { class: 'track-row-coverage tnum', attrs: { title: 'Exam-point coverage' } }, [
             icon('target', 12),

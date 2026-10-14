@@ -24,6 +24,8 @@ export const PATHS = {
   revise: '/revise',
   flashcards: '/revise/flashcards',
   mistakes: '/revise/mistakes',
+  weekly: '/revise/weekly',
+  weak: '/revise/weak',
   progress: '/progress',
   mains: '/mains',
   languages: '/languages',

@@ -5,13 +5,14 @@
  * note, and note bodies are rendered with the safe {@link renderMarkdown}
  * helper (real DOM nodes only — never innerHTML) at a comfortable measure.
  */
+import { learnerSource } from '../lib/source-label';
 import { getBanks } from '../content/loader';
 import { SUBJECTS, type Figure, type NoteItem, type SubjectCode } from '../content/types';
 import { resolveImage } from '../content/assets';
 import { buildClozeCards, buildFlashcards, isMainsNote } from '../engine/flashcards';
 import { newCard, review, type Grade } from '../engine/spaced-repetition';
 import { updateState } from '../state/store';
-import { el, mount, renderMarkdown, type Child } from './dom';
+import { el, mount, renderInline, renderMarkdown, type Child } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
 import { icon } from './components/icon';
@@ -44,7 +45,7 @@ function renderFigure(fig: Figure): HTMLElement | null {
     attrs: { src: url, alt: fig.alt, loading: 'lazy', decoding: 'async' },
   });
   const kids: Child[] = [img];
-  if (fig.caption) kids.push(el('figcaption', { class: 'note-figcaption', text: fig.caption }));
+  if (fig.caption) kids.push(el('figcaption', { class: 'note-figcaption' }, renderInline(fig.caption)));
   return el('figure', { class: 'note-figure' }, kids);
 }
 
@@ -85,7 +86,7 @@ function renderKeyPoints(note: NoteItem): HTMLElement {
   const aside = el('aside', { class: 'note-keypoints', attrs: { 'aria-label': 'Must remember' } });
 
   const list = (): HTMLElement =>
-    el('ul', { class: 'keypoint-list' }, points.map((p) => el('li', { text: p })));
+    el('ul', { class: 'keypoint-list' }, points.map((p) => el('li', {}, renderInline(p))));
 
   // A polite live region announces state changes (recall → revealed → rated).
   const body = el('div', { class: 'note-keypoints-body', attrs: { 'aria-live': 'polite' } });
@@ -153,7 +154,7 @@ function renderMnemonic(mnemonic: string): HTMLElement {
     el('summary', { class: 'note-mnemonic-summary' }, [
       el('span', { class: 'note-mnemonic-label', text: 'Memory hook (optional)' }),
     ]),
-    el('p', { class: 'note-mnemonic-text', text: mnemonic }),
+    el('p', { class: 'note-mnemonic-text' }, renderInline(mnemonic)),
   ]);
   return details;
 }
@@ -168,14 +169,15 @@ export function stripLeadHeading(body: string): string {
 
 /** Build one note article with body + optional figures/retention blocks. */
 export function buildNoteArticle(note: NoteItem, anchorId: string): HTMLElement {
-  const kids: Child[] = [el('h3', { class: 'note-title', text: note.title })];
+  const kids: Child[] = [el('h3', { class: 'note-title' }, renderInline(note.title))];
   // Lead figure sits above the body; extra figures follow it.
   if (note.figure) kids.push(renderFigure(note.figure));
   kids.push(el('div', { class: 'note-body' }, renderMarkdown(stripLeadHeading(note.body))));
   if (note.figures) for (const fig of note.figures) kids.push(renderFigure(fig));
   if (note.keyPoints && note.keyPoints.length > 0) kids.push(renderKeyPoints(note));
   if (note.mnemonic) kids.push(renderMnemonic(note.mnemonic));
-  if (note.source) kids.push(el('p', { class: 'note-source', text: `Source: ${note.source}` }));
+  const src = note.source ? learnerSource(note.source) : null;
+  if (src) kids.push(el('p', { class: 'note-source', text: `Source: ${src}` }));
   return el('article', { class: 'note card', attrs: { id: anchorId } }, kids);
 }
 

@@ -8,7 +8,8 @@
  *   - `in-progress` — the notes were opened or some practice was answered.
  *   - `studied`     — the learner tapped "Mark as studied", OR answered at least
  *                     {@link AUTO_STUDIED_ANSWERS} practice questions (or the whole
- *                     bank when it is smaller). "Mark as not studied" overrides
+ *                     bank when it is smaller) WITH at least
+ *                     {@link AUTO_STUDIED_MIN_ACCURACY}% accuracy. "Mark as not studied" overrides
  *                     the automatic rule until the learner marks it studied again.
  *
  * Backward compatibility: older progress (questions answered, no study record)
@@ -26,12 +27,20 @@ import {
   type TopicStudyEntry,
 } from '../state/store';
 import { addDaysISO, todayISO } from './dates';
+import { topicAccuracy, type Accuracy } from './accuracy';
 
 /** The three study states of a subtopic. */
 export type StudyStatus = 'not-started' | 'in-progress' | 'studied';
 
 /** Answering this many practice questions marks a topic studied automatically. */
 export const AUTO_STUDIED_ANSWERS = 10;
+
+/**
+ * D12 — the automatic rule ALSO needs this accuracy (whole %, correct ÷ all
+ * attempts, see lib/accuracy). 0/10 correct is not "studied"; the learner can
+ * still tap "Mark as studied" by hand.
+ */
+export const AUTO_STUDIED_MIN_ACCURACY = 50;
 
 /**
  * How many answered questions make a topic auto-studied: {@link
@@ -44,17 +53,22 @@ export function autoStudiedThreshold(bankSize: number): number {
 
 /**
  * Derive the status from the stored record + how many distinct questions of a
- * `bankSize`-question bank were answered. PURE.
+ * `bankSize`-question bank were answered, and the topic's accuracy (whole %;
+ * `null` = nothing answered). The automatic "studied" needs BOTH the answer
+ * threshold and {@link AUTO_STUDIED_MIN_ACCURACY}. Omitting `accuracyPct`
+ * skips the accuracy check (legacy callers only). PURE.
  */
 export function deriveStudyStatus(
   entry: TopicStudyEntry | undefined,
   answered: number,
   bankSize: number,
+  accuracyPct?: number | null,
 ): StudyStatus {
   const started = answered > 0 || entry?.notesOpened === true;
   if (entry?.mark === 'studied') return 'studied';
   if (entry?.mark === 'not-studied') return started ? 'in-progress' : 'not-started';
-  if (answered >= autoStudiedThreshold(bankSize)) return 'studied';
+  const accurate = accuracyPct === undefined || (accuracyPct !== null && accuracyPct >= AUTO_STUDIED_MIN_ACCURACY);
+  if (answered >= autoStudiedThreshold(bankSize) && accurate) return 'studied';
   return started ? 'in-progress' : 'not-started';
 }
 
@@ -76,6 +90,8 @@ export interface TopicStudyInfo {
   studiedOn?: string;
   /** True when the studied state came from an explicit "Mark as studied". */
   manual: boolean;
+  /** The topic's ONE accuracy (lib/accuracy). */
+  accuracy: Accuracy;
 }
 
 /** The study info of subtopic `id` from a given state snapshot. */
@@ -83,9 +99,11 @@ export function topicStudyFrom(state: AppState, id: string): TopicStudyInfo {
   const ids = getSubtopic(id)?.mcqs.map((m) => m.id) ?? [];
   const answered = answeredCount(state.progress, ids);
   const entry = state.study[id];
-  const status = deriveStudyStatus(entry, answered, ids.length);
+  const accuracy = topicAccuracy(state.progress, ids);
+  const status = deriveStudyStatus(entry, answered, ids.length, accuracy.pct);
   return {
     status,
+    accuracy,
     answered,
     bankSize: ids.length,
     studiedOn: status === 'studied' ? entry?.studiedOn : undefined,
@@ -186,4 +204,14 @@ export function syncAutoStudied(subtopicIds: Iterable<string>, dateISO: string =
     if (entry?.studiedOn || entry?.mark === 'not-studied') continue;
     if (topicStudyFrom(state, id).status === 'studied') stampTopicStudiedOn(id, dateISO);
   }
+}
+
+/**
+ * The gentle note shown when a learner marks a topic studied BY HAND while
+ * their accuracy is below {@link AUTO_STUDIED_MIN_ACCURACY}% — or `null`.
+ */
+export function lowAccuracyNote(info: Pick<TopicStudyInfo, 'accuracy'>): string | null {
+  const pct = info.accuracy.pct;
+  if (pct === null || pct >= AUTO_STUDIED_MIN_ACCURACY) return null;
+  return `Consider reviewing the notes \u2014 you scored ${pct}%.`;
 }

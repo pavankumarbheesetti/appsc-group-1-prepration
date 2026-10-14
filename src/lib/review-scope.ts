@@ -19,6 +19,12 @@ export interface ReviewFields {
   dateISO?: string;
   /** Question ids to review: wrong ∪ guessed (Guess / 50-50), in test order. */
   reviewIds?: string[];
+  /** Every question id of the sitting, in test order (redraws the full review). */
+  itemIds?: string[];
+  /** The learner's chosen option index per question (`null` = blank). */
+  answers?: Array<number | null>;
+  /** The Sure / 50-50 / Guess tag per question (`null` = untagged). */
+  confidences?: Array<string | null>;
 }
 
 /** A finished-test record with the review fields. */
@@ -92,3 +98,31 @@ export function testedOn(attempts: readonly ReviewableAttempt[], dateISO: string
 export const MOCK_KINDS: readonly string[] = ['mock', 'full-mock', 'full-mock-omr', 'sectional-mock', 'scoped-mock'];
 /** Runner kinds that count as the week test for the week-test-review block. */
 export const WEEK_TEST_KINDS: readonly string[] = ['week-test', 'unit-test'];
+
+/** What the ORIGINAL attempt said about a review-list question (N14). */
+export type AttemptVerdict = 'wrong' | 'guess-correct' | 'fifty-correct' | 'sure-correct';
+
+/**
+ * How question `id` was answered in the most recent submitted attempt that put
+ * it on a review list — from the attempt's own record (answer + Sure / 50-50 /
+ * Guess tag), never from later practice, so answering it right in review does
+ * not relabel the test. `null` when no attempt carries the sitting. PURE.
+ */
+export function attemptVerdict(
+  attempts: readonly ReviewableAttempt[],
+  id: string,
+  answerIndex: number,
+): AttemptVerdict | null {
+  for (let a = attempts.length - 1; a >= 0; a -= 1) {
+    const rec = attempts[a]!;
+    if (!(rec.reviewIds ?? []).includes(id)) continue;
+    const i = (rec.itemIds ?? []).indexOf(id);
+    if (i < 0) continue;
+    const sel = rec.answers?.[i];
+    if (sel === null || sel === undefined) continue;
+    if (sel !== answerIndex) return 'wrong';
+    const conf = rec.confidences?.[i];
+    return conf === 'guess' ? 'guess-correct' : conf === 'fifty' ? 'fifty-correct' : 'sure-correct';
+  }
+  return null;
+}

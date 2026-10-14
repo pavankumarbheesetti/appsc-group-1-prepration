@@ -96,3 +96,46 @@ describe('telugu course (#/telugu)', () => {
     expect(conBtn.querySelector('.tel-stage-count')?.textContent).toBe(`1/${CONSONANTS.length}`);
   });
 });
+
+describe('telugu lesson deep link + beginner copy (D24/D27)', () => {
+  beforeEach(() => {
+    __resetForTests();
+  });
+
+  it('#/languages/telugu/lesson/3 opens lesson 3 directly', async () => {
+    const { renderLessonRoute } = await import('../telugu');
+    location.hash = '#/languages/telugu/lesson/3';
+    const root = document.createElement('div');
+    renderLessonRoute(root);
+    expect(root.textContent).toContain('Lesson 3 \u00b7');
+    expect(root.textContent).toContain('What this lesson teaches');
+    expect(root.textContent).toContain('How long');
+    expect(root.textContent).toMatch(/About 15 minutes/);
+    expect(root.textContent).toMatch(/8 right to pass/);
+    location.hash = '#/languages/telugu/lesson/99';
+    const bad = document.createElement('div');
+    renderLessonRoute(bad);
+    expect(bad.textContent).toContain('Lesson not found');
+  });
+
+  it('openTeluguLesson puts the lesson in the URL', async () => {
+    const { openTeluguLesson } = await import('../telugu');
+    location.hash = '';
+    openTeluguLesson('tel-lesson-04');
+    expect(location.hash).toBe('#/languages/telugu/lesson/4');
+  });
+
+  it('the course copy is beginner-friendly: lessons chip, Start lesson 1, no raw *abugida*, true section count', async () => {
+    const { lessonBrief } = await import('../telugu');
+    const { TELUGU_LESSONS, TELUGU_INTRO } = await import('../../content/telugu');
+    location.hash = '#/telugu';
+    const root = document.createElement('div');
+    render(root);
+    expect(root.textContent).toContain(`0/${TELUGU_LESSONS.length} lessons done`);
+    expect(root.textContent).not.toMatch(/\d+\/7 stages/);
+    expect(root.textContent).toContain('Start lesson 1');
+    expect(root.textContent).not.toContain('*abugida*');
+    const sections = TELUGU_INTRO.filter((p) => p.startsWith('## ')).length;
+    expect(lessonBrief(TELUGU_LESSONS[0]!).teaches).toContain(`${sections} short sections`);
+  });
+});

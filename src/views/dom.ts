@@ -87,9 +87,11 @@ const CODE_SPAN_RE = /`([^`]+)`/g;
  * `<sub>`. Superscripts accept either a BRACED body `^{...}` or — for backwards
  * safety with existing numeric content such as `10^4`, `10^-4`, `2^80` — a bare
  * run of (optionally signed) digits `^-?\d+`. Subscripts accept ONLY the braced
- * form `_{...}`, so ordinary snake_case prose is never mangled. @internal
+ * form `_{...}`, so ordinary snake_case prose is never mangled. BRACED forms
+ * need no base at all: `^{4}√10` (a 4th root) lifts the index into a
+ * `<sup class="root-index">` placed before the radical. @internal
  */
-const MATH_RE = /([0-9A-Za-z)\]}])(?:\^(\{[^}]*\}|-?\d+)|_(\{[^}]*\}))/g;
+const MATH_RE = /([0-9A-Za-z)\]}])\^(-?\d+)|\^(\{[^}]*\})|_(\{[^}]*\})/g;
 
 /** Strip the outer `{ }` from a braced math body; leave a bare body unchanged. @internal */
 function stripBraces(s: string): string {
@@ -109,10 +111,20 @@ function mathNodes(text: string): Node[] {
   let m: RegExpExecArray | null;
   while ((m = MATH_RE.exec(text)) !== null) {
     if (m.index > last) out.push(document.createTextNode(text.slice(last, m.index)));
-    out.push(document.createTextNode(m[1]!)); // base stays as normal text
-    if (m[2] !== undefined) out.push(el('sup', { text: stripBraces(m[2]) }));
-    else if (m[3] !== undefined) out.push(el('sub', { text: stripBraces(m[3]) }));
-    last = m.index + m[0].length;
+    const end = m.index + m[0].length;
+    if (m[1] !== undefined) {
+      // Bare-digit exponent: `2^80` → "2" + <sup>80</sup> (base stays as text).
+      out.push(document.createTextNode(m[1]));
+      out.push(el('sup', { text: m[2]! }));
+    } else if (m[3] !== undefined) {
+      // Braced superscript, with or without a base char before it. An index
+      // directly before a radical (`^{4}√10`) is an nth-ROOT index.
+      const isRootIndex = text.charAt(end) === '\u221A';
+      out.push(el('sup', { class: isRootIndex ? 'root-index' : undefined, text: stripBraces(m[3]) }));
+    } else if (m[4] !== undefined) {
+      out.push(el('sub', { text: stripBraces(m[4]) }));
+    }
+    last = end;
   }
   if (last < text.length) out.push(document.createTextNode(text.slice(last)));
   return out;
@@ -182,7 +194,13 @@ export function firstLine(text: string): string {
  */
 export function renderPreview(text: string, max = 0): Node[] {
   let line = firstLine(text);
-  if (max > 0 && line.length > max) line = `${line.slice(0, max - 1).trimEnd()}…`;
+  if (max > 0 && line.length > max) {
+    let cut = line.slice(0, max - 1);
+    // Never leave a half markup token (`^{4`, `_{i`) behind the ellipsis.
+    const open = Math.max(cut.lastIndexOf('^{'), cut.lastIndexOf('_{'));
+    if (open >= 0 && cut.indexOf('}', open) < 0) cut = cut.slice(0, open);
+    line = `${cut.trimEnd()}…`;
+  }
   return inlineNodes(line);
 }
 

@@ -18,6 +18,10 @@ import { el, renderPreview } from './dom';
 import { icon } from './components/icon';
 import { openLearn } from './learn';
 import { openDialog, type DialogController } from './dialog';
+import { TELUGU_LESSONS, VOWELS, CONSONANTS, GUNINTALU, VATTULU, NUMBERS, STARTER_WORDS, STARTER_SENTENCES } from '../content/telugu';
+import { GRAMMAR_AREAS, WRITING_FORMATS, readingComprehension } from '../content/english-qualifying';
+import { teluguLessonPath } from './telugu';
+import { openEnglish } from './english';
 
 /** The mounted overlay element, or null when closed. */
 let overlay: HTMLElement | null = null;
@@ -38,6 +42,48 @@ function buildDocs(): SearchDoc[] {
       docs.push({ kind: 'mcq', id: mcq.id, title: mcq.question, subtopicId: sub.id, subtitle: sub.name });
     }
   }
+  docs.push(...languageDocs());
+  return docs;
+}
+
+/** Glyph id → "glyph translit name" words for Telugu lesson keywords. @internal */
+function glyphWords(): Map<string, string> {
+  const out = new Map<string, string>();
+  const add = (id: string, ...parts: Array<string | undefined>): void => void out.set(id, parts.filter(Boolean).join(' '));
+  for (const v of VOWELS) add(v.id, v.glyph, v.translit, 'vowel');
+  for (const c of CONSONANTS) add(c.id, c.glyph, c.translit, 'consonant');
+  for (const g of GUNINTALU) add(g.id, g.glyph, g.translit);
+  for (const x of VATTULU) add(x.id, x.glyph, x.translit, x.meaning, 'conjunct');
+  for (const n of NUMBERS) add(n.id, n.glyph, n.name, n.translit, String(n.value), 'number');
+  for (const w of STARTER_WORDS) add(w.id, w.glyph, w.translit, w.meaning);
+  for (const s of STARTER_SENTENCES) add(s.id, s.glyph, s.translit, s.meaning);
+  return out;
+}
+
+/**
+ * The Languages docs (D35): every Telugu lesson (opens its own URL) and the
+ * English sections — grammar areas, writing formats, reading passages.
+ */
+export function languageDocs(): SearchDoc[] {
+  const docs: SearchDoc[] = [];
+  const words = glyphWords();
+  for (const l of TELUGU_LESSONS) {
+    docs.push({
+      kind: 'language',
+      id: l.id,
+      title: `Telugu lesson ${l.number} \u00b7 ${l.title}`,
+      subtitle: l.goal,
+      path: teluguLessonPath(l),
+      keywords: `telugu ${l.stage} ${l.goal} ${l.glyphIds.map((g) => words.get(g) ?? '').join(' ')}`,
+    });
+  }
+  const eng = (id: string, title: string, tab: string, keywords = ''): void =>
+    void docs.push({ kind: 'language', id: `eng:${id}`, title, subtitle: 'English (qualifying)', path: `/english?tab=${tab}`, keywords: `english ${keywords}` });
+  eng('overview', 'English \u00b7 Paper overview', 'overview', 'qualifying paper marks');
+  eng('grammar', 'English \u00b7 Grammar practice', 'grammar', GRAMMAR_AREAS.map((a) => a.label).join(' '));
+  for (const a of GRAMMAR_AREAS) eng(`grammar-${a.tag}`, `English grammar \u00b7 ${a.label}`, 'grammar');
+  for (const f of WRITING_FORMATS) eng(`writing-${f.name}`, `English writing \u00b7 ${f.name}`, 'writing', 'writing format');
+  for (const r of readingComprehension) eng(`reading-${r.title}`, `English reading \u00b7 ${r.title}`, 'reading', 'comprehension passage');
   return docs;
 }
 
@@ -48,6 +94,11 @@ function activate(doc: SearchDoc): void {
     openLearn(doc.id);
   } else if (doc.kind === 'note') {
     openLearn(doc.subtopicId ?? '', { tab: 'notes', noteId: doc.id });
+  } else if (doc.kind === 'language') {
+    const path = doc.path ?? '/languages';
+    const tab = /^\/english\?tab=(\w+)/.exec(path)?.[1];
+    if (tab) openEnglish(tab as Parameters<typeof openEnglish>[0]);
+    else navigate(path);
   } else {
     navigate(`/q/${doc.id}`);
   }
@@ -93,23 +144,24 @@ export function openSearch(): void {
   const results = el('div', { class: 'search-results', attrs: { role: 'listbox', 'aria-label': 'Search results' } });
 
   const iconFor = (kind: SearchDoc['kind']): ReturnType<typeof icon> =>
-    icon(kind === 'subtopic' ? 'syllabus' : kind === 'note' ? 'notes' : 'drill', 16);
+    icon(kind === 'subtopic' ? 'syllabus' : kind === 'note' ? 'notes' : kind === 'language' ? 'globe' : 'drill', 16);
 
   const groupLabel: Record<keyof GroupedResults, string> = {
     subtopics: 'Subtopics',
     notes: 'Notes',
     mcqs: 'Questions',
+    languages: 'Languages',
   };
 
   /** Re-run the search and rebuild the results list. */
   const update = (): void => {
     const grouped = searchDocs(input.value, docs);
-    flat = [...grouped.subtopics, ...grouped.notes, ...grouped.mcqs];
+    flat = [...grouped.subtopics, ...grouped.notes, ...grouped.mcqs, ...grouped.languages];
     selected = 0;
     results.replaceChildren();
 
     if (input.value.trim() === '') {
-      results.append(el('p', { class: 'search-hint', text: 'Type to search subtopics, notes and questions. ↑↓ to navigate, Enter to open, Esc to close.' }));
+      results.append(el('p', { class: 'search-hint', text: 'Type to search subtopics, notes, questions and language lessons. ↑↓ to navigate, Enter to open, Esc to close.' }));
       return;
     }
     if (totalResults(grouped) === 0) {
@@ -118,7 +170,7 @@ export function openSearch(): void {
     }
 
     let flatIndex = 0;
-    for (const key of ['subtopics', 'notes', 'mcqs'] as const) {
+    for (const key of ['subtopics', 'notes', 'languages', 'mcqs'] as const) {
       const group = grouped[key];
       if (group.length === 0) continue;
       results.append(el('p', { class: 'search-group', text: groupLabel[key] }));

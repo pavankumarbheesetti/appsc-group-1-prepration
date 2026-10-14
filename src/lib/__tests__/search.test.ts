@@ -52,3 +52,18 @@ describe('searchDocs', () => {
     expect(r.mcqs).toHaveLength(8);
   });
 });
+
+describe('Languages are searchable (D35)', () => {
+  it('Telugu lessons ("vowels", "sunna") and English sections ("precis") are found', async () => {
+    const { languageDocs } = await import('../../views/search');
+    const docs = languageDocs();
+    const vowels = searchDocs('vowels', docs).languages;
+    expect(vowels.length).toBeGreaterThan(0);
+    expect(vowels[0]!.path).toMatch(/^\/languages\/telugu\/lesson\/\d+$/);
+    const sunna = searchDocs('sunna', docs).languages;
+    expect(sunna.map((d) => d.path)).toContain('/languages/telugu/lesson/4');
+    expect(searchDocs('precis', docs).languages.length).toBeGreaterThan(0);
+    expect(searchDocs('english grammar', docs).languages.length).toBeGreaterThan(0);
+    expect(totalResults(searchDocs('sunna', docs))).toBeGreaterThan(0);
+  });
+});

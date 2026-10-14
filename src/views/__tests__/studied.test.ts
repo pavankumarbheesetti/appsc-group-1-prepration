@@ -213,14 +213,17 @@ describe('Telugu — each block is the NEXT lesson with an explicit target', () 
     setTeluguLessonDone('tel-lesson-02', true, '2026-10-12');
     const root = renderToday();
     root.querySelector<HTMLElement>('.today-check[data-kind="telugu"] .today-check-btn')!.click();
-    expect(location.hash).toBe('#/telugu');
+    // D24: the lesson has its own URL.
+    expect(location.hash).toBe('#/languages/telugu/lesson/3');
 
     const view = document.createElement('div');
     view.id = 'view';
     document.body.appendChild(view);
-    telugu.render(view);
+    telugu.renderLessonRoute(view);
     expect(view.textContent).toContain(`Telugu lesson 3 of ${N}`);
-    expect(view.textContent).toContain(`Target: ${lessonTarget(TELUGU_LESSONS[2]!)}`);
+    expect(view.textContent).toContain('What this lesson teaches');
+    expect(view.textContent).toContain('How to pass');
+    expect(lessonTarget(TELUGU_LESSONS[2]!)).toContain('pass 8/10');
     expect(view.querySelectorAll('.tel-card').length).toBe(TELUGU_LESSONS[2]!.glyphIds.length);
 
     // Answer all 10 questions correctly.
