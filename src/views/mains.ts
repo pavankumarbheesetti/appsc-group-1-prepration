@@ -44,6 +44,8 @@ import { button } from './components/button';
 import { chip } from './components/chip';
 import { icon } from './components/icon';
 import { showToast } from './components/toast';
+import { isRowKeyDone, mainsKey, markRowKeyDone } from '../lib/day-tasks';
+import { todayISO } from '../lib/dates';
 
 /* -------------------------------------------------------------------------- */
 /* Shared data helpers                                                         */
@@ -813,8 +815,29 @@ function resetRubricUI(id: string): void {
 
 /** Bottom navigation: back to the library. @internal */
 function workspaceActions(item: MainsItem): HTMLElement {
-  void item;
-  return el('div', { class: 'mains-ws-actions' }, [
-    button({ label: 'Back to list', variant: 'secondary', onClick: () => navigate('/mains') }),
-  ]);
+  const today = todayISO();
+  const key = mainsKey(item.id);
+  const box = el('div', { class: 'mains-ws-actions' });
+  const draw = (): void => {
+    const done = isRowKeyDone(today, key);
+    const parts: Array<HTMLElement | null> = [
+      done
+        ? el('span', { class: 'mains-written', attrs: { role: 'status' } }, [icon('check', 16), el('span', { text: 'Written today \u2713' })])
+        : button({
+            label: 'I\u2019ve written it',
+            variant: 'primary',
+            iconName: 'check',
+            onClick: () => {
+              // Ticks today's Mains answer row on Today (M1).
+              markRowKeyDone(today, key, true);
+              draw();
+            },
+          }),
+      done ? button({ label: 'Back to Today', variant: 'primary', onClick: () => navigate('/') }) : null,
+      button({ label: 'Back to list', variant: 'secondary', onClick: () => navigate('/mains') }),
+    ];
+    box.replaceChildren(...parts.filter((p): p is HTMLElement => p !== null));
+  };
+  draw();
+  return box;
 }

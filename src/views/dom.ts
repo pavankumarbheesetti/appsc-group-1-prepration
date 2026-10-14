@@ -163,6 +163,42 @@ export function renderInline(line: string): Node[] {
   return inlineNodes(line);
 }
 
+/**
+ * The first meaningful line of a (possibly multi-line, table/fence-carrying)
+ * question, for one-line previews in lists (notebook, search). @internal-ish
+ */
+export function firstLine(text: string): string {
+  for (const raw of text.split('\n')) {
+    const t = raw.trim();
+    if (t !== '' && !t.startsWith('```') && !t.startsWith('|')) return t;
+  }
+  return text.trim();
+}
+
+/**
+ * A one-line inline-rendered PREVIEW of a question/option: the first
+ * meaningful line through {@link renderInline} (so `10^{6}` shows as a real
+ * superscript in lists), truncated to `max` characters of source text.
+ */
+export function renderPreview(text: string, max = 0): Node[] {
+  let line = firstLine(text);
+  if (max > 0 && line.length > max) line = `${line.slice(0, max - 1).trimEnd()}…`;
+  return inlineNodes(line);
+}
+
+/**
+ * Markup-free plain text of an inline string, for aria-labels / titles where no
+ * DOM can be used: `**b**` → `b`, `` `c` `` → `c`, `10^{6}` → `10^6`,
+ * `x_{i}` → `x_i`. PURE.
+ */
+export function plainInline(text: string): string {
+  return text
+    .replace(/\*\*/g, '')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\^\{([^}]*)\}/g, '^$1')
+    .replace(/_\{([^}]*)\}/g, '_$1');
+}
+
 /** A GFM table separator row, e.g. `|---|:--:|` (must contain a dash). @internal */
 function isTableSeparator(line: string): boolean {
   return /^\s*\|?\s*:?-{1,}:?\s*(?:\|\s*:?-{1,}:?\s*)*\|?\s*$/.test(line) && line.includes('-');
@@ -216,6 +252,24 @@ export function renderMarkdown(md: string): Node[] {
   for (let i = 0; i < lines.length; i += 1) {
     const line = (lines[i] ?? '').trimEnd();
     const trimmed = line.trim();
+
+    // Fenced code block (```lang … ```): preserved verbatim as a horizontally
+    // scrollable monospace block. Only ^{}/_{} math is lifted (diagrams in the
+    // notes use it); bold/code markers stay literal. An unclosed fence runs to
+    // the end of the text.
+    if (trimmed.startsWith('```')) {
+      flushList();
+      const body: string[] = [];
+      let j = i + 1;
+      for (; j < lines.length; j += 1) {
+        if ((lines[j] ?? '').trim().startsWith('```')) break;
+        body.push((lines[j] ?? '').replace(/\r$/, ''));
+      }
+      const code = el('code', {}, mathNodes(body.join('\n')));
+      out.push(el('pre', { class: 'md-pre', attrs: { tabindex: '0' } }, [code]));
+      i = j;
+      continue;
+    }
 
     if (trimmed === '') {
       flushList();

@@ -18,17 +18,21 @@
  */
 import { getBanks, getSubtopic, getSubtopics } from '../content/loader';
 import { SUBJECTS, type MCQItem, type SubjectCode } from '../content/types';
-import { buildSession, dueQuestionIds, weakQuestionIds } from '../engine/drill';
+import { buildSession, weakQuestionIds } from '../engine/drill';
+import { flashcardTodayLine, liveFlashcardDue, questionsDue } from '../lib/due';
 import { subtopicDrillOptions, type SubtopicDrillOption } from '../lib/drill-scope';
 import type { SessionScore } from '../engine/drill';
 import { navigate, routeParam } from '../router/router';
 import { loadState } from '../state/store';
-import { el, mount, type Child } from './dom';
+import { el, mount, firstLine, plainInline, type Child } from './dom';
 import { mountQuiz, renderExplanation, renderQuestionStem } from './quiz';
 import { card } from './components/card';
 import { button } from './components/button';
 import { ring } from './components/ring';
 import { icon, type IconName } from './components/icon';
+import { nextUpFooter, practiceSegments, PATHS } from './shell';
+import { nextStep } from './next-topic';
+import { openLearn } from './learn';
 import { pct, avgTimeMs, formatDuration, confidenceBreakdown, examPointsPracticed, type SessionAnswerDetail } from '../lib/metrics';
 
 /** Which preset is the current smart default. */
@@ -83,7 +87,7 @@ export function renderSingleQuestion(root: HTMLElement): void {
       el('div', { class: 'drill-setup' }, [
         card({ title: 'Question not found' }, [
           el('p', { class: 'section-lead', text: 'That question is no longer available.' }),
-          button({ label: 'Back to drill', variant: 'primary', onClick: () => render(root) }),
+          button({ label: 'Back to practice', variant: 'primary', onClick: () => navigate(PATHS.practice) }),
         ]),
       ]),
     );
@@ -94,9 +98,9 @@ export function renderSingleQuestion(root: HTMLElement): void {
     const actions: HTMLElement[] = [];
     if (item.subtopicId) {
       const sub = item.subtopicId;
-      actions.push(button({ label: 'Open subtopic', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate(`/learn/${sub}`) }));
+      actions.push(button({ label: 'Open the topic', variant: 'primary', iconName: 'arrow-right', onClick: () => openLearn(sub, { tab: 'notes' }) }));
     }
-    actions.push(button({ label: 'New drill', variant: item.subtopicId ? 'secondary' : 'primary', onClick: () => render(root) }));
+    actions.push(button({ label: 'New practice', variant: item.subtopicId ? 'secondary' : 'primary', onClick: () => navigate(PATHS.practice) }));
     actions.push(button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }));
     mount(
       root,
@@ -138,7 +142,9 @@ function drawSetup(root: HTMLElement, refine: RefineState): void {
   const pool = buildSession({ subjectCode, subtopicId, order: 'ladder' }).items;
   const total = pool.length;
   const mcqIds = pool.map((i) => i.id);
-  const dueIds = dueQuestionIds(state.sr, mcqIds, now);
+  // The shared due model (lib/due.ts) — the same functions Progress / Revise use.
+  const dueIds = questionsDue(state, now, mcqIds);
+  const cardsLine = flashcardTodayLine(liveFlashcardDue(now));
   const weakIds = weakQuestionIds(state.progress, mcqIds);
   const quickSize = Math.min(10, total);
   const recommended: Recommended = dueIds.length > 0 ? 'due' : 'quick';
@@ -158,8 +164,8 @@ function drawSetup(root: HTMLElement, refine: RefineState): void {
     presetCard({
       iconName: 'revise',
       title: 'Due review',
-      countLabel: `${dueIds.length} due`,
-      desc: 'Spaced-repetition cards ready for review.',
+      countLabel: `${dueIds.length} question${dueIds.length === 1 ? '' : 's'} due`,
+      desc: `Practice questions due for spaced review. Flashcards live in Revise (${cardsLine.charAt(0).toLowerCase()}${cardsLine.slice(1)}).`,
       recommended: recommended === 'due',
       disabled: dueIds.length === 0,
       hint: "Nothing due right now — you're all caught up.",
@@ -212,8 +218,9 @@ function drawSetup(root: HTMLElement, refine: RefineState): void {
   body.push(beginBtn, refinePanel(root, refine));
 
   const setup = el('div', { class: 'drill-setup' }, [
+    practiceSegments('quick'),
     card(
-      { title: 'New focus drill', subtitle: 'Pick a session — or just hit Begin. Keyboard A–D or 1–4 to answer.' },
+      { title: 'Quick practice', subtitle: 'Untimed, with instant feedback. Pick a session — or just hit Begin. Keyboard A–D or 1–4 to answer.' },
       body,
     ),
   ]);
@@ -343,24 +350,21 @@ function runSession(root: HTMLElement, items: readonly MCQItem[]): void {
 function drawResults(root: HTMLElement, score: SessionScore, wrongItems: MCQItem[], details: SessionAnswerDetail[]): void {
   const variant = score.accuracy >= 0.8 ? 'success' : score.accuracy >= 0.5 ? 'accent' : 'warning';
 
-  // Primary next-step actions.
-  const actions: HTMLElement[] = [];
-  if (wrongItems.length > 0) {
-    actions.push(
-      button({
-        label: `Revise ${wrongItems.length} wrong`,
-        variant: 'primary',
-        iconName: 'revise',
-        onClick: () => runSession(root, wrongItems),
-      }),
-    );
-  }
-  actions.push(button({ label: 'New drill', variant: wrongItems.length > 0 ? 'secondary' : 'primary', iconName: 'drill', onClick: () => render(root) }));
-  actions.push(button({ label: 'Syllabus', variant: 'ghost', onClick: () => navigate('/syllabus') }));
-  actions.push(button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }));
+  // The "Next up" footer: the next step from today's plan, plus the mistakes.
+  const next = nextStep();
+  const footer = nextUpFooter({
+    eyebrow: score.total === 0 ? 'No questions answered' : `${score.correct}/${score.total} correct`,
+    primary: { label: next.label, onClick: next.go },
+    secondary: [
+      wrongItems.length > 0
+        ? { label: `Review ${wrongItems.length} mistake${wrongItems.length === 1 ? '' : 's'}`, onClick: () => runSession(root, wrongItems) }
+        : null,
+      { label: 'New practice', onClick: () => render(root) },
+    ].filter((x): x is { label: string; onClick: () => void } => x !== null),
+  });
 
   const cardKids: (HTMLElement | null)[] = [
-    el('h2', { class: 'card-title', text: score.correct === score.total && score.total > 0 ? 'Flawless session!' : 'Session complete' }),
+    el('h2', { class: 'card-title', text: score.correct === score.total && score.total > 0 ? 'Flawless practice!' : 'Practice complete' }),
     ring({
       value: score.accuracy,
       centerText: pct(score.accuracy),
@@ -395,9 +399,7 @@ function drawResults(root: HTMLElement, score: SessionScore, wrongItems: MCQItem
     cardKids.push(el('p', { class: 'results-confidence' }, [confidenceLine(conf)]));
   }
 
-  cardKids.push(el('div', { class: 'focus-advance results-actions' }, actions));
-
-  const blocks: HTMLElement[] = [card({}, cardKids)];
+  const blocks: HTMLElement[] = [card({}, cardKids), footer];
 
   // "Review wrong answers" — each missed question is revisitable via #/q/<id>.
   if (wrongItems.length > 0) {
@@ -439,7 +441,7 @@ function reviewWrongCard(wrongItems: readonly MCQItem[]): HTMLElement {
         el('button', {
           class: 'btn btn-ghost',
           type: 'button',
-          ariaLabel: `Re-solve: ${item.question}`,
+          ariaLabel: `Re-solve: ${plainInline(firstLine(item.question))}`,
           onClick: () => navigate(`/q/${item.id}`),
         }, [el('span', { text: 'Re-solve' }), icon('arrow-right', 16)]),
       ]),

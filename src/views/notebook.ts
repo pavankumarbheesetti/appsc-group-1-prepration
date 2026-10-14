@@ -12,12 +12,13 @@ import type { MCQItem } from '../content/types';
 import { activeEntries, selectReviewItems, GRADUATION_THRESHOLD } from '../engine/notebook';
 import { navigate } from '../router/router';
 import { loadState } from '../state/store';
-import { el, mount } from './dom';
+import { el, mount, renderPreview } from './dom';
 import { mountQuiz } from './quiz';
 import { card } from './components/card';
 import { button } from './components/button';
 import { chip } from './components/chip';
 import { icon } from './components/icon';
+import { completeActiveTask } from '../lib/day-tasks';
 
 /** Build an id → MCQItem lookup across every MCQ bank. @internal */
 function mcqById(): Map<string, MCQItem> {
@@ -29,9 +30,93 @@ function mcqById(): Map<string, MCQItem> {
   return map;
 }
 
+/** A one-shot scoped review request set by {@link openScopedReview}. @internal */
+interface ScopedReview {
+  ids: string[];
+  title: string;
+  lead: string;
+}
+let pendingScoped: ScopedReview | null = null;
+
+/**
+ * Open the notebook page on a SCOPED list (e.g. a review block's "today's wrong
+ * + guessed answers") instead of the whole notebook.
+ */
+export function openScopedReview(ids: readonly string[], title: string, lead: string): void {
+  pendingScoped = { ids: [...ids], title, lead };
+  navigate('/revise/mistakes');
+}
+
 /** Render the notebook into `root`. */
 export function render(root: HTMLElement): void {
+  const scoped = pendingScoped;
+  pendingScoped = null;
+  if (scoped) {
+    drawScoped(root, scoped);
+    return;
+  }
   drawList(root);
+}
+
+/**
+ * The scoped review list: each question with WHY it is listed (wrong, or a
+ * correct guess), and one "Review these N" action over exactly these items.
+ * @internal
+ */
+function drawScoped(root: HTMLElement, scoped: ScopedReview): void {
+  const items = mcqById();
+  const state = loadState();
+  const list = scoped.ids.flatMap((id) => {
+    const item = items.get(id);
+    return item ? [item] : [];
+  });
+  const backToNotebook = button({ label: 'Whole notebook', variant: 'ghost', onClick: () => drawList(root) });
+  if (list.length === 0) {
+    mount(
+      root,
+      card({ title: scoped.title }, [
+        el('div', { class: 'empty-state' }, [
+          el('span', { class: 'empty-icon' }, [icon('check', 26)]),
+          el('h3', { text: 'Nothing to review' }),
+          el('p', { text: scoped.ids.length === 0 ? scoped.lead : 'No wrong or guessed answers in that test.' }),
+          el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
+            button({ label: 'Today', variant: 'primary', onClick: () => navigate('/') }),
+            backToNotebook,
+          ]),
+        ]),
+      ]),
+    );
+    return;
+  }
+  const header = card({ title: scoped.title, subtitle: `${list.length} question${list.length === 1 ? '' : 's'} \u00b7 ${scoped.lead}` }, [
+    el('div', { class: 'focus-advance', attrs: { style: 'flex-wrap:wrap' } }, [
+      button({
+        label: `Review these ${list.length}`,
+        variant: 'primary',
+        iconName: 'arrow-right',
+        onClick: () =>
+          mountQuiz(root, list, () => {
+            // The review list is cleared: tick the Today review row (if any).
+            completeActiveTask('review');
+            drawScoped(root, scoped);
+          }),
+      }),
+      backToNotebook,
+    ]),
+  ]);
+  const stack = el('div', { class: 'review-stack', attrs: { 'data-scope': 'test-review' } }, list.map((item) => {
+    const p = state.progress[item.id];
+    const wrong = p?.lastResult === 'wrong';
+    return el('div', { class: 'review-card' }, [
+      el('div', { class: 'subject-head' }, [
+        wrong
+          ? chip({ text: 'Wrong', tone: 'danger', iconName: 'x' })
+          : chip({ text: 'Guessed \u2014 correct', tone: 'warn', iconName: 'target' }),
+      ]),
+      el('p', { class: 'review-q' }, renderPreview(item.question, 220)),
+    ]);
+  }));
+  mount(root, header, stack);
 }
 
 /** Draw the list of active entries. @internal */
@@ -43,12 +128,12 @@ function drawList(root: HTMLElement): void {
   if (active.length === 0) {
     mount(
       root,
-      card({ title: 'Wrong-answer notebook' }, [
+      card({ title: 'My mistakes' }, [
         el('div', { class: 'empty-state' }, [
           el('span', { class: 'empty-icon' }, [icon('check', 26)]),
-          el('h3', { text: 'Notebook clear' }),
-          el('p', { text: 'Miss a question in a drill and it lands here until you nail it twice in a row.' }),
-          button({ label: 'Start a drill', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/drill') }),
+          el('h3', { text: 'No mistakes to review' }),
+          el('p', { text: 'Miss a question in practice and it lands here until you nail it twice in a row.' }),
+          button({ label: 'Start practice', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/practice') }),
         ]),
       ]),
     );
@@ -56,7 +141,7 @@ function drawList(root: HTMLElement): void {
   }
 
   const header = card(
-    { title: 'Wrong-answer notebook', subtitle: `${active.length} active · answer each correctly twice in a row to graduate` },
+    { title: 'My mistakes', subtitle: `${active.length} active · answer each correctly twice in a row to graduate` },
     [
       el('div', { class: 'focus-advance' }, [
         button({ label: `Review all ${active.length}`, variant: 'primary', iconName: 'arrow-right', onClick: () => review(root) }),
@@ -71,7 +156,9 @@ function drawList(root: HTMLElement): void {
         chip({ text: 'Needs work', tone: 'warn', iconName: 'flame' }),
         streakMeter(entry.consecutiveCorrect),
       ]),
-      el('p', { class: 'review-q', text: item ? item.question : `(missing question: ${entry.id})` }),
+      item
+        ? el('p', { class: 'review-q' }, renderPreview(item.question, 220))
+        : el('p', { class: 'review-q', text: `(missing question: ${entry.id})` }),
     ]);
   }));
 

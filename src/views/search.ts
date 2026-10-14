@@ -14,7 +14,7 @@
 import { getSubtopic, getSubtopics } from '../content/loader';
 import { navigate } from '../router/router';
 import { searchDocs, totalResults, type GroupedResults, type SearchDoc } from '../lib/search';
-import { el } from './dom';
+import { el, renderPreview } from './dom';
 import { icon } from './components/icon';
 import { openLearn } from './learn';
 import { openDialog, type DialogController } from './dialog';
@@ -132,7 +132,7 @@ export function openSearch(): void {
         }, [
           el('span', { class: 'search-item-icon' }, [iconFor(doc.kind)]),
           el('span', { class: 'search-item-body' }, [
-            el('span', { class: 'search-item-title', text: doc.title }),
+            el('span', { class: 'search-item-title' }, renderPreview(doc.title, 160)),
             doc.subtitle ? el('span', { class: 'search-item-sub', text: doc.subtitle }) : null,
           ]),
         ]);

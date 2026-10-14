@@ -32,6 +32,8 @@ import { chip } from './components/chip';
 import { icon } from './components/icon';
 import { navigate } from '../router/router';
 import { prettyDate } from './today';
+import { isRowKeyDone, markRowKeyDone, START_HERE_KEY } from '../lib/day-tasks';
+import { todayISO } from '../lib/dates';
 
 /**
  * The application deadline, verbatim from the detailed Notification 07/2026
@@ -55,6 +57,7 @@ export function render(root: HTMLElement): void {
     howToHandleNegativeMarking(),
     omrSheetRules(),
     afterPrelimsMains(),
+    howCurrentAffairsIsAsked(),
     whatIfYouMissADay(),
     footerNav(),
   );
@@ -178,7 +181,7 @@ function howYourPlanWorks(
     el('ul', {}, [
       el('li', {}, [el('strong', { text: 'Weekdays (Mon–Fri): ' }), el('span', { text: 'Mental Ability + one Paper-I subject + revision + current affairs — about 4 hours.' })]),
       el('li', {}, [el('strong', { text: 'Saturday: ' }), el('span', { text: 'a test day — day 1 is your orientation instead.' })]),
-      el('li', {}, [el('strong', { text: 'Sunday: ' }), el('span', { text: 'a longer day (about 6 hours) for Modern History, Polity and a weekly catch-up.' })]),
+      el('li', {}, [el('strong', { text: 'Sunday: ' }), el('span', { text: 'a longer day (about 6 hours): more of the current unit, a Mental Ability set, weekly revision and the Current Affairs round-up.' })]),
     ]),
     el('p', { class: 'section-lead', text: 'The plan moves through three phases, all timed to your exam date:' }),
     el('div', { class: 'md-table-wrap' }, [
@@ -311,6 +314,28 @@ function afterPrelimsMains(): HTMLElement {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Current affairs — how it is asked                                           */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * "How current affairs is asked" — the short CA explainer. Part of the guide
+ * (anchor `#start-ca`) and shown again on Today's day-1 CA row before its
+ * starter set (D7). Exported for Today.
+ */
+export function howCurrentAffairsIsAsked(): HTMLElement {
+  const section = card({ title: 'How current affairs is asked', subtitle: 'A little every day beats a big monthly read' }, [
+    el('ul', {}, [
+      el('li', {}, [el('strong', { text: 'Three banks.' }), el('span', { text: ' AP / Regional, National and International current affairs. Your plan rotates them through the week.' })]),
+      el('li', {}, [el('strong', { text: 'Mostly statement questions.' }), el('span', { text: ' \u201cWhich of the statements is / are correct?\u201d or match-the-pairs. Read every statement; one wrong word makes it false.' })]),
+      el('li', {}, [el('strong', { text: 'Facts in context.' }), el('span', { text: ' Learn what a scheme, report or event is, who runs it, when it started and why it matters to Andhra Pradesh.' })]),
+      el('li', {}, [el('strong', { text: 'The daily habit.' }), el('span', { text: ' Each day\u2019s CA row is a short set from one bank. Skim its notes if a fact is new, then do the set.' })]),
+    ]),
+  ]);
+  section.id = 'start-ca';
+  return section;
+}
+
+/* -------------------------------------------------------------------------- */
 /* (e) Missing a day                                                           */
 /* -------------------------------------------------------------------------- */
 
@@ -331,14 +356,41 @@ function whatIfYouMissADay(): HTMLElement {
 
 /** A one-tap way back into the plan. @internal */
 function footerNav(): HTMLElement {
+  const read = el('div', { class: 'start-read' });
+  // D5: the guide counts as read once the learner reaches its end, or taps
+  // "I've read this" — that ticks the day-1 "Start here" row on Today.
+  const markRead = (): void => {
+    markRowKeyDone(todayISO(), START_HERE_KEY, true);
+    drawRead();
+  };
+  const drawRead = (): void => {
+    read.replaceChildren(
+      isRowKeyDone(todayISO(), START_HERE_KEY)
+        ? chip({ text: 'Guide read \u2713', tone: 'ok', iconName: 'check' })
+        : button({ label: 'I\u2019ve read this', onClick: markRead, variant: 'secondary', iconName: 'check' }),
+    );
+  };
+  drawRead();
   const actions: Child[] = [
     button({ label: 'Go to Today', onClick: () => navigate('/'), variant: 'primary', iconName: 'arrow-right' }),
-    button({ label: 'Open the planner', onClick: () => navigate('/planner'), variant: 'ghost' }),
+    button({ label: 'Open your plan', onClick: () => navigate('/plan'), variant: 'ghost' }),
   ];
-  return el('section', { class: 'start-footer', attrs: { role: 'note' } }, [
+  const footer = el('section', { class: 'start-footer', attrs: { role: 'note' } }, [
     el('span', { class: 'empty-icon' }, [icon('sparkles', 22)]),
     el('p', { class: 'section-lead', text: 'That’s everything you need to begin. Your first day is an orientation — no mock, just a gentle start.' }),
+    read,
     el('div', { class: 'hero-actions' }, actions),
     chip({ text: 'You can reopen this from Settings any time', tone: 'muted' }),
   ]);
+  // Reading to the end (the footer scrolled into view) also counts.
+  if (typeof IntersectionObserver !== 'undefined') {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        io.disconnect();
+        if (!isRowKeyDone(todayISO(), START_HERE_KEY)) markRead();
+      }
+    });
+    io.observe(footer);
+  }
+  return footer;
 }

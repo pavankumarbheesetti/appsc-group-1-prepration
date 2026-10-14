@@ -26,8 +26,11 @@ import { el, mount } from './dom';
 import { icon } from './components/icon';
 import { chip } from './components/chip';
 import { progressBar } from './components/progress';
-import { bandBadge, statusChip } from './components/badges';
+import { bandBadge, studyStatusChip } from './components/badges';
+import { topicStudyFrom, type StudyStatus } from '../lib/study-status';
+import { prelimsScope, studySummary, studiedLine } from '../lib/study-summary';
 import { openLearn } from './learn';
+import { routeQuery } from '../router/router';
 
 /** How rows within a chapter are ordered. */
 type SortMode = 'order' | 'priority';
@@ -49,6 +52,10 @@ interface Row {
   /** Learner-progress percent (mastery), 0–100. */
   mastery: number;
   status: SubtopicStatus;
+  /** The study status (the ONE vocabulary shared with the plan / Today / Learn). */
+  study: StudyStatus;
+  /** Part of the Prelims scope (counted in "Studied N of 117"). */
+  inScope: boolean;
   /** Whether ANY material (notes/mcqs/mains) has been authored yet. */
   hasMaterial: boolean;
   /** Exam-point coverage (present only when the subtopic declares examPoints). */
@@ -65,6 +72,13 @@ const STATUS_RANK: Record<SubtopicStatus, number> = {
   mastered: 3,
 };
 
+/** The Prelims-scope ids (cached per render pass). @internal */
+let scopeCache: Set<string> | null = null;
+function scopeIds(): Set<string> {
+  scopeCache ??= new Set(prelimsScope().map((s) => s.id));
+  return scopeCache;
+}
+
 /** Build the derived {@link Row} for a subtopic. @internal */
 function rowFor(meta: TaxonomySubtopic): Row {
   const view = getSubtopic(meta.id);
@@ -72,7 +86,8 @@ function rowFor(meta: TaxonomySubtopic): Row {
   const mcqs = view?.mcqs.length ?? 0;
   const mains = view?.mains.length ?? 0;
   const ids = view?.mcqs.map((m) => m.id) ?? [];
-  const progress = loadState().progress;
+  const state = loadState();
+  const progress = state.progress;
   const seen = ids.reduce((n, id) => (progress[id] && progress[id].seen > 0 ? n + 1 : n), 0);
   const mastery = subtopicMasteryPct(progress, ids);
   const cov = getSubtopicCoverage(meta.id)?.examPoints;
@@ -84,10 +99,15 @@ function rowFor(meta: TaxonomySubtopic): Row {
     seen,
     mastery,
     status: statusFromMastery(mastery),
+    study: topicStudyFrom(state, meta.id).status,
+    inScope: scopeIds().has(meta.id),
     hasMaterial: notes + mcqs + mains > 0,
     examCoverage: cov ? { pct: cov.pct, covered: cov.covered.length, total: cov.total } : undefined,
   };
 }
+
+/** Plain study-status words for aria labels. @internal */
+const STUDY_LABEL: Record<StudyStatus, string> = { 'not-started': 'Not started', 'in-progress': 'In progress', studied: 'Studied' };
 
 /** Order rows by the active sort mode. @internal */
 function sortRows(rows: Row[]): Row[] {
@@ -110,15 +130,21 @@ interface Summary {
   mastered: number;
   progress: number;
   questions: number;
+  /** In-scope (Prelims) subtopics in this group and how many are studied. */
+  scopeTotal: number;
+  studied: number;
 }
 function summarize(rows: Row[]): Summary {
   const total = rows.length;
+  const scoped = rows.filter((r) => r.inScope);
+  const scopeTotal = scoped.length;
+  const studied = scoped.filter((r) => r.study === 'studied').length;
   const withMaterial = rows.filter((r) => r.hasMaterial).length;
   const started = rows.filter((r) => r.seen > 0).length;
   const mastered = rows.filter((r) => r.status === 'mastered').length;
   const progress = total === 0 ? 0 : Math.round(rows.reduce((s, r) => s + r.mastery, 0) / total);
   const questions = rows.reduce((s, r) => s + r.mcqs, 0);
-  return { total, withMaterial, started, mastered, progress, questions };
+  return { total, withMaterial, started, mastered, progress, questions, scopeTotal, studied };
 }
 
 /**
@@ -129,24 +155,35 @@ function summarize(rows: Row[]): Summary {
 function summaryText(sum: Summary): string {
   // On a fresh install nothing is mastered/progressed yet — show a calm em-dash
   // instead of repeating "0 mastered · 0% progress" on every row.
-  const masteryPart = sum.mastered === 0 && sum.progress === 0
-    ? '\u2014 mastered'
-    : `${sum.mastered} mastered · ${sum.progress}% progress`;
-  return `${sum.withMaterial}/${sum.total} have material · ${masteryPart}`;
+  // Lead with the study status (same source as the plan); accuracy is separate.
+  const studiedPart = sum.scopeTotal > 0 ? studiedLine({ studied: sum.studied, total: sum.scopeTotal }) : `${sum.total} subtopic${sum.total === 1 ? '' : 's'} (Mains / qualifying)`;
+  const accuracyPart = sum.progress > 0 ? ` · Accuracy ${sum.progress}%` : '';
+  return `${studiedPart}${accuracyPart}`;
 }
 
 /** Render the tracker into `root`. */
 export function render(root: HTMLElement): void {
+  // `#/topics?s=<subject>&c=<chapter>` (the Learn breadcrumb): open that
+  // subject + chapter and scroll it into view.
+  const focusSubject = routeQuery('s');
+  const focusChapter = routeQuery('c');
+  if (focusSubject) expandedSubjects.add(focusSubject);
+  if (focusChapter) expandedChapters.add(focusChapter);
   const draw = (): void => {
+    scopeCache = null;
+    const overall = studySummary(loadState());
     const intro = el('div', {}, [
-      el('h2', { class: 'section-title', text: 'Syllabus tracker' }),
-      el('p', { class: 'section-lead', text: 'Browse subjects → chapters → subtopics. Open any subtopic to learn, drill and revise it.' }),
+      el('p', { class: 'page-lead', text: 'Every syllabus topic, by subject. Tap one to study it.' }),
+      el('p', { class: 'syll-studied-headline', attrs: { 'data-studied': String(overall.studied) } }, [
+        el('strong', { class: 'tnum', text: studiedLine(overall) }),
+        el('span', { class: 'section-lead', text: ` Prelims topics \u00b7 ${overall.inProgress} in progress` }),
+      ]),
       el('p', {
         class: 'track-legend',
         attrs: { role: 'note' },
       }, [
         icon('target', 14),
-        el('span', { text: 'Progress = % of this topic\u2019s questions you\u2019ve answered correctly. Priority = High-yield / Medium / Low. Counts = questions/notes/mains available.' }),
+        el('span', { text: 'Studied = marked studied (or 10 practice answers). Accuracy = % of a topic\u2019s questions you\u2019ve answered correctly. Priority = High-yield / Medium / Low.' }),
       ]),
       buildSortBar(draw),
     ]);
@@ -155,6 +192,15 @@ export function render(root: HTMLElement): void {
     mount(root, intro, buildAudit(draw), ...subjects, buildOfficial(draw));
   };
   draw();
+  const target = focusChapter ?? focusSubject;
+  const node = target ? [...root.querySelectorAll<HTMLElement>('[data-anchor]')].find((n) => n.dataset.anchor === target) ?? null : null;
+  if (node && !navigator.userAgent.includes('jsdom')) {
+    // After the router's scroll reset: bring the chapter under the top bar.
+    setTimeout(() => {
+      const bar = document.querySelector<HTMLElement>('.topbar')?.offsetHeight ?? 0;
+      window.scrollTo({ top: Math.max(0, node.getBoundingClientRect().top + window.scrollY - bar - 12), behavior: 'instant' as ScrollBehavior });
+    }, 0);
+  }
 }
 
 /** The Priority / Syllabus-order sort toggle. @internal */
@@ -211,7 +257,7 @@ function buildSubject(code: SubjectCode, name: string, rerender: () => void): HT
     el('span', { class: 'track-summary-stat', text: summaryText(sum) }),
   ]);
 
-  const section = el('section', { class: open ? 'track-subject open' : 'track-subject' }, [summary, body]);
+  const section = el('section', { class: open ? 'track-subject open' : 'track-subject', attrs: { 'data-anchor': code } }, [summary, body]);
   return section;
 }
 
@@ -239,7 +285,7 @@ function buildChapter(chapter: TaxonomyChapter, rerender: () => void): HTMLEleme
     el('span', { class: 'track-summary-stat', text: summaryText(sum) }),
   ]);
 
-  return el('section', { class: open ? 'track-chapter open' : 'track-chapter' }, [summary, body]);
+  return el('section', { class: open ? 'track-chapter open' : 'track-chapter', attrs: { 'data-anchor': chapter.id } }, [summary, body]);
 }
 
 /** Build one clickable subtopic row. @internal */
@@ -248,7 +294,7 @@ function buildRow(row: Row): HTMLElement {
     class: row.hasMaterial ? 'track-row' : 'track-row is-empty',
     type: 'button',
     ariaLabel: row.hasMaterial
-      ? `${row.meta.name} — Progress ${row.mastery}%`
+      ? `${row.meta.name} — ${STUDY_LABEL[row.study]}, Accuracy ${row.mastery}%`
       : `${row.meta.name} — material coming soon`,
     onClick: () => openLearn(row.meta.id),
   }, [
@@ -256,11 +302,11 @@ function buildRow(row: Row): HTMLElement {
       el('span', { class: 'track-row-name', text: row.meta.name }),
       el('div', { class: 'track-row-badges' }, [
         row.meta.band ? bandBadge(row.meta.band) : null,
-        statusChip(row.status),
+        studyStatusChip(row.study),
       ]),
     ]),
     el('div', { class: 'track-row-cov' }, [
-      progressBar({ value: row.mastery / 100, label: 'Progress', caption: `${row.mastery}%`, success: row.mastery >= 100 }),
+      progressBar({ value: row.mastery / 100, label: 'Accuracy', caption: `${row.mastery}%`, success: row.mastery >= 100 }),
       row.examCoverage
         ? el('span', { class: 'track-row-coverage tnum', attrs: { title: 'Exam-point coverage' } }, [
             icon('target', 12),

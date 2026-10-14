@@ -114,3 +114,33 @@
     padding-top: 3mm;
   }
 }
+
+/* The Mental Ability formula sheet (#/formula-sheet, D9): printing from its
+   Print button sets body.print-formula, so ONLY the sheet prints. */
+@media print {
+  body.print-formula .formula-sheet,
+  body.print-formula .formula-sheet * {
+    visibility: visible;
+  }
+  body.print-formula .formula-sheet {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+    background: #fff;
+  }
+  body.print-formula .formula-sheet-actions {
+    display: none;
+  }
+  body.print-formula .formula-grid {
+    column-count: 2;
+    column-gap: 8mm;
+    font-size: 9pt;
+  }
+  body.print-formula .formula-topic {
+    break-inside: avoid;
+  }
+}

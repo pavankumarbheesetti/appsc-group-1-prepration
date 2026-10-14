@@ -4,6 +4,7 @@ import {
   MAX_BOX,
   isDue,
   newCard,
+  startOfLocalDayPlus,
   nextDueList,
   review,
   type SrCard,
@@ -23,19 +24,28 @@ describe('spaced-repetition', () => {
     const c1 = newCard('q1', NOW); // box 1
     const c2 = review(c1, 'correct', NOW); // → box 2
     expect(c2.box).toBe(2);
-    expect(c2.due).toBe(NOW + BOX_INTERVALS_DAYS[2] * DAY); // 3 days
+    expect(c2.due).toBe(startOfLocalDayPlus(NOW, BOX_INTERVALS_DAYS[2])); // start of the day 3 days out
     expect(c2.lapses).toBe(0);
 
     const c3 = review(c2, 'correct', NOW); // → box 3
     expect(c3.box).toBe(3);
-    expect(c3.due).toBe(NOW + BOX_INTERVALS_DAYS[3] * DAY); // 7 days
+    expect(c3.due).toBe(startOfLocalDayPlus(NOW, BOX_INTERVALS_DAYS[3])); // 7 days
   });
 
   it('caps promotion at MAX_BOX', () => {
     let card: SrCard = { id: 'q', box: MAX_BOX, due: NOW, lapses: 0 };
     card = review(card, 'correct', NOW);
     expect(card.box).toBe(MAX_BOX);
-    expect(card.due).toBe(NOW + BOX_INTERVALS_DAYS[MAX_BOX] * DAY); // 35 days
+    expect(card.due).toBe(startOfLocalDayPlus(NOW, BOX_INTERVALS_DAYS[MAX_BOX])); // 35 days
+  });
+
+  it('due granularity is the START of the local day (M7): reviewed tonight → due tomorrow morning', () => {
+    const tonight = new Date(2026, 9, 13, 21, 0, 0).getTime(); // 13 Oct, 21:00 local
+    const next = review({ id: 'q', box: 0, due: tonight, lapses: 0 }, 'correct', tonight); // → box 1, 1 day
+    expect(next.box).toBe(1);
+    expect(next.due).toBe(new Date(2026, 9, 14, 0, 0, 0).getTime());
+    expect(isDue(next, new Date(2026, 9, 14, 8, 0, 0).getTime())).toBe(true); // 08:00 next morning
+    expect(isDue(next, new Date(2026, 9, 13, 23, 59, 0).getTime())).toBe(false);
   });
 
   it('resets to box 1, counts a lapse, and is due now on wrong', () => {

@@ -35,6 +35,8 @@ import {
   setExamDate,
   setPlanStartDate,
   setSundayStudyMinutes,
+  STUDY_MINUTES_BOUNDS,
+  studyMinutesError,
   updateState,
 } from '../state/store';
 import { addDaysISO, todayISO } from '../lib/dates';
@@ -62,17 +64,25 @@ function applyDisplay(): void {
 /** Render the Settings view into `root`. */
 export function render(root: HTMLElement): void {
   const draw = (): void => {
-    mount(root, buildStartHereCard(), buildDisplayCard(draw), buildDataCard(draw), buildAboutCard());
+    mount(root, buildAppearanceCard(draw), buildDisplayCard(draw), buildDataCard(draw), buildStartHereCard(), buildAboutCard());
   };
   draw();
 }
 
 /** A "New here?" card linking to the beginner Start-here guide. @internal */
 function buildStartHereCard(): HTMLElement {
-  return card({ title: 'New here?' }, [
-    el('p', { class: 'section-lead', text: 'The Start here guide explains the exam, how your plan works, and how to study a topic — in plain language.' }),
-    button({ label: 'Open the Start here guide', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/start') }),
+  return card({ title: 'Help' }, [
+    el('p', { class: 'section-lead', text: 'The guide explains the exam, how your plan works, and how to study a topic — in plain language.' }),
+    button({ label: 'How this app works', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/start') }),
   ]);
+}
+
+/**
+ * Appearance — the ONE place for theme + text size (the top-bar `Aa` popover
+ * is a shortcut to the same two settings). @internal
+ */
+function buildAppearanceCard(rerender: () => void): HTMLElement {
+  return card({ title: 'Appearance' }, [themeField(rerender), fontField(rerender)]);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -81,14 +91,12 @@ function buildStartHereCard(): HTMLElement {
 
 /** The display-settings card: exam date, study time, theme, font scale. @internal */
 function buildDisplayCard(rerender: () => void): HTMLElement {
-  return card({ title: 'Display & schedule' }, [
+  return card({ title: 'Exam & schedule' }, [
     examDateField(rerender),
     planStartField(rerender),
     studyTimeField(rerender),
     sundayTimeField(rerender),
     daysOffField(rerender),
-    themeField(rerender),
-    fontField(rerender),
   ]);
 }
 
@@ -133,19 +141,35 @@ function studyTimeField(rerender: () => void): HTMLElement {
     class: 'study-custom-input',
     type: 'number',
     ariaLabel: 'Custom daily study minutes',
-    attrs: { min: '30', max: '720', step: '15', placeholder: 'min', value: String(current) },
+    attrs: {
+      min: String(STUDY_MINUTES_BOUNDS.daily.min),
+      max: String(STUDY_MINUTES_BOUNDS.daily.max),
+      step: '15',
+      placeholder: 'min',
+      value: String(current),
+      'aria-describedby': 'daily-minutes-error',
+    },
   }) as HTMLInputElement;
   custom.value = String(current);
+  // D21: out-of-range values are rejected with a plain message (never saved).
+  const error = el('span', { class: 'settings-hint settings-error', attrs: { id: 'daily-minutes-error', role: 'alert' } });
   custom.addEventListener('change', () => {
     const minutes = Number(custom.value);
-    if (Number.isFinite(minutes) && minutes > 0) set(minutes);
-    else custom.value = String(getDailyStudyMinutes());
+    const msg = custom.value.trim() === '' ? studyMinutesError('daily', Number.NaN) : studyMinutesError('daily', minutes);
+    if (msg === null) {
+      set(minutes);
+      return;
+    }
+    error.textContent = msg;
+    custom.setAttribute('aria-invalid', 'true');
+    custom.value = String(getDailyStudyMinutes());
   });
 
   return el('label', { class: 'field settings-field' }, [
     el('span', { class: 'field-label', text: 'Daily study time' }),
     el('span', { class: 'settings-hint', text: `The plan is fitted to this budget — currently ${fmtHm(current)}/day. No day is scheduled beyond it.` }),
     el('div', { class: 'settings-field-row' }, [seg, custom]),
+    error,
   ]);
 }
 
@@ -157,7 +181,7 @@ const SUNDAY_PRESETS = [240, 300, 360, 420] as const;
  * minutes input, persisted to `settings.sundayStudyMinutes` (default 6 h).
  * Sunday is the one day the learner asked for extra time; Saturday is a mock day
  * and follows the daily budget, so it has no separate control. The extra Sunday
- * minutes are spent on Polity + Modern History. Re-plans on change. Accessible:
+ * minutes lengthen the Sunday unit block (STANDARDS §8a). Re-plans on change. Accessible:
  * the chips are a labelled radio-style `role="group"` of `aria-pressed`
  * buttons, and the custom input carries an explicit `aria-label`. @internal
  */
@@ -186,22 +210,38 @@ function sundayTimeField(rerender: () => void): HTMLElement {
     class: 'study-custom-input',
     type: 'number',
     ariaLabel: 'Custom Sunday study minutes',
-    attrs: { min: '30', max: '720', step: '15', placeholder: 'min', value: String(current) },
+    attrs: {
+      min: String(STUDY_MINUTES_BOUNDS.sunday.min),
+      max: String(STUDY_MINUTES_BOUNDS.sunday.max),
+      step: '15',
+      placeholder: 'min',
+      value: String(current),
+      'aria-describedby': 'sunday-minutes-error',
+    },
   }) as HTMLInputElement;
   custom.value = String(current);
+  // D21: out-of-range values are rejected with a plain message (never saved).
+  const error = el('span', { class: 'settings-hint settings-error', attrs: { id: 'sunday-minutes-error', role: 'alert' } });
   custom.addEventListener('change', () => {
     const minutes = Number(custom.value);
-    if (Number.isFinite(minutes) && minutes > 0) set(minutes);
-    else custom.value = String(getSundayStudyMinutes());
+    const msg = custom.value.trim() === '' ? studyMinutesError('sunday', Number.NaN) : studyMinutesError('sunday', minutes);
+    if (msg === null) {
+      set(minutes);
+      return;
+    }
+    error.textContent = msg;
+    custom.setAttribute('aria-invalid', 'true');
+    custom.value = String(getSundayStudyMinutes());
   });
 
   return el('label', { class: 'field settings-field' }, [
     el('span', { class: 'field-label', text: 'Sunday study time' }),
     el('span', {
       class: 'settings-hint',
-      text: `Extra Sunday time goes to Polity and Modern History — currently ${fmtHm(current)} on Sundays. Saturday is a mock day and follows the daily budget.`,
+      text: `Extra Sunday time lengthens Sunday\u2019s unit block (more of the current unit, plus its wrap-up when it ends) — currently ${fmtHm(current)} on Sundays. Saturday is a mock day and follows the daily budget.`,
     }),
     el('div', { class: 'settings-field-row' }, [seg, custom]),
+    error,
   ]);
 }
 

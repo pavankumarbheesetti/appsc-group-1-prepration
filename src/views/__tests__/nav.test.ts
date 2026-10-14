@@ -5,10 +5,9 @@ import { renderApp } from '../../app';
 import { __resetForTests } from '../../state/store';
 
 /**
- * App shell / nav coherence tests: the Progress tab must open the real
- * analytics view (#/progress), the wrong-answer Notebook lives UNDER Revise
- * (keeping the #/notebook route working), the new Mock tab opens the timed
- * mock setup (#/mock), and the header search button stays.
+ * App shell / nav coherence tests (NAV spec §3.1–3.2): six primary
+ * destinations + Tracks + Settings gear, the 5-item mobile tab bar whose More
+ * sheet never repeats a tab, old routes as redirects, and the header search.
  */
 function navLabels(root: HTMLElement): string[] {
   return [...root.querySelectorAll('.sidebar .nav .nav-item .nav-label')].map(
@@ -32,24 +31,17 @@ describe('app shell nav', () => {
   it('groups the primary nav into labelled sections', () => {
     const root = document.createElement('div');
     renderApp(root);
-    expect(navSections(root)).toEqual(['Plan', 'Study', 'More']);
+    // (no eyebrow) Today · Plan — Study — Tracks.
+    expect(navSections(root)).toEqual(['Study', 'Tracks']);
   });
 
-  it('lists the grouped nav destinations in order (Timeline & Weak areas removed)', () => {
+  it('lists the six primary destinations + the Tracks group, in order (spec names)', () => {
     const root = document.createElement('div');
     renderApp(root);
-    expect(navLabels(root)).toEqual([
-      'Today',
-      'Planner',
-      'Start here',
-      'Syllabus',
-      'Drill',
-      'Mock',
-      'Revise',
-      'Mains',
-      'Languages',
-      'Progress',
-    ]);
+    expect(navLabels(root)).toEqual(['Today', 'Plan', 'Topics', 'Practice', 'Revise', 'Progress', 'Mains', 'Languages']);
+    // Settings is the footer gear, not a group item.
+    const footer = [...root.querySelectorAll('.sidebar-footer .nav-label')].map((n) => n.textContent);
+    expect(footer).toEqual(['Settings']);
   });
 
   it('lands on the Today view by default (route "/")', () => {
@@ -60,15 +52,15 @@ describe('app shell nav', () => {
     expect(root.querySelector('#view')?.textContent).toContain('days to Prelims');
   });
 
-  it('routes Planner to #/planner with the this-week default (exam date lives in Settings)', () => {
+  it('routes Plan to #/plan with the this-week default (exam date lives in Settings)', () => {
     const root = document.createElement('div');
     renderApp(root);
     const planner = [...root.querySelectorAll<HTMLElement>('.sidebar .nav-item')].find(
-      (b) => b.textContent?.includes('Planner'),
+      (b) => b.textContent?.trim() === 'Plan',
     );
     expect(planner).toBeDefined();
     planner!.click();
-    expect(location.hash).toBe('#/planner');
+    expect(location.hash).toBe('#/plan');
     const view = root.querySelector('#view')!;
     // The default view leads with THIS WEEK (not the dense 15-week grid) and no
     // longer embeds an editable exam-date input (that duplicated Settings).
@@ -90,15 +82,21 @@ describe('app shell nav', () => {
     expect(root.querySelector('#view')?.textContent).toContain('No progress');
   });
 
-  it('routes Mock to #/mock and shows the timed-mock setup banner', () => {
+  it('Practice → "Timed mock" segment routes to #/practice/mock and shows the timed-mock setup banner', () => {
     const root = document.createElement('div');
     renderApp(root);
-    const mock = [...root.querySelectorAll<HTMLElement>('.sidebar .nav-item')].find(
-      (b) => b.textContent?.includes('Mock'),
+    const practice = [...root.querySelectorAll<HTMLElement>('.sidebar .nav-item')].find(
+      (b) => b.textContent?.includes('Practice'),
     );
-    expect(mock).toBeDefined();
-    mock!.click();
-    expect(location.hash).toBe('#/mock');
+    practice!.click();
+    expect(location.hash).toBe('#/practice');
+    const segs = [...root.querySelectorAll<HTMLElement>('#view .practice-seg')];
+    expect(segs.map((x) => x.querySelector('.practice-seg-label')?.textContent)).toEqual(['Quick practice', 'Timed mock']);
+    expect(segs[0]!.getAttribute('aria-current')).toBe('page');
+    segs[1]!.click();
+    expect(location.hash).toBe('#/practice/mock');
+    // Practice stays the highlighted destination for the mock.
+    expect(practice!.getAttribute('aria-current')).toBe('page');
     const view = root.querySelector('#view');
     // The no-compensatory-time / negative-marking banner is present on setup.
     expect(view?.textContent).toContain('negative marking');
@@ -107,13 +105,14 @@ describe('app shell nav', () => {
     expect(view?.textContent).toMatch(/Start Paper-I/);
   });
 
-  it('keeps the #/notebook route working and highlights Revise for it', () => {
+  it('keeps the old #/notebook route working (→ #/revise/mistakes) and highlights Revise for it', () => {
     const root = document.createElement('div');
     renderApp(root);
     location.hash = '#/notebook';
     window.dispatchEvent(new HashChangeEvent('hashchange'));
-    // Notebook still renders its own content...
-    expect(root.querySelector('#view')?.textContent).toContain('notebook');
+    expect(location.hash).toBe('#/revise/mistakes');
+    // "My mistakes" (was Notebook) renders...
+    expect(root.querySelector('#view')?.textContent).toContain('My mistakes');
     // ...and the Revise nav item is the active one (Notebook lives under Revise).
     const revise = [...root.querySelectorAll<HTMLElement>('.sidebar .nav-item')].find(
       (b) => b.textContent?.includes('Revise'),
@@ -160,7 +159,7 @@ describe('app shell nav', () => {
     const tabLabels = [...root.querySelectorAll('.tabbar .tab-item .nav-label')].map(
       (n) => n.textContent ?? '',
     );
-    expect(tabLabels).toEqual(['Today', 'Syllabus', 'Drill', 'Revise', 'More']);
+    expect(tabLabels).toEqual(['Today', 'Topics', 'Practice', 'Revise', 'More']);
     // The drawer starts hidden; tapping "More" opens it.
     const more = [...root.querySelectorAll<HTMLElement>('.tabbar .tab-item')].find(
       (b) => b.textContent?.includes('More'),
@@ -169,17 +168,18 @@ describe('app shell nav', () => {
     expect(drawer.hasAttribute('hidden')).toBe(true);
     more.click();
     expect(drawer.hasAttribute('hidden')).toBe(false);
-    // The drawer lists the non-primary destinations, e.g. Planner and Settings.
-    expect(drawer.textContent).toContain('Planner');
-    expect(drawer.textContent).toContain('Settings');
+    // The drawer lists ONLY the non-tab destinations (+ a search field).
+    const moreLabels = [...drawer.querySelectorAll('.nav-item .nav-label')].map((n) => n.textContent);
+    expect(moreLabels).toEqual(['Plan', 'Progress', 'Mains', 'Languages', 'Settings']);
+    expect(drawer.querySelector('.search-field')).not.toBeNull();
     // Navigating from the drawer closes it again.
     const plannerLink = [...drawer.querySelectorAll<HTMLElement>('.nav-item')].find(
-      (b) => b.textContent?.includes('Planner'),
+      (b) => b.textContent?.includes('Plan'),
     )!;
     plannerLink.click();
-    expect(location.hash).toBe('#/planner');
+    expect(location.hash).toBe('#/plan');
     expect(drawer.hasAttribute('hidden')).toBe(true);
-    // "More" is highlighted because Planner is not one of the primary tabs.
+    // "More" is highlighted because Plan is not one of the tabs.
     expect(more.getAttribute('aria-current')).toBe('page');
   });
 

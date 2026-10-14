@@ -154,7 +154,7 @@ export function mockSectionPools(pattern: ExamPattern): SectionPools {
 export function plannerProgress(): PlannerProgress {
   const state = loadState();
   const progress = state.progress;
-  const out: Record<string, { seen: number; masteryPct: number; studied: boolean }> = {};
+  const out: Record<string, { seen: number; masteryPct: number; studied: boolean; studiedOn?: string }> = {};
   for (const s of getSubjects()) {
     for (const meta of getSubtopics(s.code)) {
       const view = getSubtopic(meta.id);
@@ -164,12 +164,17 @@ export function plannerProgress(): PlannerProgress {
         const p = progress[id];
         if (p && p.seen > 0) seen += 1;
       }
+      const studied = deriveStudyStatus(state.study[meta.id], seen, ids.length) === 'studied';
+      const studiedOn = studied ? state.study[meta.id]?.studiedOn : undefined;
       out[meta.id] = {
         seen,
         masteryPct: subtopicMasteryPct(progress, ids),
         // The explicit study status (Mark as studied / ≥ 10 answered) — NOT just
         // "one question seen" — drives days-behind, recovery and coverage.
-        studied: deriveStudyStatus(state.study[meta.id], seen, ids.length) === 'studied',
+        studied,
+        // WHEN it was studied: the progress-aware re-plan (C1) drops topics
+        // studied before today from first-pass packing; today's stay ticked.
+        ...(studiedOn !== undefined ? { studiedOn } : {}),
       };
     }
   }
@@ -258,4 +263,41 @@ export function currentPlan(now: Date = new Date()): Plan {
     // mocks move off them and displaced work flows into the catch-up buffers.
     daysOff: settings.daysOff,
   });
+}
+
+/** Memo of {@link onTimePlan}, keyed by the settings that shape it. @internal */
+let onTimeMemo: { key: string; plan: Plan } | null = null;
+
+/**
+ * The ON-TIME plan: the schedule built from the plan start with NO progress
+ * (the same reference the planner measures "days behind" against). Today's
+ * catch-up rows read the topics it scheduled on past days (H4). Memoised on the
+ * schedule-shaping settings — it does not depend on progress.
+ */
+export function onTimePlan(): Plan {
+  const settings = loadState().settings;
+  const key = JSON.stringify([
+    settings.examDate,
+    settings.planStartDate,
+    settings.dailyStudyMinutes,
+    settings.sundayStudyMinutes,
+    settings.daysOff,
+  ]);
+  if (onTimeMemo?.key === key) return onTimeMemo.plan;
+  const plan = buildPlan({
+    subtopics: planSubtopics(),
+    progress: {},
+    mainsQuestionIds: mainsQuestionBank(),
+    mainsPapers: mainsRevisionPapers(),
+    pyqFrequency: pyqFrequency(),
+    sequence: learningSequence(),
+    examDateISO: settings.examDate,
+    startISO: settings.planStartDate,
+    todayISO: settings.planStartDate,
+    dailyBudgetMin: settings.dailyStudyMinutes,
+    weekendBudgetMin: settings.sundayStudyMinutes,
+    daysOff: settings.daysOff,
+  });
+  onTimeMemo = { key, plan };
+  return plan;
 }

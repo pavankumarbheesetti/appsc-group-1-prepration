@@ -14,7 +14,7 @@
  * On mobile the grid stacks into a single column. All numbers come from the
  * pure rhythm engine.
  */
-import { type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic, type SubjectFit } from '../engine/planner';
+import { behindBanner, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic, type SubjectFit } from '../engine/planner';
 import { getLearningSequence, getSubtopic, getSubtopics } from '../content/loader';
 import { SUBJECTS, type SubjectCode } from '../content/types';
 import { getPlanStartDate } from '../state/store';
@@ -24,7 +24,8 @@ import { mockSeriesLength } from '../engine/mock';
 import { PAPER_I, PAPER_II } from '../lib/exam-pattern';
 import { loadState } from '../state/store';
 import { subtopicMasteryPct } from '../lib/metrics';
-import { daysToGo, diffDaysISO, todayISO } from '../lib/dates';
+import { addDaysISO, dayOfWeekISO, daysToGo, diffDaysISO, todayISO } from '../lib/dates';
+import { isTopicStudied, studiedTopicIds, topicStudyFrom } from '../lib/study-status';
 import { el, mount, type Child } from './dom';
 import { card } from './components/card';
 import { chip } from './components/chip';
@@ -33,7 +34,8 @@ import { icon } from './components/icon';
 import { navigate } from '../router/router';
 import { openLearn } from './learn';
 import { openPaperMock, openWeekTest, openUnitTest } from './mock';
-import { prettyDate, prettyDowDate, fmtDuration, startPracticeDrill } from './today';
+import { prettyDate, prettyDowDate, fmtDuration } from './today';
+import { computeReviseCtx, dayRows, rowView } from './today-tasks';
 
 /** Render the Planner view into `root`. */
 export function render(root: HTMLElement): void {
@@ -69,9 +71,10 @@ function buildHeader(summary: PlanSummary): HTMLElement {
   const today = todayISO();
   const daysToExam = daysToGo(summary.examDateISO, today);
 
+  // H2: `onTrack` is derived from the SAME `daysBehind` Today's banner uses.
   const fit = summary.onTrack
     ? `On track — new topics finish by ${prettyDate(summary.coverageEndISO)}.`
-    : `Behind by ${summary.behindBy} topic${summary.behindBy === 1 ? '' : 's'} — a little more each day catches up before ${prettyDate(summary.examDateISO)}.`;
+    : `${summary.daysBehind} ${summary.daysBehind === 1 ? 'day' : 'days'} behind (${summary.behindBy} topic${summary.behindBy === 1 ? '' : 's'}) — new topics now finish by ${prettyDate(summary.coverageEndISO)}.`;
 
   const feasibility = el('p', {
     class: summary.onTrack ? 'feasibility is-ok' : 'feasibility is-warn',
@@ -98,7 +101,7 @@ function buildHeader(summary: PlanSummary): HTMLElement {
   ]);
 
   const left = el('div', { class: 'hero-body' }, [
-    el('h2', { class: 'hero-title', text: 'Study planner' }),
+    el('p', { class: 'hero-lead', text: 'Your day-by-day calendar to the exam.' }),
     feasibility,
     examLine,
   ]);
@@ -107,22 +110,18 @@ function buildHeader(summary: PlanSummary): HTMLElement {
 }
 
 /**
- * RE-AUDIT 2 — the calm RECOVERY banner on the Planner (no alarm wording),
- * shown only when the learner is genuinely behind (`summary.daysBehind ≥ 1`) and
- * the plan was adjusted to stay feasible. Returns `null` otherwise. @internal
+ * The behind banner on the Planner — the SAME copy as Today ({@link
+ * behindBanner}, D4): calm "plan adjusted" for 1–7 days, "here is the reduced
+ * plan" + options beyond a week, and never "finish on time" unless feasible.
+ * Returns `null` when not behind. @internal
  */
 function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
-  if (!summary.recovery || summary.daysBehind < 1) return null;
-  const n = summary.daysBehind;
-  const detail =
-    summary.recoveryChanges.length > 0
-      ? `${summary.recoveryChanges.join('; ')}. You can still finish on time.`
-      : 'The plan has been rebalanced so you can still finish on time.';
-  return el('section', { class: 'feasibility is-ok', attrs: { role: 'status' } }, [
+  const copy = behindBanner(summary, todayISO());
+  if (!copy) return null;
+  return el('section', { class: copy.tone === 'calm' ? 'feasibility is-ok' : 'feasibility is-warn', attrs: { role: 'status' } }, [
     icon('calendar', 16),
-    el('span', {
-      text: `You\u2019re ${n} ${n === 1 ? 'day' : 'days'} behind \u2014 the plan has been adjusted: ${detail}`,
-    }),
+    el('span', { text: `${copy.title}. ${copy.detail}` }),
+    copy.options.length > 0 ? el('ul', { class: 'planner-behind-options' }, copy.options.map((o) => el('li', { text: o }))) : null,
   ]);
 }
 
@@ -130,15 +129,36 @@ function buildRecoveryBanner(summary: PlanSummary): HTMLElement | null {
 /* This week — the default view (unit header + 7-row table)                    */
 /* -------------------------------------------------------------------------- */
 
-/** The 7-day week that contains today (or the first upcoming/first week). @internal */
+/** The Monday (ISO) of the calendar week containing `iso`. @internal */
+function mondayOf(iso: string): string {
+  return addDaysISO(iso, -((dayOfWeekISO(iso) + 6) % 7));
+}
+
+/** The Mon–Sun dates of the calendar week containing today (M8). @internal */
+function thisWeekDates(): string[] {
+  const mon = mondayOf(todayISO());
+  return Array.from({ length: 7 }, (_, i) => addDaysISO(mon, i));
+}
+
+/**
+ * The plan days of the Mon–Sun calendar week that contains today (M8). The live
+ * plan starts at today, so past days of the week are absent here (the week
+ * table renders them from what was actually studied). @internal
+ */
 function thisWeekDays(plan: Plan): PlanDay[] {
-  if (plan.days.length === 0) return [];
-  const anchor =
-    plan.days.find((d) => d.status === 'today') ??
-    plan.days.find((d) => d.status === 'upcoming') ??
-    plan.days[0]!;
-  const w = Math.floor(anchor.dayIndex / 7);
-  return plan.days.filter((d) => Math.floor(d.dayIndex / 7) === w);
+  const dates = new Set(thisWeekDates());
+  return plan.days.filter((d) => dates.has(d.dateISO));
+}
+
+/** Names of the topics actually STUDIED on `dateISO` (what was done). @internal */
+function studiedOnNames(dateISO: string): string[] {
+  const state = loadState();
+  return getSubtopics()
+    .filter((s) => {
+      const info = topicStudyFrom(state, s.id);
+      return info.status === 'studied' && info.studiedOn === dateISO;
+    })
+    .map((s) => s.name);
 }
 
 /** The short unit name — the part before the em-dash (e.g. "Ancient India I"). @internal */
@@ -182,7 +202,10 @@ function dayFocus(day: PlanDay): { label: string; topics: string } {
   if (day.dayOff) return { label: 'Day off', topics: 'Current Affairs + flashcards' };
   if (day.light) return { label: 'Light day', topics: '' };
   if (day.blocks.length === 0) return { label: 'Rest', topics: '' };
-  const names = day.topics.map((t) => (t.kind === 'practice' ? 'Mental Ability practice' : t.name || t.subtopicId));
+  // Topics already studied show a tick (what was done this week).
+  const names = day.topics.map((t) =>
+    t.kind === 'practice' ? 'Mental Ability practice' : `${t.name || t.subtopicId}${isTopicStudied(t.subtopicId) ? ' \u2713' : ''}`,
+  );
   const label = day.unitTitle ? unitShortTitle(day.unitTitle) : (day.blocks[0]?.label ?? 'Study');
   // Revision cycle: flag a day whose revisit carries the +5-min For-Mains read.
   const mainsAngle = day.blocks.some((b) => (b.topics ?? []).some((t) => t.mainsAngle));
@@ -200,13 +223,32 @@ function dayFocus(day: PlanDay): { label: string; topics: string } {
  */
 function buildThisWeek(plan: Plan): HTMLElement {
   const week = thisWeekDays(plan);
-  if (week.length === 0) {
+  if (week.length === 0 && plan.days.length === 0) {
     return card({ title: 'This week' }, [
       el('p', { class: 'section-lead', text: 'No days to plan — set an exam date in the future (Settings).' }),
     ]);
   }
   const start = getPlanStartDate();
-  const rows = week.map((day) => {
+  const byDate = new Map(week.map((d) => [d.dateISO, d] as const));
+  // M8: the Mon–Sun CALENDAR week. Days before today come from what the learner
+  // actually studied that day (the live plan starts today).
+  const rows = thisWeekDates().map((dateISO) => {
+    const day = byDate.get(dateISO);
+    if (!day) {
+      const done = studiedOnNames(dateISO);
+      const before = diffDaysISO(dateISO, start) > 0;
+      return el('tr', { class: 'pw-row is-past' }, [
+        el('th', { attrs: { scope: 'row' }, class: 'pw-day' }, [
+          el('span', { class: 'pw-dow', text: dowLabel(dateISO) }),
+          el('span', { class: 'pw-date tnum', text: prettyDate(dateISO).replace(/ \d{4}$/, '') }),
+        ]),
+        el('td', { class: 'pw-focus' }, [
+          el('span', { class: 'pw-focus-label', text: before ? 'Before your plan' : done.length > 0 ? 'Done' : 'Nothing recorded' }),
+          done.length > 0 ? el('span', { class: 'pw-focus-topics', text: done.map((n) => `${n} \u2713`).join(', ') }) : null,
+        ]),
+        el('td', { class: 'pw-min tnum', text: '\u2014' }),
+      ]);
+    }
     const preStart = diffDaysISO(day.dateISO, start) > 0;
     const focus = preStart ? { label: 'Free day', topics: 'Plan starts soon' } : dayFocus(day);
     const cls = ['pw-row', `is-${day.status}`];
@@ -217,10 +259,10 @@ function buildThisWeek(plan: Plan): HTMLElement {
         el('span', { class: 'pw-date tnum', text: prettyDate(day.dateISO).replace(/ \d{4}$/, '') }),
         day.status === 'today' ? chip({ text: 'Today', tone: 'ok' }) : null,
       ]),
-      el('td', { class: 'pw-focus' }, [
+      el('td', { class: 'pw-focus' }, preStart ? [
         el('span', { class: 'pw-focus-label', text: focus.label }),
-        focus.topics ? el('span', { class: 'pw-focus-topics', text: focus.topics }) : null,
-      ]),
+        el('span', { class: 'pw-focus-topics', text: focus.topics }),
+      ] : weekFocusCell(day, focus)),
       el('td', { class: 'pw-min tnum', text: preStart ? '—' : fmtDuration(day.plannedMinutes) }),
     ]);
   });
@@ -239,6 +281,35 @@ function buildThisWeek(plan: Plan): HTMLElement {
     el('h3', { class: 'card-title', text: 'This week' }),
     table,
   ]);
+}
+
+/**
+ * The This-week focus cell (D2): the day's label opens its first row (a mock,
+ * the week test, a light day…) and each topic opens its Learn page — the same
+ * destinations as the Today rows. @internal
+ */
+function weekFocusCell(day: PlanDay, focus: { label: string; topics: string }): Child[] {
+  const topics: Array<{ id: string; name: string; index: number }> = [];
+  day.blocks.forEach((b, index) => {
+    if (b.kind.startsWith('ca')) return;
+    for (const t of b.topics ?? []) if (t.kind !== 'practice') topics.push({ id: t.subtopicId, name: t.name || t.subtopicId, index });
+  });
+  const first = day.blocks.findIndex(() => true);
+  const label = topics.length === 0 && first >= 0
+    ? el('button', { class: 'pw-focus-label pw-link', type: 'button', ariaLabel: `Open ${focus.label}`, onClick: () => openRow(day, first) }, [el('span', { text: focus.label })])
+    : el('span', { class: 'pw-focus-label', text: focus.label });
+  if (topics.length === 0) return [label, focus.topics ? el('span', { class: 'pw-focus-topics', text: focus.topics }) : null];
+  return [
+    label,
+    el('span', { class: 'pw-focus-topics' }, topics.map((t, i) =>
+      el('button', {
+        class: 'pw-link pw-topic-link',
+        type: 'button',
+        ariaLabel: `Study ${t.name}${isTopicStudied(t.id) ? ', studied' : ''}`,
+        onClick: () => openRow(day, t.index, t.id),
+      }, [el('span', { text: `${t.name}${isTopicStudied(t.id) ? ' \u2713' : ''}${i < topics.length - 1 ? ',' : ''}` })]),
+    )),
+  ];
 }
 
 /* -------------------------------------------------------------------------- */
@@ -552,14 +623,25 @@ function dayCell(day: PlanDay): HTMLElement {
   const body: Child[] = preStart
     ? [el('span', { class: 'plan-day-idle', text: `Plan starts ${prettyDowDate(start)}` })]
     : day.blocks.length > 0
-      ? day.blocks.map(cellBlock)
+      ? day.blocks.map((b, i) => cellBlock(b, day, i))
       : [el('span', { class: 'plan-day-idle', text: day.light ? 'Light day' : 'Rest' })];
 
   return el('div', { class: cls.join(' ') }, [head, el('div', { class: 'plan-cell-body' }, body)]);
 }
 
+/**
+ * Open what Today's row for block `index` of `day` opens (D2: one destination
+ * per row, shared with Today). Resolved lazily on tap. @internal
+ */
+function openRow(day: PlanDay, index: number, topicId?: string): void {
+  const rows = dayRows(day).filter((r) => r.blockIndex === index);
+  const row = (topicId ? rows.find((r) => r.topic?.subtopicId === topicId) : undefined) ?? rows[0];
+  if (!row) return;
+  rowView(row, { reviseCtx: computeReviseCtx(todayISO(), day), day }).onClick();
+}
+
 /** One block row inside a day cell. @internal */
-function cellBlock(block: PlanBlock): HTMLElement {
+function cellBlock(block: PlanBlock, day: PlanDay, index: number): HTMLElement {
   if (block.kind === 'mock' && block.mockPaper) {
     const paper = block.mockPaper;
     const dress = block.label.includes('Dress rehearsal');
@@ -581,6 +663,17 @@ function cellBlock(block: PlanBlock): HTMLElement {
     }, [icon('timer', 13), el('span', { text: block.label })]);
   }
   if (block.kind === 'unit-wrapup') {
+    // D19: only a FINISHED unit (every topic studied) gets its wrap-up test.
+    const left = (block.unitTestSubtopicIds ?? []).filter((id) => !isTopicStudied(id));
+    if (left.length > 0) {
+      const unit = unitShortTitle(block.unitTitle ?? block.label);
+      return el('button', {
+        class: 'plan-cell-block',
+        type: 'button',
+        ariaLabel: `Finish ${unit} first — ${left.length} topic${left.length === 1 ? '' : 's'} left`,
+        onClick: () => openLearn(left[0]!),
+      }, [el('span', { class: 'plan-cell-block-label', text: `Finish ${unit} first · ${fmtDuration(block.minutes)}` })]);
+    }
     const q = block.unitTestCount ?? 0;
     return el('button', {
       class: 'plan-cell-mock',
@@ -588,27 +681,34 @@ function cellBlock(block: PlanBlock): HTMLElement {
       ariaLabel: q > 0
         ? `Start the unit test — ${q} question${q === 1 ? '' : 's'} from this unit only`
         : 'Open the unit wrap-up',
-      onClick: () => openUnitTest(block),
+      onClick: () => openUnitTest({ ...block, unitTestSubtopicIds: studiedTopicIds(block.unitTestSubtopicIds ?? []) }),
     }, [icon('timer', 13), el('span', { text: block.label })]);
   }
 
   const topics = block.topics ?? [];
   const head = el('span', { class: 'plan-cell-block-label', text: `${block.label} · ${fmtDuration(block.minutes)}` });
-  if (topics.length === 0) {
-    return el('div', { class: 'plan-cell-block' }, [head]);
+  if (topics.length === 0 || block.kind.startsWith('ca')) {
+    // Topic-less rows (CA set, Revise, catch-up, review, Mains answer, light
+    // day…) open exactly what the Today row opens.
+    return el('button', {
+      class: 'plan-cell-block is-link',
+      type: 'button',
+      ariaLabel: `${block.label}, about ${fmtDuration(block.minutes)}`,
+      onClick: () => openRow(day, index),
+    }, [head]);
   }
-  return el('div', { class: 'plan-cell-block' }, [head, el('div', { class: 'plan-cell-topics' }, topics.map(topicPill))]);
+  return el('div', { class: 'plan-cell-block' }, [head, el('div', { class: 'plan-cell-topics' }, topics.map((t) => topicPill(t, () => openRow(day, index, t.subtopicId))))]);
 }
 
 /** A study topic pill inside the grid (FULL / Quick pass). @internal */
-function topicPill(topic: PlanTopic): HTMLElement {
+function topicPill(topic: PlanTopic, onPractice: () => void): HTMLElement {
   if (topic.kind === 'practice') {
     const q = topic.mcqCount;
     return el('button', {
       class: 'plan-study-pill',
       type: 'button',
       ariaLabel: `Mental Ability practice · ${q} question${q === 1 ? '' : 's'}`,
-      onClick: () => startPracticeDrill(topic.practiceSubtopicIds ?? [], q > 0 ? q : 20),
+      onClick: onPractice,
     }, [
       el('span', { class: 'plan-pill-fast', text: 'PRACTICE' }),
       el('span', { text: 'Mental Ability practice' }),

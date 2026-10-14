@@ -93,9 +93,17 @@ export interface PlanSubtopic {
  * explicit/derived STUDY STATUS (see `lib/study-status.ts`) and, when present,
  * is the sole test of "studied" (days behind, recovery, coverage). When absent
  * (older callers / tests) a topic counts as studied once `seen > 0`.
+ *
+ * `studiedOn` (ISO date) is WHEN the topic became studied. The progress-aware
+ * re-plan (C1/D1) never re-schedules a topic the learner already studied: a
+ * topic with `studied === true` is dropped from first-pass packing (units, MENT,
+ * CA) UNLESS `studiedOn >= todayISO` — so topics ticked TODAY keep showing on
+ * today's rows (as "Studied ✓"), and a plan reconstructed for an earlier date
+ * still sees topics studied after that date. A studied topic with no date counts
+ * as studied before today.
  */
 export type PlannerProgress = Readonly<
-  Record<string, { seen: number; masteryPct: number; studied?: boolean }>
+  Record<string, { seen: number; masteryPct: number; studied?: boolean; studiedOn?: string }>
 >;
 
 /**
@@ -260,6 +268,11 @@ export interface PlanBlock {
   weekTestThisWeekIds?: string[];
   /** For a `ca`/`ca-refresh`/`ca-roundup` block: its focus CA subtopic id. */
   caSubtopicId?: string;
+  /**
+   * True on the day-1 orientation CA block ("How current affairs is asked"):
+   * Today opens the Start-here CA explainer, then a short CA starter set.
+   */
+  caIntro?: boolean;
   /** Previous topic name in the same subject's sequence (Today view). */
   buildsOn?: string;
   /**
@@ -1238,6 +1251,23 @@ export const WRAPUP_GLANCE_MIN = 15;
 export const WRAPUP_REVIEW_MIN = 15;
 
 /**
+ * D19 — the smallest block a day ever shows (minutes). Flexible topic-less
+ * blocks scaled below this are merged into a neighbour (see `mergeTinyBlocks`).
+ */
+export const MIN_BLOCK_MIN = 10;
+
+/** Topic-less flexible block kinds that may be merged away when tiny. @internal */
+const TINY_MERGEABLE_KINDS: ReadonlySet<PlanBlockKind> = new Set<PlanBlockKind>([
+  'targeted-revision',
+  'catchup',
+  'weakest-area',
+  'revise',
+  'weekly-revision',
+  'week-test-review',
+  'mock-review',
+]);
+
+/**
  * The timed UNIT TEST size inside a wrap-up of `size` minutes: the middle slice
  * after the glance + review, at 1 question / minute, −1/3 marking. Never
  * negative (a 30-min wrap-up is glance + review only, with a 0-question test).
@@ -1387,17 +1417,32 @@ export function buildPlan(opts: BuildPlanOpts): Plan {
   // study-days' first-pass work is missing. The retro build (today = plan start)
   // is the on-time schedule; it recurses only one level (its today == start, so
   // the inner call computes daysBehind = 0 and does not recurse again).
+  //
+  // The retro build is the CANONICAL on-time schedule, so it is built from an
+  // EMPTY progress map: the progress-aware packing (which drops already-studied
+  // topics) must not reshape the reference schedule. Every first-pass id in it
+  // comes from a block with a completion action (subject / MENT / CA topic rows
+  // all carry a "Mark as studied" tick — C2), so a learner who completes every
+  // Today row is never counted behind. `behindBy` (H2) is the number of those
+  // elapsed first-pass topics still unstudied.
   let daysBehind = 0;
+  let behindBy = 0;
   if (diffDaysISO(opts.startISO, todayISO) > 0) {
-    const retro = buildPlan({ ...opts, todayISO: opts.startISO });
+    const retro = buildPlan({ ...opts, progress: {}, todayISO: opts.startISO });
     const studiedSet = new Set(prelims.filter((s) => isStudied(s.id)).map((s) => s.id));
     const missed = new Set<string>();
+    const missedIds = new Set<string>();
     for (const d of retro.days) {
       if (d.dateISO < opts.startISO || d.dateISO >= todayISO) continue;
       const fp = [...d.theorySubtopicIds, ...d.aptitudeSubtopicIds];
-      if (fp.length > 0 && fp.some((id) => !studiedSet.has(id))) missed.add(d.dateISO);
+      for (const id of fp) {
+        if (studiedSet.has(id)) continue;
+        missed.add(d.dateISO);
+        missedIds.add(id);
+      }
     }
     daysBehind = missed.size;
+    behindBy = missedIds.size;
   }
 
   return buildRhythmPlan(opts, {
@@ -1424,6 +1469,7 @@ export function buildPlan(opts: BuildPlanOpts): Plan {
     mainsQuestionsTotal: mainsQuestionIds.length,
     postMainsPerDay,
     daysBehind,
+    behindBy,
   });
 }
 
@@ -1453,6 +1499,8 @@ interface RhythmContext {
   postMainsPerDay: number;
   /** RE-AUDIT 2 — elapsed plan study-days with unstudied first-pass work (0 on-time). */
   daysBehind: number;
+  /** H2 — unstudied first-pass topics on those elapsed days (0 on-time). */
+  behindBy: number;
 }
 
 /** The rhythm region a day falls in (coverage → revision → final → light → exam). */
@@ -1531,8 +1579,32 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   };
   const subjectLists: Record<string, PlanSubtopic[]> = {};
   for (const code of SUBJECT_ORDER) subjectLists[code] = listFor(code);
-  const mentList = listFor('MENT');
-  const caList = listFor('CA');
+
+  // ---- C1/D1: PROGRESS-AWARE first pass -----------------------------------
+  // A topic the learner already studied BEFORE today is never re-scheduled for a
+  // first pass: it is dropped from unit / MENT / CA packing, so the plan from
+  // today continues with the NEXT unstudied topics. Topics studied TODAY (or,
+  // for a plan reconstructed at an earlier date, studied after it) stay in the
+  // packing so today's rows keep showing them ticked. Only an EXPLICIT study
+  // status counts here (`studied === true`); the legacy `seen > 0` fallback
+  // never removes a topic from the schedule.
+  const studiedBefore = (id: string): boolean => {
+    const p = opts.progress[id];
+    if (p?.studied !== true) return false;
+    return !(p.studiedOn !== undefined && p.studiedOn >= todayISO);
+  };
+  const pending = (s: PlanSubtopic): boolean => !studiedBefore(s.id);
+  /** When a studied-before topic was studied (unknown → the plan start). */
+  const studiedDateOf = (id: string): string => {
+    const on = opts.progress[id]?.studiedOn;
+    return on !== undefined && on < todayISO ? on : opts.startISO < todayISO ? opts.startISO : addDaysISO(todayISO, -1);
+  };
+  // Full lists (revision parts, sweeps, practice scope) vs the PENDING lists the
+  // first-pass packers consume.
+  const mentListAll = listFor('MENT');
+  const caListAll = listFor('CA');
+  const mentList = mentListAll.filter(pending);
+  const caList = caListAll.filter(pending);
   const seqIndex = new Map<string, number>();
   for (const code of Object.keys(seqOrder)) {
     (seqOrder[code] ?? []).forEach((id, i) => seqIndex.set(id, i));
@@ -1688,32 +1760,48 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     id: string;
     title: string;
     subjectCode: string;
+    /** The unit's PENDING topics (not studied before today) — what the packer teaches. */
     topics: PlanSubtopic[];
+    /** EVERY topic of the unit (the unit-test pool / topic count). */
+    allTopics: PlanSubtopic[];
   }
   const unitSpecs = opts.sequence?.units;
   let units: BuiltUnit[];
   if (unitSpecs && unitSpecs.length > 0) {
     units = [];
     for (const u of unitSpecs) {
-      const topics: PlanSubtopic[] = [];
+      const allTopics: PlanSubtopic[] = [];
       for (const id of u.topicIds) {
         const s = byId.get(id);
-        if (s && (s.track ?? 'paper1') !== 'mains') topics.push(s);
+        if (s && (s.track ?? 'paper1') !== 'mains') allTopics.push(s);
       }
-      if (topics.length > 0) units.push({ id: u.id, title: u.title, subjectCode: u.subjectCode, topics });
+      if (allTopics.length > 0) {
+        units.push({ id: u.id, title: u.title, subjectCode: u.subjectCode, topics: allTopics.filter(pending), allTopics });
+      }
     }
   } else {
     units = SUBJECT_ORDER.map((code) => ({
       id: `unit-${code.toLowerCase()}`,
       title: SUBJECT_LABEL[code] ?? code,
       subjectCode: code,
-      topics: subjectLists[code]!,
-    })).filter((u) => u.topics.length > 0);
+      topics: subjectLists[code]!.filter(pending),
+      allTopics: subjectLists[code]!,
+    })).filter((u) => u.allTopics.length > 0);
   }
   const unitIndexById = new Map<string, number>();
-  units.forEach((u, ui) => u.topics.forEach((s) => unitIndexById.set(s.id, ui)));
-  // Every topic that belongs to a unit, in UNIT (teaching) order.
+  units.forEach((u, ui) => u.allTopics.forEach((s) => unitIndexById.set(s.id, ui)));
+  // Every PENDING topic that belongs to a unit, in UNIT (teaching) order.
   const allUnitTopics: PlanSubtopic[] = units.flatMap((u) => u.topics);
+  /**
+   * Distinct days ALREADY spent on unit `ui` before today (the studied-before
+   * topics' dates) — so the "day N of M" counter reflects real progress plus the
+   * remaining run, instead of restarting at day 1 on every re-plan. @internal
+   */
+  const unitPriorDays = (ui: number): number => {
+    const dates = new Set<string>();
+    for (const s of units[ui]!.allTopics) if (studiedBefore(s.id)) dates.add(studiedDateOf(s.id));
+    return dates.size;
+  };
 
   // Lexicographic compare of priority keys (for downgrade/defer victim picks).
   const cmpKey = (a: number[], b: number[]): number => {
@@ -2274,6 +2362,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     allSubjectTopics
       .filter(
         (s) =>
+          pending(s) &&
           floorTier(s) !== 'quick' &&
           (r.leftoverIds.includes(s.id) ||
             deferred.has(s.id) ||
@@ -2388,8 +2477,16 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
 
   // ---- CA first-pass tracking (first rotation appearance per CA id) -------
   const caFirstPassByDate = new Map<string, string>(); // date → CA id first-passed
+  // C2: the day-1 ORIENTATION CA block ("How current affairs is asked · first CA
+  // set") IS the first pass of the first CA topic — it carries that topic so it
+  // can be ticked, and the weekday rotation continues with the others.
+  const orientationCaId = orientationISO !== undefined ? caList[0]?.id : undefined;
   {
     const passed = new Set<string>();
+    if (orientationISO !== undefined && orientationCaId !== undefined) {
+      passed.add(orientationCaId);
+      caFirstPassByDate.set(orientationISO, orientationCaId);
+    }
     for (const slot of subjectSlots) {
       if (slot.dow < 1 || slot.dow > 5) continue; // CA block only on weekdays
       const caId = CA_ROTATION[slot.dow];
@@ -2410,6 +2507,11 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   for (const p of [...placements, ...spillPlacements, ...orientationPlacements]) pushFirstPass(p.dateISO, p.id);
   for (const [dateISO, list] of mentByDate) for (const s of list) pushFirstPass(dateISO, s.id);
   for (const [dateISO, caId] of caFirstPassByDate) pushFirstPass(dateISO, caId);
+  // Topics the learner ALREADY studied (dropped from packing above) keep their
+  // ACTUAL first-pass date — so spaced recall, the revision ordering, the
+  // targeted-revision defaults and the week-test pools (by real `studiedOn`,
+  // H3/M3) still see them.
+  for (const s of ctx.prelims) if (studiedBefore(s.id)) pushFirstPass(studiedDateOf(s.id), s.id);
 
   const isApOrBandA = (id: string): boolean => AP_RE.test(id) || byId.get(id)?.band === 'A';
 
@@ -2505,12 +2607,17 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   };
 
   // ---- Covered-MENT (for practice scope) as of a date --------------------
+  // M4: the practice scope is the MENT topics actually STUDIED (before today)
+  // plus those the plan first-passes on/before the date — never the whole MENT
+  // list. An empty scope is allowed: the launcher then asks the learner to do
+  // today's Mental Ability topic first.
   const mentDates = [...mentByDate.keys()].sort();
+  const studiedMentIds = mentListAll.filter((s) => studiedBefore(s.id)).map((s) => s.id);
   const coveredMentUpTo = (dateISO: string): string[] => {
-    const out: string[] = [];
+    const out: string[] = [...studiedMentIds];
     for (const d of mentDates) {
       if (d > dateISO) break;
-      for (const s of mentByDate.get(d)!) out.push(s.id);
+      for (const s of mentByDate.get(d)!) if (!out.includes(s.id)) out.push(s.id);
     }
     return out;
   };
@@ -2562,11 +2669,14 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     if (ui === undefined || ui < 0 || ui >= units.length) return;
     const u = units[ui]!;
     const run = unitDates[ui]!;
+    // "day N of M" counts the days ALREADY spent on the unit (real study dates)
+    // plus the REMAINING run, so a re-plan never resets it to day 1.
+    const prior = unitPriorDays(ui);
     day.unitId = u.id;
     day.unitTitle = u.title;
     day.unitSubjectCode = u.subjectCode;
-    day.unitDay = Math.max(1, run.indexOf(day.dateISO) + 1);
-    day.unitDays = run.length;
+    day.unitDay = prior + Math.max(1, run.indexOf(day.dateISO) + 1);
+    day.unitDays = prior + run.length;
     day.nextUnitTitle = units[ui + 1]?.title ?? null;
   };
 
@@ -2586,7 +2696,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   const REVISION_PARTS = ['HIST', 'POL', 'ECON', 'GEO', 'SCI', 'CA'] as const;
   const partLabel = (code: string): string => SUBJECT_LABEL[code] ?? (code === 'CA' ? 'Current Affairs' : code);
   const partSourceIds = (code: string): string[] =>
-    (code === 'CA' ? caList : code === 'MENT' ? mentList : subjectLists[code] ?? []).map((s) => s.id);
+    (code === 'CA' ? caListAll : code === 'MENT' ? mentListAll : subjectLists[code] ?? []).map((s) => s.id);
   const partOrderedIds = (code: string): string[] =>
     partSourceIds(code).slice().sort((a, b) => {
       const pd = (pyq[b] ?? 0) - (pyq[a] ?? 0);
@@ -2829,7 +2939,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       subjectCode: u.subjectCode,
       unitId: u.id,
       unitTitle: u.title,
-      unitTestSubtopicIds: u.topics.map((s) => s.id),
+      unitTestSubtopicIds: u.allTopics.map((s) => s.id),
       unitTestCount: count,
       unitTestMinutes: count,
       unitTestDateISO: dateISO,
@@ -3059,18 +3169,22 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
           buildsOn: buildsOnFor(histPlaced[0]?.id, seqOrder, 'HIST', nameById),
         });
       }
-      const caFirst = caList[0]?.id ?? 'ca-regional';
+      const caFirst = orientationCaId ?? caListAll[0]?.id ?? 'ca-regional';
+      const caTopics = orientationCaId !== undefined ? [toTopic(orientationCaId, 'quick')] : [];
       blocks.push({
         kind: 'ca',
         label: 'How current affairs is asked \u00b7 first CA set',
         minutes: 30,
         caSubtopicId: caFirst,
+        caIntro: true,
+        // C2: the CA block carries its topic so the first pass can be ticked.
+        ...(caTopics.length > 0 ? { topics: caTopics } : {}),
       });
       day.blocks = blocks;
       // The orientation study blocks ARE the first pass of their MENT + History
-      // topics (STANDARDS §8a): record them so first-pass accounting counts each
-      // Prelims topic exactly once (here, not again on a later day).
-      const orientationTopics = [...mentTopics, ...histTopics];
+      // (+ first CA) topics (STANDARDS §8a): record them so first-pass accounting
+      // counts each Prelims topic exactly once (here, not again on a later day).
+      const orientationTopics = [...mentTopics, ...histTopics, ...caTopics];
       recordFirstPass(day, orientationTopics);
       day.topics = orientationTopics;
       setUnitFields(day, primaryUnitOf(orientationISO));
@@ -3199,23 +3313,29 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
         // SUNDAY revision: a marks-based revision MAIN block, a 30-min Mental
         // Ability practice set (STANDARDS §8a, item 2 — MENT every day incl.
         // Sunday), then the fixed weekly revision + CA round-up + Telugu.
-        const sunScope = practiceScope(coveredMentUpTo(slot.dateISO).length > 0 ? coveredMentUpTo(slot.dateISO) : mentList.map((s) => s.id));
+        const sunScope = practiceScope(coveredMentUpTo(slot.dateISO));
         // One Mains answer per fortnight (STANDARDS §8a, item 12): on alternate
         // revision Sundays only, 25 min taken from the main revision block so the
         // Sunday stays within budget.
         const mainsQid = mainsWriteByDate.get(slot.dateISO);
-        const sunMainMin = Math.max(1, (mainsQid !== undefined ? mainMin - 25 : mainMin) - revSpillMin);
+        // D20: the fortnightly Mains answer must SURVIVE a recovery/spill Sunday —
+        // it sits right after the revision block (not last, where budget
+        // trimming would drop it) and the revision block shrinks instead; a
+        // revision block squeezed below MIN_BLOCK_MIN is dropped entirely.
+        const sunMainRaw = (mainsQid !== undefined ? mainMin - 25 : mainMin) - revSpillMin;
+        const sunMainMin = Math.max(1, sunMainRaw);
+        const mainsBlocks: PlanBlock[] = mainsQid !== undefined
+          ? [{ kind: 'mains-write', label: 'Mains answer practice (one question, 25 min)', minutes: 25, mainsQuestionId: mainsQid }]
+          : [];
         const blocks: PlanBlock[] = [
           ...revSpill.blocks,
-          ...revisionMainBlocks(sunMainMin, revisit),
+          ...(sunMainRaw >= MIN_BLOCK_MIN || revSpill.blocks.length === 0 ? revisionMainBlocks(sunMainMin, revisit) : []),
+          ...mainsBlocks,
           { kind: 'ment-practice', label: 'Mental Ability practice', minutes: PRACTICE_MIN, practiceSubtopicIds: sunScope, topics: [practiceTopic(sunScope)] },
           { kind: 'weekly-revision', label: 'Weekly revision (mistakes + flashcards)', minutes: 30 },
           { kind: 'ca-roundup', label: 'Current Affairs weekly round-up', minutes: 45, caSubtopicId: 'ca-national' },
           { kind: 'telugu', label: 'Telugu script practice', minutes: 15 },
         ];
-        if (mainsQid !== undefined) {
-          blocks.push({ kind: 'mains-write', label: 'Mains answer practice (one question, 25 min)', minutes: 25, mainsQuestionId: mainsQid });
-        }
         if (revSpill.topics.length > 0) recordFirstPass(day, revSpill.topics);
         day.blocks = blocks;
         day.teluguBlock = true;
@@ -3232,7 +3352,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       // block order as coverage — main → Mental Ability → Telugu → Revise →
       // Current Affairs).
       const covered = coveredMentUpTo(slot.dateISO);
-      const scope = practiceScope(covered.length > 0 ? covered : mentList.map((s) => s.id));
+      const scope = practiceScope(covered);
       const blocks: PlanBlock[] = [
         ...revSpill.blocks,
         ...revisionMainBlocks(Math.max(1, mainMin - revSpillMin), revisit),
@@ -3259,7 +3379,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       // FINAL revision window (non-mock): MENT practice + targeted revision + CA refresh + Telugu.
       const covered = coveredMentUpTo(slot.dateISO);
       const blocks: PlanBlock[] = [];
-      const scope = practiceScope(covered.length > 0 ? covered : mentList.map((s) => s.id));
+      const scope = practiceScope(covered);
       blocks.push({ kind: 'ment-practice', label: 'Mental Ability practice', minutes: sm(60), practiceSubtopicIds: scope, topics: [practiceTopic(scope)] });
       // Coverage SPILL (short-window fallback: the two post-coverage buffer days
       // land in the final window): teach any topic the packer could not seat as
@@ -3310,7 +3430,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       // every day incl. Sunday, taken from the Sunday main block), then weekly
       // revision 60 + CA round-up 45 + Telugu 15. Once every unit is first-passed
       // the main block becomes an early consolidation revise block.
-      const sunScope = practiceScope(coveredMentUpTo(slot.dateISO).length > 0 ? coveredMentUpTo(slot.dateISO) : mentList.map((s) => s.id));
+      const sunScope = practiceScope(coveredMentUpTo(slot.dateISO));
       day.blocks = [
         ...main.blocks,
         { kind: 'ment-practice', label: 'Mental Ability practice', minutes: PRACTICE_MIN, practiceSubtopicIds: sunScope, topics: [practiceTopic(sunScope)] },
@@ -3349,7 +3469,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       blocks.push({ kind: 'ment', label: 'Mental Ability', minutes: sm(60), subjectCode: 'MENT', topics, buildsOn: buildsOnFor(mentTopics[0]!.id, seqOrder, 'MENT', nameById) });
     } else {
       const covered = coveredMentUpTo(slot.dateISO);
-      const scope = practiceScope(covered.length > 0 ? covered : mentList.map((s) => s.id));
+      const scope = practiceScope(covered);
       blocks.push({ kind: 'ment-practice', label: 'Mental Ability practice', minutes: sm(60), practiceSubtopicIds: scope, topics: [practiceTopic(scope)] });
     }
     // 3) Telugu (Tue/Thu only).
@@ -3361,7 +3481,17 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     blocks.push({ kind: 'revise', label: 'Revise (due cards + mistakes + spaced recall)', minutes: sm(20) });
     // 5) Current Affairs (rotation focus).
     const caId = CA_ROTATION[slot.dow]!;
-    blocks.push({ kind: 'ca', label: CA_LABEL[caId] ?? 'Current Affairs', minutes: sm(25), caSubtopicId: caId });
+    // C2: on the CA topic's FIRST-PASS day the CA block carries that topic, so
+    // Today shows a tickable row (open + Mark as studied) for it.
+    const caFirst = caFirstPassByDate.get(slot.dateISO);
+    const caTopics = caFirst ? [{ ...toTopic(caFirst, 'quick'), estMinutes: Math.min(toTopic(caFirst, 'quick').estMinutes, sm(25)) }] : [];
+    blocks.push({
+      kind: 'ca',
+      label: CA_LABEL[caFirst ?? caId] ?? 'Current Affairs',
+      minutes: sm(25),
+      caSubtopicId: caFirst ?? caId,
+      ...(caTopics.length > 0 ? { topics: caTopics } : {}),
+    });
     day.caRevision = true;
 
     day.blocks = blocks;
@@ -3369,8 +3499,7 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     // Legacy field mapping + topics union.
     const allTopics = [...(mentTopics?.map((s) => toTopic(s.id, 'full')) ?? []), ...main.topics];
     // CA first-pass topic (aptitude) counts toward today's first-pass set.
-    const caFirst = caFirstPassByDate.get(slot.dateISO);
-    if (caFirst) allTopics.push(toTopic(caFirst, 'quick'));
+    for (const t of caTopics) allTopics.push(t);
     recordFirstPass(day, allTopics);
     day.topics = allTopics;
     setUnitFields(day, ui);
@@ -3401,6 +3530,9 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
     for (let ui = 0; ui < units.length; ui += 1) {
       const u = units[ui]!;
       if (wrapped.has(u.id)) continue;
+      // A unit FINISHED before today (all its topics studied) needs no future
+      // wrap-up placement from the re-plan.
+      if (u.topics.length === 0) continue;
       const run = unitDates[ui] ?? [];
       let placed = false;
       // (a) the unit's own teaching days, latest first, with free main-block room.
@@ -3577,13 +3709,17 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
   // and topic count, in teaching order, for the Planner unit timeline.
   const unitsSummary = units.map((u, ui) => {
     const run = unitDates[ui]!;
+    // Real study dates of already-studied topics extend the window backwards.
+    const dates = [...run];
+    for (const s of u.allTopics) if (studiedBefore(s.id)) dates.push(studiedDateOf(s.id));
+    dates.sort();
     return {
       id: u.id,
       title: u.title,
       subjectCode: u.subjectCode,
-      startISO: run[0] ?? '',
-      endISO: run[run.length - 1] ?? '',
-      topicCount: u.topics.length,
+      startISO: dates[0] ?? '',
+      endISO: dates[dates.length - 1] ?? '',
+      topicCount: u.allTopics.length,
     };
   });
 
@@ -3694,8 +3830,9 @@ function buildRhythmPlan(opts: BuildPlanOpts, ctx: RhythmContext): Plan {
       theoryPerDay: perDay(theoryUnstudied),
       aptitudePerDay: perDay(aptitudeUnstudied),
       expectedStudiedByToday: 0,
-      onTrack: true,
-      behindBy: 0,
+      // H2: ONE source of truth with Today's behind banner.
+      onTrack: ctx.daysBehind === 0,
+      behindBy: ctx.behindBy,
       projectedFinishISO,
       subjectFit,
       units: unitsSummary,
@@ -3834,7 +3971,34 @@ function finaliseBlocks(day: PlanDay, budgetMin: number): void {
       sum -= trim;
     }
   }
-  day.plannedMinutes = sum;
+  mergeTinyBlocks(day);
+  day.plannedMinutes = day.blocks.reduce((a, b) => a + b.minutes, 0);
+}
+
+/**
+ * D19 — no "1 m" blocks. The smallest block a day may show is
+ * {@link MIN_BLOCK_MIN} minutes. A topic-less flexible block (revise / catch-up
+ * / review / targeted revision) squeezed below that by budget scaling is
+ * REMOVED and its minutes MERGED into a flexible neighbour (previous first),
+ * or simply dropped when there is none. Teaching / test / fixed blocks are never
+ * touched. @internal
+ */
+function mergeTinyBlocks(day: PlanDay): void {
+  const isReceiver = (b: PlanBlock | undefined): b is PlanBlock =>
+    b !== undefined && (TINY_MERGEABLE_KINDS.has(b.kind) || b.kind === 'subject' || b.kind === 'ca' || b.kind === 'ment-practice' || b.kind === 'ca-refresh');
+  for (let i = 0; i < day.blocks.length; ) {
+    const b = day.blocks[i]!;
+    const teaches = (b.topics ?? []).some((t) => t.kind === 'topic');
+    if (b.minutes < MIN_BLOCK_MIN && TINY_MERGEABLE_KINDS.has(b.kind) && !teaches && day.blocks.length > 1) {
+      const prev = i > 0 ? day.blocks[i - 1] : undefined;
+      const next = day.blocks[i + 1];
+      const receiver = isReceiver(prev) ? prev : isReceiver(next) ? next : undefined;
+      if (receiver) receiver.minutes += b.minutes;
+      day.blocks.splice(i, 1);
+      continue;
+    }
+    i += 1;
+  }
 }
 
 /** A blank rhythm day skeleton with neutral defaults. @internal */
@@ -3916,9 +4080,13 @@ function buildPostPrelims(p: {
     const dateISO = addDaysISO(p.todayISO, di);
     const budgetMin = isWeekendISO(dateISO) ? p.weekendBudgetMin : p.dailyBudgetMin;
     const mainsIds = p.mainsSliceFor(di, p.postMainsPerDay);
-    const caRefresh = di % 3 === 0; // keep current-affairs warm for the Mains essay
-    const languageBlock: LanguageBlock = di % 2 === 0 ? 'telugu' : 'english';
-    const essayPractice = di % 7 === 6;
+    // The rotations are anchored to the day AFTER Prelims (not to "today"), so
+    // the alternate-day Telugu / English block and the weekly essay really
+    // alternate as the days pass (M9) instead of restarting every morning.
+    const k = Math.max(0, diffDaysISO(p.examDateISO, dateISO) - 1);
+    const caRefresh = k % 3 === 0; // keep current-affairs warm for the Mains essay
+    const languageBlock: LanguageBlock = k % 2 === 0 ? 'telugu' : 'english';
+    const essayPractice = k % 7 === 6;
     // POST-PRELIMS "Mains revision of what you studied" (STANDARDS §8a): the first
     // 4 weeks do one Mains paper (I–V) per day, round-robin — revisit that
     // paper's mapped Prelims subtopics' For-Mains notes + write their answers.
@@ -4063,4 +4231,69 @@ export function feasibilityLine(s: PlanSummary): string {
     return `${topics} · ${days} · fixed weekly rhythm · ${spilled} spills to ${spillBy}`;
   }
   return `${topics} · ${days} · fixed weekly rhythm · On track`;
+}
+
+/** The behind/recovery banner copy shared by Today and the Planner (D4). */
+export interface BehindBanner {
+  /** `calm` for 1–7 days behind, `reduced` beyond a week. */
+  tone: 'calm' | 'reduced';
+  title: string;
+  /** What the re-plan changed (sentence case, regenerated from the summary). */
+  detail: string;
+  /** Concrete options (only for `reduced`). */
+  options: string[];
+  /** Whether "restart my plan from today" may be offered (before coverage end). */
+  showRestart: boolean;
+  /** True only when the recovered plan genuinely still fits before the exam. */
+  finishOnTime: boolean;
+}
+
+/** Days behind beyond which the banner switches to the "reduced plan" wording. */
+export const BEHIND_CALM_MAX_DAYS = 7;
+
+/**
+ * The honest behind banner (D4), or `null` when not behind (or ≤ 1 day to the
+ * exam). Wording SCALES with the gap — 1–7 days: a calm "plan adjusted"; > 7:
+ * "you are N days behind — here is the reduced plan" plus concrete options. It
+ * NEVER claims "finish on time" unless the recovered plan is feasible (no
+ * genuine spill, depth floor met), and never offers a restart once the
+ * first-pass coverage window has ended. PURE — regenerated on every render.
+ */
+export function behindBanner(s: PlanSummary, todayISO: string): BehindBanner | null {
+  if (s.postPrelims || s.daysBehind < 1 || s.daysLeft <= 1) return null;
+  const n = s.daysBehind;
+  const days = `${n} ${n === 1 ? 'day' : 'days'}`;
+  const finishOnTime = s.feasible && s.spills.length === 0;
+  const changes = s.recoveryChanges.join('; ');
+  const sentence = (t: string): string => (t.length > 0 ? `${t.charAt(0).toUpperCase()}${t.slice(1)}.` : '');
+  const changed = sentence(changes) || 'Today continues with the next topics you haven\u2019t studied yet.';
+  // The restart offer only makes sense while first-pass coverage days remain
+  // (the ORIGINAL coverage window — `coverageDays` counts them from today), not
+  // in the revision cycle / final window even when recovery shifted the end.
+  const showRestart = s.coverageDays > 0 && todayISO <= s.coverageEndISO;
+  if (n <= BEHIND_CALM_MAX_DAYS) {
+    return {
+      tone: 'calm',
+      title: `You\u2019re ${days} behind \u2014 plan adjusted`,
+      detail: finishOnTime ? `${changed} You can still finish on time.` : changed,
+      options: [],
+      showRestart,
+      finishOnTime,
+    };
+  }
+  const options: string[] = [...s.feasibilityOptions];
+  options.push('Add 30\u201360 minutes a day (Settings \u2192 Daily study time)');
+  options.push('Give Sunday more time (Settings \u2192 Sunday study time)');
+  options.push('Use the Saturday catch-up block for the topics you missed');
+  if (showRestart) options.push('Restart the plan from today \u2014 your progress is kept');
+  return {
+    tone: 'reduced',
+    title: `You are ${days} behind \u2014 here is the reduced plan`,
+    detail: finishOnTime
+      ? `${changed} You can still finish on time.`
+      : `${changed} Some topics now get a quicker pass \u2014 the options below win time back.`,
+    options,
+    showRestart,
+    finishOnTime,
+  };
 }

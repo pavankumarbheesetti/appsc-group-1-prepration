@@ -2054,6 +2054,28 @@ input[type='checkbox'] {
   border: 1px solid var(--border);
 }
 
+/* Fenced ``` code / ASCII-diagram blocks: monospace, line breaks preserved,
+   horizontally scrollable so wide diagrams never break the layout. */
+.md-pre {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: var(--fs-sm, 0.875rem);
+  line-height: 1.45;
+  white-space: pre;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  tab-size: 4;
+}
+.md-pre code {
+  font: inherit;
+  white-space: inherit;
+}
+
 /* The elegant "Key facts" panel: a subtle tinted surface with a slim accent
    rule, an uppercase section label + optional caption, and facts rendered as a
    definition grid (kv), a refined table, or a tidy list. */
@@ -6973,4 +6995,716 @@ button.tel-lang-card {
   min-height: 1.5em;
   margin: var(--space-3) 0;
   font-weight: var(--fw-semibold);
+}
+
+/* ========================================================================== */
+/* Confirm dialog (submit test, etc.)                                          */
+/* ========================================================================== */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-4);
+  background: rgba(10, 12, 20, 0.55);
+}
+.confirm-panel {
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-5);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.confirm-panel.is-warn {
+  border-top: 4px solid var(--warning);
+}
+.confirm-title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-lg, 1.125rem);
+}
+.confirm-body p {
+  margin: 0 0 var(--space-2);
+}
+.confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+/* Resume-test banner (Today + Mock setup). */
+.resume-test {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+.resume-test-text {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+.resume-test-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* OMR identity flag on results. */
+.omr-identity-flag {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--danger);
+  background: var(--danger-soft);
+  text-align: center;
+}
+
+/* Mock results on narrow screens: metrics wrap, the per-section table scrolls
+   inside the card instead of widening the page. */
+.mock-results .results-breakdown {
+  flex-wrap: wrap;
+  row-gap: var(--space-3);
+}
+.mock-section-table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: var(--space-3) auto;
+  font-size: var(--fs-sm);
+}
+.mock-section-table th,
+.mock-section-table td {
+  padding: var(--space-1) var(--space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.mock-section-table th[scope='row'] {
+  min-width: 10rem;
+}
+/* Results is a flex item of the main column: never grow past the viewport. */
+.results.mock-results {
+  min-width: 0;
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Fix B — status ticks, all-done hero, exam day, formula sheet               */
+/* -------------------------------------------------------------------------- */
+/* A tick that finishes itself (tests, Telugu lesson, review lists). */
+.today-check-tick.is-status {
+  cursor: default;
+}
+.today-check-tick.is-status:hover {
+  background: transparent;
+}
+.today-check-tick.is-status .today-check-box {
+  border-style: dashed;
+}
+.today-check-tick.is-status.is-done .today-check-box {
+  border-style: solid;
+}
+.today-tomorrow {
+  display: block;
+}
+.today-exam-day .empty-state {
+  text-align: left;
+  align-items: flex-start;
+}
+.today-exam-day .admin-checklist {
+  font-size: var(--fs-md, 1rem);
+}
+.today-exam-luck {
+  font-weight: 600;
+}
+.formula-sheet-actions {
+  margin: var(--space-2) 0;
+}
+.formula-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
+.formula-grid > * {
+  min-width: 0;
+}
+@media (min-width: 900px) {
+  .formula-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.formula-topic-title {
+  font-size: var(--fs-md, 1rem);
+  margin: 0 0 var(--space-1);
+}
+.md-table.formula-table {
+  width: 100%;
+  min-width: 0; /* override .md-table max-content: wrap to the card at 390px */
+  table-layout: fixed;
+}
+.formula-table td:first-child {
+  width: 45%;
+}
+.formula-table td {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.formula-cell {
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+/* Planner rows open their destinations (D2). */
+.pw-link {
+  background: none;
+  border: 0;
+  padding: 0.15rem 0.1rem;
+  margin: 0;
+  font: inherit;
+  color: var(--accent);
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  min-height: 1.75rem;
+}
+.pw-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.pw-focus-topics .pw-topic-link {
+  margin-right: 0.3rem;
+}
+.plan-cell-block.is-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0.2rem 0;
+  border-radius: var(--radius-sm, 4px);
+}
+.plan-cell-block.is-link:hover .plan-cell-block-label {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.plan-cell-block.is-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ========================================================================== */
+/* Navigation spec (NAV-REVIEW §3): skip link, search field, Aa popover,       */
+/* back link, breadcrumb, sticky Learn tabs + contents, Next-up footer,        */
+/* Practice segments.                                                          */
+/* ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: -100px;
+  z-index: calc(var(--z-overlay) + 10);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: var(--space-3);
+}
+.app-main:focus {
+  outline: none;
+}
+.topbar-title:focus,
+.learn-title:focus {
+  outline: none;
+}
+.topbar-title:focus-visible,
+.learn-title:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Nav links are anchors now: keep the button look. */
+a.nav-item,
+a.tab-item,
+a.sidebar-brand {
+  color: inherit;
+  text-decoration: none;
+}
+a.nav-item {
+  color: var(--text-2);
+}
+a.nav-item[aria-current='page'] {
+  color: var(--accent);
+}
+
+/* Visible search field (sidebar ≥1200, top of the More sheet). */
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+  text-align: left;
+}
+.search-field:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.search-field-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search-field-kbd {
+  flex: none;
+  font-size: var(--fs-xs);
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.sidebar-search {
+  margin-bottom: var(--space-2);
+}
+.more-search {
+  margin: var(--space-2) 0 var(--space-3);
+}
+.more-search .search-field-kbd {
+  display: none;
+}
+/* The sidebar field shows on the full sidebar; the rail + phone use the icon. */
+@media (min-width: 1200px) {
+  .topbar-search {
+    display: none;
+  }
+}
+@media (max-width: 1199px) {
+  .sidebar-search {
+    display: none;
+  }
+}
+
+/* Top-bar back link (phones; Learn). */
+.topbar-back {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+  min-height: 2.75rem;
+  padding: 0 var(--space-2) 0 0;
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+}
+.topbar-back-chev {
+  font-size: 1.4em;
+  line-height: 1;
+}
+@media (max-width: 599px) {
+  .topbar-back:not([hidden]) {
+    display: inline-flex;
+  }
+  .topbar-back:not([hidden]) ~ .topbar-title {
+    font-size: var(--fs-md);
+  }
+  /* With a back link the brand mark yields its space. */
+  .topbar:has(.topbar-back:not([hidden])) .topbar-mark {
+    display: none;
+  }
+}
+.topbar-title {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* The single `Aa` display popover. */
+.aa-wrap {
+  position: relative;
+}
+.aa-btn {
+  font-weight: var(--fw-bold);
+}
+.aa-glyph {
+  font-size: var(--fs-md);
+  line-height: 1;
+}
+.aa-pop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + var(--space-2));
+  z-index: var(--z-overlay);
+  width: min(18rem, calc(100vw - 2 * var(--space-4)));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.aa-pop[hidden] {
+  display: none;
+}
+.aa-pop-title {
+  font-weight: var(--fw-bold);
+}
+.aa-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.aa-row .seg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.aa-more {
+  align-self: flex-start;
+}
+
+/* ---- Learn header: back + breadcrumb + trail ---------------------------- */
+.learn-header-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  min-width: 0;
+}
+.learn-header-nav .learn-back {
+  min-height: 2.75rem;
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+}
+.breadcrumb {
+  min-width: 0;
+  font-size: var(--fs-sm);
+}
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+.breadcrumb li + li::before {
+  content: '\203A';
+  color: var(--muted);
+  padding-right: var(--space-1);
+}
+.crumb {
+  color: var(--text-2);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+a.crumb:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.crumb.is-current {
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+}
+.crumb-up {
+  display: none;
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  min-height: 2.75rem;
+  align-items: center;
+}
+.learn-trail {
+  display: none;
+  margin: calc(-1 * var(--space-2)) 0 0;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+@media (max-width: 599px) {
+  /* Phone: the top bar carries `‹ Origin`; the trail collapses to its parent. */
+  .learn-header-nav .learn-back,
+  .learn-header-nav .breadcrumb {
+    display: none;
+  }
+  .crumb-up {
+    display: inline-flex;
+  }
+  .learn-trail {
+    display: block;
+  }
+}
+.learn-continue {
+  align-self: flex-start;
+}
+.hero-continue {
+  margin-top: var(--space-2);
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Collapsed exam-point checklist. */
+details.learn-coverage > summary.learn-coverage-line {
+  cursor: pointer;
+  margin: 0;
+  list-style: none;
+  min-height: 2.75rem;
+}
+details.learn-coverage > summary.learn-coverage-line::-webkit-details-marker {
+  display: none;
+}
+details.learn-coverage > summary.learn-coverage-line::after {
+  content: '\25B8';
+  color: var(--muted);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+details.learn-coverage[open] > summary.learn-coverage-line::after {
+  transform: rotate(90deg);
+}
+details.learn-coverage[open] > .exam-points {
+  margin-top: var(--space-3);
+}
+
+/* ---- Sticky tab bar + Contents chip -------------------------------------- */
+.learn-tabbar {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: var(--z-sticky);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.learn-tabbar .learn-tabs {
+  flex: 1;
+  min-width: 0;
+  border-bottom: 0;
+}
+.contents-chip {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+}
+.contents-chip[aria-expanded='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.learn-tabbar .contents-sheet {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: min(22rem, 100%);
+  max-height: 60vh;
+  overflow-y: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.learn-tabbar .contents-sheet:not([hidden]) {
+  display: flex;
+}
+.contents-sheet[hidden] {
+  display: none;
+}
+
+/* Notes + "On this page" (≥1100px). */
+.learn-notes-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+.learn-toc {
+  display: none;
+}
+@media (min-width: 1100px) {
+  .learn-notes-layout {
+    grid-template-columns: minmax(0, 1fr) 15rem;
+  }
+  .learn-toc {
+    display: flex;
+    position: sticky;
+    top: calc(var(--topbar-h) + 3.5rem);
+    max-height: calc(100vh - var(--topbar-h) - 5rem);
+    overflow-y: auto;
+  }
+  .contents-chip,
+  .learn-tabbar .contents-sheet {
+    display: none !important;
+  }
+}
+.toc-link {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  text-decoration: none;
+  line-height: 1.35;
+}
+.toc-mark {
+  flex: none;
+  width: 1em;
+  text-align: center;
+  color: var(--success);
+}
+.toc-link.is-read .toc-mark::before {
+  content: '\2713';
+}
+.toc-link.is-current {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+}
+.toc-link.is-current .toc-mark::before {
+  content: '\25CF';
+  color: var(--accent);
+}
+.note-next {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: var(--space-4);
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+.note-next:hover {
+  text-decoration: underline;
+}
+.note {
+  scroll-margin-top: calc(var(--topbar-h) + 3.5rem);
+}
+
+/* ---- "Next up" footer ---------------------------------------------------- */
+.next-up {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border: 1px solid var(--accent);
+  background: linear-gradient(0deg, var(--accent-soft), var(--surface));
+}
+.next-up-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.next-up-eyebrow svg {
+  color: var(--accent);
+}
+.next-up-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+.next-up-primary {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+
+/* ---- Practice segments --------------------------------------------------- */
+.practice-segs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+}
+.practice-seg {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--text-2);
+  text-decoration: none;
+}
+.practice-seg-label {
+  font-weight: var(--fw-semibold);
+}
+.practice-seg-hint {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.practice-seg.is-active {
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Page leads (Topics / Plan). */
+.page-lead {
+  margin: 0 0 var(--space-2);
+  color: var(--text-2);
+  font-size: var(--fs-md);
+}
+.hero-lead {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+}
+
+/* Long unbroken tokens in notes (e.g. "A-B,C/D" site lists) wrap at 320px
+   instead of widening the page. */
+.note-body,
+.keypoint-list,
+.mains-q {
+  overflow-wrap: anywhere;
 }

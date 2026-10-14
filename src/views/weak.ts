@@ -69,7 +69,7 @@ function emptyState(gapCount: number): HTMLElement {
       el('span', { class: 'empty-icon' }, [icon('target', 26)]),
       el('h3', { text: 'Nothing to fix yet' }),
       el('p', { text: `Answer a few questions in a drill and the topics you miss most will surface here — ranked weakest-first, each with a one-tap re-drill.${gapCount > 0 ? ` You have ${gapCount} subtopic${gapCount === 1 ? '' : 's'} still to start.` : ''}` }),
-      button({ label: 'Start a drill', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/drill') }),
+      button({ label: 'Start practice', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/practice') }),
     ]),
   ]);
 }
@@ -85,7 +85,7 @@ function buildNotebookCard(count: number): HTMLElement {
         el('span', { class: 'pv-stat-value tnum', text: String(count) }),
         el('span', { class: 'section-lead', text: body }),
       ]),
-      button({ label: 'Open notebook', variant: count > 0 ? 'primary' : 'ghost', iconName: 'arrow-right', onClick: () => navigate('/notebook') }),
+      button({ label: 'Open my mistakes', variant: count > 0 ? 'primary' : 'ghost', iconName: 'arrow-right', onClick: () => navigate('/revise/mistakes') }),
     ]),
   ]);
 }

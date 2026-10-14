@@ -11,6 +11,9 @@ import {
   deriveStudyStatus,
   isRevisable,
   markTopicStudied,
+  REVISABLE_MIN_ANSWERS,
+  studiedTopicIds,
+  weekTestPoolIds,
   syncAutoStudied,
   topicStatus,
   topicStudy,
@@ -91,8 +94,9 @@ describe('study status in the store', () => {
     expect(loadState().study).toEqual({});
     expect(topicStatus(STONE)).toBe('in-progress');
     expect(plannerProgress()[STONE]).toMatchObject({ seen: 1, studied: false });
-    // …but it is revisable (in progress with ≥ 1 answered).
-    expect(isRevisable(STONE)).toBe(true);
+    // …and NOT revisable (H3): a stray answer without the topic's Learn notes
+    // being opened never puts its cards into Revise / the test pools.
+    expect(isRevisable(STONE)).toBe(false);
   });
 
   it('cards of an untouched / notes-only topic are not revisable', () => {
@@ -101,6 +105,44 @@ describe('study status in the store', () => {
     expect(isRevisable(STONE)).toBe(false);
     markTopicStudied(STONE, true);
     expect(isRevisable(STONE)).toBe(true);
+  });
+});
+
+describe('isRevisable + test pools (H3 / M2 / M3)', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    __resetForTests();
+  });
+
+  it('1 stray mock answer never makes a topic revisable; studied or Learn practice (notes + ≥3) does', () => {
+    answer(STONE, 1); // e.g. one all-subject mock answer
+    expect(isRevisable(STONE)).toBe(false);
+    answer(STONE, REVISABLE_MIN_ANSWERS);
+    expect(isRevisable(STONE)).toBe(false); // answers without opening the Learn notes
+    noteTopicOpened(STONE);
+    expect(isRevisable(STONE)).toBe(true); // notes opened + ≥ 3 answered in practice
+    markTopicStudied(STONE, false);
+    expect(isRevisable(STONE)).toBe(false); // explicit "not studied" always wins
+    markTopicStudied(STONE, true);
+    expect(isRevisable(STONE)).toBe(true);
+  });
+
+  it('week-test pool is built from ACTUAL studiedOn dates (this week vs earlier)', () => {
+    const IVC = 'hist-ancient-ivc';
+    const VEDIC = 'hist-ancient-early-vedic';
+    const LATE = 'hist-ancient-later-vedic';
+    markTopicStudied(STONE, true, '2026-10-01'); // earlier
+    markTopicStudied(IVC, true, '2026-10-12'); // this week (Sun 11 … Sat 17)
+    markTopicStudied(VEDIC, true, '2026-10-17'); // the test day itself
+    markTopicStudied(LATE, true, '2026-10-18'); // AFTER the test → excluded
+    const pool = weekTestPoolIds('2026-10-17', [STONE, IVC, VEDIC, LATE, 'hist-ancient-mahajanapadas']);
+    expect(pool.thisWeek).toEqual([IVC, VEDIC]);
+    expect(pool.earlier).toEqual([STONE]);
+  });
+
+  it('unit-test pool keeps only the unit topics actually studied', () => {
+    markTopicStudied('hist-ancient-ivc', true, '2026-10-12');
+    expect(studiedTopicIds([STONE, 'hist-ancient-ivc'])).toEqual(['hist-ancient-ivc']);
   });
 });
 

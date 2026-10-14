@@ -22,6 +22,8 @@ export interface ButtonOpts {
   ariaLabel?: string;
   /** Render as a non-interactive, disabled control. */
   disabled?: boolean;
+  /** Extra class names. */
+  class?: string;
 }
 
 /** Build a button element. */
@@ -30,6 +32,7 @@ export function button(opts: ButtonOpts): HTMLButtonElement {
   const cls = ['btn', `btn-${variant}`];
   if (opts.large) cls.push('btn-lg');
   if (opts.block) cls.push('btn-block');
+  if (opts.class) cls.push(opts.class);
 
   const btn = el('button', {
     class: cls.join(' '),

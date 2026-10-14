@@ -1,38 +1,36 @@
 /**
- * Subtopic "Learn" workspace — the focused, single-subtopic study surface.
+ * Subtopic "Learn" workspace — the focused, single-topic study surface.
  *
- * Route: `#/learn/<subtopicId>` (the id is a hash param read via
- * {@link routeParam}). One subtopic is presented with in-page TABS:
- *   - Notes       — the subtopic's NoteItems, rendered with the SAME article
- *                   builder as the Notes view ({@link buildNoteArticle}).
- *   - Flashcards  — a deck built from this subtopic's notes+MCQs via
- *                   {@link buildFlashcards}, run through the shared Revise runner.
- *   - Drill       — a focus drill scoped to this subtopic (engine `subtopicId`
- *                   filter), handed to the shared {@link mountQuiz} runner.
- *   - Mains       — this subtopic's Mains questions + model answers.
+ * Routes (every state you would want to undo has its own URL — NAV spec §3.4):
+ *   `#/learn/<id>/notes` · `#/learn/<id>/practice` · `#/learn/<id>/mains`
+ *   `#/learn/<id>/practice/results`
+ * plus an optional query: `from` (the origin — today / plan / topics / …, which
+ * drives the `‹ Today` / `‹ Plan` / `‹ Topics` back link) and `note` (a deep
+ * link that scrolls to one note). `#/learn/<id>` redirects to the first tab.
  *
- * A header shows the subtopic name, its band, coverage, status, and a
- * "Back to Syllabus" link. Search can deep-link here (a specific tab / note)
- * via {@link openLearn}.
+ * Layout: a compact header (breadcrumb `Topics › Subject › Chapter › Topic`,
+ * the page h1, one status chip, one progress bar, a COLLAPSED exam-point
+ * checklist), a STICKY tab bar, and the panel. Notes get an "On this page"
+ * table of contents (a right-hand sticky list ≥1100px; a `Contents · 4/14`
+ * chip + sheet below that), a `Next: … ↓` link after each note and the
+ * "Next up" footer after the last one.
  */
-import { getCards, getCaUpdatedThrough, getMindmap, getSubtopic, getSubtopicCoverage, type SubtopicView } from '../content/loader';
+import { getCards, getCaUpdatedThrough, getMindmap, getSubjects, getSubtopic, getSubtopicCoverage, getTaxonomy, type SubtopicView } from '../content/loader';
+import type { NoteItem } from '../content/types';
 import { buildSession } from '../engine/drill';
 import type { SessionScore } from '../engine/drill';
-import { navigate, routeParam } from '../router/router';
+import { navigate, pushUrl, routeQuery, setDocumentTitle } from '../router/router';
 import { loadState, noteTopicOpened } from '../state/store';
 import { markTopicStudied, topicStudy, AUTO_STUDIED_ANSWERS } from '../lib/study-status';
 import { nextTabIndex } from '../lib/tabs';
-import {
-  subtopicMasteryPct,
-  statusFromMastery,
-} from '../lib/metrics';
+import { subtopicMasteryPct } from '../lib/metrics';
 import { el, mount, renderMarkdown, type Child } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
 import { chip } from './components/chip';
 import { icon } from './components/icon';
 import { progressBar } from './components/progress';
-import { bandBadge, statusChip } from './components/badges';
+import { bandBadge, studyStatusChip } from './components/badges';
 import { buildAtAGlance } from './components/atglance';
 import { buildNoteArticle, buildMainsNotesSection } from './notes';
 import { isMainsNote } from '../engine/flashcards';
@@ -40,143 +38,366 @@ import { buildCuratedDeck, mountFlashcards } from './revise';
 import { mountQuiz } from './quiz';
 import { openMock } from './mock';
 import { openMains, openMainsQuestion } from './mains';
+import { openScopedReview } from './notebook';
+import { ORIGINS, isOrigin, nextUpFooter, originFromHash, setTopbarBack, setTopbarTitle, PATHS, type Origin } from './shell';
+import { nextStep } from './next-topic';
 
-/** The in-page tabs of the Learn workspace: Notes / Practice (drill) / Mains. */
-export type LearnTab = 'notes' | 'drill' | 'mains';
+/** The in-page tabs of the Learn workspace. */
+export type LearnTab = 'notes' | 'practice' | 'mains';
+
+/** Accepts the legacy `drill` name for the Practice tab. */
+type TabRequest = LearnTab | 'drill';
+
+/** Tab labels (spec §3.8). */
+const LABELS: Record<LearnTab, string> = { notes: 'Notes', practice: 'Practice', mains: 'Mains' };
 
 /**
  * The tabs that actually have content for this subtopic, in display order.
- * A tab is only offered when there is something to show — so a content-less
- * subtopic yields `[]` (→ full empty state). Flashcards are reached from Revise
- * or the "Flashcards for this topic" button in Notes; the one-screen mind map
- * ("Topic at a glance") lives at the TOP of Notes — neither is a tab. @internal
+ * A content-less subtopic yields `[]` (→ full empty state). @internal
  */
 function availableTabs(sub: SubtopicView): LearnTab[] {
   const tabs: LearnTab[] = [];
   if (sub.notes.length > 0 || getMindmap(sub.meta.id) !== undefined) tabs.push('notes');
-  if (sub.mcqs.length > 0) tabs.push('drill');
+  if (sub.mcqs.length > 0) tabs.push('practice');
   if (sub.mains.length > 0) tabs.push('mains');
   return tabs;
 }
 
-/** A deep-link focus request set by {@link openLearn} before navigating. */
-interface PendingFocus {
-  tab?: LearnTab;
-  noteId?: string;
+/** Map a requested tab name (incl. legacy `drill`) to a LearnTab. @internal */
+function toTab(t: string | undefined): LearnTab | undefined {
+  if (t === 'drill') return 'practice';
+  return t === 'notes' || t === 'practice' || t === 'mains' ? t : undefined;
 }
-let pending: PendingFocus = {};
+
+/** Build a Learn path: `/learn/<id>/<tab>[/results][?from=…&note=…]`. */
+export function learnPath(id: string, tab: LearnTab, opts: { from?: Origin; note?: string; results?: boolean } = {}): string {
+  const q = new URLSearchParams();
+  if (opts.from) q.set('from', opts.from);
+  if (opts.note) q.set('note', opts.note);
+  const qs = q.toString();
+  return `/learn/${encodeURIComponent(id)}/${tab}${opts.results ? '/results' : ''}${qs ? `?${qs}` : ''}`;
+}
+
+/** The canonical path for `#/learn/<id>` (its first available tab). */
+export function defaultLearnPath(id: string): string {
+  const sub = getSubtopic(id);
+  const first = sub ? availableTabs(sub)[0] : undefined;
+  return learnPath(id, first ?? 'notes');
+}
 
 /**
- * Navigate to a subtopic's Learn workspace, optionally focusing a tab and/or
- * scrolling to a specific note. Used by the Syllabus tracker and global search.
+ * Navigate to a subtopic's Learn workspace, optionally on a tab and/or a note.
+ * The origin (`from`) defaults to the page we are leaving, so the back link
+ * reads `‹ Today` from Today, `‹ Plan` from the planner, etc.; moving from one
+ * topic to the next keeps the original origin.
  */
-export function openLearn(subtopicId: string, focus?: PendingFocus): void {
-  pending = focus ?? {};
-  navigate(`/learn/${subtopicId}`);
+export function openLearn(subtopicId: string, focus: { tab?: TabRequest; noteId?: string; from?: Origin } = {}): void {
+  const from = focus.from ?? originFromHash();
+  const sub = getSubtopic(subtopicId);
+  const tabs = sub ? availableTabs(sub) : [];
+  const want = toTab(focus.tab);
+  const tab = want && tabs.includes(want) ? want : tabs[0] ?? 'notes';
+  navigate(learnPath(subtopicId, tab, { from, note: focus.noteId }));
+}
+
+/** The parsed Learn hash. @internal */
+interface LearnRoute {
+  id: string | undefined;
+  tab: string | undefined;
+  results: boolean;
+  from: Origin;
+  note: string | undefined;
+}
+
+/** Parse the live hash into the Learn route parts. @internal */
+function parseRoute(): LearnRoute {
+  const path = (location.hash || '#/').split('?')[0] ?? '';
+  const segs = path.replace(/^#\/?/, '').split('/');
+  const id = segs[0] === 'learn' && segs[1] ? decodeURIComponent(segs[1]) : undefined;
+  const from = routeQuery('from');
+  return {
+    id,
+    tab: segs[2],
+    results: segs[3] === 'results',
+    from: isOrigin(from) ? from : 'topics',
+    note: routeQuery('note'),
+  };
+}
+
+/** Results of the last practice session per subtopic (for the results URL). @internal */
+const resultsCache = new Map<string, { score: SessionScore; wrongIds: string[] }>();
+
+/** Incremented on every render (lets a tab switch detect a missing router). @internal */
+let renderCount = 0;
+
+/** Set when a tab switch should keep the tab bar in view after re-render. @internal */
+let scrollToTabsAfterRender = false;
+
+/** The origin's back target; Topics goes back to the subtopic's chapter. @internal */
+function originTarget(from: Origin, sub?: SubtopicView): { label: string; path: string } {
+  const o = ORIGINS[from];
+  if (from === 'topics' && sub) return { label: o.label, path: topicsPath(sub) };
+  return o;
+}
+
+/** `#/topics?s=<subject>&c=<chapter>` — the list filtered + scrolled to this topic. @internal */
+function topicsPath(sub: SubtopicView, chapterOnly = true): string {
+  const q = new URLSearchParams({ s: sub.meta.subjectCode });
+  if (chapterOnly) q.set('c', sub.meta.chapterId);
+  return `${PATHS.topics}?${q.toString()}`;
 }
 
 /** Render the Learn workspace into `root`. */
 export function render(root: HTMLElement): void {
-  const id = routeParam('/learn/:id', 'id');
-  const sub = id === undefined ? undefined : getSubtopic(id);
+  renderCount += 1;
+  const route = parseRoute();
+  const sub = route.id === undefined ? undefined : getSubtopic(route.id);
+  const back = originTarget(route.from, sub);
+  const goBack = (): void => navigate(back.path);
+  setTopbarBack({ label: back.label, onClick: goBack });
   if (!sub) {
+    setTopbarTitle('Topic not found', { heading: false });
+    setDocumentTitle('Topic not found', 'Topics');
     mount(
       root,
-      card({ title: 'Subtopic not found' }, [
+      card({}, [
+        el('h1', { class: 'learn-title', text: 'Subtopic not found' }),
         el('p', { class: 'section-lead', text: 'That subtopic is not in the taxonomy.' }),
-        button({ label: 'Back to Syllabus', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/syllabus') }),
+        button({ label: `\u2039 Back to ${back.label}`, variant: 'primary', onClick: goBack }),
       ]),
     );
     return;
   }
 
-  // Consume any deep-link focus request (one-shot).
-  const focus = pending;
-  pending = {};
-
-  // A content-less subtopic (planned, not yet authored) gets a friendly whole-
-  // page empty state rather than a row of broken, empty tabs.
+  setTopbarTitle(sub.meta.name, { heading: false });
   const tabs = availableTabs(sub);
+
+  // A content-less subtopic gets a friendly whole-page empty state.
   if (tabs.length === 0) {
-    mount(root, el('div', { class: 'learn' }, [buildHeader(sub), buildEmptyWorkspace(sub)]));
+    setDocumentTitle(sub.meta.name, 'Topics');
+    mount(root, el('div', { class: 'learn' }, [buildHeader(sub, route, back, goBack), buildEmptyWorkspace(back, goBack)]));
     return;
   }
 
-  // Default to the requested tab when it exists for this subtopic, else the
-  // first available tab (so a notes-only subtopic opens on Notes, etc.).
-  let activeTab: LearnTab = focus.tab && tabs.includes(focus.tab) ? focus.tab : tabs[0]!;
+  const requested = toTab(route.tab);
+  const active: LearnTab = requested && tabs.includes(requested) ? requested : tabs[0]!;
+  // Correct a missing / unknown tab in the address bar (no extra history entry).
+  if (route.id && requested !== active && location.hash.startsWith('#/learn/')) {
+    try {
+      history.replaceState(history.state, '', `#${learnPath(sub.meta.id, active, { from: route.from, note: route.note })}`);
+    } catch {
+      /* ignore */
+    }
+  }
 
-  const draw = (): void => {
-    // Opening the notes moves a not-started topic to "in progress".
-    if (activeTab === 'notes') noteTopicOpened(sub.meta.id);
-    mount(root, el('div', { class: 'learn' }, [buildHeader(sub), buildTabs(sub, tabs, activeTab, select), buildPanel(sub, activeTab, root, draw)]));
-    // Scroll to a requested note once the Notes panel is in the DOM.
-    if (activeTab === 'notes' && focus.noteId) {
-      const target = document.getElementById(`learn-note-${focus.noteId}`);
-      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      focus.noteId = undefined; // one-shot
+  // Practice results have their own URL; without the in-memory results (a
+  // reload) fall back to the Practice tab.
+  if (route.results && active === 'practice') {
+    const res = resultsCache.get(sub.meta.id);
+    if (res) {
+      setDocumentTitle(`${sub.meta.name} \u2014 Practice complete`, 'Topics');
+      drawResults(root, sub, route, back, goBack, res.score, res.wrongIds);
+      return;
+    }
+  }
+
+  setDocumentTitle(active === 'notes' ? sub.meta.name : `${sub.meta.name} \u2014 ${LABELS[active]}`, 'Topics');
+  if (active === 'notes') noteTopicOpened(sub.meta.id);
+
+  const select = (tab: LearnTab): void => {
+    if (tab === active) return;
+    const before = renderCount;
+    scrollToTabsAfterRender = true;
+    navigate(learnPath(sub.meta.id, tab, { from: route.from }), { keepScroll: true, keepFocus: true });
+    if (renderCount === before) {
+      // No router mounted (unit tests): update the hash and re-render here.
+      try {
+        history.replaceState(history.state, '', `#${learnPath(sub.meta.id, tab, { from: route.from })}`);
+      } catch {
+        /* ignore */
+      }
+      render(root);
     }
   };
 
-  const select = (tab: LearnTab): void => {
-    activeTab = tab;
-    draw();
-  };
+  const toc = active === 'notes' ? tocEntries(sub) : [];
+  const contents = toc.length > 1 ? buildContentsChip(toc) : null;
+  const panel = buildPanel(sub, active, root, route, toc);
+  mount(
+    root,
+    el('div', { class: 'learn' }, [
+      buildHeader(sub, route, back, goBack, active === 'notes' ? toc : []),
+      el('div', { class: 'learn-tabbar' }, [buildTabs(sub, tabs, active, select), contents?.chip ?? null, contents?.sheet ?? null]),
+      panel,
+    ]),
+  );
+  if (toc.length > 1) wireTocTracking(sub.meta.id, toc, root, contents);
 
-  draw();
+  // A tab switch keeps the tab bar in view (rule 4: top of the tablist, not
+  // the page top). A note deep link scrolls to that note.
+  if (scrollToTabsAfterRender) {
+    scrollToTabsAfterRender = false;
+    const bar = root.querySelector<HTMLElement>('.learn-tabbar');
+    if (bar && typeof window.scrollTo === 'function' && !navigator.userAgent.includes('jsdom')) {
+      const top = bar.getBoundingClientRect().top + window.scrollY - topbarHeight();
+      if (window.scrollY > top) window.scrollTo({ top, behavior: 'instant' as ScrollBehavior });
+    }
+  }
+  if (active === 'notes' && route.note) {
+    const target = document.getElementById(`learn-note-${route.note}`);
+    if (target) setTimeout(() => scrollToEl(target), 0);
+  }
 }
 
-/** Build the subtopic header: name, band, status, progress, counts, back link. @internal */
-function buildHeader(sub: SubtopicView): HTMLElement {
+/** The fixed top bar's height (sticky offset). @internal */
+function topbarHeight(): number {
+  return document.querySelector<HTMLElement>('.topbar')?.offsetHeight ?? 0;
+}
+
+/** Scroll so `node` sits just under the sticky top bar + tab bar. @internal */
+function scrollToEl(node: HTMLElement): void {
+  if (navigator.userAgent.includes('jsdom')) return;
+  const bar = document.querySelector<HTMLElement>('.learn-tabbar');
+  const offset = topbarHeight() + (bar?.offsetHeight ?? 0) + 8;
+  const top = node.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'instant' as ScrollBehavior });
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header: breadcrumb, h1, status, progress, collapsed checklist               */
+/* -------------------------------------------------------------------------- */
+
+/** One TOC entry: a prelims note and its anchor id. @internal */
+interface TocEntry {
+  anchor: string;
+  title: string;
+  noteId: string;
+}
+
+/** The notes' "On this page" entries (Prelims notes, reading order). @internal */
+function tocEntries(sub: SubtopicView): TocEntry[] {
+  return sub.notes.filter((n) => !isMainsNote(n)).map((n) => ({ anchor: `learn-note-${n.id}`, title: n.title, noteId: n.id }));
+}
+
+/** localStorage key of the last section read per topic. @internal */
+function lastSectionKey(id: string): string {
+  return `appsc.lastSection.${id}`;
+}
+
+/** The last section read in a topic (a note id), if remembered. */
+export function lastSection(id: string): string | undefined {
+  try {
+    return localStorage.getItem(lastSectionKey(id)) ?? undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Remember the last section read in a topic. @internal */
+function rememberSection(id: string, noteId: string): void {
+  try {
+    localStorage.setItem(lastSectionKey(id), noteId);
+  } catch {
+    /* storage unavailable */
+  }
+}
+
+/** The `Continue at <section> →` hint for a topic (or null). */
+export function continueHint(sub: SubtopicView): { title: string; noteId: string } | null {
+  const id = lastSection(sub.meta.id);
+  if (!id) return null;
+  const notes = sub.notes.filter((n) => !isMainsNote(n));
+  const idx = notes.findIndex((n) => n.id === id);
+  if (idx <= 0) return null; // the first section = nothing to continue
+  return { title: notes[idx]!.title, noteId: id };
+}
+
+/** Subject + chapter names of a subtopic. @internal */
+function trailOf(sub: SubtopicView): { subject: string; chapter: string } {
+  const subject = getSubjects().find((s) => s.code === sub.meta.subjectCode)?.name ?? sub.meta.subjectCode;
+  const chapter = getTaxonomy().chapters.find((c) => c.id === sub.meta.chapterId)?.name ?? '';
+  return { subject, chapter };
+}
+
+/** An in-app link (`<a href>` + router navigate). @internal */
+function link(cls: string, path: string, children: Child[], label?: string): HTMLElement {
+  return el('a', {
+    class: cls,
+    href: `#${path}`,
+    ariaLabel: label,
+    onClick: (e) => {
+      e.preventDefault();
+      navigate(path);
+    },
+  }, children);
+}
+
+/** Build the subtopic header. @internal */
+function buildHeader(
+  sub: SubtopicView,
+  route: LearnRoute,
+  back: { label: string; path: string },
+  goBack: () => void,
+  toc: readonly TocEntry[] = [],
+): HTMLElement {
   const state = loadState();
-  const mcqIds = sub.mcqs.map((m) => m.id);
-  const mastery = subtopicMasteryPct(state.progress, mcqIds);
-  const status = statusFromMastery(mastery);
-
+  const mastery = subtopicMasteryPct(state.progress, sub.mcqs.map((m) => m.id));
   const study = topicStudy(sub.meta.id);
-  const badges = el('div', { class: 'learn-badges' }, [
-    sub.meta.band ? bandBadge(sub.meta.band) : null,
-    statusChip(status),
-    studyChip(study.status),
-  ]);
+  const { subject, chapter } = trailOf(sub);
 
-  const counts = el('div', { class: 'learn-counts' }, [
-    countChip('notes', `${sub.notes.length} Notes`),
-    countChip('drill', `${sub.mcqs.length} MCQ`),
-    countChip('notebook', `${sub.mains.length} Mains`),
+  const crumbs = el('nav', { class: 'breadcrumb', ariaLabel: 'Breadcrumb' }, [
+    el('ol', {}, [
+      el('li', {}, [link('crumb', PATHS.topics, ['Topics'])]),
+      el('li', {}, [link('crumb', topicsPath(sub, false), [subject])]),
+      chapter ? el('li', {}, [link('crumb', topicsPath(sub), [chapter])]) : null,
+      el('li', {}, [el('span', { class: 'crumb is-current', attrs: { 'aria-current': 'page' }, text: sub.meta.name })]),
+    ]),
   ]);
+  // On a phone the trail collapses to its parent (`‹ Ancient India I`).
+  const up = chapter ? link('crumb-up', topicsPath(sub), [`\u2039 ${chapter}`], `Up to ${chapter}`) : null;
+
+  const cont = route.tab === undefined || toTab(route.tab) === 'notes' ? continueHint(sub) : null;
+  const continueLink = cont && toc.length > 0
+    ? el('button', {
+        class: 'link-btn learn-continue',
+        type: 'button',
+        text: `Continue at ${cont.title} \u2192`,
+        onClick: () => {
+          const node = document.getElementById(`learn-note-${cont.noteId}`);
+          if (node) scrollToEl(node);
+        },
+      })
+    : null;
 
   return el('header', { class: 'learn-header card' }, [
-    el('button', {
-      class: 'learn-back',
-      type: 'button',
-      onClick: () => navigate('/syllabus'),
-    }, [icon('chevron', 16), el('span', { text: 'Back to Syllabus' })]),
-    el('h2', { class: 'learn-title', text: sub.meta.name }),
-    badges,
-    progressBar({ value: mastery / 100, label: 'Progress', caption: `${mastery}%`, success: mastery >= 100 }),
-    counts,
+    el('div', { class: 'learn-header-nav' }, [
+      el('button', { class: 'learn-back', type: 'button', ariaLabel: `Back to ${back.label}`, onClick: goBack }, [
+        el('span', { attrs: { 'aria-hidden': 'true' }, text: '\u2039' }),
+        el('span', { text: back.label }),
+      ]),
+      crumbs,
+      up,
+    ]),
+    el('h1', { class: 'learn-title', attrs: { tabindex: '-1' }, text: sub.meta.name }),
+    el('p', { class: 'learn-trail', text: chapter ? `${subject} \u203a ${chapter}` : subject }),
+    el('div', { class: 'learn-badges' }, [sub.meta.band ? bandBadge(sub.meta.band) : null, studyChip(study.status)]),
+    progressBar({ value: mastery / 100, label: 'Accuracy', caption: `${mastery}%`, success: mastery >= 100 }),
+    continueLink,
     buildExamPointCoverage(sub),
   ]);
 }
 
 /**
- * The exam-point COVERAGE block for a subtopic that declares an `examPoints`
- * checklist: a "Coverage X% · c/t exam points" line plus a covered-vs-missing
- * list. Returns `null` for subtopics without a checklist (the coverage model
- * falls back to the band-target estimate elsewhere and nothing is shown here).
+ * The exam-point checklist, COLLAPSED: `Coverage X% · c/t exam points ▸`
+ * opens the covered-vs-missing list. Null when the subtopic has no checklist.
  * @internal
  */
 function buildExamPointCoverage(sub: SubtopicView): HTMLElement | null {
-  const cov = getSubtopicCoverage(sub.meta.id);
-  const ep = cov?.examPoints;
+  const ep = getSubtopicCoverage(sub.meta.id)?.examPoints;
   if (!ep || ep.total === 0) return null;
-  const points = [
-    ...ep.covered.map((p) => examPointItem(p, true)),
-    ...ep.missing.map((p) => examPointItem(p, false)),
-  ];
-  return el('div', { class: 'learn-coverage' }, [
-    el('p', { class: 'learn-coverage-line' }, [
+  const points = [...ep.covered.map((p) => examPointItem(p, true)), ...ep.missing.map((p) => examPointItem(p, false))];
+  return el('details', { class: 'learn-coverage' }, [
+    el('summary', { class: 'learn-coverage-line' }, [
       icon('target', 15),
       el('span', { class: 'tnum', text: `Coverage ${ep.pct}%` }),
       el('span', { class: 'learn-coverage-frac tnum', text: `${ep.covered.length}/${ep.total} exam points` }),
@@ -185,7 +406,7 @@ function buildExamPointCoverage(sub: SubtopicView): HTMLElement | null {
   ]);
 }
 
-/** A single exam-point list item, marked covered or still missing. @internal */
+/** A single exam-point list item. @internal */
 function examPointItem(text: string, covered: boolean): HTMLElement {
   return el('li', { class: covered ? 'exam-point is-covered' : 'exam-point is-missing' }, [
     el('span', { class: 'exam-point-mark', attrs: { 'aria-hidden': 'true' } }, [icon(covered ? 'check' : 'circle', 14)]),
@@ -193,51 +414,33 @@ function examPointItem(text: string, covered: boolean): HTMLElement {
   ]);
 }
 
-/** A small icon+text count chip. @internal */
-function countChip(iconName: Parameters<typeof icon>[0], text: string): HTMLElement {
-  return el('span', { class: 'learn-count' }, [icon(iconName, 15), el('span', { text })]);
-}
-
-/**
- * Format an ISO `YYYY-MM-DD` CA freshness date as a short, human label like
- * `9 Oct 2026`. Falls back to the raw string if it is not a parseable date.
- * @internal
- */
+/** `9 Oct 2026` from an ISO date (raw string when unparseable). @internal */
 function formatCaDate(iso: string): string {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
   if (!m) return iso;
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const day = Number(m[3]);
-  const mon = months[Number(m[2]) - 1] ?? m[2];
-  return `${day} ${mon} ${m[1]}`;
+  return `${Number(m[3])} ${months[Number(m[2]) - 1] ?? m[2]} ${m[1]}`;
 }
 
-/** The stable id of the single (swapped) Learn tabpanel. @internal */
+/* -------------------------------------------------------------------------- */
+/* Tabs                                                                         */
+/* -------------------------------------------------------------------------- */
+
+/** The stable id of the single Learn tabpanel. @internal */
 const LEARN_PANEL_ID = 'learn-tabpanel';
 
-/** The DOM id of a tab button for a given LearnTab. @internal */
+/** The DOM id of a tab button. @internal */
 function tabId(tab: LearnTab): string {
   return `learn-tab-${tab}`;
 }
 
 /**
- * Build the tab bar (only the tabs that have content) as an accessible WAI-ARIA
- * tablist: each tab has an id + `aria-controls` pointing at the shared tabpanel,
- * `aria-selected`, and a ROVING tabindex (active = 0, others = -1). Left/Right/
- * Home/End move AND activate the tab (automatic activation), keeping focus on
- * the newly-selected tab. Click-to-switch is preserved. @internal
+ * The accessible WAI-ARIA tablist (`Notes 14 · Practice 22 · Mains 3`): roving
+ * tabindex, Left/Right/Home/End move AND activate. Each tab is its own URL.
+ * @internal
  */
 function buildTabs(sub: SubtopicView, available: readonly LearnTab[], active: LearnTab, select: (t: LearnTab) => void): HTMLElement {
-  const COUNTS: Record<LearnTab, number> = {
-    notes: sub.notes.length,
-    drill: sub.mcqs.length,
-    mains: sub.mains.length,
-  };
-  const LABELS: Record<LearnTab, string> = {
-    notes: 'Notes',
-    drill: 'Practice',
-    mains: 'Mains',
-  };
+  const COUNTS: Record<LearnTab, number> = { notes: sub.notes.length, practice: sub.mcqs.length, mains: sub.mains.length };
   return el('div', { class: 'learn-tabs', attrs: { role: 'tablist', 'aria-label': 'Study modes' } },
     available.map((id, i) => {
       const isActive = active === id;
@@ -258,7 +461,6 @@ function buildTabs(sub: SubtopicView, available: readonly LearnTab[], active: Le
         if (ni === null) return;
         e.preventDefault();
         const target = available[ni]!;
-        // Re-render on the new tab, then move focus to it (draw() is synchronous).
         select(target);
         document.getElementById(tabId(target))?.focus();
       });
@@ -267,58 +469,160 @@ function buildTabs(sub: SubtopicView, available: readonly LearnTab[], active: Le
   );
 }
 
+/* -------------------------------------------------------------------------- */
+/* Table of contents                                                           */
+/* -------------------------------------------------------------------------- */
+
+/** The <1100px `Contents · 4/14 ▾` chip and its sheet. @internal */
+interface ContentsChip {
+  chip: HTMLButtonElement;
+  sheet: HTMLElement;
+  setCurrent(idx: number): void;
+}
+
+/** Build the TOC links (shared by the side list and the chip sheet). @internal */
+function tocLinks(toc: readonly TocEntry[], onPick?: () => void): HTMLElement[] {
+  return toc.map((t, i) =>
+    el('a', {
+      class: 'toc-link',
+      href: `#${t.anchor}`,
+      attrs: { 'data-toc-idx': String(i) },
+      onClick: (e) => {
+        e.preventDefault();
+        onPick?.();
+        const node = document.getElementById(t.anchor);
+        if (node) scrollToEl(node);
+      },
+    }, [el('span', { class: 'toc-mark', attrs: { 'aria-hidden': 'true' } }), el('span', { class: 'toc-text', text: t.title })]),
+  );
+}
+
+/** Build the contents chip + sheet. @internal */
+function buildContentsChip(toc: readonly TocEntry[]): ContentsChip {
+  const label = el('span', { text: `Contents \u00b7 1/${toc.length}` });
+  const chipBtn = el('button', {
+    class: 'contents-chip',
+    type: 'button',
+    attrs: { 'aria-expanded': 'false', 'aria-controls': 'learn-contents-sheet' },
+  }, [label, el('span', { attrs: { 'aria-hidden': 'true' }, text: ' \u25be' })]) as HTMLButtonElement;
+  const close = (): void => {
+    sheet.hidden = true;
+    chipBtn.setAttribute('aria-expanded', 'false');
+  };
+  const sheet = el('nav', { class: 'contents-sheet toc', ariaLabel: 'Contents', attrs: { id: 'learn-contents-sheet', hidden: 'true' } }, [
+    el('span', { class: 'toc-eyebrow', text: 'On this page' }),
+    ...tocLinks(toc, close),
+  ]);
+  sheet.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      close();
+      chipBtn.focus();
+    }
+  });
+  chipBtn.addEventListener('click', () => {
+    const open = sheet.hidden;
+    sheet.hidden = !open;
+    chipBtn.setAttribute('aria-expanded', String(open));
+    if (open) sheet.querySelector<HTMLElement>('.toc-link.is-current, .toc-link')?.focus();
+  });
+  return {
+    chip: chipBtn,
+    sheet,
+    setCurrent: (idx) => {
+      label.textContent = `Contents \u00b7 ${idx + 1}/${toc.length}`;
+    },
+  };
+}
+
 /**
- * The whole-page empty state for a subtopic with no authored material yet.
- * Reassures the learner it is planned and coming, and offers a way back.
- * @internal
+ * Track the section being read (IntersectionObserver): highlight it in every
+ * TOC, tick sections already scrolled past, update the chip count, and
+ * remember it for "Continue at …". @internal
  */
-function buildEmptyWorkspace(sub: SubtopicView): HTMLElement {
-  return el('div', { class: 'learn-panel', attrs: { role: 'tabpanel' } }, [
+function wireTocTracking(id: string, toc: readonly TocEntry[], root: HTMLElement, chipCtl: ContentsChip | null): void {
+  const setCurrent = (idx: number): void => {
+    for (const a of root.querySelectorAll<HTMLElement>('.toc-link[data-toc-idx]')) {
+      const i = Number(a.dataset.tocIdx);
+      a.classList.toggle('is-current', i === idx);
+      a.classList.toggle('is-read', i < idx);
+      if (i === idx) a.setAttribute('aria-current', 'location');
+      else a.removeAttribute('aria-current');
+    }
+    chipCtl?.setCurrent(idx);
+    const entry = toc[idx];
+    if (entry) rememberSection(id, entry.noteId);
+  };
+  setCurrent(0);
+  if (typeof IntersectionObserver === 'undefined') return;
+  const nodes = toc.map((t) => document.getElementById(t.anchor));
+  const visible = new Set<number>();
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (!root.isConnected || !nodes[0]?.isConnected) {
+        io.disconnect();
+        return;
+      }
+      for (const e of entries) {
+        const i = nodes.indexOf(e.target as HTMLElement);
+        if (i === -1) continue;
+        if (e.isIntersecting) visible.add(i);
+        else visible.delete(i);
+      }
+      if (visible.size > 0) setCurrent(Math.min(...visible));
+    },
+    { rootMargin: '-35% 0px -55% 0px' },
+  );
+  for (const n of nodes) if (n) io.observe(n);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Panels                                                                      */
+/* -------------------------------------------------------------------------- */
+
+/** Notes for this topic are coming soon — the whole-page empty state. @internal */
+function buildEmptyWorkspace(back: { label: string }, goBack: () => void): HTMLElement {
+  return el('div', { class: 'learn-panel', attrs: { role: 'region', 'aria-label': 'Study material' } }, [
     el('div', { class: 'empty-state' }, [
       el('span', { class: 'empty-icon' }, [icon('sparkles', 26)]),
-      el('h3', { text: 'Study material coming soon' }),
-      el('p', { text: `Study material for ${sub.meta.name} hasn\u2019t been added yet — it\u2019s in the plan and coming soon.` }),
-      button({ label: 'Back to Syllabus', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/syllabus') }),
+      el('h2', { text: 'Study material coming soon' }),
+      el('p', { text: 'Notes for this topic are coming soon.' }),
+      button({ label: `\u2039 Back to ${back.label}`, variant: 'primary', onClick: goBack }),
     ]),
   ]);
 }
 
 /** Build the active tab's panel. @internal */
-function buildPanel(sub: SubtopicView, active: LearnTab, root: HTMLElement, back: () => void): HTMLElement {
+function buildPanel(sub: SubtopicView, active: LearnTab, root: HTMLElement, route: LearnRoute, toc: readonly TocEntry[]): HTMLElement {
   const panel = el('div', {
     class: 'learn-panel',
-    attrs: {
-      role: 'tabpanel',
-      id: LEARN_PANEL_ID,
-      'aria-labelledby': tabId(active),
-      tabindex: '0',
-    },
+    attrs: { role: 'tabpanel', id: LEARN_PANEL_ID, 'aria-labelledby': tabId(active), tabindex: '0' },
   });
-  switch (active) {
-    case 'notes':
-      panel.append(notesPanel(sub, root));
-      break;
-    case 'drill':
-      panel.append(drillPanel(sub, root, back));
-      break;
-    case 'mains':
-      panel.append(mainsPanel(sub));
-      break;
-  }
+  if (active === 'notes') panel.append(notesPanel(sub, root, route, toc));
+  else if (active === 'practice') panel.append(practicePanel(sub, root, route));
+  else panel.append(mainsPanel(sub));
   return panel;
 }
 
+/** Go to a Learn tab (a new URL, origin kept). @internal */
+function goTab(sub: SubtopicView, tab: LearnTab, route: LearnRoute): void {
+  navigate(learnPath(sub.meta.id, tab, { from: route.from }));
+}
+
+/** Mark the topic studied, then go to the next step from today's plan. @internal */
+function markAndNext(sub: SubtopicView): void {
+  markTopicStudied(sub.meta.id, true);
+  nextStep(sub.meta.id).go();
+}
+
 /**
- * Notes tab: the curated "Topic at a glance" map (when authored) at the top, a
- * "Flashcards for this topic" entry (when curated cards exist), then the notes.
- * @internal
+ * Notes tab: CA freshness, "Topic at a glance", the curated-flashcards entry,
+ * the notes (each ending in `Next: … ↓`), the collapsed For-Mains section and
+ * the Next-up footer. Wide screens add the "On this page" list. @internal
  */
-function notesPanel(sub: SubtopicView, root: HTMLElement): HTMLElement {
+function notesPanel(sub: SubtopicView, root: HTMLElement, route: LearnRoute, toc: readonly TocEntry[]): HTMLElement {
   const map = getMindmap(sub.meta.id);
   const cards = getCards(sub.meta.id);
   const kids: Child[] = [];
-  // Current-Affairs subtopics show how fresh the bank is (STANDARDS: CA is
-  // dated). The marker is read from content/current-affairs/meta.json.
   if (sub.meta.subjectCode === 'CA') {
     kids.push(el('p', { class: 'section-lead learn-ca-freshness' }, [
       icon('timer', 15),
@@ -330,75 +634,142 @@ function notesPanel(sub: SubtopicView, root: HTMLElement): HTMLElement {
     kids.push(el('div', { class: 'learn-flashcards-cta' }, [
       el('p', { class: 'section-lead' }, [
         icon('revise', 15),
-        el('span', { text: `${cards.length} curated flashcard${cards.length === 1 ? '' : 's'} for this topic — recall the answers, don\u2019t re-read.` }),
+        el('span', { text: `${cards.length} curated flashcard${cards.length === 1 ? '' : 's'} for this topic \u2014 recall the answers, don\u2019t re-read.` }),
       ]),
       button({
         label: 'Flashcards for this topic',
         variant: 'secondary',
         iconName: 'revise',
-        onClick: () => mountFlashcards(root, buildCuratedDeck(cards), () => openLearn(sub.meta.id)),
+        onClick: () => mountFlashcards(root, buildCuratedDeck(cards), () => openLearn(sub.meta.id, { tab: 'notes', from: route.from })),
       }),
     ]));
   }
   if (sub.notes.length === 0 && kids.length === 0) {
-    return emptyPanel('book-open', 'No notes yet', 'Notes for this subtopic will appear here once authored.');
+    return emptyPanel('book-open', 'No notes yet', 'Notes for this topic are coming soon.');
   }
-  // Prelims notes render in reading order; the For-Mains angle note(s) go LAST
-  // in a collapsed "For Mains" section, never mixed into the Prelims order and
-  // never drilled as cards (STANDARDS §8a).
-  const prelimsNotes = sub.notes.filter((n) => !isMainsNote(n));
+  const prelims: NoteItem[] = sub.notes.filter((n) => !isMainsNote(n));
   const mainsNotes = sub.notes.filter((n) => isMainsNote(n));
-  if (prelimsNotes.length > 0) {
-    kids.push(...prelimsNotes.map((n) => buildNoteArticle(n, `learn-note-${n.id}`)));
-  }
+  prelims.forEach((n, i) => {
+    const article = buildNoteArticle(n, `learn-note-${n.id}`);
+    const next = prelims[i + 1];
+    if (next) {
+      article.append(el('a', {
+        class: 'note-next',
+        href: `#learn-note-${next.id}`,
+        onClick: (e) => {
+          e.preventDefault();
+          const node = document.getElementById(`learn-note-${next.id}`);
+          if (node) scrollToEl(node);
+        },
+      }, [`Next: ${next.title} \u2193`]));
+    }
+    kids.push(article);
+  });
   const mainsSection = buildMainsNotesSection(mainsNotes, 'learn-note-mains');
   if (mainsSection) kids.push(mainsSection);
-  kids.push(studyMarkBar(sub));
-  return el('div', { class: 'reading' }, kids);
+  kids.push(notesFooter(sub, route));
+
+  const reading = el('div', { class: 'reading' }, kids);
+  if (toc.length <= 1) return reading;
+  const side = el('nav', { class: 'toc learn-toc', ariaLabel: 'On this page' }, [
+    el('span', { class: 'toc-eyebrow', text: 'On this page' }),
+    ...tocLinks(toc),
+  ]);
+  return el('div', { class: 'learn-notes-layout' }, [reading, side]);
 }
 
-/** Drill tab: an intro + start button that runs a subtopic-scoped focus drill. @internal */
-function drillPanel(sub: SubtopicView, root: HTMLElement, back: () => void): HTMLElement {
-  if (sub.mcqs.length === 0) return emptyPanel('drill', 'No questions yet', 'MCQs for this subtopic will appear here once authored.');
-  const start = (): void => {
+/** The Notes "Next up" footer (spec §3.5 row 1). @internal */
+function notesFooter(sub: SubtopicView, route: LearnRoute): HTMLElement {
+  const studied = topicStudy(sub.meta.id).status === 'studied';
+  const q = sub.mcqs.length;
+  if (q > 0) {
+    const next = studied ? nextStep(sub.meta.id) : null;
+    return nextUpFooter({
+      eyebrow: 'Finished reading?',
+      primary: { label: `Practice ${q} question${q === 1 ? '' : 's'}`, onClick: () => goTab(sub, 'practice', route) },
+      secondary: next
+        ? [{ label: next.label, onClick: next.go }]
+        : [{ label: 'Mark studied & skip practice', ariaLabel: `Mark ${sub.meta.name} studied and skip practice`, onClick: () => markAndNext(sub) }],
+    });
+  }
+  const next = nextStep(sub.meta.id);
+  return nextUpFooter({
+    eyebrow: 'Finished reading?',
+    primary: studied
+      ? { label: next.label, onClick: next.go }
+      : { label: 'Mark studied & go to next topic', onClick: () => markAndNext(sub) },
+  });
+}
+
+/** Practice tab: start a topic practice session, or sit a timed mock on it. @internal */
+function practicePanel(sub: SubtopicView, root: HTMLElement, route: LearnRoute): HTMLElement {
+  if (sub.mcqs.length === 0) return emptyPanel('drill', 'No questions yet', 'Practice questions for this topic are coming soon.');
+  const begin = (): void => {
     const items = buildSession({ subtopicId: sub.meta.id, order: 'ladder' }).items;
-    mountQuiz(root, items, (score) => drillResults(root, sub, score, back), { allowEndSession: true });
+    mountQuiz(root, items, (score, wrongItems) => {
+      resultsCache.set(sub.meta.id, { score, wrongIds: wrongItems.map((w) => w.id) });
+      pushUrl(learnPath(sub.meta.id, 'practice', { from: route.from, results: true }));
+      setDocumentTitle(`${sub.meta.name} \u2014 Practice complete`, 'Topics');
+      const back = originTarget(route.from, sub);
+      drawResults(root, sub, { ...route, results: true, tab: 'practice' }, back, () => navigate(back.path), score, wrongItems.map((w) => w.id));
+      if (!navigator.userAgent.includes('jsdom')) window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      root.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
+    }, { allowEndSession: true });
   };
-  const practice = startPanel(
-    'drill',
-    `${sub.mcqs.length} question${sub.mcqs.length === 1 ? '' : 's'} in scope`,
-    'A focus drill scoped to this subtopic — stop anytime.',
-    'Start drill',
-    start,
-  );
-  // A timed-mock entry point scoped to just this subtopic (no per-question
-  // feedback, -1/3 negative marking) — routes to the Mock setup pre-scoped here.
+  const n = sub.mcqs.length;
+  const start = el('div', { class: 'learn-start card' }, [
+    el('span', { class: 'empty-icon' }, [icon('drill', 26)]),
+    el('h2', { text: `${n} question${n === 1 ? '' : 's'} on ${sub.meta.name}` }),
+    el('p', { class: 'section-lead', text: 'Quick practice \u2014 untimed, instant feedback, stop anytime.' }),
+    button({ label: 'Start practice', variant: 'primary', iconName: 'arrow-right', onClick: begin }),
+  ]);
   const mockRow = el('div', { class: 'learn-mock-cta' }, [
-    el('p', { class: 'section-lead' }, [icon('timer', 15), el('span', { text: 'Prefer exam conditions? Sit a timed mock on this subtopic — negative marking, no feedback until you submit.' })]),
+    el('p', { class: 'section-lead' }, [icon('timer', 15), el('span', { text: 'Prefer exam conditions? A timed mock on this topic \u2014 negative marking, no feedback until you submit.' })]),
     button({
-      label: 'Mock this subtopic',
+      label: 'Timed mock on this topic',
       variant: 'secondary',
       iconName: 'timer',
       onClick: () => openMock({ scopeKind: 'subtopic', subtopicId: sub.meta.id }),
     }),
   ]);
-  return el('div', { class: 'learn-drill' }, [practice, mockRow, studyMarkBar(sub)]);
+  return el('div', { class: 'learn-drill' }, [start, mockRow, studyMarkBar(sub)]);
 }
 
-/** End-of-drill results for the subtopic-scoped drill. @internal */
-function drillResults(root: HTMLElement, sub: SubtopicView, score: SessionScore, back: () => void): void {
-  const line = score.total === 0 ? 'No questions answered.' : `${score.correct}/${score.total} correct.`;
+/** The practice results page (its own URL) with the Next-up footer. @internal */
+function drawResults(
+  root: HTMLElement,
+  sub: SubtopicView,
+  route: LearnRoute,
+  back: { label: string; path: string },
+  goBack: () => void,
+  score: SessionScore,
+  wrongIds: readonly string[],
+): void {
+  const line = score.total === 0 ? 'No questions answered' : `${score.correct}/${score.total} correct`;
+  const studied = topicStudy(sub.meta.id).status === 'studied';
+  const next = nextStep(sub.meta.id);
+  const secondary = [
+    wrongIds.length > 0
+      ? {
+          label: `Review ${wrongIds.length} mistake${wrongIds.length === 1 ? '' : 's'}`,
+          onClick: () => openScopedReview(wrongIds, `${sub.meta.name} \u2014 mistakes`, 'The questions you got wrong in this practice session.'),
+        }
+      : null,
+    { label: 'Back to notes', onClick: () => goTab(sub, 'notes', route) },
+  ].filter((x): x is { label: string; onClick: () => void } => x !== null);
+  const footer = nextUpFooter({
+    eyebrow: `${sub.meta.name} \u2014 ${line}`,
+    primary: studied
+      ? { label: next.label, onClick: next.go }
+      : { label: 'Mark studied & go to next topic', ariaLabel: `Mark ${sub.meta.name} studied and go to the next topic`, onClick: () => markAndNext(sub) },
+    secondary,
+  });
   mount(
     root,
-    el('div', { class: 'results' }, [
-      card({ title: 'Drill complete' }, [
-        el('p', { class: 'section-lead', text: `${sub.meta.name} — ${line}` }),
-        studyMarkBar(sub),
-        el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
-          button({ label: 'Back to subtopic', variant: 'primary', onClick: () => back() }),
-          button({ label: 'Syllabus', variant: 'ghost', onClick: () => navigate('/syllabus') }),
-        ]),
-      ]),
+    el('div', { class: 'learn results' }, [
+      buildHeader(sub, route, back, goBack),
+      card({ title: 'Practice complete' }, [el('p', { class: 'section-lead', text: `${sub.meta.name} \u2014 ${line}.` })]),
+      footer,
     ]),
   );
 }
@@ -406,15 +777,9 @@ function drillResults(root: HTMLElement, sub: SubtopicView, score: SessionScore,
 /** Mains tab: questions with optional model answers + key points. @internal */
 function mainsPanel(sub: SubtopicView): HTMLElement {
   if (sub.mains.length === 0) return emptyPanel('notebook', 'No Mains questions yet', 'Descriptive practice for this subtopic will appear here.');
-  // CTA into the dedicated Mains writing trainer, pre-filtered to this subtopic.
   const cta = el('div', { class: 'learn-mock-cta' }, [
-    el('p', { class: 'section-lead' }, [icon('notes', 15), el('span', { text: 'Learn how to WRITE these answers — frameworks, an annotated model, a practice pad and a self-eval rubric.' })]),
-    button({
-      label: 'Practice mains',
-      variant: 'secondary',
-      iconName: 'arrow-right',
-      onClick: () => openMains(sub.meta.id),
-    }),
+    el('p', { class: 'section-lead' }, [icon('notes', 15), el('span', { text: 'Learn how to WRITE these answers \u2014 frameworks, an annotated model, a practice pad and a self-eval rubric.' })]),
+    button({ label: 'Practice mains', variant: 'secondary', iconName: 'arrow-right', onClick: () => openMains(sub.meta.id) }),
   ]);
   const articles = sub.mains.map((m) => {
     const kids: Child[] = [
@@ -436,59 +801,37 @@ function mainsPanel(sub: SubtopicView): HTMLElement {
         el('ul', { class: 'keypoint-list' }, m.keyPoints.map((p) => el('li', { text: p }))),
       ]));
     }
-    kids.push(button({
-      label: 'Write this answer',
-      variant: 'ghost',
-      iconName: 'arrow-right',
-      onClick: () => openMainsQuestion(m.id),
-    }));
+    kids.push(button({ label: 'Write this answer', variant: 'ghost', iconName: 'arrow-right', onClick: () => openMainsQuestion(m.id) }));
     return el('article', { class: 'mains-item card' }, kids);
   });
   return el('div', { class: 'reading' }, [cta, ...articles]);
-}
-
-/** A reusable "start" panel (icon + summary + CTA). @internal */
-function startPanel(
-  iconName: Parameters<typeof icon>[0],
-  heading: string,
-  body: string,
-  cta: string,
-  onStart: () => void,
-): HTMLElement {
-  return el('div', { class: 'learn-start card' }, [
-    el('span', { class: 'empty-icon' }, [icon(iconName, 26)]),
-    el('h3', { text: heading }),
-    el('p', { class: 'section-lead', text: body }),
-    button({ label: cta, variant: 'primary', iconName: 'arrow-right', onClick: onStart }),
-  ]);
 }
 
 /** A friendly per-panel empty state. @internal */
 function emptyPanel(iconName: Parameters<typeof icon>[0], heading: string, body: string): HTMLElement {
   return el('div', { class: 'empty-state' }, [
     el('span', { class: 'empty-icon' }, [icon(iconName, 26)]),
-    el('h3', { text: heading }),
+    el('h2', { text: heading }),
     el('p', { text: body }),
   ]);
 }
 
 /**
- * The "Mark as studied" bar shown after the Notes, on the Practice tab and at
- * the end of a drill. Shows the topic's study status and toggles it: "Mark as
- * studied" ↔ "Mark as not studied". Answering {@link AUTO_STUDIED_ANSWERS}
- * practice questions (or the whole bank) marks it studied automatically.
- * The bar re-renders itself (and the header's study chip) in place, so the
- * reading position is kept. Exported for tests.
+ * The "Mark as studied" bar on the Practice tab. Toggles "Mark as studied" ↔
+ * "Mark as not studied"; answering {@link AUTO_STUDIED_ANSWERS} practice
+ * questions marks it studied automatically. Re-renders in place. Once studied
+ * it offers the next step from today's plan. Exported for tests.
  */
 export function studyMarkBar(sub: SubtopicView): HTMLElement {
   const info = topicStudy(sub.meta.id);
   const studied = info.status === 'studied';
   const auto = Math.min(AUTO_STUDIED_ANSWERS, info.bankSize);
   const lead = studied
-    ? `Studied \u2713 — ${sub.meta.name} counts as covered in your plan.`
+    ? `Studied \u2713 \u2014 ${sub.meta.name} counts as covered in your plan.`
     : info.bankSize > 0
-      ? `Done with ${sub.meta.name}? Mark it studied (or answer ${auto} practice questions — ${info.answered}/${auto} so far).`
+      ? `Done with ${sub.meta.name}? Mark it studied (or answer ${auto} practice questions \u2014 ${info.answered}/${auto} so far).`
       : `Done with ${sub.meta.name}? Mark it studied so your plan counts it.`;
+  const next = studied ? nextStep(sub.meta.id) : null;
   const bar: HTMLElement = el('div', { class: studied ? 'learn-study-mark is-studied' : 'learn-study-mark', attrs: { 'data-study-status': info.status, role: 'group', 'aria-label': 'Study status' } }, [
     el('p', { class: 'section-lead' }, [icon(studied ? 'check' : 'target', 15), el('span', { text: lead })]),
     el('div', { class: 'learn-study-actions' }, [
@@ -506,7 +849,7 @@ export function studyMarkBar(sub: SubtopicView): HTMLElement {
           fresh.querySelector<HTMLButtonElement>('button')?.focus();
         },
       }),
-      studied ? button({ label: 'Back to Today', variant: 'secondary', iconName: 'arrow-right', onClick: () => navigate('/') }) : null,
+      next ? button({ label: next.label, variant: 'secondary', iconName: 'arrow-right', onClick: next.go }) : null,
     ]),
   ]);
   return bar;
@@ -514,10 +857,7 @@ export function studyMarkBar(sub: SubtopicView): HTMLElement {
 
 /** The header's small study-status chip. @internal */
 function studyChip(status: ReturnType<typeof topicStudy>['status']): HTMLElement {
-  const c = chip({
-    text: status === 'studied' ? 'Studied \u2713' : status === 'in-progress' ? 'In progress' : 'Not started',
-    tone: status === 'studied' ? 'ok' : 'muted',
-  });
+  const c = studyStatusChip(status);
   c.classList.add('learn-study-chip');
   return c;
 }

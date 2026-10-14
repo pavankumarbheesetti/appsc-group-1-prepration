@@ -37,7 +37,7 @@ describe('learn workspace — content-less handling', () => {
     expect(empty).toBeTruthy();
     expect(empty?.textContent).toContain('coming soon');
     // A way back is offered.
-    expect(root.textContent).toContain('Back to Syllabus');
+    expect(root.textContent).toContain('Back to Topics');
   });
 
   it('shows the Notes / Practice / Mains tabs for an authored subtopic (Indus Valley)', () => {

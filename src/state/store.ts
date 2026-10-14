@@ -141,8 +141,8 @@ export interface Settings {
   dailyStudyMinutes: number;
   /**
    * The SUNDAY study-time budget in MINUTES. Sunday is the one day the learner
-   * asked for extra time; the planner spends the extra Sunday minutes on Polity
-   * and Modern History (see the planner's Sunday shape). Defaults to
+   * asked for extra time; the planner spends the extra Sunday minutes on a longer
+   * Sunday unit block (see the planner's Sunday shape). Defaults to
    * {@link DEFAULT_SUNDAY_STUDY_MINUTES} (6 h). Saturday is a mock day and
    * simply follows {@link dailyStudyMinutes}, so it has no separate budget.
    *
@@ -238,6 +238,15 @@ export interface AppState {
    * OPTIONAL on disk / import — older blobs normalise to `{}`.
    */
   teluguLessons: Record<string, string>;
+  /**
+   * Per-DAY completion of Today's topic-less rows, keyed by local ISO
+   * `YYYY-MM-DD` → the list of row keys finished that day (e.g. `revise`,
+   * `ca:ca-national`, `mains:<id>`, `start-here`). Written by
+   * {@link setBlockDone}; read by Today / Planner through `lib/day-tasks.ts`.
+   * OPTIONAL on disk / import — older blobs normalise to `{}`. Only the most
+   * recent {@link MAX_BLOCK_DONE_DAYS} days are kept.
+   */
+  blocksDone: Record<string, string[]>;
 }
 
 /** A mutator receives a mutable draft and edits it in place. */
@@ -320,6 +329,12 @@ const TopicStudyEntrySchema: z.ZodType<TopicStudyEntry> = z.object({
   studiedOn: z.string().optional(),
 });
 
+/** One day's finished-row keys (see {@link AppState.blocksDone}). @internal */
+const BlocksDoneDaySchema: z.ZodType<string[]> = z.array(z.string());
+
+/** Days of per-day row completion kept (older days are pruned on write). */
+export const MAX_BLOCK_DONE_DAYS = 120;
+
 /** Cap on the retained finished-test history (most recent kept). */
 export const MAX_TEST_ATTEMPTS = 60;
 
@@ -393,6 +408,7 @@ export function defaultState(): AppState {
     testAttempts: [],
     study: {},
     teluguLessons: {},
+    blocksDone: {},
   };
 }
 
@@ -429,7 +445,7 @@ function normalize(input: unknown): AppState {
       // A positive whole-minute budget, else the sensible working-pro default.
       dailyStudyMinutes:
         typeof settings.dailyStudyMinutes === 'number' && settings.dailyStudyMinutes > 0
-          ? Math.round(settings.dailyStudyMinutes)
+          ? clampStudyMinutes('daily', settings.dailyStudyMinutes)
           : base.settings.dailyStudyMinutes,
       // SUNDAY budget, migrated from the retired optional `weekendStudyMinutes`:
       //  - a valid stored `sundayStudyMinutes` wins;
@@ -437,7 +453,7 @@ function normalize(input: unknown): AppState {
       //    carried over (it was a genuine "extra weekend time" the learner set);
       //  - else the sensible Sunday default (extra time for Polity + Modern
       //    History).
-      sundayStudyMinutes: migrateSundayMinutes(settings),
+      sundayStudyMinutes: clampStudyMinutes('sunday', migrateSundayMinutes(settings)),
       prelimsDateMigrationNotice: migratePrelimsNotice(settings),
       daysOff: normalizeDaysOff(settings),
     },
@@ -456,7 +472,19 @@ function normalize(input: unknown): AppState {
     teluguLessons: isRecord((obj as { teluguLessons?: unknown }).teluguLessons)
       ? ((obj as { teluguLessons: unknown }).teluguLessons as AppState['teluguLessons'])
       : {},
+    blocksDone: normalizeBlocksDone((obj as { blocksDone?: unknown }).blocksDone),
   };
+}
+
+/** Keep only valid `ISO date → string[]` entries of a stored `blocksDone`. @internal */
+function normalizeBlocksDone(raw: unknown): AppState['blocksDone'] {
+  if (!isRecord(raw)) return {};
+  const out: AppState['blocksDone'] = {};
+  for (const [day, keys] of Object.entries(raw)) {
+    if (!isValidISODate(day) || !Array.isArray(keys)) continue;
+    out[day] = [...new Set(keys.filter((k): k is string => typeof k === 'string'))];
+  }
+  return out;
 }
 
 /**
@@ -681,22 +709,53 @@ export function getEffectiveSundayStudyMinutes(): number {
 }
 
 /**
- * Persist a new DAILY study-time budget (minutes). A non-positive/invalid value
- * is IGNORED so the setting can never be corrupted from the UI. Returns state.
+ * D21 — study-budget BOUNDS (minutes). The daily budget is 1–10 h; the Sunday
+ * budget 1–12 h. Out-of-range values are rejected by the setters (the Settings
+ * view shows {@link studyMinutesError}'s message) and clamped on load.
+ */
+export const STUDY_MINUTES_BOUNDS = {
+  daily: { min: 60, max: 600 },
+  sunday: { min: 60, max: 720 },
+} as const;
+
+/**
+ * Why `minutes` is not a valid `kind` budget, or `null` when it is. Plain
+ * language for the Settings field.
+ */
+export function studyMinutesError(kind: 'daily' | 'sunday', minutes: number): string | null {
+  const { min, max } = STUDY_MINUTES_BOUNDS[kind];
+  const what = kind === 'daily' ? 'Daily study time' : 'Sunday study time';
+  if (!Number.isFinite(minutes)) return `${what} must be a number of minutes (${min}\u2013${max}).`;
+  if (minutes < min) return `${what} must be at least ${min} minutes (1 hour).`;
+  if (minutes > max) return `${what} can be at most ${max} minutes (${max / 60} hours).`;
+  return null;
+}
+
+/** Clamp a stored budget into its bounds (whole minutes). @internal */
+function clampStudyMinutes(kind: 'daily' | 'sunday', minutes: number): number {
+  const { min, max } = STUDY_MINUTES_BOUNDS[kind];
+  return Math.min(max, Math.max(min, Math.round(minutes)));
+}
+
+/**
+ * Persist a new DAILY study-time budget (minutes). An invalid or out-of-bounds
+ * value ({@link STUDY_MINUTES_BOUNDS}) is IGNORED so the setting can never be
+ * corrupted from the UI. Returns state.
  */
 export function setDailyStudyMinutes(minutes: number): AppState {
-  if (!Number.isFinite(minutes) || minutes <= 0) return loadState();
+  if (studyMinutesError('daily', minutes) !== null) return loadState();
   return updateState((s) => {
     s.settings.dailyStudyMinutes = Math.round(minutes);
   });
 }
 
 /**
- * Persist the SUNDAY study-time budget (minutes). A non-positive/invalid value
- * is IGNORED so the setting can never be corrupted from the UI. Returns state.
+ * Persist the SUNDAY study-time budget (minutes). An invalid or out-of-bounds
+ * value ({@link STUDY_MINUTES_BOUNDS}) is IGNORED so the setting can never be
+ * corrupted from the UI. Returns state.
  */
 export function setSundayStudyMinutes(minutes: number): AppState {
-  if (!Number.isFinite(minutes) || minutes <= 0) return loadState();
+  if (studyMinutesError('sunday', minutes) !== null) return loadState();
   return updateState((s) => {
     s.settings.sundayStudyMinutes = Math.round(minutes);
   });
@@ -977,6 +1036,37 @@ export function stampTopicStudiedOn(id: string, dateISO: string): AppState {
   });
 }
 
+/* -------------------------------------------------------------------------- */
+/* Per-day row completion (Today's topic-less rows)                            */
+/* -------------------------------------------------------------------------- */
+
+/** Whether row `key` was finished on `dateISO`. */
+export function isBlockDone(dateISO: string, key: string): boolean {
+  return loadState().blocksDone[dateISO]?.includes(key) === true;
+}
+
+/** Whether row `key` was finished on ANY day (e.g. the one-off Start-here guide). */
+export function isBlockDoneEver(key: string): boolean {
+  return Object.values(loadState().blocksDone).some((keys) => keys.includes(key));
+}
+
+/**
+ * Mark row `key` finished (`done = true`) or not on `dateISO`. Idempotent;
+ * prunes days beyond the newest {@link MAX_BLOCK_DONE_DAYS}. Returns the state.
+ */
+export function setBlockDone(dateISO: string, key: string, done: boolean): AppState {
+  if (!isValidISODate(dateISO) || isBlockDone(dateISO, key) === done) return loadState();
+  return updateState((s) => {
+    const keys = new Set(s.blocksDone[dateISO] ?? []);
+    if (done) keys.add(key);
+    else keys.delete(key);
+    if (keys.size > 0) s.blocksDone[dateISO] = [...keys];
+    else delete s.blocksDone[dateISO];
+    const days = Object.keys(s.blocksDone).sort();
+    for (const old of days.slice(0, Math.max(0, days.length - MAX_BLOCK_DONE_DAYS))) delete s.blocksDone[old];
+  });
+}
+
 /** Serialize the current state as pretty JSON (for laptop↔phone transfer). */
 export function exportStateJSON(): string {
   return JSON.stringify(loadState(), null, 2);
@@ -1014,6 +1104,7 @@ export function importStateJSON(str: string): AppState {
   // The per-subtopic study records.
   validateEntries('study', TopicStudyEntrySchema, next.study);
   validateEntries('teluguLessons', z.string(), next.teluguLessons);
+  validateEntries('blocksDone', BlocksDoneDaySchema, next.blocksDone);
   // The finished-test history: validate every record in the array.
   next.testAttempts.forEach((rec, i) => {
     const result = TestAttemptRecordSchema.safeParse(rec);
@@ -1047,6 +1138,7 @@ export function resetProgress(): AppState {
     s.testAttempts = [];
     s.study = {};
     s.teluguLessons = {};
+    s.blocksDone = {};
   });
 }
 

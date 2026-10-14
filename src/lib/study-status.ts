@@ -25,7 +25,7 @@ import {
   type AppState,
   type TopicStudyEntry,
 } from '../state/store';
-import { todayISO } from './dates';
+import { addDaysISO, todayISO } from './dates';
 
 /** The three study states of a subtopic. */
 export type StudyStatus = 'not-started' | 'in-progress' | 'studied';
@@ -109,13 +109,64 @@ export function isTopicStudied(id: string): boolean {
 }
 
 /**
- * Whether subtopic `id`'s curated flashcards may be reviewed: the topic is
- * studied, or in progress with at least one practice question answered. Cards
- * of a never-studied topic are never due.
+ * Answers in a topic's own Learn practice that make an IN-PROGRESS topic's cards
+ * revisable (H3). One stray answer in an all-subject drill / mock is NOT enough.
+ */
+export const REVISABLE_MIN_ANSWERS = 3;
+
+/**
+ * Whether subtopic `id`'s curated flashcards may be reviewed (and its questions
+ * may enter a week/unit test pool): the topic is STUDIED, or the learner is
+ * working through it in Learn — notes opened AND at least
+ * {@link REVISABLE_MIN_ANSWERS} of its practice questions answered. An explicit
+ * "Mark as not studied" always excludes it. Cards of a never-studied topic are
+ * never due, and a single stray mock/drill answer never makes a topic revisable.
+ *
+ * Assumption: answers are not tagged by source, so "answered in Learn practice"
+ * is approximated by `notesOpened === true` (the Learn page was opened) plus the
+ * answered count.
  */
 export function isRevisable(id: string, state: AppState = loadState()): boolean {
   const info = topicStudyFrom(state, id);
-  return info.status === 'studied' || (info.status === 'in-progress' && info.answered >= 1);
+  if (info.status === 'studied') return true;
+  const entry = state.study[id];
+  if (entry?.mark === 'not-studied') return false;
+  return info.status === 'in-progress' && entry?.notesOpened === true && info.answered >= REVISABLE_MIN_ANSWERS;
+}
+
+/**
+ * The WEEK-TEST pool for the test dated `dateISO` (M3), by ACTUAL study dates:
+ * every topic STUDIED on or before the test day, split into `thisWeek` (studied
+ * in the 7 days ending on `dateISO` — favoured ~2/3) and `earlier`. A studied
+ * topic with no recorded date counts as earlier. `candidates` limits the scan
+ * (defaults to every taxonomy subtopic id passed by the caller). PURE in
+ * `state`.
+ */
+export function weekTestPoolIds(
+  dateISO: string,
+  candidates: Iterable<string>,
+  state: AppState = loadState(),
+): { thisWeek: string[]; earlier: string[] } {
+  const weekStart = addDaysISO(dateISO, -6);
+  const thisWeek: string[] = [];
+  const earlier: string[] = [];
+  for (const id of candidates) {
+    const info = topicStudyFrom(state, id);
+    if (info.status !== 'studied') continue;
+    const on = info.studiedOn;
+    if (on !== undefined && on > dateISO) continue; // studied after the test day
+    if (on !== undefined && on >= weekStart) thisWeek.push(id);
+    else earlier.push(id);
+  }
+  return { thisWeek, earlier };
+}
+
+/**
+ * The UNIT-TEST pool (M2): only the unit's topics the learner has STUDIED.
+ * Order preserved.
+ */
+export function studiedTopicIds(ids: readonly string[], state: AppState = loadState()): string[] {
+  return ids.filter((id) => topicStudyFrom(state, id).status === 'studied');
 }
 
 /** Mark subtopic `id` studied / not studied (explicit learner choice). */

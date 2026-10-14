@@ -176,9 +176,9 @@ story) in a sustained run rather than a slot a week apart.
   opens `#/start`) · **Mental Ability** — the first MENT sequence topic (Number System, 60) · **History** —
   the first H‑early topic(s) (Stone Age, then IVC if it fits, ~120) · **Current affairs** — "How current
   affairs is asked" + the first CA set (30). **No mock and no revise block on day 1.** The opening Saturday is
-  dropped from the mock schedule (`buildMockSchedule(…, orientationISO)`). The orientation day records NO
-  first pass — its named topics are shown as guided Learn links and are still first‑passed on their own
-  scheduled days, so "every topic first‑passed exactly once" is unchanged. A weekday/Sunday day‑1 keeps the
+  dropped from the mock schedule (`buildMockSchedule(…, orientationISO)`). The orientation study blocks ARE
+  the first pass of their topics (Number System, Stone Age/IVC and the first CA set — each a tickable row), so
+  "every topic first‑passed exactly once" holds. A weekday/Sunday day‑1 keeps the
   normal shape (the first study day already carries real topics, not a mock). The old **"Paper‑II baseline
   mock"** labelling is RETIRED — mock blocks read simply "Full Paper‑I/II mock".
 - **START HERE guide (`#/start`, `src/views/start.ts`):** a plain‑language beginner orientation, linked from
@@ -311,10 +311,40 @@ story) in a sustained run rather than a slot a week apart.
   days as a last resort, still before the final window). The plan stays **FEASIBLE**; `summary.recovery` is
   true, `summary.coverageEndISO` reflects the shift, and `summary.daysBehind` counts the elapsed plan
   study‑days whose first‑pass work is unstudied (0 when on‑time). Today and the Planner show a **calm, non‑alarm
-  banner** when `daysBehind ≥ 1`: **"You're N days behind — the plan has been adjusted: &lt;what changed&gt;"**
-  (`summary.recoveryChanges`), e.g. "moved 14 topics into the revision cycle's first week; the revision cycle
-  is 7 days shorter". Sequence order, budgets, block legality, mocks (120 min), days off, light/exam days,
+  banner** when `daysBehind ≥ 1` (copy from the pure `behindBanner`, see PROGRESS‑AWARE RE‑PLAN below),
+  built from `summary.recoveryChanges`, e.g. "Moved 14 topics into the revision cycle's first week; the
+  revision cycle is 7 days shorter". Sequence order, budgets, block legality, mocks (120 min), days off, light/exam days,
   unit wrap‑ups and the P1 ≤ 9 / P2 ≤ 8 contiguous mock numbering all hold. Long window only.
+- **PROGRESS‑AWARE RE‑PLAN — never re‑teach a studied topic (LOGIC‑AUDIT C1/C2/H2/H3, FLOW‑QA D1/D3/D4/D19/D21, LOCKED):**
+  `PlannerProgress` carries `studied` + `studiedOn`. The live plan (built from today) DROPS every topic with
+  `studied === true` and `studiedOn < today` (or no date) from first‑pass packing — units, MENT and CA — so Today
+  always continues with the NEXT unstudied topics; topics studied TODAY stay on today's rows (shown "Studied ✓"),
+  and a plan reconstructed for an earlier date still sees topics studied after it. Already‑studied topics keep
+  their ACTUAL `studiedOn` as their first‑pass date (spaced recall, revision ordering, targeted defaults, week‑test
+  pools). The unit line "day N of M" = days already spent on the unit (distinct real study dates) + the remaining
+  run. **CA first passes are tickable:** the `ca` block on a CA topic's first‑pass day (incl. the day‑1
+  orientation "first CA set", which now records ca‑regional's first pass) carries that topic in `topics`.
+  **Days behind** is counted against the CANONICAL on‑time schedule (the plan built at the start date from EMPTY
+  progress): elapsed days with any unstudied first‑pass topic; every such topic sits on a tickable row, so a
+  learner who completes every Today row is never behind. **`summary.onTrack = daysBehind === 0`** and
+  `summary.behindBy` = the unstudied topics on those days — Planner header and Today agree.
+  **Behind banner (`behindBanner`, Today + Planner):** 1–7 days → calm "You're N days behind — plan adjusted"
+  + what changed (sentence case); > 7 → "You are N days behind — here is the reduced plan" + concrete options
+  (feasibility options, more daily / Sunday time, Saturday catch‑up, restart). "You can still finish on time" only
+  when the recovered plan is feasible with no genuine spill; hidden when ≤ 1 day to the exam; the restart offer
+  only while original coverage days remain. **Revisable / test pools:** `isRevisable` = studied, or Learn practice
+  in progress (notes opened + ≥ 3 answered), never after "Mark as not studied" — one stray mock answer is not
+  enough. Week‑test pools come from ACTUAL `studiedOn` (`weekTestPoolIds`: ~2/3 from the 7 days ending on the test
+  day); unit tests use only the unit's studied topics (`studiedTopicIds`); the unit wrap‑up row reads **"Finish
+  &lt;unit&gt; first"** (opens the first unstudied topic) until every unit topic is studied. MENT practice drills only
+  studied MENT topics; with none: "Do today's Mental Ability topic first". **No tiny blocks:** flexible topic‑less
+  blocks (revise / targeted‑revision / catch‑up / reviews) below `MIN_BLOCK_MIN` = 10 min are merged into a
+  neighbour; the fortnightly `mains-write` block sits right after the Sunday revision block so recovery spill
+  never trims it. **Sunday:** the extra Sunday time lengthens the Sunday UNIT block (the retired Polity/Modern
+  History Sunday lane is not coming back — the copy no longer promises it). **Budgets (Settings):** daily
+  60–600 min, Sunday 60–720 min; out‑of‑range input is rejected with a message, stored values are clamped.
+  **Flashcards:** a correct review is due at the START of the local day `interval` days out. **Planner "This
+  week"** = the Mon–Sun calendar week; past days list the topics actually studied that day (✓).
 - **Report (per subject):** total, FULL/STANDARD/QUICK counts, minutes, last first‑pass date; the
   DEPTH‑FLOOR topics forced **below STANDARD** (`summary.infeasibleFloorTopicIds` — few, and never AP;
   History carries the bulk as it holds 47 of the 88 Paper‑I subtopics); and per‑subject Paper‑I

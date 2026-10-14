@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import * as today from '../today';
 import { prettyDowDate } from '../today';
 import { buildAtAGlance } from '../components/atglance';
@@ -13,21 +13,23 @@ describe('today view — "Now" hero + Start CTA', () => {
     location.hash = '';
   });
 
-  it('offers a primary "Start" action that jumps into study', () => {
+  it('offers a primary "Start reading" action that jumps into study (never a bare "Start")', () => {
     const root = document.createElement('div');
     document.body.appendChild(root);
     today.render(root);
 
+    const labels = [...root.querySelectorAll<HTMLButtonElement>('.hero-actions button')].map((b) => b.textContent?.trim());
+    expect(labels).not.toContain('Start');
     const cta = [...root.querySelectorAll<HTMLButtonElement>('.hero-actions button')].find((b) =>
-      b.textContent?.trim() === 'Start',
+      /^Start (reading|now)/.test(b.textContent?.trim() ?? ''),
     );
-    // Pre-Prelims the CTA is present and one-taps into a topic / mock / drill.
+    // Pre-Prelims the CTA is present and one-taps into a topic / mock / practice.
     if (cta) {
       cta.click();
-      expect(location.hash).toMatch(/^#\/(learn|mock|drill)/);
+      expect(location.hash).toMatch(/^#\/(learn|practice|mock|drill)/);
     } else {
-      // Post-exam fallback: "Open planner" is the primary instead.
-      expect(root.textContent).toContain('Open planner');
+      // Post-exam fallback: "Open plan" is the primary instead.
+      expect(root.textContent).toContain('Open plan');
     }
     root.remove();
   });
@@ -148,7 +150,13 @@ describe('at-a-glance curated map', () => {
  * the pre-start / post-exam graceful states) renders.
  */
 describe('today view — admin task cards', () => {
+  // Pinned before the 27 Oct apply deadline (the card expires after it — D18).
+  afterEach(() => {
+    vi.useRealTimers();
+  });
   beforeEach(() => {
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date('2026-10-14T10:00:00'));
     __resetForTests();
     location.hash = '';
     setExamDate(addDaysISO(todayISO(), 120));

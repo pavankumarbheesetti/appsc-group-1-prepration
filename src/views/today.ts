@@ -13,13 +13,9 @@
  * Graceful states cover before the plan starts, after the exam, and when every
  * prelims subtopic is mastered; post-Prelims the plan flips to a Mains kick-start.
  */
-import { getBanks, getCards, getSubtopic, getSubtopics } from '../content/loader';
+import { getBanks, getSubtopic } from '../content/loader';
 import type { MainsItem } from '../content/types';
-import { buildSession } from '../engine/drill';
-import { selectSession } from '../engine/flashcards';
-import { isDue } from '../engine/spaced-repetition';
-import { planDayFor, type Plan, type PlanBlock, type PlanDay, type PlanSummary, type PlanTopic } from '../engine/planner';
-import { WEEK_TEST_COUNT, WEEK_TEST_MINUTES } from '../engine/mock';
+import { behindBanner, planDayFor, type Plan, type PlanDay, type PlanSummary } from '../engine/planner';
 import { navigate } from '../router/router';
 import {
   loadState,
@@ -28,18 +24,27 @@ import {
   isAdminDone,
   setAdminDone,
   setPlanStartDate,
-  getTeluguLessonsDone,
 } from '../state/store';
-import { isTopicStudied, markTopicStudied, topicStudyFrom } from '../lib/study-status';
-import { lessonForDay, lessonHeadline, lessonProgressLine, lessonTarget } from '../lib/telugu';
-import { openTelugu, openTeluguLesson } from './telugu';
 import { currentPlan } from '../lib/plan';
 import { diffDaysISO, daysToGo, todayISO, addDaysISO } from '../lib/dates';
-import { openLearn } from './learn';
+import { adminCardsFor, isExamDay, type AdminCardId } from '../lib/day-tasks';
+import { continueHint, openLearn } from './learn';
 import { openMainsQuestion } from './mains';
-import { openPaperMock, openWeekTest, openUnitTest } from './mock';
-import { collectCuratedCards, openReviseScope } from './revise';
-import { mountQuiz } from './quiz';
+import { openResumeTest, resumeTestCard } from './mock';
+import { liveFlashcardDue } from '../lib/due';
+import {
+  computeReviseCtx,
+  dayRows,
+  fmtDuration,
+  languageRows,
+  rowDone,
+  rowManual,
+  rowView,
+  toggleRow,
+  unitShortTitle,
+  type DayRow,
+  type ReviseCtx,
+} from './today-tasks';
 import { el, mount, type Child } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
@@ -62,8 +67,13 @@ export function render(root: HTMLElement): void {
     mount(root, dateNotice, buildNowHero(null, summary, today, undefined), startsSoonCard(plan, start, today));
     return;
   }
+  // Exam day itself: a calm exam-day card, nothing to study (D18).
+  if (isExamDay(today, summary.examDateISO)) {
+    mount(root, dateNotice, buildNowHero(null, summary, today, undefined), examDayCard(summary));
+    return;
+  }
   // Graceful state: the exam date has passed — switch to MAINS kick-start.
-  if (summary.daysLeft <= 0) {
+  if (summary.daysLeft <= 0 || today > summary.examDateISO) {
     if (summary.postPrelims) {
       const kickstartDay = planDayFor(plan, today) ?? plan.days[0];
       mount(
@@ -71,7 +81,7 @@ export function render(root: HTMLElement): void {
         dateNotice,
         buildNowHero(null, summary, today, undefined),
         mainsKickstartCard(),
-        buildMainsSection(kickstartDay),
+        buildMainsSection(root, kickstartDay, today),
       );
       return;
     }
@@ -84,13 +94,15 @@ export function render(root: HTMLElement): void {
     summary.prelimsTotal > 0 && summary.prelimsMastered >= summary.prelimsTotal;
 
   const reviseCtx = computeReviseCtx(today, todayDay);
+  const rows = todayDay ? dayRows(todayDay, today) : [];
   mount(
     root,
     dateNotice,
+    resumeTestCard(() => openResumeTest(), () => render(root)),
     buildRecoveryBanner(root, summary, today),
-    buildNowHero(root, summary, today, todayDay, reviseCtx),
-    ...buildAdminCards(root, today, todayDay),
-    allMastered ? masteredCard() : buildChecklist(root, todayDay, reviseCtx),
+    buildNowHero(root, summary, today, todayDay, reviseCtx, rows, plan),
+    ...buildAdminCards(root, today, todayDay, summary.examDateISO),
+    allMastered ? masteredCard() : buildChecklist(root, todayDay, reviseCtx, rows),
     allMastered ? null : buildNextSaturdayCard(plan, today),
     buildMainsParallelNote(summary),
   );
@@ -102,67 +114,71 @@ export function render(root: HTMLElement): void {
 
 /** Public portal for the application / hall ticket. @internal */
 const PSC_URL = 'https://psc.ap.gov.in';
-/** Hall-ticket card appears from this date (watch the portal from ~12 Jan). @internal */
-const HALL_TICKET_FROM = '2027-01-12';
 
 /**
- * The compact ADMIN-TASK cards shown on Today (eligibility gates): "Apply
- * online" from plan start until done, "Hall ticket" from ~12 Jan until done, and
- * an exam-day checklist on the light day (exam − 1). Each is a small card with a
- * short checklist and ONE "Mark done" button (toggles `adminDone` via
- * {@link setAdminDone} and re-renders). Returns only the currently-active,
- * not-yet-done cards (possibly none). @internal
+ * The compact ADMIN-TASK cards shown on Today (eligibility gates), chosen by
+ * the pure {@link adminCardsFor} (D18): "Apply online" until the 27 Oct
+ * deadline (then, if still not done, "Missed the deadline?" until 31 Oct, then
+ * hidden), "Hall ticket" from exam − 12 days until the day before the exam,
+ * and an exam-day checklist on the light day (exam − 1). Each card has ONE
+ * "Mark done" button (the card's done flag). @internal
  */
-function buildAdminCards(root: HTMLElement, today: string, day: PlanDay | undefined): HTMLElement[] {
-  const out: HTMLElement[] = [];
-  // 1) APPLY ONLINE — from plan start until marked done.
-  if (!isAdminDone('apply-online')) {
-    out.push(
-      adminCard(root, {
-        id: 'apply-online',
-        title: 'Apply online — deadline 27 Oct 2026, 11:59 PM',
-        lead: 'Submit your APPSC Group-1 application before the deadline.',
-        checklist: [
-          'OTPR registration / login',
-          'Photo & signature specs',
-          'Fee payment',
-          'Choose exam centre',
-          'Download application PDF',
-        ],
-        link: { label: 'Open psc.ap.gov.in', href: PSC_URL },
-      }),
-    );
-  }
-  // 2) HALL TICKET — from ~12 Jan until marked done.
-  if (today >= HALL_TICKET_FROM && !isAdminDone('hall-ticket')) {
-    out.push(
-      adminCard(root, {
-        id: 'hall-ticket',
-        title: 'Hall ticket — download when released',
-        lead: 'Watch psc.ap.gov.in from ~12 Jan and download your hall ticket as soon as it is released.',
-        checklist: [],
-        link: { label: 'Open psc.ap.gov.in', href: PSC_URL },
-      }),
-    );
-  }
-  // 3) EXAM-DAY CHECKLIST — only on the light day (exam − 1), until done.
-  if (day?.light && !isAdminDone('exam-day')) {
-    out.push(
-      adminCard(root, {
-        id: 'exam-day',
-        title: 'Exam-day checklist',
-        lead: 'Prelims is tomorrow. Get everything ready tonight.',
-        checklist: [
-          'Hall ticket (printed) + photo ID',
-          'Black / blue ballpoint pens',
-          'Reach the centre early',
-          'OMR rules: fill bubbles fully, no stray marks',
-        ],
-      }),
-    );
-  }
-  return out;
+function buildAdminCards(root: HTMLElement, today: string, day: PlanDay | undefined, examISO: string): HTMLElement[] {
+  const ids = adminCardsFor(today, examISO, isAdminDone, day?.light === true);
+  return ids.map((id) => adminCard(root, ADMIN_SPECS[id]));
 }
+
+/** One admin card's copy. @internal */
+interface AdminSpec {
+  /** The done flag the card toggles. */
+  id: string;
+  title: string;
+  lead: string;
+  checklist: readonly string[];
+  link?: { label: string; href: string };
+}
+
+/** The admin cards' copy, by card id. @internal */
+const ADMIN_SPECS: Readonly<Record<AdminCardId, AdminSpec>> = {
+  'apply-online': {
+    id: 'apply-online',
+    title: 'Apply online — deadline 27 Oct 2026, 11:59 PM',
+    lead: 'Submit your APPSC Group-1 application before the deadline.',
+    checklist: [
+      'OTPR registration / login',
+      'Photo & signature specs',
+      'Fee payment',
+      'Choose exam centre',
+      'Download application PDF',
+    ],
+    link: { label: 'Open psc.ap.gov.in', href: PSC_URL },
+  },
+  'apply-missed': {
+    id: 'apply-online',
+    title: 'Missed the deadline? check psc.ap.gov.in for extensions',
+    lead: 'The application window closed on 27 Oct. APPSC sometimes extends it \u2014 check the portal, and apply at once if it is open.',
+    checklist: [],
+    link: { label: 'Open psc.ap.gov.in', href: PSC_URL },
+  },
+  'hall-ticket': {
+    id: 'hall-ticket',
+    title: 'Hall ticket — download when released',
+    lead: 'Watch psc.ap.gov.in from ~12 Jan and download your hall ticket as soon as it is released.',
+    checklist: [],
+    link: { label: 'Open psc.ap.gov.in', href: PSC_URL },
+  },
+  'exam-day': {
+    id: 'exam-day',
+    title: 'Exam-day checklist',
+    lead: 'Prelims is tomorrow. Get everything ready tonight.',
+    checklist: [
+      'Hall ticket (printed) + photo ID',
+      'Black / blue ballpoint pens',
+      'Reach the centre early',
+      'OMR rules: fill bubbles fully, no stray marks',
+    ],
+  },
+};
 
 /** One compact admin-task card with a checklist, optional link and a "Mark done". @internal */
 function adminCard(
@@ -230,20 +246,18 @@ function buildPrelimsDateNotice(root: HTMLElement, summary: PlanSummary): HTMLEl
 }
 
 /**
- * RE-AUDIT 2 — the calm "behind" banner (no alarm wording). Shown only when the
- * learner is genuinely behind (`summary.daysBehind ≥ 1`, counted from topics
- * actually marked studied): "You're N days behind — the plan has been
- * adjusted". A secondary action, "I'm only starting now — restart my plan from
- * today", moves the plan start to today after an inline confirm (all progress is
- * kept; the plan is recomputed). Returns `null` when not behind. @internal
+ * The honest "behind" banner (D4), copy from the pure {@link behindBanner}
+ * (shared with the Planner and regenerated on every render): 1–7 days behind →
+ * a calm "plan adjusted"; > 7 → "You are N days behind — here is the reduced
+ * plan" plus concrete options. It never claims "finish on time" unless the
+ * recovered plan is feasible. A secondary action, "I'm only starting now —
+ * restart my plan from today", moves the plan start to today after an inline
+ * confirm (all progress is kept) — offered only before the first-pass coverage
+ * end. Returns `null` when not behind. @internal
  */
 function buildRecoveryBanner(root: HTMLElement, summary: PlanSummary, today: string): HTMLElement | null {
-  if (summary.daysBehind < 1) return null;
-  const n = summary.daysBehind;
-  const detail =
-    summary.recovery && summary.recoveryChanges.length > 0
-      ? `${summary.recoveryChanges.join('; ')}. You can still finish on time.`
-      : 'The plan has been rebalanced so you can still finish on time.';
+  const copy = behindBanner(summary, today);
+  if (!copy) return null;
   const actions = el('div', { class: 'today-banner-actions' });
   const idle = (): void => {
     actions.replaceChildren(
@@ -273,16 +287,16 @@ function buildRecoveryBanner(root: HTMLElement, summary: PlanSummary, today: str
       ]),
     );
   };
-  idle();
-  return el('section', { class: 'today-banner is-ok today-behind', attrs: { role: 'status' } }, [
+  if (copy.showRestart) idle();
+  // The restart action is listed as a button, not repeated in the options list.
+  const options = copy.options.filter((o) => !o.startsWith('Restart the plan'));
+  return el('section', { class: copy.tone === 'calm' ? 'today-banner is-ok today-behind' : 'today-banner is-warn today-behind', attrs: { role: 'status' } }, [
     el('span', { class: 'today-banner-icon' }, [icon('calendar', 22)]),
     el('div', { class: 'today-banner-text' }, [
-      el('span', {
-        class: 'today-banner-title',
-        text: `You\u2019re ${n} ${n === 1 ? 'day' : 'days'} behind \u2014 the plan has been adjusted`,
-      }),
-      el('span', { class: 'today-banner-detail', text: detail }),
-      actions,
+      el('span', { class: 'today-banner-title', text: copy.title }),
+      el('span', { class: 'today-banner-detail', text: copy.detail }),
+      options.length > 0 ? el('ul', { class: 'today-banner-options' }, options.map((o) => el('li', { text: o }))) : null,
+      copy.showRestart ? actions : null,
     ]),
   ]);
 }
@@ -292,14 +306,10 @@ function buildRecoveryBanner(root: HTMLElement, summary: PlanSummary, today: str
 /* -------------------------------------------------------------------------- */
 /**
  * The "Now" hero — the single focal point of Today. It names the day's NEXT
- * UNFINISHED row (a topic not yet studied, then the mock / test / Telugu lesson,
- * then the remaining topic-less blocks) and offers ONE primary "Start" that
- * jumps straight into it. For a topic it also offers a "Mark as studied" tick
- * and the hint "Read the notes, do the practice, then tap Mark as studied"; once
- * marked, the hero moves on to the next unfinished row. A compact "N days to
- * Prelims" sits in the eyebrow and a muted "This week: <unit> · day X of Y" line
- * places today in its unit. Before the plan starts / post-exam there is no day,
- * so it falls back to "Open planner" as the primary. @internal
+ * UNFINISHED row ("Start here" first on orientation day, then the rows in day
+ * order) and offers ONE primary "Start" that opens that row's destination. For
+ * a topic it also offers "Mark as studied". When every row is done it says
+ * "All done for today — well done" and previews tomorrow. @internal
  */
 function buildNowHero(
   root: HTMLElement | null,
@@ -307,39 +317,47 @@ function buildNowHero(
   today: string,
   day: PlanDay | undefined,
   reviseCtx?: ReviseCtx,
+  rows: readonly DayRow[] = [],
+  plan?: Plan,
 ): HTMLElement {
-  const daysToExam = daysToGo(summary.examDateISO, today);
-  const rows = day ? dayRows(day) : [];
+  const daysToExam = Math.max(0, daysToGo(summary.examDateISO, today));
   const focusRow = day && reviseCtx ? nextUnfinishedRow(rows, today) : undefined;
-  const focus = focusRow && reviseCtx ? rowView(focusRow, reviseCtx, today) : null;
-  const realTopic = focusRow?.topic && focusRow.topic.kind !== 'practice' ? focusRow.topic : undefined;
+  const focus = focusRow && day && reviseCtx ? rowView(focusRow, { reviseCtx, day }) : null;
+  const topicRow = focusRow && (focusRow.task === 'topic' || focusRow.task === 'missed') ? focusRow : undefined;
 
   const actions: Child[] = focus
     ? [
-        button({ label: 'Start', onClick: focus.onClick, variant: 'primary', large: true, iconName: 'arrow-right' }),
-        realTopic && root
+        button({
+          label: topicRow || focusRow?.task === 'revisit' || focusRow?.task === 'start-here' ? 'Start reading' : 'Start now',
+          onClick: focus.onClick,
+          variant: 'primary',
+          large: true,
+          iconName: 'arrow-right',
+        }),
+        topicRow && root
           ? button({
               label: 'Mark as studied',
               variant: 'secondary',
               iconName: 'check',
               ariaLabel: `Mark ${focus.title} as studied`,
               onClick: () => {
-                markTopicStudied(realTopic.subtopicId, true, today);
+                toggleRow(topicRow, today);
                 render(root);
               },
             })
           : null,
-        button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: realTopic ? 'ghost' : 'secondary' }),
+        button({ label: 'Open plan', onClick: () => navigate('/plan'), variant: topicRow ? 'ghost' : 'secondary' }),
       ]
-    : [button({ label: 'Open planner', onClick: () => navigate('/planner'), variant: 'primary', large: true, iconName: 'arrow-right' })];
+    : [button({ label: 'Open plan', onClick: () => navigate('/plan'), variant: day && rows.length > 0 ? 'secondary' : 'primary', large: !(day && rows.length > 0), iconName: 'arrow-right' })];
 
   const allDone = day !== undefined && rows.length > 0 && !focus;
+  const greetingText = today > summary.examDateISO
+    ? `${greeting(new Date())} · Prelims done`
+    : daysToExam === 0
+      ? `${greeting(new Date())} · Prelims today`
+      : `${greeting(new Date())} · ${daysToExam} ${daysToExam === 1 ? 'day' : 'days'} to Prelims`;
   const left = el('div', { class: 'hero-body' }, [
-    el('p', {
-      class: 'hero-greeting',
-      text: `${greeting(new Date())} · ${daysToExam} ${daysToExam === 1 ? 'day' : 'days'} to Prelims`,
-    }),
-    el('h2', { class: 'hero-title', text: 'Today' }),
+    el('p', { class: 'hero-greeting', text: greetingText }),
     buildUnitLine(day),
     focus
       ? el('div', { class: 'hero-now' }, [
@@ -349,15 +367,14 @@ function buildNowHero(
             el('span', { text: focus.context }),
             chip({ text: fmtDuration(focus.minutes), tone: 'default', iconName: 'timer' }),
           ]),
-          el('span', {
-            class: 'hero-now-hint',
-            text: realTopic ? 'Read the notes, do the practice, then tap Mark as studied' : focus.hint,
-          }),
+          el('span', { class: 'hero-now-hint', text: focus.hint }),
+          continueLink(topicRow),
         ])
       : allDone
-        ? el('div', { class: 'hero-now' }, [
+        ? el('div', { class: 'hero-now is-all-done', attrs: { 'data-state': 'all-done' } }, [
             el('span', { class: 'hero-now-eyebrow', text: 'All done' }),
-            el('span', { class: 'hero-now-title', text: 'Today\u2019s topics are studied \u2713' }),
+            el('span', { class: 'hero-now-title', text: 'All done for today \u2014 well done' }),
+            plan ? tomorrowPreview(plan, today) : null,
           ])
         : null,
     el('div', { class: 'hero-actions' }, actions),
@@ -366,10 +383,39 @@ function buildNowHero(
   return el('section', { class: 'hero' }, [left]);
 }
 
+/** `Continue at <section> →` for a topic already part-read (else null). @internal */
+function continueLink(row: DayRow | undefined): HTMLElement | null {
+  const id = row?.topic?.subtopicId;
+  const sub = id ? getSubtopic(id) : undefined;
+  const hint = sub ? continueHint(sub) : null;
+  if (!id || !hint) return null;
+  return el('button', {
+    class: 'link-btn hero-continue',
+    type: 'button',
+    text: `Continue at ${hint.title} \u2192`,
+    onClick: () => openLearn(id, { tab: 'notes', noteId: hint.noteId }),
+  });
+}
+
+/** "Tomorrow: A · B · C" — a one-line preview of the next plan day. @internal */
+function tomorrowPreview(plan: Plan, today: string): HTMLElement | null {
+  const next = planDayFor(plan, addDaysISO(today, 1));
+  if (!next) return null;
+  const names: string[] = [];
+  for (const b of next.blocks) {
+    const real = (b.topics ?? []).filter((t) => t.kind !== 'practice');
+    if (real.length > 0) names.push(...real.map((t) => t.name || getSubtopic(t.subtopicId)?.meta.name || t.subtopicId));
+    else names.push(b.label);
+  }
+  const text = names.length > 0
+    ? `Tomorrow (${prettyDowDate(next.dateISO)}): ${names.slice(0, 4).join(' \u00b7 ')}${names.length > 4 ? ` +${names.length - 4} more` : ''}`
+    : `Tomorrow (${prettyDowDate(next.dateISO)}): a rest day`;
+  return el('span', { class: 'hero-now-hint today-tomorrow', text });
+}
+
 /**
  * The muted "This week: <unit title> · day X of Y" line that places today in
- * its weekly subject unit. Returns `null` when the day carries no unit (mock /
- * final / light / pre-start). @internal
+ * its weekly subject unit. Returns `null` when the day carries no unit. @internal
  */
 function buildUnitLine(day: PlanDay | undefined): HTMLElement | null {
   if (!day || !day.unitId || !day.unitTitle) return null;
@@ -377,289 +423,33 @@ function buildUnitLine(day: PlanDay | undefined): HTMLElement | null {
   return el('p', { class: 'hero-unit-line', text });
 }
 
-/**
- * The short, beginner-friendly unit name — the part before the em-dash of a
- * unit title (e.g. "Ancient India I — Stone Age …" → "Ancient India I"). Falls
- * back to the whole title when there is no dash. @internal
- */
-function unitShortTitle(title: string): string {
-  const i = title.indexOf('\u2014');
-  return (i > 0 ? title.slice(0, i) : title).trim();
-}
-
 /* -------------------------------------------------------------------------- */
-/* The day's rhythm blocks (slim checklist)                                    */
+/* The day's rows (slim checklist)                                             */
 /* -------------------------------------------------------------------------- */
 
-/** Format minutes as a compact `3 h 50 m` / `50 m` / `4 h` label. @internal */
-export function fmtDuration(min: number): string {
-  const h = Math.floor(min / 60);
-  const m = Math.round(min % 60);
-  if (h === 0) return `${m} m`;
-  return m === 0 ? `${h} h` : `${h} h ${m} m`;
+/** Today's flashcard SESSION size (shared due model). */
+export function todaysCuratedSession(): number {
+  return liveFlashcardDue().today;
 }
 
 /**
- * The REVISE context for a day. Before ~10 curated cards are due for a scheduled
- * recall, the weekday Revise block becomes an EARLY-REVISE block scoped to what
- * the learner has ACTUALLY studied (never the plan's schedule):
- *   - `previous` — cards of topics marked studied on PREVIOUS days, most recent
- *     first ("Review yesterday's flashcards" when the newest is yesterday);
- *   - `today`    — none before today, but today's topic(s) are now studied →
- *     "Flashcards for today's topic" opens their cards;
- *   - `waiting`  — nothing studied yet → "Flashcards for today's topic — after
- *     you mark it studied", with a short explanation instead of cards.
- * `none` = not early (the block opens the full studied-only Revise deck). @internal
- */
-interface ReviseCtx {
-  early: boolean;
-  mode: 'none' | 'previous' | 'today' | 'waiting';
-  /** Subtopic ids (studied, with curated cards) the early session is scoped to. */
-  ids: string[];
-  /** Row label for the early block. */
-  label: string;
-  /** Row detail (topic names, or the explanation while waiting). */
-  detail: string;
-  /** Today's main topic (the waiting state links to its Learn page). */
-  mainTopicId?: string;
-}
-
-/**
- * How many curated cards of STUDIED topics are DUE for a SCHEDULED recall right
- * now — cards already reviewed at least once (they carry a spaced-repetition
- * entry) whose next review has come due. Never-reviewed cards and cards of
- * unstudied topics are not counted. @internal
- */
-function curatedDueCount(): number {
-  const sr = loadState().flashcards;
-  const now = Date.now();
-  let n = 0;
-  for (const c of collectCuratedCards()) {
-    const entry = sr[c.id];
-    if (entry && isDue(entry, now)) n += 1;
-  }
-  return n;
-}
-
-/** Names of `ids` as "A +N more". @internal */
-function namesLine(ids: readonly string[]): string {
-  const names = ids.map((id) => getSubtopic(id)?.meta.name ?? id);
-  if (names.length === 0) return '';
-  return names.length > 1 ? `${names[0]} +${names.length - 1} more` : names[0]!;
-}
-
-/** The day's main topic: the first real topic of its subject block (else any block). @internal */
-function mainTopicOf(day: PlanDay | undefined): string | undefined {
-  if (!day) return undefined;
-  const real = (b: PlanBlock): PlanTopic | undefined => (b.topics ?? []).find((t) => t.kind !== 'practice');
-  const subject = day.blocks.find((b) => b.kind === 'subject' && real(b));
-  return (subject ? real(subject) : day.blocks.map(real).find((t) => t !== undefined))?.subtopicId;
-}
-
-/**
- * Build the revise context for `today` from the learner's STUDY STATUS: topics
- * marked studied before today (most recent first), else today's studied topics,
- * else the waiting explanation. Exported for tests.
- */
-export function computeReviseCtx(today: string, day?: PlanDay): ReviseCtx {
-  const EARLY_THRESHOLD = 10;
-  const early = curatedDueCount() < EARLY_THRESHOLD;
-  const mainTopicId = mainTopicOf(day);
-  if (!early) return { early, mode: 'none', ids: [], label: '', detail: '', mainTopicId };
-
-  const state = loadState();
-  const studied = getSubtopics()
-    .filter((s) => getCards(s.id).length > 0)
-    .map((s) => ({ id: s.id, info: topicStudyFrom(state, s.id) }))
-    .filter((x) => x.info.status === 'studied');
-
-  // Studied on PREVIOUS days (an unknown date counts as earlier), newest first.
-  const previous = studied
-    .filter((x) => (x.info.studiedOn ?? '') < today)
-    .sort((a, b) => (b.info.studiedOn ?? '').localeCompare(a.info.studiedOn ?? ''));
-  if (previous.length > 0) {
-    const ids = previous.map((x) => x.id);
-    const newest = previous[0]!.info.studiedOn;
-    const label = newest === addDaysISO(today, -1)
-      ? 'Review yesterday\u2019s flashcards'
-      : 'Review flashcards of what you studied';
-    return { early, mode: 'previous', ids, label, detail: namesLine(ids), mainTopicId };
-  }
-
-  // Nothing before today: today's studied topics (the main topic first).
-  const todays = studied.filter((x) => x.info.studiedOn === today || x.info.studiedOn === undefined).map((x) => x.id);
-  if (todays.length > 0) {
-    const ids = mainTopicId && todays.includes(mainTopicId) ? [mainTopicId, ...todays.filter((id) => id !== mainTopicId)] : todays;
-    return { early, mode: 'today', ids, label: 'Flashcards for today\u2019s topic', detail: namesLine(ids), mainTopicId };
-  }
-
-  const mainName = mainTopicId ? getSubtopic(mainTopicId)?.meta.name ?? mainTopicId : 'today\u2019s topic';
-  return {
-    early,
-    mode: 'waiting',
-    ids: [],
-    label: 'Flashcards for today\u2019s topic \u2014 after you mark it studied',
-    detail: `Cards only come from topics you have studied. Mark ${mainName} studied and its flashcards open here.`,
-    mainTopicId,
-  };
-}
-
-/**
- * One checklist ROW: a block, or ONE topic of a multi-topic block (so every
- * topic gets its own "Mark as studied" tick). @internal
- */
-interface DayRow {
-  block: PlanBlock;
-  /** The topic this row teaches (absent for topic-less blocks). */
-  topic?: PlanTopic;
-}
-
-/** Flatten a day's blocks into checklist rows (one per real topic). @internal */
-function dayRows(day: PlanDay): DayRow[] {
-  const out: DayRow[] = [];
-  for (const block of day.blocks) {
-    const topics = block.topics ?? [];
-    const real = topics.filter((t) => t.kind !== 'practice');
-    if (real.length > 0) for (const topic of real) out.push({ block, topic });
-    else out.push({ block, topic: topics[0] });
-  }
-  return out;
-}
-
-/** Whether a row is FINISHED: its topic is studied / its Telugu lesson done today. @internal */
-function rowDone(row: DayRow, today: string): boolean {
-  if (row.topic) return row.topic.kind !== 'practice' && isTopicStudied(row.topic.subtopicId);
-  if (row.block.kind === 'telugu') return lessonForDay(getTeluguLessonsDone(), today).doneToday;
-  return false;
-}
-
-/** Kinds the hero visits first (trackable work), before the topic-less extras. @internal */
-const PRIMARY_KINDS: ReadonlySet<string> = new Set(['mock', 'week-test', 'unit-wrapup', 'telugu']);
-
-/**
- * The hero's row: the first unfinished topic / mock / test / Telugu lesson in
- * day order, else the first remaining topic-less block (revise, CA, …) after
- * the last finished row. `undefined` when everything trackable is done and no
- * extras remain. @internal
+ * The hero's row: the unread "Start here" guide first (orientation day), then
+ * the first unfinished row in day order. `undefined` when all are done. @internal
  */
 function nextUnfinishedRow(rows: readonly DayRow[], today: string): DayRow | undefined {
-  const primary = rows.find((r) => {
-    if (r.topic && r.topic.kind !== 'practice') return !rowDone(r, today);
-    if (!r.topic && PRIMARY_KINDS.has(r.block.kind)) return !rowDone(r, today);
-    return false;
-  });
-  if (primary) return primary;
-  return rows.find((r) => !rowDone(r, today) && !(r.topic && r.topic.kind !== 'practice') && !PRIMARY_KINDS.has(r.block.kind));
-}
-
-/** What a row shows + does (label, detail, minutes, start). @internal */
-interface RowView {
-  /** Row label (block label, or the early-revise / Telugu lesson label). */
-  label: string;
-  /** Hero title (topic / lesson / block name). */
-  title: string;
-  /** Hero context line. */
-  context: string;
-  detail: string;
-  minutes: number;
-  onClick: () => void;
-  /** A one-line "what to do" hint for non-topic rows. */
-  hint: string;
-}
-
-/** Resolve a row's labels and start action. @internal */
-function rowView(row: DayRow, reviseCtx: ReviseCtx, today: string): RowView {
-  const { block, topic } = row;
-  if (topic) {
-    if (topic.kind === 'practice') {
-      return {
-        label: block.label,
-        title: 'Mental Ability practice',
-        context: block.label,
-        detail: topicSummary([topic]),
-        minutes: topic.estMinutes || block.minutes,
-        onClick: () => startPracticeDrill(topic.practiceSubtopicIds ?? [], topic.mcqCount > 0 ? topic.mcqCount : 20),
-        hint: 'A mixed set from topics you have covered.',
-      };
-    }
-    const name = topic.name || getSubtopic(topic.subtopicId)?.meta.name || topic.subtopicId;
-    const id = topic.subtopicId;
-    const mains = topic.mainsAngle ? ' \u00b7 incl. For Mains note (+5 min)' : '';
-    return {
-      // The TOPIC leads the row (it is what gets ticked); the block is context.
-      label: name,
-      title: name,
-      context: block.label,
-      detail: `${unitShortTitle(block.label)}${mains}`,
-      minutes: topic.estMinutes || block.minutes,
-      onClick: () => openLearn(id),
-      hint: '',
-    };
-  }
-  if (block.kind === 'telugu') {
-    const { lesson } = lessonForDay(getTeluguLessonsDone(), today);
-    if (lesson) {
-      const id = lesson.id;
-      return {
-        label: lessonProgressLine(lesson),
-        title: lessonHeadline(lesson),
-        context: lessonProgressLine(lesson),
-        detail: `${lessonHeadline(lesson)} \u00b7 ${lessonTarget(lesson)}`,
-        minutes: block.minutes,
-        onClick: () => openTeluguLesson(id),
-        hint: `Target: ${lessonTarget(lesson)}`,
-      };
-    }
-    return {
-      label: block.label,
-      title: 'Telugu practice',
-      context: block.label,
-      detail: 'All lessons done \u2014 trace words and sentences',
-      minutes: block.minutes,
-      onClick: () => openTelugu('words'),
-      hint: 'Keep your hand in: trace a few words and sentences.',
-    };
-  }
-  if (block.kind === 'revise' && reviseCtx.early) {
-    const ids = reviseCtx.ids;
-    const main = reviseCtx.mainTopicId;
-    return {
-      label: reviseCtx.label,
-      title: reviseCtx.label,
-      context: block.label,
-      detail: reviseCtx.detail,
-      minutes: block.minutes,
-      onClick: reviseCtx.mode === 'waiting'
-        ? () => (main ? openLearn(main) : navigate('/revise'))
-        : () => openReviseScope(ids),
-      hint: reviseCtx.mode === 'waiting' ? reviseCtx.detail : 'Recall each answer before you peek.',
-    };
-  }
-  const nav = blockStart(block);
-  const nowTitle =
-    block.kind === 'mock' && block.mockPaper
-      ? block.mockPaper === 'paper1' ? 'Full Paper-I mock' : 'Full Paper-II mock'
-      : block.kind === 'week-test' ? 'This week\u2019s test' : block.label;
-  return {
-    label: block.label,
-    title: nowTitle,
-    context: block.kind === 'week-test' ? `${WEEK_TEST_COUNT} questions` : block.label,
-    detail: blockDetail(block),
-    minutes: block.minutes,
-    onClick: nav,
-    hint: blockDetail(block),
-  };
+  const startHere = rows.find((r) => r.task === 'start-here' && !rowDone(r, today));
+  if (startHere) return startHere;
+  return rows.find((r) => !rowDone(r, today));
 }
 
 /**
- * The day's rhythm as a SLIM ORDERED CHECKLIST — one row per block, and one row
- * per topic of a multi-topic block. Each row one-taps into its study target;
- * a topic row carries a "Mark as studied" tick and shows "Studied ✓" once done.
- * @internal
+ * The day's rows as a SLIM ORDERED CHECKLIST. Each row one-taps into its
+ * destination and carries a tick: topic rows toggle "Mark as studied"; other
+ * self-reported rows toggle their done flag; tests / the Telugu lesson / review
+ * lists show a status box ticked by finishing them. @internal
  */
-function buildChecklist(root: HTMLElement, day: PlanDay | undefined, reviseCtx: ReviseCtx): HTMLElement {
-  const blocks = day?.blocks ?? [];
-  if (!day || blocks.length === 0) {
+function buildChecklist(root: HTMLElement, day: PlanDay | undefined, reviseCtx: ReviseCtx, rows: readonly DayRow[]): HTMLElement {
+  if (!day || rows.length === 0) {
     return card({ title: 'Today' }, [
       el('div', { class: 'empty-state is-compact' }, [
         el('span', { class: 'empty-icon' }, [icon('sparkles', 22)]),
@@ -670,139 +460,59 @@ function buildChecklist(root: HTMLElement, day: PlanDay | undefined, reviseCtx: 
   const today = day.dateISO;
   const budget = day.budgetMin ?? 0;
   const planned = day.plannedMinutes ?? 0;
+  const doneCount = rows.filter((r) => rowDone(r, today)).length;
   return card(
     {
       title: 'Today\u2019s plan',
-      subtitle: budget > 0 ? `${fmtDuration(planned)} of ${fmtDuration(budget)}` : undefined,
+      subtitle: `${doneCount} of ${rows.length} done${budget > 0 ? ` \u00b7 ${fmtDuration(planned)} of ${fmtDuration(budget)}` : ''}`,
     },
-    [el('ul', { class: 'today-checklist' }, dayRows(day).map((r) => checklistRow(root, r, reviseCtx, today)))],
+    [el('ul', { class: 'today-checklist' }, rows.map((r) => checklistRow(root, r, { reviseCtx, day }, today)))],
   );
 }
 
-/** One slim checklist row (+ a "Mark as studied" tick for a topic). @internal */
-function checklistRow(root: HTMLElement, row: DayRow, reviseCtx: ReviseCtx, today: string): HTMLElement {
-  const view = rowView(row, reviseCtx, today);
+/** One slim checklist row with its tick. @internal */
+function checklistRow(root: HTMLElement, row: DayRow, ctx: { reviseCtx: ReviseCtx; day: PlanDay }, today: string): HTMLElement {
+  const view = rowView(row, ctx);
   const done = rowDone(row, today);
-  const { label, detail } = view;
-  const topic = row.topic && row.topic.kind !== 'practice' ? row.topic : undefined;
-  const doneText = row.block.kind === 'telugu' ? 'Done \u2713' : 'Studied \u2713';
+  const { label, detail, doneText } = view;
 
-  const kids: Child[] = [
-    el('button', {
-      class: 'today-check-btn',
-      type: 'button',
-      ariaLabel: `${label}${detail ? ` — ${detail}` : ''}, about ${fmtDuration(view.minutes)}${done ? `, ${doneText}` : ''}`,
-      onClick: view.onClick,
-    }, [
-      topic ? null : el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : []),
-      el('span', { class: 'today-check-main' }, [
-        el('span', { class: 'today-check-label', text: label }),
-        detail ? el('span', { class: 'today-check-detail', text: detail }) : null,
-      ]),
-      done
-        ? chip({ text: doneText, tone: 'ok' })
-        : chip({ text: fmtDuration(view.minutes), tone: 'muted', iconName: 'timer' }),
-      el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
+  const box = el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : []);
+  const isTopic = row.task === 'topic' || row.task === 'missed';
+  const tickLabel = isTopic
+    ? done ? `${label} is studied — mark as not studied` : `Mark ${label} as studied`
+    : done ? `${label} is done — undo` : `${view.tickVerb}: ${label}`;
+  const tick = rowManual(row)
+    ? el('button', {
+        class: done ? 'today-check-tick is-done' : 'today-check-tick',
+        type: 'button',
+        ariaLabel: tickLabel,
+        attrs: { 'aria-pressed': String(done), title: done ? (isTopic ? 'Mark as not studied' : 'Undo') : view.tickVerb },
+        onClick: () => {
+          toggleRow(row, today);
+          render(root);
+        },
+      }, [box])
+    : el('span', { class: done ? 'today-check-tick is-status is-done' : 'today-check-tick is-status', attrs: { title: done ? doneText : 'Ticks itself when you finish' } }, [box]);
+
+  const main = el('button', {
+    class: 'today-check-btn',
+    type: 'button',
+    ariaLabel: `${label}${detail ? ` — ${detail}` : ''}, about ${fmtDuration(view.minutes)}${done ? `, ${doneText}` : ''}`,
+    onClick: view.onClick,
+  }, [
+    el('span', { class: 'today-check-main' }, [
+      el('span', { class: 'today-check-label', text: label }),
+      detail ? el('span', { class: 'today-check-detail', text: detail }) : null,
     ]),
-  ];
-  if (topic) {
-    const name = topic.name || getSubtopic(topic.subtopicId)?.meta.name || topic.subtopicId;
-    const tick = el('button', {
-      class: done ? 'today-check-tick is-done' : 'today-check-tick',
-      type: 'button',
-      ariaLabel: done ? `${name} is studied — mark as not studied` : `Mark ${name} as studied`,
-      attrs: { 'aria-pressed': String(done), title: done ? 'Mark as not studied' : 'Mark as studied' },
-      onClick: () => {
-        markTopicStudied(topic.subtopicId, !done, today);
-        render(root);
-      },
-    }, [el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : [])]);
-    kids.unshift(tick);
-  }
-  return el('li', { class: done ? 'today-check is-done' : 'today-check', attrs: { 'data-kind': row.block.kind } }, kids);
-}
-
-/** A compact "first topic (+N more)" detail line for a block's topics. @internal */
-function topicSummary(topics: readonly PlanTopic[]): string {
-  const first = topics[0]!;
-  const name = first.kind === 'practice'
-    ? 'Mental Ability practice'
-    : first.name || getSubtopic(first.subtopicId)?.meta.name || first.subtopicId;
-  const base = topics.length > 1 ? `${name} +${topics.length - 1} more` : name;
-  // Revision cycle: flag when the revisit includes the +5-min For-Mains read.
-  return topics.some((t) => t.mainsAngle) ? `${base} · incl. For Mains note (+5 min)` : base;
-}
-
-/** A plain-language detail line for a topic-less block. @internal */
-function blockDetail(block: PlanBlock): string {
-  switch (block.kind) {
-    case 'ca':
-    case 'ca-refresh':
-    case 'ca-roundup':
-      return 'Current affairs';
-    case 'mock':
-      return block.mockPaper === 'paper1' ? 'Full Paper-I mock' : block.mockPaper === 'paper2' ? 'Full Paper-II mock' : 'Full mock';
-    case 'week-test':
-      return `${WEEK_TEST_COUNT} questions · ${WEEK_TEST_MINUTES} min`;
-    case 'mock-review':
-    case 'week-test-review':
-      return 'Review your wrong answers';
-    case 'weakest-area':
-    case 'catchup':
-      return 'Weak areas';
-    case 'telugu':
-      return 'Telugu practice';
-    case 'unit-wrapup':
-      return block.unitTestCount && block.unitTestCount > 0
-        ? `Recap + ${block.unitTestCount}-question unit test`
-        : 'Recap your finished unit';
-    case 'light':
-      return 'Key facts — keep it light';
-    case 'start-here':
-      return 'Orientation guide';
-    case 'revise':
-      return 'Flashcards of topics you have studied';
-    default:
-      return '';
-  }
-}
-
-/** The one-tap start handler for a topic-less block. @internal */
-function blockStart(block: PlanBlock): () => void {
-  switch (block.kind) {
-    case 'ca':
-    case 'ca-refresh':
-    case 'ca-roundup': {
-      const sid = block.caSubtopicId;
-      return () => (sid ? openLearn(sid) : navigate('/drill'));
-    }
-    case 'mock': {
-      const paper = block.mockPaper;
-      return () => (paper ? openPaperMock(paper) : navigate('/mock'));
-    }
-    case 'mock-review':
-    case 'week-test-review':
-      return () => navigate('/notebook');
-    case 'weakest-area':
-    case 'catchup':
-      return () => navigate('/progress');
-    case 'week-test':
-      return () => openWeekTest(block);
-    case 'unit-wrapup':
-      return () => openUnitTest(block);
-    case 'revise':
-    case 'targeted-revision':
-    case 'weekly-revision':
-      return () => navigate('/revise');
-    case 'telugu':
-      return () => navigate('/languages');
-    case 'ment-practice':
-      return () => startPracticeDrill(block.practiceSubtopicIds ?? [], 20);
-    case 'start-here':
-      return () => navigate('/start');
-    default:
-      return () => navigate('/planner');
-  }
+    done
+      ? chip({ text: doneText, tone: 'ok' })
+      : chip({ text: fmtDuration(view.minutes), tone: 'muted', iconName: 'timer' }),
+    el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
+  ]);
+  return el('li', {
+    class: done ? 'today-check is-done' : 'today-check',
+    attrs: { 'data-kind': row.block.kind, 'data-task': row.task, 'data-done': String(done) },
+  }, [tick, main]);
 }
 
 /**
@@ -828,9 +538,9 @@ function buildNextSaturdayCard(plan: Plan, today: string): HTMLElement | null {
       el('span', { class: 'today-checkpoint-icon' }, [icon('timer', 20)]),
       el('div', { class: 'today-checkpoint-text' }, [
         el('span', { class: 'today-checkpoint-title', text: `${label} · ${detail}` }),
-        el('span', { class: 'section-lead', text: isMock ? 'A timed full paper under exam conditions.' : 'Questions drawn mostly from this week\u2019s unit.' }),
+        el('span', { class: 'section-lead', text: isMock ? 'A timed full paper under exam conditions.' : 'Questions from topics you studied, mostly this week.' }),
       ]),
-      button({ label: 'Open planner', variant: 'ghost', onClick: () => navigate('/planner') }),
+      button({ label: 'Open plan', variant: 'ghost', onClick: () => navigate('/plan') }),
     ]),
   ]);
 }
@@ -847,11 +557,19 @@ function dayOfWeek(iso: string): number {
 /* -------------------------------------------------------------------------- */
 
 /** Full-width "Mains practice" section for the post-Prelims kick-start. @internal */
-function buildMainsSection(day: PlanDay | undefined): HTMLElement {
+function buildMainsSection(root: HTMLElement, day: PlanDay | undefined, today: string): HTMLElement {
   const kids: Child[] = [];
   const paper = day?.mainsPaperRevision;
   if (paper) kids.push(buildMainsPaperRevision(paper));
   kids.push(buildMainsToday(day));
+  // M9: the qualifying Telugu / English block and the weekly General Essay.
+  const rows = languageRows(day);
+  if (day && rows.length > 0) {
+    const reviseCtx = computeReviseCtx(today, day);
+    kids.push(card({ title: 'Languages & essay today' }, [
+      el('ul', { class: 'today-checklist' }, rows.map((r) => checklistRow(root, r, { reviseCtx, day: { ...day, dateISO: today } }, today))),
+    ]));
+  }
   return el('div', { class: 'today-mains' }, kids);
 }
 
@@ -954,16 +672,6 @@ function buildMainsParallelNote(summary: PlanSummary): HTMLElement {
   ]);
 }
 
-/** Collect MCQ ids across a set of subtopic ids. @internal */
-function collectMcqIds(subtopicIds: readonly string[]): string[] {
-  const out: string[] = [];
-  for (const id of subtopicIds) {
-    const view = getSubtopic(id);
-    if (view) out.push(...view.mcqs.map((m) => m.id));
-  }
-  return out;
-}
-
 /** All mains questions indexed by id (for the kick-start mains card). @internal */
 function mainsById(): Map<string, MainsItem> {
   const map = new Map<string, MainsItem>();
@@ -979,32 +687,8 @@ function truncate(text: string, max: number): string {
   return text.length <= max ? text : `${text.slice(0, max - 1).trimEnd()}…`;
 }
 
-/**
- * Launch a mixed Mental Ability practice drill over the ALREADY-covered MENT
- * subtopics `subtopicIds`, sized to `questions`. Falls back to the Drill page
- * when none of the scope has authored MCQs yet. Exported for the Planner view.
- */
-export function startPracticeDrill(subtopicIds: readonly string[], questions: number): void {
-  const view = document.getElementById('view');
-  if (!view) return;
-  const mcqIds = collectMcqIds(subtopicIds);
-  if (mcqIds.length === 0) {
-    navigate('/drill');
-    return;
-  }
-  const items = buildSession({ restrictToIds: mcqIds, limit: questions, order: 'shuffle', seed: 1 }).items;
-  mountQuiz(view as HTMLElement, items, () => render(view as HTMLElement), { allowEndSession: true });
-}
-
-/**
- * Today's flashcard SESSION size over the CURATED deck (used elsewhere if the
- * Revise entry ever moves onto Today). Exported to keep one source of truth.
- */
-export function todaysCuratedSession(): number {
-  // Only cards of topics the learner has studied are ever due.
-  const deck = collectCuratedCards();
-  return selectSession(deck, loadState().flashcards, Date.now()).length;
-}
+// Shared with the Planner and tests (moved to today-tasks.ts).
+export { computeReviseCtx, fmtDuration, startPracticeDrill } from './today-tasks';
 
 /* -------------------------------------------------------------------------- */
 /* Graceful-state cards                                                        */
@@ -1029,7 +713,7 @@ function startsSoonCard(plan: Plan, start: string, today: string): HTMLElement {
       el('p', { text: `${prettyDowDate(start)} \u00b7 Days before the start date are free \u2014 your progress is kept.` }),
       el('div', { class: 'hero-actions' }, [
         button({ label: 'Start here', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/start') }),
-        button({ label: 'Open planner', variant: 'ghost', onClick: () => navigate('/planner') }),
+        button({ label: 'Open plan', variant: 'ghost', onClick: () => navigate('/plan') }),
       ]),
     ]),
   ]);
@@ -1064,6 +748,28 @@ function describeFirstDay(plan: Plan, start: string): string {
   return day.blocks[0]?.label ?? 'your study plan';
 }
 
+/**
+ * EXAM DAY (D18): a calm card — the reporting-time reminder, a short
+ * checklist and "Good luck". No study rows. @internal
+ */
+function examDayCard(summary: PlanSummary): HTMLElement {
+  return el('section', { class: 'card today-exam-day', attrs: { 'aria-labelledby': 'exam-day-title', 'data-state': 'exam-day' } }, [
+    el('div', { class: 'empty-state' }, [
+      el('span', { class: 'empty-icon' }, [icon('sparkles', 26)]),
+      el('h2', { class: 'card-title', attrs: { id: 'exam-day-title' }, text: `Prelims today \u2014 ${prettyDate(summary.examDateISO)}` }),
+      el('p', { text: 'Check the reporting time printed on your hall ticket and reach the centre well before it \u2014 gates close on time.' }),
+      el('ul', { class: 'admin-checklist' }, [
+        'Hall ticket (printed) + original photo ID',
+        'Black / blue ballpoint pens',
+        'Water, a watch if allowed \u2014 no phone in the hall',
+        'Fill your roll number and series on the OMR first',
+        'Read every statement; skip, don\u2019t guess blindly (\u22121/3)',
+      ].map((t) => el('li', { text: t }))),
+      el('p', { class: 'today-exam-luck', text: 'No new study today. Breathe, eat well, trust your preparation. Good luck!' }),
+    ]),
+  ]);
+}
+
 /** Shown once the exam date has passed. @internal */
 function examPassedCard(): HTMLElement {
   return card({ title: 'Prelims day has passed' }, [
@@ -1071,7 +777,7 @@ function examPassedCard(): HTMLElement {
       el('span', { class: 'empty-icon' }, [icon('check', 26)]),
       el('h3', { text: 'Set a new exam date' }),
       el('p', { text: 'Update the target Prelims date in the planner to build a fresh study plan.' }),
-      button({ label: 'Open planner', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/planner') }),
+      button({ label: 'Open plan', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/plan') }),
     ]),
   ]);
 }
@@ -1085,7 +791,7 @@ function mainsKickstartCard(): HTMLElement {
       el('span', { class: 'empty-icon' }, [icon('sparkles', 26)]),
       el('h3', { text: 'Straight into Mains' }),
       el('p', { text: 'Prelims is behind you. The plan now runs descriptive Mains practice by paper, a weekly General Essay, and the qualifying Telugu / English blocks. Today\u2019s mains practice is below.' }),
-      button({ label: 'Open planner', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/planner') }),
+      button({ label: 'Open plan', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/plan') }),
     ]),
   ]);
 }

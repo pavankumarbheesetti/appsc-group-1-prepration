@@ -27,10 +27,29 @@ import {
 import { newCard, review, type Grade } from '../engine/spaced-repetition';
 import { navigate } from '../router/router';
 import { loadState, updateState } from '../state/store';
+import { flashcardDue, flashcardTodayLine, revisableCuratedCards, todaysSession } from '../lib/due';
+import { completeActiveTask } from '../lib/day-tasks';
 import { el, mount, renderInline } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
 import { icon, type IconName } from './components/icon';
+import { subtopicMasteryPct } from '../lib/metrics';
+import { nextUpFooter, PATHS } from './shell';
+import { nextStep } from './next-topic';
+
+/** Topics with answered questions and accuracy under 60% (the "Weak topics" count). */
+export function weakTopicCount(): number {
+  const { progress } = loadState();
+  let n = 0;
+  for (const sub of getSubtopics()) {
+    const view = getSubtopic(sub.id);
+    if (!view || view.mcqs.length === 0) continue;
+    const ids = view.mcqs.map((m) => m.id);
+    if (!ids.some((id) => (progress[id]?.seen ?? 0) > 0)) continue;
+    if (subtopicMasteryPct(progress, ids) < 60) n += 1;
+  }
+  return n;
+}
 
 /**
  * The subtopic ids whose curated cards may be reviewed: studied, or in progress
@@ -46,9 +65,7 @@ export function revisableTopicIds(): string[] {
 
 /** Collect every CURATED card of the REVISABLE (studied) topics, in taxonomy order. */
 export function collectCuratedCards(): Flashcard[] {
-  const out: Flashcard[] = [];
-  for (const id of revisableTopicIds()) out.push(...buildCuratedDeck(getCards(id)));
-  return out;
+  return revisableCuratedCards();
 }
 
 /** Topic names the given cards come from, in first-seen order. @internal */
@@ -111,18 +128,24 @@ function emptyState(root: HTMLElement, heading: string, body: string): void {
 export function render(root: HTMLElement): void {
   const state = loadState();
   const deck = collectCuratedCards();
-  // Today's SESSION size (capped) — the honest "cards for today", not raw due.
-  const session = selectSession(deck, state.flashcards, Date.now());
+  const now = Date.now();
+  // Today's SESSION size: min(due, what is left of the daily cap) — the SAME
+  // number Today and Progress show (lib/due.ts), and it does not refill.
+  const due = flashcardDue(deck, state.flashcards, now);
+  const session = todaysSession(deck, state.flashcards, now);
   const ready = readyTopicCount();
   const mistakes = activeEntries(state.notebook).length;
+  const weak = weakTopicCount();
 
   const from = cardsFromLine(session);
   const flashStatus =
-    session.length > 0
-      ? `${session.length} card${session.length === 1 ? '' : 's'} for today — test yourself before you peek.${from ? ` ${from}.` : ''}`
-      : deck.length > 0
-        ? 'Nothing due right now — you\u2019re ahead on recall'
-        : `Flashcards appear once you study a topic (Mark as studied, or answer its practice questions) — ${ready} topic${ready === 1 ? '' : 's'} have cards`;
+    due.today > 0
+      ? `${flashcardTodayLine(due)} — test yourself before you peek.${from ? ` ${from}.` : ''}`
+      : due.doneForToday
+        ? `${flashcardTodayLine(due)}.`
+        : deck.length > 0
+          ? 'Nothing due right now — you\u2019re ahead on recall'
+          : `Flashcards appear once you study a topic (Mark as studied, or answer its practice questions) — ${ready} topic${ready === 1 ? '' : 's'} have cards`;
 
   mount(
     root,
@@ -132,24 +155,24 @@ export function render(root: HTMLElement): void {
         el('div', { class: 'revise-hub' }, [
           hubCard(
             'revise',
-            'Flashcards due today',
+            `Flashcards due (${due.today})`,
             flashStatus,
             deck.length > 0 ? 'Start recall' : 'How it works',
             () => navigate('/revise/flashcards'),
           ),
           hubCard(
             'notebook',
-            'Wrong-answer notebook',
-            mistakes > 0 ? `${mistakes} mistake${mistakes === 1 ? '' : 's'} to nail down` : 'Notebook clear',
-            'Open notebook',
-            () => navigate('/notebook'),
+            `My mistakes (${mistakes})`,
+            mistakes > 0 ? `${mistakes} mistake${mistakes === 1 ? '' : 's'} to nail down` : 'No mistakes to review',
+            'Open my mistakes',
+            () => navigate(PATHS.mistakes),
           ),
           hubCard(
             'target',
-            'Weak areas',
-            'See your weakest subtopics by mastery',
-            'View progress',
-            () => navigate('/progress'),
+            `Weak topics (${weak})`,
+            'Your weakest topics by accuracy',
+            'View weak topics',
+            () => navigate(PATHS.progress),
           ),
         ]),
       ],
@@ -203,7 +226,50 @@ export function renderFlashcards(root: HTMLElement): void {
     mountFlashcards(root, scopedDeck(scope), () => render(root));
     return;
   }
-  mountFlashcards(root, collectCuratedCards(), () => renderFlashcards(root));
+  mountFlashcards(root, collectCuratedCards(), () => renderFlashcards(root), { daily: true });
+}
+
+/**
+ * Whether the next whole-deck entry should ignore the daily cap ("Keep going"
+ * after the day's session is done). One-shot. @internal
+ */
+let keepGoingOnce = false;
+
+/**
+ * "Done for today — N more due tomorrow" after the day's capped session, with
+ * an optional "Keep going" link when cards are still due now. @internal
+ */
+function doneForTodayState(
+  root: HTMLElement,
+  dueTomorrow: number,
+  dueNow: number,
+  onKeepGoing: (() => void) | null,
+): void {
+  const heading = dueTomorrow > 0 ? `Done for today \u2014 ${dueTomorrow} more due tomorrow` : 'Done for today';
+  mount(
+    root,
+    card({ title: 'Revise' }, [
+      el('div', { class: 'empty-state', attrs: { 'data-state': 'done-for-today' } }, [
+        el('span', { class: 'empty-icon' }, [icon('check', 26)]),
+        el('h3', { text: heading }),
+        el('p', { text: 'You finished today\u2019s cards. Short daily sessions beat one long cram \u2014 come back tomorrow.' }),
+        el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
+          button({ label: 'Back to Today', variant: 'primary', onClick: () => navigate('/') }),
+          onKeepGoing && dueNow > 0
+            ? el('a', {
+                class: 'btn btn-ghost',
+                href: '#/revise/flashcards',
+                text: `Keep going (${dueNow} due now)`,
+                onClick: (e) => {
+                  e.preventDefault();
+                  onKeepGoing();
+                },
+              })
+            : null,
+        ]),
+      ]),
+    ]),
+  );
 }
 
 /**
@@ -217,6 +283,7 @@ export function mountFlashcards(
   root: HTMLElement,
   deck: readonly Flashcard[],
   onMore: () => void = () => render(root),
+  opts: { daily?: boolean } = {},
 ): void {
   if (deck.length === 0) {
     const ready = readyTopicCount();
@@ -227,8 +294,32 @@ export function mountFlashcards(
     );
     return;
   }
-  const session = selectSession(deck, loadState().flashcards, Date.now());
+  const sr = loadState().flashcards;
+  const now = Date.now();
+  if (opts.daily) {
+    // The whole-deck daily session: capped by what is LEFT of today's 20, so
+    // finishing it shows "Done for today" instead of refilling a fresh 20.
+    const keepGoing = keepGoingOnce;
+    keepGoingOnce = false;
+    const daily = todaysSession(deck, sr, now, keepGoing);
+    if (daily.length > 0) {
+      runReview(root, daily, onMore);
+      return;
+    }
+    const due = flashcardDue(deck, sr, now);
+    if (due.doneForToday) {
+      // Nothing left for today: the Today row that opened this session is done.
+      completeActiveTask('flashcards');
+      doneForTodayState(root, due.dueTomorrow, due.due, () => {
+        keepGoingOnce = true;
+        mountFlashcards(root, deck, onMore, opts);
+      });
+      return;
+    }
+  }
+  const session = opts.daily ? [] : selectSession(deck, sr, now);
   if (session.length === 0) {
+    completeActiveTask('flashcards');
     emptyState(root, "You're all caught up", 'Nothing is due for recall right now — spaced repetition will resurface these at the right time. 🎉');
     return;
   }
@@ -287,7 +378,16 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
   const draw = (): void => {
     const cardItem = queue[idx];
     if (!cardItem) {
-      // Session complete.
+      // Session complete: tick the Today row that started it (if any).
+      completeActiveTask('flashcards');
+      const after = flashcardDue(revisableCuratedCards(), loadState().flashcards, Date.now());
+      const next = nextStep();
+      // When the day's plan is done, the next step is a weak topic (if any).
+      const primary = next.kind === 'done' && weakTopicCount() > 0
+        ? { label: `Practise weak topics (${weakTopicCount()})`, onClick: () => navigate(PATHS.progress) }
+        : next.kind === 'done'
+          ? { label: 'Back to Today', onClick: () => navigate(PATHS.today) }
+          : { label: next.kind === 'topic' ? `Next: today\u2019s topic \u2014 ${next.name ?? ''}` : next.label, onClick: next.go };
       mount(
         root,
         el('div', { class: 'results' }, [
@@ -296,12 +396,13 @@ function runReview(root: HTMLElement, initial: readonly Flashcard[], onMore: () 
               el('span', { class: 'empty-icon' }, [icon('check', 26)]),
               el('h3', { text: `Reviewed ${reviewed} card${reviewed === 1 ? '' : 's'}` }),
               el('p', { text: 'Nice work — spaced repetition will resurface these at the right time.' }),
-              el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center;flex-wrap:wrap' } }, [
-                button({ label: 'Revise more', variant: 'primary', onClick: () => onMore() }),
-                button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
-              ]),
             ]),
           ]),
+          nextUpFooter({
+            eyebrow: `${reviewed} card${reviewed === 1 ? '' : 's'} reviewed \u00b7 ${after.dueTomorrow} due tomorrow`,
+            primary,
+            secondary: [{ label: 'Revise more', onClick: () => onMore() }],
+          }),
         ]),
       );
       return;

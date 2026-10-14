@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import * as mock from '../mock';
 import { __resetForTests } from '../../state/store';
+import { clearTestSession } from '../../lib/test-session';
 
 /**
  * Mock view tests. These exercise the FULL official-paper mode (Paper-I/II by
@@ -20,6 +21,14 @@ function byText(root: HTMLElement, sel: string, text: string): HTMLElement | und
   return [...root.querySelectorAll<HTMLElement>(sel)].find((n) => n.textContent?.includes(text));
 }
 
+/** Press Submit, then confirm in the dialog (submit now asks first). */
+function submitAndConfirm(root: HTMLElement): void {
+  byText(root, 'button', 'Submit test')!.click();
+  const dlg = document.querySelector<HTMLElement>('.confirm-panel');
+  expect(dlg).not.toBeNull();
+  byText(dlg!, 'button', 'Submit test')!.click();
+}
+
 /** Switch the mock setup into custom-scope mode (default is full paper). */
 function toScope(root: HTMLElement): void {
   byText(root, '.mock-mode-btn', 'Custom scope')!.click();
@@ -28,6 +37,8 @@ function toScope(root: HTMLElement): void {
 describe('mock setup — full official paper by section weight', () => {
   beforeEach(() => {
     __resetForTests();
+    clearTestSession();
+    document.body.replaceChildren();
     location.hash = '#/mock';
   });
 
@@ -59,7 +70,7 @@ describe('mock setup — full official paper by section weight', () => {
       expect(o.classList.contains('is-wrong')).toBe(false);
     }
     // Submit → per-section results + net marks.
-    byText(root, 'button', 'Submit mock')!.click();
+    submitAndConfirm(root);
     expect(root.querySelector('.mock-results')).not.toBeNull();
     expect(root.textContent).toContain('net marks');
     expect(root.querySelector('.mock-section-table')).not.toBeNull();
@@ -82,7 +93,7 @@ describe('mock setup — full official paper by section weight', () => {
     expect(root.textContent).toContain('A 60 · B(i) 30 · B(ii) 30');
     byText(root, 'button', 'Start Paper-II')!.click();
     expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(120);
-    byText(root, 'button', 'Submit mock')!.click();
+    submitAndConfirm(root);
     // Paper-II has three sections.
     expect(root.querySelectorAll('.mock-section-table tbody tr')).toHaveLength(3);
   });
@@ -103,6 +114,8 @@ describe('mock engine — non-repeating series (deterministic)', () => {
 describe('mock setup — custom scope reuses buildSession', () => {
   beforeEach(() => {
     __resetForTests();
+    clearTestSession();
+    document.body.replaceChildren();
     location.hash = '#/mock';
   });
 
@@ -129,6 +142,8 @@ describe('mock setup — custom scope reuses buildSession', () => {
 describe('mock running — no per-question feedback + submit', () => {
   beforeEach(() => {
     __resetForTests();
+    clearTestSession();
+    document.body.replaceChildren();
     location.hash = '#/mock';
   });
 
@@ -168,7 +183,7 @@ describe('mock running — no per-question feedback + submit', () => {
     expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(19);
 
     // Submit → results with the NET score and a full 19-item review.
-    byText(root, 'button', 'Submit mock')!.click();
+    submitAndConfirm(root);
     expect(root.querySelector('.mock-results')).not.toBeNull();
     expect(root.textContent).toContain('net score');
     expect(root.querySelectorAll('.mock-review-item')).toHaveLength(19);
@@ -185,6 +200,8 @@ describe('mock running — no per-question feedback + submit', () => {
 describe('mock running — confidence tags → skip-guesses on results', () => {
   beforeEach(() => {
     __resetForTests();
+    clearTestSession();
+    document.body.replaceChildren();
     location.hash = '#/mock';
   });
 
@@ -210,7 +227,7 @@ describe('mock running — confidence tags → skip-guesses on results', () => {
 
     // Submit → the Negative-marking habit card with the skip-guesses net and
     // the eliminate-2 rule reminder + accuracy-by-confidence table.
-    byText(root, 'button', 'Submit mock')!.click();
+    submitAndConfirm(root);
     expect(root.querySelector('.mock-results')).not.toBeNull();
     const text = root.textContent ?? '';
     expect(text).toContain('Negative-marking habit');
@@ -227,6 +244,8 @@ describe('mock running — confidence tags → skip-guesses on results', () => {
 describe('mock setup — OMR mode on full papers', () => {
   beforeEach(() => {
     __resetForTests();
+    clearTestSession();
+    document.body.replaceChildren();
     location.hash = '#/mock';
   });
 
@@ -246,8 +265,12 @@ describe('mock setup — OMR mode on full papers', () => {
     expect(root.querySelector('.omr-identity')).not.toBeNull();
     expect(root.querySelectorAll('.omr-roll .omr-bubble').length).toBeGreaterThan(0);
 
-    // Proceed into the running paper with the separate bubble sheet.
+    // Start without bubbling the identity → a nudge, not the paper.
     byText(root, 'button', 'Start paper')!.click();
+    expect(root.querySelector('.omr-running')).toBeNull();
+    expect(root.querySelector('.omr-identity-alert')!.textContent).toContain('6 roll-number digits');
+    // Explicitly skip the identity step to proceed into the running paper.
+    byText(root, 'button', 'Skip identity and start')!.click();
     expect(root.querySelector('.omr-running')).not.toBeNull();
     expect(root.querySelector('.omr-sheet-panel')).not.toBeNull();
     // One OMR row per question (full Paper-I = 120).
@@ -263,7 +286,12 @@ describe('mock setup — OMR mode on full papers', () => {
     // Mark Q1 on the booklet (scratch) WITHOUT bubbling it, then submit.
     root.querySelector<HTMLElement>('.omr-scratch-btn')!.click();
     byText(root, 'button', 'Submit sheet')!.click();
+    const dlg = document.querySelector<HTMLElement>('.confirm-panel')!;
+    expect(dlg.textContent).toContain('119 of 120 bubbles left blank');
+    byText(dlg, 'button', 'Submit sheet')!.click();
 
+    // Results flag the missing identity (the #1 rejection cause).
+    expect(root.textContent).toContain('Roll number/series not bubbled — in the real exam this can invalidate your sheet');
     // Results flag the booklet-but-not-bubbled transcription gap + reprint.
     expect(root.querySelector('.mock-results')).not.toBeNull();
     const text = root.textContent ?? '';
@@ -286,5 +314,125 @@ describe('print stylesheet — printable OMR sheet', () => {
     expect(css).toContain('@media print');
     expect(css).toContain('.omr-print-sheet');
     expect(css).toMatch(/@page[\s\S]*A4/);
+  });
+});
+
+/* -------------------------------------------------------------------------- */
+/* D16/D17 — submit confirm, autosave + resume, OMR identity                   */
+/* -------------------------------------------------------------------------- */
+
+import { loadTestSession, saveTestSession } from '../../lib/test-session';
+import { loadState } from '../../state/store';
+import { vi, afterEach } from 'vitest';
+
+describe('mock — submit asks for confirmation; leaving autosaves; resume restores', () => {
+  beforeEach(() => {
+    __resetForTests();
+    clearTestSession();
+    document.body.replaceChildren();
+    location.hash = '#/mock';
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  function startIvc(root: HTMLElement): void {
+    toScope(root);
+    byText(root, '.mock-scope-btn', 'By subtopic')!.click();
+    const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
+    select.value = 'hist-ancient-ivc';
+    select.dispatchEvent(new Event('change'));
+    byText(root, '.mock-len-btn', '19')!.click();
+    byText(root, 'button', 'Start mock')!.click();
+  }
+
+  it('Submit opens a confirm showing the unanswered count; Keep working cancels', () => {
+    const before = loadState().testAttempts.length;
+    const root = render();
+    startIvc(root);
+    root.querySelector<HTMLElement>('.option-card')!.click();
+    byText(root, 'button', 'Submit test')!.click();
+    const dlg = document.querySelector<HTMLElement>('.confirm-panel')!;
+    expect(dlg.getAttribute('role')).toBe('alertdialog');
+    expect(dlg.textContent).toContain('18 of 19 questions unanswered');
+    byText(dlg, 'button', 'Keep working')!.click();
+    expect(document.querySelector('.confirm-panel')).toBeNull();
+    expect(root.querySelector('.mock-running')).not.toBeNull();
+    expect(root.querySelector('.mock-results')).toBeNull();
+    expect(loadState().testAttempts).toHaveLength(before);
+  });
+
+  it('autosaves answers + confidence + time left; leaving and resuming restores them', () => {
+    vi.useFakeTimers();
+    const before = loadState().testAttempts.length;
+    const root = render();
+    startIvc(root);
+    root.querySelectorAll<HTMLElement>('.option-card')[1]!.click();
+    byText(root, '.mock-conf-btn', 'Guess')!.click();
+    vi.advanceTimersByTime(5_000);
+    // Navigate away (Back / nav): the next tick saves and pauses.
+    location.hash = '#/';
+    vi.advanceTimersByTime(500);
+    const saved = loadTestSession()!;
+    expect(saved).not.toBeNull();
+    expect(saved.selected[0]).toBe(1);
+    expect(saved.confidences[0]).toBe('guess');
+    expect(saved.remainingMs).toBeLessThan(19 * 60_000);
+    expect(saved.remainingMs).toBeGreaterThan(18 * 60_000);
+    // Nothing was recorded — the attempt is not lost or submitted.
+    expect(loadState().testAttempts).toHaveLength(before);
+
+    // Return to the Mock page → a Resume card; resuming restores the attempt.
+    location.hash = '#/mock';
+    const back = render();
+    const resume = byText(back, 'button', 'Resume test');
+    expect(resume).not.toBeUndefined();
+    expect(back.textContent).toContain('1 of 19 answered');
+    resume!.click();
+    expect(back.querySelector('.mock-running')).not.toBeNull();
+    expect(back.querySelector('.option-card.is-selected')).not.toBeNull();
+    expect(back.querySelector('.mock-conf-btn.is-active')!.textContent).toBe('Guess');
+  });
+
+  it('a resumed test whose time ran out auto-submits and records a review list', () => {
+    const root = render();
+    startIvc(root);
+    root.querySelector<HTMLElement>('.option-card')!.click();
+    const saved = loadTestSession()!;
+    saveTestSession({ ...saved, remainingMs: 0 });
+    location.hash = '#/mock';
+    const back = render();
+    byText(back, 'button', 'Resume test')!.click();
+    expect(back.querySelector('.mock-results')).not.toBeNull();
+    expect(loadTestSession()).toBeNull();
+    const rec = loadState().testAttempts.at(-1) as { reviewIds?: string[]; dateISO?: string };
+    expect(Array.isArray(rec.reviewIds)).toBe(true);
+    expect(rec.dateISO).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+});
+
+describe('mock — OMR identity must be completed or explicitly skipped', () => {
+  beforeEach(() => {
+    __resetForTests();
+    clearTestSession();
+    document.body.replaceChildren();
+    location.hash = '#/mock';
+  });
+
+  it('a fully bubbled identity starts directly and the results carry no identity flag', () => {
+    const root = render();
+    root.querySelector<HTMLElement>('.mock-omr-toggle')!.click();
+    byText(root, 'button', 'Start Paper-I')!.click();
+    const cols = [...root.querySelectorAll<HTMLElement>('.omr-roll-col')];
+    cols.forEach((_, c) => {
+      root.querySelectorAll<HTMLElement>('.omr-roll-col')[c]!.querySelectorAll<HTMLElement>('.omr-bubble')[c]!.click();
+    });
+    root.querySelector<HTMLElement>('.omr-series .omr-bubble')!.click();
+    byText(root, 'button', 'Start paper')!.click();
+    expect(root.querySelector('.omr-running')).not.toBeNull();
+    byText(root, 'button', 'Submit sheet')!.click();
+    byText(document.querySelector<HTMLElement>('.confirm-panel')!, 'button', 'Submit sheet')!.click();
+    expect(root.textContent).not.toContain('Roll number/series not bubbled');
+    expect(root.textContent).toContain('No booklet marks were made');
   });
 });

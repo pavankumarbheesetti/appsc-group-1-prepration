@@ -39,9 +39,6 @@ export const MAX_BOX = 5;
 /** Lowest Leitner box; a wrong answer always resets a card to this box. */
 export const MIN_BOX = 1;
 
-/** Milliseconds in a day, used to convert box intervals to `due` timestamps. */
-const DAY_MS = 24 * 60 * 60 * 1000;
-
 /**
  * Create a fresh card for `id`, due immediately (`now`) in box 1 with no lapses.
  */
@@ -61,10 +58,24 @@ export function review(card: SrCard, grade: Grade, now: number): SrCard {
   if (grade === 'correct') {
     const box = Math.min(card.box + 1, MAX_BOX);
     const intervalDays = BOX_INTERVALS_DAYS[box] ?? 0;
-    return { ...card, box, due: now + intervalDays * DAY_MS };
+    // Day granularity (M7): due at the START of the local day `intervalDays`
+    // out, so a card reviewed tonight with a 1-day interval is due tomorrow
+    // MORNING, not tomorrow night.
+    return { ...card, box, due: startOfLocalDayPlus(now, intervalDays) };
   }
   // Wrong: demote to box 1, count a lapse, resurface immediately.
   return { ...card, box: MIN_BOX, lapses: card.lapses + 1, due: now };
+}
+
+/**
+ * Epoch ms of local midnight `days` calendar days after the local day of `now`
+ * (DST-safe: calendar arithmetic, not `days × 24 h`).
+ */
+export function startOfLocalDayPlus(now: number, days: number): number {
+  const d = new Date(now);
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + days);
+  return d.getTime();
 }
 
 /** True when the card is at/after its due time and should be reviewed. */

@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import * as syllabus from '../syllabus';
 import { __resetForTests } from '../../state/store';
+import { markTopicStudied } from '../../lib/study-status';
 
 /**
  * Syllabus tracker semantics: rows default to CHRONOLOGICAL (taxonomy `order`)
@@ -38,9 +39,12 @@ describe('syllabus tracker', () => {
     // The row meter is learner progress, labelled and 0% on a fresh profile —
     // NOT the old authoring-coverage percentage.
     const firstRow = root.querySelector('.track-row')!;
-    expect(firstRow.textContent).toContain('Progress');
+    expect(firstRow.textContent).toContain('Accuracy');
     expect(firstRow.textContent).toContain('0%');
     expect(firstRow.textContent).not.toContain('covered');
+    // ONE status chip per row — the study status, not a mastery label.
+    expect(firstRow.querySelectorAll('.study-status-chip')).toHaveLength(1);
+    expect(firstRow.textContent).toContain('Not started');
   });
 
   it('exposes a Chronological / Priority sort toggle (Chronological default)', () => {
@@ -53,19 +57,28 @@ describe('syllabus tracker', () => {
     expect(active?.textContent).toBe('Chronological');
   });
 
-  it('summaries are truthful (material coverage + mastered), never "% covered"', () => {
+  it('summaries lead with the studied count (same source as the plan), accuracy separate', () => {
     const root = document.createElement('div');
     syllabus.render(root);
     const stat = root.querySelector('.track-summary-stat')?.textContent ?? '';
-    // HIST leads with how many of its 47 subtopics actually have material yet
-    // (now 47 of 47), then mastery — never a misleading "% covered".
-    expect(stat).toContain('have material');
-    expect(stat).toContain('mastered');
+    // HIST: 47 in-scope subtopics, none studied on a fresh profile.
+    expect(stat).toContain('Studied 0 of 47');
     expect(stat).not.toContain('covered');
-    expect(stat).toMatch(/47\/47 have material/);
-    // On a FRESH profile the mastery part is a calm "— mastered" em-dash rather
-    // than the noisy "0 mastered · 0% progress" repeated on every subject.
-    expect(stat).toContain('\u2014 mastered');
-    expect(stat).not.toContain('0% progress');
+    expect(stat).not.toContain('mastered');
+    // The page headline counts the whole Prelims scope.
+    expect(root.querySelector('.syll-studied-headline')!.textContent).toContain('Studied 0 of 117');
+  });
+
+  it('marking topics studied updates the headline + subject count + row chip', () => {
+    markTopicStudied('hist-ancient-stone-age', true, '2026-10-10');
+    markTopicStudied('ment-number-system', true, '2026-10-10');
+    const root = document.createElement('div');
+    syllabus.render(root);
+    expect(root.querySelector('.syll-studied-headline')!.textContent).toContain('Studied 2 of 117');
+    expect(root.querySelector('.track-summary-stat')!.textContent).toContain('Studied 1 of 47');
+    (root.querySelector('.track-subject-summary') as HTMLElement).click();
+    (root.querySelector('.track-chapter-summary') as HTMLElement).click();
+    const first = root.querySelector('.track-row')!;
+    expect(first.querySelector('.study-status-chip')!.textContent).toContain('Studied');
   });
 });

@@ -19,7 +19,6 @@ import { activeEntries } from '../engine/notebook';
 import { navigate } from '../router/router';
 import { loadState, getTestAttempts, type TestAttemptRecord } from '../state/store';
 import {
-  dueCount,
   pct,
   formatNet,
   statusFromMastery,
@@ -32,7 +31,10 @@ import { button } from './components/button';
 import { icon } from './components/icon';
 import { ring } from './components/ring';
 import { progressBar } from './components/progress';
-import { bandBadge, statusChip } from './components/badges';
+import { bandBadge, studyStatusChip } from './components/badges';
+import { topicStudyFrom, type StudyStatus } from '../lib/study-status';
+import { studySummary, studiedLine, anyStudyActivity, type StudySummary } from '../lib/study-summary';
+import { liveFlashcardDue, questionsDue, flashcardTodayLine, type FlashcardDue } from '../lib/due';
 import { openLearn } from './learn';
 
 /** How the breakdown rows are ordered. */
@@ -57,6 +59,8 @@ interface SubRow {
   /** Learner-progress percent (mastery), 0–100. */
   mastery: number;
   status: SubtopicStatus;
+  /** The study status (ONE vocabulary shared with the plan / Today / Learn). */
+  study: StudyStatus;
   /** Exam-point coverage (present only when the subtopic declares examPoints). */
   examCoverage?: { pct: number; covered: number; total: number };
 }
@@ -65,7 +69,8 @@ interface SubRow {
 function subRowFor(meta: TaxonomySubtopic): SubRow {
   const view = getSubtopic(meta.id);
   const ids = view?.mcqs.map((m) => m.id) ?? [];
-  const progress = loadState().progress;
+  const state = loadState();
+  const progress = state.progress;
   let answered = 0;
   let attempts = 0;
   let correct = 0;
@@ -88,6 +93,7 @@ function subRowFor(meta: TaxonomySubtopic): SubRow {
     accuracy: attempts > 0 ? correct / attempts : 0,
     mastery,
     status: statusFromMastery(mastery),
+    study: topicStudyFrom(state, meta.id).status,
     examCoverage: cov ? { pct: cov.pct, covered: cov.covered.length, total: cov.total } : undefined,
   };
 }
@@ -158,21 +164,22 @@ export function render(root: HTMLElement): void {
     const rows = getSubjects().flatMap((s) => getSubtopics(s.code).map(subRowFor));
     const overall = rollUp(rows);
 
-    // Nothing attempted yet → a single friendly, honest empty state.
-    if (overall.attempts === 0) {
+    const study = studySummary(state);
+    // Empty state ONLY when nothing is studied/started AND nothing answered.
+    if (overall.attempts === 0 && study.studied === 0 && study.inProgress === 0 && !anyStudyActivity(state)) {
       mount(root, emptyState());
       return;
     }
 
-    const due = dueCount(state.flashcards, Date.now());
+    const due = liveFlashcardDue();
     const mistakes = activeEntries(state.notebook).length;
 
     mount(
       root,
-      buildOverview(overall, due),
+      buildOverview(overall, due, study, questionsDue(state).length),
       buildMistakes(mistakes),
       buildNegMarkingHabit(getTestAttempts()),
-      buildBreakdown(rows, draw),
+      buildBreakdown(rows, draw, study),
     );
   };
   draw();
@@ -184,14 +191,14 @@ function emptyState(): HTMLElement {
     el('div', { class: 'empty-state' }, [
       el('span', { class: 'empty-icon' }, [icon('target', 26)]),
       el('h3', { text: 'No progress yet' }),
-      el('p', { text: 'Answer a few questions in a drill and your mastery, accuracy and per-topic breakdown will appear here.' }),
-      button({ label: 'Start a drill', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/drill') }),
+      el('p', { text: 'Study a topic (Mark as studied) or answer a few questions and your studied count, accuracy and per-topic breakdown will appear here.' }),
+      button({ label: 'Start practice', variant: 'primary', iconName: 'arrow-right', onClick: () => navigate('/practice') }),
     ]),
   ]);
 }
 
 /** The overall mastery ring + honest stat tiles. @internal */
-function buildOverview(o: Overall, due: number): HTMLElement {
+function buildOverview(o: Overall, due: FlashcardDue, study: StudySummary, questions: number): HTMLElement {
   const ringCard = el('div', { class: 'card ring-card pv-ring' }, [
     ring({ value: o.masteryPct / 100, centerText: `${o.masteryPct}%`, centerLabel: 'mastery' }),
     el('span', { class: 'ring-caption', text: 'Overall mastery' }),
@@ -199,10 +206,10 @@ function buildOverview(o: Overall, due: number): HTMLElement {
   ]);
 
   const stats = el('div', { class: 'pv-stats' }, [
-    statTile(String(o.answered), 'Questions attempted', `${o.attempts} total attempts`),
-    statTile(pct(o.accuracy), 'Accuracy', `${o.correct}/${o.attempts} correct`),
-    statTile(`${o.subtopicsStarted}/${o.subtopicsTotal}`, 'Subtopics started', `${o.subtopicsMastered} mastered · ${o.subtopicsWithMaterial} with material`),
-    statTile(String(due), 'Flashcards due', due > 0 ? 'ready for review' : 'all caught up'),
+    statTile(`${study.studied}/${study.total}`, studiedLine(study), `${study.inProgress} in progress \u00b7 Prelims topics`),
+    statTile(String(o.answered), 'Questions attempted', `${o.attempts} total attempts \u00b7 ${questions} due for review`),
+    statTile(o.attempts > 0 ? pct(o.accuracy) : '\u2014', 'Accuracy', o.attempts > 0 ? `${o.correct}/${o.attempts} correct` : 'answer some questions'),
+    statTile(String(due.today), 'Flashcards for today', due.today > 0 ? `${due.due} due in total` : flashcardTodayLine(due)),
   ]);
 
   return el('section', { class: 'pv-overview' }, [ringCard, stats]);
@@ -228,7 +235,7 @@ function buildMistakes(count: number): HTMLElement {
         el('span', { class: 'pv-stat-value tnum', text: String(count) }),
         el('span', { class: 'section-lead', text: body }),
       ]),
-      button({ label: 'Open notebook', variant: count > 0 ? 'primary' : 'ghost', iconName: 'arrow-right', onClick: () => navigate('/notebook') }),
+      button({ label: 'Open my mistakes', variant: count > 0 ? 'primary' : 'ghost', iconName: 'arrow-right', onClick: () => navigate('/revise/mistakes') }),
     ]),
   ]);
 }
@@ -295,7 +302,7 @@ function buildNegMarkingHabit(attempts: readonly TestAttemptRecord[]): HTMLEleme
 }
 
 /** Per-subject → per-subtopic breakdown with a sort toggle. @internal */
-function buildBreakdown(rows: SubRow[], rerender: () => void): HTMLElement {
+function buildBreakdown(rows: SubRow[], rerender: () => void, subjectStudy?: StudySummary): HTMLElement {
   const sorted = (list: SubRow[]): SubRow[] => {
     if (breakdownSort === 'weakest') {
       return [...list].sort((a, b) => {
@@ -310,7 +317,11 @@ function buildBreakdown(rows: SubRow[], rerender: () => void): HTMLElement {
 
   const subjectSections = getSubjects().map((s) => {
     const subjectRows = sorted(rows.filter((r) => r.meta.subjectCode === s.code));
-    return card({ title: s.name, subtitle: `${subjectRows.length} subtopic(s)` }, [
+    const counts = subjectStudy?.bySubject[s.code];
+    const subtitle = counts
+      ? `${studiedLine(counts)} \u00b7 ${subjectRows.length} subtopic(s)`
+      : `${subjectRows.length} subtopic(s)`;
+    return card({ title: s.name, subtitle }, [
       el('div', { class: 'pv-breakdown' }, subjectRows.map(breakdownRow)),
     ]);
   });
@@ -346,25 +357,27 @@ function sortChip(label: string, value: BreakdownSort, rerender: () => void): HT
   return c;
 }
 
+/** Plain study-status words for aria labels. @internal */
+const STUDY_WORD: Record<StudyStatus, string> = { 'not-started': 'Not started', 'in-progress': 'In progress', studied: 'Studied' };
+
 /** One breakdown row — opens the subtopic's Learn workspace to drill it. @internal */
 function breakdownRow(row: SubRow): HTMLElement {
   return el('button', {
     class: 'track-row',
     type: 'button',
-    ariaLabel: `${row.meta.name} — Progress ${row.mastery}%, ${row.answered} attempted, accuracy ${pct(row.accuracy)}`,
+    ariaLabel: `${row.meta.name} — ${STUDY_WORD[row.study]}, Accuracy ${row.mastery}%, ${row.answered} attempted`,
     onClick: () => openLearn(row.meta.id),
   }, [
     el('div', { class: 'track-row-main' }, [
       el('span', { class: 'track-row-name', text: row.meta.name }),
       el('div', { class: 'track-row-badges' }, [
         row.meta.band ? bandBadge(row.meta.band) : null,
-        statusChip(row.status),
+        studyStatusChip(row.study),
       ]),
     ]),
-    el('div', { class: 'track-row-cov' }, [progressBar({ value: row.mastery / 100, label: 'Progress', caption: `${row.mastery}%`, success: row.mastery >= 100 })]),
+    el('div', { class: 'track-row-cov' }, [progressBar({ value: row.mastery / 100, label: 'Accuracy', caption: `${row.mastery}%`, success: row.mastery >= 100 })]),
     el('div', { class: 'track-row-counts' }, [
       statPill('drill', `${row.answered} tried`),
-      statPill('target', row.attempts > 0 ? `${pct(row.accuracy)} acc` : '—'),
       row.examCoverage ? statPill('target', `${row.examCoverage.pct}% cov`) : null,
     ]),
     el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),

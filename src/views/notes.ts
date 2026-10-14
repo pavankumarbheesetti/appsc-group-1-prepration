@@ -158,12 +158,20 @@ function renderMnemonic(mnemonic: string): HTMLElement {
   return details;
 }
 
+/**
+ * Drop a body's LEADING `## ` heading: the note title above already names the
+ * section, so the body's own heading only repeated it (NAV F8). @internal
+ */
+export function stripLeadHeading(body: string): string {
+  return body.replace(/^\s*##(?!#)\s+[^\n]*\n+/, '');
+}
+
 /** Build one note article with body + optional figures/retention blocks. */
 export function buildNoteArticle(note: NoteItem, anchorId: string): HTMLElement {
   const kids: Child[] = [el('h3', { class: 'note-title', text: note.title })];
   // Lead figure sits above the body; extra figures follow it.
   if (note.figure) kids.push(renderFigure(note.figure));
-  kids.push(el('div', { class: 'note-body' }, renderMarkdown(note.body)));
+  kids.push(el('div', { class: 'note-body' }, renderMarkdown(stripLeadHeading(note.body))));
   if (note.figures) for (const fig of note.figures) kids.push(renderFigure(fig));
   if (note.keyPoints && note.keyPoints.length > 0) kids.push(renderKeyPoints(note));
   if (note.mnemonic) kids.push(renderMnemonic(note.mnemonic));

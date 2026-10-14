@@ -143,7 +143,7 @@ describe('Revise — only studied topics; early-revise scoping', () => {
     expect(r).toBeTruthy();
     expect(r.textContent).toContain('Mark Stone Age studied');
     r.querySelector<HTMLButtonElement>('.today-check-btn')!.click();
-    expect(location.hash).toBe(`#/learn/${STONE}`); // explanation → the topic, never cards
+    expect(location.hash.startsWith(`#/learn/${STONE}/notes`)).toBe(true); // explanation → the topic, never cards
   });
 
   it('once today\u2019s topic is studied the block opens ITS cards (and Revise shows where they come from)', () => {

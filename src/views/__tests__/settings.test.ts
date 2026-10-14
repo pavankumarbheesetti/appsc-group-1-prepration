@@ -1,6 +1,15 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import * as settings from '../settings';
-import { __resetForTests, getExamDate, getPlanStartDate, getDaysOff } from '../../state/store';
+import {
+  __resetForTests,
+  getDailyStudyMinutes,
+  getDaysOff,
+  getExamDate,
+  getPlanStartDate,
+  getSundayStudyMinutes,
+  setDailyStudyMinutes,
+  studyMinutesError,
+} from '../../state/store';
 import { DEFAULT_DAYS_OFF } from '../../config';
 import { addDaysISO, todayISO } from '../../lib/dates';
 
@@ -107,5 +116,51 @@ describe('settings view — days off control', () => {
     )!;
     reset.click();
     expect(getDaysOff()).toEqual([...DEFAULT_DAYS_OFF]);
+  });
+});
+
+describe('settings view — study-time bounds (D21)', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    __resetForTests();
+  });
+
+  const customInput = (root: HTMLElement, label: string): HTMLInputElement =>
+    [...root.querySelectorAll<HTMLInputElement>('input[type="number"]')].find((i) => i.getAttribute('aria-label') === label)!;
+
+  it('daily 60–600: out-of-range values are rejected with a message, in-range saved', () => {
+    const root = document.createElement('div');
+    settings.render(root);
+    let input = customInput(root, 'Custom daily study minutes');
+    expect(input.getAttribute('min')).toBe('60');
+    expect(input.getAttribute('max')).toBe('600');
+    input.value = '25';
+    input.dispatchEvent(new Event('change'));
+    expect(getDailyStudyMinutes()).toBe(240);
+    expect(root.textContent).toContain('at least 60 minutes');
+    input.value = '5000';
+    input.dispatchEvent(new Event('change'));
+    expect(getDailyStudyMinutes()).toBe(240);
+    expect(root.textContent).toContain('at most 600 minutes');
+    input = customInput(root, 'Custom daily study minutes');
+    input.value = '300';
+    input.dispatchEvent(new Event('change'));
+    expect(getDailyStudyMinutes()).toBe(300);
+  });
+
+  it('Sunday 60–720: out-of-range rejected, in-range saved; setters + load clamp too', () => {
+    const root = document.createElement('div');
+    settings.render(root);
+    const input = customInput(root, 'Custom Sunday study minutes');
+    expect(input.getAttribute('max')).toBe('720');
+    input.value = '800';
+    input.dispatchEvent(new Event('change'));
+    expect(getSundayStudyMinutes()).toBe(360);
+    expect(root.textContent).toContain('at most 720 minutes');
+    // Direct setter calls are bounded as well.
+    setDailyStudyMinutes(5000);
+    expect(getDailyStudyMinutes()).toBe(240);
+    expect(studyMinutesError('sunday', 720)).toBeNull();
+    expect(studyMinutesError('daily', 59)).not.toBeNull();
   });
 });
