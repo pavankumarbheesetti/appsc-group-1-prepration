@@ -22,10 +22,12 @@ import { buildSession, weakQuestionIds } from '../engine/drill';
 import { flashcardTodayLine, liveFlashcardDue, questionsDue } from '../lib/due';
 import { subtopicDrillOptions, type SubtopicDrillOption } from '../lib/drill-scope';
 import type { SessionScore } from '../engine/drill';
-import { navigate, routeParam } from '../router/router';
+import { navigate, routeParam, routeQuery } from '../router/router';
 import { loadState } from '../state/store';
 import { el, mount, firstLine, plainInline, type Child } from './dom';
-import { mountQuiz, renderExplanation, renderQuestionStem } from './quiz';
+import { mountQuiz, renderExplanation, renderQuestionStem, type QuizSessionOpts } from './quiz';
+import { clearDrillSession, scopeHash, withResume } from '../lib/drill-session';
+import { pausedDrill, pausedRunsCard, resumeItems } from './drill-resume';
 import { card } from './components/card';
 import { button } from './components/button';
 import { ring } from './components/ring';
@@ -70,7 +72,28 @@ function subtopicOptionsFor(subjectCode: SubjectCode): SubtopicDrillOption[] {
 
 /** Render the drill setup screen; a preset tap swaps in the focus runner. */
 export function render(root: HTMLElement): void {
+  // `?resume=drill:…` (a Paused-runs Resume, or a reload mid-run) reopens it.
+  const want = routeQuery('resume');
+  const paused = want?.startsWith('drill:') ? pausedDrill(want) : null;
+  if (want && paused) {
+    const items = resumeItems(want);
+    if (items) {
+      runSession(root, items, { key: want, label: paused.label }, true);
+      return;
+    }
+  }
   drawSetup(root, { open: false, subject: '', subtopic: '' });
+}
+
+/** Resumability of a Practice-hub run (`drill:<scope>` key + label). @internal */
+function hubSession(meta: { key: string; label: string }): QuizSessionOpts {
+  return { ...meta, route: withResume(PATHS.practice, meta.key), backPath: PATHS.practice };
+}
+
+/** The `drill:<preset>:<scope>` key + label of a preset run. @internal */
+function presetMeta(preset: string, title: string, subjectCode: SubjectCode | undefined, subtopicId: string | undefined): { key: string; label: string } {
+  const scope = subtopicId ? getSubtopic(subtopicId)?.meta.name ?? subtopicId : subjectCode ? SUBJECTS[subjectCode] : 'All subjects';
+  return { key: `drill:${preset}:${subjectCode ?? 'all'}:${subtopicId ?? 'all'}`, label: `${title} \u00b7 ${scope}` };
 }
 
 /**
@@ -151,14 +174,16 @@ function drawSetup(root: HTMLElement, refine: RefineState): void {
 
   // Per-preset session builders. Due/Weak restrict to the pre-computed ids;
   // Quick takes a short shuffled slice; Full is the whole scope, refresher-first.
+  // A preset tap is a FRESH run (a paused one of the same preset is replaced;
+  // paused runs resume from the "Paused runs" card).
   const startDue = (): void =>
-    runSession(root, buildSession({ subjectCode, subtopicId, restrictToIds: dueIds, order: 'ladder' }).items);
+    runSession(root, buildSession({ subjectCode, subtopicId, restrictToIds: dueIds, order: 'ladder' }).items, presetMeta('due', 'Due review', subjectCode, subtopicId));
   const startQuick = (): void =>
-    runSession(root, buildSession({ subjectCode, subtopicId, limit: 10, order: 'shuffle' }).items);
+    runSession(root, buildSession({ subjectCode, subtopicId, limit: 10, order: 'shuffle' }).items, presetMeta('quick', 'Quick 10', subjectCode, subtopicId));
   const startWeak = (): void =>
-    runSession(root, buildSession({ subjectCode, subtopicId, restrictToIds: weakIds, order: 'ladder' }).items);
+    runSession(root, buildSession({ subjectCode, subtopicId, restrictToIds: weakIds, order: 'ladder' }).items, presetMeta('weak', 'Weak areas', subjectCode, subtopicId));
   const startFull = (): void =>
-    runSession(root, buildSession({ subjectCode, subtopicId, order: 'ladder' }).items);
+    runSession(root, buildSession({ subjectCode, subtopicId, order: 'ladder' }).items, presetMeta('full', 'Full practice', subjectCode, subtopicId));
 
   const grid = el('div', { class: 'preset-grid' }, [
     presetCard({
@@ -219,6 +244,7 @@ function drawSetup(root: HTMLElement, refine: RefineState): void {
 
   const setup = el('div', { class: 'drill-setup' }, [
     practiceSegments('quick'),
+    pausedRunsCard(() => drawSetup(root, refine)),
     card(
       { title: 'Quick practice', subtitle: 'Untimed, with instant feedback. Pick a session — or just hit Begin. Keyboard A–D or 1–4 to answer.' },
       body,
@@ -328,8 +354,11 @@ function refinePanel(root: HTMLElement, refine: RefineState): HTMLElement {
   return details;
 }
 
-/** Run the quiz over the built items and show results when done. @internal */
-function runSession(root: HTMLElement, items: readonly MCQItem[]): void {
+/**
+ * Run the quiz over the built items and show results when done. With `meta`
+ * the run is resumable (Pause / reload) under its `drill:` key. @internal
+ */
+function runSession(root: HTMLElement, items: readonly MCQItem[], meta?: { key: string; label: string }, resume = false): void {
   if (items.length === 0) {
     mount(
       root,
@@ -343,7 +372,10 @@ function runSession(root: HTMLElement, items: readonly MCQItem[]): void {
     return;
   }
   // allowEndSession lets the learner stop anytime — no length is pre-committed.
-  mountQuiz(root, items, (score, wrongItems, details) => drawResults(root, score, wrongItems, details), { allowEndSession: true });
+  const session = meta ? hubSession(meta) : undefined;
+  // A fresh tap replaces any paused run of the same key; a resume restores it.
+  if (session && !resume) clearDrillSession(session.key);
+  mountQuiz(root, items, (score, wrongItems, details) => drawResults(root, score, wrongItems, details), { allowEndSession: true, session });
 }
 
 /** End-of-session results screen: score ring + rich, real-valued breakdown. */
@@ -357,7 +389,7 @@ function drawResults(root: HTMLElement, score: SessionScore, wrongItems: MCQItem
     primary: { label: next.label, onClick: next.go },
     secondary: [
       wrongItems.length > 0
-        ? { label: `Review ${wrongItems.length} mistake${wrongItems.length === 1 ? '' : 's'}`, onClick: () => runSession(root, wrongItems) }
+        ? { label: `Review ${wrongItems.length} mistake${wrongItems.length === 1 ? '' : 's'}`, onClick: () => runSession(root, wrongItems, { key: `drill:mistakes:${scopeHash(wrongItems.map((w) => w.id))}`, label: 'Practice mistakes' }) }
         : null,
       { label: 'New practice', onClick: () => render(root) },
     ].filter((x): x is { label: string; onClick: () => void } => x !== null),

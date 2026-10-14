@@ -10,10 +10,13 @@
 import { getBanks } from '../content/loader';
 import type { MCQItem } from '../content/types';
 import { activeEntries, selectReviewItems, GRADUATION_THRESHOLD } from '../engine/notebook';
-import { navigate } from '../router/router';
+import { navigate, routeQuery } from '../router/router';
 import { loadState } from '../state/store';
 import { el, mount, renderPreview } from './dom';
-import { mountQuiz } from './quiz';
+import { mountQuiz, type QuizSessionOpts } from './quiz';
+import { clearDrillSession, resumeText, scopeHash, withResume } from '../lib/drill-session';
+import { pausedDrill, resumeDrill, resumeItems } from './drill-resume';
+import { PATHS } from './shell';
 import { card } from './components/card';
 import { button } from './components/button';
 import { chip } from './components/chip';
@@ -48,10 +51,38 @@ export function openScopedReview(ids: readonly string[], title: string, lead: st
   navigate('/revise/mistakes');
 }
 
+/** The paused-drill key of the whole-notebook review. */
+export const NOTEBOOK_DRILL_KEY = 'notebook';
+
+/** The paused-drill key of a scoped review list. @internal */
+function scopedKey(ids: readonly string[]): string {
+  return `notebook:${scopeHash(ids)}`;
+}
+
+/** Resumability of a notebook review run. @internal */
+function reviewSession(key: string, label: string, backPath: string): QuizSessionOpts {
+  return { key, label, route: withResume(PATHS.mistakes, key), backPath };
+}
+
 /** Render the notebook into `root`. */
 export function render(root: HTMLElement): void {
   const scoped = pendingScoped;
   pendingScoped = null;
+  // `?resume=notebook…` (a Resume entry, or a reload mid-review) reopens it.
+  const want = routeQuery('resume');
+  if (!scoped && want?.startsWith(NOTEBOOK_DRILL_KEY) && pausedDrill(want)) {
+    const saved = pausedDrill(want)!;
+    const list = resumeItems(want);
+    if (list) {
+      const whole = want === NOTEBOOK_DRILL_KEY;
+      mountQuiz(root, list, () => {
+        if (!whole) completeActiveTask('review');
+        if (whole) reviewDone(root);
+        else drawList(root);
+      }, { session: reviewSession(want, saved.label, whole ? PATHS.mistakes : '/') });
+      return;
+    }
+  }
   if (scoped) {
     drawScoped(root, scoped);
     return;
@@ -95,12 +126,15 @@ function drawScoped(root: HTMLElement, scoped: ScopedReview): void {
         label: `Review these ${list.length}`,
         variant: 'primary',
         iconName: 'arrow-right',
-        onClick: () =>
+        onClick: () => {
+          const key = scopedKey(list.map((i) => i.id));
+          clearDrillSession(key);
           mountQuiz(root, list, () => {
             // The review list is cleared: tick the Today review row (if any).
             completeActiveTask('review');
             drawScoped(root, scoped);
-          }),
+          }, { session: reviewSession(key, scoped.title, '/') });
+        },
       }),
       backToNotebook,
     ]),
@@ -131,6 +165,7 @@ function drawList(root: HTMLElement): void {
   const state = loadState();
   const items = mcqById();
   const active = activeEntries(state.notebook);
+  const paused = pausedDrill(NOTEBOOK_DRILL_KEY);
 
   if (active.length === 0) {
     mount(
@@ -151,7 +186,10 @@ function drawList(root: HTMLElement): void {
     { title: 'My mistakes', subtitle: `${active.length} active · answer each correctly twice in a row to graduate` },
     [
       el('div', { class: 'focus-advance' }, [
-        button({ label: `Review all ${active.length}`, variant: 'primary', iconName: 'arrow-right', onClick: () => review(root) }),
+        paused
+          ? button({ label: resumeText(paused), variant: 'primary', iconName: 'arrow-right', onClick: () => resumeDrill(paused) })
+          : null,
+        button({ label: paused ? 'Start again' : `Review all ${active.length}`, variant: paused ? 'secondary' : 'primary', iconName: paused ? undefined : 'arrow-right', onClick: () => review(root) }),
       ]),
     ],
   );
@@ -194,19 +232,23 @@ function review(root: HTMLElement): void {
   const items = mcqById();
   const due = selectReviewItems(state.notebook, items);
 
-  mountQuiz(root, due, () => {
-    mount(
-      root,
-      el('div', { class: 'results' }, [
-        card({}, [
-          el('h2', { class: 'card-title', text: 'Review complete' }),
-          el('p', { class: 'section-lead', text: 'Nice work — keep chipping away until every card graduates.' }),
-          el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center' } }, [
-            button({ label: 'Back to notebook', variant: 'primary', onClick: () => drawList(root) }),
-            button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
-          ]),
+  clearDrillSession(NOTEBOOK_DRILL_KEY);
+  mountQuiz(root, due, () => reviewDone(root), { session: reviewSession(NOTEBOOK_DRILL_KEY, 'My mistakes \u00b7 Review', PATHS.mistakes) });
+}
+
+/** The whole-notebook review's done screen. @internal */
+function reviewDone(root: HTMLElement): void {
+  mount(
+    root,
+    el('div', { class: 'results' }, [
+      card({}, [
+        el('h2', { class: 'card-title', text: 'Review complete' }),
+        el('p', { class: 'section-lead', text: 'Nice work — keep chipping away until every card graduates.' }),
+        el('div', { class: 'focus-advance', attrs: { style: 'justify-content:center' } }, [
+          button({ label: 'Back to notebook', variant: 'primary', onClick: () => drawList(root) }),
+          button({ label: 'Today', variant: 'ghost', onClick: () => navigate('/') }),
         ]),
       ]),
-    );
-  });
+    ]),
+  );
 }

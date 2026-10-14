@@ -931,6 +931,22 @@ input[type='checkbox'] {
 .focus-head .focus-count {
   margin: 0;
 }
+/* Pause (save + leave) sits beside End session (finish + results). */
+.focus-head-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+.focus-pause {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 2.75rem; /* >=44px tap target */
+  padding: 0.35rem 0.75rem;
+  font-size: var(--fs-sm);
+}
 .focus-end {
   display: inline-flex;
   align-items: center;
@@ -3061,6 +3077,9 @@ input[type='checkbox'] {
 }
 .learn-start .empty-icon {
   color: var(--accent);
+}
+.learn-start-actions {
+  justify-content: center;
 }
 
 /* Mains items inside Learn. */
@@ -6380,6 +6399,12 @@ button.tel-lang-card {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* "Resume practice · question 12 of 85" on a row with a paused drill. */
+.today-check-resume {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--accent);
+}
 .today-check-btn .track-row-go {
   color: var(--muted);
   flex-shrink: 0;
@@ -7109,6 +7134,13 @@ button.tel-lang-card {
 }
 
 /* Resume-test banner (Today + Mock setup). */
+.paused-runs-list {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
 .resume-test {
   display: flex;
   flex-wrap: wrap;

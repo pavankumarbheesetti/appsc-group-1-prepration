@@ -33,6 +33,16 @@ import { splitExplanation, type KeyFacts, type WhyNotRow } from '../lib/explanat
 import { parseQuestion, type MatchQuestion, type StatementQuestion } from '../lib/question-format';
 import { el, mount, renderMarkdown, renderInline, type Child } from './dom';
 import { icon } from './components/icon';
+import { showToast } from './components/toast';
+import { navigate } from '../router/router';
+import {
+  clearDrillSession,
+  loadDrillSession,
+  resumeIndex,
+  sameItems,
+  saveDrillSession,
+  type DrillAnswer,
+} from '../lib/drill-session';
 
 /**
  * Called when the session finishes: the aggregate score, the questions missed,
@@ -57,7 +67,30 @@ export interface QuizOpts {
    * always walks its fixed active set).
    */
   allowEndSession?: boolean;
+  /**
+   * Make the run RESUMABLE (untimed drills). When given, a saved
+   * {@link ../lib/drill-session} for `key` over the SAME question list is
+   * restored on mount (question + answers, WITHOUT re-recording them), progress
+   * is saved after every answer / question change, a "Pause" control saves and
+   * returns to `backPath`, and finishing the run clears the session.
+   */
+  session?: QuizSessionOpts;
 }
+
+/** Resumability settings for {@link mountQuiz}. */
+export interface QuizSessionOpts {
+  /** Stable id of the run (`learn:<subtopicId>`, `set:<row>:<date>`, …). */
+  key: string;
+  /** Human label for resume entries (`Stone Age · Practice`). */
+  label: string;
+  /** Hash path that reopens and resumes the run (carries `?resume=<key>`). */
+  route: string;
+  /** Where "Pause" goes (the page the learner came from). Defaults to Today. */
+  backPath?: string;
+}
+
+/** Toast shown after Pause. */
+export const PAUSED_TOAST = 'Paused \u2014 resume from Today or the topic page';
 
 /** Letter badges for the first four options; falls back to the index+1. */
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'] as const;
@@ -275,6 +308,10 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
    */
   const answered = new Map<number, { chosen: number; answerIndex: number; correct: boolean }>();
   let idx = 0;
+  /** Saved answers by item id (what a paused session stores). */
+  const savedAnswers: Record<string, DrillAnswer> = {};
+  const sess = opts.session;
+  let startedAtISO = new Date().toISOString();
 
   // Per-question, reset on each draw.
   let questionStart = 0;
@@ -300,6 +337,72 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
     onDone({ total: 0, correct: 0, wrong: 0, accuracy: 0 }, wrongItems, details);
     return;
   }
+
+  // RESUME: restore a saved run over the SAME questions (answers were already
+  // recorded when given — rebuild the runner's view only, never re-record). A
+  // saved run over a different list for this key is replaced.
+  if (sess) {
+    const ids = items.map((i) => i.id);
+    const saved = loadDrillSession(sess.key);
+    if (saved && sameItems(saved.itemIds, ids)) {
+      startedAtISO = saved.startedAtISO;
+      for (const [id, a] of Object.entries(saved.answers)) {
+        const i = ids.indexOf(id);
+        const item = items[i];
+        if (!item || a.chosen >= item.options.length) continue;
+        const { correct, answerIndex } = answerQuestion(item, a.chosen);
+        answers.push({ correct });
+        details.push({ tier: item.tier, covers: item.covers, correct, timeMs: a.timeMs ?? 0, confidence: a.confidence === 'sure' || a.confidence === 'guess' ? a.confidence : null });
+        if (!correct) wrongItems.push(item);
+        answered.set(i, { chosen: a.chosen, answerIndex, correct });
+        savedAnswers[id] = a;
+      }
+      idx = resumeIndex(saved);
+    } else if (saved) {
+      clearDrillSession(sess.key);
+    }
+    markResumeUrl(sess.route);
+  }
+
+  /**
+   * Save the run (when resumable). Nothing is saved before the first answer
+   * unless `force` (Pause); a run with every question answered is complete and
+   * its session is cleared instead.
+   */
+  const persist = (force = false): void => {
+    if (!sess) return;
+    if (answered.size === items.length) {
+      clearDrillSession(sess.key);
+      return;
+    }
+    if (!force && answered.size === 0) return;
+    saveDrillSession({
+      key: sess.key,
+      label: sess.label,
+      itemIds: items.map((i) => i.id),
+      index: idx,
+      answers: { ...savedAnswers },
+      startedAtISO,
+      updatedAtISO: new Date().toISOString(),
+      route: sess.route,
+    });
+  };
+
+  /** Finish the run: clear any saved session, then hand the score back. */
+  const finish = (): void => {
+    clearPace();
+    if (sess) clearDrillSession(sess.key);
+    onDone(scoreSession(answers), wrongItems, details);
+  };
+
+  /** Pause: save the place and go back to where the learner came from. */
+  const pause = (): void => {
+    if (!sess) return;
+    clearPace();
+    persist(true);
+    navigate(sess.backPath ?? '/');
+    showToast(PAUSED_TOAST, { tone: 'success' });
+  };
 
   /** Slim top progress bar reflecting `answered` of n. */
   const progressBar = (answered: number): HTMLElement => {
@@ -395,10 +498,7 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
   };
 
   /** Finish early: score whatever has been answered so far and hand back. */
-  const endSession = (): void => {
-    clearPace();
-    onDone(scoreSession(answers), wrongItems, details);
-  };
+  const endSession = (): void => finish();
 
   /**
    * Header row: the "Question i of n" counter, plus an optional "End session"
@@ -407,14 +507,27 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
    */
   const sessionHead = (): HTMLElement => {
     const count = el('p', { class: 'focus-count tnum', text: `Question ${idx + 1} of ${items.length}` });
-    if (!opts.allowEndSession) return el('div', { class: 'focus-head' }, [count]);
-    const end = el('button', {
-      class: 'btn btn-ghost focus-end',
-      type: 'button',
-      ariaLabel: 'End session now and see your results',
-      onClick: endSession,
-    }, ['End session']);
-    return el('div', { class: 'focus-head' }, [count, end]);
+    if (!opts.allowEndSession && !sess) return el('div', { class: 'focus-head' }, [count]);
+    const controls: HTMLElement[] = [];
+    if (sess) {
+      controls.push(el('button', {
+        class: 'btn btn-ghost focus-pause',
+        type: 'button',
+        ariaLabel: 'Pause \u2014 save your place and come back later',
+        attrs: { title: 'Save your place and come back later' },
+        onClick: pause,
+      }, [icon('timer', 16), el('span', { text: 'Pause' })]));
+    }
+    if (opts.allowEndSession) {
+      controls.push(el('button', {
+        class: 'btn btn-ghost focus-end',
+        type: 'button',
+        ariaLabel: 'End session now and see your results',
+        attrs: { title: 'Finish now and see your results' },
+        onClick: endSession,
+      }, ['End session']));
+    }
+    return el('div', { class: 'focus-head' }, [count, el('div', { class: 'focus-head-actions' }, controls)]);
   };
 
   /** Build the focusable stage container that owns keyboard handling. */
@@ -509,6 +622,7 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
     const rec = answered.get(idx);
     if (rec) drawLocked(item, rec);
     else drawLive(item);
+    persist();
   };
 
   const drawLive = (item: MCQItem): void => {
@@ -569,6 +683,8 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
       if (!correct) wrongItems.push(item);
       recordOutcome(item, correct);
       answered.set(idx, { chosen, answerIndex, correct });
+      savedAnswers[item.id] = confidence ? { chosen, confidence, timeMs } : { chosen, timeMs };
+      persist();
     }
     drawLocked(item, answered.get(idx)!);
   };
@@ -578,8 +694,7 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
     const isLast = idx === items.length - 1;
     const advance = (): void => {
       if (isLast) {
-        clearPace();
-        onDone(scoreSession(answers), wrongItems, details);
+        finish();
       } else {
         idx += 1;
         drawQuestion();
@@ -631,6 +746,22 @@ export function mountQuiz(root: HTMLElement, items: readonly MCQItem[], onDone: 
   };
 
   drawQuestion();
+}
+
+/**
+ * Give the running drill's URL its resume marker (`?resume=<key>`) so a reload
+ * reopens the run where it was. Only when the learner is on the run's own page
+ * (same path); replaces the entry (no extra history, no re-render). @internal
+ */
+function markResumeUrl(route: string): void {
+  const target = `#${route}`;
+  const path = (h: string): string => h.replace(/^#/, '').split('?')[0] ?? '';
+  if (location.hash === target || path(location.hash) !== path(target)) return;
+  try {
+    history.replaceState(history.state, '', target);
+  } catch {
+    /* history unavailable — reload simply shows the Resume entry */
+  }
 }
 
 /**

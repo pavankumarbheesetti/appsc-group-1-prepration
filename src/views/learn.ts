@@ -35,7 +35,9 @@ import { buildAtAGlance } from './components/atglance';
 import { buildNoteArticle, buildMainsNotesSection } from './notes';
 import { isMainsNote } from '../engine/flashcards';
 import { buildCuratedDeck, mountFlashcards } from './revise';
-import { mountQuiz } from './quiz';
+import { mountQuiz, type QuizSessionOpts } from './quiz';
+import { clearDrillSession, resumeText, withResume } from '../lib/drill-session';
+import { pausedDrill, resumeItems, resumeRequested } from './drill-resume';
 import { openMock } from './mock';
 import { openMains, openMainsQuestion } from './mains';
 import { openScopedReview } from './notebook';
@@ -232,6 +234,13 @@ export function render(root: HTMLElement): void {
     ]),
   );
   if (toc.length > 1) wireTocTracking(sub.meta.id, toc, root, contents);
+
+  // `?resume=<key>` (a Resume entry, or a reload mid-practice) reopens the
+  // paused practice run straight away.
+  if (active === 'practice' && !route.results && resumeRequested(learnDrillKey(sub.meta.id)) && pausedDrill(learnDrillKey(sub.meta.id))) {
+    beginPractice(sub, root, route, 'resume');
+    return;
+  }
 
   // A tab switch keeps the tab bar in view (rule 4: top of the tablist, not
   // the page top). A note deep link scrolls to that note.
@@ -701,27 +710,60 @@ function notesFooter(sub: SubtopicView, route: LearnRoute): HTMLElement {
   });
 }
 
-/** Practice tab: start a topic practice session, or sit a timed mock on it. @internal */
+/** The paused-drill key of a topic's practice run. */
+export function learnDrillKey(subtopicId: string): string {
+  return `learn:${subtopicId}`;
+}
+
+/** Resumability settings of a topic's practice run. @internal */
+function practiceSession(sub: SubtopicView, route: LearnRoute): QuizSessionOpts {
+  const key = learnDrillKey(sub.meta.id);
+  return {
+    key,
+    label: `${sub.meta.name} \u00b7 Practice`,
+    route: withResume(learnPath(sub.meta.id, 'practice', { from: route.from }), key),
+    backPath: originTarget(route.from, sub).path,
+  };
+}
+
+/**
+ * Run the topic's practice: a FRESH run (any paused one is dropped), or RESUME
+ * the paused run (its saved questions — when the topic's questions changed it
+ * is discarded with a toast and a fresh run starts). @internal
+ */
+function beginPractice(sub: SubtopicView, root: HTMLElement, route: LearnRoute, mode: 'fresh' | 'resume'): void {
+  const fresh = buildSession({ subtopicId: sub.meta.id, order: 'ladder' }).items;
+  const session = practiceSession(sub, route);
+  let items = fresh;
+  if (mode === 'fresh') clearDrillSession(session.key);
+  else items = resumeItems(session.key, fresh.map((i) => i.id)) ?? fresh;
+  mountQuiz(root, items, (score, wrongItems) => {
+    resultsCache.set(sub.meta.id, { score, wrongIds: wrongItems.map((w) => w.id) });
+    pushUrl(learnPath(sub.meta.id, 'practice', { from: route.from, results: true }));
+    setDocumentTitle(`${sub.meta.name} \u2014 Practice complete`, 'Topics');
+    const back = originTarget(route.from, sub);
+    drawResults(root, sub, { ...route, results: true, tab: 'practice' }, back, () => navigate(back.path), score, wrongItems.map((w) => w.id));
+    if (!navigator.userAgent.includes('jsdom')) window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    root.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
+  }, { allowEndSession: true, session });
+}
+
+/** Practice tab: start (or resume) a topic practice session, or sit a timed mock on it. @internal */
 function practicePanel(sub: SubtopicView, root: HTMLElement, route: LearnRoute): HTMLElement {
   if (sub.mcqs.length === 0) return emptyPanel('drill', 'No questions yet', 'Practice questions for this topic are coming soon.');
-  const begin = (): void => {
-    const items = buildSession({ subtopicId: sub.meta.id, order: 'ladder' }).items;
-    mountQuiz(root, items, (score, wrongItems) => {
-      resultsCache.set(sub.meta.id, { score, wrongIds: wrongItems.map((w) => w.id) });
-      pushUrl(learnPath(sub.meta.id, 'practice', { from: route.from, results: true }));
-      setDocumentTitle(`${sub.meta.name} \u2014 Practice complete`, 'Topics');
-      const back = originTarget(route.from, sub);
-      drawResults(root, sub, { ...route, results: true, tab: 'practice' }, back, () => navigate(back.path), score, wrongItems.map((w) => w.id));
-      if (!navigator.userAgent.includes('jsdom')) window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-      root.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
-    }, { allowEndSession: true });
-  };
   const n = sub.mcqs.length;
-  const start = el('div', { class: 'learn-start card' }, [
+  const paused = pausedDrill(learnDrillKey(sub.meta.id));
+  const actions: Child[] = paused
+    ? [
+        button({ label: resumeText(paused), variant: 'primary', iconName: 'arrow-right', onClick: () => beginPractice(sub, root, route, 'resume') }),
+        button({ label: 'Start again', variant: 'secondary', ariaLabel: `Start ${sub.meta.name} practice again from question 1`, onClick: () => beginPractice(sub, root, route, 'fresh') }),
+      ]
+    : [button({ label: 'Start practice', variant: 'primary', iconName: 'arrow-right', onClick: () => beginPractice(sub, root, route, 'fresh') })];
+  const start = el('div', { class: 'learn-start card', attrs: paused ? { 'data-state': 'paused' } : {} }, [
     el('span', { class: 'empty-icon' }, [icon('drill', 26)]),
     el('h2', { text: `${n} question${n === 1 ? '' : 's'} on ${sub.meta.name}` }),
-    el('p', { class: 'section-lead', text: 'Quick practice \u2014 untimed, instant feedback, stop anytime.' }),
-    button({ label: 'Start practice', variant: 'primary', iconName: 'arrow-right', onClick: begin }),
+    el('p', { class: 'section-lead', text: paused ? 'You paused this practice \u2014 pick up where you left off, or start again from question 1.' : 'Quick practice \u2014 untimed, instant feedback, stop anytime.' }),
+    el('div', { class: 'hero-actions learn-start-actions' }, actions),
   ]);
   const mockRow = el('div', { class: 'learn-mock-cta' }, [
     el('p', { class: 'section-lead' }, [icon('timer', 15), el('span', { text: 'Prefer exam conditions? A timed mock on this topic \u2014 negative marking, no feedback until you submit.' })]),

@@ -55,7 +55,9 @@ import {
   weakestStudied,
 } from '../lib/day-tasks';
 import type { WeakSubtopicInput } from '../lib/weak';
-import { openLearn } from './learn';
+import { learnDrillKey, openLearn } from './learn';
+import { clearDrillSession, resumeText, withResume } from '../lib/drill-session';
+import { pausedDrill, resumeItems, resumeRequested } from './drill-resume';
 import { openMainsQuestion } from './mains';
 import { openPaperMock, openTestResults, openUnitTest, openWeekTest } from './mock';
 import { weekTestNumber } from '../lib/test-number';
@@ -1025,10 +1027,38 @@ export function renderSetRoute(root: HTMLElement): void {
   drawSet(root, route);
 }
 
+/** The paused-drill key of a Today set (`set:<row key>:<date>`). */
+export function setDrillKey(spec: Pick<SetSpec, 'key' | 'dateISO'>): string {
+  return `set:${spec.key}:${spec.dateISO}`;
+}
+
+/**
+ * The paused-drill key a Today row resumes: a topic row → its topic practice,
+ * a set row (CA / Mental Ability / weakest-area) → its set. Null for rows that
+ * do not run an untimed drill.
+ */
+export function rowDrillKey(row: DayRow, dateISO: string): string | null {
+  switch (row.task) {
+    case 'topic':
+    case 'missed':
+    case 'revisit':
+      return row.topic ? learnDrillKey(row.topic.subtopicId) : null;
+    case 'practice':
+    case 'ca':
+    case 'light-ca':
+    case 'weak':
+      return setDrillKey({ key: row.key, dateISO });
+    default:
+      return null;
+  }
+}
+
 /** Draw a set's brief, or its last result, into `view`. @internal */
 function drawSet(view: HTMLElement, route: string): void {
   const spec = setSpecs.get(route)!;
   const items = itemsFor(spec.ids);
+  const drillKey = setDrillKey(spec);
+  const session = { key: drillKey, label: spec.title, route: withResume(route, drillKey), backPath: '/' };
   const back = button({ label: 'Back to Today', variant: 'ghost', onClick: () => navigate('/') });
   const showResult = (score: { correct: number; total: number }): void => {
     mount(view, card({ title: spec.title }, [
@@ -1049,20 +1079,13 @@ function drawSet(view: HTMLElement, route: string): void {
       ]),
     ]));
   };
-  const last = setResults.get(route);
-  if (last) {
-    showResult(last);
-    return;
-  }
-  if (items.length === 0) {
-    mount(view, card({ title: spec.title }, [
-      el('p', { class: 'section-lead', text: 'No questions are available for this set yet.' }),
-      el('div', { class: 'hero-actions' }, [back]),
-    ]));
-    return;
-  }
-  const start = (): void =>
-    mountQuiz(view, items, (score) => {
+  // A paused run of this set resumes on its saved questions (the fresh-first
+  // pick moves on as answers are recorded, so the saved list is the truth).
+  const start = (mode: 'fresh' | 'resume'): void => {
+    let run = items;
+    if (mode === 'fresh') clearDrillSession(drillKey);
+    else run = resumeItems(drillKey) ?? items;
+    mountQuiz(view, run, (score) => {
       if (score.total > 0) {
         markRowKeyDone(spec.dateISO, spec.key, true);
         if (spec.studyTopicId && !isTopicStudied(spec.studyTopicId)) markTopicStudied(spec.studyTopicId, true, spec.dateISO);
@@ -1070,13 +1093,34 @@ function drawSet(view: HTMLElement, route: string): void {
       const result = { correct: score.correct, total: score.total };
       setResults.set(route, result);
       showResult(result);
-    }, { allowEndSession: true });
+    }, { allowEndSession: true, session });
+  };
+  const paused = pausedDrill(drillKey);
+  if (paused && resumeRequested(drillKey)) {
+    start('resume');
+    return;
+  }
+  const last = setResults.get(route);
+  if (last && !paused) {
+    showResult(last);
+    return;
+  }
+  if (items.length === 0 && !paused) {
+    mount(view, card({ title: spec.title }, [
+      el('p', { class: 'section-lead', text: 'No questions are available for this set yet.' }),
+      el('div', { class: 'hero-actions' }, [back]),
+    ]));
+    return;
+  }
   const kids: Child[] = [];
   if (spec.intro) kids.push(spec.intro);
-  kids.push(card({ title: spec.title, subtitle: `${items.length} questions` }, [
-    el('p', { class: 'section-lead', text: spec.lead }),
+  kids.push(card({ title: spec.title, subtitle: `${paused ? paused.itemIds.length : items.length} questions` }, [
+    el('p', { class: 'section-lead', text: paused ? 'You paused this set \u2014 pick up where you left off, or start it again.' : spec.lead }),
     el('div', { class: 'hero-actions' }, [
-      button({ label: `Start the ${items.length}-question set`, variant: 'primary', iconName: 'arrow-right', onClick: start }),
+      paused
+        ? button({ label: resumeText(paused), variant: 'primary', iconName: 'arrow-right', onClick: () => start('resume') })
+        : button({ label: `Start the ${items.length}-question set`, variant: 'primary', iconName: 'arrow-right', onClick: () => start('fresh') }),
+      paused && items.length > 0 ? button({ label: 'Start again', variant: 'secondary', onClick: () => start('fresh') }) : null,
       spec.notesId ? button({ label: 'Skim the notes', variant: 'secondary', onClick: () => openLearn(spec.notesId!, { tab: 'notes' }) }) : null,
       back,
     ]),

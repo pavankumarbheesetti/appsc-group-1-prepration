@@ -14,7 +14,7 @@ import { getSubjects, getSubtopic, getSubtopics } from '../content/loader';
 import { buildSession } from '../engine/drill';
 import type { SessionScore } from '../engine/drill';
 import { activeEntries } from '../engine/notebook';
-import { navigate } from '../router/router';
+import { navigate, routeQuery } from '../router/router';
 import { loadState } from '../state/store';
 import { pct } from '../lib/metrics';
 import { rankWeakAreas, type WeakRow, type WeakSubtopicInput } from '../lib/weak';
@@ -26,6 +26,17 @@ import { progressBar } from './components/progress';
 import { bandBadge, statusChip } from './components/badges';
 import { mountQuiz } from './quiz';
 import { openLearn } from './learn';
+import { PATHS } from './shell';
+import { clearDrillSession, resumeText, withResume } from '../lib/drill-session';
+import { pausedDrill, resumeItems } from './drill-resume';
+
+/** The paused-drill key of a weak-area drill. */
+export function weakDrillKey(subtopicId: string): string {
+  return `weak:${subtopicId}`;
+}
+
+/** The bits of a weak row a drill needs (name for labels, id for Learn). @internal */
+type DrillRow = Pick<WeakRow, 'subtopicId' | 'name' | 'wrongQuestionIds'>;
 
 /** Build the per-subtopic ranking inputs from the loader. @internal */
 function weakInputs(): WeakSubtopicInput[] {
@@ -44,6 +55,15 @@ export function render(root: HTMLElement): void {
   const draw = (): void => {
     const state = loadState();
     const { weak, gaps } = rankWeakAreas(weakInputs(), state.progress);
+    // `?resume=weak:<id>` (a Resume entry or a reload mid-drill) reopens it.
+    const want = routeQuery('resume');
+    if (want?.startsWith('weak:') && pausedDrill(want)) {
+      const id = want.slice('weak:'.length);
+      const row = weak.find((r) => r.subtopicId === id)
+        ?? { subtopicId: id, name: getSubtopic(id)?.meta.name ?? id, wrongQuestionIds: [] };
+      runDrill(root, row, () => navigate(PATHS.weak), 'resume');
+      return;
+    }
     const mistakes = activeEntries(state.notebook).length;
 
     // Nothing attempted yet → a single friendly, honest empty state.
@@ -100,9 +120,12 @@ function buildWeakList(weak: WeakRow[], root: HTMLElement, back: () => void): HT
 
 /** One weak-subtopic row with "Drill these" + "Learn". @internal */
 function weakRow(row: WeakRow, root: HTMLElement, back: () => void): HTMLElement {
-  const drillLabel = row.wrongQuestionIds.length > 0
-    ? `Drill these ${row.wrongQuestionIds.length}`
-    : 'Drill topic';
+  const paused = pausedDrill(weakDrillKey(row.subtopicId));
+  const drillLabel = paused
+    ? resumeText(paused)
+    : row.wrongQuestionIds.length > 0
+      ? `Drill these ${row.wrongQuestionIds.length}`
+      : 'Drill topic';
 
   return el('div', { class: 'weak-row card' }, [
     el('div', { class: 'weak-row-head' }, [
@@ -119,7 +142,7 @@ function weakRow(row: WeakRow, root: HTMLElement, back: () => void): HTMLElement
       statPill('drill', `${row.attempted}/${row.total} tried`),
     ]),
     el('div', { class: 'weak-row-actions' }, [
-      button({ label: drillLabel, variant: 'primary', iconName: 'drill', onClick: () => runDrill(root, row, back) }),
+      button({ label: drillLabel, variant: 'primary', iconName: 'drill', onClick: () => runDrill(root, row, back, paused ? 'resume' : 'fresh') }),
       button({ label: 'Learn', variant: 'ghost', iconName: 'arrow-right', onClick: () => openLearn(row.subtopicId) }),
     ]),
   ]);
@@ -136,21 +159,29 @@ function statPill(iconName: Parameters<typeof icon>[0], text: string): HTMLEleme
  * back to the whole subtopic. Reuses the shared {@link mountQuiz} runner and the
  * pure {@link buildSession}. @internal
  */
-function runDrill(root: HTMLElement, row: WeakRow, back: () => void): void {
-  const items = row.wrongQuestionIds.length > 0
+function runDrill(root: HTMLElement, row: DrillRow, back: () => void, mode: 'fresh' | 'resume' = 'fresh'): void {
+  const key = weakDrillKey(row.subtopicId);
+  const fresh = row.wrongQuestionIds.length > 0
     ? buildSession({ subtopicId: row.subtopicId, restrictToIds: row.wrongQuestionIds, order: 'ladder' }).items
     : buildSession({ subtopicId: row.subtopicId, order: 'ladder' }).items;
+  // A paused drill resumes on its SAVED questions (the weak pick moves on as
+  // answers are recorded).
+  if (mode === 'fresh') clearDrillSession(key);
+  const items = (mode === 'resume' ? resumeItems(key) : null) ?? fresh;
 
   if (items.length === 0) {
     // Nothing to drill (e.g. all graduated between render and tap) — just refresh.
     back();
     return;
   }
-  mountQuiz(root, items, (score) => drillResults(root, row, score, back), { allowEndSession: true });
+  mountQuiz(root, items, (score) => drillResults(root, row, score, back), {
+    allowEndSession: true,
+    session: { key, label: `${row.name} \u00b7 Weak-area drill`, route: withResume(PATHS.weak, key), backPath: PATHS.weak },
+  });
 }
 
 /** End-of-drill results for a weak-area drill. @internal */
-function drillResults(root: HTMLElement, row: WeakRow, score: SessionScore, back: () => void): void {
+function drillResults(root: HTMLElement, row: DrillRow, score: SessionScore, back: () => void): void {
   const line = score.total === 0 ? 'No questions answered.' : `${score.correct}/${score.total} correct.`;
   mount(
     root,

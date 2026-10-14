@@ -41,6 +41,7 @@ import {
   fmtDuration,
   languageRows,
   rowDone,
+  rowDrillKey,
   rowManual,
   rowView,
   toggleRow,
@@ -49,6 +50,8 @@ import {
   type ReviseCtx,
 } from './today-tasks';
 import { el, mount, type Child } from './dom';
+import { resumeText } from '../lib/drill-session';
+import { pausedDrill, resumeDrill } from './drill-resume';
 import { card } from './components/card';
 import { button } from './components/button';
 import { chip } from './components/chip';
@@ -328,12 +331,13 @@ function buildNowHero(
   const focusRow = day && reviseCtx ? nextUnfinishedRow(rows, today) : undefined;
   const focus = focusRow && day && reviseCtx ? rowView(focusRow, { reviseCtx, day }) : null;
   const topicRow = focusRow && (focusRow.task === 'topic' || focusRow.task === 'missed') ? focusRow : undefined;
+  const resume = focusRow && day ? rowResume(focusRow, day.dateISO) : null;
 
   const actions: Child[] = focus
     ? [
         button({
-          label: topicRow || focusRow?.task === 'revisit' || focusRow?.task === 'start-here' ? 'Start reading' : 'Start now',
-          onClick: focus.onClick,
+          label: resume ? resume.text : topicRow || focusRow?.task === 'revisit' || focusRow?.task === 'start-here' ? 'Start reading' : 'Start now',
+          onClick: resume ? resume.go : focus.onClick,
           variant: 'primary',
           large: true,
           iconName: 'arrow-right',
@@ -524,11 +528,23 @@ export function isRampDay(day: PlanDay, dailyBudgetMin: number): boolean {
     && day.budgetMin === Math.min(BEGINNER_RAMP_BUDGET_MIN, dailyBudgetMin) && day.budgetMin < dailyBudgetMin;
 }
 
+/**
+ * A row's untimed-drill RESUME entry — "Resume practice · question 12 of 85"
+ * and the action that reopens the paused run — or null when nothing is paused
+ * for it. Shared by the hero and the checklist. @internal
+ */
+function rowResume(row: DayRow, dateISO: string): { text: string; go: () => void } | null {
+  const key = rowDrillKey(row, dateISO);
+  const s = key ? pausedDrill(key) : null;
+  return s ? { text: resumeText(s), go: () => resumeDrill(s) } : null;
+}
+
 /** One slim checklist row with its tick. @internal */
 function checklistRow(root: HTMLElement, row: DayRow, ctx: { reviseCtx: ReviseCtx; day: PlanDay }, today: string): HTMLElement {
   const view = rowView(row, ctx);
   const done = rowDone(row, today);
   const { label, detail, doneText } = view;
+  const resume = rowResume(row, ctx.day.dateISO);
 
   const box = el('span', { class: 'today-check-box', attrs: { 'aria-hidden': 'true' } }, done ? [icon('check', 14)] : []);
   const isTopic = row.task === 'topic' || row.task === 'missed';
@@ -551,16 +567,21 @@ function checklistRow(root: HTMLElement, row: DayRow, ctx: { reviseCtx: ReviseCt
   const main = el('button', {
     class: 'today-check-btn',
     type: 'button',
-    ariaLabel: `${label}${detail ? ` — ${detail}` : ''}, about ${fmtDuration(view.minutes)}${done ? `, ${doneText}` : ''}`,
-    onClick: view.onClick,
+    ariaLabel: resume
+      ? `${label} \u2014 ${resume.text}`
+      : `${label}${detail ? ` — ${detail}` : ''}, about ${fmtDuration(view.minutes)}${done ? `, ${doneText}` : ''}`,
+    onClick: resume ? resume.go : view.onClick,
   }, [
     el('span', { class: 'today-check-main' }, [
       el('span', { class: 'today-check-label', text: label }),
       detail ? el('span', { class: 'today-check-detail', text: detail }) : null,
+      resume ? el('span', { class: 'today-check-resume', text: resume.text }) : null,
     ]),
-    done
-      ? chip({ text: doneText, tone: 'ok' })
-      : chip({ text: fmtDuration(view.minutes), tone: 'muted', iconName: 'timer' }),
+    resume
+      ? chip({ text: 'Paused', tone: 'accent', iconName: 'timer' })
+      : done
+        ? chip({ text: doneText, tone: 'ok' })
+        : chip({ text: fmtDuration(view.minutes), tone: 'muted', iconName: 'timer' }),
     el('span', { class: 'track-row-go' }, [icon('chevron', 16)]),
   ]);
   return el('li', {
