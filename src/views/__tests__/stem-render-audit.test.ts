@@ -124,9 +124,9 @@ describe('DOM render audit — every MCQ through the real stem renderer', () => 
     // of the 129 MCQ banks parses, 3369 items in all (360 match, 939 statements,
     // 40 A-R). Update to the new computed totals when the bank grows.
     expect(walk(CONTENT)).toHaveLength(129);
-    expect(items).toHaveLength(3369);
-    expect(items.filter((i) => i.match).length).toBe(360);
-    expect(items.filter((i) => i.statements).length).toBe(951);
+    expect(items).toHaveLength(3382); // +13 Stone Age completeness MCQs (2026-10-17)
+    expect(items.filter((i) => i.match).length).toBe(361);
+    expect(items.filter((i) => i.statements).length).toBe(954);
     expect(items.filter((i) => i.assertion !== undefined).length).toBe(45);
   });
 

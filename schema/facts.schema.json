@@ -1,0 +1,104 @@
+{
+  "$ref": "#/definitions/facts",
+  "definitions": {
+    "facts": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "subtopicId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]*$"
+              },
+              "fact": {
+                "type": "string",
+                "minLength": 8
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "name",
+                  "place",
+                  "date",
+                  "number",
+                  "term",
+                  "pair",
+                  "cause",
+                  "classification"
+                ]
+              },
+              "yield": {
+                "type": "string",
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "syllabus",
+                    "source-text",
+                    "standard",
+                    "pyq",
+                    "ap"
+                  ]
+                },
+                "minItems": 1
+              },
+              "keys": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "taughtIn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "drilledBy": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "id",
+              "fact",
+              "kind",
+              "yield",
+              "sources"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "version",
+        "subtopicId",
+        "facts"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

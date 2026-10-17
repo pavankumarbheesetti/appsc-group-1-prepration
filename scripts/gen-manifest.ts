@@ -83,6 +83,10 @@ for (const abs of walkJsonFiles(CONTENT_DIR)) {
   // ORDER over taxonomy ids, validated by its own schema — not a content bank,
   // so it is never registered in the manifest.
   if (globPath.startsWith('/content/plan/')) continue;
+  // The per-subtopic fact universes under content/facts/ are the completeness
+  // contract (validated by their own schema) — not content banks, so they are
+  // never registered in the manifest.
+  if (globPath.startsWith('/content/facts/')) continue;
   // The CA freshness marker (content/current-affairs/meta.json) is validated by
   // its own schema in the loader + validate:content — not a content bank, so it
   // is never registered in the manifest.

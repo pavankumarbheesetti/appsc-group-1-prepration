@@ -97,6 +97,6 @@ describe('drill refine — subtopic selector', () => {
     // Re-selecting a subject resets subtopic → All (full HIST pool = 917).
     fireChange(subjectSelect(root), 'HIST');
     expect(subtopicSelect(root).value).toBe('');
-    expect(presetCount(root, 'Full practice')).toBe('1009 total');
+    expect(presetCount(root, 'Full practice')).toBe('1022 total');
   });
 });

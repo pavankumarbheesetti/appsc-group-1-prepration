@@ -42,6 +42,7 @@ import {
   structuredProblems,
 } from '../lib/question-structure';
 import { LearningSequenceSchema, UnitsSchema, type LearningSequence, type Units } from './plan-types';
+import { FactsFileSchema, type Fact, type FactsFile } from './facts-types';
 
 /* -------------------------------------------------------------------------- */
 /* Paths                                                                       */
@@ -215,6 +216,8 @@ export function validateAllContent(): FileValidationResult[] {
   let learningSequence: LearningSequence | undefined;
   /** The parsed units file (for the unit completeness/contiguity cross-check). */
   let units: Units | undefined;
+  /** Parsed fact universes (content/facts/*.json) for the subtopic cross-check. */
+  const factsFiles: { file: string; abs: string; data: FactsFile }[] = [];
 
   for (const abs of jsonFiles) {
     const file = toGlobPath(abs);
@@ -341,6 +344,25 @@ export function validateAllContent(): FileValidationResult[] {
       resultFor(file).warnings.push(
         'unrecognised file under content/plan/ (not learning-sequence.json or units.json) \u2014 ignored',
       );
+      continue;
+    }
+
+    // The per-subtopic FACT UNIVERSES under content/facts/ are validated against
+    // their OWN schema and EXCLUDED from the bank/orphan/manifest checks (they
+    // are the completeness contract, not content banks). The filename and the
+    // taxonomy membership of `subtopicId` are cross-checked after the loop; the
+    // taught/drilled mappings are the advisory `completeness` rule
+    // (auditAllCompleteness), reported separately.
+    if (file.startsWith('/content/facts/')) {
+      const raw = readJson(abs);
+      if (raw === undefined) continue;
+      const parsed = FactsFileSchema.safeParse(raw);
+      if (parsed.success) {
+        factsFiles.push({ file, abs, data: parsed.data });
+        resultFor(file); // show as PASS unless a cross-check fails below
+      } else {
+        resultFor(file).errors.push(...formatIssues(parsed.error));
+      }
       continue;
     }
 
@@ -778,6 +800,21 @@ export function validateAllContent(): FileValidationResult[] {
     }
   } else if (existsSync(join(CONTENT_DIR, 'plan', 'units.json'))) {
     // File exists but failed to parse (or taxonomy failed) above; already reported.
+  }
+
+  /* ----- 12. Cross-check (j): fact-universe files ------------------------- */
+
+  // Each facts file must be named after its subtopicId and key a real taxonomy
+  // subtopic, so the completeness audit can never silently measure nothing.
+  for (const { file, abs, data } of factsFiles) {
+    const r = resultFor(file);
+    const base = abs.split(sep).pop() ?? '';
+    if (base !== `${data.subtopicId}.json`) {
+      r.errors.push(`facts file must be named '${data.subtopicId}.json' (its subtopicId), got '${base}'`);
+    }
+    if (taxonomyParsed && !taxonomySubtopicIds.has(data.subtopicId)) {
+      r.errors.push(`facts subtopicId '${data.subtopicId}' is not a taxonomy subtopic id`);
+    }
   }
 
   /* ----- Finalise ---------------------------------------------------------- */
@@ -1571,4 +1608,421 @@ export function auditAlignment(): AlignFinding[] {
   }
   findings.sort((a, b) => a.file.localeCompare(b.file) || a.itemId.localeCompare(b.itemId) || a.rule.localeCompare(b.rule));
   return findings;
+}
+
+/* ========================================================================== */
+/* COMPLETENESS rule — is a subtopic's fact universe 100% taught and drilled?  */
+/*                                                                             */
+/* For every subtopic that HAS a `content/facts/<id>.json` (the closed fact    */
+/* universe — see .research/plan/COMPLETENESS-BRIEF.md) it checks:             */
+/*   (a) TAUGHT  — the fact's `taughtIn` note item exists in the subtopic and  */
+/*       the fact's key tokens appear in that item's body/keyPoints;           */
+/*   (b) DRILLED — >= 1 `drilledBy` id exists in the subtopic's MCQ/cards      */
+/*       banks AND that item's text contains the fact's key tokens;            */
+/*   (c) HIGH-YIELD — every `yield:"high"` fact has >= 1 valid MCQ drill (a     */
+/*       flashcard alone is not enough);                                       */
+/* and reports facts / taught% / drilled% / high-yield-MCQ% per subtopic.      */
+/* For subtopics WITHOUT a facts file it reports an ESTIMATED fact count       */
+/* (distinct bolded terms + keyPoints in the notes) and the retrieval ratio    */
+/* (mcq + cards) / estimate, so the backlog stays visible.                     */
+/*                                                                             */
+/* `validate:content` prints the findings as WARNINGS (never strict yet); the  */
+/* `audit:completeness` gate fails only when a subtopic that HAS a facts file  */
+/* drops below 100% taught or 100% drilled, so closed subtopics cannot regress.*/
+/* ========================================================================== */
+
+/** Completeness rule ids (one finding per fact per failed check). */
+export type CompletenessRule =
+  | 'taught-missing' // (a) no taughtIn
+  | 'taught-unknown-note' // (a) taughtIn is not a note item of this subtopic
+  | 'taught-tokens' // (a) key tokens absent from the note body/keyPoints
+  | 'drilled-missing' // (b) no drilledBy
+  | 'drilled-unknown-item' // (b) a drilledBy id is not an MCQ/card of this subtopic
+  | 'drilled-tokens' // (b) a drilledBy item's text lacks the key tokens
+  | 'high-yield-card-only'; // (c) a high-yield fact has no valid MCQ drill
+
+/** One completeness finding. */
+export interface CompletenessFinding {
+  subtopicId: string;
+  factId: string;
+  rule: CompletenessRule;
+  detail: string;
+}
+
+/** The note fields the TAUGHT check reads. */
+export interface CompletenessNote {
+  id: string;
+  body: string;
+  keyPoints?: string[];
+}
+
+/** The MCQ fields the DRILLED check reads (the explanation is deliberately NOT read — the item must ASK for the fact). */
+export interface CompletenessMcq {
+  id: string;
+  question: string;
+  options: string[];
+  statements?: string[];
+  assertion?: string;
+  reason?: string;
+  match?: { left: { text: string }[]; right: { text: string }[] };
+}
+
+/** The flashcard fields the DRILLED check reads. */
+export interface CompletenessCard {
+  id: string;
+  front: string;
+  back: string;
+}
+
+/** The authored content of one subtopic, as the completeness rule sees it. */
+export interface CompletenessContent {
+  notes: CompletenessNote[];
+  mcqs: CompletenessMcq[];
+  cards: CompletenessCard[];
+}
+
+/** Per-subtopic result for a subtopic that HAS a facts file. */
+export interface FactsCompleteness {
+  facts: number;
+  taught: number;
+  drilled: number;
+  highYield: number;
+  highYieldMcq: number;
+  /** Percentages, rounded down to an integer (100 only when nothing is missing). */
+  taughtPct: number;
+  drilledPct: number;
+  /** 100 when there are no high-yield facts. */
+  highYieldMcqPct: number;
+  findings: CompletenessFinding[];
+}
+
+/** Normalise text for key-token matching: alignment normalisation + diacritics folded. */
+function completenessNormalise(text: string): string {
+  return alignNormalise(text.normalize('NFD').replace(/\p{M}/gu, ''));
+}
+
+/** Escape a string for use inside a RegExp. */
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Does `haystack` (already normalised) carry the fact's key tokens?
+ * Explicit `keys`: EVERY key must appear, anchored at a word start (so
+ * `microlith` matches `microliths` but `eran` does not match `veteran`).
+ * Derived (no `keys`): at least half of `significantTokens(fact)` must appear.
+ * Returns the missing tokens (empty = present).
+ */
+export function missingKeyTokens(fact: Pick<Fact, 'fact' | 'keys'>, haystack: string): string[] {
+  if (fact.keys && fact.keys.length > 0) {
+    return fact.keys.filter((k) => {
+      const key = completenessNormalise(k).trim();
+      return !new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegExp(key)}`, 'u').test(haystack);
+    });
+  }
+  const tokens = significantTokens(completenessNormalise(fact.fact));
+  if (tokenCoverage(tokens, haystack) >= TAUGHT_THRESHOLD) return [];
+  return tokens.filter((t) => !haystack.includes(t));
+}
+
+/** The text of a note item the TAUGHT check searches (body + keyPoints). */
+export function noteTaughtText(n: CompletenessNote): string {
+  return completenessNormalise([n.body, ...(n.keyPoints ?? [])].join(' \n '));
+}
+
+/** The text of an MCQ the DRILLED check searches (stem, structured fields, options — not the explanation). */
+export function mcqDrillText(q: CompletenessMcq): string {
+  return completenessNormalise(
+    [
+      q.question,
+      ...(q.statements ?? []),
+      q.assertion ?? '',
+      q.reason ?? '',
+      ...(q.match?.left.map((e) => e.text) ?? []),
+      ...(q.match?.right.map((e) => e.text) ?? []),
+      ...q.options,
+    ].join(' \n '),
+  );
+}
+
+/** The text of a flashcard the DRILLED check searches (front + back). */
+export function cardDrillText(c: CompletenessCard): string {
+  return completenessNormalise(`${c.front} \n ${c.back}`);
+}
+
+/** Integer percentage, rounded DOWN so 99.6% never displays as a passing 100%. */
+function pctFloor(n: number, d: number): number {
+  return d === 0 ? 100 : Math.floor((n / d) * 100);
+}
+
+/**
+ * Check ONE subtopic's fact universe against its authored content — the three
+ * completeness checks (a) taught, (b) drilled, (c) high-yield MCQ. Pure, so
+ * every check is unit-testable on fixtures.
+ */
+export function checkFactsCompleteness(facts: FactsFile, content: CompletenessContent): FactsCompleteness {
+  const notes = new Map(content.notes.map((n) => [n.id, noteTaughtText(n)] as const));
+  const drills = new Map<string, { kind: 'mcq' | 'card'; text: string }>();
+  for (const q of content.mcqs) drills.set(q.id, { kind: 'mcq', text: mcqDrillText(q) });
+  for (const c of content.cards) drills.set(c.id, { kind: 'card', text: cardDrillText(c) });
+
+  const findings: CompletenessFinding[] = [];
+  let taught = 0;
+  let drilled = 0;
+  let highYield = 0;
+  let highYieldMcq = 0;
+  const sid = facts.subtopicId;
+
+  for (const f of facts.facts) {
+    const push = (rule: CompletenessRule, detail: string): void => {
+      findings.push({ subtopicId: sid, factId: f.id, rule, detail });
+    };
+
+    // (a) TAUGHT
+    if (!f.taughtIn) {
+      push('taught-missing', 'no taughtIn note item');
+    } else {
+      const text = notes.get(f.taughtIn);
+      if (text === undefined) push('taught-unknown-note', `taughtIn '${f.taughtIn}' is not a note item of ${sid}`);
+      else {
+        const miss = missingKeyTokens(f, text);
+        if (miss.length > 0) push('taught-tokens', `note ${f.taughtIn} lacks key token(s): ${miss.join(', ')}`);
+        else taught += 1;
+      }
+    }
+
+    // (b) DRILLED + (c) HIGH-YIELD MCQ
+    let validDrills = 0;
+    let validMcqDrills = 0;
+    if (!f.drilledBy || f.drilledBy.length === 0) {
+      push('drilled-missing', 'no drilledBy MCQ/card ids');
+    } else {
+      for (const id of f.drilledBy) {
+        const d = drills.get(id);
+        if (!d) {
+          push('drilled-unknown-item', `drilledBy '${id}' is not an MCQ/card of ${sid}`);
+          continue;
+        }
+        const miss = missingKeyTokens(f, d.text);
+        if (miss.length > 0) {
+          push('drilled-tokens', `${d.kind} ${id} lacks key token(s): ${miss.join(', ')}`);
+          continue;
+        }
+        validDrills += 1;
+        if (d.kind === 'mcq') validMcqDrills += 1;
+      }
+    }
+    if (validDrills > 0) drilled += 1;
+    if (f.yield === 'high') {
+      highYield += 1;
+      if (validMcqDrills > 0) highYieldMcq += 1;
+      else if (validDrills > 0) push('high-yield-card-only', 'high-yield fact is drilled only by flashcard(s) — add an MCQ');
+      else push('high-yield-card-only', 'high-yield fact has no valid MCQ drill');
+    }
+  }
+
+  const n = facts.facts.length;
+  return {
+    facts: n,
+    taught,
+    drilled,
+    highYield,
+    highYieldMcq,
+    taughtPct: pctFloor(taught, n),
+    drilledPct: pctFloor(drilled, n),
+    highYieldMcqPct: pctFloor(highYieldMcq, highYield),
+    findings,
+  };
+}
+
+/** Bold spans that are structural labels, not facts (case-insensitive). */
+const STRUCTURAL_BOLD = /^(in one line|tl;dr|the story|terms explained|don'?t confuse|remember|note|example|why it matters|key points?|exam tip|trap|mnemonic)\b/i;
+
+/**
+ * ESTIMATED fact count for a subtopic that has no facts file yet: distinct
+ * bolded terms in its note bodies/keyPoints (excluding structural labels such
+ * as `**In one line:**`) plus the number of keyPoints. Deliberately rough — it
+ * only sizes the backlog.
+ */
+export function estimateFactCount(notes: readonly CompletenessNote[]): number {
+  const bold = new Set<string>();
+  let keyPoints = 0;
+  for (const n of notes) {
+    keyPoints += n.keyPoints?.length ?? 0;
+    for (const text of [n.body, ...(n.keyPoints ?? [])]) {
+      const re = /\*\*([^*\n]+)\*\*/g;
+      for (let m = re.exec(text); m !== null; m = re.exec(text)) {
+        const term = (m[1] ?? '').trim();
+        if (term === '' || term.endsWith(':') || STRUCTURAL_BOLD.test(term)) continue;
+        bold.add(term.toLowerCase());
+      }
+    }
+  }
+  return bold.size + keyPoints;
+}
+
+/** Status of a subtopic in the completeness report. */
+export type CompletenessStatus = 'COMPLETE' | 'GAPS' | 'NO-FACTS';
+
+/** One row of the app-wide completeness report. */
+export interface CompletenessRow {
+  subtopicId: string;
+  subjectCode: string;
+  /** Position in the study order (units.json, then learning-sequence.json, then the rest). */
+  order: number;
+  hasFacts: boolean;
+  mcqs: number;
+  cards: number;
+  /** Present when `hasFacts`. */
+  result?: FactsCompleteness;
+  /** Present when NOT `hasFacts`: the estimated fact count of the notes. */
+  estimate?: number;
+  /** Present when NOT `hasFacts`: (mcqs + cards) / estimate, or undefined when estimate is 0. */
+  retrievalRatio?: number;
+  status: CompletenessStatus;
+}
+
+/** The full completeness audit. */
+export interface CompletenessReport {
+  rows: CompletenessRow[];
+  findings: CompletenessFinding[];
+  /** Facts files whose subtopic has no content at all (reported, never silently ignored). */
+  orphanFacts: string[];
+}
+
+/** Status of one facts-backed subtopic: complete only at 100/100/100. */
+export function completenessStatus(r: FactsCompleteness): CompletenessStatus {
+  return r.taughtPct === 100 && r.drilledPct === 100 && r.highYieldMcqPct === 100 ? 'COMPLETE' : 'GAPS';
+}
+
+/**
+ * The regression gate: 1 when any subtopic WITH a facts file is below 100%
+ * taught or 100% drilled (or a facts file names a subtopic with no content),
+ * else 0. Subtopics without a facts file never fail the gate — they are backlog.
+ */
+export function completenessExitCode(report: Pick<CompletenessReport, 'rows' | 'orphanFacts'>): 0 | 1 {
+  if (report.orphanFacts.length > 0) return 1;
+  for (const row of report.rows) {
+    if (row.hasFacts && row.result && (row.result.taughtPct < 100 || row.result.drilledPct < 100)) return 1;
+  }
+  return 0;
+}
+
+/**
+ * Study order over subtopic ids: every unit's topicIds in units.json order,
+ * then any learning-sequence.json ids not yet listed (subject by subject),
+ * so the backlog queue reads in the order a learner meets the topics. Missing
+ * or invalid plan files simply contribute nothing.
+ */
+export function studyOrder(contentDir: string = CONTENT_DIR): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const add = (id: string): void => {
+    if (!seen.has(id)) {
+      seen.add(id);
+      out.push(id);
+    }
+  };
+  const read = (path: string): unknown => {
+    try {
+      return JSON.parse(readFileSync(path, 'utf8')) as unknown;
+    } catch {
+      return undefined;
+    }
+  };
+  const unitsRaw = read(join(contentDir, 'plan', 'units.json'));
+  const u = unitsRaw === undefined ? undefined : UnitsSchema.safeParse(unitsRaw);
+  if (u?.success) for (const unit of u.data.units) unit.topicIds.forEach(add);
+  const seqRaw = read(join(contentDir, 'plan', 'learning-sequence.json'));
+  const seq = seqRaw === undefined ? undefined : LearningSequenceSchema.safeParse(seqRaw);
+  if (seq?.success) {
+    for (const steps of Object.values(seq.data.subjects)) for (const st of steps ?? []) add(st.id);
+  }
+  return out;
+}
+
+/**
+ * Run the completeness audit over a content directory on disk (defaults to the
+ * repo's `content/`). Discovers subtopics from the notes/MCQ/cards banks and
+ * the facts files; never throws for content problems (unparseable files are
+ * skipped — the schema gate reports them).
+ */
+export function auditAllCompleteness(contentDir: string = CONTENT_DIR): CompletenessReport {
+  type Bucket = CompletenessContent & { subjectCode: string };
+  const buckets = new Map<string, Bucket>();
+  const bucket = (id: string, subjectCode: string): Bucket => {
+    let b = buckets.get(id);
+    if (!b) {
+      b = { subjectCode, notes: [], mcqs: [], cards: [] };
+      buckets.set(id, b);
+    }
+    return b;
+  };
+  const factsBySubtopic = new Map<string, FactsFile>();
+
+  for (const abs of walkJsonFiles(contentDir)) {
+    let raw: unknown;
+    try {
+      raw = JSON.parse(readFileSync(abs, 'utf8')) as unknown;
+    } catch {
+      continue;
+    }
+    const rel = relative(contentDir, abs).split(sep).join('/');
+    if (rel.startsWith('facts/')) {
+      const parsed = FactsFileSchema.safeParse(raw);
+      if (parsed.success) factsBySubtopic.set(parsed.data.subtopicId, parsed.data);
+      continue;
+    }
+    const kind = (raw as { kind?: unknown } | null)?.kind;
+    if (kind === 'cards') {
+      const parsed = CardsBankSchema.safeParse(raw);
+      if (!parsed.success) continue;
+      for (const c of parsed.data.items) bucket(c.subtopicId, c.subjectCode).cards.push(c);
+      continue;
+    }
+    if (kind !== 'notes' && kind !== 'mcq') continue;
+    const parsed = ContentBankSchema.safeParse(raw);
+    if (!parsed.success) continue;
+    const bank = parsed.data;
+    if (bank.kind === 'notes') {
+      // Mains-angle notes are not Prelims fact carriers, but they still teach —
+      // keep them so a fact may be taughtIn any note of the subtopic.
+      for (const n of bank.items) if (n.subtopicId) bucket(n.subtopicId, n.subjectCode).notes.push(n);
+    } else if (bank.kind === 'mcq') {
+      for (const q of bank.items) if (q.subtopicId) bucket(q.subtopicId, q.subjectCode).mcqs.push(q);
+    }
+  }
+
+  const order = studyOrder(contentDir);
+  const orderIdx = new Map(order.map((id, i) => [id, i] as const));
+  const orphanFacts = [...factsBySubtopic.keys()].filter((id) => !buckets.has(id)).sort();
+
+  const rows: CompletenessRow[] = [];
+  const findings: CompletenessFinding[] = [];
+  for (const [id, b] of buckets) {
+    const base = {
+      subtopicId: id,
+      subjectCode: b.subjectCode,
+      order: orderIdx.get(id) ?? Number.MAX_SAFE_INTEGER,
+      mcqs: b.mcqs.length,
+      cards: b.cards.length,
+    };
+    const facts = factsBySubtopic.get(id);
+    if (facts) {
+      const result = checkFactsCompleteness(facts, b);
+      findings.push(...result.findings);
+      rows.push({ ...base, hasFacts: true, result, status: completenessStatus(result) });
+    } else {
+      const estimate = estimateFactCount(b.notes);
+      rows.push({
+        ...base,
+        hasFacts: false,
+        estimate,
+        ...(estimate > 0 ? { retrievalRatio: (b.mcqs.length + b.cards.length) / estimate } : {}),
+        status: 'NO-FACTS',
+      });
+    }
+  }
+  rows.sort((a, c) => a.order - c.order || a.subjectCode.localeCompare(c.subjectCode) || a.subtopicId.localeCompare(c.subtopicId));
+  return { rows, findings, orphanFacts };
 }

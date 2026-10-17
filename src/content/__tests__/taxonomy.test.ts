@@ -83,7 +83,8 @@ describe('taxonomy loader', () => {
     expect(stone?.meta.name).toBe('Stone Age');
     // Re-authored to a lean, coverage-driven exam-level bank (3 refreshers + 16 exam,
     // incl. an added chronology item from the review pipeline).
-    expect(stone?.mcqs).toHaveLength(47);
+    // +13 MCQs closing the Stone Age fact universe (content/facts, 2026-10-17).
+    expect(stone?.mcqs).toHaveLength(60);
     expect(stone?.notes).toHaveLength(16);
     expect(stone?.mains).toHaveLength(3);
     // Batch-1 rollout: the subtopic now declares an examPoints checklist that its

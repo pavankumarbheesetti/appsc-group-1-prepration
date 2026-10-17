@@ -48,6 +48,7 @@ import {
 } from './audit-types';
 import { parseTimeline, type TimelineBank } from './timeline-types';
 import { parseLearningSequence, parseUnits, type LearningSequence, type Units } from './plan-types';
+import { parseFacts, type FactsFile } from './facts-types';
 import {
   coveragePct,
   examPointCoverage,
@@ -134,6 +135,12 @@ export interface ContentIndex {
    * content bank — read by path, never in the manifest.
    */
   caMeta: CaMeta;
+  /**
+   * The per-subtopic FACT UNIVERSES (`content/facts/<subtopicId>.json`) keyed by
+   * subtopicId — the contract the completeness audit measures against. Not a
+   * content bank; only subtopics that have been closed carry one.
+   */
+  facts: ReadonlyMap<string, FactsFile>;
 }
 
 /**
@@ -168,6 +175,7 @@ function buildIndex(): ContentIndex {
   /** Curated memory-layer banks, indexed by subtopicId as they are discovered. */
   const cards = new Map<string, CardItem[]>();
   const mindmaps = new Map<string, MindmapBank>();
+  const facts = new Map<string, FactsFile>();
 
   for (const [path, mod] of Object.entries(CONTENT_MODULES)) {
     const data = mod.default;
@@ -212,6 +220,14 @@ function buildIndex(): ContentIndex {
         units = parseUnits(data);
       }
       // Any other file under content/plan/ is ignored by the loader.
+      continue;
+    }
+
+    // The fact universes live under /content/facts/ and are NOT content banks —
+    // each is validated by its own schema (facts-types.ts), keyed by subtopicId.
+    if (path.startsWith('/content/facts/')) {
+      const file = parseFacts(data);
+      facts.set(file.subtopicId, file);
       continue;
     }
 
@@ -352,6 +368,7 @@ function buildIndex(): ContentIndex {
     learningSequence,
     units,
     caMeta,
+    facts,
   };
 }
 
@@ -470,6 +487,15 @@ export function getSubtopic(id: string): SubtopicView | undefined {
  */
 export function getCards(subtopicId: string): CardItem[] {
   return getContentIndex().cards.get(subtopicId) ?? [];
+}
+
+/**
+ * The fact universe (`content/facts/<subtopicId>.json`) for a subtopic, or
+ * `undefined` when that subtopic has not been closed yet. Pure over the loaded
+ * content.
+ */
+export function getFacts(subtopicId: string): FactsFile | undefined {
+  return getContentIndex().facts.get(subtopicId);
 }
 
 /**

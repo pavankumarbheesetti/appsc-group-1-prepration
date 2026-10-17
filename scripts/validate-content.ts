@@ -21,6 +21,7 @@
  * Run via `npm run validate:content` (executed with vite-node, matching gen:schema).
  */
 import {
+  auditAllCompleteness,
   alignEnabled,
   auditAlignment,
   loadAlignExceptions,
@@ -128,6 +129,30 @@ if (alignEnabled(process.env, strict)) {
   console.log(`  justified heuristic exceptions: ${loadAlignExceptions().size}`);
   if (strict) failed += align.length;
   else warned += align.length;
+}
+
+/* ----- Completeness (fact universe taught + drilled) — warnings for now --- */
+// Advisory even under --strict: a subtopic's facts file is the contract, and
+// the hard regression gate for closed subtopics is `npm run audit:completeness`
+// (chained into `npm run check`). Here every finding is surfaced as a warning
+// so authors see the exact fact that is untaught / undrilled.
+
+{
+  const completeness = auditAllCompleteness();
+  const closed = completeness.rows.filter((r) => r.hasFacts);
+  console.log('');
+  console.log(
+    `completeness: ${closed.length} subtopic(s) with a facts file, ${completeness.findings.length} finding(s) (warnings)`,
+  );
+  for (const r of closed) {
+    const c = r.result!;
+    console.log(
+      `  ${r.subtopicId}: ${c.facts} facts, taught ${c.taughtPct}%, drilled ${c.drilledPct}%, high-yield MCQ ${c.highYieldMcqPct}% — ${r.status}`,
+    );
+  }
+  for (const f of completeness.findings) console.log(`        ⚠ [${f.rule}] ${f.subtopicId}/${f.factId}: ${f.detail}`);
+  for (const id of completeness.orphanFacts) console.log(`        ⚠ [facts-orphan] ${id}: facts file but no notes/MCQs/cards`);
+  warned += completeness.findings.length + completeness.orphanFacts.length;
 }
 
 const passed = results.length - results.filter((r) => !r.ok).length;

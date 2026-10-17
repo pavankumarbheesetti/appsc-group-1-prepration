@@ -47,7 +47,7 @@ describe('drill.buildSession', () => {
   });
 
   it('filters by subject', () => {
-    expect(buildSession({ subjectCode: 'HIST' }).items).toHaveLength(1009);
+    expect(buildSession({ subjectCode: 'HIST' }).items).toHaveLength(1022);
     expect(buildSession({ subjectCode: 'ECON' }).items).toHaveLength(370);
   });
 
