@@ -20,6 +20,16 @@ import { getBanks } from '../../content/loader';
  */
 const TOTAL_MCQS = getBanks('mcq').reduce((n, b) => n + b.bank.items.length, 0);
 
+/** MCQs in one subject's banks — computed, so bank growth needs no test edit. */
+const subjectMcqs = (code: 'HIST' | 'ECON'): number =>
+  getBanks('mcq', code).reduce((n, b) => n + b.bank.items.length, 0);
+
+/** MCQs in the IVC bank (every item carries subtopicId 'hist-ancient-ivc') — computed. */
+const IVC_MCQS = getBanks('mcq').reduce(
+  (n, b) => n + (b.bank.items as { subtopicId?: string }[]).filter((i) => i.subtopicId === 'hist-ancient-ivc').length,
+  0,
+);
+
 // Exercises the drill builder/scorer against the real content pool. The HIST
 // pool now spans twenty-three Ancient-India subtopics (IVC + Stone Age, Early/Later
 // Vedic, Mahajanapadas, Rise of Magadha, Magadha Dynasties, Jainism,
@@ -47,13 +57,15 @@ describe('drill.buildSession', () => {
   });
 
   it('filters by subject', () => {
-    expect(buildSession({ subjectCode: 'HIST' }).items).toHaveLength(1022);
-    expect(buildSession({ subjectCode: 'ECON' }).items).toHaveLength(370);
+    expect(buildSession({ subjectCode: 'HIST' }).items).toHaveLength(subjectMcqs('HIST'));
+    expect(buildSession({ subjectCode: 'ECON' }).items).toHaveLength(subjectMcqs('ECON'));
+    expect(subjectMcqs('HIST')).toBeGreaterThan(1000);
   });
 
   it('filters by subtopicId', () => {
     // Every IVC MCQ carries subtopicId 'hist-ancient-ivc' (lean exemplar bank).
-    expect(buildSession({ subtopicId: 'hist-ancient-ivc' }).items).toHaveLength(57);
+    expect(buildSession({ subtopicId: 'hist-ancient-ivc' }).items).toHaveLength(IVC_MCQS);
+    expect(IVC_MCQS).toBeGreaterThanOrEqual(57); // grew in the completeness round
     // An unknown subtopic yields nothing.
     expect(buildSession({ subtopicId: 'hist-ancient-does-not-exist' }).items).toHaveLength(0);
     // The IVC exemplar is tier-LESS, so a tier filter selects none of its items.

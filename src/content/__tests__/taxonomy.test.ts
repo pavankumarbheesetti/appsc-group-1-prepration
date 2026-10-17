@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import taxonomy from '../../../content/taxonomy.json';
+import ivcMcqBank from '../../../content/history-ancient/hist-ancient-ivc/mcq-hist-ancient-ivc.json';
 import {
   getTaxonomy,
   getSubjects,
@@ -71,7 +73,7 @@ describe('taxonomy loader', () => {
     expect(ivc?.meta.name).toBe('Indus Valley Civilization');
     expect(ivc?.meta.band).toBe('A');
     // The IVC banks are grouped in by subtopicId.
-    expect(ivc?.mcqs).toHaveLength(57);
+    expect(ivc?.mcqs).toHaveLength(ivcMcqBank.items.length);
     expect(ivc?.notes).toHaveLength(24);
     expect(ivc?.mains).toHaveLength(8);
   });
@@ -130,7 +132,10 @@ describe('taxonomy loader', () => {
     const cov = getSubtopicCoverage('hist-ancient-ivc');
     expect(cov).toBeDefined();
     expect(cov?.examPoints).toBeDefined();
-    expect(cov?.examPoints?.total).toBe(20);
+    // Computed: the taxonomy checklist grows when completeness rounds merge examPoints.
+    const declared = taxonomy.subtopics.find((s) => s.id === 'hist-ancient-ivc')?.examPoints ?? [];
+    expect(declared.length).toBeGreaterThanOrEqual(20);
+    expect(cov?.examPoints?.total).toBe(declared.length);
     expect(cov?.examPoints?.missing).toEqual([]);
     expect(cov?.pct).toBe(100);
   });

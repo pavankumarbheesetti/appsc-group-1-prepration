@@ -21,6 +21,7 @@ import { describe, expect, it } from 'vitest';
 import { renderQuestionStem } from '../quiz';
 import { parseMatchOptions } from '../../lib/question-structure';
 import { MCQBankSchema, type MCQItem } from '../../content/types';
+import manifest from '../../../content/manifest.json';
 
 const CONTENT = resolve(__dirname, '../../../content');
 
@@ -120,14 +121,25 @@ describe('DOM render audit — every MCQ through the real stem renderer', () => 
 
   it('loads the full MCQ corpus', () => {
     expect(items.length).toBeGreaterThan(3000);
-    // Computed after the question-format round (q-final, 2026-10-13): every one
-    // of the 129 MCQ banks parses, 3369 items in all (360 match, 939 statements,
-    // 40 A-R). Update to the new computed totals when the bank grows.
-    expect(walk(CONTENT)).toHaveLength(129);
-    expect(items).toHaveLength(3382); // +13 Stone Age completeness MCQs (2026-10-17)
-    expect(items.filter((i) => i.match).length).toBe(361);
-    expect(items.filter((i) => i.statements).length).toBe(954);
-    expect(items.filter((i) => i.assertion !== undefined).length).toBe(45);
+    // Totals are COMPUTED from two independent sources, so bank growth needs no
+    // edit here: every mcq-*.json on disk must parse (schema-valid item count ==
+    // the manifest's per-bank `count`), and the parse must keep every structured
+    // field (counts from the raw JSON). Re-run `npm run gen:manifest` after
+    // adding questions.
+    const files = walk(CONTENT);
+    const mcqBanks = manifest.banks.filter((b) => b.kind === 'mcq');
+    expect(files).toHaveLength(mcqBanks.length);
+    expect(items).toHaveLength(mcqBanks.reduce((n, b) => n + (b.count ?? 0), 0));
+    const raw = files.flatMap((f) => (JSON.parse(readFileSync(f, 'utf8')) as { items: Record<string, unknown>[] }).items);
+    expect(items).toHaveLength(raw.length);
+    expect(items.filter((i) => i.match).length).toBe(raw.filter((i) => i.match).length);
+    expect(items.filter((i) => i.statements).length).toBe(raw.filter((i) => i.statements).length);
+    expect(items.filter((i) => i.assertion !== undefined).length).toBe(raw.filter((i) => i.assertion !== undefined).length);
+    // Floors from the question-format round (2026-10-13) — the corpus only grows.
+    expect(files.length).toBeGreaterThanOrEqual(129);
+    expect(items.filter((i) => i.match).length).toBeGreaterThanOrEqual(361);
+    expect(items.filter((i) => i.statements).length).toBeGreaterThanOrEqual(954);
+    expect(items.filter((i) => i.assertion !== undefined).length).toBeGreaterThanOrEqual(45);
   });
 
   it('renders every match / statement / A-R stem without structural defects', () => {

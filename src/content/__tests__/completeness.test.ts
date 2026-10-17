@@ -25,6 +25,20 @@ import { getContentIndex, getFacts } from '../loader';
 
 const SID = 'demo-subtopic';
 
+/** The Ancient India I unit — closed in the first completeness round. */
+const ANCIENT_1 = [
+  'hist-ancient-stone-age',
+  'hist-ancient-ivc',
+  'hist-ancient-early-vedic',
+  'hist-ancient-later-vedic',
+  'hist-ancient-mahajanapadas',
+  'hist-ancient-rise-of-magadha',
+  'hist-ancient-magadha-dynasties',
+  'hist-ancient-jainism',
+  'hist-ancient-buddhism-1',
+  'hist-ancient-buddhism-2',
+];
+
 /** A minimal valid facts file around the given facts. */
 function factsFile(facts: FactsFile['facts']): FactsFile {
   return { version: 1, subtopicId: SID, facts };
@@ -213,13 +227,32 @@ describe('completeness gate', () => {
     expect(completenessExitCode({ rows: [], orphanFacts: ['x'] })).toBe(1);
   });
 
-  it('the real repo content passes and Stone Age is COMPLETE', () => {
+  it('exits 1 when a closed subtopic has a high-yield fact without an MCQ (card-only is no longer a warning)', () => {
+    // 100% taught and 100% drilled, but a high-yield fact is drilled only by a card.
+    expect(completenessExitCode({ rows: [row(100, 100, 99)], orphanFacts: [] })).toBe(1);
+    expect(completenessExitCode({ rows: [row(100, 100, 0)], orphanFacts: [] })).toBe(1);
+    // End to end through the pure checker: a high-yield card-only fact fails, a medium one passes.
+    const cardOnly = { ...gufkral, keys: ['Chirand', 'bone tools'], drilledBy: ['c-chirand'] };
+    const asRow = (r: ReturnType<typeof checkFactsCompleteness>) => ({ ...row(r.taughtPct, r.drilledPct, r.highYieldMcqPct), result: r });
+    const high = checkFactsCompleteness(factsFile([cardOnly]), CONTENT);
+    expect([high.taughtPct, high.drilledPct]).toEqual([100, 100]);
+    expect(completenessExitCode({ rows: [asRow(high)], orphanFacts: [] })).toBe(1);
+    const medium = checkFactsCompleteness(factsFile([{ ...cardOnly, yield: 'medium' }]), CONTENT);
+    expect(completenessExitCode({ rows: [asRow(medium)], orphanFacts: [] })).toBe(0);
+  });
+
+  it('the real repo content passes and every closed subtopic (incl. the Ancient India I unit) is COMPLETE', () => {
     const report = auditAllCompleteness();
     expect(completenessExitCode(report)).toBe(0);
-    const stone = report.rows.find((r) => r.subtopicId === 'hist-ancient-stone-age');
-    expect(stone?.status).toBe('COMPLETE');
-    // Backlog is ordered by the study plan: units.json opens with Stone Age, then IVC.
-    expect(report.rows.find((r) => !r.hasFacts)?.subtopicId).toBe('hist-ancient-ivc');
+    const closed = report.rows.filter((r) => r.hasFacts);
+    expect(closed.length).toBe(getContentIndex().facts.size);
+    for (const r of closed) expect(r.status, r.subtopicId).toBe('COMPLETE');
+    for (const id of ANCIENT_1) expect(report.rows.find((r) => r.subtopicId === id)?.status, id).toBe('COMPLETE');
+    // Backlog is ordered by the study plan: closed rows lead, the first backlog row
+    // is the first study-order subtopic that still has no facts file.
+    const firstOpen = report.rows.findIndex((r) => !r.hasFacts);
+    expect(report.rows.slice(0, firstOpen).every((r) => r.hasFacts)).toBe(true);
+    expect(report.rows.slice(firstOpen).every((r) => !r.hasFacts)).toBe(true);
   });
 });
 
@@ -229,7 +262,7 @@ describe('audit:completeness CLI exit behaviour', () => {
   let tmp: string;
 
   /** Write a tiny content dir (notes + mcq + cards + facts) under tmp/<name>. */
-  function fixture(name: string, drilledBy: string[]): string {
+  function fixture(name: string, drilledBy: string[], extraCards: CompletenessContent['cards'] = []): string {
     const dir = join(tmp, name);
     const bank = join(dir, 'history-ancient', SID);
     mkdirSync(bank, { recursive: true });
@@ -245,7 +278,7 @@ describe('audit:completeness CLI exit behaviour', () => {
     );
     writeFileSync(
       join(bank, 'cards.json'),
-      JSON.stringify({ kind: 'cards', ...base, items: CONTENT.cards.map((c) => ({ ...c, subjectCode: 'HIST', subtopicId: SID, verified: true })) }),
+      JSON.stringify({ kind: 'cards', ...base, items: [...CONTENT.cards, ...extraCards].map((c) => ({ ...c, subjectCode: 'HIST', subtopicId: SID, verified: true })) }),
     );
     writeFileSync(join(dir, 'facts', `${SID}.json`), JSON.stringify(factsFile([{ ...gufkral, drilledBy }])));
     return dir;
@@ -274,12 +307,25 @@ describe('audit:completeness CLI exit behaviour', () => {
     expect(res.stdout).toContain('drilled-unknown-item');
     expect(readFileSync(out, 'utf8')).toContain('Gate: **FAIL**');
   }, 60_000);
+
+  it('exits non-zero when a closed high-yield fact is drilled only by a flashcard', () => {
+    const out = join(tmp, 'card-only.md');
+    const card = { id: 'c-gufkral', front: 'Neolithic site in Kashmir?', back: 'Gufkral.' };
+    const res = run(fixture('card-only', ['c-gufkral'], [card]), out);
+    expect(res.status).not.toBe(0);
+    expect(res.stdout).toContain('high-yield-card-only');
+    expect(readFileSync(out, 'utf8')).toContain('Gate: **FAIL**');
+  }, 60_000);
 });
 
 describe('facts loading + validation', () => {
   it('getFacts returns the seeded Stone Age universe and undefined elsewhere', () => {
     expect(getFacts('hist-ancient-stone-age')?.facts.length).toBe(stoneAgeFacts.facts.length);
-    expect(getFacts('hist-ancient-ivc')).toBeUndefined();
+    // A backlog subtopic (no facts file) returns undefined — computed, not hard-coded.
+    const backlog = auditAllCompleteness().rows.find((r) => !r.hasFacts);
+    expect(backlog).toBeDefined();
+    expect(getFacts(backlog!.subtopicId)).toBeUndefined();
+    for (const id of ANCIENT_1) expect(getFacts(id)?.facts.length, id).toBeGreaterThan(0);
     expect(getContentIndex().facts.size).toBeGreaterThanOrEqual(1);
   });
 

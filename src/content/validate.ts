@@ -1897,13 +1897,17 @@ export function completenessStatus(r: FactsCompleteness): CompletenessStatus {
 
 /**
  * The regression gate: 1 when any subtopic WITH a facts file is below 100%
- * taught or 100% drilled (or a facts file names a subtopic with no content),
- * else 0. Subtopics without a facts file never fail the gate — they are backlog.
+ * taught, 100% drilled, or 100% high-yield-with-MCQ (a high-yield fact drilled
+ * only by flashcards, or not at all, FAILS — tightened once the Ancient India I
+ * unit closed), or a facts file names a subtopic with no content; else 0.
+ * Subtopics without a facts file never fail the gate — they are backlog.
  */
 export function completenessExitCode(report: Pick<CompletenessReport, 'rows' | 'orphanFacts'>): 0 | 1 {
   if (report.orphanFacts.length > 0) return 1;
   for (const row of report.rows) {
-    if (row.hasFacts && row.result && (row.result.taughtPct < 100 || row.result.drilledPct < 100)) return 1;
+    if (!row.hasFacts || !row.result) continue;
+    const r = row.result;
+    if (r.taughtPct < 100 || r.drilledPct < 100 || r.highYieldMcqPct < 100) return 1;
   }
   return 0;
 }

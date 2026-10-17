@@ -2,6 +2,13 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import * as mock from '../mock';
 import { __resetForTests } from '../../state/store';
 import { clearTestSession } from '../../lib/test-session';
+import { getBanks } from '../../content/loader';
+
+/** IVC bank size — computed (it grows in completeness rounds). */
+const IVC_MCQS = getBanks('mcq').reduce(
+  (n, b) => n + (b.bank.items as { subtopicId?: string }[]).filter((i) => i.subtopicId === 'hist-ancient-ivc').length,
+  0,
+);
 
 /**
  * Mock view tests. These exercise the FULL official-paper mode (Paper-I/II by
@@ -132,14 +139,14 @@ describe('mock setup — custom scope reuses buildSession', () => {
     expect(root.textContent).toContain('no compensatory time');
   });
 
-  it('scoping to a single subtopic reuses buildSession(subtopicId) → 57 for IVC', () => {
+  it('scoping to a single subtopic reuses buildSession(subtopicId) → the whole IVC bank', () => {
     const root = render();
     toScope(root);
     byText(root, '.mock-scope-btn', 'By subtopic')!.click();
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    expect(root.textContent).toContain('57 questions in scope');
+    expect(root.textContent).toContain(`${IVC_MCQS} questions in scope`);
   });
 });
 
@@ -159,7 +166,7 @@ describe('mock running — no per-question feedback + submit', () => {
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    byText(root, '.mock-len-btn', '57')!.click();
+    byText(root, '.mock-len-btn', `All (${IVC_MCQS})`)!.click();
 
     // Start.
     byText(root, 'button', 'Start mock')!.click();
@@ -185,13 +192,13 @@ describe('mock running — no per-question feedback + submit', () => {
     }
 
     // A question navigator grid with one cell per question is present.
-    expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(57);
+    expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(IVC_MCQS);
 
     // Submit → results with the NET score and a full 19-item review.
     submitAndConfirm(root);
     expect(root.querySelector('.mock-results')).not.toBeNull();
     expect(root.textContent).toContain('net score');
-    expect(root.querySelectorAll('.mock-review-item')).toHaveLength(57);
+    expect(root.querySelectorAll('.mock-review-item')).toHaveLength(IVC_MCQS);
     // The review reveals the correct answer AFTER submit.
     expect(root.querySelector('.mock-review-options .option-card.is-correct')).not.toBeNull();
   });
@@ -217,7 +224,7 @@ describe('mock running — confidence tags → skip-guesses on results', () => {
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    byText(root, '.mock-len-btn', '57')!.click();
+    byText(root, '.mock-len-btn', `All (${IVC_MCQS})`)!.click();
     byText(root, 'button', 'Start mock')!.click();
     startTimer(root);
 
@@ -356,7 +363,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    byText(root, '.mock-len-btn', '57')!.click();
+    byText(root, '.mock-len-btn', `All (${IVC_MCQS})`)!.click();
     byText(root, 'button', 'Start mock')!.click();
     startTimer(root);
   }
@@ -369,7 +376,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     byText(root, 'button', 'Submit test')!.click();
     const dlg = document.querySelector<HTMLElement>('.confirm-panel')!;
     expect(dlg.getAttribute('role')).toBe('alertdialog');
-    expect(dlg.textContent).toContain('56 of 57 questions unanswered');
+    expect(dlg.textContent).toContain(`${IVC_MCQS - 1} of ${IVC_MCQS} questions unanswered`);
     byText(dlg, 'button', 'Keep working')!.click();
     expect(document.querySelector('.confirm-panel')).toBeNull();
     expect(root.querySelector('.mock-running')).not.toBeNull();
@@ -392,7 +399,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     expect(saved).not.toBeNull();
     expect(saved.selected[0]).toBe(1);
     expect(saved.confidences[0]).toBe('guess');
-    expect(saved.remainingMs).toBeLessThan(57 * 60_000);
+    expect(saved.remainingMs).toBeLessThan(IVC_MCQS * 60_000);
     expect(saved.remainingMs).toBeGreaterThan(18 * 60_000);
     // Nothing was recorded — the attempt is not lost or submitted.
     expect(loadState().testAttempts).toHaveLength(before);
@@ -402,7 +409,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     const back = render();
     const resume = byText(back, 'button', 'Resume test');
     expect(resume).not.toBeUndefined();
-    expect(back.textContent).toContain('1 of 57 answered');
+    expect(back.textContent).toContain(`1 of ${IVC_MCQS} answered`);
     resume!.click();
     expect(back.querySelector('.mock-running')).not.toBeNull();
     expect(back.querySelector('.option-card.is-selected')).not.toBeNull();

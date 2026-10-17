@@ -1,6 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import * as drill from '../drill';
 import { __resetForTests } from '../../state/store';
+import { getBanks } from '../../content/loader';
+
+/** Computed pool sizes (the banks grow in completeness rounds). */
+const IVC_MCQS = getBanks('mcq').reduce(
+  (n, b) => n + (b.bank.items as { subtopicId?: string }[]).filter((i) => i.subtopicId === 'hist-ancient-ivc').length,
+  0,
+);
+const HIST_MCQS = getBanks('mcq', 'HIST').reduce((n, b) => n + b.bank.items.length, 0);
 
 /**
  * Drill "Refine" — the Subtopic selector (Subject → Subtopic → Tier).
@@ -68,7 +76,7 @@ describe('drill refine — subtopic selector', () => {
     // IVC is offered and labelled with its real MCQ count (17, lean exemplar).
     const ivc = [...sub.options].find((o) => o.value === 'hist-ancient-ivc');
     expect(ivc).toBeTruthy();
-    expect(ivc?.textContent).toMatch(/\(57\)$/);
+    expect(ivc?.textContent).toMatch(new RegExp(`\\(${IVC_MCQS}\\)$`));
     // Every populated option carries a "(N)" count suffix.
     for (const opt of [...sub.options].slice(1)) {
       expect(opt.textContent).toMatch(/\(\d+\)$/);
@@ -82,7 +90,7 @@ describe('drill refine — subtopic selector', () => {
     fireChange(subtopicSelect(root), 'hist-ancient-ivc');
 
     // Full practice == the subtopic's total (IVC has 19 MCQs).
-    expect(presetCount(root, 'Full practice')).toBe('57 total');
+    expect(presetCount(root, 'Full practice')).toBe(`${IVC_MCQS} total`);
     // Quick == min(10, total).
     expect(presetCount(root, 'Quick 10')).toBe('10 questions');
   });
@@ -92,11 +100,11 @@ describe('drill refine — subtopic selector', () => {
     drill.render(root);
     fireChange(subjectSelect(root), 'HIST');
     fireChange(subtopicSelect(root), 'hist-ancient-ivc');
-    expect(presetCount(root, 'Full practice')).toBe('57 total');
+    expect(presetCount(root, 'Full practice')).toBe(`${IVC_MCQS} total`);
 
     // Re-selecting a subject resets subtopic → All (full HIST pool = 917).
     fireChange(subjectSelect(root), 'HIST');
     expect(subtopicSelect(root).value).toBe('');
-    expect(presetCount(root, 'Full practice')).toBe('1022 total');
+    expect(presetCount(root, 'Full practice')).toBe(`${HIST_MCQS} total`);
   });
 });

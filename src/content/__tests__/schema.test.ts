@@ -15,7 +15,10 @@ describe('content schemas', () => {
     const bank = parseBank(mcqBank);
     expect(bank.kind).toBe('mcq');
     // The IVC bank is the coverage-driven EXEMPLAR: a lean, exam-level set.
-    expect(bank.items).toHaveLength(57);
+    // Computed from the raw JSON (the bank grows in completeness rounds); the
+    // parse must keep every item.
+    expect(bank.items).toHaveLength(mcqBank.items.length);
+    expect(bank.items.length).toBeGreaterThanOrEqual(57);
   });
 
   it('accepts the seed notes bank', () => {
