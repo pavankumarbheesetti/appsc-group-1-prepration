@@ -105,6 +105,68 @@
         "series",
         "natural-numbers"
       ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Duplicate and inverse ratios, comparing ratios, continued proportion, income–expenditure",
+      "body": "### Duplicate and inverse ratios, comparing ratios, continued proportion, income–expenditure\n\n**The idea in one sentence**\nEvery ratio variant is still \"k parts\": square the parts, flip them, or set up one equation per condition.\n\n**Do it the slow way first (no formula)**\nDivide ₹1300 among A, B, C in the INVERSE ratio of 2 : 3 : 4. Inverse means 1/2 : 1/3 : 1/4. Multiply by 12 (the LCM of 2, 3, 4) to clear fractions: 6 : 4 : 3, total 13 parts of ₹100. So A gets ₹600, B ₹400, C ₹300 — the one with the SMALLEST number gets the most.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| duplicate ratio of a : b | a² : b² (squares) |\n| sub-duplicate ratio | √a : √b (square roots) |\n| triplicate ratio | a³ : b³ (cubes) |\n| sub-triplicate ratio | cube root of a : cube root of b |\n| inverse (reciprocal) ratio | 1/a : 1/b = b : a; for three terms 1/a : 1/b : 1/c = bc : ca : ab |\n| mixed ratio | x : y and p : q combine to px : qy (the same product rule as compound ratio) |\n| continued proportion | a, b, c with a : b = b : c, so b² = ac (b is the mean proportional) |\n\n**The formula (now that you know what it does)**\n- Duplicate of 3 : 4 = 9 : 16; sub-duplicate of 16 : 25 = 4 : 5; triplicate of 2 : 3 = 8 : 27.\n- Comparing two ratios: cross-multiply. 3 : 4 vs 5 : 7 → 3 × 7 = 21 and 4 × 5 = 20, so 3 : 4 is greater.\n- Number added to each term to make a proportion: (6 + x) : (15 + x) = (20 + x) : (43 + x) → (6 + x)(43 + x) = (15 + x)(20 + x) → 258 + 49x = 300 + 35x → x = 3.\n- Income and expenditure: savings = income − expenditure. Incomes 3 : 2, expenditures 5 : 3, each saves ₹1000: 3x − 5y = 1000 and 2x − 3y = 1000 give x = 2000, y = 1000, so the incomes are ₹6000 and ₹4000.\n- Coins: the ratio given may be of COUNTS or of VALUES. 280 coins of ₹1, 50 p and 25 p with VALUES 20 : 8 : 5 have counts 20 : 16 : 20 = 5 : 4 : 5, i.e. 100, 80 and 100 coins.\n\n**Exam-level example**\nFind the third term of the continued proportion 4, 8, __.\n4 : 8 = 8 : c, so c = 8 × 8 ÷ 4 = **16** (8 is the mean proportional: 8² = 4 × 16). ✓\n\n**Common traps**\n- Dividing in the inverse ratio as if it were the direct ratio — flip first, then clear fractions.\n- For three terms, the inverse ratio of a : b : c is NOT c : b : a; it is bc : ca : ab (2 : 3 : 4 → 6 : 4 : 3, not 4 : 3 : 2).\n- Treating a value ratio of coins as a count ratio.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| a² : b², √a : √b | duplicate, sub-duplicate |\n| 1/a : 1/b : 1/c = bc : ca : ab | inverse ratio of three terms |\n| cross-multiply to compare | bigger product on the left → left ratio bigger |\n| b² = ac | continued proportion |",
+      "keyPoints": [
+        "Duplicate ratio of a : b = a² : b²; sub-duplicate = √a : √b; triplicate = a³ : b³",
+        "Inverse ratio of a : b : c = 1/a : 1/b : 1/c = bc : ca : ab (2 : 3 : 4 → 6 : 4 : 3)",
+        "Compare ratios a : b and c : d by cross-multiplying: ad > bc means a : b is greater",
+        "Continued proportion a, b, c: b² = ac",
+        "Income–expenditure: savings = income − expenditure; write incomes 3x, 2x and expenditures 5y, 3y",
+        "Coin ratios may be of counts or of values — convert values to counts by dividing by the coin value"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
+      "verified": true,
+      "tags": [
+        "ratio-proportion-averages",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-averages-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "More average methods: missing value, shifting all values, removing extremes, cricket",
+      "body": "### More average methods: missing value, shifting all values, removing extremes, cricket\n\n**The idea in one sentence**\nEvery average question is solved through TOTALS: total = average × count, and each change in the group changes the total by a known amount.\n\n**Do it the slow way first (no formula)**\nFour batsmen average 61; three of them scored 68, 31 and 27. The total of all four is 4 × 61 = 244. The three known scores add to 126, so the fourth scored 244 − 126 = **118**.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| total | average × count |\n| batting average | runs ÷ innings (completed) |\n| bowling average | runs given ÷ wickets taken |\n| run rate | runs ÷ overs |\n\n**The formula (now that you know what it does)**\n| Situation | Method | Example |\n|---|---|---|\n| missing value | total − sum of the known values | 118 above |\n| add x to every value | average rises by x | average 20 → 24 after adding 4 |\n| multiply every value by x | average is multiplied by x | average 20 → 60 after × 3 |\n| consecutive numbers | middle term; largest = average + (half the span) | 5 consecutive odd numbers averaging 63: 59, 61, 63, 65, 67 → largest 67 |\n| new member joins | new member = new average × (n + 1) − old average × n | average of 10 is 20, a new member makes it 21: 11 × 21 − 10 × 20 = 31 |\n| a member leaves and one joins | new = old + (rise in average × count) | 15 boys average 24; a 13-year-old is replaced and the average rises by 1: 13 + 15 = 28 |\n| remove highest and lowest | old total − highest − new total = lowest | 80 phones average ₹30000; removing ₹80000 and the lowest leaves 78 averaging ₹29500: cheapest (lowest) = 2400000 − 80000 − 2301000 = ₹19000 |\n| ratio + average | total = average × count, then share in the ratio | 3 persons average 56 with ages 2 : 5 : 7: total 168, youngest = 168 × 2/14 = 24 |\n| members grow, average falls | equate the two totals | 120 hens, 140 more join, cost rises ₹4050, average falls ₹3: 120a + 4050 = 260(a − 3) → a = 34.5, original cost = ₹4140 |\n| scored 0 in a new innings | n × x = (n + 1)(x − fall) | 43 innings, 0 in the 44th, average falls 3: 43x = 44(x − 3) → x = 132, new 129 |\n| required run rate | runs still needed ÷ overs left | target 297, 32 overs at 7.2 (230.4 runs): 66.6 ÷ 18 = 3.7 |\n\nAverages of power lists (first n natural numbers): squares (n + 1)(2n + 1) ÷ 6 (first 5 → 11); cubes n(n + 1)² ÷ 4 (first 4 → 25).\n\n**Exam-level example**\nThe average of 12 players and their coach is 32. The first 5 players average 28 and the other 7 average 26. Find the coach's age.\nTotal of 13 = 13 × 32 = 416. Players = 5 × 28 + 7 × 26 = 140 + 182 = 322. Coach = 416 − 322 = **94**.\n\n**Common traps**\n- Forgetting to change the count when someone joins or leaves.\n- Adding a constant to every value and also changing the count.\n- Averaging two averages when the groups differ in size.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| total = average × count | always go through totals |\n| + x to all → average + x | shift moves the average by x |\n| × x to all → average × x | scaling scales the average |\n| new = old + rise × count | replacement shortcut |",
+      "keyPoints": [
+        "Missing value = average × count − sum of the known values",
+        "Adding x to every value adds x to the average; multiplying every value by x multiplies the average by x",
+        "Removing extremes: lowest = old total − highest − new total",
+        "Ratio + average: total = average × count, then divide the total in the ratio",
+        "Batting average = runs ÷ innings; bowling average = runs given ÷ wickets; run rate = runs ÷ overs",
+        "Average of squares of first n naturals = (n + 1)(2n + 1) ÷ 6; of cubes = n(n + 1)² ÷ 4"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
+      "verified": true,
+      "tags": [
+        "ratio-proportion-averages",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-ratio-proportion-averages",
+      "title": "Mixture price, reverse alligation, mixing two mixtures; partnership with changing capital",
+      "body": "### Mixture price, reverse alligation, mixing two mixtures; partnership with changing capital\n\n**The idea in one sentence**\nA mixture's price or strength is a weighted average of its parts, and alligation is just that weighted average solved backwards.\n\n**Do it the slow way first (no formula)**\nTea at ₹60/kg and ₹100/kg is mixed 3 : 2. Cost of 5 kg = 3 × 60 + 2 × 100 = 180 + 200 = 380, so the mixture costs 380 ÷ 5 = **₹76/kg**.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| mean price | the price of the mixture per unit |\n| component | one item in the mixture (milk, water, a rice variety) |\n| effective capital | capital × months, added over each period it stays unchanged |\n\n**The formula (now that you know what it does)**\n- Mixture price = (q₁ × p₁ + q₂ × p₂ + …) ÷ (q₁ + q₂ + …). Three varieties at ₹504, ₹540 and ₹x mixed 1 : 1 : 2 to give ₹612: 504 + 540 + 2x = 4 × 612 → x = ₹702.\n- Reverse alligation (find a missing price): rice at ₹45 mixed 3 : 2 with a second variety gives ₹50 → 3 × 45 + 2x = 5 × 50 → x = ₹57.50.\n- Mixing two mixtures: add each component separately. 2 L of alcohol : water = 3 : 5 (0.75 L alcohol, 1.25 L water) with 3 L of 4 : 1 (2.4 L alcohol, 0.6 L water) gives 3.15 : 1.85 = 63 : 37.\n- Replacing part of a mixture with one component: 60 L of milk : water = 7 : 8 has 28 L milk and 32 L water; take out 10 L of mixture (14/3 L milk, 16/3 L water) and pour in 10 L milk → milk 100/3, water 80/3 → 5 : 4.\n- Partnership with changing capital: add capital × months for each period. A keeps ₹30000 for 12 months (360000); B keeps ₹20000 for 4 months then ₹50000 for 8 months (80000 + 400000 = 480000). Ratio 3 : 4, so of ₹14000 profit B gets ₹8000.\n- Working (active) partner's salary comes out of the profit FIRST; the rest is split in the capital × time ratio. Profit ₹10000, A's salary ₹2000, capital ratio 3 : 1 → A gets 2000 + 6000 = ₹8000.\n\n**Exam-level example**\nHow much water must be added to 40 L of milk : water = 3 : 1 to make it 3 : 2? Milk 30 L stays fixed; water must become 20 L, so add 20 − 10 = **10 L**.\n\n**Common traps**\n- Averaging the prices without weighting by quantity (₹80 instead of ₹76).\n- Multiplying the whole year's capital when it changed mid-year.\n- Splitting the salary along with the profit.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| Σ q·p ÷ Σ q | mixture price = weighted average |\n| add components separately | mixing two mixtures |\n| Σ capital × months | partner's effective capital |\n| salary first, then ratio | working partner |",
+      "keyPoints": [
+        "Mixture price = Σ(quantity × price) ÷ total quantity (tea ₹60 and ₹100 at 3 : 2 → ₹76)",
+        "Reverse alligation: put the unknown price in the weighted-average equation (₹45 with x at 3 : 2 = ₹50 → ₹57.50)",
+        "Mixing two mixtures: add each component separately, then form the new ratio",
+        "Changing capital: effective capital = Σ capital × months for each period",
+        "A working partner's salary is paid from the profit before the capital × time split"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
+      "verified": true,
+      "tags": [
+        "ratio-proportion-averages",
+        "completeness"
+      ]
     }
   ]
 }

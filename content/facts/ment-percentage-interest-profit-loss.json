@@ -1,0 +1,969 @@
+{
+  "version": 1,
+  "subtopicId": "ment-percentage-interest-profit-loss",
+  "facts": [
+    {
+      "id": "pc-def",
+      "fact": "x% means x out of 100 (x ÷ 100); a fraction × 100 gives its percentage.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "percentage"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-1",
+        "ment-percentage-interest-profit-loss-mcq-32"
+      ]
+    },
+    {
+      "id": "pc-fractions",
+      "fact": "Fraction table: 1/8 = 12.5%, 1/6 = 16⅔%, 1/7 = 14 2/7%, 1/9 = 11 1/9%, 1/11 = 9 1/11%, 1/12 = 8⅓%.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "fraction"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-32",
+        "ment-percentage-interest-profit-loss-mcq-33"
+      ]
+    },
+    {
+      "id": "pc-whole",
+      "fact": "Whole from a part: whole = part × 100 ÷ percentage.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "total"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-34",
+        "ment-percentage-interest-profit-loss-mcq-35"
+      ]
+    },
+    {
+      "id": "pc-marks",
+      "fact": "Pass mark = marks got + marks short; total = pass mark × 100 ÷ pass %.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "marks"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-35"
+      ]
+    },
+    {
+      "id": "pc-base",
+      "fact": "An increase or decrease percentage is always taken on the ORIGINAL value.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "increase"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-4",
+        "ment-percentage-interest-profit-loss-mcq-36",
+        "ment-percentage-interest-profit-loss-mcq-37"
+      ]
+    },
+    {
+      "id": "pc-successive",
+      "fact": "Two successive changes a% and b% give a net a + b + ab/100 (minus for a fall).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "net"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-4",
+        "ment-percentage-interest-profit-loss-mcq-27",
+        "ment-percentage-interest-profit-loss-card-1",
+        "ment-percentage-interest-profit-loss-mcq-37",
+        "ment-percentage-interest-profit-loss-mcq-38"
+      ]
+    },
+    {
+      "id": "pc-up-down",
+      "fact": "Trap: +x% then −x% is NOT zero — it is a net fall of x²/100 %.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "decrease"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-4",
+        "ment-percentage-interest-profit-loss-mcq-38"
+      ]
+    },
+    {
+      "id": "pc-more-less",
+      "fact": "If A is x% more than B, B is x/(100 + x) × 100 % less than A.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "less"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-6",
+        "ment-percentage-interest-profit-loss-card-2",
+        "ment-percentage-interest-profit-loss-mcq-41"
+      ]
+    },
+    {
+      "id": "pc-less-more",
+      "fact": "If B is x% less than A, A is x/(100 − x) × 100 % more than B.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "less"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-39",
+        "ment-percentage-interest-profit-loss-mcq-40"
+      ]
+    },
+    {
+      "id": "pc-consumption",
+      "fact": "Price up x% → cut consumption x/(100 + x) × 100 %; price down x% → raise it x/(100 − x) × 100 % to keep spending fixed.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "consumption"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-7",
+        "ment-percentage-interest-profit-loss-card-2",
+        "ment-percentage-interest-profit-loss-mcq-42"
+      ]
+    },
+    {
+      "id": "pc-votes",
+      "fact": "Two-candidate margin = (winner % − loser %) of the valid votes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "votes"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-8",
+        "ment-percentage-interest-profit-loss-mcq-43"
+      ]
+    },
+    {
+      "id": "pc-invalid",
+      "fact": "With invalid votes, work on valid votes first, then convert to the total.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "invalid"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-43"
+      ]
+    },
+    {
+      "id": "pc-equality",
+      "fact": "x% of A = y% of B gives A : B = y : x.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "of a"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-20",
+        "ment-percentage-interest-profit-loss-card-12",
+        "ment-percentage-interest-profit-loss-mcq-44"
+      ]
+    },
+    {
+      "id": "pc-commission",
+      "fact": "Commission = rate × sales ÷ 100; sales = commission × 100 ÷ rate.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "commission"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-methods",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-18",
+        "ment-percentage-interest-profit-loss-mcq-45"
+      ]
+    },
+    {
+      "id": "pc-sales-tax",
+      "fact": "Sales tax is added on the selling price: total = SP × (1 + tax%/100).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sales tax"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-46"
+      ]
+    },
+    {
+      "id": "pc-savings",
+      "fact": "Savings % = (income − expenditure) ÷ income × 100.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "saving"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-47"
+      ]
+    },
+    {
+      "id": "si-formula",
+      "fact": "SI = P × R × T ÷ 100; amount = P + SI; the principal never grows.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "simple interest"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-simple-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-2",
+        "ment-percentage-interest-profit-loss-card-3",
+        "ment-percentage-interest-profit-loss-mcq-48",
+        "ment-percentage-interest-profit-loss-mcq-49"
+      ]
+    },
+    {
+      "id": "si-find",
+      "fact": "P = 100·SI ÷ (RT); R = 100·SI ÷ (PT); T = 100·SI ÷ (PR).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "simple interest"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-simple-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-9",
+        "ment-percentage-interest-profit-loss-mcq-49",
+        "ment-percentage-interest-profit-loss-mcq-50"
+      ]
+    },
+    {
+      "id": "si-doubling",
+      "fact": "Under SI a sum doubles when R × T = 100 and becomes n times when R × T = (n − 1) × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "double"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-simple-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-9",
+        "ment-percentage-interest-profit-loss-card-3",
+        "ment-percentage-interest-profit-loss-mcq-51"
+      ]
+    },
+    {
+      "id": "si-two-amounts",
+      "fact": "Two amounts at SI: yearly interest = (A₂ − A₁) ÷ (t₂ − t₁); principal = A₁ − t₁ × yearly interest.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "amounts"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-simple-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-21",
+        "ment-percentage-interest-profit-loss-mcq-52"
+      ]
+    },
+    {
+      "id": "si-instalments",
+      "fact": "SI instalments: I + I(1 + R/100) + I(1 + 2R/100) + … = the debt due.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "instalment"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-interest-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-53"
+      ]
+    },
+    {
+      "id": "ci-formula",
+      "fact": "Compound amount A = P(1 + R/100)^{n}; CI = A − P; the base grows each year.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "compound"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-10",
+        "ment-percentage-interest-profit-loss-card-4",
+        "ment-percentage-interest-profit-loss-mcq-54",
+        "ment-percentage-interest-profit-loss-mcq-66"
+      ]
+    },
+    {
+      "id": "ci-half",
+      "fact": "Half-yearly: rate R/2 for 2n periods; quarterly: R/4 for 4n periods.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "half-yearly"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-11",
+        "ment-percentage-interest-profit-loss-card-4",
+        "ment-percentage-interest-profit-loss-mcq-56"
+      ]
+    },
+    {
+      "id": "ci-effective",
+      "fact": "Effective annual rate of R% compounded half-yearly = (1 + R/200)² − 1 (10% → 10.25%).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "effective"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-interest-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-57"
+      ]
+    },
+    {
+      "id": "ci-diff2",
+      "fact": "CI − SI for 2 years = P(R/100)² (the interest on the first year's interest).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "difference"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-interest-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-12",
+        "ment-percentage-interest-profit-loss-card-5",
+        "ment-percentage-interest-profit-loss-mcq-58"
+      ]
+    },
+    {
+      "id": "ci-diff3",
+      "fact": "CI − SI for 3 years = P(R/100)²(3 + R/100).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "3 years"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-interest-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-card-5",
+        "ment-percentage-interest-profit-loss-mcq-59"
+      ]
+    },
+    {
+      "id": "ci-first-year",
+      "fact": "For one year (annual compounding) CI = SI; from year 2 CI exceeds SI.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "first year"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-25"
+      ]
+    },
+    {
+      "id": "ci-find-rate",
+      "fact": "Rate under CI: (1 + R/100)^{n} = A ÷ P.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "rate"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-22",
+        "ment-percentage-interest-profit-loss-mcq-64"
+      ]
+    },
+    {
+      "id": "ci-multiples",
+      "fact": "Under CI, doubling in n years means 4 times in 2n and 8 times in 3n years.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "times"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-interest-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-60",
+        "ment-percentage-interest-profit-loss-mcq-61"
+      ]
+    },
+    {
+      "id": "ci-population",
+      "fact": "Population/value growth = P(1 + R/100)^{n}; different yearly rates multiply.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "population"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-13",
+        "ment-percentage-interest-profit-loss-mcq-62",
+        "ment-percentage-interest-profit-loss-mcq-63"
+      ]
+    },
+    {
+      "id": "ci-depreciation",
+      "fact": "Reducing-balance depreciation: value = P(1 − R/100)^{n}.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "depreciat"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-14",
+        "ment-percentage-interest-profit-loss-mcq-64",
+        "ment-percentage-interest-profit-loss-mcq-65"
+      ]
+    },
+    {
+      "id": "ci-instalments",
+      "fact": "CI instalments: the sum borrowed = total present worth of the instalments (each ÷ (1 + R/100)^{k}).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "instal"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-17"
+      ]
+    },
+    {
+      "id": "ci-frequency",
+      "fact": "More frequent compounding gives a larger amount for the same nominal rate.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "compounded"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-compound-interest",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-55",
+        "ment-percentage-interest-profit-loss-mcq-56"
+      ]
+    },
+    {
+      "id": "pl-on-cp",
+      "fact": "Profit % and loss % are always on the cost price.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "profit"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-3",
+        "ment-percentage-interest-profit-loss-card-6",
+        "ment-percentage-interest-profit-loss-mcq-68"
+      ]
+    },
+    {
+      "id": "pl-sp",
+      "fact": "SP = CP × (1 ± p/100); CP = SP ÷ (1 ± p/100).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "sell"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-19",
+        "ment-percentage-interest-profit-loss-mcq-67",
+        "ment-percentage-interest-profit-loss-mcq-68"
+      ]
+    },
+    {
+      "id": "pl-discount",
+      "fact": "Discount is on the marked price: SP = MP × (1 − d/100).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "discount"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-15",
+        "ment-percentage-interest-profit-loss-card-6",
+        "ment-percentage-interest-profit-loss-mcq-69",
+        "ment-percentage-interest-profit-loss-mcq-70",
+        "ment-percentage-interest-profit-loss-mcq-72",
+        "ment-percentage-interest-profit-loss-mcq-73"
+      ]
+    },
+    {
+      "id": "pl-markup-trap",
+      "fact": "Trap: never subtract the discount % from the mark-up % — multiply the factors (50% up, 20% off → 20%, not 30%).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "discount"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-15",
+        "ment-percentage-interest-profit-loss-mcq-69"
+      ]
+    },
+    {
+      "id": "pl-succ-discount",
+      "fact": "Two successive discounts a% and b% = a single a + b − ab/100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "discount"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-5",
+        "ment-percentage-interest-profit-loss-card-7",
+        "ment-percentage-interest-profit-loss-mcq-71",
+        "ment-percentage-interest-profit-loss-mcq-72"
+      ]
+    },
+    {
+      "id": "pl-mp-target",
+      "fact": "MP for a target profit p after discount d: MP = CP × (100 + p) ÷ (100 − d).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "discount"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-24",
+        "ment-percentage-interest-profit-loss-mcq-73"
+      ]
+    },
+    {
+      "id": "pl-dishonest",
+      "fact": "Dealer at CP with a false weight gains error ÷ (true − error) × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "weight"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-16",
+        "ment-percentage-interest-profit-loss-card-8",
+        "ment-percentage-interest-profit-loss-mcq-74",
+        "ment-percentage-interest-profit-loss-mcq-75"
+      ]
+    },
+    {
+      "id": "pl-dishonest-combo",
+      "fact": "False weight plus a price change: profit = price factor ÷ weight factor − 1.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "weight"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-75"
+      ]
+    },
+    {
+      "id": "pl-chain",
+      "fact": "Chain sales multiply the factors; work a chain backwards by dividing.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sells"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-19",
+        "ment-percentage-interest-profit-loss-mcq-76"
+      ]
+    },
+    {
+      "id": "pl-same-sp",
+      "fact": "Same SP, one at +x% and one at −x%: always a net loss of x²/100 %.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "each"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-23",
+        "ment-percentage-interest-profit-loss-mcq-77"
+      ]
+    },
+    {
+      "id": "pl-cost-n",
+      "fact": "Loss (or gain) equal to the COST of n articles: CP of N − n (or N + n) articles = SP of N.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "cost price of"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-26",
+        "ment-percentage-interest-profit-loss-mcq-78"
+      ]
+    },
+    {
+      "id": "pl-sp-n",
+      "fact": "Loss equal to the SP of n articles on selling N: loss % = n ÷ (N + n) × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "selling price of"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-79",
+        "ment-percentage-interest-profit-loss-mcq-80"
+      ]
+    },
+    {
+      "id": "pl-cp-x-sp-y",
+      "fact": "CP of x articles = SP of y articles → profit % = (x − y) ÷ y × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "cost price of"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-81",
+        "ment-percentage-interest-profit-loss-mcq-82"
+      ]
+    },
+    {
+      "id": "pl-mixed",
+      "fact": "Part sold at a% with an overall target b%: required SP of the rest = total SP − part SP.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "overall"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-83"
+      ]
+    },
+    {
+      "id": "pl-npnl",
+      "fact": "No profit no loss on two items at +a% and −b%: a × CP₁ = b × CP₂.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "neither"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-84"
+      ]
+    },
+    {
+      "id": "pl-cp100",
+      "fact": "Set CP = 100 to turn any mark-up and discount chain into a direct profit %.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "profit"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-15"
+      ]
+    },
+    {
+      "id": "pa-partnership",
+      "fact": "Partnership profit is shared in the ratio capital × time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "profit"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-partnership-alligation",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-28",
+        "ment-percentage-interest-profit-loss-mcq-29",
+        "ment-percentage-interest-profit-loss-card-10",
+        "ment-percentage-interest-profit-loss-mcq-85"
+      ]
+    },
+    {
+      "id": "pa-withdraw",
+      "fact": "Capital withdrawn mid-year: add capital × months for each period before forming the ratio.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "withdraw"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-85"
+      ]
+    },
+    {
+      "id": "pa-alligation",
+      "fact": "Alligation: cheaper : dearer = (dearer − mean) : (mean − cheaper).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "mixture"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-partnership-alligation",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-30",
+        "ment-percentage-interest-profit-loss-mcq-86"
+      ]
+    },
+    {
+      "id": "pa-quantity",
+      "fact": "Alligation gives a QUANTITY ratio; the mean lies nearer the ingredient used in greater quantity.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-percentage-interest-profit-loss-note-partnership-alligation",
+      "drilledBy": [
+        "ment-percentage-interest-profit-loss-mcq-31"
+      ]
+    }
+  ]
+}

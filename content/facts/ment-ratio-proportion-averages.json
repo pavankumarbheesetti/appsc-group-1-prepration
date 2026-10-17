@@ -1,0 +1,909 @@
+{
+  "version": 1,
+  "subtopicId": "ment-ratio-proportion-averages",
+  "facts": [
+    {
+      "id": "rt-parts",
+      "fact": "Share of a total in ratio a : b : c = total × (own part ÷ sum of parts).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-19",
+        "ment-ratio-proportion-averages-mcq-29",
+        "ment-ratio-proportion-averages-mcq-33",
+        "ment-ratio-proportion-averages-mcq-38",
+        "ment-ratio-proportion-averages-mcq-71"
+      ]
+    },
+    {
+      "id": "rt-simplify",
+      "fact": "Simplify a : b by dividing both terms by HCF(a, b).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "simplest"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-2"
+      ]
+    },
+    {
+      "id": "rt-combine",
+      "fact": "Combine a : b and b : c by making the shared b equal (LCM of the two b-values).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "b : c"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-3",
+        "ment-ratio-proportion-averages-mcq-30"
+      ]
+    },
+    {
+      "id": "rt-compound",
+      "fact": "Compound (mixed) ratio of a : b, c : d, e : f = (a × c × e) : (b × d × f).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "compound"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-4",
+        "ment-ratio-proportion-averages-card-2",
+        "ment-ratio-proportion-averages-mcq-31"
+      ]
+    },
+    {
+      "id": "rt-duplicate",
+      "fact": "Duplicate ratio a² : b²; sub-duplicate √a : √b; triplicate a³ : b³; sub-triplicate = cube roots.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "duplicate"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-32"
+      ]
+    },
+    {
+      "id": "rt-inverse",
+      "fact": "Inverse ratio of a : b : c = 1/a : 1/b : 1/c = bc : ca : ab — the smallest term gets the largest share.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "inverse ratio"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-33",
+        "ment-ratio-proportion-averages-mcq-34"
+      ]
+    },
+    {
+      "id": "rt-compare",
+      "fact": "Compare a : b and c : d by cross-multiplying: ad > bc means a : b is greater.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "greate"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-35"
+      ]
+    },
+    {
+      "id": "rt-percent",
+      "fact": "Ratio a : b as a share of the whole = a ÷ (a + b) × 100, not a ÷ b.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "percentage"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-18",
+        "ment-ratio-proportion-averages-card-12",
+        "ment-ratio-proportion-averages-mcq-36"
+      ]
+    },
+    {
+      "id": "rt-ages",
+      "fact": "Ratio of ages: write ages as 5k, 7k and add the SAME years to both before equating to the new ratio.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "ages"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-20",
+        "ment-ratio-proportion-averages-mcq-37"
+      ]
+    },
+    {
+      "id": "rt-coins",
+      "fact": "Coin ratios: a count ratio must be turned into values (× coin value) — and a value ratio into counts.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "coins"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-21",
+        "ment-ratio-proportion-averages-mcq-38"
+      ]
+    },
+    {
+      "id": "rt-add-component",
+      "fact": "Adding one component changes the ratio: keep the unchanged component fixed and solve for the other.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratios",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-26",
+        "ment-ratio-proportion-averages-mcq-39"
+      ]
+    },
+    {
+      "id": "rt-make-proportional",
+      "fact": "Number to add to each of a, b, c, d to make them proportional: solve (a + x)(d + x) = (b + x)(c + x).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "proportional"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-40"
+      ]
+    },
+    {
+      "id": "rt-income",
+      "fact": "Income–expenditure: savings = income − expenditure; write incomes and expenditures as k-multiples and equate savings.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "income"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-41"
+      ]
+    },
+    {
+      "id": "pp-cross",
+      "fact": "In a proportion a : b = c : d the product of the extremes equals the product of the means: ad = bc.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "proportion"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-24",
+        "ment-ratio-proportion-averages-mcq-42",
+        "ment-ratio-proportion-averages-mcq-46"
+      ]
+    },
+    {
+      "id": "pp-direct",
+      "fact": "Direct proportion: x ÷ y stays constant (more gives more).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "direct"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-5",
+        "ment-ratio-proportion-averages-mcq-43"
+      ]
+    },
+    {
+      "id": "pp-inverse",
+      "fact": "Inverse proportion: x × y stays constant (more men, fewer days).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "days"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-6",
+        "ment-ratio-proportion-averages-mcq-44"
+      ]
+    },
+    {
+      "id": "pp-third",
+      "fact": "Third proportional to a, b = b² ÷ a.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "third"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-7",
+        "ment-ratio-proportion-averages-card-3",
+        "ment-ratio-proportion-averages-mcq-45",
+        "ment-ratio-proportion-averages-mcq-47"
+      ]
+    },
+    {
+      "id": "pp-fourth",
+      "fact": "Fourth proportional to a, b, c = bc ÷ a.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "fourth"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-8",
+        "ment-ratio-proportion-averages-card-3",
+        "ment-ratio-proportion-averages-mcq-46",
+        "ment-ratio-proportion-averages-mcq-47"
+      ]
+    },
+    {
+      "id": "pp-mean",
+      "fact": "Mean proportional between a and b = √(ab) — never ab.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "mean proportional"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-9",
+        "ment-ratio-proportion-averages-mcq-24",
+        "ment-ratio-proportion-averages-card-3",
+        "ment-ratio-proportion-averages-mcq-47",
+        "ment-ratio-proportion-averages-mcq-48"
+      ]
+    },
+    {
+      "id": "pp-cd",
+      "fact": "Componendo–dividendo: a/b = c/d gives (a + b)/(a − b) = (c + d)/(c − d).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        ": ("
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-10",
+        "ment-ratio-proportion-averages-mcq-49"
+      ]
+    },
+    {
+      "id": "pp-alt-inv",
+      "fact": "From a : b = c : d: invertendo b : a = d : c and alternendo a : c = b : d.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "alternendo"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-proportion",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-24",
+        "ment-ratio-proportion-averages-mcq-50"
+      ]
+    },
+    {
+      "id": "pp-continued",
+      "fact": "a, b, c in continued proportion means a : b = b : c, so b² = ac.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "continued proportion"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-51"
+      ]
+    },
+    {
+      "id": "pt-cap-time",
+      "fact": "Partnership profit is shared in the ratio capital × time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "profit"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-partnership",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-11",
+        "ment-ratio-proportion-averages-card-6",
+        "ment-ratio-proportion-averages-mcq-52",
+        "ment-ratio-proportion-averages-mcq-53"
+      ]
+    },
+    {
+      "id": "pt-equal-time",
+      "fact": "With equal periods, time cancels and profit splits in the ratio of capitals.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "profit"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-partnership",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-card-6",
+        "ment-ratio-proportion-averages-mcq-53"
+      ]
+    },
+    {
+      "id": "pt-changing",
+      "fact": "Changing capital: effective capital = Σ capital × months over each period.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "months"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-54"
+      ]
+    },
+    {
+      "id": "pt-salary",
+      "fact": "A working partner's salary is taken from the profit before the capital × time split.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "salary"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-55"
+      ]
+    },
+    {
+      "id": "av-basic",
+      "fact": "Average = sum ÷ count; total = average × count.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "average"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-1",
+        "ment-ratio-proportion-averages-mcq-56",
+        "ment-ratio-proportion-averages-mcq-57"
+      ]
+    },
+    {
+      "id": "av-missing",
+      "fact": "Missing value = average × count − sum of the known values.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "average"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-57",
+        "ment-ratio-proportion-averages-mcq-58"
+      ]
+    },
+    {
+      "id": "av-ap",
+      "fact": "Average of equally spaced numbers = middle term = (first + last) ÷ 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "consecutive"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-13",
+        "ment-ratio-proportion-averages-mcq-59",
+        "ment-ratio-proportion-averages-mcq-60"
+      ]
+    },
+    {
+      "id": "av-first-n",
+      "fact": "Average of the first n natural numbers = (n + 1) ÷ 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "natural numbers"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-average-first-n-series",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-25",
+        "ment-ratio-proportion-averages-card-8",
+        "ment-ratio-proportion-averages-mcq-61",
+        "ment-ratio-proportion-averages-mcq-62"
+      ]
+    },
+    {
+      "id": "av-odd-even",
+      "fact": "First n odd numbers average n; first n even numbers average n + 1.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "natural numbers"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-average-first-n-series",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-27",
+        "ment-ratio-proportion-averages-mcq-28",
+        "ment-ratio-proportion-averages-mcq-62"
+      ]
+    },
+    {
+      "id": "av-powers",
+      "fact": "Average of squares of the first n naturals = (n + 1)(2n + 1) ÷ 6; of cubes = n(n + 1)² ÷ 4.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "squares"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-63"
+      ]
+    },
+    {
+      "id": "av-weighted",
+      "fact": "Combined mean = (n₁m₁ + n₂m₂) ÷ (n₁ + n₂); never average the two averages when sizes differ.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "average"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-12",
+        "ment-ratio-proportion-averages-card-7",
+        "ment-ratio-proportion-averages-mcq-64",
+        "ment-ratio-proportion-averages-mcq-65"
+      ]
+    },
+    {
+      "id": "av-shift",
+      "fact": "Adding x to every value adds x to the average; multiplying every value by x multiplies the average by x.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "every"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-66"
+      ]
+    },
+    {
+      "id": "av-inclusion",
+      "fact": "New member = new average × (n + 1) − old average × n (16th-innings type).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "average"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-14",
+        "ment-ratio-proportion-averages-card-9",
+        "ment-ratio-proportion-averages-mcq-67",
+        "ment-ratio-proportion-averages-mcq-68"
+      ]
+    },
+    {
+      "id": "av-replacement",
+      "fact": "Replacement: new value = replaced value + rise in average × count.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "replac"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-23",
+        "ment-ratio-proportion-averages-card-9",
+        "ment-ratio-proportion-averages-mcq-69"
+      ]
+    },
+    {
+      "id": "av-overlap",
+      "fact": "Overlapping groups: the shared term = (sum of the group totals) − overall total.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "last"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-22",
+        "ment-ratio-proportion-averages-mcq-73"
+      ]
+    },
+    {
+      "id": "av-extremes",
+      "fact": "Removing extremes: lowest = old total − highest − new total.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "cheapest"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-70"
+      ]
+    },
+    {
+      "id": "av-ratio",
+      "fact": "Ratio + average: total = average × count, then divide the total in the ratio.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-71"
+      ]
+    },
+    {
+      "id": "av-group-change",
+      "fact": "When a group grows and its average changes, equate old total + change to new count × new average.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "average"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-72"
+      ]
+    },
+    {
+      "id": "av-cricket",
+      "fact": "Batting average = runs ÷ innings; bowling average = runs ÷ wickets; required run rate = runs needed ÷ overs left.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "run rate"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-averages-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-74"
+      ]
+    },
+    {
+      "id": "mx-alligation",
+      "fact": "Alligation: cheaper : dearer = (dearer − mean) : (mean − cheaper).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "mixture"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-16",
+        "ment-ratio-proportion-averages-mcq-75"
+      ]
+    },
+    {
+      "id": "mx-mean-between",
+      "fact": "The mean (mixture) value always lies between the two component values.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mixture"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-76"
+      ]
+    },
+    {
+      "id": "mx-weighted-price",
+      "fact": "Mixture price = Σ(quantity × price) ÷ total quantity.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mixture"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-77",
+        "ment-ratio-proportion-averages-mcq-78"
+      ]
+    },
+    {
+      "id": "mx-reverse",
+      "fact": "Reverse alligation: put the unknown price into the weighted-average equation and solve.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "mixture"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-78",
+        "ment-ratio-proportion-averages-mcq-79"
+      ]
+    },
+    {
+      "id": "mx-two-mixtures",
+      "fact": "Mixing two mixtures: add each component separately, then form the ratio.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mixtures"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-80"
+      ]
+    },
+    {
+      "id": "mx-replace-component",
+      "fact": "Replacing part of a mixture with one component: remove that part proportionally from each component, then add the new liquid.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "replac"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-81"
+      ]
+    },
+    {
+      "id": "mx-successive",
+      "fact": "Successive replacement: pure liquid left = initial × (1 − r/T)^{n}.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "replac"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-15",
+        "ment-ratio-proportion-averages-card-11",
+        "ment-ratio-proportion-averages-mcq-82"
+      ]
+    },
+    {
+      "id": "mx-straight-line-trap",
+      "fact": "Trap: each draw removes a FRACTION of what remains, so 20 − 4 − 4 is wrong.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "replac"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-15",
+        "ment-ratio-proportion-averages-mcq-82"
+      ]
+    },
+    {
+      "id": "mx-heads-legs",
+      "fact": "Heads and legs: four-legged = (legs − 2 × heads) ÷ 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "legs"
+      ],
+      "taughtIn": "ment-ratio-proportion-averages-note-mixtures",
+      "drilledBy": [
+        "ment-ratio-proportion-averages-mcq-17",
+        "ment-ratio-proportion-averages-mcq-83"
+      ]
+    }
+  ]
+}

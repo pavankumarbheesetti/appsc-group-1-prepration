@@ -1,0 +1,732 @@
+{
+  "version": 1,
+  "subtopicId": "ment-clocks-calendars-ages",
+  "facts": [
+    {
+      "id": "ck-speeds",
+      "fact": "Minute hand 6° per minute; hour hand 30° per hour = 0.5° per minute; the minute hand gains 5.5° per minute.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "minute hand"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-27",
+        "ment-clocks-calendars-ages-mcq-33"
+      ]
+    },
+    {
+      "id": "ck-angle",
+      "fact": "Angle between the hands = |30H − 5.5M|; if above 180°, take 360° minus it.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "angle"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-angle-events",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-1",
+        "ment-clocks-calendars-ages-mcq-17",
+        "ment-clocks-calendars-ages-card-1",
+        "ment-clocks-calendars-ages-mcq-29",
+        "ment-clocks-calendars-ages-mcq-30"
+      ]
+    },
+    {
+      "id": "ck-reflex",
+      "fact": "Reflex angle = 360° − the smaller angle (3:00 → 270°).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "reflex"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-31"
+      ]
+    },
+    {
+      "id": "ck-hour-turned",
+      "fact": "Angle turned by the hour hand in t minutes = 0.5 × t (11 a.m. to 4:20 p.m. → 160°).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hour hand"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-28"
+      ]
+    },
+    {
+      "id": "ck-coincide",
+      "fact": "Hands coincide at 60H/11 minutes past H and every 720/11 = 65 5/11 minutes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "coincide"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-angle-events",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-4",
+        "ment-clocks-calendars-ages-card-3",
+        "ment-clocks-calendars-ages-mcq-32",
+        "ment-clocks-calendars-ages-mcq-33"
+      ]
+    },
+    {
+      "id": "ck-counts",
+      "fact": "In 12 hours the hands coincide 11 times, are opposite 11 times and at right angles 22 times (double for 24 hours).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "times"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-angle-events",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-6",
+        "ment-clocks-calendars-ages-mcq-18",
+        "ment-clocks-calendars-ages-mcq-36",
+        "ment-clocks-calendars-ages-mcq-38"
+      ]
+    },
+    {
+      "id": "ck-why-11",
+      "fact": "Only 11 overlaps in 12 hours because the meeting \"between 11 and 1\" is the single one at 12:00.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "12:00"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-34"
+      ]
+    },
+    {
+      "id": "ck-right",
+      "fact": "Right angle between H and H + 1: solve |30H − 5.5M| = 90 (two answers in most hours).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "right angle"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-angle-events",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-5",
+        "ment-clocks-calendars-ages-mcq-35",
+        "ment-clocks-calendars-ages-mcq-36"
+      ]
+    },
+    {
+      "id": "ck-opposite",
+      "fact": "Opposite (180°) between H and H + 1: solve 5.5M = 30H ± 180.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "opposite"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-37"
+      ]
+    },
+    {
+      "id": "ck-straight",
+      "fact": "'In a straight line' counts both 0° and 180°: 22 times in 12 hours, 44 in a day.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "straight line"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-38",
+        "ment-clocks-calendars-ages-mcq-46"
+      ]
+    },
+    {
+      "id": "ck-mirror",
+      "fact": "Mirror image of a time = 11:60 − time (12:00 − time when minutes are 00).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "mirror"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-3",
+        "ment-clocks-calendars-ages-card-5",
+        "ment-clocks-calendars-ages-mcq-39",
+        "ment-clocks-calendars-ages-mcq-40"
+      ]
+    },
+    {
+      "id": "ck-water",
+      "fact": "Water image (source convention): 18:30 − time if minutes ≤ 30, else 17:90 − time.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "water"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-41"
+      ]
+    },
+    {
+      "id": "ck-faulty",
+      "fact": "Faulty clock: total error = error rate × time elapsed; a losing clock shows an earlier time, a gaining clock a later time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "set right"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-7",
+        "ment-clocks-calendars-ages-mcq-19",
+        "ment-clocks-calendars-ages-mcq-42",
+        "ment-clocks-calendars-ages-mcq-43"
+      ]
+    },
+    {
+      "id": "ck-true-time",
+      "fact": "True time from a faulty clock: true hours = shown hours × 24 ÷ (hours the clock shows per true day).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "true time"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-43"
+      ]
+    },
+    {
+      "id": "ck-64-min",
+      "fact": "Hands meeting every 64 true minutes means the clock GAINS (they should meet every 65 5/11 min): 32 8/11 min a day.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "64 minutes"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-44"
+      ]
+    },
+    {
+      "id": "ck-chimes",
+      "fact": "A clock striking the hour (1 to 12) strikes 78 times in 12 hours, 156 times in a day.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "strike"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-clock-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-45"
+      ]
+    },
+    {
+      "id": "cl-odd-days",
+      "fact": "Odd days = days left after whole weeks (days mod 7).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "odd days"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-8",
+        "ment-clocks-calendars-ages-mcq-47"
+      ]
+    },
+    {
+      "id": "cl-year",
+      "fact": "An ordinary year has 1 odd day, a leap year 2.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "monday"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-10",
+        "ment-clocks-calendars-ages-mcq-50",
+        "ment-clocks-calendars-ages-mcq-53"
+      ]
+    },
+    {
+      "id": "cl-month",
+      "fact": "Month odd days (ordinary year): 3, 0, 3, 2, 3, 2, 3, 3, 2, 3, 2, 3 (February 1 in a leap year).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "day of the week"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-50"
+      ]
+    },
+    {
+      "id": "cl-century",
+      "fact": "Century odd days: 100 years → 5, 200 → 3, 300 → 1, 400 → 0.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "odd days"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-8",
+        "ment-clocks-calendars-ages-mcq-21",
+        "ment-clocks-calendars-ages-card-6",
+        "ment-clocks-calendars-ages-mcq-47"
+      ]
+    },
+    {
+      "id": "cl-leap",
+      "fact": "Leap year: divisible by 4; a century year only if divisible by 400 (1600, 2000 yes; 1700, 1900 no).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "leap year"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-leap-year-repetition",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-2",
+        "ment-clocks-calendars-ages-mcq-48",
+        "ment-clocks-calendars-ages-mcq-49"
+      ]
+    },
+    {
+      "id": "cl-codes",
+      "fact": "Day codes for the odd-day total: Sunday 0, Monday 1, … Saturday 6.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "day of the week"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-9",
+        "ment-clocks-calendars-ages-mcq-20",
+        "ment-clocks-calendars-ages-mcq-50",
+        "ment-clocks-calendars-ages-mcq-51"
+      ]
+    },
+    {
+      "id": "cl-reference",
+      "fact": "Reference-date method: new weekday = given weekday + odd days between the two dates.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "day of the week"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-calendar-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-10",
+        "ment-clocks-calendars-ages-mcq-52",
+        "ment-clocks-calendars-ages-mcq-53",
+        "ment-clocks-calendars-ages-mcq-54"
+      ]
+    },
+    {
+      "id": "cl-leap-trap",
+      "fact": "A date moves 2 weekdays in a year only if 29 February lies between the two dates.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1 march"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-calendar-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-54",
+        "ment-clocks-calendars-ages-mcq-55"
+      ]
+    },
+    {
+      "id": "cl-repeat",
+      "fact": "A calendar repeats when odd days total a multiple of 7 and leap status matches: leap years after 28 years, ordinary after 6 or 11.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "calendar"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-leap-year-repetition",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-11",
+        "ment-clocks-calendars-ages-card-8",
+        "ment-clocks-calendars-ages-mcq-56",
+        "ment-clocks-calendars-ages-mcq-57"
+      ]
+    },
+    {
+      "id": "cl-century-last",
+      "fact": "The last day of a century can only be Sunday, Monday, Wednesday or Friday — never Tuesday, Thursday or Saturday.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "century"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-century-and-date-shift",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-25",
+        "ment-clocks-calendars-ages-mcq-59"
+      ]
+    },
+    {
+      "id": "cl-century-first",
+      "fact": "The first day of a century can only be Monday, Tuesday, Thursday or Saturday.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "first day of a century"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-calendar-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-58"
+      ]
+    },
+    {
+      "id": "cl-month-shift",
+      "fact": "Within a month, the weekday shifts by (gap in days) mod 7; dates 7, 14, 21, 28 days apart share a weekday.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "month"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-century-and-date-shift",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-26",
+        "ment-clocks-calendars-ages-mcq-61"
+      ]
+    },
+    {
+      "id": "cl-same-months",
+      "fact": "Same-calendar months in an ordinary year: January–October, April–July, September–December.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "october"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-calendar-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-60"
+      ]
+    },
+    {
+      "id": "cl-relative",
+      "fact": "Relative-day chains: count from 'today' (day before yesterday Wednesday → today Friday → day after tomorrow Sunday).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "day after tomorrow"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-calendar-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-62"
+      ]
+    },
+    {
+      "id": "cl-ds",
+      "fact": "Date data sufficiency: a weekday needs a reference date AND the target date; test each statement, then both.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "statement"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-calendar-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-63"
+      ]
+    },
+    {
+      "id": "ag-ratio",
+      "fact": "Ratio of ages: write 5k and 7k, add or subtract the SAME years for both, equate to the new ratio.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-methods",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-12",
+        "ment-clocks-calendars-ages-mcq-15",
+        "ment-clocks-calendars-ages-mcq-22",
+        "ment-clocks-calendars-ages-card-9",
+        "ment-clocks-calendars-ages-mcq-64"
+      ]
+    },
+    {
+      "id": "ag-difference",
+      "fact": "The age difference stays constant over time; ratios do not.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "older"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-methods",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-13",
+        "ment-clocks-calendars-ages-mcq-65",
+        "ment-clocks-calendars-ages-mcq-67"
+      ]
+    },
+    {
+      "id": "ag-past-future",
+      "fact": "'N years ago' subtracts N from every age; 'N years hence' adds N to every age.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "years ago"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-methods",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-16",
+        "ment-clocks-calendars-ages-mcq-24",
+        "ment-clocks-calendars-ages-card-10",
+        "ment-clocks-calendars-ages-mcq-66",
+        "ment-clocks-calendars-ages-mcq-67"
+      ]
+    },
+    {
+      "id": "ag-average",
+      "fact": "Added member's age = new average × (n + 1) − old average × n; removed member: remaining average = (total − age) ÷ (n − 1).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "average"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-methods",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-14",
+        "ment-clocks-calendars-ages-mcq-23",
+        "ment-clocks-calendars-ages-card-11",
+        "ment-clocks-calendars-ages-mcq-73"
+      ]
+    },
+    {
+      "id": "ag-one-unknown",
+      "fact": "Pick one unknown present age and write every other age from it (sum S → S − x).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sum"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-24",
+        "ment-clocks-calendars-ages-mcq-69"
+      ]
+    },
+    {
+      "id": "ag-self-multiple",
+      "fact": "Future multiple of own age: x + n = kx (in 15 years 4 times → x = 5).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "present age"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-68"
+      ]
+    },
+    {
+      "id": "ag-two-equations",
+      "fact": "Two linear age conditions: write both equations and solve simultaneously.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "three times"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-70"
+      ]
+    },
+    {
+      "id": "ag-diff-multiple",
+      "fact": "Age as a multiple of a difference of its own future and past ages: the difference is just the year gap (x = 4 × 7 = 28).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "difference"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-71"
+      ]
+    },
+    {
+      "id": "ag-middle",
+      "fact": "Shared middle member = first-group total + last-group total − whole total.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "13th"
+      ],
+      "taughtIn": "ment-clocks-calendars-ages-note-ages-extras",
+      "drilledBy": [
+        "ment-clocks-calendars-ages-mcq-72"
+      ]
+    }
+  ]
+}

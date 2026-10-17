@@ -1,0 +1,1131 @@
+{
+  "version": 1,
+  "subtopicId": "ment-powers-roots-hcf-lcm",
+  "facts": [
+    {
+      "id": "ix-laws",
+      "fact": "Same base: a^{m} × a^{n} = a^{m+n}, a^{m} ÷ a^{n} = a^{m-n}, (a^{m})^{n} = a^{mn}.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "×"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-indices",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-1",
+        "ment-powers-roots-hcf-lcm-card-1",
+        "ment-powers-roots-hcf-lcm-mcq-35"
+      ]
+    },
+    {
+      "id": "ix-zero",
+      "fact": "a^{0} = 1 for every non-zero a.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "a^{0}"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-indices",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-22",
+        "ment-powers-roots-hcf-lcm-card-1"
+      ]
+    },
+    {
+      "id": "ix-negative",
+      "fact": "A negative index means reciprocal: a^{-n} = 1 ÷ a^{n}, never a negative number.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "{-"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-indices",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-card-1",
+        "ment-powers-roots-hcf-lcm-mcq-33",
+        "ment-powers-roots-hcf-lcm-mcq-35",
+        "ment-powers-roots-hcf-lcm-mcq-45"
+      ]
+    },
+    {
+      "id": "ix-fractional",
+      "fact": "a^{m/n} = (n-th root of a)^{m}: bottom = root, top = power.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "{"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-indices",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-4",
+        "ment-powers-roots-hcf-lcm-card-1",
+        "ment-powers-roots-hcf-lcm-mcq-33",
+        "ment-powers-roots-hcf-lcm-mcq-34"
+      ]
+    },
+    {
+      "id": "ix-equation",
+      "fact": "Exponential equations: write both sides to the same base, then equate the exponents.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "{x"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-indices",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-3",
+        "ment-powers-roots-hcf-lcm-card-2",
+        "ment-powers-roots-hcf-lcm-mcq-35",
+        "ment-powers-roots-hcf-lcm-mcq-36"
+      ]
+    },
+    {
+      "id": "ix-exp-form",
+      "fact": "A root in exponential form: √a = a^{1/2}, cube root of a = a^{1/3}.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "{1/2}"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-card-12"
+      ]
+    },
+    {
+      "id": "sd-types",
+      "fact": "Surd types: pure (√7), mixed (4√3, rational × root), compound (4 + √3, a sum of surds).",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "compound"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-37"
+      ]
+    },
+    {
+      "id": "sd-simplify",
+      "fact": "Simplify a surd by pulling out perfect-square factors: √50 = 5√2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "√"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surds",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-5",
+        "ment-powers-roots-hcf-lcm-mcq-38",
+        "ment-powers-roots-hcf-lcm-mcq-39"
+      ]
+    },
+    {
+      "id": "sd-no-add",
+      "fact": "√a + √b is NOT √(a + b); only like surds combine: p√a ± q√a = (p ± q)√a.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "√"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surds",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-5",
+        "ment-powers-roots-hcf-lcm-mcq-38",
+        "ment-powers-roots-hcf-lcm-mcq-39"
+      ]
+    },
+    {
+      "id": "sd-binomial",
+      "fact": "Expand a binomial surd with (a + b)² = a² + b² + 2ab: (4 + 3√2)² = 34 + 24√2.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "24√2"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-40"
+      ]
+    },
+    {
+      "id": "sd-rationalise",
+      "fact": "Rationalise by multiplying top and bottom by the conjugate, using (x − y)(x + y) = x² − y².",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "√"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surds",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-6",
+        "ment-powers-roots-hcf-lcm-card-3",
+        "ment-powers-roots-hcf-lcm-mcq-41",
+        "ment-powers-roots-hcf-lcm-mcq-42",
+        "ment-powers-roots-hcf-lcm-mcq-44"
+      ]
+    },
+    {
+      "id": "sd-telescope",
+      "fact": "A chain of conjugate fractions telescopes: 1/(√25 − √24) − 1/(√24 − √23) + … + 1/(√21 − √20) = 5 + 2√5.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "√21"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-42"
+      ]
+    },
+    {
+      "id": "sd-compare",
+      "fact": "Compare surds of different orders by rewriting them with a common index = LCM of the root orders.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "√"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surds",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-7",
+        "ment-powers-roots-hcf-lcm-card-3",
+        "ment-powers-roots-hcf-lcm-mcq-43"
+      ]
+    },
+    {
+      "id": "sd-x-plus-1x",
+      "fact": "If x = a + √b with a² − b = 1, then 1/x = a − √b and x + 1/x = 2a (x = 3 + 2√2 gives 6).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "1/x"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surds",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-17",
+        "ment-powers-roots-hcf-lcm-mcq-44"
+      ]
+    },
+    {
+      "id": "sd-abs",
+      "fact": "√(a²) = |a|, never negative: √((−5)²) = 5.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "√("
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surds",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-22",
+        "ment-powers-roots-hcf-lcm-mcq-45"
+      ]
+    },
+    {
+      "id": "sq-prime-pairs",
+      "fact": "Square root by prime factors: group equal primes in pairs and keep one from each (cube root: groups of three).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "√"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surds",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-8",
+        "ment-powers-roots-hcf-lcm-mcq-46"
+      ]
+    },
+    {
+      "id": "sq-ends-5",
+      "fact": "A number ending in 5: x5² = x(x + 1) followed by 25 (85² = 7225).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "in 5"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-47",
+        "ment-powers-roots-hcf-lcm-mcq-50"
+      ]
+    },
+    {
+      "id": "sq-base-100",
+      "fact": "Base-100 squaring: (number ± distance from 100) then the square of the distance as two digits (97² = 9409).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "100"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-48"
+      ]
+    },
+    {
+      "id": "sq-unit-test",
+      "fact": "A perfect square never ends in 2, 3, 7 or 8 and always ends in an even number of zeros.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "perfect square"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-49",
+        "ment-powers-roots-hcf-lcm-mcq-50"
+      ]
+    },
+    {
+      "id": "sq-digital-root",
+      "fact": "The digital root of a perfect square is 1, 4, 7 or 9; any other digital root rules it out.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "perfect square"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-49"
+      ]
+    },
+    {
+      "id": "sq-make-square",
+      "fact": "Smallest multiplier/divisor that makes a perfect square = the unpaired (odd-power) primes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "perfect square"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-51",
+        "ment-powers-roots-hcf-lcm-mcq-52"
+      ]
+    },
+    {
+      "id": "sq-add-subtract",
+      "fact": "Least number to subtract to get a perfect square = long-division remainder; least to add = next square − number.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "perfect square"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-53",
+        "ment-powers-roots-hcf-lcm-mcq-54",
+        "ment-powers-roots-hcf-lcm-mcq-55"
+      ]
+    },
+    {
+      "id": "sq-n-digit",
+      "fact": "Greatest 4-digit perfect square = 9801 (99²); least 4-digit perfect square = 1024 (32²).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "4-digit"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-55"
+      ]
+    },
+    {
+      "id": "sq-decimal",
+      "fact": "Square root of a decimal: pair digits from the decimal point; √(a × 10^{−2k}) = √a × 10^{−k}.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "√0."
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-56"
+      ]
+    },
+    {
+      "id": "sq-cube-sign",
+      "fact": "A cube keeps the sign of the number ((−3)³ = −27); a square is never negative.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "−27"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-57"
+      ]
+    },
+    {
+      "id": "sq-repunit",
+      "fact": "Repunit squares form palindromes: 11² = 121, 111² = 12321, 1111² = 1234321.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "12321"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-58"
+      ]
+    },
+    {
+      "id": "lg-definition",
+      "fact": "log base a of c = b is the same statement as a^{b} = c.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "log"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-59",
+        "ment-powers-roots-hcf-lcm-mcq-60"
+      ]
+    },
+    {
+      "id": "lg-one-base",
+      "fact": "log 1 = 0 in every base, and log base b of b = 1.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "log"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-logarithms",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-61"
+      ]
+    },
+    {
+      "id": "lg-laws",
+      "fact": "log(xy) = log x + log y; log(x/y) = log x − log y; log(x^{n}) = n log x.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "log"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-logarithms",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-9",
+        "ment-powers-roots-hcf-lcm-card-4",
+        "ment-powers-roots-hcf-lcm-mcq-60",
+        "ment-powers-roots-hcf-lcm-mcq-62",
+        "ment-powers-roots-hcf-lcm-mcq-63"
+      ]
+    },
+    {
+      "id": "lg-change-base",
+      "fact": "Change of base: log base a of b = (log b) ÷ (log a) in any common base.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "log"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-logarithms",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-10",
+        "ment-powers-roots-hcf-lcm-card-4",
+        "ment-powers-roots-hcf-lcm-mcq-64"
+      ]
+    },
+    {
+      "id": "lg-char-mantissa",
+      "fact": "Characteristic = whole-number part of a common log; mantissa = its decimal part, always positive.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "characteristic"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-logarithms",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-11",
+        "ment-powers-roots-hcf-lcm-card-5"
+      ]
+    },
+    {
+      "id": "lg-digits",
+      "fact": "Digits in N = (characteristic of log N) + 1; for a^{n}, take n log a.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "digits"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-logarithms",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-21",
+        "ment-powers-roots-hcf-lcm-card-5",
+        "ment-powers-roots-hcf-lcm-mcq-66"
+      ]
+    },
+    {
+      "id": "lg-common-natural",
+      "fact": "Common log = base 10 (written log x); natural log ln x = base e.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "base"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-65"
+      ]
+    },
+    {
+      "id": "lg-product-zero",
+      "fact": "log a + log b + log c = 0 means log(abc) = log 1, so abc = 1.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "abc"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-62"
+      ]
+    },
+    {
+      "id": "lg-equality",
+      "fact": "Equality rule: log x = log y (same base) gives x = y; used to solve log equations.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "log"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-63"
+      ]
+    },
+    {
+      "id": "hl-prime-powers",
+      "fact": "HCF = lowest powers of the shared primes; LCM = highest powers of all primes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "lcm"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-2",
+        "ment-powers-roots-hcf-lcm-card-6",
+        "ment-powers-roots-hcf-lcm-mcq-67"
+      ]
+    },
+    {
+      "id": "hl-euclid",
+      "fact": "Euclidean method: divide, then divide the divisor by the remainder; the last non-zero remainder is the HCF.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "hcf"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-68"
+      ]
+    },
+    {
+      "id": "hl-product",
+      "fact": "For two numbers, A × B = HCF × LCM.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "hcf"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-12",
+        "ment-powers-roots-hcf-lcm-card-6",
+        "ment-powers-roots-hcf-lcm-mcq-69",
+        "ment-powers-roots-hcf-lcm-mcq-70",
+        "ment-powers-roots-hcf-lcm-mcq-75"
+      ]
+    },
+    {
+      "id": "hl-product-two-only",
+      "fact": "Trap: A × B = HCF × LCM holds only for TWO numbers, not three.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "hcf"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-70"
+      ]
+    },
+    {
+      "id": "hl-coprime",
+      "fact": "Co-prime numbers have HCF 1, so their LCM is their product (LCM(13, 17) = 221).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "co-prime"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-70",
+        "ment-powers-roots-hcf-lcm-mcq-71"
+      ]
+    },
+    {
+      "id": "hl-hcf-divides-lcm",
+      "fact": "The HCF always divides the LCM exactly; a pair where it does not is impossible.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "hcf"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-72"
+      ]
+    },
+    {
+      "id": "hl-ratio-hcf",
+      "fact": "Numbers in ratio a : b : c (lowest terms) are ak, bk, ck, and the HCF is k.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-ratio-hcf-and-square-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-31",
+        "ment-powers-roots-hcf-lcm-mcq-73"
+      ]
+    },
+    {
+      "id": "hl-ratio-lcm",
+      "fact": "Two numbers in ratio a : b with HCF H are Ha and Hb; sum = H(a + b), LCM = H × a × b.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-73",
+        "ment-powers-roots-hcf-lcm-mcq-74"
+      ]
+    },
+    {
+      "id": "hl-k-times",
+      "fact": "'LCM = k × HCF' puzzles: write LCM = kH and solve the given sum/difference for H.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "hcf"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-75"
+      ]
+    },
+    {
+      "id": "hl-product-diff",
+      "fact": "Product and difference given: find the factor pair with that difference, then its LCM (1890, diff 3 → 42, 45 → 630).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "1890"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-76"
+      ]
+    },
+    {
+      "id": "hl-fractions",
+      "fact": "HCF of fractions = HCF(numerators) ÷ LCM(denominators); LCM of fractions = LCM(numerators) ÷ HCF(denominators).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "fractions"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-13",
+        "ment-powers-roots-hcf-lcm-card-7",
+        "ment-powers-roots-hcf-lcm-mcq-77"
+      ]
+    },
+    {
+      "id": "hl-decimals",
+      "fact": "HCF/LCM of decimals: equalise decimal places, work with whole numbers, put the places back.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "hcf"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-18",
+        "ment-powers-roots-hcf-lcm-mcq-78"
+      ]
+    },
+    {
+      "id": "hl-least-same-rem",
+      "fact": "Least number leaving the same remainder R with given divisors = LCM(divisors) + R.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-14",
+        "ment-powers-roots-hcf-lcm-mcq-28",
+        "ment-powers-roots-hcf-lcm-card-8",
+        "ment-powers-roots-hcf-lcm-mcq-79"
+      ]
+    },
+    {
+      "id": "hl-greatest-same-rem",
+      "fact": "Greatest number dividing x, y, z with the same remainder = HCF of their pairwise differences.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-19",
+        "ment-powers-roots-hcf-lcm-card-8",
+        "ment-powers-roots-hcf-lcm-mcq-80"
+      ]
+    },
+    {
+      "id": "hl-const-gap",
+      "fact": "When divisor − remainder is the same k for every divisor, the least number = LCM − k.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "remainders"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-29",
+        "ment-powers-roots-hcf-lcm-mcq-81"
+      ]
+    },
+    {
+      "id": "hl-n-digit",
+      "fact": "Largest n-digit multiple of given numbers = greatest n-digit number − (its remainder on ÷ LCM); smallest = next multiple of the LCM.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "4-digit"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-82"
+      ]
+    },
+    {
+      "id": "hl-hcf-words",
+      "fact": "HCF word problems — longest tape, largest square tile, greatest equal sharing, fewest unmixed rows.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "greatest"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-23",
+        "ment-powers-roots-hcf-lcm-mcq-26",
+        "ment-powers-roots-hcf-lcm-card-9",
+        "ment-powers-roots-hcf-lcm-mcq-83"
+      ]
+    },
+    {
+      "id": "hl-tiles-count",
+      "fact": "Tiles = (length ÷ HCF side) × (breadth ÷ HCF side); rows = sum of (group ÷ HCF) — answer the count asked.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "number of"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-24",
+        "ment-powers-roots-hcf-lcm-mcq-30",
+        "ment-powers-roots-hcf-lcm-mcq-84"
+      ]
+    },
+    {
+      "id": "hl-runners",
+      "fact": "Runners on a circular track meet again at the starting point after the LCM of their lap times.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "start"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-25"
+      ]
+    },
+    {
+      "id": "hl-units",
+      "fact": "Convert every length to one unit (cm) before taking the HCF.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "cm"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-23",
+        "ment-powers-roots-hcf-lcm-mcq-24",
+        "ment-powers-roots-hcf-lcm-mcq-83"
+      ]
+    },
+    {
+      "id": "hl-lcm-events",
+      "fact": "Recurring events (bells, lights, runners) coincide again after the LCM of their intervals.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "together"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-20",
+        "ment-powers-roots-hcf-lcm-mcq-27",
+        "ment-powers-roots-hcf-lcm-mcq-85",
+        "ment-powers-roots-hcf-lcm-mcq-86",
+        "ment-powers-roots-hcf-lcm-mcq-87"
+      ]
+    },
+    {
+      "id": "hl-bells-plus1",
+      "fact": "Counting coincidences in time T: T ÷ LCM after the start; add 1 when the starting toll is counted.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "together"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-86",
+        "ment-powers-roots-hcf-lcm-mcq-87"
+      ]
+    },
+    {
+      "id": "hl-least-square",
+      "fact": "Least perfect square divisible by given numbers = LCM × (its odd-power primes).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "perfect square"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-ratio-hcf-and-square-lcm",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-32",
+        "ment-powers-roots-hcf-lcm-mcq-88"
+      ]
+    },
+    {
+      "id": "ud-cycle",
+      "fact": "Units digit of a power: only the base's last digit matters; cycle length 4 for 2, 3, 7, 8; 2 for 4, 9; 1 for 0, 1, 5, 6.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "units digit"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-15",
+        "ment-powers-roots-hcf-lcm-card-10",
+        "ment-powers-roots-hcf-lcm-mcq-89",
+        "ment-powers-roots-hcf-lcm-mcq-90",
+        "ment-powers-roots-hcf-lcm-mcq-93"
+      ]
+    },
+    {
+      "id": "ud-rem-zero",
+      "fact": "Trap: exponent remainder 0 picks the LAST value of the cycle (3^{100} ends in 1).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "units digit"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-card-10",
+        "ment-powers-roots-hcf-lcm-mcq-89",
+        "ment-powers-roots-hcf-lcm-mcq-93"
+      ]
+    },
+    {
+      "id": "tz-legendre",
+      "fact": "Trailing zeros of n! = n/5 + n/25 + n/125 + … (whole parts); the same sum with p gives the power of a prime p in n!.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "trailing zeros"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-16",
+        "ment-powers-roots-hcf-lcm-card-11",
+        "ment-powers-roots-hcf-lcm-mcq-91"
+      ]
+    },
+    {
+      "id": "tz-prime-power",
+      "fact": "The power of a prime p in n! = n/p + n/p² + n/p³ + … (whole parts).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "prime"
+      ],
+      "taughtIn": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
+      "drilledBy": [
+        "ment-powers-roots-hcf-lcm-mcq-92"
+      ]
+    }
+  ]
+}

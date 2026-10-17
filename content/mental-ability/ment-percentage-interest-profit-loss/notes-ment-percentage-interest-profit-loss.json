@@ -117,6 +117,69 @@
         "alligation",
         "mixture"
       ]
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-note-percentage-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "title": "Percentage extras: fraction table, marks and votes, the \"less than\" reverse, tax and savings",
+      "body": "### Percentage extras: fraction table, marks and votes, the \"less than\" reverse, tax and savings\n\n**The idea in one sentence**\nA percentage is always \"out of 100 of some base\", so every word problem is about naming the base correctly.\n\n**Do it the slow way first (no formula)**\nA student needs 40% to pass. He gets 120 marks and fails by 30. Pass mark = 120 + 30 = 150, and 150 is 40% of the total, so the total = 150 × 100 ÷ 40 = **375** marks.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| base | the quantity the percentage is \"of\" |\n| valid votes | votes left after removing invalid ones |\n| majority / margin | winner's votes − runner-up's votes |\n| savings | income − expenditure |\n\n**The formula (now that you know what it does)**\nFraction ↔ percentage table\n| Fraction | % | Fraction | % |\n|---|---|---|---|\n| 1/2 | 50 | 1/8 | 12.5 |\n| 1/3 | 33⅓ | 1/9 | 11 1/9 |\n| 1/4 | 25 | 1/11 | 9 1/11 |\n| 1/5 | 20 | 1/12 | 8⅓ |\n| 1/6 | 16⅔ | 1/16 | 6.25 |\n| 1/7 | 14 2/7 | 5/8 | 62.5 |\n\n- Whole from a part: whole = part × 100 ÷ percentage (432 marks = 72% → total 600).\n- Votes with invalid votes: 20% of votes are invalid; the winner gets 60% of the valid votes and wins by 960. Margin = 60% − 40% = 20% of valid = 960 → valid = 4800 → total = 4800 ÷ 0.8 = **6000**.\n- The \"less than\" reverse: if B is x% LESS than A, then A is x ÷ (100 − x) × 100 % MORE than B (B 20% less → A 25% more).\n- Price falls x%: consumption can rise by x ÷ (100 − x) × 100 % at the same spend (fall 20% → buy 25% more).\n- Sales tax: total paid = SP × (1 + tax% ÷ 100); price before tax = total ÷ (1 + tax% ÷ 100) (₹50440 with 4% tax → ₹48500).\n- Commission: commission = rate × sales ÷ 100; sales = commission × 100 ÷ rate (2.5% earning ₹12.50 → sales ₹500).\n- Savings % = (income − expenditure) ÷ income × 100 (earns ₹4000, spends ₹3200 → 20%).\n- Comparing two percentages of different bases: compute both (40% of 500 = 200 > 60% of 300 = 180).\n\n**Exam-level example**\nIf B's salary is 20% less than A's, by what percentage is A's salary more than B's?\nTake A = 100, B = 80. A − B = 20 on a base of 80: 20 ÷ 80 × 100 = **25%**.\n\n**Common traps**\n- Using the total votes instead of the valid votes as the base.\n- Answering 20% for the reverse question (the base has changed).\n- Adding the tax to the cost price instead of the selling price.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| whole = part × 100 ÷ % | find the base |\n| x ÷ (100 − x) | reverse of \"x% less\" |\n| SP × (1 + t/100) | price with sales tax |\n| (income − spend) ÷ income | savings percentage |",
+      "keyPoints": [
+        "Fractions to memorise: 1/8 = 12.5%, 1/6 = 16⅔%, 1/7 = 14 2/7%, 1/9 = 11 1/9%, 1/11 = 9 1/11%",
+        "Whole = part × 100 ÷ percentage (failed by 30 with 120 at 40% pass → 375 total)",
+        "With invalid votes, the margin is a percentage of VALID votes; convert to total votes last",
+        "If B is x% less than A, A is x ÷ (100 − x) × 100 % more than B",
+        "Price falls x% → consumption can rise x ÷ (100 − x) × 100 % at the same expenditure",
+        "Sales tax is added on the selling price; savings % = savings ÷ income × 100"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
+      "verified": true,
+      "tags": [
+        "percentage-interest-profit-loss",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-note-interest-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "title": "Interest extras: 3-year CI−SI, multiples under CI, effective rate, changing rates, depreciation rate, SI instalments",
+      "body": "### Interest extras: 3-year CI−SI, multiples under CI, effective rate, changing rates, depreciation rate, SI instalments\n\n**The idea in one sentence**\nCompound interest multiplies by the same factor every period, so powers of that factor answer \"how many times\", \"what rate\" and \"what after n years\".\n\n**Do it the slow way first (no formula)**\n₹8000 at 10% compound interest for 3 years: 8000 → 8800 → 9680 → 10648, so CI = ₹2648. Simple interest = 3 × 800 = ₹2400. Difference = ₹248. The formula below gives the same.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| growth factor | 1 + R ÷ 100 for each period |\n| effective annual rate | the single yearly rate that gives the same amount |\n| reducing balance | each year's depreciation is on the value left |\n\n**The formula (now that you know what it does)**\n- CI − SI for 3 years = P × (R/100)² × (3 + R/100): 8000 × 0.01 × 3.1 = ₹248.\n- Finding the sum from the 2-year difference: P = difference ÷ (R/100)² (difference ₹80 at 10% → ₹8000).\n- Multiples under CI: if a sum doubles in n years, it becomes 4 times in 2n and 8 times in 3n years (doubling in 5 years → 8 times in 15 years). Under SI the multiples grow in a straight line instead: n times needs RT = (n − 1) × 100.\n- Effective annual rate: 10% a year compounded half-yearly = 1.05² − 1 = 10.25% a year.\n- Different rates in different years: multiply the factors. Population 245000 rising 15% then 20%: 245000 × 1.15 × 1.20 = 338100.\n- Depreciation rate from two values: (1 − r/100)^{n} = new ÷ old. ₹62500 to ₹32000 in 3 years: 32000 ÷ 62500 = 64/125 = (4/5)³, so r = 20%.\n- Instalments at simple interest: each earlier instalment earns interest until the end. A debt of ₹10920 due in 3 years at 12% SI: I + 1.12I + 1.24I = 10920 → I = ₹3250.\n\n**Exam-level example**\nA sum doubles in 5 years at compound interest. In how many years will it become 8 times?\n8 = 2³, so it needs three doublings: 3 × 5 = **15 years**.\n\n**Common traps**\n- Answering 20 years (SI-style thinking) for the \"8 times\" question.\n- Treating 10% half-yearly as 10% effective.\n- Adding the two growth rates (15% + 20% = 35%) instead of multiplying the factors (38%).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| P(R/100)²(3 + R/100) | CI − SI for 3 years |\n| doubles in n → 2^{k} in kn | CI multiples |\n| (1 + R/200)² − 1 | effective rate of half-yearly R% |\n| multiply the factors | changing rates |",
+      "keyPoints": [
+        "CI − SI for 3 years = P × (R/100)² × (3 + R/100)",
+        "Under CI a sum that doubles in n years becomes 4 times in 2n and 8 times in 3n years",
+        "10% per annum compounded half-yearly = 10.25% effective annual rate",
+        "Different yearly rates: multiply the growth factors (1.15 × 1.20 = 1.38)",
+        "Depreciation rate: (1 − r/100)^{n} = new value ÷ old value",
+        "SI instalments: I + I(1 + R/100) + I(1 + 2R/100) + … = debt"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
+      "verified": true,
+      "tags": [
+        "percentage-interest-profit-loss",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-percentage-interest-profit-loss",
+      "title": "Profit and loss extras: CP of x = SP of y, loss as SP of n, mixed profit, dishonest dealer with discount, no profit no loss",
+      "body": "### Profit and loss extras: CP of x = SP of y, loss as SP of n, mixed profit, dishonest dealer with discount, no profit no loss\n\n**The idea in one sentence**\nTurn every sentence into \"cost of so many items\" versus \"selling price of so many items\", and the profit percentage drops out.\n\n**Do it the slow way first (no formula)**\nThe cost price of 15 pens equals the selling price of 12 pens. Say each pen costs ₹1, so 15 pens cost ₹15; 12 pens sell for ₹15, so one pen sells for ₹1.25 — a **25%** profit. Formula: (x − y) ÷ y × 100 = (15 − 12) ÷ 12 × 100.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| CP, SP, MP | cost price, selling price, marked (list) price |\n| x, y | numbers of articles whose CP and SP are equal |\n| false weight | the weight the dealer really gives |\n\n**The formula (now that you know what it does)**\n| Situation | Result | Example |\n|---|---|---|\n| CP of x articles = SP of y articles | profit % = (x − y) ÷ y × 100 (loss if y > x) | 15 and 12 → 25% |\n| on selling N, LOSS = SP of n | loss % = n ÷ (N + n) × 100 | 24 pens, loss = SP of 6 → 6 ÷ 30 = 20% |\n| on selling N, PROFIT = SP of n | profit % = n ÷ (N − n) × 100 | |\n| loss = SP of n, total CP given | CP of N = SP of (N + n) | 75 articles cost ₹10800, loss = SP of 5 → SP = 10800 ÷ 80 = ₹135 |\n| part sold at a%, target overall b% | rest% from total SP − part SP | ₹5400 of goods, 2/3 at 8%, overall 18% → rest at 38% |\n| dealer: false weight AND mark-up | profit = (SP for the goods actually given ÷ their CP) − 1 | 900 g for 1 kg, price 10% above cost → 1.1 ÷ 0.9 − 1 = 22.2% |\n| dealer: false weight AND a price cut | same idea | usual 20% profit, 900 g, charges 10% less → 1.2 × 0.9 ÷ 0.9 − 1 = 20% |\n| two items, +a% and −b%, no profit no loss (neither gain nor loss) | a × CP₁ = b × CP₂ | ₹650 total, +7% and −6% → CP₁ ₹300, CP₂ ₹350 |\n| capital withdrawn mid-year (partnership) | add capital × months for each period | 3 : 2 : 6, C withdraws half after 6 months → 36 : 24 : 54; of ₹53010, A gets ₹16740 |\n| one at SP ₹960 (+20%), other at CP ₹960 (−20%) | add both CPs and SPs | CPs 800 + 960, SPs 960 + 768 → loss ₹32 |\n| discount + profit chain backwards | divide by each factor | SP ₹403.20 after 16% off, no discount would give 28% profit → CP = 403.20 ÷ 0.84 ÷ 1.28 = ₹375 |\n| chain sale backwards | divide by each factor | A → B +25%, B → C −10%, C pays ₹5625 → A paid 5625 ÷ 1.25 ÷ 0.9 = ₹5000 |\n\n**Exam-level example**\nTwo successive discounts of 40% and 20% amount to ₹988 in all. Find the marked price.\nSingle discount = 40 + 20 − 40 × 20 ÷ 100 = 52%. So 52% of MP = 988 and MP = **₹1900**.\n\n**Common traps**\n- Using (x − y) ÷ x instead of dividing by y.\n- In the \"loss = SP of n\" type, dividing by N instead of N + n.\n- Forgetting that a dealer's false weight and a price change act together (multiply, don't add).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| (x − y) ÷ y × 100 | CP of x = SP of y |\n| n ÷ (N + n) × 100 | loss equal to SP of n |\n| a·CP₁ = b·CP₂ | no profit, no loss |\n| divide by each factor | work a chain backwards |",
+      "keyPoints": [
+        "CP of x articles = SP of y articles → profit % = (x − y) ÷ y × 100",
+        "Loss equal to the SP of n articles on selling N → loss % = n ÷ (N + n) × 100",
+        "Part sold at a% with an overall target b%: find the remaining SP from total SP − part SP",
+        "Dishonest dealer with a price change: profit = (price factor ÷ weight factor) − 1",
+        "No profit no loss on two items at +a% and −b%: a × CP₁ = b × CP₂",
+        "Chain or discount questions worked backwards: divide by each multiplying factor"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
+      "verified": true,
+      "tags": [
+        "percentage-interest-profit-loss",
+        "completeness"
+      ]
     }
   ]
 }

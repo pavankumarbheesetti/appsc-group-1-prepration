@@ -152,6 +152,67 @@
         "ratio",
         "perfect-square"
       ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "Squaring shortcuts, perfect-square tests and making a perfect square",
+      "body": "### Squaring shortcuts, perfect-square tests and making a perfect square\n\n**The idea in one sentence**\nA handful of patterns let you square numbers in your head, reject non-squares at a glance and find the smallest change that turns a number into a perfect square.\n\n**Do it the slow way first (no formula)**\nSquare 35: 35 × 35 = 35 × 30 + 35 × 5 = 1050 + 175 = 1225. Now notice: 3 × 4 = 12, and 1225 is just \"12\" followed by \"25\". That pattern is the first shortcut below.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| perfect square | a whole number times itself (49 = 7 × 7) |\n| digital root | keep adding the digits until one digit is left (2015 → 8) |\n| unpaired prime | a prime whose power in the factorisation is odd |\n\n**The formula (now that you know what it does)**\n\nSquaring shortcuts\n| Number | Rule | Example |\n|---|---|---|\n| ends in 5 (x5) | x × (x + 1), then write 25 after it | 85² → 8 × 9 = 72 → 7225; 115² → 11 × 12 = 132 → 13225 |\n| near 100 (base 100) | (number ± its distance from 100), then write the square of the distance as two digits | 97² → 97 − 3 = 94, 3² = 09 → 9409; 104² → 108, 16 → 10816; 112² → 124, 144 → 12544 |\n\nPerfect-square tests (they can only rule a number OUT)\n| Test | Rule |\n|---|---|\n| Unit digit | a perfect square never ends in 2, 3, 7 or 8 |\n| Trailing zeros | a perfect square ends in an even number of zeros (65000 is not a square) |\n| Digital root | the digital root of a perfect square is 1, 4, 7 or 9 (1154 → 2, so not a square) |\n| Ends in 5 | a perfect square ending in 5 ends in 25 |\n\nMaking a perfect square\n- Smallest MULTIPLIER: prime-factorise and multiply by the unpaired primes. 2352 = 2⁴ × 3 × 7², so × 3 gives 7056 = 84².\n- Smallest DIVISOR: divide by the unpaired primes. 9408 = 2⁶ × 3 × 7², so ÷ 3 gives 3136 = 56².\n- Least number to SUBTRACT: run the long-division square-root method; the remainder is the answer. 5607 leaves remainder 131, so 5607 − 131 = 5476 = 74².\n- Least number to ADD: take the next square up. 36² = 1296 < 1300 < 1369 = 37², so add 1369 − 1300 = 69.\n- Greatest 4-digit perfect square: 9999 leaves remainder 198, so 9801 = 99². Least 4-digit square: 32² = 1024.\n\nLong-division method in brief: put bars on pairs of digits from the units place (and from the decimal point for decimals), find the largest square under the first pair, bring down the next pair, double the quotient and find the next digit.\n\nSquare roots of decimals: pair digits from the decimal point, or use √(a × 10^{−2k}) = √a × 10^{−k}. So √0.000081 = √81 × 10^{−3} = 0.009, √0.0169 = 0.13 and √24.01 = 4.9.\n\nCubes keep the sign: (−3)³ = −27, while every square is positive or zero. Repunit pattern: 11² = 121, 111² = 12321, 1111² = 1234321.\n\n**Exam-level example**\nFind the least number that must be subtracted from 6203 to make a perfect square.\n78² = 6084 and 79² = 6241, so the largest square below 6203 is 6084, and 6203 − 6084 = **119**. (To ADD instead: 6241 − 6203 = 38.)\nCheck: 6084 = 78 × 78 = 6084. ✓\n\n**Common traps**\n- Passing the unit-digit test is not proof: 1154 ends in 4 but its digital root is 2, so it is not a square.\n- Multiplying by the whole number again instead of only the unpaired prime.\n- Mixing up \"least to subtract\" (remainder) with \"least to add\" (next square minus the number).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| 85² = 72 then 25 = 7225 | ends in 5: x(x + 1), then 25 |\n| 97² = 94 then 09 = 9409 | base 100: shift by the distance, then square the distance |\n| ends 2, 3, 7, 8 → not a square | quick rejection test |\n| × or ÷ the unpaired prime | smallest change that makes a square |",
+      "keyPoints": [
+        "Number ending in 5: x5² = x(x + 1) followed by 25 — 85² = 7225, 115² = 13225",
+        "Base-100 method: 97² = (97 − 3)|3² = 9409; 104² = 10816",
+        "A perfect square never ends in 2, 3, 7 or 8, ends in an even number of zeros and has digital root 1, 4, 7 or 9",
+        "Smallest multiplier or divisor that makes a perfect square = the unpaired primes of the factorisation",
+        "Least number to subtract = remainder of the long-division square root; least to add = next square − number",
+        "Square root of a decimal: pair digits from the decimal point; √0.000081 = 0.009"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
+      "verified": true,
+      "tags": [
+        "powers-roots-hcf-lcm",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "Types of surds, exponential form and more log rules",
+      "body": "### Types of surds, exponential form and more log rules\n\n**The idea in one sentence**\nSurds and logs are both exponents in disguise, so a few naming rules and three extra log facts finish the toolkit.\n\n**Do it the slow way first (no formula)**\nIs 4 + √3 a \"pure\" surd? It has a rational part (4) added to a root (√3) — two pieces joined by a plus sign — so it is a compound surd, not a pure one.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| pure surd | only a root, nothing rational in front: √7 |\n| mixed surd | a rational number times a root: 4√3, 8√5 |\n| compound surd | a sum or difference of surds (or of a number and a surd): 4 + √3, √5 + √2 |\n| exponential form | √a = a^{1/2}, cube root of a = a^{1/3} |\n| common log | base 10 (written log x when no base is shown) |\n| natural log | base e (written ln x) |\n\n**The formula (now that you know what it does)**\n- Surds cannot be added or subtracted under one root, but can be multiplied and divided: √a × √b = √(ab), √a ÷ √b = √(a ÷ b).\n- Expanding a binomial surd: (4 + 3√2)² = 4² + (3√2)² + 2 × 4 × 3√2 = 16 + 18 + 24√2 = 34 + 24√2.\n- Log form and exponent form are the same statement: 5³ = 125 ⟺ log base 5 of 125 = 3.\n- Conjugate chains telescope: 1/(√25 − √24) − 1/(√24 − √23) + 1/(√23 − √22) − 1/(√22 − √21) + 1/(√21 − √20) = 5 + 2√5, because each 1/(√(n + 1) − √n) = √(n + 1) + √n and the middle terms cancel.\n- Equality rule: if log x = log y (same base) then x = y.\n- If log a + log b + log c = 0, then log(abc) = 0 = log 1, so abc = 1.\n- Solving: log₃ x − log₃ (x − 2) = 1 → log₃ [x ÷ (x − 2)] = 1 → x ÷ (x − 2) = 3 → x = 3.\n\n**Exam-level example**\nSimplify log base 5 of 125 + log base 5 of 25.\n125 = 5³ and 25 = 5², so the sum is 3 + 2 = **5** (or log base 5 of 3125 = 5).\nCheck: 5⁵ = 3125 = 125 × 25. ✓\n\n**Common traps**\n- Calling 4√3 a pure surd — a rational multiplier in front makes it mixed.\n- Treating ln as base 10; it is base e.\n- Writing log a + log b + log c = 0 as a + b + c = 1 — it is the PRODUCT abc that equals 1.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| √7 pure, 4√3 mixed, 4 + √3 compound | the three surd types |\n| 5³ = 125 ⟺ log₅ 125 = 3 | log form = exponent form |\n| log a + log b + log c = 0 → abc = 1 | sum of logs is log of the product |",
+      "keyPoints": [
+        "Surd types: pure (√7), mixed (4√3), compound (4 + √3)",
+        "Exponential form of a root: √a = a^{1/2}; (4 + 3√2)² = 34 + 24√2",
+        "Common log = base 10; natural log ln = base e",
+        "aᵇ = c is the same statement as log base a of c = b",
+        "log a + log b + log c = 0 means abc = 1; log x = log y means x = y"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
+      "verified": true,
+      "tags": [
+        "powers-roots-hcf-lcm",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-powers-roots-hcf-lcm",
+      "title": "HCF–LCM relations, ratio numbers, bells counted with the start, n-digit multiples",
+      "body": "### HCF–LCM relations, ratio numbers, bells counted with the start, n-digit multiples\n\n**The idea in one sentence**\nMost \"given HCF, LCM, sum or difference\" questions reduce to one picture: two numbers are HCF × a and HCF × b with a, b co-prime.\n\n**Do it the slow way first (no formula)**\nTwo numbers are in the ratio 4 : 7 and their HCF is 26. Write them as 4 × 26 = 104 and 7 × 26 = 182. Their sum is 286 and their LCM is 4 × 7 × 26 = 728. Check: 104 × 182 = 18928 = 26 × 728. ✓\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| H | the HCF of the two numbers |\n| a, b | co-prime parts: numbers = Ha and Hb |\n| LCM | then equals H × a × b |\n\n**The formula (now that you know what it does)**\n- The HCF always divides the LCM exactly. So HCF 16 with LCM 136 is impossible (136 ÷ 16 = 8.5).\n- Numbers in the ratio a : b with HCF H: numbers Ha and Hb, sum H(a + b), LCM = H × a × b.\n- Product and HCF/LCM: product = HCF × LCM (two numbers only). LCM 72 and product 1728 → HCF = 1728 ÷ 72 = 24.\n- \"LCM = k × HCF\" puzzles: put LCM = kH. LCM + HCF = 112 with LCM = 15 × HCF gives 16H = 112, H = 7, LCM = 105; if one number is 35 the other is 7 × 105 ÷ 35 = 21.\n- Product and difference: product 1890, difference 3 → the numbers are 42 and 45 (42 × 45 = 1890), HCF 3, LCM 630.\n- Greatest divisor leaving the same remainder in 1295, 8146 and 17207: HCF of the differences 6851, 9061, 15912 = 221 (remainder 190).\n\nBells and lights — counting\n| Asked | Do |\n|---|---|\n| next time together | start time + LCM (8, 12, 16, 28 s → LCM 336 s = 5 min 36 s; from 1:00 a.m. → 1:05:36 a.m.) |\n| times together AFTER the start in T | whole part of T ÷ LCM |\n| times together INCLUDING the start | whole part of T ÷ LCM, plus 1 (5, 10, 15, 20, 25 s in 80 min: 4800 ÷ 300 = 16, plus 1 = 17) |\n\nLargest and smallest n-digit multiples\n- Largest 4-digit number divisible by 12, 15 and 18: LCM = 180; 9999 ÷ 180 leaves 99, so 9999 − 99 = 9900.\n- Smallest 4-digit number divisible by them: the next multiple of 180 after 999, i.e. 6 × 180 = 1080.\n\n**Exam-level example**\nBells toll every 5, 10, 15, 20 and 25 seconds and start together. How many times do they toll together in 1 hour 20 minutes, counting the start?\nLCM(5, 10, 15, 20, 25) = 300 s. 80 min = 4800 s, and 4800 ÷ 300 = 16 further coincidences. Counting the first toll: 16 + 1 = **17**.\n\n**Common traps**\n- Forgetting the \"+ 1\" when the question counts the starting toll — or adding it when it does not.\n- Accepting an HCF that does not divide the LCM.\n- Taking the LCM of the ratio parts (4 and 7) and forgetting to multiply by the HCF.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| numbers = Ha, Hb, LCM = Hab | the two-number picture |\n| HCF divides LCM | otherwise the pair is impossible |\n| T ÷ LCM (+ 1 with the start) | bells counted in a time window |\n| 9999 − (remainder of 9999 ÷ LCM) | largest 4-digit multiple |",
+      "keyPoints": [
+        "The HCF of two numbers always divides their LCM",
+        "Numbers in ratio a : b with HCF H are Ha and Hb; their LCM is H × a × b",
+        "LCM = k × HCF puzzles: write LCM as k·H and solve for H",
+        "Bells: times together in T = T ÷ LCM after the start; add 1 if the start is counted",
+        "Largest n-digit multiple = greatest n-digit number − its remainder on division by the LCM"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
+      "verified": true,
+      "tags": [
+        "powers-roots-hcf-lcm",
+        "completeness"
+      ]
     }
   ]
 }

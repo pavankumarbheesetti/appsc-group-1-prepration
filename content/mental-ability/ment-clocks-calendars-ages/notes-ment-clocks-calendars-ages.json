@@ -140,6 +140,68 @@
         "century",
         "date-shift"
       ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-clock-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Clock extras: hand speeds, reflex angle, opposite and straight-line times, water image, faulty-clock true time, chimes",
+      "body": "### Clock extras: hand speeds, reflex angle, opposite and straight-line times, water image, faulty-clock true time, chimes\n\n**The idea in one sentence**\nEvery clock question comes from two speeds — the minute hand at 6° a minute and the hour hand at 0.5° a minute — so the minute hand gains 5.5° every minute.\n\n**Do it the slow way first (no formula)**\nAt 9:40 the hour hand has moved 40 × 0.5 = 20° past the 9 (which is at 270°), so it is at 290°. The minute hand is at 40 × 6 = 240°. The gap is 290 − 240 = 50°. The formula |30H − 5.5M| = |270 − 220| = 50° says the same.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| H, M | hours (12-hour clock) and minutes past the hour |\n| 30° | the gap between two hour marks (360 ÷ 12) |\n| reflex angle | the larger angle, 360° − the smaller one |\n| water image | the reflection in water: the clock flipped top-to-bottom |\n\n**The formula (now that you know what it does)**\n| Fact | Value |\n|---|---|\n| minute hand | 6° per minute (360° in 60 min) |\n| hour hand | 30° per hour = 0.5° per minute (360° in 12 h) |\n| second hand | 6° per second |\n| relative speed | 5.5° per minute |\n| angle turned by the hour hand in t minutes | 0.5 × t (11 a.m. to 4:20 p.m. = 320 min → 160°) |\n| reflex angle | 360° − smaller angle (3:00 → 270°) |\n| opposite (180°) between H and H + 1 | 5.5M = 30H ± 180 (between 4 and 5: M = 600/11 = 54 6/11 min) |\n| straight line (0° or 180°) | 11 + 11 = 22 times in 12 hours, 44 in a day |\n| water image (convention in the source) | 18:30 − time if minutes ≤ 30; 17:90 − time if minutes > 30 (a water image of 5:45 → 12:45) |\n| chimes, striking 1 to 12 each hour | 1 + 2 + … + 12 = 78 in 12 hours, 156 in a day |\n\nWhy only 11 overlaps in 12 hours? The hands meet every 720/11 = 65 5/11 minutes, so 12 hours hold 720 ÷ (720/11) = 11 meetings; the meeting due \"between 11 and 1\" is the single one at 12:00.\n\nHands that coincide every 64 minutes of true time belong to a clock that GAINS: they should meet every 65 5/11 minutes, so the clock gains 16/11 minutes per 64 minutes, i.e. (16/11) × (1440 ÷ 64) = 32 8/11 minutes a day.\n\nFaulty clock — true time from the shown time: a clock set right at 5 a.m. loses 16 minutes in 24 hours, so it shows 23 h 44 min for every 24 true hours. When it shows 10 p.m. on the 4th day (89 shown hours), the true time elapsed is 89 × 24 ÷ (23 44/60) = 90 hours, so the true time is 11 p.m. A gaining clock (20 seconds every 3 hours) set at 2:00 a.m. Wednesday shows 6:34:30 p.m. at a true 6:30 p.m. Thursday (40.5 h × 20/3 s = 270 s).\n\n**Exam-level example**\nAt what time between 4 and 5 are the hands first at right angles?\n120 − 5.5M = 90 → M = 30 ÷ 5.5 = 5 5/11. So at **4:05 5/11**. (The second time: 5.5M − 120 = 90 → 4:38 2/11.)\n\n**Common traps**\n- Forgetting that the hour hand also moves (8:30 is 75°, not 60°).\n- Reporting the smaller angle when the reflex angle is asked.\n- Counting only coincidences, or only opposites, when \"in a straight line\" is asked.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| 6°, 0.5°, 5.5° per minute | minute hand, hour hand, gain |\n| 360° − angle | reflex angle |\n| 22 per 12 h, 44 per day | straight-line positions |\n| 78 per 12 h | chimes 1 to 12 |",
+      "keyPoints": [
+        "Minute hand 6° per minute, hour hand 0.5° per minute (30° per hour), so the minute hand gains 5.5° per minute",
+        "Reflex angle = 360° − smaller angle; hour hand turns 0.5° × minutes elapsed",
+        "Hands opposite between H and H + 1: 5.5M = 30H ± 180; in a straight line 22 times in 12 hours, 44 in a day",
+        "Hands that meet every 64 true minutes mean the clock gains 32 8/11 minutes a day",
+        "Faulty clock true time: true hours = shown hours × 24 ÷ (hours the clock shows per true day)",
+        "A clock striking 1 to 12 strikes 78 times in 12 hours, 156 in a day"
+      ],
+      "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
+      "verified": true,
+      "tags": [
+        "clocks-calendars-ages",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-calendar-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Calendar extras: the leap-day trap, reference-date method, first day of a century, same-calendar months",
+      "body": "### Calendar extras: the leap-day trap, reference-date method, first day of a century, same-calendar months\n\n**The idea in one sentence**\nMoving a date forward simply adds odd days, but you must check whether a 29 February actually lies in between.\n\n**Do it the slow way first (no formula)**\n1 January 2024 is a Monday. 2024 is a leap year and 29 February 2024 lies between 1 January 2024 and 1 January 2025, so the shift is 366 days = 2 odd days → Wednesday. But 1 March 2024 (a Friday) to 1 March 2025 covers 365 days (29 February 2024 is already behind us), so 1 March 2025 is Friday + 1 = **Saturday**.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| odd days | days left over after whole weeks (the remainder of days ÷ 7) |\n| reference date | a date whose weekday is given in the question |\n| day code | Sunday 0, Monday 1, Tuesday 2, Wednesday 3, Thursday 4, Friday 5, Saturday 6 |\n\n**The formula (now that you know what it does)**\n- Reference-date method: the day of the week of the new date = given weekday + odd days between the two dates. 5 May 2010 was a Wednesday; to 5 May 2022 is 12 years with 3 leap years → 9 + 6 = 15 → 1 odd day; to 5 June 2022 adds 31 days → 3 odd days; Wednesday + 4 = **Sunday**. 18 February 2005 (Friday) to 18 February 2007: no 29 February in between, 2 odd days → Sunday.\n- Odd days of any span: 1000 years = 2 × 400 + 200 → 0 + 3 = 3 odd days.\n- First day of a century (1 January of years like 1901, 2001) can only be Monday, Tuesday, Thursday or Saturday — the partner of \"the last day of a century can only be Sunday, Monday, Wednesday or Friday\".\n- Months with the same calendar in an ordinary year: January–October; February–March–November (same starting weekday); April–July; September–December. In a leap year, January–April–July.\n- Relative days: \"the day before yesterday was Wednesday\" → today is Friday → the day after tomorrow is Sunday.\n- Data sufficiency on dates: a weekday question needs a reference date AND the target date; \"a February birthday on an even prime date\" is fixed only by both statements together (2nd February).\n\n**Exam-level example**\nWhich year has the same calendar as 2024?\n2024 is a leap year, so look for the next leap year starting on the same weekday: **2052** (28 years later). For 2025 (an ordinary year just after a leap year) the answer is 2031.\n\n**Common traps**\n- Adding 2 odd days for a leap year even when 29 February is not inside the span.\n- Taking 1700, 1800, 1900 as leap years.\n- Treating February–March as same-calendar in a LEAP year (they are not; February has 29 days).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| +2 only if 29 Feb lies in between | the leap-day trap |\n| given weekday + odd days | reference-date method |\n| first day of a century: Mon, Tue, Thu, Sat | never Sun, Wed, Fri |\n| Jan–Oct, Apr–Jul, Sep–Dec | same-calendar months |",
+      "keyPoints": [
+        "A date moves 2 weekdays in a year only if 29 February lies between the two dates (1 March 2024 Friday → 1 March 2025 Saturday)",
+        "Reference-date method: new weekday = given weekday + odd days in between",
+        "The first day of a century can only be Monday, Tuesday, Thursday or Saturday",
+        "Same-calendar months in an ordinary year: January–October, April–July, September–December",
+        "Day codes: Sunday 0, Monday 1, … Saturday 6",
+        "A leap year repeats its calendar after 28 years (2024 → 2052)"
+      ],
+      "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
+      "verified": true,
+      "tags": [
+        "clocks-calendars-ages",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-clocks-calendars-ages-note-ages-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-clocks-calendars-ages",
+      "title": "Age extras: one-variable multiples, sum conditions, middle-member averages",
+      "body": "### Age extras: one-variable multiples, sum conditions, middle-member averages\n\n**The idea in one sentence**\nChoose ONE unknown (usually the younger person's present age), write everyone else from it, and turn the sentence into one equation.\n\n**Do it the slow way first (no formula)**\n\"A father is three times his son's age; five years ago he was four times.\" Let the son be x, so the father is 3x. Five years ago: 3x − 5 = 4(x − 5) → 3x − 5 = 4x − 20 → x = 15. Son 15, father 45. Check: 40 = 4 × 10. ✓\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| x | the one unknown present age |\n| x + n | the age n years hence |\n| x − n | the age n years ago |\n\n**The formula (now that you know what it does)**\n| Type | Equation | Example |\n|---|---|---|\n| one person, future multiple | x + n = k·x | in 15 years Ravi will be 4 times his age now: x + 15 = 4x → 5 |\n| one person, \"twice in 8 years\" | x + 8 = 2x | 8 years |\n| sum now, relation later | (S − x) + n = k(x + n) | mother + daughter = 40; in 10 years mother is twice: 50 − x = 2x + 20 → daughter 10, mother 30 |\n| past relation + fixed gap | a − 10 = (1/3)(b − 10), b = a + 12 | Anand 16 |\n| two linear conditions | write both, solve together | Renu–Manav: 2x + 11 = 3y and 3x + 9 = 4y give x = 17, y = 15, sum 32 |\n| age as a multiple of a difference | x = 4 × [(x + 4) − (x − 3)] | the difference is 7, so x = 28 |\n| middle (shared) member | shared = first-group total + last-group total − whole total | 25 persons average 40; first 13 average 44, last 13 average 41 → 13th = 572 + 533 − 1000 = 65 |\n\n**Exam-level example**\nThe ages of A and B are 3 : 2; after 5 years the ratio is 4 : 3. Ages 3k and 2k: 3(3k + 5) = 4(2k + 5) → 9k + 15 = 8k + 20 → k = 5. A = **15**, B = **10**.\n\n**Common traps**\n- Subtracting the years from only one person.\n- Treating the ratio as unchanged after n years — the difference is constant, the ratio is not.\n- Counting the shared middle member twice.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| one unknown, then everyone else | keep it to one equation |\n| x ± n for everyone | same years for every person |\n| shared = group totals − whole | middle-member average |",
+      "keyPoints": [
+        "Pick one unknown present age and write every other age from it",
+        "Future multiple of own age: x + n = kx (in 15 years Ravi is 4 times his age now → 5)",
+        "Sum now with a later relation: write the second age as S − x",
+        "The age difference never changes; ratios do",
+        "Shared middle member = first-group total + last-group total − whole total"
+      ],
+      "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
+      "verified": true,
+      "tags": [
+        "clocks-calendars-ages",
+        "completeness"
+      ]
     }
   ]
 }

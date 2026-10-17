@@ -248,8 +248,8 @@ describe('completeness gate', () => {
     expect(closed.length).toBe(getContentIndex().facts.size);
     for (const r of closed) expect(r.status, r.subtopicId).toBe('COMPLETE');
     for (const id of ANCIENT_1) expect(report.rows.find((r) => r.subtopicId === id)?.status, id).toBe('COMPLETE');
-    // Floor: the closed set only ever grows (32 after completeness round 2).
-    expect(closed.length).toBeGreaterThanOrEqual(32);
+    // Floor: the closed set only ever grows (32 after completeness round 2, 55 after round 3).
+    expect(closed.length).toBeGreaterThanOrEqual(55);
     // Rows are in study-plan order. Closure no longer proceeds strictly in study
     // order (round 2 closed POL/ECON/GEO/SCI/MENT units in parallel), so closed and
     // backlog rows interleave; each subset must still be in study order, and the

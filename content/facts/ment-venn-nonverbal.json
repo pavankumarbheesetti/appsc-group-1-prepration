@@ -1,0 +1,869 @@
+{
+  "version": 1,
+  "subtopicId": "ment-venn-nonverbal",
+  "facts": [
+    {
+      "id": "vn-three-pictures",
+      "fact": "All A are B → circle inside; some A are B → overlapping circles; no A is B → separate circles.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "circle"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-36",
+        "ment-venn-nonverbal-mcq-37",
+        "ment-venn-nonverbal-mcq-38"
+      ]
+    },
+    {
+      "id": "vn-chain",
+      "fact": "A chain such as Banana ⊂ Fruit ⊂ Food is drawn as three circles one inside another.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "food"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-38",
+        "ment-venn-nonverbal-mcq-39"
+      ]
+    },
+    {
+      "id": "vn-two-kinds",
+      "fact": "Two kinds of one class (Table, Chair under Furniture) are two separate circles inside a larger one.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "furniture"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-methods",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-2",
+        "ment-venn-nonverbal-mcq-41"
+      ]
+    },
+    {
+      "id": "vn-mixed",
+      "fact": "Mixed relations (Women, Mothers, Doctors): subset inside its class, a third class overlapping both.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "mothers"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-methods",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-6",
+        "ment-venn-nonverbal-mcq-42"
+      ]
+    },
+    {
+      "id": "vn-mutual",
+      "fact": "Three classes each partly sharing members (Indians, Teachers, Women) are three mutually overlapping circles.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "teachers"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-40"
+      ]
+    },
+    {
+      "id": "vn-union2",
+      "fact": "Two sets: n(A ∪ B) = n(A) + n(B) − n(A ∩ B).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "both"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-methods",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-5",
+        "ment-venn-nonverbal-mcq-43",
+        "ment-venn-nonverbal-mcq-44"
+      ]
+    },
+    {
+      "id": "vn-neither",
+      "fact": "Neither / none = total − n(at least one).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "neither"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-methods",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-5",
+        "ment-venn-nonverbal-mcq-45"
+      ]
+    },
+    {
+      "id": "vn-union3",
+      "fact": "Three sets: at least one = Σ singles − Σ pairs + triple.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "at least one"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-20",
+        "ment-venn-nonverbal-mcq-45"
+      ]
+    },
+    {
+      "id": "vn-exactly-two",
+      "fact": "Exactly two = Σ pairs − 3 × triple (pairs counted as \"both\").",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "exactly two"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-21",
+        "ment-venn-nonverbal-mcq-46"
+      ]
+    },
+    {
+      "id": "vn-exactly-one",
+      "fact": "Exactly one = at least one − exactly two − all three (or the sum of the only-regions).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "exactly one"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-47"
+      ]
+    },
+    {
+      "id": "vn-only",
+      "fact": "Only A = n(A) − n(A∩B) − n(A∩C) + n(A∩B∩C).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "only"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-4",
+        "ment-venn-nonverbal-mcq-48"
+      ]
+    },
+    {
+      "id": "vn-both-vs-exactly",
+      "fact": "Trap: check whether a pair figure means 'both' (includes the triple) or 'exactly two'.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "exactly two"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-46"
+      ]
+    },
+    {
+      "id": "vn-everyone",
+      "fact": "If everyone belongs to at least one group, the union equals the total.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "at least one"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-44"
+      ]
+    },
+    {
+      "id": "vn-shapes",
+      "fact": "Shape-region diagrams: add the regions inside the asked shape and outside the excluded one.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "not"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-venn-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-49"
+      ]
+    },
+    {
+      "id": "vn-min-max",
+      "fact": "Maximum overlap = the smaller group; minimum overlap = A + B − 100% when they exceed 100%.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "both"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-figure-series-analogy-classification",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-34",
+        "ment-venn-nonverbal-mcq-35",
+        "ment-venn-nonverbal-mcq-50"
+      ]
+    },
+    {
+      "id": "mw-mirror-letters",
+      "fact": "Capitals unchanged in a side mirror: A, H, I, M, O, T, U, V, W, X, Y.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mirror"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-mirror-water",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-1",
+        "ment-venn-nonverbal-mcq-51",
+        "ment-venn-nonverbal-mcq-53"
+      ]
+    },
+    {
+      "id": "mw-mirror-word",
+      "fact": "A mirror reverses the letter order of a word (CODE → EDOC); water keeps the order.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mirror"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-mirror-water",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-9",
+        "ment-venn-nonverbal-mcq-51"
+      ]
+    },
+    {
+      "id": "mw-water-letters",
+      "fact": "Capitals unchanged in water: C, D, E, H, I, K, O, X (most books also B).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "water"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-mirror-water",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-7",
+        "ment-venn-nonverbal-mcq-52",
+        "ment-venn-nonverbal-mcq-53"
+      ]
+    },
+    {
+      "id": "mw-both",
+      "fact": "H, I, O, X are unchanged in both the mirror and the water image.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "water"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-mirror-water",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-53"
+      ]
+    },
+    {
+      "id": "mw-digits",
+      "fact": "Digits unchanged: mirror 0 and 8; water 0, 3 and 8.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "digits"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-54"
+      ]
+    },
+    {
+      "id": "mw-small",
+      "fact": "Small letters unchanged: mirror i, l, o, v, w, x; water c, l, o, x.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "small letters"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-55"
+      ]
+    },
+    {
+      "id": "mw-axis",
+      "fact": "Mirror = flip about a vertical axis (left ↔ right); water = flip about a horizontal axis (top ↔ bottom).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "horizontal"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-7",
+        "ment-venn-nonverbal-mcq-56"
+      ]
+    },
+    {
+      "id": "mw-clock",
+      "fact": "Mirror image of a clock time = 11:60 − time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mirror"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-mirror-water",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-8",
+        "ment-venn-nonverbal-mcq-22",
+        "ment-venn-nonverbal-mcq-57"
+      ]
+    },
+    {
+      "id": "cb-elements",
+      "fact": "A cube has 6 faces, 12 edges and 8 vertices (corners).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "edges"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-cube-dice",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-3"
+      ]
+    },
+    {
+      "id": "cb-painted",
+      "fact": "Painted cube, n per edge: 3 faces 8; 2 faces 12(n − 2); 1 face 6(n − 2)²; none (n − 2)³.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "painted"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-cube-dice",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-10",
+        "ment-venn-nonverbal-mcq-24",
+        "ment-venn-nonverbal-mcq-58",
+        "ment-venn-nonverbal-mcq-59"
+      ]
+    },
+    {
+      "id": "cb-n",
+      "fact": "n = edge of the big cube ÷ edge of a small cube; total small cubes = n³.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "cubes"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-cube-dice",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-58"
+      ]
+    },
+    {
+      "id": "cb-stack",
+      "fact": "Count a stack layer by layer; a stepped stack has fewer cubes than its bounding box.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "layer"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-cube-dice",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-11",
+        "ment-venn-nonverbal-mcq-27"
+      ]
+    },
+    {
+      "id": "dc-never-adjacent",
+      "fact": "Two opposite faces of a dice are never seen together.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "opposite"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-60",
+        "ment-venn-nonverbal-mcq-61"
+      ]
+    },
+    {
+      "id": "dc-common-face",
+      "fact": "Common face in the same position on two views → the faces in matching positions are opposite.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "opposite"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-cube-dice",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-13",
+        "ment-venn-nonverbal-mcq-62"
+      ]
+    },
+    {
+      "id": "dc-four-adjacent",
+      "fact": "If four faces are seen next to face X, the remaining face is opposite X.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "opposite"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-61"
+      ]
+    },
+    {
+      "id": "dc-standard",
+      "fact": "Standard dice: opposite faces add to 7 (1–6, 2–5, 3–4); ordinary dice: adjacent faces add to 7.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "standard"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-63"
+      ]
+    },
+    {
+      "id": "dc-net",
+      "fact": "Dice net: alternate faces in a straight row are opposite; the squares above and below the row are opposite.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "opposite"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-cube-dice",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-12",
+        "ment-venn-nonverbal-mcq-64"
+      ]
+    },
+    {
+      "id": "pf-holes",
+      "fact": "f folds and one punch away from creases give 2^{f} holes on unfolding.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "folded"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-fold-dot-pattern-hidden",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-16",
+        "ment-venn-nonverbal-mcq-26",
+        "ment-venn-nonverbal-mcq-65"
+      ]
+    },
+    {
+      "id": "pf-mirror",
+      "fact": "Each fold crease acts like a mirror for punched holes and cuts.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mirror"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-fold-dot-pattern-hidden",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-66"
+      ]
+    },
+    {
+      "id": "dt-region",
+      "fact": "Dot situation: find the shapes enclosing each dot and pick the option with the same combination of regions.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "dot"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-fold-dot-pattern-hidden",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-17",
+        "ment-venn-nonverbal-mcq-67"
+      ]
+    },
+    {
+      "id": "hd-embedded",
+      "fact": "Hidden figure: trace the exact outline inside the complex figure without adding lines (a pentagram hides a pentagon).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "pentagon"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-fold-dot-pattern-hidden",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-19",
+        "ment-venn-nonverbal-mcq-71"
+      ]
+    },
+    {
+      "id": "cp-row-rule",
+      "fact": "Pattern completion: confirm one rule on every complete row before applying it to the blank.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "row"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-fold-dot-pattern-hidden",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-18",
+        "ment-venn-nonverbal-mcq-68"
+      ]
+    },
+    {
+      "id": "as-corners",
+      "fact": "Assemble image: fix corner and edge pieces first, then fill the middle.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "corner"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-69"
+      ]
+    },
+    {
+      "id": "nv-types",
+      "fact": "Non-verbal types: assemble, completion, hidden, mirror, water, cube & dice, paper folding & cutting, counting figures, dot situation.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "assemble"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-70"
+      ]
+    },
+    {
+      "id": "cf-triangles",
+      "fact": "Triangles from one apex to k base points = C(k, 2) = k(k − 1) ÷ 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "triangles"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-counting-figures",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-14",
+        "ment-venn-nonverbal-mcq-25",
+        "ment-venn-nonverbal-mcq-72"
+      ]
+    },
+    {
+      "id": "cf-squares-n",
+      "fact": "Squares in an n × n grid = 1² + 2² + … + n².",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "squares"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-counting-figures",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-15",
+        "ment-venn-nonverbal-mcq-73"
+      ]
+    },
+    {
+      "id": "cf-squares-mn",
+      "fact": "Squares in an m × n grid (m ≤ n) = Σ (m − k + 1)(n − k + 1) for k = 1 … m.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "squares"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-74"
+      ]
+    },
+    {
+      "id": "cf-rectangles",
+      "fact": "Rectangles in an m × n grid = C(m + 1, 2) × C(n + 1, 2).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "rectangles"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-counting-figures",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-23",
+        "ment-venn-nonverbal-mcq-75"
+      ]
+    },
+    {
+      "id": "cf-systematic",
+      "fact": "Count composite figures by size, smallest first, so nothing is missed or double-counted.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "triangles"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-counting-figures",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-14",
+        "ment-venn-nonverbal-mcq-72"
+      ]
+    },
+    {
+      "id": "cf-lines",
+      "fact": "A straight line through several marked points counts as ONE line.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "straight line"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-76"
+      ]
+    },
+    {
+      "id": "fs-constant",
+      "fact": "Figure series: find the single constant change (rotation, movement, addition/deletion) and extend it.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "figure"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-figure-series-analogy-classification",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-28",
+        "ment-venn-nonverbal-mcq-29",
+        "ment-venn-nonverbal-mcq-77",
+        "ment-venn-nonverbal-mcq-78"
+      ]
+    },
+    {
+      "id": "fs-rotation-cycle",
+      "fact": "Rotation steps add up: four 90° turns (or eight 45° turns) bring a figure back to the start.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "rotat"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-nonverbal-extras",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-29",
+        "ment-venn-nonverbal-mcq-77"
+      ]
+    },
+    {
+      "id": "fa-same-change",
+      "fact": "Figure analogy: apply the exact A-to-B change to C (it may act on the shape or on a count).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "figure"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-figure-series-analogy-classification",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-30",
+        "ment-venn-nonverbal-mcq-31",
+        "ment-venn-nonverbal-mcq-79"
+      ]
+    },
+    {
+      "id": "fc-odd",
+      "fact": "Figure classification: keep the property most figures share; the odd one breaks it, often by position or count.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "odd"
+      ],
+      "taughtIn": "ment-venn-nonverbal-note-figure-series-analogy-classification",
+      "drilledBy": [
+        "ment-venn-nonverbal-mcq-32",
+        "ment-venn-nonverbal-mcq-33",
+        "ment-venn-nonverbal-mcq-80"
+      ]
+    }
+  ]
+}
