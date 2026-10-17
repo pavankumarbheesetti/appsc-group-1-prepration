@@ -132,14 +132,14 @@ describe('mock setup — custom scope reuses buildSession', () => {
     expect(root.textContent).toContain('no compensatory time');
   });
 
-  it('scoping to a single subtopic reuses buildSession(subtopicId) → 19 for IVC', () => {
+  it('scoping to a single subtopic reuses buildSession(subtopicId) → 57 for IVC', () => {
     const root = render();
     toScope(root);
     byText(root, '.mock-scope-btn', 'By subtopic')!.click();
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    expect(root.textContent).toContain('19 questions in scope');
+    expect(root.textContent).toContain('57 questions in scope');
   });
 });
 
@@ -159,7 +159,7 @@ describe('mock running — no per-question feedback + submit', () => {
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    byText(root, '.mock-len-btn', '19')!.click();
+    byText(root, '.mock-len-btn', '57')!.click();
 
     // Start.
     byText(root, 'button', 'Start mock')!.click();
@@ -185,13 +185,13 @@ describe('mock running — no per-question feedback + submit', () => {
     }
 
     // A question navigator grid with one cell per question is present.
-    expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(19);
+    expect(root.querySelectorAll('.mock-grid-cell')).toHaveLength(57);
 
     // Submit → results with the NET score and a full 19-item review.
     submitAndConfirm(root);
     expect(root.querySelector('.mock-results')).not.toBeNull();
     expect(root.textContent).toContain('net score');
-    expect(root.querySelectorAll('.mock-review-item')).toHaveLength(19);
+    expect(root.querySelectorAll('.mock-review-item')).toHaveLength(57);
     // The review reveals the correct answer AFTER submit.
     expect(root.querySelector('.mock-review-options .option-card.is-correct')).not.toBeNull();
   });
@@ -217,7 +217,7 @@ describe('mock running — confidence tags → skip-guesses on results', () => {
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    byText(root, '.mock-len-btn', '19')!.click();
+    byText(root, '.mock-len-btn', '57')!.click();
     byText(root, 'button', 'Start mock')!.click();
     startTimer(root);
 
@@ -356,7 +356,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     const select = root.querySelector<HTMLSelectElement>('.mock-setup select')!;
     select.value = 'hist-ancient-ivc';
     select.dispatchEvent(new Event('change'));
-    byText(root, '.mock-len-btn', '19')!.click();
+    byText(root, '.mock-len-btn', '57')!.click();
     byText(root, 'button', 'Start mock')!.click();
     startTimer(root);
   }
@@ -369,7 +369,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     byText(root, 'button', 'Submit test')!.click();
     const dlg = document.querySelector<HTMLElement>('.confirm-panel')!;
     expect(dlg.getAttribute('role')).toBe('alertdialog');
-    expect(dlg.textContent).toContain('18 of 19 questions unanswered');
+    expect(dlg.textContent).toContain('56 of 57 questions unanswered');
     byText(dlg, 'button', 'Keep working')!.click();
     expect(document.querySelector('.confirm-panel')).toBeNull();
     expect(root.querySelector('.mock-running')).not.toBeNull();
@@ -392,7 +392,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     expect(saved).not.toBeNull();
     expect(saved.selected[0]).toBe(1);
     expect(saved.confidences[0]).toBe('guess');
-    expect(saved.remainingMs).toBeLessThan(19 * 60_000);
+    expect(saved.remainingMs).toBeLessThan(57 * 60_000);
     expect(saved.remainingMs).toBeGreaterThan(18 * 60_000);
     // Nothing was recorded — the attempt is not lost or submitted.
     expect(loadState().testAttempts).toHaveLength(before);
@@ -402,7 +402,7 @@ describe('mock — submit asks for confirmation; leaving autosaves; resume resto
     const back = render();
     const resume = byText(back, 'button', 'Resume test');
     expect(resume).not.toBeUndefined();
-    expect(back.textContent).toContain('1 of 19 answered');
+    expect(back.textContent).toContain('1 of 57 answered');
     resume!.click();
     expect(back.querySelector('.mock-running')).not.toBeNull();
     expect(back.querySelector('.option-card.is-selected')).not.toBeNull();

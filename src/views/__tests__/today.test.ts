@@ -26,7 +26,9 @@ describe('today view — "Now" hero + Start CTA', () => {
     // Pre-Prelims the CTA is present and one-taps into a topic / mock / practice.
     if (cta) {
       cta.click();
-      expect(location.hash).toMatch(/^#\/(learn|practice|mock|drill)/);
+      // On the orientation day the first block IS the "Start here" guide, so the
+      // CTA legitimately opens #/start; every other day it opens study material.
+      expect(location.hash).toMatch(/^#\/(learn|practice|mock|drill|start)/);
     } else {
       // Post-exam fallback: "Open plan" is the primary instead.
       expect(root.textContent).toContain('Open plan');

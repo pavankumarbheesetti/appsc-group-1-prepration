@@ -5,6 +5,7 @@ import * as progress from '../progress';
 import * as learn from '../learn';
 import * as today from '../today';
 import { renderFlashcards, collectCuratedCards } from '../revise';
+import { flashcardDue } from '../../lib/due';
 import { __resetForTests, loadState, recordTestAttempt, updateState } from '../../state/store';
 import { markTopicStudied } from '../../lib/study-status';
 import { clearTestSession, saveTestSession } from '../../lib/test-session';
@@ -166,7 +167,9 @@ describe('D13 — one due count; the daily 20 does not refill', () => {
 
   it('Progress shows the same "for today" number Revise uses', () => {
     markTopicStudied(STONE, true);
-    const n = Math.min(20, collectCuratedCards().length);
+    // Expectation comes from the app's own due-count source of truth (new cards are
+    // capped per day), so the test cannot drift from the rule it is checking.
+    const n = flashcardDue(collectCuratedCards(), loadState().flashcards, Date.now()).today;
     const root = document.createElement('div');
     progress.render(root);
     const tile = byText(root, '.pv-stat', 'Flashcards for today')!;

@@ -68,7 +68,7 @@ describe('drill refine — subtopic selector', () => {
     // IVC is offered and labelled with its real MCQ count (17, lean exemplar).
     const ivc = [...sub.options].find((o) => o.value === 'hist-ancient-ivc');
     expect(ivc).toBeTruthy();
-    expect(ivc?.textContent).toMatch(/\(19\)$/);
+    expect(ivc?.textContent).toMatch(/\(57\)$/);
     // Every populated option carries a "(N)" count suffix.
     for (const opt of [...sub.options].slice(1)) {
       expect(opt.textContent).toMatch(/\(\d+\)$/);
@@ -82,7 +82,7 @@ describe('drill refine — subtopic selector', () => {
     fireChange(subtopicSelect(root), 'hist-ancient-ivc');
 
     // Full practice == the subtopic's total (IVC has 19 MCQs).
-    expect(presetCount(root, 'Full practice')).toBe('19 total');
+    expect(presetCount(root, 'Full practice')).toBe('57 total');
     // Quick == min(10, total).
     expect(presetCount(root, 'Quick 10')).toBe('10 questions');
   });
@@ -92,11 +92,11 @@ describe('drill refine — subtopic selector', () => {
     drill.render(root);
     fireChange(subjectSelect(root), 'HIST');
     fireChange(subtopicSelect(root), 'hist-ancient-ivc');
-    expect(presetCount(root, 'Full practice')).toBe('19 total');
+    expect(presetCount(root, 'Full practice')).toBe('57 total');
 
     // Re-selecting a subject resets subtopic → All (full HIST pool = 917).
     fireChange(subjectSelect(root), 'HIST');
     expect(subtopicSelect(root).value).toBe('');
-    expect(presetCount(root, 'Full practice')).toBe('946 total');
+    expect(presetCount(root, 'Full practice')).toBe('1009 total');
   });
 });

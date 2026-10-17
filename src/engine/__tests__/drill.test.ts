@@ -47,13 +47,13 @@ describe('drill.buildSession', () => {
   });
 
   it('filters by subject', () => {
-    expect(buildSession({ subjectCode: 'HIST' }).items).toHaveLength(946);
+    expect(buildSession({ subjectCode: 'HIST' }).items).toHaveLength(1009);
     expect(buildSession({ subjectCode: 'ECON' }).items).toHaveLength(370);
   });
 
   it('filters by subtopicId', () => {
     // Every IVC MCQ carries subtopicId 'hist-ancient-ivc' (lean exemplar bank).
-    expect(buildSession({ subtopicId: 'hist-ancient-ivc' }).items).toHaveLength(19);
+    expect(buildSession({ subtopicId: 'hist-ancient-ivc' }).items).toHaveLength(57);
     // An unknown subtopic yields nothing.
     expect(buildSession({ subtopicId: 'hist-ancient-does-not-exist' }).items).toHaveLength(0);
     // The IVC exemplar is tier-LESS, so a tier filter selects none of its items.

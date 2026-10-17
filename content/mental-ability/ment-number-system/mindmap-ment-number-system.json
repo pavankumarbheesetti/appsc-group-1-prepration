@@ -18,18 +18,18 @@
       "label": "Divisibility",
       "leaves": [
         "3 / 9: digit sum",
-        "4: last two digits",
-        "8: last three digits",
-        "11: alternating digit sum"
+        "4 / 8: last 2 / 3 digits",
+        "11: alternating digit sum",
+        "7: rest − 2×last; 13: rest + 4×last"
       ]
     },
     {
       "label": "Factors",
       "leaves": [
         "N = p^{a}q^{b} → (a+1)(b+1)",
-        "Includes 1 and N",
         "Odd: drop powers of 2",
-        "Even = total − odd"
+        "Even = total − odd",
+        "Sum = product of (1 + p + … + p^{a})"
       ]
     },
     {
@@ -47,16 +47,25 @@
         "n! zeros = ⌊n/5⌋+⌊n/25⌋…",
         "Product: min(#2, #5)",
         "Rem. of a^{n}: use cycle",
-        "2^{100} ÷ 7 = 2"
+        "Fermat: a^{p−1} leaves 1 (p prime)"
       ]
     },
     {
       "label": "HCF-LCM & fractions",
       "leaves": [
         "HCF × LCM = a × b",
-        "Bells → LCM",
-        "Same remainder → HCF of diffs",
-        "0.(36) = 36/99 = 4/11"
+        "Bells, runners → LCM",
+        "Tiles, same remainder → HCF",
+        "Terminates: bottom only 2s, 5s"
+      ]
+    },
+    {
+      "label": "Counting & notation",
+      "leaves": [
+        "Multiples: ⌊b/k⌋ − ⌊(a−1)/k⌋",
+        "AP terms = (l − a)/d + 1",
+        "25 primes up to 100",
+        "Order of magnitude cut-off √10"
       ]
     }
   ]

@@ -152,6 +152,196 @@
       "examPoint": "Perfect square — unit-digit property test",
       "source": "APPSC Quantitative Reasoning — Number System",
       "verified": true
+    },
+    {
+      "id": "ment-number-system-card-16",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How do you test divisibility by 7?",
+      "back": "Remove the last digit; subtract twice it from the rest; repeat. 0 or a multiple of 7 means divisible (343: 34 − 6 = 28).",
+      "examPoint": "Divisibility rules (2, 3, 4, 6, 8, 9, 11)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-17",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How do you test divisibility by 13?",
+      "back": "Remove the last digit; ADD four times it to the rest; repeat (351: 35 + 4 = 39 = 3 × 13).",
+      "examPoint": "Divisibility rules (2, 3, 4, 6, 8, 9, 11)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-18",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Why is 256256 divisible by 7, 11 and 13?",
+      "back": "abcabc = abc × 1001 and 1001 = 7 × 11 × 13. A four-digit repeat abab = ab × 101 is not.",
+      "examPoint": "Divisibility rules (2, 3, 4, 6, 8, 9, 11)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-19",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How do you test a long number for 7, 11 or 13 at once?",
+      "back": "Alternately add and subtract three-digit groups from the right (764 − 233 + 1 = 532); test that result.",
+      "examPoint": "Divisibility rules (2, 3, 4, 6, 8, 9, 11)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-20",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Sum of all factors — formula and example?",
+      "back": "Multiply (1 + p + … + p^{a}) for each prime: 72 = 2^{3} × 3^{2} → 15 × 13 = 195.",
+      "examPoint": "Number of factors via prime factorisation",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-21",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Odd-factor trap: what must you drop first?",
+      "back": "Every power of 2. 1260 = 2^{2} × 3^{2} × 5 × 7 has 12 odd factors; even = 36 − 12 = 24.",
+      "examPoint": "Number of odd/even factors",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-22",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Trailing-zero trap for 125! or 625!?",
+      "back": "Keep dividing by 125, 625 … : 125! = 25 + 5 + 1 = 31 zeros, not 30.",
+      "examPoint": "Trailing zeros in a factorial",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-23",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Remainder trap: N ÷ 6 leaves 5 — what does N ÷ 12 leave?",
+      "back": "Cannot be fixed (5 or 11). The rule only works from a divisor down to its factor.",
+      "examPoint": "Remainder — divisor as a multiple / successive division",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-24",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Fermat's shortcut for a remainder of a power?",
+      "back": "p prime, p not dividing a: a^{p−1} leaves 1. Reduce the exponent mod (p − 1): 5^{100} ÷ 7 → 5^{4} → 2.",
+      "examPoint": "Remainder of powers — cyclicity/pattern method",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-25",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Remainder of (d − 1)^{n} ÷ d?",
+      "back": "1 when n is even; d − 1 when n is odd (29^{51} ÷ 30 leaves 29).",
+      "examPoint": "Remainder of powers — cyclicity/pattern method",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-26",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Largest square tile for a floor — method?",
+      "back": "HCF of length and breadth in the same unit; tiles = (L ÷ side)(B ÷ side). 1650 × 1200 cm → 150 cm, 88 tiles.",
+      "examPoint": "HCF & LCM — word problems (bells, greatest divisor, least number)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-27",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Runners on a circular track meet at the start when?",
+      "back": "After the LCM of their lap times (40, 60, 75 s → 600 s = 10 min), not the product.",
+      "examPoint": "HCF & LCM — word problems (bells, greatest divisor, least number)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-28",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "When does a fraction give a terminating decimal?",
+      "back": "In lowest terms, its denominator has only 2s and 5s. Cancel first: 7/56 = 1/8 terminates.",
+      "examPoint": "Recurring decimal to fraction conversion",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How many terms in an evenly spaced list?",
+      "back": "n = (last − first)/step + 1. 7, 13, …, 205 → 198/6 + 1 = 34. Do not drop the +1.",
+      "examPoint": "Counting multiples / terms in a range (AP count)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-30",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Divisible by both 12 and 18 — count multiples of what?",
+      "back": "LCM(12, 18) = 36, not 12 × 18 = 216. From 1 to 600: ⌊600/36⌋ = 16.",
+      "examPoint": "Counting multiples / terms in a range (AP count)",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-31",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "How many primes up to 100, and how do you test one number?",
+      "back": "25 primes up to 100. Test by primes up to √n: 391 needs up to 19 → 17 × 23.",
+      "examPoint": "Prime, composite & co-prime identification",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-32",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Scientific-notation trap after multiplying or dividing?",
+      "back": "Renormalise so 1 ≤ a < 10: 12 × 10^{5} = 1.2 × 10^{6}; 0.8 × 10^{7} = 8.0 × 10^{6}.",
+      "examPoint": "Scientific (standard) notation — a × 10^n form & products",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-33",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Order-of-magnitude cut-off?",
+      "back": "√10 ≈ 3.16: a × 10^{n} has order n if a < 3.16, else n + 1. 4,500 → 4; 2,800 → 3.",
+      "examPoint": "Order of magnitude — nearest power of ten",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
+    },
+    {
+      "id": "ment-number-system-card-34",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "front": "Is 22/7 rational? Is 0.1010010001… rational?",
+      "back": "22/7 is rational (only approximates π). 0.1010010001… never repeats a fixed block, so irrational.",
+      "examPoint": "Number classification — natural/whole/integer/rational/irrational/real",
+      "source": "APPSC Quantitative Reasoning — Number System",
+      "verified": true
     }
   ]
 }

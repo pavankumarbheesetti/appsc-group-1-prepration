@@ -121,13 +121,13 @@ describe('DOM render audit — every MCQ through the real stem renderer', () => 
   it('loads the full MCQ corpus', () => {
     expect(items.length).toBeGreaterThan(3000);
     // Computed after the question-format round (q-final, 2026-10-13): every one
-    // of the 129 MCQ banks parses, 3246 items in all (348 match, 939 statements,
+    // of the 129 MCQ banks parses, 3369 items in all (360 match, 939 statements,
     // 40 A-R). Update to the new computed totals when the bank grows.
     expect(walk(CONTENT)).toHaveLength(129);
-    expect(items).toHaveLength(3246);
-    expect(items.filter((i) => i.match).length).toBe(348);
-    expect(items.filter((i) => i.statements).length).toBe(939);
-    expect(items.filter((i) => i.assertion !== undefined).length).toBe(40);
+    expect(items).toHaveLength(3369);
+    expect(items.filter((i) => i.match).length).toBe(360);
+    expect(items.filter((i) => i.statements).length).toBe(951);
+    expect(items.filter((i) => i.assertion !== undefined).length).toBe(45);
   });
 
   it('renders every match / statement / A-R stem without structural defects', () => {
