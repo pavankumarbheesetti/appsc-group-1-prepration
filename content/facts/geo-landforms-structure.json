@@ -1,0 +1,5291 @@
+{
+  "version": 1,
+  "subtopicId": "geo-landforms-structure",
+  "facts": [
+    {
+      "id": "in-three-layers",
+      "fact": "The Earth is divided into three parts: crust, mantle and core.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "crust",
+        "mantle",
+        "core"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-30"
+      ]
+    },
+    {
+      "id": "in-nife",
+      "fact": "The core is rich in nickel and iron, hence called the NIFE layer.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "NIFE"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-1",
+        "geo-landforms-structure-card-1"
+      ]
+    },
+    {
+      "id": "in-moho",
+      "fact": "The Mohorovicic (Moho) discontinuity separates the crust from the mantle.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Moho"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-2",
+        "geo-landforms-structure-card-3"
+      ]
+    },
+    {
+      "id": "in-conrad",
+      "fact": "The Conrad discontinuity separates the upper crust (SiAl) from the lower crust (SiMa).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Conrad"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-2",
+        "geo-landforms-structure-card-3"
+      ]
+    },
+    {
+      "id": "in-gutenberg",
+      "fact": "The Gutenberg discontinuity separates the mantle from the outer core.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Gutenberg"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-2",
+        "geo-landforms-structure-card-3"
+      ]
+    },
+    {
+      "id": "in-lehmann",
+      "fact": "The Lehmann discontinuity separates the outer core from the inner core.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Lehmann"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-2",
+        "geo-landforms-structure-card-3"
+      ]
+    },
+    {
+      "id": "in-repetti",
+      "fact": "The Repetti discontinuity separates the upper and lower mantle.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Repetti"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-card-3",
+        "geo-landforms-structure-mcq-30"
+      ]
+    },
+    {
+      "id": "in-sial-sima",
+      "fact": "SIAL (silica + aluminium) is granitic continental crust; SIMA (silica + magnesium) is basaltic oceanic crust.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "SIAL",
+        "SIMA"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-1",
+        "geo-landforms-structure-card-2"
+      ]
+    },
+    {
+      "id": "in-oceanic-basalt",
+      "fact": "Oceanic crust is basaltic and denser than the granitic continental crust.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "basaltic",
+        "granitic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-4"
+      ]
+    },
+    {
+      "id": "in-oceanic-younger",
+      "fact": "Oceanic crust is younger than continental crust.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "older"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-4"
+      ]
+    },
+    {
+      "id": "in-oxygen",
+      "fact": "Oxygen is the most abundant element in the Earth's crust.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Oxygen",
+        "abundant"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-4"
+      ]
+    },
+    {
+      "id": "in-aluminium-iron",
+      "fact": "Aluminium is the most abundant metal in the crust; iron is the most abundant metal in the whole Earth.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Aluminium",
+        "iron"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-30"
+      ]
+    },
+    {
+      "id": "in-mantle-2900",
+      "fact": "The mantle extends from the Moho to a depth of about 2,900 km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "2900"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-30"
+      ]
+    },
+    {
+      "id": "in-asthenosphere-magma",
+      "fact": "The asthenosphere (upper mantle) is the source of magma.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "asthenosphere",
+        "magma"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-30"
+      ]
+    },
+    {
+      "id": "in-outer-liquid",
+      "fact": "The outer core is molten (liquid) while the inner core is solid.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "outer core",
+        "molten"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-5",
+        "geo-landforms-structure-card-1"
+      ]
+    },
+    {
+      "id": "in-mnemonic",
+      "fact": "The discontinuities top-down are Conrad, Moho, Repetti, Gutenberg, Lehmann ('Commander Mohit is ReGuLar').",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Commander Mohit"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-card-15"
+      ]
+    },
+    {
+      "id": "in-p-all-media",
+      "fact": "P-waves are longitudinal and travel through solids, liquids and gases.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "P-waves",
+        "liquids"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-5",
+        "geo-landforms-structure-card-9"
+      ]
+    },
+    {
+      "id": "in-s-no-liquid",
+      "fact": "S-waves cannot pass through liquids, which shows that the outer core is molten.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "S-waves",
+        "liquid"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-5",
+        "geo-landforms-structure-card-9"
+      ]
+    },
+    {
+      "id": "pt-wegener",
+      "fact": "Alfred Wegener proposed the Continental Drift Theory.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Wegener"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-3",
+        "geo-landforms-structure-card-4"
+      ]
+    },
+    {
+      "id": "pt-pangaea",
+      "fact": "Wegener's single supercontinent was Pangaea, surrounded by the ocean Panthalassa.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Pangaea",
+        "Panthalassa"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-card-4",
+        "geo-landforms-structure-mcq-33"
+      ]
+    },
+    {
+      "id": "pt-tethys",
+      "fact": "The Tethys Sea divided Pangaea into Laurasia (north) and Gondwanaland (south).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Laurasia",
+        "Gondwanaland"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-33"
+      ]
+    },
+    {
+      "id": "pt-hess",
+      "fact": "Harry Hess proposed sea-floor spreading.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Hess"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-6",
+        "geo-landforms-structure-card-5"
+      ]
+    },
+    {
+      "id": "pt-holmes",
+      "fact": "Arthur Holmes (1930s) proposed convection currents in the mantle driven by radioactive heat.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Holmes",
+        "convection"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-card-5",
+        "geo-landforms-structure-mcq-35"
+      ]
+    },
+    {
+      "id": "pt-paleomag",
+      "fact": "Symmetrical paleomagnetic stripes on either side of mid-ocean ridges are the key evidence of sea-floor spreading.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "paleomagneti"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-5",
+        "geo-landforms-structure-mcq-35"
+      ]
+    },
+    {
+      "id": "pt-nazca-minor",
+      "fact": "The Nazca plate is a minor plate, not one of the seven major plates.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Nazca"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-7"
+      ]
+    },
+    {
+      "id": "pt-divergent",
+      "fact": "Divergent (constructive) boundaries form mid-ocean ridges; continental divergence forms rift valleys like the East African Rift.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "East African Rift"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-8"
+      ]
+    },
+    {
+      "id": "pt-convergent",
+      "fact": "Convergent (destructive) boundaries form fold mountains (Himalayas) and ocean trenches at subduction zones.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "trench"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-8",
+        "geo-landforms-structure-card-6"
+      ]
+    },
+    {
+      "id": "pt-transform",
+      "fact": "At transform boundaries plates slide past each other; the San Andreas Fault is the best example.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "San Andreas"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-8",
+        "geo-landforms-structure-card-6"
+      ]
+    },
+    {
+      "id": "pt-india-collision",
+      "fact": "India collided with Asia about 40–50 million years ago, uplifting the Himalayas, which are still rising.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "40-50 million"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-9"
+      ]
+    },
+    {
+      "id": "pt-deccan-traps",
+      "fact": "The outpouring of lava during the Indian Plate's movement formed the Deccan Traps.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Deccan Traps"
+      ],
+      "taughtIn": "geo-landforms-structure-note-plate-tectonics",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-9",
+        "geo-landforms-structure-card-7"
+      ]
+    },
+    {
+      "id": "eq-focus-epicentre",
+      "fact": "The focus (hypocentre) is where energy is released inside the Earth; the epicentre is the surface point directly above.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "epicentre",
+        "focus"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-10",
+        "geo-landforms-structure-card-8"
+      ]
+    },
+    {
+      "id": "eq-foreshock",
+      "fact": "A foreshock precedes the main shock; aftershocks follow it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "foreshock",
+        "aftershock"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-card-16"
+      ]
+    },
+    {
+      "id": "eq-l-waves",
+      "fact": "Surface (L) waves are the slowest and most destructive earthquake waves.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Surface (L)"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-11"
+      ]
+    },
+    {
+      "id": "eq-richter-32",
+      "fact": "On the Richter scale each step is about 32 times more energy; two steps about 1,000 times.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "1,000"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-12",
+        "geo-landforms-structure-card-10"
+      ]
+    },
+    {
+      "id": "eq-mercalli",
+      "fact": "The Mercalli scale measures intensity (observed effects), not energy.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mercalli"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-card-10",
+        "geo-landforms-structure-mcq-39"
+      ]
+    },
+    {
+      "id": "eq-ring-68",
+      "fact": "The Circum-Pacific Belt ('Pacific Ring of Fire') accounts for about 68% of all earthquakes.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "68%"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-13"
+      ]
+    },
+    {
+      "id": "eq-alpine-15",
+      "fact": "The Alpine–Himalayan belt releases about 15% of the world's earthquake energy.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "15%"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-13"
+      ]
+    },
+    {
+      "id": "eq-india-59",
+      "fact": "Nearly 59% of India's land area is prone to moderate or severe earthquakes (NDMA map).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "59%"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-13"
+      ]
+    },
+    {
+      "id": "eq-zone-v",
+      "fact": "Zone V is India's highest seismic-risk zone — NE India, the Himalayas, Kutch and Andaman–Nicobar.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Zone V"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-41"
+      ]
+    },
+    {
+      "id": "eq-depth-classes",
+      "fact": "Shallow quakes are 0–70 km deep, intermediate 70–300 km, deep 300–700 km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "70",
+        "300",
+        "700"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquakes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-38"
+      ]
+    },
+    {
+      "id": "vo-shield",
+      "fact": "Shield volcanoes are broad and gentle, built of fluid low-viscosity basalt (Mauna Loa).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Shield",
+        "Mauna Loa"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-14"
+      ]
+    },
+    {
+      "id": "vo-intrusive",
+      "fact": "Intrusive landforms: batholith (largest), dyke (vertical), sill (horizontal), laccolith (dome).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Batholith",
+        "Laccolith"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-15"
+      ]
+    },
+    {
+      "id": "ro-limestone-marble",
+      "fact": "Limestone metamorphoses into marble.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Limestone",
+        "Marble"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-16",
+        "geo-landforms-structure-card-12"
+      ]
+    },
+    {
+      "id": "ro-sandstone-quartzite",
+      "fact": "Sandstone metamorphoses into quartzite.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Sandstone",
+        "Quartzite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-16",
+        "geo-landforms-structure-card-12"
+      ]
+    },
+    {
+      "id": "ro-granite-gneiss",
+      "fact": "Granite metamorphoses into gneiss.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Granite",
+        "Gneiss"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-16",
+        "geo-landforms-structure-card-12"
+      ]
+    },
+    {
+      "id": "ro-coal-graphite",
+      "fact": "Coal metamorphoses into anthracite and graphite.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Graphite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-16",
+        "geo-landforms-structure-card-12"
+      ]
+    },
+    {
+      "id": "ro-three-groups",
+      "fact": "Rocks are igneous (primary), sedimentary (layered, fossils) and metamorphic (from heat and pressure).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Igneous",
+        "Sedimentary",
+        "Metamorphic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-23"
+      ]
+    },
+    {
+      "id": "ro-basalt-igneous",
+      "fact": "Basalt is an igneous rock, not metamorphic.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Basalt"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-23"
+      ]
+    },
+    {
+      "id": "ro-feldspar-quartz",
+      "fact": "Feldspar and quartz are the most common minerals in rocks.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Feldspar",
+        "quartz"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcanoes-rocks",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-47"
+      ]
+    },
+    {
+      "id": "ts-cretaceous",
+      "fact": "The mass extinction of the dinosaurs marks the end of the Cretaceous period.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Cretaceous"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-17"
+      ]
+    },
+    {
+      "id": "ts-hierarchy",
+      "fact": "The geological time scale hierarchy is Eon > Era > Period > Epoch.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Eon",
+        "Epoch"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-53"
+      ]
+    },
+    {
+      "id": "fo-endogenic",
+      "fact": "Endogenic forces originate within the Earth, powered by internal heat, and build up the surface.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Endogenic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-18"
+      ]
+    },
+    {
+      "id": "fo-orogeny",
+      "fact": "Orogeny is mountain building through folding and faulting.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Orogeny"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-18"
+      ]
+    },
+    {
+      "id": "fo-exogenic-sun",
+      "fact": "Exogenic processes such as weathering and erosion are powered by solar energy.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Exogenic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-18"
+      ]
+    },
+    {
+      "id": "fo-epeirogeny",
+      "fact": "Epeirogeny is broad, continent-wide uplift or warping of the crust.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "epeirogeny"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-55"
+      ]
+    },
+    {
+      "id": "fo-weathering-erosion",
+      "fact": "Weathering is the in-situ breakdown of rock; erosion removes and transports it.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "in-situ"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-25"
+      ]
+    },
+    {
+      "id": "fo-chemical",
+      "fact": "Chemical weathering alters minerals by carbonation, hydration, hydrolysis and oxidation.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "carbonation"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-25"
+      ]
+    },
+    {
+      "id": "fo-mountain-types",
+      "fact": "Mountain types: fold (Himalayas, Alps), block (Black Forest, Vosges), volcanic (Kilimanjaro, Fujiyama), residual (Aravalli).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Black Forest",
+        "Aravalli"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-forces",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-24",
+        "geo-landforms-structure-card-14"
+      ]
+    },
+    {
+      "id": "ex-oxbow",
+      "fact": "A cut-off river meander that survives as a separate water body is an oxbow lake.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Oxbow"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-19"
+      ]
+    },
+    {
+      "id": "ex-cirque",
+      "fact": "A cirque is an armchair-shaped glacial hollow that may hold a tarn lake.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Cirque",
+        "tarn"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-20"
+      ]
+    },
+    {
+      "id": "ex-arete",
+      "fact": "An arete is a steep, sharp ridge between two glacial valleys.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Arete"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-20"
+      ]
+    },
+    {
+      "id": "ex-esker",
+      "fact": "An esker is a winding ridge of glacial debris on a till plain.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Esker"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-20"
+      ]
+    },
+    {
+      "id": "ex-fjord",
+      "fact": "A fjord is a steep-sided narrow glacial valley drowned at the coast (Norway).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Fjord"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-20"
+      ]
+    },
+    {
+      "id": "ex-barchan",
+      "fact": "Barchan dunes are crescent-shaped with tips pointing downwind.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Barchan"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-21",
+        "geo-landforms-structure-mcq-26"
+      ]
+    },
+    {
+      "id": "ex-stalactite",
+      "fact": "Stalactites and stalagmites are karst (limestone-dissolution) features.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Stalactite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-stack",
+      "fact": "A sea stack is left by the collapse of a sea arch (marine erosion).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "stack"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-sinkhole",
+      "fact": "A sinkhole is a funnel-shaped karst depression.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Sinkhole"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-tombolo",
+      "fact": "A tombolo is a bar connecting an island to the mainland or another island.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Tombolo"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-yardang",
+      "fact": "A yardang is a streamlined rock ridge carved by wind parallel to the prevailing wind.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Yardang"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-26"
+      ]
+    },
+    {
+      "id": "ex-loess",
+      "fact": "Loess is fertile wind-deposited fine silt (e.g. Hwang-Ho basin).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Loess"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-26"
+      ]
+    },
+    {
+      "id": "ex-playa",
+      "fact": "A playa is a temporary shallow salt lake in a desert basin (bolson).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Playa"
+      ],
+      "taughtIn": "geo-landforms-structure-note-exogenic-landforms",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-26"
+      ]
+    },
+    {
+      "id": "rs-barren",
+      "fact": "Barren Island in the Andaman Sea is India's only active volcano.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Barren Island"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-27"
+      ]
+    },
+    {
+      "id": "rs-barren-post-1991",
+      "fact": "Barren Island has erupted repeatedly after 1991 (e.g. 2017), so it is not dormant.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "1991"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-27"
+      ]
+    },
+    {
+      "id": "rs-narcondam",
+      "fact": "Narcondam is India's other volcanic island and is regarded as dormant.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Narcondam"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-card-17"
+      ]
+    },
+    {
+      "id": "rs-gondwana-coal",
+      "fact": "About 98% of India's coal comes from the Gondwana rock system.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Gondwana",
+        "coal"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-28"
+      ]
+    },
+    {
+      "id": "rs-kodarma",
+      "fact": "Kodarma in Jharkhand is famous for mica.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Kodarma"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-28"
+      ]
+    },
+    {
+      "id": "rs-dharwar",
+      "fact": "The Dharwar system is rich in metallic minerals (iron, manganese, gold) but not petroleum.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Dharwar"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-28"
+      ]
+    },
+    {
+      "id": "rs-tertiary-oil",
+      "fact": "Petroleum in India comes from Tertiary rocks.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tertiary",
+        "petroleum"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-51"
+      ]
+    },
+    {
+      "id": "rs-cuddapah",
+      "fact": "The Cuddapah system (Proterozoic) carries iron, manganese, limestone, asbestos and barytes.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap"
+      ],
+      "keys": [
+        "Cuddapah"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-card-18"
+      ]
+    },
+    {
+      "id": "rs-shale-basins",
+      "fact": "Shale gas occurs in the Cambay, Cauvery and Krishna-Godavari basins (UPSC 2015).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Cambay",
+        "Krishna-Godavari"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rock-systems-minerals",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-29"
+      ]
+    },
+    {
+      "id": "inn-densities",
+      "fact": "Oceanic crust has a density of about 3.0 g/cm³ and continental crust about 2.7 g/cm³.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "3.0",
+        "2.7"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-31"
+      ]
+    },
+    {
+      "id": "inn-thickness",
+      "fact": "Oceanic crust is about 5 km thick on average and continental crust about 30 km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "5 km",
+        "30 km"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-31"
+      ]
+    },
+    {
+      "id": "inn-astheno-400",
+      "fact": "The asthenosphere ('astheno' = weak) extends to about 400 km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "400 km"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-30"
+      ]
+    },
+    {
+      "id": "inn-litho-10-200",
+      "fact": "The lithosphere (crust + uppermost mantle) is 10–200 km thick.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "10–200"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-31"
+      ]
+    },
+    {
+      "id": "inn-lower-mantle-solid",
+      "fact": "The lower mantle, below the asthenosphere, is in a solid state.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "lower mantle",
+        "solid"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-card-19",
+        "geo-landforms-structure-mcq-31"
+      ]
+    },
+    {
+      "id": "inn-mantle-density",
+      "fact": "Mantle density increases with depth from about 3.3 to 5.7 g/cm³; it is made of iron- and magnesium-rich silicates.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "3.3",
+        "5.7"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-card-20"
+      ]
+    },
+    {
+      "id": "inn-outer-core",
+      "fact": "The outer core is about 2,200 km thick at about 4,000–6,000°C.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "2,200"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-32"
+      ]
+    },
+    {
+      "id": "inn-inner-core",
+      "fact": "The inner core is about 1,220 km (radius), solid, at about 5,400°C with density 12.6–13.0 g/cm³.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1,220",
+        "5,400"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-32"
+      ]
+    },
+    {
+      "id": "inn-p-shadow",
+      "fact": "The P-wave shadow zone lies between about 103° and 142° from the epicentre.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "103",
+        "142"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-32"
+      ]
+    },
+    {
+      "id": "inn-s-shadow",
+      "fact": "S-waves are not recorded beyond about 103° from the epicentre, so the S-wave shadow zone is larger.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "S-wave shadow"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-32"
+      ]
+    },
+    {
+      "id": "inn-kola",
+      "fact": "The deepest drilling, the Kola Superdeep Borehole (Russia), reached only about 12 km.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Kola"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-card-21"
+      ]
+    },
+    {
+      "id": "inn-indirect",
+      "fact": "Indirect sources of knowledge of the interior include temperature and pressure gradients, meteorites, gravity, magnetism and seismic waves.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "meteorites"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-card-22"
+      ]
+    },
+    {
+      "id": "inn-radius",
+      "fact": "The Earth's mean radius is about 6,371 km.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "6,371"
+      ],
+      "taughtIn": "geo-landforms-structure-note-interior-numbers",
+      "drilledBy": [
+        "geo-landforms-structure-card-23"
+      ]
+    },
+    {
+      "id": "dr-1912-1922",
+      "fact": "Wegener proposed continental drift in 1912; the source text dates it to 1922 (his book's later edition).",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "1912"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-4"
+      ]
+    },
+    {
+      "id": "dr-200mya",
+      "fact": "According to Wegener, drift began about 200 million years ago.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "200 million"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-24"
+      ]
+    },
+    {
+      "id": "dr-forces",
+      "fact": "Wegener's forces were the pole-fleeing force (from rotation) and the tidal force; both were too weak to move continents.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "pole-fleeing",
+        "tidal"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-33"
+      ]
+    },
+    {
+      "id": "dr-brazil-guinea",
+      "fact": "Brazil fits into the Gulf of Guinea of Africa (jig-saw fit).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Brazil",
+        "Gulf of Guinea"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-34"
+      ]
+    },
+    {
+      "id": "dr-appalachian",
+      "fact": "The Caledonian and Hercynian mountains of Europe continue in the Appalachians of the USA.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Caledonian",
+        "Appalachians"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-25"
+      ]
+    },
+    {
+      "id": "dr-glossopteris",
+      "fact": "Glossopteris flora found in India, Australia, South Africa, Falklands and Antarctica shows they were once Gondwana.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Glossopteris"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-4",
+        "geo-landforms-structure-mcq-34"
+      ]
+    },
+    {
+      "id": "dr-lemuria",
+      "fact": "Lemurs in India, Madagascar and Africa led to the idea of a linking land called Lemuria.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Lemuria"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-26"
+      ]
+    },
+    {
+      "id": "dr-mesosaurus",
+      "fact": "Mesosaurus skeletons are found only in South Africa and Brazil, now 4,800 km apart.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mesosaurus",
+        "4,800"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-34"
+      ]
+    },
+    {
+      "id": "dr-tillite",
+      "fact": "Tillite (glacial sedimentary rock) of the Gondwana system occurs across India, Africa, Antarctica and Australia.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Tillite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-27"
+      ]
+    },
+    {
+      "id": "dr-placer-gold",
+      "fact": "Placer gold deposits of West Africa were derived from the Brazil plateau.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "placer",
+        "gold"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-34"
+      ]
+    },
+    {
+      "id": "dr-2000-rocks",
+      "fact": "Rock belts about 2,000 million years old on coastal Brazil match those of western Africa.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "2,000"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-28"
+      ]
+    },
+    {
+      "id": "dr-mesozoic-drawback",
+      "fact": "Wegener could not explain why drift began only in the Mesozoic era.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mesozoic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-33"
+      ]
+    },
+    {
+      "id": "dr-mckenzie",
+      "fact": "Plate tectonics was suggested by McKenzie and Parker (1967) and outlined by Morgan (1968).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "McKenzie",
+        "Morgan"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-35"
+      ]
+    },
+    {
+      "id": "dr-float-astheno",
+      "fact": "Lithospheric plates float on the asthenosphere and are moved by mantle convection currents.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "float",
+        "asthenosphere"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-35"
+      ]
+    },
+    {
+      "id": "dr-minor-plates",
+      "fact": "Minor plates include Cocos, Nazca, Arabian, Philippine, Caroline, Fuji, Caribbean, Juan de Fuca, Turkish, Aegean and Iranian.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cocos",
+        "Juan de Fuca"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-36"
+      ]
+    },
+    {
+      "id": "dr-cocos-nazca-loc",
+      "fact": "The Cocos plate lies between Central America and the Pacific plate; the Nazca plate between South America and the Pacific plate.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Central America"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-36"
+      ]
+    },
+    {
+      "id": "dr-ocean-younger",
+      "fact": "Older rocks form the continents while younger rocks lie on the ocean floor — evidence of plate tectonics.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "younger rocks"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-36"
+      ]
+    },
+    {
+      "id": "dr-india-225",
+      "fact": "India was separated from Asia by the Tethys Sea until about 225 million years ago.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "225 million"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-37"
+      ]
+    },
+    {
+      "id": "dr-india-140",
+      "fact": "About 140 million years ago the Indian subcontinent lay far south, in the Southern Hemisphere.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "140 million"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-card-29"
+      ]
+    },
+    {
+      "id": "dr-deccan-60",
+      "fact": "The Deccan Trap lava outpouring began about 60 million years ago.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "60 million"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-37"
+      ]
+    },
+    {
+      "id": "dr-upsc-2014",
+      "fact": "Both continental drift and glacial cycles influenced the evolution of organisms (UPSC 2014).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "glacial cycles"
+      ],
+      "taughtIn": "geo-landforms-structure-note-drift-evidence",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-37"
+      ]
+    },
+    {
+      "id": "eqd-koyna",
+      "fact": "The 1967 Koynanagar earthquake (6.3) near the Koyna Dam, Maharashtra, is an example of reservoir-induced seismicity.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Koyna"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-38"
+      ]
+    },
+    {
+      "id": "eqd-human",
+      "fact": "Human-induced earthquakes are caused by mining, petroleum extraction, artificial lakes and nuclear tests.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mining",
+        "nuclear"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-30"
+      ]
+    },
+    {
+      "id": "eqd-volcanic-mild",
+      "fact": "Earthquakes of volcanic origin are generally less severe and more limited than tectonic ones.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "volcanic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-38"
+      ]
+    },
+    {
+      "id": "eqd-swarm",
+      "fact": "A series of many small earthquakes for months without a major quake is an earthquake swarm.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "swarm"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-16"
+      ]
+    },
+    {
+      "id": "eqd-energy-shares",
+      "fact": "Shallow quakes release about 70–85% of earthquake energy, intermediate 12–15%, deep 3–5%.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "70–85",
+        "12–15"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-38"
+      ]
+    },
+    {
+      "id": "eqd-italy-myanmar",
+      "fact": "The shallow 2016 Italy quake (6.2, ~10 km) killed about 300 while a deeper (84 km) Myanmar quake (6.8) killed few — depth matters.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Italy",
+        "Myanmar"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-31"
+      ]
+    },
+    {
+      "id": "eqd-p-speed",
+      "fact": "P-waves (compressional/pressure waves) travel at about 5–8 km/s.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "5–8",
+        "km/s"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-41"
+      ]
+    },
+    {
+      "id": "eqd-s-names",
+      "fact": "S-waves are also called transverse, shear or distortional waves.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "shear",
+        "distortional"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-39"
+      ]
+    },
+    {
+      "id": "eqd-richter-1930s",
+      "fact": "Charles F. Richter developed the Richter scale in the 1930s; the moment magnitude scale is better for large quakes.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Richter",
+        "moment magnitude"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-39"
+      ]
+    },
+    {
+      "id": "eqd-mercalli-12",
+      "fact": "The Mercalli intensity scale has 12 levels (I–XII).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "XII"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-39"
+      ]
+    },
+    {
+      "id": "eqd-valdivia",
+      "fact": "The largest recorded earthquake was the 1960 Valdivia (Chile) quake of magnitude 9.4–9.6.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Valdivia"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-40"
+      ]
+    },
+    {
+      "id": "eqd-2004",
+      "fact": "The 2004 Indian Ocean earthquake measured 9.1–9.3.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "ap"
+      ],
+      "keys": [
+        "2004",
+        "Indian Ocean"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-40"
+      ]
+    },
+    {
+      "id": "eqd-assam-1950",
+      "fact": "The 1950 Assam–Tibet earthquake measured 8.6.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Assam",
+        "8.6"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-40"
+      ]
+    },
+    {
+      "id": "eqd-gujarat-2001",
+      "fact": "The 2001 Gujarat earthquake measured 7.7; the 1819 Rann of Kutch quake was 7.7–8.2.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Gujarat",
+        "7.7"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-40"
+      ]
+    },
+    {
+      "id": "eqd-tohoku-alaska",
+      "fact": "The 2011 Tohoku (Japan) quake measured 9.1 and the 1964 Alaska quake 9.2.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Tohoku",
+        "Alaska"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-32"
+      ]
+    },
+    {
+      "id": "eqd-mag-classes",
+      "fact": "Magnitude classes: 7.0–7.9 major (10–20 a year), 8.0–8.9 great (about one a year).",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Great",
+        "Major"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-33"
+      ]
+    },
+    {
+      "id": "eqd-alpine-route",
+      "fact": "The Alpine belt runs from Mexico across the Atlantic and Mediterranean through the Alpine–Caucasus ranges to the Himalayas.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Caucasus"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-34"
+      ]
+    },
+    {
+      "id": "eqd-ap-zones",
+      "fact": "Most of Andhra Pradesh lies in seismic Zones II and III.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "Zones II and III"
+      ],
+      "taughtIn": "geo-landforms-structure-note-earthquake-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-41"
+      ]
+    },
+    {
+      "id": "vod-activity",
+      "fact": "Volcanoes are classed by activity as active, dormant or extinct.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "active",
+        "dormant",
+        "extinct"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-43"
+      ]
+    },
+    {
+      "id": "vod-shield-largest",
+      "fact": "Shield volcanoes are the largest volcanoes, with short intervals between eruptions (Mauna Kea, Surtsey).",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Surtsey"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-42"
+      ]
+    },
+    {
+      "id": "vod-composite",
+      "fact": "Composite (strato) volcanoes have viscous lava and layers of tephra; examples St. Helens, Vesuvius, Etna, Fuji.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Vesuvius",
+        "Etna"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-42"
+      ]
+    },
+    {
+      "id": "vod-caldera",
+      "fact": "Calderas, the most explosive volcanoes, include Yellowstone and Crater Lake (Oregon).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Yellowstone",
+        "Crater Lake"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-42"
+      ]
+    },
+    {
+      "id": "vod-flood-low-silica",
+      "fact": "Flood basalt lava is rich in iron and magnesium and low in silica; it typifies mid-ocean ridge volcanism.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "low in silica"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-43"
+      ]
+    },
+    {
+      "id": "vod-lava-dome",
+      "fact": "Lava domes form from highly viscous lava piling up near the vent.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Lava dome"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-43"
+      ]
+    },
+    {
+      "id": "vod-neck",
+      "fact": "A volcanic neck is the solidified conduit exposed when the cone erodes.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "volcanic neck"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-35"
+      ]
+    },
+    {
+      "id": "vod-black-soil",
+      "fact": "Black cotton soil was formed by the weathering of fissure volcanic rock (UPSC 2021).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "fissure volcanic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-44"
+      ]
+    },
+    {
+      "id": "vod-ojos",
+      "fact": "Ojos del Salado (6,893 m, Chile–Argentina) is the world's highest volcano.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Ojos del Salado"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-45"
+      ]
+    },
+    {
+      "id": "vod-crater-caldera",
+      "fact": "A crater is a summit bowl; a caldera is a much larger collapse depression.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Crater",
+        "collapse"
+      ],
+      "taughtIn": "geo-landforms-structure-note-volcano-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-43"
+      ]
+    },
+    {
+      "id": "rod-petrology",
+      "fact": "The scientific study of rocks is called petrology.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "petrology"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-47"
+      ]
+    },
+    {
+      "id": "rod-feldspar-half",
+      "fact": "Feldspar makes up about half of the Earth's crust.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "half"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-47"
+      ]
+    },
+    {
+      "id": "rod-quartz",
+      "fact": "Quartz (silicon + oxygen, hexagonal crystals) is used in radio and radar.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "radar"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-36"
+      ]
+    },
+    {
+      "id": "rod-bauxite",
+      "fact": "Bauxite, a hydrous oxide of aluminium, is the ore of aluminium.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Bauxite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-46"
+      ]
+    },
+    {
+      "id": "rod-cinnabar",
+      "fact": "Mercury is derived from cinnabar.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cinnabar",
+        "mercury"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-46"
+      ]
+    },
+    {
+      "id": "rod-dolomite",
+      "fact": "Dolomite is a double carbonate of calcium and magnesium.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Dolomite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-37"
+      ]
+    },
+    {
+      "id": "rod-gypsum",
+      "fact": "Gypsum is hydrous calcium sulphate, used in cement and fertiliser.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Gypsum",
+        "calcium sulphate"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-46"
+      ]
+    },
+    {
+      "id": "rod-haematite-magnetite",
+      "fact": "Haematite is the red ore and magnetite the black ore of iron.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Haematite",
+        "Magnetite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-47"
+      ]
+    },
+    {
+      "id": "rod-amphibole-mica",
+      "fact": "Amphibole forms about 7% of the crust (asbestos); mica about 4% (electrical instruments).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Amphibole",
+        "Mica"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-38"
+      ]
+    },
+    {
+      "id": "rod-olivine",
+      "fact": "Olivine (magnesium, iron, silica) is a greenish crystal; pyroxene is green or black.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Olivine"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-39"
+      ]
+    },
+    {
+      "id": "rod-unfossiliferous",
+      "fact": "Igneous rocks are un-fossiliferous because they form at high temperatures.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "un-fossiliferous"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-48"
+      ]
+    },
+    {
+      "id": "rod-plutonic",
+      "fact": "Plutonic igneous rocks cool slowly at depth and are coarse-grained (granite).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Plutonic",
+        "granite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-48"
+      ]
+    },
+    {
+      "id": "rod-extrusive",
+      "fact": "Extrusive (volcanic) igneous rocks cool quickly and are fine-grained (basalt).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Extrusive",
+        "basalt"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-48"
+      ]
+    },
+    {
+      "id": "rod-dyke-rock",
+      "fact": "Dyke (intermediate) rocks lie between plutonic and surface rocks and are semi-crystalline.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "semi-crystalline"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-40"
+      ]
+    },
+    {
+      "id": "rod-acid-basic",
+      "fact": "Igneous rocks are acidic or basic depending on silica content.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "acidic",
+        "basic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-48"
+      ]
+    },
+    {
+      "id": "rod-amygdales",
+      "fact": "Amygdales are gas bubbles in basalt filled with minerals.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Amygdales"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-41"
+      ]
+    },
+    {
+      "id": "rod-lithification",
+      "fact": "Sedimentary rocks form by lithification — compaction and consolidation of sediments.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "lithification"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-49"
+      ]
+    },
+    {
+      "id": "rod-sed-fossils",
+      "fact": "Sedimentary rocks are stratified and fossiliferous.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "stratified",
+        "fossiliferous"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-49"
+      ]
+    },
+    {
+      "id": "rod-sed-modes",
+      "fact": "Sedimentary rocks are mechanically (sandstone), organically (coal, chalk) or chemically (halite, potash) formed.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "organically",
+        "chemically"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-49"
+      ]
+    },
+    {
+      "id": "rod-reservoir",
+      "fact": "Mechanically formed sedimentary rocks like sandstone are the best reservoirs for groundwater and petroleum.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "reservoirs"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-49"
+      ]
+    },
+    {
+      "id": "rod-petroleum-marine",
+      "fact": "Petroleum comes from the decay of tiny marine organisms in sedimentary rocks.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "marine organisms"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-42"
+      ]
+    },
+    {
+      "id": "rod-foliation",
+      "fact": "The arrangement of minerals in layers in metamorphic rocks is called foliation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "foliation"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-50"
+      ]
+    },
+    {
+      "id": "rod-meta-causes",
+      "fact": "Causes of metamorphism are orogenic movements, lava inflow and geodynamic forces.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "lava inflow"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-50"
+      ]
+    },
+    {
+      "id": "rod-shale-slate",
+      "fact": "Clay/shale becomes slate (then phyllite) under heat and schist under pressure.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Slate",
+        "Schist"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-50"
+      ]
+    },
+    {
+      "id": "rod-rock-cycle",
+      "fact": "In the rock cycle, subduction carries crustal rocks into the mantle where they melt into magma.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "subduction"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-43"
+      ]
+    },
+    {
+      "id": "rod-till-loess",
+      "fact": "Ice-deposited sedimentary rocks are till/tillite; wind-deposited sediments are loess.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "till"
+      ],
+      "taughtIn": "geo-landforms-structure-note-rocks-minerals-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-44"
+      ]
+    },
+    {
+      "id": "tsd-holocene",
+      "fact": "The Holocene (last 10,000 years) is the epoch of modern man.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Holocene"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-54"
+      ]
+    },
+    {
+      "id": "tsd-pleistocene",
+      "fact": "The Pleistocene (10,000 years to 2 million years ago) saw the rise of Homo sapiens.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Pleistocene"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-54"
+      ]
+    },
+    {
+      "id": "tsd-oligocene",
+      "fact": "Anthropoid apes evolved in the Oligocene.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Oligocene"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-54"
+      ]
+    },
+    {
+      "id": "tsd-miocene",
+      "fact": "Flowering plants and trees expanded in the Miocene.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Miocene"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-45"
+      ]
+    },
+    {
+      "id": "tsd-eocene-palaeocene",
+      "fact": "Rabbits and hares evolved in the Eocene; small mammals (rats, mice) in the Palaeocene.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Eocene"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-46"
+      ]
+    },
+    {
+      "id": "tsd-jurassic",
+      "fact": "The Jurassic was the age of dinosaurs (early birds evolved).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Jurassic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-52"
+      ]
+    },
+    {
+      "id": "tsd-triassic",
+      "fact": "Frogs and turtles evolved in the Triassic.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Triassic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-47"
+      ]
+    },
+    {
+      "id": "tsd-permian",
+      "fact": "In the Permian reptiles replaced amphibians; it ended in a mass extinction.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Permian"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-48"
+      ]
+    },
+    {
+      "id": "tsd-carboniferous",
+      "fact": "The Carboniferous saw the first reptiles and vast coal beds.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Carboniferous",
+        "coal"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-53"
+      ]
+    },
+    {
+      "id": "tsd-devonian",
+      "fact": "Amphibians evolved in the Devonian.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Devonian"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-52"
+      ]
+    },
+    {
+      "id": "tsd-silurian",
+      "fact": "The first plants on land appeared in the Silurian.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Silurian"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-52"
+      ]
+    },
+    {
+      "id": "tsd-ordovician",
+      "fact": "The first fish appeared in the Ordovician.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Ordovician"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-52"
+      ]
+    },
+    {
+      "id": "tsd-cambrian",
+      "fact": "In the Cambrian marine invertebrates dominated and there was no terrestrial life.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cambrian"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-53"
+      ]
+    },
+    {
+      "id": "tsd-archean",
+      "fact": "Blue-green algae and unicellular bacteria characterise the Archean.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Archean"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-54"
+      ]
+    },
+    {
+      "id": "tsd-hadean",
+      "fact": "In the Hadean oceans and continents formed with a CO2-rich atmosphere.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Hadean"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-49"
+      ]
+    },
+    {
+      "id": "tsd-eras",
+      "fact": "The three later eras are Palaeozoic, Mesozoic and Cainozoic.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Palaeozoic",
+        "Mesozoic",
+        "Cainozoic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-53"
+      ]
+    },
+    {
+      "id": "tsd-quaternary",
+      "fact": "The Quaternary period comprises the Pleistocene and Holocene epochs.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Quaternary"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-50"
+      ]
+    },
+    {
+      "id": "tsd-modern-66",
+      "fact": "On the modern chart the dinosaurs' extinction is dated about 66 million years ago (source: 65).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "66 million"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-51"
+      ]
+    },
+    {
+      "id": "tsd-uses",
+      "fact": "The time scale is used for dating rocks and fossils, correlating strata and resource exploration.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "resource exploration"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-52"
+      ]
+    },
+    {
+      "id": "tsd-limits",
+      "fact": "A limitation of the time scale is the incomplete fossil record.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "incomplete fossil record"
+      ],
+      "taughtIn": "geo-landforms-structure-note-time-scale-table",
+      "drilledBy": [
+        "geo-landforms-structure-card-52"
+      ]
+    },
+    {
+      "id": "gp-davis",
+      "fact": "William Morris Davis (1850–1934) founded the science of geomorphology.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Davis"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-55"
+      ]
+    },
+    {
+      "id": "gp-radioactive-50",
+      "fact": "Radioactive decay provides about 50% of the Earth's internal heat.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "50%"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-53"
+      ]
+    },
+    {
+      "id": "gp-radial-tangential",
+      "fact": "Epeirogenic movements act radially; orogenic movements act tangentially to the Earth's surface.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "radial",
+        "tangential"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-55"
+      ]
+    },
+    {
+      "id": "gp-sudden",
+      "fact": "Sudden endogenic movements are earthquakes and volcanoes, mostly at plate margins.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Sudden"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-54"
+      ]
+    },
+    {
+      "id": "gp-chile-nz",
+      "fact": "An 1822 Chile earthquake raised the coast about 1 m; an 1885 New Zealand quake up to 3 m.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1822",
+        "1885"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-55"
+      ]
+    },
+    {
+      "id": "gp-denudation",
+      "fact": "Denudation (from \"denude\", to strip off) is the general term for weathering and erosion.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "denudation"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-55"
+      ]
+    },
+    {
+      "id": "gp-gravity",
+      "fact": "Gravity provides the directional force for all downslope geomorphic movement.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Gravity"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-56"
+      ]
+    },
+    {
+      "id": "gp-exfoliation",
+      "fact": "Exfoliation occurs by pressure release (unloading) or by thermal stress, which is strongest in dry climates and high elevations.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Exfoliation"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-56"
+      ]
+    },
+    {
+      "id": "gp-granular",
+      "fact": "Granular disintegration happens because dark minerals absorb more heat than light ones.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Granular disintegration"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-57"
+      ]
+    },
+    {
+      "id": "gp-frost",
+      "fact": "Frost weathering includes frost shattering, frost-wedging and freeze–thaw.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "frost-wedging"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-57"
+      ]
+    },
+    {
+      "id": "gp-salt",
+      "fact": "Salt weathering is typical of arid climates.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Salt weathering"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-58"
+      ]
+    },
+    {
+      "id": "gp-mass-wasting",
+      "fact": "Mass wasting is downslope movement of soil and rock under gravity.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mass wasting"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-56"
+      ]
+    },
+    {
+      "id": "gp-carbonation",
+      "fact": "Carbonation: carbonic acid converts limestone into soluble calcium bicarbonate, forming caves (karst).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "calcium bicarbonate"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-56"
+      ]
+    },
+    {
+      "id": "gp-hydration",
+      "fact": "Hydration is the chemical addition of water, e.g. iron oxide becoming bulkier iron hydroxide.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Hydration",
+        "hydroxide"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-59"
+      ]
+    },
+    {
+      "id": "gp-biological",
+      "fact": "Biological weathering is caused by lichens, mosses, plant roots and burrowing animals.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "lichens"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-60"
+      ]
+    },
+    {
+      "id": "gp-soil-first",
+      "fact": "Weathering is the first step in soil formation.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "first step"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-56"
+      ]
+    },
+    {
+      "id": "gp-gully",
+      "fact": "The Chambal ravines and the Chos of Hoshiarpur are examples of gully erosion.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Chambal",
+        "Hoshiarpur"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-57"
+      ]
+    },
+    {
+      "id": "gp-sheet-rill",
+      "fact": "Sheet erosion removes a thin layer of soil; rills grow into gullies.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Sheet",
+        "rill"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-61"
+      ]
+    },
+    {
+      "id": "gp-saltation",
+      "fact": "Wind moves sand by saltation (bounds), suspension (dust) and surface creep (coarse sand).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "saltation",
+        "surface creep"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-57"
+      ]
+    },
+    {
+      "id": "gp-desert-pavement",
+      "fact": "Coarse fragments left behind by wind form desert pavement; wind depressions reaching groundwater become oases.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "desert pavement"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-62"
+      ]
+    },
+    {
+      "id": "gp-splash",
+      "fact": "Raindrop (splash) erosion is prevented by vegetation cover.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "splash"
+      ],
+      "taughtIn": "geo-landforms-structure-note-geomorphic-processes",
+      "drilledBy": [
+        "geo-landforms-structure-card-63"
+      ]
+    },
+    {
+      "id": "fl-processes",
+      "fact": "Fluvial erosion works by hydraulic action, corrosion, abrasion and attrition.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "attrition",
+        "abrasion"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-58"
+      ]
+    },
+    {
+      "id": "fl-attrition",
+      "fact": "Attrition is the breaking of load particles by colliding with each other; abrasion is load scraping the bed.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Attrition"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-64"
+      ]
+    },
+    {
+      "id": "fl-headward",
+      "fact": "Headward erosion moves a stream's source back upstream, lengthening the channel.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Headward"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-65"
+      ]
+    },
+    {
+      "id": "fl-braiding",
+      "fact": "Braiding is a channel splitting around braid bars, in rivers with low slope or heavy load.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "braid bars"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-66"
+      ]
+    },
+    {
+      "id": "fl-gorge-canyon",
+      "fact": "A deep narrow V-valley is a gorge; an extended gorge is a canyon.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "gorge",
+        "canyon"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-58"
+      ]
+    },
+    {
+      "id": "fl-grand-canyon",
+      "fact": "The Grand Canyon of the Colorado River is 483 km long and 2.88 km deep.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Grand Canyon",
+        "483"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-58"
+      ]
+    },
+    {
+      "id": "fl-stages",
+      "fact": "River stages: youth (V-valleys, waterfalls), maturity (meanders), old age (deltas, braiding).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Youth",
+        "Maturity",
+        "Old age"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-58"
+      ]
+    },
+    {
+      "id": "fl-majuli",
+      "fact": "Majuli in the Brahmaputra (Assam) is the world's largest river island.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Majuli"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-59"
+      ]
+    },
+    {
+      "id": "fl-kunchikal",
+      "fact": "Kunchikal Falls (Varahi river, Karnataka; 455 m) is India's highest waterfall.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kunchikal"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-59"
+      ]
+    },
+    {
+      "id": "fl-jog",
+      "fact": "Jog (Gersoppa) Falls (253 m) is on the Sharavathi river.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Jog",
+        "Sharavathi"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-59"
+      ]
+    },
+    {
+      "id": "fl-angel",
+      "fact": "Angel Falls (Venezuela, 979 m) is the world's highest waterfall.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Angel Falls"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-59"
+      ]
+    },
+    {
+      "id": "fl-potholes",
+      "fact": "Potholes are cylindrical holes drilled into river beds by stones swirling in eddies.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Potholes"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-67"
+      ]
+    },
+    {
+      "id": "fl-terraces",
+      "fact": "River terraces are stepped benches marking former valley floors.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "terraces"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-68"
+      ]
+    },
+    {
+      "id": "fl-meander-slopes",
+      "fact": "A meander's outer bank is the eroding concave cliff-slope; the inner bank is the depositing convex slip-off slope.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "slip-off"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-60"
+      ]
+    },
+    {
+      "id": "fl-kanwar",
+      "fact": "Kanwar Lake (Begusarai, Bihar) is the largest oxbow lake in India/Asia.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kanwar"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-60"
+      ]
+    },
+    {
+      "id": "fl-peneplain",
+      "fact": "A peneplain, a near-flat plain with low residual hills, is the end product of the erosion cycle.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Peneplain"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-60"
+      ]
+    },
+    {
+      "id": "fl-alluvial-fan",
+      "fact": "Alluvial fans form where streams leave mountains, as along the Himalayan foothills.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Alluvial fans"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-69"
+      ]
+    },
+    {
+      "id": "fl-levee",
+      "fact": "Natural levees are low ridges along river banks; a breach causes sudden floods (Hwang Ho).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "levees"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-70"
+      ]
+    },
+    {
+      "id": "fl-delta-cause",
+      "fact": "Deltas form as river speed falls on entering the sea and clay coagulates in salt water.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "coagulate"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-60"
+      ]
+    },
+    {
+      "id": "fl-arcuate",
+      "fact": "Arcuate deltas are fan-shaped — Nile and Ganga.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Arcuate"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-61"
+      ]
+    },
+    {
+      "id": "fl-birdsfoot",
+      "fact": "The Mississippi has a bird's-foot delta.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mississippi"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-61"
+      ]
+    },
+    {
+      "id": "fl-cuspate",
+      "fact": "The Tiber (Italy) has a cuspate (tooth-shaped) delta.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Tiber"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-61"
+      ]
+    },
+    {
+      "id": "fl-estuarine",
+      "fact": "Narmada, Tapi and Seine form estuarine deltas.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Estuarine",
+        "Narmada"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-61"
+      ]
+    },
+    {
+      "id": "fl-abandoned",
+      "fact": "An abandoned delta forms when a river shifts its mouth — Yellow River; western Ganga delta (Hooghly).",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Abandoned"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-71"
+      ]
+    },
+    {
+      "id": "fl-lacustrine",
+      "fact": "A lacustrine delta forms where a river enters a lake.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Lacustrine"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-72"
+      ]
+    },
+    {
+      "id": "fl-narmada-rift",
+      "fact": "The Narmada flows west through a linear rift valley because the land slopes west from Central India (UPSC 2013).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "rift valley"
+      ],
+      "taughtIn": "geo-landforms-structure-note-fluvial-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-62"
+      ]
+    },
+    {
+      "id": "ga-glacier-types",
+      "fact": "Glacier types are continental (ice sheets), ice caps, piedmont and valley (Alpine) glaciers.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "piedmont",
+        "ice caps"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-63"
+      ]
+    },
+    {
+      "id": "ga-continental",
+      "fact": "Continental glaciers (ice sheets) are found in Antarctica and Greenland.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Greenland",
+        "Antarctica"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-63"
+      ]
+    },
+    {
+      "id": "ga-piedmont-alaska",
+      "fact": "Piedmont glaciers form at mountain bases, as in southern Alaska.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Alaska"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-73"
+      ]
+    },
+    {
+      "id": "ga-siachen",
+      "fact": "Siachen (Karakoram, about 72 km) is India's largest glacier; Gangotri is about 25.5 km long.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Siachen"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-63"
+      ]
+    },
+    {
+      "id": "ga-trough-u",
+      "fact": "A glacial trough is a U-shaped valley.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "U-shape"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-63"
+      ]
+    },
+    {
+      "id": "ga-hanging",
+      "fact": "A hanging valley is a tributary glacier's valley left high above the main valley.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Hanging valley"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-74"
+      ]
+    },
+    {
+      "id": "ga-horn",
+      "fact": "A horn is a peak cut by glaciers from more than two sides.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Horn"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-64"
+      ]
+    },
+    {
+      "id": "ga-drumlin",
+      "fact": "A drumlin is an inverted-boat-shaped glacial deposit.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Drumlin"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-64"
+      ]
+    },
+    {
+      "id": "ga-kettle",
+      "fact": "Kettle holes are basins formed where glacial deposits sag.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kettle"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-64"
+      ]
+    },
+    {
+      "id": "ga-kame",
+      "fact": "Kame terraces form from sediment in ponds between glacier ice and the valley side.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kame"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-75"
+      ]
+    },
+    {
+      "id": "ga-esker-roads",
+      "fact": "Eskers are often used for making roads.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "roads"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-76"
+      ]
+    },
+    {
+      "id": "ga-moraine",
+      "fact": "Moraines are glacial debris — ground and end (terminal), also lateral and medial.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Moraine"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-64"
+      ]
+    },
+    {
+      "id": "ga-outwash",
+      "fact": "An outwash (till) plain is the stratified deposit left where a glacier melts.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "outwash"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-77"
+      ]
+    },
+    {
+      "id": "ga-snowline",
+      "fact": "Mountains rise only about 1,500 m above their snowline; near the equator the snowline is about 5,500 m.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "snowline",
+        "5,500"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-78"
+      ]
+    },
+    {
+      "id": "ga-bolson",
+      "fact": "A bolson is an intermontane basin in a dry region.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Bolson"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-79"
+      ]
+    },
+    {
+      "id": "ga-pediment",
+      "fact": "A pediment is an erosional rock-cut surface at a mountain foot (unlike a depositional alluvial fan).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Pediment"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-65"
+      ]
+    },
+    {
+      "id": "ga-bajada",
+      "fact": "A bajada is formed by coalescing alluvial fans between pediment and playa.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Bajada"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-65"
+      ]
+    },
+    {
+      "id": "ga-blowout",
+      "fact": "Deflation basins (blowouts) are hollows scooped out by wind.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "blowout"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-80"
+      ]
+    },
+    {
+      "id": "ga-mushroom",
+      "fact": "A mushroom rock is also called a pedestal rock.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mushroom rock",
+        "pedestal"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-81"
+      ]
+    },
+    {
+      "id": "ga-inselberg",
+      "fact": "An inselberg (monadnock) is an isolated hill rising abruptly from a plain.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Inselberg",
+        "monadnock"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-65"
+      ]
+    },
+    {
+      "id": "ga-demoiselle",
+      "fact": "Demoiselles are rock pillars of hard rock standing above soft rock.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Demoiselle"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-82"
+      ]
+    },
+    {
+      "id": "ga-zeugen",
+      "fact": "Zeugen are table-shaped ridges of resistant rock over softer rock.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Zeugen",
+        "table"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-65"
+      ]
+    },
+    {
+      "id": "ga-wind-window",
+      "fact": "Wind abrasion makes wind windows that widen into wind bridges.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "wind window"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-83"
+      ]
+    },
+    {
+      "id": "ga-ripple",
+      "fact": "Ripple marks are small depositional features made by saltation.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Ripple marks"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-84"
+      ]
+    },
+    {
+      "id": "ga-transverse-seif",
+      "fact": "Transverse dunes lie perpendicular to the wind; seif dunes are long linear ridges in parallel rows.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Transverse",
+        "Seif"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-66"
+      ]
+    },
+    {
+      "id": "ga-star-parabolic",
+      "fact": "Star dunes form under winds from many directions; parabolic dunes are U-shaped with tips upwind, held by vegetation.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Star",
+        "Parabolic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-66"
+      ]
+    },
+    {
+      "id": "ga-loess-places",
+      "fact": "Thick loess occurs along the Yellow River (China) and near the Missouri River in Iowa (USA).",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Iowa"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-85"
+      ]
+    },
+    {
+      "id": "ga-desert-250",
+      "fact": "Deserts receive less than about 250 mm of rain a year.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "250 mm"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-86"
+      ]
+    },
+    {
+      "id": "ga-desert-types",
+      "fact": "Desert types: subtropical (Sahara), cold (Gobi, Atacama), coastal (Namib) and rain-shadow (Mojave, Patagonia).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Namib",
+        "Gobi"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-67"
+      ]
+    },
+    {
+      "id": "ga-antarctic-desert",
+      "fact": "The largest desert is the polar Antarctic desert (about 14.2 million km²).",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Antarctic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-glacial-arid-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-87"
+      ]
+    },
+    {
+      "id": "km-karst-name",
+      "fact": "Karst is named after the Karst region of former Yugoslavia on the Adriatic coast.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Yugoslavia",
+        "Adriatic"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-68"
+      ]
+    },
+    {
+      "id": "km-limestone-dolomite",
+      "fact": "Pure limestone is calcium carbonate; with magnesium it is dolomite.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "calcium carbonate"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-88"
+      ]
+    },
+    {
+      "id": "km-no-surface",
+      "fact": "Karst regions have little surface drainage; water flows underground.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "underground"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-89"
+      ]
+    },
+    {
+      "id": "km-swallow",
+      "fact": "Surface streams disappear underground through swallow holes.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "swallow hole"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-90"
+      ]
+    },
+    {
+      "id": "km-doline-uvala-polje",
+      "fact": "Dolines join into uvalas, and uvalas coalesce into U-shaped poljes.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "uvala",
+        "polje"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-68"
+      ]
+    },
+    {
+      "id": "km-blind-valley",
+      "fact": "A karst valley in which a stream disappears is a blind valley.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "blind valley"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-91"
+      ]
+    },
+    {
+      "id": "km-tunnel",
+      "fact": "A cave with openings at both ends is a tunnel.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "tunnel"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-92"
+      ]
+    },
+    {
+      "id": "km-stalagmite",
+      "fact": "Stalactites hang from cave ceilings; stalagmites rise from the floor; joined they form columns.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Stalagmite",
+        "ceiling"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-68"
+      ]
+    },
+    {
+      "id": "km-bogas",
+      "fact": "Sinking creeks with open tops are called bogas.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "bogas"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-93"
+      ]
+    },
+    {
+      "id": "km-india-caves",
+      "fact": "Karst caves in India occur in Bastar, Dehradun and the Shillong plateau.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Bastar",
+        "Shillong"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-94"
+      ]
+    },
+    {
+      "id": "km-borra",
+      "fact": "Borra Caves lie in the Ananthagiri hills of Andhra Pradesh.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "Borra",
+        "Ananthagiri"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-69"
+      ]
+    },
+    {
+      "id": "km-belum",
+      "fact": "Belum Caves (Kurnool region, AP) are the second-largest cave system in India.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "Belum"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-69"
+      ]
+    },
+    {
+      "id": "km-chasm",
+      "fact": "A chasm is a narrow deep notch cut by waves along weak planes, widening into a bay.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Chasm"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-card-95"
+      ]
+    },
+    {
+      "id": "km-wave-cut",
+      "fact": "A wave-cut platform is the flat bench left as a cliff retreats, with a notch at the cliff foot.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "wave-cut platform",
+        "notch"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-70"
+      ]
+    },
+    {
+      "id": "km-arch-stack",
+      "fact": "A sea cave becomes a sea arch, whose collapse leaves a stack (skerry/chimney rock).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "arch",
+        "chimney"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-70"
+      ]
+    },
+    {
+      "id": "km-bar-barrier",
+      "fact": "A bar is a submerged offshore sand ridge; a barrier is its above-water counterpart; water behind is a lagoon.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "barrier",
+        "lagoon"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-70"
+      ]
+    },
+    {
+      "id": "km-spit-hook",
+      "fact": "A spit is a sand ridge joined to land at one end; a short curved spit is a hook.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "spit",
+        "hook"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-70"
+      ]
+    },
+    {
+      "id": "km-ria",
+      "fact": "A ria coast (drowned river valleys) is typified by south-west Ireland.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "ria",
+        "Ireland"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-71"
+      ]
+    },
+    {
+      "id": "km-fjord-norway",
+      "fact": "Fjord coasts are typified by Norway.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Norway"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-71"
+      ]
+    },
+    {
+      "id": "km-west-east-coast",
+      "fact": "India's west coast is largely submergent and the east coast emergent.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "submergent",
+        "emergent"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-71"
+      ]
+    },
+    {
+      "id": "km-pulicat",
+      "fact": "Pulicat Lake on the AP–Tamil Nadu border is a lagoon behind Sriharikota island, second to Chilika.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "Pulicat",
+        "Chilika"
+      ],
+      "taughtIn": "geo-landforms-structure-note-karst-marine-detail",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-69"
+      ]
+    },
+    {
+      "id": "mp-600",
+      "fact": "Mountains typically rise above 600 m; plateaus over 300 m above their surroundings.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "600",
+        "300"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-96"
+      ]
+    },
+    {
+      "id": "mp-young-old-fold",
+      "fact": "The Himalayas are young fold mountains; the Aravalli are old fold mountains.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Young",
+        "Aravalli"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-73"
+      ]
+    },
+    {
+      "id": "mp-block",
+      "fact": "Sierra Nevada (USA) and the Harz (Germany) are fault-block mountains with a steep front and gentle back.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Sierra Nevada",
+        "Harz"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-73"
+      ]
+    },
+    {
+      "id": "mp-andes",
+      "fact": "The Andes (7,000 km) is the longest continental range; Aconcagua (6,961 m) is its highest peak.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Andes",
+        "Aconcagua"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-72"
+      ]
+    },
+    {
+      "id": "mp-lithium",
+      "fact": "The Lithium Triangle (Argentina, Bolivia, Chile) lies in the Andes.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Lithium Triangle"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-73"
+      ]
+    },
+    {
+      "id": "mp-rockies",
+      "fact": "Mount Elbert (4,401 m, Colorado) is the highest peak of the Rockies.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Elbert"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-97"
+      ]
+    },
+    {
+      "id": "mp-gdr",
+      "fact": "Kosciuszko (2,228 m) is the highest peak of the Great Dividing Range, source of the Murray–Darling.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kosciuszko"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-98"
+      ]
+    },
+    {
+      "id": "mp-atlas",
+      "fact": "The young-fold Atlas Mountains (highest Toubkal) separate the Sahara from the coast.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Atlas",
+        "Toubkal"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-72"
+      ]
+    },
+    {
+      "id": "mp-urals",
+      "fact": "The old-fold Urals (highest Narodnaya) form the traditional Europe–Asia boundary.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Ural",
+        "Narodnaya"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-72"
+      ]
+    },
+    {
+      "id": "mp-appalachians",
+      "fact": "The Appalachians are very old fold mountains (~480 million years); highest peak Mount Mitchell.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mitchell"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-99"
+      ]
+    },
+    {
+      "id": "mp-himalaya-water-tower",
+      "fact": "The Himalayas (Everest 8,849 m) are called the Water Tower of Asia.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Water Tower",
+        "8,849"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-73"
+      ]
+    },
+    {
+      "id": "mp-alps",
+      "fact": "The Alps are young fold mountains (~30 million years); Mont Blanc (4,809 m) is the highest.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mont Blanc"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-72"
+      ]
+    },
+    {
+      "id": "mp-drakensberg",
+      "fact": "Thabana Ntlenyana (3,482 m, Lesotho) is the highest peak of the Drakensberg.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Thabana",
+        "Drakensberg"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-100"
+      ]
+    },
+    {
+      "id": "mp-altai-scandes",
+      "fact": "Belukha is the highest peak of the Altai; Galdhopiggen of the Scandinavian mountains.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Belukha"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-101"
+      ]
+    },
+    {
+      "id": "mp-tibetan",
+      "fact": "The Tibetan Plateau, the world's largest and highest, is an intermontane plateau called the Roof of the World.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Tibetan",
+        "Roof of the World"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-74"
+      ]
+    },
+    {
+      "id": "mp-plateau-types",
+      "fact": "Plateau types: intermontane, volcanic (Deccan), erosional (Colorado), dissected (Ozark) and continental (Katanga).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Colorado",
+        "Ozark"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-75"
+      ]
+    },
+    {
+      "id": "mp-deccan-largest",
+      "fact": "The Deccan, a volcanic plateau between the Western and Eastern Ghats, is India's largest plateau.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Deccan Plateau"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-75"
+      ]
+    },
+    {
+      "id": "mp-kimberley",
+      "fact": "The Kimberley Plateau (Australia) has kimberlite, a diamond-bearing rock.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kimberley",
+        "kimberlite"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-74"
+      ]
+    },
+    {
+      "id": "mp-katanga",
+      "fact": "The Katanga Plateau (DR Congo) is known for copper and uranium.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Katanga",
+        "copper"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-74"
+      ]
+    },
+    {
+      "id": "mp-laurentian",
+      "fact": "The Laurentian Plateau is the Canadian Shield, rich in iron ore.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Laurentian",
+        "Canadian Shield"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-mcq-74"
+      ]
+    },
+    {
+      "id": "mp-mexican",
+      "fact": "The Mexican Plateau (\"Mineral Store\") has the world's largest silver mine (Chihuahua).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "silver"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-102"
+      ]
+    },
+    {
+      "id": "mp-altiplano",
+      "fact": "The Altiplano (Peru–Bolivia) is known for tin.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Altiplano",
+        "tin"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-103"
+      ]
+    },
+    {
+      "id": "mp-patagonia",
+      "fact": "The Patagonian Plateau is a rain-shadow semi-desert famous for sheep rearing.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Patagonian",
+        "sheep"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-104"
+      ]
+    },
+    {
+      "id": "mp-anatolia",
+      "fact": "The Anatolian Plateau (Turkey) is famous for Angora goats.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Anatolian",
+        "Angora"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-105"
+      ]
+    },
+    {
+      "id": "mp-massif-central",
+      "fact": "Massif Central (France) is famous for grapes.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Massif Central"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-106"
+      ]
+    },
+    {
+      "id": "mp-loess-plateau",
+      "fact": "The Loess (Huangtu) Plateau of China has the most erodible soil in the world.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Huangtu"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-107"
+      ]
+    },
+    {
+      "id": "mp-pothohar",
+      "fact": "The Pothohar Plateau (Pakistan) lies between the Jhelum and Indus, with the Salt Range to the south.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Pothohar"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-108"
+      ]
+    },
+    {
+      "id": "mp-mascarene",
+      "fact": "The Mascarene Plateau is an undersea granite remnant of Gondwana, second to the Kerguelen.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mascarene"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-109"
+      ]
+    },
+    {
+      "id": "mp-ahaggar",
+      "fact": "The Ahaggar (Hoggar) Plateau is a volcanic basalt plateau in the Algerian Sahara.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Ahaggar"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-110"
+      ]
+    },
+    {
+      "id": "mp-chota-nagpur",
+      "fact": "The Chota Nagpur Plateau is India's mineral heartland.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Chota Nagpur"
+      ],
+      "taughtIn": "geo-landforms-structure-note-mountains-plateaus",
+      "drilledBy": [
+        "geo-landforms-structure-card-111"
+      ]
+    }
+  ]
+}

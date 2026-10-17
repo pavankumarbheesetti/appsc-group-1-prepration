@@ -1,0 +1,1811 @@
+{
+  "version": 1,
+  "subtopicId": "econ-poverty-unemployment",
+  "facts": [
+    {
+      "id": "pl-calorie",
+      "fact": "The traditional poverty line was anchored to 2400 kcal (rural) and 2100 kcal (urban) per person per day.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "2400",
+        "2100"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-1",
+        "econ-poverty-unemployment-card-1"
+      ]
+    },
+    {
+      "id": "pl-concept",
+      "fact": "The poverty line is the per-capita consumption expenditure below which a person is counted as poor.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "poverty line",
+        "consumption"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-14"
+      ]
+    },
+    {
+      "id": "pl-absolute-relative",
+      "fact": "Relative poverty compares the standard of living of one group with another; absolute poverty is failure to meet a fixed minimum.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "relative poverty"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-6"
+      ]
+    },
+    {
+      "id": "pl-hcr-gap",
+      "fact": "Head Count Ratio measures incidence of poverty; the Poverty Gap measures its depth.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "HCR",
+        "Poverty Gap"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-2"
+      ]
+    },
+    {
+      "id": "pl-spg",
+      "fact": "The Squared Poverty Gap measures the severity of poverty.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Squared Poverty Gap",
+        "severity"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-15"
+      ]
+    },
+    {
+      "id": "pl-1962",
+      "fact": "The 1962 Planning Commission Working Group set the first official poverty line at ₹20 (rural) and ₹25 (urban) per capita per month.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1962",
+        "₹20"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-20"
+      ]
+    },
+    {
+      "id": "pl-dandekar-rath",
+      "fact": "Dandekar and Rath (1971) made the first systematic poverty estimate using 2,250 calories per day.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Dandekar",
+        "2,250"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-20"
+      ]
+    },
+    {
+      "id": "pl-alagh",
+      "fact": "The Alagh Task Force (1979) first defined the poverty line using calorie norms.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Alagh",
+        "1979"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-4",
+        "econ-poverty-unemployment-card-3"
+      ]
+    },
+    {
+      "id": "pl-alagh-values",
+      "fact": "The Alagh lines were ₹49.09 (rural) and ₹56.64 (urban) per capita per month at 1973-74 prices.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "49.09",
+        "56.64"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-16"
+      ]
+    },
+    {
+      "id": "pl-lakdawala",
+      "fact": "The Lakdawala Committee (1993) introduced state-specific poverty lines.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Lakdawala",
+        "1993"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-4",
+        "econ-poverty-unemployment-card-3"
+      ]
+    },
+    {
+      "id": "pl-lakdawala-cpi",
+      "fact": "Lakdawala updated poverty lines with CPI-AL (rural) and CPI-IW (urban).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "CPI-AL",
+        "CPI-IW"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-21"
+      ]
+    },
+    {
+      "id": "pl-tendulkar-mrp",
+      "fact": "The Tendulkar Committee (2009) dropped the pure calorie anchor and used the Mixed Reference Period (MRP).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Tendulkar",
+        "Mixed Reference Period"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-5"
+      ]
+    },
+    {
+      "id": "pl-tendulkar-219",
+      "fact": "By the Tendulkar method India's poverty ratio for 2011-12 was about 21.9%.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "21.9"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-5",
+        "econ-poverty-unemployment-card-4"
+      ]
+    },
+    {
+      "id": "pl-tendulkar-day",
+      "fact": "The Tendulkar line for 2011-12 was about ₹816 rural / ₹1,000 urban per month (≈ ₹27 / ₹33 per day).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "₹27",
+        "₹33"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-22"
+      ]
+    },
+    {
+      "id": "pl-tendulkar-2004",
+      "fact": "By the Tendulkar method, poverty in 2004-05 was 37.2%.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "37.2"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-22"
+      ]
+    },
+    {
+      "id": "pl-rangarajan-295",
+      "fact": "The Rangarajan Committee (2014) estimated poverty at 29.5% for 2011-12 (Modified MRP).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Rangarajan",
+        "29.5"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-5",
+        "econ-poverty-unemployment-mcq-19"
+      ]
+    },
+    {
+      "id": "pl-rangarajan-32",
+      "fact": "The Rangarajan line was about ₹32 per day rural and ₹47 per day urban (₹972 / ₹1,407 per month).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "₹32",
+        "₹47"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-19"
+      ]
+    },
+    {
+      "id": "pl-rangarajan-2009",
+      "fact": "The Rangarajan Committee put poverty at 38.2% for 2009-10.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "38.2"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-17"
+      ]
+    },
+    {
+      "id": "pl-rangarajan-not-adopted",
+      "fact": "The government did not officially adopt the Rangarajan estimates.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Rangarajan",
+        "adopt"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-4"
+      ]
+    },
+    {
+      "id": "pl-state-prices",
+      "fact": "Official poverty lines are higher in some states than others because price levels vary from state to state (UPSC 2019).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "price levels"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-23"
+      ]
+    },
+    {
+      "id": "pl-committee-order",
+      "fact": "Committee order: Alagh 1979 → Lakdawala 1993 → Tendulkar 2009 → Rangarajan 2014.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tendulkar",
+        "2009",
+        "Rangarajan",
+        "2014"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-line-committees",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-4",
+        "econ-poverty-unemployment-card-3"
+      ]
+    },
+    {
+      "id": "pl-hces-2324",
+      "fact": "HCES 2023-24 average MPCE was about ₹4,122 (rural) and ₹6,996 (urban).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "4,122",
+        "6,996"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-24"
+      ]
+    },
+    {
+      "id": "pl-hces-2223",
+      "fact": "HCES 2022-23 average MPCE was about ₹3,773 (rural) and ₹6,459 (urban).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "3,773",
+        "6,459"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-18"
+      ]
+    },
+    {
+      "id": "pl-wb-extreme",
+      "fact": "World Bank: India's extreme poverty fell from 16.2% (2011-12) to 2.3% (2022-23), lifting about 171 million people.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "16.2",
+        "2.3"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-24"
+      ]
+    },
+    {
+      "id": "ap-p4",
+      "fact": "AP's P4 model has the top 10% ('Margadarsis') support the bottom 20% ('Bangaru Kutumbalu') to end poverty by 2029.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Margadarsis",
+        "Bangaru Kutumbalu"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-29"
+      ]
+    },
+    {
+      "id": "mpi-global-publisher",
+      "fact": "The Global MPI is published jointly by OPHI (University of Oxford) and UNDP.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "OPHI",
+        "UNDP"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-7",
+        "econ-poverty-unemployment-card-5"
+      ]
+    },
+    {
+      "id": "mpi-global-alkire",
+      "fact": "The Global MPI uses the Alkire-Foster counting method.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Alkire-Foster"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-7"
+      ]
+    },
+    {
+      "id": "mpi-global-dims",
+      "fact": "The Global MPI uses 3 dimensions (health, education, standard of living) and 10 indicators.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "3 dimensions",
+        "10 indicators"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-5",
+        "econ-poverty-unemployment-mcq-37"
+      ]
+    },
+    {
+      "id": "mpi-upsc2012",
+      "fact": "The OPHI-UNDP MPI covers household-level deprivation in education, health, assets and services — not PPP or budget deficits (UPSC 2012).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "household",
+        "deprivation"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-26"
+      ]
+    },
+    {
+      "id": "mpi-national-12",
+      "fact": "NITI Aayog's National MPI uses 3 dimensions but 12 indicators, adding maternal health and bank accounts.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "12 indicators",
+        "bank"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-8",
+        "econ-poverty-unemployment-card-6"
+      ]
+    },
+    {
+      "id": "mpi-2024-paper",
+      "fact": "NITI's January 2024 paper: MPI headcount fell from 29.17% (2013-14) to 11.28% (2022-23), with 24.82 crore escaping.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "29.17",
+        "11.28"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-9",
+        "econ-poverty-unemployment-card-7"
+      ]
+    },
+    {
+      "id": "mpi-2023-review",
+      "fact": "NITI's July 2023 review: MPI headcount fell from 24.85% (2015-16) to 14.96% (2019-21); about 13.5 crore exited.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "24.85",
+        "14.96"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-27"
+      ]
+    },
+    {
+      "id": "mpi-states",
+      "fact": "In the 2023 National MPI, Bihar had the highest headcount (33.76%) and Kerala the lowest (0.55%).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Bihar",
+        "Kerala"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-27"
+      ]
+    },
+    {
+      "id": "mpi-ap",
+      "fact": "Andhra Pradesh's MPI headcount was 6.06% in 2019-21 (NFHS-5).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "6.06"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-27"
+      ]
+    },
+    {
+      "id": "mpi-formula",
+      "fact": "MPI = H × A (headcount × intensity).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "H × A"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-25"
+      ]
+    },
+    {
+      "id": "mpi-cutoff",
+      "fact": "A person is multidimensionally poor if deprived in at least one-third of the weighted indicators.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "one-third"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-25"
+      ]
+    },
+    {
+      "id": "mpi-415m",
+      "fact": "Global MPI 2023: about 415 million Indians exited poverty between 2005-06 and 2019-21.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "415"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-poverty-estimates-data",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-28"
+      ]
+    },
+    {
+      "id": "mpi-indicator-list",
+      "fact": "National MPI indicators include nutrition, child mortality, maternal health, years of schooling, school attendance, cooking fuel, sanitation, drinking water, electricity, housing, assets and bank account.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "cooking fuel",
+        "maternal health"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-multidimensional-poverty",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-19"
+      ]
+    },
+    {
+      "id": "ue-def",
+      "fact": "Unemployment is a situation where people capable of and willing to work cannot find suitable jobs.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "willing",
+        "work"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-20"
+      ]
+    },
+    {
+      "id": "ue-structural",
+      "fact": "Structural unemployment is a mismatch between workers' skills and available jobs, caused by industrial or technological change.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "Structural",
+        "mismatch"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-10"
+      ]
+    },
+    {
+      "id": "ue-frictional",
+      "fact": "Frictional unemployment is short-term joblessness while moving between jobs or seeking a first job.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "Frictional",
+        "transitioning"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-10"
+      ]
+    },
+    {
+      "id": "ue-frictional-healthy",
+      "fact": "Frictional unemployment is voluntary and temporary and is considered healthy for an economy.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "frictional",
+        "healthy"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-30"
+      ]
+    },
+    {
+      "id": "ue-cyclical",
+      "fact": "Cyclical unemployment rises during recessions as demand falls.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "Cyclical",
+        "recessions"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-10"
+      ]
+    },
+    {
+      "id": "ue-seasonal",
+      "fact": "Seasonal unemployment is tied to particular periods of the year, as in agriculture and tourism.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "Seasonal",
+        "agriculture"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-10"
+      ]
+    },
+    {
+      "id": "ue-disguised",
+      "fact": "Disguised unemployment means more people work than needed, so the marginal productivity of the extra workers is zero (UPSC 2013).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "marginal productivity"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-11",
+        "econ-poverty-unemployment-card-8"
+      ]
+    },
+    {
+      "id": "ue-disguised-agri",
+      "fact": "Disguised unemployment is most characteristic of Indian agriculture.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "agricultural"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-11"
+      ]
+    },
+    {
+      "id": "ue-lewis",
+      "fact": "Transferring surplus farm labour to industry without loss of farm output is central to the Lewis dual-sector model.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Lewis"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-11",
+        "econ-poverty-unemployment-card-8"
+      ]
+    },
+    {
+      "id": "ue-educated",
+      "fact": "Educated (white-collar) unemployment is when qualified graduates cannot find jobs matching their qualifications.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Educated"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-12"
+      ]
+    },
+    {
+      "id": "ue-open-tech",
+      "fact": "Open unemployment is visible joblessness; technological unemployment is displacement by automation.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Open unemployment",
+        "Technological"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-30"
+      ]
+    },
+    {
+      "id": "ue-underemployment",
+      "fact": "Visible underemployment is working fewer hours than wished; invisible underemployment is low productivity or unused skills.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "visible underemployment",
+        "invisible"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-30"
+      ]
+    },
+    {
+      "id": "ue-voluntary",
+      "fact": "Voluntary unemployment is unwillingness to work at the going wage; involuntary is being willing but jobless.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "voluntary",
+        "involuntary"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-21"
+      ]
+    },
+    {
+      "id": "ue-jobless",
+      "fact": "The 'jobless growth' debate asks whether high GDP growth is creating proportionate employment.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "jobless growth"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-types-of-unemployment",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-33"
+      ]
+    },
+    {
+      "id": "ue-cause-population",
+      "fact": "Rapid population growth adds job seekers faster than jobs are created.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "population growth"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-causes-current-situation",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-31"
+      ]
+    },
+    {
+      "id": "ue-cause-skills",
+      "fact": "An education-skill gap (theoretical curricula, weak vocational training) causes unemployment and underemployment.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "vocational",
+        "skill"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-31"
+      ]
+    },
+    {
+      "id": "ue-cause-tech",
+      "fact": "Automation and AI reduce demand for manual labour and widen the digital divide.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "automation",
+        "digital divide"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-causes-current-situation",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-31"
+      ]
+    },
+    {
+      "id": "ue-cause-economic",
+      "fact": "Economic slowdowns, inflation-driven costs and industrial stagnation depress hiring.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "slowdown",
+        "stagnation"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-causes-current-situation",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-22"
+      ]
+    },
+    {
+      "id": "ue-effects",
+      "fact": "Unemployment causes social unrest, deeper poverty and inequality, and rural-to-urban migration.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "social unrest",
+        "migration"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-23"
+      ]
+    },
+    {
+      "id": "pf-2017",
+      "fact": "PLFS was launched by NSO (MoSPI) in 2017.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "2017"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-plfs-measurement",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-10",
+        "econ-poverty-unemployment-mcq-38"
+      ]
+    },
+    {
+      "id": "pf-replaced-eus",
+      "fact": "PLFS replaced the NSSO quinquennial Employment-Unemployment Surveys.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "quinquennial"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-plfs-measurement",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-2",
+        "econ-poverty-unemployment-card-10"
+      ]
+    },
+    {
+      "id": "pf-cws",
+      "fact": "Current Weekly Status uses a 7-day reference period; a person is employed if they worked at least one hour on any day.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "Current Weekly Status"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-plfs-measurement",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-13"
+      ]
+    },
+    {
+      "id": "pf-ups-183",
+      "fact": "Usual Principal Status counts the activity pursued for 183 days or more of the year; subsidiary status needs 30 days or more.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "183",
+        "30 days"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-38"
+      ]
+    },
+    {
+      "id": "pf-monthly-2025",
+      "fact": "From January 2025 the PLFS releases monthly labour-force estimates for rural and urban areas.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "monthly"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-plfs-measurement",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-14",
+        "econ-poverty-unemployment-card-12"
+      ]
+    },
+    {
+      "id": "pf-ur-formula",
+      "fact": "Unemployment rate = Unemployed ÷ Labour force × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "labour force",
+        "unemployed"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-plfs-measurement",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-34"
+      ]
+    },
+    {
+      "id": "pf-lfpr-wpr",
+      "fact": "LFPR = labour force ÷ population; WPR = employed ÷ population.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "LFPR",
+        "WPR"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-plfs-measurement",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-34"
+      ]
+    },
+    {
+      "id": "pf-2324-figures",
+      "fact": "PLFS 2023-24: LFPR 60.1%, WPR 58.2%, unemployment rate 3.2%.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "60.1",
+        "58.2",
+        "3.2"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-35"
+      ]
+    },
+    {
+      "id": "pf-female-lfpr",
+      "fact": "Female LFPR (15+) was 41.7% in PLFS 2023-24.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "41.7"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-24"
+      ]
+    },
+    {
+      "id": "pf-rural-urban",
+      "fact": "Rural unemployment fell from 5.3% (2017-18) to 2.5% (2023-24) and urban from 7.7% to 5.1%.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "2.5",
+        "5.1"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-causes-current-situation",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-36"
+      ]
+    },
+    {
+      "id": "pf-youth",
+      "fact": "Youth (15-29) unemployment fell from 17.8% (2017-18) to about 10% (2022-23).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "17.8"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-causes-current-situation",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-36"
+      ]
+    },
+    {
+      "id": "pf-states",
+      "fact": "Highest unemployment rates (2022-23): Lakshadweep 11.1%, Goa 9.7%, Kerala 7%; lowest Delhi 1.9%.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Lakshadweep",
+        "Delhi"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-25"
+      ]
+    },
+    {
+      "id": "pf-cmie",
+      "fact": "CMIE is a private body that publishes its own monthly unemployment series (7.8% in Sept 2024).",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "CMIE"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-labour-measures",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-26"
+      ]
+    },
+    {
+      "id": "sc-mgnrega-100",
+      "fact": "MGNREGA guaranteed 100 days of wage employment per rural household per year.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "100 days"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-3",
+        "econ-poverty-unemployment-card-13"
+      ]
+    },
+    {
+      "id": "sc-mgnrega-eligible",
+      "fact": "Any adult member of a rural household willing to do unskilled manual work is eligible under MGNREGA (UPSC 2011).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "adult",
+        "household"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-39"
+      ]
+    },
+    {
+      "id": "sc-mgnrega-launch-ap",
+      "fact": "MGNREGA was launched on 2 February 2006 at Bandlapalli in Anantapur district, Andhra Pradesh.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard",
+        "source-text"
+      ],
+      "keys": [
+        "Bandlapalli",
+        "Anantapur"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-40"
+      ]
+    },
+    {
+      "id": "sc-mgnrega-passed",
+      "fact": "MGNREGA was passed on 23 August 2005.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "23 August 2005"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-40"
+      ]
+    },
+    {
+      "id": "sc-mgnrega-women",
+      "fact": "At least one-third of MGNREGA beneficiaries were to be women.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "one-third",
+        "women"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-27"
+      ]
+    },
+    {
+      "id": "sc-allowance-15",
+      "fact": "An unemployment allowance is payable if work is not provided within 15 days (retained in VB-G RAM G).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "15 days"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-43"
+      ]
+    },
+    {
+      "id": "sc-wage-material",
+      "fact": "MGNREGA required a minimum wage-material ratio of 60:40.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "wage-material"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-40"
+      ]
+    },
+    {
+      "id": "sc-abps",
+      "fact": "Aadhaar-Based Payment System (ABPS) became mandatory for MGNREGA wages from 2024.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "ABPS"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-15"
+      ]
+    },
+    {
+      "id": "sc-vbg-repeal",
+      "fact": "The VB-G RAM G Act, 2025 repealed MGNREGA and is administered by the Ministry of Rural Development.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "VB",
+        "repeal"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-15"
+      ]
+    },
+    {
+      "id": "sc-vbg-125",
+      "fact": "The VB-G RAM G Act raises the guarantee to 125 days per rural household.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "125"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-43"
+      ]
+    },
+    {
+      "id": "sc-vbg-july-2026",
+      "fact": "The VB-G RAM G Act came into force on 1 July 2026.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1 July 2026"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-43"
+      ]
+    },
+    {
+      "id": "sc-vbg-sharing",
+      "fact": "VB-G RAM G is a centrally sponsored scheme with 60:40 Centre-State sharing (90:10 for North-eastern and Himalayan states).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "90:10"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-43"
+      ]
+    },
+    {
+      "id": "sc-vbg-pause",
+      "fact": "Under VB-G RAM G, states notify a pause of up to 60 days a year during peak agricultural seasons.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "60 days",
+        "agricultural"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-44"
+      ]
+    },
+    {
+      "id": "sc-ssaat",
+      "fact": "Andhra Pradesh pioneered MGNREGA social audits through SSAAT (Society for Social Audit, Accountability and Transparency).",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "SSAAT"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-28",
+        "econ-poverty-unemployment-mcq-41"
+      ]
+    },
+    {
+      "id": "sc-pmegp",
+      "fact": "PMEGP (2008, Ministry of MSME) gives credit-linked subsidy for micro-enterprises.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "PMEGP",
+        "micro-enterprises"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-16"
+      ]
+    },
+    {
+      "id": "sc-ddugky",
+      "fact": "DDU-GKY (25 Sep 2014, Ministry of Rural Development) gives skilling and placement to rural youth.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "DDU-GKY",
+        "rural youth"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-16"
+      ]
+    },
+    {
+      "id": "sc-standup",
+      "fact": "Stand-Up India (5 April 2016, Ministry of Finance) gives bank loans to SC/ST and women entrepreneurs.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "Stand-Up India",
+        "women"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-16"
+      ]
+    },
+    {
+      "id": "sc-eshram",
+      "fact": "e-Shram (26 August 2021, Ministry of Labour) is a national database of unorganised workers.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "e-Shram",
+        "unorganised"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-16"
+      ]
+    },
+    {
+      "id": "sc-pmkvy",
+      "fact": "PMKVY and the Skill India Mission were launched on 15 July 2015 (Ministry of Skill Development and Entrepreneurship).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "PMKVY",
+        "2015"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-45"
+      ]
+    },
+    {
+      "id": "sc-make-in-india",
+      "fact": "Make in India was launched on 25 September 2014 (Ministry of Commerce and Industry).",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Make in India",
+        "2014"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-45"
+      ]
+    },
+    {
+      "id": "sc-startup",
+      "fact": "Startup India was launched on 16 January 2016.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Startup India",
+        "2016"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-45"
+      ]
+    },
+    {
+      "id": "sc-naps",
+      "fact": "NAPS (National Apprenticeship Promotion Scheme) was launched on 19 August 2016.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "NAPS",
+        "Apprenticeship"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-29"
+      ]
+    },
+    {
+      "id": "sc-digital",
+      "fact": "Digital India was launched on 1 July 2015 (Ministry of Electronics and IT).",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Digital India",
+        "2015"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-45"
+      ]
+    },
+    {
+      "id": "sc-ncs",
+      "fact": "The National Career Service portal was launched on 20 July 2015 (Ministry of Labour and Employment).",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "National Career Service"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-46"
+      ]
+    },
+    {
+      "id": "sc-atmanirbhar",
+      "fact": "Atmanirbhar Bharat was announced on 12 May 2020 (\"Vocal for Local\").",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Atmanirbhar",
+        "2020"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-46"
+      ]
+    },
+    {
+      "id": "sc-nulm",
+      "fact": "NULM (24 September 2013, Ministry of Housing and Urban Affairs) targets urban poverty through skilling and self-employment.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "NULM",
+        "urban"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-46"
+      ]
+    },
+    {
+      "id": "sc-rseti",
+      "fact": "RSETIs (2009, Ministry of Rural Development) give free short-term residential training to rural youth.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "RSETI",
+        "residential"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-30"
+      ]
+    },
+    {
+      "id": "sc-unnat",
+      "fact": "Unnat Bharat Abhiyan (2014, Ministry of Education) links higher-education institutions with rural communities.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Unnat Bharat"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-card-31"
+      ]
+    },
+    {
+      "id": "sc-irdp-sgsy-nrlm",
+      "fact": "Self-employment lineage: IRDP → SGSY (1999) → NRLM/Aajeevika (2011) → DAY-NRLM.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "IRDP",
+        "SGSY",
+        "NRLM"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-17"
+      ]
+    },
+    {
+      "id": "sc-trysem-dwcra",
+      "fact": "TRYSEM (1979) and DWCRA (1982) were merged into SGSY in 1999.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "TRYSEM",
+        "DWCRA"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-47"
+      ]
+    },
+    {
+      "id": "sc-nrlm-shg",
+      "fact": "NRLM improves rural livelihoods through self-help groups and skill development (UPSC 2012).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "self-help groups"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-47"
+      ]
+    },
+    {
+      "id": "sc-wage-lineage",
+      "fact": "Wage-employment lineage: NREP (1980) and RLEGP (1983) → JRY (1989) → SGRY (2001) → MGNREGA.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Jawahar Rozgar",
+        "SGRY"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-schemes-timeline",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-47"
+      ]
+    },
+    {
+      "id": "sc-sap-lead-bank",
+      "fact": "The Service Area Approach (1989) was implemented under the Lead Bank Scheme (1969) (UPSC 2019).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Service Area Approach",
+        "Lead Bank"
+      ],
+      "taughtIn": "econ-poverty-unemployment-note-employment-schemes",
+      "drilledBy": [
+        "econ-poverty-unemployment-mcq-18"
+      ]
+    }
+  ]
+}

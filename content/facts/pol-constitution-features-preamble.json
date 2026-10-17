@@ -1,0 +1,3555 @@
+{
+  "version": 1,
+  "subtopicId": "pol-constitution-features-preamble",
+  "facts": [
+    {
+      "id": "sz-lengthiest",
+      "fact": "The Indian Constitution is the lengthiest written constitution in the world.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "lengthiest"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-38"
+      ]
+    },
+    {
+      "id": "sz-written-vs",
+      "fact": "Constitutions are classified as written (like the USA) or unwritten (like the UK).",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "written",
+        "unwritten"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-38"
+      ]
+    },
+    {
+      "id": "sz-original",
+      "fact": "Originally the Constitution had a Preamble, 395 Articles in 22 Parts and 8 Schedules.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "395",
+        "22",
+        "8"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-2",
+        "pol-constitution-features-preamble-mcq-17",
+        "pol-constitution-features-preamble-card-1"
+      ]
+    },
+    {
+      "id": "sz-current",
+      "fact": "The source counts 448 Articles in 25 Parts and 12 Schedules (October 2024).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "448",
+        "25",
+        "12"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-38"
+      ]
+    },
+    {
+      "id": "sz-106",
+      "fact": "The Constitution has been amended 106 times as of 2024.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "106"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-38"
+      ]
+    },
+    {
+      "id": "sz-reasons",
+      "fact": "Its length is due to diversity, the 1935 Act, a single constitution for Centre and states, and legal experts.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "diversity",
+        "legal experts"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-39"
+      ]
+    },
+    {
+      "id": "sz-cabinet-adapted",
+      "fact": "Borrowed features were adapted: the cabinet system does not have the same supremacy as in the UK.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "cabinet system",
+        "supremacy"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-40"
+      ]
+    },
+    {
+      "id": "rg-blend",
+      "fact": "The Constitution is a blend of rigidity and flexibility.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "rigidity",
+        "flexibility"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-6"
+      ]
+    },
+    {
+      "id": "rg-368",
+      "fact": "Article 368 provides for amendment by special majority and by special majority with ratification by half the states.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "368",
+        "half"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-41"
+      ]
+    },
+    {
+      "id": "rg-special-def",
+      "fact": "A special majority is a majority of the total membership of each House plus two-thirds of members present and voting.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "total membership",
+        "two-thirds"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-41"
+      ]
+    },
+    {
+      "id": "rg-simple",
+      "fact": "Some provisions can be amended by a simple majority — more than half of those present and voting — by the ordinary legislative process.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "simple majority"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-41"
+      ]
+    },
+    {
+      "id": "fd-federal-features",
+      "fact": "Federal features: two governments, division of powers, written and supreme constitution, rigidity, independent judiciary and bicameralism.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "division of powers",
+        "bicameralism"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-42"
+      ]
+    },
+    {
+      "id": "fd-unitary-features",
+      "fact": "Unitary features: strong Centre, single constitution, single citizenship, integrated judiciary, Centre-appointed Governors, all-India services, emergency provisions.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "all-India services",
+        "integrated judiciary"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-42"
+      ]
+    },
+    {
+      "id": "fd-wheare",
+      "fact": "K.C. Wheare described India as 'quasi-federal'.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Wheare",
+        "quasi"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-44"
+      ]
+    },
+    {
+      "id": "fd-union-states",
+      "fact": "Article 1 describes India as a 'Union of States'.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Article 1",
+        "Union of States"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-43"
+      ]
+    },
+    {
+      "id": "fd-no-agreement",
+      "fact": "The Indian federation is not the result of an agreement among the states.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "agreement"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-43"
+      ]
+    },
+    {
+      "id": "fd-no-secede",
+      "fact": "No state has the right to secede from the Indian Union.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "secede"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-43"
+      ]
+    },
+    {
+      "id": "fd-no-word",
+      "fact": "The word 'Federation' is not used anywhere in the Constitution.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Federation"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-43"
+      ]
+    },
+    {
+      "id": "fd-austin",
+      "fact": "Granville Austin called Indian federalism 'co-operative federalism'.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Austin",
+        "co-operative federalism"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-44"
+      ]
+    },
+    {
+      "id": "fd-morris",
+      "fact": "Morris-Jones called it 'bargaining federalism'.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Morris-Jones",
+        "bargaining"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-44"
+      ]
+    },
+    {
+      "id": "fd-jennings",
+      "fact": "Ivor Jennings called India a federation with a strong centralising tendency.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Jennings",
+        "centralising"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-44"
+      ]
+    },
+    {
+      "id": "pg-westminster",
+      "fact": "The parliamentary system is also called the Westminster model, responsible government and cabinet government.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Westminster"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-45"
+      ]
+    },
+    {
+      "id": "pg-over-presidential",
+      "fact": "India chose the British parliamentary system over the American presidential system, at the Centre and in the states.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "parliamentary",
+        "presidential"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-46"
+      ]
+    },
+    {
+      "id": "pg-features",
+      "fact": "Parliamentary features include nominal and real executives, majority-party rule, collective responsibility and dissolution of the lower House.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "nominal",
+        "collective"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-45"
+      ]
+    },
+    {
+      "id": "pg-not-sovereign",
+      "fact": "Unlike the British Parliament, the Indian Parliament is not sovereign.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "not sovereign"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-45"
+      ]
+    },
+    {
+      "id": "pg-elected-head",
+      "fact": "Unlike Britain's hereditary monarch, India has an elected head of State.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "elected head"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-45"
+      ]
+    },
+    {
+      "id": "pg-responsible",
+      "fact": "In a parliamentary system the Government is responsible to Parliament and can be removed by it.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "responsible"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-46"
+      ]
+    },
+    {
+      "id": "pg-synthesis",
+      "fact": "The Constitution synthesises British parliamentary sovereignty and American judicial supremacy.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "parliamentary sovereignty",
+        "judicial supremacy"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-47"
+      ]
+    },
+    {
+      "id": "pg-procedure",
+      "fact": "Article 21 uses 'procedure established by law', not the American 'due process of law'.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "procedure established by law",
+        "due process"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-47"
+      ]
+    },
+    {
+      "id": "pg-review-amend",
+      "fact": "The Supreme Court can strike down laws by judicial review, while Parliament can amend most of the Constitution.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "judicial review",
+        "amend"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-47"
+      ]
+    },
+    {
+      "id": "jd-integrated",
+      "fact": "A single integrated judiciary, headed by the Supreme Court, enforces both central and state laws.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "integrated",
+        "central and state laws"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-48"
+      ]
+    },
+    {
+      "id": "jd-sc-roles",
+      "fact": "The Supreme Court is a federal court, the highest court of appeal, guarantor of FRs and guardian of the Constitution.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "federal court",
+        "guardian"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-48"
+      ]
+    },
+    {
+      "id": "jd-independence",
+      "fact": "Judicial independence is secured by security of tenure and fixed service conditions.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "security of tenure"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-48"
+      ]
+    },
+    {
+      "id": "ib-bodies",
+      "fact": "The Election Commission, CAG, UPSC and State PSCs are independent constitutional bodies.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Election Commission",
+        "Comptroller",
+        "Union Public Service Commission"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-11"
+      ]
+    },
+    {
+      "id": "ib-niti",
+      "fact": "NITI Aayog is not a constitutional body; it was created by a Cabinet resolution in 2015.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "NITI Aayog"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-49"
+      ]
+    },
+    {
+      "id": "ib-cag",
+      "fact": "The CAG audits the accounts of the central and state governments.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "audit",
+        "CAG"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-49"
+      ]
+    },
+    {
+      "id": "ib-upsc-spsc",
+      "fact": "The UPSC advises the President and a State PSC advises the Governor on disciplinary matters.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "advises the President",
+        "Governor"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-49"
+      ]
+    },
+    {
+      "id": "em-352",
+      "fact": "A National Emergency (Article 352) can be declared on war, external aggression or armed rebellion.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "352",
+        "armed rebellion"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-50"
+      ]
+    },
+    {
+      "id": "em-356",
+      "fact": "President's Rule rests on Article 356, and on Article 365 when a state fails to comply with Union directions.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "356",
+        "365"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-50"
+      ]
+    },
+    {
+      "id": "em-360",
+      "fact": "A Financial Emergency (Article 360) can be proclaimed on a threat to financial stability or credit.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "360",
+        "Financial Emergency"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-50"
+      ]
+    },
+    {
+      "id": "sec-42nd",
+      "fact": "'Secular' was added to the Preamble by the 42nd Amendment, 1976.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Secular",
+        "42nd"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-51"
+      ]
+    },
+    {
+      "id": "sec-positive",
+      "fact": "Indian secularism is positive — equal respect and protection for all religions — unlike the Western separation of religion and state.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "equal respect"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-51"
+      ]
+    },
+    {
+      "id": "uaf-326",
+      "fact": "Universal adult franchise is in Article 326.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "326"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-51"
+      ]
+    },
+    {
+      "id": "uaf-61st",
+      "fact": "The 61st Amendment Act, 1988 reduced the voting age from 21 to 18 (in force 1989).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "61st",
+        "18"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-51"
+      ]
+    },
+    {
+      "id": "sc-single",
+      "fact": "Despite a dual polity India has a single citizenship, unlike the dual citizenship of the USA.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "single citizenship"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-52"
+      ]
+    },
+    {
+      "id": "sc-one-domicile",
+      "fact": "India has only one citizenship and one domicile (UPSC 2021).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "domicile"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-52"
+      ]
+    },
+    {
+      "id": "tt-73-74",
+      "fact": "The 73rd and 74th Amendments (1992) created a third tier of local government.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "73rd",
+        "74th"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-salient-features",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-53"
+      ]
+    },
+    {
+      "id": "tt-73-part",
+      "fact": "The 73rd Amendment added Part IX and the Eleventh Schedule for panchayats.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part IX",
+        "Eleventh Schedule"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-53"
+      ]
+    },
+    {
+      "id": "tt-74-part",
+      "fact": "The 74th Amendment added Part IXA and the Twelfth Schedule for municipalities.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part IXA",
+        "Twelfth Schedule"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-53"
+      ]
+    },
+    {
+      "id": "cr-misra",
+      "fact": "Lokanath Misra called the Constitution a 'slavish imitation of the West'.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Lokanath Misra",
+        "slavish"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-54"
+      ]
+    },
+    {
+      "id": "cr-hanumanthaiya",
+      "fact": "K. Hanumanthaiya complained of an English band instead of the music of the veena or sitar (un-Gandhian criticism).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "source-text"
+      ],
+      "keys": [
+        "Hanumanthaiya",
+        "veena"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-54"
+      ]
+    },
+    {
+      "id": "cr-jennings",
+      "fact": "Ivor Jennings called the Constitution a 'paradise for lawyers'.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "source-text"
+      ],
+      "keys": [
+        "Jennings",
+        "paradise"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-54"
+      ]
+    },
+    {
+      "id": "cr-list",
+      "fact": "Criticisms include: borrowed, carbon copy of the 1935 Act, un-Indian, un-Gandhian, elephantine size and lawyers' paradise.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "carbon copy",
+        "elephantine"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-55"
+      ]
+    },
+    {
+      "id": "cl-limited",
+      "fact": "A constitutional government restricts State authority in the interest of individual liberty.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "individual liberty"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-pyq-precision",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-56"
+      ]
+    },
+    {
+      "id": "cl-separation",
+      "fact": "Separation of powers is the best safeguard of liberty in a liberal democracy (UPSC 2021).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "separation of powers"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-56"
+      ]
+    },
+    {
+      "id": "fr-six",
+      "fact": "Part III guarantees six Fundamental Rights.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "six"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-schedules",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-57"
+      ]
+    },
+    {
+      "id": "fr-equality",
+      "fact": "The Right to Equality is in Articles 14-18 and abolishes untouchability.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "14",
+        "18",
+        "untouchability"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-57"
+      ]
+    },
+    {
+      "id": "fr-freedom",
+      "fact": "The Right to Freedom is in Articles 19-22, including protection against arbitrary arrest and detention.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "19",
+        "22",
+        "arrest"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-57"
+      ]
+    },
+    {
+      "id": "fr-exploitation",
+      "fact": "The Right against Exploitation (Articles 23-24) bans trafficking, forced labour and child labour.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "23",
+        "24",
+        "trafficking"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-57"
+      ]
+    },
+    {
+      "id": "fr-religion",
+      "fact": "The Right to Freedom of Religion is in Articles 25-28.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "25",
+        "28",
+        "Religion"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-58"
+      ]
+    },
+    {
+      "id": "fr-cultural",
+      "fact": "Cultural and Educational Rights (Articles 29-30) protect minorities' language, script and culture.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "29",
+        "30",
+        "script"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-57"
+      ]
+    },
+    {
+      "id": "fr-32",
+      "fact": "Article 32 gives the Right to Constitutional Remedies — moving the Supreme Court.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "32",
+        "Constitutional Remedies"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-58"
+      ]
+    },
+    {
+      "id": "wr-england",
+      "fact": "Writs are derived from the legal system of England and enforced through Article 32.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "England",
+        "writs"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-58"
+      ]
+    },
+    {
+      "id": "wr-habeas",
+      "fact": "Habeas Corpus means 'you may have the body' — to produce a detained person before a court.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Habeas Corpus",
+        "body"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-59"
+      ]
+    },
+    {
+      "id": "wr-mandamus",
+      "fact": "Mandamus means 'we command' — directs an official to perform a public duty.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Mandamus",
+        "we command"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-59"
+      ]
+    },
+    {
+      "id": "wr-prohibition",
+      "fact": "Prohibition is issued by a higher court to stop a lower court exceeding its jurisdiction.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Prohibition",
+        "jurisdiction"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-59"
+      ]
+    },
+    {
+      "id": "wr-certiorari",
+      "fact": "Certiorari quashes an order of a lower court made without jurisdiction or against natural justice.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Certiorari",
+        "quash"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-59"
+      ]
+    },
+    {
+      "id": "wr-quo",
+      "fact": "Quo Warranto means 'by what authority' — questions the right to hold a public office.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Quo Warranto",
+        "by what authority"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-59"
+      ]
+    },
+    {
+      "id": "fdu-51a",
+      "fact": "Part IVA has only Article 51A, listing eleven Fundamental Duties.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "51A",
+        "eleven"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-60"
+      ]
+    },
+    {
+      "id": "fdu-42-swaran",
+      "fact": "The Fundamental Duties were added by the 42nd Amendment (1976) on the Swaran Singh Committee's recommendation, during the internal Emergency.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Swaran Singh",
+        "42nd"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-60"
+      ]
+    },
+    {
+      "id": "fdu-86",
+      "fact": "The 86th Amendment (2002) added one more Fundamental Duty.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "86th"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-60"
+      ]
+    },
+    {
+      "id": "fdu-nonjust",
+      "fact": "Fundamental Duties are non-justiciable.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Duties",
+        "non-justiciable"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-60"
+      ]
+    },
+    {
+      "id": "dp-novel",
+      "fact": "Ambedkar called the Directive Principles a 'novel feature' of the Constitution.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "novel feature"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-61"
+      ]
+    },
+    {
+      "id": "dp-three",
+      "fact": "The Directive Principles fall into socialistic, Gandhian and liberal-intellectual groups.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "socialistic",
+        "Gandhian",
+        "liberal-intellectual"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-61"
+      ]
+    },
+    {
+      "id": "dp-nonjust",
+      "fact": "Directive Principles are non-justiciable but fundamental in governance.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "non-justiciable",
+        "governance"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-61"
+      ]
+    },
+    {
+      "id": "dp-welfare",
+      "fact": "The ideal of a 'Welfare State' is enshrined in the Directive Principles.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Welfare State"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-pyq-precision",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-74"
+      ]
+    },
+    {
+      "id": "dp-econ-justice",
+      "fact": "'Economic Justice' is provided in both the Preamble and the Directive Principles.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Economic Justice"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-pyq-precision",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-74"
+      ]
+    },
+    {
+      "id": "udhr",
+      "fact": "UDHR (1948) ideals are reflected in the Preamble, the DPSP and the Fundamental Duties.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "UDHR"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-pyq-precision",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-74"
+      ]
+    },
+    {
+      "id": "fdu-sovereignty",
+      "fact": "'To uphold and protect the sovereignty, unity and integrity of India' is a Fundamental Duty (Article 51A).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "uphold and protect"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-pyq-precision",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-63"
+      ]
+    },
+    {
+      "id": "co-97",
+      "fact": "The 97th Amendment (2011) gave constitutional status to co-operative societies.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "97th",
+        "co-operative"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-62"
+      ]
+    },
+    {
+      "id": "co-art19",
+      "fact": "The right to form co-operative societies is a Fundamental Right under Article 19.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Article 19",
+        "co-operative"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-62"
+      ]
+    },
+    {
+      "id": "co-43b",
+      "fact": "The 97th Amendment added Article 43B, a Directive Principle on promoting co-operative societies.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "43B"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-rights-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-62"
+      ]
+    },
+    {
+      "id": "co-ixb",
+      "fact": "The 97th Amendment added Part IXB (Articles 243ZH to 243ZT) on co-operative societies.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "IXB",
+        "243ZH"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-62"
+      ]
+    },
+    {
+      "id": "pr-intro",
+      "fact": "The Preamble is the introductory statement setting out the guiding principles and philosophy of the Constitution.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "introductory statement"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-65"
+      ]
+    },
+    {
+      "id": "pr-objres",
+      "fact": "The Preamble is based on the Objectives Resolution moved by Jawaharlal Nehru.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Objectives Resolution",
+        "Nehru"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-3",
+        "pol-constitution-features-preamble-card-5"
+      ]
+    },
+    {
+      "id": "pr-four-components",
+      "fact": "The Preamble has four components: source of authority, nature of the State, objectives and date of adoption.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "source of authority",
+        "date of adoption"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-65"
+      ]
+    },
+    {
+      "id": "pr-we-people",
+      "fact": "'We, the people of India' shows that the Constitution derives its authority from the people.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "We, the People",
+        "authority"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-13"
+      ]
+    },
+    {
+      "id": "pr-keywords",
+      "fact": "The Preamble describes India as Sovereign, Socialist, Secular, Democratic and Republic.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Sovereign",
+        "Socialist",
+        "Republic"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-65"
+      ]
+    },
+    {
+      "id": "pr-objectives",
+      "fact": "The four objectives are Justice, Liberty, Equality and Fraternity.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Justice",
+        "Liberty",
+        "Equality",
+        "Fraternity"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-13",
+        "pol-constitution-features-preamble-mcq-71",
+        "pol-constitution-features-preamble-card-8"
+      ]
+    },
+    {
+      "id": "pr-date",
+      "fact": "The Preamble records the date of adoption as 26 November 1949.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "26 November 1949"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-71"
+      ]
+    },
+    {
+      "id": "pr-justice-3",
+      "fact": "Justice in the Preamble is social, economic and political.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "social",
+        "economic",
+        "political"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-64"
+      ]
+    },
+    {
+      "id": "pr-liberty-5",
+      "fact": "Liberty in the Preamble is of thought, expression, belief, faith and worship.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "thought",
+        "expression",
+        "worship"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-pyq-precision",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-65"
+      ]
+    },
+    {
+      "id": "pr-no-econ-liberty",
+      "fact": "'Economic liberty' is not an objective in the Preamble.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Economic liberty"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-pyq-precision",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-74"
+      ]
+    },
+    {
+      "id": "pr-equality-2",
+      "fact": "Equality in the Preamble is of status and of opportunity.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "status",
+        "opportunity"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-64"
+      ]
+    },
+    {
+      "id": "pr-fraternity",
+      "fact": "Fraternity assures the dignity of the individual and the unity and integrity of the Nation.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "dignity of the individual"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-64"
+      ]
+    },
+    {
+      "id": "pr-enact",
+      "fact": "The Preamble ends 'do hereby adopt, enact and give to ourselves this Constitution'.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "adopt, enact and give"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-64"
+      ]
+    },
+    {
+      "id": "pr-sovereign",
+      "fact": "Sovereign means India is independent, with no external authority above it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Sovereign",
+        "external"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-66"
+      ]
+    },
+    {
+      "id": "pr-socialist",
+      "fact": "Socialist in India means democratic socialism — a mixed economy.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "democratic socialism",
+        "mixed economy"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-66"
+      ]
+    },
+    {
+      "id": "pr-democratic",
+      "fact": "Democratic means representative parliamentary democracy.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "representative"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-66"
+      ]
+    },
+    {
+      "id": "pr-republic",
+      "fact": "Republic means the head of State is elected, not hereditary.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Republic",
+        "elected"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-66"
+      ]
+    },
+    {
+      "id": "pr-42nd",
+      "fact": "The 42nd Amendment (1976) added 'Socialist', 'Secular' and 'Integrity' to the Preamble.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "42nd",
+        "Integrity"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-67"
+      ]
+    },
+    {
+      "id": "pr-once",
+      "fact": "The Preamble has been amended only once.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "only once"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-67"
+      ]
+    },
+    {
+      "id": "pr-1950-status",
+      "fact": "On 26 January 1950 India was a Sovereign Democratic Republic.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Sovereign Democratic Republic"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-67"
+      ]
+    },
+    {
+      "id": "pr-balram-2024",
+      "fact": "In November 2024 (Dr Balram Singh v. Union of India) the Supreme Court upheld the insertion of Socialist and Secular.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Balram Singh"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-67"
+      ]
+    },
+    {
+      "id": "pr-bommai",
+      "fact": "In S.R. Bommai (1994) secularism was held part of the basic structure.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Bommai",
+        "basic structure"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-68"
+      ]
+    },
+    {
+      "id": "pr-berubari",
+      "fact": "Berubari (1960): the Preamble is the 'key to open the mind of the makers' but not a part of the Constitution.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Berubari",
+        "1960"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-status",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-68"
+      ]
+    },
+    {
+      "id": "pr-berubari-143",
+      "fact": "The Berubari case was a Presidential reference under Article 143.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Berubari",
+        "143"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-68"
+      ]
+    },
+    {
+      "id": "pr-kesavananda",
+      "fact": "Kesavananda Bharati (1973): the Preamble is part of the Constitution and amendable, but not its basic features.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Kesavananda",
+        "1973"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-status",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-68"
+      ]
+    },
+    {
+      "id": "pr-lic",
+      "fact": "LIC of India (1995): the Preamble is an integral part of the Constitution but not directly enforceable.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "LIC",
+        "1995"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-status",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-68"
+      ]
+    },
+    {
+      "id": "pr-no-legal-effect",
+      "fact": "The Preamble is part of the Constitution but has no legal effect independently of other parts (UPSC 2020).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Preamble",
+        "enforceable"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-status",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-69"
+      ]
+    },
+    {
+      "id": "pr-not-power",
+      "fact": "The Preamble is neither a source of power to the legislature nor a limitation on it.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "source of power"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-69"
+      ]
+    },
+    {
+      "id": "pr-mind",
+      "fact": "The mind of the makers of the Constitution is reflected in the Preamble (UPSC 2017).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "mind"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-status",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-70"
+      ]
+    },
+    {
+      "id": "pr-src-usa",
+      "fact": "'We, the people of India' (the idea of a Preamble) comes from the USA.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "We, the people",
+        "USA"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-71"
+      ]
+    },
+    {
+      "id": "pr-src-russia",
+      "fact": "The ideal of social, economic and political justice comes from the Russian Revolution.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Russian Revolution"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-71"
+      ]
+    },
+    {
+      "id": "pr-src-france",
+      "fact": "Liberty, equality and fraternity come from the French Revolution.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "French Revolution"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-71"
+      ]
+    },
+    {
+      "id": "pr-q-alladi",
+      "fact": "Alladi Krishnaswami Ayyar said the Preamble 'expresses what we had thought or dreamt for so long'.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "ap"
+      ],
+      "keys": [
+        "Alladi",
+        "dreamt"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-73"
+      ]
+    },
+    {
+      "id": "pr-q-munshi",
+      "fact": "K.M. Munshi called the Preamble the 'horoscope' of our sovereign democratic republic.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Munshi",
+        "horoscope"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-72"
+      ]
+    },
+    {
+      "id": "pr-q-bhargava",
+      "fact": "Thakur Das Bhargava called the Preamble the 'soul' of the Constitution and 'a jewel set in it'.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Bhargava",
+        "soul"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-72"
+      ]
+    },
+    {
+      "id": "pr-q-barker",
+      "fact": "Ernest Barker called the Preamble the 'key-note' to the Constitution.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Barker",
+        "key-note"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-72"
+      ]
+    },
+    {
+      "id": "pr-q-hidayatullah",
+      "fact": "M. Hidayatullah compared the Preamble to the American Declaration of Independence.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Hidayatullah",
+        "Declaration of Independence"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-73"
+      ]
+    },
+    {
+      "id": "pr-q-palkhivala",
+      "fact": "N.A. Palkhivala called the Preamble the 'identity card' of the Constitution.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Palkhivala",
+        "identity card"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-preamble-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-72"
+      ]
+    },
+    {
+      "id": "pt-p1",
+      "fact": "Part I deals with Union and its Territory (Articles 1-4).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part I",
+        "Union and its Territory"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-24"
+      ]
+    },
+    {
+      "id": "pt-p2",
+      "fact": "Part II deals with Citizenship (Articles 5-11).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part II",
+        "Citizenship"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-24"
+      ]
+    },
+    {
+      "id": "pt-p3",
+      "fact": "Part III deals with Fundamental Rights (Articles 12-35).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part III",
+        "Fundamental Rights"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-25"
+      ]
+    },
+    {
+      "id": "pt-p4",
+      "fact": "Part IV deals with Directive Principles (Articles 36-51).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part IV",
+        "Directive Principles"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-25"
+      ]
+    },
+    {
+      "id": "pt-p4a",
+      "fact": "Part IVA deals with Fundamental Duties (Articles 51A).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part IVA",
+        "Fundamental Duties"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-25"
+      ]
+    },
+    {
+      "id": "pt-p5",
+      "fact": "Part V deals with The Union (Articles 52-151).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part V",
+        "The Union"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-24"
+      ]
+    },
+    {
+      "id": "pt-p6",
+      "fact": "Part VI deals with The States (Articles 152-237).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part VI",
+        "The States"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-24"
+      ]
+    },
+    {
+      "id": "pt-p8",
+      "fact": "Part VIII deals with Union Territories (Articles 239-242).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part VIII",
+        "Union Territories"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-25"
+      ]
+    },
+    {
+      "id": "pt-p9",
+      "fact": "Part IX deals with Panchayats (Articles 243-243O).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part IX",
+        "Panchayats"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-26"
+      ]
+    },
+    {
+      "id": "pt-p9a",
+      "fact": "Part IXA deals with Municipalities (Articles 243P-243ZG).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part IXA",
+        "Municipalities"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-26"
+      ]
+    },
+    {
+      "id": "pt-p10",
+      "fact": "Part X deals with Scheduled and Tribal Areas (Articles 244-244A).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part X",
+        "Scheduled and Tribal Areas"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-26"
+      ]
+    },
+    {
+      "id": "pt-p11",
+      "fact": "Part XI deals with Relations between the Union and the States (Articles 245-263).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XI",
+        "Relations between the Union and the States"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-26"
+      ]
+    },
+    {
+      "id": "pt-p12",
+      "fact": "Part XII deals with Finance, Property, Contracts (Articles 264-300A).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XII",
+        "Finance, Property, Contracts"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-27"
+      ]
+    },
+    {
+      "id": "pt-p13",
+      "fact": "Part XIII deals with Trade (Articles 301-307).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XIII",
+        "Trade",
+        "Commerce"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-27"
+      ]
+    },
+    {
+      "id": "pt-p14",
+      "fact": "Part XIV deals with Services (Articles 308-323).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XIV",
+        "Services"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-27"
+      ]
+    },
+    {
+      "id": "pt-p14a",
+      "fact": "Part XIVA deals with Tribunals (Articles 323A-323B).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XIVA",
+        "Tribunals"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-27"
+      ]
+    },
+    {
+      "id": "pt-p15",
+      "fact": "Part XV deals with Elections (Articles 324-329A).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XV",
+        "Elections"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-28"
+      ]
+    },
+    {
+      "id": "pt-p16",
+      "fact": "Part XVI deals with Special provisions (Articles 330-342).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XVI",
+        "Special provisions"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-28"
+      ]
+    },
+    {
+      "id": "pt-p17",
+      "fact": "Part XVII deals with Official Language (Articles 343-351).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XVII",
+        "Official Language"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-28"
+      ]
+    },
+    {
+      "id": "pt-p18",
+      "fact": "Part XVIII deals with Emergency Provisions (Articles 352-360).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XVIII",
+        "Emergency Provisions"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-28"
+      ]
+    },
+    {
+      "id": "pt-p19",
+      "fact": "Part XIX deals with Miscellaneous (Articles 361-367).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XIX",
+        "Miscellaneous"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-29"
+      ]
+    },
+    {
+      "id": "pt-p20",
+      "fact": "Part XX deals with Amendment of the Constitution (Articles 368).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XX",
+        "Amendment of the Constitution"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-29"
+      ]
+    },
+    {
+      "id": "pt-p21",
+      "fact": "Part XXI deals with Temporary, Transitional and Special (Articles 369-392).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XXI",
+        "Temporary, Transitional and Special"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-29"
+      ]
+    },
+    {
+      "id": "pt-p22",
+      "fact": "Part XXII deals with Short title (Articles 393-395).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XXII",
+        "Short title"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-29"
+      ]
+    },
+    {
+      "id": "pt-25",
+      "fact": "There are now 25 Parts; IVA, IXA, IXB and XIVA were added later.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "IVA",
+        "XIVA",
+        "25"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-35"
+      ]
+    },
+    {
+      "id": "pt-p7-repealed",
+      "fact": "Part VII (Part B states) was repealed by the 7th Amendment (1956).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part VII",
+        "7th Amendment"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-35"
+      ]
+    },
+    {
+      "id": "pt-p13-australia",
+      "fact": "Part XIII on trade and commerce is inspired by the Australian Constitution.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Part XIII",
+        "Australia"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-35"
+      ]
+    },
+    {
+      "id": "pt-p3-usbill",
+      "fact": "Part III (Fundamental Rights) was inspired by the US Bill of Rights.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Bill of Rights"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-35"
+      ]
+    },
+    {
+      "id": "pt-p5-ranges",
+      "fact": "Within Part V: Union Executive 52-78, Parliament 79-122, Supreme Court 124-147.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "52-78",
+        "79-122",
+        "124-147"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-36"
+      ]
+    },
+    {
+      "id": "pt-p6-ranges",
+      "fact": "Within Part VI: State Executive 153-167, Legislature 168-212, High Courts 214-237.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "153-167",
+        "168-212"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-36"
+      ]
+    },
+    {
+      "id": "pt-p11-ranges",
+      "fact": "Legislative relations are Articles 245-255 and administrative relations 256-263.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "245-255",
+        "256-263"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-36"
+      ]
+    },
+    {
+      "id": "pt-handwritten",
+      "fact": "The original Constitution was handwritten in both Hindi and English.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Hindi and English"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts",
+      "drilledBy": [
+        "pol-constitution-features-preamble-card-15"
+      ]
+    },
+    {
+      "id": "ap-371d",
+      "fact": "Article 371D (32nd Amendment, 1973) gives Andhra Pradesh equitable opportunities in public employment and education.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "371D",
+        "Andhra Pradesh"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-37"
+      ]
+    },
+    {
+      "id": "ap-371d-2014",
+      "fact": "After 2014 Article 371D applies to both Andhra Pradesh and Telangana.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "371D",
+        "Telangana"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-37"
+      ]
+    },
+    {
+      "id": "ap-371e",
+      "fact": "Article 371E lets Parliament provide for a Central University in Andhra Pradesh.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "371E",
+        "Central University"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-37"
+      ]
+    },
+    {
+      "id": "sc-s1",
+      "fact": "The First Schedule deals with States and Union Territories (Articles 1 and 4).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "First Schedule",
+        "States and Union Territories"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s1-art",
+      "fact": "The First Schedule is linked to Article(s) 1 and 4.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "First",
+        "1 and 4"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s2",
+      "fact": "The Second Schedule deals with Salaries (Articles 59).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Second Schedule",
+        "Salaries"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s2-art",
+      "fact": "The Second Schedule is linked to Article(s) 59.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Second",
+        "59"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s3",
+      "fact": "The Third Schedule deals with oaths (Articles 75).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Third Schedule",
+        "oaths"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s3-art",
+      "fact": "The Third Schedule is linked to Article(s) 75.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Third",
+        "75"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s4",
+      "fact": "The Fourth Schedule deals with Rajya Sabha (Articles 80).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Fourth Schedule",
+        "Rajya Sabha"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s4-art",
+      "fact": "The Fourth Schedule is linked to Article(s) 80.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Fourth",
+        "80"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-30"
+      ]
+    },
+    {
+      "id": "sc-s5",
+      "fact": "The Fifth Schedule deals with Scheduled Areas (Articles 244(1)).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Fifth Schedule",
+        "Scheduled Areas"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s5-art",
+      "fact": "The Fifth Schedule is linked to Article(s) 244(1).",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Fifth",
+        "244(1)"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s6",
+      "fact": "The Sixth Schedule deals with Tribal Areas (Articles 244(2)).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Sixth Schedule",
+        "Tribal Areas",
+        "Mizoram"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s6-art",
+      "fact": "The Sixth Schedule is linked to Article(s) 244(2).",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Sixth",
+        "244(2)"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s7",
+      "fact": "The Seventh Schedule deals with Union, State and Concurrent Lists (Articles 246).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Seventh Schedule",
+        "Union, State and Concurrent Lists"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s7-art",
+      "fact": "The Seventh Schedule is linked to Article(s) 246.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Seventh",
+        "246"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s8",
+      "fact": "The Eighth Schedule deals with 22 (Articles 344 and 351).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Eighth Schedule",
+        "22"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s8-art",
+      "fact": "The Eighth Schedule is linked to Article(s) 344 and 351.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Eighth",
+        "344 and 351"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-31"
+      ]
+    },
+    {
+      "id": "sc-s9",
+      "fact": "The Ninth Schedule deals with land reform (Articles 31B).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Ninth Schedule",
+        "land reform"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-schedules",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-s9-art",
+      "fact": "The Ninth Schedule is linked to Article(s) 31B.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Ninth",
+        "31B"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-s10",
+      "fact": "The Tenth Schedule deals with Anti-defection (Articles 102 and 191).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Tenth Schedule",
+        "Anti-defection"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-schedules",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-s10-art",
+      "fact": "The Tenth Schedule is linked to Article(s) 102 and 191.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Tenth",
+        "102 and 191"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-s11",
+      "fact": "The Eleventh Schedule deals with Panchayats (Articles 243G).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Eleventh Schedule",
+        "Panchayats"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-s11-art",
+      "fact": "The Eleventh Schedule is linked to Article(s) 243G.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Eleventh",
+        "243G"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-s12",
+      "fact": "The Twelfth Schedule deals with Municipalities (Articles 243W).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Twelfth Schedule",
+        "Municipalities"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-features-polity-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-s12-art",
+      "fact": "The Twelfth Schedule is linked to Article(s) 243W.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Twelfth",
+        "243W"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-32"
+      ]
+    },
+    {
+      "id": "sc-1935-origin",
+      "fact": "Schedules were first used in the GoI Act 1935, which had 10 Schedules.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1935",
+        "10"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-33"
+      ]
+    },
+    {
+      "id": "sc-ease",
+      "fact": "Schedules hold detail outside the main text and make amendment easier.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "amend"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-card-16"
+      ]
+    },
+    {
+      "id": "sc-9-1st",
+      "fact": "The Ninth Schedule was added by the 1st Amendment Act, 1951.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Ninth",
+        "1st Amendment"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-schedules",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-33"
+      ]
+    },
+    {
+      "id": "sc-10-52",
+      "fact": "The Tenth Schedule was added by the 52nd Amendment Act, 1985.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Tenth",
+        "52nd"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-schedules",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-33"
+      ]
+    },
+    {
+      "id": "sc-11-73",
+      "fact": "The Eleventh Schedule came with the 73rd and the Twelfth with the 74th Amendment (1992).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Eleventh",
+        "73rd"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-schedules",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-33"
+      ]
+    },
+    {
+      "id": "sc-11-29",
+      "fact": "The Eleventh Schedule lists 29 subjects for Panchayats.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "29"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-34"
+      ]
+    },
+    {
+      "id": "sc-12-18",
+      "fact": "The Twelfth Schedule lists 18 subjects for Municipalities.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "18 subjects"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-34"
+      ]
+    },
+    {
+      "id": "sc-8-14",
+      "fact": "The Eighth Schedule originally had 14 languages; it now has 22.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "14",
+        "22"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-34"
+      ]
+    },
+    {
+      "id": "sc-coelho",
+      "fact": "In I.R. Coelho (2007) laws put in the Ninth Schedule after 24 April 1973 were held open to basic-structure review.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Coelho",
+        "24 April 1973"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-parts-schedules-detail",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-34"
+      ]
+    },
+    {
+      "id": "bf-uk",
+      "fact": "From Britain: parliamentary government, rule of law, bicameralism, cabinet system, single citizenship, writs.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "British",
+        "rule of law"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-75"
+      ]
+    },
+    {
+      "id": "bf-us",
+      "fact": "From the USA: FRs, independence of judiciary, judicial review, impeachment of President, removal of judges, Vice-President.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "judicial review",
+        "impeachment"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-75"
+      ]
+    },
+    {
+      "id": "bf-ireland",
+      "fact": "From Ireland: DPSP, method of President's election, nomination of Rajya Sabha members.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Irish",
+        "Directive Principles"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-75"
+      ]
+    },
+    {
+      "id": "bf-ussr",
+      "fact": "From the USSR: Fundamental Duties and the ideal of justice in the Preamble.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Fundamental Duties",
+        "Soviet"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-75"
+      ]
+    },
+    {
+      "id": "bf-canada",
+      "fact": "From Canada: strong-centre federation, residuary powers, appointment of Governors, advisory jurisdiction of SC.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Canadian",
+        "residuary"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-76"
+      ]
+    },
+    {
+      "id": "bf-australia",
+      "fact": "From Australia: Concurrent List, joint sitting, freedom of trade and commerce.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Australian",
+        "Concurrent List"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-76"
+      ]
+    },
+    {
+      "id": "bf-weimar",
+      "fact": "From Weimar Germany: suspension of FRs during emergency.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Weimar",
+        "suspension"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-76"
+      ]
+    },
+    {
+      "id": "bf-france",
+      "fact": "From France: republic and ideals of liberty, equality, fraternity.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "French",
+        "Republic"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-77"
+      ]
+    },
+    {
+      "id": "bf-japan",
+      "fact": "From Japan: procedure established by law.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Japanese",
+        "procedure established by law"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-76"
+      ]
+    },
+    {
+      "id": "bf-1935",
+      "fact": "From the GoI Act 1935: federal scheme, judiciary, PSCs, office of Governor, emergency provisions.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "1935",
+        "office of Governor"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-77"
+      ]
+    },
+    {
+      "id": "bf-sa",
+      "fact": "From South Africa: amendment procedure and election of Rajya Sabha members.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "South African",
+        "amendment"
+      ],
+      "taughtIn": "pol-constitution-features-preamble-note-borrowed-sources",
+      "drilledBy": [
+        "pol-constitution-features-preamble-mcq-77"
+      ]
+    }
+  ]
+}

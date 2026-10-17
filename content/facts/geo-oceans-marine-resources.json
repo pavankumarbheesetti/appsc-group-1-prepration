@@ -1,0 +1,2893 @@
+{
+  "version": 1,
+  "subtopicId": "geo-oceans-marine-resources",
+  "facts": [
+    {
+      "id": "ex-eez-200",
+      "fact": "Under UNCLOS the EEZ extends 200 nautical miles from the baseline.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "200 nautical miles"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-marine-resources-and-energy",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-1",
+        "geo-oceans-marine-resources-mcq-19",
+        "geo-oceans-marine-resources-card-8"
+      ]
+    },
+    {
+      "id": "ex-mariana",
+      "fact": "The Challenger Deep in the Mariana Trench is the deepest point of the oceans (~10,935 m).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mariana"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-2",
+        "geo-oceans-marine-resources-mcq-17",
+        "geo-oceans-marine-resources-card-1"
+      ]
+    },
+    {
+      "id": "ex-matsya",
+      "fact": "Samudrayaan will carry three persons to 6,000 m in the submersible MATSYA-6000.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "MATSYA-6000"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-marine-resources-and-energy",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-3",
+        "geo-oceans-marine-resources-mcq-19",
+        "geo-oceans-marine-resources-card-8"
+      ]
+    },
+    {
+      "id": "ex-shelf",
+      "fact": "The continental shelf is the gently sloping seaward extension of the continent (0–200 m), the richest fishing ground.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "continental shelf"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-4"
+      ]
+    },
+    {
+      "id": "ex-ridge-divergent",
+      "fact": "Mid-oceanic ridges form at divergent plate boundaries.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ridge",
+        "plate"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-4"
+      ]
+    },
+    {
+      "id": "ex-relief-seq",
+      "fact": "Ocean relief from the coast: shelf → slope → rise → abyssal plain → trench.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "abyssal plain"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-4",
+        "geo-oceans-marine-resources-card-1",
+        "geo-oceans-marine-resources-card-7"
+      ]
+    },
+    {
+      "id": "ex-dead-sea",
+      "fact": "The Dead Sea is extremely saline because it is enclosed with high evaporation and no outlet.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Dead Sea"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-5",
+        "geo-oceans-marine-resources-mcq-16",
+        "geo-oceans-marine-resources-card-2"
+      ]
+    },
+    {
+      "id": "ex-thermocline",
+      "fact": "The thermocline is the layer where temperature falls rapidly with depth.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Thermocline"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-6",
+        "geo-oceans-marine-resources-card-3"
+      ]
+    },
+    {
+      "id": "ex-gulf-stream",
+      "fact": "The Gulf Stream is a warm current of the North Atlantic.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Gulf Stream",
+        "Warm"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-and-movements",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-7",
+        "geo-oceans-marine-resources-card-4"
+      ]
+    },
+    {
+      "id": "ex-humboldt",
+      "fact": "The Humboldt (Peru) current is a cold current of the south-east Pacific.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Humboldt",
+        "Cold"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-and-movements",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-7",
+        "geo-oceans-marine-resources-card-4"
+      ]
+    },
+    {
+      "id": "ex-kuroshio",
+      "fact": "The Kuroshio is a warm current of the north-west Pacific.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Kuroshio"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-and-movements",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-7",
+        "geo-oceans-marine-resources-card-4"
+      ]
+    },
+    {
+      "id": "ex-benguela",
+      "fact": "The Benguela is a cold current of the south-east Atlantic.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Benguela"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-and-movements",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-7",
+        "geo-oceans-marine-resources-card-4"
+      ]
+    },
+    {
+      "id": "ex-three-char",
+      "fact": "Ocean water has physical (temperature, salinity, density), chemical (dissolved gases) and biological (plankton, nekton, benthos) characteristics.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard"
+      ],
+      "keys": [
+        "plankton",
+        "nekton"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-8",
+        "geo-oceans-marine-resources-card-10"
+      ]
+    },
+    {
+      "id": "ex-spring-tide",
+      "fact": "Spring tides occur when the Sun, Earth and Moon are in a straight line (new and full moon).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "straight line"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-9"
+      ]
+    },
+    {
+      "id": "ex-neap",
+      "fact": "Neap tides, the lowest range, occur when the Sun and Moon are at right angles.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Neap"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-and-movements",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-18",
+        "geo-oceans-marine-resources-card-5"
+      ]
+    },
+    {
+      "id": "ex-tides-moon",
+      "fact": "Tides are caused chiefly by the Moon's gravity, then the Sun's, with centrifugal force (UPSC 2015).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Moon"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-and-movements",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-9",
+        "geo-oceans-marine-resources-mcq-18",
+        "geo-oceans-marine-resources-card-5"
+      ]
+    },
+    {
+      "id": "ex-tidal-bore",
+      "fact": "A tidal bore is a wall of water rushing up a river mouth on the rising tide (Hooghly).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "tidal bore"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-and-movements",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-18"
+      ]
+    },
+    {
+      "id": "ex-coral-cold",
+      "fact": "Cold water rich in fresh river discharge is unfavourable for coral reefs.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "river discharge"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-coral-reefs",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-10"
+      ]
+    },
+    {
+      "id": "ex-coral-types",
+      "fact": "Coral reef types are fringing, barrier and atoll.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Fringing",
+        "atoll"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-coral-reefs",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-6",
+        "geo-oceans-marine-resources-mcq-45"
+      ]
+    },
+    {
+      "id": "ex-nodules",
+      "fact": "Polymetallic nodules are chiefly manganese, nickel, copper and cobalt.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "manganese",
+        "cobalt"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-marine-resources-and-energy",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-11",
+        "geo-oceans-marine-resources-card-7"
+      ]
+    },
+    {
+      "id": "ex-tsunami-2004",
+      "fact": "The December 2004 tsunami was caused by an undersea earthquake off Sumatra.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "ap"
+      ],
+      "keys": [
+        "Sumatra"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-ap-coast-and-hazards",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-12",
+        "geo-oceans-marine-resources-card-9"
+      ]
+    },
+    {
+      "id": "ex-otec",
+      "fact": "OTEC uses the temperature difference between warm surface and cold deep water.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "temperature difference"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-marine-resources-and-energy",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-13"
+      ]
+    },
+    {
+      "id": "ex-plastic",
+      "fact": "Plastic and microplastic waste is a major marine pollutant, mitigated by cutting single-use plastics.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Plastic"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-ap-coast-and-hazards",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-14"
+      ]
+    },
+    {
+      "id": "ex-ap-974",
+      "fact": "AP's coastline (~974 km) is the longest on India's east coast.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "974"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-ap-coast-and-hazards",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-15",
+        "geo-oceans-marine-resources-card-9"
+      ]
+    },
+    {
+      "id": "ex-vizag-major",
+      "fact": "Visakhapatnam is AP's only major port.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Visakhapatnam"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-ap-coast-and-hazards",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-15"
+      ]
+    },
+    {
+      "id": "ex-ap-fish",
+      "fact": "AP is a leading state in fish and shrimp production.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "shrimp"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-ap-coast-and-hazards",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-15"
+      ]
+    },
+    {
+      "id": "ex-salinity-35",
+      "fact": "Average ocean salinity is about 35 parts per thousand.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "35"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-16",
+        "geo-oceans-marine-resources-card-2"
+      ]
+    },
+    {
+      "id": "ex-salinity-subtropics",
+      "fact": "Salinity is highest in the subtropics and lower near the equator.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "subtropics"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-16"
+      ]
+    },
+    {
+      "id": "ex-puerto-rico",
+      "fact": "The Puerto Rico Trench is the deepest point of the Atlantic.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Puerto Rico"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-17"
+      ]
+    },
+    {
+      "id": "ex-sunda",
+      "fact": "The Sunda (Java) Trench is the deepest point of the Indian Ocean.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Sunda"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-12",
+        "geo-oceans-marine-resources-mcq-17",
+        "geo-oceans-marine-resources-card-9"
+      ]
+    },
+    {
+      "id": "ex-tonga",
+      "fact": "The Tonga Trench is the second-deepest oceanic trench.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Tonga"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-17"
+      ]
+    },
+    {
+      "id": "ex-blue-economy",
+      "fact": "The Blue Economy is the sustainable use of ocean resources for growth, jobs and ecosystem health.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Blue Economy"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-marine-resources-and-energy",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-19"
+      ]
+    },
+    {
+      "id": "ex-counter-current",
+      "fact": "The Equatorial Counter Current flows east because the North and South Equatorial Currents converge and pile up water (UPSC 2015).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "convergence"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-water-facts",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-20"
+      ]
+    },
+    {
+      "id": "ex-omt",
+      "fact": "The January–March Ocean Mean Temperature is used to assess whether monsoon rainfall will be above or below the mean (UPSC 2020).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "January-March"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-water-facts",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-21"
+      ]
+    },
+    {
+      "id": "ex-chandipur",
+      "fact": "At Chandipur (Odisha) the sea recedes a few km twice a day.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Chandipur"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-water-facts",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-ice-groundwater",
+      "fact": "More water is stored in polar ice caps and glaciers than as groundwater; groundwater exceeds rivers and lakes (UPSC 2021/2013).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "ice caps",
+        "groundwater"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-water-facts",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-23"
+      ]
+    },
+    {
+      "id": "ex-dom-2021",
+      "fact": "The Deep Ocean Mission was launched in 2021 by the Ministry of Earth Sciences.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Deep Ocean Mission"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-marine-resources-and-energy",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-19"
+      ]
+    },
+    {
+      "id": "ex-niot",
+      "fact": "MATSYA-6000 is built by NIOT, Chennai.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "NIOT"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-deep-ocean-mission",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-8"
+      ]
+    },
+    {
+      "id": "ex-india-reefs",
+      "fact": "India's coral reefs: Gulf of Mannar, Gulf of Kutch, Lakshadweep, Andaman & Nicobar (not the Sundarbans).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Gulf of Mannar"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-coral-reefs",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-45"
+      ]
+    },
+    {
+      "id": "ex-bleaching",
+      "fact": "Coral bleaching is the loss of symbiotic zooxanthellae due to warming.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "zooxanthellae"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-relief-and-characteristics",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-45"
+      ]
+    },
+    {
+      "id": "ex-incois",
+      "fact": "INCOIS, Hyderabad runs the Indian Tsunami Early Warning Centre.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap"
+      ],
+      "keys": [
+        "INCOIS"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-ap-coast-and-hazards",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-46"
+      ]
+    },
+    {
+      "id": "ex-india-eez-area",
+      "fact": "India's EEZ is about 2.37 million km².",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "2.37"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-marine-resources-and-energy",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-19"
+      ]
+    },
+    {
+      "id": "ex-ap-ports",
+      "fact": "Krishnapatnam, Gangavaram, Kakinada and Machilipatnam are important non-major ports of AP.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Krishnapatnam"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-ap-coast-and-hazards",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-46"
+      ]
+    },
+    {
+      "id": "ex-tidal-sites",
+      "fact": "India's tidal-energy potential lies in the Gulf of Kutch, Gulf of Khambhat and Sundarbans.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "source-text"
+      ],
+      "keys": [
+        "Gulf of Kutch"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-coral-reefs",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-34"
+      ]
+    },
+    {
+      "id": "ex-reefs-tropical",
+      "fact": "Most coral reefs are in tropical waters; over one-third lie off Australia, Indonesia and the Philippines (UPSC 2018).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "tropical"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-coral-reefs",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-45"
+      ]
+    },
+    {
+      "id": "fo-oceanography",
+      "fact": "Oceanography is the study of all aspects of the oceans.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Oceanography"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-11"
+      ]
+    },
+    {
+      "id": "fo-oceanus",
+      "fact": "'Ocean' comes from the Greek 'Oceanus', an enormous river encircling the Earth.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Oceanus"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-12"
+      ]
+    },
+    {
+      "id": "fo-five",
+      "fact": "The five oceans are the Pacific, Atlantic, Indian, Southern and Arctic.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Southern",
+        "Arctic"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-24"
+      ]
+    },
+    {
+      "id": "fo-pacific-third",
+      "fact": "The Pacific, the largest ocean, covers about one-third of the Earth's surface — more than all the land.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "one-third"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-24"
+      ]
+    },
+    {
+      "id": "fo-magellan",
+      "fact": "Ferdinand Magellan named the Pacific (\"peaceful\").",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Magellan"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-24"
+      ]
+    },
+    {
+      "id": "fo-pacific-depth",
+      "fact": "The Pacific's average depth is about 4,280 m.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "4,280"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-13"
+      ]
+    },
+    {
+      "id": "fo-pacific-idl",
+      "fact": "The International Date Line lies in the Pacific.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "International Date Line"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-14"
+      ]
+    },
+    {
+      "id": "fo-atlantic-20",
+      "fact": "The Atlantic, the second-largest ocean, covers about 20% of the Earth's surface and is S-shaped.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "20%"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-24"
+      ]
+    },
+    {
+      "id": "fo-atlas",
+      "fact": "The Atlantic is named after Atlas (Atlantis Thalassa).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Atlas"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-15"
+      ]
+    },
+    {
+      "id": "fo-atlantic-depth",
+      "fact": "The Atlantic's average depth is about 3,646 m; the Puerto Rico Trench reaches about 8,376 m.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "8,376"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-16"
+      ]
+    },
+    {
+      "id": "fo-greenland",
+      "fact": "Greenland, the world's largest island, lies in the Atlantic.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Greenland"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-25"
+      ]
+    },
+    {
+      "id": "fo-sargasso",
+      "fact": "The Sargasso Sea is the only sea without a shore.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Sargasso"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-26"
+      ]
+    },
+    {
+      "id": "fo-indian-warm",
+      "fact": "The Indian Ocean is the warmest ocean and is land-locked on the north.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "warmest"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-26"
+      ]
+    },
+    {
+      "id": "fo-madagascar",
+      "fact": "Madagascar is the largest island of the Indian Ocean.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Madagascar"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-25"
+      ]
+    },
+    {
+      "id": "fo-sunda-7450",
+      "fact": "The Sunda (Java) Trench is about 7,450 m deep.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "7,450"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-17"
+      ]
+    },
+    {
+      "id": "fo-southern-60",
+      "fact": "The Southern Ocean lies around Antarctica south of 60°S.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "60°S"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-25"
+      ]
+    },
+    {
+      "id": "fo-drake",
+      "fact": "The Drake Passage, between Cape Horn and the South Shetland Islands, links the Southern Ocean with the Atlantic and Pacific.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Drake Passage"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-26"
+      ]
+    },
+    {
+      "id": "fo-arctic-smallest",
+      "fact": "The Arctic is the smallest and shallowest ocean, with the lowest salinity.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "smallest",
+        "shallowest"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-26"
+      ]
+    },
+    {
+      "id": "fo-molloy",
+      "fact": "The Molloy Deep in the Fram Strait is the Arctic Ocean's deepest point.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Molloy"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-18"
+      ]
+    },
+    {
+      "id": "fo-bering-link",
+      "fact": "The Arctic joins the Pacific through the Bering Strait.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Bering"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-19"
+      ]
+    },
+    {
+      "id": "fo-pacific-seas",
+      "fact": "Pacific marginal seas include the Coral, South China, Tasman, Bering and Okhotsk seas.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Tasman",
+        "Okhotsk"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-20"
+      ]
+    },
+    {
+      "id": "fo-atlantic-seas",
+      "fact": "Atlantic marginal seas include the Caribbean, Mediterranean, North and Baltic seas and Hudson Bay.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Caribbean",
+        "Hudson Bay"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-21"
+      ]
+    },
+    {
+      "id": "fo-southern-seas",
+      "fact": "Weddell and Ross seas are marginal seas of the Southern Ocean.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Weddell",
+        "Ross"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-22"
+      ]
+    },
+    {
+      "id": "fo-pac-indian-link",
+      "fact": "The Pacific is linked to the Indian Ocean via the Indonesian seaways, Torres Strait and Strait of Malacca.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Indonesian"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-five-oceans",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-23"
+      ]
+    },
+    {
+      "id": "ss-palk",
+      "fact": "The Palk Strait separates India and Sri Lanka.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Palk"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-27"
+      ]
+    },
+    {
+      "id": "ss-ten-degree",
+      "fact": "The Ten Degree Channel separates the Andaman and Nicobar Islands.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Ten Degree"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-27"
+      ]
+    },
+    {
+      "id": "ss-nine-degree",
+      "fact": "The Nine Degree Channel separates Lakshadweep (Kavaratti) from Minicoy.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Nine Degree"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-27"
+      ]
+    },
+    {
+      "id": "ss-eight-degree",
+      "fact": "The Eight Degree Channel separates Minicoy from the Maldives.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Eight Degree"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-27"
+      ]
+    },
+    {
+      "id": "ss-duncan",
+      "fact": "Duncan Passage lies between South Andaman and Little Andaman.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Duncan"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-24"
+      ]
+    },
+    {
+      "id": "ss-coco",
+      "fact": "The Coco Channel lies between the Andaman Islands and Myanmar's Coco Islands.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Coco Channel"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-25"
+      ]
+    },
+    {
+      "id": "ss-malacca",
+      "fact": "The Strait of Malacca separates Malaysia and Sumatra, joining the Andaman Sea and South China Sea.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Malacca"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-30"
+      ]
+    },
+    {
+      "id": "ss-sunda-strait",
+      "fact": "The Sunda Strait separates Java and Sumatra.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Sunda Strait"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-26"
+      ]
+    },
+    {
+      "id": "ss-hormuz",
+      "fact": "The Strait of Hormuz joins the Persian Gulf and the Gulf of Oman.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Hormuz"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-28"
+      ]
+    },
+    {
+      "id": "ss-bab",
+      "fact": "Bab-el-Mandeb joins the Red Sea and the Gulf of Aden.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bab-el-Mandeb"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-28"
+      ]
+    },
+    {
+      "id": "ss-gibraltar",
+      "fact": "The Strait of Gibraltar separates Spain and Morocco, joining the Mediterranean and Atlantic.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Gibraltar"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-28"
+      ]
+    },
+    {
+      "id": "ss-bosphorus",
+      "fact": "The Bosphorus joins the Black Sea and the Sea of Marmara.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bosphorus"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-28"
+      ]
+    },
+    {
+      "id": "ss-dardanelles",
+      "fact": "The Dardanelles join the Sea of Marmara and the Aegean Sea.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Dardanelles"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-30"
+      ]
+    },
+    {
+      "id": "ss-dover",
+      "fact": "The Strait of Dover separates England and France.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Dover"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-30"
+      ]
+    },
+    {
+      "id": "ss-bering",
+      "fact": "The Bering Strait separates Asia (Russia) and North America (Alaska).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Bering",
+        "Alaska"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-29"
+      ]
+    },
+    {
+      "id": "ss-magellan",
+      "fact": "The Strait of Magellan separates mainland South America from Tierra del Fuego.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Tierra del Fuego"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-27"
+      ]
+    },
+    {
+      "id": "ss-torres",
+      "fact": "The Torres Strait separates Australia and New Guinea.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Torres"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-29"
+      ]
+    },
+    {
+      "id": "ss-bass",
+      "fact": "The Bass Strait separates Australia and Tasmania.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Bass"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-29"
+      ]
+    },
+    {
+      "id": "ss-cook",
+      "fact": "The Cook Strait separates the North and South Islands of New Zealand.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Cook"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-29"
+      ]
+    },
+    {
+      "id": "ss-taiwan-korea",
+      "fact": "The Taiwan (Formosa) Strait separates China and Taiwan; the Korea Strait separates Korea and Japan.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Formosa"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-28"
+      ]
+    },
+    {
+      "id": "ss-la-perouse",
+      "fact": "La Perouse Strait separates Sakhalin and Hokkaido.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "La Perouse"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-29"
+      ]
+    },
+    {
+      "id": "ss-florida",
+      "fact": "The Florida Strait separates Florida and Cuba.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Florida"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-30"
+      ]
+    },
+    {
+      "id": "ss-davis",
+      "fact": "The Davis Strait separates Greenland and Baffin Island.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Davis"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-31"
+      ]
+    },
+    {
+      "id": "ss-messina",
+      "fact": "The Strait of Messina separates Italy and Sicily; Otranto separates Italy and Albania.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Messina"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-32"
+      ]
+    },
+    {
+      "id": "ss-mozambique",
+      "fact": "The Mozambique Channel separates Mozambique and Madagascar.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Mozambique Channel"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-33"
+      ]
+    },
+    {
+      "id": "ss-suez",
+      "fact": "The Suez Canal (1869) joins the Mediterranean and the Red Sea.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Suez"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-30"
+      ]
+    },
+    {
+      "id": "ss-panama",
+      "fact": "The Panama Canal (1914) joins the Atlantic and the Pacific.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Panama"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-30"
+      ]
+    },
+    {
+      "id": "ss-adams-bridge",
+      "fact": "Adam's Bridge (Ram Setu) lies in the Palk Strait region.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Adam's Bridge"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-straits-seas",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-34"
+      ]
+    },
+    {
+      "id": "wt-h-v",
+      "fact": "Horizontal ocean movements are currents and waves; vertical ones are tides and upwelling.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "vertical"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-35"
+      ]
+    },
+    {
+      "id": "wt-energy",
+      "fact": "In waves the energy moves, not the water; particles move in small circles.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "energy",
+        "circle"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-31"
+      ]
+    },
+    {
+      "id": "wt-break",
+      "fact": "A wave breaks when the water depth is less than half its wavelength.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "half"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-31"
+      ]
+    },
+    {
+      "id": "wt-largest-open",
+      "fact": "The largest waves are found in the open ocean.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "open ocean"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-36"
+      ]
+    },
+    {
+      "id": "wt-steep-young",
+      "fact": "Steep waves are young and local; slow, steady swells come from far away.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Steep"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-37"
+      ]
+    },
+    {
+      "id": "wt-fetch",
+      "fact": "Wave height depends on wind strength, duration and fetch.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "fetch"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-38"
+      ]
+    },
+    {
+      "id": "wt-amplitude",
+      "fact": "Wave amplitude is half the wave height.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "amplitude"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-31"
+      ]
+    },
+    {
+      "id": "wt-period",
+      "fact": "Wave period is the time between two successive crests passing a fixed point.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Wave period"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-39"
+      ]
+    },
+    {
+      "id": "wt-wavelength",
+      "fact": "Wavelength is the horizontal distance between two successive crests.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Wavelength"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-40"
+      ]
+    },
+    {
+      "id": "wt-knots",
+      "fact": "Wave speed is measured in knots.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "knots"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-41"
+      ]
+    },
+    {
+      "id": "wt-constructive",
+      "fact": "Constructive waves have a stronger swash than backwash and build beaches.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Constructive",
+        "swash"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-31"
+      ]
+    },
+    {
+      "id": "wt-destructive",
+      "fact": "Destructive waves have a stronger backwash, are high and steep, and erode the coast.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Destructive",
+        "backwash"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-31"
+      ]
+    },
+    {
+      "id": "wt-surge",
+      "fact": "Surges are irregular sea-level rises caused by winds and pressure changes, unlike tides.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "surge"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-32"
+      ]
+    },
+    {
+      "id": "wt-moon-2x",
+      "fact": "The Moon's tidal attraction is more than twice the Sun's.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "twice"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-32"
+      ]
+    },
+    {
+      "id": "wt-two-bulges",
+      "fact": "Gravity and centrifugal force create two tidal bulges — towards and away from the Moon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "centrifugal"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-32"
+      ]
+    },
+    {
+      "id": "wt-shelf-higher",
+      "fact": "Tidal bulges are higher on wide continental shelves and lower at mid-ocean islands.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mid-ocean islands"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-42"
+      ]
+    },
+    {
+      "id": "wt-semidiurnal",
+      "fact": "Semi-diurnal tides (two highs, two lows a day) are the most common.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Semi-diurnal"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-32"
+      ]
+    },
+    {
+      "id": "wt-diurnal",
+      "fact": "Diurnal tides have one high and one low a day.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Diurnal"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-43"
+      ]
+    },
+    {
+      "id": "wt-mixed",
+      "fact": "Mixed tides occur along the west coast of North America and many Pacific islands.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mixed"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-44"
+      ]
+    },
+    {
+      "id": "wt-neap-7",
+      "fact": "Neap tides come about seven days after spring tides.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "seven"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-45"
+      ]
+    },
+    {
+      "id": "wt-perigee",
+      "fact": "At perigee, and at perihelion (3 January), tidal ranges are greater than normal.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "perigee"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-46"
+      ]
+    },
+    {
+      "id": "wt-ebb-flood",
+      "fact": "The falling tide is the ebb; the rising tide is the flow or flood.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "ebb",
+        "flood"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-33"
+      ]
+    },
+    {
+      "id": "wt-fundy",
+      "fact": "The Bay of Fundy (Canada) has the greatest tidal range.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Fundy"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-33"
+      ]
+    },
+    {
+      "id": "wt-tide-uses",
+      "fact": "Tides aid navigation over harbour bars, desilt estuaries and generate power (Canada, France, Russia, China).",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "desilt"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-47"
+      ]
+    },
+    {
+      "id": "wt-sihwa",
+      "fact": "Sihwa Lake (South Korea, 254 MW) is a major tidal power station; La Rance is in France.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Sihwa"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-48"
+      ]
+    },
+    {
+      "id": "wt-tidal-methods",
+      "fact": "Tidal power is generated by floodgate dams, tidal barrages and tidal stream generators.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "barrage"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-49"
+      ]
+    },
+    {
+      "id": "wt-cambay-11",
+      "fact": "The Gulf of Cambay (Khambhat) has a tidal range of up to 11 m and the Gulf of Kutch 8 m.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "11 m"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-33"
+      ]
+    },
+    {
+      "id": "wt-durgaduani",
+      "fact": "A tidal project at Durgaduani creek in the Sundarbans (3.75 MW, approved 2008) was delayed.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Durgaduani"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-50"
+      ]
+    },
+    {
+      "id": "wt-mandavi",
+      "fact": "A 50 MW tidal plant is being developed at Mandavi (Kutch); a 250 MW plant was planned in the Gulf of Kutch.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mandavi"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-51"
+      ]
+    },
+    {
+      "id": "wt-coastline",
+      "fact": "India's coastline is usually given as over 7,500 km; a 2024 re-measurement gives about 11,098 km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "7,500",
+        "11,098"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-waves-tides-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-33"
+      ]
+    },
+    {
+      "id": "cu-surface-400",
+      "fact": "Surface currents occupy the upper 400 m and are driven mainly by wind.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "400"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-35"
+      ]
+    },
+    {
+      "id": "cu-thermohaline",
+      "fact": "Deep currents (thermohaline circulation) are driven by density differences of temperature and salinity.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "thermohaline"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-35"
+      ]
+    },
+    {
+      "id": "cu-gyres",
+      "fact": "Gyres turn clockwise in the Northern Hemisphere and anticlockwise in the Southern Hemisphere.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "clockwise"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-35"
+      ]
+    },
+    {
+      "id": "cu-nad",
+      "fact": "The North Atlantic Drift, a warm continuation of the Gulf Stream, keeps Western Europe mild.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "North Atlantic Drift"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-36"
+      ]
+    },
+    {
+      "id": "cu-labrador",
+      "fact": "The Labrador current is a cold current off Newfoundland.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Labrador"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-36"
+      ]
+    },
+    {
+      "id": "cu-canary",
+      "fact": "The Canary current is a cold current off north-west Africa, adding to the Sahara's aridity.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Canary"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-36"
+      ]
+    },
+    {
+      "id": "cu-brazil-falkland",
+      "fact": "The warm Brazil current meets the cold Falkland current off Argentina.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Falkland"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-37"
+      ]
+    },
+    {
+      "id": "cu-norwegian",
+      "fact": "The Norwegian current is a warm extension of the North Atlantic Drift.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Norwegian"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-52"
+      ]
+    },
+    {
+      "id": "cu-california",
+      "fact": "The California current is a cold current of the North Pacific.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "California"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-37"
+      ]
+    },
+    {
+      "id": "cu-oyashio",
+      "fact": "The cold Oyashio flows south along Japan and meets the warm Kuroshio.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Oyashio"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-37"
+      ]
+    },
+    {
+      "id": "cu-east-australian",
+      "fact": "The East Australian current is warm.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "East Australian"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-53"
+      ]
+    },
+    {
+      "id": "cu-kamchatka",
+      "fact": "The Kamchatka current is a cold extension of the Oyashio.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kamchatka"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-54"
+      ]
+    },
+    {
+      "id": "cu-agulhas",
+      "fact": "The Agulhas current is a warm current along Africa's east coast.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Agulhas"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-36"
+      ]
+    },
+    {
+      "id": "cu-mozambique",
+      "fact": "The warm Mozambique current flows between Madagascar and Africa into the Agulhas.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mozambique"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-55"
+      ]
+    },
+    {
+      "id": "cu-west-australian",
+      "fact": "The West Australian current is cold.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "West Australian"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-37"
+      ]
+    },
+    {
+      "id": "cu-somali",
+      "fact": "The Somali current reverses direction with the monsoon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Somali"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-35"
+      ]
+    },
+    {
+      "id": "cu-monsoon-drift",
+      "fact": "The Indian Monsoon Drift flows clockwise in summer and anticlockwise in winter.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Monsoon Drift"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-56"
+      ]
+    },
+    {
+      "id": "cu-acc",
+      "fact": "The Antarctic Circumpolar Current (West Wind Drift) encircles Antarctica.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Circumpolar"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-39"
+      ]
+    },
+    {
+      "id": "cu-east-greenland",
+      "fact": "The East Greenland current is cold; the Beaufort Gyre circulates clockwise in the western Arctic.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "East Greenland"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-57"
+      ]
+    },
+    {
+      "id": "cu-west-coast-arid",
+      "fact": "Tropical and subtropical west coasts bordered by cold currents are cool, foggy and arid.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "west coasts"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-38"
+      ]
+    },
+    {
+      "id": "cu-east-coast-rainy",
+      "fact": "Warm currents along tropical east coasts give warm, rainy climates.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "east coasts"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-38"
+      ]
+    },
+    {
+      "id": "cu-newfoundland",
+      "fact": "Mixing of warm and cold currents gives fog and drizzle at Newfoundland.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Newfoundland",
+        "drizzle"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-38"
+      ]
+    },
+    {
+      "id": "cu-fishing",
+      "fact": "Mixing zones of warm and cold currents are the best fishing grounds because plankton thrives there.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "fishing"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-39"
+      ]
+    },
+    {
+      "id": "cu-trade-wind-deserts",
+      "fact": "Hot deserts on west coasts (15°–30°) are trade-wind deserts aided by cold currents.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "trade-wind deserts"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-38"
+      ]
+    },
+    {
+      "id": "cu-cyclone-fuel",
+      "fact": "Warm water piled up by currents in the tropics fuels tropical cyclones.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "cyclones"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-currents-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-58"
+      ]
+    },
+    {
+      "id": "pr-isohalines",
+      "fact": "Isohalines join places of equal salinity.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Isohaline"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-40"
+      ]
+    },
+    {
+      "id": "pr-salinity-controls",
+      "fact": "Salinity rises with evaporation and falls with precipitation, river inflow and melting ice.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "evaporation",
+        "precipitation"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-40"
+      ]
+    },
+    {
+      "id": "pr-red-sea",
+      "fact": "The Red Sea (about 41‰) and Persian Gulf are the saltiest seas.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Red Sea"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-40"
+      ]
+    },
+    {
+      "id": "pr-lake-van",
+      "fact": "Lake Van (Turkey), the Dead Sea and the Great Salt Lake have extreme salinity.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Lake Van",
+        "Great Salt Lake"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-59"
+      ]
+    },
+    {
+      "id": "pr-baltic-arctic",
+      "fact": "The Baltic Sea and the Arctic Ocean are among the least saline waters.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "source-text"
+      ],
+      "keys": [
+        "Baltic"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-40"
+      ]
+    },
+    {
+      "id": "pr-bay-arabian",
+      "fact": "The Bay of Bengal is less saline than the Arabian Sea because of Ganga–Brahmaputra inflow.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Bay of Bengal",
+        "Arabian Sea"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-40"
+      ]
+    },
+    {
+      "id": "pr-temp-layers",
+      "fact": "Ocean temperature has three layers: warm surface water, the thermocline (~500–1,000 m) and cold deep water.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "three layers"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-41"
+      ]
+    },
+    {
+      "id": "pr-nh-warmer",
+      "fact": "Northern Hemisphere oceans are slightly warmer than southern ones.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Northern Hemisphere"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-60"
+      ]
+    },
+    {
+      "id": "pr-territorial-12",
+      "fact": "The territorial sea extends 12 nautical miles and the contiguous zone 24.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "12 nautical miles"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-44"
+      ]
+    },
+    {
+      "id": "pr-shelf-350",
+      "fact": "The extended continental shelf may reach 350 nautical miles.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "350"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-61"
+      ]
+    },
+    {
+      "id": "pr-unclos-1982",
+      "fact": "UNCLOS was adopted in 1982 and came into force in 1994.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1982"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-62"
+      ]
+    },
+    {
+      "id": "pr-isa",
+      "fact": "The International Seabed Authority (Kingston, Jamaica) grants sea-bed exploration licences — not the Global Ocean Commission (UPSC 2021).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "International Seabed Authority"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-43"
+      ]
+    },
+    {
+      "id": "pr-india-ciob",
+      "fact": "India holds an ISA licence for polymetallic nodules in the Central Indian Ocean Basin (~75,000 km²).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Central Indian Ocean Basin"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-44"
+      ]
+    },
+    {
+      "id": "pr-pioneer-1987",
+      "fact": "India was registered as a pioneer investor for sea-bed nodules in 1987.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1987"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-63"
+      ]
+    },
+    {
+      "id": "pr-rare-earths",
+      "fact": "Rare-earth minerals occur on the sea floor in international waters (UPSC 2021).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "rare"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-42"
+      ]
+    },
+    {
+      "id": "pr-sulphides",
+      "fact": "India also holds a licence for polymetallic sulphides on the Indian Ocean ridges.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "sulphides"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-64"
+      ]
+    },
+    {
+      "id": "pr-mumbai-kg",
+      "fact": "Offshore oil and gas come from Mumbai High and the Krishna–Godavari basin (also gas hydrates).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap"
+      ],
+      "keys": [
+        "Mumbai High",
+        "Krishna"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-mcq-44"
+      ]
+    },
+    {
+      "id": "pr-otec-20",
+      "fact": "OTEC needs a surface-to-deep temperature difference of about 20°C.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "20°C"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-65"
+      ]
+    },
+    {
+      "id": "pr-kavaratti",
+      "fact": "LTTD desalination plants at Kavaratti (Lakshadweep) use the ocean temperature difference.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Kavaratti"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-66"
+      ]
+    },
+    {
+      "id": "pr-hornsea",
+      "fact": "Hornsea 2 (UK) is the largest operating offshore wind farm.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Hornsea"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-67"
+      ]
+    },
+    {
+      "id": "pr-ap-1053",
+      "fact": "A 2024 re-measurement gives AP's coastline as about 1,053 km.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "1,053"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-68"
+      ]
+    },
+    {
+      "id": "pr-placer",
+      "fact": "Placer minerals such as monazite and ilmenite occur on Kerala and AP beaches.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap"
+      ],
+      "keys": [
+        "monazite"
+      ],
+      "taughtIn": "geo-oceans-marine-resources-note-properties-resources-detail",
+      "drilledBy": [
+        "geo-oceans-marine-resources-card-69"
+      ]
+    }
+  ]
+}

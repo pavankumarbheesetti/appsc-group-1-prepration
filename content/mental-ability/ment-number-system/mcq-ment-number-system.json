@@ -784,7 +784,7 @@
       ],
       "answerIndex": 0,
       "covers": [
-        "Scientific (standard) notation — a × 10^{n} form & products"
+        "Scientific (standard) notation — a × 10^n form & products"
       ],
       "explanation": "Multiply the front numbers and add the powers: 3.0 × 4.0 = 12 and 10^{8} × 10^{-3} = 10^{5}, giving 12 × 10^{5}. Renormalise so the front number is below 10: 12 = 1.2 × 10^{1}, so 12 × 10^{5} = 1.2 × 10^{6}. Check by ordinary numbers: 300,000,000 × 0.004 = 1,200,000 = 1.2 × 10^{6}.\n\n**Why not the others**\n- 12 × 10^{5} — the same value but not standard form, since the front number must be between 1 and 10.\n- 1.2 × 10^{5} — drops the extra power of ten gained when 12 is renormalised to 1.2 × 10^{1}.\n- 1.2 × 10^{-6} — subtracts the powers (and mishandles the sign) instead of adding them.\n\n**Key facts**\n- To multiply, multiply the front numbers and add the powers, then renormalise so the front number is between 1 and 10.\n- 3.0 × 4.0 = 12; 10^{8} × 10^{-3} = 10^{5}; 12 × 10^{5} = 1.2 × 10^{6}.\n\n*Source: NCERT mathematics — exponents & scientific notation (concept).*",
       "source": "NCERT mathematics — exponents & scientific notation (concept)",
@@ -2332,6 +2332,1199 @@
         "number-system",
         "counting",
         "lcm"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-93",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following statements about rational and irrational numbers:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "A rational number can always be written as p/q (q ≠ 0), so its decimal either terminates or repeats.",
+        "5 + √2 is irrational, because a rational number plus an irrational number is always irrational.",
+        "√2 × √8 is irrational, because the product of two irrational numbers is always irrational."
+      ],
+      "options": [
+        "1 and 3 only",
+        "2 only",
+        "3 only",
+        "1 and 2 only"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-classification",
+      "explanation": "Statements 1 and 2 are correct. Statement 3 fails: √2 × √8 = √16 = 4, which is rational — the product of two irrationals CAN be rational.\n\n**Why not the others**\n- 1 and 3 only — includes statement 3, which is incorrect; leaves out statement 2, which is correct\n- 2 only — leaves out statement 1, which is correct\n- 3 only — includes statement 3, which is incorrect; leaves out statement 1 and 2, which are correct\n\n**Key facts**\n- Rational = p/q, decimal terminates or repeats.\n- Rational + irrational is always irrational.\n- Irrational × irrational may be rational (√2 × √8 = 4).\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Number classification — natural/whole/integer/rational/irrational/real"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-94",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following statements about prime and composite numbers:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "2 is the smallest prime and the only even prime number.",
+        "1 is neither prime nor composite.",
+        "9 is the smallest composite number."
+      ],
+      "options": [
+        "2 and 3 only",
+        "3 only",
+        "1 only",
+        "1 and 2 only"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-classification",
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is wrong: 4 (factors 1, 2, 4) is the smallest composite number; 9 is only the smallest ODD composite.\n\n**Why not the others**\n- 2 and 3 only — includes statement 3, which is incorrect; leaves out statement 1, which is correct\n- 3 only — includes statement 3, which is incorrect; leaves out statement 1 and 2, which are correct\n- 1 only — leaves out statement 2, which is correct\n\n**Key facts**\n- 2 is the only even prime.\n- 1 is neither prime nor composite.\n- 4 is the smallest composite; 9 the smallest odd composite.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Prime, composite & co-prime identification"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-95",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many prime numbers are there from 1 to 50, and how many from 1 to 100?",
+      "options": [
+        "15 and 24",
+        "16 and 25",
+        "14 and 26",
+        "15 and 25"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-classification",
+      "explanation": "There are 15 primes up to 50 (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47) and 10 more from 51 to 100 (53, 59, 61, 67, 71, 73, 79, 83, 89, 97), giving 25 up to 100.\n\n**Why not the others**\n- 15 and 24 — 24 misses one prime up to 100; the count is 25.\n- 16 and 25 — 16 counts 1 (or 49) as a prime; there are 15 primes up to 50.\n- 14 and 26 — Both counts are off by one; 2 must be included and 1 excluded.\n\n**Key facts**\n- 15 primes from 1 to 50; 25 from 1 to 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Prime, composite & co-prime identification"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-96",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "To test whether 221 is prime, up to which prime must you try divisors, and what do you find?",
+      "options": [
+        "Up to 13; 221 is prime",
+        "Up to 17; 221 is prime",
+        "Up to 13; 221 = 13 × 17, so it is not prime",
+        "Up to 11; 221 = 11 × 21, so it is not prime"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-counting-special-sums",
+      "explanation": "√221 ≈ 14.87, so it is enough to try the primes 2, 3, 5, 7, 11 and 13. 221 ÷ 13 = 17 exactly, so 221 = 13 × 17 is composite.\n\n**Why not the others**\n- Up to 13; 221 is prime — 13 does divide 221 (13 × 17 = 221), so 221 is not prime.\n- Up to 17; 221 is prime — You only need primes up to √221 ≈ 14.9, i.e. up to 13, and 13 divides it.\n- Up to 11; 221 = 11 × 21, so it is not prime — 11 × 21 = 231, not 221; 11 does not divide 221, and you must go up to 13.\n\n**Key facts**\n- Test primality only by primes up to √n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Prime, composite & co-prime identification"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-97",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many prime numbers are there between 100 and 120?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-squares-factors-extras",
+      "explanation": "Checking odd numbers from 101 to 119 against 3, 5 and 7 (√119 < 11) leaves 101, 103, 107, 109 and 113 — five primes. 111 = 3 × 37, 117 = 9 × 13 and 119 = 7 × 17 are composite.\n\n**Why not the others**\n- 4 — Misses one of 101, 103, 107, 109, 113.\n- 6 — Counts 111 or 119 as prime; 111 = 3 × 37 and 119 = 7 × 17.\n- 7 — Counts both 111 and 119, which are composite.\n\n**Key facts**\n- The primes between 100 and 120: 101, 103, 107, 109, 113.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Prime, composite & co-prime identification"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-98",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Which of the following numbers between 100 and 120 is NOT a prime?",
+      "options": [
+        "111",
+        "101",
+        "107",
+        "113"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-squares-factors-extras",
+      "explanation": "111 has digit sum 3, so it is divisible by 3: 111 = 3 × 37. The other three are primes.\n\n**Why not the others**\n- 101 — 101 is prime (not divisible by 2, 3, 5 or 7).\n- 107 — 107 is prime (not divisible by 2, 3, 5 or 7).\n- 113 — 113 is prime (not divisible by 2, 3, 5 or 7).\n\n**Key facts**\n- 111 = 3 × 37 is the classic trap in the 100–120 band.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Prime, composite & co-prime identification"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-99",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the least perfect square that is divisible by each of 2, 3, 5, 6, 9 and 18?",
+      "options": [
+        "90",
+        "8100",
+        "3600",
+        "900"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-squares-factors-extras",
+      "explanation": "LCM(2, 3, 5, 6, 9, 18) = 90 = 2 × 3^{2} × 5. Make every power even by multiplying by 2 × 5: 2^{2} × 3^{2} × 5^{2} = 900 = 30^{2}.\n\n**Why not the others**\n- 90 — 90 is the LCM, but 90 = 2 × 3^{2} × 5 is not a perfect square.\n- 8100 — 8100 = 90^{2} is a square divisible by all, but not the least one.\n- 3600 — 3600 = 60^{2} works but is larger than 900.\n\n**Key facts**\n- Least perfect square divisible by given numbers: LCM, then make every prime power even.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Perfect square — unit-digit property test"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-100",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the least perfect square divisible by each of 8, 12 and 15?",
+      "options": [
+        "120",
+        "14400",
+        "900",
+        "3600"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-squares-factors-extras",
+      "explanation": "LCM(8, 12, 15) = 120 = 2^{3} × 3 × 5. Raise each odd power by one: 2^{4} × 3^{2} × 5^{2} = 3600 = 60^{2}.\n\n**Why not the others**\n- 120 — 120 is the LCM but not a perfect square.\n- 14400 — 14400 = 120^{2} is a square but not the least.\n- 900 — 900 is a square but 900 ÷ 8 is not a whole number.\n\n**Key facts**\n- LCM 120 = 2^{3} × 3 × 5 → 2^{4} × 3^{2} × 5^{2} = 3600.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Perfect square — unit-digit property test"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-101",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Which of the following numbers is divisible by 4? (Check only the number formed by its last two digits.)",
+      "options": [
+        "97634",
+        "47654",
+        "31459",
+        "83544"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-divisibility",
+      "explanation": "Only the last two digits decide divisibility by 4: 44 ÷ 4 = 11, so 83544 is divisible by 4.\n\n**Why not the others**\n- 97634 — Last two digits 34 leave remainder 2 on division by 4.\n- 47654 — Last two digits 54 leave remainder 2 on division by 4.\n- 31459 — Last two digits 59 are odd, so not divisible by 4.\n\n**Key facts**\n- Divisibility by 4: the last two digits.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-102",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The six-digit number 4573x6 is divisible by 4. Using its last two digits, how many values can the digit x take?",
+      "options": [
+        "5",
+        "4",
+        "10",
+        "3"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-divisibility",
+      "explanation": "The last two digits are x6. Multiples of 4 ending in 6 are 16, 36, 56, 76 and 96, so x ∈ {1, 3, 5, 7, 9} — five values.\n\n**Why not the others**\n- 4 — Misses one of 16, 36, 56, 76, 96.\n- 10 — Not every digit works: 06, 26, 46, 66 and 86 are not multiples of 4.\n- 3 — There are five odd digits and each gives a multiple of 4.\n\n**Key facts**\n- Divisibility by 4 depends only on the last two digits.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-103",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Using its last three digits, find the smallest number that must be subtracted from 148109326 to make it divisible by 8.",
+      "options": [
+        "6",
+        "2",
+        "4",
+        "326"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-divisibility",
+      "explanation": "Only the last three digits matter for 8: 326 = 8 × 40 + 6, so subtracting the remainder 6 gives …320, which is divisible by 8.\n\n**Why not the others**\n- 2 — 326 − 2 = 324, and 324 ÷ 8 is not whole.\n- 4 — 326 − 4 = 322, and 322 ÷ 8 is not whole.\n- 326 — Subtracting 326 works but is not the smallest; 326 ÷ 8 leaves 6.\n\n**Key facts**\n- Divisibility by 8: the last three digits.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-104",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Checking only the last three digits, which of the following numbers is divisible by 8?",
+      "options": [
+        "5432612",
+        "9876416",
+        "3145724",
+        "2468350"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-divisibility",
+      "explanation": "416 = 8 × 52, so 9876416 is divisible by 8; the other numbers end in 612, 724 and 350, none a multiple of 8.\n\n**Why not the others**\n- 5432612 — 612 ÷ 8 leaves 4.\n- 3145724 — 724 ÷ 8 leaves 4.\n- 2468350 — 350 ÷ 8 leaves 6.\n\n**Key facts**\n- Divisibility by 8: the last three digits; by 16: the last four.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-105",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The number 327AB is divisible by 6, where A and B are natural-number digits (1 to 9). What are the smallest possible values of A and B?",
+      "options": [
+        "A = 1, B = 2",
+        "A = 2, B = 4",
+        "A = 1, B = 8",
+        "A = 2, B = 1"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-divisibility",
+      "explanation": "Divisible by 6 means divisible by 2 (B even) and by 3 (digit sum a multiple of 3). Smallest even natural B = 2; then 3 + 2 + 7 + A + 2 = 14 + A must be a multiple of 3, so A = 1 (32712 = 6 × 5452).\n\n**Why not the others**\n- A = 2, B = 4 — 32724 is divisible by 6, but A = 1, B = 2 is smaller.\n- A = 1, B = 8 — 32718 is divisible by 6, but B = 2 is smaller than 8.\n- A = 2, B = 1 — 32721 is odd, so it fails the 2-test.\n\n**Key facts**\n- Divisible by 6 = passes the 2-test and the 3-test.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-106",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Which of the following numbers is divisible by 6?",
+      "options": [
+        "7314",
+        "7315",
+        "7316",
+        "4522"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-divisibility",
+      "explanation": "7314 is even and its digit sum 7 + 3 + 1 + 4 = 15 is a multiple of 3, so it is divisible by 2 and 3, hence by 6.\n\n**Why not the others**\n- 7315 — 7315 is odd, so it fails the 2-test.\n- 7316 — Digit sum 17 is not a multiple of 3.\n- 4522 — Digit sum 13 is not a multiple of 3.\n\n**Key facts**\n- Divisible by 6 = even AND digit sum divisible by 3.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-107",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The 11-digit number 7823326867X is divisible by 18. Splitting 18 into the co-prime factors 2 and 9, what is the digit X?",
+      "options": [
+        "0",
+        "4",
+        "2",
+        "8"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-squares-factors-extras",
+      "explanation": "For 2, X must be even. For 9, the digit sum 7 + 8 + 2 + 3 + 3 + 2 + 6 + 8 + 6 + 7 + X = 52 + X must be a multiple of 9, so X = 2 (sum 54).\n\n**Why not the others**\n- 0 — 0 is even, but the digit sum 52 is not a multiple of 9.\n- 4 — 4 is even, but the digit sum 56 is not a multiple of 9.\n- 8 — 8 is even, but the digit sum 60 is not a multiple of 9.\n\n**Key facts**\n- Test a composite divisor through co-prime factors: 18 = 2 × 9.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-108",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The six-digit number 10a82b is divisible by 112. Using the co-prime factors 16 and 7, what is a × b?",
+      "options": [
+        "12",
+        "8",
+        "15",
+        "24"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-squares-factors-extras",
+      "explanation": "Test 16 (last four digits a82b) and 7 together: the only choice is a = 3, b = 4, giving 103824 = 112 × 927. So a × b = 12.\n\n**Why not the others**\n- 8 — No digits a, b with a × b = 8 make 10a82b divisible by 112.\n- 15 — No digits a, b with a × b = 15 work; only a = 3, b = 4 does.\n- 24 — No digits with a × b = 24 work; only a = 3, b = 4 does.\n\n**Key facts**\n- 112 = 16 × 7, two co-prime factors.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-109",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following Assertion (A) and Reason (R):\nSelect the correct option:",
+      "assertion": "Every number divisible by both 4 and 6 is divisible by 24.",
+      "reason": "A number divisible by both 4 and 6 must be divisible by their LCM, which is 12.",
+      "options": [
+        "Both A and R are true, and R is the correct explanation of A",
+        "Both A and R are true, but R is NOT the correct explanation of A",
+        "A is true, but R is false",
+        "A is false, but R is true"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-divisibility",
+      "explanation": "A is false: 12 is divisible by 4 and by 6 but not by 24. R is true: being divisible by both guarantees only LCM(4, 6) = 12. The trap is multiplying 4 × 6 when the two share the factor 2.\n\n**Why not the others**\n- Both A and R are true, and R is the correct explanation of A — A is false (12 is a counter-example), so \"both true\" cannot be right.\n- Both A and R are true, but R is NOT the correct explanation of A — A is false, so this cannot be right either.\n- A is true, but R is false — R is true — LCM(4, 6) = 12 — so \"R is false\" is wrong.\n\n**Key facts**\n- Divisible by x and by y means divisible by LCM(x, y), not necessarily by x × y.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-110",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Every number of the form abcabc (such as 256256) is a multiple of 1001. What is 1001 as a product of primes?",
+      "options": [
+        "7 × 11 × 17",
+        "7 × 11 × 13",
+        "11 × 13 × 17",
+        "7 × 13 × 19"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-divisibility-7-13",
+      "explanation": "abcabc = abc × 1000 + abc = abc × 1001, and 1001 = 7 × 11 × 13, so every such number is divisible by 7, 11 and 13.\n\n**Why not the others**\n- 7 × 11 × 17 — 7 × 11 × 17 = 1309.\n- 11 × 13 × 17 — 11 × 13 × 17 = 2431.\n- 7 × 13 × 19 — 7 × 13 × 19 = 1729.\n\n**Key facts**\n- 1001 = 7 × 11 × 13.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Divisibility rules (2, 3, 4, 6, 8, 9, 11)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-111",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many even factors does 81900 have?",
+      "options": [
+        "108",
+        "72",
+        "36",
+        "54"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-factors",
+      "explanation": "81900 = 2^{2} × 3^{2} × 5^{2} × 7 × 13. Total factors = 3 × 3 × 3 × 2 × 2 = 108; odd factors (drop 2^{2}) = 3 × 3 × 2 × 2 = 36; even factors = 108 − 36 = 72 (or 2 × 3 × 3 × 2 × 2 = 72).\n\n**Why not the others**\n- 108 — 108 is the total number of factors, odd and even together.\n- 36 — 36 is the number of ODD factors.\n- 54 — 54 is half the total; odd and even factors are not always equal in number.\n\n**Key facts**\n- Even factors = total − odd = a × (b + 1)(c + 1)… for 2^{a}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Number of odd/even factors"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-112",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "How many perfect square factors does 3600 have?",
+      "options": [
+        "45",
+        "12",
+        "9",
+        "6"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-squares-factors-extras",
+      "explanation": "3600 = 2^{4} × 3^{2} × 5^{2}. A square factor uses even exponents only: 2 → 0, 2, 4 (3 ways); 3 → 0, 2 (2 ways); 5 → 0, 2 (2 ways). 3 × 2 × 2 = 12.\n\n**Why not the others**\n- 45 — 45 is the total number of factors of 3600.\n- 9 — 9 forgets that 2^{4} allows three even exponents (0, 2, 4).\n- 6 — 6 counts only two choices for the power of 2.\n\n**Key facts**\n- Perfect square factors = (⌊a/2⌋ + 1)(⌊b/2⌋ + 1)….\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Number of factors via prime factorisation"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-113",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 20^{19} + 31^{43} + 25^{30} + 36^{13}?",
+      "options": [
+        "2",
+        "0",
+        "6",
+        "7"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "Bases ending in 0, 1, 5, 6 keep their unit digit at every power, so the unit digits are 0 + 1 + 5 + 6 = 12, giving 2.\n\n**Why not the others**\n- 0 — 0 is only the unit digit of 20^{19}; the other three terms add 1 + 5 + 6.\n- 6 — 6 is only the unit digit of 36^{13}.\n- 7 — 7 drops the 5 from 25^{30}.\n\n**Key facts**\n- Unit digits 0, 1, 5, 6 never change under powers.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit of an expression (sum/product of powers)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-114",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 156^{73} × 25^{4}?",
+      "options": [
+        "5",
+        "6",
+        "1",
+        "0"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "156^{73} ends in 6 and 25^{4} ends in 5, because 6 and 5 keep their unit digit; 6 × 5 = 30, so the product ends in 0.\n\n**Why not the others**\n- 5 — 5 is the unit digit of 25^{4} alone.\n- 6 — 6 is the unit digit of 156^{73} alone.\n- 1 — 1 has no basis — neither 6 nor 5 ever becomes 1.\n\n**Key facts**\n- A base ending in 5 or 6 keeps that unit digit.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit of an expression (sum/product of powers)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-115",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 234^{31} + 59^{26}?",
+      "options": [
+        "5",
+        "7",
+        "3",
+        "1"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "234^{31}: base ends in 4 and the power is odd, so 4. 59^{26}: base ends in 9 and the power is even, so 1. 4 + 1 = 5.\n\n**Why not the others**\n- 7 — 7 uses 6 for 234^{31}, but an ODD power of a 4-ending base ends in 4.\n- 3 — 3 uses 9 for 59^{26}, but an EVEN power of a 9-ending base ends in 1.\n- 1 — 1 drops the first term.\n\n**Key facts**\n- 4: odd power → 4, even → 6.\n- 9: odd power → 9, even → 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit of an expression (sum/product of powers)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-116",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 79^{23} × 144^{42}?",
+      "options": [
+        "4",
+        "6",
+        "9",
+        "5"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "79^{23}: odd power of a 9-ending base → 9. 144^{42}: even power of a 4-ending base → 6. 9 × 6 = 54, so the unit digit is 4.\n\n**Why not the others**\n- 6 — 6 treats 79^{23} as ending in 1, but an odd power of 9 ends in 9.\n- 9 — 9 ignores the factor 144^{42}.\n- 5 — 5 adds 9 + 6 instead of multiplying.\n\n**Key facts**\n- 9: odd → 9, even → 1; 4: odd → 4, even → 6.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit of an expression (sum/product of powers)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-117",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 42^{23}?",
+      "options": [
+        "8",
+        "2",
+        "4",
+        "6"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "Only the last digit 2 matters. Powers of 2 cycle 2, 4, 8, 6. 23 ÷ 4 leaves 3, so take the 3rd term: 8.\n\n**Why not the others**\n- 2 — 2 is the 1st term of the cycle; 23 mod 4 = 3 points to the 3rd.\n- 4 — 4 is the 2nd term of the cycle.\n- 6 — 6 is the 4th term, used only when the power is a multiple of 4.\n\n**Key facts**\n- Powers of 2 cycle 2, 4, 8, 6.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit — cyclicity of powers"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-118",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 142^{20}?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "The base ends in 2 (cycle 2, 4, 8, 6). 20 ÷ 4 leaves 0, and remainder 0 means the LAST (4th) term: 6.\n\n**Why not the others**\n- 2 — 2 treats remainder 0 as the 1st term; it is the 4th.\n- 4 — 4 is the 2nd term of the cycle.\n- 8 — 8 is the 3rd term of the cycle.\n\n**Key facts**\n- Remainder 0 on (power ÷ 4) means the 4th term of the cycle.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit — cyclicity of powers"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-119",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 23^{17}?",
+      "options": [
+        "9",
+        "7",
+        "1",
+        "3"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "Base ends in 3: cycle 3, 9, 7, 1. 17 ÷ 4 leaves 1, so the 1st term: 3.\n\n**Why not the others**\n- 9 — 9 is the 2nd term of the cycle 3, 9, 7, 1.\n- 7 — 7 is the 3rd term.\n- 1 — 1 is the 4th term, for powers that are multiples of 4.\n\n**Key facts**\n- Powers of 3 cycle 3, 9, 7, 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit — cyclicity of powers"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-120",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of 58^{30}?",
+      "options": [
+        "8",
+        "2",
+        "6",
+        "4"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "Base ends in 8: cycle 8, 4, 2, 6. 30 ÷ 4 leaves 2, so the 2nd term: 4.\n\n**Why not the others**\n- 8 — 8 is the 1st term of the cycle 8, 4, 2, 6.\n- 2 — 2 is the 3rd term.\n- 6 — 6 is the 4th term.\n\n**Key facts**\n- Powers of 8 cycle 8, 4, 2, 6.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit — cyclicity of powers"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-121",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of P = 164^{169} + 333^{337} − 727^{726}?",
+      "options": [
+        "2",
+        "6",
+        "8",
+        "0"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-unit-digit",
+      "explanation": "164^{169}: odd power of 4 → 4. 333^{337}: 337 mod 4 = 1 → 3. 727^{726}: 726 mod 4 = 2 → 9. So 4 + 3 − 9 = 7 − 9; borrow 10: 17 − 9 = 8.\n\n**Why not the others**\n- 2 — 2 subtracts 7 from 9 the wrong way round; you must borrow: 17 − 9 = 8.\n- 6 — 6 uses 6 for 164^{169}, but an odd power of 4 ends in 4.\n- 0 — 0 uses 7 for 727^{726}, but 726 mod 4 = 2 gives 9.\n\n**Key facts**\n- For a difference of unit digits, borrow 10 when needed.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit of an expression (sum/product of powers)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-122",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the unit digit of the factorial sum 1! + 2! + 3! + … + 100!?",
+      "options": [
+        "0",
+        "3",
+        "9",
+        "4"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "From 5! onwards every factorial contains 2 × 5, so it ends in 0. Only 1 + 2 + 6 + 24 = 33 matters, so the unit digit is 3.\n\n**Why not the others**\n- 0 — 0 forgets that 1! to 4! do not end in 0.\n- 9 — 9 stops at 3! (1 + 2 + 6).\n- 4 — 4 is the unit digit of 4! alone.\n\n**Key facts**\n- Every factorial from 5! on ends in 0.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Unit digit of an expression (sum/product of powers)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-123",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the highest power of 2 that divides 100!?",
+      "options": [
+        "88",
+        "97",
+        "50",
+        "96"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "⌊100/2⌋ + ⌊100/4⌋ + ⌊100/8⌋ + ⌊100/16⌋ + ⌊100/32⌋ + ⌊100/64⌋ = 50 + 25 + 12 + 6 + 3 + 1 = 97.\n\n**Why not the others**\n- 88 — 88 stops dividing too early (50 + 25 + 12 + 1); you must also add ⌊100/16⌋ = 6 and ⌊100/32⌋ = 3.\n- 50 — 50 counts only the even numbers, not the extra 2s in 4, 8, 16, ….\n- 96 — 96 drops the ⌊100/64⌋ = 1 term.\n\n**Key facts**\n- Highest power of a prime p in n! = ⌊n/p⌋ + ⌊n/p^{2}⌋ + ….\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Trailing zeros in a factorial"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-124",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Consider the following statements about HCF and LCM:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "HCF takes the lowest power of each common prime, and LCM takes the highest power of every prime.",
+        "For two co-prime numbers the LCM is simply their product.",
+        "In Euclid's division method the last non-zero remainder is the LCM."
+      ],
+      "options": [
+        "1 and 3 only",
+        "3 only",
+        "1 and 2 only",
+        "2 only"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "Statements 1 and 2 are correct. In Euclid's method the last non-zero remainder is the HCF, not the LCM (48, 18 → 12 → 6 gives HCF 6).\n\n**Why not the others**\n- 1 and 3 only — includes statement 3, which is incorrect; leaves out statement 2, which is correct\n- 3 only — includes statement 3, which is incorrect; leaves out statement 1 and 2, which are correct\n- 2 only — leaves out statement 1, which is correct\n\n**Key facts**\n- HCF: lowest powers; LCM: highest powers.\n- Co-prime numbers: LCM = product.\n- Euclid's method gives the HCF.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF × LCM = product of two numbers"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-125",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Writing the decimals as fractions, what is the HCF of 1.43, 1.87 and 20.9?",
+      "options": [
+        "11",
+        "1.1",
+        "0.011",
+        "0.11"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "1.43 = 143/100, 1.87 = 187/100, 20.9 = 209/10. HCF of fractions = HCF(143, 187, 209) ÷ LCM(100, 100, 10) = 11/100 = 0.11.\n\n**Why not the others**\n- 11 — 11 is the HCF of 143, 187, 209 but forgets to divide by the LCM of denominators (100).\n- 1.1 — 1.1 divides by 10 instead of 100.\n- 0.011 — 0.011 divides by 1000 instead of 100.\n\n**Key facts**\n- HCF of fractions = HCF of numerators ÷ LCM of denominators.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF × LCM = product of two numbers"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-126",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the LCM of the fractions 3/4, 5/6 and 9/10?",
+      "options": [
+        "1/60",
+        "90",
+        "45/2",
+        "45/60"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "LCM of fractions = LCM(3, 5, 9) ÷ HCF(4, 6, 10) = 45 ÷ 2 = 45/2.\n\n**Why not the others**\n- 1/60 — 1/60 is the HCF of the fractions (HCF of numerators ÷ LCM of denominators).\n- 90 — 90 multiplies by the HCF of the denominators instead of dividing.\n- 45/60 — 45/60 divides by the LCM of the denominators instead of their HCF.\n\n**Key facts**\n- LCM of fractions = LCM of numerators ÷ HCF of denominators.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF × LCM = product of two numbers"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-127",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Three bells ring at intervals of 9, 12 and 15 minutes. If they rang together at 8:00 a.m., when will the bells next ring together?",
+      "options": [
+        "8:36 a.m.",
+        "11:00 a.m.",
+        "9:00 a.m.",
+        "8:45 a.m."
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-hcf-lcm-remainder",
+      "explanation": "LCM(9, 12, 15) = 180 minutes = 3 hours, so they ring together again at 11:00 a.m.\n\n**Why not the others**\n- 8:36 a.m. — 36 minutes is LCM(9, 12) only; the 15-minute bell is not ringing then.\n- 9:00 a.m. — 60 minutes is LCM(12, 15) only; the 9-minute bell is not ringing then.\n- 8:45 a.m. — 45 minutes is LCM(9, 15) only; the 12-minute bell is not ringing then.\n\n**Key facts**\n- Bells/lights starting together coincide after the LCM of their intervals.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-128",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "Three runners start together from the same point on a circular track and complete one lap in 24 s, 36 s and 54 s. After how long will they next be together at the starting point?",
+      "options": [
+        "1 min 12 s",
+        "6 s",
+        "3 min 36 s",
+        "1 min 48 s"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-hcf-lcm-applications",
+      "explanation": "LCM(24, 36, 54) = 216 s = 3 min 36 s.\n\n**Why not the others**\n- 1 min 12 s — 72 s is LCM(24, 36) only.\n- 6 s — 6 s is the HCF, not the LCM.\n- 1 min 48 s — 108 s is LCM(36, 54) only; 108 is not a multiple of 24.\n\n**Key facts**\n- Runners meet at the start after the LCM of their lap times.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-129",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "A room 15 m 17 cm long and 9 m 2 cm broad is to be paved with identical square tiles of the largest possible size. How many tiles are needed?",
+      "options": [
+        "41",
+        "814",
+        "59",
+        "1628"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-hcf-lcm-applications",
+      "explanation": "Side = HCF(1517, 902) = 41 cm. Tiles = (1517 ÷ 41) × (902 ÷ 41) = 37 × 22 = 814.\n\n**Why not the others**\n- 41 — 41 cm is the side of the tile, not the number of tiles.\n- 59 — 59 adds 37 + 22 instead of multiplying.\n- 1628 — 1628 doubles the correct count.\n\n**Key facts**\n- Largest square tile = HCF of the sides; count = (L ÷ side)(B ÷ side).\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-130",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the largest length of a measuring tape that can measure 7 m, 3 m 85 cm and 12 m 95 cm an exact number of times?",
+      "options": [
+        "7 cm",
+        "5 cm",
+        "35 cm",
+        "70 cm"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-hcf-lcm-applications",
+      "explanation": "Convert to cm: 700, 385, 1295. HCF(700, 385, 1295) = 35 cm.\n\n**Why not the others**\n- 7 cm — 7 cm measures all three exactly but is not the largest.\n- 5 cm — 5 cm measures all three exactly but is not the largest.\n- 70 cm — 70 cm does not divide 385 cm.\n\n**Key facts**\n- The largest common measure is the HCF.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-131",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the greatest number that divides 1305, 4665 and 6905, leaving the same remainder in each case?",
+      "options": [
+        "560",
+        "2240",
+        "1120",
+        "3360"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-hcf-lcm-remainder",
+      "explanation": "Differences: 4665 − 1305 = 3360, 6905 − 4665 = 2240, 6905 − 1305 = 5600. HCF(3360, 2240, 5600) = 1120 (each number leaves 185).\n\n**Why not the others**\n- 560 — 560 divides all the differences but is not the greatest.\n- 2240 — 2240 does not divide 3360.\n- 3360 — 3360 does not divide 2240.\n\n**Key facts**\n- Greatest number leaving the same remainder = HCF of the differences.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-132",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the greatest number that divides 1657 and 2037, leaving remainders 6 and 5 respectively?",
+      "options": [
+        "13",
+        "127",
+        "16",
+        "254"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "Subtract the remainders: 1657 − 6 = 1651 = 13 × 127 and 2037 − 5 = 2032 = 16 × 127. HCF = 127.\n\n**Why not the others**\n- 13 — 13 divides 1651 but not 2032.\n- 16 — 16 divides 2032 but not 1651.\n- 254 — 254 divides neither 1651 nor 2032 exactly.\n\n**Key facts**\n- Greatest number leaving remainders a, b on x, y = HCF(x − a, y − b).\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-133",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the least number which, when divided by 5, 7 and 9, leaves a remainder of 3 in each case?",
+      "options": [
+        "315",
+        "312",
+        "633",
+        "318"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-hcf-lcm-remainder",
+      "explanation": "LCM(5, 7, 9) = 315; add the common remainder: 315 + 3 = 318.\n\n**Why not the others**\n- 315 — 315 is the LCM itself, which leaves remainder 0.\n- 312 — 312 subtracts the remainder instead of adding it.\n- 633 — 633 = 2 × 315 + 3 also works, but is not the least.\n\n**Key facts**\n- Least number leaving the same remainder R = LCM + R.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-134",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the least number which, when divided by 4, 5 and 6, leaves remainders 3, 4 and 5 respectively?",
+      "options": [
+        "61",
+        "57",
+        "119",
+        "59"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "Each divisor − remainder = 1, the same K. So the number is LCM(4, 5, 6) − 1 = 60 − 1 = 59.\n\n**Why not the others**\n- 61 — 61 adds 1 to the LCM instead of subtracting.\n- 57 — 57 leaves 1 on division by 4.\n- 119 — 119 = 2 × 60 − 1 works but is not the least.\n\n**Key facts**\n- When every divisor − remainder is the same K, the least number is LCM − K.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-135",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the largest four-digit number exactly divisible by 88?",
+      "options": [
+        "9988",
+        "9944",
+        "9900",
+        "9856"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "9999 ÷ 88 leaves 55, so 9999 − 55 = 9944 = 88 × 113.\n\n**Why not the others**\n- 9988 — 9988 ÷ 88 is not whole.\n- 9900 — 9900 ÷ 88 is not whole.\n- 9856 — 9856 is divisible by 88 but 9944 is larger.\n\n**Key facts**\n- Largest n-digit multiple = largest n-digit number − its remainder.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "HCF & LCM — word problems (bells, greatest divisor, least number)"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-136",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "On dividing a number by 17, the quotient is 9 and the remainder is 13. What is the number?",
+      "options": [
+        "153",
+        "140",
+        "166",
+        "179"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-hcf-lcm-remainder",
+      "explanation": "Dividend = divisor × quotient + remainder = 17 × 9 + 13 = 166.\n\n**Why not the others**\n- 153 — 153 = 17 × 9 forgets to add the remainder.\n- 140 — 140 subtracts the remainder.\n- 179 — 179 adds the remainder twice.\n\n**Key facts**\n- Dividend = divisor × quotient + remainder.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Remainder — divisor as a multiple / successive division"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-137",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "A number leaves a remainder of 21 when divided by 45. What is the remainder when the same number is divided by 15?",
+      "options": [
+        "6",
+        "21",
+        "3",
+        "0"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-hcf-lcm-remainder",
+      "explanation": "N = 45k + 21. Since 15 divides 45, the remainder by 15 is 21 mod 15 = 6.\n\n**Why not the others**\n- 21 — 21 cannot be a remainder on division by 15; reduce it further.\n- 3 — 3 is 21 ÷ 7 — the remainder must be reduced modulo 15, not divided.\n- 0 — 0 would need 21 to be a multiple of 15.\n\n**Key facts**\n- If d divides D, remainder by d = (remainder by D) mod d.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Remainder — divisor as a multiple / successive division"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-138",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the remainder when 8^{8} + 6 is divided by 7?",
+      "options": [
+        "1",
+        "0",
+        "6",
+        "2"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "8 leaves 1 on division by 7, so 8^{8} leaves 1^{8} = 1. Then 1 + 6 = 7, which leaves 0.\n\n**Why not the others**\n- 1 — 1 is the remainder of 8^{8} alone; the +6 must be added.\n- 6 — 6 forgets the 1 from 8^{8}.\n- 2 — 2 has no basis — 8 leaves 1 on 7, not 2.\n\n**Key facts**\n- Remainder of a sum/product = sum/product of remainders, reduced again.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Remainder of powers — cyclicity/pattern method"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-139",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "What is the remainder when 1421 × 1423 × 1425 is divided by 12?",
+      "options": [
+        "1",
+        "3",
+        "9",
+        "5"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "Remainders on 12: 1421 → 5, 1423 → 7, 1425 → 9. 5 × 7 × 9 = 315 = 12 × 26 + 3, so the remainder is 3.\n\n**Why not the others**\n- 1 — 1 multiplies wrongly; 5 × 7 × 9 = 315, which leaves 3.\n- 9 — 9 is only the remainder of 1425.\n- 5 — 5 is only the remainder of 1421.\n\n**Key facts**\n- Multiply the remainders and reduce again.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Remainder — divisor as a multiple / successive division"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-140",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "For every odd natural number n, the expression a^{n} + b^{n} is always divisible by:",
+      "options": [
+        "a + b",
+        "a − b",
+        "a^{2} + b^{2}",
+        "ab"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-number-system-note-remainder-hcf-extras",
+      "explanation": "For odd n, a^{n} + b^{n} = (a + b)(a^{n−1} − a^{n−2}b + … + b^{n−1}). E.g. 3^{3} + 2^{3} = 35 = 5 × 7.\n\n**Why not the others**\n- a − b — a − b divides a^{n} − b^{n}, not a^{n} + b^{n}: 5^{3} + 2^{3} = 133 is not divisible by 5 − 2 = 3.\n- a^{2} + b^{2} — a^{2} + b^{2} need not divide it: 1^{3} + 2^{3} = 9 is not divisible by 1 + 4 = 5.\n- ab — ab need not divide it: 1^{1} + 2^{1} = 3 is not divisible by 1 × 2 = 2.\n\n**Key facts**\n- a^{n} + b^{n} is divisible by a + b when n is odd.\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Remainder of powers — cyclicity/pattern method"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-number-system-mcq-141",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-number-system",
+      "question": "The pure recurring decimal 0.272727… is equal to:",
+      "options": [
+        "27/100",
+        "3/10",
+        "3/11",
+        "2/7"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-number-system-note-fractions-decimals",
+      "explanation": "Pure recurring: the repeating block over as many 9s as it has digits: 0.272727… = 27/99 = 3/11.\n\n**Why not the others**\n- 27/100 — 27/100 = 0.27 terminates; it does not repeat.\n- 3/10 — 3/10 = 0.3.\n- 2/7 — 2/7 = 0.285714….\n\n**Key facts**\n- Pure recurring decimal = block ÷ (as many 9s).\n\n*Source: APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Classification of Number System, Divisibility Rule, Factors, Unit Digit, Number of Zeros, LCM and HCF, Remainder Theorem, Fractions, Decimals, Perfect Square); NCERT Class 6-10 number chapters; PYQ bank .research/pyq-bank/ment-number-system.md",
+      "verified": true,
+      "covers": [
+        "Recurring decimal to fraction conversion"
+      ],
+      "tags": [
+        "number-system",
+        "completeness"
       ]
     }
   ]

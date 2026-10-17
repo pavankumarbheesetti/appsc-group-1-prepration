@@ -149,6 +149,26 @@
         "chained",
         "riddle"
       ]
+    },
+    {
+      "id": "ment-relationships-note-relations-seating-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-relationships",
+      "title": "Relation words, family counts, facing rules and \"persons between\"",
+      "body": "### Relation words, family counts, facing rules and \"persons between\"\n\n**The idea in one sentence**\nMost blood-relation and seating slips come from a fuzzy relation word or a wrong facing direction, so fix the vocabulary and the direction rules once.\n\n**Do it the slow way first (no formula)**\n\"The son of my father's sister\" — walk it: my father's sister is my aunt (paternal); her son is the child of my aunt, which makes him my cousin. Each relation word is just one step up, across or down the tree.\n\n**What the symbols mean**\n□ (or +) means male, ○ (or −) means female, \"=\" means a married couple, and a vertical line means parent above, child below. \"Facing the centre\" means everyone looks inwards; \"facing outward\" means everyone looks away from the table.\n\n**The formula (now that you know what it does)**\nRelation words\n| Word | Meaning |\n|---|---|\n| Uncle / aunt | brother / sister of a parent (or a parent's sibling's spouse) |\n| Nephew / niece | son / daughter of one's brother or sister |\n| Cousin | child of one's uncle or aunt |\n| Grandfather / grandmother | father / mother of a parent |\n| In-laws | relatives by marriage: spouse's parents, spouse's siblings, a child's spouse |\n\nFacing rules\n| Situation | Their left is… |\n|---|---|\n| Row facing north | your left as you look the same way (west) |\n| Row facing south | your right — left and right flip (their right hand points west) |\n| Circle facing the centre | clockwise |\n| Circle facing outward | anticlockwise |\n\n\"Persons between\"\n- If A is p-th from the left and B is q-th from the left (p < q), there are q − p − 1 people between them.\n- With positions from opposite ends in a row of N: convert one of them first (from the right r → from the left N − r + 1). In a row of 40, A 12th from the left and B 15th from the right (= 26th from the left) have 26 − 12 − 1 = 13 people between them.\n- \"Exactly two persons sit between A and B\" means their positions differ by 3.\n- Rank shifting: if a person 15th from the left in a row of 40 shifts 6 places to the right, he is 21st from the left, i.e. 40 − 21 + 1 = 20th from the right.\n\nQuestion types: pointing/introduction based, family based (relations by blood or by law) and coded (symbols stand for relations).\n\n**Exam-level example**\nFamily count: P is the father of Q and R (both male); S is Q's wife; T is S's son; U is R's sister. Mark genders as you read — P, Q, R, T male; S, U female — so there are 2 female members.\nMixed relation + seating: A (father of C) sits at the left end of a north-facing row, C sits between A and D, D is C's sister and B, D's mother, is at the right end. The row is A, C, D, B, so the person right of C is D, A's daughter.\n\n**Common traps**\n- Calling a sibling's child a cousin — that is a nephew or niece.\n- Forgetting that facing south flips left and right.\n- Counting the two named people as \"between\" them.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| sibling's child | nephew / niece |\n| uncle's or aunt's child | cousin |\n| facing centre: left = clockwise | outward: left = anticlockwise |\n| q − p − 1 | people sitting between p-th and q-th |",
+      "keyPoints": [
+        "Uncle/aunt = a parent's sibling; nephew/niece = a sibling's child; cousin = an uncle's or aunt's child",
+        "Family-chart notation: □ or + male, ○ or − female, = married couple, vertical line parent to child",
+        "Facing south flips left and right; in a circle facing outward, left is anticlockwise",
+        "People between p-th and q-th from the same end = q − p − 1; convert opposite-end positions first",
+        "Count family members by fixing every gender as you read"
+      ],
+      "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
+      "verified": true,
+      "tags": [
+        "relationships",
+        "completeness"
+      ]
     }
   ]
 }

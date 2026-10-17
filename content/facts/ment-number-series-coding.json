@@ -1,0 +1,853 @@
+{
+  "version": 1,
+  "subtopicId": "ment-number-series-coding",
+  "facts": [
+    {
+      "id": "ns-ladder",
+      "fact": "Test a number series in order: difference, ratio, squares/cubes, prime gaps, alternating, Fibonacci.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "difference",
+        "ratio"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-card-1"
+      ]
+    },
+    {
+      "id": "ns-difference",
+      "fact": "An arithmetic series adds the same difference each time (3, 7, 11, 15 → 19).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-3",
+        "ment-number-series-coding-mcq-31"
+      ]
+    },
+    {
+      "id": "ns-ratio",
+      "fact": "A geometric series multiplies by the same ratio each time (5, 10, 20, 40 → 80).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-4",
+        "ment-number-series-coding-mcq-32"
+      ]
+    },
+    {
+      "id": "ns-squares",
+      "fact": "Square series use n² or n² ± k; consecutive odd differences (3, 5, 7, 9) signal them (2, 5, 10, 17, 26 = n² + 1).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-5",
+        "ment-number-series-coding-mcq-33",
+        "ment-number-series-coding-mcq-36"
+      ]
+    },
+    {
+      "id": "ns-cubes",
+      "fact": "Cube series use n³ (1, 8, 27, 64, 125) — directly, or as amounts added/subtracted.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-34",
+        "ment-number-series-coding-mcq-35"
+      ]
+    },
+    {
+      "id": "ns-prime-gaps",
+      "fact": "Prime-gap series add consecutive (or alternate) primes as the jumps (17, 30, 47, 66, 89 → 118).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-6",
+        "ment-number-series-coding-mcq-37",
+        "ment-number-series-coding-mcq-43"
+      ]
+    },
+    {
+      "id": "ns-second-diff",
+      "fact": "When the jumps grow steadily, write the jumps of the jumps (second differences) and extend them.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-21",
+        "ment-number-series-coding-mcq-38",
+        "ment-number-series-coding-mcq-39"
+      ]
+    },
+    {
+      "id": "ns-alternating",
+      "fact": "An alternating series applies two rules turn by turn; solve alternate terms (or gaps) separately.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-7",
+        "ment-number-series-coding-mcq-22",
+        "ment-number-series-coding-mcq-40"
+      ]
+    },
+    {
+      "id": "ns-fibonacci",
+      "fact": "A Fibonacci-type series makes each term the sum of the previous two (2, 3, 5, 8, 13, 21 → 34).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-8",
+        "ment-number-series-coding-mcq-41"
+      ]
+    },
+    {
+      "id": "ns-mult-add",
+      "fact": "Mixed-operation series use × n ± k at each step (10, 22, 46, 94 = × 2 + 2; 7, 27, 87 = × 3 + 6).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-10",
+        "ment-number-series-coding-mcq-42",
+        "ment-number-series-coding-mcq-43"
+      ]
+    },
+    {
+      "id": "ns-wrong-term",
+      "fact": "Wrong term: fix the rule from the majority of terms, then the one term that breaks it is wrong.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "wrong term"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-9",
+        "ment-number-series-coding-mcq-33"
+      ]
+    },
+    {
+      "id": "ns-missing-verify",
+      "fact": "Missing term: fix the rule from the neighbours and verify it forward past the gap.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "missing"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-10",
+        "ment-number-series-coding-card-4"
+      ]
+    },
+    {
+      "id": "al-positions",
+      "fact": "Letter positions run A = 1 to Z = 26; every letter problem is position arithmetic.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "position"
+      ],
+      "taughtIn": "ment-number-series-coding-note-alphabet-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-1",
+        "ment-number-series-coding-mcq-44",
+        "ment-number-series-coding-mcq-45"
+      ]
+    },
+    {
+      "id": "al-ejoty",
+      "fact": "EJOTY anchors: E = 5, J = 10, O = 15, T = 20, Y = 25.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "ejoty"
+      ],
+      "taughtIn": "ment-number-series-coding-note-alphabet-series",
+      "drilledBy": [
+        "ment-number-series-coding-card-5",
+        "ment-number-series-coding-mcq-44",
+        "ment-number-series-coding-mcq-45"
+      ]
+    },
+    {
+      "id": "al-opposite",
+      "fact": "Opposite (mirror) letter = 27 − position: A–Z, B–Y, C–X, D–W, M–N.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "27"
+      ],
+      "taughtIn": "ment-number-series-coding-note-alphabet-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-2",
+        "ment-number-series-coding-card-6",
+        "ment-number-series-coding-mcq-46"
+      ]
+    },
+    {
+      "id": "al-opposite-mnemonic",
+      "fact": "Opposite pairs are remembered as CruX, LoVE, InneR, Jungle Queen, KeeP, LOve.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "love",
+        "crux"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-card-15"
+      ]
+    },
+    {
+      "id": "al-gap-series",
+      "fact": "A single-sequence letter series has a gap pattern of its own (A, C, F, J, O: gaps 2, 3, 4, 5 → U).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-alphabet-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-11",
+        "ment-number-series-coding-mcq-47"
+      ]
+    },
+    {
+      "id": "al-prime-positions",
+      "fact": "Some letter series take letters at prime positions: B, C, E, G, K, M, Q (2, 3, 5, 7, 11, 13, 17).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-48",
+        "ment-number-series-coding-mcq-49"
+      ]
+    },
+    {
+      "id": "al-grouped",
+      "fact": "A grouped letter series is split into columns, each column with its own step (BOJ, FQO, JST, NUY → RWD).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "series"
+      ],
+      "taughtIn": "ment-number-series-coding-note-alphabet-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-12",
+        "ment-number-series-coding-mcq-28",
+        "ment-number-series-coding-card-7",
+        "ment-number-series-coding-mcq-50"
+      ]
+    },
+    {
+      "id": "al-wraparound",
+      "fact": "Past Z, subtract 26 from the position (wrap-around); before A, add 26.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "26"
+      ],
+      "taughtIn": "ment-number-series-coding-note-alphabet-series",
+      "drilledBy": [
+        "ment-number-series-coding-card-7"
+      ]
+    },
+    {
+      "id": "al-alphanumeric",
+      "fact": "An alphanumeric series is two tracks: solve the letters and the numbers separately (C3, E5, G7, I9 → K11).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "alphanumeric"
+      ],
+      "taughtIn": "ment-number-series-coding-note-alphabet-series",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-13",
+        "ment-number-series-coding-card-8"
+      ]
+    },
+    {
+      "id": "al-wrong-letter-term",
+      "fact": "A wrong letter-group is the one that breaks the column steps (FHH, JLL, NPP, RST — should be RTT).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "wrong"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-51"
+      ]
+    },
+    {
+      "id": "al-from-right",
+      "fact": "The k-th letter from the right is the (27 − k)-th from the left; then count left/right as told.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "from the right"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-52"
+      ]
+    },
+    {
+      "id": "cd-shift",
+      "fact": "Letter-shift coding moves each letter by a fixed number of places (TIGER → WLJHU is +3).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "code"
+      ],
+      "taughtIn": "ment-number-series-coding-note-letter-coding",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-25",
+        "ment-number-series-coding-mcq-53"
+      ]
+    },
+    {
+      "id": "cd-alt-shift",
+      "fact": "The shift can alternate (−1, +1: KANPUR → JBMQTS); check the sign on the sample.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "kanpur"
+      ],
+      "taughtIn": "ment-number-series-coding-note-letter-coding",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-14"
+      ]
+    },
+    {
+      "id": "cd-wrap",
+      "fact": "In shift coding wrap round the alphabet: after Z comes A and before A comes Z (BOMBAY → APLCZZ).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "bombay"
+      ],
+      "taughtIn": "ment-number-series-coding-note-letter-coding",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-14"
+      ]
+    },
+    {
+      "id": "cd-opposite",
+      "fact": "Opposite-letter coding replaces every letter by its 27 − n mirror (UNICORN → FMRXLIM).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "code"
+      ],
+      "taughtIn": "ment-number-series-coding-note-letter-coding",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-54",
+        "ment-number-series-coding-mcq-55"
+      ]
+    },
+    {
+      "id": "cd-vowel-consonant",
+      "fact": "PYQ scheme: vowels move +13 and consonants become their opposite letters (DIRECTOR → WVIRXGBI, NEURO → MRHIB).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "director"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-56",
+        "ment-number-series-coding-mcq-57"
+      ]
+    },
+    {
+      "id": "cd-ascending",
+      "fact": "Rearrangement coding often sorts the same letters in ascending order (BEHOLD → BDEHLO, COURSE → CEORSU).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "behold"
+      ],
+      "taughtIn": "ment-number-series-coding-note-letter-coding",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-15",
+        "ment-number-series-coding-card-10"
+      ]
+    },
+    {
+      "id": "cd-descending",
+      "fact": "Descending rearrangement sorts letters Z to A (FIXED → XIFED, GAMBIT → TMIGBA).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "descending"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-card-16"
+      ]
+    },
+    {
+      "id": "cd-reverse",
+      "fact": "Reverse coding writes the word backwards (MONKEY → YEKNOM).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "monkey"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-card-17"
+      ]
+    },
+    {
+      "id": "cd-letter-digit-map",
+      "fact": "Letter-to-number coding: build a letter→digit map from the sample and substitute (PUNCTUAL = 47819765 → LUNA = 5876).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "coded"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-coding",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-16",
+        "ment-number-series-coding-mcq-58"
+      ]
+    },
+    {
+      "id": "cd-word-value",
+      "fact": "Word-value coding adds the letter positions (CAT = 24, DOG = 26 → COW = 41).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "cat"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-59"
+      ]
+    },
+    {
+      "id": "cd-count-code",
+      "fact": "A word can be coded by a count property such as (number of letters − 1): MANGO = 4, MUSKMELON = 8.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mango"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-card-18"
+      ]
+    },
+    {
+      "id": "cd-digit-op",
+      "fact": "Number-to-number coding applies one operation to every digit (64958 → 53847 is −1 per digit).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "code"
+      ],
+      "taughtIn": "ment-number-series-coding-note-number-coding",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-17",
+        "ment-number-series-coding-mcq-26"
+      ]
+    },
+    {
+      "id": "cd-digit-square",
+      "fact": "Digit-square coding writes the square of each digit (2*4*9 → 41681, so 9*7*3 → 81499).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "41681"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-card-19"
+      ]
+    },
+    {
+      "id": "cd-fictitious",
+      "fact": "Fictitious-language coding: the word common to two sentences takes the code common to both.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "code"
+      ],
+      "taughtIn": "ment-number-series-coding-note-substitution-conditional",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-18",
+        "ment-number-series-coding-mcq-27",
+        "ment-number-series-coding-card-12",
+        "ment-number-series-coding-mcq-62"
+      ]
+    },
+    {
+      "id": "cd-substitution-chain",
+      "fact": "Substitution coding (\"A is called B\"): answer with the code name, not the real word.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "called"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-60"
+      ]
+    },
+    {
+      "id": "cd-analogy",
+      "fact": "Coding by analogy repeats the first pair's transformation on the second (BOOK : CPPL :: WORD : XPSE).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "book"
+      ],
+      "taughtIn": "ment-number-series-coding-note-substitution-conditional",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-20"
+      ]
+    },
+    {
+      "id": "cd-conditional",
+      "fact": "Conditional coding: do the base substitution first, then apply the overriding condition(s).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "condition"
+      ],
+      "taughtIn": "ment-number-series-coding-note-substitution-conditional",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-19",
+        "ment-number-series-coding-card-13",
+        "ment-number-series-coding-mcq-61"
+      ]
+    },
+    {
+      "id": "cd-ds",
+      "fact": "In data-sufficiency coding a statement suffices only if it fixes the required code uniquely.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sufficien"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-62"
+      ]
+    },
+    {
+      "id": "mx-row-rule",
+      "fact": "Missing number in a grid: find one rule that every complete row (or column) obeys, then apply it.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "row"
+      ],
+      "taughtIn": "ment-number-series-coding-note-matrix-missing-number",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-29",
+        "ment-number-series-coding-mcq-30",
+        "ment-number-series-coding-mcq-67"
+      ]
+    },
+    {
+      "id": "mx-constant-total",
+      "fact": "Constant-total grids: missing number = row total − the other entries.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "total"
+      ],
+      "taughtIn": "ment-number-series-coding-note-matrix-missing-number",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-30"
+      ]
+    },
+    {
+      "id": "mx-diff-squares",
+      "fact": "A common grid rule is third = first² − second² (5, 3 → 16; 8, 6 → 28).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "row"
+      ],
+      "taughtIn": "ment-number-series-coding-note-matrix-missing-number",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-29"
+      ]
+    },
+    {
+      "id": "cls-odd-number",
+      "fact": "Odd-one-out: find the property all but one share — cubes 8, 27, 64, 125 vs 100; a digit rule in 133, 155, 221 vs 273.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "odd one"
+      ],
+      "taughtIn": "ment-number-series-coding-note-matrix-missing-number",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-23",
+        "ment-number-series-coding-mcq-63"
+      ]
+    },
+    {
+      "id": "cls-odd-pair",
+      "fact": "Odd letter pair: AZ, BY, CX are opposite pairs; DV is not (D pairs with W).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "pair"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-64"
+      ]
+    },
+    {
+      "id": "an-number",
+      "fact": "Number analogy a : b :: c : ? — find the a → b rule and apply it to c (6 : 42 = n(n + 1), so 9 : 90).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "::"
+      ],
+      "taughtIn": "ment-number-series-coding-note-matrix-missing-number",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-24",
+        "ment-number-series-coding-card-14",
+        "ment-number-series-coding-mcq-65"
+      ]
+    },
+    {
+      "id": "dict-order",
+      "fact": "Dictionary order compares words letter by letter from the left until they differ.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "dictionary"
+      ],
+      "taughtIn": "ment-number-series-coding-note-series-coding-extras",
+      "drilledBy": [
+        "ment-number-series-coding-mcq-66"
+      ]
+    }
+  ]
+}

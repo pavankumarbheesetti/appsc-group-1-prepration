@@ -1,0 +1,3639 @@
+{
+  "version": 1,
+  "subtopicId": "geo-earth-solar-system",
+  "facts": [
+    {
+      "id": "ss-definition",
+      "fact": "The solar system is the Sun plus everything bound to it by gravity — eight planets, dwarf planets, moons, asteroids, comets and meteoroids.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "dwarf planets",
+        "asteroids",
+        "comets"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-card-14"
+      ]
+    },
+    {
+      "id": "ss-nebular-kant-laplace",
+      "fact": "The Nebular Hypothesis of the solar system is associated with Kant and Laplace.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kant",
+        "Laplace"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-4",
+        "geo-earth-solar-system-card-1"
+      ]
+    },
+    {
+      "id": "ss-age-4-6",
+      "fact": "The Sun and planets formed about 4.6 billion years ago.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "4.6 billion"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-4",
+        "geo-earth-solar-system-card-1"
+      ]
+    },
+    {
+      "id": "ss-99-9",
+      "fact": "About 99.9% of the nebular matter was pulled into the centre to form the Sun.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "99.9"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-4",
+        "geo-earth-solar-system-card-1"
+      ]
+    },
+    {
+      "id": "ss-terrestrial",
+      "fact": "The terrestrial (inner) planets — Mercury, Venus, Earth, Mars — are small, rocky and dense.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "terrestrial",
+        "rocky"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-7",
+        "geo-earth-solar-system-card-2"
+      ]
+    },
+    {
+      "id": "ss-jovian",
+      "fact": "The Jovian (outer) planets — Jupiter, Saturn, Uranus, Neptune — are large, gaseous and have many moons.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Jovian",
+        "gaseous"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-7",
+        "geo-earth-solar-system-card-2"
+      ]
+    },
+    {
+      "id": "ss-asteroid-belt",
+      "fact": "The asteroid belt lies between Mars and Jupiter.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "asteroid",
+        "Mars",
+        "Jupiter"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-9",
+        "geo-earth-solar-system-card-2"
+      ]
+    },
+    {
+      "id": "ss-au",
+      "fact": "One Astronomical Unit (AU), the mean Earth–Sun distance, is about 150 million km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "150 million"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-card-15",
+        "geo-earth-solar-system-mcq-70"
+      ]
+    },
+    {
+      "id": "ss-oort",
+      "fact": "The Oort Cloud, a distant shell of icy bodies, is the source of long-period comets.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Oort"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-9"
+      ]
+    },
+    {
+      "id": "ss-kuiper-pluto",
+      "fact": "The Kuiper Belt beyond Neptune is home to Pluto.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kuiper"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-solar-system",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-9"
+      ]
+    },
+    {
+      "id": "pl-venus-hottest",
+      "fact": "Venus is the hottest planet because of the greenhouse effect of its thick CO2 atmosphere, though Mercury is closer to the Sun.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Venus",
+        "hottest"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-6",
+        "geo-earth-solar-system-card-3"
+      ]
+    },
+    {
+      "id": "pl-venus-retrograde",
+      "fact": "Venus rotates retrograde (clockwise, east to west), opposite to most planets.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Venus",
+        "retrograde"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-6",
+        "geo-earth-solar-system-card-3"
+      ]
+    },
+    {
+      "id": "pl-venus-day-year",
+      "fact": "A day on Venus (243 Earth days) is longer than its year (about 225 days).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "243"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-card-3",
+        "geo-earth-solar-system-mcq-45"
+      ]
+    },
+    {
+      "id": "pl-mars-red",
+      "fact": "Mars is called the Red Planet because of iron oxide on its surface.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Red Planet"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-3"
+      ]
+    },
+    {
+      "id": "pl-neptune-winds",
+      "fact": "Neptune has the strongest sustained winds of any planet, about 2,100 km/h.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Neptune",
+        "winds"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-6"
+      ]
+    },
+    {
+      "id": "pl-uranus-tilt",
+      "fact": "Uranus spins on its side — its axis of rotation lies nearly in the plane of its orbit.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Uranus",
+        "axis"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-6"
+      ]
+    },
+    {
+      "id": "pl-jupiter-largest",
+      "fact": "Jupiter is the largest planet; its moon Ganymede is the largest moon in the solar system.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Jupiter",
+        "largest"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-card-16",
+        "geo-earth-solar-system-mcq-44"
+      ]
+    },
+    {
+      "id": "pl-mercury-smallest",
+      "fact": "Mercury is the smallest planet and the closest to the Sun.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mercury",
+        "smallest"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-card-17",
+        "geo-earth-solar-system-mcq-44"
+      ]
+    },
+    {
+      "id": "pl-venus-twin",
+      "fact": "Venus is called Earth's twin because of its similar size, mass and composition.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "twin"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-40",
+        "geo-earth-solar-system-mcq-43"
+      ]
+    },
+    {
+      "id": "pl-milky-way",
+      "fact": "The solar system lies in the Milky Way, a barred-spiral galaxy.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Milky Way"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-22"
+      ]
+    },
+    {
+      "id": "pl-andromeda",
+      "fact": "Andromeda is the nearest major galaxy, about 2.5 million light-years away.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Andromeda"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-22"
+      ]
+    },
+    {
+      "id": "pl-light-year",
+      "fact": "A light-year (about 9.46 trillion km) is a unit of distance, not time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "light-year"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-22"
+      ]
+    },
+    {
+      "id": "pl-proxima",
+      "fact": "Proxima Centauri is the nearest star to the Sun, about 4.24 light-years away.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Proxima"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-22"
+      ]
+    },
+    {
+      "id": "pl-dwarf-criterion",
+      "fact": "A dwarf planet fails only the IAU criterion of having cleared its orbital neighbourhood.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "cleared"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-8",
+        "geo-earth-solar-system-card-4"
+      ]
+    },
+    {
+      "id": "pl-five-dwarfs",
+      "fact": "The IAU recognises five dwarf planets: Ceres, Pluto, Eris, Haumea and Makemake (Charon is a moon of Pluto).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Haumea",
+        "Makemake"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-astronomy-basics",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-28",
+        "geo-earth-solar-system-card-4"
+      ]
+    },
+    {
+      "id": "pl-meteor-chain",
+      "fact": "A meteoroid is rock in space, a meteor the streak of light as it burns, a meteorite the piece that reaches the ground.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "meteoroid",
+        "meteorite"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-10",
+        "geo-earth-solar-system-card-5"
+      ]
+    },
+    {
+      "id": "pl-comet-orbits",
+      "fact": "Comets have highly elliptical orbits, unlike the near-circular orbits of planets.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Comets",
+        "orbits"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-10"
+      ]
+    },
+    {
+      "id": "sun-composition",
+      "fact": "The Sun is about 75% hydrogen and 24% helium.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "75%",
+        "24%"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-13",
+        "geo-earth-solar-system-card-6"
+      ]
+    },
+    {
+      "id": "sun-mass-share",
+      "fact": "The Sun holds about 99.86% of the mass of the solar system.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "99.86"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-13",
+        "geo-earth-solar-system-card-6"
+      ]
+    },
+    {
+      "id": "sun-light-time",
+      "fact": "Sunlight takes about 8 minutes 20 seconds to reach the Earth.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "8 min"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-13"
+      ]
+    },
+    {
+      "id": "sun-sunspots-cool",
+      "fact": "Sunspots are dark patches cooler than the surrounding surface.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Sunspots"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-13",
+        "geo-earth-solar-system-card-6"
+      ]
+    },
+    {
+      "id": "sun-fusion",
+      "fact": "The Sun's energy comes from nuclear fusion of hydrogen into helium in its core.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "fusion"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-card-32",
+        "geo-earth-solar-system-mcq-35"
+      ]
+    },
+    {
+      "id": "moon-reflects",
+      "fact": "The Moon does not emit its own light; it reflects sunlight.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "reflect"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-11"
+      ]
+    },
+    {
+      "id": "moon-phase-29",
+      "fact": "The phases of the Moon repeat about every 29 days.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "29 days"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-11"
+      ]
+    },
+    {
+      "id": "moon-big-splat",
+      "fact": "The Moon formed from a giant impact — 'the big splat'.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "giant impact"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-11"
+      ]
+    },
+    {
+      "id": "ecl-lunar-full",
+      "fact": "A lunar eclipse occurs when the Earth comes between the Sun and Moon, only on a Full Moon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "lunar eclipse",
+        "Full Moon"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-11",
+        "geo-earth-solar-system-card-7"
+      ]
+    },
+    {
+      "id": "ecl-solar-new",
+      "fact": "A solar eclipse occurs when the Moon comes between the Sun and Earth, only on a New Moon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "solar",
+        "new"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-26",
+        "geo-earth-solar-system-card-7"
+      ]
+    },
+    {
+      "id": "ecl-annular-ring",
+      "fact": "An annular eclipse shows a 'ring of fire' because the Moon is near its farthest point and looks smaller than the Sun.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "ring of fire"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-12"
+      ]
+    },
+    {
+      "id": "ecl-umbra-total",
+      "fact": "During a total solar eclipse the observer is within the Moon's umbra.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "umbra"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-moon-eclipses",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-26",
+        "geo-earth-solar-system-card-7"
+      ]
+    },
+    {
+      "id": "ecl-nodes-5deg",
+      "fact": "Eclipses are not monthly because the Moon's orbit is tilted about 5°; they need a new/full moon near a node.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "node"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-astronomy-basics",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-26",
+        "geo-earth-solar-system-card-8"
+      ]
+    },
+    {
+      "id": "mo-tilt-66",
+      "fact": "Earth's axis is inclined at 66½° to its orbital plane, i.e. tilted 23½° from the vertical.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "66½",
+        "23½"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-14",
+        "geo-earth-solar-system-card-9"
+      ]
+    },
+    {
+      "id": "mo-rotation-24",
+      "fact": "One rotation of the Earth takes about 24 hours and causes day and night.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "day and night"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-23"
+      ]
+    },
+    {
+      "id": "mo-west-east",
+      "fact": "The Earth rotates from west to east, so the Sun appears to rise in the east and set in the west.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "rise in the east"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-23"
+      ]
+    },
+    {
+      "id": "mo-revolution-365",
+      "fact": "The Earth revolves around the Sun in an elliptical orbit in 365¼ days.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "365¼"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-15"
+      ]
+    },
+    {
+      "id": "mo-leap-year",
+      "fact": "The extra quarter day each year is collected into one extra day every four years — the leap year of 366 days.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "four years"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-15"
+      ]
+    },
+    {
+      "id": "mo-summer-solstice",
+      "fact": "On 21 June (summer solstice) the Sun is overhead at the Tropic of Cancer, giving the longest Northern Hemisphere day.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "21",
+        "Jun",
+        "Cancer"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-2",
+        "geo-earth-solar-system-card-10"
+      ]
+    },
+    {
+      "id": "mo-longest-day-june",
+      "fact": "In the Northern Hemisphere the longest day normally occurs in the first half of June (21 June).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "June"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-2"
+      ]
+    },
+    {
+      "id": "mo-winter-solstice",
+      "fact": "On 22 December (winter solstice) the Sun is overhead at the Tropic of Capricorn.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "22 Dec",
+        "Capricorn"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-card-10",
+        "geo-earth-solar-system-mcq-63"
+      ]
+    },
+    {
+      "id": "mo-equinoxes",
+      "fact": "On the equinoxes, 21 March and 23 September, the Sun is overhead at the equator and day equals night everywhere.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "21 Mar",
+        "23 Sep"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-card-10",
+        "geo-earth-solar-system-mcq-63"
+      ]
+    },
+    {
+      "id": "mo-arctic-24h",
+      "fact": "On 21 June the Arctic Circle receives 24 hours of daylight (the Sun does not set there).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Arctic Circle"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-16"
+      ]
+    },
+    {
+      "id": "mo-seasons-tilt",
+      "fact": "Seasons are caused by the Earth's axial tilt and revolution, not by its distance from the Sun.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "tilt",
+        "distance"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-27",
+        "geo-earth-solar-system-card-11"
+      ]
+    },
+    {
+      "id": "mo-aphelion-july",
+      "fact": "The Earth is farthest from the Sun (aphelion) in early July, yet the Northern Hemisphere then has summer.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "aphelion",
+        "July"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-27",
+        "geo-earth-solar-system-card-11"
+      ]
+    },
+    {
+      "id": "mo-coriolis",
+      "fact": "The Coriolis effect (Ferrel's Law) deflects moving objects to the right in the Northern Hemisphere and to the left in the Southern.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "right",
+        "left"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-21",
+        "geo-earth-solar-system-card-13"
+      ]
+    },
+    {
+      "id": "mo-coriolis-zero",
+      "fact": "The Coriolis force is zero at the Equator and increases towards the poles.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "zero at the Equator"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-21",
+        "geo-earth-solar-system-card-13"
+      ]
+    },
+    {
+      "id": "mo-circle-illumination",
+      "fact": "The circle of illumination divides the lit and dark halves of the Earth and does not align with the axis because of the tilt.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "circle of illumination"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-card-18"
+      ]
+    },
+    {
+      "id": "mo-poles-six-months",
+      "fact": "Because of the tilt the poles get about six months of daylight and six months of darkness.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "six months"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-card-19"
+      ]
+    },
+    {
+      "id": "mo-dynamic-agents",
+      "fact": "Geothermal energy, plate movements and the Earth's rotation and revolution bring dynamic changes to the Earth's surface (UPSC 2013).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Geothermal",
+        "Plate movements"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-exam-named-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-31"
+      ]
+    },
+    {
+      "id": "gr-ist-82",
+      "fact": "Indian Standard Time is based on the 82½°E meridian.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "82½"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-1",
+        "geo-earth-solar-system-card-12"
+      ]
+    },
+    {
+      "id": "gr-lat-111km",
+      "fact": "One degree of latitude is about 111 km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "111 km"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-card-20",
+        "geo-earth-solar-system-mcq-64"
+      ]
+    },
+    {
+      "id": "gr-tropics",
+      "fact": "The Tropic of Cancer is at 23½°N and the Tropic of Capricorn at 23½°S.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Tropic of Cancer",
+        "Capricorn"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-17"
+      ]
+    },
+    {
+      "id": "gr-polar-circles",
+      "fact": "The Arctic Circle is at 66½°N and the Antarctic Circle at 66½°S.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Arctic Circle"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-17"
+      ]
+    },
+    {
+      "id": "gr-torrid",
+      "fact": "The Torrid Zone, the hottest heat zone, lies between the Tropic of Cancer and the Tropic of Capricorn.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Torrid"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-19"
+      ]
+    },
+    {
+      "id": "gr-temperate",
+      "fact": "The Temperate Zones lie between the tropics and the polar circles in each hemisphere.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Temperate"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-card-21"
+      ]
+    },
+    {
+      "id": "gr-frigid",
+      "fact": "The Frigid Zones lie north of the Arctic Circle and south of the Antarctic Circle.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Frigid"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-card-21"
+      ]
+    },
+    {
+      "id": "gr-prime-meridian",
+      "fact": "The Prime Meridian (0°) passes through Greenwich and divides the Earth into Eastern and Western Hemispheres.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Greenwich"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-18"
+      ]
+    },
+    {
+      "id": "gr-15-per-hour",
+      "fact": "The Earth rotates 15° of longitude per hour, i.e. 1° in 4 minutes.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "15°",
+        "minutes"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-18"
+      ]
+    },
+    {
+      "id": "gr-same-meridian",
+      "fact": "All places on the same meridian have the same local (solar) time.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "same meridian"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-earth-motions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-18",
+        "geo-earth-solar-system-mcq-23"
+      ]
+    },
+    {
+      "id": "gr-idl-180",
+      "fact": "The International Date Line broadly follows the 180° meridian.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "International Date Line",
+        "180°"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-18"
+      ]
+    },
+    {
+      "id": "gr-ist-5-30",
+      "fact": "IST is 5 hours 30 minutes ahead of GMT.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "5:30"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-card-12",
+        "geo-earth-solar-system-mcq-67"
+      ]
+    },
+    {
+      "id": "gr-east-ahead",
+      "fact": "Places east of Greenwich are ahead of Greenwich time; places west are behind.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "east",
+        "ahead"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-lat-long-time",
+      "drilledBy": [
+        "geo-earth-solar-system-card-12",
+        "geo-earth-solar-system-mcq-66"
+      ]
+    },
+    {
+      "id": "gr-kohima-calc",
+      "fact": "At 10:00 AM IST, the local time at Kohima (94°E) is about 10:46 AM (11½° × 4 min = 46 min ahead).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "10:46"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-astronomy-basics",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-25"
+      ]
+    },
+    {
+      "id": "nf-goldilocks",
+      "fact": "The Goldilocks (habitable) zone is the orbital band around a star where liquid water can exist — used in the search for Earth-like planets.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Goldilocks"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-exam-named-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-29"
+      ]
+    },
+    {
+      "id": "nf-magnetic-reversal",
+      "fact": "Earth's magnetic field has reversed its polarity many times over geological time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "magnetic field",
+        "revers"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-exam-named-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-30"
+      ]
+    },
+    {
+      "id": "nf-life-modified-air",
+      "fact": "Living organisms modified the early atmosphere; the early atmosphere had no free oxygen.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "modified",
+        "atmosphere"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-exam-named-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-30"
+      ]
+    },
+    {
+      "id": "nf-pole-star",
+      "fact": "The Pole Star (Polaris) lies nearly above Earth's axis of rotation, so it appears fixed and marks north.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "axis of rotation"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-20"
+      ]
+    },
+    {
+      "id": "nf-iron-catastrophe",
+      "fact": "The Iron Catastrophe was the heating of the young Earth to iron's melting point, letting iron and nickel sink to form the core.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Iron Catastrophe"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-exam-named-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-5"
+      ]
+    },
+    {
+      "id": "nf-goe",
+      "fact": "The Great Oxidation Event, about 2.4 billion years ago, was the rise of free oxygen from early photosynthesis.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Great Oxidation Event",
+        "2.4 billion"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-exam-named-facts",
+      "drilledBy": [
+        "geo-earth-solar-system-card-22"
+      ]
+    },
+    {
+      "id": "nf-saros",
+      "fact": "The Saros cycle, after which similar eclipses repeat, is about 18 years 11 days (8 hours).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Saros",
+        "18 years"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-57"
+      ]
+    },
+    {
+      "id": "or-astronomy",
+      "fact": "Astronomy, the study of celestial objects, is one of the oldest sciences; ancient Indians used it for calendars, festivals and sowing.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Astronomy",
+        "oldest sciences"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-23"
+      ]
+    },
+    {
+      "id": "or-observable-universe",
+      "fact": "The Observable Universe is the spherical region of the universe that can be observed from Earth.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Observable Universe"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-24"
+      ]
+    },
+    {
+      "id": "or-big-bang-13-7",
+      "fact": "The Big Bang took place about 13.7 billion years ago.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Big Bang",
+        "13.7 billion"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-33"
+      ]
+    },
+    {
+      "id": "or-hubble-1920",
+      "fact": "Edwin Hubble provided evidence in 1920 that the universe is expanding.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Hubble",
+        "expanding"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-33"
+      ]
+    },
+    {
+      "id": "or-lemaitre",
+      "fact": "Georges Lemaître proposed the Big Bang idea.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Lema"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-25"
+      ]
+    },
+    {
+      "id": "or-steady-state-hoyle",
+      "fact": "The Steady State theory of the universe is associated with Fred Hoyle.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Steady State",
+        "Hoyle"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-32"
+      ]
+    },
+    {
+      "id": "or-laplace-1796",
+      "fact": "Laplace revised Kant's nebular hypothesis in 1796.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Laplace",
+        "1796"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-26",
+        "geo-earth-solar-system-mcq-32"
+      ]
+    },
+    {
+      "id": "or-planetesimal",
+      "fact": "The Planetesimal Hypothesis (1900) was given by Chamberlin and Moulton — a passing star pulled material from the Sun.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Chamberlin",
+        "Moulton"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-32"
+      ]
+    },
+    {
+      "id": "or-jeans-jeffreys",
+      "fact": "Sir James Jeans and later Sir Harold Jeffreys supported the passing-star (tidal) idea.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Jeans",
+        "Jeffreys"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-33"
+      ]
+    },
+    {
+      "id": "or-schmidt-weizsacker",
+      "fact": "Otto Schmidt and Carl Weizsacker revised the nebular hypothesis (1950).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Otto Schmidt",
+        "Weizsacker"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-32"
+      ]
+    },
+    {
+      "id": "or-akash-ganga",
+      "fact": "The Milky Way is called Akash Ganga in India.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Akash Ganga"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-27"
+      ]
+    },
+    {
+      "id": "or-nebula-collapse",
+      "fact": "The solar nebula began collapsing some 5–5.6 billion years ago, probably triggered by a nearby supernova.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "supernova"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-28"
+      ]
+    },
+    {
+      "id": "or-protoplanetary-disc",
+      "fact": "Only 0.1% of the nebular matter stayed in orbit as a flat protoplanetary disc, where the planets formed.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "protoplanetary disc",
+        "0.1"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-34"
+      ]
+    },
+    {
+      "id": "or-accretion-chain",
+      "fact": "Accretion built planetesimals, which grew into proto-planets and then planets.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "planetesimals",
+        "proto-planets"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-29"
+      ]
+    },
+    {
+      "id": "or-iron-1538",
+      "fact": "About 500 million years after formation, the young Earth reached iron's melting point of about 1,538°C.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1,538",
+        "500 million"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-30"
+      ]
+    },
+    {
+      "id": "or-differentiation",
+      "fact": "The sinking of heavy iron and nickel to the core while light silicates stayed outside is called planetary differentiation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "planetary differentiation"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-34"
+      ]
+    },
+    {
+      "id": "or-earth-age",
+      "fact": "The Earth formed about 4.5–4.54 billion years ago.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "4.54"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-origin-theories",
+      "drilledBy": [
+        "geo-earth-solar-system-card-31"
+      ]
+    },
+    {
+      "id": "sun-109",
+      "fact": "The Sun's diameter is about 1.4 million km, about 109 times that of the Earth.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "109",
+        "1.4 million"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-37"
+      ]
+    },
+    {
+      "id": "sun-layers",
+      "fact": "The Sun's layers from inside out are the core, radiative zone, convective zone, photosphere, chromosphere and corona.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "radiative zone",
+        "convective zone"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-card-32",
+        "geo-earth-solar-system-mcq-35"
+      ]
+    },
+    {
+      "id": "sun-photosphere",
+      "fact": "The photosphere is the Sun's visible surface, from which light is emitted.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "photosphere",
+        "visible surface"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-35"
+      ]
+    },
+    {
+      "id": "sun-chromosphere",
+      "fact": "The chromosphere is seen as a red ring during a solar eclipse.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "chromosphere",
+        "red ring"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-35"
+      ]
+    },
+    {
+      "id": "sun-corona",
+      "fact": "The corona is the Sun's outermost layer, seen as a halo during a total solar eclipse.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "corona",
+        "outermost"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-36"
+      ]
+    },
+    {
+      "id": "sun-spot-500",
+      "fact": "Sunspots are 500–1,500°C cooler than their surroundings, and the Sun is about 1% cooler during sunspot activity.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1,500",
+        "1%"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-card-33"
+      ]
+    },
+    {
+      "id": "sun-solar-wind",
+      "fact": "The solar wind is a stream of charged particles (electrons and protons) flowing from the Sun at up to 900 km/s at about 1 million °C.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "solar wind",
+        "900 km"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-37"
+      ]
+    },
+    {
+      "id": "sun-flares",
+      "fact": "Solar flares are bursts of energy from magnetic anomalies that heat the corona to 10–20 million °C.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "flares",
+        "20 million"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-card-34"
+      ]
+    },
+    {
+      "id": "sun-prominences",
+      "fact": "Solar prominences are large arcs of gas held by the Sun's magnetic fields that often erupt into space.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "prominences",
+        "magnetic"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-card-35"
+      ]
+    },
+    {
+      "id": "sun-mid-life",
+      "fact": "The Sun is about 5 billion years old, in the middle of its life, with about 5 billion more years to shine.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "5 billion"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-37"
+      ]
+    },
+    {
+      "id": "sun-red-giant",
+      "fact": "At the end of its life the Sun will become a red giant and then leave a white dwarf.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "red giant",
+        "white dwarf"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-37"
+      ]
+    },
+    {
+      "id": "sun-aditya-l1",
+      "fact": "Aditya-L1, India's solar mission (launched 2 September 2023 from Sriharikota), observes the Sun from Lagrange point L1, about 1.5 million km away.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "ap"
+      ],
+      "keys": [
+        "Aditya",
+        "L1"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-sun-structure",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-38"
+      ]
+    },
+    {
+      "id": "pl-order",
+      "fact": "The planets in order from the Sun are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Mercury",
+        "Neptune"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-36",
+        "geo-earth-solar-system-mcq-39"
+      ]
+    },
+    {
+      "id": "pl-indian-names",
+      "fact": "Indian names: Budh (Mercury), Shukra (Venus), Mangal (Mars), Brihaspati (Jupiter), Shani (Saturn), Arun (Uranus), Varun (Neptune).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Shukra",
+        "Varun"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-47"
+      ]
+    },
+    {
+      "id": "pl-earth-densest",
+      "fact": "Earth is the densest planet (5.51 g/cm³).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "densest",
+        "Earth"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-40"
+      ]
+    },
+    {
+      "id": "pl-saturn-least-dense",
+      "fact": "Saturn is the least dense planet (0.69 g/cm³) — it would float on water.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Saturn",
+        "least dense"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-40"
+      ]
+    },
+    {
+      "id": "pl-mercury-88",
+      "fact": "Mercury has the shortest year — 88 Earth days.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "88"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-40"
+      ]
+    },
+    {
+      "id": "pl-jupiter-fastest-spin",
+      "fact": "Jupiter spins fastest (one rotation in about 9.9 hours), making it an oblate spheroid.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "9.9",
+        "Jupiter"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-40"
+      ]
+    },
+    {
+      "id": "pl-venus-slowest",
+      "fact": "Venus has the slowest rotation (243 Earth days).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Venus",
+        "243"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-3",
+        "geo-earth-solar-system-mcq-45"
+      ]
+    },
+    {
+      "id": "pl-neptune-164",
+      "fact": "Neptune takes about 164.8 Earth years to orbit the Sun — the longest year.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "164.8"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-37",
+        "geo-earth-solar-system-mcq-46"
+      ]
+    },
+    {
+      "id": "pl-revolutions",
+      "fact": "Revolution periods: Venus 225 days, Mars 687 days, Jupiter 11.86 years, Saturn 29.46 years, Uranus 84 years.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "687",
+        "29.46"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-46"
+      ]
+    },
+    {
+      "id": "pl-no-moons",
+      "fact": "Mercury and Venus have no moons.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "no moons"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-41"
+      ]
+    },
+    {
+      "id": "pl-mars-moons",
+      "fact": "Mars has two moons, Phobos and Deimos.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Phobos",
+        "Deimos"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-41"
+      ]
+    },
+    {
+      "id": "pl-saturn-most-moons",
+      "fact": "Saturn now has the most moons (274 recognised in 2025); the source table lists Jupiter 95 and Saturn 82.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Saturn",
+        "most moons"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-41"
+      ]
+    },
+    {
+      "id": "pl-retrograde-pair",
+      "fact": "Venus and Uranus are the two planets that rotate east to west (clockwise).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Venus",
+        "Uranus",
+        "clockwise"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-43"
+      ]
+    },
+    {
+      "id": "pl-mercury-temps",
+      "fact": "Mercury, with almost no atmosphere, ranges from about 427°C by day to −173°C at night — the widest diurnal range.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "427",
+        "173"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-38"
+      ]
+    },
+    {
+      "id": "pl-mercury-ganymede-titan",
+      "fact": "Mercury is smaller than Ganymede and Titan but has more mass than both.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Titan",
+        "more mass"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-39"
+      ]
+    },
+    {
+      "id": "pl-venus-bright",
+      "fact": "Venus is the brightest planet, third-brightest object after the Sun and Moon, with the highest albedo from sulphuric acid clouds.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "brightest planet",
+        "albedo"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-40",
+        "geo-earth-solar-system-mcq-42"
+      ]
+    },
+    {
+      "id": "pl-venus-co2-92",
+      "fact": "Venus's atmosphere is about 96% carbon dioxide with a surface pressure 92 times that of Earth.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "96%",
+        "92"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-43"
+      ]
+    },
+    {
+      "id": "pl-venus-morning-star",
+      "fact": "Venus is seen as the morning star and the evening star.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "morning",
+        "evening star"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-41"
+      ]
+    },
+    {
+      "id": "pl-mars-pressure",
+      "fact": "Mars has no surface liquid water because its atmospheric pressure is under 1% of Earth's, though landforms show water once existed.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "liquid water",
+        "1%"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-43"
+      ]
+    },
+    {
+      "id": "pl-mars-magnetosphere",
+      "fact": "Mars lost its magnetosphere about 4 billion years ago, so the solar wind strips its ionosphere.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "magnetosphere",
+        "4 billion"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-42"
+      ]
+    },
+    {
+      "id": "pl-mars-air",
+      "fact": "Mars's air is about 96% CO2, 1.93% argon and 1.89% nitrogen; methane has been detected.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "argon",
+        "methane"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-43"
+      ]
+    },
+    {
+      "id": "pl-olympus-mons",
+      "fact": "Olympus Mons on Mars is the highest volcano in the solar system.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Olympus Mons"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-42"
+      ]
+    },
+    {
+      "id": "pl-galilean",
+      "fact": "Jupiter's four Galilean moons — Io, Europa, Ganymede and Callisto — were discovered by Galileo.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Io",
+        "Europa",
+        "Callisto"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-42"
+      ]
+    },
+    {
+      "id": "pl-great-red-spot",
+      "fact": "Jupiter's Great Red Spot is a giant storm in its banded atmosphere.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Great Red Spot"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-48"
+      ]
+    },
+    {
+      "id": "pl-saturn-rings",
+      "fact": "Saturn's rings are made of billions of particles of ice and ice-covered rock.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "rings",
+        "ice"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-44"
+      ]
+    },
+    {
+      "id": "pl-titan-atmosphere",
+      "fact": "Titan (Saturn) is the second-largest moon and the only moon with a substantial atmosphere, mostly nitrogen.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Titan",
+        "nitrogen"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-41"
+      ]
+    },
+    {
+      "id": "pl-ganymede-5268",
+      "fact": "Ganymede is 5,268 km across; the Earth's Moon (3,474 km) is the fifth-largest moon.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "5,268"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-16"
+      ]
+    },
+    {
+      "id": "pl-ice-giants",
+      "fact": "Uranus and Neptune are the ice giants — the twins of the outer solar system — rich in water, ammonia and methane ices.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "ice giant"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-42"
+      ]
+    },
+    {
+      "id": "pl-elliptical-orbit",
+      "fact": "A planet is a celestial body moving in an elliptical orbit around a star.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "elliptical orbit"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-planet-table",
+      "drilledBy": [
+        "geo-earth-solar-system-card-45"
+      ]
+    },
+    {
+      "id": "sb-iau-2006",
+      "fact": "In 2006 the IAU (meeting at Prague) defined a planet and reclassified Pluto as a dwarf planet.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "2006",
+        "Pluto"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-49"
+      ]
+    },
+    {
+      "id": "sb-iau-four",
+      "fact": "An IAU planet orbits the Sun, is round (hydrostatic equilibrium), is not a satellite, and has cleared its orbit.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hydrostatic equilibrium"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-8"
+      ]
+    },
+    {
+      "id": "sb-pluto-eris",
+      "fact": "Pluto (2,377 km) and Eris (2,326 km) are similar-sized Kuiper Belt dwarf planets.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Eris",
+        "2,377"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-card-46"
+      ]
+    },
+    {
+      "id": "sb-ceres",
+      "fact": "Ceres (946 km) is the largest asteroid, a proto-planet and a dwarf planet in the asteroid belt.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Ceres",
+        "946"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-49"
+      ]
+    },
+    {
+      "id": "sb-jupiter-belt",
+      "fact": "The asteroid belt is a remnant that failed to form a planet because of Jupiter's gravitational interference.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Jupiter",
+        "gravitational"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-49"
+      ]
+    },
+    {
+      "id": "sb-asteroid-make",
+      "fact": "Asteroids are made of refractory rocky and metallic minerals.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "rocky",
+        "metallic"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-50"
+      ]
+    },
+    {
+      "id": "sb-kuiper-30-50",
+      "fact": "The Kuiper Belt extends from Neptune's orbit at 30 AU to 50 AU and may be treated as the extent of the Solar System.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "30 AU",
+        "50 AU"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-card-47"
+      ]
+    },
+    {
+      "id": "sb-comet-coma-tail",
+      "fact": "Near the Sun a comet's nucleus outgasses to form a coma and a tail.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "coma",
+        "tail"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-51"
+      ]
+    },
+    {
+      "id": "sb-tail-away",
+      "fact": "A comet's tail always points away from the Sun.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "away from the Sun"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-51"
+      ]
+    },
+    {
+      "id": "sb-halley",
+      "fact": "Halley's Comet returns about every 76 years; it last appeared in 1986 and is next due in 2061.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Halley",
+        "76"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-51"
+      ]
+    },
+    {
+      "id": "sb-shooting-star",
+      "fact": "Meteors are called shooting stars, but they are pieces of rock, not stars.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "shooting star"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-card-48"
+      ]
+    },
+    {
+      "id": "sb-meteor-shower",
+      "fact": "A meteor shower is seen when the Earth passes through a comet's tail (debris).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "meteor shower"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-small-bodies-iau",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-51"
+      ]
+    },
+    {
+      "id": "mn-eight-phases",
+      "fact": "The Moon shows eight major phases.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "eight",
+        "phases"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-card-49"
+      ]
+    },
+    {
+      "id": "mn-waxing-waning",
+      "fact": "In the waxing phase the Moon grows; in the waning phase it shrinks.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "waxing",
+        "waning"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-52"
+      ]
+    },
+    {
+      "id": "mn-blue-moon",
+      "fact": "A Blue Moon is the second full moon in a single calendar month.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Blue Moon"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-52"
+      ]
+    },
+    {
+      "id": "mn-diwali",
+      "fact": "Diwali is celebrated on New Moon day.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Diwali"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-53"
+      ]
+    },
+    {
+      "id": "mn-guru-nanak",
+      "fact": "Guru Nanak Jayanti is celebrated on Full Moon day.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Guru Nanak"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-53"
+      ]
+    },
+    {
+      "id": "mn-shivratri",
+      "fact": "Maha Shivratri falls on a night of the waning moon (13th/14th night).",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Shivratri"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-53"
+      ]
+    },
+    {
+      "id": "mn-eid",
+      "fact": "Eid-ul-Fitr is celebrated on the day after the crescent moon is sighted.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Eid"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-53"
+      ]
+    },
+    {
+      "id": "mn-surface",
+      "fact": "The Moon's surface is barren and dusty with craters and high mountains, and it has no atmosphere.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "craters",
+        "no atmosphere"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-55"
+      ]
+    },
+    {
+      "id": "mn-water-chandrayaan1",
+      "fact": "Chandrayaan-1 (2008) detected water molecules on the Moon, though it has no liquid water.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Chandrayaan-1"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-card-50"
+      ]
+    },
+    {
+      "id": "mn-impactor-size",
+      "fact": "The Moon-forming impactor (Theia) was one to three times the size of Mars; the Moon formed about 4.44 billion years ago.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "4.44"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-55"
+      ]
+    },
+    {
+      "id": "mn-distance",
+      "fact": "The Moon is about 384,400 km from the Earth.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "384,400"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-52"
+      ]
+    },
+    {
+      "id": "mn-same-face",
+      "fact": "The Moon rotates once per orbit, so the same face always faces the Earth.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "same face"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-52"
+      ]
+    },
+    {
+      "id": "mn-sidereal-synodic",
+      "fact": "The sidereal month (one orbit) is about 27.3 days; the synodic month (phase cycle) about 29.5 days.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "27.3",
+        "29.5"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-55"
+      ]
+    },
+    {
+      "id": "mn-armstrong",
+      "fact": "Neil Armstrong, followed by Edwin Aldrin, first landed on the Moon on 21 July 1969 (Apollo 11).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Armstrong",
+        "1969"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-54"
+      ]
+    },
+    {
+      "id": "mn-cy3-launch",
+      "fact": "Chandrayaan-3 was launched on 14 July 2023 from the Satish Dhawan Space Centre, Sriharikota (Andhra Pradesh).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "ap"
+      ],
+      "keys": [
+        "Chandrayaan-3",
+        "Sriharikota"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-54"
+      ]
+    },
+    {
+      "id": "mn-cy3-landing",
+      "fact": "Chandrayaan-3 entered lunar orbit on 5 August 2023 and landed near the lunar south pole on 23 August 2023.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "south pole",
+        "23 August"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-moon-phases-missions",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-54"
+      ]
+    },
+    {
+      "id": "ec-lunar-types",
+      "fact": "The three types of lunar eclipse are total, partial and penumbral.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "penumbral"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-56"
+      ]
+    },
+    {
+      "id": "ec-blood-moon",
+      "fact": "In a total lunar eclipse the Moon often turns red — a 'blood moon' — as Earth's atmosphere scatters sunlight onto it.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "blood moon"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-56"
+      ]
+    },
+    {
+      "id": "ec-lunar-visible",
+      "fact": "A lunar eclipse is visible from anywhere on the night side of the Earth, a solar eclipse only where the Moon's shadow falls.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "night side"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-56"
+      ]
+    },
+    {
+      "id": "ec-solar-types",
+      "fact": "The three types of solar eclipse are total, partial and annular.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "annular",
+        "partial"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-56"
+      ]
+    },
+    {
+      "id": "ec-corona-total",
+      "fact": "The corona becomes visible during a total solar eclipse.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "corona"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-36"
+      ]
+    },
+    {
+      "id": "st-stars-gas",
+      "fact": "Stars are celestial bodies of hot gases, mainly hydrogen and helium, that emit their own light.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "own light"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-59"
+      ]
+    },
+    {
+      "id": "st-ursa-major",
+      "fact": "Ursa Major (Great Bear / Saptarishi / Big Dipper) has seven main stars — three in the handle and four in the bowl.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Ursa Major",
+        "Saptarishi"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-58"
+      ]
+    },
+    {
+      "id": "st-merak-dubhe",
+      "fact": "Merak and Dubhe, the pointer stars of Ursa Major, point to the Pole Star.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Merak",
+        "Dubhe"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-58"
+      ]
+    },
+    {
+      "id": "st-orion",
+      "fact": "Orion (the Hunter) has a belt of three stars in a line with four stars in a quadrilateral.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Orion",
+        "belt"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-58"
+      ]
+    },
+    {
+      "id": "st-sirius",
+      "fact": "Sirius is the brightest star in the night sky; a line through Orion's belt points to it (it lies in Canis Major).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Sirius",
+        "brightest star"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-58"
+      ]
+    },
+    {
+      "id": "st-cassiopeia",
+      "fact": "Cassiopeia, seen in northern winter, is shaped like a W.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cassiopeia"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-58"
+      ]
+    },
+    {
+      "id": "st-leo",
+      "fact": "Leo Major is visible from both hemispheres and appears upside down in the Southern Hemisphere.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Leo"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-card-51"
+      ]
+    },
+    {
+      "id": "st-constellation",
+      "fact": "A constellation is a group of stars forming a recognisable pattern; its stars may be at very different distances.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "constellation",
+        "pattern"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-eclipse-types-stars",
+      "drilledBy": [
+        "geo-earth-solar-system-card-52"
+      ]
+    },
+    {
+      "id": "md-geoid",
+      "fact": "The Earth's shape is a geoid — flattened at the poles and bulging at the equator.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "geoid"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-60"
+      ]
+    },
+    {
+      "id": "md-diameters",
+      "fact": "Earth's equatorial diameter is about 12,756 km and its polar diameter about 12,714 km.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "12,756"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-card-53"
+      ]
+    },
+    {
+      "id": "md-sidereal-day",
+      "fact": "A sidereal day is 23 hours 56 minutes 4 seconds; a solar day is 24 hours.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "23 hours 56"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-60"
+      ]
+    },
+    {
+      "id": "md-rotation-speed",
+      "fact": "A point on the equator moves at about 1,670 km/h because of rotation.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1,670"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-card-54"
+      ]
+    },
+    {
+      "id": "md-orbital-speed",
+      "fact": "The Earth revolves around the Sun at about 30 km per second.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "30 km"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-card-54"
+      ]
+    },
+    {
+      "id": "md-leap-400",
+      "fact": "A century year is a leap year only if divisible by 400 (2000 was, 1900 was not); February then has 29 days.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "400"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-60"
+      ]
+    },
+    {
+      "id": "md-daylength-cause",
+      "fact": "Seasonal variation in the length of day and night is due to the Earth's revolution on a tilted axis (UPSC 2013).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "tilted axis"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-61"
+      ]
+    },
+    {
+      "id": "md-equator-12h",
+      "fact": "At the equator day and night are about 12 hours each throughout the year.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "12 hours"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-60"
+      ]
+    },
+    {
+      "id": "md-equinox-latin",
+      "fact": "'Equinox' comes from Latin aequi (equal) + noctium (night).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "aequi"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-62"
+      ]
+    },
+    {
+      "id": "md-solstice-latin",
+      "fact": "'Solstice' comes from Latin sol (sun) + stitium (standing still).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "stitium"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-62"
+      ]
+    },
+    {
+      "id": "md-subsolar",
+      "fact": "On the June solstice the subsolar point is at 23.5°N, on the December solstice at 23.5°S; at the equinoxes the Sun is at 90° over the equator.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "subsolar"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-62"
+      ]
+    },
+    {
+      "id": "md-vernal-autumnal",
+      "fact": "In the Northern Hemisphere 21 March is the vernal (spring) equinox and 23 September the autumnal equinox.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "vernal",
+        "autumnal"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-62"
+      ]
+    },
+    {
+      "id": "md-antarctic-24h",
+      "fact": "On 22 December the Antarctic Circle receives 24 hours of daylight.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Antarctic Circle",
+        "22 December"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-63"
+      ]
+    },
+    {
+      "id": "md-perihelion",
+      "fact": "The Earth is nearest the Sun (perihelion, about 147 million km) around 3 January.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "perihelion",
+        "3 January"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-63"
+      ]
+    },
+    {
+      "id": "md-twilight",
+      "fact": "Twilight is shortest at the equator and longest at the poles.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Twilight"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-motions-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-card-55"
+      ]
+    },
+    {
+      "id": "gt-phi-lambda",
+      "fact": "Latitude is denoted by the Greek letter phi (φ) and longitude by lambda (λ).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "phi",
+        "lambda"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-64"
+      ]
+    },
+    {
+      "id": "gt-179-360",
+      "fact": "There are 179 parallels of latitude (including the equator) and 360 meridians of longitude.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "179",
+        "360"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-64"
+      ]
+    },
+    {
+      "id": "gt-110-111",
+      "fact": "One degree of latitude is about 110.6 km at the equator and 111.7 km at the poles.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "110.6",
+        "111.7"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-64"
+      ]
+    },
+    {
+      "id": "gt-meridian-zero",
+      "fact": "Meridians are semicircles whose spacing decreases polewards, becoming zero at the poles.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "semicircles"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-64"
+      ]
+    },
+    {
+      "id": "gt-parallels-shrink",
+      "fact": "Parallels of latitude decrease in size away from the equator.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "smaller"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-card-56"
+      ]
+    },
+    {
+      "id": "gt-1884",
+      "fact": "The Prime Meridian through Greenwich was adopted at the International Meridian Conference of 1884.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1884"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-card-57"
+      ]
+    },
+    {
+      "id": "gt-latlong-uses",
+      "fact": "Latitudes are used to classify temperature zones; longitudes to classify time zones.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "temperature",
+        "time zones"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-65"
+      ]
+    },
+    {
+      "id": "gt-idl-zigzag",
+      "fact": "The International Date Line zigzags to avoid dividing land and island groups.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "zigzag"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-65"
+      ]
+    },
+    {
+      "id": "gt-idl-westward",
+      "fact": "Crossing the International Date Line westward a day is gained (date advances); eastward a day is repeated.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "westward"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-65"
+      ]
+    },
+    {
+      "id": "gt-24-zones",
+      "fact": "The Earth is divided into 24 time zones of one hour, each about 15° of longitude wide.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "24 time zones"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-65"
+      ]
+    },
+    {
+      "id": "gt-russia-11",
+      "fact": "Russia has 11 standard times.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Russia",
+        "11"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-66"
+      ]
+    },
+    {
+      "id": "gt-france-12",
+      "fact": "France holds the record for the most time zones — 12.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "France",
+        "12"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-66"
+      ]
+    },
+    {
+      "id": "gt-dwarka-dibrugarh",
+      "fact": "Local time at Dwarka (Gujarat) and Dibrugarh (Assam) differs by about 1 hour 45 minutes.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Dwarka",
+        "Dibrugarh"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-67"
+      ]
+    },
+    {
+      "id": "gt-mirzapur",
+      "fact": "The IST meridian 82°30'E passes near Mirzapur in Uttar Pradesh.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Mirzapur"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-67"
+      ]
+    },
+    {
+      "id": "gt-london-india",
+      "fact": "When it is 2:00 pm in London, it is 7:30 pm in India.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "7:30"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-67"
+      ]
+    },
+    {
+      "id": "gt-india-long-extent",
+      "fact": "India extends from about 68°7'E to 97°25'E — about 30° of longitude, i.e. about 2 hours of local time.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "97°25"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-67"
+      ]
+    },
+    {
+      "id": "gt-82-five-states",
+      "fact": "The 82°30'E meridian passes through Uttar Pradesh, Madhya Pradesh, Chhattisgarh, Odisha and Andhra Pradesh.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap"
+      ],
+      "keys": [
+        "Chhattisgarh",
+        "Odisha",
+        "Andhra Pradesh"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-68"
+      ]
+    },
+    {
+      "id": "gt-ap-extent",
+      "fact": "Andhra Pradesh lies about 12°37'N–19°54'N, wholly in the Torrid Zone south of the Tropic of Cancer.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "19°54"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-69"
+      ]
+    },
+    {
+      "id": "gt-cancer-8-states",
+      "fact": "The Tropic of Cancer passes through eight Indian states: Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tripura",
+        "Mizoram"
+      ],
+      "taughtIn": "geo-earth-solar-system-note-grid-time-detail",
+      "drilledBy": [
+        "geo-earth-solar-system-mcq-69"
+      ]
+    }
+  ]
+}

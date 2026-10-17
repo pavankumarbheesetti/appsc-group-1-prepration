@@ -3,18 +3,235 @@
   "subjectCode": "ECON",
   "topic": "Human Development & Sustainable Development",
   "items": [
-    {"id":"econ-human-sustainable-development-card-1","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"Who created the HDI and in which year's report?","back":"Mahbub-ul-Haq with Amartya Sen; first UNDP HDR in 1990.","examPoint":"HDI origin — Haq & Sen, HDR 1990","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-2","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"Three dimensions of the HDI?","back":"Health (life expectancy), knowledge (schooling), living standard (GNI per capita PPP).","examPoint":"HDI three dimensions","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-3","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"How is HDI aggregated since HDR 2010?","back":"Geometric mean of the three equally weighted sub-indices.","examPoint":"HDI = geometric mean (since 2010)","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-4","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"India's rank and HDI value in HDR 2025?","back":"130/193, HDI 0.685 — Medium Human Development (up from 134).","examPoint":"India HDR 2025 — 130/193, HDI 0.685","source":"Wikipedia — List of countries by HDI (verified 30 Sep 2026)","verified":true},
-    {"id":"econ-human-sustainable-development-card-5","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"HDI category bands?","back":"Low <0.550, Medium 0.550-0.699, High 0.700-0.799, Very High ≥0.800.","examPoint":"HDI category bands","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-6","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"Global MPI — agencies, method and formula?","back":"UNDP + OPHI; Alkire-Foster method; MPI = H × A (headcount × intensity).","examPoint":"Global MPI — UNDP/OPHI, MPI=H×A","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-7","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"How does India's National MPI differ from Global MPI?","back":"3 dimensions but 12 indicators (adds maternal health & bank accounts); by NITI Aayog.","examPoint":"National MPI — 12 indicators (NITI Aayog)","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-8","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"Which report defined sustainable development, and when?","back":"Brundtland Report 'Our Common Future', 1987 — intergenerational equity.","examPoint":"Brundtland 1987 defined sustainable development","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-9","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"SDGs — number of goals/targets and adoption year?","back":"17 goals, 169 targets; adopted Sep 2015 (2030 Agenda); succeeded 8 MDGs.","examPoint":"SDGs — 17 goals, 169 targets, 2015","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-10","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"Milestone sequence of sustainable development?","back":"Stockholm 1972 → Brundtland 1987 → Rio 1992 → MDGs 2000 → SDGs 2015.","examPoint":"Sustainable-development milestones","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-11","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"SDG India Index — publisher and score bands?","back":"NITI Aayog; Aspirant 0-49, Performer 50-64, Front Runner 65-99, Achiever 100.","examPoint":"SDG India Index — NITI Aayog, bands","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-12","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"AP's standout SDG India Index performance?","back":"Front Runner; topped Goal-7 (Affordable & Clean Energy) among States.","examPoint":"AP SDG Index — Front Runner, tops Goal-7","source":"notes","verified":true},
-    {"id":"econ-human-sustainable-development-card-13","subjectCode":"ECON","subtopicId":"econ-human-sustainable-development","front":"Companion measures to HDI?","back":"IHDI (inequality-adjusted), GDI (female/male ratio), GII (gender inequality).","examPoint":"HDI companions — IHDI, GDI, GII","source":"notes","verified":true}
+    {
+      "id": "econ-human-sustainable-development-card-1",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Who created the HDI and in which year's report?",
+      "back": "Mahbub-ul-Haq with Amartya Sen; first UNDP HDR in 1990.",
+      "examPoint": "HDI origin — Haq & Sen, HDR 1990",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-2",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Three dimensions of the HDI?",
+      "back": "Health (life expectancy), knowledge (schooling), living standard (GNI per capita PPP).",
+      "examPoint": "HDI three dimensions",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-3",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "How is HDI aggregated since HDR 2010?",
+      "back": "Geometric mean of the three equally weighted sub-indices.",
+      "examPoint": "HDI = geometric mean (since 2010)",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-4",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "India's rank and HDI value in HDR 2025?",
+      "back": "130/193, HDI 0.685 — Medium Human Development (up from 134).",
+      "examPoint": "India HDR 2025 — 130/193, HDI 0.685",
+      "source": "Wikipedia — List of countries by HDI (verified 30 Sep 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-5",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "HDI category bands?",
+      "back": "Low <0.550, Medium 0.550-0.699, High 0.700-0.799, Very High ≥0.800.",
+      "examPoint": "HDI category bands",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-6",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Global MPI — agencies, method and formula?",
+      "back": "UNDP + OPHI; Alkire-Foster method; MPI = H × A (headcount × intensity).",
+      "examPoint": "Global MPI — UNDP/OPHI, MPI=H×A",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-7",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "How does India's National MPI differ from Global MPI?",
+      "back": "3 dimensions but 12 indicators (adds maternal health & bank accounts); by NITI Aayog.",
+      "examPoint": "National MPI — 12 indicators (NITI Aayog)",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-8",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Which report defined sustainable development, and when?",
+      "back": "Brundtland Report 'Our Common Future', 1987 — intergenerational equity.",
+      "examPoint": "Brundtland 1987 defined sustainable development",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-9",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "SDGs — number of goals/targets and adoption year?",
+      "back": "17 goals, 169 targets; adopted Sep 2015 (2030 Agenda); succeeded 8 MDGs.",
+      "examPoint": "SDGs — 17 goals, 169 targets, 2015",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-10",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Milestone sequence of sustainable development?",
+      "back": "Stockholm 1972 → Brundtland 1987 → Rio 1992 → MDGs 2000 → SDGs 2015.",
+      "examPoint": "Sustainable-development milestones",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-11",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "SDG India Index — publisher and score bands?",
+      "back": "NITI Aayog; Aspirant 0-49, Performer 50-64, Front Runner 65-99, Achiever 100.",
+      "examPoint": "SDG India Index — NITI Aayog, bands",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-12",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "AP's standout SDG India Index performance?",
+      "back": "Front Runner; topped Goal-7 (Affordable & Clean Energy) among States.",
+      "examPoint": "AP SDG Index — Front Runner, tops Goal-7",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-13",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Companion measures to HDI?",
+      "back": "IHDI (inequality-adjusted), GDI (female/male ratio), GII (gender inequality).",
+      "examPoint": "HDI companions — IHDI, GDI, GII",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-14",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Range of HDI values?",
+      "back": "The HDI always lies between 0 and 1 (geometric mean of three dimension indices).",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-15",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Expand AHDI and name the other three indices listed with it.",
+      "back": "AHDI = Augmented Human Development Index; listed with HDI, IHDI (inequality-adjusted) and GDI (gender development).",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-16",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "When was the Human Development Report 2025 released?",
+      "back": "6 May 2025 (theme: A Matter of Choice: People and Possibilities in the Age of AI).",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-17",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "India's Gender Development Index (HDR 2025)?",
+      "back": "About 0.874 (female HDI ÷ male HDI); IHDI ≈ 0.475.",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-18",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "Another name for the SDGs, per the source?",
+      "back": "The Global Goals — integrated goals balancing social, economic and environmental sustainability.",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-19",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "SDG 1 and SDG 2?",
+      "back": "SDG 1 = No Poverty; SDG 2 = Zero Hunger.",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-20",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "SDGs 3, 4 and 5?",
+      "back": "SDG 3 = Good Health and Well-being; SDG 4 = Quality Education; SDG 5 = Gender Equality.",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-21",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "SDG 8 and SDG 9?",
+      "back": "SDG 8 = Decent Work and Economic Growth; SDG 9 = Industry, Innovation and Infrastructure.",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-22",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "SDG 10 and SDG 11?",
+      "back": "SDG 10 = Reduced Inequalities; SDG 11 = Sustainable Cities and Communities.",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    },
+    {
+      "id": "econ-human-sustainable-development-card-23",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-human-sustainable-development",
+      "front": "How many States/UTs were Front Runners in SDG India Index 2023-24?",
+      "back": "32 (up from 22 in 2020-21).",
+      "examPoint": "HDI — concept, creators (Mahbub-ul-Haq & Amartya Sen) and first HDR (1990)",
+      "source": "APPSC GK — Indian Economics: Growth and Development.txt (indices, SDGs); UNDP HDR 2025 & Technical Notes; UN 2030 Agenda; NITI Aayog SDG India Index 2023-24 & National MPI 2023; AP dossier-econ §1/§12 (Harita AP, NREDCAP); PYQ bank .research/pyq-bank/econ-human-sustainable-development.md",
+      "verified": true
+    }
   ]
 }

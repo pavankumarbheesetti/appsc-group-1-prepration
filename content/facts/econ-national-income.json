@@ -1,0 +1,1736 @@
+{
+  "version": 1,
+  "subtopicId": "econ-national-income",
+  "facts": [
+    {
+      "id": "ni-def-final",
+      "fact": "National income is the money value of all final goods and services produced in a country during a year (UPSC 2013).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "money value",
+        "final goods"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-20"
+      ]
+    },
+    {
+      "id": "ni-flow",
+      "fact": "National income is a flow concept, measured per period; capital and wealth are stocks.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "flow",
+        "stock"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-13"
+      ]
+    },
+    {
+      "id": "ni-final-intermediate",
+      "fact": "The same good can be final or intermediate depending on its use (consumption/investment vs resale or further processing).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "final",
+        "intermediate",
+        "use"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-card-14",
+        "econ-national-income-mcq-21"
+      ]
+    },
+    {
+      "id": "ni-economic-territory",
+      "fact": "A country's economic territory includes its embassies abroad and ships/aircraft operated by its residents, and excludes foreign embassies located in it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "embassies",
+        "territory"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-mcq-21"
+      ]
+    },
+    {
+      "id": "ni-normal-resident",
+      "fact": "A normal resident is a person or institution whose centre of economic interest lies in the country.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "normal resident",
+        "economic interest"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-15"
+      ]
+    },
+    {
+      "id": "ni-depreciation-cfc",
+      "fact": "Depreciation is also called consumption of fixed capital — the wear and tear of capital goods.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "consumption of fixed capital",
+        "wear and tear"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-24"
+      ]
+    },
+    {
+      "id": "ni-value-output",
+      "fact": "Value of output = sales + change in stock (inventories).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "sales",
+        "change in stock"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-16"
+      ]
+    },
+    {
+      "id": "ni-uses",
+      "fact": "National income data are used for policy-making, measuring living standards (per capita income) and international comparisons.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "policy",
+        "international comparisons"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-17"
+      ]
+    },
+    {
+      "id": "ni-macro-income-employment",
+      "fact": "Macroeconomics is also called the \"Theory of Income and Employment\".",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Theory of Income and Employment"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-18"
+      ]
+    },
+    {
+      "id": "ni-growth-formula",
+      "fact": "GDP growth rate = (GDP this year − GDP last year) ÷ GDP last year × 100.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "growth rate",
+        "last year"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-19"
+      ]
+    },
+    {
+      "id": "ag-gdp-borders",
+      "fact": "GDP measures output produced within a country's borders, including that by foreign-owned firms.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "borders",
+        "foreign-owned"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-4"
+      ]
+    },
+    {
+      "id": "ag-gnp-residents",
+      "fact": "GNP measures output by a country's residents wherever produced.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "GNP",
+        "residents"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-4",
+        "econ-national-income-card-1"
+      ]
+    },
+    {
+      "id": "ag-gnp-formula",
+      "fact": "GNP = GDP + Net Factor Income from Abroad.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "Net Factor Income from Abroad"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-1"
+      ]
+    },
+    {
+      "id": "ag-indian-co-abroad",
+      "fact": "Income earned by an Indian company operating abroad is part of India's GNP but not its GDP.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Indian company",
+        "abroad"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-4"
+      ]
+    },
+    {
+      "id": "ag-basis-geo-citizenship",
+      "fact": "GDP is based on the geographical boundary; GNP on citizenship or nationality.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "geographical",
+        "citizenship"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-mcq-22"
+      ]
+    },
+    {
+      "id": "ag-nfia-def",
+      "fact": "NFIA is income earned by a country's residents abroad minus income earned by foreigners within the country.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "NFIA",
+        "foreigners"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-22",
+        "econ-national-income-mcq-46"
+      ]
+    },
+    {
+      "id": "ag-nfia-negative",
+      "fact": "If NFIA is negative, GNP is less than GDP — India's usual case.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "NFIA",
+        "negative"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-card-12",
+        "econ-national-income-mcq-45"
+      ]
+    },
+    {
+      "id": "ag-ndp",
+      "fact": "NDP = GDP − Depreciation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "NDP",
+        "Depreciation"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-23"
+      ]
+    },
+    {
+      "id": "ag-nnp",
+      "fact": "NNP = GNP − Depreciation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "NNP",
+        "GNP",
+        "Depreciation"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-23"
+      ]
+    },
+    {
+      "id": "ag-ni-nnpfc",
+      "fact": "National Income = NNP at factor cost.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "NNP at factor cost"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-2",
+        "econ-national-income-card-2",
+        "econ-national-income-mcq-46"
+      ]
+    },
+    {
+      "id": "ag-ni-factor-incomes",
+      "fact": "National income is the total income earned by a nation's residents as wages, rent, interest and profits.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "wages",
+        "rent",
+        "interest",
+        "profit"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-card-6"
+      ]
+    },
+    {
+      "id": "ag-pi",
+      "fact": "Personal income is the total income actually received by individuals, including transfers such as pensions.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Personal Income",
+        "pensions"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-24"
+      ]
+    },
+    {
+      "id": "ag-di",
+      "fact": "Disposable income = Personal income − direct (personal) taxes; households can spend or save it.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "DI",
+        "PI",
+        "direct"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-16"
+      ]
+    },
+    {
+      "id": "ag-per-capita",
+      "fact": "Per capita income = National income ÷ population.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "capita",
+        "population"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-20"
+      ]
+    },
+    {
+      "id": "ag-nnp-example",
+      "fact": "With GDP ₹500, depreciation ₹40 and NFIA +₹15, NNP = ₹475 (500 − 40 = 460 is NDP).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "475"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-15"
+      ]
+    },
+    {
+      "id": "pb-fc-formula",
+      "fact": "Factor cost = Market price − Indirect taxes + Subsidies.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "Indirect Taxes",
+        "Subsidies"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-card-4",
+        "econ-national-income-mcq-26"
+      ]
+    },
+    {
+      "id": "pb-net-indirect",
+      "fact": "Net indirect taxes = indirect taxes − subsidies; market price − net indirect taxes = factor cost.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "net indirect taxes"
+      ],
+      "taughtIn": "econ-national-income-note-gva",
+      "drilledBy": [
+        "econ-national-income-mcq-26"
+      ]
+    },
+    {
+      "id": "pb-gst-added",
+      "fact": "Indirect taxes such as GST are added to factor cost to get market price.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "GST",
+        "market price"
+      ],
+      "taughtIn": "econ-national-income-note-gva",
+      "drilledBy": [
+        "econ-national-income-mcq-25"
+      ]
+    },
+    {
+      "id": "pb-ni-example-150",
+      "fact": "GDP(MP) 200, NFIA −10, depreciation 20, indirect taxes 25, subsidies 5 gives National Income 150.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "150"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-5"
+      ]
+    },
+    {
+      "id": "pb-mp-includes-taxes",
+      "fact": "GDP at market price includes taxes on products; GDP at factor cost adjusts for taxes and subsidies.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "market price",
+        "factor cost"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-25"
+      ]
+    },
+    {
+      "id": "nr-nominal",
+      "fact": "Nominal GDP is valued at current market prices and is not adjusted for inflation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "nominal",
+        "current"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-mcq-27"
+      ]
+    },
+    {
+      "id": "nr-real",
+      "fact": "Real GDP is valued at constant base-year prices, removing the effect of price changes; it is the better measure of growth.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "real gdp",
+        "constant base-year"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-mcq-12"
+      ]
+    },
+    {
+      "id": "nr-deflator-formula",
+      "fact": "GDP deflator = (Nominal GDP ÷ Real GDP) × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "deflator",
+        "nominal",
+        "real"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-mcq-6",
+        "econ-national-income-card-5"
+      ]
+    },
+    {
+      "id": "nr-deflator-125",
+      "fact": "Nominal GDP ₹150 lakh crore and real GDP ₹120 lakh crore give a deflator of 125.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "125"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-mcq-6"
+      ]
+    },
+    {
+      "id": "nr-deflator-base-100",
+      "fact": "In the base year nominal GDP equals real GDP, so the deflator is 100.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "base year",
+        "100"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-mcq-28"
+      ]
+    },
+    {
+      "id": "nr-deflator-broadest",
+      "fact": "The GDP deflator covers all goods and services in GDP, unlike the fixed-basket CPI/WPI.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "deflator",
+        "CPI"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-card-5"
+      ]
+    },
+    {
+      "id": "nr-deflator-no-imports",
+      "fact": "The GDP deflator does not include the prices of imported goods.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "deflator",
+        "imported"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-mcq-27"
+      ]
+    },
+    {
+      "id": "me-product",
+      "fact": "Product (value-added) method: GDP at factor cost = Σ (Gross Value of Output − Intermediate Consumption).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "Gross Value of Output",
+        "Intermediate Consumption"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-9"
+      ]
+    },
+    {
+      "id": "me-value-added-700",
+      "fact": "Crops worth ₹1,000 grown with ₹300 of seeds and fertilizers give value added of ₹700.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "700"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-card-21"
+      ]
+    },
+    {
+      "id": "me-value-added-1600",
+      "fact": "Agriculture ₹1,000 output with ₹300 inputs plus industry ₹1,500 with ₹600 inputs gives combined GVA ₹1,600.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1,600"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-mcq-11"
+      ]
+    },
+    {
+      "id": "me-sector-contribution",
+      "fact": "The production method is useful for comparing the contributions of different sectors to national income.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "contribution",
+        "sectors"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-card-22"
+      ]
+    },
+    {
+      "id": "me-double-counting",
+      "fact": "Counting only value added or final goods avoids double counting.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "double counting"
+      ],
+      "taughtIn": "econ-national-income-note-aggregates",
+      "drilledBy": [
+        "econ-national-income-mcq-9"
+      ]
+    },
+    {
+      "id": "me-income",
+      "fact": "Income method: National income = wages + rent + interest + profits + mixed income.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "wages",
+        "rent",
+        "interest",
+        "profit",
+        "mixed income"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-9"
+      ]
+    },
+    {
+      "id": "me-labour-wages",
+      "fact": "Labour earns wages and salaries.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "labour",
+        "wages"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-mcq-29"
+      ]
+    },
+    {
+      "id": "me-land-rent",
+      "fact": "Land earns rent.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "land",
+        "rent"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-mcq-29"
+      ]
+    },
+    {
+      "id": "me-capital-interest",
+      "fact": "Capital earns interest.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "capital",
+        "interest"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-29"
+      ]
+    },
+    {
+      "id": "me-entrepreneur-profit",
+      "fact": "The entrepreneur earns profit.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "entrepreneur",
+        "profit"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-mcq-29"
+      ]
+    },
+    {
+      "id": "me-mixed-income",
+      "fact": "Mixed income is the income of the self-employed (small traders, farmers) where wage and profit cannot be separated.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mixed income",
+        "self-employed"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-10",
+        "econ-national-income-mcq-30"
+      ]
+    },
+    {
+      "id": "me-transfer-excluded",
+      "fact": "Transfer payments such as pensions and scholarships are excluded in the income method.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "pensions",
+        "scholarships"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-10",
+        "econ-national-income-card-7"
+      ]
+    },
+    {
+      "id": "me-income-20000",
+      "fact": "Wages ₹10,000 + rent ₹5,000 + interest ₹3,000 + profits ₹2,000 = national income ₹20,000.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "20,000"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-card-23"
+      ]
+    },
+    {
+      "id": "me-income-distribution",
+      "fact": "The income method is useful for analysing the distribution of income among factors of production.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "distribution of income"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-card-24"
+      ]
+    },
+    {
+      "id": "me-expenditure",
+      "fact": "Expenditure method: GDP at market prices = C + I + G + (X − M).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "C + I + G"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-3"
+      ]
+    },
+    {
+      "id": "me-investment-inventory",
+      "fact": "Investment (I) in the expenditure method is gross domestic capital formation, including inventory investment.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "inventory",
+        "capital formation"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-mcq-31"
+      ]
+    },
+    {
+      "id": "me-imports-subtracted",
+      "fact": "Exports are added and imports are subtracted in the expenditure method.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "imports",
+        "subtracted"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-31"
+      ]
+    },
+    {
+      "id": "me-expenditure-85000",
+      "fact": "C ₹50,000 + G ₹10,000 + I ₹20,000 + net exports ₹5,000 = GDP ₹85,000.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "85,000"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-card-25"
+      ]
+    },
+    {
+      "id": "me-three-same",
+      "fact": "All three methods yield the same national income figure when measured correctly (circular flow).",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "same",
+        "three methods"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-card-26"
+      ]
+    },
+    {
+      "id": "me-gdp-cst",
+      "fact": "Households use income for consumption, saving or taxes: GDP = C + S + T.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "C + S + T"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-mcq-31"
+      ]
+    },
+    {
+      "id": "me-twin-identity",
+      "fact": "Equating C + I + G + X − M with C + S + T gives (I − S) + (G − T) = M − X.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "(I - S)",
+        "(G - T)"
+      ],
+      "taughtIn": "econ-national-income-note-methods-extras",
+      "drilledBy": [
+        "econ-national-income-mcq-32"
+      ]
+    },
+    {
+      "id": "me-i-equals-s",
+      "fact": "With no government and no foreign sector, investment equals saving (I = S).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "Investment",
+        "Saving"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-32"
+      ]
+    },
+    {
+      "id": "me-closed-economy",
+      "fact": "A closed economy has neither exports nor imports, so GDP = GNP (UPSC 2011).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "neither exports nor imports"
+      ],
+      "taughtIn": "econ-national-income-note-pyq-traps",
+      "drilledBy": [
+        "econ-national-income-mcq-17"
+      ]
+    },
+    {
+      "id": "me-tourism-export",
+      "fact": "Spending by foreign tourists in India (e.g. Commonwealth Games visitors) is an export of services (UPSC 2011).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "export"
+      ],
+      "taughtIn": "econ-national-income-note-three-methods",
+      "drilledBy": [
+        "econ-national-income-mcq-18"
+      ]
+    },
+    {
+      "id": "me-expenditure-1000",
+      "fact": "C 600 + I 150 + G 200 + (X 100 − M 50) = GDP ₹1,000 crore.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1,000 crore"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-card-27"
+      ]
+    },
+    {
+      "id": "gva-def",
+      "fact": "GVA = value of output − intermediate consumption, measured at basic prices.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "GVA",
+        "basic prices"
+      ],
+      "taughtIn": "econ-national-income-note-gva",
+      "drilledBy": [
+        "econ-national-income-card-8"
+      ]
+    },
+    {
+      "id": "gva-gdp-bridge",
+      "fact": "GDP at market price = GVA at basic prices + product taxes − product subsidies.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "Product Taxes",
+        "Product Subsidies"
+      ],
+      "taughtIn": "econ-national-income-note-gva",
+      "drilledBy": [
+        "econ-national-income-mcq-7",
+        "econ-national-income-card-8"
+      ]
+    },
+    {
+      "id": "gva-basic-fc",
+      "fact": "GVA at basic prices = GVA at factor cost + production taxes − production subsidies.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "production taxes",
+        "factor cost"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-mcq-33"
+      ]
+    },
+    {
+      "id": "gva-headline-2015",
+      "fact": "GVA at basic prices became the headline sectoral measure with the 2015 (base 2011-12) revision.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "2015",
+        "GVA"
+      ],
+      "taughtIn": "econ-national-income-note-gva",
+      "drilledBy": [
+        "econ-national-income-mcq-33"
+      ]
+    },
+    {
+      "id": "gva-product-vs-production",
+      "fact": "Product taxes (GST, excise) are per unit of output; production taxes (land revenue, stamp duty) are not tied to output.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "product taxes",
+        "production taxes"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-mcq-34"
+      ]
+    },
+    {
+      "id": "gva-gap-signal",
+      "fact": "A gap between GVA and GDP growth reflects changing net product taxes, not changing real output.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "net product taxes"
+      ],
+      "taughtIn": "econ-national-income-note-gva",
+      "drilledBy": [
+        "econ-national-income-card-28"
+      ]
+    },
+    {
+      "id": "by-2022-23",
+      "fact": "The current base year of India's national accounts is 2022-23 (new series released in February 2026).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "2022-23",
+        "2026"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-8",
+        "econ-national-income-card-9",
+        "econ-national-income-mcq-42"
+      ]
+    },
+    {
+      "id": "by-2011-12-2015",
+      "fact": "The previous base year 2011-12 was adopted in the January 2015 revision.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "2011-12",
+        "2015"
+      ],
+      "taughtIn": "econ-national-income-note-gva",
+      "drilledBy": [
+        "econ-national-income-mcq-35"
+      ]
+    },
+    {
+      "id": "by-acnas-goldar",
+      "fact": "The 2022-23 revision was guided by the Advisory Committee on National Accounts Statistics (ACNAS), chaired by Prof. Biswanath Goldar.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "ACNAS"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-8",
+        "econ-national-income-card-9",
+        "econ-national-income-mcq-42"
+      ]
+    },
+    {
+      "id": "by-data-sources",
+      "fact": "The new series uses newer data sources such as GST, MCA-21 corporate filings and PLFS.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "GST",
+        "MCA-21"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-8",
+        "econ-national-income-card-9"
+      ]
+    },
+    {
+      "id": "by-not-rbi",
+      "fact": "National accounts and GDP estimates are compiled by the NSO (MoSPI), not by the RBI.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "RBI"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-mcq-8"
+      ]
+    },
+    {
+      "id": "by-first-1948",
+      "fact": "India's first official national-income series (CSO) had the base year 1948-49.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1948-49"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-mcq-35"
+      ]
+    },
+    {
+      "id": "by-series-list",
+      "fact": "Earlier base years include 1960-61, 1970-71, 1980-81, 1993-94, 1999-2000 and 2004-05.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1999-2000",
+        "2004-05"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-card-29"
+      ]
+    },
+    {
+      "id": "by-un-five-years",
+      "fact": "The UN recommends revising the base year about every five years.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "five"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-card-30"
+      ]
+    },
+    {
+      "id": "by-growth-2025-26",
+      "fact": "Real GDP growth in 2025-26 was about 7.6% (new series).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "7.6"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-card-31"
+      ]
+    },
+    {
+      "id": "by-q1-2026-27",
+      "fact": "Real GDP grew 7.8% in Q1 (April–June) 2026-27.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "7.8"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-card-31"
+      ]
+    },
+    {
+      "id": "by-imf-oct-2026",
+      "fact": "In October 2026 the IMF said India's revised GDP methodology was consistent with international standards.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "IMF",
+        "international standards"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-card-32"
+      ]
+    },
+    {
+      "id": "hi-naoroji",
+      "fact": "Dadabhai Naoroji made the first estimate of India's national income in \"Poverty and Un-British Rule in India\" (1867-68).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Naoroji"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-13",
+        "econ-national-income-card-10"
+      ]
+    },
+    {
+      "id": "hi-naoroji-20",
+      "fact": "Naoroji estimated India's per capita income at ₹20 a year (1867-68).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Naoroji",
+        "20"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-37"
+      ]
+    },
+    {
+      "id": "hi-vkrv-rao",
+      "fact": "V.K.R.V. Rao made the first scientific estimate of national income (1931).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "V.K.R.V. Rao"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-13",
+        "econ-national-income-card-10"
+      ]
+    },
+    {
+      "id": "hi-nic-1949",
+      "fact": "The National Income Committee (1949), the first official post-independence body, was chaired by P.C. Mahalanobis.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Mahalanobis"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-19"
+      ]
+    },
+    {
+      "id": "hi-nic-members",
+      "fact": "Members of the National Income Committee included V.K.R.V. Rao and D.R. Gadgil.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Gadgil"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-card-33"
+      ]
+    },
+    {
+      "id": "hi-cso-1951",
+      "fact": "The CSO (Central Statistical Office) was set up in 1951.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "CSO",
+        "1951"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-36"
+      ]
+    },
+    {
+      "id": "hi-nso-2019",
+      "fact": "The NSO was formed in 2019 by merging the CSO and NSSO under MoSPI.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "NSO",
+        "2019"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-36"
+      ]
+    },
+    {
+      "id": "hi-nsc-2005",
+      "fact": "The National Statistical Commission (2005) was set up on the Rangarajan Commission's recommendation.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "National Statistical Commission",
+        "Rangarajan"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-card-34"
+      ]
+    },
+    {
+      "id": "hi-difficulties",
+      "fact": "Estimating national income is hard because of the large informal sector, non-monetised output (self-consumption) and the black economy.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "informal",
+        "non-monetised"
+      ],
+      "taughtIn": "econ-national-income-note-base-year-agencies",
+      "drilledBy": [
+        "econ-national-income-mcq-14"
+      ]
+    },
+    {
+      "id": "lim-unpaid",
+      "fact": "GDP does not count non-market activities such as unpaid domestic work or volunteer services.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "unpaid",
+        "domestic"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-mcq-38"
+      ]
+    },
+    {
+      "id": "lim-inequality",
+      "fact": "GDP does not reflect income inequality, happiness or overall well-being.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "inequality",
+        "well-being"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-mcq-39"
+      ]
+    },
+    {
+      "id": "lim-environment",
+      "fact": "GDP ignores environmental degradation and depletion of natural resources.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "environmental",
+        "degradation"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-mcq-38"
+      ]
+    },
+    {
+      "id": "lim-shadow",
+      "fact": "Activities in the informal or black (shadow) economy are not included in GDP.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "shadow",
+        "black"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-mcq-38"
+      ]
+    },
+    {
+      "id": "lim-sustainability",
+      "fact": "GDP measures short-term output but not whether growth is sustainable over the long term.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sustainable",
+        "long term"
+      ],
+      "taughtIn": "econ-national-income-note-concepts-limits",
+      "drilledBy": [
+        "econ-national-income-card-35"
+      ]
+    },
+    {
+      "id": "ap-gsdp-des",
+      "fact": "Each state's GSDP is estimated by its Directorate of Economics and Statistics (DES); Andhra Pradesh's GSDP for 2026-27 is projected at about ₹19.75 lakh crore.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "Directorate of Economics and Statistics",
+        "19.75"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-card-36"
+      ]
+    },
+    {
+      "id": "ap-pci-exact",
+      "fact": "Andhra Pradesh's per-capita GSDP in 2024-25 was ₹2,98,058, above India's ₹2,34,859.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "2,98,058",
+        "2,34,859"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-mcq-43"
+      ]
+    },
+    {
+      "id": "ap-gsdp-series",
+      "fact": "AP's GSDP rose from ₹15.91 lakh crore (2024-25) to ₹17.62 lakh crore (2025-26 RE), projected ₹19.75 lakh crore in 2026-27.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "15.91",
+        "17.62"
+      ],
+      "taughtIn": "econ-national-income-note-series-history",
+      "drilledBy": [
+        "econ-national-income-mcq-44"
+      ]
+    },
+    {
+      "id": "pq-nominal-steady",
+      "fact": "GDP at market prices (in rupees) has risen steadily, but the real GDP growth rate has not (UPSC 2015).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "market prices",
+        "steadily"
+      ],
+      "taughtIn": "econ-national-income-note-pyq-traps",
+      "drilledBy": [
+        "econ-national-income-mcq-40"
+      ]
+    },
+    {
+      "id": "pq-2011-neither",
+      "fact": "Neither GDP growth nor per-capita income growth increased steadily in the five years before 2011 (UPSC 2011).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "per capita income",
+        "steadily"
+      ],
+      "taughtIn": "econ-national-income-note-pyq-traps",
+      "drilledBy": [
+        "econ-national-income-mcq-41"
+      ]
+    },
+    {
+      "id": "pq-level-vs-rate",
+      "fact": "A rising level of GDP is compatible with a falling growth rate.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "level",
+        "growth rate"
+      ],
+      "taughtIn": "econ-national-income-note-nominal-real-deflator",
+      "drilledBy": [
+        "econ-national-income-card-37"
+      ]
+    }
+  ]
+}

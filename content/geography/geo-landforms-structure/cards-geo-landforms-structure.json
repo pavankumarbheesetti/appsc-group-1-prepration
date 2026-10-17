@@ -3,19 +3,1115 @@
   "subjectCode": "GEO",
   "topic": "Landforms & Structure of the Earth",
   "items": [
-    {"id":"geo-landforms-structure-card-1","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Innermost layer of the Earth and its composition?","back":"Core = NIFE (nickel + iron); outer core molten, inner core solid.","examPoint":"Earth's internal layers — crust, mantle, core (depths & states)","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-2","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"SIAL vs SIMA — composition and which crust?","back":"SIAL = silica+aluminium, granitic continental crust (~2.7); SIMA = silica+magnesium, basaltic oceanic crust (~3.0).","examPoint":"SIAL-SIMA-NIFE composition; oceanic vs continental crust","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-3","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Which discontinuity separates crust from mantle?","back":"Mohorovicic (Moho). Others: Conrad (within crust), Repetti (mantle), Gutenberg (mantle/core), Lehmann (outer/inner core).","examPoint":"Interior discontinuities — Conrad, Moho, Repetti, Gutenberg, Lehmann","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-4","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Continental Drift — proposer, supercontinent, key fossil evidence?","back":"Alfred Wegener (1912); Pangaea in Panthalassa; Glossopteris flora & Mesosaurus fossils.","examPoint":"Continental Drift Theory (Wegener) — Pangaea, Tethys & evidences","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-5","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Sea-floor spreading proposer and its proof?","back":"Harry Hess; proven by symmetrical paleomagnetic stripes across mid-ocean ridges. Holmes gave convection currents.","examPoint":"Sea-floor spreading (Hess), convection currents (Holmes) & paleomagnetism","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-6","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Three plate boundary types with an example each?","back":"Divergent = mid-ocean ridge/E. African Rift; Convergent = trench/Himalaya; Transform = San Andreas Fault.","examPoint":"Plate boundaries — divergent, convergent, transform","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-7","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"When did the Indian Plate collide with Asia, and what else did it form?","back":"Collision 40–50 mya raised the (still-rising) Himalayas; the same movement erupted the Deccan Traps (~60 mya).","examPoint":"Movement of the Indian Plate — Himalayas & Deccan Traps","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-8","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Focus vs epicentre of an earthquake?","back":"Focus (hypocentre) = point inside Earth where energy is released; epicentre = surface point directly above it.","examPoint":"Earthquakes — focus/epicentre, foreshocks/aftershocks, depth classes","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-9","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Which seismic wave proves the outer core is molten, and which is most destructive?","back":"S-waves cannot pass liquids (molten outer core); slowest surface (L) waves are most destructive. P-waves fastest.","examPoint":"Seismic waves — P, S and surface (L) wave characteristics","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-10","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Richter scale: energy jump per step and for M5→M7?","back":"One step ≈ 32× more energy; two steps (M5→M7) ≈ 1,000×. Mercalli measures intensity, not energy.","examPoint":"Earthquake measurement — Richter vs Mercalli & energy scaling","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-11","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Volcano types by shape/lava?","back":"Shield (fluid basalt, gentle), Composite/strato (viscous, steep), Caldera (collapse, most explosive), Flood basalt (Deccan Traps).","examPoint":"Volcano types — shield, composite, caldera, flood basalt","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-12","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Metamorphic pairs: limestone, sandstone, coal, granite become?","back":"Limestone→marble; sandstone→quartzite; coal→graphite/anthracite; granite→gneiss; shale→slate/schist.","examPoint":"Rock types (igneous/sedimentary/metamorphic), metamorphism & rock cycle","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-13","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Signature erosional landforms of glacier, wind and karst?","back":"Glacier = cirque/arete/horn/fjord; wind = yardang/inselberg (barchan deposits); karst = sinkhole, stalactite/stalagmite.","examPoint":"Glacial landforms — cirque, U-valley, arete, horn, fjord, moraine, esker, drumlin","source":"NCERT Geography","verified":true},
-    {"id":"geo-landforms-structure-card-14","subjectCode":"GEO","subtopicId":"geo-landforms-structure","front":"Four mountain types with an example each?","back":"Fold = Himalayas/Alps; Block = Black Forest/Vosges; Volcanic = Kilimanjaro/Fujiyama; Residual = Aravalli.","examPoint":"Mountain types — fold, block, volcanic, residual (world & India)","source":"NCERT Geography","verified":true}
+    {
+      "id": "geo-landforms-structure-card-1",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Innermost layer of the Earth and its composition?",
+      "back": "Core = NIFE (nickel + iron); outer core molten, inner core solid.",
+      "examPoint": "Earth's internal layers — crust, mantle, core (depths & states)",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-2",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "SIAL vs SIMA — composition and which crust?",
+      "back": "SIAL = silica+aluminium, granitic continental crust (~2.7); SIMA = silica+magnesium, basaltic oceanic crust (~3.0).",
+      "examPoint": "SIAL-SIMA-NIFE composition; oceanic vs continental crust",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-3",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Which discontinuity separates crust from mantle?",
+      "back": "Mohorovicic (Moho). Others: Conrad (within crust), Repetti (mantle), Gutenberg (mantle/core), Lehmann (outer/inner core).",
+      "examPoint": "Interior discontinuities — Conrad, Moho, Repetti, Gutenberg, Lehmann",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-4",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Continental Drift — proposer, supercontinent, key fossil evidence?",
+      "back": "Alfred Wegener (1912); Pangaea in Panthalassa; Glossopteris flora & Mesosaurus fossils.",
+      "examPoint": "Continental Drift Theory (Wegener) — Pangaea, Tethys & evidences",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-5",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Sea-floor spreading proposer and its proof?",
+      "back": "Harry Hess; proven by symmetrical paleomagnetic stripes across mid-ocean ridges. Holmes gave convection currents.",
+      "examPoint": "Sea-floor spreading (Hess), convection currents (Holmes) & paleomagnetism",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-6",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Three plate boundary types with an example each?",
+      "back": "Divergent = mid-ocean ridge/E. African Rift; Convergent = trench/Himalaya; Transform = San Andreas Fault.",
+      "examPoint": "Plate boundaries — divergent, convergent, transform",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-7",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "When did the Indian Plate collide with Asia, and what else did it form?",
+      "back": "Collision 40–50 mya raised the (still-rising) Himalayas; the same movement erupted the Deccan Traps (~60 mya).",
+      "examPoint": "Movement of the Indian Plate — Himalayas & Deccan Traps",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-8",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Focus vs epicentre of an earthquake?",
+      "back": "Focus (hypocentre) = point inside Earth where energy is released; epicentre = surface point directly above it.",
+      "examPoint": "Earthquakes — focus/epicentre, foreshocks/aftershocks, depth classes",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-9",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Which seismic wave proves the outer core is molten, and which is most destructive?",
+      "back": "S-waves cannot pass liquids (molten outer core); slowest surface (L) waves are most destructive. P-waves fastest.",
+      "examPoint": "Seismic waves — P, S and surface (L) wave characteristics",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-10",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Richter scale: energy jump per step and for M5→M7?",
+      "back": "One step ≈ 32× more energy; two steps (M5→M7) ≈ 1,000×. Mercalli measures intensity, not energy.",
+      "examPoint": "Earthquake measurement — Richter vs Mercalli & energy scaling",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-11",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Volcano types by shape/lava?",
+      "back": "Shield (fluid basalt, gentle), Composite/strato (viscous, steep), Caldera (collapse, most explosive), Flood basalt (Deccan Traps).",
+      "examPoint": "Volcano types — shield, composite, caldera, flood basalt",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-12",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Metamorphic pairs: limestone, sandstone, coal, granite become?",
+      "back": "Limestone→marble; sandstone→quartzite; coal→graphite/anthracite; granite→gneiss; shale→slate/schist.",
+      "examPoint": "Rock types (igneous/sedimentary/metamorphic), metamorphism & rock cycle",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-13",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Signature erosional landforms of glacier, wind and karst?",
+      "back": "Glacier = cirque/arete/horn/fjord; wind = yardang/inselberg (barchan deposits); karst = sinkhole, stalactite/stalagmite.",
+      "examPoint": "Glacial landforms — cirque, U-valley, arete, horn, fjord, moraine, esker, drumlin",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-14",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Four mountain types with an example each?",
+      "back": "Fold = Himalayas/Alps; Block = Black Forest/Vosges; Volcanic = Kilimanjaro/Fujiyama; Residual = Aravalli.",
+      "examPoint": "Mountain types — fold, block, volcanic, residual (world & India)",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-15",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The discontinuities top-down are Conrad, Moho, Repetti, Gutenberg, Lehmann ('____ is ReGuLar').",
+      "back": "Commander Mohit — The discontinuities top-down are Conrad, Moho, Repetti, Gutenberg, Lehmann ('Commander Mohit is ReGuLar').",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-16",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Foreshock vs aftershock vs swarm?",
+      "back": "Foreshock: mild quake before the main shock; aftershocks: lesser quakes after it; swarm: many small quakes for months with no main shock.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-17",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ is India's other volcanic island and is regarded as dormant.",
+      "back": "Narcondam — Narcondam is India's other volcanic island and is regarded as dormant.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-18",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ system (Proterozoic) carries iron, manganese, limestone, asbestos and barytes.",
+      "back": "Cuddapah — The Cuddapah system (Proterozoic) carries iron, manganese, limestone, asbestos and barytes.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-19",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "State of the lower mantle?",
+      "back": "Solid — it lies below the weak, partly molten asthenosphere.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-20",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Density range and composition of the mantle?",
+      "back": "About 3.3 to 5.7 g/cm³, rising with depth; silicate minerals rich in iron and magnesium.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-21",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Deepest borehole into the crust?",
+      "back": "Kola Superdeep Borehole, Russia — about 12 km.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-22",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Indirect sources of information on the Earth's interior?",
+      "back": "Temperature/pressure rise with depth, meteorites, gravity and magnetic surveys, and seismic waves.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-23",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Earth's mean radius?",
+      "back": "About 6,371 km.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-24",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: According to Wegener, drift began about ____ years ago.",
+      "back": "200 million — According to Wegener, drift began about 200 million years ago.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-25",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ and Hercynian mountains of Europe continue in the Appalachians of the USA.",
+      "back": "Caledonian — The Caledonian and Hercynian mountains of Europe continue in the Appalachians of the USA.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-26",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Lemurs in India, Madagascar and Africa led to the idea of a linking land called ____.",
+      "back": "Lemuria — Lemurs in India, Madagascar and Africa led to the idea of a linking land called Lemuria.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-27",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ (glacial sedimentary rock) of the Gondwana system occurs across India, Africa, Antarctica and Australia.",
+      "back": "Tillite — Tillite (glacial sedimentary rock) of the Gondwana system occurs across India, Africa, Antarctica and Australia.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-28",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Which rock evidence matches Brazil and West Africa?",
+      "back": "Belts of ancient rocks about 2,000 million years old on the Brazilian coast match those of western Africa.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-29",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Where was India 140 million years ago?",
+      "back": "Far to the south, in the Southern Hemisphere; its northward journey began ~200 million years ago.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-30",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Human-induced earthquakes are caused by ____, petroleum extraction, artificial lakes and nuclear tests.",
+      "back": "mining — Human-induced earthquakes are caused by mining, petroleum extraction, artificial lakes and nuclear tests.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-31",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Why did the 2016 Italy quake (6.2) kill more than the Myanmar quake (6.8)?",
+      "back": "Italy's was very shallow (~10 km); Myanmar's was deep (84 km). Depth and location matter, not only energy.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-32",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The 2011 ____ (Japan) quake measured 9.1 and the 1964 Alaska quake 9.2.",
+      "back": "Tohoku — The 2011 Tohoku (Japan) quake measured 9.1 and the 1964 Alaska quake 9.2.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-33",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "How often do major (7–7.9) and great (8–8.9) earthquakes occur?",
+      "back": "Major: about 10–20 a year; Great: about one a year; 9+ about once per 10–50 years.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-34",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Route of the Alpine (mid-world) earthquake belt?",
+      "back": "From Mexico across the Atlantic and Mediterranean, through the Alpine–Caucasus ranges to the Caspian and the Himalayas.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-35",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What is a volcanic neck?",
+      "back": "The solidified magma in a volcano's conduit, left standing as a pipe-like pillar after the cone is eroded.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-36",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Quartz (silicon + oxygen, hexagonal crystals) is used in radio and ____.",
+      "back": "radar — Quartz (silicon + oxygen, hexagonal crystals) is used in radio and radar.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-37",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ is a double carbonate of calcium and magnesium.",
+      "back": "Dolomite — Dolomite is a double carbonate of calcium and magnesium.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-38",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ forms about 7% of the crust (asbestos); mica about 4% (electrical instruments).",
+      "back": "Amphibole — Amphibole forms about 7% of the crust (asbestos); mica about 4% (electrical instruments).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-39",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Colour of olivine and pyroxene?",
+      "back": "Olivine: greenish crystals (Mg, Fe, silica). Pyroxene: green or black (Ca, Al, Mg, Fe, silica).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-40",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Dyke (intermediate) rocks lie between plutonic and surface rocks and are ____.",
+      "back": "semi-crystalline — Dyke (intermediate) rocks lie between plutonic and surface rocks and are semi-crystalline.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-41",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What are amygdales?",
+      "back": "Bubbles formed in basalt by escaping gases, later filled with minerals.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-42",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Petroleum comes from the decay of tiny ____ in sedimentary rocks.",
+      "back": "marine organisms — Petroleum comes from the decay of tiny marine organisms in sedimentary rocks.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-43",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: In the rock cycle, ____ carries crustal rocks into the mantle where they melt into magma.",
+      "back": "subduction — In the rock cycle, subduction carries crustal rocks into the mantle where they melt into magma.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-44",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Ice-deposited sedimentary rocks are ____/tillite; wind-deposited sediments are loess.",
+      "back": "till — Ice-deposited sedimentary rocks are till/tillite; wind-deposited sediments are loess.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-45",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Flowering plants and trees expanded in the ____.",
+      "back": "Miocene — Flowering plants and trees expanded in the Miocene.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-46",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Life of the Eocene and Palaeocene?",
+      "back": "Eocene: rabbits and hares. Palaeocene: small mammals such as rats and mice.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-47",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Frogs and turtles evolved in the ____.",
+      "back": "Triassic — Frogs and turtles evolved in the Triassic.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-48",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: In the ____ reptiles replaced amphibians; it ended in a mass extinction.",
+      "back": "Permian — In the Permian reptiles replaced amphibians; it ended in a mass extinction.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-49",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What characterises the Hadean eon?",
+      "back": "Formation of oceans and continents, with an atmosphere rich in CO2 (3,800–4,800 million years ago in the source).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-50",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ period comprises the Pleistocene and Holocene epochs.",
+      "back": "Quaternary — The Quaternary period comprises the Pleistocene and Holocene epochs.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-51",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: On the modern chart the dinosaurs' extinction is dated about ____ years ago (source: 65).",
+      "back": "66 million — On the modern chart the dinosaurs' extinction is dated about 66 million years ago (source: 65).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-52",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Two uses and one limitation of the geological time scale?",
+      "back": "Uses: dating rocks/fossils, correlating strata, resource exploration, past climates. Limitation: incomplete fossil record.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-53",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Radioactive decay provides about ____ of the Earth's internal heat.",
+      "back": "50% — Radioactive decay provides about 50% of the Earth's internal heat.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-54",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ endogenic movements are earthquakes and volcanoes, mostly at plate margins.",
+      "back": "Sudden — Sudden endogenic movements are earthquakes and volcanoes, mostly at plate margins.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-55",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Uplift caused by the 1822 Chile and 1885 New Zealand earthquakes?",
+      "back": "Chile 1822: about 1 m of coastal uplift. New Zealand 1885: up to 3 m.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-56",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ provides the directional force for all downslope geomorphic movement.",
+      "back": "Gravity — Gravity provides the directional force for all downslope geomorphic movement.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-57",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Frost weathering includes frost shattering, ____ and freeze–thaw.",
+      "back": "frost-wedging — Frost weathering includes frost shattering, frost-wedging and freeze–thaw.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-58",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ is typical of arid climates.",
+      "back": "Salt weathering — Salt weathering is typical of arid climates.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-59",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ is the chemical addition of water, e.g. iron oxide becoming bulkier iron hydroxide.",
+      "back": "Hydration — Hydration is the chemical addition of water, e.g. iron oxide becoming bulkier iron hydroxide.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-60",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Biological weathering is caused by ____, mosses, plant roots and burrowing animals.",
+      "back": "lichens — Biological weathering is caused by lichens, mosses, plant roots and burrowing animals.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-61",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ erosion removes a thin layer of soil; rills grow into gullies.",
+      "back": "Sheet — Sheet erosion removes a thin layer of soil; rills grow into gullies.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-62",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Coarse fragments left behind by wind form ____; wind depressions reaching groundwater become oases.",
+      "back": "desert pavement — Coarse fragments left behind by wind form desert pavement; wind depressions reaching groundwater become oases.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-63",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What is splash erosion and what prevents it?",
+      "back": "Raindrops hitting bare soil like tiny bombs displace particles; vegetation cover prevents it.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-64",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ is the breaking of load particles by colliding with each other; abrasion is load scraping the bed.",
+      "back": "Attrition — Attrition is the breaking of load particles by colliding with each other; abrasion is load scraping the bed.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-65",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ erosion moves a stream's source back upstream, lengthening the channel.",
+      "back": "Headward — Headward erosion moves a stream's source back upstream, lengthening the channel.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-66",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Braiding is a channel splitting around ____, in rivers with low slope or heavy load.",
+      "back": "braid bars — Braiding is a channel splitting around braid bars, in rivers with low slope or heavy load.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-67",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ are cylindrical holes drilled into river beds by stones swirling in eddies.",
+      "back": "Potholes — Potholes are cylindrical holes drilled into river beds by stones swirling in eddies.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-68",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: River ____ are stepped benches marking former valley floors.",
+      "back": "terraces — River terraces are stepped benches marking former valley floors.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-69",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ form where streams leave mountains, as along the Himalayan foothills.",
+      "back": "Alluvial fans — Alluvial fans form where streams leave mountains, as along the Himalayan foothills.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-70",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Natural ____ are low ridges along river banks; a breach causes sudden floods (Hwang Ho).",
+      "back": "levees — Natural levees are low ridges along river banks; a breach causes sudden floods (Hwang Ho).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-71",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What is an abandoned delta? Example?",
+      "back": "A delta left unused when the river shifts its mouth — Yellow River (China); western Ganga delta (Hooghly).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-72",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Lacustrine vs truncated delta?",
+      "back": "Lacustrine: formed where a river enters a lake. Truncated: cut back by sea waves and currents.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-73",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Piedmont glaciers form at mountain bases, as in southern ____.",
+      "back": "Alaska — Piedmont glaciers form at mountain bases, as in southern Alaska.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-74",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: A ____ is a tributary glacier's valley left high above the main valley.",
+      "back": "hanging valley — A hanging valley is a tributary glacier's valley left high above the main valley.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-75",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "How do kame terraces form?",
+      "back": "Sediment collects in ponds and lakes trapped between lobes of glacier ice or between the glacier and the valley side.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-76",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Why are eskers useful?",
+      "back": "They are winding, embankment-like ridges of glacial gravel — often used for building roads.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-77",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: An ____ (till) plain is the stratified deposit left where a glacier melts.",
+      "back": "outwash — An outwash (till) plain is the stratified deposit left where a glacier melts.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-78",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Mountains rise only about 1,500 m above their ____; near the equator the snowline is about 5,500 m.",
+      "back": "snowline — Mountains rise only about 1,500 m above their snowline; near the equator the snowline is about 5,500 m.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-79",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: A ____ is an intermontane basin in a dry region.",
+      "back": "bolson — A bolson is an intermontane basin in a dry region.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-80",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Deflation basins (____s) are hollows scooped out by wind.",
+      "back": "blowout — Deflation basins (blowouts) are hollows scooped out by wind.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-81",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: A ____ is also called a pedestal rock.",
+      "back": "mushroom rock — A mushroom rock is also called a pedestal rock.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-82",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____s are rock pillars of hard rock standing above soft rock.",
+      "back": "Demoiselle — Demoiselles are rock pillars of hard rock standing above soft rock.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-83",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "How do wind windows and wind bridges form?",
+      "back": "Wind abrades holes through rock (windows); widening them further leaves arch-like wind bridges.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-84",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "How are desert ripple marks formed?",
+      "back": "By saltation — the bouncing transport of sand grains over an uneven surface.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-85",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Thick loess occurs along the Yellow River (China) and near the Missouri River in ____ (USA).",
+      "back": "Iowa — Thick loess occurs along the Yellow River (China) and near the Missouri River in Iowa (USA).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-86",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Deserts receive less than about ____ of rain a year.",
+      "back": "250 mm — Deserts receive less than about 250 mm of rain a year.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-87",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The largest desert is the polar ____ desert (about 14.2 million km²).",
+      "back": "Antarctic — The largest desert is the polar Antarctic desert (about 14.2 million km²).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-88",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Pure limestone is ____; with magnesium it is dolomite.",
+      "back": "calcium carbonate — Pure limestone is calcium carbonate; with magnesium it is dolomite.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-89",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Karst regions have little surface drainage; water flows ____.",
+      "back": "underground — Karst regions have little surface drainage; water flows underground.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-90",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Surface streams disappear underground through ____s.",
+      "back": "swallow hole — Surface streams disappear underground through swallow holes.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-91",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What is a blind valley?",
+      "back": "A karst valley (polje) in which the stream loses itself underground.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-92",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What is a karst tunnel?",
+      "back": "A limestone cave with openings at both ends, through which a cave stream discharges.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-93",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What are bogas?",
+      "back": "Sinking creeks in a karst valley — water lost through cracks — whose tops are open.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-94",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Karst caves in India occur in ____, Dehradun and the Shillong plateau.",
+      "back": "Bastar — Karst caves in India occur in Bastar, Dehradun and the Shillong plateau.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-95",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What is a coastal chasm?",
+      "back": "A narrow, deep indentation cut by waves along vertical planes of weakness; it widens over time into a bay.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-96",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Mountains typically rise above ____ m; plateaus over 300 m above their surroundings.",
+      "back": "600 — Mountains typically rise above 600 m; plateaus over 300 m above their surroundings.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-97",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: Mount ____ (4,401 m, Colorado) is the highest peak of the Rockies.",
+      "back": "Elbert — Mount Elbert (4,401 m, Colorado) is the highest peak of the Rockies.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-98",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ (2,228 m) is the highest peak of the Great Dividing Range, source of the Murray–Darling.",
+      "back": "Kosciuszko — Kosciuszko (2,228 m) is the highest peak of the Great Dividing Range, source of the Murray–Darling.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-99",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The Appalachians are very old fold mountains (~480 million years); highest peak Mount ____.",
+      "back": "Mitchell — The Appalachians are very old fold mountains (~480 million years); highest peak Mount Mitchell.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-100",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: ____ Ntlenyana (3,482 m, Lesotho) is the highest peak of the Drakensberg.",
+      "back": "Thabana — Thabana Ntlenyana (3,482 m, Lesotho) is the highest peak of the Drakensberg.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-101",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Highest peaks of the Altai and Scandinavian mountains?",
+      "back": "Altai: Belukha (4,506 m). Scandinavian (Scandes): Galdhopiggen (2,469 m, Norway).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-102",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The Mexican Plateau (\"Mineral Store\") has the world's largest ____ mine (Chihuahua).",
+      "back": "silver — The Mexican Plateau (\"Mineral Store\") has the world's largest silver mine (Chihuahua).",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-103",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ (Peru–Bolivia) is known for tin.",
+      "back": "Altiplano — The Altiplano (Peru–Bolivia) is known for tin.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-104",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ Plateau is a rain-shadow semi-desert famous for sheep rearing.",
+      "back": "Patagonian — The Patagonian Plateau is a rain-shadow semi-desert famous for sheep rearing.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-105",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ Plateau (Turkey) is famous for Angora goats.",
+      "back": "Anatolian — The Anatolian Plateau (Turkey) is famous for Angora goats.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-106",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Massif Central and Iberian plateaus — known for?",
+      "back": "Massif Central (France): faulting, grape cultivation. Iberian (Spain): high-quality iron.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-107",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The Loess (____) Plateau of China has the most erodible soil in the world.",
+      "back": "Huangtu — The Loess (Huangtu) Plateau of China has the most erodible soil in the world.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-108",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ Plateau (Pakistan) lies between the Jhelum and Indus, with the Salt Range to the south.",
+      "back": "Pothohar — The Pothohar Plateau (Pakistan) lies between the Jhelum and Indus, with the Salt Range to the south.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-109",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "What is the Mascarene Plateau?",
+      "back": "An undersea plateau in the Indian Ocean made of granite — a remnant of Gondwana; second-largest after the Kerguelen.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-110",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Ahaggar and Bavarian plateaus?",
+      "back": "Ahaggar/Hoggar: volcanic basalt plateau in the Sahara (Algeria). Bavarian: the Alpine Foreland, shaped by ice ages.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    },
+    {
+      "id": "geo-landforms-structure-card-111",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-landforms-structure",
+      "front": "Fill in the blank: The ____ Plateau is India's mineral heartland.",
+      "back": "Chota Nagpur — The Chota Nagpur Plateau is India's mineral heartland.",
+      "examPoint": "Internal structure & major landforms — completeness facts",
+      "source": "APPSC GK — World Geography: Interior of the Earth, Plate Tectonics, Earthquake, Volcano, Rocks, Geological Time Scale, Geomorphology, River, Glacial, Arid, Karst, Marine landforms, Mountains, Plateaus, Desert (.txt); NCERT XI Fundamentals of Physical Geography ch. 3–7; PYQ bank geo-landforms-structure",
+      "verified": true
+    }
   ]
 }

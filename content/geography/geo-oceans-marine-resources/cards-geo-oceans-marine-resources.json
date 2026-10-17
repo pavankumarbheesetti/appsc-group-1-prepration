@@ -3,15 +3,695 @@
   "subjectCode": "GEO",
   "topic": "Oceans & Marine Resources",
   "items": [
-    {"id":"geo-oceans-marine-resources-card-1","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"Ocean relief zones from coast to deep, and the deepest?","back":"Shelf → slope → rise → abyssal plain → trench (deepest, Mariana ~11 km); mid-ocean ridge at divergent edges.","examPoint":"Ocean relief — continental shelf/slope/rise, abyssal plain, trenches (Mariana), mid-ocean ridges","source":"NCERT Geography","verified":true},
-    {"id":"geo-oceans-marine-resources-card-2","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"Average ocean salinity and why the Dead Sea is so salty?","back":"~35‰ (NaCl-dominated). Dead Sea = enclosed, high evaporation, no outlet → extreme salinity.","examPoint":"Salinity — average 35‰, controlling factors, Dead Sea/Baltic extremes","source":"NCERT Geography","verified":true},
-    {"id":"geo-oceans-marine-resources-card-3","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"What is the thermocline?","back":"The layer where temperature falls rapidly with depth, separating warm surface water from cold deep water.","examPoint":"Ocean temperature — thermocline, vertical & horizontal variation","source":"NCERT Geography","verified":true},
-    {"id":"geo-oceans-marine-resources-card-4","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"Classify: Gulf Stream, Kuroshio, Humboldt, Benguela.","back":"Warm: Gulf Stream (N Atlantic), Kuroshio (NW Pacific). Cold: Humboldt (SE Pacific), Benguela (SE Atlantic).","examPoint":"Ocean currents — warm vs cold; Gulf Stream, Kuroshio, Humboldt, Benguela; effect on climate & fishing","source":"NCERT Geography","verified":true},
-    {"id":"geo-oceans-marine-resources-card-5","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"Spring vs neap tides — when?","back":"Spring (highest) at new & full moon (Sun-Earth-Moon aligned); neap (lowest) at 1st & 3rd quarter (right angles).","examPoint":"Movements of ocean water — waves, tides (spring/neap), causes of tides","source":"NCERT Geography","verified":true},
-    {"id":"geo-oceans-marine-resources-card-6","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"Coral reef types and growth conditions?","back":"Fringing, barrier (lagoon), atoll (ring). Need warm (>20°C), shallow, clear, sediment-free, normal-salinity water.","examPoint":"Coral reefs — fringing/barrier/atoll, growth conditions & bleaching","source":"NCERT Geography","verified":true},
-    {"id":"geo-oceans-marine-resources-card-7","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"Polymetallic nodules composition; OTEC basis?","back":"Nodules = manganese, nickel, copper, cobalt (on abyssal plains). OTEC uses warm-surface vs cold-deep temperature gap.","examPoint":"Marine resources — fisheries, polymetallic nodules, offshore oil/gas, minerals","source":"NCERT Geography","verified":true},
-    {"id":"geo-oceans-marine-resources-card-8","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"EEZ limit and India's Deep Ocean submersible?","back":"EEZ = 200 nautical miles (UNCLOS). Samudrayaan sends 3 persons to 6,000 m in MATSYA-6000 (NIOT).","examPoint":"Deep Ocean Mission & Samudrayaan (MATSYA-6000)","source":"MoES","verified":true},
-    {"id":"geo-oceans-marine-resources-card-9","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"AP coastline length and 2004 tsunami cause?","back":"~974 km, longest on India's east coast. 2004 tsunami = undersea earthquake off Sumatra (Sunda Trench, Mw ~9.1).","examPoint":"AP coastline (~974 km, longest east coast) — fisheries & ports","source":"INCOIS","verified":true},
-    {"id":"geo-oceans-marine-resources-card-10","subjectCode":"GEO","subtopicId":"geo-oceans-marine-resources","front":"Three characteristic classes of ocean water (syllabus)?","back":"Physical (temperature, salinity, density), chemical (dissolved O₂/CO₂, salts), biological (plankton, nekton, benthos).","examPoint":"Physical, chemical & biological characteristics of oceans (syllabus wording)","source":"NCERT Geography","verified":true}
+    {
+      "id": "geo-oceans-marine-resources-card-1",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Ocean relief zones from coast to deep, and the deepest?",
+      "back": "Shelf → slope → rise → abyssal plain → trench (deepest, Mariana ~11 km); mid-ocean ridge at divergent edges.",
+      "examPoint": "Ocean relief — continental shelf/slope/rise, abyssal plain, trenches (Mariana), mid-ocean ridges",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-2",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Average ocean salinity and why the Dead Sea is so salty?",
+      "back": "~35‰ (NaCl-dominated). Dead Sea = enclosed, high evaporation, no outlet → extreme salinity.",
+      "examPoint": "Salinity — average 35‰, controlling factors, Dead Sea/Baltic extremes",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-3",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "What is the thermocline?",
+      "back": "The layer where temperature falls rapidly with depth, separating warm surface water from cold deep water.",
+      "examPoint": "Ocean temperature — thermocline, vertical & horizontal variation",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-4",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Classify: Gulf Stream, Kuroshio, Humboldt, Benguela.",
+      "back": "Warm: Gulf Stream (N Atlantic), Kuroshio (NW Pacific). Cold: Humboldt (SE Pacific), Benguela (SE Atlantic).",
+      "examPoint": "Ocean currents — warm vs cold; Gulf Stream, Kuroshio, Humboldt, Benguela; effect on climate & fishing",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-5",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Spring vs neap tides — when?",
+      "back": "Spring (highest) at new & full moon (Sun-Earth-Moon aligned); neap (lowest) at 1st & 3rd quarter (right angles).",
+      "examPoint": "Movements of ocean water — waves, tides (spring/neap), causes of tides",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-6",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Coral reef types and growth conditions?",
+      "back": "Fringing, barrier (lagoon), atoll (ring). Need warm (>20°C), shallow, clear, sediment-free, normal-salinity water.",
+      "examPoint": "Coral reefs — fringing/barrier/atoll, growth conditions & bleaching",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-7",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Polymetallic nodules composition; OTEC basis?",
+      "back": "Nodules = manganese, nickel, copper, cobalt (on abyssal plains). OTEC uses warm-surface vs cold-deep temperature gap.",
+      "examPoint": "Marine resources — fisheries, polymetallic nodules, offshore oil/gas, minerals",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-8",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "EEZ limit and India's Deep Ocean submersible?",
+      "back": "EEZ = 200 nautical miles (UNCLOS). Samudrayaan sends 3 persons to 6,000 m in MATSYA-6000 (NIOT).",
+      "examPoint": "Deep Ocean Mission & Samudrayaan (MATSYA-6000)",
+      "source": "MoES",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-9",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "AP coastline length and 2004 tsunami cause?",
+      "back": "~974 km, longest on India's east coast. 2004 tsunami = undersea earthquake off Sumatra (Sunda Trench, Mw ~9.1).",
+      "examPoint": "AP coastline (~974 km, longest east coast) — fisheries & ports",
+      "source": "INCOIS",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-10",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Three characteristic classes of ocean water (syllabus)?",
+      "back": "Physical (temperature, salinity, density), chemical (dissolved O₂/CO₂, salts), biological (plankton, nekton, benthos).",
+      "examPoint": "Physical, chemical & biological characteristics of oceans (syllabus wording)",
+      "source": "NCERT Geography",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-11",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ is the study of all aspects of the oceans.",
+      "back": "Oceanography — Oceanography is the study of all aspects of the oceans.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-12",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: 'Ocean' comes from the Greek '____', an enormous river encircling the Earth.",
+      "back": "Oceanus — 'Ocean' comes from the Greek 'Oceanus', an enormous river encircling the Earth.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-13",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Pacific's average depth is about ____ m.",
+      "back": "4,280 — The Pacific's average depth is about 4,280 m.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-14",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ lies in the Pacific.",
+      "back": "International Date Line — The International Date Line lies in the Pacific.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-15",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Atlantic is named after ____ (Atlantis Thalassa).",
+      "back": "Atlas — The Atlantic is named after Atlas (Atlantis Thalassa).",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-16",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Atlantic's average depth is about 3,646 m; the Puerto Rico Trench reaches about ____ m.",
+      "back": "8,376 — The Atlantic's average depth is about 3,646 m; the Puerto Rico Trench reaches about 8,376 m.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-17",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Sunda (Java) Trench is about ____ m deep.",
+      "back": "7,450 — The Sunda (Java) Trench is about 7,450 m deep.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-18",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ Deep in the Fram Strait is the Arctic Ocean's deepest point.",
+      "back": "Molloy — The Molloy Deep in the Fram Strait is the Arctic Ocean's deepest point.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-19",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Arctic joins the Pacific through the ____ Strait.",
+      "back": "Bering — The Arctic joins the Pacific through the Bering Strait.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-20",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Pacific marginal seas include the Coral, South China, ____, Bering and Okhotsk seas.",
+      "back": "Tasman — Pacific marginal seas include the Coral, South China, Tasman, Bering and Okhotsk seas.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-21",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Atlantic marginal seas include the ____, Mediterranean, North and Baltic seas and Hudson Bay.",
+      "back": "Caribbean — Atlantic marginal seas include the Caribbean, Mediterranean, North and Baltic seas and Hudson Bay.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-22",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ and Ross seas are marginal seas of the Southern Ocean.",
+      "back": "Weddell — Weddell and Ross seas are marginal seas of the Southern Ocean.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-23",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Pacific is linked to the Indian Ocean via the ____ seaways, Torres Strait and Strait of Malacca.",
+      "back": "Indonesian — The Pacific is linked to the Indian Ocean via the Indonesian seaways, Torres Strait and Strait of Malacca.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-24",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ Passage lies between South Andaman and Little Andaman.",
+      "back": "Duncan — Duncan Passage lies between South Andaman and Little Andaman.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-25",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ lies between the Andaman Islands and Myanmar's Coco Islands.",
+      "back": "Coco Channel — The Coco Channel lies between the Andaman Islands and Myanmar's Coco Islands.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-26",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ separates Java and Sumatra.",
+      "back": "Sunda Strait — The Sunda Strait separates Java and Sumatra.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-27",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Strait of Magellan separates mainland South America from ____.",
+      "back": "Tierra del Fuego — The Strait of Magellan separates mainland South America from Tierra del Fuego.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-28",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Taiwan (____) Strait separates China and Taiwan; the Korea Strait separates Korea and Japan.",
+      "back": "Formosa — The Taiwan (Formosa) Strait separates China and Taiwan; the Korea Strait separates Korea and Japan.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-29",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ Strait separates Sakhalin and Hokkaido.",
+      "back": "La Perouse — La Perouse Strait separates Sakhalin and Hokkaido.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-30",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ Strait separates Florida and Cuba.",
+      "back": "Florida — The Florida Strait separates Florida and Cuba.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-31",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ Strait separates Greenland and Baffin Island.",
+      "back": "Davis — The Davis Strait separates Greenland and Baffin Island.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-32",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Strait of ____ separates Italy and Sicily; Otranto separates Italy and Albania.",
+      "back": "Messina — The Strait of Messina separates Italy and Sicily; Otranto separates Italy and Albania.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-33",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ separates Mozambique and Madagascar.",
+      "back": "Mozambique Channel — The Mozambique Channel separates Mozambique and Madagascar.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-34",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ (Ram Setu) lies in the Palk Strait region.",
+      "back": "Adam's Bridge — Adam's Bridge (Ram Setu) lies in the Palk Strait region.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-35",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Horizontal ocean movements are currents and waves; ____ ones are tides and upwelling.",
+      "back": "vertical — Horizontal ocean movements are currents and waves; vertical ones are tides and upwelling.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-36",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The largest waves are found in the ____.",
+      "back": "open ocean — The largest waves are found in the open ocean.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-37",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ waves are young and local; slow, steady swells come from far away.",
+      "back": "Steep — Steep waves are young and local; slow, steady swells come from far away.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-38",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Wave height depends on wind strength, duration and ____.",
+      "back": "fetch — Wave height depends on wind strength, duration and fetch.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-39",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ is the time between two successive crests passing a fixed point.",
+      "back": "Wave period — Wave period is the time between two successive crests passing a fixed point.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-40",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ is the horizontal distance between two successive crests.",
+      "back": "Wavelength — Wavelength is the horizontal distance between two successive crests.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-41",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Wave speed is measured in ____.",
+      "back": "knots — Wave speed is measured in knots.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-42",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Tidal bulges are higher on wide continental shelves and lower at ____.",
+      "back": "mid-ocean islands — Tidal bulges are higher on wide continental shelves and lower at mid-ocean islands.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-43",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ tides have one high and one low a day.",
+      "back": "Diurnal — Diurnal tides have one high and one low a day.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-44",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ tides occur along the west coast of North America and many Pacific islands.",
+      "back": "Mixed — Mixed tides occur along the west coast of North America and many Pacific islands.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-45",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Neap tides come about ____ days after spring tides.",
+      "back": "seven — Neap tides come about seven days after spring tides.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-46",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: At ____, and at perihelion (3 January), tidal ranges are greater than normal.",
+      "back": "perigee — At perigee, and at perihelion (3 January), tidal ranges are greater than normal.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-47",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Tides aid navigation over harbour bars, ____ estuaries and generate power (Canada, France, Russia, China).",
+      "back": "desilt — Tides aid navigation over harbour bars, desilt estuaries and generate power (Canada, France, Russia, China).",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-48",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ Lake (South Korea, 254 MW) is a major tidal power station; La Rance is in France.",
+      "back": "Sihwa — Sihwa Lake (South Korea, 254 MW) is a major tidal power station; La Rance is in France.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-49",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Tidal power is generated by floodgate dams, tidal ____s and tidal stream generators.",
+      "back": "barrage — Tidal power is generated by floodgate dams, tidal barrages and tidal stream generators.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-50",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: A tidal project at ____ creek in the Sundarbans (3.75 MW, approved 2008) was delayed.",
+      "back": "Durgaduani — A tidal project at Durgaduani creek in the Sundarbans (3.75 MW, approved 2008) was delayed.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-51",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: A 50 MW tidal plant is being developed at ____ (Kutch); a 250 MW plant was planned in the Gulf of Kutch.",
+      "back": "Mandavi — A 50 MW tidal plant is being developed at Mandavi (Kutch); a 250 MW plant was planned in the Gulf of Kutch.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-52",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ current is a warm extension of the North Atlantic Drift.",
+      "back": "Norwegian — The Norwegian current is a warm extension of the North Atlantic Drift.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-53",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ current is warm.",
+      "back": "East Australian — The East Australian current is warm.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-54",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ current is a cold extension of the Oyashio.",
+      "back": "Kamchatka — The Kamchatka current is a cold extension of the Oyashio.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-55",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The warm ____ current flows between Madagascar and Africa into the Agulhas.",
+      "back": "Mozambique — The warm Mozambique current flows between Madagascar and Africa into the Agulhas.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-56",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The Indian ____ flows clockwise in summer and anticlockwise in winter.",
+      "back": "Monsoon Drift — The Indian Monsoon Drift flows clockwise in summer and anticlockwise in winter.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-57",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The ____ current is cold; the Beaufort Gyre circulates clockwise in the western Arctic.",
+      "back": "East Greenland — The East Greenland current is cold; the Beaufort Gyre circulates clockwise in the western Arctic.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-58",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Warm water piled up by currents in the tropics fuels tropical ____.",
+      "back": "cyclones — Warm water piled up by currents in the tropics fuels tropical cyclones.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-59",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ (Turkey), the Dead Sea and the Great Salt Lake have extreme salinity.",
+      "back": "Lake Van — Lake Van (Turkey), the Dead Sea and the Great Salt Lake have extreme salinity.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-60",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ oceans are slightly warmer than southern ones.",
+      "back": "Northern Hemisphere — Northern Hemisphere oceans are slightly warmer than southern ones.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-61",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: The extended continental shelf may reach ____ nautical miles.",
+      "back": "350 — The extended continental shelf may reach 350 nautical miles.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-62",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: UNCLOS was adopted in ____ and came into force in 1994.",
+      "back": "1982 — UNCLOS was adopted in 1982 and came into force in 1994.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-63",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: India was registered as a pioneer investor for sea-bed nodules in ____.",
+      "back": "1987 — India was registered as a pioneer investor for sea-bed nodules in 1987.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-64",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: India also holds a licence for polymetallic ____ on the Indian Ocean ridges.",
+      "back": "sulphides — India also holds a licence for polymetallic sulphides on the Indian Ocean ridges.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-65",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: OTEC needs a surface-to-deep temperature difference of about ____.",
+      "back": "20°C — OTEC needs a surface-to-deep temperature difference of about 20°C.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-66",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: LTTD desalination plants at ____ (Lakshadweep) use the ocean temperature difference.",
+      "back": "Kavaratti — LTTD desalination plants at Kavaratti (Lakshadweep) use the ocean temperature difference.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-67",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: ____ 2 (UK) is the largest operating offshore wind farm.",
+      "back": "Hornsea — Hornsea 2 (UK) is the largest operating offshore wind farm.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-68",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: A 2024 re-measurement gives AP's coastline as about ____ km.",
+      "back": "1,053 — A 2024 re-measurement gives AP's coastline as about 1,053 km.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    },
+    {
+      "id": "geo-oceans-marine-resources-card-69",
+      "subjectCode": "GEO",
+      "subtopicId": "geo-oceans-marine-resources",
+      "front": "Fill in the blank: Placer minerals such as ____ and ilmenite occur on Kerala and AP beaches.",
+      "back": "monazite — Placer minerals such as monazite and ilmenite occur on Kerala and AP beaches.",
+      "examPoint": "Oceans & marine resources — completeness facts",
+      "source": "APPSC GK — World Geography: Oceanography (Oceans, Movements of Ocean Water, Ocean Currents) and Indian Geography: Geo & Tidal Energy (.txt); NCERT XI Fundamentals of Physical Geography ch. 13–14; UNCLOS/ISA; PYQ bank geo-oceans-marine-resources",
+      "verified": true
+    }
   ]
 }

@@ -248,11 +248,17 @@ describe('completeness gate', () => {
     expect(closed.length).toBe(getContentIndex().facts.size);
     for (const r of closed) expect(r.status, r.subtopicId).toBe('COMPLETE');
     for (const id of ANCIENT_1) expect(report.rows.find((r) => r.subtopicId === id)?.status, id).toBe('COMPLETE');
-    // Backlog is ordered by the study plan: closed rows lead, the first backlog row
-    // is the first study-order subtopic that still has no facts file.
-    const firstOpen = report.rows.findIndex((r) => !r.hasFacts);
-    expect(report.rows.slice(0, firstOpen).every((r) => r.hasFacts)).toBe(true);
-    expect(report.rows.slice(firstOpen).every((r) => !r.hasFacts)).toBe(true);
+    // Floor: the closed set only ever grows (32 after completeness round 2).
+    expect(closed.length).toBeGreaterThanOrEqual(32);
+    // Rows are in study-plan order. Closure no longer proceeds strictly in study
+    // order (round 2 closed POL/ECON/GEO/SCI/MENT units in parallel), so closed and
+    // backlog rows interleave; each subset must still be in study order, and the
+    // first backlog row is the first study-order subtopic with no facts file.
+    const inOrder = (rs: typeof report.rows) => rs.every((r, i) => i === 0 || rs[i - 1]!.order <= r.order);
+    expect(inOrder(report.rows)).toBe(true);
+    const open = report.rows.filter((r) => !r.hasFacts);
+    expect(inOrder(open)).toBe(true);
+    expect(open[0]).toBe(report.rows.find((r) => !r.hasFacts));
   });
 });
 

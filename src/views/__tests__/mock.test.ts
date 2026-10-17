@@ -3,6 +3,7 @@ import * as mock from '../mock';
 import { __resetForTests } from '../../state/store';
 import { clearTestSession } from '../../lib/test-session';
 import { getBanks } from '../../content/loader';
+import { buildSession } from '../../engine/drill';
 
 /** IVC bank size — computed (it grows in completeness rounds). */
 const IVC_MCQS = getBanks('mcq').reduce(
@@ -10,13 +11,16 @@ const IVC_MCQS = getBanks('mcq').reduce(
   0,
 );
 
+/** Full available mock pool — computed (completeness rounds keep growing the banks). */
+const FULL_POOL = buildSession({ order: 'ladder' }).items.length;
+
 /**
  * Mock view tests. These exercise the FULL official-paper mode (Paper-I/II by
  * section weight, non-repeating series, sectional mocks, per-section results)
  * as well as the custom SCOPE mode → {@link buildSession} reuse (the setup's
  * live pool count), the no-feedback running contract (options never reveal
  * correct/incorrect during the mock), and the submit → results + full review
- * flow. Content is the real bank: 3164 MCQs total; HIST = 917, IVC = 19.
+ * flow. Content is the real bank (counts are computed, with a floor of 3,000 MCQs).
  */
 function render(): HTMLElement {
   const root = document.createElement('div');
@@ -130,10 +134,12 @@ describe('mock setup — custom scope reuses buildSession', () => {
     location.hash = '#/mock';
   });
 
-  it('the full available pool is 3164 MCQs across subjects', () => {
+  it('the full available pool is every MCQ across subjects (computed, floor 3000)', () => {
     const root = render();
     toScope(root);
-    expect(root.textContent).toMatch(/3\d{3} questions in scope/);
+    // Floor keeps the test meaningful; the exact count is computed from the live banks.
+    expect(FULL_POOL).toBeGreaterThanOrEqual(3000);
+    expect(root.textContent).toContain(`${FULL_POOL} questions in scope`);
     // Banner is present with the exact exam-condition wording.
     expect(root.textContent).toContain('negative marking');
     expect(root.textContent).toContain('no compensatory time');

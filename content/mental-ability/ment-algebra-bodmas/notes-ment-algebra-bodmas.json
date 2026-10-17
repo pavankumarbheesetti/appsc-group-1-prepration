@@ -146,6 +146,47 @@
         "percentage",
         "simplification"
       ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-bodmas-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "BODMAS extras — 'of', the bar, nested brackets and sign puzzles",
+      "body": "### BODMAS extras — 'of', the bar, nested brackets and sign puzzles\n\n**The idea in one sentence**\nExam simplifications add four twists to plain BODMAS — the word \"of\", the bar (vinculum), several layers of brackets, and swapped or missing signs — and each has one fixed rule.\n\n**Do it the slow way first (no formula)**\nSimplify 4 + 4 × 4 ÷ 4 of 4 − 4 ÷ 4 × 4. Read \"4 of 4\" as 4 × 4 = 16 and do it FIRST, before any ÷ or ×. Then 4 × 4 ÷ 16 = 1 and 4 ÷ 4 × 4 = 4, so the value is 4 + 1 − 4 = 1. Treating \"of\" like an ordinary × (left to right) would give a different, wrong answer.\n\n**What the symbols mean**\n\"of\" means multiply, but it is done before ÷ and ×; the vinculum (bar) means a line drawn over numbers, like 14 − 4 with a bar on top, which groups them; ( ), { }, [ ] mean small, curly and square brackets; \"'+' stands for '×'\" means wherever you see + you must multiply.\n\n**The formula (now that you know what it does)**\nVBODMAS order: Vinculum (bar) → Brackets ( ), then { }, then [ ] (innermost first) → Of → Orders (powers, roots) → Division and Multiplication (left to right) → Addition and Subtraction (left to right).\n- Mixed fractions: change to improper fractions first; \"a of b\" is a × b done early.\n- Sign interchange: rewrite the whole expression with the real signs, then apply BODMAS.\n- Sign insertion: try each option's signs in the blanks and keep the one that balances the equation.\n- Approximation questions: round each number to a convenient nearby value and pick the closest option.\n\n**Exam-level example**\n- [7 + 7 × (7 + 7 ÷ 7)] + 7 ÷ 7: innermost (7 + 1) = 8, then [7 + 56] = 63, then 63 + 1 = 64.\n- 8 − [8 − (5 + 8) − {8 − (8 − 5 + 8)} + 10]: (5 + 8) = 13, {8 − 11} = −3, so [8 − 13 + 3 + 10] = 8 and 8 − 8 = 0.\n- 441 ÷ [270 ÷ (3/7 of 35) + (17 ÷ 1/3) − (8½ − 5/2)] = 441 ÷ [18 + 51 − 6] = 441 ÷ 63 = 7.\n- 3 × 6 ÷ 4 of 6 − 6 ÷ 2 × (4 − 6) + 4 − 2 × 3 ÷ 6 of 1/3 = 3/4 + 6 + 4 − 3 = 7¾.\n- If '+' stands for '×', '×' for '−', '−' for '÷' and '÷' for '+', then 16 × 4 ÷ 4 + 14 − 2 becomes 16 − 4 + 4 × 14 ÷ 2 = 40.\n- Signs for 6 _ 2 _ 0 _ 8 = 20: ×, +, + works (12 + 0 + 8).\n\n**Common traps**\n- Doing \"of\" in its left-to-right turn like ×: \"4 ÷ 4 of 4\" is 4 ÷ 16, not 1 × 4.\n- Opening the outer bracket before the inner one.\n- Forgetting the minus in front of a bracket flips every sign inside it.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| bar first | the vinculum groups before any bracket |\n| ( ) → { } → [ ] | innermost bracket first |\n| of before ÷ | \"of\" is a multiplication done early |",
+      "keyPoints": [
+        "VBODMAS: Vinculum (bar), Brackets, Of, Orders, Division/Multiplication, Addition/Subtraction",
+        "'of' is a multiplication done BEFORE ÷ and ×: 4 + 4 × 4 ÷ 4 of 4 − 4 ÷ 4 × 4 = 1",
+        "Nested brackets: solve ( ), then { }, then [ ] — innermost first",
+        "Sign interchange: rewrite with the real signs first ('+' stands for '×' …), then BODMAS",
+        "Sign insertion: test each option until both sides balance",
+        "Approximation: round to convenient values and choose the nearest option"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Bodmas Rule, Basic Identities, Linear Equation, Quadratic Equation, Polynomials, Arithmetic/Geometric/Harmonic Progression, AGP, Relationship between AM GM HM, Sets and Types, Union/Intersection, Complement, Difference of Sets, Approx Value); Logical Reasoning (BODMAS Rule, Sign Insertion and Interchange); NCERT Class 9-11 algebra; PYQ bank .research/pyq-bank/ment-algebra-bodmas.md",
+      "verified": true,
+      "tags": [
+        "algebra-bodmas",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-algebra-bodmas",
+      "title": "Algebra and sets extras — identities, equations, means and set counts",
+      "body": "### Algebra and sets extras — identities, equations, means and set counts\n\n**The idea in one sentence**\nA second set of standard results — three-variable identities, when two equations have a solution, how to build a quadratic, the AM–GM–HM link and set counting — covers the rest of the question bank.\n\n**Do it the slow way first (no formula)**\nFind 25³ − 75³ + 50³. Cubing each is slow: 15625 − 421875 + 125000 = −281250. Notice instead that 25 + (−75) + 50 = 0, and when a + b + c = 0 the sum a³ + b³ + c³ equals 3abc: 3 × 25 × (−75) × 50 = −281250 — same answer in one line.\n\n**What the symbols mean**\na₁, b₁, c₁ and a₂, b₂, c₂ mean the coefficients of two equations a₁x + b₁y = c₁ and a₂x + b₂y = c₂; AM, GM, HM mean the arithmetic, geometric and harmonic means; n(A) means the number of elements in set A; A′ means the complement (everything not in A); A − B means elements of A that are not in B.\n\n**The formula (now that you know what it does)**\nIdentities\n- (a + b)² − (a − b)² = 4ab; a³ + b³ = (a + b)(a² − ab + b²) and a³ − b³ = (a − b)(a² + ab + b²).\n- (a + b + c)² = a² + b² + c² + 2(ab + bc + ca).\n- a³ + b³ + c³ − 3abc = (a + b + c)(a² + b² + c² − ab − bc − ca), so if a + b + c = 0 then a³ + b³ + c³ = 3abc.\n- Decimal shortcut: (4.71³ − 3.79³) ÷ (4.71² + 4.71 × 3.79 + 3.79²) = 4.71 − 3.79 = 0.92.\n- Quick products: 98² − 2² = (98 + 2)(98 − 2) = 9600, using (a + b)(a − b).\n\nTwo linear equations\n| Condition | Result |\n|---|---|\n| a₁/a₂ ≠ b₁/b₂ | exactly one solution (lines cross) |\n| a₁/a₂ = b₁/b₂ ≠ c₁/c₂ | no solution (parallel lines) |\n| a₁/a₂ = b₁/b₂ = c₁/c₂ | infinitely many solutions (same line) |\n\nQuadratics\n- The quadratic with roots α and β is x² − (α + β)x + αβ = 0; roots 4 and 5 give x² − 9x + 20 = 0.\n- If the discriminant b² − 4ac is a perfect square, the roots are rational (2x² − 7x + 3: D = 25, roots 3 and 1/2).\n\nMeans and sums\n- For two positive numbers AM ≥ GM ≥ HM and GM² = AM × HM (4 and 16: AM 10, GM 8, HM 6.4).\n- 1 + 2 + … + n = n(n + 1)/2; 1² + … + n² = n(n + 1)(2n + 1)/6; 1³ + … + n³ = [n(n + 1)/2]².\n\nPolynomials and sets\n- Degree = highest power: 0 constant, 1 linear, 2 quadratic, 3 cubic; the zero polynomial has no defined degree.\n- A set with n elements has 2ⁿ subsets and 2ⁿ − 1 proper subsets.\n- Types: empty (null) set ∅, singleton (one element), finite and infinite sets.\n- Three sets: n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A∩B) − n(B∩C) − n(A∩C) + n(A∩B∩C).\n- De Morgan: (A ∪ B)′ = A′ ∩ B′ and (A ∩ B)′ = A′ ∪ B′.\n\n**Exam-level example**\n40 students like A, 35 like B, 30 like C; 12 like A and B, 10 like B and C, 8 like A and C, and 5 like all three. At least one = 40 + 35 + 30 − 12 − 10 − 8 + 5 = 80.\n\n**Common traps**\n- a + b + c = 0 gives a³ + b³ + c³ = 3abc, not 0.\n- Equal ratios a₁/a₂ = b₁/b₂ alone do not mean \"infinitely many\" — check c₁/c₂ too.\n- Forgetting to add back the all-three region in the three-set formula.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| a + b + c = 0 gives 3abc | sum of cubes shortcut |\n| x² − (sum)x + product | quadratic from its roots |\n| GM² = AM × HM | the three means of two numbers |",
+      "keyPoints": [
+        "(a + b)² − (a − b)² = 4ab; if a + b + c = 0 then a³ + b³ + c³ = 3abc",
+        "Two lines: a₁/a₂ ≠ b₁/b₂ one solution; = but ≠ c₁/c₂ no solution; all equal infinitely many",
+        "Quadratic with roots α, β: x² − (α + β)x + αβ = 0; a perfect-square discriminant gives rational roots",
+        "AM ≥ GM ≥ HM and GM² = AM × HM; 1 + 2 + … + n = n(n + 1)/2",
+        "A set of n elements has 2ⁿ subsets; three-set union adds back the all-three region"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Bodmas Rule, Basic Identities, Linear Equation, Quadratic Equation, Polynomials, Arithmetic/Geometric/Harmonic Progression, AGP, Relationship between AM GM HM, Sets and Types, Union/Intersection, Complement, Difference of Sets, Approx Value); Logical Reasoning (BODMAS Rule, Sign Insertion and Interchange); NCERT Class 9-11 algebra; PYQ bank .research/pyq-bank/ment-algebra-bodmas.md",
+      "verified": true,
+      "tags": [
+        "algebra-bodmas",
+        "completeness"
+      ]
     }
   ]
 }

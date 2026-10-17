@@ -1,0 +1,1821 @@
+{
+  "version": 1,
+  "subtopicId": "ment-number-system",
+  "facts": [
+    {
+      "id": "cls-nesting",
+      "fact": "Number families nest: natural inside whole inside integer inside rational inside real.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "whole",
+        "integer",
+        "rational"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-4",
+        "ment-number-system-mcq-33",
+        "ment-number-system-mcq-34"
+      ]
+    },
+    {
+      "id": "cls-whole-zero",
+      "fact": "Whole numbers are the natural numbers together with 0, so 0 is whole but not natural.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "whole",
+        "natural"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-4"
+      ]
+    },
+    {
+      "id": "cls-rational-def",
+      "fact": "A rational number can be written as p/q with q not 0, so its decimal terminates or repeats.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "rational",
+        "repeat"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-35",
+        "ment-number-system-mcq-93"
+      ]
+    },
+    {
+      "id": "cls-irrational-def",
+      "fact": "An irrational number has a non-terminating, non-repeating decimal (√2, π, e); the root of a non-perfect square is irrational.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "irrational",
+        "√"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-1",
+        "ment-number-system-card-1",
+        "ment-number-system-mcq-93"
+      ]
+    },
+    {
+      "id": "cls-22-7-trap",
+      "fact": "22/7 is rational — it is only an approximation of π, which is irrational.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "22/7"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-1",
+        "ment-number-system-mcq-36",
+        "ment-number-system-card-34"
+      ]
+    },
+    {
+      "id": "cls-rat-irr-sum",
+      "fact": "Rational + irrational is always irrational, and a non-zero rational × irrational is irrational (5 + √2, 4√2).",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "irrational",
+        "√2"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-card-1",
+        "ment-number-system-mcq-93"
+      ]
+    },
+    {
+      "id": "cls-prime-def",
+      "fact": "A prime has exactly two factors; 2 is the smallest prime and the only even prime.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "only even prime"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-5",
+        "ment-number-system-card-2",
+        "ment-number-system-mcq-94"
+      ]
+    },
+    {
+      "id": "cls-one-neither",
+      "fact": "1 is neither prime nor composite.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "neither prime nor composite"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-5",
+        "ment-number-system-card-2",
+        "ment-number-system-mcq-94"
+      ]
+    },
+    {
+      "id": "cls-smallest-composite",
+      "fact": "4 is the smallest composite number and 9 the smallest odd composite.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "smallest composite"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-94"
+      ]
+    },
+    {
+      "id": "cls-coprime",
+      "fact": "Two numbers are co-prime when their HCF is 1 (they need not be prime); consecutive numbers are always co-prime.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "co-prime"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-5",
+        "ment-number-system-mcq-23",
+        "ment-number-system-mcq-37",
+        "ment-number-system-card-2"
+      ]
+    },
+    {
+      "id": "cls-twin-primes",
+      "fact": "Twin primes are primes differing by 2, e.g. (3, 5), (11, 13); (7, 11) is not a twin pair.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "twin"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-card-35"
+      ]
+    },
+    {
+      "id": "cls-perfect-number",
+      "fact": "A perfect number equals the sum of its divisors other than itself: 6 = 1 + 2 + 3, and 28.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "perfect number"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-36"
+      ]
+    },
+    {
+      "id": "cls-primes-25",
+      "fact": "There are 25 primes from 1 to 100 (15 up to 50 and 10 from 51 to 100).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "25",
+        "prime"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-86",
+        "ment-number-system-card-31",
+        "ment-number-system-mcq-95"
+      ]
+    },
+    {
+      "id": "cls-prime-sqrt-test",
+      "fact": "To test n for primality divide only by primes up to √n.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "test",
+        "prime"
+      ],
+      "taughtIn": "ment-number-system-note-counting-special-sums",
+      "drilledBy": [
+        "ment-number-system-mcq-87",
+        "ment-number-system-card-31",
+        "ment-number-system-mcq-96"
+      ]
+    },
+    {
+      "id": "cls-primes-100-120",
+      "fact": "The primes between 100 and 120 are 101, 103, 107, 109 and 113 (five).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "100",
+        "120",
+        "prime"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-97",
+        "ment-number-system-mcq-98"
+      ]
+    },
+    {
+      "id": "sq-unit-digit",
+      "fact": "A perfect square ends only in 0, 1, 4, 5, 6 or 9 — never in 2, 3, 7 or 8.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "perfect square"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-16",
+        "ment-number-system-mcq-38",
+        "ment-number-system-mcq-39"
+      ]
+    },
+    {
+      "id": "sq-digital-root",
+      "fact": "The digital root of a perfect square is always 1, 4, 7 or 9.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "digital root"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-37"
+      ]
+    },
+    {
+      "id": "sq-ends-5",
+      "fact": "A perfect square ending in 5 always ends in 25 (tens digit 2).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "ends in 5",
+        "25"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-38"
+      ]
+    },
+    {
+      "id": "sq-least-lcm",
+      "fact": "The least perfect square divisible by given numbers is their LCM with every prime power made even (2, 3, 5, 6, 9, 18 give 900).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "least perfect square"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-99",
+        "ment-number-system-mcq-100"
+      ]
+    },
+    {
+      "id": "div-2-5-10",
+      "fact": "Divisibility by 2, 5 and 10 is read off the last digit (even; 0 or 5; 0).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "last digit"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-39"
+      ]
+    },
+    {
+      "id": "div-3-9",
+      "fact": "A number is divisible by 3 (or 9) when its digit sum is divisible by 3 (or 9).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "digit",
+        "9"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility",
+      "drilledBy": [
+        "ment-number-system-mcq-2",
+        "ment-number-system-mcq-40",
+        "ment-number-system-card-3",
+        "ment-number-system-mcq-107"
+      ]
+    },
+    {
+      "id": "div-4",
+      "fact": "Divisibility by 4 is decided by the number formed by the last two digits.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "last two digits",
+        "4"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility",
+      "drilledBy": [
+        "ment-number-system-card-3",
+        "ment-number-system-mcq-101",
+        "ment-number-system-mcq-102"
+      ]
+    },
+    {
+      "id": "div-8",
+      "fact": "Divisibility by 8 is decided by the last three digits (by 16, the last four).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "last three digits",
+        "8"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility",
+      "drilledBy": [
+        "ment-number-system-card-3",
+        "ment-number-system-mcq-103",
+        "ment-number-system-mcq-104"
+      ]
+    },
+    {
+      "id": "div-6",
+      "fact": "A number is divisible by 6 when it passes both the 2-test and the 3-test.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "divisible by 6"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility",
+      "drilledBy": [
+        "ment-number-system-mcq-105",
+        "ment-number-system-mcq-106"
+      ]
+    },
+    {
+      "id": "div-11",
+      "fact": "Divisible by 11 when (sum of odd-place digits) − (sum of even-place digits) is 0 or a multiple of 11.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "divisible by 11"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility",
+      "drilledBy": [
+        "ment-number-system-mcq-6",
+        "ment-number-system-mcq-41",
+        "ment-number-system-mcq-42"
+      ]
+    },
+    {
+      "id": "div-11-places",
+      "fact": "For the 11-test, places are counted from the right, the units digit being the first (odd) place.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "11",
+        "right",
+        "units"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility",
+      "drilledBy": [
+        "ment-number-system-card-40"
+      ]
+    },
+    {
+      "id": "div-composite",
+      "fact": "For a composite divisor, split it into co-prime factors and test each (12 = 3 × 4, 18 = 2 × 9, 112 = 16 × 7).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "co-prime factors"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-107",
+        "ment-number-system-mcq-108"
+      ]
+    },
+    {
+      "id": "div-4-6-trap",
+      "fact": "Divisible by 4 and by 6 guarantees only divisibility by LCM(4, 6) = 12, not by 24.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "24",
+        "12"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility",
+      "drilledBy": [
+        "ment-number-system-mcq-17",
+        "ment-number-system-mcq-109"
+      ]
+    },
+    {
+      "id": "div-7",
+      "fact": "7-test: remove the last digit, subtract twice it from the rest, repeat; 0 or a multiple of 7 means divisible.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "test",
+        "7"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility-7-13",
+      "drilledBy": [
+        "ment-number-system-mcq-43",
+        "ment-number-system-mcq-45",
+        "ment-number-system-card-16"
+      ]
+    },
+    {
+      "id": "div-13",
+      "fact": "13-test: remove the last digit, add four times it to the rest, repeat; a multiple of 13 means divisible.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "test",
+        "13"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility-7-13",
+      "drilledBy": [
+        "ment-number-system-mcq-44",
+        "ment-number-system-mcq-45",
+        "ment-number-system-card-17"
+      ]
+    },
+    {
+      "id": "div-1001",
+      "fact": "1001 = 7 × 11 × 13, so abcabc = abc × 1001 is always divisible by 7, 11 and 13.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "1001"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility-7-13",
+      "drilledBy": [
+        "ment-number-system-mcq-48",
+        "ment-number-system-card-18",
+        "ment-number-system-mcq-110"
+      ]
+    },
+    {
+      "id": "div-groups",
+      "fact": "For 7, 11 or 13, alternately add and subtract three-digit groups from the right and test the result.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "three-digit group"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility-7-13",
+      "drilledBy": [
+        "ment-number-system-mcq-47",
+        "ment-number-system-card-19"
+      ]
+    },
+    {
+      "id": "div-abab-trap",
+      "fact": "A four-digit repeat abab = ab × 101 is NOT automatically divisible by 7, 11 or 13.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "101"
+      ],
+      "taughtIn": "ment-number-system-note-divisibility-7-13",
+      "drilledBy": [
+        "ment-number-system-card-18"
+      ]
+    },
+    {
+      "id": "div-25",
+      "fact": "Divisible by 25 when the last two digits are 00, 25, 50 or 75.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "25",
+        "last two digits"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-41"
+      ]
+    },
+    {
+      "id": "fac-count",
+      "fact": "If N = p^a × q^b × r^c, the number of factors is (a+1)(b+1)(c+1).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "factors"
+      ],
+      "taughtIn": "ment-number-system-note-factors",
+      "drilledBy": [
+        "ment-number-system-mcq-7",
+        "ment-number-system-mcq-21",
+        "ment-number-system-mcq-49",
+        "ment-number-system-card-4"
+      ]
+    },
+    {
+      "id": "fac-odd",
+      "fact": "Odd factors: drop the power of 2 and take the (power + 1) product of the odd primes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "odd factors"
+      ],
+      "taughtIn": "ment-number-system-note-factors",
+      "drilledBy": [
+        "ment-number-system-mcq-8",
+        "ment-number-system-mcq-51",
+        "ment-number-system-card-5"
+      ]
+    },
+    {
+      "id": "fac-even",
+      "fact": "Even factors = total factors − odd factors (= a × (b+1)(c+1) when 2^a is the power of 2).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "even factors"
+      ],
+      "taughtIn": "ment-number-system-note-factors",
+      "drilledBy": [
+        "ment-number-system-mcq-50",
+        "ment-number-system-card-5",
+        "ment-number-system-mcq-111"
+      ]
+    },
+    {
+      "id": "fac-sum",
+      "fact": "Sum of factors = (1 + p + … + p^a)(1 + q + … + q^b)….",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "sum",
+        "factors"
+      ],
+      "taughtIn": "ment-number-system-note-factors",
+      "drilledBy": [
+        "ment-number-system-mcq-52",
+        "ment-number-system-mcq-53",
+        "ment-number-system-card-20"
+      ]
+    },
+    {
+      "id": "fac-product",
+      "fact": "The product of all factors of N is N^(T/2), where T is the number of factors.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "product of all factors"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-42"
+      ]
+    },
+    {
+      "id": "fac-square-factors",
+      "fact": "Perfect square factors: for each prime use only even exponents, giving (⌊a/2⌋ + 1)(⌊b/2⌋ + 1)… (180 has 4).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "perfect square factors"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-112"
+      ]
+    },
+    {
+      "id": "fac-cube-factors",
+      "fact": "Perfect cube factors: use exponents that are multiples of 3, giving (⌊a/3⌋ + 1)(⌊b/3⌋ + 1)….",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "perfect cube factors"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-43"
+      ]
+    },
+    {
+      "id": "fac-proper",
+      "fact": "Proper factors exclude the number itself (some books also exclude 1, giving T − 2).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "proper factors"
+      ],
+      "taughtIn": "ment-number-system-note-squares-factors-extras",
+      "drilledBy": [
+        "ment-number-system-card-44"
+      ]
+    },
+    {
+      "id": "ud-base-only",
+      "fact": "The unit digit of a power depends only on the unit digit of the base.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "unit digit"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-9",
+        "ment-number-system-mcq-10",
+        "ment-number-system-mcq-20",
+        "ment-number-system-card-6",
+        "ment-number-system-mcq-113",
+        "ment-number-system-mcq-117"
+      ]
+    },
+    {
+      "id": "ud-0156",
+      "fact": "Bases ending in 0, 1, 5 or 6 keep that unit digit at every power.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "unit digit"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-card-6",
+        "ment-number-system-mcq-113",
+        "ment-number-system-mcq-114"
+      ]
+    },
+    {
+      "id": "ud-4",
+      "fact": "A base ending in 4 gives unit digit 4 for an odd power and 6 for an even power.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "unit digit"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-10",
+        "ment-number-system-mcq-115",
+        "ment-number-system-mcq-116"
+      ]
+    },
+    {
+      "id": "ud-9",
+      "fact": "A base ending in 9 gives unit digit 9 for an odd power and 1 for an even power.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "unit digit"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-115",
+        "ment-number-system-mcq-116"
+      ]
+    },
+    {
+      "id": "ud-cycle-2",
+      "fact": "Powers of 2 cycle 2, 4, 8, 6 (cyclicity 4).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "unit digit",
+        "2"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-117",
+        "ment-number-system-mcq-118"
+      ]
+    },
+    {
+      "id": "ud-cycle-3",
+      "fact": "Powers of 3 cycle 3, 9, 7, 1 (cyclicity 4).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "unit digit",
+        "3"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-9",
+        "ment-number-system-mcq-119"
+      ]
+    },
+    {
+      "id": "ud-cycle-7",
+      "fact": "Powers of 7 cycle 7, 9, 3, 1 (cyclicity 4).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "unit digit",
+        "7"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-20",
+        "ment-number-system-mcq-10"
+      ]
+    },
+    {
+      "id": "ud-cycle-8",
+      "fact": "Powers of 8 cycle 8, 4, 2, 6 (cyclicity 4).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "unit digit",
+        "8"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-120"
+      ]
+    },
+    {
+      "id": "ud-mod4",
+      "fact": "For bases 2, 3, 7, 8 take the exponent mod 4; a remainder of 0 means the 4th term of the cycle.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "unit digit"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-9",
+        "ment-number-system-mcq-20",
+        "ment-number-system-card-6",
+        "ment-number-system-mcq-118",
+        "ment-number-system-mcq-119"
+      ]
+    },
+    {
+      "id": "ud-expression",
+      "fact": "For a sum, difference or product of powers, find each unit digit and combine (borrow 10 for a difference).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "unit digit"
+      ],
+      "taughtIn": "ment-number-system-note-unit-digit",
+      "drilledBy": [
+        "ment-number-system-mcq-10",
+        "ment-number-system-card-7",
+        "ment-number-system-mcq-113",
+        "ment-number-system-mcq-115",
+        "ment-number-system-mcq-121"
+      ]
+    },
+    {
+      "id": "ud-factorial",
+      "fact": "Every factorial from 5! onwards ends in 0, so only 1! to 4! affect a unit digit.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "unit digit",
+        "factorial"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-122"
+      ]
+    },
+    {
+      "id": "tz-pairs",
+      "fact": "Each trailing zero needs one pair of 2 × 5, so count the 2s and 5s and take the smaller.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "trailing zeros"
+      ],
+      "taughtIn": "ment-number-system-note-trailing-zeros",
+      "drilledBy": [
+        "ment-number-system-mcq-11",
+        "ment-number-system-mcq-12",
+        "ment-number-system-mcq-55",
+        "ment-number-system-card-8"
+      ]
+    },
+    {
+      "id": "tz-factorial",
+      "fact": "Trailing zeros of n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + ….",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "trailing zeros"
+      ],
+      "taughtIn": "ment-number-system-note-trailing-zeros",
+      "drilledBy": [
+        "ment-number-system-mcq-11",
+        "ment-number-system-mcq-55",
+        "ment-number-system-card-8"
+      ]
+    },
+    {
+      "id": "tz-100-200",
+      "fact": "100! ends in 24 zeros and 200! in 49 zeros.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "200!"
+      ],
+      "taughtIn": "ment-number-system-note-trailing-zeros",
+      "drilledBy": [
+        "ment-number-system-mcq-11"
+      ]
+    },
+    {
+      "id": "tz-1000",
+      "fact": "1000! ends in 249 zeros (200 + 40 + 8 + 1).",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1000!"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-56"
+      ]
+    },
+    {
+      "id": "tz-product",
+      "fact": "In a product, total the 2s and 5s of every base and take the smaller — the 2s can be scarcer.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "trailing zeros",
+        "×"
+      ],
+      "taughtIn": "ment-number-system-note-trailing-zeros",
+      "drilledBy": [
+        "ment-number-system-mcq-12",
+        "ment-number-system-mcq-57",
+        "ment-number-system-mcq-58"
+      ]
+    },
+    {
+      "id": "tz-legendre",
+      "fact": "The highest power of a prime p in n! is ⌊n/p⌋ + ⌊n/p²⌋ + … (the power of 2 in 100! is 97).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "highest power",
+        "100!"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-123"
+      ]
+    },
+    {
+      "id": "hl-product",
+      "fact": "For two numbers, HCF × LCM = product of the numbers (not true for three numbers).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "hcf",
+        "lcm"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-3",
+        "ment-number-system-mcq-59",
+        "ment-number-system-card-12"
+      ]
+    },
+    {
+      "id": "hl-prime-powers",
+      "fact": "HCF takes the lowest power of each common prime; LCM takes the highest power of every prime.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "lowest power",
+        "highest power"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-124"
+      ]
+    },
+    {
+      "id": "hl-euclid",
+      "fact": "Euclid's division method: divide, replace by the remainder, repeat; the last non-zero remainder is the HCF.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "euclid"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-124"
+      ]
+    },
+    {
+      "id": "hl-coprime-lcm",
+      "fact": "For co-prime numbers the HCF is 1 and the LCM is their product.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "co-prime",
+        "lcm"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-124"
+      ]
+    },
+    {
+      "id": "hl-fraction-hcf",
+      "fact": "HCF of fractions = HCF of numerators ÷ LCM of denominators.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hcf",
+        "fractions"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-60",
+        "ment-number-system-mcq-125"
+      ]
+    },
+    {
+      "id": "hl-fraction-lcm",
+      "fact": "LCM of fractions = LCM of numerators ÷ HCF of denominators.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "lcm",
+        "fractions"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-126"
+      ]
+    },
+    {
+      "id": "hl-decimals",
+      "fact": "For HCF or LCM of decimals, write them as fractions first: HCF(1.43, 1.87, 20.9) = 11/100 = 0.11.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hcf",
+        "1.43"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-125"
+      ]
+    },
+    {
+      "id": "hl-bells",
+      "fact": "Bells (lights) that start together coincide again after the LCM of their intervals.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "bells"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-18",
+        "ment-number-system-card-15",
+        "ment-number-system-mcq-127"
+      ]
+    },
+    {
+      "id": "hl-runners",
+      "fact": "Runners on a circular track first meet at the start after the LCM of their lap times.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "track"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-applications",
+      "drilledBy": [
+        "ment-number-system-mcq-72",
+        "ment-number-system-card-27",
+        "ment-number-system-mcq-128"
+      ]
+    },
+    {
+      "id": "hl-tiles",
+      "fact": "Largest square tile for a floor = HCF of length and breadth; tiles = (L ÷ side) × (B ÷ side).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "tile"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-applications",
+      "drilledBy": [
+        "ment-number-system-mcq-71",
+        "ment-number-system-card-26",
+        "ment-number-system-mcq-129"
+      ]
+    },
+    {
+      "id": "hl-container",
+      "fact": "The largest measure that exactly measures several quantities is their HCF.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "largest",
+        "measure"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-73",
+        "ment-number-system-mcq-130"
+      ]
+    },
+    {
+      "id": "hl-same-rem-greatest",
+      "fact": "The greatest number leaving the SAME remainder on x, y, z is the HCF of their differences.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "greatest number",
+        "same remainder"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-24",
+        "ment-number-system-card-15",
+        "ment-number-system-mcq-131"
+      ]
+    },
+    {
+      "id": "hl-given-rem-greatest",
+      "fact": "The greatest number leaving remainders a, b, c on x, y, z is HCF(x − a, y − b, z − c).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "greatest number",
+        "remainders"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-132"
+      ]
+    },
+    {
+      "id": "hl-least-same-rem",
+      "fact": "The least number leaving the same remainder R on division by x, y, z is LCM(x, y, z) + R.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "least number",
+        "remainder"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-70",
+        "ment-number-system-mcq-133"
+      ]
+    },
+    {
+      "id": "hl-least-const-diff",
+      "fact": "When divisor − remainder is the same K for every divisor, the least number is LCM − K.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "least number",
+        "remainders"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-134"
+      ]
+    },
+    {
+      "id": "hl-largest-n-digit",
+      "fact": "Largest n-digit multiple of d = largest n-digit number − its remainder by d (largest 3-digit multiple of 13 is 988).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "largest",
+        "digit"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-135"
+      ]
+    },
+    {
+      "id": "rem-division",
+      "fact": "Dividend = divisor × quotient + remainder, with 0 ≤ remainder < divisor.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-19",
+        "ment-number-system-mcq-136"
+      ]
+    },
+    {
+      "id": "rem-multiple-divisor",
+      "fact": "If d divides D, the remainder of N by d equals (remainder of N by D) mod d (N ÷ 899 leaves 63 ⇒ N ÷ 29 leaves 5).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-13",
+        "ment-number-system-mcq-61",
+        "ment-number-system-card-11",
+        "ment-number-system-mcq-137"
+      ]
+    },
+    {
+      "id": "rem-reverse-trap",
+      "fact": "Knowing N mod 6 does NOT fix N mod 12 — going from a small divisor to a bigger one is indeterminate.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "remainder",
+        "12"
+      ],
+      "taughtIn": "ment-number-system-note-classification",
+      "drilledBy": [
+        "ment-number-system-mcq-62",
+        "ment-number-system-card-23"
+      ]
+    },
+    {
+      "id": "rem-sum-product",
+      "fact": "The remainder of a sum or product equals the sum or product of the remainders, reduced again.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-138",
+        "ment-number-system-mcq-139"
+      ]
+    },
+    {
+      "id": "rem-power-cycle",
+      "fact": "For a^n ÷ d, list the power-remainders until they repeat and use n mod (cycle length) (2^100 ÷ 7 leaves 2).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-25",
+        "ment-number-system-mcq-63",
+        "ment-number-system-mcq-64",
+        "ment-number-system-card-10"
+      ]
+    },
+    {
+      "id": "rem-fermat",
+      "fact": "Fermat: for prime p not dividing a, a^(p−1) leaves remainder 1 on division by p.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "fermat"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-applications",
+      "drilledBy": [
+        "ment-number-system-mcq-65",
+        "ment-number-system-card-24"
+      ]
+    },
+    {
+      "id": "rem-d-minus-1",
+      "fact": "(d − 1)^n ÷ d leaves 1 for even n and d − 1 for odd n.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-applications",
+      "drilledBy": [
+        "ment-number-system-mcq-66",
+        "ment-number-system-card-25"
+      ]
+    },
+    {
+      "id": "rem-sum-of-powers",
+      "fact": "a^n + b^n is divisible by a + b when n is odd; a^n − b^n is always divisible by a − b.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "divisible",
+        "odd"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-140"
+      ]
+    },
+    {
+      "id": "rem-successive",
+      "fact": "Successive division: rebuild the number backwards from the last quotient using dividend = divisor × quotient + remainder.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "successively"
+      ],
+      "taughtIn": "ment-number-system-note-hcf-lcm-remainder",
+      "drilledBy": [
+        "ment-number-system-mcq-19",
+        "ment-number-system-mcq-68",
+        "ment-number-system-mcq-69"
+      ]
+    },
+    {
+      "id": "rem-negative",
+      "fact": "A negative remainder (75 ÷ 17 → 7 or −10) shortens work; add the divisor to get the true remainder.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "negative remainder"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-card-45"
+      ]
+    },
+    {
+      "id": "rem-100",
+      "fact": "The remainder on division by 100 (1000) is the number formed by the last two (three) digits.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "100",
+        "last two digits"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-card-46"
+      ]
+    },
+    {
+      "id": "fr-compare",
+      "fact": "Compare fractions by converting to decimals or cross-multiplying (a × d versus b × c).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "fractions"
+      ],
+      "taughtIn": "ment-number-system-note-fractions-decimals",
+      "drilledBy": [
+        "ment-number-system-mcq-14",
+        "ment-number-system-mcq-22",
+        "ment-number-system-mcq-74",
+        "ment-number-system-card-13"
+      ]
+    },
+    {
+      "id": "fr-pure-recurring",
+      "fact": "A pure recurring decimal = repeating block over as many 9s as its digits (0.3636… = 36/99 = 4/11).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "recurring"
+      ],
+      "taughtIn": "ment-number-system-note-fractions-decimals",
+      "drilledBy": [
+        "ment-number-system-mcq-15",
+        "ment-number-system-card-14",
+        "ment-number-system-mcq-141"
+      ]
+    },
+    {
+      "id": "fr-mixed-recurring",
+      "fact": "A mixed recurring decimal = (all digits − non-repeating digits) over 9s for repeating then 0s for non-repeating digits.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "mixed recurring"
+      ],
+      "taughtIn": "ment-number-system-note-fractions-decimals",
+      "drilledBy": [
+        "ment-number-system-mcq-30",
+        "ment-number-system-mcq-75"
+      ]
+    },
+    {
+      "id": "fr-terminating",
+      "fact": "A fraction in lowest terms terminates only when its denominator has no prime other than 2 and 5.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "terminating"
+      ],
+      "taughtIn": "ment-number-system-note-fractions-decimals",
+      "drilledBy": [
+        "ment-number-system-mcq-76",
+        "ment-number-system-mcq-77",
+        "ment-number-system-mcq-78",
+        "ment-number-system-card-28"
+      ]
+    },
+    {
+      "id": "fr-types",
+      "fact": "Proper fraction: numerator < denominator; improper: numerator > denominator; mixed = whole + proper fraction.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "improper"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-card-47"
+      ]
+    },
+    {
+      "id": "cnt-multiples",
+      "fact": "Multiples of k from a to b = ⌊b/k⌋ − ⌊(a − 1)/k⌋.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "divisible by"
+      ],
+      "taughtIn": "ment-number-system-note-counting-special-sums",
+      "drilledBy": [
+        "ment-number-system-mcq-27",
+        "ment-number-system-mcq-79"
+      ]
+    },
+    {
+      "id": "cnt-both-lcm",
+      "fact": "Divisible by both x and y means divisible by LCM(x, y).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "divisible by both"
+      ],
+      "taughtIn": "ment-number-system-note-counting-special-sums",
+      "drilledBy": [
+        "ment-number-system-mcq-26",
+        "ment-number-system-mcq-80",
+        "ment-number-system-mcq-92",
+        "ment-number-system-card-30"
+      ]
+    },
+    {
+      "id": "cnt-ap-terms",
+      "fact": "Terms in an evenly spaced list: n = (last − first)/step + 1.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "how many"
+      ],
+      "taughtIn": "ment-number-system-note-counting-special-sums",
+      "drilledBy": [
+        "ment-number-system-mcq-81",
+        "ment-number-system-mcq-82",
+        "ment-number-system-card-29"
+      ]
+    },
+    {
+      "id": "cnt-power-sum-factor",
+      "fact": "A sum of consecutive powers factors as a^m(1 + a + a² + …), revealing its divisor (6^25 + … + 6^28 = 6^25 × 259).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "divisible"
+      ],
+      "taughtIn": "ment-number-system-note-counting-special-sums",
+      "drilledBy": [
+        "ment-number-system-mcq-28",
+        "ment-number-system-mcq-29",
+        "ment-number-system-mcq-84"
+      ]
+    },
+    {
+      "id": "om-standard-form",
+      "fact": "Standard (scientific) form is a × 10^n with 1 ≤ a < 10 and n an integer.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard"
+      ],
+      "keys": [
+        "standard",
+        "10^{"
+      ],
+      "taughtIn": "ment-number-system-note-order-of-magnitude",
+      "drilledBy": [
+        "ment-number-system-mcq-31",
+        "ment-number-system-mcq-88",
+        "ment-number-system-mcq-89"
+      ]
+    },
+    {
+      "id": "om-multiply",
+      "fact": "To multiply standard forms multiply the fronts and add the powers; to divide, subtract the powers; then renormalise.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "10^{",
+        "×"
+      ],
+      "taughtIn": "ment-number-system-note-order-of-magnitude",
+      "drilledBy": [
+        "ment-number-system-mcq-31",
+        "ment-number-system-mcq-89",
+        "ment-number-system-card-32"
+      ]
+    },
+    {
+      "id": "om-small-negative",
+      "fact": "Numbers below 1 take a negative power: 0.000045 = 4.5 × 10^−5.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "0.000045"
+      ],
+      "taughtIn": "ment-number-system-note-remainder-hcf-extras",
+      "drilledBy": [
+        "ment-number-system-mcq-88"
+      ]
+    },
+    {
+      "id": "om-nearest-power",
+      "fact": "Order of magnitude is the power of ten nearest the number, the cut-off being √10 ≈ 3.16.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard"
+      ],
+      "keys": [
+        "order of magnitude"
+      ],
+      "taughtIn": "ment-number-system-note-order-of-magnitude",
+      "drilledBy": [
+        "ment-number-system-mcq-32",
+        "ment-number-system-mcq-90",
+        "ment-number-system-mcq-91"
+      ]
+    }
+  ]
+}

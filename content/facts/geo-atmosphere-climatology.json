@@ -1,0 +1,4824 @@
+{
+  "version": 1,
+  "subtopicId": "geo-atmosphere-climatology",
+  "facts": [
+    {
+      "id": "co-n2-o2",
+      "fact": "Dry air is about 78% nitrogen and 21% oxygen by volume.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "78%",
+        "21%"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-1",
+        "geo-atmosphere-climatology-card-1"
+      ]
+    },
+    {
+      "id": "co-co2-greenhouse",
+      "fact": "Carbon dioxide absorbs terrestrial long-wave radiation and re-radiates it, acting as a greenhouse gas.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Carbon dioxide",
+        "long-wave"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-4"
+      ]
+    },
+    {
+      "id": "co-ozone-uv",
+      "fact": "Ozone in the stratosphere absorbs most incoming ultraviolet radiation.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Ozone",
+        "ultraviolet"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-4"
+      ]
+    },
+    {
+      "id": "co-troposphere-weather",
+      "fact": "Almost all weather phenomena occur in the troposphere.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Troposphere"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-2",
+        "geo-atmosphere-climatology-mcq-28",
+        "geo-atmosphere-climatology-card-2"
+      ]
+    },
+    {
+      "id": "co-stratosphere-ozone",
+      "fact": "The stratosphere contains the ozone layer and is ideal for flying.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "ozone layer",
+        "flying"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-5",
+        "geo-atmosphere-climatology-card-2"
+      ]
+    },
+    {
+      "id": "co-mesosphere-meteor",
+      "fact": "Meteorites burn up in the mesosphere.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Meteorites burn"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-5"
+      ]
+    },
+    {
+      "id": "co-ionosphere-radio",
+      "fact": "The ionosphere reflects radio waves back to the Earth.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "radio waves"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-5"
+      ]
+    },
+    {
+      "id": "co-exosphere",
+      "fact": "Light gases like helium and hydrogen escape to space from the exosphere.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "helium",
+        "hydrogen"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-5"
+      ]
+    },
+    {
+      "id": "co-lapse-rate",
+      "fact": "The normal lapse rate is about 6.5°C per 1,000 m.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "6.5"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-2",
+        "geo-atmosphere-climatology-mcq-43"
+      ]
+    },
+    {
+      "id": "hb-35-reflected",
+      "fact": "Of insolation at the top of the atmosphere about 35 units are reflected (the Earth's albedo).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "35 units"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-heat-budget",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-6"
+      ]
+    },
+    {
+      "id": "hb-51-surface",
+      "fact": "The Earth's surface absorbs about 51 units of incoming radiation.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "51 units"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-heat-budget",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-6"
+      ]
+    },
+    {
+      "id": "hb-longwave",
+      "fact": "The Earth radiates energy back as long-wave terrestrial radiation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "long-wave"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-4",
+        "geo-atmosphere-climatology-mcq-6",
+        "geo-atmosphere-climatology-card-3"
+      ]
+    },
+    {
+      "id": "hb-inversion-night",
+      "fact": "A long winter night with clear skies and still air favours temperature inversion.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "clear skies"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-7"
+      ]
+    },
+    {
+      "id": "hb-clouds-pyq",
+      "fact": "High clouds trap outgoing infrared and warm the surface while low clouds reflect sunlight and cool it (UPSC 2022 — both reverse claims wrong).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "clouds",
+        "infrared"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-heat-budget",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-38"
+      ]
+    },
+    {
+      "id": "pw-itcz-thermal",
+      "fact": "The equatorial low (ITCZ) is thermally induced.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "equatorial low"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-8",
+        "geo-atmosphere-climatology-card-4"
+      ]
+    },
+    {
+      "id": "pw-horse-latitudes",
+      "fact": "The subtropical high-pressure belts near 30°N and 30°S are the Horse latitudes.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Horse latitudes"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-8",
+        "geo-atmosphere-climatology-card-4"
+      ]
+    },
+    {
+      "id": "pw-sh-westerlies",
+      "fact": "Southern Hemisphere westerlies are stronger because there is little land between 40°S and 60°S.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "40°S"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-9"
+      ]
+    },
+    {
+      "id": "pw-roaring-forties",
+      "fact": "Southern westerlies are called the Roaring Forties, Furious Fifties and Screaming Sixties.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Roaring Forties"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-48"
+      ]
+    },
+    {
+      "id": "pw-coriolis",
+      "fact": "The Coriolis force deflects winds right in the NH and left in the SH; zero at the equator, maximum at the poles.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Coriolis"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-5",
+        "geo-atmosphere-climatology-card-7",
+        "geo-atmosphere-climatology-mcq-49"
+      ]
+    },
+    {
+      "id": "lw-loo",
+      "fact": "The Loo is a hot dry wind of the northern plains of India.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Loo",
+        "Northern plains"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-10"
+      ]
+    },
+    {
+      "id": "lw-chinook",
+      "fact": "The Chinook blows down the eastern slopes of the Rockies.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Chinook",
+        "Rockies"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-10",
+        "geo-atmosphere-climatology-card-6"
+      ]
+    },
+    {
+      "id": "lw-mistral",
+      "fact": "The Mistral is a cold wind of the Rhone valley, France.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Mistral",
+        "Rhone"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-10",
+        "geo-atmosphere-climatology-card-6"
+      ]
+    },
+    {
+      "id": "lw-foehn",
+      "fact": "The Foehn is a warm dry wind on the leeward slopes of the Alps.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Foehn",
+        "Alps"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-10",
+        "geo-atmosphere-climatology-card-6"
+      ]
+    },
+    {
+      "id": "lw-sirocco",
+      "fact": "The Sirocco is a hot, dry wind blowing from the Sahara towards the Mediterranean.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Sirocco",
+        "Sahara"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-30"
+      ]
+    },
+    {
+      "id": "lw-harmattan",
+      "fact": "The Harmattan is a hot, dry, dusty north-easterly of West Africa.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Harmattan",
+        "West Africa"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-30"
+      ]
+    },
+    {
+      "id": "lw-santa-ana",
+      "fact": "The Santa Ana is a hot, dry offshore wind of southern California.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Santa Ana",
+        "California"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-30"
+      ]
+    },
+    {
+      "id": "lw-berg",
+      "fact": "The Berg is a hot, dry wind descending to the coast of South Africa.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Berg"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-30"
+      ]
+    },
+    {
+      "id": "cy-names",
+      "fact": "Tropical cyclones are called cyclones (Indian Ocean), hurricanes (Atlantic) and typhoons (western Pacific).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Hurricanes",
+        "Typhoons"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-3"
+      ]
+    },
+    {
+      "id": "cy-temperate-fronts",
+      "fact": "Extratropical cyclones have a clear frontal system, which tropical cyclones lack.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "frontal system"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-11"
+      ]
+    },
+    {
+      "id": "cy-tropical-sea",
+      "fact": "Tropical cyclones originate only over warm seas; extratropical ones over land or sea.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "warm seas"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-11",
+        "geo-atmosphere-climatology-card-8"
+      ]
+    },
+    {
+      "id": "cy-sst-27",
+      "fact": "Tropical cyclones need a sea-surface temperature above 27°C.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "27°C"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-7",
+        "geo-atmosphere-climatology-mcq-57"
+      ]
+    },
+    {
+      "id": "cy-wind-shear",
+      "fact": "Large variation in vertical wind speed (strong shear) is unfavourable for tropical cyclones.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "vertical wind speed"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-12"
+      ]
+    },
+    {
+      "id": "cy-imd-rsmc",
+      "fact": "The IMD is the Regional Specialised Meteorological Centre that names north Indian Ocean cyclones.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "India Meteorological Department"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-13",
+        "geo-atmosphere-climatology-mcq-36"
+      ]
+    },
+    {
+      "id": "cy-bay-more",
+      "fact": "The Bay of Bengal generates far more cyclones than the Arabian Sea.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "ap"
+      ],
+      "keys": [
+        "Bay of Bengal"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-14"
+      ]
+    },
+    {
+      "id": "cy-hudhud",
+      "fact": "Cyclone Hudhud (October 2014) made landfall near Visakhapatnam.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Hudhud",
+        "Visakhapatnam"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-14",
+        "geo-atmosphere-climatology-mcq-21",
+        "geo-atmosphere-climatology-mcq-22"
+      ]
+    },
+    {
+      "id": "cy-hudhud-escs",
+      "fact": "Hudhud was an Extremely Severe Cyclonic Storm whose remnants caused a snowstorm disaster in Nepal.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Extremely Severe",
+        "Nepal"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-22"
+      ]
+    },
+    {
+      "id": "cy-titli",
+      "fact": "Cyclone Titli (2018) struck northern Andhra Pradesh (Srikakulam belt).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Titli",
+        "Srikakulam"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-21",
+        "geo-atmosphere-climatology-card-11"
+      ]
+    },
+    {
+      "id": "cy-michaung",
+      "fact": "Cyclone Michaung (December 2023) made landfall near Bapatla after flooding Chennai.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Michaung",
+        "Bapatla"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-21",
+        "geo-atmosphere-climatology-mcq-23",
+        "geo-atmosphere-climatology-card-11"
+      ]
+    },
+    {
+      "id": "cy-montha",
+      "fact": "Cyclone Montha (October 2025) made landfall near Narasapuram as a Severe Cyclonic Storm.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Montha",
+        "Narasapuram"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-21",
+        "geo-atmosphere-climatology-mcq-23",
+        "geo-atmosphere-climatology-mcq-35",
+        "geo-atmosphere-climatology-card-11"
+      ]
+    },
+    {
+      "id": "cy-montha-thailand",
+      "fact": "The name 'Montha' was contributed by Thailand.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Montha",
+        "Thailand"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-36",
+        "geo-atmosphere-climatology-card-10"
+      ]
+    },
+    {
+      "id": "cy-ap-season",
+      "fact": "The peak season for cyclones striking the AP coast is October–November.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "October"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-14",
+        "geo-atmosphere-climatology-mcq-18",
+        "geo-atmosphere-climatology-mcq-22",
+        "geo-atmosphere-climatology-mcq-23",
+        "geo-atmosphere-climatology-mcq-35"
+      ]
+    },
+    {
+      "id": "cy-chronology",
+      "fact": "AP-coast cyclones in order: Hudhud (2014) → Titli (2018) → Michaung (2023) → Montha (2025).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Hudhud",
+        "Titli",
+        "Michaung",
+        "Montha"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-21",
+        "geo-atmosphere-climatology-mcq-37",
+        "geo-atmosphere-climatology-card-11"
+      ]
+    },
+    {
+      "id": "ra-orographic",
+      "fact": "Orographic rainfall falls on the windward side of a mountain, leaving a dry rain shadow to leeward.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Orographic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-15",
+        "geo-atmosphere-climatology-mcq-29"
+      ]
+    },
+    {
+      "id": "ra-convectional",
+      "fact": "Convectional rainfall, typical of the equatorial belt, occurs in the afternoon from surface heating.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Convectional"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-29"
+      ]
+    },
+    {
+      "id": "cd-dew-frost",
+      "fact": "Dew forms when the dew point is above freezing; white frost when at or below freezing.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Dew",
+        "frost"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-16"
+      ]
+    },
+    {
+      "id": "cd-smog",
+      "fact": "Fog mixed with smoke is called smog.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "smog"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-16"
+      ]
+    },
+    {
+      "id": "cd-rh",
+      "fact": "Relative humidity is the ratio of actual water vapour to the air's capacity at that temperature.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Relative humidity"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-29"
+      ]
+    },
+    {
+      "id": "cd-dew-point",
+      "fact": "The dew point is the temperature at which air becomes saturated.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "dew point",
+        "saturated"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-29"
+      ]
+    },
+    {
+      "id": "cl-cirrus",
+      "fact": "Cirrus are high, thin, wispy ice-crystal clouds.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Cirrus"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-27",
+        "geo-atmosphere-climatology-mcq-32",
+        "geo-atmosphere-climatology-card-9"
+      ]
+    },
+    {
+      "id": "cl-nimbostratus",
+      "fact": "Nimbostratus is a low, thick grey layer giving continuous steady rain.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Nimbostratus"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-27",
+        "geo-atmosphere-climatology-mcq-32",
+        "geo-atmosphere-climatology-card-9"
+      ]
+    },
+    {
+      "id": "cl-cumulonimbus",
+      "fact": "Cumulonimbus is the towering thunderstorm cloud giving heavy rain, hail and lightning.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cumulonimbus"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-24",
+        "geo-atmosphere-climatology-mcq-27",
+        "geo-atmosphere-climatology-card-9"
+      ]
+    },
+    {
+      "id": "cl-cumulus",
+      "fact": "Cumulus are heaped fair-weather clouds with a flat base.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cumulus"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-27"
+      ]
+    },
+    {
+      "id": "kp-af",
+      "fact": "Köppen Af is the tropical wet (rainforest) climate with rain all year.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Af"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-heat-budget",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-14",
+        "geo-atmosphere-climatology-mcq-17",
+        "geo-atmosphere-climatology-mcq-23",
+        "geo-atmosphere-climatology-mcq-29",
+        "geo-atmosphere-climatology-mcq-30",
+        "geo-atmosphere-climatology-mcq-32",
+        "geo-atmosphere-climatology-card-14"
+      ]
+    },
+    {
+      "id": "kp-am",
+      "fact": "Köppen Am is the tropical monsoon climate.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Am"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-17"
+      ]
+    },
+    {
+      "id": "kp-bwh",
+      "fact": "Köppen BWh is the hot subtropical desert climate.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "BWh"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-17"
+      ]
+    },
+    {
+      "id": "kp-cs",
+      "fact": "Köppen Cs is the Mediterranean climate — dry summer, wet winter.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cs"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-17"
+      ]
+    },
+    {
+      "id": "kp-1918-groups",
+      "fact": "Köppen (1918) linked climate to vegetation, with groups A, B, C, D, E and highland H.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "1918"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-condensation-koppen",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-65"
+      ]
+    },
+    {
+      "id": "mn-itcz-shift",
+      "fact": "The northward shift of the ITCZ over the Indo-Gangetic plain draws in the south-west monsoon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "ITCZ"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-8",
+        "geo-atmosphere-climatology-mcq-18"
+      ]
+    },
+    {
+      "id": "mn-kerala-1june",
+      "fact": "The south-west monsoon sets in over Kerala around 1 June.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Kerala",
+        "1 June"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-18",
+        "geo-atmosphere-climatology-card-13"
+      ]
+    },
+    {
+      "id": "mn-ne-ap-tn",
+      "fact": "The retreating (north-east) monsoon brings most rain to coastal AP and Tamil Nadu (Oct–Dec).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "retreating"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-18",
+        "geo-atmosphere-climatology-mcq-32",
+        "geo-atmosphere-climatology-card-13"
+      ]
+    },
+    {
+      "id": "mn-burst-break",
+      "fact": "'Burst' is the sudden onset of the monsoon; 'break' is a dry spell within it.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Burst",
+        "break"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-78"
+      ]
+    },
+    {
+      "id": "mn-seasonal-reversal",
+      "fact": "Seasonal reversal of winds is the typical characteristic of the monsoon climate (UPSC 2014).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "seasonal"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-77"
+      ]
+    },
+    {
+      "id": "en-elnino",
+      "fact": "El Niño (warming of the central-eastern Pacific) is generally associated with a weak Indian monsoon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "El Ni"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-19",
+        "geo-atmosphere-climatology-mcq-39",
+        "geo-atmosphere-climatology-card-12"
+      ]
+    },
+    {
+      "id": "en-lanina",
+      "fact": "La Niña is generally associated with a good or above-normal monsoon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "La Ni"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-19",
+        "geo-atmosphere-climatology-card-12"
+      ]
+    },
+    {
+      "id": "en-iod-positive",
+      "fact": "A positive Indian Ocean Dipole tends to favour Indian monsoon rainfall.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "positive Indian Ocean Dipole"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-19"
+      ]
+    },
+    {
+      "id": "en-iod-not-pacific",
+      "fact": "The IOD is defined within the Indian Ocean (not the eastern Pacific) and can influence El Niño's impact on the monsoon (UPSC 2017).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "El Ni",
+        "Indian monsoon"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-enso",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-19",
+        "geo-atmosphere-climatology-mcq-39",
+        "geo-atmosphere-climatology-card-12"
+      ]
+    },
+    {
+      "id": "jt-geostrophic-westerly",
+      "fact": "Jet streams are fast, narrow bands of geostrophic westerly winds in the upper troposphere.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Jet streams"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-28"
+      ]
+    },
+    {
+      "id": "jt-wd-steer",
+      "fact": "The subtropical westerly jet steers the winter western disturbances.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "western disturbances"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-28"
+      ]
+    },
+    {
+      "id": "am-cp-mt",
+      "fact": "A continental polar (cP) air mass is cold and dry; maritime tropical (mT) is warm and humid.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "cP",
+        "mT"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-air-masses-fronts",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-24",
+        "geo-atmosphere-climatology-mcq-31"
+      ]
+    },
+    {
+      "id": "am-ct-sahara",
+      "fact": "Continental tropical (cT) air masses come from the Sahara and other deserts — hot and dry.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Sahara"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-winds",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-30",
+        "geo-atmosphere-climatology-mcq-31"
+      ]
+    },
+    {
+      "id": "am-mp",
+      "fact": "Maritime polar (mP) air masses form over cold high-latitude oceans.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mP"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-air-masses-fronts",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-31"
+      ]
+    },
+    {
+      "id": "fr-cold",
+      "fact": "At a cold front dense cold air undercuts warm air steeply, giving cumulonimbus and brief heavy rain.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "cold front"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclones",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-24",
+        "geo-atmosphere-climatology-mcq-32",
+        "geo-atmosphere-climatology-mcq-33",
+        "geo-atmosphere-climatology-mcq-34",
+        "geo-atmosphere-climatology-card-9"
+      ]
+    },
+    {
+      "id": "fr-warm",
+      "fact": "A warm front has a gentle slope with a cirrus-to-nimbostratus cloud sequence and prolonged steady rain.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "warm front",
+        "gentle"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-air-masses-fronts",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-32",
+        "geo-atmosphere-climatology-card-9"
+      ]
+    },
+    {
+      "id": "fr-occluded",
+      "fact": "An occluded front forms when a cold front overtakes the warm front — the dissipating stage of a temperate cyclone.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "occluded"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-air-masses-fronts",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-24",
+        "geo-atmosphere-climatology-mcq-33"
+      ]
+    },
+    {
+      "id": "fr-stationary",
+      "fact": "A stationary front occurs when neither air mass can displace the other.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "stationary front"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-air-masses-fronts",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-56"
+      ]
+    },
+    {
+      "id": "dm-ndma",
+      "fact": "The NDMA was constituted under the Disaster Management Act 2005.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard"
+      ],
+      "keys": [
+        "NDMA"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-mains-angle",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-25",
+        "geo-atmosphere-climatology-card-14"
+      ]
+    },
+    {
+      "id": "dm-ndrf",
+      "fact": "The NDRF is the specialised disaster-response force.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "NDRF"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-mains-angle",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-25",
+        "geo-atmosphere-climatology-card-14"
+      ]
+    },
+    {
+      "id": "dm-apsdma",
+      "fact": "The APSDMA is chaired by the Chief Minister of Andhra Pradesh.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "APSDMA"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-mains-angle",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-25"
+      ]
+    },
+    {
+      "id": "dm-sendai",
+      "fact": "The Sendai Framework (2015–2030) succeeded the Hyogo Framework with four priorities and seven targets.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Sendai",
+        "Hyogo"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-mains-angle",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-26",
+        "geo-atmosphere-climatology-card-14"
+      ]
+    },
+    {
+      "id": "cc-ghg",
+      "fact": "Carbon dioxide, methane and nitrous oxide are greenhouse gases.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "methane"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-composition-layers",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-79"
+      ]
+    },
+    {
+      "id": "ad-height",
+      "fact": "The source gives the atmosphere's height as about 16,000–29,000 km.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "16,000"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-15"
+      ]
+    },
+    {
+      "id": "ad-argon",
+      "fact": "Argon (0.93%) is the third most abundant gas in dry air.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Argon",
+        "0.93"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-40"
+      ]
+    },
+    {
+      "id": "ad-co2-share",
+      "fact": "Carbon dioxide forms about 0.03% (today about 0.04%) of the air.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "0.03"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-40"
+      ]
+    },
+    {
+      "id": "ad-trace-gases",
+      "fact": "Neon (0.0018%), helium (0.0005%), ozone (0.00006%) and hydrogen (0.00005%) are minor gases.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Neon",
+        "0.0018"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-16"
+      ]
+    },
+    {
+      "id": "ad-n2-diluent",
+      "fact": "Nitrogen acts as a diluent and is chemically inactive; oxygen is needed for combustion.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "diluent"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-17"
+      ]
+    },
+    {
+      "id": "ad-wv-0-5",
+      "fact": "Water vapour is 0–5% of the air by volume and decreases from the equator poleward.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "0-5",
+        "poleward"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-40"
+      ]
+    },
+    {
+      "id": "ad-wv-transparent",
+      "fact": "Water vapour is transparent to incoming short-wave radiation but absorbs outgoing long-wave radiation.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "short-wave"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-40"
+      ]
+    },
+    {
+      "id": "ad-blue-sky",
+      "fact": "The blue colour of the sky is due to selective scattering of sunlight.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "blue",
+        "scattering"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-41"
+      ]
+    },
+    {
+      "id": "ad-red-sunset",
+      "fact": "Scattering by dust particles gives red and orange colours at sunrise and sunset.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sunrise",
+        "sunset"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-41"
+      ]
+    },
+    {
+      "id": "ad-hygroscopic",
+      "fact": "Salt particles act as hygroscopic nuclei for cloud drops.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hygroscopic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-41"
+      ]
+    },
+    {
+      "id": "ad-mixing",
+      "fact": "'Troposphere' means 'zone of mixing'; the tropopause is where mixing stops.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mixing"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-18"
+      ]
+    },
+    {
+      "id": "ad-tropo-height",
+      "fact": "The troposphere is about 13 km on average — higher at the equator (16 km; NCERT ~18 km) than at the poles (6 km; NCERT ~8 km).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "16 km",
+        "6 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-42"
+      ]
+    },
+    {
+      "id": "ad-tropo-summer",
+      "fact": "The troposphere is higher in summer and lower in winter.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "higher in summer"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-19"
+      ]
+    },
+    {
+      "id": "ad-tropopause",
+      "fact": "The tropopause is about 1.5 km thick.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1.5 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-20"
+      ]
+    },
+    {
+      "id": "ad-strato-50",
+      "fact": "The stratosphere extends up to about 50 km; its top is the stratopause.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "50 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-42"
+      ]
+    },
+    {
+      "id": "ad-ozone-15-30",
+      "fact": "The ozone layer (ozonosphere) lies between 15 and 30 km.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "15",
+        "30 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-42"
+      ]
+    },
+    {
+      "id": "ad-strato-temp",
+      "fact": "Temperature rises with height in the stratosphere because ozone absorbs UV.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "rises"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-42"
+      ]
+    },
+    {
+      "id": "ad-meso-80",
+      "fact": "The mesosphere lies between 50 and 80 km; the mesopause, at about −80°C, is the coldest level.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "80"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-42"
+      ]
+    },
+    {
+      "id": "ad-iss",
+      "fact": "The International Space Station orbits in the thermosphere.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "International Space Station"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-43"
+      ]
+    },
+    {
+      "id": "ad-iono-80-400",
+      "fact": "The ionosphere extends from about 80 to 400 km and has D, E, F and G layers.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "400 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-43"
+      ]
+    },
+    {
+      "id": "ad-exo-nebula",
+      "fact": "The exosphere is so rarefied it resembles a nebula.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "nebula"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-21"
+      ]
+    },
+    {
+      "id": "ad-lapse-64",
+      "fact": "Some books give the normal lapse rate as 6.4°C per km (source: 6.5°C per 1,000 m).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "6.4"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-atmosphere-details",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-22"
+      ]
+    },
+    {
+      "id": "id-insolation",
+      "fact": "Insolation is the solar energy received at the Earth's surface.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "insolation"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-44"
+      ]
+    },
+    {
+      "id": "id-climatology",
+      "fact": "Climatology is the study of atmospheric conditions over a long period.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Climatology"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-23"
+      ]
+    },
+    {
+      "id": "id-zones",
+      "fact": "Insolation zones are tropical, middle-latitude and polar; insolation is zero in the polar night.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "middle-latitude",
+        "polar"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-24"
+      ]
+    },
+    {
+      "id": "id-angle",
+      "fact": "The angle of incidence of the Sun's rays controls insolation more than the length of day.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "angle of incidence"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-44"
+      ]
+    },
+    {
+      "id": "id-poles-low",
+      "fact": "The poles get little insolation despite long days because rays are oblique and ice reflects them.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "oblique"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-25"
+      ]
+    },
+    {
+      "id": "id-sunspot-11",
+      "fact": "Sunspot numbers follow an 11-year cycle; more sunspots mean more solar energy.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "11"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-44"
+      ]
+    },
+    {
+      "id": "id-max-deserts",
+      "fact": "Maximum insolation is received over the subtropical deserts.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "subtropical deserts"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-44"
+      ]
+    },
+    {
+      "id": "id-equator-less",
+      "fact": "The equator gets less insolation than the tropics because of clouds.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "clouds"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-44"
+      ]
+    },
+    {
+      "id": "id-continents-more",
+      "fact": "At the same latitude continents receive more insolation than oceans.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "continents"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-26"
+      ]
+    },
+    {
+      "id": "id-isohels",
+      "fact": "Isohels are lines joining places with equal sunshine.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Isohel"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-27"
+      ]
+    },
+    {
+      "id": "id-albedo",
+      "fact": "Albedo is the portion of incident radiation reflected back by a surface.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Albedo",
+        "reflected"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-45"
+      ]
+    },
+    {
+      "id": "id-conduction",
+      "fact": "Conduction is a minor way of heating the air because air is a poor conductor.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "poor conductor"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-45"
+      ]
+    },
+    {
+      "id": "id-convection",
+      "fact": "Convective heat transfer is confined to the troposphere.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Convection",
+        "troposphere"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-45"
+      ]
+    },
+    {
+      "id": "id-advection",
+      "fact": "Advection is horizontal heat transfer by wind (e.g. Loo, Sirocco) and drives most day-to-day weather change in middle latitudes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Advection",
+        "horizontal"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-45"
+      ]
+    },
+    {
+      "id": "id-from-below",
+      "fact": "The atmosphere is heated indirectly from below by terrestrial radiation.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "from below"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-46"
+      ]
+    },
+    {
+      "id": "id-counter",
+      "fact": "Counter-radiation is heat radiated from the atmosphere back to the ground.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Counter-radiation"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-28"
+      ]
+    },
+    {
+      "id": "id-27-clouds",
+      "fact": "Of the 35 reflected units, 27 are reflected from cloud tops and 2 from snow and ice.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "27",
+        "snow"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-29"
+      ]
+    },
+    {
+      "id": "id-14-atm",
+      "fact": "Of the 65 absorbed units, 14 are absorbed by the atmosphere.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "14"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-30"
+      ]
+    },
+    {
+      "id": "id-17-34",
+      "fact": "Of the 51 units the Earth radiates, 17 go directly to space and 34 are absorbed by the atmosphere.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "17",
+        "34"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-31"
+      ]
+    },
+    {
+      "id": "id-latent-19",
+      "fact": "Of those 34 units, 19 reach the air through latent heat of condensation (6 direct, 9 by convection).",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "19",
+        "latent heat"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-32"
+      ]
+    },
+    {
+      "id": "id-48",
+      "fact": "The atmosphere radiates 48 units to space; 17 + 48 = 65 balances incoming energy.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "48"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-33"
+      ]
+    },
+    {
+      "id": "id-isotherms",
+      "fact": "Isotherms are lines joining places of equal temperature.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Isotherm"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-34"
+      ]
+    },
+    {
+      "id": "id-continentality",
+      "fact": "Annual temperature range is greater in continental interiors mainly because of land–water heating differences (UPSC 2013).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "continental interiors"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-46"
+      ]
+    },
+    {
+      "id": "id-inversion-polar",
+      "fact": "Temperature inversion is normal throughout the year over polar areas.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "polar",
+        "inversion"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-46"
+      ]
+    },
+    {
+      "id": "id-air-drainage",
+      "fact": "Air drainage — cold air sliding downslope into valleys — protects plants on slopes from frost.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "air drainage"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-35"
+      ]
+    },
+    {
+      "id": "id-perihelion-jan3",
+      "fact": "Perihelion is on 3 January and aphelion on 4 July, but this changes insolation only slightly.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "3 January"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-insolation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-36"
+      ]
+    },
+    {
+      "id": "pc-1013",
+      "fact": "Mean sea-level pressure is 1,013.2 millibar.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1,013.2"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-47"
+      ]
+    },
+    {
+      "id": "pc-1mb-10m",
+      "fact": "Pressure decreases about 1 mb for every 10 m of height in the lower atmosphere.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "10 m"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-47"
+      ]
+    },
+    {
+      "id": "pc-barometer",
+      "fact": "Air pressure is measured with a mercury or aneroid barometer.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "aneroid"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-37"
+      ]
+    },
+    {
+      "id": "pc-isobars",
+      "fact": "Isobars are lines joining places of equal pressure.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Isobar"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-47"
+      ]
+    },
+    {
+      "id": "pc-doldrums",
+      "fact": "The equatorial low is called the doldrums (zone of calm) because only vertical currents occur.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "doldrums"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-48"
+      ]
+    },
+    {
+      "id": "pc-azores-hawaii",
+      "fact": "In the NH the subtropical high survives as the Azores (Atlantic) and Hawaiian (Pacific) cells.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Azores",
+        "Hawaiian"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-38"
+      ]
+    },
+    {
+      "id": "pc-horse-story",
+      "fact": "Horse latitudes got their name from becalmed sailors throwing horses overboard.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "horses"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-39"
+      ]
+    },
+    {
+      "id": "pc-subantarctic",
+      "fact": "The continuous subpolar low of the Southern Hemisphere is the sub-Antarctic low.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sub-Antarctic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-40"
+      ]
+    },
+    {
+      "id": "pc-subpolar-dynamic",
+      "fact": "Subpolar lows are not thermal; converging subtropical and polar winds rise there.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "subpolar low"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-48"
+      ]
+    },
+    {
+      "id": "pc-belts-shift",
+      "fact": "Pressure belts shift with the apparent movement of the Sun — south in the northern winter, north in summer.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "shift"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-48"
+      ]
+    },
+    {
+      "id": "pc-pgf",
+      "fact": "The pressure gradient is strong where isobars are close together.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "close"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-47"
+      ]
+    },
+    {
+      "id": "pc-friction",
+      "fact": "Friction affects winds up to 1–3 km and is least over the sea.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1-3 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-41"
+      ]
+    },
+    {
+      "id": "pc-coriolis-latitude",
+      "fact": "The Coriolis force is proportional to latitude and acts perpendicular to the pressure gradient.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "perpendicular"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-49"
+      ]
+    },
+    {
+      "id": "pc-no-equator-cyclone",
+      "fact": "Tropical cyclones do not form at the equator because the Coriolis force there is zero.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "equator"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-49"
+      ]
+    },
+    {
+      "id": "pc-geostrophic",
+      "fact": "The geostrophic wind blows parallel to isobars aloft, where pressure gradient and Coriolis forces balance.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "geostrophic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-49"
+      ]
+    },
+    {
+      "id": "pc-cyclonic",
+      "fact": "Circulation around a low is cyclonic and around a high anticyclonic.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "anticyclonic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-42"
+      ]
+    },
+    {
+      "id": "pc-orders",
+      "fact": "Primary circulation is planetary winds; secondary is cyclones, anticyclones and monsoons; tertiary is local winds.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Secondary",
+        "Tertiary"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-50"
+      ]
+    },
+    {
+      "id": "pc-hadley",
+      "fact": "In the Hadley cell air rises at the ITCZ to about 14 km and sinks near 30°.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Hadley"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-50"
+      ]
+    },
+    {
+      "id": "pc-ferrel-polar",
+      "fact": "The Ferrel cell (30°–60°) and the Polar cell complete the three-cell circulation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Ferrel"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-50"
+      ]
+    },
+    {
+      "id": "pc-polar-front",
+      "fact": "Polar easterlies and westerlies converge at the polar front, producing cyclonic storms.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "polar front"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-50"
+      ]
+    },
+    {
+      "id": "pc-trades-ne-se",
+      "fact": "Trade winds are north-easterly in the NH and south-easterly in the SH, blowing 30°N–30°S towards the equator.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "north-east",
+        "south-east"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-51"
+      ]
+    },
+    {
+      "id": "pc-westerlies-dir",
+      "fact": "Westerlies blow from the south-west in the NH and north-west in the SH and bring rain to west coasts.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "west coasts"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-51"
+      ]
+    },
+    {
+      "id": "pc-westerlies-30-60",
+      "fact": "Westerlies lie between 30° and 60° in each hemisphere and bring winter rain to NW India (UPSC 2015).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "30°",
+        "60°"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-51"
+      ]
+    },
+    {
+      "id": "pc-polar-easterlies",
+      "fact": "Polar easterlies are cold, dry winds from the polar highs to the subpolar lows.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Polar easterlies"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-43"
+      ]
+    },
+    {
+      "id": "pc-ocean-warmth",
+      "fact": "Trade winds make tropical western oceans warmer; westerlies make temperate eastern oceans warmer (UPSC 2021).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "western oceans"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-52"
+      ]
+    },
+    {
+      "id": "pc-jets-both",
+      "fact": "Jet streams occur in both hemispheres (UPSC 2020).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "both hemispheres"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-pressure-circulation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-52"
+      ]
+    },
+    {
+      "id": "lwd-breeze-depth",
+      "fact": "The land and sea breeze system is only about 1–2 km deep.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "1-2 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-44"
+      ]
+    },
+    {
+      "id": "lwd-sea-day",
+      "fact": "The sea breeze blows by day (land hotter) and the land breeze at night.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sea breeze",
+        "land breeze"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-53"
+      ]
+    },
+    {
+      "id": "lwd-valley",
+      "fact": "The valley breeze blows upslope by day; the mountain wind descends at night.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "valley breeze",
+        "mountain wind"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-45"
+      ]
+    },
+    {
+      "id": "lwd-katabatic",
+      "fact": "Cold air draining off plateaus and ice fields is a katabatic wind.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "katabatic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-46"
+      ]
+    },
+    {
+      "id": "lwd-adiabatic",
+      "fact": "Leeward winds like the Foehn and Chinook warm adiabatically as they descend.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "adiabatic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-47"
+      ]
+    },
+    {
+      "id": "lwd-loo-temp",
+      "fact": "The Loo blows west to east in May–June afternoons at 45–50°C.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "45",
+        "May"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-53"
+      ]
+    },
+    {
+      "id": "lwd-foehn-grapes",
+      "fact": "The Foehn melts snow for pasture and helps grapes ripen early.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "grapes"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-48"
+      ]
+    },
+    {
+      "id": "lwd-chinook-snow-eater",
+      "fact": "Chinook means 'snow eater' and can raise temperature by 5°C in 20 minutes.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "snow eater"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-53"
+      ]
+    },
+    {
+      "id": "lwd-sirocco-names",
+      "fact": "The Sirocco is called Leveche in Spain, Khamsin in Egypt and Gharbi in the Aegean.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Leveche",
+        "Khamsin"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-54"
+      ]
+    },
+    {
+      "id": "lwd-blood-rain",
+      "fact": "The Sirocco's red Saharan dust can cause 'blood rain'.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "blood rain"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-49"
+      ]
+    },
+    {
+      "id": "lwd-harmattan-doctor",
+      "fact": "The Harmattan is called 'the Doctor' because it relieves the moist heat.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Doctor"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-53"
+      ]
+    },
+    {
+      "id": "lwd-mistral-hedges",
+      "fact": "Houses and orchards of the Rhone valley are shielded from the Mistral by hedges and tree rows.",
+      "kind": "cause",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hedges"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-50"
+      ]
+    },
+    {
+      "id": "lwd-bora",
+      "fact": "The Bora is a cold, dry north-easterly of the Adriatic coast.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Bora",
+        "Adriatic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-54"
+      ]
+    },
+    {
+      "id": "lwd-blizzard",
+      "fact": "A blizzard is a violent snow-laden polar wind of up to 160 km/h and −70°C.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Blizzard",
+        "160"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-51"
+      ]
+    },
+    {
+      "id": "lwd-buran",
+      "fact": "The Buran is the blizzard of Eurasia.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Buran"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-52"
+      ]
+    },
+    {
+      "id": "lwd-elephanta",
+      "fact": "The Elephanta is a strong southerly/south-easterly wind of the Malabar coast.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Elephanta",
+        "Malabar"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-54"
+      ]
+    },
+    {
+      "id": "lwd-kali-andhi",
+      "fact": "Kali Andhi is the violent pre-monsoon dust squall of the Indo-Gangetic plain.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kali Andhi"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-55"
+      ]
+    },
+    {
+      "id": "lwd-zonda",
+      "fact": "The Zonda is a warm wind on the eastern slope of the Andes in Argentina.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Zonda"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-55"
+      ]
+    },
+    {
+      "id": "lwd-pampero",
+      "fact": "The Pampero is a very strong wind of the Argentine Pampas.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Pampero"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-53"
+      ]
+    },
+    {
+      "id": "lwd-shamal",
+      "fact": "The Shamal is a summer north-westerly of Iraq and the Persian Gulf.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Shamal"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-55"
+      ]
+    },
+    {
+      "id": "lwd-simoom",
+      "fact": "The Simoom is a strong dry wind of the Sahara and Arabian deserts.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Simoom"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-54"
+      ]
+    },
+    {
+      "id": "lwd-diablo",
+      "fact": "The Diablo is a hot, dry offshore wind of the San Francisco Bay area.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Diablo"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-55"
+      ]
+    },
+    {
+      "id": "lwd-etesian",
+      "fact": "The Etesian is a northerly wind of Greece and Turkey.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Etesian"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-56"
+      ]
+    },
+    {
+      "id": "lwd-doctors",
+      "fact": "Cape Doctor (South Africa) and Fremantle Doctor (Perth) are cooling winds.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Fremantle"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-55"
+      ]
+    },
+    {
+      "id": "lwd-southerly-buster",
+      "fact": "The Southerly Buster is a sudden wind change at Sydney.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Southerly Buster"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-57"
+      ]
+    },
+    {
+      "id": "lwd-karaburan",
+      "fact": "The Karaburan is a katabatic \"black storm\" of Central Asia.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Karaburan"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-58"
+      ]
+    },
+    {
+      "id": "lwd-kalbaisakhi",
+      "fact": "Nor'westers (Kalbaisakhi) are pre-monsoon thunderstorms of Bengal.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Kalbaisakhi"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-local-winds-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-59"
+      ]
+    },
+    {
+      "id": "ca-sources",
+      "fact": "Air-mass source regions: warm tropical oceans, subtropical hot deserts, cold high-latitude oceans, snowy high-latitude continents, and the Arctic/Antarctic ice.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "source regions"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-60"
+      ]
+    },
+    {
+      "id": "ca-ca",
+      "fact": "Continental Arctic (cA) is the fifth air-mass type.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "cA"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-61"
+      ]
+    },
+    {
+      "id": "ca-frontogenesis",
+      "fact": "The formation of fronts is called frontogenesis.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "frontogenesis"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-56"
+      ]
+    },
+    {
+      "id": "ca-polar-front-origin",
+      "fact": "Extratropical cyclones form along the polar front.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "polar front"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-56"
+      ]
+    },
+    {
+      "id": "ca-cold-faster",
+      "fact": "The cold front moves faster than the warm front and overtakes it.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "faster"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-56"
+      ]
+    },
+    {
+      "id": "ca-warm-sector",
+      "fact": "The wedge of warm air between the warm and cold fronts is the warm sector.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "warm sector"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-62"
+      ]
+    },
+    {
+      "id": "ca-larger",
+      "fact": "Extratropical cyclones cover a larger area than tropical cyclones.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "larger area"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-63"
+      ]
+    },
+    {
+      "id": "ca-latent",
+      "fact": "Tropical cyclones draw energy from latent heat of condensation in cumulonimbus clouds; they die after landfall.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "latent heat",
+        "landfall"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-57"
+      ]
+    },
+    {
+      "id": "ca-eye-warm",
+      "fact": "The eye is calm with subsiding air and is warmer, not colder, than its surroundings (UPSC 2020).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "eye",
+        "subsiding"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-59"
+      ]
+    },
+    {
+      "id": "ca-some-eye",
+      "fact": "Only some cyclones develop an eye (UPSC 2020).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "develop an eye"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-58"
+      ]
+    },
+    {
+      "id": "ca-eyewall-250",
+      "fact": "Eye-wall winds can reach about 250 km/h.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "250 km"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-57"
+      ]
+    },
+    {
+      "id": "ca-size",
+      "fact": "Bay of Bengal/Arabian Sea cyclones are 600–1,200 km in diameter.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "600"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-64"
+      ]
+    },
+    {
+      "id": "ca-speed",
+      "fact": "Tropical cyclones move about 300–500 km a day.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "300"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-65"
+      ]
+    },
+    {
+      "id": "ca-recurve-20",
+      "fact": "Cyclones crossing 20°N usually recurve and are more destructive.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "20°N"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-57"
+      ]
+    },
+    {
+      "id": "ca-willy",
+      "fact": "Tropical cyclones are called willy-willies in Western Australia.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Willy-willies"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-61"
+      ]
+    },
+    {
+      "id": "ca-sa-sep",
+      "fact": "Tropical cyclones do not form in the South Atlantic and south-east Pacific because SSTs are low (UPSC 2015).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "South Atlantic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-60"
+      ]
+    },
+    {
+      "id": "ca-six-rsmc",
+      "fact": "There are six RSMCs in the world, including IMD.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "six"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-61"
+      ]
+    },
+    {
+      "id": "ca-2000-eight",
+      "fact": "WMO/ESCAP naming began in 2000 with eight countries: Bangladesh, India, Maldives, Myanmar, Oman, Pakistan, Sri Lanka and Thailand.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "2000",
+        "Maldives"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-61"
+      ]
+    },
+    {
+      "id": "ca-2018-five",
+      "fact": "In 2018 Iran, Qatar, Saudi Arabia, UAE and Yemen joined, making 13 countries.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "2018",
+        "Qatar"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-61"
+      ]
+    },
+    {
+      "id": "ca-imd-12",
+      "fact": "IMD issues advisories to 12 other nations of the region.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "12 other"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-66"
+      ]
+    },
+    {
+      "id": "ca-storm-surge",
+      "fact": "Storm surges flood coastal lowlands during tropical cyclones.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "storm surge"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-67"
+      ]
+    },
+    {
+      "id": "ca-thunderstorm",
+      "fact": "A thunderstorm is a well-grown cumulonimbus with thunder and lightning; hail forms above the freezing level.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hail"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-68"
+      ]
+    },
+    {
+      "id": "ca-tornado",
+      "fact": "Tornadoes occur mainly in middle latitudes; over the sea they are waterspouts.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "waterspout"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-cyclone-airmass-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-62"
+      ]
+    },
+    {
+      "id": "hu-absolute",
+      "fact": "Absolute humidity is the weight of water vapour per unit volume, in grams per cubic metre.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Absolute humidity"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-63"
+      ]
+    },
+    {
+      "id": "hu-specific",
+      "fact": "Specific humidity is the weight of water vapour per unit weight of air, in grams per kilogram.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Specific humidity"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-63"
+      ]
+    },
+    {
+      "id": "hu-rh-oceans",
+      "fact": "Relative humidity is greater over oceans and lower over continents.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "oceans"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-69"
+      ]
+    },
+    {
+      "id": "hu-600-cal",
+      "fact": "About 600 calories are needed to convert one gram of water to vapour.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "600 calories"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-63"
+      ]
+    },
+    {
+      "id": "hu-latent",
+      "fact": "The energy absorbed in evaporation and released on condensation is latent heat.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "latent heat"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-63"
+      ]
+    },
+    {
+      "id": "hu-evap-factors",
+      "fact": "Evaporation increases with temperature, dryness of air and air movement.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Evaporation"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-70"
+      ]
+    },
+    {
+      "id": "hu-cond-depends",
+      "fact": "Condensation depends on the amount of cooling and the relative humidity; air must cool below the dew point.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "amount of cooling"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-71"
+      ]
+    },
+    {
+      "id": "hu-dew-conditions",
+      "fact": "Dew needs a clear sky, calm air, high relative humidity and cold long nights.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "calm air"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-64"
+      ]
+    },
+    {
+      "id": "hu-mist-fog",
+      "fact": "Mist contains more moisture than fog and is frequent over mountains; fogs are drier.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Mist",
+        "fog"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-63"
+      ]
+    },
+    {
+      "id": "hu-fog-currents",
+      "fact": "Fogs are common where warm and cold currents meet.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "currents"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-humidity-condensation-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-72"
+      ]
+    },
+    {
+      "id": "kd-approaches",
+      "fact": "Climate classification approaches are empirical, genetic and applied.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "empirical",
+        "genetic"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-73"
+      ]
+    },
+    {
+      "id": "kd-b-precip",
+      "fact": "Four Köppen groups are temperature-based; group B is precipitation-based.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "precipitation-based"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-65"
+      ]
+    },
+    {
+      "id": "kd-letters",
+      "fact": "f = no dry season, m = monsoon, w = dry winter, s = dry summer.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "dry winter",
+        "dry summer"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-65"
+      ]
+    },
+    {
+      "id": "kd-ws-hk",
+      "fact": "W = desert, S = steppe; h = hot, k = cold in group B codes.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "steppe"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-74"
+      ]
+    },
+    {
+      "id": "kd-aw",
+      "fact": "Aw (tropical wet and dry) is found in Sudan and Brazil.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Aw"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-66"
+      ]
+    },
+    {
+      "id": "kd-bwk",
+      "fact": "BWk (mid-latitude desert) is exemplified by the Great Basin.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "BWk",
+        "Great Basin"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-66"
+      ]
+    },
+    {
+      "id": "kd-bsk",
+      "fact": "BSk (mid-latitude steppe) occurs in Central Asia.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "BSk"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-75"
+      ]
+    },
+    {
+      "id": "kd-cwa",
+      "fact": "Cwa (humid subtropical, dry winter) covers the north Indian plains and eastern China.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cwa"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-66"
+      ]
+    },
+    {
+      "id": "kd-cfa",
+      "fact": "Cfa (humid subtropical, rain all year) is found in the eastern USA.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cfa"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-76"
+      ]
+    },
+    {
+      "id": "kd-cfb",
+      "fact": "Cfb (marine west coast) is found in north-western Europe.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cfb"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-66"
+      ]
+    },
+    {
+      "id": "kd-df-dw",
+      "fact": "Df (humid winters) covers Canada and northern Russia; Dw (dry winters) north-eastern Asia.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Dw"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-77"
+      ]
+    },
+    {
+      "id": "kd-et-ef",
+      "fact": "ET is tundra (permafrost); EF is ice cap (Greenland, Antarctica).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "ET",
+        "EF"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-65"
+      ]
+    },
+    {
+      "id": "kd-h",
+      "fact": "Group H denotes highland climates.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Highland"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-78"
+      ]
+    },
+    {
+      "id": "kd-india",
+      "fact": "Most of India is Am and Aw; Ladakh is a cold desert.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Ladakh"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-koppen-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-79"
+      ]
+    },
+    {
+      "id": "wt-eq-temp",
+      "fact": "In the equatorial climate monthly means stay 24–27°C with no winter.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "24",
+        "27°C"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-67"
+      ]
+    },
+    {
+      "id": "wt-eq-peaks",
+      "fact": "Equatorial rainfall has two peaks near the equinoxes.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "equinoxes"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-67"
+      ]
+    },
+    {
+      "id": "wt-selvas",
+      "fact": "The equatorial rainforest of the Amazon is called the Selvas.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Selvas"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-67"
+      ]
+    },
+    {
+      "id": "wt-hardwoods",
+      "fact": "Equatorial forests yield hardwoods such as mahogany, ebony and greenheart.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mahogany",
+        "ebony"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-67"
+      ]
+    },
+    {
+      "id": "wt-cameron",
+      "fact": "The Cameron Highlands (Malaysia) are cooler because of altitude.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Cameron"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-80"
+      ]
+    },
+    {
+      "id": "wt-sudan",
+      "fact": "The savanna climate is also called the Sudan type.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Sudan"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-67"
+      ]
+    },
+    {
+      "id": "wt-acacia",
+      "fact": "Savanna trees include acacia and baobab.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "baobab"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-81"
+      ]
+    },
+    {
+      "id": "wt-kano",
+      "fact": "Kano (Nigeria) gets over 80 cm of savanna rain.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Kano"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-82"
+      ]
+    },
+    {
+      "id": "wt-monsoon-5-30",
+      "fact": "The tropical monsoon climate lies 5°–30° from the equator.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "5°",
+        "30°"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-83"
+      ]
+    },
+    {
+      "id": "wt-70-summer",
+      "fact": "Over 70% of monsoon rain falls in summer.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "70%"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-84"
+      ]
+    },
+    {
+      "id": "wt-mawsynram",
+      "fact": "Mawsynram and Cherrapunji receive over 1,000 cm of rain.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Mawsynram"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-70"
+      ]
+    },
+    {
+      "id": "wt-monsoon-forest",
+      "fact": "Moist deciduous monsoon forests get over 150 cm of rain; dry deciduous less.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "deciduous"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-85"
+      ]
+    },
+    {
+      "id": "wt-desert-west",
+      "fact": "Hot deserts lie on the western margins of continents between 15° and 30°.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "western margins"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-68"
+      ]
+    },
+    {
+      "id": "wt-desert-causes",
+      "fact": "Hot deserts result from subtropical highs, offshore trade winds and cold currents.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "cold currents"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-68"
+      ]
+    },
+    {
+      "id": "wt-sahara-largest",
+      "fact": "The Sahara is the largest hot desert (about 3.5 million square miles).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Sahara",
+        "largest"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-68"
+      ]
+    },
+    {
+      "id": "wt-atacama",
+      "fact": "The Atacama, with under 2 cm of rain, is the driest place on Earth.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Atacama",
+        "driest"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-68"
+      ]
+    },
+    {
+      "id": "wt-libya-57",
+      "fact": "Libya recorded 57°C in 1922.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "57°C"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-86"
+      ]
+    },
+    {
+      "id": "wt-desert-peoples",
+      "fact": "Bushmen (Kalahari), Tuaregs (Sahara) and Bedouins (Arabia) are desert peoples.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Tuaregs",
+        "Bedouins"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-69"
+      ]
+    },
+    {
+      "id": "wt-midlat-deserts",
+      "fact": "Mid-latitude deserts include the Gobi, Turkestan, Patagonian and Ladakh.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Turkestan"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-87"
+      ]
+    },
+    {
+      "id": "wt-steppe-rain",
+      "fact": "Steppe regions receive 25–75 cm of rain.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "75 cm"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-88"
+      ]
+    },
+    {
+      "id": "wt-grassland-names",
+      "fact": "Temperate grasslands: Prairies (N. America), Pampas (Argentina), Velds (S. Africa), Puszta (Hungary), Downs (Australia), Canterbury (NZ).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Pampas",
+        "Velds"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-69"
+      ]
+    },
+    {
+      "id": "wt-chernozem",
+      "fact": "The Chernozem soils of Ukraine are rich steppe soils.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Chernozem"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-tropical",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-89"
+      ]
+    },
+    {
+      "id": "wm-med-west",
+      "fact": "The Mediterranean climate lies 30°–45° on the western margins of continents.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "30°",
+        "45°"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-71"
+      ]
+    },
+    {
+      "id": "wm-med-places",
+      "fact": "Mediterranean climate regions include central Chile, California, the Cape Town area and south-western Australia.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "California",
+        "Cape Town"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-71"
+      ]
+    },
+    {
+      "id": "wm-med-winter-rain",
+      "fact": "Mediterranean winters are wet from onshore westerlies; summers dry under offshore trades.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "westerlies",
+        "winter"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-71"
+      ]
+    },
+    {
+      "id": "wm-cork-sequoia",
+      "fact": "Mediterranean vegetation includes cork oak, eucalyptus and the giant sequoia.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "sequoia"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-90"
+      ]
+    },
+    {
+      "id": "wm-china-type",
+      "fact": "China type: south-east monsoon in summer and dry north-west monsoon from the Siberian high in winter.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Siberian"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-72"
+      ]
+    },
+    {
+      "id": "wm-gulf-type",
+      "fact": "Gulf type (south-eastern USA) has the Gulf Stream, about 150 cm rain, hurricanes and tornadoes.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Gulf"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-91"
+      ]
+    },
+    {
+      "id": "wm-natal-type",
+      "fact": "Natal type has onshore trades all year and well-distributed rain.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Natal"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-92"
+      ]
+    },
+    {
+      "id": "wm-sa-trees",
+      "fact": "Parana pine, quebracho and yerba mate grow in the warm temperate east margin of South America.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "quebracho"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-93"
+      ]
+    },
+    {
+      "id": "wm-british",
+      "fact": "The British type has westerlies all year and mild winters owing to the North Atlantic Drift.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "North Atlantic Drift"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-72"
+      ]
+    },
+    {
+      "id": "wm-british-temp",
+      "fact": "British-type mean temperatures range 5–15°C.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "5",
+        "15°C"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-94"
+      ]
+    },
+    {
+      "id": "wm-british-forest",
+      "fact": "British-type vegetation is deciduous forest — oak, elm, ash, beech.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "elm"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-95"
+      ]
+    },
+    {
+      "id": "wm-taiga-belt",
+      "fact": "The Taiga lies 50°–70°N and is absent in the Southern Hemisphere.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Taiga",
+        "Southern Hemisphere"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-72"
+      ]
+    },
+    {
+      "id": "wm-taiga-range",
+      "fact": "The Taiga has an annual temperature range of 50–60°C.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "50",
+        "60°C"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-96"
+      ]
+    },
+    {
+      "id": "wm-verkhoyansk",
+      "fact": "Verkhoyansk in Siberia is among the coldest inhabited places.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Verkhoyansk"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-73"
+      ]
+    },
+    {
+      "id": "wm-taiga-trees",
+      "fact": "Taiga forests are coniferous — pine, fir, spruce, larch — with podzol soils, the base of lumbering.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "podzol"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-73"
+      ]
+    },
+    {
+      "id": "wm-laurentian",
+      "fact": "The Laurentian climate occurs only in the NH — NE North America and eastern Asia (Manchuria, Korea, N. Japan).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Laurentian",
+        "Manchuria"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-72"
+      ]
+    },
+    {
+      "id": "wm-laurentian-rain",
+      "fact": "About two-thirds of Laurentian rain falls in summer.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "two-thirds"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-97"
+      ]
+    },
+    {
+      "id": "wm-polar-10",
+      "fact": "In the polar climate the warmest month stays below 10°C and there is permafrost.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "10°C",
+        "permafrost"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-73"
+      ]
+    },
+    {
+      "id": "wm-tundra-veg",
+      "fact": "Tundra vegetation is mosses, lichens and sedges; there are no trees.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "lichens"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-world-climates-temperate",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-73"
+      ]
+    },
+    {
+      "id": "mm-mausim",
+      "fact": "'Monsoon' is derived from the Arabic word 'mausim' meaning season.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "mausim"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-74"
+      ]
+    },
+    {
+      "id": "mm-tibet-madagascar",
+      "fact": "The SW monsoon is driven by the Tibetan low and the high near Madagascar.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Madagascar"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-74"
+      ]
+    },
+    {
+      "id": "mm-stj-split",
+      "fact": "The winter subtropical jet is split by the Himalayas and Tibet; the southern branch flows along about 25°N at about 240 km/h.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "240"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-74"
+      ]
+    },
+    {
+      "id": "mm-stj-shift",
+      "fact": "The northward shift of the subtropical jet north of the Himalayas in late May–June triggers the monsoon's sudden onset.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "north of the Himalayas"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-74"
+      ]
+    },
+    {
+      "id": "mm-tej",
+      "fact": "The Tropical Easterly Jet lies between 5° and 20°N at 6–9 km, blowing east to west from June to October.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Tropical Easterly Jet"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-75"
+      ]
+    },
+    {
+      "id": "mm-tibet-snow",
+      "fact": "Heavy snow over Tibet leads to a weak monsoon.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "snow"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-75"
+      ]
+    },
+    {
+      "id": "mm-somali-jet",
+      "fact": "The Somali (Findlater) jet speeds the monsoon towards India.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Somali"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-75"
+      ]
+    },
+    {
+      "id": "mm-findlater-current",
+      "fact": "The Findlater current causes upwelling off the Horn of Africa.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Findlater",
+        "upwelling"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-98"
+      ]
+    },
+    {
+      "id": "mm-iod-poles",
+      "fact": "The IOD poles are the Arabian Sea (west) and the eastern Indian Ocean south of Indonesia.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Arabian Sea",
+        "Indonesia"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-76"
+      ]
+    },
+    {
+      "id": "mm-iod-october",
+      "fact": "The IOD develops in April–May and peaks in October.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "October"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-76"
+      ]
+    },
+    {
+      "id": "mm-equinoo",
+      "fact": "EQUINOO is the atmospheric component of the IOD.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "EQUINOO"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-76"
+      ]
+    },
+    {
+      "id": "mm-wd-mediterranean",
+      "fact": "Western disturbances originate over the Mediterranean and are carried by the westerly jet.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "Mediterranean"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-75"
+      ]
+    },
+    {
+      "id": "mm-1100",
+      "fact": "Mawsynram and Cherrapunji exceed 1,100 cm of rain due to funnelling and orographic lift.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "funnel"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-99"
+      ]
+    },
+    {
+      "id": "mm-jaisalmer",
+      "fact": "Jaisalmer rarely gets more than 12 cm of rain.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Jaisalmer"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-100"
+      ]
+    },
+    {
+      "id": "mm-himalaya-barrier",
+      "fact": "The Himalayas keep northern India 3–8°C warmer in winter by blocking cold Central Asian air.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "3-8°C"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-card-101"
+      ]
+    },
+    {
+      "id": "mm-rain-shadow-ap",
+      "fact": "Interior Maharashtra, Karnataka, Telangana, Andhra Pradesh (Rayalaseema) and Tamil Nadu lie in the rain shadow of the Western Ghats.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "ap"
+      ],
+      "keys": [
+        "Rayalaseema"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-77"
+      ]
+    },
+    {
+      "id": "mm-aravalli-parallel",
+      "fact": "Monsoon winds run parallel to the Aravallis, so Rajasthan gets little rain (except Mount Abu).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Aravalli"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-77"
+      ]
+    },
+    {
+      "id": "mm-coromandel-dry",
+      "fact": "The Coromandel coast is dry in July–August and gets rain from the NE monsoon.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "ap"
+      ],
+      "keys": [
+        "Coromandel"
+      ],
+      "taughtIn": "geo-atmosphere-climatology-note-monsoon-mechanism-detail",
+      "drilledBy": [
+        "geo-atmosphere-climatology-mcq-77"
+      ]
+    }
+  ]
+}

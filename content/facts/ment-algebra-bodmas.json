@@ -1,0 +1,919 @@
+{
+  "version": 1,
+  "subtopicId": "ment-algebra-bodmas",
+  "facts": [
+    {
+      "id": "b-order",
+      "fact": "BODMAS fixes the order: Brackets, Orders, Division/Multiplication, Addition/Subtraction.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "syllabus",
+        "pyq"
+      ],
+      "keys": [
+        "simplify"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-1",
+        "ment-algebra-bodmas-mcq-15",
+        "ment-algebra-bodmas-mcq-28"
+      ]
+    },
+    {
+      "id": "b-dm-equal",
+      "fact": "÷ and × have equal rank (left to right), as do + and −; M does not beat D.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "÷",
+        "×"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-1",
+        "ment-algebra-bodmas-mcq-15"
+      ]
+    },
+    {
+      "id": "b-of",
+      "fact": "'of' is a multiplication done before ÷ and × (4 + 4 × 4 ÷ 4 of 4 − 4 ÷ 4 × 4 = 1).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "of",
+        "÷"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-25",
+        "ment-algebra-bodmas-mcq-26"
+      ]
+    },
+    {
+      "id": "b-vinculum",
+      "fact": "VBODMAS: the vinculum (bar) is simplified before any bracket.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "vinculum"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-27"
+      ]
+    },
+    {
+      "id": "b-nested",
+      "fact": "Nested brackets are opened innermost first: ( ), then { }, then [ ].",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "["
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-28",
+        "ment-algebra-bodmas-mcq-29"
+      ]
+    },
+    {
+      "id": "b-fraction",
+      "fact": "In a fraction simplification convert mixed numbers to improper fractions and do \"of\" first (441 ÷ [270 ÷ (3/7 of 35) + …] = 7).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "441"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-30"
+      ]
+    },
+    {
+      "id": "b-defined-symbol",
+      "fact": "Defined-symbol questions: substitute the stated rule exactly, then apply BODMAS.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "defined"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-3",
+        "ment-algebra-bodmas-card-2",
+        "ment-algebra-bodmas-mcq-31"
+      ]
+    },
+    {
+      "id": "b-operand-order",
+      "fact": "For a non-symmetric defined operator, a △ b ≠ b △ a — keep the operands in their slots.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "△"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-3"
+      ]
+    },
+    {
+      "id": "b-sign-interchange",
+      "fact": "Sign interchange: rewrite with the real operations ('+' stands for '×' …) before simplifying.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "syllabus"
+      ],
+      "keys": [
+        "stands for"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-32",
+        "ment-algebra-bodmas-mcq-33"
+      ]
+    },
+    {
+      "id": "b-sign-insertion",
+      "fact": "Sign insertion: try each option's signs in the blanks and keep the one that balances (6 × 2 + 0 + 8 = 20).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "signs"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-34"
+      ]
+    },
+    {
+      "id": "b-pct",
+      "fact": "k% of N = kN/100; with an unknown x%, collect the known terms and solve the linear equation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "x%"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-percentage-in-simplification",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-23",
+        "ment-algebra-bodmas-mcq-24"
+      ]
+    },
+    {
+      "id": "b-approx",
+      "fact": "Approximation questions: round each number to a convenient value and choose the nearest option.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "approx"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-bodmas-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-12"
+      ]
+    },
+    {
+      "id": "id-sq",
+      "fact": "(a ± b)² = a² ± 2ab + b² — never drop the 2ab term.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "2ab"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-identities",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-3",
+        "ment-algebra-bodmas-mcq-36"
+      ]
+    },
+    {
+      "id": "id-a2b2",
+      "fact": "a² + b² = (a + b)² − 2ab = (a − b)² + 2ab.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "a² + b²"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-identities",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-4",
+        "ment-algebra-bodmas-mcq-35"
+      ]
+    },
+    {
+      "id": "id-diff-squares",
+      "fact": "a² − b² = (a + b)(a − b) — also a quick-multiplication trick (98² − 2² = 100 × 96).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "(a + b)(a − b)"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-identities",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-37",
+        "ment-algebra-bodmas-mcq-38"
+      ]
+    },
+    {
+      "id": "id-cubes",
+      "fact": "a³ + b³ = (a + b)³ − 3ab(a + b) and a³ − b³ = (a − b)³ + 3ab(a − b).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "a³"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-identities",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-5",
+        "ment-algebra-bodmas-card-4",
+        "ment-algebra-bodmas-mcq-39"
+      ]
+    },
+    {
+      "id": "id-cube-factor",
+      "fact": "a³ − b³ = (a − b)(a² + ab + b²), so (a³ − b³)/(a² + ab + b²) = a − b (4.71, 3.79 → 0.92).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "4.71"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-40"
+      ]
+    },
+    {
+      "id": "id-abc-sq",
+      "fact": "(a + b + c)² = a² + b² + c² + 2(ab + bc + ca).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "a² + b² + c²"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-identities",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-41"
+      ]
+    },
+    {
+      "id": "id-abc-zero",
+      "fact": "If a + b + c = 0 then a³ + b³ + c³ = 3abc.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "a + b + c = 0"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-42",
+        "ment-algebra-bodmas-mcq-43"
+      ]
+    },
+    {
+      "id": "id-4ab",
+      "fact": "(a + b)² − (a − b)² = 4ab.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "4ab"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-44"
+      ]
+    },
+    {
+      "id": "id-recip-sq",
+      "fact": "x² + 1/x² = (x + 1/x)² − 2 = (x − 1/x)² + 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "1/x"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-identities",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-16",
+        "ment-algebra-bodmas-card-5",
+        "ment-algebra-bodmas-mcq-45"
+      ]
+    },
+    {
+      "id": "id-recip-cube",
+      "fact": "x³ + 1/x³ = (x + 1/x)³ − 3(x + 1/x); x³ − 1/x³ = (x − 1/x)³ + 3(x − 1/x).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "1/x³"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-identities",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-17",
+        "ment-algebra-bodmas-card-4",
+        "ment-algebra-bodmas-mcq-46"
+      ]
+    },
+    {
+      "id": "eq-linear",
+      "fact": "Linear equation: move terms across \"=\" by changing sign, then divide by the coefficient of x.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "solve"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-equations",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-6",
+        "ment-algebra-bodmas-mcq-47"
+      ]
+    },
+    {
+      "id": "eq-two-var",
+      "fact": "Two linear equations are solved by substitution or elimination, and the answer is checked in both.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "equations"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-equations",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-7",
+        "ment-algebra-bodmas-mcq-48"
+      ]
+    },
+    {
+      "id": "eq-consistency",
+      "fact": "a₁/a₂ ≠ b₁/b₂: one solution; a₁/a₂ = b₁/b₂ ≠ c₁/c₂: no solution; all three equal: infinitely many.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "no solution"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-49"
+      ]
+    },
+    {
+      "id": "eq-quad-formula",
+      "fact": "Quadratic roots: factorise, or use x = [−b ± √(b² − 4ac)]/2a.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "quadratic"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-equations",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-8",
+        "ment-algebra-bodmas-mcq-50"
+      ]
+    },
+    {
+      "id": "eq-discriminant",
+      "fact": "D = b² − 4ac: D > 0 real distinct, D = 0 real equal, D < 0 no real roots; a perfect-square D gives rational roots.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "roots"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-equations",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-9",
+        "ment-algebra-bodmas-card-6",
+        "ment-algebra-bodmas-mcq-51"
+      ]
+    },
+    {
+      "id": "eq-sum-product",
+      "fact": "For ax² + bx + c = 0, sum of roots = −b/a and product = c/a.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "root"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-equations",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-18",
+        "ment-algebra-bodmas-card-6",
+        "ment-algebra-bodmas-mcq-52"
+      ]
+    },
+    {
+      "id": "eq-form",
+      "fact": "The quadratic with roots α, β is x² − (α + β)x + αβ = 0.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "roots"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-53"
+      ]
+    },
+    {
+      "id": "pg-ap-nth",
+      "fact": "AP nth term: aₙ = a + (n − 1)d.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "arithmetic progression"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-2",
+        "ment-algebra-bodmas-mcq-54"
+      ]
+    },
+    {
+      "id": "pg-ap-sum",
+      "fact": "AP sum: Sₙ = n/2 [2a + (n − 1)d] = n/2 (first + last).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sum"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-19",
+        "ment-algebra-bodmas-mcq-20",
+        "ment-algebra-bodmas-card-7"
+      ]
+    },
+    {
+      "id": "pg-ap-mean",
+      "fact": "Of three numbers in AP, the middle one is the average of the other two.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "middle"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-20"
+      ]
+    },
+    {
+      "id": "pg-gp-nth",
+      "fact": "GP nth term: aₙ = a·r^(n − 1).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "geometric progression"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-55",
+        "ment-algebra-bodmas-mcq-56"
+      ]
+    },
+    {
+      "id": "pg-gp-sum",
+      "fact": "GP sum: Sₙ = a(rⁿ − 1)/(r − 1).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sum"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-11",
+        "ment-algebra-bodmas-card-8",
+        "ment-algebra-bodmas-mcq-56"
+      ]
+    },
+    {
+      "id": "pg-gp-inf",
+      "fact": "Infinite GP sum S∞ = a/(1 − r), valid only when |r| < 1.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "infinit"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-12",
+        "ment-algebra-bodmas-mcq-20",
+        "ment-algebra-bodmas-card-8"
+      ]
+    },
+    {
+      "id": "pg-hp",
+      "fact": "HP: take reciprocals (they form an AP), solve, then invert back.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "harmonic"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-13"
+      ]
+    },
+    {
+      "id": "pg-agp",
+      "fact": "AGP = arithmetic × geometric terms; sum it by the S − rS shift.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "agp"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-progressions",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-9"
+      ]
+    },
+    {
+      "id": "pg-am-gm-hm",
+      "fact": "For two positive numbers AM ≥ GM ≥ HM and GM² = AM × HM.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "gm"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-57"
+      ]
+    },
+    {
+      "id": "pg-n-sums",
+      "fact": "1 + 2 + … + n = n(n + 1)/2; squares n(n + 1)(2n + 1)/6; cubes [n(n + 1)/2]².",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1 + 2"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-58"
+      ]
+    },
+    {
+      "id": "po-remainder",
+      "fact": "Remainder theorem: f(x) ÷ (x − a) leaves f(a); for (ax − b) evaluate f(b/a).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "remainder"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-polynomials",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-10",
+        "ment-algebra-bodmas-card-10",
+        "ment-algebra-bodmas-mcq-59"
+      ]
+    },
+    {
+      "id": "po-factor",
+      "fact": "Factor theorem: (x − a) is a factor exactly when f(a) = 0.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "factor"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-polynomials",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-22",
+        "ment-algebra-bodmas-card-10",
+        "ment-algebra-bodmas-mcq-60"
+      ]
+    },
+    {
+      "id": "po-degree",
+      "fact": "Degree = highest power (0 constant, 1 linear, 2 quadratic, 3 cubic); the zero polynomial has no defined degree.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "degree"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-13"
+      ]
+    },
+    {
+      "id": "st-union",
+      "fact": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "both"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-sets",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-14",
+        "ment-algebra-bodmas-mcq-61",
+        "ment-algebra-bodmas-mcq-62"
+      ]
+    },
+    {
+      "id": "st-neither",
+      "fact": "Neither = total − n(A ∪ B).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "neither"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-sets",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-14",
+        "ment-algebra-bodmas-mcq-61"
+      ]
+    },
+    {
+      "id": "st-only",
+      "fact": "Only A = n(A) − n(A ∩ B).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "only"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-sets",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-11",
+        "ment-algebra-bodmas-mcq-62"
+      ]
+    },
+    {
+      "id": "st-three",
+      "fact": "Three sets: add the singles, subtract the pairs, add back the all-three region.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "three"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-63"
+      ]
+    },
+    {
+      "id": "st-complement",
+      "fact": "Complement: n(A') = n(U) − n(A).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "complement"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-sets",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-14"
+      ]
+    },
+    {
+      "id": "st-difference",
+      "fact": "Difference A − B is the set of elements of A that are not in B (= only A).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "a − b"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-15"
+      ]
+    },
+    {
+      "id": "st-power",
+      "fact": "A set of n elements has 2ⁿ subsets and 2ⁿ − 1 proper subsets.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "subsets"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-mcq-64"
+      ]
+    },
+    {
+      "id": "st-types",
+      "fact": "Set types: empty (null) ∅, singleton (one element), finite, infinite.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "singleton"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-16"
+      ]
+    },
+    {
+      "id": "st-de-morgan",
+      "fact": "De Morgan: (A ∪ B)' = A' ∩ B' and (A ∩ B)' = A' ∪ B'.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "morgan"
+      ],
+      "taughtIn": "ment-algebra-bodmas-note-algebra-sets-extras",
+      "drilledBy": [
+        "ment-algebra-bodmas-card-17"
+      ]
+    }
+  ]
+}

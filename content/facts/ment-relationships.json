@@ -1,0 +1,619 @@
+{
+  "version": 1,
+  "subtopicId": "ment-relationships",
+  "facts": [
+    {
+      "id": "br-tree",
+      "fact": "Draw a top-down family tree: elders on top, same generation on one row, children below.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "family"
+      ],
+      "taughtIn": "ment-relationships-note-family-tree-method",
+      "drilledBy": [
+        "ment-relationships-mcq-3",
+        "ment-relationships-card-1",
+        "ment-relationships-mcq-34"
+      ]
+    },
+    {
+      "id": "br-notation",
+      "fact": "Family-chart notation: □ / + male, ○ / − female, = married couple, vertical line parent→child.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "married"
+      ],
+      "taughtIn": "ment-relationships-note-family-tree-method",
+      "drilledBy": [
+        "ment-relationships-mcq-3",
+        "ment-relationships-card-2",
+        "ment-relationships-mcq-34"
+      ]
+    },
+    {
+      "id": "br-gender-fix",
+      "fact": "Fix gender the moment a gendered word (son, wife, brother) appears; many questions hinge on it.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "male"
+      ],
+      "taughtIn": "ment-relationships-note-data-sufficiency",
+      "drilledBy": [
+        "ment-relationships-mcq-23",
+        "ment-relationships-mcq-37"
+      ]
+    },
+    {
+      "id": "br-relation-words",
+      "fact": "Uncle/aunt = a parent's sibling; nephew/niece = a sibling's child; cousin = an uncle's or aunt's child.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "uncle"
+      ],
+      "taughtIn": "ment-relationships-note-relations-seating-extras",
+      "drilledBy": [
+        "ment-relationships-mcq-12",
+        "ment-relationships-mcq-35",
+        "ment-relationships-mcq-36"
+      ]
+    },
+    {
+      "id": "br-grandparent",
+      "fact": "A parent's father/mother is the grandfather/grandmother.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "grand"
+      ],
+      "taughtIn": "ment-relationships-note-family-tree-method",
+      "drilledBy": [
+        "ment-relationships-mcq-1",
+        "ment-relationships-mcq-8"
+      ]
+    },
+    {
+      "id": "br-generations",
+      "fact": "Count generations: 1 link up = parent, 2 = grandparent, 3 = great-grandparent.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "great-grand"
+      ],
+      "taughtIn": "ment-relationships-note-common-traps",
+      "drilledBy": [
+        "ment-relationships-mcq-9"
+      ]
+    },
+    {
+      "id": "br-in-laws",
+      "fact": "In-laws come through marriage: spouse's mother = mother-in-law, spouse's sister/brother's wife = sister-in-law, daughter's husband = son-in-law.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "in-law"
+      ],
+      "taughtIn": "ment-relationships-note-common-traps",
+      "drilledBy": [
+        "ment-relationships-mcq-10",
+        "ment-relationships-mcq-20",
+        "ment-relationships-mcq-15"
+      ]
+    },
+    {
+      "id": "br-in-law-direction",
+      "fact": "Father-in-law and son-in-law are the two ends of one link — check which direction is asked.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "son-in-law",
+        "father-in-law"
+      ],
+      "taughtIn": "ment-relationships-note-coded-relations",
+      "drilledBy": [
+        "ment-relationships-mcq-15"
+      ]
+    },
+    {
+      "id": "br-spouses",
+      "fact": "Two people who are both parents of the same child are spouses.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "parents"
+      ],
+      "taughtIn": "ment-relationships-note-coded-relations",
+      "drilledBy": [
+        "ment-relationships-card-4"
+      ]
+    },
+    {
+      "id": "br-maternal-paternal",
+      "fact": "A relative reached through the father is paternal; through the mother, maternal.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "maternal"
+      ],
+      "taughtIn": "ment-relationships-note-coded-relations",
+      "drilledBy": [
+        "ment-relationships-mcq-2",
+        "ment-relationships-mcq-32"
+      ]
+    },
+    {
+      "id": "br-only-trap",
+      "fact": "'Only son/daughter' blocks other branches and usually points to the speaker or the speaker's parent.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "only"
+      ],
+      "taughtIn": "ment-relationships-note-common-traps",
+      "drilledBy": [
+        "ment-relationships-mcq-2",
+        "ment-relationships-mcq-13",
+        "ment-relationships-card-5"
+      ]
+    },
+    {
+      "id": "br-self-reference",
+      "fact": "Collapse self-reference first: 'only daughter of my mother' (said by a woman) is the speaker herself.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "only"
+      ],
+      "taughtIn": "ment-relationships-note-pointing-photo",
+      "drilledBy": [
+        "ment-relationships-mcq-5",
+        "ment-relationships-mcq-22",
+        "ment-relationships-card-3"
+      ]
+    },
+    {
+      "id": "br-pointing",
+      "fact": "Pointing/photo statements: resolve the phrase about the pointed person, then relate it to the speaker.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "pointing"
+      ],
+      "taughtIn": "ment-relationships-note-pointing-photo",
+      "drilledBy": [
+        "ment-relationships-mcq-4",
+        "ment-relationships-mcq-5",
+        "ment-relationships-mcq-17",
+        "ment-relationships-mcq-22"
+      ]
+    },
+    {
+      "id": "br-inside-out",
+      "fact": "Chained riddles are solved innermost phrase first ('A's brother's father' = A's father).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "maternal"
+      ],
+      "taughtIn": "ment-relationships-note-chained-riddle",
+      "drilledBy": [
+        "ment-relationships-mcq-32",
+        "ment-relationships-mcq-33"
+      ]
+    },
+    {
+      "id": "br-coded-legend",
+      "fact": "Coded relations: write the symbol legend, translate each link as \"A is the __ of B\", then draw the tree.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "means"
+      ],
+      "taughtIn": "ment-relationships-note-coded-relations",
+      "drilledBy": [
+        "ment-relationships-mcq-6",
+        "ment-relationships-mcq-7",
+        "ment-relationships-mcq-15",
+        "ment-relationships-mcq-16"
+      ]
+    },
+    {
+      "id": "br-coded-chain",
+      "fact": "In a coded chain the second person of one link is the first person of the next.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "×"
+      ],
+      "taughtIn": "ment-relationships-note-coded-relations",
+      "drilledBy": [
+        "ment-relationships-mcq-7",
+        "ment-relationships-mcq-16"
+      ]
+    },
+    {
+      "id": "br-ds-gender",
+      "fact": "In blood-relation data sufficiency, a statement suffices only if the target's gender is also fixed.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "statement"
+      ],
+      "taughtIn": "ment-relationships-note-data-sufficiency",
+      "drilledBy": [
+        "ment-relationships-mcq-11",
+        "ment-relationships-mcq-21",
+        "ment-relationships-card-7"
+      ]
+    },
+    {
+      "id": "br-ds-neutral",
+      "fact": "'Child', 'parent', 'cousin', 'spouse' are gender-neutral words — a trap in certainty questions.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "child"
+      ],
+      "taughtIn": "ment-relationships-note-data-sufficiency",
+      "drilledBy": [
+        "ment-relationships-mcq-14",
+        "ment-relationships-mcq-23",
+        "ment-relationships-card-7"
+      ]
+    },
+    {
+      "id": "br-ds-options",
+      "fact": "DS choices: I alone, II alone, either alone, both together, or even both insufficient — test I, then II, then both.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "statement"
+      ],
+      "taughtIn": "ment-relationships-note-data-sufficiency",
+      "drilledBy": [
+        "ment-relationships-mcq-11",
+        "ment-relationships-mcq-21"
+      ]
+    },
+    {
+      "id": "br-count-members",
+      "fact": "To count males/females in a family, fix every gender while reading each clue.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "female"
+      ],
+      "taughtIn": "ment-relationships-note-relations-seating-extras",
+      "drilledBy": [
+        "ment-relationships-mcq-37"
+      ]
+    },
+    {
+      "id": "br-mixed",
+      "fact": "Mixed relation + seating: build the row (or circle) and the family tree side by side.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "sits"
+      ],
+      "taughtIn": "ment-relationships-note-relations-seating-extras",
+      "drilledBy": [
+        "ment-relationships-mcq-38"
+      ]
+    },
+    {
+      "id": "st-linear-facing",
+      "fact": "In a north-facing row their left is your left; facing south flips left and right.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "facing"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-24",
+        "ment-relationships-mcq-25",
+        "ment-relationships-card-8",
+        "ment-relationships-mcq-39"
+      ]
+    },
+    {
+      "id": "st-constrained-first",
+      "fact": "In seating, place the most-constrained person (fixed end or middle) first.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "end"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-24",
+        "ment-relationships-mcq-25"
+      ]
+    },
+    {
+      "id": "st-circle-direction",
+      "fact": "Circle facing the centre: left = clockwise, right = anticlockwise; facing outward the directions reverse.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "centre"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-26",
+        "ment-relationships-mcq-40",
+        "ment-relationships-mcq-41"
+      ]
+    },
+    {
+      "id": "st-circle-equiv",
+      "fact": "In a circle of n, 'k to the left' is the same seat as '(n − k) to the right'.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "left"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-27",
+        "ment-relationships-card-9",
+        "ment-relationships-mcq-41"
+      ]
+    },
+    {
+      "id": "st-circle-opposite",
+      "fact": "With an even n, the person exactly opposite sits n/2 places away either way.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "opposite"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-27",
+        "ment-relationships-card-9"
+      ]
+    },
+    {
+      "id": "st-between",
+      "fact": "'Exactly two persons between A and B' means their positions differ by 3; between p-th and q-th there are q − p − 1.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "between"
+      ],
+      "taughtIn": "ment-relationships-note-relations-seating-extras",
+      "drilledBy": [
+        "ment-relationships-mcq-42"
+      ]
+    },
+    {
+      "id": "rk-total",
+      "fact": "Total = position from left + position from right − 1.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "from"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-28",
+        "ment-relationships-card-10",
+        "ment-relationships-mcq-44"
+      ]
+    },
+    {
+      "id": "rk-other-end",
+      "fact": "Position from the other end = total − position from this end + 1.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "position"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-29",
+        "ment-relationships-card-10",
+        "ment-relationships-mcq-43",
+        "ment-relationships-mcq-45"
+      ]
+    },
+    {
+      "id": "rk-interchange",
+      "fact": "On an interchange each takes the other's seat: total = new position from one end + old position of the other from the other end − 1.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "interchange"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-30",
+        "ment-relationships-card-11",
+        "ment-relationships-mcq-46"
+      ]
+    },
+    {
+      "id": "rk-below",
+      "fact": "'k places below rank r' is rank r + k from the top; rank from bottom = total − rank from top + 1.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "rank"
+      ],
+      "taughtIn": "ment-relationships-note-seating-ranking",
+      "drilledBy": [
+        "ment-relationships-mcq-31"
+      ]
+    },
+    {
+      "id": "rk-shift",
+      "fact": "Rank shifting: moving k places towards one end changes the position from that end by k; then convert to the other end.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "shifts"
+      ],
+      "taughtIn": "ment-relationships-note-relations-seating-extras",
+      "drilledBy": [
+        "ment-relationships-mcq-43"
+      ]
+    },
+    {
+      "id": "br-types",
+      "fact": "Blood-relation questions come in three types: pointing/introduction, family-based (by blood or by law) and coded.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "pointing",
+        "coded"
+      ],
+      "taughtIn": "ment-relationships-note-relations-seating-extras",
+      "drilledBy": [
+        "ment-relationships-card-12"
+      ]
+    },
+    {
+      "id": "rk-between",
+      "fact": "People between two persons whose positions are from opposite ends: convert to one end, then q − p − 1.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "between"
+      ],
+      "taughtIn": "ment-relationships-note-relations-seating-extras",
+      "drilledBy": [
+        "ment-relationships-mcq-47"
+      ]
+    }
+  ]
+}
