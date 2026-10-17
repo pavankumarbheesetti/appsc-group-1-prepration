@@ -3,20 +3,345 @@
   "subjectCode": "ECON",
   "topic": "Agriculture & Allied Sectors",
   "items": [
-    {"id":"econ-agriculture-card-1","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Agriculture's share of GVA vs workforce?","back":"~18% of GVA but employs ~45-46% of the workforce.","examPoint":"Agriculture — GVA share vs employment","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-2","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Kharif vs Rabi vs Zaid — sowing and examples?","back":"Kharif (rice/cotton, Jun-Jul), Rabi (wheat/gram, Oct-Dec), Zaid (watermelon, summer).","examPoint":"Cropping seasons","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-3","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Who led India's Green Revolution and with what inputs?","back":"M.S. Swaminathan (with Borlaug's work); HYV seeds, fertiliser, irrigation (post-1965).","examPoint":"Green Revolution — Swaminathan, HYV","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-4","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Coloured revolutions: White, Blue, Yellow, Pink?","back":"White=milk (Operation Flood, Kurien), Blue=fish, Yellow=oilseeds, Pink=meat/prawn.","examPoint":"Coloured revolutions","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-5","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Who led the Bhoodan Movement and when?","back":"Acharya Vinoba Bhave, 1951; first donation by V. Ramachandra Reddy.","examPoint":"Bhoodan Movement 1951 — Vinoba Bhave","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-6","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Land-holding classes by size?","back":"<1ha marginal, 1-2 small, 2-4 semi-medium, 4-10 medium, >10 large.","examPoint":"Land-holding categories","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-7","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"For how many crops is MSP announced, and who recommends it?","back":"23 crops; recommended by CACP (introduced 1965-66).","examPoint":"MSP — 23 crops, CACP","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-8","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Cost concepts A2, A2+FL, C2?","back":"A2=paid-out; A2+FL adds family labour; C2 adds imputed rent/interest.","examPoint":"Cost concepts A2/A2+FL/C2","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-9","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Swaminathan MSP formula vs government's?","back":"Swaminathan: C2+50%; government uses A2+FL+50%.","examPoint":"MSP formula — C2+50% vs A2+FL+50%","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-10","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Procurement agencies: foodgrains, pulses/oilseeds, cotton?","back":"FCI (foodgrains), NAFED (pulses/oilseeds), CCI (cotton).","examPoint":"Procurement agencies — FCI/NAFED/CCI","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-11","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"PM-KISAN — benefit and mode?","back":"₹6,000/year in 3 instalments via DBT (since 2018/19).","examPoint":"PM-KISAN — ₹6,000/yr, 3 instalments","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-12","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"Apex rural-credit body and the crop-loan card?","back":"NABARD (1982); Kisan Credit Card (1998) for short-term crop loans.","examPoint":"NABARD 1982; KCC 1998","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-13","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"NFSA 2013 entitlements and coverage?","back":"5 kg/person/month (priority), 35 kg/household (AAY); ~67% of population.","examPoint":"NFSA 2013 — entitlements & coverage","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-14","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"FAO's four food-security dimensions?","back":"Availability, Accessibility, Utilization, Stability.","examPoint":"Food-security dimensions (FAO)","source":"notes","verified":true},
-    {"id":"econ-agriculture-card-15","subjectCode":"ECON","subtopicId":"econ-agriculture","front":"AP agriculture superlatives?","back":"Largest shrimp producer (~70%); 1st in chillies, cocoa, oil palm, papaya, tomato.","examPoint":"AP angle — shrimp & horticulture leader","source":"notes","verified":true}
+    {
+      "id": "econ-agriculture-card-1",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Agriculture's share of GVA vs workforce?",
+      "back": "~18% of GVA but employs ~45-46% of the workforce.",
+      "examPoint": "Agriculture — GVA share vs employment",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-2",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Kharif vs Rabi vs Zaid — sowing and examples?",
+      "back": "Kharif (rice/cotton, Jun-Jul), Rabi (wheat/gram, Oct-Dec), Zaid (watermelon, summer).",
+      "examPoint": "Cropping seasons",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-3",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Who led India's Green Revolution and with what inputs?",
+      "back": "M.S. Swaminathan (with Borlaug's work); HYV seeds, fertiliser, irrigation (post-1965).",
+      "examPoint": "Green Revolution — Swaminathan, HYV",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-4",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Coloured revolutions: White, Blue, Yellow, Pink?",
+      "back": "White=milk (Operation Flood, Kurien), Blue=fish, Yellow=oilseeds, Pink=meat/prawn.",
+      "examPoint": "Coloured revolutions",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-5",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Who led the Bhoodan Movement and when?",
+      "back": "Acharya Vinoba Bhave, 1951; first donation by V. Ramachandra Reddy.",
+      "examPoint": "Bhoodan Movement 1951 — Vinoba Bhave",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-6",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Land-holding classes by size?",
+      "back": "<1ha marginal, 1-2 small, 2-4 semi-medium, 4-10 medium, >10 large.",
+      "examPoint": "Land-holding categories",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-7",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "For how many crops is MSP announced, and who recommends it?",
+      "back": "23 crops; recommended by CACP (introduced 1965-66).",
+      "examPoint": "MSP — 23 crops, CACP",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-8",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Cost concepts A2, A2+FL, C2?",
+      "back": "A2=paid-out; A2+FL adds family labour; C2 adds imputed rent/interest.",
+      "examPoint": "Cost concepts A2/A2+FL/C2",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-9",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Swaminathan MSP formula vs government's?",
+      "back": "Swaminathan: C2+50%; government uses A2+FL+50%.",
+      "examPoint": "MSP formula — C2+50% vs A2+FL+50%",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-10",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Procurement agencies: foodgrains, pulses/oilseeds, cotton?",
+      "back": "FCI (foodgrains), NAFED (pulses/oilseeds), CCI (cotton).",
+      "examPoint": "Procurement agencies — FCI/NAFED/CCI",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-11",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "PM-KISAN — benefit and mode?",
+      "back": "₹6,000/year in 3 instalments via DBT (since 2018/19).",
+      "examPoint": "PM-KISAN — ₹6,000/yr, 3 instalments",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-12",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Apex rural-credit body and the crop-loan card?",
+      "back": "NABARD (1982); Kisan Credit Card (1998) for short-term crop loans.",
+      "examPoint": "NABARD 1982; KCC 1998",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-13",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "NFSA 2013 entitlements and coverage?",
+      "back": "5 kg/person/month (priority), 35 kg/household (AAY); ~67% of population.",
+      "examPoint": "NFSA 2013 — entitlements & coverage",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-14",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "FAO's four food-security dimensions?",
+      "back": "Availability, Accessibility, Utilization, Stability.",
+      "examPoint": "Food-security dimensions (FAO)",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-15",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "AP agriculture superlatives?",
+      "back": "Largest shrimp producer (~70%); 1st in chillies, cocoa, oil palm, papaya, tomato.",
+      "examPoint": "AP angle — shrimp & horticulture leader",
+      "source": "notes",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-16",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "What share of India's geographical area does agriculture cover (source)?",
+      "back": "About 43%.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-17",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Aviculture vs Arboriculture?",
+      "back": "Aviculture = raising birds; Arboriculture = cultivating trees and shrubs.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-18",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "What is floriculture?",
+      "back": "Commercial cultivation of flowers and ornamental plants.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-19",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Second Plan's allocation to agriculture?",
+      "back": "Cut to 11.7% of outlay — the Plan focused on industry (Mahalanobis).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-20",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Which Plan saw the \"Second Green Revolution\" of 1983-84?",
+      "back": "The Sixth Plan (1980-85).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-21",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Agricultural growth in 2017-18 and 2022-23 (source)?",
+      "back": "6.6% in 2017-18; 3.5% in 2022-23 (3.0% in 2021-22).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-22",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Wheat production 2025-26 (3rd advance estimates)?",
+      "back": "About 121 million tonnes (record foodgrain 376.56 mt).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-23",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "India's world rank in eggs and in meat (source)?",
+      "back": "3rd in total eggs; 5th in total meat.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-24",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "BGREI foodgrain growth in 2011-12?",
+      "back": "11.99%, against a national 2.2%.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-25",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Red and Brown Revolutions — products?",
+      "back": "Red = meat and tomato; Brown = leather and cocoa.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-26",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "What does the Tricolour Revolution comprise?",
+      "back": "Coined by PM Modi: Saffron (energy), White (milk) and Blue (fish) revolutions.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-27",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Paddy Grade A MSP, KMS 2026-27?",
+      "back": "₹2,461 per quintal (common ₹2,441; both +₹72).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-28",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Highest absolute MSP rise for RMS 2027-28?",
+      "back": "Safflower, ₹675 per quintal (wheat only +₹25).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-29",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "How many schemes does PM Dhan-Dhaanya Krishi Yojana converge?",
+      "back": "36 schemes of 11 ministries in 100 low-productivity districts.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-30",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Fortified rice pilot — year and scale?",
+      "back": "2019 pilot in 15 districts of 11 states (to fight anaemia/malnutrition).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-31",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Agriculture's share of India's greenhouse-gas emissions (source)?",
+      "back": "About 18%.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-32",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Founding years of NAFED and CCI?",
+      "back": "NAFED 1958; Cotton Corporation of India 1970.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-33",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "APEDA and MPEDA — founding years?",
+      "back": "APEDA 1986 (Act of 1985); MPEDA 1972, HQ Kochi.",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    },
+    {
+      "id": "econ-agriculture-card-34",
+      "subjectCode": "ECON",
+      "subtopicId": "econ-agriculture",
+      "front": "Central Warehousing Corporation and WDRA — years?",
+      "back": "CWC 1957; WDRA 2010 (Warehousing Act, 2007).",
+      "examPoint": "Agriculture's share of GVA and workforce",
+      "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
+      "verified": true
+    }
   ]
 }

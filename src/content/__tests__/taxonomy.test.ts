@@ -103,20 +103,22 @@ describe('taxonomy loader', () => {
     const books = getSubtopic('hist-ancient-books-authors');
     expect(books).toBeDefined();
     expect(books?.meta.name).toBe('Books & Authors of Ancient India');
-    expect(books?.mcqs).toHaveLength(19);
-    expect(books?.notes).toHaveLength(14);
-    expect(books?.mains).toHaveLength(2);
+    // Floors, not exact counts: completeness rounds grow these banks (round 4: 40 MCQs / 17 notes).
+    expect(books?.mcqs.length).toBeGreaterThanOrEqual(19);
+    expect(books?.notes.length).toBeGreaterThanOrEqual(14);
+    expect(books?.mains.length).toBeGreaterThanOrEqual(2);
 
     const travelers = getSubtopic('hist-ancient-travelers');
     expect(travelers).toBeDefined();
     expect(travelers?.meta.name).toBe('Travelers in Ancient India');
     // Re-authored to a lean, coverage-driven exam-level bank (3 refreshers + 13 exam).
-    expect(travelers?.mcqs).toHaveLength(18);
-    expect(travelers?.notes).toHaveLength(12);
-    expect(travelers?.mains).toHaveLength(3);
+    // Floors (bank grew in completeness round 4: 27 MCQs / 14 notes).
+    expect(travelers?.mcqs.length).toBeGreaterThanOrEqual(18);
+    expect(travelers?.notes.length).toBeGreaterThanOrEqual(12);
+    expect(travelers?.mains.length).toBeGreaterThanOrEqual(3);
     // Rollout: the subtopic now declares an examPoints checklist that its bank
     // covers 100% (exam-point coverage, not the band-target fallback).
-    expect(travelers?.meta.examPoints).toHaveLength(16);
+    expect(travelers?.meta.examPoints?.length ?? 0).toBeGreaterThanOrEqual(16);
     const travelersCov = getSubtopicCoverage('hist-ancient-travelers');
     expect(travelersCov?.examPoints?.missing).toEqual([]);
     expect(travelersCov?.pct).toBe(100);

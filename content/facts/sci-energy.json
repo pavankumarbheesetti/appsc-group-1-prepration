@@ -1,0 +1,3053 @@
+{
+  "version": 1,
+  "subtopicId": "sci-energy",
+  "facts": [
+    {
+      "id": "ex-third-consumer",
+      "fact": "India is the world's third-largest energy consumer, after China and the USA.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "third-largest",
+        "consumer"
+      ],
+      "taughtIn": "sci-energy-note-scenario-mix",
+      "drilledBy": [
+        "sci-energy-mcq-27"
+      ]
+    },
+    {
+      "id": "ex-per-capita",
+      "fact": "India's energy use per person is below the world average.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "per person",
+        "average"
+      ],
+      "taughtIn": "sci-energy-note-scenario-mix",
+      "drilledBy": [
+        "sci-energy-mcq-27"
+      ]
+    },
+    {
+      "id": "ex-crude-import",
+      "fact": "India imports about 85-88% of its crude oil.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "crude",
+        "85"
+      ],
+      "taughtIn": "sci-energy-note-scenario-mix",
+      "drilledBy": [
+        "sci-energy-mcq-4",
+        "sci-energy-card-1"
+      ]
+    },
+    {
+      "id": "ex-lng",
+      "fact": "India imports natural gas as LNG (liquefied natural gas).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "LNG"
+      ],
+      "taughtIn": "sci-energy-note-scenario-mix",
+      "drilledBy": [
+        "sci-energy-mcq-27"
+      ]
+    },
+    {
+      "id": "ex-coal-70",
+      "fact": "Coal generates about 70% of India's electricity, the largest single source.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Coal",
+        "largest source"
+      ],
+      "taughtIn": "sci-energy-note-scenario-mix",
+      "drilledBy": [
+        "sci-energy-mcq-4",
+        "sci-energy-card-1"
+      ]
+    },
+    {
+      "id": "ex-cap-vs-gen",
+      "fact": "Non-fossil sources lead installed capacity while coal still leads generation — a classic trap pair.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "installed capacity",
+        "generation"
+      ],
+      "taughtIn": "sci-energy-note-scenario-mix",
+      "drilledBy": [
+        "sci-energy-mcq-28"
+      ]
+    },
+    {
+      "id": "ex-phase-down",
+      "fact": "India plans to phase coal down, not out, keeping it for base-load.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "phase",
+        "base-load"
+      ],
+      "taughtIn": "sci-energy-note-scenario-mix",
+      "drilledBy": [
+        "sci-energy-mcq-27"
+      ]
+    },
+    {
+      "id": "ex-500gw",
+      "fact": "500 GW of non-fossil capacity by 2030 was pledged at COP26 Glasgow (2021) under Panchamrit.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "500 GW",
+        "COP26"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-1",
+        "sci-energy-mcq-5",
+        "sci-energy-card-2"
+      ]
+    },
+    {
+      "id": "ex-panchamrit",
+      "fact": "Panchamrit = five COP26 pledges: 500 GW non-fossil, 50% energy from RE, 1 billion tonne CO2 cut, 45% intensity cut, net-zero 2070.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Panchamrit",
+        "45"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-29"
+      ]
+    },
+    {
+      "id": "ex-50pc-2025",
+      "fact": "India reached 50% non-fossil installed capacity in June 2025, five years ahead of its NDC.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "50",
+        "2025"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-5",
+        "sci-energy-card-3"
+      ]
+    },
+    {
+      "id": "ex-500gw-total",
+      "fact": "India's total installed capacity crossed 500 GW in September 2025.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "500 GW",
+        "crossed"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-5",
+        "sci-energy-card-3"
+      ]
+    },
+    {
+      "id": "ex-175gw",
+      "fact": "The earlier 175 GW by 2022 goal was renewables-only, unlike the 500 GW non-fossil goal.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "175 GW",
+        "2022"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-28"
+      ]
+    },
+    {
+      "id": "ex-nsm",
+      "fact": "The National Solar Mission was launched in 2010.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "National Solar Mission",
+        "2010"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-29"
+      ]
+    },
+    {
+      "id": "ex-kusum",
+      "fact": "PM-KUSUM solarises agriculture with solar pumps and farm solar plants.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PM-KUSUM"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-6"
+      ]
+    },
+    {
+      "id": "ex-surya-ghar",
+      "fact": "PM Surya Ghar Muft Bijli Yojana (Feb 2024): rooftop solar for 1 crore homes, up to 300 free units, Rs 75,021 crore.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Surya Ghar",
+        "300"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-35"
+      ]
+    },
+    {
+      "id": "ex-wind-states",
+      "fact": "Gujarat and Tamil Nadu lead India in wind capacity.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Gujarat",
+        "Tamil Nadu"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-8",
+        "sci-energy-mcq-45",
+        "sci-energy-card-46"
+      ]
+    },
+    {
+      "id": "ex-solar-park",
+      "fact": "A solar park is a large contiguous zone with shared infrastructure where many developers set up plants.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "contiguous",
+        "shared infrastructure"
+      ],
+      "taughtIn": "sci-energy-note-renewable-targets",
+      "drilledBy": [
+        "sci-energy-mcq-29"
+      ]
+    },
+    {
+      "id": "ex-gh-def",
+      "fact": "Green hydrogen is made by electrolysis of water using renewable electricity.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "electrolysis",
+        "renewable"
+      ],
+      "taughtIn": "sci-energy-note-green-hydrogen",
+      "drilledBy": [
+        "sci-energy-mcq-7"
+      ]
+    },
+    {
+      "id": "ex-grey-blue",
+      "fact": "Grey hydrogen comes from natural gas; blue hydrogen is the same with the CO2 captured.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Grey",
+        "Blue"
+      ],
+      "taughtIn": "sci-energy-note-green-hydrogen",
+      "drilledBy": [
+        "sci-energy-mcq-30"
+      ]
+    },
+    {
+      "id": "ex-nghm",
+      "fact": "The National Green Hydrogen Mission was approved in January 2023 with Rs 19,744 crore.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "19,744"
+      ],
+      "taughtIn": "sci-energy-note-green-hydrogen",
+      "drilledBy": [
+        "sci-energy-mcq-7",
+        "sci-energy-card-5"
+      ]
+    },
+    {
+      "id": "ex-nghm-5mmt",
+      "fact": "The Mission targets about 5 MMT of green hydrogen a year by 2030.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "5",
+        "2030"
+      ],
+      "taughtIn": "sci-energy-note-green-hydrogen",
+      "drilledBy": [
+        "sci-energy-mcq-1",
+        "sci-energy-mcq-2",
+        "sci-energy-mcq-5",
+        "sci-energy-card-2",
+        "sci-energy-card-5"
+      ]
+    },
+    {
+      "id": "ex-nghm-125",
+      "fact": "About 125 GW of added renewable capacity will power the Mission.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "125 GW"
+      ],
+      "taughtIn": "sci-energy-note-green-hydrogen",
+      "drilledBy": [
+        "sci-energy-mcq-30"
+      ]
+    },
+    {
+      "id": "ex-sight",
+      "fact": "SIGHT incentivises electrolyser manufacturing and green-hydrogen production.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "SIGHT",
+        "electrolyser"
+      ],
+      "taughtIn": "sci-energy-note-green-hydrogen",
+      "drilledBy": [
+        "sci-energy-mcq-7",
+        "sci-energy-card-5"
+      ]
+    },
+    {
+      "id": "ex-gh-sectors",
+      "fact": "Green hydrogen targets hard-to-abate fertiliser, refining and steel.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "fertiliser",
+        "steel"
+      ],
+      "taughtIn": "sci-energy-note-green-hydrogen",
+      "drilledBy": [
+        "sci-energy-mcq-30"
+      ]
+    },
+    {
+      "id": "ex-three-stage",
+      "fact": "Homi Bhabha's three stages: PHWR (natural uranium) → Fast Breeder Reactor → thorium breeders.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PHWR",
+        "Fast Breeder"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-9"
+      ]
+    },
+    {
+      "id": "ex-monazite",
+      "fact": "India's thorium occurs in monazite beach sands of Kerala, Odisha, Tamil Nadu and Andhra Pradesh.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "monazite"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-10",
+        "sci-energy-mcq-48",
+        "sci-energy-card-7"
+      ]
+    },
+    {
+      "id": "ex-th-not-u",
+      "fact": "India has limited uranium but abundant thorium — the reason for the three-stage design.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "thorium",
+        "uranium"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-31"
+      ]
+    },
+    {
+      "id": "ex-pfbr",
+      "fact": "The PFBR at Kalpakkam, run by BHAVINI, began core loading in 2024 and reached first criticality on 6 April 2026.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PFBR",
+        "Kalpakkam"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-31"
+      ]
+    },
+    {
+      "id": "ex-dae-bodies",
+      "fact": "DAE bodies: BARC (research, Trombay), IGCAR (fast reactors, Kalpakkam), NPCIL (power plants), BHAVINI (FBR).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "IGCAR",
+        "NPCIL"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-11",
+        "sci-energy-card-8"
+      ]
+    },
+    {
+      "id": "ex-kudankulam",
+      "fact": "Kudankulam (Tamil Nadu) has Russian VVER reactors.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kudankulam"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-31"
+      ]
+    },
+    {
+      "id": "ex-nem",
+      "fact": "The Nuclear Energy Mission (Budget 2025-26) gives Rs 20,000 crore for Small Modular Reactors.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "20,000",
+        "SMR"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-12",
+        "sci-energy-card-9"
+      ]
+    },
+    {
+      "id": "ex-nem-targets",
+      "fact": "At least five indigenous SMRs by 2033 and 100 GW nuclear by 2047.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "2033",
+        "100 GW",
+        "2047"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-12",
+        "sci-energy-card-9"
+      ]
+    },
+    {
+      "id": "ex-shanti",
+      "fact": "The SHANTI Act, 2025 replaced the Atomic Energy Act 1962 and the Civil Liability for Nuclear Damage Act 2010, opening nuclear power to private players.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "SHANTI",
+        "private"
+      ],
+      "taughtIn": "sci-energy-note-nuclear",
+      "drilledBy": [
+        "sci-energy-mcq-31"
+      ]
+    },
+    {
+      "id": "ex-e20",
+      "fact": "India reached about 20% ethanol blending (E20) around 2025.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "E20"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-14",
+        "sci-energy-mcq-51",
+        "sci-energy-card-10"
+      ]
+    },
+    {
+      "id": "ex-ethanol-feed",
+      "fact": "Ethanol comes from sugarcane, molasses, grain and crop residue — never from petroleum.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "molasses",
+        "petroleum"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-34"
+      ]
+    },
+    {
+      "id": "ex-satat",
+      "fact": "SATAT promotes Compressed Bio-Gas (CBG) from waste.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "SATAT",
+        "Compressed Bio-Gas"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-14",
+        "sci-energy-card-10"
+      ]
+    },
+    {
+      "id": "ex-bee",
+      "fact": "BEE is the statutory body for energy efficiency under the Energy Conservation Act 2001.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "BEE",
+        "2001"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-34"
+      ]
+    },
+    {
+      "id": "ex-pat",
+      "fact": "PAT lets heavy industry trade ESCerts (energy-saving certificates).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PAT",
+        "ESCerts"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-34"
+      ]
+    },
+    {
+      "id": "ex-ujala",
+      "fact": "UJALA distributed efficient LED bulbs; star labels rate appliances.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "UJALA",
+        "LED"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-15",
+        "sci-energy-mcq-50",
+        "sci-energy-card-11"
+      ]
+    },
+    {
+      "id": "ex-e-drive",
+      "fact": "PM E-DRIVE (2024) replaced FAME to support EVs and charging.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PM E-DRIVE",
+        "FAME"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-32"
+      ]
+    },
+    {
+      "id": "ex-bess",
+      "fact": "Battery storage (BESS) and pumped-storage hydro balance variable solar and wind.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "BESS"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-32"
+      ]
+    },
+    {
+      "id": "ex-netzero",
+      "fact": "India pledged net-zero by 2070.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "net-zero",
+        "2070"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-16",
+        "sci-energy-mcq-29",
+        "sci-energy-card-2"
+      ]
+    },
+    {
+      "id": "ex-isa",
+      "fact": "The International Solar Alliance was launched by India and France at CoP21 Paris (2015), HQ Gurugram.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "International Solar Alliance",
+        "Gurugram"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-36"
+      ]
+    },
+    {
+      "id": "ex-life",
+      "fact": "India leads Mission LiFE, a campaign for sustainable lifestyles.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "LiFE"
+      ],
+      "taughtIn": "sci-energy-note-bioenergy-efficiency-netzero",
+      "drilledBy": [
+        "sci-energy-mcq-32"
+      ]
+    },
+    {
+      "id": "ex-ap-psp",
+      "fact": "Andhra Pradesh has one of India's largest pumped-storage potentials.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "pumped-storage",
+        "potential"
+      ],
+      "taughtIn": "sci-energy-note-andhra-pradesh",
+      "drilledBy": [
+        "sci-energy-mcq-18",
+        "sci-energy-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-ap-policy",
+      "fact": "AP Integrated Clean Energy Policy 2024 promotes renewables, pumped storage and green hydrogen.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Clean Energy Policy",
+        "2024"
+      ],
+      "taughtIn": "sci-energy-note-andhra-pradesh",
+      "drilledBy": [
+        "sci-energy-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-psp-how",
+      "fact": "Pumped storage pumps water uphill on surplus power and generates at peak — it stores, not creates, energy.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "pump",
+        "peak"
+      ],
+      "taughtIn": "sci-energy-note-andhra-pradesh",
+      "drilledBy": [
+        "sci-energy-mcq-33"
+      ]
+    },
+    {
+      "id": "ex-pinnapuram",
+      "fact": "Pinnapuram (Kurnool district) integrates solar, wind and a very large pumped-storage unit.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Pinnapuram",
+        "Kurnool"
+      ],
+      "taughtIn": "sci-energy-note-andhra-pradesh",
+      "drilledBy": [
+        "sci-energy-mcq-18",
+        "sci-energy-card-12"
+      ]
+    },
+    {
+      "id": "ex-ap-14833",
+      "fact": "AP had commissioned about 14,833 MW of renewables by 2026, led by ground-mounted solar.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "14,8"
+      ],
+      "taughtIn": "sci-energy-note-ap-re-snapshot",
+      "drilledBy": [
+        "sci-energy-mcq-24",
+        "sci-energy-card-13"
+      ]
+    },
+    {
+      "id": "ex-ap-160gw",
+      "fact": "AP targets about 160 GW of green energy by 2047.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "160 GW",
+        "2047"
+      ],
+      "taughtIn": "sci-energy-note-ap-re-snapshot",
+      "drilledBy": [
+        "sci-energy-mcq-25",
+        "sci-energy-card-13"
+      ]
+    },
+    {
+      "id": "ex-pudimadaka",
+      "fact": "Pudimadaka (Anakapalli district) is the NTPC Green hydrogen hub, about 1,200 tonnes a day.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Pudimadaka",
+        "Anakapalli"
+      ],
+      "taughtIn": "sci-energy-note-ap-re-snapshot",
+      "drilledBy": [
+        "sci-energy-mcq-20",
+        "sci-energy-card-12"
+      ]
+    },
+    {
+      "id": "ex-kurnool-umsp",
+      "fact": "Kurnool Ultra Mega Solar Park (~1,000 MW) is in Panyam mandal, Kurnool district.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Panyam",
+        "1000 MW"
+      ],
+      "taughtIn": "sci-energy-note-ap-re-snapshot",
+      "drilledBy": [
+        "sci-energy-mcq-19",
+        "sci-energy-card-12"
+      ]
+    },
+    {
+      "id": "ex-ap-utilities",
+      "fact": "APGENCO generates, APTRANSCO transmits, APSPCL develops solar parks, NREDCAP is the RE nodal agency.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "APGENCO",
+        "APTRANSCO"
+      ],
+      "taughtIn": "sci-energy-note-ap-re-snapshot",
+      "drilledBy": [
+        "sci-energy-mcq-21",
+        "sci-energy-card-13"
+      ]
+    },
+    {
+      "id": "ff-anthracite",
+      "fact": "Anthracite: highest-carbon, best-quality coal (about 80–95% carbon); found mainly in Jammu & Kashmir.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Anthracite",
+        "highest-carbon"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-37"
+      ]
+    },
+    {
+      "id": "ff-lignite",
+      "fact": "Lignite: low-grade brown coal — mined at Neyveli, Tamil Nadu.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Lignite",
+        "Neyveli"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-37"
+      ]
+    },
+    {
+      "id": "ff-peat",
+      "fact": "Peat: first stage of coal formation; lowest carbon, high moisture.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Peat",
+        "lowest carbon"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-39"
+      ]
+    },
+    {
+      "id": "ff-gondwana",
+      "fact": "Gondwana coal: about 98% of India's coal reserves (Damodar, Mahanadi, Godavari valleys).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Gondwana",
+        "98"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-37"
+      ]
+    },
+    {
+      "id": "ff-tertiary",
+      "fact": "Tertiary coal: younger coal of the North-East (Assam, Meghalaya).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tertiary",
+        "North-East"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-39"
+      ]
+    },
+    {
+      "id": "ff-jharia",
+      "fact": "Jharia (Jharkhand): largest reserve of coking coal used in steel making.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Jharia",
+        "coking"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-37"
+      ]
+    },
+    {
+      "id": "ff-raniganj",
+      "fact": "Raniganj (West Bengal): first coal mining in India (1774); first commercial coal-bed methane.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Raniganj",
+        "1774"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-card-14"
+      ]
+    },
+    {
+      "id": "ff-digboi",
+      "fact": "Digboi (Assam): first oil discovered in India (1889); oldest working refinery (1901).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Digboi",
+        "1889"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-38"
+      ]
+    },
+    {
+      "id": "ff-bombay-high",
+      "fact": "Bombay High: largest offshore oil field, discovered in 1974.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bombay High",
+        "1974"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-38"
+      ]
+    },
+    {
+      "id": "ff-kg-basin",
+      "fact": "Krishna-Godavari (KG) basin: major offshore gas province off Andhra Pradesh (KG-D6).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Krishna-Godavari",
+        "gas"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-38"
+      ]
+    },
+    {
+      "id": "ff-spr",
+      "fact": "Strategic Petroleum Reserves (ISPRL): underground caverns at Visakhapatnam, Mangaluru and Padur — about 5.33 million tonnes.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Visakhapatnam",
+        "Padur"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-38"
+      ]
+    },
+    {
+      "id": "ff-cbm",
+      "fact": "Coal-bed methane (CBM): methane gas held inside coal seams.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Coal-bed methane",
+        "coal seams"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-39"
+      ]
+    },
+    {
+      "id": "ff-shale",
+      "fact": "Shale gas: gas trapped in shale rock, released by hydraulic fracturing (fracking).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Shale",
+        "fracturing"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-39"
+      ]
+    },
+    {
+      "id": "hy-darjeeling",
+      "fact": "Sidrapong, Darjeeling (1897): India's first hydroelectric plant.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Sidrapong",
+        "1897"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-40"
+      ]
+    },
+    {
+      "id": "hy-sivasamudram",
+      "fact": "Shivanasamudra (Karnataka, 1902): first major hydroelectric station in Asia, on the Kaveri.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Shivanasamudra",
+        "1902"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-40"
+      ]
+    },
+    {
+      "id": "hy-tehri",
+      "fact": "Tehri Dam: India's tallest dam, on the Bhagirathi in Uttarakhand.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tehri",
+        "tallest"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-40"
+      ]
+    },
+    {
+      "id": "hy-bhakra",
+      "fact": "Bhakra Nangal: multipurpose project on the Sutlej (Himachal Pradesh–Punjab).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bhakra",
+        "Sutlej"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-card-15"
+      ]
+    },
+    {
+      "id": "hy-small",
+      "fact": "Small hydro: plants up to 25 MW — counted under MNRE as renewable.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Small hydro",
+        "25 MW"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-mcq-40"
+      ]
+    },
+    {
+      "id": "hy-large-2019",
+      "fact": "Large hydro (above 25 MW): declared renewable energy in March 2019.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Large hydro",
+        "2019"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-card-16"
+      ]
+    },
+    {
+      "id": "hy-brahmaputra",
+      "fact": "Brahmaputra basin: holds nearly half of India's untapped hydro potential.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Brahmaputra",
+        "hydro"
+      ],
+      "taughtIn": "sci-energy-note-fossil-fuels-hydro",
+      "drilledBy": [
+        "sci-energy-card-17"
+      ]
+    },
+    {
+      "id": "nt-pv",
+      "fact": "Solar photovoltaic (PV) cell: converts sunlight directly into electricity; usually made of silicon.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "photovoltaic",
+        "silicon"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-mcq-41"
+      ]
+    },
+    {
+      "id": "nt-thermal",
+      "fact": "Solar thermal / concentrated solar power: uses the Sun's heat — water heaters, or mirrors raising steam for turbines.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Solar thermal",
+        "heat"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-mcq-41"
+      ]
+    },
+    {
+      "id": "nt-perovskite",
+      "fact": "Perovskite solar cell: new low-cost thin-film cell material under development.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Perovskite",
+        "thin-film"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-18"
+      ]
+    },
+    {
+      "id": "nt-bifacial",
+      "fact": "Bifacial solar module: panel that captures light on both faces.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bifacial",
+        "both"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-19"
+      ]
+    },
+    {
+      "id": "nt-floating",
+      "fact": "Floating solar: panels on reservoirs — e.g. Omkareshwar (Narmada, Madhya Pradesh) and Ramagundam (Telangana).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Floating solar",
+        "Omkareshwar"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-20"
+      ]
+    },
+    {
+      "id": "nt-wind",
+      "fact": "Wind turbine: converts the kinetic energy of moving air into electricity.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Wind turbine",
+        "kinetic"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-21"
+      ]
+    },
+    {
+      "id": "nt-tidal",
+      "fact": "Tidal energy: uses the rise and fall of tides — best sites Gulf of Khambhat and Gulf of Kutch (Gujarat), Sundarbans.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tidal",
+        "Khambhat"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-mcq-41"
+      ]
+    },
+    {
+      "id": "nt-geothermal",
+      "fact": "Geothermal energy: heat from inside the Earth — Puga Valley (Ladakh), Manikaran (Himachal), Tattapani (Chhattisgarh).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Geothermal",
+        "Puga"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-mcq-41"
+      ]
+    },
+    {
+      "id": "nt-otec",
+      "fact": "OTEC (Ocean Thermal Energy Conversion): uses the temperature difference (20 °C or more) between warm surface and cold deep sea water.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "OTEC",
+        "temperature difference"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-mcq-42"
+      ]
+    },
+    {
+      "id": "nt-ltt",
+      "fact": "Low-Temperature Thermal Desalination (LTTD): NIOT plant at Kavaratti, Lakshadweep, uses the same ocean temperature gap to make drinking water.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "LTTD",
+        "Kavaratti"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-22"
+      ]
+    },
+    {
+      "id": "nt-fuelcell",
+      "fact": "Fuel cell: combines hydrogen and oxygen to give electricity; by-products only water and heat.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Fuel cell",
+        "water"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-mcq-42"
+      ]
+    },
+    {
+      "id": "nt-biogas",
+      "fact": "Biogas: mainly methane, made by anaerobic digestion of dung and waste.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Biogas",
+        "methane"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-mcq-42"
+      ]
+    },
+    {
+      "id": "nt-gasifier",
+      "fact": "Biomass gasifier: turns wood or crop waste into a combustible producer gas.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "gasifier",
+        "producer gas"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-23"
+      ]
+    },
+    {
+      "id": "nt-2g",
+      "fact": "Second-generation (2G) ethanol: made from crop residue such as rice straw — IOCL plant at Panipat (2022).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "2G",
+        "Panipat"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-24"
+      ]
+    },
+    {
+      "id": "ri-nise",
+      "fact": "National Institute of Solar Energy (NISE): Gurugram, Haryana.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "National Institute of Solar Energy",
+        "Gurugram"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-25"
+      ]
+    },
+    {
+      "id": "ri-niwe",
+      "fact": "National Institute of Wind Energy (NIWE): Chennai, Tamil Nadu.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "National Institute of Wind Energy",
+        "Chennai"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-26"
+      ]
+    },
+    {
+      "id": "ri-nibe",
+      "fact": "Sardar Swaran Singh National Institute of Bio-Energy: Kapurthala, Punjab.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Bio-Energy",
+        "Kapurthala"
+      ],
+      "taughtIn": "sci-energy-note-non-conventional-tech",
+      "drilledBy": [
+        "sci-energy-card-27"
+      ]
+    },
+    {
+      "id": "cp-solar",
+      "fact": "Solar capacity: about 171 GW — the largest renewable source.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Solar",
+        "171"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-43"
+      ]
+    },
+    {
+      "id": "cp-wind",
+      "fact": "Wind capacity: about 59 GW — second-largest renewable source.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Wind",
+        "59"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-43"
+      ]
+    },
+    {
+      "id": "cp-hydro",
+      "fact": "Large hydro capacity: about 52 GW, including about 7.4 GW pumped storage.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Large hydro",
+        "52"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-card-28"
+      ]
+    },
+    {
+      "id": "cp-rooftop",
+      "fact": "Rooftop solar: about 33 GW grid-connected.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Rooftop",
+        "33"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-card-29"
+      ]
+    },
+    {
+      "id": "cp-nonfossil",
+      "fact": "Total non-fossil capacity: about 308 GW (renewables about 299 GW plus nuclear about 8.8 GW).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "non-fossil",
+        "308"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-43"
+      ]
+    },
+    {
+      "id": "cp-nuclear",
+      "fact": "Nuclear capacity: about 8.8 GW — the smallest non-fossil share.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Nuclear",
+        "8.8"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-43"
+      ]
+    },
+    {
+      "id": "cp-rank",
+      "fact": "India's world rank: 3rd in renewable and in solar capacity; 4th in wind.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "3rd",
+        "solar"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-44"
+      ]
+    },
+    {
+      "id": "cp-bhadla",
+      "fact": "Bhadla Solar Park (Jodhpur, Rajasthan): India's largest commissioned solar park (about 2,245 MW).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bhadla",
+        "Rajasthan"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-44"
+      ]
+    },
+    {
+      "id": "cp-pavagada",
+      "fact": "Pavagada Solar Park (Karnataka): India's second-largest solar park.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Pavagada",
+        "Karnataka"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-card-30"
+      ]
+    },
+    {
+      "id": "cp-khavda",
+      "fact": "Khavda (Rann of Kutch, Gujarat): 30 GW hybrid renewable energy park — set to be the world's largest.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Khavda",
+        "30 GW"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-44"
+      ]
+    },
+    {
+      "id": "cp-mnre",
+      "fact": "Ministry of New and Renewable Energy: began as a Department in 1982 — the world's first such ministry; renamed MNRE in 2006.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "MNRE",
+        "1982"
+      ],
+      "taughtIn": "sci-energy-note-capacity-2026",
+      "drilledBy": [
+        "sci-energy-mcq-44"
+      ]
+    },
+    {
+      "id": "np-apsara",
+      "fact": "Apsara (Trombay, 1956): Asia's first research reactor.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Apsara",
+        "1956"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-45"
+      ]
+    },
+    {
+      "id": "np-tarapur",
+      "fact": "Tarapur (Maharashtra, 1969): India's first nuclear power station — boiling-water reactors from the USA.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tarapur",
+        "1969"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-45"
+      ]
+    },
+    {
+      "id": "np-raps",
+      "fact": "Rawatbhata (RAPS), Rajasthan: first PHWR station, built with Canadian (CANDU) help.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Rawatbhata",
+        "Canad"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-card-31"
+      ]
+    },
+    {
+      "id": "np-kakrapar",
+      "fact": "Kakrapar-3 (Gujarat): first indigenous 700 MWe PHWR.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kakrapar",
+        "700"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-45"
+      ]
+    },
+    {
+      "id": "np-kudankulam-big",
+      "fact": "Kudankulam (Tamil Nadu): India's largest nuclear plant — Russian VVER-1000 reactors.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kudankulam",
+        "Russia"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-45"
+      ]
+    },
+    {
+      "id": "np-kamini",
+      "fact": "KAMINI (Kalpakkam, 1996): the world's only reactor running on uranium-233 fuel.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "KAMINI",
+        "uranium-233"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-46"
+      ]
+    },
+    {
+      "id": "np-pfbr-spec",
+      "fact": "PFBR (Kalpakkam): 500 MWe sodium-cooled fast breeder using MOX fuel — first criticality 6 April 2026.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PFBR",
+        "sodium"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-46"
+      ]
+    },
+    {
+      "id": "np-kaiga",
+      "fact": "Kaiga: PHWR station in Karnataka.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kaiga",
+        "Karnataka"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-card-32"
+      ]
+    },
+    {
+      "id": "np-narora",
+      "fact": "Narora: PHWR station in Uttar Pradesh.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Narora",
+        "Uttar Pradesh"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-card-33"
+      ]
+    },
+    {
+      "id": "np-gorakhpur",
+      "fact": "Gorakhpur (Haryana): upcoming 700 MWe PHWR station (GHAVP).",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Gorakhpur",
+        "Haryana"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-card-34"
+      ]
+    },
+    {
+      "id": "np-jaitapur",
+      "fact": "Jaitapur (Maharashtra): planned with France (EPR reactors) — would be the largest nuclear site.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Jaitapur",
+        "France"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-46"
+      ]
+    },
+    {
+      "id": "np-kovvada",
+      "fact": "Kovvada (Srikakulam, Andhra Pradesh): planned with the USA (Westinghouse AP1000 reactors).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Kovvada",
+        "Srikakulam"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-46"
+      ]
+    },
+    {
+      "id": "nb-aec",
+      "fact": "Atomic Energy Commission: set up in 1948, chaired first by Homi Bhabha.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Atomic Energy Commission",
+        "1948"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-47"
+      ]
+    },
+    {
+      "id": "nb-dae",
+      "fact": "Department of Atomic Energy (DAE): created in 1954, directly under the Prime Minister.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Department of Atomic Energy",
+        "1954"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-47"
+      ]
+    },
+    {
+      "id": "nb-barc",
+      "fact": "BARC: began as AEET (1954); renamed Bhabha Atomic Research Centre in 1967.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "BARC",
+        "1967"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-48"
+      ]
+    },
+    {
+      "id": "nb-aerb",
+      "fact": "Atomic Energy Regulatory Board (AERB): nuclear safety regulator, set up in 1983.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "AERB",
+        "1983"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-47"
+      ]
+    },
+    {
+      "id": "nb-ucil",
+      "fact": "Uranium Corporation of India (UCIL): mines uranium; India's first uranium mine at Jaduguda, Jharkhand.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "UCIL",
+        "Jaduguda"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-48"
+      ]
+    },
+    {
+      "id": "nb-tummalapalle",
+      "fact": "Tummalapalle (Kadapa, Andhra Pradesh): one of the world's largest uranium deposits.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Tummalapalle",
+        "uranium"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-47"
+      ]
+    },
+    {
+      "id": "nb-irel",
+      "fact": "IREL (Indian Rare Earths Ltd): processes monazite beach sands for thorium and rare earths.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "IREL",
+        "monazite"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-48"
+      ]
+    },
+    {
+      "id": "nb-heavy-water",
+      "fact": "Heavy water (D2O): moderator and coolant in PHWRs — made by the Heavy Water Board.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Heavy water",
+        "moderator"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-card-35"
+      ]
+    },
+    {
+      "id": "nb-123",
+      "fact": "India–US 123 Agreement (2008): civil nuclear cooperation deal; came with the NSG waiver of 2008.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "123 Agreement",
+        "2008"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-mcq-48"
+      ]
+    },
+    {
+      "id": "nb-iter",
+      "fact": "ITER (Cadarache, France): international nuclear-fusion experiment; India a member since 2005.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ITER",
+        "fusion"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-card-36"
+      ]
+    },
+    {
+      "id": "nb-bsr",
+      "fact": "Bharat Small Reactors: 220 MWe PHWRs offered for captive industrial power under the Nuclear Energy Mission.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bharat Small Reactors",
+        "220"
+      ],
+      "taughtIn": "sci-energy-note-nuclear-plants",
+      "drilledBy": [
+        "sci-energy-card-37"
+      ]
+    },
+    {
+      "id": "li-ec-amend",
+      "fact": "Energy Conservation (Amendment) Act 2022: enabled a carbon market — the Carbon Credit Trading Scheme (2023).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "2022",
+        "carbon"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-49"
+      ]
+    },
+    {
+      "id": "li-elec-2003",
+      "fact": "Electricity Act 2003: set up CERC/SERCs, open access and licence-free generation.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Electricity Act",
+        "2003"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-49"
+      ]
+    },
+    {
+      "id": "li-cerc",
+      "fact": "CERC: Central Electricity Regulatory Commission — fixes inter-state tariffs.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "CERC",
+        "tariff"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-50"
+      ]
+    },
+    {
+      "id": "li-cea",
+      "fact": "Central Electricity Authority (CEA): statutory technical adviser and planner for the power sector.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Central Electricity Authority",
+        "planner"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-50"
+      ]
+    },
+    {
+      "id": "li-seci",
+      "fact": "SECI (2011): Solar Energy Corporation of India — implementing agency for the National Solar Mission.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "SECI",
+        "Solar Energy Corporation"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-49"
+      ]
+    },
+    {
+      "id": "li-ireda",
+      "fact": "IREDA (1987): Indian Renewable Energy Development Agency — lends to clean-energy projects.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "IREDA",
+        "1987"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-49"
+      ]
+    },
+    {
+      "id": "li-eesl",
+      "fact": "EESL: Energy Efficiency Services Ltd — runs UJALA and street-lighting LEDs.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "EESL",
+        "UJALA"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-50"
+      ]
+    },
+    {
+      "id": "li-ntpc",
+      "fact": "NTPC (1975): India's largest power producer; NTPC Green Energy is its renewables arm.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "NTPC",
+        "1975"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-38"
+      ]
+    },
+    {
+      "id": "li-napcc",
+      "fact": "NAPCC (2008): eight missions, including the National Solar Mission and the Mission for Enhanced Energy Efficiency (PAT).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "NAPCC",
+        "2008"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-50"
+      ]
+    },
+    {
+      "id": "sc-ddugjy",
+      "fact": "DDUGJY (2014): village electrification — last village Leisang (Manipur), 28 April 2018.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "DDUGJY",
+        "Leisang"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-51"
+      ]
+    },
+    {
+      "id": "sc-saubhagya",
+      "fact": "Saubhagya (2017): electricity connection for every household.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Saubhagya",
+        "household"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-51"
+      ]
+    },
+    {
+      "id": "sc-uday",
+      "fact": "UDAY (2015): financial turnaround of state discoms.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "UDAY",
+        "discom"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-39"
+      ]
+    },
+    {
+      "id": "sc-rdss",
+      "fact": "RDSS (2021): Revamped Distribution Sector Scheme — smart prepaid meters, loss reduction.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "RDSS",
+        "smart"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-40"
+      ]
+    },
+    {
+      "id": "sc-gec",
+      "fact": "Green Energy Corridor: transmission lines to carry renewable power to the grid.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Green Energy Corridor",
+        "transmission"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-41"
+      ]
+    },
+    {
+      "id": "sc-biofuel-policy",
+      "fact": "National Policy on Biofuels 2018 (amended 2022): advanced the E20 target from 2030 to 2025-26.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Biofuels",
+        "2018"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-51"
+      ]
+    },
+    {
+      "id": "sc-jivan",
+      "fact": "PM JI-VAN Yojana (2019): funds second-generation (2G) ethanol plants.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "JI-VAN",
+        "2G"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-42"
+      ]
+    },
+    {
+      "id": "sc-gobardhan",
+      "fact": "GOBAR-Dhan (2018): turns cattle dung and farm waste into biogas and CBG.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "GOBAR-Dhan",
+        "dung"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-43"
+      ]
+    },
+    {
+      "id": "sc-pli-solar",
+      "fact": "PLI for high-efficiency solar PV modules (2021): production-linked incentive to make solar modules in India.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PLI",
+        "solar"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-44"
+      ]
+    },
+    {
+      "id": "sc-almm",
+      "fact": "ALMM: Approved List of Models and Manufacturers — only listed Indian-made modules for government-backed projects.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ALMM",
+        "Approved List"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-45"
+      ]
+    },
+    {
+      "id": "sc-offshore",
+      "fact": "National Offshore Wind Energy Policy (2015): opened sea-based wind; best sites off Gujarat and Tamil Nadu.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Offshore Wind",
+        "2015"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-46"
+      ]
+    },
+    {
+      "id": "sc-hybrid",
+      "fact": "National Wind-Solar Hybrid Policy (2018): wind and solar plants sharing one site and grid link.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Hybrid Policy",
+        "2018"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-47"
+      ]
+    },
+    {
+      "id": "sc-fame",
+      "fact": "FAME I (2015) and FAME II (2019): earlier EV subsidy schemes, succeeded by PM E-DRIVE (2024).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "FAME II",
+        "2019"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-48"
+      ]
+    },
+    {
+      "id": "gb-isa-treaty",
+      "fact": "International Solar Alliance (ISA): treaty-based body since December 2017 — first intergovernmental organisation headquartered in India.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ISA",
+        "headquartered in India"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-52"
+      ]
+    },
+    {
+      "id": "gb-osowog",
+      "fact": "One Sun One World One Grid (OSOWOG): India's proposal (2018) for a global solar grid, pursued with ISA.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "One Sun One World One Grid",
+        "grid"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-52"
+      ]
+    },
+    {
+      "id": "gb-gba",
+      "fact": "Global Biofuels Alliance: launched by India at the G20 New Delhi summit, September 2023.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Global Biofuels Alliance",
+        "G20"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-52"
+      ]
+    },
+    {
+      "id": "gb-irena",
+      "fact": "IRENA: International Renewable Energy Agency (2009), HQ Abu Dhabi.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "IRENA",
+        "Abu Dhabi"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-mcq-52"
+      ]
+    },
+    {
+      "id": "gb-iea",
+      "fact": "International Energy Agency (IEA): Paris-based OECD body; India is an association country (since 2017), not a full member.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "International Energy Agency",
+        "association"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-49"
+      ]
+    },
+    {
+      "id": "gb-opec",
+      "fact": "OPEC: oil exporters' cartel (1960), HQ Vienna; India is not a member.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "OPEC",
+        "Vienna"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-50"
+      ]
+    },
+    {
+      "id": "gb-mi",
+      "fact": "Mission Innovation: launched at COP21 Paris (2015) to double clean-energy R&D.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mission Innovation",
+        "R&D"
+      ],
+      "taughtIn": "sci-energy-note-laws-institutions-schemes",
+      "drilledBy": [
+        "sci-energy-card-51"
+      ]
+    },
+    {
+      "id": "ap-simhadri",
+      "fact": "Simhadri Super Thermal Power Station: NTPC coal plant near Visakhapatnam (about 2,000 MW).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Simhadri",
+        "Visakhapatnam"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-mcq-53"
+      ]
+    },
+    {
+      "id": "ap-nttps",
+      "fact": "Dr Narla Tata Rao Thermal Power Station: APGENCO coal plant at Vijayawada (Ibrahimpatnam).",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Narla Tata Rao",
+        "Vijayawada"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-52",
+        "sci-energy-mcq-55"
+      ]
+    },
+    {
+      "id": "ap-sdsts",
+      "fact": "Sri Damodaram Sanjeevaiah Thermal Power Station: APGENCO coal plant at Krishnapatnam, Nellore district.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Damodaram Sanjeevaiah",
+        "Krishnapatnam"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-53",
+        "sci-energy-mcq-56"
+      ]
+    },
+    {
+      "id": "ap-rtpp",
+      "fact": "Rayalaseema Thermal Power Station: APGENCO coal plant at Muddanur, Kadapa district.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Rayalaseema Thermal",
+        "Muddanur"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-54",
+        "sci-energy-mcq-57"
+      ]
+    },
+    {
+      "id": "ap-srisailam",
+      "fact": "Srisailam hydro station: on the Krishna — right-bank station run by APGENCO.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Srisailam",
+        "Krishna"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-mcq-53"
+      ]
+    },
+    {
+      "id": "ap-sileru",
+      "fact": "Upper and Lower Sileru: hydro stations on the Sileru, a Godavari tributary.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Sileru",
+        "Godavari"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-55",
+        "sci-energy-mcq-58"
+      ]
+    },
+    {
+      "id": "ap-machkund",
+      "fact": "Machkund: joint Andhra Pradesh–Odisha hydro project.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Machkund",
+        "Odisha"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-56",
+        "sci-energy-mcq-59"
+      ]
+    },
+    {
+      "id": "ap-polavaram",
+      "fact": "Polavaram: multipurpose Godavari project with a 960 MW hydro station.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Polavaram",
+        "960"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-57",
+        "sci-energy-mcq-60"
+      ]
+    },
+    {
+      "id": "ap-npkunta",
+      "fact": "NP Kunta (Ananthapuram-I) Ultra Mega Solar Park: Nambulapulakunta mandal, Rayalaseema — first phase commissioned 2016.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "NP Kunta",
+        "Nambulapulakunta"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-mcq-53"
+      ]
+    },
+    {
+      "id": "ap-vizag-spr",
+      "fact": "Visakhapatnam Strategic Petroleum Reserve: India's first SPR cavern (about 1.33 million tonnes).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Strategic Petroleum Reserve",
+        "1.33"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-mcq-53"
+      ]
+    },
+    {
+      "id": "ap-hpcl",
+      "fact": "HPCL Visakh refinery: oil refinery at Visakhapatnam.",
+      "kind": "place",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "HPCL",
+        "refinery"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-58",
+        "sci-energy-mcq-62"
+      ]
+    },
+    {
+      "id": "ap-kgd6",
+      "fact": "KG-D6: Reliance deep-water gas block in the Krishna-Godavari basin.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "KG-D6",
+        "Reliance"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-59",
+        "sci-energy-mcq-61"
+      ]
+    },
+    {
+      "id": "ap-greenko",
+      "fact": "Pinnapuram project developer: Greenko — about 1,680 MW of pumped storage with solar and wind.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Greenko",
+        "1,680"
+      ],
+      "taughtIn": "sci-energy-note-ap-power-map",
+      "drilledBy": [
+        "sci-energy-card-60"
+      ]
+    }
+  ]
+}

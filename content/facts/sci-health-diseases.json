@@ -1,0 +1,3331 @@
+{
+  "version": 1,
+  "subtopicId": "sci-health-diseases",
+  "facts": [
+    {
+      "id": "ex-macro",
+      "fact": "Macronutrients are carbohydrates, proteins and fats; micronutrients are vitamins and minerals.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Macronutrient",
+        "micronutrient"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-31"
+      ]
+    },
+    {
+      "id": "ex-kcal",
+      "fact": "Fats yield about 9 kcal/g; carbohydrates and proteins about 4 kcal/g.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "9",
+        "kcal"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-31"
+      ]
+    },
+    {
+      "id": "ex-scurvy",
+      "fact": "Vitamin C deficiency causes scurvy (bleeding gums).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Scurvy",
+        "Vitamin C"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-1"
+      ]
+    },
+    {
+      "id": "ex-rickets",
+      "fact": "Vitamin D deficiency causes rickets in children (osteomalacia in adults).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Rickets",
+        "Vitamin D"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-5"
+      ]
+    },
+    {
+      "id": "ex-nightblind",
+      "fact": "Vitamin A deficiency causes night blindness — not Vitamin E.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "night blindness",
+        "Vitamin A"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-32"
+      ]
+    },
+    {
+      "id": "ex-beriberi",
+      "fact": "Beriberi = Vitamin B1 (thiamine); pellagra = Vitamin B3 (niacin).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Beriberi",
+        "Pellagra"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-5"
+      ]
+    },
+    {
+      "id": "ex-goitre",
+      "fact": "Goitre = iodine deficiency; anaemia = iron deficiency.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Goitre",
+        "iodine"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-5"
+      ]
+    },
+    {
+      "id": "ex-kwash",
+      "fact": "Kwashiorkor = protein deficiency (oedema); marasmus = energy + protein deficiency (wasting).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kwashiorkor",
+        "Marasmus"
+      ],
+      "taughtIn": "sci-health-diseases-note-nutrition",
+      "drilledBy": [
+        "sci-health-diseases-mcq-31"
+      ]
+    },
+    {
+      "id": "ex-tb-air",
+      "fact": "Tuberculosis is bacterial and airborne; cholera is bacterial and water-borne.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tuberculosis",
+        "Cholera"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-6",
+        "sci-health-diseases-mcq-38"
+      ]
+    },
+    {
+      "id": "ex-viral",
+      "fact": "Dengue, COVID-19, Nipah, H1N1 and JE are viral diseases.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Dengue",
+        "Nipah"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-6"
+      ]
+    },
+    {
+      "id": "ex-anopheles",
+      "fact": "Malaria (Plasmodium) is spread by the female Anopheles mosquito.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Anopheles",
+        "Malaria"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-2",
+        "sci-health-diseases-mcq-7"
+      ]
+    },
+    {
+      "id": "ex-aedes",
+      "fact": "Dengue, chikungunya and Zika are spread by Aedes aegypti.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Aedes",
+        "Chikungunya"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-7"
+      ]
+    },
+    {
+      "id": "ex-culex",
+      "fact": "Lymphatic filariasis and Japanese encephalitis are spread by Culex.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Culex",
+        "filariasis"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-7",
+        "sci-health-diseases-mcq-40"
+      ]
+    },
+    {
+      "id": "ex-sandfly",
+      "fact": "Kala-azar (Leishmania) is spread by the sandfly.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kala-azar",
+        "Sandfly"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-7",
+        "sci-health-diseases-mcq-44"
+      ]
+    },
+    {
+      "id": "ex-nipah-bat",
+      "fact": "The Nipah virus reservoir is the fruit bat; outbreaks are mainly in Kerala.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Nipah",
+        "fruit bat"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-6"
+      ]
+    },
+    {
+      "id": "ex-ncd",
+      "fact": "NCDs (diabetes, hypertension, cancer, CVD) are not transmitted and cause most deaths in India.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "diabetes",
+        "hypertension"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-8",
+        "sci-health-diseases-card-41"
+      ]
+    },
+    {
+      "id": "ex-fluorosis",
+      "fact": "Fluorosis (excess fluoride in drinking water) is endemic in parts of AP and is non-communicable.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Fluorosis",
+        "fluoride"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-21",
+        "sci-health-diseases-card-57"
+      ]
+    },
+    {
+      "id": "ex-ap-filaria",
+      "fact": "Lymphatic filariasis has been endemic in coastal districts of Andhra Pradesh.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "filariasis",
+        "coastal"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-21"
+      ]
+    },
+    {
+      "id": "ex-active-passive",
+      "fact": "Active immunity is self-made and lasting; passive immunity is borrowed, immediate and short-lived.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Active immunity",
+        "Passive immunity"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-uip",
+      "drilledBy": [
+        "sci-health-diseases-mcq-9"
+      ]
+    },
+    {
+      "id": "ex-herd",
+      "fact": "Herd immunity protects the unvaccinated when most people are immune.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Herd immunity"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-uip",
+      "drilledBy": [
+        "sci-health-diseases-mcq-9"
+      ]
+    },
+    {
+      "id": "ex-uip",
+      "fact": "The UIP was launched in 1985 and covers 12 diseases.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "1985",
+        "12"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-uip",
+      "drilledBy": [
+        "sci-health-diseases-mcq-10"
+      ]
+    },
+    {
+      "id": "ex-hepb-pcv",
+      "fact": "Hepatitis B was added to UIP in 2007; PCV in 2017.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "2007",
+        "2017"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-uip",
+      "drilledBy": [
+        "sci-health-diseases-mcq-33"
+      ]
+    },
+    {
+      "id": "ex-indradhanush",
+      "fact": "Mission Indradhanush (2014) immunises missed children and pregnant women.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Indradhanush",
+        "2014"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-uip",
+      "drilledBy": [
+        "sci-health-diseases-mcq-10"
+      ]
+    },
+    {
+      "id": "ex-uwin",
+      "fact": "U-WIN is the digital registry that tracks every vaccination.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "U-WIN"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-uip",
+      "drilledBy": [
+        "sci-health-diseases-mcq-10"
+      ]
+    },
+    {
+      "id": "ex-pmjay",
+      "fact": "PM-JAY (2018) gives ₹5 lakh per family per year for secondary and tertiary care.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PM-JAY",
+        "5 lakh"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-3",
+        "sci-health-diseases-mcq-11",
+        "sci-health-diseases-card-12"
+      ]
+    },
+    {
+      "id": "ex-arogya-mandir",
+      "fact": "Health and Wellness Centres were renamed Ayushman Arogya Mandir.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Ayushman Arogya Mandir"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-11"
+      ]
+    },
+    {
+      "id": "ex-vay-vandana",
+      "fact": "Ayushman Vay Vandana (2024) covers all citizens aged 70+.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Vay Vandana",
+        "70"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-11",
+        "sci-health-diseases-card-12"
+      ]
+    },
+    {
+      "id": "ex-abha",
+      "fact": "ABDM (2021) issues the 14-digit ABHA health ID.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ABHA"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-11"
+      ]
+    },
+    {
+      "id": "ex-nhm",
+      "fact": "NHM = NRHM (2005) + NUHM (2013); ASHAs are community health volunteers.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "NRHM",
+        "2005"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-12"
+      ]
+    },
+    {
+      "id": "ex-nhp",
+      "fact": "National Health Policy 2017 targets public health spending of 2.5% of GDP.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "2.5"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-12"
+      ]
+    },
+    {
+      "id": "ex-ntr-vaidya",
+      "fact": "Dr NTR Vaidya Seva (Aarogyasri) gives cashless secondary/tertiary care through empanelled hospitals.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "NTR Vaidya Seva",
+        "cashless"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-18",
+        "sci-health-diseases-mcq-23",
+        "sci-health-diseases-mcq-24",
+        "sci-health-diseases-card-13"
+      ]
+    },
+    {
+      "id": "ex-rajiv-aarogyasri",
+      "fact": "Dr NTR Vaidya Seva descends from Rajiv Aarogyasri (2007, undivided AP).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Rajiv Aarogyasri"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-18",
+        "sci-health-diseases-mcq-23"
+      ]
+    },
+    {
+      "id": "ex-108",
+      "fact": "The 108 emergency ambulance service originated in Andhra Pradesh (EMRI, 2005).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "108",
+        "originated"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-19",
+        "sci-health-diseases-card-13"
+      ]
+    },
+    {
+      "id": "ex-104",
+      "fact": "104 is a health helpline and fixed-day mobile medical service.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "104",
+        "fixed-day"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-19",
+        "sci-health-diseases-mcq-24"
+      ]
+    },
+    {
+      "id": "ex-ap-tfr",
+      "fact": "AP's TFR is below the replacement level of 2.1; IMR and MMR are lower than all-India.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "2.1",
+        "replacement"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-20",
+        "sci-health-diseases-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-ap-inst-births",
+      "fact": "Institutional births in AP are about 96-98% (NFHS-5).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "institutional births"
+      ],
+      "taughtIn": "sci-health-diseases-note-missions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-22"
+      ]
+    },
+    {
+      "id": "ex-smallpox",
+      "fact": "Smallpox is the only human disease eradicated globally (1980).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Smallpox",
+        "1980"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-13",
+        "sci-health-diseases-card-10"
+      ]
+    },
+    {
+      "id": "ex-polio",
+      "fact": "India (WHO SEAR) was certified polio-free in 2014.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "polio-free",
+        "2014"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-13",
+        "sci-health-diseases-card-10"
+      ]
+    },
+    {
+      "id": "ex-guinea",
+      "fact": "Guinea worm was eliminated from India in 2000.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Guinea worm"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-13",
+        "sci-health-diseases-card-10"
+      ]
+    },
+    {
+      "id": "ex-tetanus",
+      "fact": "Maternal and neonatal tetanus was eliminated in 2015.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "tetanus",
+        "2015"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-14"
+      ]
+    },
+    {
+      "id": "ex-yaws",
+      "fact": "India was the first country validated as yaws-free (2016).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "yaws",
+        "2016"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-34"
+      ]
+    },
+    {
+      "id": "ex-trachoma",
+      "fact": "WHO validated India's elimination of trachoma in 2024.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "trachoma",
+        "2024"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-14"
+      ]
+    },
+    {
+      "id": "ex-tb-2025",
+      "fact": "India targeted TB elimination by 2025, ahead of the SDG 2030 goal.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "2025",
+        "2030"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-14"
+      ]
+    },
+    {
+      "id": "ex-amr",
+      "fact": "AMR is driven by antibiotic overuse; India has NAP-AMR (2017) and the Red Line campaign.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "AMR",
+        "2017"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-15"
+      ]
+    },
+    {
+      "id": "ex-erad-vs-elim",
+      "fact": "Eradication = global zero; elimination = zero in a defined area.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Eradication",
+        "Elimination"
+      ],
+      "taughtIn": "sci-health-diseases-note-eradication",
+      "drilledBy": [
+        "sci-health-diseases-mcq-13"
+      ]
+    },
+    {
+      "id": "ex-poshan",
+      "fact": "POSHAN Abhiyaan (2018) fights malnutrition; PM POSHAN (2021) is the renamed mid-day meal.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "POSHAN Abhiyaan",
+        "PM POSHAN"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-outbreaks",
+      "drilledBy": [
+        "sci-health-diseases-mcq-16"
+      ]
+    },
+    {
+      "id": "ex-anaemia-mukt",
+      "fact": "Anaemia Mukt Bharat uses a 6x6x6 strategy.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Anaemia Mukt Bharat"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-outbreaks",
+      "drilledBy": [
+        "sci-health-diseases-mcq-16"
+      ]
+    },
+    {
+      "id": "ex-icds",
+      "fact": "ICDS (1975) runs Anganwadi services.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ICDS",
+        "Anganwadi"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-outbreaks",
+      "drilledBy": [
+        "sci-health-diseases-mcq-16"
+      ]
+    },
+    {
+      "id": "ex-mpox",
+      "fact": "WHO declared Mpox a PHEIC in August 2024.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mpox",
+        "2024"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-outbreaks",
+      "drilledBy": [
+        "sci-health-diseases-mcq-17",
+        "sci-health-diseases-card-30"
+      ]
+    },
+    {
+      "id": "ex-hmpv",
+      "fact": "HMPV drew attention in early 2025.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "HMPV"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-outbreaks",
+      "drilledBy": [
+        "sci-health-diseases-mcq-17"
+      ]
+    },
+    {
+      "id": "ex-one-health",
+      "fact": "One Health links human, animal and environmental health.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "One Health"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-outbreaks",
+      "drilledBy": [
+        "sci-health-diseases-mcq-17"
+      ]
+    },
+    {
+      "id": "ex-bt-cells",
+      "fact": "B cells make antibodies (humoral); T cells give cell-mediated immunity — both protect against pathogens.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "B cells",
+        "T cells"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-25",
+        "sci-health-diseases-card-1"
+      ]
+    },
+    {
+      "id": "ex-covishield",
+      "fact": "Covishield is a viral-vector (not mRNA) vaccine; Covaxin is inactivated; Sputnik V is viral-vector.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Covishield",
+        "Sputnik"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-26",
+        "sci-health-diseases-card-2"
+      ]
+    },
+    {
+      "id": "ex-biofilm",
+      "fact": "Biofilms form on implants and food surfaces and resist antibiotics.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "biofilm",
+        "antibiotic"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-27",
+        "sci-health-diseases-card-3"
+      ]
+    },
+    {
+      "id": "ex-probiotic",
+      "fact": "Probiotics contain bacteria and yeast, occur naturally in the gut and help digest lactose.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Probiotic",
+        "yeast"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-28",
+        "sci-health-diseases-card-4"
+      ]
+    },
+    {
+      "id": "ex-adeno-retro",
+      "fact": "Adenovirus is a DNA virus (common cold); a retrovirus (RNA) such as HIV causes AIDS.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "adenovirus",
+        "retrovirus"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-29",
+        "sci-health-diseases-card-5"
+      ]
+    },
+    {
+      "id": "ex-virus-hosts",
+      "fact": "Viruses can infect bacteria, fungi and plants.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bacteria",
+        "Fungi"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-30",
+        "sci-health-diseases-card-6"
+      ]
+    },
+    {
+      "id": "ex-ace2",
+      "fact": "ACE2 is the receptor SARS-CoV-2 uses to enter human cells.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ACE2"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-35"
+      ]
+    },
+    {
+      "id": "ex-ebola",
+      "fact": "The 2014 Ebola outbreak centred on Guinea, Sierra Leone and Liberia.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Guinea",
+        "Sierra Leone"
+      ],
+      "taughtIn": "sci-health-diseases-note-immunity-microbiology",
+      "drilledBy": [
+        "sci-health-diseases-mcq-36"
+      ]
+    },
+    {
+      "id": "ex-h1n1",
+      "fact": "H1N1 is the swine flu virus.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "H1N1",
+        "swine flu"
+      ],
+      "taughtIn": "sci-health-diseases-note-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-37"
+      ]
+    },
+    {
+      "id": "bd-tb",
+      "fact": "Tuberculosis: Mycobacterium tuberculosis — airborne; discovered by Robert Koch (1882); BCG vaccine.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mycobacterium tuberculosis",
+        "Koch"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-38"
+      ]
+    },
+    {
+      "id": "bd-leprosy",
+      "fact": "Leprosy (Hansen's disease): Mycobacterium leprae — long close contact; eliminated as a public-health problem in India in 2005.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mycobacterium leprae",
+        "2005"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-38"
+      ]
+    },
+    {
+      "id": "bd-cholera",
+      "fact": "Cholera: Vibrio cholerae — contaminated water; severe watery diarrhoea.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Vibrio cholerae",
+        "water"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-38"
+      ]
+    },
+    {
+      "id": "bd-typhoid",
+      "fact": "Typhoid: Salmonella typhi — food and water; Widal test.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Salmonella typhi",
+        "Widal"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-38"
+      ]
+    },
+    {
+      "id": "bd-diphtheria",
+      "fact": "Diphtheria: Corynebacterium diphtheriae — airborne; affects the throat.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Corynebacterium",
+        "throat"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-14"
+      ]
+    },
+    {
+      "id": "bd-tetanus",
+      "fact": "Tetanus: Clostridium tetani — enters through wounds; causes lockjaw.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Clostridium tetani",
+        "lockjaw"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-39"
+      ]
+    },
+    {
+      "id": "bd-pertussis",
+      "fact": "Whooping cough (pertussis): Bordetella pertussis — airborne.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bordetella",
+        "Whooping cough"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-15"
+      ]
+    },
+    {
+      "id": "bd-plague",
+      "fact": "Plague: Yersinia pestis — spread by the rat flea.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Yersinia pestis",
+        "rat flea"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-39"
+      ]
+    },
+    {
+      "id": "bd-lepto",
+      "fact": "Leptospirosis: Leptospira — rat urine in flood water (\"rat fever\").",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Leptospirosis",
+        "rat urine"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-39"
+      ]
+    },
+    {
+      "id": "bd-scrub",
+      "fact": "Scrub typhus: Orientia tsutsugamushi — bite of infected mites (chiggers).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Scrub typhus",
+        "mite"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-16"
+      ]
+    },
+    {
+      "id": "bd-anthrax",
+      "fact": "Anthrax: Bacillus anthracis — from infected animals and spores.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Bacillus anthracis",
+        "spores"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-17"
+      ]
+    },
+    {
+      "id": "bd-pneumonia",
+      "fact": "Pneumonia: often Streptococcus pneumoniae — airborne; prevented by PCV.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Streptococcus pneumoniae",
+        "PCV"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-18"
+      ]
+    },
+    {
+      "id": "bd-syphilis",
+      "fact": "Syphilis: Treponema pallidum — sexually transmitted.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Treponema",
+        "sexually"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-19"
+      ]
+    },
+    {
+      "id": "bd-botulism",
+      "fact": "Botulism: Clostridium botulinum toxin — badly canned food.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "botulinum",
+        "canned"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-20"
+      ]
+    },
+    {
+      "id": "fw-ringworm",
+      "fact": "Ringworm: a fungal skin infection — not a worm.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Ringworm",
+        "fungal"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-40"
+      ]
+    },
+    {
+      "id": "fw-athlete",
+      "fact": "Athlete's foot: fungal infection between the toes.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Athlete's foot",
+        "fungal"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-21"
+      ]
+    },
+    {
+      "id": "fw-candida",
+      "fact": "Candidiasis: yeast (Candida) infection of mouth, skin or genitals.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Candidiasis",
+        "Candida"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-22"
+      ]
+    },
+    {
+      "id": "fw-mucor",
+      "fact": "Mucormycosis (\"black fungus\"): fungal infection seen in many COVID-19 patients in 2021, especially diabetics given steroids.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mucormycosis",
+        "black fungus"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-40"
+      ]
+    },
+    {
+      "id": "fw-ascaris",
+      "fact": "Ascariasis: roundworm Ascaris — eggs in contaminated soil and food.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Ascaris",
+        "roundworm"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-40"
+      ]
+    },
+    {
+      "id": "fw-hookworm",
+      "fact": "Hookworm disease: larvae enter through bare feet; cause anaemia.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Hookworm",
+        "bare feet"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-23"
+      ]
+    },
+    {
+      "id": "fw-taenia",
+      "fact": "Taeniasis: tapeworm Taenia — undercooked pork or beef.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Taenia",
+        "tapeworm"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-24"
+      ]
+    },
+    {
+      "id": "fw-wuchereria",
+      "fact": "Filariasis (elephantiasis): Wuchereria bancrofti worm — spread by Culex mosquito.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Wuchereria bancrofti",
+        "elephantiasis"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-40"
+      ]
+    },
+    {
+      "id": "fw-guinea",
+      "fact": "Guinea-worm disease (dracunculiasis): Dracunculus medinensis — drinking water with infected water fleas.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Dracunculus",
+        "water fleas"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-25"
+      ]
+    },
+    {
+      "id": "fw-ndd",
+      "fact": "National Deworming Day: held in February and August — albendazole tablets for children aged 1–19.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "National Deworming Day",
+        "albendazole"
+      ],
+      "taughtIn": "sci-health-diseases-note-bacterial-fungal-worm-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-26"
+      ]
+    },
+    {
+      "id": "vd-polio",
+      "fact": "Polio: poliovirus — faecal-oral; Salk (injectable, killed) and Sabin (oral, live) vaccines.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Salk",
+        "Sabin"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-41"
+      ]
+    },
+    {
+      "id": "vd-measles",
+      "fact": "Measles: airborne virus — prevented by the MR (measles-rubella) vaccine.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Measles",
+        "rubella"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-41"
+      ]
+    },
+    {
+      "id": "vd-chickenpox",
+      "fact": "Chickenpox: varicella-zoster virus — airborne; later reactivation causes shingles.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "varicella",
+        "shingles"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-27"
+      ]
+    },
+    {
+      "id": "vd-rabies",
+      "fact": "Rabies: lyssavirus — bite of an infected dog; nearly always fatal once symptoms appear; Pasteur vaccine (1885).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Rabies",
+        "Pasteur"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-41"
+      ]
+    },
+    {
+      "id": "vd-hep-ae",
+      "fact": "Hepatitis A and E: faecal-oral — contaminated food and water.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Hepatitis A",
+        "faecal-oral"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-41"
+      ]
+    },
+    {
+      "id": "vd-hep-bc",
+      "fact": "Hepatitis B and C: blood, needles and sex; B has a vaccine (in UIP).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Hepatitis B",
+        "blood"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-42"
+      ]
+    },
+    {
+      "id": "vd-tattoo",
+      "fact": "Spread by unclean tattooing needles (UPSC 2013): hepatitis B and HIV — not chikungunya (which needs a mosquito).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "tattoo",
+        "chikungunya"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-42"
+      ]
+    },
+    {
+      "id": "vd-hiv",
+      "fact": "HIV / AIDS: retrovirus that destroys CD4 helper T cells; screened by ELISA.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "CD4",
+        "ELISA"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-42"
+      ]
+    },
+    {
+      "id": "vd-h5n1",
+      "fact": "Bird flu: H5N1 avian influenza — from infected poultry.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "H5N1",
+        "Bird flu"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-42"
+      ]
+    },
+    {
+      "id": "vd-zika",
+      "fact": "Zika (UPSC 2017): Aedes mosquitoes and also sexual transmission; birth defect microcephaly.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Zika",
+        "sexual"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-43"
+      ]
+    },
+    {
+      "id": "vd-je",
+      "fact": "Japanese encephalitis: Culex mosquito; pigs and wading birds are hosts; vaccine in endemic districts.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Japanese encephalitis",
+        "pigs"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-28"
+      ]
+    },
+    {
+      "id": "vd-kfd",
+      "fact": "Kyasanur Forest Disease (\"monkey fever\"): tick-borne virus first found in Karnataka (1957).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Kyasanur",
+        "tick"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-43"
+      ]
+    },
+    {
+      "id": "vd-chandipura",
+      "fact": "Chandipura virus: spread by sandflies; outbreak among children in Gujarat in 2024.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Chandipura",
+        "sandflies"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-43"
+      ]
+    },
+    {
+      "id": "vd-hpv",
+      "fact": "Human papillomavirus (HPV): causes most cervical cancers; prevented by HPV vaccine (Cervavac).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "papillomavirus",
+        "cervical"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-43"
+      ]
+    },
+    {
+      "id": "vd-ebola",
+      "fact": "Ebola: contact with body fluids of infected people or animals (fruit bats).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Ebola",
+        "body fluids"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-29"
+      ]
+    },
+    {
+      "id": "vd-mpox-end",
+      "fact": "Mpox PHEIC (clade Ib): declared August 2024; ended September 2025.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mpox",
+        "September 2025"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-30"
+      ]
+    },
+    {
+      "id": "pd-falciparum",
+      "fact": "Plasmodium falciparum: most dangerous malaria parasite — causes cerebral malaria.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "falciparum",
+        "cerebral"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-44"
+      ]
+    },
+    {
+      "id": "pd-vivax",
+      "fact": "Plasmodium vivax: commonest malaria parasite in India.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "vivax",
+        "commonest"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-45"
+      ]
+    },
+    {
+      "id": "pd-ross",
+      "fact": "Ronald Ross: proved mosquitoes transmit malaria, at Secunderabad (1897) — Nobel Prize 1902.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Ronald Ross",
+        "Secunderabad"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-44"
+      ]
+    },
+    {
+      "id": "pd-kalaazar",
+      "fact": "Kala-azar (visceral leishmaniasis): Leishmania donovani, sandfly — endemic in Bihar, Jharkhand, West Bengal and UP.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Leishmania donovani",
+        "Bihar"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-44"
+      ]
+    },
+    {
+      "id": "pd-amoeba",
+      "fact": "Amoebic dysentery: Entamoeba histolytica — contaminated food and water; houseflies carry it.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Entamoeba",
+        "dysentery"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-44"
+      ]
+    },
+    {
+      "id": "pd-sleeping",
+      "fact": "Sleeping sickness: Trypanosoma — spread by the tsetse fly (Africa).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Trypanosoma",
+        "tsetse"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-45"
+      ]
+    },
+    {
+      "id": "pd-giardia",
+      "fact": "Giardiasis: Giardia — contaminated water; diarrhoea.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Giardia",
+        "diarrhoea"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-45"
+      ]
+    },
+    {
+      "id": "pd-prion",
+      "fact": "Prion diseases: misfolded proteins — mad cow disease (BSE) and Creutzfeldt–Jakob disease.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Prion",
+        "mad cow"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-mcq-45"
+      ]
+    },
+    {
+      "id": "pd-rtss",
+      "fact": "Malaria vaccines: RTS,S/AS01 and R21/Matrix-M (WHO-recommended; R21 made by the Serum Institute).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "RTS,S",
+        "R21"
+      ],
+      "taughtIn": "sci-health-diseases-note-viral-protozoan-diseases",
+      "drilledBy": [
+        "sci-health-diseases-card-31"
+      ]
+    },
+    {
+      "id": "vm-fat",
+      "fact": "Fat-soluble vitamins: A, D, E and K — stored in the body.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Fat-soluble",
+        "A, D, E"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-46"
+      ]
+    },
+    {
+      "id": "vm-water",
+      "fact": "Water-soluble vitamins: B group and C — not stored; needed daily.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Water-soluble",
+        "B group"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-46"
+      ]
+    },
+    {
+      "id": "vm-e",
+      "fact": "Vitamin E (tocopherol): antioxidant; linked to fertility and healthy cells — not to night blindness.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Vitamin E",
+        "antioxidant"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-46"
+      ]
+    },
+    {
+      "id": "vm-k",
+      "fact": "Vitamin K: needed for blood clotting; given to newborns.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Vitamin K",
+        "clotting"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-46"
+      ]
+    },
+    {
+      "id": "vm-b2",
+      "fact": "Vitamin B2 (riboflavin): deficiency cracks the lips and mouth corners (cheilosis).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "riboflavin",
+        "cheilosis"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-47"
+      ]
+    },
+    {
+      "id": "vm-b9",
+      "fact": "Vitamin B9 (folic acid): prevents neural-tube defects; deficiency causes anaemia.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "folic acid",
+        "neural-tube"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-47"
+      ]
+    },
+    {
+      "id": "vm-b12",
+      "fact": "Vitamin B12 (cobalamin): deficiency causes pernicious anaemia; found in animal foods.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "B12",
+        "pernicious"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-47"
+      ]
+    },
+    {
+      "id": "vm-d-sun",
+      "fact": "Vitamin D source: made in the skin from sunlight (UV-B).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Vitamin D",
+        "sunlight"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-mcq-47"
+      ]
+    },
+    {
+      "id": "vm-calcium",
+      "fact": "Calcium: bones and teeth; deficiency → osteoporosis.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Calcium",
+        "osteoporosis"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-card-32"
+      ]
+    },
+    {
+      "id": "vm-zinc",
+      "fact": "Zinc: growth and immunity; used with ORS for child diarrhoea.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Zinc",
+        "ORS"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-card-33"
+      ]
+    },
+    {
+      "id": "vm-cretinism",
+      "fact": "Cretinism: iodine deficiency in infancy — stunted body and mind.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Cretinism",
+        "iodine"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-card-34"
+      ]
+    },
+    {
+      "id": "vm-xeroph",
+      "fact": "Xerophthalmia: dry eye from Vitamin A deficiency.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Xerophthalmia",
+        "Vitamin A"
+      ],
+      "taughtIn": "sci-health-diseases-note-vitamins-minerals-more",
+      "drilledBy": [
+        "sci-health-diseases-card-35"
+      ]
+    },
+    {
+      "id": "np-ntep",
+      "fact": "NTEP (2020): National TB Elimination Programme — the renamed RNTCP.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "NTEP",
+        "RNTCP"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-48"
+      ]
+    },
+    {
+      "id": "np-nikshay",
+      "fact": "Ni-kshay Poshan Yojana: ₹1,000 a month nutrition support to TB patients (raised from ₹500 in 2024).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Ni-kshay Poshan",
+        "1,000"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-48"
+      ]
+    },
+    {
+      "id": "np-100day",
+      "fact": "TB Mukt Bharat 100-day campaign: intensified TB case-finding drive launched December 2024.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "100-day",
+        "TB Mukt Bharat"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-50"
+      ]
+    },
+    {
+      "id": "np-naco",
+      "fact": "National AIDS Control Programme (1992): run by NACO; targets 95-95-95 (diagnosed, on treatment, virally suppressed).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "NACO",
+        "95-95-95"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-48"
+      ]
+    },
+    {
+      "id": "np-ncvbdc",
+      "fact": "NCVBDC: National Center for Vector Borne Diseases Control — malaria, dengue, filariasis, kala-azar, JE, chikungunya.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "NCVBDC",
+        "Vector Borne"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-50"
+      ]
+    },
+    {
+      "id": "np-malaria-2030",
+      "fact": "Malaria elimination target: zero indigenous cases in India by 2030 (National Framework 2016).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Malaria",
+        "2030"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-48"
+      ]
+    },
+    {
+      "id": "np-lf-2027",
+      "fact": "Lymphatic filariasis elimination target: 2027, through mass drug administration.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "filariasis",
+        "2027"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-36"
+      ]
+    },
+    {
+      "id": "np-pulse-polio",
+      "fact": "Pulse Polio (1995): nationwide oral polio vaccine drives for all children under five.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Pulse Polio",
+        "1995"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-49"
+      ]
+    },
+    {
+      "id": "np-jsy",
+      "fact": "Janani Suraksha Yojana (2005): cash incentive for institutional delivery.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Janani Suraksha",
+        "institutional delivery"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-49"
+      ]
+    },
+    {
+      "id": "np-jssk",
+      "fact": "JSSK (2011): Janani Shishu Suraksha Karyakram — free delivery and newborn care in public hospitals.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "JSSK",
+        "free delivery"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-37"
+      ]
+    },
+    {
+      "id": "np-pmsma",
+      "fact": "PMSMA (2016): free antenatal check-up on the 9th of every month.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PMSMA",
+        "9th"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-49"
+      ]
+    },
+    {
+      "id": "np-pmmvy",
+      "fact": "PMMVY (2017): Pradhan Mantri Matru Vandana Yojana — ₹5,000 maternity benefit for the first child.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PMMVY",
+        "5,000"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-49"
+      ]
+    },
+    {
+      "id": "np-rbsk",
+      "fact": "RBSK (2013): child health screening for the 4 Ds — defects, diseases, deficiencies, developmental delays.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "RBSK",
+        "4 Ds"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-50"
+      ]
+    },
+    {
+      "id": "np-rksk",
+      "fact": "RKSK (2014): Rashtriya Kishor Swasthya Karyakram — adolescent health.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "RKSK",
+        "adolescent"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-38"
+      ]
+    },
+    {
+      "id": "np-janaushadhi",
+      "fact": "PM Bhartiya Janaushadhi Pariyojana: cheap generic medicines through Jan Aushadhi Kendras.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Janaushadhi",
+        "generic"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-50"
+      ]
+    },
+    {
+      "id": "np-abhim",
+      "fact": "PM-ABHIM (2021): PM Ayushman Bharat Health Infrastructure Mission — labs, critical-care blocks, surveillance.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PM-ABHIM",
+        "infrastructure"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-39"
+      ]
+    },
+    {
+      "id": "np-telemanas",
+      "fact": "Tele-MANAS (2022): national tele-mental-health helpline (14416).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Tele-MANAS",
+        "14416"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-40"
+      ]
+    },
+    {
+      "id": "np-75-25",
+      "fact": "75/25 initiative (2023): screen and treat 75 million people for hypertension and diabetes by 2025.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "75 million",
+        "hypertension"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-41"
+      ]
+    },
+    {
+      "id": "hl-epidemic",
+      "fact": "Epidemic Diseases Act, 1897: oldest epidemic law; amended 2020 to punish violence against health workers.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Epidemic Diseases Act",
+        "1897"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-51"
+      ]
+    },
+    {
+      "id": "hl-mtp",
+      "fact": "MTP Act, 1971 (amended 2021): abortion allowed up to 24 weeks for special categories of women.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "MTP",
+        "24 weeks"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-51"
+      ]
+    },
+    {
+      "id": "hl-pcpndt",
+      "fact": "PCPNDT Act, 1994: bans sex selection and sex-determination tests.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "PCPNDT",
+        "sex selection"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-51"
+      ]
+    },
+    {
+      "id": "hl-cotpa",
+      "fact": "COTPA, 2003: bans smoking in public places and tobacco sale within 100 yards of schools.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "COTPA",
+        "smoking"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-51"
+      ]
+    },
+    {
+      "id": "hl-mhca",
+      "fact": "Mental Healthcare Act, 2017: right to mental healthcare; decriminalised attempted suicide.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mental Healthcare Act",
+        "suicide"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-52"
+      ]
+    },
+    {
+      "id": "hl-hivact",
+      "fact": "HIV/AIDS (Prevention and Control) Act, 2017: bans discrimination against people living with HIV.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "HIV/AIDS",
+        "discrimination"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-52"
+      ]
+    },
+    {
+      "id": "hl-nmc",
+      "fact": "National Medical Commission Act, 2019: replaced the Medical Council of India.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "National Medical Commission",
+        "Medical Council of India"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-52"
+      ]
+    },
+    {
+      "id": "hl-thoa",
+      "fact": "Transplantation of Human Organs Act, 1994: regulates organ donation and bans organ trade.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Transplantation of Human Organs",
+        "1994"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-52"
+      ]
+    },
+    {
+      "id": "hl-fssa",
+      "fact": "Food Safety and Standards Act, 2006: created FSSAI (2008), the food regulator.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "FSSAI",
+        "2006"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-42"
+      ]
+    },
+    {
+      "id": "hl-drugs",
+      "fact": "Drugs and Cosmetics Act, 1940: basis of drug regulation by CDSCO, headed by the DCGI.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Drugs and Cosmetics Act",
+        "DCGI"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-43"
+      ]
+    },
+    {
+      "id": "hi-icmr",
+      "fact": "ICMR: began in 1911 as the Indian Research Fund Association; renamed ICMR in 1949.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "ICMR",
+        "1911"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-53"
+      ]
+    },
+    {
+      "id": "hi-niv",
+      "fact": "National Institute of Virology (NIV): Pune — India's top virus lab (isolated SARS-CoV-2 in 2020).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "National Institute of Virology",
+        "Pune"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-53"
+      ]
+    },
+    {
+      "id": "hi-ncdc",
+      "fact": "National Centre for Disease Control (NCDC): Delhi — disease surveillance (IDSP).",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "National Centre for Disease Control",
+        "surveillance"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-54"
+      ]
+    },
+    {
+      "id": "hi-who",
+      "fact": "World Health Organization: founded 7 April 1948, HQ Geneva — 7 April is World Health Day; SEARO is in New Delhi.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "World Health Organization",
+        "Geneva"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-53"
+      ]
+    },
+    {
+      "id": "hi-pandemic",
+      "fact": "WHO Pandemic Agreement: adopted at the World Health Assembly on 20 May 2025.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Pandemic Agreement",
+        "2025"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-53"
+      ]
+    },
+    {
+      "id": "hi-gavi",
+      "fact": "Gavi: the Vaccine Alliance (2000), Geneva — funds vaccines for poorer countries.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Gavi",
+        "Vaccine Alliance"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-54"
+      ]
+    },
+    {
+      "id": "hi-tbday",
+      "fact": "World TB Day: 24 March — the day Koch announced the TB germ (1882).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "World TB Day",
+        "24 March"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-54"
+      ]
+    },
+    {
+      "id": "hi-malariaday",
+      "fact": "World Malaria Day: 25 April.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "World Malaria Day",
+        "25 April"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-44"
+      ]
+    },
+    {
+      "id": "hi-aidsday",
+      "fact": "World AIDS Day: 1 December.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "World AIDS Day",
+        "1 December"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-mcq-54"
+      ]
+    },
+    {
+      "id": "hi-doctors",
+      "fact": "National Doctors' Day: 1 July — birthday of Dr B.C. Roy.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Doctors' Day",
+        "B.C. Roy"
+      ],
+      "taughtIn": "sci-health-diseases-note-programmes-laws-institutions",
+      "drilledBy": [
+        "sci-health-diseases-card-45"
+      ]
+    },
+    {
+      "id": "dt-widal",
+      "fact": "Widal test: typhoid.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Widal",
+        "typhoid"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-55"
+      ]
+    },
+    {
+      "id": "dt-mantoux",
+      "fact": "Mantoux (tuberculin skin) test: TB infection.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Mantoux",
+        "TB"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-55"
+      ]
+    },
+    {
+      "id": "dt-truenat",
+      "fact": "TrueNat and CBNAAT: rapid molecular tests for TB (TrueNat is made in India).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "TrueNat",
+        "molecular"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-46"
+      ]
+    },
+    {
+      "id": "dt-elisa",
+      "fact": "ELISA / Western blot: HIV (ELISA screens; Western blot confirms).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Western blot",
+        "HIV"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-55"
+      ]
+    },
+    {
+      "id": "dt-pap",
+      "fact": "Pap smear: early cervical cancer.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Pap smear",
+        "cervical cancer"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-55"
+      ]
+    },
+    {
+      "id": "dt-schick",
+      "fact": "Schick test: diphtheria immunity.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Schick",
+        "diphtheria"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-47"
+      ]
+    },
+    {
+      "id": "dt-ns1",
+      "fact": "NS1 antigen test: early dengue.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "NS1",
+        "dengue"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-48"
+      ]
+    },
+    {
+      "id": "dt-rtpcr",
+      "fact": "RT-PCR: RNA viruses such as SARS-CoV-2 (gold standard for COVID-19).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "RT-PCR",
+        "SARS-CoV-2"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-49"
+      ]
+    },
+    {
+      "id": "dt-hba1c",
+      "fact": "HbA1c: average blood sugar over about three months (diabetes).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "HbA1c",
+        "three months"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-50"
+      ]
+    },
+    {
+      "id": "mp-jenner",
+      "fact": "Edward Jenner (1796): first vaccine — against smallpox, using cowpox.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Jenner",
+        "smallpox"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-56"
+      ]
+    },
+    {
+      "id": "mp-fleming",
+      "fact": "Alexander Fleming (1928): penicillin — the first antibiotic.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Fleming",
+        "penicillin"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-56"
+      ]
+    },
+    {
+      "id": "mp-landsteiner",
+      "fact": "Karl Landsteiner (1901): ABO blood groups; O negative = universal donor, AB positive = universal recipient.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Landsteiner",
+        "universal donor"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-56"
+      ]
+    },
+    {
+      "id": "mp-banting",
+      "fact": "Banting and Best (1921): isolated insulin.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Banting",
+        "insulin"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-51"
+      ]
+    },
+    {
+      "id": "mp-salk",
+      "fact": "Jonas Salk (1955): injectable (killed) polio vaccine.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Jonas Salk",
+        "1955"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-52"
+      ]
+    },
+    {
+      "id": "mp-lister",
+      "fact": "Joseph Lister: antiseptic surgery (carbolic acid).",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Lister",
+        "antiseptic"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-53"
+      ]
+    },
+    {
+      "id": "mp-barnard",
+      "fact": "Christiaan Barnard (1967): first human heart transplant.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Barnard",
+        "heart transplant"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-54"
+      ]
+    },
+    {
+      "id": "mp-ivf",
+      "fact": "Louise Brown (1978): world's first IVF (test-tube) baby; India's first — Durga (Kanupriya Agarwal), 1978.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Louise Brown",
+        "IVF"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-55"
+      ]
+    },
+    {
+      "id": "aph-uddanam",
+      "fact": "Uddanam nephropathy: chronic kidney disease of unknown cause in the Uddanam region, Srikakulam district.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Uddanam",
+        "Srikakulam"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-57"
+      ]
+    },
+    {
+      "id": "aph-palasa",
+      "fact": "Palasa kidney centre: government Kidney Research Centre and Super-Speciality Hospital at Palasa (Srikakulam), opened 2023.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Palasa",
+        "Kidney"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-57"
+      ]
+    },
+    {
+      "id": "aph-aiims",
+      "fact": "AIIMS Mangalagiri: Andhra Pradesh's AIIMS, in Guntur district.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "AIIMS",
+        "Mangalagiri"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-mcq-57"
+      ]
+    },
+    {
+      "id": "aph-emri",
+      "fact": "EMRI (2005): started the 108 ambulance service in undivided Andhra Pradesh.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "EMRI",
+        "2005"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-56",
+        "sci-health-diseases-mcq-58"
+      ]
+    },
+    {
+      "id": "aph-fluoro-dist",
+      "fact": "Fluorosis districts: Prakasam and Rayalaseema districts (high-fluoride groundwater).",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "Prakasam",
+        "Rayalaseema"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-57",
+        "sci-health-diseases-mcq-59"
+      ]
+    },
+    {
+      "id": "aph-ntr-cr",
+      "fact": "Dr NTR Vaidya Seva budget (2026-27): about ₹4,000 crore to the Dr NTR Vaidya Seva Trust.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "ap",
+        "pyq"
+      ],
+      "keys": [
+        "4,000",
+        "Trust"
+      ],
+      "taughtIn": "sci-health-diseases-note-diagnostics-discoveries-ap",
+      "drilledBy": [
+        "sci-health-diseases-card-58"
+      ]
+    }
+  ]
+}
