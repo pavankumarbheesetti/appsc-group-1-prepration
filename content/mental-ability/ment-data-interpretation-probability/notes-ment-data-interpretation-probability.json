@@ -86,6 +86,51 @@
       ],
       "source": "UPSC CSE (CSAT) 2015-2016 patterns (via UPSCprep); local APPSC Quantitative Reasoning PDFs",
       "verified": true
+    },
+    {
+      "id": "ment-data-interpretation-probability-note-di-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-data-interpretation-probability",
+      "title": "More DI methods: shares, percentage points, units, newer chart types, quantity comparison",
+      "body": "### More DI methods: shares, percentage points, units, newer chart types, quantity comparison\n\n**The idea in one sentence**\nEvery DI question is one of four sums — a share of a total, a change from an old value, a ratio between two values, or an average — read off a table or picture.\n\n**Do it the slow way first (no formula)**\nIn a pie chart of a ₹50,000 budget, the \"Travel\" slice has a central angle of 72°. The whole circle (360°) is the whole budget, so 72° is 72 ÷ 360 = 1/5 of it. One fifth of ₹50,000 is **₹10,000**. (Equally: 72° ÷ 3.6 = 20%.)\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| share % | part ÷ total × 100 |\n| percentage points | plain difference of two percentages |\n| per cent change | (new − old) ÷ old × 100 |\n| base | the value you divide by (\"than whom?\") |\n\n**The formula (now that you know what it does)**\n| Situation | Method | Example |\n|---|---|---|\n| share of a total | part ÷ total × 100 | 120 of 480 → 25% |\n| pie: value from a percentage | share% ÷ 100 × total | 12.5% of ₹80,000 → ₹10,000 |\n| pie: value from an angle | angle ÷ 360 × total; 1% = 3.6° | 72° of ₹50,000 → ₹10,000 |\n| \"A is x% more than B\" | B is x ÷ (100 + x) × 100 % less than A | 25% more → B is 20% less |\n| percentage points vs per cent | 8% → 10% is +2 percentage points but a 25% rise | — |\n| units | 1 crore = 100 lakh; 1 lakh = 100 thousand — convert before comparing | 2.5 crore = 250 lakh |\n| weighted marks | Σ(questions in a section × % correct) | 20 at 60% + 30 at 50% = 27 of 50 = 54% |\n| periodic events | they coincide every LCM of the periods | buses every 12 and 18 min → together every 36 min |\n| scatter plot | points rising left to right = positive correlation, falling = negative, no pattern = none | hours studied vs marks → positive |\n| bubble chart | x, y and the bubble SIZE carry three variables | — |\n| candlestick | body from open to close; green/white = close > open (price rose); wicks show high and low | — |\n| funnel chart | stages narrow top to bottom; the drop between stages is the loss/conversion | — |\n| radar chart | each spoke is one parameter; distance from the centre = score | — |\n| quantity comparison | compute both quantities; if one quantity has two values on both sides of the other (x² = 9 → x = ±3 vs 2), no relation can be established | — |\n\n**Exam-level example**\nUnemployment rose from 8% to 10%. It rose by **2 percentage points**, which is a **25%** increase on the old rate (2 ÷ 8 × 100).\n\n**Common traps**\n- Dividing by the new value (or the wrong base) in \"% more / % less\".\n- Mixing lakh and crore in one comparison.\n- Taking the biggest absolute rise as the biggest percentage rise.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| part ÷ total × 100 | share |\n| angle ÷ 3.6 | pie angle → % |\n| x ÷ (100 + x) | \"% less\" from \"% more\" |\n| LCM of periods | when events coincide |",
+      "keyPoints": [
+        "Share % = part ÷ total × 100",
+        "Pie: value = angle ÷ 360 × total; 1% = 3.6°",
+        "If A is x% more than B, B is x ÷ (100 + x) × 100 % less than A",
+        "A rise from 8% to 10% is 2 percentage points but a 25% increase",
+        "Convert units first: 1 crore = 100 lakh",
+        "Scatter: rising points → positive correlation; bubble size is a third variable; candlestick green body → close > open",
+        "Quantity comparison: if a quantity has two values on both sides of the other, no relation can be established"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
+      "verified": true,
+      "tags": [
+        "di-probability",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-data-interpretation-probability",
+      "title": "More counting and probability rules: sum/product rules, together-as-one, necklaces, odds, independence",
+      "body": "### More counting and probability rules: sum/product rules, together-as-one, necklaces, odds, independence\n\n**The idea in one sentence**\nCount the ways (with OR = add, AND = multiply), then probability is just favourable ways ÷ all ways.\n\n**Do it the slow way first (no formula)**\nFive friends A, B, C, D, E stand in a row, and A and B insist on standing together. Tie A and B into one \"bundle\". Now arrange 4 items (bundle, C, D, E): 4! = 24 ways. Inside the bundle A and B can stand AB or BA: 2 ways. Total = 24 × 2 = **48**.\n\n**What the symbols mean**\n| Symbol | Plain words |\n|---|---|\n| n! | n × (n − 1) × … × 1 |\n| nPr | ordered picks of r from n = n! ÷ (n − r)! |\n| nCr | unordered picks of r from n = n! ÷ [r!(n − r)!] |\n| P(A ∩ B) | A and B both happen |\n| P(A ∪ B) | A or B (or both) happens |\n\n**The formula (now that you know what it does)**\n| Rule | Method | Example |\n|---|---|---|\n| sum rule (OR) | m + n ways when the tasks cannot both be done | 5 buses or 3 trains → 8 ways |\n| product rule (AND) | m × n ways for stage 1 then stage 2 | 10 gates, enter and leave by a different gate → 10 × 9 = 90 |\n| nPr | order matters | president and secretary from 7 → 7P2 = 42 |\n| nCr = nC(n − r) | choosing r is the same as leaving out n − r | 10C8 = 10C2 = 45 |\n| handshakes | each pair once → nC2 | 10 people → 45 |\n| condition \"X only if Y\" | split into cases (with Y / without Y) and add | 2 of 5 subjects, Maths-II only if Maths-I → 1 + 6 = 7 |\n| digits | repetition allowed nʳ, not allowed nPr | 3-digit numbers from 1–5 → 125 or 60 |\n| items together | tie them as one unit, then × internal arrangements | vowels of MOTHER together → 5! × 2! = 240 |\n| repeated letters | n! ÷ (p! q! …) | BANANA → 6! ÷ (3! 2!) = 60 |\n| circle | (n − 1)! | 5 people → 24 |\n| necklace / garland (can be flipped) | (n − 1)! ÷ 2 | 6 beads → 60 |\n| coins | n coins give 2ⁿ outcomes | 3 coins, exactly two heads → 3/8 |\n| complement | P(not E) = 1 − P(E); 0 ≤ P ≤ 1 (0 impossible, 1 sure) | P(rain) 0.3 → 0.7 |\n| odds in favour a : b | P = a ÷ (a + b) | 3 : 5 → 3/8 |\n| mutually exclusive | cannot happen together: P(A ∪ B) = P(A) + P(B) | red card or club → 26/52 + 13/52 = 3/4 |\n| independent | one does not affect the other: P(A ∩ B) = P(A) × P(B) | head and a six → 1/2 × 1/6 = 1/12 |\n| two independent tries, at least one | 1 − P(both fail) | hit chances 0.6 and 0.5 → 1 − 0.4 × 0.5 = 0.8 |\n| without replacement | the second fraction loses one from top and bottom | two aces → 4/52 × 3/51 = 1/221 |\n| at least one six in two throws | 1 − (5/6)² | 11/36 |\n\n**Exam-level example**\nA bag has 5 white and 3 black balls; two are drawn together. P(one of each colour) = (5C1 × 3C1) ÷ 8C2 = 15 ÷ 28.\n\n**Common traps**\n- Adding probabilities of events that CAN happen together (use the addition rule with the overlap).\n- Multiplying probabilities of events that are NOT independent without adjusting the second one.\n- Using (n − 1)! for a necklace — it can be turned over, so halve it.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| OR → add, AND → multiply | counting rules |\n| bundle then × inside | \"together\" problems |\n| (n − 1)!/2 | necklace |\n| a/(a + b) | odds to probability |\n| P(A)P(B) | independent events |",
+      "keyPoints": [
+        "Sum rule: m + n ways when only one task is done; product rule: m × n for successive stages",
+        "nCr = nC(n − r); handshakes among n people = nC2",
+        "Digits with repetition allowed: nʳ; without: nPr",
+        "Items that must be together: treat them as one unit, then multiply by their internal arrangements",
+        "Necklace / garland of n distinct beads: (n − 1)! ÷ 2",
+        "n coins give 2ⁿ outcomes",
+        "Odds in favour a : b → P = a ÷ (a + b); P(not E) = 1 − P(E)",
+        "Mutually exclusive: P(A ∪ B) = P(A) + P(B); independent: P(A ∩ B) = P(A) × P(B)"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
+      "verified": true,
+      "tags": [
+        "di-probability",
+        "completeness"
+      ]
     }
   ]
 }

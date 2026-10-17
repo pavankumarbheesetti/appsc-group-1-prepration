@@ -1,0 +1,842 @@
+{
+  "version": 1,
+  "subtopicId": "ment-time-work-distance",
+  "facts": [
+    {
+      "id": "tw-rate",
+      "fact": "Rate of work = 1 ÷ days taken alone; work done = rate × time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "day"
+      ],
+      "taughtIn": "ment-time-work-distance-note-time-work-method",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-1",
+        "ment-time-work-distance-card-1",
+        "ment-time-work-distance-mcq-30"
+      ]
+    },
+    {
+      "id": "tw-lcm",
+      "fact": "Units method: take the job as the LCM of the days so each rate is a whole number of units.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "units"
+      ],
+      "taughtIn": "ment-time-work-distance-note-time-work-method",
+      "drilledBy": [
+        "ment-time-work-distance-card-1",
+        "ment-time-work-distance-mcq-30",
+        "ment-time-work-distance-mcq-31"
+      ]
+    },
+    {
+      "id": "tw-together",
+      "fact": "Two workers together take ab ÷ (a + b) days — never add the days.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "together"
+      ],
+      "taughtIn": "ment-time-work-distance-note-time-work-method",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-4",
+        "ment-time-work-distance-card-2",
+        "ment-time-work-distance-mcq-31",
+        "ment-time-work-distance-mcq-32",
+        "ment-time-work-distance-mcq-37",
+        "ment-time-work-distance-mcq-48"
+      ]
+    },
+    {
+      "id": "tw-three",
+      "fact": "Three workers together: add the three rates 1/a + 1/b + 1/c and invert.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "together"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-20",
+        "ment-time-work-distance-mcq-31"
+      ]
+    },
+    {
+      "id": "tw-k-times",
+      "fact": "k times as efficient: rate ratio k : 1, so days ratio 1 : k.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "efficient"
+      ],
+      "taughtIn": "ment-time-work-distance-note-time-work-method",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-6",
+        "ment-time-work-distance-card-3",
+        "ment-time-work-distance-mcq-32"
+      ]
+    },
+    {
+      "id": "tw-pct-eff",
+      "fact": "x% more efficient: days ratio = 100 : (100 + x).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "efficient"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-27",
+        "ment-time-work-distance-mcq-33"
+      ]
+    },
+    {
+      "id": "tw-leave",
+      "fact": "A worker who leaves after x days: subtract the joint work of x days, then the rest is done by the others.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "leaves"
+      ],
+      "taughtIn": "ment-time-work-distance-note-time-work-method",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-5",
+        "ment-time-work-distance-mcq-35"
+      ]
+    },
+    {
+      "id": "tw-leave-end",
+      "fact": "A worker who leaves d days before the end works (t − d) days in the equation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "before"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-34",
+        "ment-time-work-distance-mcq-35"
+      ]
+    },
+    {
+      "id": "tw-pair-sums",
+      "fact": "From A + B, B + C, C + A times: add the three pair rates and halve to get A + B + C.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "c and a"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-36"
+      ]
+    },
+    {
+      "id": "tw-fraction",
+      "fact": "Part of a job done in some days: full time = days ÷ part; remaining work = 1 − part done.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "of the work"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-37"
+      ]
+    },
+    {
+      "id": "tw-alternate",
+      "fact": "Alternate days: add one full cycle first, fit whole cycles, then finish the leftover in turn.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "alternate"
+      ],
+      "taughtIn": "ment-time-work-distance-note-alternate-days",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-7",
+        "ment-time-work-distance-mcq-38",
+        "ment-time-work-distance-mcq-39"
+      ]
+    },
+    {
+      "id": "tw-alt-start",
+      "fact": "In alternate-day work the person who starts changes the final part-day (and the total time).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "starting"
+      ],
+      "taughtIn": "ment-time-work-distance-note-alternate-days",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-38",
+        "ment-time-work-distance-mcq-39"
+      ]
+    },
+    {
+      "id": "tw-wages",
+      "fact": "Wages are shared in the ratio of work done (efficiency × days); the faster worker earns more.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "wages"
+      ],
+      "taughtIn": "ment-time-work-distance-note-wages-mandays",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-8",
+        "ment-time-work-distance-mcq-40",
+        "ment-time-work-distance-mcq-41"
+      ]
+    },
+    {
+      "id": "tw-wages-third",
+      "fact": "A helper's wages = (1 − parts done by the others) × total pay.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "source-text"
+      ],
+      "keys": [
+        "wages"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-40"
+      ]
+    },
+    {
+      "id": "tw-mdh",
+      "fact": "M₁D₁H₁/W₁ = M₂D₂H₂/W₂ for the same kind of work.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "men"
+      ],
+      "taughtIn": "ment-time-work-distance-note-wages-mandays",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-11",
+        "ment-time-work-distance-mcq-22",
+        "ment-time-work-distance-card-4",
+        "ment-time-work-distance-mcq-42"
+      ]
+    },
+    {
+      "id": "tw-man-hours",
+      "fact": "Man-hours: total work = men × hours (all equally efficient).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "man-hours"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-card-12",
+        "ment-time-work-distance-mcq-43"
+      ]
+    },
+    {
+      "id": "tw-equivalence",
+      "fact": "Convert men, women and boys into one unit through the given equivalence before using workers × days.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "women"
+      ],
+      "taughtIn": "ment-time-work-distance-note-worker-equivalence",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-28",
+        "ment-time-work-distance-mcq-29",
+        "ment-time-work-distance-card-5"
+      ]
+    },
+    {
+      "id": "pc-sign",
+      "fact": "Pipes: inlet rate +, outlet or leak rate −; fill time = 1 ÷ net rate.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "empt"
+      ],
+      "taughtIn": "ment-time-work-distance-note-pipes-cistern",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-10",
+        "ment-time-work-distance-mcq-21",
+        "ment-time-work-distance-mcq-44",
+        "ment-time-work-distance-mcq-46"
+      ]
+    },
+    {
+      "id": "pc-two-inlets",
+      "fact": "Two inlets together fill in ab ÷ (a + b) hours.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "pipe"
+      ],
+      "taughtIn": "ment-time-work-distance-note-pipes-cistern",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-9",
+        "ment-time-work-distance-mcq-48"
+      ]
+    },
+    {
+      "id": "pc-leak",
+      "fact": "A leak alone empties the tank in ab ÷ (b − a) hours (a = normal fill time, b = fill time with the leak).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "leak"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-44",
+        "ment-time-work-distance-mcq-45"
+      ]
+    },
+    {
+      "id": "pc-outlet-faster",
+      "fact": "If the outlet is faster than the inlet, the net rate is negative: a full tank empties and an empty one never fills.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "outlet"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-46"
+      ]
+    },
+    {
+      "id": "pc-missing-pipe",
+      "fact": "Missing pipe's rate = together rate − the known pipes' rates.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "third"
+      ],
+      "taughtIn": "ment-time-work-distance-note-work-pipes-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-47"
+      ]
+    },
+    {
+      "id": "sd-basic",
+      "fact": "Speed = distance ÷ time; distance = speed × time.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "km"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-49",
+        "ment-time-work-distance-mcq-50"
+      ]
+    },
+    {
+      "id": "sd-convert",
+      "fact": "km/h → m/s multiply by 5/18; m/s → km/h multiply by 18/5.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "km/h"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-2",
+        "ment-time-work-distance-card-7",
+        "ment-time-work-distance-mcq-49",
+        "ment-time-work-distance-mcq-51",
+        "ment-time-work-distance-mcq-58"
+      ]
+    },
+    {
+      "id": "sd-inverse",
+      "fact": "With distance fixed, speed and time are inversely proportional (3/4 speed → 4/3 time).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "usual"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-52"
+      ]
+    },
+    {
+      "id": "sd-avg-dist",
+      "fact": "Equal distances at x and y: average speed = 2xy ÷ (x + y), not (x + y) ÷ 2.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "average speed"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-12",
+        "ment-time-work-distance-card-7",
+        "ment-time-work-distance-mcq-53",
+        "ment-time-work-distance-mcq-54"
+      ]
+    },
+    {
+      "id": "sd-avg-time",
+      "fact": "Equal times at x and y: average speed = (x + y) ÷ 2.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "hour"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-54"
+      ]
+    },
+    {
+      "id": "sd-late-early",
+      "fact": "Late/early: d/v₁ − d/v₂ = total time gap (late + early) in hours.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "late"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-19",
+        "ment-time-work-distance-mcq-55"
+      ]
+    },
+    {
+      "id": "sd-relative",
+      "fact": "Relative speed: same direction = difference, opposite directions = sum.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "direction"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-15",
+        "ment-time-work-distance-card-8",
+        "ment-time-work-distance-mcq-57",
+        "ment-time-work-distance-mcq-60"
+      ]
+    },
+    {
+      "id": "sd-meet",
+      "fact": "Two bodies approaching each other meet after gap ÷ (sum of speeds).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "towards"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-56"
+      ]
+    },
+    {
+      "id": "sd-chase",
+      "fact": "Chase: time to catch = lead ÷ (difference of speeds); a late start first creates the lead.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "catch"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-24",
+        "ment-time-work-distance-mcq-57"
+      ]
+    },
+    {
+      "id": "tr-pole",
+      "fact": "A train passes a pole/person in train length ÷ speed.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "pole"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-23",
+        "ment-time-work-distance-card-9",
+        "ment-time-work-distance-mcq-58",
+        "ment-time-work-distance-mcq-59"
+      ]
+    },
+    {
+      "id": "tr-platform",
+      "fact": "A train crosses a platform/bridge covering (train + platform) length.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "platform"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-13",
+        "ment-time-work-distance-mcq-23",
+        "ment-time-work-distance-card-9",
+        "ment-time-work-distance-mcq-59"
+      ]
+    },
+    {
+      "id": "tr-two-trains",
+      "fact": "Two trains cross each other in (L₁ + L₂) ÷ relative speed.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "trains"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-14",
+        "ment-time-work-distance-mcq-60"
+      ]
+    },
+    {
+      "id": "tr-person",
+      "fact": "A train passing a moving person: train length ÷ relative speed (difference same way, sum opposite).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "man"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-15",
+        "ment-time-work-distance-mcq-61"
+      ]
+    },
+    {
+      "id": "tr-two-crossings",
+      "fact": "From a pole time and a platform time: L/t₁ = (L + P)/t₂ gives the length and the speed.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "pole"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-distance-trains",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-23",
+        "ment-time-work-distance-mcq-62"
+      ]
+    },
+    {
+      "id": "bs-down-up",
+      "fact": "Downstream speed = B + S; upstream speed = B − S.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "upstream"
+      ],
+      "taughtIn": "ment-time-work-distance-note-boats-races",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-3",
+        "ment-time-work-distance-mcq-17",
+        "ment-time-work-distance-card-10",
+        "ment-time-work-distance-mcq-63",
+        "ment-time-work-distance-mcq-64"
+      ]
+    },
+    {
+      "id": "bs-recover",
+      "fact": "Boat speed = (down + up) ÷ 2; stream speed = (down − up) ÷ 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "still water"
+      ],
+      "taughtIn": "ment-time-work-distance-note-boats-races",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-16",
+        "ment-time-work-distance-mcq-25"
+      ]
+    },
+    {
+      "id": "bs-round-trip",
+      "fact": "Boat round trip in T hours: distance = T(B² − S²) ÷ 2B.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "returns"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-63"
+      ]
+    },
+    {
+      "id": "bs-time-diff",
+      "fact": "Upstream takes T hours more than downstream: distance = T(B² − S²) ÷ 2S.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "more than"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-64"
+      ]
+    },
+    {
+      "id": "rc-beats-d",
+      "fact": "A beats B by d m in an L m race: speed ratio L : (L − d).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "beats"
+      ],
+      "taughtIn": "ment-time-work-distance-note-boats-races",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-18",
+        "ment-time-work-distance-card-11",
+        "ment-time-work-distance-mcq-65"
+      ]
+    },
+    {
+      "id": "rc-beats-t",
+      "fact": "Beats by d m or t s: loser's speed = d ÷ t; winner's time = loser's time − t.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "seconds"
+      ],
+      "taughtIn": "ment-time-work-distance-note-boats-races",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-26",
+        "ment-time-work-distance-mcq-66"
+      ]
+    },
+    {
+      "id": "rc-chain",
+      "fact": "Chain of beats: multiply the speed ratios (100 m and 100 m in 1 km → 190 m, not 200 m).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "beats"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-65"
+      ]
+    },
+    {
+      "id": "rc-head-start",
+      "fact": "A start of x m means the opponent runs L − x; dead-heat start = L − L × (slower ÷ faster).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "start"
+      ],
+      "taughtIn": "ment-time-work-distance-note-boats-races",
+      "drilledBy": [
+        "ment-time-work-distance-mcq-67"
+      ]
+    },
+    {
+      "id": "rc-circular",
+      "fact": "Circular track: first meeting = track ÷ relative speed; all meet at the start after the LCM of lap times.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "track"
+      ],
+      "taughtIn": "ment-time-work-distance-note-speed-races-extras",
+      "drilledBy": [
+        "ment-time-work-distance-card-13",
+        "ment-time-work-distance-mcq-68"
+      ]
+    }
+  ]
+}

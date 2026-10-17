@@ -139,6 +139,30 @@
         "moving-average",
         "time-series"
       ]
+    },
+    {
+      "id": "ment-central-tendency-note-statistics-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "title": "More statistics methods: assumed mean, skewness, variance shortcut, CV, quartile deviation, class intervals",
+      "body": "### More statistics methods: assumed mean, skewness, variance shortcut, CV, quartile deviation, class intervals\n\n**The idea in one sentence**\nEvery measure is either a \"centre\" (mean, median, mode) or a \"spread\" (range, deviation, variance), and each has one shortcut worth knowing.\n\n**Do it the slow way first (no formula)**\nMid-values 15, 25, 35, 45 have frequencies 2, 3, 4, 1. Instead of multiplying big numbers, guess a centre A = 35 and record how far each mid-value is from it: −20, −10, 0, +10. Weighted by frequency these add to −40 − 30 + 0 + 10 = −60 over 10 observations, i.e. −6 on average. So the mean is 35 − 6 = **29** — the same as Σfx ÷ Σf = 290 ÷ 10.\n\n**What the symbols mean**\n| Symbol | Plain words |\n|---|---|\n| A | assumed mean (any convenient guess) |\n| d = x − A | deviation from the guess |\n| u = d ÷ h | step deviation (divide by the class width h) |\n| Q₁, Q₃ | lower and upper quartiles (25% and 75% points) |\n| CV | coefficient of variation |\n| class mark | middle of a class = (lower + upper) ÷ 2 |\n\n**The formula (now that you know what it does)**\n| Measure | Formula / rule | Example |\n|---|---|---|\n| assumed-mean method | x̄ = A + Σfd ÷ Σf; step-deviation x̄ = A + (Σfu ÷ Σf) × h | 35 + (−60 ÷ 10) = 29 |\n| sum of deviations | Σ(x − x̄) = 0 always | — |\n| change of origin and scale | every value multiplied by a and increased by b (y = ax + b) → mean, median and mode all become a × (old) + b | median 20 → 2 × 20 − 3 = 37 |\n| bimodal data | two values tie for the highest frequency | 2, 3, 3, 5, 7, 7, 9 → modes 3 and 7 |\n| symmetric (normal) curve | mean = median = mode | mean 25 → median 25, mode 25 |\n| positive (right) skew | mean > median > mode (long tail to the right) | 40 > 38 > 34 |\n| negative (left) skew | mean < median < mode | — |\n| variance shortcut | σ² = Σx² ÷ n − x̄² | 1 to 5: 55 ÷ 5 − 9 = 2 |\n| first n natural numbers | variance = (n² − 1) ÷ 12 | n = 10 → 8.25 |\n| coefficient of variation | CV = σ ÷ mean × 100; the SMALLER CV is the more consistent series | SD 8, mean 40 → 20% |\n| quartile deviation | QD = (Q₃ − Q₁) ÷ 2; coefficient (Q₃ − Q₁) ÷ (Q₃ + Q₁) | Q₁ 20, Q₃ 50 → 15 and 3/7 |\n| moving averages | a k-period moving average of n values gives n − k + 1 averages | 10 years, 4-year MA → 7 |\n| class mark | (lower limit + upper limit) ÷ 2 | 20–30 → 25 |\n| inclusive → exclusive | subtract 0.5 from lower and add 0.5 to upper limits | 10–19 → 9.5–19.5 |\n| ogives | the less-than and more-than ogives cross at the median | — |\n\n**Exam-level example**\nSeries A: mean 50, SD 5. Series B: mean 40, SD 6. CV(A) = 10%, CV(B) = 15%, so **A is more consistent** (lower CV) even though its mean is higher.\n\n**Common traps**\n- Calling the series with the smaller SD \"more consistent\" when the means differ — compare CVs.\n- Forgetting that adding b shifts the mean, median and mode but leaves the SD unchanged.\n- Treating a symmetric curve's mean = median = mode as a result of the empirical formula — it comes from symmetry.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| A + Σfd/Σf | assumed-mean shortcut |\n| Σx²/n − x̄² | variance shortcut |\n| σ/mean × 100 | CV — lower is steadier |\n| (Q₃ − Q₁)/2 | quartile deviation |\n| n − k + 1 | number of moving averages |",
+      "keyPoints": [
+        "Assumed-mean method: x̄ = A + Σfd ÷ Σf; step deviation multiplies by the class width h",
+        "Deviations from the mean always sum to zero",
+        "Change of origin and scale moves the mean, median and mode alike: new = a × old + b",
+        "Symmetric distribution: mean = median = mode; positive skew: mean > median > mode",
+        "Variance shortcut σ² = Σx² ÷ n − x̄²; first n natural numbers: (n² − 1) ÷ 12",
+        "CV = SD ÷ mean × 100; the smaller CV is the more consistent series",
+        "Quartile deviation = (Q₃ − Q₁) ÷ 2",
+        "Class mark = (lower + upper) ÷ 2; inclusive classes become exclusive by ± 0.5",
+        "Less-than and more-than ogives intersect at the median"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
     }
   ]
 }

@@ -1,0 +1,866 @@
+{
+  "version": 1,
+  "subtopicId": "ment-data-interpretation-probability",
+  "facts": [
+    {
+      "id": "di-pct-change",
+      "fact": "Percentage change = (new − old) ÷ old × 100 — divide by the OLD value.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "percentage"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-4",
+        "ment-data-interpretation-probability-mcq-6",
+        "ment-data-interpretation-probability-mcq-39",
+        "ment-data-interpretation-probability-mcq-49"
+      ]
+    },
+    {
+      "id": "di-share",
+      "fact": "Share % = part ÷ total × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "percentage"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-10",
+        "ment-data-interpretation-probability-mcq-37"
+      ]
+    },
+    {
+      "id": "di-pie-value",
+      "fact": "Pie: amount = share% ÷ 100 × total.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "pie"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-8",
+        "ment-data-interpretation-probability-mcq-35",
+        "ment-data-interpretation-probability-mcq-36"
+      ]
+    },
+    {
+      "id": "di-pie-angle",
+      "fact": "Pie: central angle = share% × 3.6°; value = angle ÷ 360 × total.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "angle"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-24",
+        "ment-data-interpretation-probability-mcq-36"
+      ]
+    },
+    {
+      "id": "di-average",
+      "fact": "Average across categories = sum ÷ number of categories.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "average"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-5",
+        "ment-data-interpretation-probability-mcq-7"
+      ]
+    },
+    {
+      "id": "di-ratio",
+      "fact": "Ratio between two categories: divide and simplify (North : West = 4500 : 2000 = 9 : 4).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-23"
+      ]
+    },
+    {
+      "id": "di-ratio-vs-absolute",
+      "fact": "'Profit as % of revenue' is a ratio, not the largest absolute profit.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "profit"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-9"
+      ]
+    },
+    {
+      "id": "di-absolute-vs-pct",
+      "fact": "The largest absolute increase need not be the largest percentage increase.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "increase"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-25",
+        "ment-data-interpretation-probability-mcq-4",
+        "ment-data-interpretation-probability-mcq-49"
+      ]
+    },
+    {
+      "id": "di-missing",
+      "fact": "Missing table value = total − sum of the known values.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "missing"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-13"
+      ]
+    },
+    {
+      "id": "di-more-than",
+      "fact": "'More than X' is strict: a value exactly X is excluded.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "more than"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-basics",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-12"
+      ]
+    },
+    {
+      "id": "di-pct-less-base",
+      "fact": "'Y is x% less than Z' means Y = Z(1 − x/100); compare on the right base.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "less than"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-pyq-counting-variants",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-34",
+        "ment-data-interpretation-probability-mcq-38"
+      ]
+    },
+    {
+      "id": "di-pct-points",
+      "fact": "A rise from 8% to 10% is 2 percentage points but a 25% increase.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "percentage points"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-39"
+      ]
+    },
+    {
+      "id": "di-units",
+      "fact": "Convert units before comparing (1 crore = 100 lakh).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "lakh"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-40"
+      ]
+    },
+    {
+      "id": "di-weighted-marks",
+      "fact": "Weighted marks = Σ(questions in a section × % correct).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "correct"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-41"
+      ]
+    },
+    {
+      "id": "di-lcm",
+      "fact": "Periodic events coincide every LCM of their periods; count = duration ÷ LCM.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "together"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-pyq-counting-variants",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-31",
+        "ment-data-interpretation-probability-mcq-42"
+      ]
+    },
+    {
+      "id": "di-radar",
+      "fact": "Radar chart: each spoke is one parameter and distance from the centre is the score.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "radar"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-11",
+        "ment-data-interpretation-probability-mcq-47"
+      ]
+    },
+    {
+      "id": "di-scatter",
+      "fact": "Scatter plot: rising points = positive correlation, falling = negative, no pattern = none.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "scatter"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-12",
+        "ment-data-interpretation-probability-mcq-43"
+      ]
+    },
+    {
+      "id": "di-bubble",
+      "fact": "Bubble chart: x, y and the bubble size carry three variables.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "bubble"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-44"
+      ]
+    },
+    {
+      "id": "di-candle",
+      "fact": "Candlestick: body = open to close; green/white body = close > open; wicks = high and low.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "candlestick"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-45"
+      ]
+    },
+    {
+      "id": "di-funnel",
+      "fact": "Funnel chart: stages narrow from top to bottom; the drop between stages is the loss.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "funnel"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-46"
+      ]
+    },
+    {
+      "id": "di-qc",
+      "fact": "Quantity comparison: if one quantity has values on both sides of the other, no relation can be established.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "quantity"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-di-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-48"
+      ]
+    },
+    {
+      "id": "ds-unique",
+      "fact": "A statement is sufficient only if it yields exactly one value.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sufficient"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-data-sufficiency",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-14",
+        "ment-data-interpretation-probability-mcq-50",
+        "ment-data-interpretation-probability-mcq-51"
+      ]
+    },
+    {
+      "id": "ds-alone-first",
+      "fact": "Test statement I alone and II alone before combining them.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "both"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-data-sufficiency",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-15",
+        "ment-data-interpretation-probability-mcq-26",
+        "ment-data-interpretation-probability-mcq-51"
+      ]
+    },
+    {
+      "id": "ds-either",
+      "fact": "'Each (either) statement alone is sufficient' when I and II each give the unique answer.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "either"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-data-sufficiency",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-26",
+        "ment-data-interpretation-probability-mcq-51"
+      ]
+    },
+    {
+      "id": "ds-neither",
+      "fact": "Fifth option: even both statements together are not sufficient.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "together"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-data-sufficiency",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-50"
+      ]
+    },
+    {
+      "id": "pc-sum-rule",
+      "fact": "Sum rule: m + n ways when only one of two tasks is done.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "or"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-52"
+      ]
+    },
+    {
+      "id": "pc-product-rule",
+      "fact": "Product rule: m × n ways for stage 1 followed by stage 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "ways"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-53",
+        "ment-data-interpretation-probability-mcq-54"
+      ]
+    },
+    {
+      "id": "pc-npr",
+      "fact": "Order matters → nPr = n! ÷ (n − r)!.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "ways"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-permutation-combination",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-16",
+        "ment-data-interpretation-probability-mcq-55"
+      ]
+    },
+    {
+      "id": "pc-ncr",
+      "fact": "Order irrelevant (team, committee) → nCr = n! ÷ [r!(n − r)!].",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "committee"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-permutation-combination",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-3",
+        "ment-data-interpretation-probability-mcq-30"
+      ]
+    },
+    {
+      "id": "pc-ncr-sym",
+      "fact": "nCr = nC(n − r) (10C8 = 10C2 = 45).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "10c8"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-56"
+      ]
+    },
+    {
+      "id": "pc-circular",
+      "fact": "n distinct objects in a circle: (n − 1)!.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "circular"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-permutation-combination",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-17",
+        "ment-data-interpretation-probability-mcq-57"
+      ]
+    },
+    {
+      "id": "pc-necklace",
+      "fact": "Necklace/garland (can be flipped): (n − 1)! ÷ 2.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "necklace"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-58"
+      ]
+    },
+    {
+      "id": "pc-repeated",
+      "fact": "Repeated letters: n! ÷ (p! q! …).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "letters"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-permutation-combination",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-27",
+        "ment-data-interpretation-probability-mcq-59"
+      ]
+    },
+    {
+      "id": "pc-together",
+      "fact": "Items that must be together: treat as one unit, then multiply by their internal arrangements.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "together"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-60",
+        "ment-data-interpretation-probability-mcq-61"
+      ]
+    },
+    {
+      "id": "pc-handshakes",
+      "fact": "Handshakes among n people = nC2; opposite-sex pairs m × w; same-sex mC2 + wC2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "hand"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-33",
+        "ment-data-interpretation-probability-mcq-62"
+      ]
+    },
+    {
+      "id": "pc-digits",
+      "fact": "Digits with repetition allowed: nʳ; without repetition: nPr.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "repeat"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-63"
+      ]
+    },
+    {
+      "id": "pc-constraint",
+      "fact": "Constrained selection: split into cases (or subtract the forbidden ones) and add.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "only if"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-32"
+      ]
+    },
+    {
+      "id": "pr-basic",
+      "fact": "P(event) = favourable outcomes ÷ total outcomes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "probability"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-probability",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-2",
+        "ment-data-interpretation-probability-mcq-64",
+        "ment-data-interpretation-probability-mcq-66"
+      ]
+    },
+    {
+      "id": "pr-complement",
+      "fact": "P(not E) = 1 − P(E); 0 ≤ P ≤ 1 (0 impossible, 1 sure).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "probability"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-64",
+        "ment-data-interpretation-probability-mcq-65"
+      ]
+    },
+    {
+      "id": "pr-dice",
+      "fact": "Two dice give 36 equally likely ordered outcomes.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "dice"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-probability",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-19",
+        "ment-data-interpretation-probability-mcq-66"
+      ]
+    },
+    {
+      "id": "pr-cards",
+      "fact": "A pack has 52 cards: 4 suits of 13, 4 of each rank, 12 face cards, 26 red.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "cards"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-probability",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-21",
+        "ment-data-interpretation-probability-mcq-29",
+        "ment-data-interpretation-probability-mcq-68"
+      ]
+    },
+    {
+      "id": "pr-coins",
+      "fact": "n coins give 2ⁿ equally likely outcomes.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "coin"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-28",
+        "ment-data-interpretation-probability-mcq-67"
+      ]
+    },
+    {
+      "id": "pr-balls",
+      "fact": "Drawing balls/members together: favourable combinations ÷ total combinations.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "balls"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-probability",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-20",
+        "ment-data-interpretation-probability-mcq-69"
+      ]
+    },
+    {
+      "id": "pr-addition",
+      "fact": "Addition rule: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "or"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-probability",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-21",
+        "ment-data-interpretation-probability-mcq-70",
+        "ment-data-interpretation-probability-mcq-71"
+      ]
+    },
+    {
+      "id": "pr-mutually-exclusive",
+      "fact": "Mutually exclusive events: P(A ∪ B) = P(A) + P(B).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mutually exclusive"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-71"
+      ]
+    },
+    {
+      "id": "pr-independent",
+      "fact": "Independent events: P(A ∩ B) = P(A) × P(B).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "independent"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-72",
+        "ment-data-interpretation-probability-mcq-73"
+      ]
+    },
+    {
+      "id": "pr-without-replacement",
+      "fact": "Without replacement the second draw has one fewer item in the numerator/denominator.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "without replacement"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-probability",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-22",
+        "ment-data-interpretation-probability-mcq-74"
+      ]
+    },
+    {
+      "id": "pr-at-least",
+      "fact": "At least one = 1 − P(none).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "at least"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-probability",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-28",
+        "ment-data-interpretation-probability-mcq-73",
+        "ment-data-interpretation-probability-mcq-75"
+      ]
+    },
+    {
+      "id": "pr-odds",
+      "fact": "Odds in favour a : b → P = a ÷ (a + b).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "odds"
+      ],
+      "taughtIn": "ment-data-interpretation-probability-note-counting-probability-extras",
+      "drilledBy": [
+        "ment-data-interpretation-probability-mcq-76"
+      ]
+    }
+  ]
+}

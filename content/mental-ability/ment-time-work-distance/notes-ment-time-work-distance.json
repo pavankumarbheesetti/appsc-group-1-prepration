@@ -150,6 +150,51 @@
         "equivalence",
         "man-days"
       ]
+    },
+    {
+      "id": "ment-time-work-distance-note-work-pipes-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "More work and pipe methods: leaving before the end, pair sums, fractions, leaks",
+      "body": "### More work and pipe methods: leaving before the end, pair sums, fractions, leaks\n\n**The idea in one sentence**\nEvery work or pipe question is one equation: (each person's rate × the days that person actually worked) added up = 1 whole job.\n\n**Do it the slow way first (no formula)**\nA can do a job in 20 days and B in 30 days. They start together, but A leaves 5 days before the job is finished. Call the total time t. B works all t days, A works only t − 5 days. So t/30 + (t − 5)/20 = 1. Multiply by 60: 2t + 3t − 15 = 60, so 5t = 75 and **t = 15 days**.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| rate (efficiency) | part of the job done in one day (or one hour) |\n| units | the job written as the LCM of the days, so every rate is a whole number |\n| leaves d days before the end | that person worked (total − d) days |\n| leak | an outlet you did not plan for; its rate is subtracted |\n\n**The formula (now that you know what it does)**\n| Situation | Method | Example |\n|---|---|---|\n| three workers together | add the three rates: 1/a + 1/b + 1/c | 10, 12, 15 days → 60 units, rates 6 + 5 + 4 = 15 → 4 days |\n| x% more efficient | days ratio = 100 : (100 + x) | B takes 30 days, A is 50% more efficient → A takes 30 × 100/150 = 20 days |\n| leaves after x days | x days of work, then the rest by the others | — |\n| leaves d days before the end | that worker gets (t − d) days in the equation | 20 and 30 days, A leaves 5 days before → 15 days |\n| pair sums (A and B, B and C, C and A) | add the three pair rates and halve = A + B + C | 12, 15, 20 days → (5 + 4 + 3)/60 ÷ 2 = 1/10 → 10 days |\n| part of the work done in some days | full time = days ÷ part | 1/4 in 5 days → 20 days |\n| remaining work | 1 − part already done | — |\n| man-hours | total work = men × hours (equal efficiency) | 120 man-hours ÷ 8 hours = 15 men |\n| work size changes | M₁D₁H₁/W₁ = M₂D₂H₂/W₂ | 10 men, 12 days, 8 h for 40 m → 16 men, 6 h for 60 m: 15 days |\n| third worker's wages | their share = (1 − parts done by the others) × total pay | A 6 days, B 8 days, with C finish in 3 days, ₹3200: C did 1 − 3/6 − 3/8 = 1/8 → ₹400 |\n| alternate days, who starts | starting person changes the last part-day | A 6 days, B 9 days: A first → 7 days; B first → 7⅓ days |\n| leak | leak time = ab ÷ (b − a), a = normal fill, b = fill with leak | 6 h normally, 8 h with a leak → leak empties in 24 h |\n| outlet faster than inlet | net rate is negative: a full tank EMPTIES and an empty tank never fills | fill 12 h, empty 8 h → full tank empties in 1 ÷ (1/8 − 1/12) = 24 h |\n| missing third pipe | third rate = together rate − the known rates | together 4 h, others 8 h and 12 h → 1/4 − 1/8 − 1/12 = 1/24 → 24 h |\n\n**Exam-level example**\nA, B and C can do a job in 12, 15 and 20 days. All start together; A leaves after 4 days and B leaves 4 days before the end. With 60 units (rates 5, 4, 3): 4 × 5 + 4(t − 4) + 3t = 60 → 20 + 4t − 16 + 3t = 60 → 7t = 56, so **t = 8 days**.\n\n**Common traps**\n- Giving the leaver all t days.\n- Halving the pair sums for one pair instead of for all three together.\n- Assuming an outlet makes the tank fill slowly when the outlet is actually faster — then it never fills.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| Σ rate × days worked = 1 | the one equation |\n| (t − d) days | leaves d days before the end |\n| half of the pair-sum rates | A + B + C from pairs |\n| ab ÷ (b − a) | time for the leak alone |",
+      "keyPoints": [
+        "Three workers together: add the rates 1/a + 1/b + 1/c (10, 12, 15 days → 4 days)",
+        "x% more efficient: days ratio 100 : (100 + x)",
+        "A worker who leaves d days before the end works (t − d) days in the equation",
+        "Pair sums A + B, B + C, C + A: add the three pair rates and halve to get A + B + C",
+        "Part done in some days: full time = days ÷ part; remaining work = 1 − part done",
+        "Man-hours: total work = men × hours when all are equally efficient",
+        "Leak alone empties in ab ÷ (b − a) hours (a = normal fill time, b = fill time with leak)",
+        "If the outlet is faster than the inlet, a full tank empties and an empty tank never fills"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Basic Concepts of Time & Work, Fractions of Work, Efficiency and Work Comparison, Alternate Days Work, Work and Wages, Man-Hours Concept, MDH Concept, Pipes and Cistern, Basic Speed Time and Distance, Average Speed, Relative speed, Problem on train, Boat and Stream, Race); standard arithmetic references; PYQ bank .research/pyq-bank/ment-time-work-distance.md",
+      "verified": true,
+      "tags": [
+        "time-work-distance",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-time-work-distance-note-speed-races-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-time-work-distance",
+      "title": "More speed methods: proportional speed, equal-time average, meeting, races on a track",
+      "body": "### More speed methods: proportional speed, equal-time average, meeting, races on a track\n\n**The idea in one sentence**\nDistance = speed × time; when one of the three is fixed, the other two are either proportional or inversely proportional.\n\n**Do it the slow way first (no formula)**\nWalking at 3/4 of his usual speed, a man is 20 minutes late. Same distance, so time goes up in the inverse ratio: new time = 4/3 of the usual time. The extra 1/3 of the usual time is 20 minutes, so the usual time is **60 minutes**.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| speed (S) | distance ÷ time |\n| 5/18 | turns km/h into m/s (1000 m ÷ 3600 s) |\n| 18/5 | turns m/s into km/h |\n| B, S (boats) | boat speed in still water, stream speed |\n| dead heat | both runners finish together |\n\n**The formula (now that you know what it does)**\n| Situation | Method | Example |\n|---|---|---|\n| basic | speed = distance ÷ time; distance = speed × time | 18 km in 1.5 h = 12 km/h = 10/3 m/s |\n| m/s to km/h | × 18/5 | 15 m/s = 54 km/h |\n| distance fixed | speed and time are inversely proportional | 3/4 speed → 4/3 time |\n| equal TIMES at x and y | average speed = (x + y) ÷ 2 | 1 h at 40 and 1 h at 60 → 50 km/h |\n| equal DISTANCES at x and y | average speed = 2xy ÷ (x + y) | 30 up and 20 down → 24 km/h |\n| late and early | d/v₁ − d/v₂ = total time gap | 10 min late at 40, 5 min early at 50 → 50 km |\n| meeting head-on | time = gap ÷ (sum of speeds) | 360 km apart at 50 and 40 → 4 h |\n| chase after a late start | lead = slow speed × head-start time; time = lead ÷ (difference) | thief 40 km/h, police 2 h later at 60 → 80 ÷ 20 = 4 h |\n| train passes a pole | time = train length ÷ speed | 180 m at 54 km/h (15 m/s) → 12 s |\n| two trains, same direction | (L₁ + L₂) ÷ (difference of speeds) | 200 m and 150 m at 72 and 54 → 350 ÷ 5 = 70 s |\n| train and a man walking towards it | train length ÷ (sum of speeds) | 150 m at 80, man at 10 → 150 ÷ 25 = 6 s |\n| boat goes and returns (round trip) in T hours | distance = T(B² − S²) ÷ 2B | B 10, S 2, T 5 → 24 km |\n| upstream takes T hours more than downstream | distance = T(B² − S²) ÷ 2S | B 6, S 2, T 2 → 16 km |\n| chain of beats | multiply the speed ratios | A beats B and B beats C by 100 m in 1 km → A beats C by 190 m, not 200 m |\n| head start for a dead heat | start = L − L × (slower ÷ faster) | A 1.25 times as fast, 100 m race → 20 m start |\n| circular track, first meeting | track ÷ relative speed (same direction: difference; opposite: sum) | 1200 m at 2 and 4 m/s → 600 s same way, 200 s opposite |\n| all meet again at the start | LCM of the lap times | laps of 30 s and 45 s → 90 s |\n\n**Exam-level example**\nIn a 100 m race A beats B by 10 m or 2 seconds. B covers those 10 m in 2 s, so B's speed is 5 m/s and B's time is 100 ÷ 5 = 20 s. A finishes 2 s earlier, in **18 s**.\n\n**Common traps**\n- Using (x + y) ÷ 2 when the DISTANCES are equal (that is only for equal times).\n- Subtracting 100 + 100 for a chain of beats.\n- Forgetting the head start the thief built up before the chase began.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| (x + y) ÷ 2 | equal times |\n| 2xy ÷ (x + y) | equal distances |\n| gap ÷ (sum) | meeting head-on |\n| T(B² − S²) ÷ 2B | boat round trip |\n| LCM of lap times | meet at the starting point |",
+      "keyPoints": [
+        "Speed = distance ÷ time; m/s to km/h: multiply by 18/5",
+        "Distance fixed: speed and time are inversely proportional (3/4 speed → 4/3 time)",
+        "Equal times at x and y: average speed = (x + y) ÷ 2; equal distances: 2xy ÷ (x + y)",
+        "Meeting head-on: time = gap ÷ (sum of speeds)",
+        "Boat round trip in T hours: distance = T(B² − S²) ÷ 2B; upstream T hours longer: T(B² − S²) ÷ 2S",
+        "Chain of beats: multiply the speed ratios (100 m and 100 m in 1 km → 190 m)",
+        "Circular track: first meeting = track ÷ relative speed; all meet at the start after the LCM of lap times"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Basic Concepts of Time & Work, Fractions of Work, Efficiency and Work Comparison, Alternate Days Work, Work and Wages, Man-Hours Concept, MDH Concept, Pipes and Cistern, Basic Speed Time and Distance, Average Speed, Relative speed, Problem on train, Boat and Stream, Race); standard arithmetic references; PYQ bank .research/pyq-bank/ment-time-work-distance.md",
+      "verified": true,
+      "tags": [
+        "time-work-distance",
+        "completeness"
+      ]
     }
   ]
 }

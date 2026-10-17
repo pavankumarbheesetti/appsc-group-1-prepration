@@ -1,0 +1,778 @@
+{
+  "version": 1,
+  "subtopicId": "ment-mensuration",
+  "facts": [
+    {
+      "id": "m-rect",
+      "fact": "Rectangle: area l × b, perimeter 2(l + b), diagonal √(l² + b²).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "rectangle"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-1",
+        "ment-mensuration-mcq-28",
+        "ment-mensuration-mcq-29"
+      ]
+    },
+    {
+      "id": "m-square",
+      "fact": "Square: area a² = d² ÷ 2, diagonal a√2, perimeter 4a.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "diagonal"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-30",
+        "ment-mensuration-mcq-31"
+      ]
+    },
+    {
+      "id": "m-tri-bh",
+      "fact": "Triangle area = ½ × base × height.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "height"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-32",
+        "ment-mensuration-mcq-37"
+      ]
+    },
+    {
+      "id": "m-heron",
+      "fact": "Heron's formula: area = √[s(s − a)(s − b)(s − c)], s = (a + b + c) ÷ 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sides"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-4",
+        "ment-mensuration-card-1",
+        "ment-mensuration-mcq-33"
+      ]
+    },
+    {
+      "id": "m-right-tri",
+      "fact": "Right triangle: hypotenuse² = sum of the squares of the legs (find the missing side, then the perimeter).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "right"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-34"
+      ]
+    },
+    {
+      "id": "m-equi",
+      "fact": "Equilateral triangle: area (√3 ÷ 4)a², height (√3 ÷ 2)a.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "equilateral"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-18",
+        "ment-mensuration-card-3",
+        "ment-mensuration-mcq-35"
+      ]
+    },
+    {
+      "id": "m-isosceles",
+      "fact": "Isosceles triangle (equal sides a, base b): area = (b ÷ 4)√(4a² − b²).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "isosceles"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-36"
+      ]
+    },
+    {
+      "id": "m-parallelogram",
+      "fact": "Parallelogram: area = base × perpendicular height; perimeter = 2(a + b).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "parallelogram"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-37",
+        "ment-mensuration-mcq-38"
+      ]
+    },
+    {
+      "id": "m-trapezium",
+      "fact": "Trapezium area = ½ × (sum of parallel sides) × height.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "parallel sides"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-5",
+        "ment-mensuration-mcq-39"
+      ]
+    },
+    {
+      "id": "m-rhombus",
+      "fact": "Rhombus: area = ½ d₁d₂; side = √((d₁/2)² + (d₂/2)²) because diagonals bisect at right angles.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "rhombus"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-19",
+        "ment-mensuration-mcq-40"
+      ]
+    },
+    {
+      "id": "m-circle",
+      "fact": "Circle: area πr², circumference 2πr (use π = 22/7 when r is a multiple of 7).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "circle"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-3",
+        "ment-mensuration-card-2",
+        "ment-mensuration-mcq-41"
+      ]
+    },
+    {
+      "id": "m-semicircle",
+      "fact": "Semicircle: area πr² ÷ 2, perimeter πr + 2r (curve plus diameter).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "semicircle"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-42"
+      ]
+    },
+    {
+      "id": "m-ring",
+      "fact": "Ring (annulus) area = π(R² − r²).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "ring"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-20",
+        "ment-mensuration-card-2"
+      ]
+    },
+    {
+      "id": "m-sector",
+      "fact": "Sector: area (θ ÷ 360)πr², arc length (θ ÷ 360) × 2πr.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sector"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-6",
+        "ment-mensuration-card-2",
+        "ment-mensuration-mcq-43"
+      ]
+    },
+    {
+      "id": "m-hexagon",
+      "fact": "Regular hexagon of side a = six equilateral triangles: area (3√3 ÷ 2)a².",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "hexagon"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-44"
+      ]
+    },
+    {
+      "id": "m-path",
+      "fact": "Path outside: (l + 2w)(b + 2w) − lb; inside: lb − (l − 2w)(b − 2w).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "path"
+      ],
+      "taughtIn": "ment-mensuration-note-2d-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-23",
+        "ment-mensuration-mcq-45"
+      ]
+    },
+    {
+      "id": "m-roads",
+      "fact": "Two crossing roads of width w through the middle: area w(l + b − w) (crossing counted once).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "roads"
+      ],
+      "taughtIn": "ment-mensuration-note-mensuration-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-46"
+      ]
+    },
+    {
+      "id": "m-tiles",
+      "fact": "Number of tiles = floor area ÷ area of one tile (same units).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "tiles"
+      ],
+      "taughtIn": "ment-mensuration-note-scaling",
+      "drilledBy": [
+        "ment-mensuration-mcq-24",
+        "ment-mensuration-mcq-47"
+      ]
+    },
+    {
+      "id": "s-cube",
+      "fact": "Cube: volume a³, TSA 6a², LSA 4a², diagonal a√3.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "cube"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-2",
+        "ment-mensuration-card-7",
+        "ment-mensuration-mcq-48"
+      ]
+    },
+    {
+      "id": "s-cuboid",
+      "fact": "Cuboid: volume lbh, TSA 2(lb + bh + hl), four walls 2h(l + b), diagonal √(l² + b² + h²).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "cuboid"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-7",
+        "ment-mensuration-card-7",
+        "ment-mensuration-mcq-49",
+        "ment-mensuration-mcq-50"
+      ]
+    },
+    {
+      "id": "s-cylinder",
+      "fact": "Cylinder: volume πr²h, CSA 2πrh, TSA 2πr(r + h).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "cylinder"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-8",
+        "ment-mensuration-card-4",
+        "ment-mensuration-mcq-51"
+      ]
+    },
+    {
+      "id": "s-hollow-cyl",
+      "fact": "Hollow cylinder (pipe) volume = πh(R² − r²).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "pipe"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-52"
+      ]
+    },
+    {
+      "id": "s-cone",
+      "fact": "Cone: volume ⅓πr²h, slant l = √(r² + h²), CSA πrl, TSA πr(r + l).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "cone"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-9",
+        "ment-mensuration-card-5",
+        "ment-mensuration-mcq-53",
+        "ment-mensuration-mcq-61"
+      ]
+    },
+    {
+      "id": "s-sphere",
+      "fact": "Sphere: volume (4/3)πr³, surface 4πr².",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sphere"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-10",
+        "ment-mensuration-card-6",
+        "ment-mensuration-mcq-54"
+      ]
+    },
+    {
+      "id": "s-hemisphere",
+      "fact": "Hemisphere: volume (2/3)πr³, curved 2πr², solid TSA 3πr².",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "hemisphere"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-11",
+        "ment-mensuration-card-6",
+        "ment-mensuration-mcq-55",
+        "ment-mensuration-mcq-71"
+      ]
+    },
+    {
+      "id": "s-frustum",
+      "fact": "Frustum: volume ⅓πh(R² + Rr + r²); CSA π(R + r)l with l = √(h² + (R − r)²).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "frustum"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-12",
+        "ment-mensuration-mcq-56"
+      ]
+    },
+    {
+      "id": "s-prism",
+      "fact": "Right prism: volume = base area × height; LSA = base perimeter × height; TSA = 2 × base + LSA.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "prism"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-13",
+        "ment-mensuration-mcq-57"
+      ]
+    },
+    {
+      "id": "s-pyramid",
+      "fact": "Pyramid: volume ⅓ × base area × height; LSA = ½ × base perimeter × slant height.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "pyramid"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-14",
+        "ment-mensuration-mcq-58"
+      ]
+    },
+    {
+      "id": "s-tetra",
+      "fact": "Regular tetrahedron of edge a: TSA √3a² (four equilateral faces), volume a³ ÷ (6√2).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "tetrahedron"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-59"
+      ]
+    },
+    {
+      "id": "s-litres",
+      "fact": "1 m³ = 1000 litres; 1 litre = 1000 cm³.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "litres"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-22",
+        "ment-mensuration-mcq-60"
+      ]
+    },
+    {
+      "id": "c-combined",
+      "fact": "Combined solid volume = sum of the component volumes.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "volume"
+      ],
+      "taughtIn": "ment-mensuration-note-combined-recast",
+      "drilledBy": [
+        "ment-mensuration-mcq-15",
+        "ment-mensuration-mcq-61"
+      ]
+    },
+    {
+      "id": "c-exposed",
+      "fact": "Combined solid surface = exposed faces only; the hidden joint is dropped.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "surface"
+      ],
+      "taughtIn": "ment-mensuration-note-combined-recast",
+      "drilledBy": [
+        "ment-mensuration-mcq-62"
+      ]
+    },
+    {
+      "id": "c-recast",
+      "fact": "Melting conserves volume: number of pieces = original volume ÷ volume of one piece.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "melt"
+      ],
+      "taughtIn": "ment-mensuration-note-combined-recast",
+      "drilledBy": [
+        "ment-mensuration-mcq-16",
+        "ment-mensuration-card-8",
+        "ment-mensuration-mcq-63",
+        "ment-mensuration-mcq-64",
+        "ment-mensuration-mcq-66"
+      ]
+    },
+    {
+      "id": "c-sphere-count",
+      "fact": "Spheres recast into spheres: count = (R/r)³, not (R/r)².",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "spheres"
+      ],
+      "taughtIn": "ment-mensuration-note-combined-recast",
+      "drilledBy": [
+        "ment-mensuration-mcq-16",
+        "ment-mensuration-card-8",
+        "ment-mensuration-mcq-66"
+      ]
+    },
+    {
+      "id": "c-wire",
+      "fact": "Solid drawn into a wire: volume of the solid = πr²L of the wire.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "wire"
+      ],
+      "taughtIn": "ment-mensuration-note-combined-recast",
+      "drilledBy": [
+        "ment-mensuration-mcq-64"
+      ]
+    },
+    {
+      "id": "c-water-rise",
+      "fact": "Solid dropped into water: rise in level = volume of the solid ÷ base area of the vessel.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "rise"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-65"
+      ]
+    },
+    {
+      "id": "k-scale",
+      "fact": "All lengths × k: area × k², volume × k³ (diameter doubled → area 4 times).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "area"
+      ],
+      "taughtIn": "ment-mensuration-note-scaling",
+      "drilledBy": [
+        "ment-mensuration-mcq-17",
+        "ment-mensuration-card-9",
+        "ment-mensuration-mcq-67",
+        "ment-mensuration-mcq-68"
+      ]
+    },
+    {
+      "id": "k-ratio-vs-increase",
+      "fact": "'New is 225% of old' is an increase of 125% — do not confuse the ratio with the increase.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "percent"
+      ],
+      "taughtIn": "ment-mensuration-note-scaling",
+      "drilledBy": [
+        "ment-mensuration-mcq-17",
+        "ment-mensuration-mcq-68"
+      ]
+    },
+    {
+      "id": "k-paint",
+      "fact": "Painting/plastering cost = area to be covered × rate.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "painting"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-50"
+      ]
+    },
+    {
+      "id": "k-r2h",
+      "fact": "Independent radius and height ratios: volume ∝ r²h (cone and cylinder).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-mensuration-note-volume-ratios",
+      "drilledBy": [
+        "ment-mensuration-mcq-26",
+        "ment-mensuration-card-10",
+        "ment-mensuration-mcq-70"
+      ]
+    },
+    {
+      "id": "k-123",
+      "fact": "Same r and h = r: cone : hemisphere : cylinder volumes = 1 : 2 : 3.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "cone"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-formulae",
+      "drilledBy": [
+        "ment-mensuration-mcq-21",
+        "ment-mensuration-card-11",
+        "ment-mensuration-mcq-69"
+      ]
+    },
+    {
+      "id": "k-match",
+      "fact": "Match each solid to its formula: the ⅓ belongs to the pointed solids (cone, pyramid).",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "match"
+      ],
+      "taughtIn": "ment-mensuration-note-solids-extras",
+      "drilledBy": [
+        "ment-mensuration-mcq-25",
+        "ment-mensuration-mcq-71"
+      ]
+    }
+  ]
+}

@@ -747,6 +747,613 @@
         "moving-average",
         "time-series"
       ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-29",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "For the frequency distribution with classes 0–10, 10–20, 20–30 and frequencies 3, 5, 2, the mean is:",
+      "options": [
+        "15",
+        "10",
+        "16",
+        "14"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-mean",
+      "explanation": "Mid-values 5, 15, 25: Σfx = 15 + 75 + 50 = 140, Σf = 10, so the mean = 14.\n\n**Why not the others**\n- 15 — 15 is the middle mid-value only.\n- 10 — 10 = 30 ÷ 3 ignores the frequencies.\n- 16 — 16 is an arithmetic slip.\n\n**Key facts**\n- Grouped mean = Σfx ÷ Σf with mid-values.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Arithmetic mean — grouped data (Σfx/Σf)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-30",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Using the assumed-mean method with A = 35, the mid-values 15, 25, 35, 45 with frequencies 2, 3, 4, 1 give a mean of:",
+      "options": [
+        "35",
+        "41",
+        "30",
+        "29"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "d = −20, −10, 0, 10; Σfd = −40 − 30 + 0 + 10 = −60; x̄ = 35 + (−60 ÷ 10) = 29 (equal to Σfx ÷ Σf = 290 ÷ 10).\n\n**Why not the others**\n- 35 — 35 is only the assumed mean.\n- 41 — 41 adds the correction instead of subtracting.\n- 30 — 30 is an arithmetic slip.\n\n**Key facts**\n- x̄ = A + Σfd ÷ Σf.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Arithmetic mean — grouped data (Σfx/Σf)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-31",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Values 10, 20 and 30 carry weights 2, 3 and 5. The weighted mean is:",
+      "options": [
+        "20",
+        "25",
+        "23",
+        "21"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-central-tendency-note-mean",
+      "explanation": "Weighted mean = Σwx ÷ Σw = (20 + 60 + 150) ÷ 10 = 23.\n\n**Why not the others**\n- 20 — 20 is the simple mean.\n- 25 — 25 is an arithmetic slip.\n- 21 — 21 is an arithmetic slip.\n\n**Key facts**\n- Weighted mean = Σwx ÷ Σw.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Weighted mean"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-32",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The mean of 20 observations is 15. One observation, 36, was wrongly read as 16. The correct mean is:",
+      "options": [
+        "14",
+        "16",
+        "17",
+        "15.5"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-central-tendency-note-mean",
+      "explanation": "Corrected mean = old mean + (Σcorrect − Σwrong) ÷ n = 15 + 20 ÷ 20 = 16 once the wrongly read value is fixed.\n\n**Why not the others**\n- 14 — 14 subtracts the error.\n- 17 — 17 doubles the correction.\n- 15.5 — 15.5 halves it.\n\n**Key facts**\n- Corrected mean = old + (right − wrong) ÷ n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Mean — correcting a wrongly-copied observation"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-33",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The median of a data set is 20. If every observation is multiplied by 2 and then 3 is subtracted, the new median is:",
+      "options": [
+        "40",
+        "37",
+        "17",
+        "43"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "Median (like mean and mode) follows y = ax + b: 2 × 20 − 3 = 37 when the values are multiplied by 2 and reduced by 3.\n\n**Why not the others**\n- 40 — 40 forgets the −3.\n- 17 — 17 forgets the × 2.\n- 43 — 43 adds 3.\n\n**Key facts**\n- Mean, median, mode → a × old + b.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Mean, median, mode — effect of change of origin and scale"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-34",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "For any data set, the sum of the deviations of the observations from their arithmetic mean is:",
+      "options": [
+        "1",
+        "the mean",
+        "the variance",
+        "0"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "Σ(x − x̄) = Σx − n x̄ = 0, which is why mean deviation uses absolute deviations and variance uses squared deviations.\n\n**Why not the others**\n- 1 — The positive and negative deviations cancel exactly.\n- the mean — The mean is not the sum of deviations.\n- the variance — Variance uses squared deviations.\n\n**Key facts**\n- Σ(x − x̄) = 0.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Mean deviation"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-35",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The median of 7, 3, 9, 1, 5, 11, 13 is:",
+      "options": [
+        "1",
+        "9",
+        "7",
+        "5"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-central-tendency-note-median",
+      "explanation": "Sort: 1, 3, 5, 7, 9, 11, 13. n = 7 is odd, so the median is the (7 + 1)/2 = 4th term = 7.\n\n**Why not the others**\n- 1 — 1 is the middle item of the UNSORTED list.\n- 9 — 9 is the 5th sorted value.\n- 5 — 5 is the 3rd sorted value.\n\n**Key facts**\n- Sort first; odd n → middle term.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Median — ungrouped data (odd/even)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-36",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Classes 0–10, 10–20, 20–30, 30–40, 40–50 have frequencies 5, 8, 12, 10, 5. The median class and the value of C (cumulative frequency before it) are:",
+      "options": [
+        "20–30 and 25",
+        "10–20 and 5",
+        "30–40 and 25",
+        "20–30 and 13"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-median",
+      "explanation": "N = 40, N/2 = 20. Cumulative frequencies 5, 13, 25, … — the first to reach 20 is 25, so the median class is 20–30 and C = 13.\n\n**Why not the others**\n- 20–30 and 25 — 25 is the cumulative frequency OF the median class.\n- 10–20 and 5 — 10–20 has cf 13 < 20.\n- 30–40 and 25 — 30–40 is beyond N/2.\n\n**Key facts**\n- Median class = first cumulative frequency ≥ N/2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Median — grouped data (formula)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-37",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The mode of the data 2, 3, 3, 5, 7, 7, 9 is:",
+      "options": [
+        "3 and 7 (bimodal)",
+        "3 only",
+        "7 only",
+        "no mode"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-central-tendency-note-mode",
+      "explanation": "3 and 7 each occur twice, more than any other value, so the data is bimodal with modes 3 and 7.\n\n**Why not the others**\n- 3 only — 7 also occurs twice.\n- 7 only — 3 also occurs twice.\n- no mode — Two values repeat most often.\n\n**Key facts**\n- Several values can share the highest frequency.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Mode — ungrouped data"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-38",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Classes 10–20, 20–30, 30–40, 40–50 have frequencies 4, 10, 6, 2. The mode is:",
+      "options": [
+        "25",
+        "30",
+        "26",
+        "24"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-central-tendency-note-mode",
+      "explanation": "Modal class 20–30: mode = 20 + [(10 − 4) ÷ (20 − 4 − 6)] × 10 = 20 + 6 = 26.\n\n**Why not the others**\n- 25 — 25 is just the class mark.\n- 30 — 30 is the upper limit.\n- 24 — 24 is an arithmetic slip.\n\n**Key facts**\n- Mode = l + [(f₁ − f₀) ÷ (2f₁ − f₀ − f₂)] × h.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Mode — grouped data (modal-class formula)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-39",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "In a moderately skewed distribution the mean and median are in the ratio 10 : 11 and add up to 63. Using the empirical relation, the mode is:",
+      "options": [
+        "39",
+        "36",
+        "33",
+        "27"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-central-tendency-note-mode",
+      "explanation": "Mean = 30, median = 33 (10 : 11 of 63). Empirical: mode = 3 × 33 − 2 × 30 = 99 − 60 = 39.\n\n**Why not the others**\n- 36 — 36 is an arithmetic slip.\n- 33 — 33 is the median.\n- 27 — 27 uses 3 Mean − 2 Median.\n\n**Key facts**\n- Mode = 3 Median − 2 Mean.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Empirical relation Mode = 3·Median − 2·Mean"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-40",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "In a symmetric (normal) distribution the mean is 25. The median and mode are:",
+      "options": [
+        "25 and 75",
+        "50 and 25",
+        "cannot be found",
+        "25 and 25"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "For a symmetric distribution mean = median = mode = 25.\n\n**Why not the others**\n- 25 and 75 — 75 misuses the empirical formula.\n- 50 and 25 — The median equals the mean here.\n- cannot be found — Symmetry fixes them.\n\n**Key facts**\n- Symmetric → mean = median = mode.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Empirical relation Mode = 3·Median − 2·Mean"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-41",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Consider the following Assertion (A) and Reason (R):\nSelect the correct option:",
+      "assertion": "In a perfectly symmetric distribution the mean, median and mode coincide.",
+      "reason": "The empirical relation Mode = 3 Median − 2 Mean holds exactly for every distribution.",
+      "options": [
+        "Both A and R are true, and R is the correct explanation of A",
+        "Both A and R are true, but R is NOT the correct explanation of A",
+        "A is true, but R is false",
+        "A is false, but R is true"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "A is true (symmetry puts all three at the centre). R is false: the empirical relation is only an approximation for moderately skewed data.\n\n**Why not the others**\n- Both A and R are true, and R is the correct explanation of A — R is false, so it cannot explain A.\n- Both A and R are true, but R is NOT the correct explanation of A — R is false.\n- A is false, but R is true — A is true.\n\n**Key facts**\n- Symmetric → mean = median = mode; the empirical relation is approximate.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Assertion–reason on central-tendency properties"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-42",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "A distribution has mean 40, median 38 and mode 34. It is:",
+      "options": [
+        "negatively (left) skewed",
+        "symmetric",
+        "bimodal",
+        "positively (right) skewed"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "Mean > median > mode means a long tail to the right: positive (right) skew.\n\n**Why not the others**\n- negatively (left) skewed — Negative skew has mean < median < mode.\n- symmetric — Symmetric needs all three equal.\n- bimodal — One mode is given.\n\n**Key facts**\n- Positive skew: mean > median > mode.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Empirical relation Mode = 3·Median − 2·Mean"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-43",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "For the data 12, 7, 25, 18, 33 the range and the coefficient of range are:",
+      "options": [
+        "26 and 0.79",
+        "26 and 0.65",
+        "21 and 0.65",
+        "40 and 0.65"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-central-tendency-note-dispersion",
+      "explanation": "Range = 33 − 7 = 26; coefficient of range = (33 − 7) ÷ (33 + 7) = 26 ÷ 40 = 0.65.\n\n**Why not the others**\n- 26 and 0.79 — 0.79 = 26 ÷ 33 divides by the highest only.\n- 21 and 0.65 — 21 is an arithmetic slip.\n- 40 and 0.65 — 40 is H + L.\n\n**Key facts**\n- Range H − L; coefficient (H − L) ÷ (H + L).\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Range and coefficient of range"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-44",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Using σ² = Σx² ÷ n − x̄², the variance of 1, 2, 3, 4, 5 is:",
+      "options": [
+        "11",
+        "2",
+        "9",
+        "√2"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "Σx² = 55, Σx² ÷ n = 11, x̄ = 3, so variance = 11 − 9 = 2.\n\n**Why not the others**\n- 11 — 11 = Σx² ÷ n forgets to subtract x̄².\n- 9 — 9 is x̄².\n- √2 — √2 is the SD.\n\n**Key facts**\n- Variance shortcut Σx²/n − x̄².\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Variance and standard deviation"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-45",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The variance of the first 10 natural numbers is:",
+      "options": [
+        "5.5",
+        "9.17",
+        "82.5",
+        "8.25"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "Variance of 1, 2, …, n = (n² − 1) ÷ 12 = 99 ÷ 12 = 8.25 for these natural numbers.\n\n**Why not the others**\n- 5.5 — 5.5 is the mean.\n- 9.17 — 9.17 is an arithmetic slip (the divisor is 12).\n- 82.5 — 82.5 is off by a factor of 10.\n\n**Key facts**\n- First n naturals: (n² − 1) ÷ 12.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Variance and standard deviation"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-46",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The standard deviation of a data set is 4. If 10 is added to every observation, the new standard deviation is:",
+      "options": [
+        "14",
+        "4",
+        "40",
+        "16"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-central-tendency-note-variance-sd",
+      "explanation": "Adding a constant (change of origin) moves every value equally, so the spread — the standard deviation — stays 4.\n\n**Why not the others**\n- 14 — 14 adds 10 to the SD — a shift does not change spread.\n- 40 — 40 multiplies by 10.\n- 16 — 16 is the variance.\n\n**Key facts**\n- Adding b leaves SD and variance unchanged.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Mean, median, mode — effect of change of origin and scale"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-47",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "A data set has a standard deviation of 8 and a mean of 40. Its coefficient of variation is:",
+      "options": [
+        "5%",
+        "32%",
+        "20%",
+        "0.2%"
+      ],
+      "answerIndex": 2,
+      "noteRef": "ment-central-tendency-note-variance-sd",
+      "explanation": "Coefficient of variation = SD ÷ mean × 100 = 8 ÷ 40 × 100 = 20%.\n\n**Why not the others**\n- 5% — 5% inverts the ratio.\n- 32% — 32% is an arithmetic slip.\n- 0.2% — 0.2% forgets × 100.\n\n**Key facts**\n- CV = SD ÷ mean × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Coefficient of variation (consistency comparison)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-48",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Batsman A averages 50 runs with SD 5; batsman B averages 40 with SD 6. Who is more consistent?",
+      "options": [
+        "B (smaller mean)",
+        "A (CV 10% vs 15%)",
+        "A (larger SD)",
+        "Both are equally consistent"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "CV(A) = 5/50 × 100 = 10%, CV(B) = 6/40 × 100 = 15%: A, with the smaller coefficient of variation, is more consistent.\n\n**Why not the others**\n- B (smaller mean) — A smaller mean says nothing about consistency.\n- A (larger SD) — A has the SMALLER SD, and SDs alone do not decide when means differ.\n- Both are equally consistent — Their CVs differ.\n\n**Key facts**\n- Smaller CV → more consistent.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Coefficient of variation (consistency comparison)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-49",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The lower and upper quartiles of a distribution are 20 and 50. The quartile deviation is:",
+      "options": [
+        "30",
+        "35",
+        "70",
+        "15"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "Quartile deviation = (Q₃ − Q₁) ÷ 2 = 30 ÷ 2 = 15 (its coefficient is 30 ÷ 70 = 3/7).\n\n**Why not the others**\n- 30 — 30 is the interquartile range (not halved).\n- 35 — 35 is the mean of Q₁ and Q₃.\n- 70 — 70 is Q₁ + Q₃.\n\n**Key facts**\n- QD = (Q₃ − Q₁) ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Range and coefficient of range"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-50",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "A shoe company wants to know which size to make in the largest numbers. The most suitable average is the:",
+      "options": [
+        "mean",
+        "median",
+        "range",
+        "mode"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-variance-sd",
+      "explanation": "The mode is the most frequent (most-demanded) value — the right average for \"most common\" questions.\n\n**Why not the others**\n- mean — A mean size (e.g. 7.4) may not exist as a shoe size.\n- median — The median is not the most-demanded size.\n- range — Range is a spread, not an average.\n\n**Key facts**\n- Mode for most-common / categorical data.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Choosing the appropriate measure of central tendency"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-51",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "From data for 10 years, how many 4-year moving averages can be formed?",
+      "options": [
+        "6",
+        "7",
+        "10",
+        "40"
+      ],
+      "answerIndex": 1,
+      "noteRef": "ment-central-tendency-note-moving-average",
+      "explanation": "n values give n − k + 1 moving averages: 10 − 4 + 1 = 7.\n\n**Why not the others**\n- 6 — 6 subtracts k.\n- 10 — 10 ignores the lost terms.\n- 40 — 40 multiplies.\n\n**Key facts**\n- Number of moving averages = n − k + 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Moving averages / time-series trend"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-52",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "Consider the following statements about class intervals:\nWhich of the statements given above is/are correct?",
+      "statements": [
+        "The class mark of the class 20–30 is 25.",
+        "The inclusive class 10–19 becomes 9.5–19.5 in exclusive form.",
+        "The class mark of a class equals its width."
+      ],
+      "options": [
+        "3 only",
+        "1 only",
+        "1 and 3 only",
+        "1 and 2 only"
+      ],
+      "answerIndex": 3,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "Class mark = (20 + 30) ÷ 2 = 25 (1 true). Inclusive → exclusive by subtracting/adding 0.5 (2 true). The class width of 20–30 is 10, not the class mark (3 false).\n\n**Why not the others**\n- 3 only — includes statement 3, which is incorrect; leaves out statement 1 and 2, which are correct\n- 1 only — leaves out statement 2, which is correct\n- 1 and 3 only — includes statement 3, which is incorrect; leaves out statement 2, which is correct\n\n**Key facts**\n- Class mark = (lower + upper) ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Arithmetic mean — grouped data (Σfx/Σf)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-central-tendency-mcq-53",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-central-tendency",
+      "question": "The less-than ogive and the more-than ogive of a distribution are drawn on the same graph. The x-coordinate of their point of intersection gives the:",
+      "options": [
+        "median",
+        "mean",
+        "mode",
+        "range"
+      ],
+      "answerIndex": 0,
+      "noteRef": "ment-central-tendency-note-statistics-extras",
+      "explanation": "At the crossing point, half the observations lie below and half above: that is the median.\n\n**Why not the others**\n- mean — The mean is not read from ogives.\n- mode — The mode comes from a histogram.\n- range — Range is a spread.\n\n**Key facts**\n- Ogives cross at the median.\n\n*Source: APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md*",
+      "source": "APPSC Quantitative Reasoning extracted text (Mean, Median, Mode, Range and Class Interval, Mean Deviation, Variance and Standard Deviation); NCERT Class 10 Statistics and Class 11 Economics (Statistics for Economics: measures of central tendency and dispersion, moving averages); PYQ bank .research/pyq-bank/ment-central-tendency.md",
+      "verified": true,
+      "covers": [
+        "Median — grouped data (formula)"
+      ],
+      "tags": [
+        "central-tendency",
+        "completeness"
+      ]
     }
   ]
 }

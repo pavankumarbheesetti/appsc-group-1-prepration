@@ -111,6 +111,51 @@
         "ratio",
         "scaling"
       ]
+    },
+    {
+      "id": "ment-mensuration-note-mensuration-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "title": "More 2D formulae: square from its diagonal, isosceles, parallelogram, semicircle, hexagon, roads",
+      "body": "### More 2D formulae: square from its diagonal, isosceles, parallelogram, semicircle, hexagon, roads\n\n**The idea in one sentence**\nArea is \"how many unit squares fit inside\" and perimeter is \"how far round the edge\" — most shapes reduce to rectangles, triangles and circles.\n\n**Do it the slow way first (no formula)**\nA square has a diagonal of 12 cm. The diagonal cuts it into two right triangles, each with legs equal to the side a. By Pythagoras a² + a² = 144, so a² = 72. The area of the square is a², i.e. **72 cm²** — exactly half of d² (144 ÷ 2).\n\n**What the symbols mean**\n| Symbol | Plain words |\n|---|---|\n| l, b | length and breadth of a rectangle |\n| a | side of a square / equal side of an isosceles triangle |\n| b (triangle) | base |\n| h | perpendicular height |\n| d, d₁, d₂ | diagonals |\n| r, θ | radius, angle at the centre in degrees |\n\n**The formula (now that you know what it does)**\n| Shape | Area | Perimeter / other |\n|---|---|---|\n| rectangle | l × b | perimeter 2(l + b); diagonal √(l² + b²) |\n| square | a² = d² ÷ 2 | perimeter 4a; diagonal a√2 |\n| triangle | ½ × base × height | right triangle: hypotenuse² = leg² + leg² |\n| isosceles (equal sides a, base b) | (b ÷ 4) × √(4a² − b²) | perimeter 2a + b |\n| equilateral | (√3 ÷ 4) a² | height (√3 ÷ 2) a |\n| parallelogram | base × height | perimeter 2(a + b) |\n| trapezium | ½ × (sum of parallel sides) × height | — |\n| semicircle | πr² ÷ 2 | perimeter πr + 2r (curve plus diameter) |\n| sector | (θ ÷ 360) × πr² | arc (θ ÷ 360) × 2πr |\n| regular hexagon | (3√3 ÷ 2) a² (six equilateral triangles) | perimeter 6a |\n| path INSIDE a rectangle, width w | l × b − (l − 2w)(b − 2w) | — |\n| two roads of width w crossing in the middle | w(l + b − w) | the crossing square is counted once |\n\n**Exam-level example**\nTwo roads, each 3 m wide, cross through the middle of a 60 m × 40 m field parallel to its sides. Road area = 3 × 60 + 3 × 40 − 3 × 3 = **291 m²** — the 3 × 3 square where they cross is subtracted once.\n\n**Common traps**\n- Using the slant side instead of the perpendicular height in a parallelogram.\n- Forgetting the diameter in a semicircle's perimeter (πr alone is only the curve).\n- Counting the crossing square of two roads twice.\n- Mixing radius and diameter: doubling the diameter makes the area 4 times.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| d² ÷ 2 | square from its diagonal |\n| base × height | parallelogram |\n| πr + 2r | semicircle perimeter |\n| w(l + b − w) | crossing roads |",
+      "keyPoints": [
+        "Rectangle perimeter = 2(l + b); square area = d² ÷ 2 and diagonal = a√2",
+        "Triangle area = ½ × base × height; right triangle sides by Pythagoras",
+        "Isosceles triangle (equal sides a, base b): area = (b ÷ 4)√(4a² − b²)",
+        "Parallelogram area = base × height; perimeter = 2(a + b)",
+        "Semicircle: area πr² ÷ 2, perimeter πr + 2r",
+        "Regular hexagon of side a: area = (3√3 ÷ 2)a²",
+        "Path inside a rectangle: l × b − (l − 2w)(b − 2w); crossing roads: w(l + b − w)"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
+      "verified": true,
+      "tags": [
+        "mensuration",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-mensuration-note-solids-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-mensuration",
+      "title": "More solid formulae: lateral areas, hollow cylinder, frustum and pyramid surfaces, wires and rising water",
+      "body": "### More solid formulae: lateral areas, hollow cylinder, frustum and pyramid surfaces, wires and rising water\n\n**The idea in one sentence**\nVolume = how much a solid holds (base area × height for straight solids, one-third of that for pointed ones); surface area = the paper needed to wrap it.\n\n**Do it the slow way first (no formula)**\nA cone of radius 7 cm and height 24 cm: the slant height is the hypotenuse of a right triangle with legs 7 and 24, so l = √(49 + 576) = 25 cm. Unrolled, the curved surface is a sector whose area is π × r × l = 22/7 × 7 × 25 = **550 cm²**.\n\n**What the symbols mean**\n| Symbol | Plain words |\n|---|---|\n| CSA / LSA | curved or lateral surface — the sides only |\n| TSA | total surface — sides plus the flat ends |\n| l | slant height |\n| R, r | outer and inner (or bigger and smaller) radii |\n\n**The formula (now that you know what it does)**\n| Solid | Volume | Surface |\n|---|---|---|\n| cube (edge a) | a³ | TSA 6a², LSA 4a², diagonal a√3 |\n| cuboid | l b h | TSA 2(lb + bh + hl); LSA (four walls) 2h(l + b) |\n| cylinder | πr²h | CSA 2πrh, TSA 2πr(r + h) |\n| hollow cylinder (pipe) | πh(R² − r²) | — |\n| cone | ⅓πr²h | CSA πrl, TSA πr(r + l), l = √(r² + h²) |\n| sphere | (4/3)πr³ | 4πr² |\n| hemisphere | (2/3)πr³ | curved 2πr², solid TSA 3πr² |\n| frustum | ⅓πh(R² + Rr + r²) | CSA π(R + r)l with l = √(h² + (R − r)²) |\n| right prism | base area × height | LSA = base perimeter × height; TSA = 2 × base area + LSA |\n| pyramid | ⅓ × base area × height | LSA = ½ × base perimeter × slant height |\n| regular tetrahedron (edge a) | a³ ÷ (6√2) | TSA √3 a² (four equilateral faces) |\n\n- Capacity: 1 m³ = 1000 litres; 1 litre = 1000 cm³ (a 50 × 40 × 30 cm tank holds 60 litres).\n- Painting or plastering cost = area to be covered × rate (four walls of a 6 × 4 × 3 m room: 2 × 3 × 10 = 60 m²; at ₹20 per m² → ₹1200).\n- Combined-solid surface: add only the faces you can touch — the joint between a cone and a hemisphere is hidden.\n- Melting into a wire: volume of the solid = πr²L of the wire.\n- To match a solid with its formula, ask: is it pointed (⅓ in the volume) and does the area count the flat faces (total) or not (curved)?\n- Dropping a solid into water: rise in level = volume of the solid ÷ base area of the vessel.\n\n**Exam-level example**\nA sphere of radius 3 cm is dropped into a cylindrical jar of radius 6 cm full of water to some level. Rise = (4/3)π × 27 ÷ (π × 36) = 36 ÷ 36 = **1 cm**.\n\n**Common traps**\n- Using the vertical height in πrl (it needs the slant height).\n- Adding the base twice for an open box or a hemispherical bowl.\n- Forgetting to convert cm³ to litres (÷ 1000).\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| base × h, then ⅓ for pointed | volume rule |\n| perimeter × h | prism side area |\n| ½ × perimeter × slant | pyramid side area |\n| π(R + r)l | frustum curved area |\n| volume ÷ base area | water rise |",
+      "keyPoints": [
+        "Cube LSA = 4a²; cuboid four walls = 2h(l + b), TSA = 2(lb + bh + hl)",
+        "Hollow cylinder volume = πh(R² − r²)",
+        "Cone CSA = πrl with slant l = √(r² + h²)",
+        "Frustum CSA = π(R + r)l with l = √(h² + (R − r)²)",
+        "Prism: LSA = base perimeter × height, TSA = 2 × base area + LSA",
+        "Pyramid LSA = ½ × base perimeter × slant height; regular tetrahedron TSA = √3a²",
+        "Painting cost = area × rate; solid into a wire: volume = πr²L",
+        "Water rise when a solid is dropped in = its volume ÷ base area of the vessel"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
+      "verified": true,
+      "tags": [
+        "mensuration",
+        "completeness"
+      ]
     }
   ]
 }

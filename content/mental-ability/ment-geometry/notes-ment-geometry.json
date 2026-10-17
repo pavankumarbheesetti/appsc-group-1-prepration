@@ -129,6 +129,52 @@
         "tangent",
         "counting"
       ]
+    },
+    {
+      "id": "ment-geometry-note-geometry-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "title": "More lines, triangle and polygon rules: angle types, inequality, special triangles, centres",
+      "body": "### More lines, triangle and polygon rules: angle types, inequality, special triangles, centres\n\n**The idea in one sentence**\nAlmost every geometry answer comes from four facts — a straight line is 180°, a triangle is 180°, a full turn is 360°, and similar shapes scale lengths by k.\n\n**Do it the slow way first (no formula)**\nIn triangle ABC the exterior angle at C is 110° and ∠A = 45°. The exterior angle and ∠C make a straight line, so ∠C = 70°. Then ∠B = 180° − 45° − 70° = **65°** — which is just 110° − 45°: the exterior angle equals the sum of the two far (remote) interior angles.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| acute / right / obtuse | less than 90° / exactly 90° / between 90° and 180° |\n| straight / reflex / complete | 180° / between 180° and 360° / 360° |\n| vertically opposite | the X-shaped pair across a crossing point |\n| median, altitude, bisector | vertex to opposite midpoint; perpendicular to the opposite side; splits an angle in two |\n\n**The formula (now that you know what it does)**\n| Rule | Statement | Example |\n|---|---|---|\n| vertically opposite | equal; angles round a point total 360° | 3x + 10 = 5x − 30 → 70° |\n| alternate / corresponding (parallel lines) | equal | 2x + 10 = 3x − 20 → 70° |\n| exterior angle | = sum of the two remote interior angles | 110° − 45° = 65° |\n| triangle inequality | difference < third side < sum | sides 12 and 7 → third side 6 to 18 (13 integer values) |\n| type by sides | c² < a² + b² acute, = right, > obtuse (c the longest) | 6, 8, 11: 100 < 121 → obtuse |\n| 30°-60°-90° | sides 1 : √3 : 2 | hypotenuse 10 → 5 and 5√3 |\n| 45°-45°-90° | sides 1 : 1 : √2 | — |\n| similarity tests | AA, SAS (sides in proportion, included angle equal), SSS | AAA is only similarity |\n| basic proportionality (Thales) | DE ∥ BC → AD/DB = AE/EC | 3/4 = 6/EC → EC = 8 |\n| congruence | SSS, SAS, ASA/AAS, RHS — never SSA or AAA | — |\n| centroid coordinates | ((x₁ + x₂ + x₃) ÷ 3, (y₁ + y₂ + y₃) ÷ 3) | (1, 2), (4, 5), (7, 2) → (4, 3) |\n| incentre angle | ∠BIC = 90° + A/2 | A = 70° → 125° |\n| excentre angle | ∠BOC = 90° − A/2 (external bisectors of B and C) | A = 50° → 65° |\n| circumcentre angle | ∠BOC = 2A (acute triangle); right triangle: R = hypotenuse ÷ 2 | A = 50° → 100° |\n| orthocentre angle | ∠BHC = 180° − A | A = 70° → 110° |\n| where the centres lie | circumcentre and orthocentre: inside (acute), on the triangle (right), outside (obtuse); centroid and incentre always inside | — |\n| equilateral triangle | all four centres coincide; R = a/√3, r = a/(2√3) = R/2 | a = 6√3 → R = 6, r = 3 |\n| polygon diagonals | n(n − 3) ÷ 2 | decagon → 35 |\n| quadrilateral | angles total 360°; joining midpoints gives a parallelogram of half the area | — |\n\n**Exam-level example**\nEach interior angle of a regular polygon is 140°. Each exterior angle is 180° − 140° = 40°, so n = 360 ÷ 40 = **9 sides**.\n\n**Common traps**\n- Treating SSA (two sides and a non-included angle) as a congruence test.\n- Using ∠BIC = 90° + A/2 for the excentre (it is 90° − A/2 there).\n- Forgetting that the exterior angles of ANY polygon total 360°.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| ext = sum of remote interiors | exterior-angle theorem |\n| (a − b) < c < (a + b), a ≥ b | triangle inequality |\n| 90 + A/2, 90 − A/2, 2A, 180 − A | incentre, excentre, circumcentre, orthocentre |\n| n(n − 3)/2 | diagonals |",
+      "keyPoints": [
+        "Angle types: acute < 90°, right 90°, obtuse 90°–180°, straight 180°, reflex 180°–360°, complete 360°",
+        "Vertically opposite angles are equal; alternate and corresponding angles on parallel lines are equal",
+        "Exterior angle of a triangle = sum of the two remote interior angles",
+        "Triangle inequality: difference of two sides < third side < their sum",
+        "Longest side c: c² < a² + b² acute, = right, > obtuse",
+        "30°-60°-90° sides 1 : √3 : 2; 45°-45°-90° sides 1 : 1 : √2",
+        "Basic proportionality: DE ∥ BC gives AD/DB = AE/EC",
+        "Incentre ∠BIC = 90° + A/2; excentre 90° − A/2; circumcentre 2A; orthocentre 180° − A",
+        "Number of diagonals of an n-gon = n(n − 3) ÷ 2; quadrilateral angles total 360°"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Concept of Point and Line, Angles, Basic concept of Triangle, Types of Triangles, Properties of Triangle, Similarity & Congruency of Triangles, Centroid, Incentre, Circumcentre, Orthocentre, Excentre, Angle Bisector, Basic concept of Circle, Theorems of circle, Sector, Chord and Tangent, Polygons, General Quadrilateral, Co-ordinate Geometry); NCERT Class 6–10 geometry; PYQ bank .research/pyq-bank/ment-geometry.md",
+      "verified": true,
+      "tags": [
+        "geometry",
+        "completeness"
+      ]
+    },
+    {
+      "id": "ment-geometry-note-circle-coordinate-extras",
+      "subjectCode": "MENT",
+      "subtopicId": "ment-geometry",
+      "title": "More circle and coordinate rules: same segment, alternate segment, chords, slopes, quadrants",
+      "body": "### More circle and coordinate rules: same segment, alternate segment, chords, slopes, quadrants\n\n**The idea in one sentence**\nIn a circle, every angle is tied to the arc it stands on; in coordinates, every length or slope is a right triangle drawn on the grid.\n\n**Do it the slow way first (no formula)**\nA chord AB of a circle with centre O. A tangent at A makes a 50° angle with the chord AB. The radius OA meets the tangent at 90°, so ∠OAB = 90° − 50° = 40°. Triangle OAB is isosceles (OA = OB), so ∠OBA = 40° and ∠AOB = 180° − 80° = **100°** = 2 × 50°. Any angle at the circle on the far side of AB is half of that: 50° — the tangent–chord angle equals the angle in the alternate segment.\n\n**What the symbols mean**\n| Term | Plain words |\n|---|---|\n| arc | a piece of the circle's edge |\n| inscribed angle | angle with its vertex on the circle |\n| segment | the region between a chord and its arc |\n| secant | a line cutting the circle at two points |\n| slope m | rise ÷ run = Δy ÷ Δx |\n\n**The formula (now that you know what it does)**\n| Rule | Statement | Example |\n|---|---|---|\n| angle at the centre | twice the inscribed angle on the same arc | 130° → 65° |\n| angle in a semicircle (on a diameter) | 90° | ∠CAB = 35° → ∠CBA = 55° |\n| same segment | angles on the same arc are equal | ∠ACB = 40° → ∠ADB = 40° |\n| cyclic quadrilateral | opposite angles total 180°; an exterior angle = the interior opposite angle | ∠B = 3∠D → 135° and 45° |\n| tangent | ⟂ radius; length from a point at distance d = √(d² − r²) | d 17, r 8 → 15 |\n| two tangents from P | equal lengths; ∠P = 180° − central angle | central 110° → ∠P = 70° |\n| alternate segment | tangent–chord angle = inscribed angle on the other side | 50° → 50°, central 100° |\n| chord | perpendicular from the centre bisects it: r² = (half-chord)² + distance² | r 10, chord 16 → distance 6 |\n| equal chords | are equidistant from the centre | — |\n| two parallel chords | distance apart = sum (opposite sides of centre) or difference (same side) | 6 + 8 = 14 |\n| intersecting chords | PA × PB = PC × PD | 4 × 6 = 3 × PD → PD = 8 |\n| tangent and secant | PT² = PA × PB | 4 × 9 = 36 → PT = 6 |\n| distance | √(Δx² + Δy²) | (−3, 4) to origin → 5 |\n| midpoint | average of the coordinates | (2, 3), (8, 15) → (5, 9) |\n| slopes | parallel: equal; perpendicular: m₁ × m₂ = −1 | 2/3 → −3/2 |\n| triangle area | ½ × absolute value of [x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)]; zero → collinear | (0,0), (4,0), (0,3) → 6 |\n| quadrants | I (+, +), II (−, +), III (−, −), IV (+, −) | (−3, 5) is in II |\n\n**Exam-level example**\nChords AB and CD meet at P inside a circle with PA = 4, PB = 6, PC = 3. PA × PB = PC × PD → 24 = 3 × PD → **PD = 8**.\n\n**Common traps**\n- Halving the wrong way (the centre angle is the BIGGER one).\n- Using the diameter instead of the half-chord in r² = (half-chord)² + d².\n- Taking the perpendicular slope as 3/2 instead of −3/2.\n\n**TL;DR**\n| What you write | In plain words |\n|---|---|\n| same arc → equal angles | same segment |\n| tangent–chord = alternate segment | tangent angle rule |\n| PA·PB = PC·PD | crossing chords |\n| m₁m₂ = −1 | perpendicular lines |",
+      "keyPoints": [
+        "Angles in the same segment (on the same arc) are equal",
+        "Exterior angle of a cyclic quadrilateral = interior opposite angle",
+        "Alternate segment: tangent–chord angle = inscribed angle in the alternate segment",
+        "Equal chords are equidistant from the centre; parallel chords: distances add (opposite sides) or subtract (same side)",
+        "Intersecting chords: PA × PB = PC × PD; tangent–secant: PT² = PA × PB",
+        "Midpoint = average of coordinates; perpendicular slopes multiply to −1",
+        "Quadrant signs: I (+, +), II (−, +), III (−, −), IV (+, −)"
+      ],
+      "source": "APPSC Quantitative Reasoning extracted text (Concept of Point and Line, Angles, Basic concept of Triangle, Types of Triangles, Properties of Triangle, Similarity & Congruency of Triangles, Centroid, Incentre, Circumcentre, Orthocentre, Excentre, Angle Bisector, Basic concept of Circle, Theorems of circle, Sector, Chord and Tangent, Polygons, General Quadrilateral, Co-ordinate Geometry); NCERT Class 6–10 geometry; PYQ bank .research/pyq-bank/ment-geometry.md",
+      "verified": true,
+      "tags": [
+        "geometry",
+        "completeness"
+      ]
     }
   ]
 }

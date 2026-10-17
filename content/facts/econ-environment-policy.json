@@ -1,0 +1,2085 @@
+{
+  "version": 1,
+  "subtopicId": "econ-environment-policy",
+  "facts": [
+    {
+      "id": "ed-forms",
+      "fact": "Environmental degradation takes four forms: deforestation, pollution, soil degradation/desertification and biodiversity loss.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Deforestation",
+        "biodiversity"
+      ],
+      "taughtIn": "econ-environment-policy-note-economics-of-degradation",
+      "drilledBy": [
+        "econ-environment-policy-mcq-16"
+      ]
+    },
+    {
+      "id": "ed-externality",
+      "fact": "Pollution is a negative externality: social cost exceeds private cost, so the good is overproduced.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "social cost",
+        "private cost"
+      ],
+      "taughtIn": "econ-environment-policy-note-economics-of-degradation",
+      "drilledBy": [
+        "econ-environment-policy-mcq-4",
+        "econ-environment-policy-card-2"
+      ]
+    },
+    {
+      "id": "ed-commons",
+      "fact": "The tragedy of the commons (Garrett Hardin, 1968) is overuse of an open-access shared resource.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "tragedy of the commons"
+      ],
+      "taughtIn": "econ-environment-policy-note-economics-of-degradation",
+      "drilledBy": [
+        "econ-environment-policy-mcq-5",
+        "econ-environment-policy-card-2"
+      ]
+    },
+    {
+      "id": "ed-ekc",
+      "fact": "The Environmental Kuznets Curve is an inverted U: degradation rises with income, then falls.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Kuznets"
+      ],
+      "taughtIn": "econ-environment-policy-note-economics-of-degradation",
+      "drilledBy": [
+        "econ-environment-policy-mcq-6"
+      ]
+    },
+    {
+      "id": "ed-public-good",
+      "fact": "Clean air is a public good — non-excludable and non-rival — so markets under-supply it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "public good"
+      ],
+      "taughtIn": "econ-environment-policy-note-economics-of-degradation",
+      "drilledBy": [
+        "econ-environment-policy-card-14"
+      ]
+    },
+    {
+      "id": "ed-hardin",
+      "fact": "The tragedy of the commons was named by Garrett Hardin in 1968.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Hardin"
+      ],
+      "taughtIn": "econ-environment-policy-note-economics-of-degradation",
+      "drilledBy": [
+        "econ-environment-policy-card-2"
+      ]
+    },
+    {
+      "id": "pi-pigou",
+      "fact": "A Pigouvian tax equals the marginal external cost, internalising the externality.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Pigouvian"
+      ],
+      "taughtIn": "econ-environment-policy-note-policy-instruments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-4",
+        "econ-environment-policy-mcq-25",
+        "econ-environment-policy-card-3",
+        "econ-environment-policy-card-15"
+      ]
+    },
+    {
+      "id": "pi-cap",
+      "fact": "Cap-and-trade fixes total emissions and lets firms trade permits so cuts happen where cheapest.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Cap-and-trade"
+      ],
+      "taughtIn": "econ-environment-policy-note-policy-instruments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-25"
+      ]
+    },
+    {
+      "id": "pi-coase",
+      "fact": "The Coase theorem: clear property rights and cheap bargaining can solve pollution privately.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Coase"
+      ],
+      "taughtIn": "econ-environment-policy-note-policy-instruments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-25"
+      ]
+    },
+    {
+      "id": "pi-ppp",
+      "fact": "Polluter Pays and Precautionary principles were read into Article 21 (Vellore Citizens, 1996).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Polluter Pays",
+        "Article 21"
+      ],
+      "taughtIn": "econ-environment-policy-note-policy-instruments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-14"
+      ]
+    },
+    {
+      "id": "pi-cac",
+      "fact": "Command-and-control sets emission limits; market-based tools price pollution.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Command-and-control"
+      ],
+      "taughtIn": "econ-environment-policy-note-policy-instruments",
+      "drilledBy": [
+        "econ-environment-policy-card-15"
+      ]
+    },
+    {
+      "id": "li-epa",
+      "fact": "The Environment (Protection) Act, 1986 is the umbrella law passed after the Bhopal tragedy (1984).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "1986"
+      ],
+      "taughtIn": "econ-environment-policy-note-laws-institutions",
+      "drilledBy": [
+        "econ-environment-policy-mcq-2",
+        "econ-environment-policy-mcq-3",
+        "econ-environment-policy-mcq-8",
+        "econ-environment-policy-mcq-34",
+        "econ-environment-policy-card-5"
+      ]
+    },
+    {
+      "id": "li-ngt",
+      "fact": "The National Green Tribunal was set up in 2010.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "2010"
+      ],
+      "taughtIn": "econ-environment-policy-note-laws-institutions",
+      "drilledBy": [
+        "econ-environment-policy-mcq-3",
+        "econ-environment-policy-mcq-28",
+        "econ-environment-policy-mcq-33",
+        "econ-environment-policy-card-5"
+      ]
+    },
+    {
+      "id": "li-order",
+      "fact": "Wildlife 1972, Water 1974, Forest Conservation 1980, Air 1981.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "1974",
+        "1981"
+      ],
+      "taughtIn": "econ-environment-policy-note-laws-institutions",
+      "drilledBy": [
+        "econ-environment-policy-mcq-2",
+        "econ-environment-policy-mcq-7",
+        "econ-environment-policy-card-5",
+        "econ-environment-policy-card-16"
+      ]
+    },
+    {
+      "id": "li-eia",
+      "fact": "EIA is governed by the EIA Notification 2006; Category A projects are cleared by the MoEFCC and include public consultation.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "EIA Notification, 2006"
+      ],
+      "taughtIn": "econ-environment-policy-note-laws-institutions",
+      "drilledBy": [
+        "econ-environment-policy-mcq-8"
+      ]
+    },
+    {
+      "id": "li-cpcb",
+      "fact": "The CPCB was created by the Water Act, 1974.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "CPCB"
+      ],
+      "taughtIn": "econ-environment-policy-note-laws-institutions",
+      "drilledBy": [
+        "econ-environment-policy-card-16",
+        "econ-environment-policy-mcq-36"
+      ]
+    },
+    {
+      "id": "cc-2070",
+      "fact": "India committed to net-zero emissions by 2070.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "2070"
+      ],
+      "taughtIn": "econ-environment-policy-note-climate-commitments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-1",
+        "econ-environment-policy-card-12"
+      ]
+    },
+    {
+      "id": "cc-panchamrit",
+      "fact": "Panchamrit (COP26, 2021): 500 GW non-fossil, 50% renewables, 45% intensity cut, 1 billion-tonne cut by 2030.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "500 GW"
+      ],
+      "taughtIn": "econ-environment-policy-note-climate-commitments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-9",
+        "econ-environment-policy-card-12"
+      ]
+    },
+    {
+      "id": "cc-ndc",
+      "fact": "India's 2022 updated NDC cuts emissions intensity of GDP by 45% from 2005 by 2030.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "45"
+      ],
+      "taughtIn": "econ-environment-policy-note-climate-commitments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-9",
+        "econ-environment-policy-mcq-10",
+        "econ-environment-policy-card-12"
+      ]
+    },
+    {
+      "id": "cc-napcc",
+      "fact": "NAPCC (2008) has eight missions; ISA was co-founded by India and France; Mission LiFE promotes green lifestyles.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "NAPCC"
+      ],
+      "taughtIn": "econ-environment-policy-note-climate-commitments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-15"
+      ]
+    },
+    {
+      "id": "cc-non-fossil-50",
+      "fact": "The 2022 NDC targets about 50% non-fossil power capacity by 2030.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "non-fossil"
+      ],
+      "taughtIn": "econ-environment-policy-note-climate-commitments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-9",
+        "econ-environment-policy-mcq-42",
+        "econ-environment-policy-card-12"
+      ]
+    },
+    {
+      "id": "cm-ccts",
+      "fact": "CCTS 2023 was notified under the Energy Conservation Act 2001 (amended 2022) and is administered by BEE.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Bureau of Energy Efficiency"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-11",
+        "econ-environment-policy-card-17"
+      ]
+    },
+    {
+      "id": "cm-arms",
+      "fact": "CCTS has a compliance mechanism and an offset mechanism.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "offset mechanism"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-11"
+      ]
+    },
+    {
+      "id": "cm-instruments",
+      "fact": "ESCerts (PAT), RECs, Carbon Credit Certificates (CCTS) and Sovereign Green Bonds are distinct instruments.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ESCerts"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-12"
+      ]
+    },
+    {
+      "id": "cm-sgb",
+      "fact": "India issued its first Sovereign Green Bonds in 2022-23 (₹16,000 crore).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Sovereign Green Bonds"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-12",
+        "econ-environment-policy-mcq-13"
+      ]
+    },
+    {
+      "id": "cm-green-budget",
+      "fact": "Green budgeting uses the budget process to advance environmental objectives.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Green budgeting"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-13"
+      ]
+    },
+    {
+      "id": "cm-registry",
+      "fact": "The Grid Controller of India runs the CCTS registry.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Grid Controller"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-card-17"
+      ]
+    },
+    {
+      "id": "ga-green-gdp",
+      "fact": "Green GDP adjusts GDP downward for depletion of natural resources and environmental degradation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "depletion"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-5",
+        "econ-environment-policy-mcq-17",
+        "econ-environment-policy-mcq-21",
+        "econ-environment-policy-mcq-22",
+        "econ-environment-policy-mcq-39",
+        "econ-environment-policy-card-13"
+      ]
+    },
+    {
+      "id": "ga-ndp",
+      "fact": "NDP deducts depreciation of man-made capital; Green GDP also deducts natural-capital loss.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "man-made"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-21"
+      ]
+    },
+    {
+      "id": "ga-seea",
+      "fact": "SEEA: 1993 handbook, Central Framework standard 2012, Ecosystem Accounting 2021.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "2012",
+        "2021"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-19"
+      ]
+    },
+    {
+      "id": "ga-envistats",
+      "fact": "MoSPI has published EnviStats India annually since 2018; India was in the NCAVES project.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "EnviStats"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-18",
+        "econ-environment-policy-mcq-20",
+        "econ-environment-policy-card-13"
+      ]
+    },
+    {
+      "id": "ga-dasgupta",
+      "fact": "Partha Dasgupta led India's Green National Accounts group (2013); the Dasgupta Review (2021) was commissioned by the UK Treasury.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Dasgupta"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-23"
+      ]
+    },
+    {
+      "id": "ga-gep",
+      "fact": "Uttarakhand pioneered the Gross Environment Product in India.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Gross Environment Product"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-22",
+        "econ-environment-policy-mcq-23"
+      ]
+    },
+    {
+      "id": "ga-ans",
+      "fact": "Adjusted Net Savings is a World Bank measure; the Inclusive Wealth Index is UNEP's.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Inclusive Wealth Index"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-22"
+      ]
+    },
+    {
+      "id": "ga-services",
+      "fact": "Ecosystem services: provisioning, regulating, cultural, supporting.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Provisioning"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-accounting",
+      "drilledBy": [
+        "econ-environment-policy-mcq-24"
+      ]
+    },
+    {
+      "id": "gt-ramsar",
+      "fact": "The Ramsar Convention on wetlands dates from 1971.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Ramsar",
+        "1971"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-26"
+      ]
+    },
+    {
+      "id": "gt-stockholm72",
+      "fact": "The 1972 Stockholm Conference created UNEP; 5 June is World Environment Day.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Stockholm",
+        "UNEP"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-28"
+      ]
+    },
+    {
+      "id": "gt-cites",
+      "fact": "CITES (1973) regulates trade in endangered species.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "CITES"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-26"
+      ]
+    },
+    {
+      "id": "gt-cms",
+      "fact": "CMS (Bonn Convention, 1979) protects migratory species.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Bonn"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-28"
+      ]
+    },
+    {
+      "id": "gt-montreal",
+      "fact": "The Montreal Protocol (1987) protects the ozone layer; the Kigali Amendment (2016) phases down HFCs.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Montreal",
+        "Kigali"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-27"
+      ]
+    },
+    {
+      "id": "gt-vienna",
+      "fact": "The Vienna Convention (1985) is the ozone framework treaty.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Vienna"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-28"
+      ]
+    },
+    {
+      "id": "gt-basel",
+      "fact": "Basel Convention (1989) controls transboundary movement of hazardous waste.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Basel",
+        "hazardous waste"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-26"
+      ]
+    },
+    {
+      "id": "gt-rotterdam",
+      "fact": "Rotterdam (1998) covers prior informed consent for hazardous chemicals; Stockholm (2001) covers POPs.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Rotterdam",
+        "persistent organic pollutants"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-27"
+      ]
+    },
+    {
+      "id": "gt-minamata",
+      "fact": "The Minamata Convention (2013) deals with mercury.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Minamata",
+        "mercury"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-26"
+      ]
+    },
+    {
+      "id": "gt-rio",
+      "fact": "The 1992 Rio Earth Summit produced the UNFCCC, CBD and Agenda 21.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Rio",
+        "Agenda 21"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-29"
+      ]
+    },
+    {
+      "id": "gt-unccd",
+      "fact": "UNCCD (desertification) followed in 1994.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "UNCCD"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-card-18"
+      ]
+    },
+    {
+      "id": "gt-kyoto",
+      "fact": "The Kyoto Protocol (1997, in force 2005) set binding cuts for Annex I countries with CDM, JI and emissions trading.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq",
+        "syllabus"
+      ],
+      "keys": [
+        "Kyoto",
+        "CDM"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-30"
+      ]
+    },
+    {
+      "id": "gt-paris",
+      "fact": "The Paris Agreement (2015) entered into force on 4 November 2016 with five-yearly NDCs and Article 6 markets.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Paris",
+        "4 November 2016"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-30"
+      ]
+    },
+    {
+      "id": "gt-cartagena",
+      "fact": "Cartagena Protocol (2000) covers biosafety; Nagoya Protocol (2010) covers access and benefit-sharing.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Cartagena"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-27"
+      ]
+    },
+    {
+      "id": "gt-nagoya",
+      "fact": "The Nagoya Protocol (2010) covers access to genetic resources and benefit-sharing.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Nagoya"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-28"
+      ]
+    },
+    {
+      "id": "gt-gbf",
+      "fact": "The Kunming–Montreal GBF (2022) set the 30×30 target.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "30×30"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-29"
+      ]
+    },
+    {
+      "id": "gt-brundtland",
+      "fact": "The Brundtland Report \"Our Common Future\" (1987) defined sustainable development.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Brundtland"
+      ],
+      "taughtIn": "econ-environment-policy-note-policy-instruments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-29"
+      ]
+    },
+    {
+      "id": "gt-page",
+      "fact": "PAGE was launched at Rio+20 (2012) (UPSC 2018).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "PAGE",
+        "Rio+20"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-31"
+      ]
+    },
+    {
+      "id": "gt-cbdr",
+      "fact": "CBDR-RC is the Rio principle of Common But Differentiated Responsibilities.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Common But Differentiated"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-29"
+      ]
+    },
+    {
+      "id": "gt-redd",
+      "fact": "REDD+ means reducing emissions from deforestation and forest degradation (UNFCCC).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "REDD+",
+        "deforestation"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-30"
+      ]
+    },
+    {
+      "id": "gt-credit",
+      "fact": "One carbon credit equals one tonne of CO₂-equivalent (UPSC 2011).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "one tonne"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-30"
+      ]
+    },
+    {
+      "id": "gt-gcf",
+      "fact": "The Green Climate Fund was set up at Cancún (2010) and is based in Songdo, South Korea.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Green Climate Fund"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-33"
+      ]
+    },
+    {
+      "id": "gt-cop27",
+      "fact": "COP27 (Sharm el-Sheikh, 2022) agreed the Loss and Damage Fund.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Loss and Damage"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-32"
+      ]
+    },
+    {
+      "id": "gt-cop28",
+      "fact": "COP28 (Dubai, 2023) completed the first Global Stocktake.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Global Stocktake"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-32"
+      ]
+    },
+    {
+      "id": "gt-cop29",
+      "fact": "COP29 (Baku, 2024) set the NCQG of US$300 billion a year by 2035.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "300 billion"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-32"
+      ]
+    },
+    {
+      "id": "gt-cop30",
+      "fact": "COP30 was held at Belém, Brazil (2025), launching the Tropical Forest Forever Facility.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Belém"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-32"
+      ]
+    },
+    {
+      "id": "gt-cop31",
+      "fact": "COP31 is at Antalya, Türkiye, 9-20 November 2026; COP32 at Addis Ababa (2027).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Antalya"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-33"
+      ]
+    },
+    {
+      "id": "gt-kolleru",
+      "fact": "Kolleru Lake in Andhra Pradesh is a Ramsar site (2002).",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "Kolleru"
+      ],
+      "taughtIn": "econ-environment-policy-note-global-treaties-cops",
+      "drilledBy": [
+        "econ-environment-policy-mcq-33"
+      ]
+    },
+    {
+      "id": "il-48a",
+      "fact": "Article 48A (DPSP) on environment protection was added by the 42nd Amendment (1976).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "48A"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-34"
+      ]
+    },
+    {
+      "id": "il-51ag",
+      "fact": "Article 51A(g) makes protecting the natural environment a Fundamental Duty.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "51A(g)"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-34"
+      ]
+    },
+    {
+      "id": "il-absolute",
+      "fact": "M.C. Mehta (Oleum gas leak, 1986) created absolute liability for hazardous industries.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "absolute liability"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-34"
+      ]
+    },
+    {
+      "id": "il-pli",
+      "fact": "The Public Liability Insurance Act dates from 1991.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Public Liability Insurance"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-card-19"
+      ]
+    },
+    {
+      "id": "il-bd",
+      "fact": "The Biological Diversity Act (2002) set up the National Biodiversity Authority at Chennai.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Biological Diversity",
+        "Chennai"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-35"
+      ]
+    },
+    {
+      "id": "il-fra",
+      "fact": "The Forest Rights Act was passed in 2006.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Forest Rights Act",
+        "2006"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-35"
+      ]
+    },
+    {
+      "id": "il-ngt-act",
+      "fact": "NGT appeals go to the Supreme Court within 90 days; principal bench New Delhi.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "90 days"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-36"
+      ]
+    },
+    {
+      "id": "il-campa",
+      "fact": "The CAMPA Act (2016) governs compensatory afforestation funds.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "CAMPA"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-35"
+      ]
+    },
+    {
+      "id": "il-wpa22",
+      "fact": "The Wild Life (Protection) Amendment 2022 cut schedules to four and incorporated CITES.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "four"
+      ],
+      "taughtIn": "econ-environment-policy-note-economics-of-degradation",
+      "drilledBy": [
+        "econ-environment-policy-mcq-36"
+      ]
+    },
+    {
+      "id": "il-van",
+      "fact": "The Forest (Conservation) Amendment 2023 renamed the Act Van (Sanrakshan Evam Samvardhan) Adhiniyam.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Van (Sanrakshan"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-36"
+      ]
+    },
+    {
+      "id": "il-janvishwas",
+      "fact": "The Jan Vishwas Act 2023 replaced jail with penalties for minor offences under the EPA, Air and Water Acts.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Jan Vishwas"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-35"
+      ]
+    },
+    {
+      "id": "il-swm",
+      "fact": "The Solid Waste Management Rules and Plastic Waste Management Rules date from 2016.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Solid Waste Management Rules"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-37"
+      ]
+    },
+    {
+      "id": "il-sup",
+      "fact": "Identified single-use plastic items were banned from 1 July 2022.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1 July 2022"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-37"
+      ]
+    },
+    {
+      "id": "il-ewaste",
+      "fact": "E-Waste and Battery Waste Management Rules came in 2022, with EPR.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "E-Waste"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-37"
+      ]
+    },
+    {
+      "id": "il-epr",
+      "fact": "Extended Producer Responsibility makes producers collect and recycle their products after use.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Extended Producer Responsibility"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-37"
+      ]
+    },
+    {
+      "id": "il-circular",
+      "fact": "A circular economy cuts raw-material input and waste and thereby GHG emissions (UPSC 2025).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "circular economy"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-38"
+      ]
+    },
+    {
+      "id": "il-types",
+      "fact": "Pollution types (source mind map): air, water, soil, noise, light and radiation.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "light",
+        "radiation"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-39"
+      ]
+    },
+    {
+      "id": "il-eutro",
+      "fact": "Eutrophication is nutrient overload of water bodies, mainly from farm run-off.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "Eutrophication"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-39"
+      ]
+    },
+    {
+      "id": "il-acid",
+      "fact": "Air pollution causes acid rain and ozone depletion besides respiratory disease.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "acid rain"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-39"
+      ]
+    },
+    {
+      "id": "il-noise",
+      "fact": "Noise is regulated by the Noise Pollution Rules, 2000.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "Noise Pollution"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-card-20"
+      ]
+    },
+    {
+      "id": "il-ncap",
+      "fact": "NCAP (January 2019) covers 131 non-attainment cities with a 40% PM10 cut target by 2025-26.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "131",
+        "40%"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-40"
+      ]
+    },
+    {
+      "id": "il-aqi",
+      "fact": "The National Air Quality Index (2014) uses eight pollutants.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "eight pollutants"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-40"
+      ]
+    },
+    {
+      "id": "il-ap-ncap",
+      "fact": "Visakhapatnam and Vijayawada are AP's NCAP non-attainment cities.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "non-attainment"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-40"
+      ]
+    },
+    {
+      "id": "il-lg",
+      "fact": "The LG Polymers styrene leak at Visakhapatnam (7 May 2020) drew NGT interim damages of ₹50 crore.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "LG Polymers"
+      ],
+      "taughtIn": "econ-environment-policy-note-indian-laws-waste",
+      "drilledBy": [
+        "econ-environment-policy-mcq-41"
+      ]
+    },
+    {
+      "id": "gx-50",
+      "fact": "India's non-fossil installed capacity crossed 50% in 2025, five years early.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "50%",
+        "2025"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-42"
+      ]
+    },
+    {
+      "id": "gx-ngh",
+      "fact": "National Green Hydrogen Mission (January 2023): ₹19,744 crore and 5 million tonnes a year by 2030.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "19,744"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-42"
+      ]
+    },
+    {
+      "id": "gx-sight",
+      "fact": "SIGHT is the incentive programme under the Green Hydrogen Mission.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "SIGHT"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-42"
+      ]
+    },
+    {
+      "id": "gx-h2-uses",
+      "fact": "Green hydrogen can decarbonise fertiliser plants, refineries and steel plants (UPSC 2023).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "refineries",
+        "steel"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-43"
+      ]
+    },
+    {
+      "id": "gx-surya",
+      "fact": "PM Surya Ghar (Feb 2024) gives rooftop solar with up to 300 free units a month to 1 crore homes.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Surya Ghar"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-44"
+      ]
+    },
+    {
+      "id": "gx-kusum",
+      "fact": "PM-KUSUM (2019) promotes solar pumps; the National Solar Mission dates from 2010.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "KUSUM"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-44"
+      ]
+    },
+    {
+      "id": "gx-isa",
+      "fact": "The International Solar Alliance was launched at COP21 (2015) and is headquartered in Gurugram.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Gurugram"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-42"
+      ]
+    },
+    {
+      "id": "gx-coal-nat",
+      "fact": "Coal was nationalised in 1971-73 under Indira Gandhi; blocks now go by auction (UPSC 2019).",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "nationalised",
+        "auction"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-45"
+      ]
+    },
+    {
+      "id": "gx-coal-204",
+      "fact": "The Supreme Court cancelled 204 coal blocks in 2014; commercial coal mining opened in 2020.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "204"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-46"
+      ]
+    },
+    {
+      "id": "gx-coal-1bt",
+      "fact": "India's coal output crossed 1 billion tonnes in 2024-25 but it still imports coking coal.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "1 billion tonnes",
+        "coking coal"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-46"
+      ]
+    },
+    {
+      "id": "gx-coal-cess",
+      "fact": "The ₹400-a-tonne Clean Environment Cess on coal became GST compensation cess (2017) and was removed by GST 2.0.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Clean Environment Cess"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-46"
+      ]
+    },
+    {
+      "id": "gx-dmf",
+      "fact": "District Mineral Foundations (MMDR Amendment 2015) protect the interests of people affected by mining (UPSC 2016).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "District Mineral Foundation",
+        "affected by mining"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-47"
+      ]
+    },
+    {
+      "id": "gx-dmf-rate",
+      "fact": "DMF contributions are 30% of royalty for pre-2015 leases and 10% for auctioned leases; spent under PMKKKY.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "PMKKKY"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-48"
+      ]
+    },
+    {
+      "id": "gx-carbon-pyq",
+      "fact": "Carbon markets are among the most widespread climate tools and do not transfer resources to the State (UPSC 2023).",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "carbon markets"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-49"
+      ]
+    },
+    {
+      "id": "gx-brsr",
+      "fact": "BRSR is mandated by SEBI (not the RBI) for the top 1,000 listed companies and is largely non-financial (UPSC 2025).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "BRSR",
+        "SEBI"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-49"
+      ]
+    },
+    {
+      "id": "gx-gcp",
+      "fact": "The Green Credit Programme was notified in October 2023 and launched globally at COP28.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Green Credit Programme"
+      ],
+      "taughtIn": "econ-environment-policy-note-carbon-markets-green-finance",
+      "drilledBy": [
+        "econ-environment-policy-mcq-49"
+      ]
+    },
+    {
+      "id": "gx-geac",
+      "fact": "GEAC must approve any import of GM food (UPSC 2024).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "GEAC"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-50"
+      ]
+    },
+    {
+      "id": "gx-recession",
+      "fact": "In a recession the likely step is more spending on public projects (UPSC 2020).",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "public projects"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-50"
+      ]
+    },
+    {
+      "id": "gx-free",
+      "fact": "When the government provides a good free, the opportunity cost shifts to taxpayers (UPSC 2018).",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "opportunity cost"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-50"
+      ]
+    },
+    {
+      "id": "gx-ap-h2",
+      "fact": "NTPC Green's green hydrogen hub at Pudimadaka (Anakapalli) is ~₹1.85 lakh crore; foundation laid 8 January 2025.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Pudimadaka"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-51"
+      ]
+    },
+    {
+      "id": "gx-ap-160",
+      "fact": "AP targets 160 GW of green energy by 2047.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "160 GW"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-51"
+      ]
+    },
+    {
+      "id": "gx-ap-re",
+      "fact": "AP has about 14,833 MW of renewable capacity (August 2026) and added 3,866 MW in 2025-26.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "14,833"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-51"
+      ]
+    },
+    {
+      "id": "gx-ap-pinnapuram",
+      "fact": "Pinnapuram (Nandyal) hosts an integrated renewable-plus-pumped-storage project.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Pinnapuram"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-52"
+      ]
+    },
+    {
+      "id": "gx-ap-harita",
+      "fact": "Harita AP targets 37% green cover by 2030 and 50% by 2047.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Harita"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-51"
+      ]
+    },
+    {
+      "id": "gx-ccus",
+      "fact": "Budget 2026-27 gives ₹20,000 crore over five years for CCUS.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "CCUS"
+      ],
+      "taughtIn": "econ-environment-policy-note-green-transition-ap",
+      "drilledBy": [
+        "econ-environment-policy-mcq-44"
+      ]
+    },
+    {
+      "id": "dd-dma",
+      "fact": "The Disaster Management Act was passed in 2005; NDMA is chaired by the Prime Minister.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "syllabus"
+      ],
+      "keys": [
+        "Prime Minister",
+        "2005"
+      ],
+      "taughtIn": "econ-environment-policy-note-climate-commitments",
+      "drilledBy": [
+        "econ-environment-policy-mcq-53"
+      ]
+    },
+    {
+      "id": "dd-ndrf",
+      "fact": "The NDRF was set up in 2006 as the specialist response force.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "NDRF"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-53"
+      ]
+    },
+    {
+      "id": "dd-sendai",
+      "fact": "The Sendai Framework covers 2015-2030.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Sendai",
+        "2015-2030"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-53"
+      ]
+    },
+    {
+      "id": "dd-cdri",
+      "fact": "CDRI is India-led (2019) and headquartered in New Delhi.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "CDRI"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-53"
+      ]
+    },
+    {
+      "id": "dd-polavaram",
+      "fact": "Polavaram dam raises displacement of tribal families in the Godavari valley.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Polavaram"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-54"
+      ]
+    },
+    {
+      "id": "dd-kolleru-op",
+      "fact": "Operation Kolleru (2006) removed illegal fish tanks from Kolleru Lake.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Operation Kolleru"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-54"
+      ]
+    },
+    {
+      "id": "dd-rfctlarr",
+      "fact": "Resettlement follows the RFCTLARR Act, 2013.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "RFCTLARR"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-54"
+      ]
+    },
+    {
+      "id": "dd-hudhud",
+      "fact": "Cyclone Hudhud (October 2014) struck Visakhapatnam.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Hudhud"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-55"
+      ]
+    },
+    {
+      "id": "dd-titli",
+      "fact": "Cyclone Titli (October 2018) hit Srikakulam district.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Titli"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-55"
+      ]
+    },
+    {
+      "id": "dd-michaung",
+      "fact": "Cyclone Michaung (December 2023) made landfall near Bapatla.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Michaung"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-55"
+      ]
+    },
+    {
+      "id": "dd-montha",
+      "fact": "Cyclone Montha (October 2025) made landfall near Narasapuram.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Montha",
+        "Narasapuram"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-mcq-55"
+      ]
+    },
+    {
+      "id": "dd-apsdma",
+      "fact": "APSDMA runs disaster management in AP; Coringa mangroves buffer storms.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Coringa"
+      ],
+      "taughtIn": "econ-environment-policy-note-disasters-development",
+      "drilledBy": [
+        "econ-environment-policy-card-21"
+      ]
+    }
+  ]
+}

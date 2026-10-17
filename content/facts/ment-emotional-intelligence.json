@@ -1,0 +1,524 @@
+{
+  "version": 1,
+  "subtopicId": "ment-emotional-intelligence",
+  "facts": [
+    {
+      "id": "ei-def",
+      "fact": "EI = recognising, understanding and managing your own emotions and responding well to others’ emotions.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "emotions"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-concept-origins",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-1",
+        "ment-emotional-intelligence-mcq-25"
+      ]
+    },
+    {
+      "id": "ei-emotion",
+      "fact": "An emotion is a short, intense reaction with physiological, cognitive and behavioural components.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "emotion"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-27"
+      ]
+    },
+    {
+      "id": "ei-ekman",
+      "fact": "Paul Ekman's six basic emotions: happiness, sadness, fear, anger, surprise, disgust.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ekman"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-28"
+      ]
+    },
+    {
+      "id": "ei-coined",
+      "fact": "Peter Salovey and John Mayer coined 'emotional intelligence' in 1990.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "salovey"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-concept-origins",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-3",
+        "ment-emotional-intelligence-mcq-24"
+      ]
+    },
+    {
+      "id": "ei-goleman",
+      "fact": "Daniel Goleman popularised EI in his 1995 book Emotional Intelligence.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "goleman"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-concept-origins",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-3",
+        "ment-emotional-intelligence-mcq-24",
+        "ment-emotional-intelligence-mcq-36"
+      ]
+    },
+    {
+      "id": "ei-iq",
+      "fact": "IQ is cognitive and relatively stable; EI is emotional-social and can matter more than IQ for leadership.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "iq"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-concept-origins",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-9",
+        "ment-emotional-intelligence-mcq-34"
+      ]
+    },
+    {
+      "id": "ei-learnable",
+      "fact": "EI can be learned and developed with practice (it is not fixed at birth).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "develop"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-concept-origins",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-9",
+        "ment-emotional-intelligence-mcq-17",
+        "ment-emotional-intelligence-mcq-34"
+      ]
+    },
+    {
+      "id": "ei-five",
+      "fact": "Goleman's five components: self-awareness, self-regulation, motivation, empathy, social skills.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "social skills"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-goleman-five",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-2",
+        "ment-emotional-intelligence-mcq-29"
+      ]
+    },
+    {
+      "id": "ei-order",
+      "fact": "Goleman's order: self-awareness → self-regulation → motivation → empathy → social skills.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "→"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-29"
+      ]
+    },
+    {
+      "id": "ei-personal-social",
+      "fact": "First three components are personal (managing yourself); empathy and social skills are social (managing relationships).",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "social"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-30"
+      ]
+    },
+    {
+      "id": "ei-self-awareness",
+      "fact": "Self-awareness = recognising your own emotions, triggers and their effect on behaviour.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "self-awareness"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-goleman-five",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-5",
+        "ment-emotional-intelligence-mcq-21",
+        "ment-emotional-intelligence-mcq-31"
+      ]
+    },
+    {
+      "id": "ei-self-regulation",
+      "fact": "Self-regulation = controlling impulses and moods; thinking before acting.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "self-regulation"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-goleman-five",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-14",
+        "ment-emotional-intelligence-mcq-17",
+        "ment-emotional-intelligence-mcq-31",
+        "ment-emotional-intelligence-mcq-46"
+      ]
+    },
+    {
+      "id": "ei-motivation",
+      "fact": "Motivation = inner drive, optimism and resilience after setbacks.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "motivation"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-goleman-five",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-7",
+        "ment-emotional-intelligence-mcq-18",
+        "ment-emotional-intelligence-mcq-31"
+      ]
+    },
+    {
+      "id": "ei-empathy",
+      "fact": "Empathy = understanding and sharing others' feelings without judgement (not mere sympathy).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "empathy"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-goleman-five",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-10",
+        "ment-emotional-intelligence-mcq-31",
+        "ment-emotional-intelligence-mcq-33"
+      ]
+    },
+    {
+      "id": "ei-social-skills",
+      "fact": "Social skills = building rapport, managing relationships, resolving conflict.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "social skills"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-goleman-five",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-26",
+        "ment-emotional-intelligence-mcq-32"
+      ]
+    },
+    {
+      "id": "ei-hijack",
+      "fact": "Amygdala hijack = Goleman's term for an emotional over-reaction where feeling overrides thinking.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "amygdala"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-38"
+      ]
+    },
+    {
+      "id": "ei-four-branch",
+      "fact": "Mayer–Salovey four branches, basic → complex: perceiving, using, understanding, managing emotions.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "perceiving"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-mayer-salovey",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-12",
+        "ment-emotional-intelligence-mcq-23"
+      ]
+    },
+    {
+      "id": "ei-msceit",
+      "fact": "The ability model is measured by a performance test with right/wrong answers (MSCEIT).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "msceit"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-35"
+      ]
+    },
+    {
+      "id": "ei-mixed",
+      "fact": "Goleman's and Bar-On's (EQ-i) models are MIXED models — abilities plus personality traits.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "mixed"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-19",
+        "ment-emotional-intelligence-mcq-36"
+      ]
+    },
+    {
+      "id": "ei-trait",
+      "fact": "Trait EI (Petrides) is self-perceived and measured by self-report (TEIQue).",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "petrides"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-37"
+      ]
+    },
+    {
+      "id": "ei-appraisal",
+      "fact": "Identify the competency from the behaviour: naming your feeling = self-awareness, reading others = empathy, mediating = social skills.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "comp"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-goleman-five",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-14",
+        "ment-emotional-intelligence-mcq-21",
+        "ment-emotional-intelligence-mcq-31",
+        "ment-emotional-intelligence-mcq-32"
+      ]
+    },
+    {
+      "id": "ei-eliminate",
+      "fact": "Situation method: eliminate aggressive/impulsive, then passive/avoidant, then over-reacting options.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "eliminat"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-scenario-method",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-39",
+        "ment-emotional-intelligence-mcq-40"
+      ]
+    },
+    {
+      "id": "ei-cava",
+      "fact": "Pick the option that is Calm, Acknowledges the feeling, Verifies the facts and Acts fairly (CAVA).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "calm"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-scenario-method",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-4",
+        "ment-emotional-intelligence-mcq-40",
+        "ment-emotional-intelligence-mcq-41",
+        "ment-emotional-intelligence-mcq-43"
+      ]
+    },
+    {
+      "id": "ei-task-emotion",
+      "fact": "The best answer handles both the task and the emotion, proportionately.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "task"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-scenario-method",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-16",
+        "ment-emotional-intelligence-mcq-42"
+      ]
+    },
+    {
+      "id": "ei-ego-agency",
+      "fact": "Traps: 'confident' options that are ego-driven and 'kind' options that remove the person's agency.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "emotionally intelligent"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-16",
+        "ment-emotional-intelligence-mcq-41",
+        "ment-emotional-intelligence-mcq-42"
+      ]
+    },
+    {
+      "id": "ei-feedback",
+      "fact": "When criticised, listen calmly and analyse the feedback before responding.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "criticis"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-4",
+        "ment-emotional-intelligence-mcq-43"
+      ]
+    },
+    {
+      "id": "ei-lawful",
+      "fact": "If someone breaks the law or deliberately hurts sentiments, use lawful channels (police complaint), not retaliation or ignoring it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "police"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-models-emotions-extras",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-44"
+      ]
+    },
+    {
+      "id": "ei-coping",
+      "fact": "Coping with stress: acknowledge it, steady yourself, prioritise — never suppress, vent or dodge.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "stress"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-scenario-method",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-11",
+        "ment-emotional-intelligence-mcq-45"
+      ]
+    },
+    {
+      "id": "ei-governance",
+      "fact": "In administration, EI means de-escalating, listening to citizens and acting on facts.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "citizen"
+      ],
+      "taughtIn": "ment-emotional-intelligence-note-scenario-method",
+      "drilledBy": [
+        "ment-emotional-intelligence-mcq-13"
+      ]
+    }
+  ]
+}

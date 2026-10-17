@@ -1,0 +1,890 @@
+{
+  "version": 1,
+  "subtopicId": "ment-geometry",
+  "facts": [
+    {
+      "id": "g-angle-types",
+      "fact": "Acute < 90°, right 90°, obtuse 90°–180°, straight 180°, reflex 180°–360°, complete 360°.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "reflex"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-26"
+      ]
+    },
+    {
+      "id": "g-comp-supp",
+      "fact": "Complementary angles total 90°, supplementary 180°; a linear pair is supplementary.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "supplement"
+      ],
+      "taughtIn": "ment-geometry-note-lines-angles",
+      "drilledBy": [
+        "ment-geometry-mcq-1",
+        "ment-geometry-mcq-27"
+      ]
+    },
+    {
+      "id": "g-vertical",
+      "fact": "Vertically opposite angles are equal; angles round a point total 360°.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "vertically opposite"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-28"
+      ]
+    },
+    {
+      "id": "g-parallel-equal",
+      "fact": "Parallel lines and a transversal: corresponding and alternate angles are equal.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "parallel"
+      ],
+      "taughtIn": "ment-geometry-note-lines-angles",
+      "drilledBy": [
+        "ment-geometry-card-1",
+        "ment-geometry-mcq-29",
+        "ment-geometry-mcq-30"
+      ]
+    },
+    {
+      "id": "g-cointerior",
+      "fact": "Co-interior (same-side interior) angles are supplementary.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "co-interior"
+      ],
+      "taughtIn": "ment-geometry-note-lines-angles",
+      "drilledBy": [
+        "ment-geometry-mcq-2",
+        "ment-geometry-card-1",
+        "ment-geometry-mcq-31"
+      ]
+    },
+    {
+      "id": "g-angle-sum",
+      "fact": "Triangle angles total 180°.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "triangle"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-facts",
+      "drilledBy": [
+        "ment-geometry-mcq-3",
+        "ment-geometry-card-2",
+        "ment-geometry-mcq-32",
+        "ment-geometry-mcq-33"
+      ]
+    },
+    {
+      "id": "g-exterior",
+      "fact": "An exterior angle = sum of the two remote interior angles.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "exterior angle"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-33",
+        "ment-geometry-mcq-34"
+      ]
+    },
+    {
+      "id": "g-inequality",
+      "fact": "Triangle inequality: difference of two sides < third side < their sum.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "sides"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-35",
+        "ment-geometry-mcq-36"
+      ]
+    },
+    {
+      "id": "g-type-sides",
+      "fact": "Longest side c: c² < a² + b² acute, = right, > obtuse.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "obtuse"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-37"
+      ]
+    },
+    {
+      "id": "g-pythagoras",
+      "fact": "Right triangle: hypotenuse² = sum of squares of the other two sides.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "hypotenuse"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-facts",
+      "drilledBy": [
+        "ment-geometry-mcq-4",
+        "ment-geometry-mcq-39"
+      ]
+    },
+    {
+      "id": "g-triples",
+      "fact": "Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25 (and multiples).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "triple"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-facts",
+      "drilledBy": [
+        "ment-geometry-card-3",
+        "ment-geometry-mcq-38"
+      ]
+    },
+    {
+      "id": "g-special",
+      "fact": "30°-60°-90° sides 1 : √3 : 2; 45°-45°-90° sides 1 : 1 : √2.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "30°"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-39"
+      ]
+    },
+    {
+      "id": "g-sim-area",
+      "fact": "Similar triangles: sides and perimeters scale by k, areas by k².",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "similar"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-facts",
+      "drilledBy": [
+        "ment-geometry-mcq-5",
+        "ment-geometry-mcq-19",
+        "ment-geometry-card-3",
+        "ment-geometry-mcq-40"
+      ]
+    },
+    {
+      "id": "g-sim-tests",
+      "fact": "Similarity tests: AA, SAS (proportional sides with equal included angle), SSS.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "similar"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-41"
+      ]
+    },
+    {
+      "id": "g-congruence",
+      "fact": "Congruence: SSS, SAS, ASA/AAS, RHS — never SSA or AAA.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "congruen"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-facts",
+      "drilledBy": [
+        "ment-geometry-mcq-14",
+        "ment-geometry-mcq-42"
+      ]
+    },
+    {
+      "id": "g-bpt",
+      "fact": "Basic proportionality (Thales): DE ∥ BC gives AD/DB = AE/EC.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "parallel"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-43"
+      ]
+    },
+    {
+      "id": "g-centroid",
+      "fact": "The centroid divides each median 2 : 1 from the vertex.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "centroid"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-centres",
+      "drilledBy": [
+        "ment-geometry-mcq-6",
+        "ment-geometry-card-4",
+        "ment-geometry-mcq-44"
+      ]
+    },
+    {
+      "id": "g-centroid-xy",
+      "fact": "Centroid = ((x₁ + x₂ + x₃) ÷ 3, (y₁ + y₂ + y₃) ÷ 3).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "centroid"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-45"
+      ]
+    },
+    {
+      "id": "g-incentre",
+      "fact": "Incentre (angle bisectors): ∠BIC = 90° + A/2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "incentre"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-46",
+        "ment-geometry-mcq-47"
+      ]
+    },
+    {
+      "id": "g-excentre",
+      "fact": "Excentre (external bisectors of B and C): ∠BOC = 90° − A/2.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "external"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-48"
+      ]
+    },
+    {
+      "id": "g-circumcentre",
+      "fact": "Circumcentre: ∠BOC = 2A (acute); right triangle: midpoint of hypotenuse, R = hypotenuse ÷ 2.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "circum"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-49",
+        "ment-geometry-mcq-50"
+      ]
+    },
+    {
+      "id": "g-orthocentre",
+      "fact": "Orthocentre (altitudes): ∠BHC = 180° − A; right triangle: at the right-angle vertex.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "orthocentre"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-51",
+        "ment-geometry-mcq-52"
+      ]
+    },
+    {
+      "id": "g-centre-place",
+      "fact": "Circumcentre and orthocentre lie inside (acute), on (right) or outside (obtuse) the triangle.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "outside"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-52"
+      ]
+    },
+    {
+      "id": "g-inradius",
+      "fact": "Inradius r = area ÷ s; right triangle r = (a + b − c) ÷ 2.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "inradius"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-centres",
+      "drilledBy": [
+        "ment-geometry-mcq-7"
+      ]
+    },
+    {
+      "id": "g-equilateral-centres",
+      "fact": "Equilateral triangle: all centres coincide; R = a/√3, r = a/(2√3) = R/2.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "equilateral"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-53"
+      ]
+    },
+    {
+      "id": "g-bisector",
+      "fact": "Angle bisector theorem: BD : DC = AB : AC.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "bisect"
+      ],
+      "taughtIn": "ment-geometry-note-triangle-centres",
+      "drilledBy": [
+        "ment-geometry-mcq-8",
+        "ment-geometry-card-5",
+        "ment-geometry-mcq-54"
+      ]
+    },
+    {
+      "id": "g-poly-sum",
+      "fact": "Interior angles of an n-gon total (n − 2) × 180°.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "interior"
+      ],
+      "taughtIn": "ment-geometry-note-circle-polygon",
+      "drilledBy": [
+        "ment-geometry-mcq-16",
+        "ment-geometry-card-8",
+        "ment-geometry-mcq-55",
+        "ment-geometry-mcq-56"
+      ]
+    },
+    {
+      "id": "g-poly-ext",
+      "fact": "Exterior angles of any polygon total 360°; regular: each 360° ÷ n.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "exterior"
+      ],
+      "taughtIn": "ment-geometry-note-circle-polygon",
+      "drilledBy": [
+        "ment-geometry-mcq-9",
+        "ment-geometry-card-8",
+        "ment-geometry-mcq-56"
+      ]
+    },
+    {
+      "id": "g-diagonals",
+      "fact": "Number of diagonals of an n-gon = n(n − 3) ÷ 2.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "diagonals"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-57"
+      ]
+    },
+    {
+      "id": "g-quad",
+      "fact": "Quadrilateral angles total 360°; joining the midpoints gives a parallelogram of half the area.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "quadrilateral"
+      ],
+      "taughtIn": "ment-geometry-note-geometry-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-58",
+        "ment-geometry-mcq-59"
+      ]
+    },
+    {
+      "id": "g-central",
+      "fact": "The central angle is twice the inscribed angle on the same arc.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "centr"
+      ],
+      "taughtIn": "ment-geometry-note-circle-polygon",
+      "drilledBy": [
+        "ment-geometry-mcq-10",
+        "ment-geometry-card-6",
+        "ment-geometry-mcq-60"
+      ]
+    },
+    {
+      "id": "g-semicircle",
+      "fact": "The angle in a semicircle is 90°.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "diameter"
+      ],
+      "taughtIn": "ment-geometry-note-circle-polygon",
+      "drilledBy": [
+        "ment-geometry-mcq-61",
+        "ment-geometry-mcq-62"
+      ]
+    },
+    {
+      "id": "g-same-segment",
+      "fact": "Angles in the same segment (on the same arc) are equal.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "same"
+      ],
+      "taughtIn": "ment-geometry-note-circle-coordinate-extras",
+      "drilledBy": [
+        "ment-geometry-card-6",
+        "ment-geometry-mcq-63"
+      ]
+    },
+    {
+      "id": "g-cyclic",
+      "fact": "Cyclic quadrilateral: opposite angles total 180°; an exterior angle = interior opposite angle.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "cyclic"
+      ],
+      "taughtIn": "ment-geometry-note-circle-polygon",
+      "drilledBy": [
+        "ment-geometry-mcq-15",
+        "ment-geometry-card-6",
+        "ment-geometry-mcq-64",
+        "ment-geometry-mcq-65"
+      ]
+    },
+    {
+      "id": "g-tangent",
+      "fact": "A tangent ⟂ radius; tangent length from distance d = √(d² − r²).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "tangent"
+      ],
+      "taughtIn": "ment-geometry-note-circle-polygon",
+      "drilledBy": [
+        "ment-geometry-mcq-11",
+        "ment-geometry-card-7",
+        "ment-geometry-mcq-66",
+        "ment-geometry-mcq-69"
+      ]
+    },
+    {
+      "id": "g-two-tangents",
+      "fact": "Two tangents from a point are equal and ∠P + central angle = 180°.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "tangents"
+      ],
+      "taughtIn": "ment-geometry-note-tangent-extras-counting",
+      "drilledBy": [
+        "ment-geometry-mcq-23",
+        "ment-geometry-card-7",
+        "ment-geometry-mcq-67"
+      ]
+    },
+    {
+      "id": "g-alt-segment",
+      "fact": "Tangent–chord angle = inscribed angle in the alternate segment.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "chord"
+      ],
+      "taughtIn": "ment-geometry-note-circle-coordinate-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-68",
+        "ment-geometry-mcq-69"
+      ]
+    },
+    {
+      "id": "g-chord-perp",
+      "fact": "The perpendicular from the centre bisects a chord: r² = (half-chord)² + distance².",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "chord"
+      ],
+      "taughtIn": "ment-geometry-note-circle-polygon",
+      "drilledBy": [
+        "ment-geometry-mcq-17",
+        "ment-geometry-mcq-70"
+      ]
+    },
+    {
+      "id": "g-equal-chords",
+      "fact": "Equal chords are equidistant from the centre.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "equidistant"
+      ],
+      "taughtIn": "ment-geometry-note-circle-coordinate-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-71"
+      ]
+    },
+    {
+      "id": "g-parallel-chords",
+      "fact": "Two parallel chords: distance apart = sum (opposite sides of the centre) or difference (same side).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "opposite sides"
+      ],
+      "taughtIn": "ment-geometry-note-circle-coordinate-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-72"
+      ]
+    },
+    {
+      "id": "g-intersecting-chords",
+      "fact": "Intersecting chords: PA × PB = PC × PD; tangent–secant: PT² = PA × PB.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "chords"
+      ],
+      "taughtIn": "ment-geometry-note-circle-coordinate-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-73",
+        "ment-geometry-mcq-74"
+      ]
+    },
+    {
+      "id": "g-tangential-quad",
+      "fact": "A quadrilateral with an incircle has AB + CD = BC + AD.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "inscribed"
+      ],
+      "taughtIn": "ment-geometry-note-tangent-extras-counting",
+      "drilledBy": [
+        "ment-geometry-mcq-22",
+        "ment-geometry-mcq-75"
+      ]
+    },
+    {
+      "id": "g-distance",
+      "fact": "Distance = √(Δx² + Δy²).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "distance"
+      ],
+      "taughtIn": "ment-geometry-note-coordinate",
+      "drilledBy": [
+        "ment-geometry-mcq-12",
+        "ment-geometry-card-9",
+        "ment-geometry-mcq-76"
+      ]
+    },
+    {
+      "id": "g-section",
+      "fact": "Section (m : n) internal = ((mx₂ + nx₁)/(m + n), (my₂ + ny₁)/(m + n)); midpoint = average.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "ratio"
+      ],
+      "taughtIn": "ment-geometry-note-coordinate",
+      "drilledBy": [
+        "ment-geometry-mcq-18",
+        "ment-geometry-mcq-78"
+      ]
+    },
+    {
+      "id": "g-midpoint",
+      "fact": "Midpoint = average of the coordinates.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "midpoint"
+      ],
+      "taughtIn": "ment-geometry-note-circle-coordinate-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-77"
+      ]
+    },
+    {
+      "id": "g-slope",
+      "fact": "Slope = Δy ÷ Δx; parallel lines equal slopes, perpendicular slopes multiply to −1.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "slope"
+      ],
+      "taughtIn": "ment-geometry-note-coordinate",
+      "drilledBy": [
+        "ment-geometry-mcq-13",
+        "ment-geometry-card-9",
+        "ment-geometry-mcq-79"
+      ]
+    },
+    {
+      "id": "g-area-coords",
+      "fact": "Triangle area by coordinates = ½|x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|; zero means collinear.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "area"
+      ],
+      "taughtIn": "ment-geometry-note-coordinate",
+      "drilledBy": [
+        "ment-geometry-card-9",
+        "ment-geometry-mcq-80",
+        "ment-geometry-mcq-81"
+      ]
+    },
+    {
+      "id": "g-quadrants",
+      "fact": "Quadrant signs: I (+, +), II (−, +), III (−, −), IV (+, −).",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "quadrant"
+      ],
+      "taughtIn": "ment-geometry-note-circle-coordinate-extras",
+      "drilledBy": [
+        "ment-geometry-mcq-82"
+      ]
+    },
+    {
+      "id": "g-int-triangles",
+      "fact": "Count integer triangles of perimeter P by listing a ≤ b ≤ c with c < P/2.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "integer"
+      ],
+      "taughtIn": "ment-geometry-note-tangent-extras-counting",
+      "drilledBy": [
+        "ment-geometry-mcq-24",
+        "ment-geometry-mcq-25",
+        "ment-geometry-card-10"
+      ]
+    }
+  ]
+}

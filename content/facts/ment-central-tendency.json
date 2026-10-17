@@ -1,0 +1,625 @@
+{
+  "version": 1,
+  "subtopicId": "ment-central-tendency",
+  "facts": [
+    {
+      "id": "ct-mean",
+      "fact": "Mean = sum of observations ÷ number of observations.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mean"
+      ],
+      "taughtIn": "ment-central-tendency-note-mean",
+      "drilledBy": [
+        "ment-central-tendency-mcq-1",
+        "ment-central-tendency-mcq-29"
+      ]
+    },
+    {
+      "id": "ct-grouped-mean",
+      "fact": "Grouped mean = Σfx ÷ Σf with x = class mid-value.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "frequenc"
+      ],
+      "taughtIn": "ment-central-tendency-note-mean",
+      "drilledBy": [
+        "ment-central-tendency-mcq-4",
+        "ment-central-tendency-mcq-29"
+      ]
+    },
+    {
+      "id": "ct-assumed",
+      "fact": "Assumed-mean method: x̄ = A + Σfd ÷ Σf (step deviation: × h).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "assumed"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-30"
+      ]
+    },
+    {
+      "id": "ct-combined",
+      "fact": "Combined mean = (n₁x̄₁ + n₂x̄₂) ÷ (n₁ + n₂).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "combined"
+      ],
+      "taughtIn": "ment-central-tendency-note-mean",
+      "drilledBy": [
+        "ment-central-tendency-mcq-5",
+        "ment-central-tendency-mcq-23",
+        "ment-central-tendency-card-1"
+      ]
+    },
+    {
+      "id": "ct-weighted",
+      "fact": "Weighted mean = Σwx ÷ Σw.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "weight"
+      ],
+      "taughtIn": "ment-central-tendency-note-mean",
+      "drilledBy": [
+        "ment-central-tendency-mcq-6",
+        "ment-central-tendency-card-1",
+        "ment-central-tendency-mcq-31"
+      ]
+    },
+    {
+      "id": "ct-corrected",
+      "fact": "Corrected mean = old mean + (Σcorrect − Σwrong) ÷ n.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "correct"
+      ],
+      "taughtIn": "ment-central-tendency-note-mean",
+      "drilledBy": [
+        "ment-central-tendency-mcq-7",
+        "ment-central-tendency-card-2",
+        "ment-central-tendency-mcq-32"
+      ]
+    },
+    {
+      "id": "ct-add-remove",
+      "fact": "Adding/removing observations: work through totals (mean × count).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "observation"
+      ],
+      "taughtIn": "ment-central-tendency-note-mean",
+      "drilledBy": [
+        "ment-central-tendency-mcq-8",
+        "ment-central-tendency-mcq-19"
+      ]
+    },
+    {
+      "id": "ct-origin-scale",
+      "fact": "y = ax + b: mean, median and mode all become a × (old) + b.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "multiplied"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-9",
+        "ment-central-tendency-mcq-33"
+      ]
+    },
+    {
+      "id": "ct-sum-dev",
+      "fact": "Deviations from the mean always sum to zero.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "deviations"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-34"
+      ]
+    },
+    {
+      "id": "ct-median",
+      "fact": "Sort first; odd n: the [(n + 1)/2]th term; even n: mean of the two middle terms.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "median"
+      ],
+      "taughtIn": "ment-central-tendency-note-median",
+      "drilledBy": [
+        "ment-central-tendency-mcq-2",
+        "ment-central-tendency-card-3",
+        "ment-central-tendency-mcq-35"
+      ]
+    },
+    {
+      "id": "ct-median-grouped",
+      "fact": "Grouped median = L + [(N/2 − C) ÷ f] × h.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "median"
+      ],
+      "taughtIn": "ment-central-tendency-note-median",
+      "drilledBy": [
+        "ment-central-tendency-mcq-10",
+        "ment-central-tendency-mcq-22",
+        "ment-central-tendency-card-3",
+        "ment-central-tendency-mcq-36"
+      ]
+    },
+    {
+      "id": "ct-median-class",
+      "fact": "Median class = first class whose cumulative frequency ≥ N/2; C is the cf before it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "cumulative"
+      ],
+      "taughtIn": "ment-central-tendency-note-median",
+      "drilledBy": [
+        "ment-central-tendency-mcq-36"
+      ]
+    },
+    {
+      "id": "ct-median-robust",
+      "fact": "The median is not pulled by extreme outliers (positional measure).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "outliers"
+      ],
+      "taughtIn": "ment-central-tendency-note-median",
+      "drilledBy": [
+        "ment-central-tendency-mcq-17"
+      ]
+    },
+    {
+      "id": "ct-mode",
+      "fact": "Mode = most frequent value; data can have no mode, one mode or several (bimodal).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mode"
+      ],
+      "taughtIn": "ment-central-tendency-note-mode",
+      "drilledBy": [
+        "ment-central-tendency-mcq-3",
+        "ment-central-tendency-mcq-37"
+      ]
+    },
+    {
+      "id": "ct-mode-grouped",
+      "fact": "Grouped mode = l + [(f₁ − f₀) ÷ (2f₁ − f₀ − f₂)] × h.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mode"
+      ],
+      "taughtIn": "ment-central-tendency-note-mode",
+      "drilledBy": [
+        "ment-central-tendency-mcq-11",
+        "ment-central-tendency-card-4",
+        "ment-central-tendency-mcq-38"
+      ]
+    },
+    {
+      "id": "ct-empirical",
+      "fact": "Empirical relation: Mode = 3 Median − 2 Mean.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "empirical"
+      ],
+      "taughtIn": "ment-central-tendency-note-mode",
+      "drilledBy": [
+        "ment-central-tendency-mcq-12",
+        "ment-central-tendency-mcq-26",
+        "ment-central-tendency-card-4",
+        "ment-central-tendency-mcq-39",
+        "ment-central-tendency-mcq-41"
+      ]
+    },
+    {
+      "id": "ct-symmetric",
+      "fact": "Symmetric (normal) distribution: mean = median = mode.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "symmetric"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-card-5",
+        "ment-central-tendency-mcq-40",
+        "ment-central-tendency-mcq-41"
+      ]
+    },
+    {
+      "id": "ct-skew",
+      "fact": "Positive (right) skew: mean > median > mode; negative skew reverses it.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "skew"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-card-5",
+        "ment-central-tendency-mcq-42"
+      ]
+    },
+    {
+      "id": "ct-qualitative",
+      "fact": "Only the mode can be used for qualitative (categorical) data.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "qualitative"
+      ],
+      "taughtIn": "ment-central-tendency-note-mode",
+      "drilledBy": [
+        "ment-central-tendency-mcq-17"
+      ]
+    },
+    {
+      "id": "ct-range",
+      "fact": "Range = highest − lowest value.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "range"
+      ],
+      "taughtIn": "ment-central-tendency-note-dispersion",
+      "drilledBy": [
+        "ment-central-tendency-mcq-13",
+        "ment-central-tendency-card-6",
+        "ment-central-tendency-mcq-43"
+      ]
+    },
+    {
+      "id": "ct-coef-range",
+      "fact": "Coefficient of range = (H − L) ÷ (H + L).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "coefficient of range"
+      ],
+      "taughtIn": "ment-central-tendency-note-dispersion",
+      "drilledBy": [
+        "ment-central-tendency-mcq-13",
+        "ment-central-tendency-card-6",
+        "ment-central-tendency-mcq-43"
+      ]
+    },
+    {
+      "id": "ct-md",
+      "fact": "Mean deviation = (1/n) Σ|x − A| (absolute deviations); least about the median.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mean deviation"
+      ],
+      "taughtIn": "ment-central-tendency-note-dispersion",
+      "drilledBy": [
+        "ment-central-tendency-mcq-14",
+        "ment-central-tendency-card-8"
+      ]
+    },
+    {
+      "id": "ct-variance",
+      "fact": "Variance σ² = (1/n) Σ(x − x̄)²; SD = √variance.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "variance"
+      ],
+      "taughtIn": "ment-central-tendency-note-variance-sd",
+      "drilledBy": [
+        "ment-central-tendency-mcq-15",
+        "ment-central-tendency-card-7",
+        "ment-central-tendency-mcq-44"
+      ]
+    },
+    {
+      "id": "ct-var-short",
+      "fact": "Variance shortcut: σ² = Σx² ÷ n − x̄².",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "variance"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-44"
+      ]
+    },
+    {
+      "id": "ct-sd-scale",
+      "fact": "y = ax + b: SD × |a|, variance × a²; adding b changes neither.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "standard deviation"
+      ],
+      "taughtIn": "ment-central-tendency-note-variance-sd",
+      "drilledBy": [
+        "ment-central-tendency-mcq-16",
+        "ment-central-tendency-card-7",
+        "ment-central-tendency-mcq-46"
+      ]
+    },
+    {
+      "id": "ct-var-natural",
+      "fact": "Variance of the first n natural numbers = (n² − 1) ÷ 12.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "natural numbers"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-45"
+      ]
+    },
+    {
+      "id": "ct-cv",
+      "fact": "Coefficient of variation = SD ÷ mean × 100.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "coefficient of variation"
+      ],
+      "taughtIn": "ment-central-tendency-note-variance-sd",
+      "drilledBy": [
+        "ment-central-tendency-mcq-21",
+        "ment-central-tendency-mcq-47"
+      ]
+    },
+    {
+      "id": "ct-cv-consistent",
+      "fact": "The series with the smaller CV is the more consistent.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "consistent"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-48"
+      ]
+    },
+    {
+      "id": "ct-qd",
+      "fact": "Quartile deviation = (Q₃ − Q₁) ÷ 2; coefficient (Q₃ − Q₁) ÷ (Q₃ + Q₁).",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "quartile"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-49"
+      ]
+    },
+    {
+      "id": "ct-choose",
+      "fact": "Mean for symmetric data, median for skewed/outlier data, mode for categorical / most-common data.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "mode"
+      ],
+      "taughtIn": "ment-central-tendency-note-variance-sd",
+      "drilledBy": [
+        "ment-central-tendency-mcq-17",
+        "ment-central-tendency-card-9",
+        "ment-central-tendency-mcq-50"
+      ]
+    },
+    {
+      "id": "ct-ma",
+      "fact": "k-period moving average = mean of each sliding block of k consecutive values.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "moving average"
+      ],
+      "taughtIn": "ment-central-tendency-note-moving-average",
+      "drilledBy": [
+        "ment-central-tendency-mcq-27",
+        "ment-central-tendency-mcq-28",
+        "ment-central-tendency-card-10",
+        "ment-central-tendency-mcq-51"
+      ]
+    },
+    {
+      "id": "ct-ma-count",
+      "fact": "n values give n − k + 1 moving averages of period k.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "moving average"
+      ],
+      "taughtIn": "ment-central-tendency-note-moving-average",
+      "drilledBy": [
+        "ment-central-tendency-mcq-51"
+      ]
+    },
+    {
+      "id": "ct-class-mark",
+      "fact": "Class mark = (lower + upper limit) ÷ 2; inclusive classes become exclusive by ± 0.5.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "class"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-52"
+      ]
+    },
+    {
+      "id": "ct-ogive",
+      "fact": "The less-than and more-than ogives intersect at the median.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ogive"
+      ],
+      "taughtIn": "ment-central-tendency-note-statistics-extras",
+      "drilledBy": [
+        "ment-central-tendency-mcq-53"
+      ]
+    }
+  ]
+}

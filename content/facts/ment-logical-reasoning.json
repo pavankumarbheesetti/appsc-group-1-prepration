@@ -1,0 +1,978 @@
+{
+  "version": 1,
+  "subtopicId": "ment-logical-reasoning",
+  "facts": [
+    {
+      "id": "sy-assume-true",
+      "fact": "Treat every statement as 100% true, even if it contradicts real-world facts; use no outside knowledge.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "true"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-37",
+        "ment-logical-reasoning-mcq-47"
+      ]
+    },
+    {
+      "id": "sy-least-diagram",
+      "fact": "A definite conclusion follows only if it is true in every least possible Venn diagram.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "follow"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-4",
+        "ment-logical-reasoning-mcq-29",
+        "ment-logical-reasoning-mcq-37",
+        "ment-logical-reasoning-mcq-38",
+        "ment-logical-reasoning-mcq-40"
+      ]
+    },
+    {
+      "id": "sy-forms",
+      "fact": "Four forms: All A are B, No A is B, Some A are B, Some A are not B (only the last does not convert).",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "are not"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-39"
+      ]
+    },
+    {
+      "id": "sy-conversion",
+      "fact": "'All A are B' converts to 'Some B are A'; 'No A is B' to 'No B is A'.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "some"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-4",
+        "ment-logical-reasoning-mcq-29",
+        "ment-logical-reasoning-mcq-37"
+      ]
+    },
+    {
+      "id": "sy-some-some",
+      "fact": "Some A are B + Some B are C gives no definite conclusion about A and C.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "some"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-38",
+        "ment-logical-reasoning-mcq-48"
+      ]
+    },
+    {
+      "id": "sy-all-no",
+      "fact": "All A are B + No B is C gives No A is C; Some A are B + No B is C gives Some A are not C.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "no"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-29",
+        "ment-logical-reasoning-mcq-40",
+        "ment-logical-reasoning-mcq-41"
+      ]
+    },
+    {
+      "id": "sy-contrapositive",
+      "fact": "All A are B means 'no non-B is an A' (contrapositive).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "does not"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-42"
+      ]
+    },
+    {
+      "id": "sy-either-or",
+      "fact": "Either–or needs the same two terms in a complementary pair (Some + No, or All + Some not), each alone not following.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "either"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-5",
+        "ment-logical-reasoning-mcq-43"
+      ]
+    },
+    {
+      "id": "sy-possibility",
+      "fact": "A possibility is true if it holds in at least one valid diagram, but false if it contradicts a definite conclusion.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "possibility"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-6",
+        "ment-logical-reasoning-mcq-44"
+      ]
+    },
+    {
+      "id": "sy-only-a-few",
+      "fact": "'Only a few A are B' = some A are B AND some A are not B (so 'All A are B' is false).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "only a few"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-7",
+        "ment-logical-reasoning-mcq-45"
+      ]
+    },
+    {
+      "id": "sy-keywords",
+      "fact": "Each/every/any/only/100% → All; at least/many/a few/most → Some; none/0% → No.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "every"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-1",
+        "ment-logical-reasoning-mcq-46"
+      ]
+    },
+    {
+      "id": "iq-same-direction",
+      "fact": "Combine inequality links only while every sign points the same way.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "conclusion"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-2",
+        "ment-logical-reasoning-mcq-31",
+        "ment-logical-reasoning-mcq-53"
+      ]
+    },
+    {
+      "id": "iq-strict",
+      "fact": "One strict sign in a same-direction chain makes the result strict; ≥ alone never gives >.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "≥"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-31",
+        "ment-logical-reasoning-mcq-49",
+        "ment-logical-reasoning-mcq-53"
+      ]
+    },
+    {
+      "id": "iq-opposite",
+      "fact": "Opposite signs meeting at one element (> then <) give no definite relation.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "neither"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-10",
+        "ment-logical-reasoning-mcq-54"
+      ]
+    },
+    {
+      "id": "iq-either-or",
+      "fact": "Inequality either–or pairs: > with ≤, < with ≥ (same two elements, each alone false).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "either"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-inequality-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-11",
+        "ment-logical-reasoning-mcq-55"
+      ]
+    },
+    {
+      "id": "iq-coded",
+      "fact": "Decode each symbol first; 'not greater than' means ≤ and 'neither greater nor smaller' means =.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "means"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-syllogism-inequality-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-49",
+        "ment-logical-reasoning-mcq-56"
+      ]
+    },
+    {
+      "id": "cl-operator",
+      "fact": "Coded logic: find the one operator rule that fits every given example, then apply it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "="
+      ],
+      "taughtIn": "ment-logical-reasoning-note-inequality-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-12",
+        "ment-logical-reasoning-mcq-57"
+      ]
+    },
+    {
+      "id": "ord-chain",
+      "fact": "Order comparisons: write all clues as one chain (P > Q > S > R) and read off the extreme or middle.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "than"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-inequality-method",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-28",
+        "ment-logical-reasoning-mcq-58",
+        "ment-logical-reasoning-mcq-59"
+      ]
+    },
+    {
+      "id": "ord-indeterminate",
+      "fact": "If the chain has a gap, the position of an unlinked person cannot be determined.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "cannot be determined"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-verbal-reasoning-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-59"
+      ]
+    },
+    {
+      "id": "lv-concentric",
+      "fact": "A chain of subsets (pigeon ⊂ bird ⊂ living thing) is drawn as concentric circles.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "circles"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-numerical",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-3",
+        "ment-logical-reasoning-mcq-50"
+      ]
+    },
+    {
+      "id": "lv-separate-inside",
+      "fact": "Two kinds of one class (doctors, engineers within humans) are two separate circles inside a bigger one.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "inside"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-60"
+      ]
+    },
+    {
+      "id": "lv-overlap",
+      "fact": "Classes that partly share members (mothers and doctors) are drawn as overlapping circles.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "overlapping"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-numerical",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-8"
+      ]
+    },
+    {
+      "id": "lv-two-set",
+      "fact": "Two sets: at least one = A + B − both; neither = total − at least one.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "neither"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-numerical",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-9",
+        "ment-logical-reasoning-mcq-62"
+      ]
+    },
+    {
+      "id": "lv-only-a",
+      "fact": "'Only A' = A − overlap, not the full A.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "only"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-numerical",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-61",
+        "ment-logical-reasoning-mcq-64"
+      ]
+    },
+    {
+      "id": "lv-three-set",
+      "fact": "Three sets: at least one = A + B + C − (pair overlaps) + triple overlap.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "all three"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-63",
+        "ment-logical-reasoning-mcq-64"
+      ]
+    },
+    {
+      "id": "sa-anchor",
+      "fact": "Seat the fixed clues (ends, fixed seats, directly opposite) before relative clues.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "extreme"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-arrangement-puzzles",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-13",
+        "ment-logical-reasoning-mcq-30"
+      ]
+    },
+    {
+      "id": "sa-facing",
+      "fact": "Row facing north: their left is your left; facing south: their left is your right.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "facing south"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-51",
+        "ment-logical-reasoning-mcq-65"
+      ]
+    },
+    {
+      "id": "sa-circle",
+      "fact": "Round table facing the centre: left = clockwise, right = anticlockwise (outward facing swaps them).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "centre"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-14",
+        "ment-logical-reasoning-mcq-66"
+      ]
+    },
+    {
+      "id": "sa-opposite",
+      "fact": "In an n-seat circle the seat opposite seat i is seat i + n/2.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "opposite"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-arrangement-puzzles",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-14",
+        "ment-logical-reasoning-mcq-67"
+      ]
+    },
+    {
+      "id": "sa-polygon",
+      "fact": "Square/rectangular tables: place corner and middle seats first; diagonally opposite is across a corner.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "corner"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-68"
+      ]
+    },
+    {
+      "id": "fl-two-below",
+      "fact": "Floors count from 1 at the bottom; 'two floors below' means one floor lies between.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "two floors below"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-52",
+        "ment-logical-reasoning-mcq-69"
+      ]
+    },
+    {
+      "id": "fl-immediately",
+      "fact": "'Immediately above/below' means adjacent floors.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "immediately"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-arrangement-puzzles",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-15",
+        "ment-logical-reasoning-mcq-70"
+      ]
+    },
+    {
+      "id": "pz-grid",
+      "fact": "Double line-up and scheduling puzzles: build a grid (person × attribute / day × slot) and eliminate.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "grid"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-71"
+      ]
+    },
+    {
+      "id": "gr-selection",
+      "fact": "Selections with conditions: add the nCr counts of every allowed case (or subtract the forbidden ones).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "pyq"
+      ],
+      "keys": [
+        "committee"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-arrangement-puzzles",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-16",
+        "ment-logical-reasoning-mcq-72"
+      ]
+    },
+    {
+      "id": "gr-assignment",
+      "fact": "Assignment with a fixed task: fix it, then arrange the rest (4 tasks, one fixed → 3! = 6).",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "tasks"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-73"
+      ]
+    },
+    {
+      "id": "dir-turns",
+      "fact": "Right turn = 90° clockwise, left turn = 90° anticlockwise, from the current facing.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "turns"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-27",
+        "ment-logical-reasoning-mcq-74",
+        "ment-logical-reasoning-mcq-76"
+      ]
+    },
+    {
+      "id": "dir-distance",
+      "fact": "Straight-line distance = √(net N–S² + net E–W²).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "km"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-arrangement-puzzles",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-26",
+        "ment-logical-reasoning-mcq-75",
+        "ment-logical-reasoning-mcq-87"
+      ]
+    },
+    {
+      "id": "dir-final",
+      "fact": "Final direction from the start combines the net N–S and net E–W (e.g. north-west).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "direction"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-27",
+        "ment-logical-reasoning-mcq-75",
+        "ment-logical-reasoning-mcq-76"
+      ]
+    },
+    {
+      "id": "dir-shadow",
+      "fact": "Morning sun in the east → shadow falls west; evening shadow falls east.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "shadow"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-venn-puzzle-direction-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-77"
+      ]
+    },
+    {
+      "id": "rk-both-ends",
+      "fact": "Total = left rank + right rank − 1; persons between two = difference of positions from one end − 1.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "from"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-arrangement-puzzles",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-24",
+        "ment-logical-reasoning-mcq-25",
+        "ment-logical-reasoning-mcq-78"
+      ]
+    },
+    {
+      "id": "arg-strong",
+      "fact": "Strong argument: relevant, important and backed by facts; weak: emotional, ambiguous or a restatement.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "argument"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-statement-based",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-17",
+        "ment-logical-reasoning-mcq-79"
+      ]
+    },
+    {
+      "id": "asm-negation",
+      "fact": "Assumption test: deny it; if the statement collapses, the assumption is implicit.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "assumption"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-statement-based",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-18",
+        "ment-logical-reasoning-mcq-80"
+      ]
+    },
+    {
+      "id": "asm-extreme",
+      "fact": "Reject assumptions with extreme words (only, best, always) or comparisons with others.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "only"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-verbal-reasoning-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-80"
+      ]
+    },
+    {
+      "id": "con-given-only",
+      "fact": "A conclusion must follow from the statement alone; hedged (may/likely) yes, absolute (always/never) no.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "conclusion"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-statement-based",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-19",
+        "ment-logical-reasoning-mcq-81"
+      ]
+    },
+    {
+      "id": "inf-scale",
+      "fact": "Inference scale: definitely true, probably true, data inadequate, probably false, definitely false.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "probably"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-verbal-reasoning-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-82"
+      ]
+    },
+    {
+      "id": "inf-points",
+      "fact": "Percentage points (75 − 60 = 15) differ from percent change (15/60 = 25%).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "percentage points"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-statement-based",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-20",
+        "ment-logical-reasoning-mcq-83"
+      ]
+    },
+    {
+      "id": "ar-steps",
+      "fact": "Assertion–Reason: check A, check R, then whether R explains A.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "explanation"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-ar-cause-coa",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-21",
+        "ment-logical-reasoning-mcq-84"
+      ]
+    },
+    {
+      "id": "ce-order",
+      "fact": "A cause precedes and directly produces its effect; otherwise the two are independent or share a common cause.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "cause"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-ar-cause-coa",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-22",
+        "ment-logical-reasoning-mcq-85"
+      ]
+    },
+    {
+      "id": "coa-feasible",
+      "fact": "A course of action must be practical and reduce the problem; reject extreme or escapist steps.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "source-text",
+        "standard"
+      ],
+      "keys": [
+        "course"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-ar-cause-coa",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-23",
+        "ment-logical-reasoning-mcq-86"
+      ]
+    },
+    {
+      "id": "ds-order",
+      "fact": "Data sufficiency: test statement I alone, then II alone, then both together.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "alone"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-verbal-reasoning-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-87"
+      ]
+    },
+    {
+      "id": "adm-exception",
+      "fact": "Analytical decision making: check every condition; an exception clause refers the case to the named authority.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "source-text"
+      ],
+      "keys": [
+        "refer"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-verbal-reasoning-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-88"
+      ]
+    },
+    {
+      "id": "tf-or",
+      "fact": "'A or B' is false only when both A and B are false.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "either"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-truth-cause-indeterminacy",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-32",
+        "ment-logical-reasoning-mcq-89"
+      ]
+    },
+    {
+      "id": "tf-if",
+      "fact": "'If P then Q' is false only when P is true and Q is false.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "if"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-truth-cause-indeterminacy",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-33",
+        "ment-logical-reasoning-mcq-90"
+      ]
+    },
+    {
+      "id": "cause-common",
+      "fact": "The cause is the item present in every affected case and absent from every unaffected case.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "ill"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-verbal-reasoning-extras",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-34",
+        "ment-logical-reasoning-mcq-91"
+      ]
+    },
+    {
+      "id": "indeterminate",
+      "fact": "When the data fits several answers, 'cannot be determined / nothing definite' is correct.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "definite"
+      ],
+      "taughtIn": "ment-logical-reasoning-note-truth-cause-indeterminacy",
+      "drilledBy": [
+        "ment-logical-reasoning-mcq-36",
+        "ment-logical-reasoning-mcq-92"
+      ]
+    }
+  ]
+}
