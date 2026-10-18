@@ -19,6 +19,8 @@
  *   --content-dir <dir>  content root to audit (default: ./content)
  *   --out <file>         BASELINE.md path (default: .research/quality/BASELINE.md)
  *   --verbose            print every finding, not only the per-bank table
+ *   --strict             permanent-gate mode: waived findings fail too, and a
+ *                        non-empty quality-waivers.json fails the gate
  *   --seed-waivers       (re)write <content-dir>/audit/quality-waivers.json waiving
  *                        every bank that currently has findings, then exit 0
  *
@@ -45,6 +47,7 @@ function argValue(flag: string): string | undefined {
 const contentDir = resolve(argValue('--content-dir') ?? resolve(ROOT, 'content'));
 const outFile = resolve(argValue('--out') ?? resolve(ROOT, '.research/quality/BASELINE.md'));
 const verbose = process.argv.includes('--verbose');
+const strict = process.argv.includes('--strict');
 
 let report = auditAllQuality(contentDir);
 
@@ -137,9 +140,21 @@ console.log(line(header));
 console.log(widths.map((w) => '-'.repeat(w)).join('-|-'));
 for (const r of rows) console.log(line(r));
 
-const exitCode = qualityExitCode(report);
+/** Entries in the waivers file (strict mode requires 0). */
+function waiverCount(): number {
+  const path = join(contentDir, 'audit', 'quality-waivers.json');
+  if (!existsSync(path)) return 0;
+  try {
+    const w = (JSON.parse(readFileSync(path, 'utf8')) as { waivers?: unknown[] }).waivers;
+    return Array.isArray(w) ? w.length : 0;
+  } catch {
+    return 0; // an unparsable file is already a non-waived finding
+  }
+}
+const waivers = waiverCount();
+const exitCode: 0 | 1 = qualityExitCode(report, strict) === 1 || (strict && waivers > 0) ? 1 : 0;
 for (const f of report.findings) {
-  if (verbose || (!f.waived && exitCode !== 0))
+  if (verbose || ((strict || !f.waived) && exitCode !== 0))
     console.log(`  ${f.waived ? '⚠' : '✗'} [${f.rule}] ${f.file} ${f.itemId}: ${f.detail}`);
 }
 
@@ -278,8 +293,14 @@ console.log(
 );
 if (exitCode !== 0) {
   console.error(
-    '\n✗ question-quality gate FAILED: un-waived findings (fix the bank, or the stale waiver)',
+    strict
+      ? `\n✗ question-quality gate FAILED (strict): ${report.findings.length} finding(s), ${waivers} waiver(s) — fix the bank; waivers must stay empty`
+      : '\n✗ question-quality gate FAILED: un-waived findings (fix the bank, or the stale waiver)',
   );
   process.exit(exitCode);
 }
-console.log('\n✓ question-quality gate passed (waived banks reported only)');
+console.log(
+  strict
+    ? '\n✓ question-quality gate passed (strict: 0 findings, 0 waivers)'
+    : '\n✓ question-quality gate passed (waived banks reported only)',
+);

@@ -2075,10 +2075,11 @@ export function auditAllCompleteness(contentDir: string = CONTENT_DIR): Complete
 /*     waiver-stale      a quality-waivers entry names an unknown bank or no   */
 /*                       longer suppresses any finding (remove it).            */
 /*                                                                             */
-/* NOT strict yet: `validate:content` runs it only under VALIDATE_QUALITY=1,   */
-/* and `npm run audit:quality` prints the per-bank table + BASELINE.md. Both   */
-/* fail only on findings in banks NOT listed in                                */
-/* `content/audit/quality-waivers.json`, so the fix can land bank by bank.     */
+/* PERMANENT GATE: `validate:content` runs it by default (VALIDATE_QUALITY=0   */
+/* opts out locally) and `npm run audit:quality` (chained into `npm run check`)*/
+/* runs it with --strict. In strict mode waived findings fail too, and the     */
+/* waivers file `content/audit/quality-waivers.json` must stay EMPTY (asserted */
+/* by a test). Non-strict runs keep the bank-by-bank waiver semantics.         */
 /* ========================================================================== */
 
 /** Question-quality rule ids (the waivable ones plus `waiver-stale`). */
@@ -2155,9 +2156,13 @@ export interface QualityReport {
   waiverErrors: string[];
 }
 
-/** Is the question-quality report switched on in `validate:content`? Only with `VALIDATE_QUALITY=1` (never by `--strict` yet). */
+/**
+ * Is the question-quality rule switched on in `validate:content`? ON BY DEFAULT
+ * (a permanent gate since the Q3 programme closed with 0 findings and an empty
+ * waivers file); only `VALIDATE_QUALITY=0` switches it off for a local run.
+ */
 export function qualityEnabled(env: Record<string, string | undefined> = process.env): boolean {
-  return env.VALIDATE_QUALITY === '1';
+  return env.VALIDATE_QUALITY !== '0';
 }
 
 /** A sequence/ordering code option such as `2 - 4 - 3 - 1` or `1 → 2 → 3`. */
@@ -2503,6 +2508,7 @@ export function auditAllQuality(contentDir: string = CONTENT_DIR): QualityReport
 }
 
 /** Gate exit code: 1 when any finding is NOT waived (incl. stale waivers / a bad waivers file). */
-export function qualityExitCode(report: Pick<QualityReport, 'findings'>): 0 | 1 {
-  return report.findings.some((f) => !f.waived) ? 1 : 0;
+export function qualityExitCode(report: Pick<QualityReport, 'findings'>, strict = false): 0 | 1 {
+  // Strict (the permanent gate): any finding fails, waived or not.
+  return report.findings.some((f) => strict || !f.waived) ? 1 : 0;
 }

@@ -18,9 +18,10 @@
  * The validation logic lives in `src/content/validate.ts` and is shared with the
  * Vitest suite (`content-integrity.test.ts`) — this file is only the reporter.
  *
- * The exam-standard QUESTION-QUALITY rule (`auditAllQuality`) runs only under
- * `VALIDATE_QUALITY=1` (never via `--strict` yet): findings in banks not waived
- * in `content/audit/quality-waivers.json` fail, waived ones are warnings.
+ * The exam-standard QUESTION-QUALITY rule (`auditAllQuality`) runs BY DEFAULT
+ * (`VALIDATE_QUALITY=0` opts out for a local run): findings in banks not waived
+ * in `content/audit/quality-waivers.json` fail; under `--strict` waived ones
+ * fail too (the waivers file must stay empty).
  *
  * Run via `npm run validate:content` (executed with vite-node, matching gen:schema).
  */
@@ -138,11 +139,12 @@ if (alignEnabled(process.env, strict)) {
   else warned += align.length;
 }
 
-/* ----- Question quality (exam standard) — opt-in, NOT strict yet ---------- */
-// Off by default (so `npm run check` stays green while content is rewritten);
-// VALIDATE_QUALITY=1 prints the per-bank report and FAILS on any finding in a
-// bank not waived in content/audit/quality-waivers.json (and on stale waivers).
-// Waived findings are counted as warnings. `--quality-verbose` prints each one.
+/* ----- Question quality (exam standard) — ON by default, strict-aware ----- */
+// A permanent gate: runs unless VALIDATE_QUALITY=0, prints the per-bank report
+// and FAILS on any finding in a bank not waived in
+// content/audit/quality-waivers.json (and on stale waivers). Under --strict
+// waived findings fail too; otherwise they are warnings. `--quality-verbose`
+// prints each one.
 // The standard: .research/plan/QUESTION-QUALITY.md; fix queue: npm run audit:quality.
 
 if (qualityEnabled(process.env)) {
@@ -166,8 +168,11 @@ if (qualityEnabled(process.env)) {
     }
   }
   console.log(`  quality by rule: ${[...byRule.entries()].map(([r, n]) => `${r}=${n}`).join(', ') || 'none'}`);
-  failed += unwaived.length;
-  warned += quality.findings.length - unwaived.length;
+  if (strict) failed += quality.findings.length;
+  else {
+    failed += unwaived.length;
+    warned += quality.findings.length - unwaived.length;
+  }
 }
 
 /* ----- Completeness (fact universe taught + drilled) — warnings for now --- */

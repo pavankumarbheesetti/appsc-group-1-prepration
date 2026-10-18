@@ -316,8 +316,8 @@ describe('quality waivers schema + switch', () => {
     }
     expect(QualityWaiversSchema.safeParse({ ...base, waivers: [w, w] }).success).toBe(false);
   });
-  it('is enabled only by VALIDATE_QUALITY=1', () => {
-    expect(qualityEnabled({})).toBe(false);
+  it('is ON by default (permanent gate); only VALIDATE_QUALITY=0 opts out', () => {
+    expect(qualityEnabled({})).toBe(true);
     expect(qualityEnabled({ VALIDATE_QUALITY: '0' })).toBe(false);
     expect(qualityEnabled({ VALIDATE_QUALITY: '1' })).toBe(true);
   });
@@ -444,6 +444,32 @@ describe('auditAllQuality + audit:quality CLI', () => {
     expect(res.stdout).toContain('waiver-stale');
   }, 60_000);
 
+  it('strict: waived findings fail (qualityExitCode + CLI --strict)', () => {
+    const waived = auditAllQuality(fixture('strict-waived', waiversFor({ bank: BAD })));
+    expect(qualityExitCode(waived)).toBe(0);
+    expect(qualityExitCode(waived, true)).toBe(1);
+    const res = run(fixture('cli-strict', waiversFor({ bank: BAD })), join(tmp, 'strict.md'), '--strict');
+    expect(res.status).toBe(1);
+    expect(res.stderr).toContain('strict');
+  }, 60_000);
+
+  it('CLI --strict passes a clean content dir with no waivers', () => {
+    const dir = join(tmp, 'strict-clean');
+    mkdirSync(join(dir, 'history-ap', 'good'), { recursive: true });
+    writeFileSync(
+      join(dir, 'history-ap', 'good', 'mcq-good.json'),
+      JSON.stringify({
+        kind: 'mcq',
+        subjectCode: 'HIST',
+        topic: 'Demo',
+        items: balanced(20).map((q) => ({ ...q, subjectCode: 'HIST' })),
+      }),
+    );
+    const res = run(dir, join(tmp, 'strict-clean.md'), '--strict');
+    expect(res.status).toBe(0);
+    expect(res.stdout).toContain('strict: 0 findings, 0 waivers');
+  }, 60_000);
+
   it('--seed-waivers waives exactly the failing banks and then passes', () => {
     const dir = fixture('cli-seed');
     const res = run(dir, join(tmp, 'seed.md'), '--seed-waivers');
@@ -453,4 +479,26 @@ describe('auditAllQuality + audit:quality CLI', () => {
     const doc = QualityWaiversSchema.parse(JSON.parse(readFileSync(path, 'utf8')));
     expect(doc.waivers.map((w) => w.bank)).toEqual([BAD]);
   }, 60_000);
+});
+
+/* -------------------------------------------------------------------------- */
+/* The REAL content: quality is a permanent gate                              */
+/* -------------------------------------------------------------------------- */
+
+describe('real content: question-quality permanent gate', () => {
+  const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../..');
+
+  it('content/audit/quality-waivers.json is valid and EMPTY (no bank may be waived)', () => {
+    const doc = QualityWaiversSchema.parse(
+      JSON.parse(readFileSync(join(ROOT, 'content', 'audit', 'quality-waivers.json'), 'utf8')),
+    );
+    expect(doc.waivers).toEqual([]);
+  });
+
+  it('every real MCQ bank has 0 quality findings (strict exit 0)', () => {
+    const r = auditAllQuality(join(ROOT, 'content'));
+    expect(r.banks.length).toBeGreaterThanOrEqual(129);
+    expect(r.findings.map((f) => `${f.file} ${f.itemId} [${f.rule}]`)).toEqual([]);
+    expect(qualityExitCode(r, true)).toBe(0);
+  }, 120_000);
 });

@@ -11,7 +11,7 @@
       "question": "Which relationship correctly expresses Gross National Product (GNP)?",
       "options": [
         "GNP = GDP − Depreciation",
-        "GNP = GDP + Net Factor Income from Abroad (NFIA)",
+        "GNP = GDP + NFIA",
         "GNP = NNP + Indirect Taxes",
         "GNP = GDP + Subsidies"
       ],
@@ -38,13 +38,13 @@
       "question": "In India's economy today, which sector contributes the largest share of Gross Value Added (GVA)?",
       "options": [
         "Agriculture and allied activities",
-        "Industry (manufacturing, construction, mining)",
+        "Industry (manufacturing and mining)",
         "Services (tertiary) sector",
-        "The quinary sector"
+        "Quinary (decision-making) sector"
       ],
       "answerIndex": 2,
       "noteRef": "econ-characteristics-development-note-sectors",
-      "explanation": "The **services (tertiary) sector** is India's largest, contributing roughly **54–55%** of GVA, well ahead of industry and agriculture.\n\n**Why not the others**\n- Agriculture and allied activities — largest employer (~44–46% of workforce) but only ~17–18% of GVA.\n- Industry — around 27–28% of GVA, the middle contributor.\n- The quinary sector — a top-level decision-making sub-category, not separately measured as the largest GVA head.\n\n**Key facts**\n| Sector | GVA share (approx.) | Workforce share |\n|---|---|---|\n| Services | ~54.7% | ~30% |\n| Industry | ~27.6% | ~25% |\n| Agriculture | ~17.7% | ~44–46% |\n\n*Source: MoSPI National Accounts / Economic Survey (current); APPSC GK PDF — Sectors of Indian Economy.*",
+      "explanation": "The **services (tertiary) sector** is India's largest, contributing roughly **54–55%** of GVA, well ahead of industry and agriculture.\n\n**Why not the others**\n- Agriculture and allied activities — largest employer (~44–46% of workforce) but only ~17–18% of GVA.\n- Industry — around 27–28% of GVA, the middle contributor.\n- Quinary (decision-making) sector — a top-level decision-making sub-category, not separately measured as the largest GVA head.\n\n**Key facts**\n| Sector | GVA share (approx.) | Workforce share |\n|---|---|---|\n| Services | ~54.7% | ~30% |\n| Industry | ~27.6% | ~25% |\n| Agriculture | ~17.7% | ~44–46% |\n\n*Source: MoSPI National Accounts / Economic Survey (current); APPSC GK PDF — Sectors of Indian Economy.*",
       "source": "MoSPI National Accounts / Economic Survey (current); APPSC GK PDF — Sectors of Indian Economy",
       "verified": true,
       "covers": [
@@ -87,7 +87,7 @@
       "id": "econ-characteristics-development-mcq-4",
       "subjectCode": "ECON",
       "subtopicId": "econ-characteristics-development",
-      "question": "Consider the following statements about the distinction between economic growth and economic development:\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the distinction between economic growth and economic development:\nWhich of the statements given above is/are correct?",
       "statements": [
         "Economic growth is a narrower, quantitative concept referring only to a rise in real output/income.",
         "Economic development is multidimensional, adding reduction of poverty, inequality and unemployment plus qualitative and structural change.",
@@ -209,21 +209,21 @@
       "id": "econ-characteristics-development-mcq-7",
       "subjectCode": "ECON",
       "subtopicId": "econ-characteristics-development",
-      "question": "Consider the following statements about nominal and real GDP:\nWhich statements are correct?",
+      "question": "Consider the following statements about nominal and real GDP:\nWhich of the statements given above is/are correct?",
       "statements": [
+        "The GDP deflator is the ratio of real GDP to nominal GDP, multiplied by 100.",
         "Nominal GDP is valued at current market prices and can rise merely due to inflation.",
-        "Real GDP is valued at constant base-year prices and better reflects genuine output change.",
-        "The GDP deflator is the ratio of real GDP to nominal GDP, multiplied by 100."
+        "Real GDP is valued at constant base-year prices and better reflects genuine output change."
       ],
       "options": [
-        "1 and 2 only",
         "2 and 3 only",
         "1 and 3 only",
+        "1 and 2 only",
         "1, 2 and 3"
       ],
       "answerIndex": 0,
       "noteRef": "econ-characteristics-development-note-national-income-aggregates",
-      "explanation": "Statements 1 and 2 are correct. Statement 3 inverts the ratio — the GDP deflator = (**Nominal ÷ Real**) × 100, not real ÷ nominal.\n\n**Why not the others**\n- 2 and 3 only — statement 3 is wrong (ratio inverted), and statement 1 is correct.\n- 1 and 3 only — again statement 3 is wrong.\n- 1, 2 and 3 — cannot include the incorrect statement 3.\n\n**Key facts**\n- A deflator above 100 signals prices have risen above the base year.\n- Real GDP removes the price effect, isolating volume growth.\n\n*Source: APPSC GK PDF — Basic Concepts of Macroeconomics (Part I).*",
+      "explanation": "Statements 2 and 3 are correct. Statement 1 inverts the ratio — the GDP deflator = (**Nominal ÷ Real**) × 100, not real ÷ nominal.\n\n**Why not the others**\n- 1 and 3 only — statement 1 is wrong (ratio inverted), and statement 2 is correct.\n- 1 and 2 only — again statement 1 is wrong.\n- 1, 2 and 3 — cannot include the incorrect statement 1.\n\n**Key facts**\n- A deflator above 100 signals prices have risen above the base year.\n- Real GDP removes the price effect, isolating volume growth.\n\n*Source: APPSC GK PDF — Basic Concepts of Macroeconomics (Part I).*",
       "source": "APPSC GK PDF — Basic Concepts of Macroeconomics (Part I)",
       "verified": true,
       "covers": [
@@ -241,13 +241,13 @@
       "question": "In estimating national income, which method sums consumption, investment, government spending and net exports (C + I + G + (X − M))?",
       "options": [
         "Production / value-added method",
-        "Income method",
+        "Income (factor-payment) method",
         "Expenditure method",
         "Commodity-flow deflation method"
       ],
       "answerIndex": 2,
       "noteRef": "econ-characteristics-development-note-national-income-aggregates",
-      "explanation": "This identity is the **expenditure method**, adding all final spending in the economy.\n\n**Why not the others**\n- Production / value-added method — sums the Gross Value Added of each industry (output minus intermediate consumption).\n- Income method — adds factor incomes: wages, rent, interest and profit.\n- Commodity-flow deflation method — not one of the three standard national-income methods.\n\n**Key facts**\n- All three methods should, in principle, yield the same national income.\n- GVA = Output − Intermediate consumption; GDP(mp) = GVA + (Product taxes − Product subsidies).\n\n*Source: APPSC GK PDF — Basic Concepts of Macroeconomics (Part I & II).*",
+      "explanation": "This identity is the **expenditure method**, adding all final spending in the economy.\n\n**Why not the others**\n- Production / value-added method — sums the Gross Value Added of each industry (output minus intermediate consumption).\n- Income (factor-payment) method — adds factor incomes: wages, rent, interest and profit.\n- Commodity-flow deflation method — not one of the three standard national-income methods.\n\n**Key facts**\n- All three methods should, in principle, yield the same national income.\n- GVA = Output − Intermediate consumption; GDP(mp) = GVA + (Product taxes − Product subsidies).\n\n*Source: APPSC GK PDF — Basic Concepts of Macroeconomics (Part I & II).*",
       "source": "APPSC GK PDF — Basic Concepts of Macroeconomics (Part I & II)",
       "verified": true,
       "covers": [
@@ -336,19 +336,19 @@
       "id": "econ-characteristics-development-mcq-12",
       "subjectCode": "ECON",
       "subtopicId": "econ-characteristics-development",
-      "question": "Consider the following statements about structural transformation in the Indian economy:\nWhich statements are correct?",
+      "question": "Consider the following statements about structural transformation in the Indian economy:\nWhich of the statements given above is/are correct?",
       "statements": [
         "The share of agriculture in GVA has declined over the decades while services' share has risen.",
         "The fall in agriculture's GVA share has been matched by a proportionate fall in its workforce share.",
         "India's transition skipped a strong manufacturing-led phase and leapt to a services-led structure."
       ],
       "options": [
-        "1 and 2 only",
         "1 and 3 only",
+        "1 and 2 only",
         "2 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "econ-characteristics-development-note-sectors",
       "explanation": "Statements 1 and 3 are correct. Statement 2 is wrong — agriculture's workforce share (~44–46%) has fallen far more slowly than its GVA share (~18%), the core of India's structural imbalance.\n\n**Why not the others**\n- 1 and 2 only — statement 2 wrongly claims proportionate workforce decline.\n- 2 and 3 only — again includes the false statement 2.\n- 1, 2 and 3 — cannot include statement 2.\n\n**Key facts**\n- Classic structural transformation runs agriculture → industry → services; India moved agriculture → services, under-using manufacturing.\n- The GVA-workforce gap signals low agricultural productivity and disguised unemployment.\n\n*Source: APPSC GK PDF — Sectors of Indian Economy; Economic Survey (current).*",
       "source": "APPSC GK PDF — Sectors of Indian Economy; Economic Survey (current)",
@@ -492,8 +492,8 @@
       "assertion": "India is often described as an economy exhibiting 'jobless growth'.",
       "reason": "In several years output (GDP) grew rapidly while employment generation lagged, especially in the organised sector.",
       "options": [
-        "Both A and R are true, and R is the correct explanation of A",
-        "Both A and R are true, but R is NOT the correct explanation of A",
+        "Both A and R are true, and R explains A",
+        "Both A and R are true, but R does not explain A",
         "A is true, but R is false",
         "A is false, but R is true"
       ],
@@ -518,13 +518,13 @@
       "question": "When India's economy is described as the world's 3rd largest by one measure but far lower by another, the two measures being contrasted are:",
       "options": [
         "GDP at factor cost vs GDP at market price",
-        "Purchasing Power Parity (PPP) vs nominal (market exchange rate) GDP",
+        "PPP GDP vs nominal (exchange-rate) GDP",
         "Real GDP vs nominal GDP",
-        "GVA vs GDP"
+        "GVA at basic prices vs GDP"
       ],
       "answerIndex": 1,
       "noteRef": "econ-characteristics-development-note-achievements-challenges",
-      "explanation": "India ranks about **3rd on a PPP basis** but lower (around 4th–6th) on **nominal** GDP, because PPP adjusts for lower domestic price levels while nominal uses market exchange rates.\n\n**Why not the others**\n- Factor cost vs market price — a valuation adjustment for net taxes, not a cross-country size comparison.\n- Real vs nominal GDP — an inflation adjustment within one country, not a PPP contrast.\n- GVA vs GDP — differ only by net product taxes, unrelated to international ranking.\n\n**Key facts**\n- PPP raises the relative size of developing economies with lower price levels.\n- Per-capita income, whether PPP or nominal, remains low, keeping India a lower-middle-income economy.\n\n*Source: IMF/World Bank (current); APPSC GK PDF — Basic Concepts of Macroeconomics.*",
+      "explanation": "India ranks about **3rd on a PPP basis** but lower (around 4th–6th) on **nominal** GDP, because PPP adjusts for lower domestic price levels while nominal uses market exchange rates.\n\n**Why not the others**\n- Factor cost vs market price — a valuation adjustment for net taxes, not a cross-country size comparison.\n- Real vs nominal GDP — an inflation adjustment within one country, not a PPP contrast.\n- GVA at basic prices vs GDP — differ only by net product taxes, unrelated to international ranking.\n\n**Key facts**\n- PPP raises the relative size of developing economies with lower price levels.\n- Per-capita income, whether PPP or nominal, remains low, keeping India a lower-middle-income economy.\n\n*Source: IMF/World Bank (current); APPSC GK PDF — Basic Concepts of Macroeconomics.*",
       "source": "IMF/World Bank (current); APPSC GK PDF — Basic Concepts of Macroeconomics",
       "verified": true,
       "covers": [
@@ -615,21 +615,21 @@
       "id": "econ-characteristics-development-mcq-23",
       "subjectCode": "ECON",
       "subtopicId": "econ-characteristics-development",
-      "question": "Consider the following statements about Andhra Pradesh's economy (latest estimates):\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about Andhra Pradesh's economy (latest estimates):\nWhich of the statements given above is/are correct?",
       "statements": [
         "Its GSDP at current prices is projected at about ₹19.75 lakh crore for 2026-27.",
-        "Its per-capita GSDP (2024-25, current prices) of about ₹2.98 lakh is above the national average.",
-        "Andhra Pradesh's economy is entirely industry-dominated with a negligible agricultural share."
+        "Andhra Pradesh's economy is entirely industry-dominated with a negligible agricultural share.",
+        "Its per-capita GSDP (2024-25, current prices) of about ₹2.98 lakh is above the national average."
       ],
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
         "1 and 3 only",
+        "2 and 3 only",
+        "1 and 2 only",
         "1, 2 and 3"
       ],
       "answerIndex": 0,
       "noteRef": "econ-characteristics-development-note-blackmoney-ap-economy",
-      "explanation": "Statements 1 and 2 are correct. AP's GSDP for 2026-27 is projected at about **₹19.75 lakh crore**, and its **2024-25 per-capita GSDP of ~₹2,98,058** exceeds India's (~₹2,34,859). Statement 3 is wrong — agriculture and allied activities remain a large share of AP's economy.\n\n**Why not the others**\n- 2 and 3 only — statement 3 wrongly denies AP's substantial agrarian base.\n- 1 and 3 only — again includes the false statement 3.\n- 1, 2 and 3 — cannot include statement 3.\n\n**Key facts**\n- AP per-capita income has risen steadily; it ranks among the higher-income larger states.\n- Agriculture directly and indirectly supports a majority of AP's population, unlike the all-India services tilt.\n\n*Source: PRS Legislative Research — AP Budget Analysis 2026-27; AP Socio-Economic Survey 2025-26 (verified online).*",
+      "explanation": "Statements 1 and 3 are correct. AP's GSDP for 2026-27 is projected at about **₹19.75 lakh crore**, and its **2024-25 per-capita GSDP of ~₹2,98,058** exceeds India's (~₹2,34,859). Statement 2 is wrong — agriculture and allied activities remain a large share of AP's economy.\n\n**Why not the others**\n- 2 and 3 only — statement 2 wrongly denies AP's substantial agrarian base.\n- 1 and 2 only — again includes the false statement 2.\n- 1, 2 and 3 — cannot include statement 2.\n\n**Key facts**\n- AP per-capita income has risen steadily; it ranks among the higher-income larger states.\n- Agriculture directly and indirectly supports a majority of AP's population, unlike the all-India services tilt.\n\n*Source: PRS Legislative Research — AP Budget Analysis 2026-27; AP Socio-Economic Survey 2025-26 (verified online).*",
       "source": "PRS Legislative Research — AP Budget Analysis 2026-27; AP Socio-Economic Survey 2025-26 (verified online, Sep 2026)",
       "verified": true,
       "covers": [
@@ -647,14 +647,14 @@
       "subtopicId": "econ-characteristics-development",
       "question": "Compared with the all-India sectoral pattern, the composition of Andhra Pradesh's Gross State Value Added is distinctive because:",
       "options": [
-        "The primary (agriculture and allied) sector contributes a notably larger share than the all-India average",
-        "The state has no services sector",
-        "Industry contributes over 60% of GSVA",
-        "The primary sector contributes less than 5% of GSVA"
+        "Primary sector share about double the all-India share",
+        "Industry share above 60% of GSVA",
+        "Services share below one-tenth of GSVA",
+        "Primary sector share below 5% of GSVA"
       ],
       "answerIndex": 0,
       "noteRef": "econ-characteristics-development-note-blackmoney-ap-economy",
-      "explanation": "Andhra Pradesh's **primary (agriculture and allied) sector contributes a markedly higher share of GSVA (roughly a third)** than the all-India average (~18%), reflecting the state's strong agrarian and horticultural base; services (~40%) and industry (~23%) make up the rest.\n\n**Why not the others**\n- No services sector — services are in fact the single largest contributor to AP's GSVA (~40%).\n- Industry over 60% — industry is around a fifth to a quarter of GSVA, not a majority.\n- Primary under 5% — AP's primary sector is far larger, around a third of GSVA.\n\n**Key facts**\n| AP GSVA (approx.) | Share |\n|---|---|\n| Primary (agri & allied) | ~35-37% |\n| Secondary (industry) | ~23% |\n| Tertiary (services) | ~40% |\n- AP is a leading producer of rice, aquaculture, chillies, tobacco and horticultural crops.\n\n*Source: AP Socio-Economic Survey 2025-26; PRS — AP Budget Analysis (verified online).*",
+      "explanation": "Andhra Pradesh's **primary (agriculture and allied) sector contributes a markedly higher share of GSVA (roughly a third)** than the all-India average (~18%), reflecting the state's strong agrarian and horticultural base; services (~40%) and industry (~23%) make up the rest.\n\n**Why not the others**\n- Services share below one-tenth of GSVA — services are in fact the single largest contributor to AP's GSVA (~40%).\n- Industry share above 60% of GSVA — industry is around a fifth to a quarter of GSVA, not a majority.\n- Primary sector share below 5% of GSVA — AP's primary sector is far larger, around a third of GSVA.\n\n**Key facts**\n| AP GSVA (approx.) | Share |\n|---|---|\n| Primary (agri & allied) | ~35-37% |\n| Secondary (industry) | ~23% |\n| Tertiary (services) | ~40% |\n- AP is a leading producer of rice, aquaculture, chillies, tobacco and horticultural crops.\n\n*Source: AP Socio-Economic Survey 2025-26; PRS — AP Budget Analysis (verified online).*",
       "source": "AP Socio-Economic Survey 2025-26; PRS — AP Budget Analysis (verified online, Sep 2026)",
       "verified": true,
       "covers": [
@@ -696,7 +696,7 @@
       "id": "econ-characteristics-development-mcq-26",
       "subjectCode": "ECON",
       "subtopicId": "econ-characteristics-development",
-      "question": "Consider the following statements about the Prevention of Money Laundering Act (PMLA), 2002:\nWhich of the statements is/are correct?",
+      "question": "Consider the following statements about the Prevention of Money Laundering Act (PMLA), 2002:\nWhich of the statements given above is/are correct?",
       "statements": [
         "It came into force in 2005 and is India's principal anti-money-laundering law.",
         "The Enforcement Directorate (ED) is the agency that investigates offences under it.",
@@ -812,14 +812,14 @@
       "subtopicId": "econ-characteristics-development",
       "question": "In the Index of Eight Core Industries (the lead infrastructure index feeding the IIP), which industry is assigned the highest weight?",
       "options": [
-        "Refinery (petroleum) products",
-        "Electricity generation",
+        "Refinery products",
+        "Electricity",
         "Steel",
         "Coal"
       ],
       "answerIndex": 0,
       "noteRef": "econ-characteristics-development-note-sectors",
-      "explanation": "In the Index of Eight Core Industries, **refinery (petroleum) products carries the highest weight** (28.04% under the 2011-12 series), followed by electricity and steel.\n\n**Why not the others**\n- Electricity generation — the second-highest weight (~19.85%), but below refinery products.\n- Steel — the third-highest weight (~17.92%).\n- Coal — a mid-ranked weight (~10.33%), far below refinery products.\n\n**Key facts**\n- Eight core industries: coal, crude oil, natural gas, refinery products, fertilizers, steel, cement, electricity.\n- They made up ~40.27% of the IIP under the 2011-12 series; the IIP/ICI are being rebased to **2022-23** (new IIP series released 1 June 2026). **Textiles is NOT a core industry.**\n\n*Source: Office of the Economic Adviser, DPIIT — Index of Eight Core Industries; MoSPI (IIP base 2022-23, June 2026).*",
+      "explanation": "In the Index of Eight Core Industries, **refinery (petroleum) products carries the highest weight** (28.04% under the 2011-12 series), followed by electricity and steel.\n\n**Why not the others**\n- Electricity — the second-highest weight (~19.85%), but below refinery products.\n- Steel — the third-highest weight (~17.92%).\n- Coal — a mid-ranked weight (~10.33%), far below refinery products.\n\n**Key facts**\n- Eight core industries: coal, crude oil, natural gas, refinery products, fertilizers, steel, cement, electricity.\n- They made up ~40.27% of the IIP under the 2011-12 series; the IIP/ICI are being rebased to **2022-23** (new IIP series released 1 June 2026). **Textiles is NOT a core industry.**\n\n*Source: Office of the Economic Adviser, DPIIT — Index of Eight Core Industries; MoSPI (IIP base 2022-23, June 2026).*",
       "source": "Office of the Economic Adviser, DPIIT — Index of Eight Core Industries",
       "verified": true,
       "covers": [
@@ -946,11 +946,11 @@
       ],
       "options": [
         "2 and 3 only",
-        "1 and 3 only",
         "1 and 2 only",
+        "1 and 3 only",
         "2 only"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Statement 2 is wrong: a **high ICOR** means **more** investment is needed per unit of extra output — inefficient capital. Statements 1 and 3 are the UPSC 2013 and 2018 answers on capital formation and human capital formation.\n\n**Why not the others**\n- 2 and 3 only — includes statement 2, which is incorrect; leaves out statement 1, which is correct\n- 1 and 2 only — includes statement 2, which is incorrect; leaves out statement 3, which is correct\n- 2 only — includes statement 2, which is incorrect; leaves out statement 1 and 3, which are correct\n\n**Key facts**\n- ICOR = extra investment ÷ extra output; high ICOR = inefficient.\n- Human capital = intangible wealth (knowledge, skill).\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
@@ -1012,11 +1012,11 @@
       },
       "options": [
         "A-2, B-4, C-1, D-3",
-        "A-4, B-2, C-1, D-3",
+        "A-4, B-1, C-2, D-3",
         "A-3, B-2, C-1, D-4",
-        "A-4, B-1, C-2, D-3"
+        "A-4, B-2, C-1, D-3"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "Dairy farming uses livestock directly (**primary**); weaving processes cotton yarn (**secondary**); storage is a **service** (tertiary); knowledge work such as software and R&D is **quaternary**. UPSC 2024 trapped candidates with storage-as-secondary.\n\n**Why not the others**\n- A-2, B-4, C-1, D-3 — pairs Dairy farming with Secondary sector; Dairy farming actually goes with Primary sector\n- A-3, B-2, C-1, D-4 — pairs Dairy farming with Quaternary sector; Dairy farming actually goes with Primary sector\n- A-4, B-1, C-2, D-3 — pairs Weaving cloth with Tertiary sector; Weaving cloth actually goes with Secondary sector\n\n**Key facts**\n- Storage = tertiary (not secondary).\n- Mineral exploration/mining = primary (not tertiary).\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
@@ -1265,11 +1265,11 @@
       "options": [
         "National Statistics Office, MoSPI",
         "Reserve Bank of India",
-        "Office of the Economic Adviser, DPIIT (Ministry of Commerce and Industry)",
-        "NITI Aayog"
+        "Office of the Economic Adviser, DPIIT",
+        "NITI Aayog's DMEO"
       ],
       "answerIndex": 2,
-      "explanation": "The ICI is released monthly by the **Office of the Economic Adviser, DPIIT**, ahead of the IIP (compiled by NSO, MoSPI).\n\n**Why not the others**\n- National Statistics Office, MoSPI — NSO (MoSPI) compiles the IIP, not the ICI.\n- Reserve Bank of India — RBI publishes monetary and banking data, not this index.\n- NITI Aayog — NITI Aayog is a policy think-tank and compiles no production index.\n\n**Key facts**\n- ICI — Office of the Economic Adviser, DPIIT.\n- IIP — NSO, MoSPI.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
+      "explanation": "The ICI is released monthly by the **Office of the Economic Adviser, DPIIT**, ahead of the IIP (compiled by NSO, MoSPI).\n\n**Why not the others**\n- National Statistics Office, MoSPI — NSO (MoSPI) compiles the IIP, not the ICI.\n- Reserve Bank of India — RBI publishes monetary and banking data, not this index.\n- NITI Aayog's DMEO — the Development Monitoring and Evaluation Office evaluates schemes; it compiles no production index.\n\n**Key facts**\n- ICI — Office of the Economic Adviser, DPIIT.\n- IIP — NSO, MoSPI.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
       "covers": [
@@ -1289,13 +1289,13 @@
       "assertion": "The UPSC 2015 answer key named electricity as the core industry with the highest weight.",
       "reason": "In the older 2004-05 series electricity had the highest weight, whereas under the 2011-12 base refinery products has the highest weight.",
       "options": [
-        "Both A and R are true, and R is the correct explanation of A",
-        "Both A and R are true, but R is NOT the correct explanation of A",
+        "Both A and R are true, and R explains A",
+        "Both A and R are true, but R does not explain A",
         "A is true, but R is false",
         "A is false, but R is true"
       ],
       "answerIndex": 0,
-      "explanation": "The 2015 question was set when the **2004-05** series was in use, where **electricity** led. After rebasing to **2011-12**, **refinery products** (28.04%) leads. R explains A.\n\n**Why not the others**\n- Both A and R are true, but R is NOT the correct explanation of A — A and R are both true and R gives the reason for the 2015 key.\n- A is true, but R is false — R is true, so this is wrong.\n- A is false, but R is true — A is true, so this is wrong.\n\n**Key facts**\n- 2004-05 series: electricity highest.\n- 2011-12 series: refinery products 28.04% highest, electricity 19.85% second.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
+      "explanation": "The 2015 question was set when the **2004-05** series was in use, where **electricity** led. After rebasing to **2011-12**, **refinery products** (28.04%) leads. R explains A.\n\n**Why not the others**\n- Both A and R are true, but R does not explain A — A and R are both true and R gives the reason for the 2015 key.\n- A is true, but R is false — R is true, so this is wrong.\n- A is false, but R is true — A is true, so this is wrong.\n\n**Key facts**\n- 2004-05 series: electricity highest.\n- 2011-12 series: refinery products 28.04% highest, electricity 19.85% second.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
       "covers": [
@@ -1337,18 +1337,18 @@
       "subtopicId": "econ-characteristics-development",
       "question": "Consider the following statements about the Indian economy:\nWhich of the statements given above is/are correct?",
       "statements": [
+        "In a mixed economy, the private sector is abolished and only the public sector operates.",
         "India is classified by the World Bank as a lower-middle-income economy.",
-        "Economic dualism means a modern sector coexists with a traditional subsistence sector.",
-        "In a mixed economy, the private sector is abolished and only the public sector operates."
+        "Economic dualism means a modern sector coexists with a traditional subsistence sector."
       ],
       "options": [
-        "1 and 3 only",
-        "3 only",
         "1 and 2 only",
-        "2 and 3 only"
+        "1 only",
+        "2 and 3 only",
+        "1 and 3 only"
       ],
       "answerIndex": 2,
-      "explanation": "Statement 3 is wrong: a **mixed economy** is one in which **public and private** sectors **coexist**. Statements 1 and 2 are correct.\n\n**Why not the others**\n- 1 and 3 only — includes statement 3, which is incorrect; leaves out statement 2, which is correct\n- 3 only — includes statement 3, which is incorrect; leaves out statement 1 and 2, which are correct\n- 2 and 3 only — includes statement 3, which is incorrect; leaves out statement 1, which is correct\n\n**Key facts**\n- Lower-middle income (World Bank).\n- Dualism = modern + traditional coexist; mixed = public + private coexist.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
+      "explanation": "Statement 1 is wrong: a **mixed economy** is one in which **public and private** sectors **coexist**. Statements 2 and 3 are correct.\n\n**Why not the others**\n- 1 and 2 only — includes statement 1, which is incorrect; leaves out statement 3, which is correct\n- 1 only — includes statement 1, which is incorrect; leaves out statement 2 and 3, which are correct\n- 1 and 3 only — includes statement 1, which is incorrect; leaves out statement 2, which is correct\n\n**Key facts**\n- Lower-middle income (World Bank).\n- Dualism = modern + traditional coexist; mixed = public + private coexist.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
       "covers": [
@@ -1369,12 +1369,12 @@
       "question": "India is best described as a ____ economy, in which public and private sectors coexist with state planning.",
       "options": [
         "socialist command",
-        "pure capitalist (laissez-faire)",
+        "laissez-faire",
         "mixed economy",
         "traditional barter"
       ],
       "answerIndex": 2,
-      "explanation": "India is a **mixed economy** — **public** and **private** sectors coexist; the model came from the Industrial Policy Resolutions of 1948 and 1956 and was liberalised from **1991**.\n\n**Why not the others**\n- socialist command — A command economy has no significant private sector, unlike India.\n- pure capitalist (laissez-faire) — India has a large public sector and state planning, so it is not laissez-faire.\n- traditional barter — India is a monetised market economy, not a barter economy.\n\n**Key facts**\n- Mixed economy = public + private coexist.\n- IPR 1948 and 1956; liberalised since 1991.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
+      "explanation": "India is a **mixed economy** — **public** and **private** sectors coexist; the model came from the Industrial Policy Resolutions of 1948 and 1956 and was liberalised from **1991**.\n\n**Why not the others**\n- socialist command — A command economy has no significant private sector, unlike India.\n- laissez-faire — India has a large public sector and state planning, so it is not laissez-faire.\n- traditional barter — India is a monetised market economy, not a barter economy.\n\n**Key facts**\n- Mixed economy = public + private coexist.\n- IPR 1948 and 1956; liberalised since 1991.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
       "covers": [
@@ -1393,12 +1393,12 @@
       "question": "Which of the following best describes disguised unemployment, common in Indian agriculture?",
       "options": [
         "Workers lose jobs during a recession",
-        "More workers are engaged than needed, so removing some does not reduce output",
+        "Extra workers whose removal leaves output unchanged",
         "Workers are unemployed during the off-season",
-        "Workers are between two jobs"
+        "Workers are idle while moving between jobs"
       ],
       "answerIndex": 1,
-      "explanation": "**Disguised** unemployment: the extra workers add nothing, so removing them leaves **output** unchanged (zero marginal productivity).\n\n**Why not the others**\n- Workers lose jobs during a recession — That is cyclical unemployment.\n- Workers are unemployed during the off-season — That is seasonal unemployment.\n- Workers are between two jobs — That is frictional unemployment.\n\n**Key facts**\n- Disguised = zero marginal productivity.\n- Seasonal, cyclical and frictional are different types.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
+      "explanation": "**Disguised** unemployment: the extra workers add nothing, so removing them leaves **output** unchanged (zero marginal productivity).\n\n**Why not the others**\n- Workers lose jobs during a recession — That is cyclical unemployment.\n- Workers are unemployed during the off-season — That is seasonal unemployment.\n- Workers are idle while moving between jobs — That is frictional unemployment.\n\n**Key facts**\n- Disguised = zero marginal productivity.\n- Seasonal, cyclical and frictional are different types.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
       "covers": [
@@ -1417,7 +1417,7 @@
       "question": "Consider the following statements about the size of the Indian economy:\nWhich of the statements given above is/are correct?",
       "statements": [
         "In the IMF's April 2026 World Economic Outlook, India's nominal GDP is about US$4.06 trillion, the 6th largest.",
-        "India is the 3rd largest economy in terms of Purchasing Power Parity (PPP).",
+        "India is the 4th largest economy in terms of Purchasing Power Parity (PPP).",
         "India's nominal per-capita GDP exceeds US$10,000."
       ],
       "options": [
@@ -1426,8 +1426,8 @@
         "3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 0,
-      "explanation": "Statements 1 and 2 are the IMF April 2026 figures. Statement 3 is wrong: nominal per-capita GDP is only about **US$2,750** (≈US$13,000 in PPP terms).\n\n**Why not the others**\n- 1 only — leaves out statement 2, which is correct\n- 3 only — includes statement 3, which is incorrect; leaves out statement 1 and 2, which are correct\n- 1, 2 and 3 — includes statement 3, which is incorrect\n\n**Key facts**\n- Nominal ~$4.06 trillion (6th); PPP 3rd.\n- Per-capita ~$2,750 nominal.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
+      "answerIndex": 1,
+      "explanation": "Only statement 1 is correct. In the IMF's April 2026 WEO India's nominal GDP is about **US$4.06 trillion (6th)**. Statement 2 is wrong — on a **PPP** basis India is the **3rd** largest economy (after China and the US), not 4th. Statement 3 is wrong — nominal per-capita GDP is only about **US$2,750** (≈US$13,000 in PPP terms).\n\n**Why not the others**\n- 1 and 2 only — includes statement 2, which is incorrect (India is 3rd, not 4th, in PPP)\n- 3 only — includes statement 3, which is incorrect; leaves out statement 1, which is correct\n- 1, 2 and 3 — includes statements 2 and 3, which are incorrect\n\n**Key facts**\n- Nominal ~$4.06 trillion (6th); PPP 3rd.\n- Per-capita ~$2,750 nominal.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
       "covers": [
@@ -1447,17 +1447,17 @@
       "question": "Consider the following statements about the Human Development Index:\nWhich of the statements given above is/are correct?",
       "statements": [
         "It was introduced by UNDP in 1990 and was conceived by Mahbub-ul-Haq with Amartya Sen.",
-        "India's HDI value in the Human Development Report 2025 is 0.685, with a rank of 130 out of 193.",
-        "India is placed in the \"High human development\" category."
+        "India is placed in the \"High human development\" category.",
+        "India's HDI value in the Human Development Report 2025 is 0.685, with a rank of 130 out of 193."
       ],
       "options": [
-        "1 and 3 only",
-        "2 only",
         "1 and 2 only",
+        "3 only",
+        "1 and 3 only",
         "2 and 3 only"
       ],
       "answerIndex": 2,
-      "explanation": "India (0.685, rank 130/193) is in the **Medium** human development category, not High. Statements 1 and 2 are correct.\n\n**Why not the others**\n- 1 and 3 only — includes statement 3, which is incorrect; leaves out statement 2, which is correct\n- 2 only — leaves out statement 1, which is correct\n- 2 and 3 only — includes statement 3, which is incorrect; leaves out statement 1, which is correct\n\n**Key facts**\n- HDI: UNDP, 1990, Mahbub-ul-Haq + Amartya Sen.\n- India HDR 2025: 0.685, rank 130/193, Medium.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
+      "explanation": "India (0.685, rank 130/193) is in the **Medium** human development category, not High. Statements 1 and 3 are correct.\n\n**Why not the others**\n- 1 and 2 only — includes statement 2, which is incorrect; leaves out statement 3, which is correct\n- 3 only — leaves out statement 1, which is correct\n- 2 and 3 only — includes statement 2, which is incorrect; leaves out statement 1, which is correct\n\n**Key facts**\n- HDI: UNDP, 1990, Mahbub-ul-Haq + Amartya Sen.\n- India HDR 2025: 0.685, rank 130/193, Medium.\n\n*Source: APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md*",
       "source": "APPSC GK — Indian Economics: Growth and Development.txt, Sectors of Indian Economy.txt; NCERT Indian Economic Development (Class XI) / Ramesh Singh standard treatment; IMF WEO Apr 2026; UNDP HDR 2025; PRS AP Budget 2026-27; PYQ bank .research/pyq-bank/econ-characteristics-development.md",
       "verified": true,
       "covers": [
@@ -1577,7 +1577,7 @@
       "question": "Which of the following best explains why the primary sector has an unusually large share in the economy of Andhra Pradesh?",
       "options": [
         "AP has no manufacturing or services activity",
-        "AP is the largest producer of fish and aquaculture (shrimp) in India, besides large rice and horticulture output",
+        "AP leads India in fish and shrimp aquaculture output",
         "AP is the largest producer of coal in India",
         "AP has the largest forest cover among Indian states"
       ],

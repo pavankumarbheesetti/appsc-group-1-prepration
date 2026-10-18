@@ -50,6 +50,41 @@ auto-migrates on load). Applications 6–27 Oct 2026.
 - Each item: `subjectCode`, `subtopicId`, `verified: true`, `covers: [...]`, and the explanation
   in the locked format below.
 
+## 3a. Exam‑standard question rules (PERMANENT GATE — `npm run audit:quality --strict`)
+Full standard + fixer workflow: `.research/plan/QUESTION-QUALITY.md`. Linted (rule id in brackets),
+enforced by `npm run check` with **0 findings** and an **EMPTY** `content/audit/quality-waivers.json`
+(a test asserts it is empty — a new waiver is a regression, fix the bank instead):
+- **(a) Stem** — a real exam stem ≥ 45 rendered characters asking one thing; statement items end with
+  a prompt ("Which of the statements given above is/are correct?") [`stem-short`, `stem-prompt`].
+- **(b) Options** — four plausible, homogeneous options: longest ≤ 2.2× shortest (prose sets), no
+  duplicates, no "All/None of the above" filler, no give‑away absolutes (distractors hedged with always/never/solely/entirely while the key is not)
+  [`option-length`, `option-duplicate`, `option-filler`, `option-absolute`].
+- **(c) Statements mix true and false** — at most **20 %** of a bank's statement items may be keyed
+  "all statements correct" / Both / All (banks with < 5 statement items: at most one) [`all-correct-share`]. A false statement is a **checkable
+  near‑miss** (wrong year, body, figure, ratio, article), never an absurdity.
+- **(d) Answer spread** — each option A/B/C/D holds **20–30 %** of keys (18–32 % for banks < 30 items)
+  [`answer-spread`]. Rebalance by reordering options only; explanations name options by text.
+- **(e) Statement keys vary** — banks with ≥ 6 statement items: ≥ 3 distinct keys, none on > 40 %;
+  ≥ 10 items: at least one `N only` or none key; 3–5 items: not all identical [`key-variety`].
+- Human‑review rules (no lint, checked in spot‑checks): **(f)** distractors are real facts answering a
+  different question; **(g)** exactly one defensible answer; **(h)** match items have four real pairs
+  with spread keys; **(i)** numerical distractors are named common mistakes.
+- The explanation must **judge every statement/option** (true ones why, false ones what the correct fact is).
+- `VALIDATE_QUALITY=0` switches the rule off in `validate:content` for a local run only; the
+  default is ON and `--strict` fails waived findings too.
+
+## 3b. Definition of done for content — the COMPLETENESS rule
+A subtopic is **done** only when `npm run audit:completeness` reports it **COMPLETE** (all 129/129 today;
+any regression fails `npm run check`). Against its closed fact universe `content/facts/<id>.json`
+(source set + method: `.research/plan/COMPLETENESS-BRIEF.md`):
+1. **Taught 100 %** — every fact appears in the notes (prose, table row or keyPoint; `taughtIn`).
+2. **Drilled 100 %** — every fact is asked by ≥ 1 MCQ or flashcard (`drilledBy`).
+3. **High‑yield MCQ 100 %** — every high‑yield fact (PYQ, AP‑specific, classic trap) has ≥ 1 **MCQ**.
+4. **Closed** — the universe comes from syllabus + source text + standard reference + PYQs + AP angle,
+   not from our own notes; out‑of‑clause facts are listed as excluded.
+And every MCQ that drills it passes §3/§3a (0 quality findings), `validate:content --strict` (0
+findings) and `audit:coverage` (AP floors). Content is not done until all four gates are green.
+
 ## 4. Explanation format (LOCKED)
 Order in the `explanation` markdown string:
 1. **Rationale** — 1–2 sentences on why the correct answer is right.
@@ -444,7 +479,8 @@ story) in a sustained run rather than a slot a week apart.
   History/Polity/Economy/Geography (~28–30 each/exam).
 
 ## 10. Process rules (non‑negotiable)
-- After ANY change, **run `npm run check` YOURSELF** (typecheck + lint + validate:content + tests).
+- After ANY change, **run `npm run check` YOURSELF** (typecheck + lint + validate:content --strict +
+  audit:completeness + audit:coverage + audit:quality --strict + tests).
   A subagent reporting "build green" is NOT enough — its unit tests can pass while the rendered
   output is broken. **Always browser‑verify** UI/rendering on the `file://` build.
 - Keep it **offline single‑file** (no CDN/fetch; everything inlined). Verify dist is one HTML with
