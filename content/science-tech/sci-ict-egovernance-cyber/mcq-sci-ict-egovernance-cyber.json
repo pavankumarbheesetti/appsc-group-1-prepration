@@ -38,12 +38,12 @@
       "noteRef": "sci-ict-egovernance-cyber-note-india-stack",
       "options": [
         "Reserve Bank of India",
-        "National Payments Corporation of India (NPCI)",
+        "National Payments Corp. of India (NPCI)",
         "State Bank of India",
-        "MeitY"
+        "Ministry of Electronics and IT (MeitY)"
       ],
       "answerIndex": 1,
-      "explanation": "**UPI** is built and operated by the **National Payments Corporation of India (NPCI)**, an RBI-promoted umbrella body for retail payments.\n\n**Why not the others**\n- Reserve Bank of India — the regulator that promoted NPCI, but does not run UPI directly.\n- State Bank of India — a member bank on UPI, not its operator.\n- MeitY — the IT ministry; it drives Digital India but not the payment rails.\n\n**Key facts**\n- UPI launched in 2016; it is the world's largest real-time retail payment system by volume.\n- India Stack layers: identity (Aadhaar), payments (UPI), data (DigiLocker / Account Aggregator).\n\n*Source: NPCI / RBI — UPI product.*",
+      "explanation": "**UPI** is built and operated by the **National Payments Corporation of India (NPCI)**, an RBI-promoted umbrella body for retail payments.\n\n**Why not the others**\n- Reserve Bank of India — the regulator that promoted NPCI, but does not run UPI directly.\n- State Bank of India — a member bank on UPI, not its operator.\n- Ministry of Electronics and IT (MeitY) — the IT ministry; it drives Digital India but not the payment rails.\n\n**Key facts**\n- UPI launched in 2016; it is the world's largest real-time retail payment system by volume.\n- India Stack layers: identity (Aadhaar), payments (UPI), data (DigiLocker / Account Aggregator).\n\n*Source: NPCI / RBI — UPI product.*",
       "source": "NPCI / RBI — UPI",
       "verified": true,
       "covers": [
@@ -119,13 +119,13 @@
       "question": "Which of the following is NOT one of the nine pillars of the Digital India programme?",
       "noteRef": "sci-ict-egovernance-cyber-note-digital-india",
       "options": [
-        "Broadband Highways",
+        "Broadband Highways (connectivity)",
         "Electronics Manufacturing",
         "e-Kranti — Electronic Delivery of Services",
         "Green Energy Corridors"
       ],
       "answerIndex": 3,
-      "explanation": "**Green Energy Corridors** is a renewable-power transmission scheme under MNRE, not a Digital India pillar.\n\n**Why not the others**\n- Broadband Highways — pillar 1, connectivity backbone.\n- Electronics Manufacturing — pillar aiming at net-zero electronics imports.\n- e-Kranti — Electronic Delivery of Services — the mission-mode services pillar.\n\n**Key facts**\n| Sample Digital India pillars |\n|---|\n| Broadband Highways; Universal Mobile Access; Public Internet Access |\n| e-Governance (reforming govt through tech); e-Kranti |\n| Information for All; Electronics Manufacturing; IT for Jobs; Early Harvest |\n\n*Source: MeitY — Digital India nine pillars.*",
+      "explanation": "**Green Energy Corridors** is a renewable-power transmission scheme under MNRE, not a Digital India pillar.\n\n**Why not the others**\n- Broadband Highways (connectivity) — pillar 1, the connectivity backbone.\n- Electronics Manufacturing — pillar aiming at net-zero electronics imports.\n- e-Kranti — Electronic Delivery of Services — the mission-mode services pillar.\n\n**Key facts**\n| Sample Digital India pillars |\n|---|\n| Broadband Highways; Universal Mobile Access; Public Internet Access |\n| e-Governance (reforming govt through tech); e-Kranti |\n| Information for All; Electronics Manufacturing; IT for Jobs; Early Harvest |\n\n*Source: MeitY — Digital India nine pillars.*",
       "source": "MeitY — Digital India pillars",
       "verified": true,
       "covers": [
@@ -336,17 +336,17 @@
       "statements": [
         "It establishes the Data Protection Board of India.",
         "It provides for financial penalties that can extend up to ₹250 crore.",
-        "Processing of a child's personal data generally requires verifiable parental consent."
+        "Processing of a child's personal data needs only the child's own consent, not parental consent."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-data-protection-law",
       "options": [
+        "1 only",
         "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
+        "2 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "All three are correct: the Act creates the Data Protection Board, prescribes penalties up to ₹250 crore, and mandates verifiable parental consent for children's data.\n\n**Why not the others**\n- 1 and 2 only — omits the correct children's-consent provision.\n- 2 and 3 only — omits the Data Protection Board.\n- 1 and 3 only — omits the ₹250 crore penalty ceiling.\n\n**Key facts**\n- Actors: Data Principal (individual), Data Fiduciary (processor of data), Significant Data Fiduciary (higher obligations).\n- Rights: access, correction, erasure, grievance redressal and nomination.\n\n*Source: MeitY / PIB — DPDP Act 2023.*",
+      "answerIndex": 1,
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — processing a child's data generally requires verifiable parental consent. The Act creates the Data Protection Board, prescribes penalties up to ₹250 crore, and mandates verifiable parental consent for children's data.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (processing a child's data generally requires verifiable parental consent).\n\n**Key facts**\n- Actors: Data Principal (individual), Data Fiduciary (processor of data), Significant Data Fiduciary (higher obligations).\n- Rights: access, correction, erasure, grievance redressal and nomination.\n\n*Source: MeitY / PIB — DPDP Act 2023.*",
       "source": "MeitY / PIB — DPDP Act 2023",
       "verified": true,
       "covers": [
@@ -390,18 +390,18 @@
       "question": "Consider the following statements about the Information Technology (IT) Act, 2000:\nWhich of the statements is/are correct?",
       "statements": [
         "It is India's primary law governing electronic commerce and cyber offences.",
-        "Section 66A, which penalised 'offensive' online messages, was struck down by the Supreme Court.",
+        "Section 66A, which penalised 'offensive' online messages, was struck down by the Delhi High Court.",
         "The Act was substantially amended in 2008."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-data-protection-law",
       "options": [
-        "1 and 2 only",
-        "1, 2 and 3",
-        "2 and 3 only",
-        "1 only"
+        "1 only",
+        "1 and 3 only",
+        "3 only",
+        "1, 2 and 3"
       ],
       "answerIndex": 1,
-      "explanation": "All three are correct: the IT Act 2000 is the core cyber law, was amended in 2008, and its Section 66A was struck down in *Shreya Singhal v. Union of India* (2015).\n\n**Why not the others**\n- 1 and 2 only — omits the correct 2008 amendment.\n- 2 and 3 only — omits statement 1 on the Act's primacy.\n- 1 only — ignores the well-known 66A striking-down and the amendment.\n\n**Key facts**\n- Section 66A was voided for violating free speech under Article 19(1)(a).\n- Key sections: 43A (data compensation), 69 (interception), 70 (protected systems), 79 (intermediary safe harbour).\n\n*Source: MeitY — IT Act 2000; SC in Shreya Singhal (2015).*",
+      "explanation": "Statements 1 and 3 are correct. Statement 2 is incorrect — Section 66A was struck down by the Supreme Court in Shreya Singhal v. Union of India (2015). The IT Act 2000 is the core cyber law, was amended in 2008, and its Section 66A was struck down in *Shreya Singhal v. Union of India* (2015).\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (Section 66A was struck down by the Supreme Court in Shreya Singhal v. Union of India (2015)).\n\n**Key facts**\n- Section 66A was voided for violating free speech under Article 19(1)(a).\n- Key sections: 43A (data compensation), 69 (interception), 70 (protected systems), 79 (intermediary safe harbour).\n\n*Source: MeitY — IT Act 2000; SC in Shreya Singhal (2015).*",
       "source": "MeitY — IT Act 2000; Shreya Singhal v. Union of India (2015)",
       "verified": true,
       "covers": [
@@ -420,18 +420,18 @@
       "question": "With reference to CERT-In, consider the following statements:\nWhich of the statements is/are correct?",
       "statements": [
         "It is the national nodal agency for responding to cyber-security incidents.",
-        "It functions under the Ministry of Electronics and Information Technology.",
+        "It functions under the Ministry of Home Affairs.",
         "Its 2022 directions require certain cyber incidents to be reported within six hours of detection."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
+        "1 only",
         "1 and 3 only",
+        "3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "All three are correct: CERT-In is the national incident-response nodal agency under MeitY, statutorily recognised under Section 70B of the IT Act, and its April 2022 directions mandate 6-hour incident reporting.\n\n**Why not the others**\n- 1 and 2 only — omits the correct six-hour reporting rule.\n- 2 and 3 only — omits its nodal-agency role.\n- 1 and 3 only — omits its parent ministry (MeitY).\n\n**Key facts**\n- CERT-In = Indian Computer Emergency Response Team.\n- 2022 directions also require log retention (180 days) and KYC/data retention by VPN and cloud providers.\n\n*Source: CERT-In / MeitY — 2022 directions.*",
+      "answerIndex": 1,
+      "explanation": "Statements 1 and 3 are correct. Statement 2 is incorrect — CERT-In is under MeitY; it is the I4C that is under the Ministry of Home Affairs. CERT-In is the national incident-response nodal agency under MeitY, statutorily recognised under Section 70B of the IT Act, and its April 2022 directions mandate 6-hour incident reporting.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (CERT-In is under MeitY; it is the I4C that is under the Ministry of Home Affairs).\n\n**Key facts**\n- CERT-In = Indian Computer Emergency Response Team.\n- 2022 directions also require log retention (180 days) and KYC/data retention by VPN and cloud providers.\n\n*Source: CERT-In / MeitY — 2022 directions.*",
       "source": "CERT-In / MeitY — 2022 directions",
       "verified": true,
       "covers": [
@@ -481,11 +481,11 @@
       "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
         "1 only",
-        "2 only",
         "Both 1 and 2",
+        "2 only",
         "Neither 1 nor 2"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "Both are correct: the Cyber Swachhta Kendra is CERT-In's botnet-cleaning centre, and the first National Cyber Security Policy was released in 2013.\n\n**Why not the others**\n- 1 only — the 2013 policy statement is also correct.\n- 2 only — the Cyber Swachhta Kendra statement is also correct.\n- Neither 1 nor 2 — both statements are factual.\n\n**Key facts**\n- Cyber Swachhta Kendra provides free bot-removal and security tools to citizens.\n- The 2013 policy aimed to build a secure cyber ecosystem and a skilled workforce (target: 5 lakh professionals).\n\n*Source: CERT-In — Cyber Swachhta Kendra; MeitY — National Cyber Security Policy 2013.*",
       "source": "CERT-In; MeitY — National Cyber Security Policy 2013",
       "verified": true,
@@ -572,17 +572,17 @@
       "statements": [
         "The Indian Cyber Crime Coordination Centre (I4C) functions under the Ministry of Home Affairs.",
         "'1930' is the national helpline number for reporting financial cyber fraud.",
-        "The CFCFRMS enables rapid reporting to freeze fraudulently transferred money."
+        "The CFCFRMS compensates cyber-fraud victims from a central insurance fund."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-cyber-security-architecture",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "1 only",
+        "2 only",
+        "1, 2 and 3",
+        "1 and 2 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct: I4C is under MHA, 1930 is the cyber-fraud helpline, and the CFCFRMS supports rapid reporting to freeze defrauded funds.\n\n**Why not the others**\n- 1 and 2 only — omits the correct CFCFRMS statement.\n- 2 and 3 only — omits I4C's parent ministry (MHA).\n- 1 and 3 only — omits the 1930 helpline.\n\n**Key facts**\n- I4C also runs the National Cybercrime Reporting Portal (cybercrime.gov.in).\n- CFCFRMS = Citizen Financial Cyber Fraud Reporting and Management System.\n\n*Source: I4C / MHA — cyber-crime reporting.*",
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — the CFCFRMS is a reporting and fund-freezing system, not a compensation fund. I4C is under MHA, 1930 is the cyber-fraud helpline, and the CFCFRMS supports rapid reporting to freeze defrauded funds.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (the CFCFRMS is a reporting and fund-freezing system, not a compensation fund).\n\n**Key facts**\n- I4C also runs the National Cybercrime Reporting Portal (cybercrime.gov.in).\n- CFCFRMS = Citizen Financial Cyber Fraud Reporting and Management System.\n\n*Source: I4C / MHA — cyber-crime reporting.*",
       "source": "I4C / MHA — cyber-crime reporting",
       "verified": true,
       "covers": [
@@ -600,19 +600,19 @@
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "Consider the following statements about the IndiaAI Mission (approved 2024) and AI governance:\nWhich of the statements is/are correct?",
       "statements": [
-        "The Mission has an outlay of about ₹10,372 crore over five years.",
+        "The Mission has an outlay of about ₹10,372 crore over ten years.",
         "Building AI compute capacity (GPUs) is one of its key pillars.",
         "MeitY has issued advisories on labelling AI-generated content amid concerns over deepfakes."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-emerging-tech-missions",
       "options": [
-        "1 and 2 only",
-        "1 and 3 only",
-        "2 and 3 only",
-        "1, 2 and 3"
+        "2 only",
+        "3 only",
+        "1, 2 and 3",
+        "2 and 3 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct: the IndiaAI Mission's outlay is ~₹10,372 crore, compute capacity is a core pillar, and MeitY has issued advisories addressing deepfakes and AI-generated content.\n\n**Why not the others**\n- 1 and 2 only — omits the correct deepfake/advisory statement.\n- 1 and 3 only — omits the compute-capacity pillar.\n- 2 and 3 only — omits the ₹10,372 crore outlay.\n\n**Key facts**\n- Pillars include IndiaAI Compute Capacity, Innovation Centre, Datasets Platform (AIKosh), Application Development, FutureSkills, Startup Financing and Safe & Trusted AI.\n- Deepfakes are tackled via IT Rules 2021 obligations and MeitY advisories, pending dedicated regulation.\n\n*Source: MeitY / PIB — IndiaAI Mission 2024.*",
+      "explanation": "Statements 2 and 3 are correct. Statement 1 is incorrect — the ₹10,372 crore outlay is spread over five years. The IndiaAI Mission's outlay is ~₹10,372 crore, compute capacity is a core pillar, and MeitY has issued advisories addressing deepfakes and AI-generated content.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (the ₹10,372 crore outlay is spread over five years).\n\n**Key facts**\n- Pillars include IndiaAI Compute Capacity, Innovation Centre, Datasets Platform (AIKosh), Application Development, FutureSkills, Startup Financing and Safe & Trusted AI.\n- Deepfakes are tackled via IT Rules 2021 obligations and MeitY advisories, pending dedicated regulation.\n\n*Source: MeitY / PIB — IndiaAI Mission 2024.*",
       "source": "MeitY / PIB — IndiaAI Mission 2024",
       "verified": true,
       "covers": [
@@ -631,19 +631,19 @@
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "Consider the following statements about India's next-generation connectivity:\nWhich of the statements is/are correct?",
       "statements": [
-        "Commercial 5G services were launched in India in October 2022.",
+        "Commercial 5G services were launched in India in October 2022 at the India Mobile Congress in Mumbai.",
         "The Bharat 6G Vision document sets out India's ambition to be a leader in 6G technology.",
         "The National Quantum Mission supports development of quantum-secure communication."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-emerging-tech-missions",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "2 only",
+        "3 only",
+        "1, 2 and 3",
+        "2 and 3 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct: 5G launched in October 2022, the Bharat 6G Vision (2023) sets 6G leadership goals, and the National Quantum Mission supports quantum-secure communication.\n\n**Why not the others**\n- 1 and 2 only — omits the correct quantum-communication statement.\n- 2 and 3 only — omits the October-2022 5G launch.\n- 1 and 3 only — omits the Bharat 6G Vision.\n\n**Key facts**\n- 5G was rolled out across all districts within about two years of launch.\n- National Quantum Mission (approved 2023, ~₹6,003 crore) spans quantum computing, communication, sensing and materials.\n\n*Source: DoT / PIB — 5G, Bharat 6G Vision; DST — National Quantum Mission.*",
+      "explanation": "Statements 2 and 3 are correct. Statement 1 is incorrect — 5G was launched on 1 October 2022 at the India Mobile Congress in New Delhi. 5G launched in October 2022, the Bharat 6G Vision (2023) sets 6G leadership goals, and the National Quantum Mission supports quantum-secure communication.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (5G was launched on 1 October 2022 at the India Mobile Congress in New Delhi).\n\n**Key facts**\n- 5G was rolled out across all districts within about two years of launch.\n- National Quantum Mission (approved 2023, ~₹6,003 crore) spans quantum computing, communication, sensing and materials.\n\n*Source: DoT / PIB — 5G, Bharat 6G Vision; DST — National Quantum Mission.*",
       "source": "DoT / PIB — 5G, Bharat 6G Vision; DST — National Quantum Mission",
       "verified": true,
       "covers": [
@@ -783,17 +783,17 @@
       "statements": [
         "The Real Time Governance Society (RTGS) operates a centre for integrated, real-time monitoring of schemes and grievances.",
         "e-Pragati is AP's core enterprise-architecture platform integrating departmental services.",
-        "The Praja Sadhikara Survey was a household socio-economic data-collection exercise."
+        "The Praja Sadhikara Survey was a satellite-based land-records mapping exercise."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "1 only",
+        "2 only",
+        "1, 2 and 3",
+        "1 and 2 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct: AP's RTGS runs a real-time governance centre, e-Pragati is its integrating enterprise-architecture platform, and the Praja Sadhikara Survey collected household socio-economic data.\n\n**Why not the others**\n- 1 and 2 only — omits the correct Praja Sadhikara Survey statement.\n- 2 and 3 only — omits the RTGS real-time centre.\n- 1 and 3 only — omits e-Pragati.\n\n**Key facts**\n- RTGS integrates department databases for real-time dashboards and grievance redress.\n- e-Pragati links citizen, business and government services into a single digital backbone.\n\n*Source: AP Real Time Governance Society; AP IT & e-Governance Department.*",
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — the Praja Sadhikara Survey was a household socio-economic data-collection exercise. AP's RTGS runs a real-time governance centre, e-Pragati is its integrating enterprise-architecture platform, and the Praja Sadhikara Survey collected household socio-economic data.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (the Praja Sadhikara Survey was a household socio-economic data-collection exercise).\n\n**Key facts**\n- RTGS integrates department databases for real-time dashboards and grievance redress.\n- e-Pragati links citizen, business and government services into a single digital backbone.\n\n*Source: AP Real Time Governance Society; AP IT & e-Governance Department.*",
       "source": "AP Real Time Governance Society; AP IT & e-Governance Dept",
       "verified": true,
       "covers": [
@@ -813,13 +813,13 @@
       "question": "'Mana Mitra', an initiative launched by the Government of Andhra Pradesh, delivers government services to citizens primarily through:",
       "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
-        "WhatsApp",
+        "The WhatsApp messaging app",
         "Physical kiosks only",
-        "Postal mail",
-        "Satellite radio"
+        "Postal mail and couriers",
+        "Satellite radio broadcasts"
       ],
       "answerIndex": 0,
-      "explanation": "**Mana Mitra** is AP's WhatsApp-based governance service, letting citizens access government services and certificates directly through **WhatsApp**.\n\n**Why not the others**\n- Physical kiosks only — Mana Mitra is a mobile/WhatsApp channel, not kiosk-restricted.\n- Postal mail — the service is digital, delivering documents electronically.\n- Satellite radio — unrelated to citizen service delivery.\n\n**Key facts**\n- Delivered via the Real Time Governance Society over a dedicated WhatsApp number, offering many citizen services and downloadable certificates.\n- Represents AP's push toward chat-based, whole-of-government digital service delivery.\n\n*Source: AP Real Time Governance Society — Mana Mitra WhatsApp governance.*",
+      "explanation": "**Mana Mitra** is AP's WhatsApp-based governance service, letting citizens access government services and certificates directly through **WhatsApp**.\n\n**Why not the others**\n- Physical kiosks only — Mana Mitra is a mobile/WhatsApp channel, not kiosk-restricted.\n- Postal mail and couriers — the service is digital, delivering documents electronically.\n- Satellite radio broadcasts — unrelated to citizen service delivery.\n\n**Key facts**\n- Delivered via the Real Time Governance Society over a dedicated WhatsApp number, offering many citizen services and downloadable certificates.\n- Represents AP's push toward chat-based, whole-of-government digital service delivery.\n\n*Source: AP Real Time Governance Society — Mana Mitra WhatsApp governance.*",
       "source": "AP Real Time Governance Society — Mana Mitra",
       "verified": true,
       "covers": [
@@ -963,19 +963,19 @@
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "Consider the following statements about Andhra Pradesh's digital and emerging-technology initiatives:\nWhich of the statements is/are correct?",
       "statements": [
-        "The Amaravati Quantum Valley is intended to attract investment in quantum computing.",
+        "The Amaravati Quantum Valley is intended to attract investment in semiconductor fabrication.",
         "AP FiberNet provides fibre-based broadband connectivity in the state.",
         "The Real Time Governance Society enables integrated, real-time monitoring of government services."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "2 only",
+        "3 only",
+        "1, 2 and 3",
+        "2 and 3 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three statements are correct — the Amaravati Quantum Valley targets quantum-computing investment, AP FiberNet supplies fibre broadband, and the RTGS runs real-time governance monitoring.\n\n**Why not the others**\n- 1 and 2 only — omits the correct RTGS statement.\n- 2 and 3 only — omits the Amaravati Quantum Valley statement.\n- 1 and 3 only — omits the AP FiberNet statement.\n\n**Key facts**\n- Together these span frontier tech (quantum), digital infrastructure (fibre broadband) and governance (real-time monitoring).\n- They illustrate AP's layered digital strategy from backbone connectivity to service delivery.\n\n*Source: Government of Andhra Pradesh; APSFL; AP Real Time Governance Society.*",
+      "explanation": "Statements 2 and 3 are correct. Statement 1 is incorrect — the Amaravati Quantum Valley is a quantum-computing hub, not a chip-fabrication park. The Amaravati Quantum Valley targets quantum-computing investment, AP FiberNet supplies fibre broadband, and the RTGS runs real-time governance monitoring.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (the Amaravati Quantum Valley is a quantum-computing hub, not a chip-fabrication park).\n\n**Key facts**\n- Together these span frontier tech (quantum), digital infrastructure (fibre broadband) and governance (real-time monitoring).\n- They illustrate AP's layered digital strategy from backbone connectivity to service delivery.\n\n*Source: Government of Andhra Pradesh; APSFL; AP Real Time Governance Society.*",
       "source": "Government of Andhra Pradesh; APSFL; AP Real Time Governance Society",
       "verified": true,
       "covers": [
@@ -997,18 +997,18 @@
       "question": "Consider the following statements about the Amaravati Quantum Valley:\nWhich of the statements given above are correct?",
       "statements": [
         "It is being developed as India's first quantum-computing hub, in Andhra Pradesh.",
-        "It is set to host an IBM Quantum System Two powered by a 156-qubit 'Heron' processor.",
+        "It is set to host an IBM Quantum System Two powered by a 1,121-qubit 'Condor' processor.",
         "TCS and L&T are among the industry partners associated with the project."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
+        "1 only",
+        "3 only",
         "1 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "The **Amaravati Quantum Valley** is planned as **India's first quantum hub**, to house an **IBM Quantum System Two with a 156-qubit 'Heron' processor**, with **IBM, TCS and L&T** as partners.\n\n**Why not the others**\n- 1 and 2 only — omits the industry partners (TCS, L&T) in statement 3.\n- 2 and 3 only — drops the 'India's first quantum hub' framing in statement 1.\n- 1 and 3 only — drops the specific IBM System Two / 156-qubit Heron detail.\n\n**Key facts**\n\n| Item | Detail |\n|---|---|\n| Location | Amaravati, Andhra Pradesh |\n| Hardware | IBM Quantum System Two — 156-qubit 'Heron' (India's largest) |\n| Partners | IBM, TCS, L&T |\n| Status | India's first quantum hub; commissioning targeted 2026 |\n\n*Source: Government of Andhra Pradesh / IBM (2026).*",
+      "answerIndex": 2,
+      "explanation": "Statements 1 and 3 are correct. Statement 2 is incorrect — the IBM Quantum System Two at Amaravati is to run on a 156-qubit 'Heron' processor. The **Amaravati Quantum Valley** is planned as **India's first quantum hub**, to house an **IBM Quantum System Two with a 156-qubit 'Heron' processor**, with **IBM, TCS and L&T** as partners.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (the IBM Quantum System Two at Amaravati is to run on a 156-qubit 'Heron' processor).\n\n**Key facts**\n\n| Item | Detail |\n|---|---|\n| Location | Amaravati, Andhra Pradesh |\n| Hardware | IBM Quantum System Two — 156-qubit 'Heron' (India's largest) |\n| Partners | IBM, TCS, L&T |\n| Status | India's first quantum hub; commissioning targeted 2026 |\n\n*Source: Government of Andhra Pradesh / IBM (2026).*",
       "source": "Government of Andhra Pradesh / IBM (2026)",
       "verified": true,
       "covers": [
@@ -1054,17 +1054,17 @@
       "statements": [
         "It is a WhatsApp-based governance platform that lets citizens access government services through a single mobile number.",
         "It is anchored in the state's Real Time Governance Society (RTGS) framework.",
-        "It is an example of the Government-to-Citizen (G2C) service-delivery model."
+        "It is an example of the Government-to-Business (G2B) service-delivery model."
       ],
       "noteRef": "sci-ict-egovernance-cyber-note-ap-egovernance",
       "options": [
+        "1 only",
+        "2 only",
         "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "**Mana Mitra** is a **WhatsApp-based, RTGS-anchored** platform delivering government services to citizens via a single number — a classic **G2C** e-governance model.\n\n**Why not the others**\n- 1 and 2 only — omits the correct G2C classification in statement 3.\n- 2 and 3 only — drops the WhatsApp single-number delivery in statement 1.\n- 1 and 3 only — drops the RTGS anchoring in statement 2.\n\n**Key facts**\n- Channel: WhatsApp (single mobile number) for multiple citizen services.\n- Run within the Real Time Governance Society (RTGS) ecosystem.\n- Service model: Government-to-Citizen (G2C).\n\n*Source: AP Real Time Governance Society (rtgs.ap.gov.in).*",
+      "answerIndex": 2,
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — Mana Mitra serves citizens — a Government-to-Citizen (G2C) model. **Mana Mitra** is a **WhatsApp-based, RTGS-anchored** platform delivering government services to citizens via a single number — a classic **G2C** e-governance model.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (Mana Mitra serves citizens — a Government-to-Citizen (G2C) model).\n\n**Key facts**\n- Channel: WhatsApp (single mobile number) for multiple citizen services.\n- Run within the Real Time Governance Society (RTGS) ecosystem.\n- Service model: Government-to-Citizen (G2C).\n\n*Source: AP Real Time Governance Society (rtgs.ap.gov.in).*",
       "source": "AP Real Time Governance Society (rtgs.ap.gov.in)",
       "verified": true,
       "covers": [
@@ -1262,17 +1262,17 @@
       "question": "Consider the following statements about Digital India and e-governance:\nWhich of the statements given above is/are correct?",
       "statements": [
         "e-Kranti is the Digital India pillar for electronic delivery of services.",
-        "In the G2E model, the government serves its own employees, for example through payroll portals.",
+        "In the G2E model, the government serves businesses, for example through licensing portals.",
         "API Setu lets government departments exchange data through open APIs (a G2G link)."
       ],
       "options": [
+        "1 only",
+        "3 only",
         "1 and 3 only",
-        "1, 2 and 3",
-        "2 and 3 only",
-        "1 and 2 only"
+        "1, 2 and 3"
       ],
-      "answerIndex": 1,
-      "explanation": "All three are right. e-Kranti is the \"electronic delivery of services\" pillar; the four e-governance models are G2C, G2B, G2G and G2E (employee); and API Setu is the open-API platform for inter-department data exchange.\n\n**Why not the others**\n- 1 and 3 only — leaves out statement 2, which is correct\n- 2 and 3 only — leaves out statement 1, which is correct\n- 1 and 2 only — leaves out statement 3, which is correct\n\n**Key facts**\n- e-Kranti = electronic delivery of services.\n- G2C, G2B, G2G, G2E.\n- API Setu = interoperability (G2G).\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
+      "answerIndex": 2,
+      "explanation": "Statements 1 and 3 are correct. Statement 2 is incorrect — G2E serves government employees (e.g. payroll portals); serving businesses is G2B. E-Kranti is the \"electronic delivery of services\" pillar; the four e-governance models are G2C, G2B, G2G and G2E (employee); and API Setu is the open-API platform for inter-department data exchange.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (G2E serves government employees (e.g. payroll portals); serving businesses is G2B).\n\n**Key facts**\n- e-Kranti = electronic delivery of services.\n- G2C, G2B, G2G, G2E.\n- API Setu = interoperability (G2G).\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
       "source": "MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS",
       "verified": true,
       "covers": [
@@ -1291,17 +1291,17 @@
       "question": "Consider the following statements:\nWhich of the statements given above is/are correct?",
       "statements": [
         "Under the DPDP Act, the individual whose data is processed is the Data Principal, and the organisation deciding the processing is the Data Fiduciary.",
-        "The Puttaswamy judgment (2017) declared privacy a fundamental right.",
+        "The Puttaswamy judgment (2017) held that privacy is only a statutory right, not a fundamental right.",
         "Section 79 of the IT Act gives intermediaries conditional safe harbour for user content."
       ],
       "options": [
+        "1 only",
+        "3 only",
         "1 and 3 only",
-        "1 and 2 only",
-        "1, 2 and 3",
-        "3 only"
+        "1, 2 and 3"
       ],
       "answerIndex": 2,
-      "explanation": "All three are right. The DPDP Act names the individual the Data Principal and the processor the Data Fiduciary (with extra duties for a Significant Data Fiduciary); Puttaswamy (2017) made privacy a fundamental right; and Section 79 protects intermediaries if they follow due diligence.\n\n**Why not the others**\n- 1 and 3 only — leaves out statement 2, which is correct\n- 1 and 2 only — leaves out statement 3, which is correct\n- 3 only — leaves out statement 1 and 2, which are correct\n\n**Key facts**\n- Data Principal = you; Data Fiduciary = processor.\n- Puttaswamy 2017 = privacy a fundamental right.\n- Sec 79 = safe harbour.\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
+      "explanation": "Statements 1 and 3 are correct. Statement 2 is incorrect — Puttaswamy (2017) declared privacy a fundamental right under Article 21. The DPDP Act names the individual the Data Principal and the processor the Data Fiduciary (with extra duties for a Significant Data Fiduciary); Puttaswamy (2017) made privacy a fundamental right; and Section 79 protects intermediaries if they follow due diligence.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (Puttaswamy (2017) declared privacy a fundamental right under Article 21).\n\n**Key facts**\n- Data Principal = you; Data Fiduciary = processor.\n- Puttaswamy 2017 = privacy a fundamental right.\n- Sec 79 = safe harbour.\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
       "source": "MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS",
       "verified": true,
       "covers": [
@@ -1372,17 +1372,17 @@
       "subtopicId": "sci-ict-egovernance-cyber",
       "question": "Consider the following statements:\nWhich of the statements given above is/are correct?",
       "statements": [
-        "The India Semiconductor Mission has an outlay of ₹76,000 crore.",
+        "The India Semiconductor Mission has an outlay of ₹76,000 crore and is run by the Ministry of Commerce.",
         "IndiaAI's datasets platform is called AIKosh."
       ],
       "options": [
-        "2 only",
-        "Neither 1 nor 2",
         "1 only",
-        "Both 1 and 2"
+        "2 only",
+        "Both 1 and 2",
+        "Neither 1 nor 2"
       ],
-      "answerIndex": 3,
-      "explanation": "Both are right. The Semiconductor Mission is a ₹76,000 crore programme with units at Dholera, Sanand and Jagiroad; AIKosh is the IndiaAI Mission's datasets platform.\n\n**Why not the others**\n- 2 only — leaves out statement 1, which is correct\n- Neither 1 nor 2 — leaves out statement 1 and 2, which are correct\n- 1 only — leaves out statement 2, which is correct\n\n**Key facts**\n- ISM ₹76,000 cr.\n- AIKosh = IndiaAI datasets.\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
+      "answerIndex": 1,
+      "explanation": "Only statement 2 is correct. Statement 1 is incorrect — the India Semiconductor Mission is run under MeitY, not the Ministry of Commerce. The Semiconductor Mission is a ₹76,000 crore programme with units at Dholera, Sanand and Jagiroad; AIKosh is the IndiaAI Mission's datasets platform.\n\n**Why not the others**\n- '1 only' — Statement 1 is incorrect (the India Semiconductor Mission is run under MeitY, not the Ministry of Commerce); it leaves out statement 2, which is correct.\n- 'Both 1 and 2' — Statement 1 is incorrect (the India Semiconductor Mission is run under MeitY, not the Ministry of Commerce).\n- 'Neither 1 nor 2' — It leaves out statement 2, which is correct.\n\n**Key facts**\n- ISM ₹76,000 cr.\n- AIKosh = IndiaAI datasets.\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
       "source": "MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS",
       "verified": true,
       "covers": [
@@ -1431,11 +1431,11 @@
       "options": [
         "Quantum computing",
         "Visible light communication",
-        "Cloud computing",
+        "Cloud computing services",
         "Wireless communication technologies"
       ],
       "answerIndex": 0,
-      "explanation": "A qubit (quantum bit) is the basic unit of quantum computing: through superposition it can be 0 and 1 at the same time (UPSC 2022).\n\n**Why not the others**\n- Visible light communication — Visible light communication (Li-Fi) uses light, not qubits.\n- Cloud computing — Cloud computing rents classical IT resources over the internet.\n- Wireless communication technologies — Wireless communication uses radio waves, not qubits.\n\n**Key facts**\n- Qubit → quantum computing; superposition and entanglement.\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
+      "explanation": "A qubit (quantum bit) is the basic unit of quantum computing: through superposition it can be 0 and 1 at the same time (UPSC 2022).\n\n**Why not the others**\n- Visible light communication — Visible light communication (Li-Fi) uses light, not qubits.\n- Cloud computing services — Cloud computing rents classical IT resources over the internet.\n- Wireless communication technologies — Wireless communication uses radio waves, not qubits.\n\n**Key facts**\n- Qubit → quantum computing; superposition and entanglement.\n\n*Source: MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS*",
       "source": "MeitY, CERT-In, NPCI, I4C/MHA, DoT/TRAI and PIB releases (to Oct 2026); IT Act 2000, DPDP Act 2023 & Rules 2025, Telecommunications Act 2023, Online Gaming Act 2025; standard S&T references; PYQ bank .research/pyq-bank/sci-ict-egovernance-cyber.md; AP RTGS",
       "verified": true,
       "covers": [

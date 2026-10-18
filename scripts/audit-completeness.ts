@@ -11,8 +11,8 @@
  *
  * EXIT CODE: non-zero when any subtopic WITH a facts file is below 100% taught,
  * 100% drilled, or 100% high-yield-with-MCQ (or a facts file names a subtopic with no content), so a
- * completed subtopic can never regress. Subtopics without a facts file are
- * backlog — reported, never failed. `npm run check` chains this after
+ * completed subtopic can never regress — AND when any subtopic has NO facts file:
+ * all 129 universes are closed, so there is no backlog allowance any more. `npm run check` chains this after
  * `validate:content`.
  *
  * Flags (used by the tests to run against fixtures):
@@ -170,7 +170,11 @@ console.log(
     `${backlog.length} in the queue (~${backlog.reduce((n, r) => n + (r.estimate ?? 0), 0)} estimated facts)`,
 );
 if (exitCode !== 0) {
-  console.error('\n✗ completeness gate FAILED: a subtopic with a facts file is below 100% taught, drilled, or high-yield-with-MCQ');
+  console.error(
+    backlog.length > 0
+      ? `\n✗ completeness gate FAILED: ${backlog.length} subtopic(s) have no facts file (every subtopic must be closed)`
+      : '\n✗ completeness gate FAILED: a subtopic with a facts file is below 100% taught, drilled, or high-yield-with-MCQ',
+  );
   process.exit(exitCode);
 }
 console.log('\n✓ completeness gate passed');

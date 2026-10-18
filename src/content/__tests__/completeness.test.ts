@@ -6,6 +6,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import stoneAgeFacts from '../../../content/facts/hist-ancient-stone-age.json';
 import manifest from '../../../content/manifest.json';
+import taxonomy from '../../../content/taxonomy.json';
 import { FactsFileSchema, parseFacts, type FactsFile } from '../facts-types';
 import {
   auditAllCompleteness,
@@ -211,14 +212,13 @@ describe('completeness gate', () => {
     result: { facts: 1, taught: 1, drilled: 1, highYield: 0, highYieldMcq: 0, taughtPct, drilledPct, highYieldMcqPct, findings: [] },
   });
 
-  it('exits 0 at 100/100 and when only backlog subtopics exist', () => {
+  it('exits 0 at 100/100, and 1 when any subtopic has no facts file (no backlog allowance)', () => {
     expect(completenessExitCode({ rows: [row(100, 100)], orphanFacts: [] })).toBe(0);
-    expect(
-      completenessExitCode({
-        rows: [{ subtopicId: 'b', subjectCode: 'HIST', order: 1, hasFacts: false, mcqs: 0, cards: 0, estimate: 9, status: 'NO-FACTS' }],
-        orphanFacts: [],
-      }),
-    ).toBe(0);
+    const noFacts = { subtopicId: 'b', subjectCode: 'HIST', order: 1, hasFacts: false, mcqs: 0, cards: 0, estimate: 9, status: 'NO-FACTS' as const };
+    // Since all 129 universes closed, a NO-FACTS row fails the gate on its own …
+    expect(completenessExitCode({ rows: [noFacts], orphanFacts: [] })).toBe(1);
+    // … and even beside a COMPLETE subtopic.
+    expect(completenessExitCode({ rows: [row(100, 100), noFacts], orphanFacts: [] })).toBe(1);
   });
 
   it('exits 1 when a closed subtopic drops below 100% taught or drilled, or a facts file is orphaned', () => {
@@ -248,8 +248,9 @@ describe('completeness gate', () => {
     expect(closed.length).toBe(getContentIndex().facts.size);
     for (const r of closed) expect(r.status, r.subtopicId).toBe('COMPLETE');
     for (const id of ANCIENT_1) expect(report.rows.find((r) => r.subtopicId === id)?.status, id).toBe('COMPLETE');
-    // Floor: the closed set only ever grows (32 after completeness round 2, 55 after round 3, 76 after round 4, 102 after round 5).
-    expect(closed.length).toBeGreaterThanOrEqual(102);
+    // Floor: the closed set only ever grows (32 after completeness round 2, 55 after round 3, 76 after round 4, 102 after round 5,
+    // 129 = every subtopic after ca-international closed in quality round 2).
+    expect(closed.length).toBeGreaterThanOrEqual(129);
     // Rows are in study-plan order. Closure no longer proceeds strictly in study
     // order (round 2 closed POL/ECON/GEO/SCI/MENT units in parallel), so closed and
     // backlog rows interleave; each subset must still be in study order, and the
@@ -259,6 +260,20 @@ describe('completeness gate', () => {
     const open = report.rows.filter((r) => !r.hasFacts);
     expect(inOrder(open)).toBe(true);
     expect(open[0]).toBe(report.rows.find((r) => !r.hasFacts));
+  });
+
+  it('every taxonomy subtopic is closed and COMPLETE — the gate requires all of them (computed, floor 129)', () => {
+    const report = auditAllCompleteness();
+    const ids = taxonomy.subtopics.map((t) => t.id);
+    expect(ids.length).toBeGreaterThanOrEqual(129);
+    // No backlog: every row has a facts file and is COMPLETE.
+    expect(report.rows.filter((r) => !r.hasFacts).map((r) => r.subtopicId)).toEqual([]);
+    expect(report.rows.length).toBe(ids.length);
+    const byId = new Map(report.rows.map((r) => [r.subtopicId, r] as const));
+    for (const id of ids) expect(byId.get(id)?.status, id).toBe('COMPLETE');
+    expect(getContentIndex().facts.size).toBe(ids.length);
+    // The last universe closed: International current affairs.
+    expect(byId.get('ca-international')?.result?.facts ?? 0).toBeGreaterThanOrEqual(100);
   });
 });
 
@@ -314,6 +329,27 @@ describe('audit:completeness CLI exit behaviour', () => {
     expect(readFileSync(out, 'utf8')).toContain('Gate: **FAIL**');
   }, 60_000);
 
+  it('exits non-zero when a subtopic has content but no facts file (no backlog allowance)', () => {
+    const dir = fixture('backlog', ['q-gufkral']);
+    // A second subtopic with a note and no content/facts/<id>.json.
+    const extra = join(dir, 'history-ancient', 'demo-open');
+    mkdirSync(extra, { recursive: true });
+    writeFileSync(
+      join(extra, 'notes.json'),
+      JSON.stringify({
+        kind: 'notes',
+        subjectCode: 'HIST',
+        topic: 'Open',
+        items: [{ id: 'n-open', subjectCode: 'HIST', subtopicId: 'demo-open', title: 'T', body: 'The **Open** fact.' }],
+      }),
+    );
+    const out = join(tmp, 'backlog.md');
+    const res = run(dir, out);
+    expect(res.status).not.toBe(0);
+    expect(res.stderr).toContain('have no facts file');
+    expect(readFileSync(out, 'utf8')).toContain('Gate: **FAIL**');
+  }, 60_000);
+
   it('exits non-zero when a closed high-yield fact is drilled only by a flashcard', () => {
     const out = join(tmp, 'card-only.md');
     const card = { id: 'c-gufkral', front: 'Neolithic site in Kashmir?', back: 'Gufkral.' };
@@ -327,10 +363,9 @@ describe('audit:completeness CLI exit behaviour', () => {
 describe('facts loading + validation', () => {
   it('getFacts returns the seeded Stone Age universe and undefined elsewhere', () => {
     expect(getFacts('hist-ancient-stone-age')?.facts.length).toBe(stoneAgeFacts.facts.length);
-    // A backlog subtopic (no facts file) returns undefined — computed, not hard-coded.
-    const backlog = auditAllCompleteness().rows.find((r) => !r.hasFacts);
-    expect(backlog).toBeDefined();
-    expect(getFacts(backlog!.subtopicId)).toBeUndefined();
+    // No backlog is left (all subtopics closed), so an id with no facts file — an unknown one — returns undefined.
+    expect(auditAllCompleteness().rows.find((r) => !r.hasFacts)).toBeUndefined();
+    expect(getFacts('no-such-subtopic')).toBeUndefined();
     for (const id of ANCIENT_1) expect(getFacts(id)?.facts.length, id).toBeGreaterThan(0);
     expect(getContentIndex().facts.size).toBeGreaterThanOrEqual(1);
   });

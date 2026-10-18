@@ -1642,8 +1642,9 @@ export function auditAlignment(): AlignFinding[] {
 /* (mcq + cards) / estimate, so the backlog stays visible.                     */
 /*                                                                             */
 /* `validate:content` prints the findings as WARNINGS (never strict yet); the  */
-/* `audit:completeness` gate fails only when a subtopic that HAS a facts file  */
-/* drops below 100% taught or 100% drilled, so closed subtopics cannot regress.*/
+/* `audit:completeness` gate fails when a subtopic that HAS a facts file drops */
+/* below 100% taught / drilled / high-yield MCQ, or when any subtopic has no   */
+/* facts file at all (no backlog allowance since all 129 closed).              */
 /* ========================================================================== */
 
 /** Completeness rule ids (one finding per fact per failed check). */
@@ -1915,12 +1916,14 @@ export function completenessStatus(r: FactsCompleteness): CompletenessStatus {
  * taught, 100% drilled, or 100% high-yield-with-MCQ (a high-yield fact drilled
  * only by flashcards, or not at all, FAILS — tightened once the Ancient India I
  * unit closed), or a facts file names a subtopic with no content; else 0.
- * Subtopics without a facts file never fail the gate — they are backlog.
+ * Since the last fact universe (ca-international) closed, a subtopic WITHOUT a
+ * facts file also FAILS: there is no backlog allowance any more — every
+ * subtopic with content must have a closed, COMPLETE fact universe.
  */
 export function completenessExitCode(report: Pick<CompletenessReport, 'rows' | 'orphanFacts'>): 0 | 1 {
   if (report.orphanFacts.length > 0) return 1;
   for (const row of report.rows) {
-    if (!row.hasFacts || !row.result) continue;
+    if (!row.hasFacts || !row.result) return 1;
     const r = row.result;
     if (r.taughtPct < 100 || r.drilledPct < 100 || r.highYieldMcqPct < 100) return 1;
   }

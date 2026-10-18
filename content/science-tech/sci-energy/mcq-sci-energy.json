@@ -119,19 +119,19 @@
       "subtopicId": "sci-energy",
       "question": "Consider the following statements about India's electricity capacity milestones:\nWhich of the statements are correct?",
       "statements": [
-        "India achieved 50 percent of its installed electricity capacity from non-fossil sources in 2025, ahead of its 2030 NDC pledge.",
+        "India achieved 50 percent of its electricity generation (units actually produced) from non-fossil sources in 2025.",
         "India's total installed electricity generation capacity crossed 500 GW around 2025.",
         "The 500 GW non-fossil target for 2030 was announced under the Panchamrit pledges at COP26."
       ],
       "noteRef": "sci-energy-note-renewable-targets",
       "options": [
-        "1 and 2 only",
-        "1 and 3 only",
+        "2 only",
+        "3 only",
         "2 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "All three are correct — India reached **50 percent non-fossil capacity in 2025** (about five years ahead of its NDC), its **total installed capacity crossed 500 GW** around 2025, and the **500 GW non-fossil-by-2030** goal came from the **Panchamrit** pledges at COP26.\n\n**Why not the others**\n- '1 and 2 only' — omits the correct COP26/Panchamrit origin of the target (statement 3).\n- '1 and 3 only' — omits the correct 500 GW total-capacity milestone (statement 2).\n- '2 and 3 only' — omits the correct 2025 non-fossil-share milestone (statement 1).\n\n**Key facts**\n| Milestone | Status |\n|---|---|\n| 50% non-fossil capacity | Achieved 2025, ahead of 2030 NDC |\n| Total installed capacity | Crossed ~500 GW (2025) |\n| Non-fossil target | 500 GW by 2030 (Panchamrit, COP26) |\n\n*Source: PIB / MNRE / Ministry of Power — capacity milestones (pib.gov.in).*",
+      "answerIndex": 2,
+      "explanation": "Statements 2 and 3 are correct. Statement 1 is incorrect — the 2025 milestone was 50 percent of installed capacity; coal still produces most of the electricity generated. India reached **50 percent non-fossil capacity in 2025** (about five years ahead of its NDC), its **total installed capacity crossed 500 GW** around 2025, and the **500 GW non-fossil-by-2030** goal came from the **Panchamrit** pledges at COP26.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (the 2025 milestone was 50 percent of installed capacity; coal still produces most of the electricity generated).\n\n**Key facts**\n| Milestone | Status |\n|---|---|\n| 50% non-fossil capacity | Achieved 2025, ahead of 2030 NDC |\n| Total installed capacity | Crossed ~500 GW (2025) |\n| Non-fossil target | 500 GW by 2030 (Panchamrit, COP26) |\n\n*Source: PIB / MNRE / Ministry of Power — capacity milestones (pib.gov.in).*",
       "source": "PIB / MNRE / Ministry of Power — installed-capacity milestones (pib.gov.in)",
       "verified": true,
       "covers": [
@@ -232,17 +232,17 @@
       "statements": [
         "Stage 1 uses Pressurised Heavy Water Reactors (PHWRs) fuelled by natural uranium.",
         "Stage 2 uses Fast Breeder Reactors (FBRs) that breed plutonium and later use the thorium-uranium-233 cycle.",
-        "Stage 3 is designed around India's vast thorium reserves."
+        "Stage 3 is designed around India's large uranium reserves."
       ],
       "noteRef": "sci-energy-note-nuclear",
       "options": [
+        "1 only",
+        "2 only",
         "1 and 2 only",
-        "1 and 3 only",
-        "2 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "All three describe the **three-stage programme** correctly — **Stage 1 PHWRs on natural uranium**, **Stage 2 FBRs breeding plutonium** and initiating the thorium cycle, and **Stage 3 thorium-based reactors** using India's large thorium reserves.\n\n**Why not the others**\n- '1 and 2 only' — omits the correct thorium-based Stage 3 (statement 3).\n- '1 and 3 only' — omits the correct FBR Stage 2 (statement 2).\n- '2 and 3 only' — omits the correct PHWR Stage 1 (statement 1).\n\n**Key facts**\n| Stage | Reactor | Fuel |\n|---|---|---|\n| 1 | PHWR | Natural uranium, produces Pu-239 |\n| 2 | FBR | Pu-239 + U-238; breeds fuel, starts Th cycle |\n| 3 | Thorium breeder | Th-232 to U-233 |\n\n*Source: DAE — Three-Stage Nuclear Power Programme (dae.gov.in).*",
+      "answerIndex": 2,
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — Stage 3 is built around thorium — India has limited uranium but vast thorium reserves. In the **three-stage programme**: **Stage 1 PHWRs on natural uranium**, **Stage 2 FBRs breeding plutonium** and initiating the thorium cycle, and **Stage 3 thorium-based reactors** using India's large thorium reserves.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (Stage 3 is built around thorium — India has limited uranium but vast thorium reserves).\n\n**Key facts**\n| Stage | Reactor | Fuel |\n|---|---|---|\n| 1 | PHWR | Natural uranium, produces Pu-239 |\n| 2 | FBR | Pu-239 + U-238; breeds fuel, starts Th cycle |\n| 3 | Thorium breeder | Th-232 to U-233 |\n\n*Source: DAE — Three-Stage Nuclear Power Programme (dae.gov.in).*",
       "source": "DAE — Three-Stage Nuclear Power Programme (dae.gov.in)",
       "verified": true,
       "covers": [
@@ -326,12 +326,12 @@
       },
       "noteRef": "sci-energy-note-nuclear",
       "options": [
-        "A-2, B-3, C-4, D-1",
         "A-1, B-4, C-3, D-2",
+        "A-2, B-3, C-4, D-1",
         "A-2, B-4, C-3, D-1",
         "A-3, B-2, C-1, D-4"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "**NPCIL** runs commercial power plants (2), **BHAVINI** builds/operates the **PFBR** (3), **IGCAR** is the fast-reactor R&D centre at Kalpakkam (4), and **BARC**, Trombay, is the premier research centre (1) — so **A-2, B-3, C-4, D-1**.\n\n**Why not the others**\n- A-1, B-4, C-3, D-2 — swaps NPCIL with BARC and IGCAR with BHAVINI.\n- A-2, B-4, C-3, D-1 — swaps BHAVINI and IGCAR roles.\n- A-3, B-2, C-1, D-4 — misassigns every institution.\n\n**Key facts**\n- PFBR at Kalpakkam (BHAVINI) began core fuel loading in 2024 — Stage 2 milestone.\n- Kudankulam (Tamil Nadu) hosts Russian-built VVER reactors under NPCIL.\n\n*Source: DAE — BARC, IGCAR, NPCIL, BHAVINI (dae.gov.in).*",
       "source": "DAE — BARC, IGCAR, NPCIL, BHAVINI (dae.gov.in)",
       "verified": true,
@@ -353,17 +353,17 @@
       "statements": [
         "It set a target of 100 GW of nuclear power capacity by 2047.",
         "It allocated about Rs 20,000 crore for research and development of Small Modular Reactors (SMRs).",
-        "It aims for at least five indigenously designed SMRs to be operational by 2033."
+        "It aims for at least five imported SMRs to be operational by 2033."
       ],
       "noteRef": "sci-energy-note-nuclear",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "1 only",
+        "2 only",
+        "1, 2 and 3",
+        "1 and 2 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct — the **Nuclear Energy Mission** targets **100 GW nuclear by 2047**, allocates about **Rs 20,000 crore for SMR R&D**, and seeks **at least five indigenously designed SMRs operational by 2033**.\n\n**Why not the others**\n- '1 and 2 only' — omits the correct 2033 SMR deployment goal (statement 3).\n- '2 and 3 only' — omits the correct 100 GW-by-2047 target (statement 1).\n- '1 and 3 only' — omits the correct Rs 20,000 crore SMR allocation (statement 2).\n\n**Key facts**\n- India's present nuclear capacity is around 8-9 GW, so 100 GW by 2047 is a major scale-up.\n- SMRs (Bharat Small Reactors / Bharat Small Modular Reactors) are compact factory-built reactors.\n\n*Source: PIB / Union Budget 2025-26 — Nuclear Energy Mission (pib.gov.in).*",
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — the target is at least five indigenously designed SMRs by 2033. The **Nuclear Energy Mission** targets **100 GW nuclear by 2047**, allocates about **Rs 20,000 crore for SMR R&D**, and seeks **at least five indigenously designed SMRs operational by 2033**.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (the target is at least five indigenously designed SMRs by 2033).\n\n**Key facts**\n- India's present nuclear capacity is around 8-9 GW, so 100 GW by 2047 is a major scale-up.\n- SMRs (Bharat Small Reactors / Bharat Small Modular Reactors) are compact factory-built reactors.\n\n*Source: PIB / Union Budget 2025-26 — Nuclear Energy Mission (pib.gov.in).*",
       "source": "PIB / Union Budget 2025-26 — Nuclear Energy Mission (pib.gov.in)",
       "verified": true,
       "covers": [
@@ -383,7 +383,7 @@
       "noteRef": "sci-energy-note-nuclear",
       "options": [
         "Bans all thermal power plants by 2030",
-        "Opens the nuclear power sector to private participation by overhauling the legacy legal framework",
+        "Opens nuclear power to private players by overhauling old laws",
         "Creates a single national electricity distribution company",
         "Nationalises all renewable-energy assets"
       ],
@@ -412,12 +412,12 @@
       ],
       "noteRef": "sci-energy-note-bioenergy-efficiency-netzero",
       "options": [
-        "1 and 2 only",
+        "1, 2 and 3",
         "2 and 3 only",
         "1 and 3 only",
-        "1, 2 and 3"
+        "1 and 2 only"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "India reached about **20 percent ethanol blending (E20) around 2025** and **SATAT** promotes **Compressed Bio-Gas** from waste/biomass, so statements 1 and 2 are correct.\n\n**Why not the others**\n- Statement 3 is wrong — ethanol is made from **sugarcane, molasses, surplus grains and crop residue**, not from imported crude petroleum.\n- '2 and 3 only' / '1 and 3 only' / '1,2,3' all wrongly include statement 3.\n\n**Key facts**\n- Ethanol blending cuts oil imports and emissions; E20 target was advanced.\n- SATAT = Sustainable Alternative Towards Affordable Transportation (CBG outlets).\n\n*Source: PIB / MoPNG / MNRE — Ethanol Blending and SATAT (pib.gov.in).*",
       "source": "PIB / MoPNG / MNRE — Ethanol Blending Programme, SATAT (pib.gov.in)",
       "verified": true,
@@ -479,10 +479,10 @@
       "options": [
         "A-3, B-4, C-1, D-2",
         "A-1, B-2, C-3, D-4",
-        "A-2, B-3, C-4, D-1",
-        "A-2, B-4, C-3, D-1"
+        "A-2, B-4, C-3, D-1",
+        "A-2, B-3, C-4, D-1"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "**PAT** is the market-based trading scheme for industry (2), **UJALA** distributes efficient **LED bulbs** (3), **Star labelling** rates appliances (4), and **BEE** is the statutory coordinating body (1) — so **A-2, B-3, C-4, D-1**.\n\n**Why not the others**\n- A-1, B-2, C-3, D-4 — swaps BEE with PAT and misassigns UJALA/star labelling.\n- A-3, B-4, C-1, D-2 — misassigns every item.\n- A-2, B-4, C-3, D-1 — swaps UJALA (LEDs) with star labelling.\n\n**Key facts**\n- BEE (Bureau of Energy Efficiency) operates under the Energy Conservation Act 2001.\n- PAT issues tradable Energy Savings Certificates (ESCerts).\n\n*Source: BEE / PIB — Energy-efficiency programmes (beeindia.gov.in).*",
       "source": "BEE / PIB — PAT, UJALA, Standards & Labelling (beeindia.gov.in)",
       "verified": true,
@@ -554,17 +554,17 @@
       "statements": [
         "Andhra Pradesh has one of India's largest identified potentials for pumped-storage hydro projects.",
         "The Pinnapuram integrated renewable-energy storage project in Kurnool district includes a very large pumped-storage component.",
-        "Pumped-storage plants store energy by pumping water uphill during surplus power and generating during peak demand."
+        "Pumped-storage plants generate electricity by pumping water uphill during peak demand."
       ],
       "noteRef": "sci-energy-note-andhra-pradesh",
       "options": [
-        "1 and 3 only",
-        "2 and 3 only",
-        "1 and 2 only",
-        "1, 2 and 3"
+        "1 only",
+        "2 only",
+        "1, 2 and 3",
+        "1 and 2 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct — **Andhra Pradesh has a very large identified pumped-storage potential**, the **Pinnapuram project (Kurnool)** integrates solar, wind and a large **pumped-storage** unit, and **pumped storage works by pumping water uphill using surplus power and releasing it to generate at peak demand**.\n\n**Why not the others**\n- '1 and 3 only' — omits the correct Pinnapuram detail (statement 2).\n- '2 and 3 only' — omits AP's large PSP potential (statement 1).\n- '1 and 2 only' — omits how pumped storage actually works (statement 3).\n\n**Key facts**\n- Pumped-storage acts as a giant 'water battery' to balance variable solar and wind.\n- AP promotes green hydrogen, solar and wind under its clean-energy policy, leveraging its coastline and terrain.\n\n*Source: AP Govt / NREDCAP; PIB — pumped-storage projects (pib.gov.in).*",
+      "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — they pump water uphill using surplus power and generate by releasing it during peak demand. **Andhra Pradesh has a very large identified pumped-storage potential**, the **Pinnapuram project (Kurnool)** integrates solar, wind and a large **pumped-storage** unit, and **pumped storage works by pumping water uphill using surplus power and releasing it to generate at peak demand**.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (they pump water uphill using surplus power and generate by releasing it during peak demand).\n\n**Key facts**\n- Pumped-storage acts as a giant 'water battery' to balance variable solar and wind.\n- AP promotes green hydrogen, solar and wind under its clean-energy policy, leveraging its coastline and terrain.\n\n*Source: AP Govt / NREDCAP; PIB — pumped-storage projects (pib.gov.in).*",
       "source": "AP Govt / NREDCAP; PIB — Andhra Pradesh pumped-storage and clean energy (pib.gov.in)",
       "verified": true,
       "covers": [
@@ -582,19 +582,19 @@
       "subtopicId": "sci-energy",
       "question": "Consider the following statements about the Kurnool Ultra Mega Solar Park:\nWhich of the statements are correct?",
       "statements": [
-        "It is located in Panyam mandal of Kurnool district, Andhra Pradesh.",
+        "It is located in Panyam mandal (then in Kurnool district, now in Nandyal district), Andhra Pradesh.",
         "It has an installed capacity of about 1000 MW.",
-        "When commissioned it was among the largest solar parks in the world."
+        "It is a floating solar park built on the Srisailam reservoir."
       ],
       "noteRef": "sci-energy-note-ap-re-snapshot",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "1 only",
+        "2 only",
+        "1, 2 and 3",
+        "1 and 2 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct — the **Kurnool Ultra Mega Solar Park** lies in **Panyam mandal, Kurnool district**, has a capacity of about **1000 MW**, and on commissioning was **among the world's largest** operational solar parks.\n\n**Why not the others**\n- '1 and 2 only' — omits its correct standing as one of the world's largest when commissioned (statement 3).\n- '2 and 3 only' — omits its correct location in Panyam mandal, Kurnool (statement 1).\n- '1 and 3 only' — omits the correct ~1000 MW capacity (statement 2).\n\n**Key facts**\n| Feature | Detail |\n|---|---|\n| Location | Panyam mandal, Kurnool dist., AP |\n| Capacity | ~1000 MW |\n| Area | ~24 sq km |\n| Developer | APSPCL (solar park) |\n\n*Source: AP Govt / APSPCL; MNRE — Kurnool Ultra Mega Solar Park (mnre.gov.in).*",
+      "explanation": "Statements 1 and 2 are correct: the **Kurnool Ultra Mega Solar Park** lies in **Panyam** mandal (Kurnool district when built; Nandyal district since the 2022 reorganisation) and has a capacity of about **1000 MW** — among the world's largest solar parks when commissioned. Statement 3 is incorrect: it is a ground-mounted park on land, not floating solar on a reservoir.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (it is a ground-mounted solar park on land, not a floating plant).\n\n**Key facts**\n| Feature | Detail |\n|---|---|\n| Location | Panyam mandal, Kurnool dist., AP |\n| Capacity | ~1000 MW |\n| Area | ~24 sq km |\n| Developer | APSPCL (solar park) |\n\n*Source: AP Govt / APSPCL; MNRE — Kurnool Ultra Mega Solar Park (mnre.gov.in).*",
       "source": "AP Govt / APSPCL; MNRE — Kurnool Ultra Mega Solar Park (mnre.gov.in)",
       "verified": true,
       "covers": [
@@ -678,12 +678,12 @@
       },
       "noteRef": "sci-energy-note-ap-re-snapshot",
       "options": [
-        "A-2, B-1, C-4, D-3",
+        "A-3, B-1, C-4, D-2",
         "A-1, B-2, C-3, D-4",
         "A-2, B-1, C-3, D-4",
-        "A-3, B-1, C-4, D-2"
+        "A-2, B-1, C-4, D-3"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "**APGENCO** generates power (2), **APTRANSCO** is the intra-state transmission utility (1), **APSPCL** develops solar parks (4), and **NREDCAP** is the state nodal agency for new & renewable energy (3) — so **A-2, B-1, C-4, D-3**.\n\n**Why not the others**\n- A-1, B-2, C-3, D-4 — swaps generation and transmission and misassigns APSPCL/NREDCAP.\n- A-2, B-1, C-3, D-4 — swaps APSPCL (solar parks) with NREDCAP (renewable nodal agency).\n- A-3, B-1, C-4, D-2 — wrongly makes APGENCO the renewable nodal agency.\n\n**Key facts**\n- APGENCO = Andhra Pradesh Power Generation Corporation; APTRANSCO = AP Transmission Corporation.\n- Distribution is handled by DISCOMs (APEPDCL, APSPDCL, APCPDCL).\n\n*Source: AP Govt — APGENCO / APTRANSCO / NREDCAP (aptransco.co.in, apgenco.gov.in).*",
       "source": "AP Govt — APGENCO, APTRANSCO, NREDCAP, APSPCL (apgenco.gov.in / aptransco.co.in)",
       "verified": true,
@@ -702,19 +702,19 @@
       "subtopicId": "sci-energy",
       "question": "Consider the following statements about Andhra Pradesh's clean-energy plans:\nWhich of the statements are correct?",
       "statements": [
-        "The state released an Integrated Clean Energy Policy in 2024 to scale up renewables, pumped storage and green hydrogen.",
+        "The state released an Integrated Clean Energy Policy in 2024 that leaves out pumped storage and green hydrogen.",
         "Andhra Pradesh has one of India's largest identified potentials for pumped-storage hydro projects.",
         "Its coastline and terrain are being used to attract green-hydrogen and export-oriented investment."
       ],
       "noteRef": "sci-energy-note-andhra-pradesh",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "2 only",
+        "3 only",
+        "1, 2 and 3",
+        "2 and 3 only"
       ],
       "answerIndex": 3,
-      "explanation": "All three are correct — AP's **Integrated Clean Energy Policy 2024** targets large renewable, **pumped-storage** and **green-hydrogen** capacity, AP has one of India's **largest pumped-storage potentials**, and its coast/terrain are being leveraged to draw **green-hydrogen and export** investment.\n\n**Why not the others**\n- '1 and 2 only' — omits the correct coastal green-hydrogen/export thrust (statement 3).\n- '2 and 3 only' — omits the correct 2024 policy (statement 1).\n- '1 and 3 only' — omits AP's large pumped-storage potential (statement 2).\n\n**Key facts**\n- Pumped storage (e.g. Pinnapuram, Kurnool) acts as a 'water battery' to firm up solar and wind.\n- Green-hydrogen hubs planned at Pudimadaka (Anakapalli) and Kakinada.\n\n*Source: AP Govt — Integrated Clean Energy Policy 2024 (apedb.gov.in); PIB.*",
+      "explanation": "Statements 2 and 3 are correct. Statement 1 is incorrect — the 2024 policy explicitly covers pumped storage and green hydrogen along with renewables. AP's **Integrated Clean Energy Policy 2024** targets large renewable, **pumped-storage** and **green-hydrogen** capacity, AP has one of India's **largest pumped-storage potentials**, and its coast/terrain are being leveraged to draw **green-hydrogen and export** investment.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (the 2024 policy explicitly covers pumped storage and green hydrogen along with renewables).\n\n**Key facts**\n- Pumped storage (e.g. Pinnapuram, Kurnool) acts as a 'water battery' to firm up solar and wind.\n- Green-hydrogen hubs planned at Pudimadaka (Anakapalli) and Kakinada.\n\n*Source: AP Govt — Integrated Clean Energy Policy 2024 (apedb.gov.in); PIB.*",
       "source": "AP Govt — Integrated Clean Energy Policy 2024 (apedb.gov.in); PIB",
       "verified": true,
       "covers": [
@@ -735,7 +735,7 @@
       "noteRef": "sci-energy-note-renewable-targets",
       "options": [
         "A single rooftop-solar installation on a government building",
-        "A large contiguous zone with shared infrastructure where multiple developers set up solar plants",
+        "A large shared-infrastructure zone for many solar developers",
         "A floating solar plant built on a reservoir",
         "An offshore solar installation in the sea"
       ],
@@ -760,18 +760,18 @@
       "question": "Consider the following statements about renewable energy in Andhra Pradesh (as of 2026):\nWhich of the statements given above are correct?",
       "statements": [
         "The state has cumulatively commissioned of the order of 14,800 MW of renewable-energy capacity.",
-        "Ground-mounted solar accounts for the single largest share of this commissioned capacity.",
+        "Wind power accounts for the single largest share of this commissioned capacity.",
         "Pumped-storage projects contribute to the state's clean-energy capacity mix."
       ],
       "noteRef": "sci-energy-note-ap-re-snapshot",
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "1 only",
+        "3 only",
+        "1, 2 and 3",
+        "1 and 3 only"
       ],
       "answerIndex": 3,
-      "explanation": "As of 2026 AP had commissioned about **14,833 MW** of renewables, with **ground-mounted solar the largest component**, alongside wind, rooftop solar and **pumped storage**.\n\n**Why not the others**\n- 1 and 2 only — omits pumped storage, which is part of the mix (statement 3).\n- 2 and 3 only — drops the ~14,800 MW cumulative figure.\n- 1 and 3 only — drops solar's position as the largest component.\n\n**Key facts — AP RE commissioned (~2026)**\n\n| Source | MW |\n|---|---|\n| Ground solar | ~7,049 |\n| Wind | ~4,461 |\n| Pumped storage | ~1,680 |\n| Rooftop solar | ~1,015 |\n| Total RE | ~14,833 |\n\n*Source: NREDCAP (as of 31 Aug 2026).*",
+      "explanation": "Statements 1 and 3 are correct. Statement 2 is incorrect — ground-mounted solar, not wind, is the largest component. As of 2026 AP had commissioned about **14,833 MW** of renewables, with **ground-mounted solar the largest component**, alongside wind, rooftop solar and **pumped storage**.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (ground-mounted solar, not wind, is the largest component).\n\n*Source: NREDCAP (as of 31 Aug 2026).*",
       "source": "NREDCAP (as of 31 Aug 2026)",
       "verified": true,
       "covers": [
@@ -814,19 +814,19 @@
       "subtopicId": "sci-energy",
       "question": "Consider the following statements about the green-hydrogen hub at Pudimadaka in Andhra Pradesh:\nWhich of the statements given above are correct?",
       "statements": [
-        "It is being developed by NTPC through its green-energy arm.",
+        "It is being developed by ONGC through its green-energy arm.",
         "It is planned as one of India's largest green-hydrogen facilities.",
-        "It is located on the Andhra Pradesh coast near Visakhapatnam."
+        "It is located on the Andhra Pradesh coast near Kakinada."
       ],
       "noteRef": "sci-energy-note-ap-re-snapshot",
       "options": [
+        "2 only",
         "1 and 2 only",
         "2 and 3 only",
-        "1 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
-      "explanation": "The Pudimadaka hub is being built by **NTPC Green Energy**, is planned as **one of India's largest green-hydrogen projects**, and lies on the **coast near Visakhapatnam** (Anakapalli district).\n\n**Why not the others**\n- 1 and 2 only — omits the correct location near Visakhapatnam (statement 3).\n- 2 and 3 only — drops the NTPC (green arm) developer fact.\n- 1 and 3 only — drops the 'among India's largest' scale.\n\n**Key facts**\n- Developer: NTPC Green Energy Ltd (NGEL).\n- Scale: planned ~1,200 tonnes/day — among India's largest green-H2 hubs; multi-lakh-crore investment.\n- Location: Pudimadaka, Anakapalli district, near Visakhapatnam; foundation Jan 2025.\n\n*Source: NTPC / MNRE; press (2025).*",
+      "answerIndex": 0,
+      "explanation": "Only statement 2 is correct. Statement 1 is incorrect — the Pudimadaka hub is being developed by NTPC Green Energy. Statement 3 is incorrect — Pudimadaka is in Anakapalli district, near Visakhapatnam. The Pudimadaka hub is being built by **NTPC Green Energy**, is planned as **one of India's largest green-hydrogen projects**, and lies on the **coast near Visakhapatnam** (Anakapalli district).\n\n**Why not the others**\n- '1 and 2 only' — Statement 1 is incorrect (the Pudimadaka hub is being developed by NTPC Green Energy).\n- '2 and 3 only' — Statement 3 is incorrect (Pudimadaka is in Anakapalli district, near Visakhapatnam).\n- '1, 2 and 3' — Statements 1 and 3 are incorrect.\n\n**Key facts**\n- Developer: NTPC Green Energy Ltd (NGEL).\n- Scale: planned ~1,200 tonnes/day — among India's largest green-H2 hubs; multi-lakh-crore investment.\n- Location: Pudimadaka, Anakapalli district, near Visakhapatnam; foundation Jan 2025.\n\n*Source: NTPC / MNRE; press (2025).*",
       "source": "NTPC / MNRE; press (2025)",
       "verified": true,
       "covers": [
@@ -905,17 +905,17 @@
       "question": "Consider the following statements:\nWhich of the statements given above is/are correct?",
       "statements": [
         "The National Solar Mission was launched in 2010.",
-        "Panchamrit includes a 45% cut in the emission intensity of GDP and net-zero by 2070.",
+        "Panchamrit includes a 45% cut in absolute emissions and net-zero by 2070.",
         "A solar park is a large contiguous zone with shared infrastructure for many developers."
       ],
       "options": [
-        "1, 2 and 3",
-        "2 only",
+        "1 only",
         "3 only",
+        "1, 2 and 3",
         "1 and 3 only"
       ],
-      "answerIndex": 0,
-      "explanation": "All three are right. The (Jawaharlal Nehru) National Solar Mission began in 2010 under the NAPCC; Panchamrit (COP26) includes 500 GW non-fossil, 50% energy from renewables, a 1 billion tonne CO2 cut, a 45% intensity cut and net-zero 2070; and a solar park gives developers land, roads and transmission in one contiguous zone.\n\n**Why not the others**\n- 2 only — leaves out statement 1 and 3, which are correct\n- 3 only — leaves out statement 1 and 2, which are correct\n- 1 and 3 only — leaves out statement 2, which is correct\n\n**Key facts**\n- NSM 2010.\n- Panchamrit: 500-50-1-45-70.\n- Solar park = contiguous zone, shared infrastructure.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
+      "answerIndex": 3,
+      "explanation": "Statements 1 and 3 are correct. Statement 2 is incorrect — the 45% cut is in the emission intensity of GDP (by 2030, over 2005), not in absolute emissions. The (Jawaharlal Nehru) National Solar Mission began in 2010 under the NAPCC; Panchamrit (COP26) includes 500 GW non-fossil, 50% energy from renewables, a 1 billion tonne CO2 cut, a 45% intensity cut and net-zero 2070; and a solar park gives developers land, roads and transmission in one contiguous zone.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (the 45% cut is in the emission intensity of GDP (by 2030, over 2005), not in absolute emissions).\n\n**Key facts**\n- NSM 2010.\n- Panchamrit: 500-50-1-45-70.\n- Solar park = contiguous zone, shared infrastructure.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
       "source": "MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP",
       "verified": true,
       "covers": [
@@ -993,18 +993,18 @@
       "subtopicId": "sci-energy",
       "question": "Consider the following statements:\nWhich of the statements given above is/are correct?",
       "statements": [
-        "PM E-DRIVE (2024) replaced the FAME schemes for electric vehicles.",
+        "PM E-DRIVE (2019) replaced the FAME schemes for electric vehicles.",
         "Battery storage (BESS) helps balance variable solar and wind power.",
         "Mission LiFE is a campaign for sustainable lifestyles led by India."
       ],
       "options": [
-        "1 and 2 only",
+        "2 only",
+        "3 only",
         "1, 2 and 3",
-        "2 and 3 only",
-        "2 only"
+        "2 and 3 only"
       ],
-      "answerIndex": 1,
-      "explanation": "All three are right. PM E-DRIVE (2024) succeeded FAME for EV subsidies and charging; battery energy storage systems (BESS) and pumped hydro store surplus solar for the evening peak; and Mission LiFE (Lifestyle for Environment) is India's global campaign.\n\n**Why not the others**\n- 1 and 2 only — leaves out statement 3, which is correct\n- 2 and 3 only — leaves out statement 1, which is correct\n- 2 only — leaves out statement 1 and 3, which are correct\n\n**Key facts**\n- PM E-DRIVE succeeds FAME.\n- BESS = battery storage.\n- Mission LiFE = Lifestyle for Environment.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
+      "answerIndex": 3,
+      "explanation": "Statements 2 and 3 are correct. Statement 1 is incorrect — PM E-DRIVE was launched in 2024; 2019 was the start of FAME-II. PM E-DRIVE (2024) succeeded FAME for EV subsidies and charging; battery energy storage systems (BESS) and pumped hydro store surplus solar for the evening peak; and Mission LiFE (Lifestyle for Environment) is India's global campaign.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (PM E-DRIVE was launched in 2024; 2019 was the start of FAME-II).\n\n**Key facts**\n- PM E-DRIVE succeeds FAME.\n- BESS = battery storage.\n- Mission LiFE = Lifestyle for Environment.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
       "source": "MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP",
       "verified": true,
       "covers": [
@@ -1024,13 +1024,13 @@
       "assertion": "Pumped-storage hydro does not add new energy to the grid.",
       "reason": "It pumps water uphill using surplus power and releases it through turbines at peak demand.",
       "options": [
-        "Both A and R are true, and R is the correct explanation of A",
-        "Both A and R are true, but R is NOT the correct explanation of A",
+        "Both A and R are true, and R explains A",
+        "Both A and R are true, but R does not explain A",
         "A is true, but R is false",
         "A is false, but R is true"
       ],
       "answerIndex": 0,
-      "explanation": "Both are true and R explains A: a pumped-storage plant only shifts energy from cheap surplus hours (pumping water up) to peak hours (generating as it falls), losing a little in the round trip — so it is a \"water battery\", not a new source.\n\n**Why not the others**\n- Both A and R are true, but R is NOT the correct explanation of A — R does explain A — storing and shifting energy is exactly why no new energy is created.\n- A is true, but R is false — A is true: pumped storage stores energy; it does not create it.\n- A is false, but R is true — R is true: that is how a pumped-storage plant works.\n\n**Key facts**\n- Pumped storage = water battery: pump at surplus, generate at peak.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
+      "explanation": "Both are true and R explains A: a pumped-storage plant only shifts energy from cheap surplus hours (pumping water up) to peak hours (generating as it falls), losing a little in the round trip — so it is a \"water battery\", not a new source.\n\n**Why not the others**\n- Both A and R are true, but R does not explain A — R does explain A — storing and shifting energy is exactly why no new energy is created.\n- A is true, but R is false — A is true: pumped storage stores energy; it does not create it.\n- A is false, but R is true — R is true: that is how a pumped-storage plant works.\n\n**Key facts**\n- Pumped storage = water battery: pump at surplus, generate at peak.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
       "source": "MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP",
       "verified": true,
       "covers": [
@@ -1048,18 +1048,18 @@
       "subtopicId": "sci-energy",
       "question": "Consider the following statements:\nWhich of the statements given above is/are correct?",
       "statements": [
-        "Ethanol for blending is made from sugarcane, molasses and surplus grain, not from petroleum.",
+        "Ethanol for blending is made from petroleum refinery by-products as well as molasses.",
         "The Bureau of Energy Efficiency (BEE) is a statutory body created by the Energy Conservation Act 2001.",
         "PAT (Perform, Achieve and Trade) lets heavy industry trade ESCerts (energy-saving certificates)."
       ],
       "options": [
-        "1 and 2 only",
-        "1 only",
-        "1, 2 and 3",
-        "1 and 3 only"
+        "2 only",
+        "3 only",
+        "2 and 3 only",
+        "1, 2 and 3"
       ],
       "answerIndex": 2,
-      "explanation": "All three are right. Ethanol is a crop and waste product (sugarcane, molasses, surplus grain, crop residue); BEE is the statutory body under the Energy Conservation Act 2001; and PAT sets efficiency targets for heavy industry, issuing ESCerts that can be traded.\n\n**Why not the others**\n- 1 and 2 only — leaves out statement 3, which is correct\n- 1 only — leaves out statement 2 and 3, which are correct\n- 1 and 3 only — leaves out statement 2, which is correct\n\n**Key facts**\n- Ethanol from molasses/grain, not petroleum.\n- BEE: EC Act 2001.\n- PAT → ESCerts.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
+      "explanation": "Statements 2 and 3 are correct. Statement 1 is incorrect — ethanol comes from sugarcane juice, molasses, surplus grain and crop residue — not from petroleum. Ethanol is a crop and waste product (sugarcane, molasses, surplus grain, crop residue); BEE is the statutory body under the Energy Conservation Act 2001; and PAT sets efficiency targets for heavy industry, issuing ESCerts that can be traded.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (ethanol comes from sugarcane juice, molasses, surplus grain and crop residue — not from petroleum).\n\n**Key facts**\n- Ethanol from molasses/grain, not petroleum.\n- BEE: EC Act 2001.\n- PAT → ESCerts.\n\n*Source: MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP*",
       "source": "MNRE physical progress (30 Sept 2026), DAE, BEE, PIB releases (to Oct 2026); NCERT Geography/Science and standard S&T references; PYQ bank .research/pyq-bank/sci-energy.md; AP dossiers, NREDCAP",
       "verified": true,
       "covers": [
