@@ -3,27 +3,7 @@
   "source": "Per-bank allowlist for the question-quality rule (.research/plan/QUESTION-QUALITY.md). A listed bank is reported but not failed by VALIDATE_QUALITY=1 / npm run audit:quality. Remove a bank once it is clean; a stale entry fails the gate. Optional \"rules\" narrows a waiver.",
   "waivers": [
     {
-      "bank": "/content/current-affairs/ca-international/mcq-ca-international.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/current-affairs/ca-national/mcq-ca-national.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/current-affairs/ca-regional/mcq-ca-regional.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/economy/econ-agriculture/mcq-econ-agriculture.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/economy/econ-ap-economy-bifurcation/mcq-econ-ap-economy-bifurcation.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/economy/econ-ap-reorganisation-act/mcq-econ-ap-reorganisation-act.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -35,15 +15,7 @@
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
-      "bank": "/content/economy/econ-fiscal-budget-gst/mcq-econ-fiscal-budget-gst.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/economy/econ-human-sustainable-development/mcq-econ-human-sustainable-development.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/economy/econ-industry/mcq-econ-industry.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -56,10 +28,6 @@
     },
     {
       "bank": "/content/economy/econ-poverty-unemployment/mcq-econ-poverty-unemployment.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/economy/econ-rbi-banking-markets/mcq-econ-rbi-banking-markets.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -127,18 +95,6 @@
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
-      "bank": "/content/history-ancient/hist-ancient-buddhism-1/mcq-hist-ancient-buddhism-1.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-buddhism-2/mcq-hist-ancient-buddhism-2.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-early-vedic/mcq-hist-ancient-early-vedic.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/history-ancient/hist-ancient-guptas/mcq-hist-ancient-guptas.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
@@ -147,31 +103,7 @@
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
-      "bank": "/content/history-ancient/hist-ancient-indo-greek/mcq-hist-ancient-indo-greek.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-ivc/mcq-hist-ancient-ivc.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-jainism/mcq-hist-ancient-jainism.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/history-ancient/hist-ancient-kushanas/mcq-hist-ancient-kushanas.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-later-vedic/mcq-hist-ancient-later-vedic.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-magadha-dynasties/mcq-hist-ancient-magadha-dynasties.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-mahajanapadas/mcq-hist-ancient-mahajanapadas.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -180,10 +112,6 @@
     },
     {
       "bank": "/content/history-ancient/hist-ancient-post-gupta/mcq-hist-ancient-post-gupta.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-rise-of-magadha/mcq-hist-ancient-rise-of-magadha.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -196,10 +124,6 @@
     },
     {
       "bank": "/content/history-ancient/hist-ancient-satavahanas/mcq-hist-ancient-satavahanas.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ancient/hist-ancient-stone-age/mcq-hist-ancient-stone-age.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -228,10 +152,6 @@
     },
     {
       "bank": "/content/history-ap/hist-ap-reddi-kingdoms/mcq-hist-ap-reddi-kingdoms.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/history-ap/hist-ap-satavahanas-ikshvakus/mcq-hist-ap-satavahanas-ikshvakus.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -307,74 +227,6 @@
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
-      "bank": "/content/mental-ability/ment-algebra-bodmas/mcq-ment-algebra-bodmas.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-central-tendency/mcq-ment-central-tendency.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-clocks-calendars-ages/mcq-ment-clocks-calendars-ages.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-data-interpretation-probability/mcq-ment-data-interpretation-probability.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-emotional-intelligence/mcq-ment-emotional-intelligence.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-geometry/mcq-ment-geometry.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-mensuration/mcq-ment-mensuration.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-number-series-coding/mcq-ment-number-series-coding.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-number-system/mcq-ment-number-system.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-percentage-interest-profit-loss/mcq-ment-percentage-interest-profit-loss.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-powers-roots-hcf-lcm/mcq-ment-powers-roots-hcf-lcm.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-ratio-proportion-averages/mcq-ment-ratio-proportion-averages.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-relationships/mcq-ment-relationships.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-social-intelligence-decision/mcq-ment-social-intelligence-decision.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-time-work-distance/mcq-ment-time-work-distance.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-ability/ment-venn-nonverbal/mcq-ment-venn-nonverbal.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/mental-reasoning/ment-logical-reasoning/mcq-ment-logical-reasoning.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/polity-mains/pol-ethics-attitude-ei/mcq-pol-ethics-attitude-ei.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
@@ -399,31 +251,11 @@
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
-      "bank": "/content/polity/pol-constitution-evolution/mcq-pol-constitution-evolution.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/polity/pol-constitution-features-preamble/mcq-pol-constitution-features-preamble.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/polity/pol-constitutional-authorities/mcq-pol-constitutional-authorities.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
-      "bank": "/content/polity/pol-directive-principles/mcq-pol-directive-principles.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/polity/pol-foreign-policy-ir/mcq-pol-foreign-policy-ir.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/polity/pol-fundamental-duties/mcq-pol-fundamental-duties.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/polity/pol-fundamental-rights/mcq-pol-fundamental-rights.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -432,10 +264,6 @@
     },
     {
       "bank": "/content/polity/pol-international-institutions/mcq-pol-international-institutions.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/polity/pol-judiciary/mcq-pol-judiciary.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -455,15 +283,7 @@
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
-      "bank": "/content/polity/pol-state-executive-legislature/mcq-pol-state-executive-legislature.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
       "bank": "/content/polity/pol-statutory-regulatory-bodies/mcq-pol-statutory-regulatory-bodies.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/polity/pol-union-executive-legislature/mcq-pol-union-executive-legislature.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {
@@ -492,10 +312,6 @@
     },
     {
       "bank": "/content/science-tech/sci-ict-egovernance-cyber/mcq-sci-ict-egovernance-cyber.json",
-      "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
-    },
-    {
-      "bank": "/content/science-tech/sci-indian-scientists/mcq-sci-indian-scientists.json",
       "why": "baseline — pending exam-standard quality rewrite (QUESTION-QUALITY.md)"
     },
     {

@@ -8,15 +8,15 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
       "refresher": true,
-      "question": "The father of your father is your:",
+      "question": "In family relations, the father of your father is your:",
       "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
+        "Grandfather",
         "Uncle",
         "Nephew",
-        "Grandfather",
         "Father-in-law"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "Move up the generations one step at a time. Your father is one step above you (a parent). Your father's father is one more step up, which makes him two generations above you, and that is a grandfather. Since he is on your father's side, he is your paternal grandfather.\n\n**Why not the others**\n- Uncle — that is the brother of your father or mother, only one generation above you, not two.\n- Nephew — that is the son of your sibling, one generation below you.\n- Father-in-law — that is the father of your spouse, gained through marriage, not by blood.\n\n**Key facts**\n- One step up is a parent; two steps up is a grandparent.\n- Paternal means the father's side, maternal the mother's side.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based)",
       "verified": true,
@@ -37,11 +37,11 @@
       "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Aunt",
-        "Mother",
         "Sister",
-        "Grandmother"
+        "Grandmother",
+        "Mother"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "Work up to the maternal grandmother, then back down. Your maternal grandmother is your mother's mother. The question says she has only one daughter, so that daughter cannot be an aunt — she must be the very person through whom you descend, that is, your mother.\n```\n   maternal grandmother\n          |\n      her only daughter = your mother\n          |\n         you\n```\n\n**Why not the others**\n- Aunt — an aunt would be your mother's sister, but the grandmother has only one daughter, so no such sister exists.\n- Sister — a sister is a child of your own parents, not a direct child of your grandmother.\n- Grandmother — that is the person we started from, one generation higher.\n\n**Key facts**\n- \"Maternal\" fixes the side: go up to the mother's mother, then down her only daughter.\n- \"Only\" removes any sibling alternative, which defuses the trap.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Based)",
       "verified": true,
@@ -62,12 +62,12 @@
       "question": "In a family-tree diagram, males and females are drawn as squares and circles; a horizontal double line (=) joining two people denotes:",
       "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
+        "A married couple",
         "Siblings",
         "Parent and child",
-        "Cousins",
-        "A married couple"
+        "Cousins"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "explanation": "In a family chart each person is a box: a square for a male, a circle for a female. A horizontal double line joining two people shows they are married, and a vertical line drawn down from that couple leads to their children. So the \"=\" link means a married couple.\n\n**Why not the others**\n- Siblings — these are shown by a horizontal bracket joining children of the same parents, not by \"=\".\n- Parent and child — this is shown by a vertical line going down, not a horizontal one.\n- Cousins — these are never joined directly; they connect only through shared grandparents.\n\n**Key facts**\n- Square means male, circle means female.\n- Horizontal \"=\" means marriage; a vertical line means descent from parent to child.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Chart).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Chart)",
       "verified": true,
@@ -86,12 +86,12 @@
       "question": "Pointing to a lady, Rohit said, \"She is the daughter of the only child of my grandmother.\" How is the lady related to Rohit?",
       "noteRef": "ment-relationships-note-pointing-photo",
       "options": [
-        "Sister",
         "Mother",
         "Aunt",
-        "Niece"
+        "Niece",
+        "Sister"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Resolve the inner phrase first. \"The only child of my grandmother\" is Rohit's own parent, because his grandmother had just one child. The lady is the daughter of that parent, so she is a daughter of Rohit's own father or mother — that is, Rohit's sister.\n```\n     grandmother\n          |\n   her only child = Rohit's parent\n        /      \\\n     Rohit     the lady (daughter)\n```\n\n**Why not the others**\n- Mother — the lady is a daughter of Rohit's parent, so she is in Rohit's own generation, not one above.\n- Aunt — an aunt would need the grandmother to have a second child, but she has only one.\n- Niece — a niece would be the daughter of Rohit's sibling, which the statement never says.\n\n**Key facts**\n- \"Only child of my grandmother\" is the speaker's father or mother.\n- The daughter of one's parent is one's sister.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Introduction).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Pointing/Introduction)",
       "verified": true,
@@ -110,12 +110,12 @@
       "question": "Pointing to a man in a photograph, Latha said, \"His mother is the only daughter of my mother.\" How is Latha related to the man?",
       "noteRef": "ment-relationships-note-pointing-photo",
       "options": [
+        "Mother",
         "Sister",
         "Aunt",
-        "Mother",
         "Grandmother"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "Collapse the self-referring phrase first. \"The only daughter of my mother\", spoken by Latha, must be Latha herself, since she is female and the sole daughter. So \"his mother is the only daughter of my mother\" simply means \"the man's mother is Latha\". Therefore Latha is the man's mother.\n```\n   Latha's mother\n        |\n   Latha (only daughter) = the man's mother\n        |\n       the man\n```\n\n**Why not the others**\n- Sister — this would need Latha and the man to share parents, but instead Latha is his mother.\n- Aunt — this would need the man's mother to be Latha's sister, yet Latha's mother has only one daughter.\n- Grandmother — Latha is only one generation above the man, not two.\n\n**Key facts**\n- \"Only daughter of my mother\" is the female speaker herself.\n- Resolve the self-reference first; it collapses the whole chain.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference)",
       "verified": true,
@@ -159,12 +159,12 @@
       "question": "'A × B' means A is the father of B; 'A ÷ B' means A is the daughter of B; 'A + B' means A is the sister of B; 'A − B' means A is the son of B. If 'P × Q ÷ R' is true, how is P related to R?",
       "noteRef": "ment-relationships-note-coded-relations",
       "options": [
+        "Husband",
         "Brother",
         "Son",
-        "Father",
-        "Husband"
+        "Father"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "explanation": "Read the chain link by link. \"P × Q\" means P is the father of Q. \"Q ÷ R\" means Q is the daughter of R, so R is also a parent of Q. Q already has P as father, so R must be Q's mother. Two people who are both parents of the same child are married, so P is the husband of R.\n```\n   P --(husband)-- R\n        \\         /\n          Q (child of both)\n```\n\n**Why not the others**\n- Brother — nothing in the chain links P and R as siblings.\n- Son — P is a parent of Q, not a child of R.\n- Father — P is the father of Q, not of R.\n\n**Key facts**\n- Two people who are both parents of the same child are spouses.\n- Read the chain through the shared child Q.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded)",
       "verified": true,
@@ -184,12 +184,12 @@
       "question": "A is B's sister. C is B's mother. D is C's father. How is A related to D?",
       "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
-        "Granddaughter",
         "Grandmother",
         "Daughter",
-        "Niece"
+        "Niece",
+        "Granddaughter"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Draw the tree from the clues. A is B's sister, so A is female and A and B are siblings. C is their mother. D is C's father, so D is the grandparent of A and B through their mother.\n```\n          D\n          |\n          C  (mother)\n         / \\\n        A   B\n```\nA sits two descent steps below D and is female, so A is D's granddaughter.\n\n**Why not the others**\n- Grandmother — D is two generations above A, not below.\n- Daughter — A is D's daughter's child, which is one more generation down than a daughter.\n- Niece — a niece would be the child of D's sibling, not of D's daughter.\n\n**Key facts**\n- The chain is D (father of) C (mother of) A.\n- Two steps down from D is a grandchild; A female makes it granddaughter.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Tree).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Tree)",
       "verified": true,
@@ -210,11 +210,11 @@
       "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Grandfather",
-        "Great-grandfather",
         "Father",
+        "Great-grandfather",
         "Great-grandmother"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Count the descent steps down the chain. A is the father of F, F is the father of B, and B is the mother of C.\n```\nA\n|\nF\n|\nB\n|\nC\n```\nFrom A to C there are three downward steps, and one step is a parent, two a grandparent, three a great-grandparent. A is male (he is a \"father\"), so A is C's great-grandfather.\n\n**Why not the others**\n- Grandfather — that is A's relation to B, one generation short of C.\n- Father — A is three generations above C, not one.\n- Great-grandmother — A is male, so any grandmother form is wrong.\n\n**Key facts**\n- Count descent links: three links up is a great-grandparent.\n- Track gender from the given words; \"father\" fixes A as male.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Generations)",
       "verified": true,
@@ -234,11 +234,11 @@
       "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Mother",
-        "Sister-in-law",
         "Mother-in-law",
+        "Sister-in-law",
         "Grandmother"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "R is the mother of Q, and P is Q's husband. The mother of one's spouse is one's mother-in-law, so R is P's mother-in-law.\n```\n   R (mother)\n      |\n      Q --(married)-- P\n```\n\n**Why not the others**\n- Mother — R is related to P only through marriage, not by blood; \"mother\" would mean P's own parent.\n- Sister-in-law — that is a spouse's sister or a brother's wife, not the spouse's mother.\n- Grandmother — R is one generation above P as an in-law, not a grandparent.\n\n**Key facts**\n- Relatives gained through marriage carry the \"in-law\" tag.\n- A spouse's parent is a parent-in-law.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws)",
       "verified": true,
@@ -282,12 +282,12 @@
       "question": "In a family, A is the father of C. B is the sister of C. D is the daughter of A. E is the brother of A. How is E related to D?",
       "noteRef": "ment-relationships-note-family-tree-method",
       "options": [
-        "Father",
         "Uncle",
+        "Father",
         "Brother",
         "Grandfather"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "explanation": "Place everyone on the tree. A is the father of C; B is C's sister and D is A's daughter, so C, B and D are all A's children (one generation). E is A's brother, so E is in A's own generation.\n```\n   E --(brother)-- A\n                   |\n            +------+------+\n            C      B      D\n```\nD is A's daughter, and E is A's brother, so E is the brother of D's father, which is a paternal uncle.\n\n**Why not the others**\n- Father — D's father is A, not E.\n- Brother — E is in A's generation, one above D, so not D's brother.\n- Grandfather — E is only one generation above D, not two.\n\n**Key facts**\n- C, B and D are all children of A, so they share one generation.\n- A parent's brother is a paternal uncle.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle)",
       "verified": true,
@@ -366,10 +366,10 @@
       "options": [
         "Son",
         "Brother-in-law",
-        "Son-in-law",
-        "Father-in-law"
+        "Father-in-law",
+        "Son-in-law"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "Read the chain. \"P # Q\" means P is the father of Q. \"Q @ R\" means Q is the wife of R, so Q is female (P's daughter) and R is her husband. R is therefore the husband of P's daughter, which is a son-in-law.\n```\n   P (father)\n     |\n     Q --(wife of)-- R\n```\n\n**Why not the others**\n- Son — R marries into the family and is not P's own child.\n- Brother-in-law — that is a spouse's sibling or a sister's husband, not a daughter's husband.\n- Father-in-law — that is how P relates to R, the opposite direction.\n\n**Key facts**\n- Direction matters: the husband of one's daughter is a son-in-law.\n- \"A @ B\" (wife) fixes A as female and B as her husband.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded/In-laws).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Coded/In-laws)",
       "verified": true,
@@ -416,11 +416,11 @@
       "noteRef": "ment-relationships-note-pointing-photo",
       "options": [
         "His father",
-        "His son",
         "His own (himself)",
+        "His son",
         "His nephew"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "The speaker has no brother or sister, so \"my father's son\" can only be the speaker himself. The clue then reads \"that man's father is the speaker\", which means the man in the photo is the speaker's son.\n```\n   speaker (my father's son = me)\n        |\n     the man in the photo (his son)\n```\n\n**Why not the others**\n- His father — that reverses the generations; here the speaker is the father.\n- Himself — the photo shows someone whose father is the speaker, so one generation below.\n- His nephew — a nephew would need a sibling, but the speaker has none.\n\n**Key facts**\n- With no siblings, \"my father's son\" is the speaker himself.\n- \"That man's father is me\", so that man is my son.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Photo/Self-reference)",
       "verified": true,
@@ -439,7 +439,7 @@
       "subtopicId": "ment-relationships",
       "question": "A and B are a married couple. A is the father of C. C is the sister of D. D is the son of B. E is the mother of A. Consider the following statements:\nWhich of the statements is/are correct?",
       "statements": [
-        "E is the grandmother of D.",
+        "E is the maternal grandmother of D.",
         "B is the mother of C.",
         "C and D are siblings."
       ],
@@ -450,8 +450,8 @@
         "1, 2 and 3",
         "2 and 3 only"
       ],
-      "answerIndex": 2,
-      "explanation": "Build the tree. A and B are a married couple; A is the father of C, and D is the son of B with C as D's sister, so C and D are both children of A and B.\n```\n   E (A's mother)\n   |\n   A --(married)-- B\n        \\         /\n       +--+-----+--+\n       C          D\n```\nStatement 2: B, the wife of their father A, is the mother of C — correct. Statement 3: C and D share parents, so they are siblings — correct. Statement 1: E is A's mother, so E is the paternal grandmother of C and D — correct. All three hold.\n\n**Why not the others**\n- 3 only — this omits the equally valid statements 1 and 2.\n- 1 and 3 only — this drops statement 2, though B is clearly the children's mother.\n- 2 and 3 only — this drops statement 1, though E is A's mother and so D's grandmother.\n\n**Key facts**\n- A married couple who are the parents of a child are that child's mother and father.\n- A parent's mother is the child's grandmother.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle).*",
+      "answerIndex": 3,
+      "explanation": "Build the tree. A and B are a married couple; A is the father of C, and D is the son of B with C as D's sister, so C and D are both children of A and B.\n```\n   E (A's mother)\n   |\n   A --(married)-- B\n        \\         /\n       +--+-----+--+\n       C          D\n```\nStatement 2: B, the wife of their father A, is the mother of C — correct. Statement 3: C and D share parents, so they are siblings — correct. Statement 1: E is A's mother, so E is the PATERNAL grandmother of D (father's side), not the maternal one — wrong. Hence 2 and 3 only.\n\n**Why not the others**\n- 3 only — omits the equally valid statement 2 (B is C's mother).\n- 1 and 3 only — keeps statement 1, but E is A's mother, i.e. D's paternal grandmother.\n- 1, 2 and 3 — statement 1 is false; E is on the father's side.\n\n**Key facts**\n- A married couple who are the parents of a child are that child's mother and father.\n- A parent's mother is the child's grandmother.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (Family Puzzle)",
       "verified": true,
       "covers": [
@@ -496,11 +496,11 @@
       "noteRef": "ment-relationships-note-common-traps",
       "options": [
         "Sister",
+        "Sister-in-law",
         "Daughter-in-law",
-        "Aunt",
-        "Sister-in-law"
+        "Aunt"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "explanation": "Suresh is Mohan's brother and Priya is Suresh's sister, so Priya is also Mohan's sister. Rekha is Mohan's wife, and the sister of one's husband is a sister-in-law, so Priya is Rekha's sister-in-law.\n```\n   Priya -- Suresh -- Mohan --(married)-- Rekha\n   (all three siblings)              (wife)\n```\n\n**Why not the others**\n- Sister — Priya and Rekha are related only through marriage, not by blood.\n- Daughter-in-law — that is a son's wife, a different relation.\n- Aunt — Priya is in the same generation as Rekha, not one above.\n\n**Key facts**\n- The siblings of one's spouse are one's brothers-in-law and sisters-in-law.\n- Priya, being Mohan's sister, is the sister-in-law of Mohan's wife Rekha.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Blood Relations (In-laws)",
       "verified": true,
@@ -604,11 +604,11 @@
       "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
         "A",
-        "B",
         "D",
+        "B",
         "E"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Number the five seats 1 to 5 from the left and fix the most definite clue first — the middle. C is in the middle, seat 3. A is immediately left of C, seat 2; D is immediately right of C, seat 4; E is at the extreme right, seat 5. Only B is left, so B takes seat 1, the extreme left end.\n```\nseat: 1  2  3  4  5\n      B  A  C  D  E\n```\n\n**Why not the others**\n- A — A is at seat 2, immediately left of C, not at the end.\n- D — D is at seat 4, immediately right of C.\n- E — E is fixed at the extreme right end, seat 5.\n\n**Key facts**\n- Fix the person with the most definite clue (the middle seat) first.\n- Facing north means each person's left is the same as your left, so no swap is needed.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (linear, facing north).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
@@ -624,7 +624,7 @@
       "id": "ment-relationships-mcq-25",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "Six friends A, B, C, D, E and F sit in a row facing north. Consider the following:\nWho is sitting fourth from the left end?",
+      "question": "Six friends A, B, C, D, E and F sit in a row facing north. Consider the following:\nWhich person is sitting fourth from the left end?",
       "statements": [
         "F is at the extreme left end and C is at the extreme right end.",
         "A is immediately to the left of B, and E is immediately to the left of D.",
@@ -657,12 +657,12 @@
       "question": "Five friends P, Q, R, S and T are seated around a circular table facing the centre. Q is to the immediate right of P; R is to the immediate right of Q; S is to the immediate right of R. Who is to the immediate right of T?",
       "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
-        "P",
         "Q",
         "R",
-        "S"
+        "S",
+        "P"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Follow the \"immediate right\" clues around the circle: Q is right of P, R is right of Q, S is right of R, so the order clockwise is P, Q, R, S. The only person left, T, sits between S and P. Going on round, the person to the immediate right of T is the next one, which closes the loop back to P.\n```\n        P\n    T       Q\n    S       R\n       (clockwise: P Q R S T, then back to P)\n```\n\n**Why not the others**\n- Q — Q is to the immediate right of P, not of T.\n- R — R is to the immediate right of Q.\n- S — S is to the immediate right of R.\n\n**Key facts**\n- A chain of \"immediate right\" statements fixes one cyclic order.\n- In a circle the order wraps round: after the last named person it returns to the first.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (circular, facing centre).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
@@ -681,7 +681,7 @@
       "question": "Eight persons are seated at equal spacing around a circular table, all facing the centre. Consider the following statements:\nWhich of the statements is/are correct?",
       "statements": [
         "The person third to the left of any given person is the same as the one fifth to that person's right.",
-        "The person sitting exactly opposite a given person is four places away on either side."
+        "The person sitting exactly opposite a given person is three places away on either side."
       ],
       "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
@@ -690,8 +690,8 @@
         "Both 1 and 2",
         "Neither 1 nor 2"
       ],
-      "answerIndex": 2,
-      "explanation": "There are 8 equally spaced seats. Counting k places one way is the same seat as counting (8 − k) places the other way. So \"third to the left\" is the same as \"8 − 3 = fifth to the right\" — statement 1 is correct. The seat directly opposite is half the circle away, 8 ÷ 2 = 4 places, counted either way — statement 2 is correct. Both hold.\n```\n8 seats: going 3 left = going 5 right (3 + 5 = 8)\nopposite seat = 8 / 2 = 4 places away\n```\n\n**Why not the others**\n- 1 only — this ignores that the opposite seat really is 4 places away.\n- 2 only — this ignores the valid left/right equivalence (k and 8 − k).\n- Neither — both are standard consequences of 8 equal seats.\n\n**Key facts**\n- In a circle of n seats, \"k to the left\" equals \"(n − k) to the right\".\n- The opposite seat exists only when n is even and is n/2 places away either side.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (circular, opposite & left/right).*",
+      "answerIndex": 0,
+      "explanation": "There are 8 equally spaced seats. Counting k places one way is the same seat as counting (8 − k) places the other way. So \"third to the left\" is the same as \"8 − 3 = fifth to the right\" — statement 1 is correct. The seat directly opposite is half the circle away, 8 ÷ 2 = 4 places, not 3 — statement 2 is wrong.\n```\n8 seats: going 3 left = going 5 right (3 + 5 = 8)\nopposite seat = 8 / 2 = 4 places away\n```\n\n**Why not the others**\n- 2 only — statement 2 is false: the opposite seat is 8 ÷ 2 = 4 places away, not 3.\n- Both 1 and 2 — statement 2 miscounts half of 8 seats.\n- Neither 1 nor 2 — this ignores the valid left/right equivalence (k and 8 − k) in statement 1.\n\n**Key facts**\n- In a circle of n seats, \"k to the left\" equals \"(n − k) to the right\".\n- The opposite seat exists only when n is even and is n/2 places away either side.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Seating (circular, opposite & left/right).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -711,13 +711,13 @@
       "question": "In a row of children, Ravi is 7th from the left end and 12th from the right end. How many children are there in the row?",
       "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
-        "18",
         "19",
+        "18",
         "17",
-        "20"
+        "5"
       ],
-      "answerIndex": 0,
-      "explanation": "When one person's positions from both ends are given, that person is counted in both the left count and the right count, so add the two and subtract the one duplicate. Total = 7 + 12 − 1 = 18.\n```\nleft of Ravi: 6 | Ravi: 1 | right of Ravi: 11  ->  6 + 1 + 11 = 18\n```\n\n**Why not the others**\n- 19 — this adds 7 + 12 without subtracting the double-counted child.\n- 17 — this subtracts 2 instead of 1.\n- 20 — this is an unrelated over-count.\n\n**Key facts**\n- Total = (position from left) + (position from right) − 1.\n- Subtract exactly one to remove the double count.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (positions from both ends).*",
+      "answerIndex": 1,
+      "explanation": "When one person's positions from both ends are given, that person is counted in both the left count and the right count, so add the two and subtract the one duplicate. Total = 7 + 12 − 1 = 18.\n```\nleft of Ravi: 6 | Ravi: 1 | right of Ravi: 11  ->  6 + 1 + 11 = 18\n```\n\n**Why not the others**\n- 5 — subtracts the positions (12 − 7) instead of adding them.\n- 17 — this subtracts 2 instead of 1.\n- 19 — this adds 7 + 12 without subtracting the double-counted child.\n\n**Key facts**\n- Total = (position from left) + (position from right) − 1.\n- Subtract exactly one to remove the double count.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (positions from both ends).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
       "covers": [
@@ -735,9 +735,9 @@
       "question": "In a row of 40 students, Sita is 16th from the left end. What is her position from the right end?",
       "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
-        "24th",
-        "25th",
         "26th",
+        "25th",
+        "24th",
         "15th"
       ],
       "answerIndex": 1,
@@ -759,12 +759,12 @@
       "question": "In a row, Amit is 10th from the left and Sunil is 8th from the right. When they interchange their seats, Amit becomes 15th from the left. How many persons are there in the row?",
       "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
-        "22",
-        "23",
+        "20",
         "21",
-        "20"
+        "22",
+        "23"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "After the swap, Amit sits in Sunil's old seat, which was 8th from the right. Amit is now also 15th from the left. Those two counts share Amit's single seat, so total = 15 + 8 − 1 = 22.\n```\nAmit now: 15th from left AND 8th from right  ->  15 + 8 - 1 = 22\n```\n\n**Why not the others**\n- 23 — this forgets to subtract the double-counted seat.\n- 21 — this subtracts 2 instead of 1.\n- 20 — this wrongly uses Amit's original 10th-from-left position.\n\n**Key facts**\n- On an interchange, each person takes the other's fixed seat.\n- Total = (new position from left) + (that seat's position from right) − 1.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (interchange).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
@@ -783,12 +783,12 @@
       "question": "In a class of 30 students, Anu's rank is 12th from the top. Bina's rank is 5 places below Anu's. What is Bina's rank from the bottom?",
       "noteRef": "ment-relationships-note-seating-ranking",
       "options": [
+        "13th",
         "14th",
         "15th",
-        "13th",
         "19th"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "Anu is 12th from the top. \"5 places below\" means 5 ranks further down, so Bina is 12 + 5 = 17th from the top. To turn a top rank into a bottom rank in a class of 30, use bottom = total − top + 1 = 30 − 17 + 1 = 14th from the bottom.\n\n**Why not the others**\n- 15th — this comes from 30 − 17 + 2, adding one too many.\n- 13th — this comes from 30 − 17, forgetting the +1.\n- 19th — this uses Anu's 12th-from-top with a sign slip (30 − 12 + 1).\n\n**Key facts**\n- \"k places below the top rank r\" means rank (r + k) from the top.\n- Rank from the bottom = N − (rank from the top) + 1.\n\n*Source: local APPSC Group-1 PDF — Logical Reasoning: Ranking (rank among n).*",
       "source": "local APPSC Group-1 PDF — Logical Reasoning: Seating Arrangement & Ranking",
       "verified": true,
@@ -807,13 +807,13 @@
       "question": "P is the mother of A's brother's father's wife. How is P related to A?",
       "noteRef": "ment-relationships-note-chained-riddle",
       "options": [
-        "Maternal grandmother",
-        "Paternal grandmother",
-        "Mother",
-        "Aunt"
+        "maternal grandmother",
+        "paternal grandmother",
+        "A's own mother",
+        "maternal aunt"
       ],
       "answerIndex": 0,
-      "explanation": "Work outward from the innermost phrase. \"A's brother's father\" is A's own father, because a brother and A share the same father. \"A's father's wife\" is A's mother. So P is the mother of A's mother, which makes P the maternal grandmother of A.\n```\n   P (maternal grandmother)\n      |\n   A's mother  (= A's father's wife)\n      |\n      A\n```\n\n**Why not the others**\n- Paternal grandmother — that would be the mother of A's father, but P is the mother of A's mother.\n- Mother — P is one generation above A's mother.\n- Aunt — no sibling link is stated.\n\n**Key facts**\n- \"A's brother's father\" resolves to A's own father.\n- The mother of one's mother is the maternal grandmother.\n\n*Source: AP State Govt / APPSC Group-2 22.12.2022.*",
+      "explanation": "Work outward from the innermost phrase. \"A's brother's father\" is A's own father, because a brother and A share the same father. \"A's father's wife\" is A's mother. So P is the mother of A's mother, which makes P the maternal grandmother of A.\n```\n   P (maternal grandmother)\n      |\n   A's mother  (= A's father's wife)\n      |\n      A\n```\n\n**Why not the others**\n- paternal grandmother — that would be the mother of A's father, but P is the mother of A's mother.\n- A's own mother — P is one generation above A's mother.\n- maternal aunt — that is the SISTER of A's mother; no sibling link is stated.\n\n**Key facts**\n- \"A's brother's father\" resolves to A's own father.\n- The mother of one's mother is the maternal grandmother.\n\n*Source: AP State Govt / APPSC Group-2 22.12.2022.*",
       "source": "AP State Govt / APPSC Group-2 22.12.2022",
       "verified": true,
       "covers": [
@@ -832,12 +832,12 @@
       "question": "Pointing to a lady, Ram said, \"She is the daughter of the only granddaughter of my maternal great-grandfather.\" How is the lady related to Ram?",
       "noteRef": "ment-relationships-note-chained-riddle",
       "options": [
-        "Sister",
         "Mother",
         "Aunt",
+        "Sister",
         "Cousin"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "Unpack from the inside. Ram's maternal great-grandfather is his mother's grandfather. His \"only granddaughter\" on that maternal line is Ram's mother (the word \"only\" forces this single identity). The lady is the daughter of Ram's mother, so she is Ram's sister.\n```\n   maternal great-grandfather\n            |\n   only granddaughter = Ram's mother\n          /     \\\n        Ram     the lady (daughter)\n```\n\n**Why not the others**\n- Mother — the lady is the mother's daughter, one generation below the mother.\n- Aunt — an aunt would be the mother's sister, not her daughter.\n- Cousin — no uncle or aunt branch is involved; \"only granddaughter\" forces the mother.\n\n**Key facts**\n- \"Only granddaughter of the maternal great-grandfather\" is Ram's mother.\n- The daughter of one's mother is one's sister.\n\n*Source: AP State Govt / APPSC Group-2 14.12.2022.*",
       "source": "AP State Govt / APPSC Group-2 14.12.2022",
       "verified": true,
@@ -878,14 +878,14 @@
       "id": "ment-relationships-mcq-35",
       "subjectCode": "MENT",
       "subtopicId": "ment-relationships",
-      "question": "Rita's brother's son is Rita's:",
+      "question": "In family relations, Rita's brother's son is Rita's:",
       "options": [
-        "Nephew",
         "Cousin",
+        "Nephew",
         "Son",
         "Uncle"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-relationships-note-relations-seating-extras",
       "explanation": "The son of one's brother or sister is one's nephew.\n\n**Why not the others**\n- Cousin — A cousin is the child of an uncle or aunt, not of a sibling.\n- Son — He is her brother's son, not hers.\n- Uncle — An uncle is a parent's brother.\n\n**Key facts**\n- Sibling's child = nephew/niece.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
       "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
@@ -928,9 +928,9 @@
       "subtopicId": "ment-relationships",
       "question": "In a family of six, P is the father of Q and R, who are both male. S is the wife of Q, T is the son of S, and U is the sister of R. How many female members are there in the family?",
       "options": [
-        "3",
-        "2",
         "1",
+        "2",
+        "3",
         "4"
       ],
       "answerIndex": 1,
@@ -976,12 +976,12 @@
       "subtopicId": "ment-relationships",
       "question": "Six people sit in a row facing south. K sits at the extreme right end of the row (K's own right). At which compass end of the row is K?",
       "options": [
-        "East end",
         "West end",
+        "East end",
         "North end",
         "South end"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-relationships-note-relations-seating-extras",
       "explanation": "Facing south, a person's right hand points west, so the extreme right end of the row is the west end. Facing south flips left and right compared with facing north.\n\n**Why not the others**\n- East end — East is on the right only when facing north.\n- North end — A row facing south runs east–west, so its ends are east and west.\n- South end — A row facing south runs east–west, so its ends are east and west.\n\n**Key facts**\n- Facing south flips left and right.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
       "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
@@ -1000,14 +1000,14 @@
       "subtopicId": "ment-relationships",
       "question": "Six persons sit around a circular table facing AWAY from the centre. For each of them, moving to the immediate left means moving in which direction around the table?",
       "options": [
-        "Anticlockwise",
-        "Clockwise",
-        "Across to the opposite seat",
-        "It depends on the number of persons"
+        "clockwise round the table",
+        "across to the opposite seat",
+        "anticlockwise round the table",
+        "it depends on how many sit"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-relationships-note-relations-seating-extras",
-      "explanation": "Facing the centre, left is clockwise; facing outward everyone has turned round, so left becomes anticlockwise.\n\n**Why not the others**\n- Clockwise — Clockwise is the left when facing the centre.\n- Across to the opposite seat — The opposite seat is n/2 places away, not \"left\".\n- It depends on the number of persons — The direction depends only on which way they face.\n\n**Key facts**\n- Circle: inward left = clockwise; outward left = anticlockwise.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
+      "explanation": "Facing the centre, left is clockwise; facing outward everyone has turned round, so left becomes anticlockwise.\n\n**Why not the others**\n- clockwise round the table — clockwise is the left when facing the centre.\n- across to the opposite seat — the opposite seat is n/2 places away, not \"left\".\n- it depends on how many sit — the direction depends only on which way they face.\n\n**Key facts**\n- Circle: inward left = clockwise; outward left = anticlockwise.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
       "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
       "verified": true,
       "covers": [
@@ -1025,11 +1025,11 @@
       "question": "Ten people sit at equal spacing around a circular table facing the centre. The person 3rd to the left of A is the same as the person how many places to the right of A?",
       "options": [
         "3rd",
-        "7th",
         "5th",
-        "6th"
+        "6th",
+        "7th"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-relationships-note-seating-ranking",
       "explanation": "In a circle of n, 'k to the left' = '(n − k) to the right': 10 − 3 = 7, so 7th to the right.\n\n**Why not the others**\n- 3rd — 3rd to the right is a different seat on the other side.\n- 5th — 5th either way is the person exactly opposite A.\n- 6th — Uses n − k − 1 instead of n − k.\n\n**Key facts**\n- k to the left = (n − k) to the right.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
       "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
@@ -1048,8 +1048,8 @@
       "subtopicId": "ment-relationships",
       "question": "In a row facing north, exactly two persons sit between A and B, and A is to the left of B. If A is 4th from the left end, what is B's position from the left end?",
       "options": [
-        "6th",
         "5th",
+        "6th",
         "7th",
         "8th"
       ],
@@ -1072,12 +1072,12 @@
       "subtopicId": "ment-relationships",
       "question": "Ravi is 15th from the left end in a row of 40 students. He shifts 6 places to the right. What is his new position from the right end?",
       "options": [
-        "26th",
-        "21st",
         "19th",
-        "20th"
+        "20th",
+        "21st",
+        "26th"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-relationships-note-relations-seating-extras",
       "explanation": "After shifting he is 15 + 6 = 21st from the left, so from the right he is 40 − 21 + 1 = 20th.\n\n**Why not the others**\n- 26th — 26th is his old position from the right (40 − 15 + 1).\n- 21st — 21st is his new position from the LEFT.\n- 19th — Forgets the + 1: 40 − 21.\n\n**Key facts**\n- Shift first, then convert to the other end.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
       "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
@@ -1096,10 +1096,10 @@
       "subtopicId": "ment-relationships",
       "question": "In a queue, Meena is 14th from the front and 9th from the back. How many people are in the queue?",
       "options": [
+        "24",
         "23",
-        "21",
         "22",
-        "24"
+        "21"
       ],
       "answerIndex": 2,
       "noteRef": "ment-relationships-note-seating-ranking",
@@ -1120,12 +1120,12 @@
       "subtopicId": "ment-relationships",
       "question": "Sana is 14th from the right end in a row of 30 students. What is her position from the left end?",
       "options": [
-        "16th",
         "15th",
-        "18th",
-        "17th"
+        "16th",
+        "17th",
+        "18th"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-relationships-note-seating-ranking",
       "explanation": "Position from the left = 30 − 14 + 1 = 17th.\n\n**Why not the others**\n- 16th — Forgets the + 1: 30 − 14 = 16.\n- 15th — Subtracts 1 instead of adding.\n- 18th — Adds 2 instead of 1.\n\n**Key facts**\n- Other-end position = total − this-end position + 1.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
       "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
@@ -1144,12 +1144,12 @@
       "subtopicId": "ment-relationships",
       "question": "In a row, P is 12th from the left and Q is 9th from the right. When they interchange positions, P becomes 16th from the left. How many persons are in the row?",
       "options": [
-        "25",
-        "27",
+        "20",
         "24",
-        "20"
+        "25",
+        "27"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-relationships-note-seating-ranking",
       "explanation": "After the interchange P sits in Q's old seat, which is 16th from the left and 9th from the right. Total = 16 + 9 − 1 = 24.\n\n**Why not the others**\n- 25 — Forgets to subtract 1 for the person counted twice.\n- 27 — Adds P's old position instead of using Q's seat.\n- 20 — Uses P's old 12th position with 9th.\n\n**Key facts**\n- On an interchange use the seat both positions describe.\n\n*Source: APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md*",
       "source": "APPSC Logical Reasoning extracted text (Family Based Blood Relation, Coded Blood Relation Problems, Pointing/Introduction Based, Data Sufficiency in Blood Relation, Linear/Circular Seating Arrangement, Ranking, Order Based); standard reasoning references; PYQ bank .research/pyq-bank/ment-relationships.md",
@@ -1168,10 +1168,10 @@
       "subtopicId": "ment-relationships",
       "question": "In a row of 40 students, A is 12th from the left end and B is 15th from the right end. How many students sit between A and B?",
       "options": [
-        "14",
+        "11",
         "12",
         "13",
-        "11"
+        "14"
       ],
       "answerIndex": 2,
       "noteRef": "ment-relationships-note-relations-seating-extras",

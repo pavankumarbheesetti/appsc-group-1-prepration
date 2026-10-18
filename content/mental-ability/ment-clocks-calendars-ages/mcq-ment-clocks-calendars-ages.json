@@ -11,13 +11,13 @@
       "question": "What is the angle between the hour and minute hands of a clock at 3:40?",
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "options": [
-        "130°",
+        "230°",
         "150°",
-        "120°",
-        "140°"
+        "130°",
+        "110°"
       ],
-      "answerIndex": 0,
-      "explanation": "Use angle = |30H − 5.5M| = |30×3 − 5.5×40| = |90 − 220| = 130°.\n\n**Why not the others**\n- 150° — forgets the minute-hand's pull on the hour hand (using 5.5 wrongly as 6, or 30×5).\n- 120° — comes from |30×3 − 6×40|/… a common wrong formula using 6M for the hour term.\n- 140° — a slip of taking 30×3 − 5×40 = −110 then mis-adding.\n\n**Key facts**\n- Angle = |30H − 5.5M| degrees, where H = hour, M = minutes; take the value ≤ 180°.\n- 30° = one hour mark; the minute hand moves 5.5° per minute relative to the hour hand.\n\n*Source: local APPSC Logical Reasoning PDF — Clock.*",
+      "answerIndex": 2,
+      "explanation": "Use angle = |30H − 5.5M| = |30×3 − 5.5×40| = |90 − 220| = 130°.\n\n**Why not the others**\n- 110° — moves the minute hand 5° per minute (5 × 40 = 200) instead of 6°; the 5.5 in the formula is 6 − 0.5.\n- 150° — uses 6M (|90 − 240|), ignoring that the hour hand has moved 20° past 3.\n- 230° — this is the reflex angle (360° − 130°), not the angle between the hands.\n\n**Key facts**\n- Angle = |30H − 5.5M| degrees, where H = hour, M = minutes; take the value ≤ 180°.\n- 30° = one hour mark; the minute hand moves 5.5° per minute relative to the hour hand.\n\n*Source: local APPSC Logical Reasoning PDF — Clock.*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -34,15 +34,15 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
       "refresher": true,
-      "question": "Which of the following is a leap year?",
+      "question": "Under the Gregorian calendar rules, which of the following is a leap year?",
       "noteRef": "ment-clocks-calendars-ages-note-leap-year-repetition",
       "options": [
         "1900",
+        "2000",
         "2010",
-        "2100",
-        "2000"
+        "2100"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "explanation": "A century year is a leap year only if divisible by 400. 2000 ÷ 400 = 5, so **2000** is a leap year.\n\n**Why not the others**\n- 1900 — divisible by 100 but not by 400, so it is NOT a leap year.\n- 2010 — not divisible by 4, so an ordinary year.\n- 2100 — divisible by 100 but not by 400, so NOT a leap year.\n\n**Key facts**\n- Rule: a year is a leap year if divisible by 4, EXCEPT century years, which must be divisible by 400.\n- Leap year = 366 days (Feb has 29); ordinary year = 365 days.\n\n*Source: local APPSC Logical Reasoning PDF — Calendar.*",
       "source": "local APPSC Logical Reasoning PDF — Calendar",
       "verified": true,
@@ -63,13 +63,13 @@
       "question": "What is the mirror image of the time 3:25 (as seen in a plane mirror)?",
       "noteRef": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
       "options": [
-        "8:35",
-        "9:35",
         "8:25",
-        "7:35"
+        "9:35",
+        "8:35",
+        "3:35"
       ],
-      "answerIndex": 0,
-      "explanation": "For times after 1:00, mirror time = 11:60 − actual time = (11:60) − (3:25) = **8:35**.\n\n**Why not the others**\n- 9:35 — from subtracting the hour wrongly (12 − 3 = 9) without borrowing for the minutes.\n- 8:25 — leaves the minutes unchanged; minutes must also be reflected (60 − 25 = 35).\n- 7:35 — uses 11 − 4 for the hour, mis-borrowing.\n\n**Key facts**\n- Mirror image: subtract the time from 12:00 (use 11:60 when minutes ≠ 00).\n- Water image needs a different reference (18:00), not 12:00.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (mirror image).*",
+      "answerIndex": 2,
+      "explanation": "For times after 1:00, mirror time = 11:60 − actual time = (11:60) − (3:25) = **8:35**.\n\n**Why not the others**\n- 3:35 — reflects only the minutes and keeps the hour.\n- 8:25 — reflects only the hour; minutes must also be reflected (60 − 25 = 35).\n- 9:35 — subtracts from 12:60 instead of 11:60, so the hour is one too many.\n\n**Key facts**\n- Mirror image: subtract the time from 12:00 (use 11:60 when minutes ≠ 00).\n- Water image needs a different reference (18:00), not 12:00.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (mirror image).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -88,13 +88,13 @@
       "question": "At what time between 4 and 5 o'clock will the two hands of a clock coincide (overlap)?",
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "options": [
-        "4:20 min",
-        "4:22 2/11 min",
         "4:21 9/11 min",
-        "4:23 7/11 min"
+        "4:05 5/11 min",
+        "4:20 min",
+        "4:24 min"
       ],
-      "answerIndex": 2,
-      "explanation": "The hands overlap when the minute hand catches up to the hour hand. At 4:00 the hour hand is 4 × 30 = 120 degrees ahead, and the minute hand gains 5.5 degrees every minute, so it needs 120 ÷ 5.5 minutes. That is 240/11 = 21 and 9/11 minutes, so the time is **4:21 9/11**.\n\n**Why not the others**\n- 4:20 — the rough guess ignoring the hour hand's own movement.\n- 4:22 2/11 — arises from using 5H·(12/11) with the wrong base.\n- 4:23 7/11 — the overlap time for the 5–6 window, not 4–5.\n\n**Key facts**\n- The hands coincide once each ~65 5/11 minutes (720/11 min) → 11 times in 12 h, 22 times in 24 h.\n- Coincidence minute past hour H = 60H/11.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence of hands).*",
+      "answerIndex": 0,
+      "explanation": "The hands overlap when the minute hand catches up to the hour hand. At 4:00 the hour hand is 4 × 30 = 120 degrees ahead, and the minute hand gains 5.5 degrees every minute, so it needs 120 ÷ 5.5 minutes. That is 240/11 = 21 and 9/11 minutes, so the time is **4:21 9/11**.\n\n**Why not the others**\n- 4:05 5/11 min — this is when the hands are at right angles (gap 90°), not when they coincide.\n- 4:20 min — the rough guess ignoring the hour hand's own movement.\n- 4:24 min — divides 120° by 5 instead of 5.5, i.e. uses minute-marks instead of the 5.5° per minute gain.\n\n**Key facts**\n- The hands coincide once each ~65 5/11 minutes (720/11 min) → 11 times in 12 h, 22 times in 24 h.\n- Coincidence minute past hour H = 60H/11.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence of hands).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -112,13 +112,13 @@
       "question": "At what time between 2 and 3 o'clock will the hands of a clock be at right angles (90°) for the first time?",
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "options": [
-        "2:25 5/11 min",
-        "2:27 3/11 min",
+        "2:10 10/11 min",
+        "2:25 min",
         "2:30 min",
-        "2:28 8/11 min"
+        "2:27 3/11 min"
       ],
-      "answerIndex": 1,
-      "explanation": "At 2 o'clock the hour hand is 60 degrees from the 12, so the gap is the size of (60 − 5.5M). Setting 5.5M − 60 = 90 gives 5.5M = 150, so M = 150 ÷ 5.5 = 300/11 = **27 3/11**, giving 2:27 3/11.\n\n**Why not the others**\n- 2:25 5/11 — solves 60 − 5.5M = 60 (a 60° gap), not 90°.\n- 2:30 — a rough guess; at 2:30 the angle is |60 − 165| = 105°, not 90°.\n- 2:28 8/11 — uses 5.5M − 60 = 95, an arithmetic slip.\n\n**Key facts**\n- Right-angle condition: |30H − 5.5M| = 90.\n- Hands are at right angles 22 times in 12 hours and 44 times in 24 hours.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (right angles).*",
+      "answerIndex": 3,
+      "explanation": "At 2 o'clock the hour hand is 60 degrees from the 12, so the gap is the size of (60 − 5.5M). Setting 5.5M − 60 = 90 gives 5.5M = 150, so M = 150 ÷ 5.5 = 300/11 = **27 3/11**, giving 2:27 3/11.\n\n**Why not the others**\n- 2:10 10/11 min — this is when the hands COINCIDE (5.5M = 60), not when they are at right angles.\n- 2:25 min — uses a gain of 6° per minute (6M − 60 = 90); the minute hand gains only 5.5° per minute.\n- 2:30 min — a rough guess; at 2:30 the angle is |60 − 165| = 105°, not 90°.\n\n**Key facts**\n- Right-angle condition: |30H − 5.5M| = 90.\n- Hands are at right angles 22 times in 12 hours and 44 times in 24 hours.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (right angles).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -136,12 +136,12 @@
       "question": "How many times in 12 hours do the two hands of a clock point in exactly opposite directions (180°)?",
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "options": [
+        "11 times",
         "12 times",
         "22 times",
-        "24 times",
-        "11 times"
+        "24 times"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "explanation": "The hands are opposite once in roughly every 65 5/11 minutes, but between 5 and 7 o'clock this happens only once, so in 12 hours they are opposite **11 times**.\n\n**Why not the others**\n- 12 times — the naive 'once per hour' count; the 5–7 overlap removes one.\n- 22 times — that is the 24-hour total (11 × 2), or the number of coincidences+opposites confusion.\n- 24 times — double-counts, treating each hour as giving two opposites.\n\n**Key facts**\n- In 12 hours: hands coincide 11 times, are opposite 11 times, at right angles 22 times.\n- Double each for a full 24-hour day (22, 22, 44).\n\n*Source: local APPSC Logical Reasoning PDF — Clock (straight line / opposite hands).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
@@ -161,12 +161,12 @@
       "noteRef": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
       "options": [
         "4:48 a.m.",
-        "5:12 a.m.",
-        "4:00 a.m.",
-        "3:36 a.m."
+        "5:24 a.m.",
+        "5:57 a.m.",
+        "7:12 a.m."
       ],
       "answerIndex": 0,
-      "explanation": "In 24 true hours the watch loses 3 × 24 = 72 minutes = 1 h 12 min. So it shows 6:00 a.m. − 1:12 = **4:48 a.m.**\n\n**Why not the others**\n- 5:12 a.m. — subtracts only 48 minutes (mis-multiplying 3 × 16).\n- 4:00 a.m. — rounds the loss to a flat 2 hours.\n- 3:36 a.m. — doubles the loss to 144 minutes.\n\n**Key facts**\n- Total error = (loss/gain per hour) × number of hours elapsed.\n- A losing clock shows an EARLIER time; a gaining clock shows a LATER time.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (faulty / gaining-losing clock).*",
+      "explanation": "In 24 true hours the watch loses 3 × 24 = 72 minutes = 1 h 12 min. So it shows 6:00 a.m. − 1:12 = **4:48 a.m.**\n\n**Why not the others**\n- 5:24 a.m. — counts only 12 hours of loss (36 min); the watch runs for 24 hours.\n- 5:57 a.m. — subtracts only one hour's loss of 3 minutes.\n- 7:12 a.m. — adds the 72 minutes; a losing watch falls BEHIND the true time.\n\n**Key facts**\n- Total error = (loss/gain per hour) × number of hours elapsed.\n- A losing clock shows an EARLIER time; a gaining clock shows a LATER time.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (faulty / gaining-losing clock).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -181,15 +181,15 @@
       "id": "ment-clocks-calendars-ages-mcq-8",
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
-      "question": "How many odd days are there in 200 years?",
+      "question": "In calendar arithmetic, how many odd days are there in 200 years?",
       "noteRef": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
       "options": [
-        "3",
-        "5",
+        "0",
         "1",
-        "0"
+        "3",
+        "5"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "100 years have 5 odd days, so 200 years have 5 × 2 = 10 odd days. Take out one whole week (7 days): 10 − 7 = **3** odd days.\n\n**Why not the others**\n- 5 — that is the count for 100 years, not 200.\n- 1 — the count for 300 years (15 mod 7).\n- 0 — the count for 400 years (28 mod 7), which is fully divisible.\n\n**Key facts**\n- Odd days: 100 yrs = 5, 200 yrs = 3, 300 yrs = 1, 400 yrs = 0.\n- 'Odd days' = days left over after counting complete weeks; 1 ordinary year = 1 odd day, 1 leap year = 2.\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
       "source": "local APPSC Logical Reasoning PDF — Calendar",
       "verified": true,
@@ -210,10 +210,10 @@
       "options": [
         "Thursday",
         "Saturday",
-        "Friday",
-        "Wednesday"
+        "Wednesday",
+        "Friday"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "Counting odd days up to 15 August 1947: 1600 years give 0, 300 years give 1, the 46 completed years give 46 + 11 leap days = 57 which leaves 1 after whole weeks, and the days of 1947 up to 15 August add the rest. The running total leaves 5 odd days counted from Sunday, which lands on **Friday**.\n\n**Why not the others**\n- Thursday — one odd day short (an off-by-one in the month totals).\n- Saturday — one odd day extra.\n- Wednesday — miscounts the leap years in 1901–1947.\n\n**Key facts**\n- Day = (total odd days) counted from a reference; 0→Sunday, 1→Monday … 5→Friday, 6→Saturday.\n- Month odd-days (Jan..): 3,0,3,2,3,2,3,3,2,3,2,3 for an ordinary year.\n\n*Source: standard calendar computation (verified with datetime).*",
       "source": "standard calendar computation (verified with datetime)",
       "verified": true,
@@ -232,12 +232,12 @@
       "question": "If 1 January 2024 is a Monday, what day of the week is 1 January 2025?",
       "noteRef": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
       "options": [
-        "Tuesday",
         "Wednesday",
+        "Tuesday",
         "Thursday",
         "Monday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "explanation": "2024 is a leap year (366 days = 52 weeks + 2 odd days), so the day advances by 2: Monday + 2 = **Wednesday**.\n\n**Why not the others**\n- Tuesday — advances by only 1 day, as if 2024 were an ordinary year.\n- Thursday — advances by 3 days, over-counting the odd days.\n- Monday — assumes 364 days (0 odd days), which is never the case.\n\n**Key facts**\n- An ordinary year carries 1 odd day; a leap year carries 2 odd days.\n- Same date next year moves forward 1 day (ordinary) or 2 days (leap year in between).\n\n*Source: standard calendar computation (verified with datetime).*",
       "source": "standard calendar computation (verified with datetime)",
       "verified": true,
@@ -258,10 +258,10 @@
       "options": [
         "2028",
         "2029",
-        "2034",
-        "2033"
+        "2033",
+        "2034"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "2023 is an ordinary year that starts on a Sunday. Adding the odd days year by year (1, 2, 1, 1, 1, 2, 1, 1, 1, 2), the first later year that again starts on a Sunday and is also an ordinary year is **2034**. A datetime check confirms 1 January 2023 and 1 January 2034 are both Sundays.\n\n**Why not the others**\n- 2028 — is a leap year, so its calendar cannot match an ordinary year like 2023.\n- 2029 — its running odd days reach a full week, but it starts on a different weekday, so the check fails.\n- 2033 — one year short; the odd-day sum is not yet a whole number of weeks with the matching year type.\n\n**Key facts**\n- A calendar repeats when the total odd days since the year make a whole number of weeks AND the leap-year status matches.\n- Ordinary years usually repeat after 6 or 11 years; leap years after 28.\n\n*Source: standard calendar computation (verified with datetime).*",
       "source": "standard calendar computation (verified with datetime)",
       "verified": true,
@@ -280,13 +280,13 @@
       "question": "The present ages of A and B are in the ratio 5 : 7. Six years hence the ratio becomes 3 : 4. What are their present ages?",
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
+        "18 and 24 years",
         "25 and 35 years",
-        "35 and 49 years",
-        "20 and 28 years",
+        "36 and 48 years",
         "30 and 42 years"
       ],
       "answerIndex": 3,
-      "explanation": "Let the ages be 5x and 7x. Six years later they are 5x + 6 and 7x + 6, in the ratio 3 : 4, so 4 × (5x + 6) = 3 × (7x + 6). That gives 20x + 24 = 21x + 18, so x = 6. The ages are 5 × 6 and 7 × 6 = **30 and 42 years**.\n\n**Why not the others**\n- 25 and 35 — x = 5, but then 31/41 ≠ 3/4.\n- 35 and 49 — x = 7, giving 41/55 ≠ 3/4.\n- 20 and 28 — x = 4, giving 26/34 ≠ 3/4.\n\n**Key facts**\n- Set ratio parts as 5x, 7x; add the time to both, equate to the new ratio, solve the linear equation.\n- Check by substituting x back into the future ratio.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the ages be 5x and 7x. Six years later they are 5x + 6 and 7x + 6, in the ratio 3 : 4, so 4 × (5x + 6) = 3 × (7x + 6). That gives 20x + 24 = 21x + 18, so x = 6. The ages are 5 × 6 and 7 × 6 = **30 and 42 years**.\n\n**Why not the others**\n- 18 and 24 years — applies the future ratio 3 : 4 to x = 6; the present ratio is 5 : 7.\n- 25 and 35 years — x = 5, but then 31/41 ≠ 3/4.\n- 36 and 48 years — these are their ages six years HENCE, not now.\n\n**Key facts**\n- Set ratio parts as 5x, 7x; add the time to both, equate to the new ratio, solve the linear equation.\n- Check by substituting x back into the future ratio.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -304,13 +304,13 @@
       "question": "A father is 30 years older than his son. In 12 years the father's age will be twice the son's age. What is the son's present age?",
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
-        "16 years",
-        "20 years",
         "18 years",
-        "15 years"
+        "30 years",
+        "42 years",
+        "48 years"
       ],
-      "answerIndex": 2,
-      "explanation": "Let the son be S, so the father is S + 30. In 12 years the father is twice the son: (S + 30) + 12 = 2 × (S + 12). That gives S + 42 = 2S + 24, so S = **18 years**.\n\n**Why not the others**\n- 16 — gives father 46; in 12 yrs 58 vs 2×28 = 56, not equal.\n- 20 — gives father 50; in 12 yrs 62 vs 2×32 = 64, not equal.\n- 15 — gives father 45; in 12 yrs 57 vs 2×27 = 54, not equal.\n\n**Key facts**\n- The age difference stays constant; use it to write one age in terms of the other.\n- 'Twice as old' → form the equation at the stated future/past time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "answerIndex": 0,
+      "explanation": "Let the son be S, so the father is S + 30. In 12 years the father is twice the son: (S + 30) + 12 = 2 × (S + 12). That gives S + 42 = 2S + 24, so S = **18 years**.\n\n**Why not the others**\n- 30 years — ignores the 12 years and sets S + 30 = 2S.\n- 42 years — adds the 12 years to the father only (S + 42 = 2S).\n- 48 years — this is the father's present age (18 + 30), not the son's.\n\n**Key facts**\n- The age difference stays constant; use it to write one age in terms of the other.\n- 'Twice as old' → form the equation at the stated future/past time.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -328,13 +328,13 @@
       "question": "The average age of 11 cricket players is 29 years. When the coach's age is included, the average of all 12 rises by 1 year. What is the coach's age?",
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
-        "40 years",
-        "30 years",
+        "360 years",
         "41 years",
-        "42 years"
+        "40 years",
+        "30 years"
       ],
-      "answerIndex": 2,
-      "explanation": "Total of 11 players = 11 × 29 = 319. New average = 30, so total of 12 = 12 × 30 = 360. Coach's age = 360 − 319 = **41 years**.\n\n**Why not the others**\n- 40 — from adding only 21 (using new avg 29+... ) — arithmetic slip on the totals.\n- 42 — assumes the average rises by 1 across 12 AND adds an extra year.\n- 30 — the new average itself, not the coach's age.\n\n**Key facts**\n- New member's value = (new total) − (old total) = new_avg×(n+1) − old_avg×n.\n- Shortcut: added age = new average + (rise × number of old members) = 30 + 1×11 = 41.\n\n*Source: local APPSC Quantitative Reasoning PDF — Based on Cricket and Age / Basic Concept Averages.*",
+      "answerIndex": 1,
+      "explanation": "Total of 11 players = 11 × 29 = 319. New average = 30, so total of 12 = 12 × 30 = 360. Coach's age = 360 − 319 = **41 years**.\n\n**Why not the others**\n- 30 years — the new average itself, not the coach's age.\n- 40 years — adds a 1-year rise for the 11 players only (29 + 11); the coach must also lift his own share.\n- 360 years — this is the total age of all 12 (12 × 30).\n\n**Key facts**\n- New member's value = (new total) − (old total) = new_avg×(n+1) − old_avg×n.\n- Shortcut: added age = new average + (rise × number of old members) = 30 + 1×11 = 41.\n\n*Source: local APPSC Quantitative Reasoning PDF — Based on Cricket and Age / Basic Concept Averages.*",
       "source": "local APPSC Quantitative Reasoning PDF — Based on Cricket and Age",
       "verified": true,
       "covers": [
@@ -352,13 +352,13 @@
       "question": "The present ages of a mother and daughter are in the ratio 7 : 1. Five years hence the ratio becomes 4 : 1. What is the mother's present age?",
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
+        "5 years",
+        "20 years",
         "35 years",
-        "42 years",
-        "28 years",
-        "49 years"
+        "40 years"
       ],
-      "answerIndex": 0,
-      "explanation": "Let the ages be 7x and x. Five years later they are 7x + 5 and x + 5, in the ratio 4 : 1, so 7x + 5 = 4 × (x + 5). That gives 7x + 5 = 4x + 20, so 3x = 15 and x = 5. The mother is 7 × 5 = **35 years**.\n\n**Why not the others**\n- 42 — x = 6, but 47/11 ≠ 4.\n- 28 — x = 4, giving 33/9 ≠ 4.\n- 49 — x = 7, giving 54/12 ≠ 4.\n\n**Key facts**\n- Ratios change over time because the SAME number of years is added to both ages.\n- Equate the future ratio to a single fraction and solve for x.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "answerIndex": 2,
+      "explanation": "Let the ages be 7x and x. Five years later they are 7x + 5 and x + 5, in the ratio 4 : 1, so 7x + 5 = 4 × (x + 5). That gives 7x + 5 = 4x + 20, so 3x = 15 and x = 5. The mother is 7 × 5 = **35 years**.\n\n**Why not the others**\n- 5 years — this is x (the daughter's present age), not the mother's.\n- 20 years — applies the future ratio 4 to x = 5; the present ratio is 7 : 1.\n- 40 years — this is the mother's age five years HENCE (35 + 5).\n\n**Key facts**\n- Ratios change over time because the SAME number of years is added to both ages.\n- Equate the future ratio to a single fraction and solve for x.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -376,13 +376,13 @@
       "question": "Ten years ago, A's age was half of B's age. If the ratio of their present ages is 3 : 4, what is the sum of their present ages?",
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
-        "30 years",
+        "55 years",
         "35 years",
-        "45 years",
-        "40 years"
+        "20 years",
+        "15 years"
       ],
       "answerIndex": 1,
-      "explanation": "Let the present ages be 3k and 4k. Ten years ago A was half of B, so 3k − 10 = (4k − 10) ÷ 2. Multiply both sides by 2: 6k − 20 = 4k − 10, so 2k = 10 and k = 5. The ages are 15 and 20, and the sum is **35 years**.\n\n**Why not the others**\n- 30 — k = 4.28…, not integer; fails the 'half' condition.\n- 45 — k = 6.43…, does not satisfy 3k−10 = (4k−10)/2.\n- 40 — k = 5.71…, again inconsistent with the past condition.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the stated relation.\n- Combine the present ratio (3k, 4k) with the past equation to solve for k.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the present ages be 3k and 4k. Ten years ago A was half of B, so 3k − 10 = (4k − 10) ÷ 2. Multiply both sides by 2: 6k − 20 = 4k − 10, so 2k = 10 and k = 5. The ages are 15 and 20, and the sum is **35 years**.\n\n**Why not the others**\n- 15 years — this is A's present age (3k) alone, not the sum.\n- 20 years — this is B's present age (4k) alone, not the sum.\n- 55 years — this is the sum ten years HENCE (25 + 30), not now.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the stated relation.\n- Combine the present ratio (3k, 4k) with the past equation to solve for k.\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -400,13 +400,13 @@
       "question": "What is the angle between the hour and minute hands of a clock at 5:30?",
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "options": [
-        "45°",
+        "0°",
         "15°",
         "30°",
-        "60°"
+        "345°"
       ],
       "answerIndex": 1,
-      "explanation": "Use angle = |30H − 5.5M| = |30×5 − 5.5×30| = |150 − 165| = **15°**.\n\n**Why not the others**\n- 45° — uses |30×5 − 5×30| = |150 − 150| type slip, mishandling the 5.5 factor.\n- 30° — treats the hour hand as fixed at the 5 mark, ignoring its half-hour advance.\n- 60° — doubles the true gap by a formula error.\n\n**Key facts**\n- Angle = |30H − 5.5M|, taking the value ≤ 180°.\n- At 5:30 the hour hand is halfway between 5 and 6, only 15° from the minute hand at 6.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (angle between hands).*",
+      "explanation": "Use angle = |30H − 5.5M| = |30×5 − 5.5×30| = |150 − 165| = **15°**.\n\n**Why not the others**\n- 0° — moves the minute hand 5° per minute (|150 − 150|); it moves 6° per minute.\n- 30° — treats the hour hand as fixed at the 5 mark, ignoring its half-hour advance.\n- 345° — this is the reflex angle (360° − 15°), not the angle between the hands.\n\n**Key facts**\n- Angle = |30H − 5.5M|, taking the value ≤ 180°.\n- At 5:30 the hour hand is halfway between 5 and 6, only 15° from the minute hand at 6.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (angle between hands).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -424,13 +424,13 @@
       "question": "How many times in a full day (24 hours) do the two hands of a clock coincide (overlap)?",
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "options": [
-        "24",
-        "20",
         "44",
-        "22"
+        "24",
+        "22",
+        "11"
       ],
-      "answerIndex": 3,
-      "explanation": "In 12 hours the hands coincide 11 times (only once between 11 and 1, not twice), so in 24 hours they coincide 11 × 2 = **22** times.\n\n**Why not the others**\n- 24 — the naive 'twice per… ' or 'once per hour × 24' count; one overlap is shared across the 11–12–1 window.\n- 20 — under-counts by removing two valid overlaps.\n- 44 — that is the number of RIGHT-ANGLE positions in 24 hours, not coincidences.\n\n**Key facts**\n- 12 h: coincide 11 times, opposite 11 times, right angles 22 times.\n- Double each for 24 h → 22, 22, 44.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence count).*",
+      "answerIndex": 2,
+      "explanation": "In 12 hours the hands coincide 11 times (only once between 11 and 1, not twice), so in 24 hours they coincide 11 × 2 = **22** times.\n\n**Why not the others**\n- 11 — this is the count for 12 hours, not a full day.\n- 24 — the naive 'once per hour × 24' count; one overlap is shared across the 11–12–1 window.\n- 44 — that is the number of RIGHT-ANGLE positions in 24 hours, not overlaps.\n\n**Key facts**\n- 12 h: coincide 11 times, opposite 11 times, right angles 22 times.\n- Double each for 24 h → 22, 22, 44.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (coincidence count).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -449,12 +449,12 @@
       "noteRef": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
       "options": [
         "9:00 p.m.",
-        "8:48 p.m.",
-        "9:12 p.m.",
-        "7:00 p.m."
+        "7:00 p.m.",
+        "8:05 p.m.",
+        "10:00 p.m."
       ],
       "answerIndex": 0,
-      "explanation": "From 8:00 a.m. to 8:00 p.m. is 12 true hours. The clock gains 5 × 12 = 60 minutes = 1 hour, so it shows 8:00 p.m. + 1:00 = **9:00 p.m.**\n\n**Why not the others**\n- 8:48 p.m. — adds only 48 minutes (mis-multiplying 5 × 12).\n- 9:12 p.m. — adds 72 minutes as if 12 hours were 14.4.\n- 7:00 p.m. — subtracts the gain; a gaining clock runs ahead, not behind.\n\n**Key facts**\n- Total error = (gain/loss per hour) × hours elapsed.\n- A gaining clock shows a LATER time; a losing clock shows an EARLIER time.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (gaining/losing clock).*",
+      "explanation": "From 8:00 a.m. to 8:00 p.m. is 12 true hours. The clock gains 5 × 12 = 60 minutes = 1 hour, so it shows 8:00 p.m. + 1:00 = **9:00 p.m.**\n\n**Why not the others**\n- 7:00 p.m. — subtracts the gain; a gaining clock runs ahead, not behind.\n- 8:05 p.m. — adds only one hour's gain of 5 minutes.\n- 10:00 p.m. — counts 24 hours of gain (2 hours); only 12 hours have passed.\n\n**Key facts**\n- Total error = (gain/loss per hour) × hours elapsed.\n- A gaining clock shows a LATER time; a losing clock shows an EARLIER time.\n\n*Source: local APPSC Logical Reasoning PDF — Clock (gaining/losing clock).*",
       "source": "local APPSC Logical Reasoning PDF — Clock",
       "verified": true,
       "covers": [
@@ -472,12 +472,12 @@
       "question": "India's first Republic Day was 26 January 1950. What day of the week was it?",
       "noteRef": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
       "options": [
+        "Thursday",
         "Wednesday",
         "Friday",
-        "Thursday",
         "Saturday"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "Counting odd days up to 26 January 1950: 1600 years give 0, 300 years give 1, the 49 completed years with 12 leap years give 61 which leaves 5 after whole weeks, and 26 days of January leave 5. The total leaves 4 odd days from the reference, which lands on **Thursday**. A datetime check confirms 26 January 1950 was a Thursday.\n\n**Why not the others**\n- Wednesday — one odd day short (an off-by-one in the January day count).\n- Friday — one odd day extra.\n- Saturday — miscounts the leap years in 1901–1949.\n\n**Key facts**\n- Day = total odd days counted from the reference; map 0→Sunday … 4→Thursday.\n- Republic Day 26 Jan 1950 fell on a Thursday.\n\n*Source: standard calendar computation (verified with datetime).*",
       "source": "standard calendar computation (verified with datetime)",
       "verified": true,
@@ -493,16 +493,16 @@
       "id": "ment-clocks-calendars-ages-mcq-21",
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
-      "question": "How many odd days are there in 400 years?",
+      "question": "In calendar arithmetic, how many odd days are there in 400 years?",
       "noteRef": "ment-clocks-calendars-ages-note-century-and-date-shift",
       "options": [
-        "1",
-        "2",
+        "5",
         "3",
+        "1",
         "0"
       ],
       "answerIndex": 3,
-      "explanation": "100 years give 5 odd days, so four of them give 5 × 4 = 20; the 400th year is itself a leap year (divisible by 400), adding 1 more to make 21. 21 is exactly 3 whole weeks, so 400 years contain a whole number of weeks and leave **0** odd days.\n\n**Why not the others**\n- 1 — the count for 300 years (15 mod 7).\n- 2 — no standard century block gives 2 odd days.\n- 3 — the count for 200 years (10 mod 7).\n\n**Key facts**\n- Odd days: 100 → 5, 200 → 3, 300 → 1, 400 → 0.\n- Every 400-year cycle repeats the calendar exactly (0 odd days).\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
+      "explanation": "100 years give 5 odd days, so four of them give 5 × 4 = 20; the 400th year is itself a leap year (divisible by 400), adding 1 more to make 21. 21 is exactly 3 whole weeks, so 400 years contain a whole number of weeks and leave **0** odd days.\n\n**Why not the others**\n- 1 — the count for 300 years (15 mod 7).\n- 3 — the count for 200 years (10 mod 7).\n- 5 — the count for 100 years; it forgets that the 400th year is a leap year and the total 21 is a whole number of weeks.\n\n**Key facts**\n- Odd days: 100 → 5, 200 → 3, 300 → 1, 400 → 0.\n- Every 400-year cycle repeats the calendar exactly (0 odd days).\n\n*Source: local APPSC Logical Reasoning PDF — Calendar (odd days).*",
       "source": "local APPSC Logical Reasoning PDF — Calendar",
       "verified": true,
       "covers": [
@@ -520,13 +520,13 @@
       "question": "The present ages of A and B are in the ratio 3 : 5. Ten years hence the ratio of their ages becomes 5 : 7. What is A's present age?",
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
-        "20 years",
+        "5 years",
         "15 years",
         "25 years",
-        "12 years"
+        "35 years"
       ],
       "answerIndex": 1,
-      "explanation": "Let the ages be 3x and 5x. Ten years later they are 3x + 10 and 5x + 10, in the ratio 5 : 7, so 7 × (3x + 10) = 5 × (5x + 10). That gives 21x + 70 = 25x + 50, so 4x = 20 and x = 5. So A is 3 × 5 = **15 years**.\n\n**Why not the others**\n- 20 — x = 6.67 does not satisfy the future ratio.\n- 25 — that is B's present age (5x = 25), not A's.\n- 12 — x = 4 gives 22/30 ≠ 5/7.\n\n**Key facts**\n- Set the ratio parts as 3x, 5x; add the elapsed time to both, equate to the new ratio.\n- Check: (15+10)/(25+10) = 25/35 = 5/7. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the ages be 3x and 5x. Ten years later they are 3x + 10 and 5x + 10, in the ratio 5 : 7, so 7 × (3x + 10) = 5 × (5x + 10). That gives 21x + 70 = 25x + 50, so 4x = 20 and x = 5. So A is 3 × 5 = **15 years**.\n\n**Why not the others**\n- 5 years — this is x, the ratio multiplier, not an age.\n- 25 years — that is B's present age (5x = 25), not A's.\n- 35 years — that is B's age ten years hence (25 + 10).\n\n**Key facts**\n- Set the ratio parts as 3x, 5x; add the elapsed time to both, equate to the new ratio.\n- Check: (15+10)/(25+10) = 25/35 = 5/7. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -545,12 +545,12 @@
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
         "20 years",
-        "22 years",
         "25 years",
-        "21 years"
+        "30 years",
+        "100 years"
       ],
       "answerIndex": 0,
-      "explanation": "Total age of 6 = 6 × 25 = 150. Removing the grandfather (50) leaves 150 − 50 = 100 for 5 members, so the new average = 100 ÷ 5 = **20 years**.\n\n**Why not the others**\n- 22 — from dividing 110 by 5 (subtracting only 40).\n- 25 — assumes the average is unchanged, but removing an above-average member lowers it.\n- 21 — an arithmetic slip on the remaining total.\n\n**Key facts**\n- New average = (old total − removed value) ÷ (remaining count).\n- Removing a member older than the mean pulls the average down.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Concept Averages.*",
+      "explanation": "Total age of 6 = 6 × 25 = 150. Removing the grandfather (50) leaves 150 − 50 = 100 for 5 members, so the new average = 100 ÷ 5 = **20 years**.\n\n**Why not the others**\n- 25 years — assumes the average is unchanged, but removing an above-average member lowers it.\n- 30 years — divides the full total 150 by 5 without removing the grandfather's 50.\n- 100 years — this is the total age of the 5 members, not their average.\n\n**Key facts**\n- New average = (old total − removed value) ÷ (remaining count).\n- Removing a member older than the mean pulls the average down.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic Concept Averages.*",
       "source": "local APPSC Quantitative Reasoning PDF — Averages",
       "verified": true,
       "covers": [
@@ -568,13 +568,13 @@
       "question": "The sum of the present ages of a father and his son is 60 years. Six years ago, the father's age was five times the son's age. What is the son's present age?",
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "options": [
-        "12 years",
-        "16 years",
+        "8 years",
+        "10 years",
         "14 years",
-        "10 years"
+        "46 years"
       ],
       "answerIndex": 2,
-      "explanation": "Let the son be s, so the father is 60 − s. Six years ago the father was five times the son: (60 − s) − 6 = 5 × (s − 6). That gives 54 − s = 5s − 30, so 6s = 84 and s = **14 years**.\n\n**Why not the others**\n- 12 — gives father 48; 6 yrs ago 42 vs 5×6 = 30, not equal.\n- 16 — gives father 44; 6 yrs ago 38 vs 5×10 = 50, not equal.\n- 10 — gives father 50; 6 yrs ago 44 vs 5×4 = 20, not equal.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the ratio/multiple.\n- Check: father now 46, son 14; 6 yrs ago 40 = 5 × 8. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
+      "explanation": "Let the son be s, so the father is 60 − s. Six years ago the father was five times the son: (60 − s) − 6 = 5 × (s − 6). That gives 54 − s = 5s − 30, so 6s = 84 and s = **14 years**.\n\n**Why not the others**\n- 8 years — this is the son's age six years AGO (14 − 6).\n- 10 years — divides the total 60 by 6 (5 + 1 parts) and ignores the 'six years ago' shift.\n- 46 years — this is the father's present age.\n\n**Key facts**\n- For 'N years ago', subtract N from BOTH ages before applying the ratio/multiple.\n- Check: father now 46, son 14; 6 yrs ago 40 = 5 × 8. ✓\n\n*Source: local APPSC Quantitative Reasoning PDF — Problem on Age.*",
       "source": "local APPSC Quantitative Reasoning PDF — Problem on Age",
       "verified": true,
       "covers": [
@@ -589,15 +589,15 @@
       "id": "ment-clocks-calendars-ages-mcq-25",
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
-      "question": "The last day of a century cannot be:",
+      "question": "In the Gregorian calendar, the last day of a century cannot be:",
       "noteRef": "ment-clocks-calendars-ages-note-century-and-date-shift",
       "options": [
         "Monday, Wednesday or Friday",
-        "Tuesday, Thursday or Saturday",
         "Sunday, Tuesday or Thursday",
-        "Any day of the week is possible"
+        "Any day of the week is possible",
+        "Tuesday, Thursday or Saturday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "Over a 400-year cycle the odd days for 100, 200, 300 and 400 years are 5, 3, 1 and 0, which make the last day of a century fall only on Friday, Wednesday, Monday or Sunday. Hence it can never be Tuesday, Thursday or Saturday.\n\n**Why not the others**\n- Monday, Wednesday or Friday — Monday, Wednesday and Friday ARE all possible last days.\n- Sunday, Tuesday or Thursday — Sunday is possible, so this set is wrong.\n- Any day is possible — false; only four weekdays occur.\n\n**Key facts**\n- Odd days: 100 yr = 5, 200 = 3, 300 = 1, 400 = 0.\n- Possible last days: Sun, Mon, Wed, Fri only.\n\n*Source: Testbook Calendar Reasoning PYQ.*",
       "source": "Testbook Calendar Reasoning PYQ",
       "verified": true,
@@ -617,12 +617,12 @@
       "question": "If the 5th of a certain month is a Tuesday, what day of the week is the 21st of the same month?",
       "noteRef": "ment-clocks-calendars-ages-note-century-and-date-shift",
       "options": [
-        "Thursday",
         "Wednesday",
         "Friday",
-        "Saturday"
+        "Saturday",
+        "Thursday"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "The 21st is 21 − 5 = 16 days after the 5th. Whole weeks do not change the weekday, so take out 14 days (two weeks) from 16, leaving 2. Move two weekdays on from Tuesday: Tuesday, Wednesday, Thursday, so the 21st is a **Thursday**.\n\n**Why not the others**\n- Wednesday — only one day's advance (would need a 15-day gap).\n- Friday — three days' advance, i.e. a 17-day gap.\n- Saturday — four days' advance, not a gap of 16 days.\n\n**Key facts**\n- The weekday moves on by the gap between the dates after taking out whole weeks.\n- 16 days is two weeks plus 2 days, so Tuesday plus 2 = Thursday.\n\n*Source: APPSC Quantitative Reasoning PDF — Calendar date-shift.*",
       "source": "APPSC Quantitative Reasoning PDF — Calendar",
       "verified": true,
@@ -669,12 +669,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "A clock is started at 11 a.m. Through what angle has the hour hand turned by 4:20 p.m.?",
       "options": [
-        "160°",
         "130°",
         "150°",
+        "160°",
         "320°"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
       "explanation": "Elapsed time = 5 h 20 min = 320 min. The hour hand moves 0.5° per minute: 320 × 0.5 = 160°.\n\n**Why not the others**\n- 130° — 130° is the gap between the hands, not the turn.\n- 150° — 150° ignores the 20 minutes (5 hours × 30°).\n- 320° — 320 is the number of minutes elapsed.\n\n**Key facts**\n- Hour hand turn = 0.5° × minutes elapsed.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -693,12 +693,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "The angle between the hands of a clock at 9:40 is:",
       "options": [
-        "60°",
         "40°",
         "50°",
+        "60°",
         "310°"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "explanation": "|30 × 9 − 5.5 × 40| = |270 − 220| = 50°.\n\n**Why not the others**\n- 60° — 60° ignores the hour hand moving past 9.\n- 40° — 40° uses 5.5 × 40 − 180.\n- 310° — 310° is the reflex angle, not the angle between the hands.\n\n**Key facts**\n- Angle = |30H − 5.5M|.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -717,14 +717,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "The angle between the hands of a clock at 8:30 is:",
       "options": [
-        "75°",
         "60°",
-        "90°",
-        "105°"
+        "75°",
+        "105°",
+        "285°"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
-      "explanation": "|30 × 8 − 5.5 × 30| = |240 − 165| = 75°. The hour hand has moved 15° past 8.\n\n**Why not the others**\n- 60° — 60° ignores the hour hand moving halfway towards 9.\n- 90° — 90° has no basis.\n- 105° — 105° adds the 15° instead of subtracting.\n\n**Key facts**\n- The hour hand also moves: 0.5° per minute.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "|30 × 8 − 5.5 × 30| = |240 − 165| = 75°. The hour hand has moved 15° past 8.\n\n**Why not the others**\n- 60° — 60° ignores the hour hand moving halfway towards 9.\n- 105° — 105° adds the 15° instead of subtracting.\n- 285° — this is the reflex angle (360° − 75°).\n\n**Key facts**\n- The hour hand also moves: 0.5° per minute.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -741,12 +741,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "What is the reflex angle between the hands of a clock at 3:00?",
       "options": [
-        "270°",
         "90°",
         "180°",
+        "270°",
         "360°"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
       "explanation": "The smaller angle at 3:00 is 90°, so the reflex angle = 360° − 90° = 270°.\n\n**Why not the others**\n- 90° — 90° is the smaller angle.\n- 180° — 180° is a straight line.\n- 360° — 360° is a full turn.\n\n**Key facts**\n- Reflex angle = 360° − smaller angle.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -765,14 +765,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "At what time between 7 and 8 o'clock do the hands of a clock coincide?",
       "options": [
+        "7:38 2/11",
         "7:35",
         "7:36 4/11",
-        "7:40",
-        "7:38 2/11"
+        "7:43 7/11"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
-      "explanation": "M = 60H ÷ 11 = 420 ÷ 11 = 38 2/11 minutes, so 7:38 2/11.\n\n**Why not the others**\n- 7:35 — 7:35 is when the minute hand reaches the 7 mark, but the hour hand has moved on.\n- 7:36 4/11 — Uses 60H/12 instead of 60H/11.\n- 7:40 — 7:40 overshoots.\n\n**Key facts**\n- Coincide at 60H/11 minutes past H.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "M = 60H ÷ 11 = 420 ÷ 11 = 38 2/11 minutes, so 7:38 2/11.\n\n**Why not the others**\n- 7:35 — 7:35 is when the minute hand reaches the 7 mark, but the hour hand has moved on.\n- 7:36 4/11 — uses 60H/12 instead of 60H/11.\n- 7:43 7/11 — uses H = 8 (480/11), the overlap for the next hour.\n\n**Key facts**\n- Coincide at 60H/11 minutes past H.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -862,11 +862,11 @@
       "question": "How many times in a day (24 hours) are the hands of a clock at right angles?",
       "options": [
         "48",
-        "22",
         "44",
-        "24"
+        "24",
+        "22"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-clock-angle-events",
       "explanation": "Right angles occur 22 times in 12 hours (two per hour except where 3:00 and 9:00 are shared), so 44 in 24 hours.\n\n**Why not the others**\n- 48 — 48 assumes two per hour with no shared times.\n- 22 — 22 is the count for 12 hours.\n- 24 — 24 assumes one per hour.\n\n**Key facts**\n- Right angles: 22 per 12 hours, 44 per day.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -885,12 +885,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "At what time between 4 and 5 o'clock are the hands of a clock in opposite directions?",
       "options": [
+        "4:54 6/11",
         "4:50",
         "4:21 9/11",
-        "4:54 6/11",
         "4:05 5/11"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
       "explanation": "5.5M = 30 × 4 + 180 = 300 → M = 600/11 = 54 6/11, so 4:54 6/11.\n\n**Why not the others**\n- 4:50 — 4:50 ignores the hour hand moving.\n- 4:21 9/11 — 4:21 9/11 is when they coincide.\n- 4:05 5/11 — 4:05 5/11 is a right angle.\n\n**Key facts**\n- Opposite: 5.5M = 30H ± 180.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -910,9 +910,9 @@
       "question": "How many times in a day are the hands of a clock in a straight line (either coinciding or opposite)?",
       "options": [
         "22",
-        "48",
+        "24",
         "44",
-        "24"
+        "48"
       ],
       "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
@@ -934,11 +934,11 @@
       "question": "The time on a clock is 5:40. What time does its mirror image show?",
       "options": [
         "7:20",
-        "6:40",
+        "6:20",
         "5:20",
-        "6:20"
+        "6:40"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
       "explanation": "Mirror time = 11:60 − 5:40 = 6:20.\n\n**Why not the others**\n- 7:20 — Subtracts from 12:60 instead of 11:60.\n- 6:40 — Keeps the minutes.\n- 5:20 — Keeps the hour.\n\n**Key facts**\n- Mirror image = 11:60 − time.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -957,12 +957,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "A clock seen in a plane mirror shows 10:10. The actual time is:",
       "options": [
-        "2:50",
+        "10:50",
         "1:10",
-        "1:50",
-        "10:50"
+        "2:50",
+        "1:50"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
       "explanation": "Actual = 11:60 − 10:10 = 1:50 (the mirror rule works both ways).\n\n**Why not the others**\n- 2:50 — Subtracts from 12:60.\n- 1:10 — Keeps the minutes.\n- 10:50 — Only flips the minutes.\n\n**Key facts**\n- Mirror image = 11:60 − time.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -981,14 +981,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "Using the rule \"17:90 − time when the minutes exceed 30\", the water image of a clock showing 5:45 is:",
       "options": [
+        "6:45",
         "12:45",
         "6:15",
-        "11:45",
         "12:15"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
-      "explanation": "17:90 − 5:45 = 12:45. In water the clock flips top-to-bottom, unlike the left-right flip of a mirror.\n\n**Why not the others**\n- 6:15 — 6:15 is the mirror image (11:60 − 5:45).\n- 11:45 — Arithmetic slip in the hours.\n- 12:15 — Changes the minutes as a mirror would.\n\n**Key facts**\n- Water image: 18:30 − time (minutes ≤ 30) or 17:90 − time.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "17:90 − 5:45 = 12:45. In water the clock flips top-to-bottom, unlike the left-right flip of a mirror.\n\n**Why not the others**\n- 6:15 — 6:15 is the mirror image (11:60 − 5:45), not the water image.\n- 6:45 — reflects only the hour (11 − 5) and keeps the minutes.\n- 12:15 — changes the minutes as a mirror would.\n\n**Key facts**\n- Water image: 18:30 − time (minutes ≤ 30) or 17:90 − time.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1006,13 +1006,13 @@
       "question": "A clock gains 20 seconds every 3 hours. It is set right at 2:00 a.m. on Wednesday. What does it show at a true time of 6:30 p.m. on Thursday?",
       "options": [
         "6:25:30 p.m.",
-        "6:33:20 p.m.",
-        "6:34:30 p.m.",
-        "6:40:30 p.m."
+        "6:31:50 p.m.",
+        "6:43:30 p.m.",
+        "6:34:30 p.m."
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-faulty-mirror-clock",
-      "explanation": "Elapsed = 40.5 h; gain = 40.5 × 20/3 = 270 s = 4 min 30 s. The clock shows 6:30 p.m. + 4:30 = 6:34:30 p.m.\n\n**Why not the others**\n- 6:25:30 p.m. — Subtracts the gain — a gaining clock shows a later time.\n- 6:33:20 p.m. — Uses 30 hours.\n- 6:40:30 p.m. — Uses 60 hours.\n\n**Key facts**\n- Error = rate × time; a gaining clock reads later.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "Elapsed = 40.5 h; gain = 40.5 × 20/3 = 270 s = 4 min 30 s. The clock shows 6:30 p.m. + 4:30 = 6:34:30 p.m.\n\n**Why not the others**\n- 6:25:30 p.m. — subtracts the gain; a gaining clock shows a later time.\n- 6:31:50 p.m. — counts only 16.5 hours (2 a.m. to 6:30 p.m. on the same day) and forgets the extra day.\n- 6:43:30 p.m. — uses a gain of 20 s per HOUR instead of per 3 hours.\n\n**Key facts**\n- Error = rate × time; a gaining clock reads later.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1030,11 +1030,11 @@
       "question": "A clock set right at 5 a.m. loses 16 minutes in 24 hours. When it shows 10 p.m. on the 4th day, the true time is:",
       "options": [
         "9 p.m.",
-        "10:16 p.m.",
         "11 p.m.",
+        "10:16 p.m.",
         "10 p.m."
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
       "explanation": "Shown time = 89 hours. The clock shows 23 h 44 min per 24 true hours, so true time = 89 × 24 ÷ (23 44/60) = 90 h → 11 p.m.\n\n**Why not the others**\n- 9 p.m. — A losing clock is BEHIND, so true time is later, not earlier.\n- 10:16 p.m. — Adds only one day's loss.\n- 10 p.m. — Ignores the loss.\n\n**Key facts**\n- True hours = shown hours × 24 ÷ shown-per-day.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1053,12 +1053,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "The hands of a clock coincide every 64 minutes of true time. In a day the clock:",
       "options": [
+        "gains 32 8/11 minutes",
         "loses 32 8/11 minutes",
         "gains 16/11 minutes",
-        "is correct",
-        "gains 32 8/11 minutes"
+        "is correct"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
       "explanation": "Correct meeting gap = 65 5/11 min. Meeting every 64 minutes means a gain of 16/11 min per 64 min; per day: (16/11) × (1440 ÷ 64) = 32 8/11 minutes gained.\n\n**Why not the others**\n- loses 32 8/11 minutes — They meet SOONER than 65 5/11 min, so the clock runs fast, not slow.\n- gains 16/11 minutes — That is the gain per 64 minutes, not per day.\n- is correct — A correct clock meets every 65 5/11 min.\n\n**Key facts**\n- Meeting sooner than 65 5/11 min → the clock gains.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1077,12 +1077,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "A clock strikes once at 1 o'clock, twice at 2 o'clock, and so on. How many times does it strike in a day?",
       "options": [
-        "156",
         "78",
         "144",
+        "156",
         "300"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-clock-extras",
       "explanation": "In 12 hours: 1 + 2 + … + 12 = 78; a day has two such cycles: 156.\n\n**Why not the others**\n- 78 — 78 is for 12 hours only.\n- 144 — 144 = 12 × 12.\n- 300 — 300 = 1 + 2 + … + 24.\n\n**Key facts**\n- Chimes 78 per 12 hours.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1128,16 +1128,16 @@
       "id": "ment-clocks-calendars-ages-mcq-47",
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
-      "question": "How many odd days are there in 1000 years?",
+      "question": "In calendar arithmetic, how many odd days are there in 1000 years?",
       "options": [
-        "5",
         "0",
+        "1",
         "3",
-        "6"
+        "5"
       ],
       "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
-      "explanation": "1000 = 2 × 400 + 200. 400 years give 0 odd days and 200 years give 3, so 1000 years give 3.\n\n**Why not the others**\n- 5 — 5 is for 100 years.\n- 0 — 0 is for 400 or 800 years.\n- 6 — Arithmetic slip.\n\n**Key facts**\n- 100 → 5, 200 → 3, 300 → 1, 400 → 0.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "1000 = 2 × 400 + 200. 400 years give 0 odd days and 200 years give 3, so 1000 years give 3.\n\n**Why not the others**\n- 0 — 0 is for 400 or 800 years; the remaining 200 years still add 3.\n- 1 — 1 is the count for 300 years.\n- 5 — 5 is the count for 100 years.\n\n**Key facts**\n- 100 → 5, 200 → 3, 300 → 1, 400 → 0.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1152,14 +1152,14 @@
       "id": "ment-clocks-calendars-ages-mcq-48",
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
-      "question": "Which of the following is NOT a leap year?",
+      "question": "Under the Gregorian calendar rules, which of the following is NOT a leap year?",
       "options": [
         "1980",
-        "1688",
         "1842",
-        "1760"
+        "1760",
+        "1688"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-leap-year-repetition",
       "explanation": "1842 is not divisible by 4 (1842 ÷ 4 = 460.5); the others are non-century years divisible by 4.\n\n**Why not the others**\n- 1980 — 1980 ÷ 4 = 495.\n- 1688 — 1688 ÷ 4 = 422.\n- 1760 — 1760 ÷ 4 = 440.\n\n**Key facts**\n- Leap year: ÷ 4; century years ÷ 400.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1205,14 +1205,14 @@
       "id": "ment-clocks-calendars-ages-mcq-50",
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
-      "question": "What day of the week was 29 June 2010?",
+      "question": "Using the odd-days method, what day of the week was 29 June 2010?",
       "options": [
         "Monday",
-        "Tuesday",
         "Wednesday",
-        "Thursday"
+        "Thursday",
+        "Tuesday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
       "explanation": "2000 years → 0 odd days; 2001–2009: 9 years with 2 leap years (2004, 2008) → 11 → 4; Jan–May 2010: 3+0+3+2+3 = 11 → 4; 29 June → 1. Total 4 + 4 + 1 = 9 → 2 = Tuesday.\n\n**Why not the others**\n- Monday — One odd day short.\n- Wednesday — One odd day too many.\n- Thursday — Two odd days too many.\n\n**Key facts**\n- Add odd days, read the code: 2 = Tuesday.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1229,14 +1229,14 @@
       "id": "ment-clocks-calendars-ages-mcq-51",
       "subjectCode": "MENT",
       "subtopicId": "ment-clocks-calendars-ages",
-      "question": "What day of the week was 31 January 2007?",
+      "question": "Using the odd-days method, what day of the week was 31 January 2007?",
       "options": [
         "Tuesday",
-        "Wednesday",
         "Thursday",
-        "Sunday"
+        "Sunday",
+        "Wednesday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-odd-days-day-of-week",
       "explanation": "2000 years → 0; 2001–2006: 6 years with 1 leap year → 7 → 0; 31 January → 3. Total 3 = Wednesday.\n\n**Why not the others**\n- Tuesday — One odd day short.\n- Thursday — One odd day too many.\n- Sunday — Reads the code from 1 instead of 0.\n\n**Key facts**\n- Day codes: Sunday 0 … Saturday 6.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1256,11 +1256,11 @@
       "question": "If 5 May 2010 was a Wednesday, what day of the week was 5 June 2022?",
       "options": [
         "Saturday",
-        "Sunday",
         "Monday",
+        "Sunday",
         "Thursday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-calendar-extras",
       "explanation": "5 May 2010 → 5 May 2022: 12 years with 3 leap years → 9 + 6 = 15 → 1 odd day. 5 May → 5 June 2022: 31 days → 3. Wednesday + 4 = Sunday.\n\n**Why not the others**\n- Saturday — Misses one leap year.\n- Monday — Adds an extra odd day.\n- Thursday — Counts only the years.\n\n**Key facts**\n- New weekday = given weekday + odd days in between.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1303,12 +1303,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "If 1 March 2024 was a Friday, what day of the week was 1 March 2025?",
       "options": [
-        "Sunday",
         "Saturday",
+        "Sunday",
         "Friday",
         "Thursday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-calendar-extras",
       "explanation": "From 1 March 2024 to 1 March 2025 there are 365 days (29 February 2024 lies before the start), so 1 odd day: Friday + 1 = Saturday.\n\n**Why not the others**\n- Sunday — Adds 2 although 29 February 2024 is already past.\n- Friday — Forgets the odd day.\n- Thursday — Subtracts instead of adding.\n\n**Key facts**\n- Add 2 only if 29 February lies between the dates.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1355,12 +1355,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "Which year will have the same calendar as 2024?",
       "options": [
-        "2052",
-        "2030",
         "2028",
-        "2035"
+        "2030",
+        "2035",
+        "2052"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-leap-year-repetition",
       "explanation": "A leap year needs a leap year starting on the same weekday: 28 years later, 2052.\n\n**Why not the others**\n- 2030 — 2030 is an ordinary year.\n- 2028 — 2028 is a leap year but starts on a different weekday.\n- 2035 — 2035 is an ordinary year.\n\n**Key facts**\n- Leap years repeat after 28 years.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1380,11 +1380,11 @@
       "question": "Which year will have the same calendar as 2001?",
       "options": [
         "2005",
+        "2007",
         "2012",
-        "2029",
-        "2007"
+        "2029"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-leap-year-repetition",
       "explanation": "Odd days from 2001 to 2006: 1 + 1 + 1 + 2 + 1 + 1 = 7, so 2007 repeats the calendar of 2001.\n\n**Why not the others**\n- 2005 — Odd days 2001–2004 total 5, not 7.\n- 2012 — 2012 is a leap year.\n- 2029 — 2029 also matches but is not the NEXT one.\n\n**Key facts**\n- Repeat when the odd days total a multiple of 7 and leap status matches.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1403,12 +1403,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "The FIRST day of a century (for example 1 January 2001) can NOT be:",
       "options": [
+        "Sunday, Wednesday or Friday",
         "Monday, Tuesday or Thursday",
         "Tuesday, Thursday or Saturday",
-        "Saturday or Monday",
-        "Sunday, Wednesday or Friday"
+        "Saturday or Monday"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-calendar-extras",
       "explanation": "The last day of a century is Sunday, Monday, Wednesday or Friday, so the next day — the first day of the new century — is Monday, Tuesday, Thursday or Saturday; never Sunday, Wednesday or Friday.\n\n**Why not the others**\n- Monday, Tuesday or Thursday — These are possible (2001 Monday, 1901 Tuesday, 2201 Thursday).\n- Tuesday, Thursday or Saturday — That is the list the LAST day of a century cannot be.\n- Saturday or Monday — Both are possible (2101 Saturday, 2001 Monday).\n\n**Key facts**\n- First day of a century: Mon, Tue, Thu or Sat.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1428,11 +1428,11 @@
       "question": "Which of the following can be the last day of a century?",
       "options": [
         "Tuesday",
-        "Wednesday",
         "Thursday",
+        "Wednesday",
         "Saturday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-century-and-date-shift",
       "explanation": "Centuries end with 5, 3, 1 or 0 odd days → Friday, Wednesday, Monday or Sunday. So Wednesday is possible (31 December 1800 was a Wednesday).\n\n**Why not the others**\n- Tuesday — Never possible.\n- Thursday — Never possible.\n- Saturday — Never possible.\n\n**Key facts**\n- Last day of a century: Sun, Mon, Wed or Fri.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1451,12 +1451,12 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "In an ordinary (non-leap) year, which month has the same calendar as January?",
       "options": [
-        "October",
         "April",
         "July",
-        "December"
+        "December",
+        "October"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-calendar-extras",
       "explanation": "January to October covers 273 days = 39 weeks exactly, so they start on the same weekday and both have 31 days: January–October.\n\n**Why not the others**\n- April — April pairs with July.\n- July — July pairs with April.\n- December — December pairs with September.\n\n**Key facts**\n- Same-calendar months: Jan–Oct, Apr–Jul, Sep–Dec.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1476,11 +1476,11 @@
       "question": "If the 3rd of a month is a Monday, what day is the 24th of the same month?",
       "options": [
         "Sunday",
+        "Monday",
         "Tuesday",
-        "Wednesday",
-        "Monday"
+        "Wednesday"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-century-and-date-shift",
       "explanation": "Gap = 21 days = 3 whole weeks, so the 24th of the same month is also a Monday.\n\n**Why not the others**\n- Sunday — Subtracts a day.\n- Tuesday — Adds a day.\n- Wednesday — Adds two days.\n\n**Key facts**\n- Dates 7, 14, 21, 28 days apart share a weekday.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1500,11 +1500,11 @@
       "question": "If the day before yesterday was Wednesday, what will the day after tomorrow be?",
       "options": [
         "Saturday",
-        "Sunday",
         "Friday",
+        "Sunday",
         "Monday"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-calendar-extras",
       "explanation": "Day before yesterday Wednesday → yesterday Thursday → today Friday → tomorrow Saturday → day after tomorrow Sunday.\n\n**Why not the others**\n- Saturday — One day short.\n- Friday — That is today.\n- Monday — One day too many.\n\n**Key facts**\n- Count everything from 'today'.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1523,14 +1523,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "Question: On which day of the week was Vimal born? Statement I: It was in February 2000. Statement II: It was on 21 February. Which is true?",
       "options": [
-        "Both statements together are needed (with a calendar reference)",
+        "Both statements together are needed",
         "Statement I alone is enough",
         "Statement II alone is enough",
         "Neither statement is needed"
       ],
       "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-calendar-extras",
-      "explanation": "A weekday needs both the year/month (I) and the date (II); together they fix 21 February 2000 (a Monday).\n\n**Why not the others**\n- Statement I alone is enough — February 2000 alone gives no date.\n- Statement II alone is enough — 21 February alone gives no year.\n- Neither statement is needed — The day cannot be found without the data.\n\n**Key facts**\n- Date data sufficiency needs the full date.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "A weekday needs both the year/month (I) and the date (II); together they fix 21 February 2000 (a Monday).\n\n**Why not the others**\n- Statement I alone is enough — February 2000 alone gives no date.\n- Statement II alone is enough — 21 February alone gives no year.\n- Neither statement is needed — the day cannot be found without the data.\n\n**Key facts**\n- Date data sufficiency needs the full date.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1547,14 +1547,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "The ratio of the present ages of A and B is 3 : 2. After 5 years the ratio will be 4 : 3. A's present age is:",
       "options": [
+        "5 years",
         "10 years",
-        "20 years",
-        "12 years",
-        "15 years"
+        "15 years",
+        "20 years"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "Ages 3k and 2k: 3(3k + 5) = 4(2k + 5) → 9k + 15 = 8k + 20 → k = 5. A = 15, B = 10.\n\n**Why not the others**\n- 10 years — 10 years is B's age.\n- 20 years — Adds 5 years.\n- 12 years — Arithmetic slip.\n\n**Key facts**\n- Add the same years to both, then equate the ratio.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "Ages 3k and 2k: 3(3k + 5) = 4(2k + 5) → 9k + 15 = 8k + 20 → k = 5. A = 15, B = 10.\n\n**Why not the others**\n- 5 years — this is k, the ratio multiplier, not an age.\n- 10 years — 10 years is B's age.\n- 20 years — this is A's age after 5 years (15 + 5).\n\n**Key facts**\n- Add the same years to both, then equate the ratio.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1572,11 +1572,11 @@
       "question": "A is 5 years older than B. If A is 18 years old now, how old will B be in 10 years?",
       "options": [
         "13 years",
-        "28 years",
         "23 years",
+        "28 years",
         "33 years"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-ages-methods",
       "explanation": "The difference is constant: B = 18 − 5 = 13 now, so 23 in 10 years (A will be 28, still 5 older).\n\n**Why not the others**\n- 13 years — 13 is B's present age.\n- 28 years — 28 is A's age in 10 years.\n- 33 years — Adds 15.\n\n**Key facts**\n- Age difference stays constant.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
@@ -1595,14 +1595,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "The present age of a father is three times that of his son. Five years ago the father was four times as old as his son was then. The son's present age is:",
       "options": [
-        "10 years",
+        "50 years",
         "45 years",
         "15 years",
-        "20 years"
+        "10 years"
       ],
       "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "Son x, father 3x: 3x − 5 = 4(x − 5) → x = 15 (father 45).\n\n**Why not the others**\n- 10 years — 10 years is the son's age five years ago.\n- 45 years — 45 years is the father's age.\n- 20 years — Arithmetic slip.\n\n**Key facts**\n- 'N years ago' subtracts N from both.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "Son x, father 3x: 3x − 5 = 4(x − 5) → x = 15 (father 45).\n\n**Why not the others**\n- 10 years — 10 years is the son's age five years ago.\n- 45 years — 45 years is the father's present age.\n- 50 years — this is the father's age five years HENCE, not the son's.\n\n**Key facts**\n- 'N years ago' subtracts N from both.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1620,13 +1620,13 @@
       "question": "Ten years ago Anand was one-third as old as Bala was then. Bala is 12 years older than Anand. Anand's present age is:",
       "options": [
         "6 years",
-        "28 years",
+        "16 years",
         "18 years",
-        "16 years"
+        "28 years"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "a − 10 = (1/3)(a + 12 − 10) → 3a − 30 = a + 2 → a = 16 (Bala 28).\n\n**Why not the others**\n- 6 years — 6 is Anand's age ten years ago.\n- 28 years — 28 is Bala's age.\n- 18 years — Arithmetic slip.\n\n**Key facts**\n- Subtract the years from both; the 12-year gap is fixed.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "a − 10 = (1/3)(a + 12 − 10) → 3a − 30 = a + 2 → a = 16 (Bala 28).\n\n**Why not the others**\n- 6 years — 6 is Anand's age ten years ago.\n- 18 years — 18 is Bala's age ten years ago.\n- 28 years — 28 is Bala's present age.\n\n**Key facts**\n- Subtract the years from both; the 12-year gap is fixed.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1643,14 +1643,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "Fifteen years from now Ravi's age will be four times his present age. Ravi's present age is:",
       "options": [
+        "5 years",
         "15 years",
         "20 years",
-        "3 years",
-        "5 years"
+        "60 years"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "x + 15 = 4x → 3x = 15 → x = 5, i.e. in 15 years he will be four times his present age.\n\n**Why not the others**\n- 15 years — 15 is the number of years.\n- 20 years — 20 is his age in 15 years.\n- 3 years — Arithmetic slip.\n\n**Key facts**\n- x + n = kx.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "x + 15 = 4x → 3x = 15 → x = 5, i.e. in 15 years he will be four times his present age.\n\n**Why not the others**\n- 15 years — 15 is the number of years, not his age.\n- 20 years — 20 is his age in 15 years.\n- 60 years — multiplies the 15 years by 4 instead of solving x + 15 = 4x.\n\n**Key facts**\n- x + n = kx.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1668,13 +1668,13 @@
       "question": "The sum of the present ages of a mother and her daughter is 40 years. After 10 years the mother will be twice as old as the daughter. The daughter's present age is:",
       "options": [
         "10 years",
-        "30 years",
         "20 years",
-        "15 years"
+        "30 years",
+        "40 years"
       ],
       "answerIndex": 0,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "Daughter x, mother 40 − x: 50 − x = 2(x + 10) → x = 10. The sum fixes the second age.\n\n**Why not the others**\n- 30 years — 30 is the mother's age.\n- 20 years — 20 is the daughter's age after 10 years.\n- 15 years — Arithmetic slip.\n\n**Key facts**\n- With a sum S, write the other age as S − x.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "Daughter x, mother 40 − x: 50 − x = 2(x + 10) → x = 10. The sum fixes the second age.\n\n**Why not the others**\n- 20 years — 20 is the daughter's age after 10 years.\n- 30 years — 30 is the mother's age.\n- 40 years — this is the sum of their ages, not the daughter's age.\n\n**Key facts**\n- With a sum S, write the other age as S − x.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1691,14 +1691,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "Three times Renu's present age is 11 years more than two times Manav's present age, and three times Manav's age is 9 years less than four times Renu's age. The sum of their ages is:",
       "options": [
-        "30 years",
-        "34 years",
-        "28 years",
+        "2 years",
+        "15 years",
+        "17 years",
         "32 years"
       ],
       "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "Manav x, Renu y: 3y = 2x + 11 and 3x = 4y − 9. Solving, x = 17, y = 15, so the sum is 32.\n\n**Why not the others**\n- 30 years — Arithmetic slip.\n- 34 years — Arithmetic slip.\n- 28 years — Arithmetic slip.\n\n**Key facts**\n- Two conditions → two equations.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "Manav x, Renu y: 3y = 2x + 11 and 3x = 4y − 9. Solving, x = 17, y = 15, so the sum is 32.\n\n**Why not the others**\n- 2 years — this is the difference of their ages (17 − 15), not the sum.\n- 15 years — this is Renu's age alone.\n- 17 years — this is Manav's age alone.\n\n**Key facts**\n- Two conditions → two equations.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1715,14 +1715,14 @@
       "subtopicId": "ment-clocks-calendars-ages",
       "question": "Radha's present age is four times the difference between her age 4 years hence and her age 3 years ago. Her present age is:",
       "options": [
+        "4 years",
         "7 years",
         "21 years",
-        "28 years",
-        "32 years"
+        "28 years"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "The difference (x + 4) − (x − 3) = 7 for any x, so x = 4 × 7 = 28.\n\n**Why not the others**\n- 7 years — 7 is the difference itself.\n- 21 years — Uses 3 × 7.\n- 32 years — Adds 4.\n\n**Key facts**\n- Such a difference is just the year gap.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "The difference (x + 4) − (x − 3) = 7 for any x, so x = 4 × 7 = 28.\n\n**Why not the others**\n- 4 years — subtracts the 3 instead of adding it ((x + 4) − (x + 3) = 1, then 4 × 1).\n- 7 years — 7 is the difference itself.\n- 21 years — uses 3 × 7 instead of 4 × 7.\n\n**Key facts**\n- Such a difference is just the year gap.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [
@@ -1740,13 +1740,13 @@
       "question": "The average age of 25 persons is 40. The average of the first 13 is 44 and of the last 13 is 41. The age of the 13th person is:",
       "options": [
         "40 years",
-        "65 years",
         "44 years",
-        "35 years"
+        "65 years",
+        "1105 years"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-clocks-calendars-ages-note-ages-extras",
-      "explanation": "13th = 13 × 44 + 13 × 41 − 25 × 40 = 572 + 533 − 1000 = 65.\n\n**Why not the others**\n- 40 years — That is the overall average.\n- 44 years — That is the first group's average.\n- 35 years — Arithmetic slip.\n\n**Key facts**\n- Shared member = group totals − whole total.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
+      "explanation": "13th = 13 × 44 + 13 × 41 − 25 × 40 = 572 + 533 − 1000 = 65.\n\n**Why not the others**\n- 40 years — that is the overall average.\n- 44 years — that is the first group's average.\n- 1105 years — adds the two group totals (572 + 533) and forgets to subtract the overall total 1000.\n\n**Key facts**\n- Shared member = group totals − whole total.\n\n*Source: APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md*",
       "source": "APPSC Logical Reasoning extracted text (Clock, Calendar, Data Sufficiency in Clock and Calendar); Quantitative Reasoning extracted text (Problem on Age); standard reasoning references (odd-days method, clock-angle formula); PYQ bank .research/pyq-bank/ment-clocks-calendars-ages.md",
       "verified": true,
       "covers": [

@@ -11,12 +11,12 @@
       "question": "What is the position of the letter T in the English alphabet counted from the left?",
       "noteRef": "ment-number-series-coding-note-alphabet-series",
       "options": [
-        "20",
         "18",
-        "21",
-        "19"
+        "19",
+        "20",
+        "21"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "Give each letter its place in the alphabet, A = 1 up to Z = 26. The easiest way is to count from the nearest EJOTY landmark, which fixes E = 5, J = 10, O = 15, T = 20, Y = 25.\nT is itself a landmark, so T = 20 directly. The position counted from the left is 20.\n\n**Why not the others**\n- 18 — that is R, which comes two places before T.\n- 21 — that is U, one place after T.\n- 19 — that is S, one place before T.\n\n**Key facts**\n- EJOTY landmarks: E = 5, J = 10, O = 15, T = 20, Y = 25.\n- The position from the right is 27 − the position from the left (for T, 27 − 20 = 7).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (positional value / EJOTY).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (EJOTY)",
       "verified": true,
@@ -63,13 +63,13 @@
       "question": "Find the next term of the series: 3, 7, 11, 15, 19, ?",
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
-        "21",
         "22",
         "23",
-        "24"
+        "27",
+        "34"
       ],
-      "answerIndex": 2,
-      "explanation": "Write the jump under each gap by subtracting one term from the next: 7 − 3 = 4, 11 − 7 = 4, 15 − 11 = 4, 19 − 15 = 4.\nThe jump is a steady +4, so this is an arithmetic series. The next term is the last term plus that step: 19 + 4 = 23.\n\n**Why not the others**\n- 21 — this is only +2 from 19 and breaks the fixed step of 4.\n- 22 — this is +3, not the established +4.\n- 24 — this is +5, overshooting the constant step.\n\n**Key facts**\n- Arithmetic series: equal first differences; the next term is the last term plus the common difference.\n- Here the common difference is 4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (addition pattern).*",
+      "answerIndex": 1,
+      "explanation": "Write the jump under each gap by subtracting one term from the next: 7 − 3 = 4, 11 − 7 = 4, 15 − 11 = 4, 19 − 15 = 4.\nThe jump is a steady +4, so this is an arithmetic series. The next term is the last term plus that step: 19 + 4 = 23.\n\n**Why not the others**\n- 22 — takes the first term 3 as the step (19 + 3); the step is the gap 4.\n- 27 — doubles the step (19 + 8); the gap is a constant 4.\n- 34 — adds the last two terms (15 + 19), as in a Fibonacci series; this series has a constant gap.\n\n**Key facts**\n- Arithmetic series: equal first differences; the next term is the last term plus the common difference.\n- Here the common difference is 4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (addition pattern).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -138,12 +138,12 @@
       "question": "Select the number that replaces the question mark in the series: 17, 30, 47, 66, 89, ?",
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
-        "118",
         "112",
         "116",
+        "118",
         "120"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "Write the jumps: 30 − 17 = 13, 47 − 30 = 17, 66 − 47 = 19, 89 − 66 = 23. The jumps 13, 17, 19, 23 are consecutive prime numbers, so the rule lives in the differences.\nThe next prime after 23 is 29, so the next term is 89 + 29 = 118.\n\n**Why not the others**\n- 112 — this uses +23 again, repeating a prime instead of advancing to 29.\n- 116 — this uses +27, but 27 = 3 × 9 is not prime.\n- 120 — this uses +31, skipping the prime 29.\n\n**Key facts**\n- Prime-difference series: check whether the jumps form the prime list 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31.\n- Here the jumps are 13, 17, 19, 23, 29.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (prime-difference pattern).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
@@ -164,11 +164,11 @@
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
         "27",
-        "108",
         "40.5",
+        "108",
         "121.5"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "Check each gap in turn rather than looking for one rule. 36 ÷ 2 = 18, 18 × 3 = 54, 54 ÷ 2 = 27, 27 × 3 = 81.\nThe operations alternate ÷ 2 and × 3. After a × 3 (the step that made 81), the next operation is ÷ 2, so 81 ÷ 2 = 40.5.\n\n**Why not the others**\n- 27 — this just repeats an earlier term and ignores the alternating rule.\n- 108 — this applies × 3, but a division is due next.\n- 121.5 — this is 81 × 1.5, an invented ratio.\n\n**Key facts**\n- Alternating series: two operations are applied turn by turn (here ÷ 2 and × 3).\n- Identify it by testing operations on alternate gaps, not one common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
@@ -188,13 +188,13 @@
       "question": "Which number comes next in the series: 2, 3, 5, 8, 13, 21, ?",
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
-        "30",
-        "32",
+        "29",
         "33",
-        "34"
+        "34",
+        "42"
       ],
-      "answerIndex": 3,
-      "explanation": "Neither a constant difference nor a constant ratio fits, so test the sum rule: each term is the two before it added together. Check: 2 + 3 = 5, 3 + 5 = 8, 5 + 8 = 13, 8 + 13 = 21 — all hold.\nSo the next term is 13 + 21 = 34.\n\n**Why not the others**\n- 30 — this comes from a guessed +9 step; no single difference fits the series.\n- 32 — this assumes doubling minus a constant, which does not match the earlier terms.\n- 33 — this uses 12 + 21, taking the wrong earlier term.\n\n**Key facts**\n- Fibonacci-type series: term(n) = term(n−1) + term(n−2).\n- Suspect it whenever neither a fixed difference nor a fixed ratio works.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (sum of previous terms).*",
+      "answerIndex": 2,
+      "explanation": "Neither a constant difference nor a constant ratio fits, so test the sum rule: each term is the two before it added together. Check: 2 + 3 = 5, 3 + 5 = 8, 5 + 8 = 13, 8 + 13 = 21 — all hold.\nSo the next term is 13 + 21 = 34.\n\n**Why not the others**\n- 29 — adds the last difference 8 again (21 + 8); the gaps themselves grow.\n- 33 — this uses 12 + 21, taking the wrong earlier term.\n- 42 — doubles the last term; the ratio is not constant (8/5 ≠ 13/8 exactly).\n\n**Key facts**\n- Fibonacci-type series: term(n) = term(n−1) + term(n−2).\n- Suspect it whenever neither a fixed difference nor a fixed ratio works.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (sum of previous terms).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
       "covers": [
@@ -214,11 +214,11 @@
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
         "15",
-        "128",
         "31",
+        "128",
         "255"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Fix the rule from the terms you trust, then flag the one that breaks it. Testing \"double and add 1\": 3 × 2 + 1 = 7, 7 × 2 + 1 = 15, 15 × 2 + 1 = 31, 31 × 2 + 1 = 63, and 63 × 2 + 1 = 127.\nThe series prints 128 where 127 is expected, so 128 is the wrong term.\n\n**Why not the others**\n- 15 — correct, because 7 × 2 + 1 = 15.\n- 31 — correct, because 15 × 2 + 1 = 31.\n- 255 — correct, because the intended 127 gives 127 × 2 + 1 = 255.\n\n**Key facts**\n- Wrong-term questions: derive the rule from the majority of terms, then flag the single deviation.\n- The rule here is next = 2 × current + 1; expected 127, printed 128.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (wrong term).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
@@ -238,12 +238,12 @@
       "question": "Find the missing term in the series: 10, 22, 46, ?, 190, 382",
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
+        "96",
         "94",
-        "88",
         "92",
-        "96"
+        "88"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "Find the rule from the surrounding terms. Testing \"double and add 2\": 10 × 2 + 2 = 22, 22 × 2 + 2 = 46, so the rule is × 2 + 2.\nThe missing term follows 46: 46 × 2 + 2 = 94. Verify forward: 94 × 2 + 2 = 190 and 190 × 2 + 2 = 382, which match the given terms, so the missing term is 94.\n\n**Why not the others**\n- 88 — this is 46 × 2 − 4, using the wrong constant.\n- 92 — this is 46 × 2, forgetting the + 2.\n- 96 — this is 46 × 2 + 4, using the wrong constant.\n\n**Key facts**\n- Missing-term questions: establish the rule from neighbours, then compute the gap.\n- Always verify forward: 94 → 190 → 382 confirms the rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (missing term).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
@@ -263,12 +263,12 @@
       "question": "Which letter completes the series: A, C, F, J, O, ?",
       "noteRef": "ment-number-series-coding-note-alphabet-series",
       "options": [
-        "T",
         "U",
+        "T",
         "V",
         "W"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "explanation": "Turn the letters into positions: A = 1, C = 3, F = 6, J = 10, O = 15. The jumps are 3 − 1 = 2, 6 − 3 = 3, 10 − 6 = 4, 15 − 10 = 5 — growing by one each time.\nSo the next jump is 6, giving 15 + 6 = 21, and position 21 is U.\n\n**Why not the others**\n- T — position 20, only +5 from O, repeating the previous jump.\n- V — position 22, which is +7 from O and overshoots.\n- W — position 23, which is +8 from O.\n\n**Key facts**\n- Single-sequence alphabet series: convert letters to positions (A = 1 … Z = 26) and read the gap pattern.\n- The gaps here are 2, 3, 4, 5, 6.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (single sequence).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
       "verified": true,
@@ -287,12 +287,12 @@
       "question": "Which group completes the series: BOJ, FQO, JST, NUY, ?",
       "noteRef": "ment-number-series-coding-note-alphabet-series",
       "options": [
+        "RWD",
         "RVD",
         "SWC",
-        "RWD",
         "QVD"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "Treat each of the three positions as its own column and read it in alphabet numbers.\nFirst letters B(2), F(6), J(10), N(14) rise by 4 each, so the next is 18 = R.\nSecond letters O(15), Q(17), S(19), U(21) rise by 2 each, so the next is 23 = W.\nThird letters J(10), O(15), T(20), Y(25) rise by 5 each, so the next is 25 + 5 = 30; since that passes Z, subtract 26 to get 4 = D.\nThe group is RWD.\n\n**Why not the others**\n- RVD — the second letter V is only +1 from U and breaks the +2 column.\n- SWC — the first letter S (+5) and the third letter C both break their columns.\n- QVD — the first letter Q (+3) and second letter V (+1) break their columns.\n\n**Key facts**\n- Grouped series: split into columns and solve each column's own step.\n- The column steps are +4, +2, +5, with wrap-around (subtract 26) after Z.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
       "verified": true,
@@ -336,12 +336,12 @@
       "question": "In a code language KANPUR is written as JBMQTS. How is BOMBAY written?",
       "noteRef": "ment-number-series-coding-note-letter-coding",
       "options": [
-        "APLCZZ",
         "ANLCZZ",
         "APKDZZ",
-        "APLCZX"
+        "APLCZX",
+        "APLCZZ"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Find the shift by writing positions for KANPUR and JBMQTS: K(11)→J(10) is −1, A(1)→B(2) is +1, N(14)→M(13) is −1, P(16)→Q(17) is +1, U(21)→T(20) is −1, R(18)→S(19) is +1. The shift alternates −1, +1.\nApply the same −1, +1 to BOMBAY: B(2)−1 = A, O(15)+1 = P, M(13)−1 = L, B(2)+1 = C, A(1)−1 wraps to Z, Y(25)+1 = Z. The code is APLCZZ.\n\n**Why not the others**\n- ANLCZZ — this takes the second letter as O − 1 = N instead of O + 1 = P.\n- APKDZZ — this mis-shifts the third and fourth letters by −2 and +2.\n- APLCZX — this takes the last letter as Y − 1 = X instead of Y + 1 = Z.\n\n**Key facts**\n- Letter-shift coding: find the position change per letter, watching for alternating signs.\n- Wrap-around: stepping back from A lands on Z.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting)",
       "verified": true,
@@ -361,12 +361,12 @@
       "question": "In a code language BEHOLD is written as BDEHLO. How is COURSE written in the same language?",
       "noteRef": "ment-number-series-coding-note-letter-coding",
       "options": [
-        "CEOURS",
         "CEORSU",
+        "CEOURS",
         "CORSEU",
         "ECORSU"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "explanation": "Confirm the rule on the sample: BEHOLD sorted into alphabetical order is B, D, E, H, L, O = BDEHLO, which matches the given code. So the rule is \"arrange the letters A to Z\".\nApply it to COURSE: sort C, O, U, R, S, E into C, E, O, R, S, U, giving CEORSU.\n\n**Why not the others**\n- CEOURS — here U is placed before R, so the letters are not fully sorted.\n- CORSEU — this keeps a near-original order instead of sorting alphabetically.\n- ECORSU — this starts with E, but sorting must begin with C.\n\n**Key facts**\n- Rearrangement coding: the code is the same letters reordered by a rule (here ascending A to Z).\n- Always confirm the rule on the sample before applying it.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (alphabetical rearrangement).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (rearrangement)",
       "verified": true,
@@ -386,12 +386,12 @@
       "question": "If PUNCTUAL is coded as 47819765, how is LUNA coded in the same language?",
       "noteRef": "ment-number-series-coding-note-number-coding",
       "options": [
-        "5876",
-        "6785",
         "5768",
-        "5786"
+        "5786",
+        "5876",
+        "6785"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "explanation": "Line up PUNCTUAL with its code 47819765 letter by letter: P = 4, U = 7, N = 8, C = 1, T = 9, U = 7, A = 6, L = 5. The repeated U gives 7 both times, which confirms the mapping.\nNow spell LUNA with those digits, keeping the order: L = 5, U = 7, N = 8, A = 6, giving 5786.\n\n**Why not the others**\n- 5876 — this swaps the digits for U and N (7 and 8).\n- 6785 — this reverses the order of the digits.\n- 5768 — this ends with N's digit 8 instead of A's digit 6.\n\n**Key facts**\n- Letter-to-number coding: build a letter → digit table from the given pair, then substitute.\n- Keep the letter order and substitute only the mapped digits.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
       "verified": true,
@@ -411,12 +411,12 @@
       "question": "If 64958 is coded as 53847, what is the code for 62654?",
       "noteRef": "ment-number-series-coding-note-number-coding",
       "options": [
-        "51543",
         "51443",
-        "71543",
-        "51533"
+        "51533",
+        "51543",
+        "71543"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "Compare 64958 with 53847 digit by digit: 6→5, 4→3, 9→8, 5→4, 8→7. Every digit drops by 1, so the operation is \"subtract 1 from each digit\".\nApply it to 62654: 6→5, 2→1, 6→5, 5→4, 4→3, giving 51543.\n\n**Why not the others**\n- 51443 — this treats the third digit 6 as 4 instead of 5.\n- 71543 — this leaves the first digit as 7 instead of 6 − 1 = 5.\n- 51533 — this mis-reduces the fourth digit 5 to 3 instead of 4.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation (here −1) from the sample.\n- Apply the same operation to each digit on its own.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
       "verified": true,
@@ -436,12 +436,12 @@
       "question": "In a code language, 'sky is blue' is 'ta na ka', 'blue is high' is 'na ka pa', and 'high and dry' is 'pa la ja'. What is the code for 'high'?",
       "noteRef": "ment-number-series-coding-note-substitution-conditional",
       "options": [
+        "pa",
         "na",
         "ka",
-        "pa",
         "la"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "Compare the sentences that share words. 'sky is blue' = ta na ka and 'blue is high' = na ka pa both contain 'is' and 'blue', and both share the codes na and ka, so {is, blue} map to {na, ka}.\nThat leaves 'high' as the only new word in the second sentence, matched to the only new code, pa. The third sentence 'high and dry' = pa la ja also contains pa, confirming high = pa.\n\n**Why not the others**\n- na — this is a shared code for 'is' or 'blue', not unique to 'high'.\n- ka — this is the other shared code for 'is' or 'blue'.\n- la — this appears only in 'high and dry' and codes 'and' or 'dry', not 'high'.\n\n**Key facts**\n- Fictitious-language coding: intersect sentences to isolate a shared word's code.\n- The leftover code in a sentence names its leftover word.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding and Decoding in Fictitious Language.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language",
       "verified": true,
@@ -462,11 +462,11 @@
       "noteRef": "ment-number-series-coding-note-substitution-conditional",
       "options": [
         "VSRUX",
-        "£SRU£",
         "£SRUX",
-        "VSRU£"
+        "VSRU£",
+        "£SRU£"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "First apply the base table: 7 = V, 4 = S, 3 = R, 6 = U, 9 = X, giving VSRUX.\nNow read the condition: if BOTH the first and last digit are odd, replace each of them with the pound sign. The first digit 7 is odd and the last digit 9 is odd, so the condition fires on both ends. Overriding only those ends gives £SRU£.\n\n**Why not the others**\n- VSRUX — this ignores the condition and leaves the plain code.\n- £SRUX — this recodes only the first digit, not the last.\n- VSRU£ — this recodes only the last digit, not the first.\n\n**Key facts**\n- Conditional coding: apply the base substitution first, then override by the stated condition.\n- The condition here needs BOTH ends to be odd (7 and 9 are).\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Conditional Matrix / Coding.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Conditional Matrix",
       "verified": true,
@@ -483,7 +483,7 @@
       "id": "ment-number-series-coding-mcq-20",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-series-coding",
-      "question": "BOOK is to CPPL as WORD is to ?",
+      "question": "In a letter code, BOOK is written as CPPL. In the same code, WORD is written as:",
       "noteRef": "ment-number-series-coding-note-substitution-conditional",
       "options": [
         "XPSD",
@@ -511,12 +511,12 @@
       "question": "Find the next term of the series: 4, 9, 19, 35, 58, ?",
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
+        "84",
         "88",
         "89",
-        "90",
-        "84"
+        "90"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "The first differences are 9 − 4 = 5, 19 − 9 = 10, 35 − 19 = 16, 58 − 35 = 23 — not constant, so look at the differences of those differences: 10 − 5 = 5, 16 − 10 = 6, 23 − 16 = 7, which rise by 1.\nSo the next second difference is 8, making the next first difference 23 + 8 = 31, and the next term 58 + 31 = 89.\n\n**Why not the others**\n- 88 — this uses a next first difference of 30, misreading the second-level step.\n- 90 — this uses 32, over-stepping the second difference.\n- 84 — this repeats a difference of 26 instead of following the pattern.\n\n**Key facts**\n- Two-tier series: when first differences are irregular, examine the second differences.\n- Here the second differences are 5, 6, 7, 8, so the first differences are 5, 10, 16, 23, 31.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (double difference).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
@@ -536,12 +536,12 @@
       "question": "Find the next term of the series: 2, 6, 3, 9, 6, 18, ?",
       "noteRef": "ment-number-series-coding-note-number-series",
       "options": [
-        "12",
-        "9",
         "21",
-        "15"
+        "15",
+        "12",
+        "9"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "explanation": "Check each gap in turn. 2 × 3 = 6, 6 − 3 = 3, 3 × 3 = 9, 9 − 3 = 6, 6 × 3 = 18. The operations alternate × 3 and − 3.\nThe step that made 18 was a × 3, so the next operation is − 3, giving 18 − 3 = 15.\n\n**Why not the others**\n- 12 — this applies − 6 instead of the established − 3.\n- 9 — this repeats an earlier term and ignores the alternating rule.\n- 21 — this adds 3 when a subtraction is due next.\n\n**Key facts**\n- Alternating series: two rules applied turn by turn (here × 3 and − 3).\n- Detect it by testing operations on alternate gaps, not one common rule.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Number Series (alternating operations).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Number Series",
       "verified": true,
@@ -558,7 +558,7 @@
       "id": "ment-number-series-coding-mcq-23",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-series-coding",
-      "question": "Find the odd one out: 8, 27, 64, 100, 125",
+      "question": "Find the odd one out from the following numbers: 8, 27, 64, 100, 125",
       "noteRef": "ment-number-series-coding-note-matrix-missing-number",
       "options": [
         "27",
@@ -583,15 +583,15 @@
       "id": "ment-number-series-coding-mcq-24",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-series-coding",
-      "question": "6 : 42 :: 9 : ?",
+      "question": "Find the missing number in the analogy 6 : 42 :: 9 : ?",
       "noteRef": "ment-number-series-coding-note-matrix-missing-number",
       "options": [
+        "99",
         "90",
-        "72",
         "81",
-        "99"
+        "72"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "Find the link in the first pair: 6 relates to 42, and 6 × 7 = 42, which is n × (n + 1).\nApply the same rule to 9: 9 × (9 + 1) = 9 × 10 = 90.\n\n**Why not the others**\n- 72 — this is 8 × 9, using the wrong base number.\n- 81 — this is 9², ignoring the (n + 1) multiplier.\n- 99 — this is 9 × 11, over-stepping to (n + 2).\n\n**Key facts**\n- Number analogy: identify the operation linking the first pair, then apply it to the second.\n- Here the rule is first number × (first number + 1): 6 × 7 and 9 × 10.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Analogy (number analogy).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Analogy",
       "verified": true,
@@ -611,12 +611,12 @@
       "question": "In a certain code, TIGER is written as WLJHU. How is LION written in the same code?",
       "noteRef": "ment-number-series-coding-note-letter-coding",
       "options": [
+        "OLRQ",
         "OLQR",
         "PLRQ",
-        "OKRQ",
-        "OLRQ"
+        "OKRQ"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "explanation": "Find the shift from TIGER → WLJHU: T(20)→W(23), I(9)→L(12), G(7)→J(10), E(5)→H(8), R(18)→U(21). Every letter moves +3.\nApply +3 to LION: L(12)→O(15), I(9)→L(12), O(15)→R(18), N(14)→Q(17), giving OLRQ.\n\n**Why not the others**\n- OLQR — this swaps the last two letters R and Q.\n- PLRQ — this shifts the first letter by +4 instead of +3.\n- OKRQ — this shifts the second letter by +2 (I→K) instead of +3.\n\n**Key facts**\n- Letter-shift coding: find the constant position change from the sample word.\n- The shift here is +3 for every letter, and LION needs no wrap-around.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding (letter shifting)",
       "verified": true,
@@ -636,12 +636,12 @@
       "question": "If 3572 is coded as 4683, how is 6014 coded in the same language?",
       "noteRef": "ment-number-series-coding-note-number-coding",
       "options": [
-        "7124",
         "7125",
-        "6125",
-        "7025"
+        "7124",
+        "7025",
+        "6125"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "explanation": "Compare 3572 with 4683 digit by digit: 3→4, 5→6, 7→8, 2→3. Every digit increases by 1.\nApply +1 to each digit of 6014: 6→7, 0→1, 1→2, 4→5, giving 7125.\n\n**Why not the others**\n- 7124 — this leaves the last digit 4 as 4 instead of +1 = 5.\n- 6125 — this leaves the first digit 6 unchanged instead of +1 = 7.\n- 7025 — this keeps the 0 as 0 instead of making it 1.\n\n**Key facts**\n- Number-to-number coding: detect the per-digit operation from the sample (here +1).\n- Apply the same operation to each digit.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding-Decoding Based on Numbers",
       "verified": true,
@@ -661,12 +661,12 @@
       "question": "In a code language, 'pen is blue' is written as 'mo ta re', 'blue is sky' as 're mo la', and 'sky is high' as 'la mo pa'. What is the code for 'is'?",
       "noteRef": "ment-number-series-coding-note-substitution-conditional",
       "options": [
+        "mo",
         "re",
         "la",
-        "mo",
         "ta"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "Find the word that appears in every sentence and the code that appears in every sentence. 'is' is the only word in all three, and 'mo' is the only code in all three ('pen is blue' = mo ta re, 'blue is sky' = re mo la, 'sky is high' = la mo pa).\nSo 'is' = mo.\n\n**Why not the others**\n- re — this is common only to the first two sentences, so it codes 'blue'.\n- la — this is common only to the last two sentences, so it codes 'sky'.\n- ta — this appears only in the first sentence, so it codes 'pen'.\n\n**Key facts**\n- Fictitious-language coding: intersect the sentences to isolate the shared word's code.\n- A word in all three sentences has the code common to all three.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language.*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Coding in Fictitious Language",
       "verified": true,
@@ -686,12 +686,12 @@
       "question": "Which group completes the series: DEB, HIF, LMJ, PQN, ?",
       "noteRef": "ment-number-series-coding-note-alphabet-series",
       "options": [
-        "TUR",
         "TUS",
         "SUR",
-        "TVR"
+        "TVR",
+        "TUR"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Read each position as its own column in alphabet numbers.\nFirst letters D(4), H(8), L(12), P(16) rise by 4 each, so the next is 20 = T.\nSecond letters E(5), I(9), M(13), Q(17) rise by 4 each, so the next is 21 = U.\nThird letters B(2), F(6), J(10), N(14) rise by 4 each, so the next is 18 = R.\nThe group is TUR.\n\n**Why not the others**\n- TUS — the third letter should be R (+4 from N), not S.\n- SUR — the first letter should be T (+4 from P), not S.\n- TVR — the second letter should be U (+4 from Q), not V.\n\n**Key facts**\n- Grouped series: split into columns and solve each column's own pattern.\n- Every column here advances by +4.\n\n*Source: local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series (combination sequence).*",
       "source": "local APPSC Group 1 PDF — Logical Reasoning: Alphabet Series",
       "verified": true,
@@ -711,13 +711,13 @@
       "question": "In each row of the table the third number follows one fixed rule based on the first two: (5, 3, 16), (7, 4, 33), (8, 6, ?). What replaces '?'",
       "noteRef": "ment-number-series-coding-note-matrix-missing-number",
       "options": [
-        "28",
-        "26",
         "14",
-        "48"
+        "28",
+        "48",
+        "100"
       ],
-      "answerIndex": 0,
-      "explanation": "Test rules on the complete rows until one fits both. The sum 5 + 3 = 8 and the product 5 × 3 = 15 do not give 16, but 5² − 3² = 25 − 9 = 16 does, and 7² − 4² = 49 − 16 = 33 confirms it.\nSo the rule is third = first² − second². For the last row, 8² − 6² = 64 − 36 = 28.\n\n**Why not the others**\n- 26 — this comes from 64 − 38, an arithmetic slip.\n- 14 — this is 8 + 6, the sum rule, which fails on the first two rows.\n- 48 — this is 8 × 6, the product rule, which also fails the first two rows.\n\n**Key facts**\n- Confirm one rule fits every complete row before applying it.\n- Here third = a² − b² = (a + b)(a − b).\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
+      "answerIndex": 1,
+      "explanation": "Test rules on the complete rows until one fits both. The sum 5 + 3 = 8 and the product 5 × 3 = 15 do not give 16, but 5² − 3² = 25 − 9 = 16 does, and 7² − 4² = 49 − 16 = 33 confirms it.\nSo the rule is third = first² − second². For the last row, 8² − 6² = 64 − 36 = 28.\n\n**Why not the others**\n- 14 — this is 8 + 6, the sum rule, which fails on the first two rows.\n- 48 — this is 8 × 6, the product rule, which also fails the first two rows.\n- 100 — ADDS the squares (64 + 36); the rows need first² − second².\n\n**Key facts**\n- Confirm one rule fits every complete row before applying it.\n- Here third = a² − b² = (a + b)(a − b).\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
       "source": "local APPSC Group 1 PDFs — Logical Reasoning: Matrix",
       "verified": true,
       "covers": [
@@ -736,12 +736,12 @@
       "question": "Each row of the grid has the same total. Given the rows (12, 5, 7), (9, 8, 7) and (10, ?, 6), the missing number is:",
       "noteRef": "ment-number-series-coding-note-matrix-missing-number",
       "options": [
-        "8",
+        "6",
         "7",
-        "9",
-        "6"
+        "8",
+        "9"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "Add the complete rows: 12 + 5 + 7 = 24 and 9 + 8 + 7 = 24. Each row has the same total, 24.\nThe third row must also total 24, so 10 + ? + 6 = 24, which gives ? = 24 − 16 = 8.\n\n**Why not the others**\n- 7 — this makes the row total 23, not 24.\n- 9 — this makes the row total 25.\n- 6 — this makes the row total 22.\n\n**Key facts**\n- Constant-row-total grids: missing cell = common total − the sum of the other cells.\n- The common total is read off any complete row.\n\n*Source: local APPSC Group 1 PDFs — Logical Reasoning: Matrix.*",
       "source": "local APPSC Group 1 PDFs — Logical Reasoning: Matrix",
       "verified": true,
@@ -760,12 +760,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the next term of the series: 287, 276, 265, 254, 243, ?",
       "options": [
+        "222",
         "231",
         "232",
-        "233",
-        "222"
+        "233"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "Each term is 11 less than the one before (constant difference −11), so 243 − 11 = 232.\n\n**Why not the others**\n- 231 — Subtracts 12 instead of 11.\n- 233 — Subtracts 10 instead of 11.\n- 222 — Subtracts 21 — two steps at once.\n\n**Key facts**\n- Each term is 11 less than the one before (constant difference −11), so 243 − 11 = 232.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -784,14 +784,14 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the next term of the series: 23, 69, 207, 621, ?",
       "options": [
-        "1242",
-        "828",
+        "5589",
         "1863",
-        "1683"
+        "1242",
+        "828"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-number-series",
-      "explanation": "Each term is 3 times the previous (constant ratio 3), so 621 × 3 = 1863.\n\n**Why not the others**\n- 1242 — Doubles instead of trebling.\n- 828 — Adds 207 — treats it as a difference series.\n- 1683 — Digit slip; 621 × 3 = 1863.\n\n**Key facts**\n- Each term is 3 times the previous (constant ratio 3), so 621 × 3 = 1863.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
+      "explanation": "Each term is 3 times the previous (constant ratio 3), so 621 × 3 = 1863.\n\n**Why not the others**\n- 828 — adds 207, treating it as a difference series.\n- 1242 — doubles instead of trebling.\n- 5589 — multiplies by 9, the ratio between ALTERNATE terms, instead of 3.\n\n**Key facts**\n- Each term is 3 times the previous (constant ratio 3), so 621 × 3 = 1863.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
       "verified": true,
       "covers": [
@@ -808,12 +808,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the wrong term in the series: 2, 5, 10, 17, 26, 38, 50",
       "options": [
-        "26",
-        "50",
         "17",
-        "38"
+        "26",
+        "38",
+        "50"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "The terms are n^{2} + 1: 2, 5, 10, 17, 26, 37, 50. So 38 is wrong; it should be 6^{2} + 1 = 37.\n\n**Why not the others**\n- 26 — 26 = 5^{2} + 1 fits the rule.\n- 50 — 50 = 7^{2} + 1 fits the rule.\n- 17 — 17 = 4^{2} + 1 fits the rule.\n\n**Key facts**\n- Wrong term: fix the rule from the majority (here n^{2} + 1).\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -832,12 +832,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the next term of the series: 983, 975, 948, 884, 759, ?",
       "options": [
-        "634",
-        "575",
         "543",
-        "559"
+        "559",
+        "575",
+        "634"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "The jumps are −8, −27, −64, −125: successive cubes 2^{3}, 3^{3}, 4^{3}, 5^{3}. Next is −6^{3} = −216, so 759 − 216 = 543.\n\n**Why not the others**\n- 634 — Subtracts 125 again instead of 6^{3} = 216.\n- 575 — Subtracts 184 — no rule gives that.\n- 559 — Subtracts 200 — no rule gives that.\n\n**Key facts**\n- The jumps are −8, −27, −64, −125: successive cubes 2^{3}, 3^{3}, 4^{3}, 5^{3}.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -856,10 +856,10 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the next term of the series: 2, 9, 28, 65, 126, ?",
       "options": [
-        "215",
+        "252",
         "217",
         "216",
-        "252"
+        "215"
       ],
       "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-number-series",
@@ -881,11 +881,11 @@
       "question": "Find the next term of the series: 0, 3, 8, 15, 24, ?",
       "options": [
         "33",
-        "36",
         "35",
+        "36",
         "48"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "The jumps 3, 5, 7, 9 are consecutive odd numbers, the sign of a square pattern: the terms are n^{2} − 1, so 6^{2} − 1 = 35.\n\n**Why not the others**\n- 33 — Adds 9 again; the jumps rise by 2 each time.\n- 36 — 36 = 6^{2} forgets the − 1.\n- 48 — Doubles the last term; the rule is not a ratio.\n\n**Key facts**\n- The jumps 3, 5, 7, 9 are consecutive odd numbers, the sign of a square pattern: the terms are n^{2} − 1, so 6^{2} − 1 = 35.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -904,12 +904,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the missing term of the series: 45, 68, 99, ?, 187, 246, 313",
       "options": [
-        "136",
-        "142",
         "130",
-        "140"
+        "136",
+        "140",
+        "142"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "The jumps are 23, 31, ?, ?, 59, 67 — alternate primes 23, 31, 41, 47, 59, 67. So 99 + 41 = 140 (and 140 + 47 = 187 checks).\n\n**Why not the others**\n- 136 — Adds 37, the prime skipped in the alternate-prime pattern.\n- 142 — Adds 43, which breaks 187 − 142 = 45 (not prime).\n- 130 — Adds 31 again.\n\n**Key facts**\n- The jumps are 23, 31, ?, ?, 59, 67 — alternate primes 23, 31, 41, 47, 59, 67.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -928,12 +928,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the missing term of the series: 86, 89, 95, 104, ?, 131, 149",
       "options": [
-        "114",
-        "118",
         "113",
-        "116"
+        "114",
+        "116",
+        "118"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "The jumps are 3, 6, 9, 12, 15, 18 — they grow by 3 each time (constant second difference). So 104 + 12 = 116.\n\n**Why not the others**\n- 114 — Adds 10 instead of 12.\n- 118 — Adds 14, which breaks 131 − 118 = 13.\n- 113 — Adds 9 again.\n\n**Key facts**\n- The jumps are 3, 6, 9, 12, 15, 18 — they grow by 3 each time (constant second difference).\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -952,12 +952,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the next term of the series: 3, 10, 24, 45, 73, ?",
       "options": [
-        "101",
-        "104",
+        "112",
         "108",
-        "112"
+        "104",
+        "101"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "The jumps are 7, 14, 21, 28 (second difference 7), so the next jump is 35: 73 + 35 = 108.\n\n**Why not the others**\n- 101 — Adds 28 again; the jumps keep growing by 7.\n- 104 — Adds 31 — no constant second difference gives that.\n- 112 — Adds 39 — no constant second difference gives that.\n\n**Key facts**\n- The jumps are 7, 14, 21, 28 (second difference 7), so the next jump is 35: 73 + 35 = 108.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1000,14 +1000,14 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the next term of the series: 1, 4, 7, 13, 22, 37, 61, 100, ?",
       "options": [
-        "161",
+        "124",
         "139",
-        "163",
-        "200"
+        "161",
+        "163"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-number-series-coding-note-number-series",
-      "explanation": "The jumps are 3, 3, 6, 9, 15, 24, 39 — each jump is the sum of the previous two, like Fibonacci. Next jump = 24 + 39 = 63, so 100 + 63 = 163.\n\n**Why not the others**\n- 161 — 161 = 100 + 61 adds the last term, not the next jump.\n- 139 — Adds 39, the last jump again.\n- 200 — Doubles the last term.\n\n**Key facts**\n- The jumps are 3, 3, 6, 9, 15, 24, 39 — each jump is the sum of the previous two, like Fibonacci.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
+      "explanation": "The jumps are 3, 3, 6, 9, 15, 24, 39 — each jump is the sum of the previous two, like Fibonacci. Next jump = 24 + 39 = 63, so 100 + 63 = 163.\n\n**Why not the others**\n- 124 — adds the second-last jump 24 instead of the next jump 63.\n- 139 — adds 39, the last jump again.\n- 161 — 161 = 100 + 61 adds the last term, not the next jump.\n\n**Key facts**\n- The jumps are 3, 3, 6, 9, 15, 24, 39 — each jump is the sum of the previous two, like Fibonacci.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
       "verified": true,
       "covers": [
@@ -1024,8 +1024,8 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the next term of the series: 7, 27, 87, 267, 807, ?",
       "options": [
-        "2421",
         "1614",
+        "2421",
         "2427",
         "2433"
       ],
@@ -1048,12 +1048,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the missing term of the series: 11, 20, 37, 69, 131, ?, 489",
       "options": [
+        "249",
         "251",
         "253",
-        "262",
-        "249"
+        "262"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-number-series",
       "explanation": "Each term = previous × 2 − (next prime): × 2 − 2, × 2 − 3, × 2 − 5, × 2 − 7, × 2 − 11 → 131 × 2 − 11 = 251, then 251 × 2 − 13 = 489.\n\n**Why not the others**\n- 253 — × 2 − 9 breaks the next step (253 × 2 − 13 = 493, not 489).\n- 262 — × 2 alone ignores the subtracted primes.\n- 249 — × 2 − 13 uses the wrong prime here; 13 comes next.\n\n**Key facts**\n- Each term = previous × 2 − (next prime): × 2 − 2, × 2 − 3, × 2 − 5, × 2 − 7, × 2 − 11 → 131 × 2 − 11 = 251, then 251 × 2 − 13 = 489.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1072,12 +1072,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Using the EJOTY anchors, what is the position of the letter R in the English alphabet?",
       "options": [
+        "9",
         "17",
         "18",
-        "19",
-        "9"
+        "19"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-number-series-coding-note-alphabet-series",
       "explanation": "O is the 15th letter (EJOTY: E5, J10, O15, T20, Y25). R is 3 places after O: 15 + 3 = 18.\n\n**Why not the others**\n- 17 — Counts 2 places after O instead of 3.\n- 19 — Counts 4 places after O.\n- 9 — 9 is the position of R counted from the right (27 − 18).\n\n**Key facts**\n- EJOTY: E = 5, J = 10, O = 15, T = 20, Y = 25.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1096,12 +1096,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Using the EJOTY anchors, which letter is at position 22 in the English alphabet?",
       "options": [
+        "V",
         "W",
         "U",
-        "X",
-        "V"
+        "X"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-number-series-coding-note-alphabet-series",
       "explanation": "T is the 20th letter, so the 22nd is two places after T: U (21), V (22).\n\n**Why not the others**\n- W — W is position 23.\n- U — U is position 21.\n- X — X is position 24.\n\n**Key facts**\n- Count from the nearest EJOTY anchor.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1240,12 +1240,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Find the wrong term in the series: FHH, JLL, NPP, RST",
       "options": [
+        "RST",
         "NPP",
         "JLL",
-        "RST",
         "FHH"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "Each column moves +4: F, J, N, R; H, L, P, T; H, L, P, T. The fourth group should be RTT, so RST is wrong.\n\n**Why not the others**\n- NPP — NPP follows the +4 column steps.\n- JLL — JLL follows the +4 column steps.\n- FHH — FHH is the starting group.\n\n**Key facts**\n- A wrong letter group breaks the column steps.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1264,12 +1264,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "In the English alphabet, which letter is fifth to the left of the thirteenth letter from the right?",
       "options": [
+        "I",
         "H",
         "S",
-        "J",
-        "I"
+        "J"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "The 13th letter from the right is the (27 − 13) = 14th from the left, N. Five to the left of N: 14 − 5 = 9, which is I.\n\n**Why not the others**\n- H — H counts five to the left of M; the 13th from the right is N.\n- S — S counts to the right instead of the left.\n- J — J counts only four places.\n\n**Key facts**\n- k-th from the right = (27 − k)-th from the left.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1290,10 +1290,10 @@
       "options": [
         "DBOEMF",
         "ECPFMG",
-        "ECPFNG",
-        "EBPFNG"
+        "EBPFNG",
+        "ECPFNG"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-number-series-coding-note-letter-coding",
       "explanation": "Every letter moves 2 places forward: F → H, R → T, I → K, E → G, N → P, D → F. So C → E, A → C, N → P, D → F, L → N, E → G: ECPFNG.\n\n**Why not the others**\n- DBOEMF — Shifts by +1, not +2.\n- ECPFMG — Shifts L by +1 instead of +2.\n- EBPFNG — Shifts A by +1 instead of +2.\n\n**Key facts**\n- Letter-shift coding moves every letter by the same number of places.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1312,12 +1312,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "In a certain code language, RECTANGLE is written as IVXGZMTOV. How is SPHERE written in that language?",
       "options": [
+        "HKSVIV",
         "HKSVJV",
         "GKSVIV",
-        "HJSVIV",
-        "HKSVIV"
+        "HJSVIV"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-number-series-coding-note-letter-coding",
       "explanation": "Every letter is replaced by its opposite (27 − position): R → I, E → V, C → X, T → G … So S → H, P → K, H → S, E → V, R → I, E → V: HKSVIV.\n\n**Why not the others**\n- HKSVJV — R becomes J here; its opposite is I.\n- GKSVIV — S becomes G here; its opposite is H.\n- HJSVIV — P becomes J here; its opposite is K.\n\n**Key facts**\n- Opposite-letter coding uses the 27 − n mirror.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1337,11 +1337,11 @@
       "question": "UNICORN is coded as FMRXLIM in a code language. How will EXTINCT be coded in the same language?",
       "options": [
         "VCGRNXG",
-        "VCGRMXG",
         "VDGRMXG",
-        "UCGRMXG"
+        "UCGRMXG",
+        "VCGRMXG"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-number-series-coding-note-letter-coding",
       "explanation": "Each letter becomes its opposite: U → F, N → M, I → R, C → X, O → L, R → I. So E → V, X → C, T → G, I → R, N → M, C → X, T → G: VCGRMXG.\n\n**Why not the others**\n- VCGRNXG — Keeps N as N; its opposite is M.\n- VDGRMXG — Codes X as D; its opposite is C.\n- UCGRMXG — Codes E as U; its opposite is V.\n\n**Key facts**\n- Opposite pairs: E–V, X–C, T–G, I–R, N–M.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1360,12 +1360,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "In a code language DIRECTOR is written as WVIRXGBI. How is NEURO written in that language?",
       "options": [
-        "MRHIB",
         "MVFIL",
         "MRHIL",
-        "NRHIB"
+        "NRHIB",
+        "MRHIB"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "In DIRECTOR, consonants become opposite letters (D → W, R → I, C → X, T → G) and vowels move 13 places (I → V, E → R, O → B). So N → M, E → R, U → H, R → I, O → B: MRHIB.\n\n**Why not the others**\n- MVFIL — Codes the vowels by their opposites too; vowels move +13.\n- MRHIL — Codes O by its opposite L; O moves +13 to B.\n- NRHIB — Leaves N unchanged; consonants become their opposites (N → M).\n\n**Key facts**\n- Vowels +13, consonants → opposite letter.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1384,12 +1384,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "In the same code in which DIRECTOR is written as WVIRXGBI, how is AUDIT written?",
       "options": [
-        "ZFWRG",
         "NHWVG",
+        "ZFWRG",
         "NHWRG",
         "NHXVG"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "Vowels move +13 (A → N, U → H, I → V); consonants become opposites (D → W, T → G). AUDIT → NHWVG.\n\n**Why not the others**\n- ZFWRG — Codes the vowels by their opposites instead of moving them +13.\n- NHWRG — Codes I by its opposite R; I moves +13 to V.\n- NHXVG — Codes D as X; its opposite is W.\n\n**Key facts**\n- Apply the two-part rule letter by letter.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1408,8 +1408,8 @@
       "subtopicId": "ment-number-series-coding",
       "question": "If MOTHER is coded as 568734, how is HOME coded in the same language?",
       "options": [
-        "7563",
         "6753",
+        "7563",
         "7635",
         "7653"
       ],
@@ -1433,11 +1433,11 @@
       "question": "In a certain code, CAT = 24 and DOG = 26. What is the code for COW?",
       "options": [
         "39",
+        "41",
         "43",
-        "45",
-        "41"
+        "45"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "The code is the sum of letter positions: CAT = 3 + 1 + 20 = 24, DOG = 4 + 15 + 7 = 26. COW = 3 + 15 + 23 = 41.\n\n**Why not the others**\n- 39 — Uses W = 21; W is the 23rd letter.\n- 43 — Uses O = 17; O is the 15th letter.\n- 45 — Adds an extra 4 — no rule gives that.\n\n**Key facts**\n- Word-value coding adds the letter positions.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1481,11 +1481,11 @@
       "question": "Digits are coded 2 = K, 3 = M, 4 = P, 5 = R, 6 = T, 7 = W, 8 = B, 9 = D. Condition: if the first digit is even and the last digit is odd, their codes are interchanged. Using this condition, code 47859.",
       "options": [
         "PWBRD",
+        "DWBRP",
         "DWBRD",
-        "PWBRP",
-        "DWBRP"
+        "PWBRP"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-substitution-conditional",
       "explanation": "Base codes: 4 → P, 7 → W, 8 → B, 5 → R, 9 → D, giving PWBRD. The first digit 4 is even and the last 9 is odd, so interchange the end codes: DWBRP.\n\n**Why not the others**\n- PWBRD — Ignores the condition (4 is even and 9 is odd, so the end codes swap).\n- DWBRD — Changes only the first code; both ends must swap.\n- PWBRP — Changes only the last code; both ends must swap.\n\n**Key facts**\n- Conditional coding: base substitution first, then the condition.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1505,11 +1505,11 @@
       "question": "Question: what is the code for 'nephew' if 'he is my nephew' is coded 'co pv zs mn'? Statement I: 'that is my car' is coded 'zs pt pv ga'. Statement II: 'he is your uncle' is coded 'co pv ex yz'. Which statement(s) are sufficient to answer the question?",
       "options": [
         "I alone is sufficient",
-        "Both I and II together are needed",
         "II alone is sufficient",
-        "Even I and II together are not sufficient"
+        "Even I and II together are not sufficient",
+        "Both I and II together are needed"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "I gives is/my = pv/zs; II gives he/is = co/pv. Only together do they leave 'nephew' with the single remaining code mn.\n\n**Why not the others**\n- I alone is sufficient — I fixes only \"is\" and \"my\" (pv, zs); \"he\" and \"nephew\" stay unresolved between co and mn.\n- II alone is sufficient — II fixes only \"he\" and \"is\" (co, pv); \"my\" and \"nephew\" stay unresolved between zs and mn.\n- Even I and II together are not sufficient — Together they fix is = pv, my = zs, he = co, leaving nephew = mn.\n\n**Key facts**\n- A statement suffices only if it fixes the code uniquely.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1526,12 +1526,12 @@
       "id": "ment-number-series-coding-mcq-63",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-series-coding",
-      "question": "Find the odd one out: 273, 133, 155, 221",
+      "question": "Find the odd one out from the following numbers: 273, 133, 155, 221",
       "options": [
         "273",
-        "133",
+        "221",
         "155",
-        "221"
+        "133"
       ],
       "answerIndex": 0,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
@@ -1550,14 +1550,14 @@
       "id": "ment-number-series-coding-mcq-64",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-series-coding",
-      "question": "Find the odd pair: AZ, BY, CX, DV",
+      "question": "Find the odd letter-pair out from the following: AZ, BY, CX, DV",
       "options": [
         "AZ",
-        "BY",
         "DV",
+        "BY",
         "CX"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "AZ, BY and CX are opposite-letter pairs whose positions add to 27. D (4) pairs with W (23), not V (22), so DV is odd.\n\n**Why not the others**\n- AZ — A and Z are opposite letters (1 + 26 = 27).\n- BY — B and Y are opposite letters (2 + 25 = 27).\n- CX — C and X are opposite letters (3 + 24 = 27).\n\n**Key facts**\n- Odd pair: check the relation inside each pair.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1574,14 +1574,14 @@
       "id": "ment-number-series-coding-mcq-65",
       "subjectCode": "MENT",
       "subtopicId": "ment-number-series-coding",
-      "question": "5 : 23 :: 7 : ?",
+      "question": "Find the missing number in the analogy 5 : 23 :: 7 : ?",
       "options": [
-        "49",
-        "51",
+        "35",
         "47",
-        "35"
+        "49",
+        "51"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-number-series-coding-note-matrix-missing-number",
       "explanation": "The rule is (first)^{2} − 2: 5^{2} − 2 = 23, so 7^{2} − 2 = 47.\n\n**Why not the others**\n- 49 — 49 = 7^{2} forgets the − 2.\n- 51 — 51 = 7^{2} + 2 adds instead of subtracting.\n- 35 — 35 = 5 × 7 uses a different rule.\n\n**Key facts**\n- Number analogy: find the a → b rule and apply it to c.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1600,12 +1600,12 @@
       "subtopicId": "ment-number-series-coding",
       "question": "Arrange the words in the order they appear in a dictionary — Explain (1), Exhaust (2), Expert (3), Exhibit (4), Exotic (5).",
       "options": [
-        "2, 4, 5, 3, 1",
         "2, 4, 3, 5, 1",
         "4, 2, 5, 3, 1",
+        "2, 4, 5, 3, 1",
         "2, 5, 4, 3, 1"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-number-series-coding-note-series-coding-extras",
       "explanation": "All begin \"Ex\"; compare the third letter: h (Exhaust, Exhibit), o (Exotic), p (Expert, Explain). Then Exhaust < Exhibit (a < i) and Expert < Explain (e < l). Order: 2, 4, 5, 3, 1.\n\n**Why not the others**\n- 2, 4, 3, 5, 1 — Puts Expert before Exotic, but o comes before p.\n- 4, 2, 5, 3, 1 — Puts Exhibit before Exhaust, but a comes before i.\n- 2, 5, 4, 3, 1 — Puts Exotic before Exhibit, but h comes before o.\n\n**Key facts**\n- Dictionary order compares letter by letter from the left.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",
@@ -1626,10 +1626,10 @@
       "options": [
         "13",
         "42",
-        "169",
-        "85"
+        "85",
+        "169"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-number-series-coding-note-matrix-missing-number",
       "explanation": "Row rule: first^{2} + second^{2}: 16 + 36 = 52, 9 + 25 = 34, so 49 + 36 = 85.\n\n**Why not the others**\n- 13 — 13 is just 7 + 6.\n- 42 — 42 is 7 × 6.\n- 169 — 169 = (7 + 6)^{2}; the rule squares each number separately.\n\n**Key facts**\n- Missing number in a grid: one rule must fit every complete row.\n\n*Source: APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md*",
       "source": "APPSC Logical Reasoning extracted text (Number Series, Alphabet Series, General Series of Alphabets, Mixed Series, Coding-Decoding: Letter Shifting / Letters of a Word / Based on Numbers / Fictitious Language / By Analogy, Conditional Matrix, Data Sufficiency in Coding, Missing Number in Matrix/Diagram, Number Analogy, Classification, Dictionary Order); Quantitative Reasoning — Number Series; PYQ bank .research/pyq-bank/ment-number-series-coding.md",

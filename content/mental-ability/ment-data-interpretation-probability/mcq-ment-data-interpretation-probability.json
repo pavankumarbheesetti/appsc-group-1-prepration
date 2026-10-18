@@ -12,11 +12,11 @@
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
         "45",
+        "55",
         "60",
-        "70",
-        "55"
+        "70"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "Read the April row directly: **70** cars.\n\n**Why not the others**\n- 45 — the January figure.\n- 60 — the February figure.\n- 55 — the March figure.\n\n**Key facts**\n- Table DI step 1 is always: locate the correct row and column before any calculation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Tabulation",
       "verified": true,
@@ -37,13 +37,13 @@
       "question": "A fair six-faced die is rolled once. What is the probability of getting an even number?",
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "options": [
+        "1/6",
         "1/3",
         "1/2",
-        "1/6",
-        "2/3"
+        "3"
       ],
-      "answerIndex": 1,
-      "explanation": "Even outcomes = {2, 4, 6} = 3 favourable; total = 6. P = 3/6 = **1/2**.\n\n**Why not the others**\n- 1/3 — that is P(a specific pair) or 2/6, not the count of evens.\n- 1/6 — probability of a single specific face.\n- 2/3 — 4/6, which would need 4 favourable outcomes.\n\n**Key facts**\n- P(event) = favourable / total equally-likely outcomes.\n- One die: sample space = 6 outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
+      "answerIndex": 2,
+      "explanation": "Even outcomes = {2, 4, 6} = 3 favourable; total = 6. P = 3/6 = **1/2**.\n\n**Why not the others**\n- 1/6 — probability of a single specific face.\n- 1/3 — counts only 2 and 4 as even (2/6) and forgets the 6.\n- 3 — this is the NUMBER of even faces, not a probability (it is not divided by 6).\n\n**Key facts**\n- P(event) = favourable / total equally-likely outcomes.\n- One die: sample space = 6 outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
       "covers": [
@@ -65,12 +65,12 @@
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "options": [
         "15",
-        "12",
+        "20",
         "30",
-        "20"
+        "36"
       ],
       "answerIndex": 0,
-      "explanation": "Order does not matter, so use combinations: 6C2 = 6!/(2!·4!) = (6×5)/(2×1) = **15**.\n\n**Why not the others**\n- 12 — no standard count; a mis-multiplication.\n- 30 — this is 6P2 = 6×5, the ordered count (arrangements, not selections).\n- 20 — 6C3, selecting 3 not 2.\n\n**Key facts**\n- nCr = n!/(r!(n−r)!); a selection uses a combination, an arrangement uses a permutation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "explanation": "Order does not matter, so use combinations: 6C2 = 6!/(2!·4!) = (6×5)/(2×1) = **15**.\n\n**Why not the others**\n- 20 — 6C3, selecting 3 not 2.\n- 30 — this is 6P2 = 6 × 5, the ordered count (arrangements, not selections).\n- 36 — 6 × 6 counts ordered pairs and even lets one person be picked twice.\n\n**Key facts**\n- nCr = n!/(r!(n−r)!); a selection uses a combination, an arrangement uses a permutation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
       "covers": [
@@ -90,11 +90,11 @@
       "options": [
         "20%",
         "25%",
-        "30%",
-        "33.3%"
+        "80%",
+        "125%"
       ],
       "answerIndex": 1,
-      "explanation": "%change = (new − old)/old × 100 = (1500 − 1200)/1200 × 100 = 300/1200 × 100 = **25%**.\n\n**Why not the others**\n- 20% — dividing the change by the new value (300/1500), the classic base-error.\n- 30% — misreads the increase as 360 or wrong base.\n- 33.3% — would need the change to equal 400 (i.e. 1200→1600).\n\n**Key facts**\n- Always divide the change by the ORIGINAL (older) value.\n- %change = (new − old)/old × 100.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph.*",
+      "explanation": "%change = (new − old)/old × 100 = (1500 − 1200)/1200 × 100 = 300/1200 × 100 = **25%**.\n\n**Why not the others**\n- 20% — divides the change by the new value (300/1500), the classic base-error.\n- 80% — this is the 2021 output as a percentage of 2022 (1200/1500).\n- 125% — this is the 2022 output as a percentage of 2021, not the increase.\n\n**Key facts**\n- Always divide the change by the ORIGINAL (older) value.\n- %change = (new − old)/old × 100.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bar Graph",
       "verified": true,
       "covers": [
@@ -114,13 +114,13 @@
       "question": "Using the same production data:\n\n| Factory | 2021 | 2022 |\n|---|---|---|\n| P | 1200 | 1500 |\n| Q | 800 | 1000 |\n| R | 1500 | 1350 |\n| S | 600 | 750 |\n\nWhat is the average production per factory in 2022?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
-        "1150",
-        "1100",
-        "1200",
-        "1050"
+        "920",
+        "1025",
+        "1087.5",
+        "1150"
       ],
-      "answerIndex": 0,
-      "explanation": "Average = sum ÷ count = (1500 + 1000 + 1350 + 750)/4 = 4600/4 = **1150**.\n\n**Why not the others**\n- 1100 — uses total 4400 (drops 200 somewhere).\n- 1200 — total 4800, over-counts.\n- 1050 — total 4200, under-counts.\n\n**Key facts**\n- Average across categories = (Σ values) / (number of categories).\n- 2022 total = 4600 over 4 factories.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph / Basic Concept Averages.*",
+      "answerIndex": 3,
+      "explanation": "Average = sum ÷ count = (1500 + 1000 + 1350 + 750)/4 = 4600/4 = **1150**.\n\n**Why not the others**\n- 920 — divides the 2022 total 4600 by 5 instead of by the 4 factories.\n- 1025 — uses the 2021 column (4100 ÷ 4) instead of 2022.\n- 1087.5 — pools both years (8700 ÷ 8) instead of averaging 2022 alone.\n\n**Key facts**\n- Average across categories = (Σ values) / (number of categories).\n- 2022 total = 4600 over 4 factories.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph / Basic Concept Averages.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bar Graph",
       "verified": true,
       "covers": [
@@ -139,11 +139,11 @@
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
         "2020",
+        "2021",
         "2022",
-        "2023",
-        "2021"
+        "2023"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Compute year-on-year %growth: 2020 = 15/40 = 37.5%; 2021 = −5/55 (decline); 2022 = 20/50 = 40%; 2023 = 15/70 ≈ 21.4%. Highest is **2022** at 40%.\n\n**Why not the others**\n- 2020 — 37.5%, high but below 2022's 40%.\n- 2023 — only ≈21.4% (15 on a base of 70).\n- 2021 — revenue fell (55→50), a negative growth.\n\n**Key facts**\n- Compare growth as a RATIO (change/base), not the absolute change.\n- 2020 and 2022 both rose 15–20 units but on different bases.\n\n*Source: local APPSC Quantitative Reasoning PDF — Bar Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Bar Graph",
       "verified": true,
@@ -164,13 +164,13 @@
       "question": "The line graph data below shows monthly sales (in units):\n\n| Month | Sales |\n|---|---|\n| Jan | 120 |\n| Feb | 150 |\n| Mar | 135 |\n| Apr | 180 |\n| May | 165 |\n\nWhat is the average monthly sales over these five months?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
-        "145",
-        "148",
-        "152",
-        "150"
+        "150",
+        "187.5",
+        "300",
+        "750"
       ],
-      "answerIndex": 3,
-      "explanation": "Total = 120 + 150 + 135 + 180 + 165 = 750; average = 750/5 = **150**.\n\n**Why not the others**\n- 145 — total 725, an addition slip.\n- 148 — total 740.\n- 152 — total 760.\n\n**Key facts**\n- Average = Σ values / number of periods.\n- Sum the line-graph points first, then divide by 5.\n\n*Source: local APPSC Quantitative Reasoning PDF — Line Graph.*",
+      "answerIndex": 0,
+      "explanation": "Total = 120 + 150 + 135 + 180 + 165 = 750; average = 750/5 = **150**.\n\n**Why not the others**\n- 187.5 — divides the total by 4 instead of 5.\n- 300 — adds the lowest and highest months (120 + 180) and forgets to halve, ignoring the other three.\n- 750 — this is the total, not the average.\n\n**Key facts**\n- Average = Σ values / number of periods.\n- Sum the line-graph points first, then divide by 5.\n\n*Source: local APPSC Quantitative Reasoning PDF — Line Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Line Graph",
       "verified": true,
       "covers": [
@@ -190,12 +190,12 @@
       "question": "A family's monthly budget of ₹60,000 is distributed as shown in the pie chart below:\n\n| Head | Share |\n|---|---|\n| Food | 30% |\n| Rent | 25% |\n| Education | 20% |\n| Savings | 15% |\n| Others | 10% |\n\nHow much is spent on Rent?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
-        "₹12,000",
         "₹18,000",
         "₹15,000",
+        "₹12,000",
         "₹9,000"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "Rent = 25% of 60,000 = 0.25 × 60,000 = **₹15,000**.\n\n**Why not the others**\n- ₹12,000 — 20% (the Education share).\n- ₹18,000 — 30% (the Food share).\n- ₹9,000 — 15% (the Savings share).\n\n**Key facts**\n- Pie amount = (share% / 100) × total.\n- Central angle for a slice = share% × 360° (Rent = 90°).\n\n*Source: local APPSC Quantitative Reasoning PDF — Pie Chart.*",
       "source": "local APPSC Quantitative Reasoning PDF — Pie Chart",
       "verified": true,
@@ -241,12 +241,12 @@
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
         "25%",
+        "30%",
         "35%",
-        "20%",
-        "30%"
+        "42.86%"
       ],
-      "answerIndex": 3,
-      "explanation": "Train share = 150/500 × 100 = **30%**.\n\n**Why not the others**\n- 25% — that is Car (125/500).\n- 35% — that is Bus (175/500).\n- 20% — no category matches; 100 people would be needed.\n\n**Key facts**\n- Caselet DI: pull each quantity from the text/table, then share% = part/whole × 100.\n- All shares must sum to 100% (35+25+30+10 = 100).\n\n*Source: local APPSC Quantitative Reasoning PDF — Caselet DI.*",
+      "answerIndex": 1,
+      "explanation": "Train share = 150/500 × 100 = **30%**.\n\n**Why not the others**\n- 25% — that is Car (125/500).\n- 35% — that is Bus (175/500).\n- 42.86% — divides the Train count by the non-Train people (150/350) instead of all 500.\n\n**Key facts**\n- Caselet DI: pull each quantity from the text/table, then share% = part/whole × 100.\n- All shares must sum to 100% (35+25+30+10 = 100).\n\n*Source: local APPSC Quantitative Reasoning PDF — Caselet DI.*",
       "source": "local APPSC Quantitative Reasoning PDF — Caselet DI",
       "verified": true,
       "covers": [
@@ -267,12 +267,12 @@
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
         "1",
-        "3",
         "2",
-        "4"
+        "3",
+        "5"
       ],
-      "answerIndex": 2,
-      "explanation": "Compare row by row: Design (85>70) ✓ and Camera (80>65) ✓; Price (60<80), Battery (75<90) and Speed (70<75) all favour X. So Y wins on **2** parameters.\n\n**Why not the others**\n- 1 — misses either Design or Camera.\n- 3 — wrongly counts Speed (70<75) for Y.\n- 4 — counts all but Price, ignoring Battery and Speed.\n\n**Key facts**\n- Radar DI = spoke-by-spoke comparison; a higher point on a spoke = larger value.\n\n*Source: local APPSC Quantitative Reasoning PDF — Radar.*",
+      "answerIndex": 1,
+      "explanation": "Compare row by row: Design (85>70) ✓ and Camera (80>65) ✓; Price (60<80), Battery (75<90) and Speed (70<75) all favour X. So Y wins on **2** parameters.\n\n**Why not the others**\n- 1 — counts only Camera, the parameter with the widest gap, and misses Design.\n- 3 — counts the parameters where X wins (Price, Battery, Speed) — the reverse question.\n- 5 — counts all five parameters, as if every one were a win.\n\n**Key facts**\n- Radar DI = spoke-by-spoke comparison; a higher point on a spoke = larger value.\n\n*Source: local APPSC Quantitative Reasoning PDF — Radar.*",
       "source": "local APPSC Quantitative Reasoning PDF — Radar",
       "verified": true,
       "covers": [
@@ -290,13 +290,13 @@
       "question": "A scatter plot shows hours studied (x) against marks (y) for six students:\n\n| Student | Hours | Marks |\n|---|---|---|\n| A | 2 | 40 |\n| B | 4 | 55 |\n| C | 6 | 65 |\n| D | 3 | 50 |\n| E | 5 | 60 |\n| F | 7 | 75 |\n\nHow many students scored MORE than 55 marks?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
-        "2",
-        "4",
         "5",
-        "3"
+        "4",
+        "3",
+        "2"
       ],
-      "answerIndex": 3,
-      "explanation": "Marks strictly above 55: C (65), E (60), F (75) = **3** students. B is exactly 55 (not 'more than').\n\n**Why not the others**\n- 2 — omits one of C/E/F.\n- 4 — wrongly includes B (=55, not >55).\n- 5 — includes B and D (50), both ≤55.\n\n**Key facts**\n- Scatter DI: read each (x, y) point; 'more than' means strictly greater — exclude the boundary value.\n\n*Source: local APPSC Quantitative Reasoning PDF — Scatter.*",
+      "answerIndex": 2,
+      "explanation": "Marks strictly above 55: C (65), E (60), F (75) = **3** students. B is exactly 55 (not 'more than').\n\n**Why not the others**\n- 2 — counts only the scores of 65 and above (C, F) and drops E's 60.\n- 4 — wrongly includes B (= 55, not > 55).\n- 5 — includes B and D (50), both ≤ 55.\n\n**Key facts**\n- Scatter DI: read each (x, y) point; 'more than' means strictly greater — exclude the boundary value.\n\n*Source: local APPSC Quantitative Reasoning PDF — Scatter.*",
       "source": "local APPSC Quantitative Reasoning PDF — Scatter",
       "verified": true,
       "covers": [
@@ -314,13 +314,13 @@
       "question": "The table shows units sold of four products; one value is missing but the total is given:\n\n| Product | Units |\n|---|---|\n| A | 120 |\n| B | ? |\n| C | 150 |\n| D | 90 |\n| Total | 500 |\n\nHow many units of Product B were sold?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
-        "130",
-        "150",
         "120",
-        "140"
+        "140",
+        "150",
+        "360"
       ],
-      "answerIndex": 3,
-      "explanation": "B = Total − (A + C + D) = 500 − (120 + 150 + 90) = 500 − 360 = **140**.\n\n**Why not the others**\n- 130 — subtracts to 370.\n- 150 — equals C, not the residual.\n- 120 — equals A, not the residual.\n\n**Key facts**\n- Missing-data DI: known parts sum + missing entry, so missing = total − (sum of the known values).\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
+      "answerIndex": 1,
+      "explanation": "B = Total − (A + C + D) = 500 − (120 + 150 + 90) = 500 − 360 = **140**.\n\n**Why not the others**\n- 120 — equals A, not the residual.\n- 150 — equals C, not the residual.\n- 360 — this is A + C + D, the sum still to be subtracted from 500.\n\n**Key facts**\n- Missing-data DI: known parts sum + missing entry, so missing = total − (sum of the known values).\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Tabulation",
       "verified": true,
       "covers": [
@@ -338,12 +338,12 @@
       "question": "Data Sufficiency — What is the value of x? Consider the statements:\nI. x is an even prime number.\nII. x is a positive integer less than 5.\nWhich statement(s) alone is/are sufficient to determine x uniquely?",
       "noteRef": "ment-data-interpretation-probability-note-data-sufficiency",
       "options": [
-        "Statement I alone is sufficient",
         "Statement II alone is sufficient",
         "Both statements together are needed",
-        "Either statement alone is sufficient"
+        "Either statement alone is sufficient",
+        "Statement I alone is sufficient"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "The only even prime number is 2, so Statement I alone fixes x = 2 — sufficient. Statement II allows x ∈ {1, 2, 3, 4} — not unique, insufficient.\n\n**Why not the others**\n- Statement II alone — leaves four possible values.\n- Both together — unnecessary, since I already determines x.\n- Either alone — false, because II alone is not sufficient.\n\n**Key facts**\n- DS convention: a statement is sufficient only if it yields ONE value.\n- 2 is the unique even prime.\n\n*Source: local APPSC Quantitative Reasoning PDF — Data Sufficiency.*",
       "source": "local APPSC Quantitative Reasoning PDF — Data Sufficiency",
       "verified": true,
@@ -384,12 +384,12 @@
       "question": "In how many ways can a 3-letter code (no letter repeated) be formed from 5 distinct letters?",
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "options": [
-        "60",
-        "120",
+        "10",
         "20",
-        "10"
+        "60",
+        "120"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "Order matters (a code), no repetition, so use a permutation: 5P3 = 5 × 4 × 3 = **60**.\n\n**Why not the others**\n- 120 — that is 5! (arranging all five letters).\n- 20 — 5 × 4, only two positions filled.\n- 10 — 5C3 = 10, selection without order (ignores arrangement).\n\n**Key facts**\n- nPr = n!/(n−r)! = n(n−1)…(r terms).\n- 'Code/word/rank' means order matters, so use a permutation.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
@@ -407,13 +407,13 @@
       "question": "In how many distinct ways can 6 people be seated around a circular table?",
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "options": [
-        "720",
         "24",
         "120",
-        "60"
+        "360",
+        "720"
       ],
-      "answerIndex": 2,
-      "explanation": "Circular arrangements of n people = (n − 1)! Fixing one person removes rotational duplicates: (6 − 1)! = 5! = **120**.\n\n**Why not the others**\n- 720 — 6!, the count for a straight line (row), not a circle.\n- 24 — 4! (would be five people in a circle).\n- 60 — no standard circular count here.\n\n**Key facts**\n- Linear arrangement = n!; circular = (n−1)! because rotations are identical.\n- If clockwise and anticlockwise are the same, divide further by 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "answerIndex": 1,
+      "explanation": "Circular arrangements of n people = (n − 1)! Fixing one person removes rotational duplicates: (6 − 1)! = 5! = **120**.\n\n**Why not the others**\n- 24 — 4! (would be five people in a circle).\n- 360 — 6!/2 halves the row count; a circle removes the 6 rotations, not 2.\n- 720 — 6!, the count for a straight line (row), not a circle.\n\n**Key facts**\n- Linear arrangement = n!; circular = (n−1)! because rotations are identical.\n- If clockwise and anticlockwise are the same, divide further by 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
       "covers": [
@@ -431,13 +431,13 @@
       "question": "From a squad of 8 players, in how many ways can a team of 3 be selected?",
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "options": [
-        "336",
         "56",
-        "112",
-        "24"
+        "70",
+        "336",
+        "512"
       ],
-      "answerIndex": 1,
-      "explanation": "Selection (order irrelevant), so use a combination: 8C3 = (8 × 7 × 6)/(3 × 2 × 1) = 336/6 = **56**.\n\n**Why not the others**\n- 336 — 8P3 = 8×7×6, the ordered count (arrangements).\n- 112 — a doubling error of 56.\n- 24 — 4! or a mis-cancellation.\n\n**Key facts**\n- nCr = nPr / r!; here 336/6 = 56.\n- 'Team/committee/group' means order is irrelevant, so use a combination.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "answerIndex": 0,
+      "explanation": "Selection (order irrelevant), so use a combination: 8C3 = (8 × 7 × 6)/(3 × 2 × 1) = 336/6 = **56**.\n\n**Why not the others**\n- 70 — this is 8C4, selecting 4 players, not 3.\n- 336 — 8P3 = 8 × 7 × 6, the ordered count (arrangements).\n- 512 — 8³ lets the same player be picked more than once and counts order.\n\n**Key facts**\n- nCr = nPr / r!; here 336/6 = 56.\n- 'Team/committee/group' means order is irrelevant, so use a combination.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
       "covers": [
@@ -455,12 +455,12 @@
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "options": [
         "1/6",
+        "1/7",
         "5/36",
-        "7/36",
-        "1/9"
+        "1/11"
       ],
-      "answerIndex": 1,
-      "explanation": "Favourable outcomes for a sum of 8: (2,6), (3,5), (4,4), (5,3), (6,2) = 5. Total outcomes = 6 × 6 = 36. P = **5/36**.\n\n**Why not the others**\n- 1/6 — that is 6/36, the count for a sum of 7 (the most likely sum).\n- 7/36 — over-counts favourable outcomes.\n- 1/9 — 4/36, misses one ordered pair.\n\n**Key facts**\n- Two dice: sample space = 36 ordered outcomes.\n- Order matters: (2,6) and (6,2) are distinct outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
+      "answerIndex": 2,
+      "explanation": "Favourable outcomes for a sum of 8: (2,6), (3,5), (4,4), (5,3), (6,2) = 5. Total outcomes = 6 × 6 = 36. P = **5/36**.\n\n**Why not the others**\n- 1/11 — treats the 11 possible sums (2 to 12) as equally likely.\n- 1/7 — counts unordered pairs ({2,6}, {3,5}, {4,4} out of 21); dice outcomes are ordered.\n- 1/6 — that is 6/36, the count for a sum of 7 (the most likely sum).\n\n**Key facts**\n- Two dice: sample space = 36 ordered outcomes.\n- Order matters: (2,6) and (6,2) are distinct outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
       "covers": [
@@ -479,13 +479,13 @@
       "question": "A bag contains 4 red and 3 green balls. Two balls are drawn at random together. What is the probability that both are red?",
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "options": [
-        "1/7",
-        "3/7",
-        "4/7",
-        "2/7"
+        "12/49",
+        "2/7",
+        "16/49",
+        "4/7"
       ],
-      "answerIndex": 3,
-      "explanation": "Model as combinations: favourable = 4C2 = 6; total = 7C2 = 21. P = 6/21 = **2/7**.\n\n**Why not the others**\n- 1/7 — would need only 3 favourable ways.\n- 3/7 — 9/21, not the value of 4C2/7C2.\n- 4/7 — the raw red fraction (4/7), ignores drawing two without replacement.\n\n**Key facts**\n- P = (favourable combinations)/(total combinations) = 4C2 / 7C2.\n- Total balls = 4 + 3 = 7; 7C2 = 21.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
+      "answerIndex": 1,
+      "explanation": "Model as combinations: favourable = 4C2 = 6; total = 7C2 = 21. P = 6/21 = **2/7**.\n\n**Why not the others**\n- 12/49 — removes a red from the reds but not from the total (4/7 × 3/7).\n- 16/49 — draws WITH replacement ((4/7)²); the two balls are drawn together.\n- 4/7 — the raw red fraction (4/7); ignores that two balls are drawn.\n\n**Key facts**\n- P = (favourable combinations)/(total combinations) = 4C2 / 7C2.\n- Total balls = 4 + 3 = 7; 7C2 = 21.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
       "covers": [
@@ -505,13 +505,13 @@
       "question": "One card is drawn at random from a well-shuffled standard pack of 52 cards. What is the probability that it is a king OR a heart?",
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "options": [
-        "17/52",
-        "4/13",
+        "1/13",
         "1/4",
-        "16/13"
+        "4/13",
+        "17/52"
       ],
-      "answerIndex": 1,
-      "explanation": "Addition rule: P(K ∪ H) = P(K) + P(H) − P(K ∩ H) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**. (The king of hearts is subtracted once to avoid double counting.)\n\n**Why not the others**\n- 17/52 — 4/52 + 13/52 without subtracting the overlap (double counts the king of hearts).\n- 1/4 — 13/52, hearts only.\n- 16/13 — a nonsensical value greater than 1.\n\n**Key facts**\n- P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n- Deck: 4 kings, 13 hearts, 1 card is both.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
+      "answerIndex": 2,
+      "explanation": "Addition rule: P(K ∪ H) = P(K) + P(H) − P(K ∩ H) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**. (The king of hearts is subtracted once to avoid double counting.)\n\n**Why not the others**\n- 1/13 — 4/52, kings only.\n- 1/4 — 13/52, hearts only.\n- 17/52 — 4/52 + 13/52 without subtracting the overlap (double counts the king of hearts).\n\n**Key facts**\n- P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n- Deck: 4 kings, 13 hearts, 1 card is both.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
       "covers": [
@@ -533,11 +533,11 @@
       "options": [
         "15/64",
         "15/56",
-        "5/56",
-        "8/56"
+        "3/8",
+        "15/28"
       ],
       "answerIndex": 1,
-      "explanation": "Dependent events: P(1st red) = 5/8; after removing a red, 7 balls remain with 3 blue, so P(2nd blue | 1st red) = 3/7. Multiply: 5/8 × 3/7 = **15/56**.\n\n**Why not the others**\n- 15/64 — uses 8 in the second draw too (i.e. WITH replacement), ignoring the removed ball.\n- 5/56 — drops the factor 3 in the numerator.\n- 8/56 — unrelated simplification error.\n\n**Key facts**\n- Without replacement, the second draw's total shrinks by 1: P(A then B) = P(A) × P(B|A).\n- Total balls = 8; after one drawn = 7.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
+      "explanation": "Dependent events: P(1st red) = 5/8; after removing a red, 7 balls remain with 3 blue, so P(2nd blue | 1st red) = 3/7. Multiply: 5/8 × 3/7 = **15/56**.\n\n**Why not the others**\n- 15/64 — uses 8 in the second draw too (i.e. WITH replacement), ignoring the removed ball.\n- 3/8 — this is just P(blue) on one draw; the red-first condition is ignored.\n- 15/28 — counts both orders (red-blue and blue-red); the question fixes red first.\n\n**Key facts**\n- Without replacement, the second draw's total shrinks by 1: P(A then B) = P(A) × P(B|A).\n- Total balls = 8; after one drawn = 7.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
       "covers": [
@@ -555,13 +555,13 @@
       "question": "The table shows the sales (in units) of a company across four zones:\n\n| Zone | Sales |\n|---|---|\n| North | 4500 |\n| South | 3000 |\n| East | 2500 |\n| West | 2000 |\n\nWhat is the ratio of North zone sales to West zone sales?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
-        "9 : 4",
         "4 : 9",
-        "5 : 2",
-        "3 : 2"
+        "3 : 2",
+        "9 : 5",
+        "9 : 4"
       ],
-      "answerIndex": 0,
-      "explanation": "Ratio = North : West = 4500 : 2000. Divide both by 500 → 9 : 4.\n\n**Why not the others**\n- 4 : 9 — the inverse ratio (West : North).\n- 5 : 2 — does not match any pair of these zones.\n- 3 : 2 — that is the North : South ratio (4500 : 3000), not North : West.\n\n**Key facts**\n- Ratio DI: divide both quantities by their HCF to get the simplest form.\n- HCF(4500, 2000) = 500, so the ratio is 9 : 4.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
+      "answerIndex": 3,
+      "explanation": "Ratio = North : West = 4500 : 2000. Divide both by 500 → 9 : 4.\n\n**Why not the others**\n- 4 : 9 — the inverse ratio (West : North).\n- 3 : 2 — that is the North : South ratio (4500 : 3000), not North : West.\n- 9 : 5 — that is the North : East ratio (4500 : 2500).\n\n**Key facts**\n- Ratio DI: divide both quantities by their HCF to get the simplest form.\n- HCF(4500, 2000) = 500, so the ratio is 9 : 4.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tabulation.*",
       "source": "local APPSC Quantitative Reasoning PDF — Tabulation",
       "verified": true,
       "covers": [
@@ -581,13 +581,13 @@
       "question": "A company's annual expenditure is shown as a pie chart:\n\n| Head | Share |\n|---|---|\n| Salaries | 40% |\n| Rent | 20% |\n| Utilities | 15% |\n| Marketing | 15% |\n| Misc | 10% |\n\nWhat is the central angle (in degrees) of the sector representing Salaries?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
-        "144°",
-        "120°",
-        "150°",
-        "90°"
+        "14.4°",
+        "40°",
+        "72°",
+        "144°"
       ],
-      "answerIndex": 0,
-      "explanation": "A pie chart spans 360°, so central angle = share% × 360°. Salaries = 40% × 360° = 0.40 × 360 = **144°**.\n\n**Why not the others**\n- 120° — corresponds to a 33.3% share.\n- 150° — corresponds to a 41.7% share.\n- 90° — corresponds to a 25% share.\n\n**Key facts**\n- Central angle of a slice = (share% / 100) × 360°.\n- The five angles must total 360° (144+72+54+54+36 = 360).\n\n*Source: local APPSC Quantitative Reasoning PDF — Pie Chart.*",
+      "answerIndex": 3,
+      "explanation": "A pie chart spans 360°, so central angle = share% × 360°. Salaries = 40% × 360° = 0.40 × 360 = **144°**.\n\n**Why not the others**\n- 14.4° — multiplies 40 by 0.36 instead of by 3.6 (1% of a pie is 3.6°).\n- 40° — reads the percentage as degrees; 1% of a pie is 3.6°.\n- 72° — this is the Rent sector (20% × 360°).\n\n**Key facts**\n- Central angle of a slice = (share% / 100) × 360°.\n- The five angles must total 360° (144+72+54+54+36 = 360).\n\n*Source: local APPSC Quantitative Reasoning PDF — Pie Chart.*",
       "source": "local APPSC Quantitative Reasoning PDF — Pie Chart",
       "verified": true,
       "covers": [
@@ -606,12 +606,12 @@
       "question": "The line graph data below shows a firm's yearly profit (₹ crore):\n\n| Year | Profit |\n|---|---|\n| 2019 | 20 |\n| 2020 | 35 |\n| 2021 | 30 |\n| 2022 | 50 |\n| 2023 | 45 |\n\nBetween which pair of consecutive years was the ABSOLUTE increase in profit the greatest?",
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "options": [
+        "2021 and 2022",
         "2019 and 2020",
         "2020 and 2021",
-        "2021 and 2022",
         "2022 and 2023"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "Year-on-year changes: 2019→2020 = +15; 2020→2021 = −5; 2021→2022 = +20; 2022→2023 = −5. The greatest absolute increase is **+20, between 2021 and 2022**.\n\n**Why not the others**\n- 2019 and 2020 — a rise of +15, less than +20.\n- 2020 and 2021 — a decline (−5), not an increase.\n- 2022 and 2023 — a decline (−5).\n\n**Key facts**\n- Absolute change = later value − earlier value; compare the raw differences.\n- Only two intervals rose (2019→20 and 2021→22); the larger jump is +20.\n\n*Source: local APPSC Quantitative Reasoning PDF — Line Graph.*",
       "source": "local APPSC Quantitative Reasoning PDF — Line Graph",
       "verified": true,
@@ -631,12 +631,12 @@
       "question": "Data Sufficiency — What is the area of a square? Consider the statements:\nI. The perimeter of the square is 40 cm.\nII. The diagonal of the square is 10√2 cm.\nWhich of the following is correct?",
       "noteRef": "ment-data-interpretation-probability-note-data-sufficiency",
       "options": [
+        "Either statement alone is sufficient",
         "Statement I alone is sufficient but II is not",
         "Statement II alone is sufficient but I is not",
-        "Either statement alone is sufficient",
         "Both statements together are needed"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "I alone: perimeter 40, so side = 40 ÷ 4 = 10, giving area = 100 cm² — sufficient. II alone: diagonal = side√2 = 10√2, so side = 10, giving area = 100 cm² — also sufficient. So EITHER statement alone works.\n\n**Why not the others**\n- I alone only — false; II alone also fixes the side.\n- II alone only — false; I alone also fixes the side.\n- Both together needed — unnecessary, since each alone determines the area.\n\n**Key facts**\n- Square: side = perimeter/4 = diagonal/√2; area = side².\n- DS 'either' case: each statement independently yields the same unique answer.\n\n*Source: local APPSC Quantitative Reasoning PDF — Data Sufficiency.*",
       "source": "local APPSC Quantitative Reasoning PDF — Data Sufficiency",
       "verified": true,
@@ -655,13 +655,13 @@
       "question": "In how many distinct ways can the letters of the word 'LEVEL' be arranged?",
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "options": [
-        "30",
-        "60",
         "120",
-        "20"
+        "60",
+        "30",
+        "15"
       ],
-      "answerIndex": 0,
-      "explanation": "'LEVEL' has 5 letters with L repeated twice and E repeated twice. Arrangements = 5! / (2! × 2!) = 120 / 4 = **30**.\n\n**Why not the others**\n- 60 — divides by only one 2! (accounts for one repeated letter, not both).\n- 120 — 5!, treating all letters as distinct.\n- 20 — an incorrect division of 120.\n\n**Key facts**\n- Arrangements of n letters with repeats = n! / (p! q! …) where p, q are the repeat counts.\n- LEVEL: n = 5, L twice and E twice, so arrangements = 5!/(2!2!) = 30.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "answerIndex": 2,
+      "explanation": "'LEVEL' has 5 letters with L repeated twice and E repeated twice. Arrangements = 5! / (2! × 2!) = 120 / 4 = **30**.\n\n**Why not the others**\n- 15 — divides by an extra 2! (5!/(2!·2!·2!)); only L and E repeat.\n- 60 — divides by only one 2! (accounts for one repeated letter, not both).\n- 120 — 5!, treating all letters as distinct.\n\n**Key facts**\n- Arrangements of n letters with repeats = n! / (p! q! …) where p, q are the repeat counts.\n- LEVEL: n = 5, L twice and E twice, so arrangements = 5!/(2!2!) = 30.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
       "covers": [
@@ -680,9 +680,9 @@
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "options": [
         "7/8",
-        "1/8",
         "1/2",
-        "3/8"
+        "3/8",
+        "1/8"
       ],
       "answerIndex": 0,
       "explanation": "Use the complement. P(no head) = P(all three tails) = (1/2)³ = 1/8. So P(at least one head) = 1 − 1/8 = **7/8**.\n\n**Why not the others**\n- 1/8 — that is P(no head at all), the complement itself.\n- 1/2 — the probability of a head on a single toss, not across three.\n- 3/8 — the probability of exactly one head, not 'at least one'.\n\n**Key facts**\n- 'At least one' means 1 − P(none) is the fastest route.\n- Three tosses: sample space = 2³ = 8 equally likely outcomes.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
@@ -705,12 +705,12 @@
       "question": "One card is drawn at random from a well-shuffled standard pack of 52 cards. What is the probability that it is a face card (Jack, Queen or King)?",
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "options": [
-        "3/13",
         "1/13",
-        "4/13",
-        "1/4"
+        "3/13",
+        "1/4",
+        "4/13"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "A deck has 3 face cards (J, Q, K) in each of the 4 suits = 12 face cards. P = 12/52 = **3/13**.\n\n**Why not the others**\n- 1/13 — that is P(a specific rank, e.g. a King) = 4/52.\n- 4/13 — that is 16/52, e.g. face cards plus aces mis-counted.\n- 1/4 — that is 13/52, the probability of a chosen suit.\n\n**Key facts**\n- Face cards = J, Q, K → 3 × 4 = 12 cards; 12/52 = 3/13.\n- Deck: 52 cards, 4 suits × 13 ranks, 4 of each rank.\n\n*Source: local APPSC Quantitative Reasoning PDF — Probability.*",
       "source": "local APPSC Quantitative Reasoning PDF — Probability",
       "verified": true,
@@ -731,13 +731,13 @@
       "question": "A committee of 3 is to be formed from 4 men and 3 women. In how many ways can it be formed if it must contain EXACTLY one woman?",
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "options": [
+        "35",
+        "30",
         "18",
-        "12",
-        "9",
-        "30"
+        "12"
       ],
-      "answerIndex": 0,
-      "explanation": "Choose 1 woman from 3 AND 2 men from 4 (multiply the independent selections): 3C1 × 4C2 = 3 × 6 = **18**.\n\n**Why not the others**\n- 12 — uses 4C2 alone or 3 × 4, ignoring one selection.\n- 9 — 3 × 3, a mis-count of the men's combinations.\n- 30 — 3 × 10, using 5C2 instead of 4C2.\n\n**Key facts**\n- 'Exactly one woman' means (ways to pick the woman) × (ways to pick the remaining men).\n- 3C1 = 3 and 4C2 = 6, so 3 × 6 = 18.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
+      "answerIndex": 2,
+      "explanation": "Choose 1 woman from 3 AND 2 men from 4 (multiply the independent selections): 3C1 × 4C2 = 3 × 6 = **18**.\n\n**Why not the others**\n- 12 — 3 × 4 picks only one man; the committee needs two men.\n- 30 — 3 × 5C2 uses 5C2 instead of 4C2; there are only 4 men to choose from.\n- 35 — 7C3 ignores the 'exactly one woman' condition.\n\n**Key facts**\n- 'Exactly one woman' means (ways to pick the woman) × (ways to pick the remaining men).\n- 3C1 = 3 and 4C2 = 6, so 3 × 6 = 18.\n\n*Source: local APPSC Quantitative Reasoning PDF — Permutation and Combination.*",
       "source": "local APPSC Quantitative Reasoning PDF — Permutation and Combination",
       "verified": true,
       "covers": [
@@ -756,13 +756,13 @@
       "question": "Three bells ring at intervals of 3, 4 and 6 minutes and ring together at 9:00 a.m. In the next 72 minutes (up to and including 10:12 a.m.), how many more times do all three ring together?",
       "noteRef": "ment-data-interpretation-probability-note-pyq-counting-variants",
       "options": [
-        "6",
+        "3",
         "5",
-        "4",
+        "6",
         "12"
       ],
-      "answerIndex": 0,
-      "explanation": "They coincide every LCM(3,4,6) = 12 minutes. In 72 minutes that is at 12, 24, 36, 48, 60 and 72 minutes = **6** times.\n\n**Why not the others**\n- 5 — drops the coincidence at the 72nd minute.\n- 4 — uses a wrong LCM (e.g. 18).\n- 12 — counts every 6 minutes instead of every 12.\n\n**Key facts**\n- Periodic events with periods p, q, r coincide every LCM(p, q, r).\n- Number of coincidences in time T = floor(T / LCM).\n\n*Source: UPSC CSE (CSAT) 2016 pattern — LCM coincidence (via UPSCprep); APPSC Quantitative Reasoning.*",
+      "answerIndex": 2,
+      "explanation": "They coincide every LCM(3,4,6) = 12 minutes. In 72 minutes that is at 12, 24, 36, 48, 60 and 72 minutes = **6** times.\n\n**Why not the others**\n- 3 — uses 24 (4 × 6) as the LCM instead of 12.\n- 5 — drops the coincidence at the 72nd minute.\n- 12 — counts every 6 minutes instead of every 12.\n\n**Key facts**\n- Periodic events with periods p, q, r coincide every LCM(p, q, r).\n- Number of coincidences in time T = floor(T / LCM).\n\n*Source: UPSC CSE (CSAT) 2016 pattern — LCM coincidence (via UPSCprep); APPSC Quantitative Reasoning.*",
       "source": "UPSC CSE (CSAT) 2016 (via UPSCprep); APPSC Quantitative Reasoning",
       "verified": true,
       "covers": [
@@ -783,11 +783,11 @@
       "options": [
         "10",
         "7",
-        "8",
-        "9"
+        "6",
+        "3"
       ],
       "answerIndex": 1,
-      "explanation": "Total unrestricted selections = 5C2 = 10. Invalid selections pair Maths-II with a non-Maths-I subject (Physics, Chemistry or Biology) = 3. Valid = 10 - 3 = **7**.\n\n**Why not the others**\n- 10 — ignores the dependency constraint entirely.\n- 8 or 9 — remove too few invalid pairs (only 3 must go).\n\n**Key facts**\n- With a dependency, count all C(n, r) then subtract the selections that violate it.\n- Here 5C2 = 10 and 10 - 3 = 7.\n\n*Source: UPSC CSE (CSAT) 2015 — constrained selection (via UPSCprep).*",
+      "explanation": "Total unrestricted selections = 5C2 = 10. Invalid selections pair Maths-II with a non-Maths-I subject (Physics, Chemistry or Biology) = 3. Valid = 10 - 3 = **7**.\n\n**Why not the others**\n- 3 — this is the number of INVALID pairs, not the valid ones.\n- 6 — also removes the valid pair Maths-I + Maths-II.\n- 10 — ignores the dependency constraint entirely.\n\n**Key facts**\n- With a dependency, count all C(n, r) then subtract the selections that violate it.\n- Here 5C2 = 10 and 10 - 3 = 7.\n\n*Source: UPSC CSE (CSAT) 2015 — constrained selection (via UPSCprep).*",
       "source": "UPSC CSE (CSAT) 2015 (via UPSCprep)",
       "verified": true,
       "covers": [
@@ -806,9 +806,9 @@
       "question": "At a party there are 3 men and 4 women. Every pair of the OPPOSITE sex shakes hands, while every pair of the SAME sex hugs. How many hugs take place?",
       "noteRef": "ment-data-interpretation-probability-note-pyq-counting-variants",
       "options": [
-        "12",
-        "9",
         "7",
+        "9",
+        "12",
         "21"
       ],
       "answerIndex": 1,
@@ -831,13 +831,13 @@
       "question": "X and Y are respectively 20% and 28% less than a third number Z. By what percentage is Y less than X?",
       "noteRef": "ment-data-interpretation-probability-note-pyq-counting-variants",
       "options": [
-        "8%",
+        "90%",
+        "11.11%",
         "10%",
-        "12%",
-        "28%"
+        "8%"
       ],
-      "answerIndex": 1,
-      "explanation": "Take Z = 100, so X = 80 and Y = 72. Y is less than X by (80 - 72)/80 x 100 = 8/80 x 100 = **10%** (the base is X, not Z).\n\n**Why not the others**\n- 8% — wrongly subtracts the two percentages (28 - 20) or uses Z as the base.\n- 12% or 28% — misuse of base; the comparison must be relative to X.\n\n**Key facts**\n- 'Y is x% less than Z' means Y = Z(1 - x/100).\n- 'Y less than X' uses X as the base: (X - Y)/X x 100.\n\n*Source: UPSC CSE (CSAT) 2016 — percentage-less base comparison (via UPSCprep).*",
+      "answerIndex": 2,
+      "explanation": "Take Z = 100, so X = 80 and Y = 72. Y is less than X by (80 - 72)/80 x 100 = 8/80 x 100 = **10%** (the base is X, not Z).\n\n**Why not the others**\n- 8% — wrongly subtracts the two percentages (28 − 20), i.e. uses Z as the base.\n- 11.11% — uses Y as the base (8/72); 'less than X' needs X as the base.\n- 90% — this is Y as a percentage of X (72/80), not how much less.\n\n**Key facts**\n- 'Y is x% less than Z' means Y = Z(1 - x/100).\n- 'Y less than X' uses X as the base: (X - Y)/X x 100.\n\n*Source: UPSC CSE (CSAT) 2016 — percentage-less base comparison (via UPSCprep).*",
       "source": "UPSC CSE (CSAT) 2016 (via UPSCprep)",
       "verified": true,
       "covers": [
@@ -855,12 +855,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A family spends 12.5% of its monthly income of ₹80,000 on education, as shown in a pie chart. The amount spent on education is:",
       "options": [
-        "₹12,500",
-        "₹10,000",
+        "₹6,400",
         "₹8,000",
-        "₹6,400"
+        "₹10,000",
+        "₹12,500"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "explanation": "Pie amount = share% ÷ 100 × total = 12.5 ÷ 100 × 80,000 = ₹10,000.\n\n**Why not the others**\n- ₹12,500 — ₹12,500 treats 12.5% as ₹12,500.\n- ₹8,000 — ₹8,000 is 10%.\n- ₹6,400 — ₹6,400 is 8%.\n\n**Key facts**\n- Amount = share% ÷ 100 × total.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -881,12 +881,12 @@
       "options": [
         "₹7,200",
         "₹10,000",
-        "₹36,000",
-        "₹14,400"
+        "₹13,889",
+        "₹36,000"
       ],
       "answerIndex": 1,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
-      "explanation": "Angle ÷ 360 × total = 72 ÷ 360 × 50,000 = ₹10,000 (72° = 20%, since 1% = 3.6°).\n\n**Why not the others**\n- ₹7,200 — ₹7,200 treats degrees as hundreds of rupees.\n- ₹36,000 — ₹36,000 is 72% of the budget, treating degrees as per cent.\n- ₹14,400 — ₹14,400 uses 72 ÷ 250.\n\n**Key facts**\n- Value = angle ÷ 360 × total.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Angle ÷ 360 × total = 72 ÷ 360 × 50,000 = ₹10,000 (72° = 20%, since 1% = 3.6°).\n\n**Why not the others**\n- ₹7,200 — ₹7,200 treats degrees as hundreds of rupees.\n- ₹13,889 — divides the budget by 3.6 instead of taking 72/360 of it.\n- ₹36,000 — ₹36,000 is 72% of the budget, treating degrees as per cent.\n\n**Key facts**\n- Value = angle ÷ 360 × total.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -903,14 +903,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A table shows that 120 of a college's 480 students are in Science. What percentage of the students are in Science?",
       "options": [
-        "40%",
-        "75%",
         "25%",
-        "12%"
+        "33.33%",
+        "75%",
+        "400%"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
-      "explanation": "Share percentage = part ÷ total × 100 = 120 ÷ 480 × 100 = 25%.\n\n**Why not the others**\n- 40% — 40% is an arithmetic slip.\n- 75% — 75% is the non-Science share.\n- 12% — 12% is an arithmetic slip.\n\n**Key facts**\n- Share = part ÷ total × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Share percentage = part ÷ total × 100 = 120 ÷ 480 × 100 = 25%.\n\n**Why not the others**\n- 33.33% — divides by the non-Science students (120/360) instead of all 480.\n- 75% — 75% is the non-Science share.\n- 400% — inverts the ratio (480/120).\n\n**Key facts**\n- Share = part ÷ total × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -927,14 +927,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Exports of A are 25% more than those of B. By what percentage are B's exports less than A's?",
       "options": [
-        "20%",
+        "125%",
+        "80%",
         "25%",
-        "33.3%",
-        "15%"
+        "20%"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
-      "explanation": "If B = 100, A = 125. B is 25 less than A, on A's base: 25 ÷ 125 × 100 = 20% less than A.\n\n**Why not the others**\n- 25% — 25% uses the wrong base (B instead of A).\n- 33.3% — 33.3% is an arithmetic slip.\n- 15% — 15% is an arithmetic slip.\n\n**Key facts**\n- x% more → x ÷ (100 + x) × 100 % less.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "If B = 100, A = 125. B is 25 less than A, on A's base: 25 ÷ 125 × 100 = 20% less than A.\n\n**Why not the others**\n- 25% — 25% uses the wrong base (B instead of A).\n- 80% — this is B as a percentage of A (100/125), not how much less.\n- 125% — this is A as a percentage of B.\n\n**Key facts**\n- x% more → x ÷ (100 + x) × 100 % less.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -951,14 +951,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A state's unemployment rate rose from 8% to 10%. Which statement is correct?",
       "options": [
-        "It rose by 2 percentage points, a 25% increase",
-        "It rose by 2%",
-        "It rose by 25 percentage points",
-        "It rose by 20%"
+        "2 percentage points, a 2% increase",
+        "25 percentage points, a 25% increase",
+        "2 percentage points, a 20% increase",
+        "2 percentage points, a 25% increase"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
-      "explanation": "Percentage points = 10 − 8 = 2; percent change = 2 ÷ 8 × 100 = 25%.\n\n**Why not the others**\n- It rose by 2% — 2% would mean 8.16%.\n- It rose by 25 percentage points — Mixes the two measures.\n- It rose by 20% — 20% divides by the new value.\n\n**Key facts**\n- Percentage points vs per cent change.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Percentage points = 10 − 8 = 2; percent change = 2 ÷ 8 × 100 = 25%.\n\n**Why not the others**\n- 2 percentage points, a 2% increase — treats the point change as the percentage change; 2% of 8 would be only 0.16.\n- 25 percentage points, a 25% increase — mixes the two measures; the rate moved only 2 points.\n- 2 percentage points, a 20% increase — divides the change by the new value 10 instead of the old value 8.\n\n**Key facts**\n- Percentage points vs per cent change.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -975,14 +975,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "One company's sales are ₹2.5 crore; another's are ₹180 lakh. In lakh, the first company's sales are:",
       "options": [
+        "2.5 lakh",
         "25 lakh",
-        "2500 lakh",
         "250 lakh",
-        "2.5 lakh"
+        "2500 lakh"
       ],
       "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
-      "explanation": "1 crore = 100 lakh, so 2.5 crore = 250 lakh — more than 180 lakh.\n\n**Why not the others**\n- 25 lakh — 25 lakh is off by 10.\n- 2500 lakh — 2500 lakh is off by 10.\n- 2.5 lakh — No conversion done.\n\n**Key facts**\n- Convert units before comparing.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "1 crore = 100 lakh, so 2.5 crore = 250 lakh — more than 180 lakh.\n\n**Why not the others**\n- 2.5 lakh — no conversion done.\n- 25 lakh — uses 1 crore = 10 lakh.\n- 2500 lakh — uses 1 crore = 1000 lakh; 1 crore is 100 lakh.\n\n**Key facts**\n- Convert units before comparing.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1023,12 +1023,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Two buses leave a depot together at 8:00 a.m.; one leaves every 12 minutes and the other every 18 minutes. When do they next leave together?",
       "options": [
-        "8:36 a.m.",
         "8:30 a.m.",
         "8:06 a.m.",
-        "9:00 a.m."
+        "9:00 a.m.",
+        "8:36 a.m."
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-pyq-counting-variants",
       "explanation": "They leave together every LCM(12, 18) = 36 minutes: 8:36 a.m.\n\n**Why not the others**\n- 8:30 a.m. — 30 is not a multiple of 12.\n- 8:06 a.m. — 6 is the HCF.\n- 9:00 a.m. — 60 minutes is a common multiple but not the least.\n\n**Key facts**\n- Events coincide every LCM of the periods.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1047,12 +1047,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A scatter plot of hours studied (x) against marks (y) shows the points rising from left to right. This shows:",
       "options": [
+        "a positive correlation",
         "a negative correlation",
         "no correlation",
-        "that marks cause studying",
-        "a positive correlation"
+        "that marks cause studying"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
       "explanation": "Points rising together means the two variables increase together: positive correlation.\n\n**Why not the others**\n- a negative correlation — Negative correlation falls left to right.\n- no correlation — A clear pattern is visible.\n- that marks cause studying — Correlation does not show cause.\n\n**Key facts**\n- Scatter: rising → positive; falling → negative.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1095,14 +1095,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In a candlestick chart, a green (hollow) body for a day means that day:",
       "options": [
-        "the closing price was higher than the opening price",
-        "the closing price was lower than the opening price",
-        "the high and low were equal",
-        "no trading took place"
+        "it closed below its opening price",
+        "its high and low prices were equal",
+        "no trading took place on that day",
+        "it closed above its opening price"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
-      "explanation": "The body runs from open to close; green/white = close > open (price rose); the wicks show the high and the low.\n\n**Why not the others**\n- the closing price was lower than the opening price — That is a red/black body.\n- the high and low were equal — Wicks show high and low.\n- no trading took place — A candle is drawn only for trading days.\n\n**Key facts**\n- Candlestick: green body → close > open.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "The body runs from open to close; green/white = close > open (price rose); the wicks show the high and the low.\n\n**Why not the others**\n- it closed below its opening price — that is a red/black body.\n- its high and low prices were equal — the wicks, not the body colour, show the high and low.\n- no trading took place on that day — a candle is drawn only for trading days.\n\n**Key facts**\n- Candlestick: green body → close > open.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1119,14 +1119,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A funnel chart shows 1000 website visitors, 400 adding to cart and 100 buying. What percentage of visitors finally buy?",
       "options": [
+        "0.1%",
         "10%",
         "25%",
-        "40%",
-        "4%"
+        "40%"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
-      "explanation": "Funnel stages narrow from 1000 to 100; overall conversion = 100 ÷ 1000 × 100 = 10% (the drop at each stage is the loss).\n\n**Why not the others**\n- 25% — 25% is cart-to-purchase conversion.\n- 40% — 40% is visitor-to-cart.\n- 4% — 4% is an arithmetic slip.\n\n**Key facts**\n- Funnel: read the drop between stages.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Funnel stages narrow from 1000 to 100; overall conversion = 100 ÷ 1000 × 100 = 10% (the drop at each stage is the loss).\n\n**Why not the others**\n- 0.1% — gives 100/1000 = 0.1 but forgets the × 100.\n- 25% — 25% is cart-to-purchase conversion.\n- 40% — 40% is visitor-to-cart.\n\n**Key facts**\n- Funnel: read the drop between stages.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1143,12 +1143,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In a radar (spider) chart rating a phone on five parameters, a point lying farther from the centre on a spoke means:",
       "options": [
-        "a higher score on that parameter",
         "a lower score on that parameter",
         "the parameter is unimportant",
-        "the data is missing"
+        "the data is missing",
+        "a higher score on that parameter"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
       "explanation": "Each spoke is one parameter and the distance from the centre is the magnitude of the score.\n\n**Why not the others**\n- a lower score on that parameter — Distance from the centre grows with the value.\n- the parameter is unimportant — Importance is not shown by distance.\n- the data is missing — Missing data is not plotted.\n\n**Key facts**\n- Radar: distance from centre = score.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1167,12 +1167,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Quantity I: x, where x² = 9. Quantity II: 2. What is the relation between the two quantities?",
       "options": [
+        "No relation can be established",
         "Quantity I > Quantity II",
         "Quantity I < Quantity II",
-        "No relation can be established",
         "Quantity I = Quantity II"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-di-extras",
       "explanation": "x = +3 or −3; one value is above 2 and the other below, so no single relation between the quantities can be established.\n\n**Why not the others**\n- Quantity I > Quantity II — x = −3 is less than 2.\n- Quantity I < Quantity II — x = 3 is greater than 2.\n- Quantity I = Quantity II — Neither root equals 2.\n\n**Key facts**\n- Two values on both sides → no relation.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1191,12 +1191,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "Sales grew from 50 to 70 units (Product A) and from 20 to 32 units (Product B). Which statement is correct?",
       "options": [
+        "A had the larger absolute increase but B had the larger percentage increase",
         "A had both the larger absolute and percentage increase",
         "B had both the larger absolute and percentage increase",
-        "A had the larger absolute increase but B had the larger percentage increase",
         "Both had the same percentage increase"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-di-basics",
       "explanation": "Absolute: A +20, B +12. Percentage: A 20 ÷ 50 = 40% increase, B 12 ÷ 20 = 60% increase.\n\n**Why not the others**\n- A had both the larger absolute and percentage increase — A grew 40%, B grew 60%.\n- B had both the larger absolute and percentage increase — B grew only 12 units.\n- Both had the same percentage increase — 40% ≠ 60%.\n\n**Key facts**\n- Biggest absolute rise ≠ biggest % rise.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1217,10 +1217,10 @@
       "options": [
         "Statement I alone is sufficient",
         "Statement II alone is sufficient",
-        "Even both statements together are not sufficient",
-        "Both statements together are sufficient"
+        "Both statements together are sufficient",
+        "Even both statements together are not sufficient"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-data-sufficiency",
       "explanation": "II is just I doubled, so even together there is one equation in two unknowns: x + y is not fixed — the fifth option.\n\n**Why not the others**\n- Statement I alone is sufficient — I gives only x − y.\n- Statement II alone is sufficient — II is the same equation as I.\n- Both statements together are sufficient — Together they are still one equation in two unknowns.\n\n**Key facts**\n- Fifth option: not even both together.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1241,10 +1241,10 @@
       "options": [
         "Statement I alone is sufficient",
         "Statement II alone is sufficient",
-        "Either statement alone is sufficient",
-        "Both statements together are needed"
+        "Both statements together are needed",
+        "Either statement alone is sufficient"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-data-sufficiency",
       "explanation": "Test each alone first: I → yes, even; II → an odd prime, so no. Each statement alone gives a definite answer.\n\n**Why not the others**\n- Statement I alone is sufficient — II alone also answers (No).\n- Statement II alone is sufficient — I alone also answers (Yes).\n- Both statements together are needed — Each works alone, so combining is not needed.\n\n**Key facts**\n- Test I alone and II alone before combining.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1263,12 +1263,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A traveller can go from city A to city B by one of 5 buses or one of 3 trains. In how many ways can he travel?",
       "options": [
-        "8",
-        "15",
+        "3",
         "5",
-        "3"
+        "8",
+        "15"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
       "explanation": "He takes a bus OR a train (not both), so by the sum rule: 5 + 3 = 8 ways.\n\n**Why not the others**\n- 15 — 15 multiplies — that is for bus AND train in succession.\n- 5 — Counts buses only.\n- 3 — Counts trains only.\n\n**Key facts**\n- OR → add (sum rule).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1287,12 +1287,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A hall has 10 gates. In how many ways can a person enter by one gate and leave by a different gate?",
       "options": [
-        "90",
-        "100",
         "19",
-        "45"
+        "45",
+        "90",
+        "100"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
       "explanation": "Enter: 10 ways; leave by a different gate: 9 ways. Product rule: 10 × 9 = 90 ways.\n\n**Why not the others**\n- 100 — 100 allows the same gate.\n- 19 — 19 adds the choices.\n- 45 — 45 is 10C2 (unordered).\n\n**Key facts**\n- AND → multiply (product rule).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1311,9 +1311,9 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A man has 3 shirts and 4 trousers. In how many ways can he wear one shirt with one trouser?",
       "options": [
-        "7",
-        "12",
         "24",
+        "12",
+        "7",
         "3"
       ],
       "answerIndex": 1,
@@ -1335,14 +1335,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In how many ways can a president and a secretary be chosen from 7 members (one person cannot hold both posts)?",
       "options": [
+        "7",
         "21",
         "42",
-        "49",
-        "14"
+        "49"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
-      "explanation": "The two posts are different, so order matters: 7P2 = 7 × 6 = 42 ways.\n\n**Why not the others**\n- 21 — 21 = 7C2 ignores which post is which.\n- 49 — 49 allows one person both posts.\n- 14 — 14 is an arithmetic slip.\n\n**Key facts**\n- Order matters → nPr.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "The two posts are different, so order matters: 7P2 = 7 × 6 = 42 ways.\n\n**Why not the others**\n- 7 — fills only one post (7 choices) and forgets the second.\n- 21 — 21 = 7C2 ignores which post is which.\n- 49 — 49 allows one person both posts.\n\n**Key facts**\n- Order matters → nPr.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1357,14 +1357,14 @@
       "id": "ment-data-interpretation-probability-mcq-56",
       "subjectCode": "MENT",
       "subtopicId": "ment-data-interpretation-probability",
-      "question": "The value of 10C8 is:",
+      "question": "In combinatorics, the value of 10C8 (the number of ways of choosing 8 items from 10) is:",
       "options": [
-        "90",
         "45",
-        "1,814,400",
-        "80"
+        "80",
+        "90",
+        "1,814,400"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
       "explanation": "10C8 = 10C2 (choosing 8 = leaving out 2) = 10 × 9 ÷ 2 = 45.\n\n**Why not the others**\n- 90 — 90 = 10P2.\n- 1,814,400 — 1,814,400 = 10P8.\n- 80 — 80 is an arithmetic slip.\n\n**Key facts**\n- nCr = nC(n − r).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1383,12 +1383,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In how many ways can 5 people sit around a circular table?",
       "options": [
-        "24",
-        "120",
         "12",
-        "60"
+        "24",
+        "60",
+        "120"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "explanation": "Circular arrangement: fix one person, arrange the rest: (5 − 1)! = 24.\n\n**Why not the others**\n- 120 — 120 = 5! treats it as a row.\n- 12 — 12 halves (only for necklaces).\n- 60 — 60 is 5!/2.\n\n**Key facts**\n- Circle: (n − 1)!.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1407,12 +1407,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In how many ways can 6 different beads be strung into a necklace?",
       "options": [
-        "120",
-        "60",
         "720",
-        "360"
+        "360",
+        "120",
+        "60"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
       "explanation": "A necklace can be turned over, so clockwise and anticlockwise are the same: (6 − 1)! ÷ 2 = 60.\n\n**Why not the others**\n- 120 — 120 = 5! forgets that a necklace can be flipped.\n- 720 — 720 = 6! treats it as a row.\n- 360 — 360 = 6!/2.\n\n**Key facts**\n- Necklace: (n − 1)! ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1431,12 +1431,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The number of different arrangements of the letters of the word BANANA is:",
       "options": [
-        "720",
         "60",
         "120",
-        "360"
+        "360",
+        "720"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-permutation-combination",
       "explanation": "BANANA has 6 letters with A × 3 and N × 2: 6! ÷ (3! × 2!) = 720 ÷ 12 = 60.\n\n**Why not the others**\n- 720 — 720 = 6! ignores the repeated letters.\n- 120 — 120 divides by 3! only.\n- 360 — 360 divides by 2! only.\n\n**Key facts**\n- Repeated letters: n! ÷ (p! q!).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1456,13 +1456,13 @@
       "question": "In how many ways can 5 people stand in a row if two particular people must stand together?",
       "options": [
         "24",
-        "120",
         "48",
-        "96"
+        "120",
+        "240"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
-      "explanation": "Tie the two together as one unit: 4! = 24 arrangements, × 2! inside = 48 ways.\n\n**Why not the others**\n- 24 — 24 forgets the 2 orders inside the pair.\n- 120 — 120 ignores the condition.\n- 96 — 96 doubles twice.\n\n**Key facts**\n- Together → one unit × internal arrangements.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Tie the two together as one unit: 4! = 24 arrangements, × 2! inside = 48 ways.\n\n**Why not the others**\n- 24 — 24 forgets the 2 orders inside the pair.\n- 120 — 120 ignores the condition.\n- 240 — multiplies 5! by 2, gluing the pair but still arranging 5 units.\n\n**Key facts**\n- Together → one unit × internal arrangements.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1479,14 +1479,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "In how many ways can the letters of MOTHER be arranged so that the two vowels are always together?",
       "options": [
-        "120",
+        "1440",
         "720",
-        "48",
-        "240"
+        "240",
+        "120"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
-      "explanation": "Treat O and E as one unit: 5 units → 5! = 120, × 2! for OE/EO = 240 ways with the vowels together.\n\n**Why not the others**\n- 120 — 120 forgets the 2 orders of O and E.\n- 720 — 720 ignores the condition.\n- 48 — 48 is an arithmetic slip.\n\n**Key facts**\n- Together → one unit × internal arrangements.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Treat O and E as one unit: 5 units → 5! = 120, × 2! for OE/EO = 240 ways with the vowels together.\n\n**Why not the others**\n- 120 — 120 forgets the 2 orders of O and E.\n- 720 — 720 ignores the condition.\n- 1440 — multiplies 6! by 2, gluing the vowels but still arranging 6 units.\n\n**Key facts**\n- Together → one unit × internal arrangements.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1503,14 +1503,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "At a meeting each of 10 people shakes hands once with every other person. The number of handshakes is:",
       "options": [
+        "9",
         "45",
         "90",
-        "100",
-        "20"
+        "100"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
-      "explanation": "Each handshake is an unordered pair: 10C2 = 45.\n\n**Why not the others**\n- 90 — 90 counts each handshake twice.\n- 100 — 100 = 10².\n- 20 — 20 is an arithmetic slip.\n\n**Key facts**\n- Handshakes = nC2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Each handshake is an unordered pair: 10C2 = 45.\n\n**Why not the others**\n- 9 — this is the handshakes of ONE person, not of the whole group.\n- 90 — 90 counts each handshake twice.\n- 100 — 100 = 10² lets people shake their own hands and counts twice.\n\n**Key facts**\n- Handshakes = nC2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1527,12 +1527,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "How many 3-digit numbers can be formed from the digits 1, 2, 3, 4, 5 if digits may repeat, and if they may not repeat?",
       "options": [
-        "60 and 125",
         "125 and 60",
+        "60 and 125",
         "125 and 10",
         "15 and 60"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
       "explanation": "With repetition: 5 × 5 × 5 = 125. Without (no digit repeated): 5P3 = 60.\n\n**Why not the others**\n- 60 and 125 — Swapped.\n- 125 and 10 — 10 = 5C3 ignores order.\n- 15 and 60 — 15 = 5 × 3.\n\n**Key facts**\n- Repeat allowed nʳ; not allowed nPr.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1551,12 +1551,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The probability that it rains tomorrow is 0.3. The probability that it does NOT rain is:",
       "options": [
-        "0.3",
-        "1.3",
         "0",
-        "0.7"
+        "0.3",
+        "0.7",
+        "1.3"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
       "explanation": "P(not E) = 1 − P(E) = 0.7; every probability lies between 0 (impossible) and 1 (sure).\n\n**Why not the others**\n- 0.3 — 0.3 is P(rain).\n- 1.3 — Probability cannot exceed 1.\n- 0 — 0 would mean rain is certain.\n\n**Key facts**\n- P(not E) = 1 − P(E).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1606,12 +1606,12 @@
       "options": [
         "1/36",
         "1/12",
-        "1/3",
-        "1/6"
+        "1/6",
+        "2/7"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-probability",
-      "explanation": "Of the 36 ordered outcomes of two dice, 6 are doublets: 6/36 = 1/6.\n\n**Why not the others**\n- 1/36 — 1/36 is one particular doublet.\n- 1/12 — 1/12 halves the right answer.\n- 1/3 — 1/3 is an arithmetic slip.\n\n**Key facts**\n- Two dice → 36 outcomes.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Of the 36 ordered outcomes of two dice, 6 are doublets: 6/36 = 1/6.\n\n**Why not the others**\n- 1/36 — 1/36 is one particular doublet.\n- 1/12 — 1/12 halves the right answer (counts 3 doublets).\n- 2/7 — counts unordered outcomes (6 of 21); dice outcomes are ordered, 36 in all.\n\n**Key facts**\n- Two dice → 36 outcomes.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1635,7 +1635,7 @@
       ],
       "answerIndex": 1,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
-      "explanation": "3 coins give 2³ = 8 outcomes; HHT, HTH, THH have exactly two heads: 3/8.\n\n**Why not the others**\n- 1/4 — 1/4 ignores the order arrangements.\n- 1/2 — 1/2 is an arithmetic slip.\n- 2/3 — 2/3 counts 2 of 3 coins.\n\n**Key facts**\n- n coins → 2ⁿ outcomes.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "3 coins give 2³ = 8 outcomes; HHT, HTH, THH have exactly two heads: 3/8.\n\n**Why not the others**\n- 1/4 — 1/4 is P(HH) for two coins and ignores the arrangements of three.\n- 1/2 — this is P(at least two heads), which also counts HHH.\n- 2/3 — 2/3 counts 2 of 3 coins.\n\n**Key facts**\n- n coins → 2ⁿ outcomes.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1652,12 +1652,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "One card is drawn from a pack of 52 cards. The probability that it is a red king is:",
       "options": [
-        "1/13",
         "1/52",
         "1/26",
+        "1/13",
         "1/2"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "explanation": "There are 2 red kings (hearts and diamonds) among 52 cards: 2/52 = 1/26.\n\n**Why not the others**\n- 1/13 — 1/13 counts all four kings.\n- 1/52 — 1/52 counts one card.\n- 1/2 — 1/2 counts all red cards.\n\n**Key facts**\n- 52 cards: 26 red, 4 kings.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1676,14 +1676,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A bag has 5 white and 3 black balls. Two balls are drawn together. The probability that they are of different colours is:",
       "options": [
-        "15/28",
         "15/64",
+        "15/56",
         "5/14",
-        "1/2"
+        "15/28"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-probability",
-      "explanation": "Favourable = 5C1 × 3C1 = 15; total = 8C2 = 28 for the two balls; probability 15/28.\n\n**Why not the others**\n- 15/64 — 15/64 uses drawing with replacement.\n- 5/14 — 5/14 is P(both white).\n- 1/2 — 1/2 is a guess.\n\n**Key facts**\n- Balls drawn together → combinations.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Favourable = 5C1 × 3C1 = 15; total = 8C2 = 28 for the two balls; probability 15/28.\n\n**Why not the others**\n- 15/64 — 15/64 uses drawing with replacement.\n- 15/56 — counts only one order (white then black, 5/8 × 3/7); drawn together, either colour can come first.\n- 5/14 — 5/14 is P(both white).\n\n**Key facts**\n- Balls drawn together → combinations.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1700,12 +1700,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "For two events, P(A) = 0.5, P(B) = 0.4 and P(A and B) = 0.2. Then P(A or B) is:",
       "options": [
-        "0.7",
+        "1.1",
         "0.9",
-        "0.2",
-        "1.1"
+        "0.7",
+        "0.2"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-probability",
       "explanation": "Addition rule: P(A ∪ B) = 0.5 + 0.4 − 0.2 = 0.7 for A or B.\n\n**Why not the others**\n- 0.9 — 0.9 forgets to subtract the overlap.\n- 0.2 — 0.2 is P(A and B).\n- 1.1 — A probability cannot exceed 1.\n\n**Key facts**\n- P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1724,12 +1724,12 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "One card is drawn from a pack of 52. The events \"red card\" and \"club\" are mutually exclusive. The probability of a red card or a club is:",
       "options": [
-        "3/4",
-        "1/2",
         "1/4",
-        "39/104"
+        "39/104",
+        "1/2",
+        "3/4"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
       "explanation": "Mutually exclusive (no card is both): P = 26/52 + 13/52 = 39/52 = 3/4.\n\n**Why not the others**\n- 1/2 — 1/2 counts red only.\n- 1/4 — 1/4 counts clubs only.\n- 39/104 — 39/104 halves the answer.\n\n**Key facts**\n- Mutually exclusive → just add.\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
@@ -1748,14 +1748,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A coin is tossed and a die is rolled; the two are independent. The probability of a head and a six is:",
       "options": [
-        "2/3",
         "1/12",
-        "1/8",
-        "7/12"
+        "1/6",
+        "7/12",
+        "2/3"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
-      "explanation": "Independent events multiply: P(H) × P(6) = 1/2 × 1/6 = 1/12.\n\n**Why not the others**\n- 2/3 — 2/3 adds 1/2 + 1/6.\n- 1/8 — 1/8 is an arithmetic slip.\n- 7/12 — 7/12 is P(head or six), not P(head and six).\n\n**Key facts**\n- Independent: P(A ∩ B) = P(A) × P(B).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Independent events multiply: P(H) × P(6) = 1/2 × 1/6 = 1/12.\n\n**Why not the others**\n- 1/6 — 1/6 is the six alone; the coin is ignored.\n- 7/12 — 7/12 is P(head or six), not P(head and six).\n- 2/3 — 2/3 adds 1/2 + 1/6.\n\n**Key facts**\n- Independent: P(A ∩ B) = P(A) × P(B).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [
@@ -1773,9 +1773,9 @@
       "question": "A and B shoot at a target independently, with probabilities 0.6 and 0.5 of hitting. The probability that the target is hit at least once is:",
       "options": [
         "0.3",
-        "1.1",
+        "0.5",
         "0.8",
-        "0.5"
+        "1.1"
       ],
       "answerIndex": 2,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
@@ -1820,9 +1820,9 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "A die is thrown twice. The probability of getting at least one six is:",
       "options": [
-        "1/3",
-        "11/36",
         "1/36",
+        "11/36",
+        "1/3",
         "25/36"
       ],
       "answerIndex": 1,
@@ -1844,14 +1844,14 @@
       "subtopicId": "ment-data-interpretation-probability",
       "question": "The odds in favour of an event are 3 : 5. The probability of the event is:",
       "options": [
-        "3/8",
-        "3/5",
+        "5/3",
         "5/8",
-        "2/5"
+        "3/5",
+        "3/8"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-data-interpretation-probability-note-counting-probability-extras",
-      "explanation": "Odds in favour a : b → P = a ÷ (a + b) = 3/8.\n\n**Why not the others**\n- 3/5 — 3/5 divides by the \"against\" part only.\n- 5/8 — 5/8 is the probability of the event NOT happening.\n- 2/5 — 2/5 is an arithmetic slip.\n\n**Key facts**\n- Odds a : b → a ÷ (a + b).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
+      "explanation": "Odds in favour a : b → P = a ÷ (a + b) = 3/8.\n\n**Why not the others**\n- 3/5 — 3/5 divides by the \"against\" part only.\n- 5/8 — 5/8 is the probability of the event NOT happening.\n- 5/3 — inverts the odds and is greater than 1, so it cannot be a probability.\n\n**Key facts**\n- Odds a : b → a ÷ (a + b).\n\n*Source: APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Introduction to DI, Tabulation, Bar Graph, Line Graph, Pie Chart and the mixed-chart files, Caselet DI, Radar, Scatter, Bubble, Candlestick, Funnel, Flow Chart, Data Sufficiency, Quantity Comparison, Permutation and Combination, Probability); NCERT Class 10–11 probability and permutations & combinations; PYQ bank .research/pyq-bank/ment-data-interpretation-probability.md",
       "verified": true,
       "covers": [

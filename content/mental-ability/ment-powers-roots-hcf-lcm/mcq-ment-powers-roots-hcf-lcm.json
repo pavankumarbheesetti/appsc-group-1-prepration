@@ -8,16 +8,16 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "refresher": true,
-      "question": "The value of 2^{5} × 2^{3} is:",
+      "question": "Using the laws of indices, the value of 2^{5} × 2^{3} is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-indices",
       "options": [
+        "4",
         "256",
-        "64",
-        "128",
-        "512"
+        "32768",
+        "65536"
       ],
-      "answerIndex": 0,
-      "explanation": "Same base, so add the exponents instead of multiplying the bases. 2^{5} = 32 and 2^{3} = 8; written out, 2^{5} × 2^{3} = (2×2×2×2×2) × (2×2×2) = eight 2's = 2^{5+3} = 2^{8}. Now 2^{8} = 256.\n\n**Why not the others**\n- 64 — this is 2^{6}, got by adding only to 5 + 1 instead of 5 + 3.\n- 128 — this is 2^{7}, from adding the exponents as 5 + 2.\n- 512 — this is 2^{9}, from also multiplying the bases (2 × 2 = 4) on top of adding exponents.\n\n**Key facts**\n| Rule | Formula |\n|---|---|\n| Product | a^{m} × a^{n} = a^{m+n} |\n| Quotient | a^{m} ÷ a^{n} = a^{m-n} |\n| Power of a power | (a^{m})^{n} = a^{m×n} |\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Laws of Indices).*",
+      "answerIndex": 1,
+      "explanation": "Same base, so add the exponents instead of multiplying the bases. 2^{5} = 32 and 2^{3} = 8; written out, 2^{5} × 2^{3} = (2×2×2×2×2) × (2×2×2) = eight 2's = 2^{5+3} = 2^{8}. Now 2^{8} = 256.\n\n**Why not the others**\n- 4 — subtracts the exponents (2^{5−3}), the rule for DIVISION, not multiplication.\n- 32768 — multiplies the exponents (2^{15}); that is the rule for a power of a power.\n- 65536 — multiplies the bases as well as adding the exponents (4^{8}).\n\n**Key facts**\n| Rule | Formula |\n|---|---|\n| Product | a^{m} × a^{n} = a^{m+n} |\n| Quotient | a^{m} ÷ a^{n} = a^{m-n} |\n| Power of a power | (a^{m})^{n} = a^{m×n} |\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Laws of Indices).*",
       "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Laws of Indices)",
       "verified": true,
       "covers": [
@@ -33,16 +33,16 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "refresher": true,
-      "question": "The LCM of 12 and 18 is:",
+      "question": "Find the LCM (least common multiple) of the two numbers 12 and 18.",
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "options": [
         "6",
-        "72",
+        "30",
         "36",
         "216"
       ],
       "answerIndex": 2,
-      "explanation": "Prime-factorise each number, then take the highest power of every prime for the LCM. 12 = 2 × 2 × 3 = 2^{2} × 3; 18 = 2 × 3 × 3 = 2 × 3^{2}. Highest powers present: 2^{2} and 3^{2}, so LCM = 4 × 9 = 36.\n\n**Why not the others**\n- 6 — this is the HCF (lowest shared powers, 2 × 3), not the LCM.\n- 72 — takes an extra factor of 2 (2^{3} × 3^{2}), more than the highest power actually present.\n- 216 — this is 12 × 18, which equals LCM × HCF (36 × 6), not the LCM alone.\n\n**Key facts**\n- LCM = product of the highest power of every prime present.\n- HCF = product of the lowest power of the shared primes.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Prime Factorization Method).*",
+      "explanation": "Prime-factorise each number, then take the highest power of every prime for the LCM. 12 = 2 × 2 × 3 = 2^{2} × 3; 18 = 2 × 3 × 3 = 2 × 3^{2}. Highest powers present: 2^{2} and 3^{2}, so LCM = 4 × 9 = 36.\n\n**Why not the others**\n- 6 — this is the HCF (lowest shared powers, 2 × 3), not the LCM.\n- 30 — adds the numbers (12 + 18); the LCM is built from prime powers.\n- 216 — this is 12 × 18, which equals LCM × HCF (36 × 6), not the LCM.\n\n**Key facts**\n- LCM = product of the highest power of every prime present.\n- HCF = product of the lowest power of the shared primes.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Prime Factorization Method).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Prime Factorization Method)",
       "verified": true,
       "covers": [
@@ -61,11 +61,11 @@
       "noteRef": "ment-powers-roots-hcf-lcm-note-indices",
       "options": [
         "3",
-        "5",
         "4",
+        "5",
         "8"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "Write both right-hand sides to base 7. 343 = 7 × 7 × 7 = 7^{3}, so x − y = 3. 16807 = 7^{5} (7^{4} = 2401, times 7 is 16807), so x + y = 5. Add the two equations: (x − y) + (x + y) = 2x = 3 + 5 = 8, so x = 4 (and then y = 1).\nCheck: 7^{4-1} = 7^{3} = 343. Correct.\n\n**Why not the others**\n- 3 — this is the value of (x − y), not x.\n- 5 — this is the value of (x + y), not x.\n- 8 — this is 2x; you must halve it to get x.\n\n**Key facts**\n- With equal bases, a^{m} = a^{n} forces m = n.\n- 7^{1} = 7, 7^{2} = 49, 7^{3} = 343, 7^{4} = 2401, 7^{5} = 16807.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 7).*",
       "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 7)",
       "verified": true,
@@ -81,15 +81,15 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-4",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of (81/16)^{−3/4} is:",
+      "question": "Using the laws of indices, the value of (81/16)^{−3/4} is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-indices",
       "options": [
         "27/8",
-        "8/27",
         "9/4",
+        "8/27",
         "16/81"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "A negative index flips the fraction: (81/16)^{-3/4} = (16/81)^{3/4}. Now spot the fourth powers: 16 = 2^{4} and 81 = 3^{4}, so 16/81 = (2/3)^{4}. Raising to the 3/4 power keeps 4 × 3/4 = 3 of them: ((2/3)^{4})^{3/4} = (2/3)^{3} = 8/27.\n\n**Why not the others**\n- 27/8 — this is (3/2)^{3}, the reciprocal, got by handling the negative sign backwards.\n- 9/4 — this is (3/2)^{2}, from using index 1/2 instead of 3/4.\n- 16/81 — this is just (16/81)^{1}; the ^{3/4} step was dropped.\n\n**Key facts**\n- a^{-n} = 1 ÷ a^{n}; (a/b)^{-n} = (b/a)^{n}.\n- a^{m/n} = (n-th root of a)^{m} — take the root, then the power.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 6).*",
       "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 6)",
       "verified": true,
@@ -105,16 +105,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-5",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of √50 + √18 − √8 is:",
+      "question": "On simplifying the surds, the value of √50 + √18 − √8 is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
       "options": [
-        "4√2",
         "6√2",
-        "5√2",
-        "8√2"
+        "4√2",
+        "10√2",
+        "√60"
       ],
-      "answerIndex": 1,
-      "explanation": "Reduce each surd to a multiple of √2 by pulling out the perfect square. √50 = √(25 × 2) = 5√2; √18 = √(9 × 2) = 3√2; √8 = √(4 × 2) = 2√2. Like surds now combine: 5√2 + 3√2 − 2√2 = (5 + 3 − 2)√2 = 6√2.\n\n**Why not the others**\n- 4√2 — arises if √18 is mistaken for √8 (both read as 2√2), giving 5 + 2 − 2.\n- 5√2 — arises if the −√8 term is dropped (5 + 3 − 3).\n- 8√2 — arises from adding all three coefficients (5 + 3 + 2) instead of subtracting the last.\n\n**Key facts**\n- Only like surds combine: p√a ± q√a = (p ± q)√a.\n- √(k^{2} × b) = k√b; here 50 = 25 × 2, 18 = 9 × 2, 8 = 4 × 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 1, simplification).*",
+      "answerIndex": 0,
+      "explanation": "Reduce each surd to a multiple of √2 by pulling out the perfect square. √50 = √(25 × 2) = 5√2; √18 = √(9 × 2) = 3√2; √8 = √(4 × 2) = 2√2. Like surds now combine: 5√2 + 3√2 − 2√2 = (5 + 3 − 2)√2 = 6√2.\n\n**Why not the others**\n- 4√2 — swaps the signs, subtracting √18 and adding √8 (5 − 3 + 2).\n- 10√2 — adds the −√8 term instead of subtracting it (5 + 3 + 2).\n- √60 — adds and subtracts under one root (50 + 18 − 8); surds combine only as like multiples.\n\n**Key facts**\n- Only like surds combine: p√a ± q√a = (p ± q)√a.\n- √(k^{2} × b) = k√b; here 50 = 25 × 2, 18 = 9 × 2, 8 = 4 × 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 1, simplification).*",
       "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Example 1, simplification)",
       "verified": true,
       "covers": [
@@ -133,12 +133,12 @@
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
       "options": [
         "√3 − √2",
-        "√3 + √2",
         "√5",
-        "√6 − 1"
+        "(√3 + √2)/5",
+        "√3 + √2"
       ],
-      "answerIndex": 1,
-      "explanation": "Multiply the top and bottom by the conjugate (√3 + √2). The bottom becomes (√3 − √2)(√3 + √2) = (√3)^{2} − (√2)^{2} = 3 − 2 = 1. The top becomes √3 + √2. So the value is (√3 + √2) ÷ 1 = √3 + √2. We only multiplied by 1 in disguise, so the value is unchanged.\n\n**Why not the others**\n- √3 − √2 — this is the original denominator, not the rationalised value.\n- √5 — from wrongly adding under one root; √3 + √2 is not √5.\n- √6 − 1 — mishandles the conjugate product; the denominator here is 1, with no √6 left.\n\n**Key facts**\n- The conjugate of (a − b) is (a + b); (a − b)(a + b) = a^{2} − b^{2} clears the surd.\n- To rationalise is to remove the root from the denominator.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Rules of surds).*",
+      "answerIndex": 3,
+      "explanation": "Multiply the top and bottom by the conjugate (√3 + √2). The bottom becomes (√3 − √2)(√3 + √2) = (√3)^{2} − (√2)^{2} = 3 − 2 = 1. The top becomes √3 + √2. So the value is (√3 + √2) ÷ 1 = √3 + √2. We only multiplied by 1 in disguise, so the value is unchanged.\n\n**Why not the others**\n- √3 − √2 — this is the original denominator, not the rationalised value.\n- √5 — from wrongly adding under one root; √3 + √2 is not √5.\n- (√3 + √2)/5 — multiplies out the bottom as 3 + 2; (√3 − √2)(√3 + √2) = 3 − 2 = 1.\n\n**Key facts**\n- The conjugate of (a − b) is (a + b); (a − b)(a + b) = a^{2} − b^{2} clears the surd.\n- To rationalise is to remove the root from the denominator.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Rules of surds).*",
       "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Rules of surds)",
       "verified": true,
       "covers": [
@@ -156,12 +156,12 @@
       "question": "Which of the following is the greatest: ^{4}√10, ³√6, √3, ³√10 ?",
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
       "options": [
+        "³√10",
         "^{4}√10",
         "³√6",
-        "√3",
-        "³√10"
+        "√3"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "explanation": "Bring all four to a common index 12 (the LCM of the root orders 4, 3, 2) and compare the numbers inside. 4th-root of 10 = 10^{3/12} = 12th-root of 10^{3} = 12th-root of 1000; cube-root of 6 = 6^{4/12} = 12th-root of 1296; √3 = 3^{6/12} = 12th-root of 729; cube-root of 10 = 10^{4/12} = 12th-root of 10000. The largest number inside is 10000, so the greatest surd is the cube-root of 10.\n\n**Why not the others**\n- 4th-root of 10 — becomes 12th-root of 1000, the smallest of the four.\n- cube-root of 6 — becomes 12th-root of 1296, bigger than √3 but smaller than cube-root of 10.\n- √3 — becomes 12th-root of 729, the second smallest.\n\n**Key facts**\n- To compare surds, rewrite each with a common index equal to the LCM of the root orders.\n- With a common index, the surd with the largest number inside is the greatest.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds & Indices (Comparison of Surds).*",
       "source": "local APPSC Quantitative Reasoning PDF — Surds & Indices (Comparison of Surds)",
       "verified": true,
@@ -210,11 +210,11 @@
       "noteRef": "ment-powers-roots-hcf-lcm-note-logarithms",
       "options": [
         "log 30",
-        "log 50",
         "2",
-        "log 100"
+        "log 100",
+        "log 50"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "Combine using the log laws. First the quotient law: log 10 − log 5 = log(10 ÷ 5) = log 2. Then the product law: log 2 + log 25 = log(2 × 25) = log 50. So the value is log 50.\n\n**Why not the others**\n- log 30 — from adding 5 + 25 instead of multiplying (10 ÷ 5) × 25.\n- 2 — this is log 100; it would need the argument to be 100, but it is 50.\n- log 100 — from combining the numbers wrongly; the correct product is (10 ÷ 5) × 25 = 50.\n\n**Key facts**\n| Law | Formula |\n|---|---|\n| Product | log(x × y) = log x + log y |\n| Quotient | log(x ÷ y) = log x − log y |\n| Power | log(x^{n}) = n × log x |\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (Example 8).*",
       "source": "local APPSC Quantitative Reasoning PDF — Logarithm (Example 8)",
       "verified": true,
@@ -230,16 +230,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-10",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of log₈ 16 is:",
+      "question": "Using the change-of-base rule, the value of log₈ 16 is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-logarithms",
       "options": [
-        "4/3",
         "3/4",
+        "4/3",
         "2",
-        "1/2"
+        "4"
       ],
-      "answerIndex": 0,
-      "explanation": "Change to base 2, where both numbers are easy powers. log base 8 of 16 = (log base 2 of 16) ÷ (log base 2 of 8). Since 16 = 2^{4} and 8 = 2^{3}, this is 4 ÷ 3 = 4/3.\nCheck: 8^{4/3} = (8^{1/3})^{4} = 2^{4} = 16. Correct.\n\n**Why not the others**\n- 3/4 — this is log base 16 of 8, the reciprocal; numerator and denominator swapped.\n- 2 — treats it as log base 4 of 16; wrong base.\n- 1/2 — treats it as log base 16 of 4; wrong argument.\n\n**Key facts**\n- Change of base: log base a of b = (log b) ÷ (log a) in any common base.\n- A log of one power of the base to another: log of 2^{4} to base 2^{3} is 4/3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (Base Change Rule).*",
+      "answerIndex": 1,
+      "explanation": "Change to base 2, where both numbers are easy powers. log base 8 of 16 = (log base 2 of 16) ÷ (log base 2 of 8). Since 16 = 2^{4} and 8 = 2^{3}, this is 4 ÷ 3 = 4/3.\nCheck: 8^{4/3} = (8^{1/3})^{4} = 2^{4} = 16. Correct.\n\n**Why not the others**\n- 3/4 — this is log base 16 of 8, the reciprocal; numerator and denominator swapped.\n- 2 — divides the numbers (16 ÷ 8) instead of their logs.\n- 4 — this is log base 2 of 16 alone; it still has to be divided by log base 2 of 8 = 3.\n\n**Key facts**\n- Change of base: log base a of b = (log b) ÷ (log a) in any common base.\n- A log of one power of the base to another: log of 2^{4} to base 2^{3} is 4/3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (Base Change Rule).*",
       "source": "local APPSC Quantitative Reasoning PDF — Logarithm (Base Change Rule)",
       "verified": true,
       "covers": [
@@ -281,13 +281,13 @@
       "question": "The HCF and LCM of two numbers are 35 and 525 respectively. If one number is 105, the other number is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "options": [
-        "150",
+        "5",
+        "7",
         "175",
-        "125",
-        "245"
+        "1575"
       ],
-      "answerIndex": 1,
-      "explanation": "For any two numbers, their product equals HCF × LCM. So the unknown number = (HCF × LCM) ÷ known number = (35 × 525) ÷ 105. Work it out: 35 × 525 = 18375, then 18375 ÷ 105 = 175.\nCheck: HCF(105, 175) = 35 and LCM(105, 175) = 525. Correct.\n\n**Why not the others**\n- 150 — does not satisfy 105 × n = 18375 (105 × 150 = 15750).\n- 125 — 105 × 125 = 13125, not 18375.\n- 245 — 105 × 245 = 25725, not 18375.\n\n**Key facts**\n- For any two numbers A, B: A × B = HCF(A, B) × LCM(A, B).\n- So the second number = (HCF × LCM) ÷ first number.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 11).*",
+      "answerIndex": 2,
+      "explanation": "For any two numbers, their product equals HCF × LCM. So the unknown number = (HCF × LCM) ÷ known number = (35 × 525) ÷ 105. Work it out: 35 × 525 = 18375, then 18375 ÷ 105 = 175.\nCheck: HCF(105, 175) = 35 and LCM(105, 175) = 525. Correct.\n\n**Why not the others**\n- 5 — divides the LCM by the known number (525 ÷ 105) and forgets the HCF.\n- 7 — inverts the rule (35 × 105 ÷ 525).\n- 1575 — multiplies the LCM by the known number and divides by the HCF (525 × 105 ÷ 35).\n\n**Key facts**\n- For any two numbers A, B: A × B = HCF(A, B) × LCM(A, B).\n- So the second number = (HCF × LCM) ÷ first number.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 11).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 11)",
       "verified": true,
       "covers": [
@@ -305,12 +305,12 @@
       "question": "The HCF of the fractions 4/9, 8/15 and 12/20 is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
+        "1/180",
         "1/45",
         "4/5",
-        "24/1",
-        "1/180"
+        "24/1"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "HCF of fractions = HCF of the numerators ÷ LCM of the denominators. Numerators 4, 8, 12 have HCF 4. Denominators 9, 15, 20 have LCM 180 (9 = 3^{2}, 15 = 3 × 5, 20 = 2^{2} × 5, so LCM = 2^{2} × 3^{2} × 5 = 180). So the answer is 4 ÷ 180 = 4/180 = 1/45.\n\n**Why not the others**\n- 4/5 — from HCF(numerators) ÷ HCF(denominators); the denominator rule is LCM, not HCF.\n- 24/1 — this is the LCM of the fractions, LCM(numerators) ÷ HCF(denominators) = 24 ÷ 1, not the HCF.\n- 1/180 — takes the numerator HCF as 1 instead of 4.\n\n**Key facts**\n- HCF of fractions = HCF(numerators) ÷ LCM(denominators).\n- LCM of fractions = LCM(numerators) ÷ HCF(denominators).\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 14, fractions).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 14, fractions)",
       "verified": true,
@@ -330,11 +330,11 @@
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
         "312",
-        "318",
         "315",
+        "318",
         "321"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "A number that leaves the same remainder 3 by each divisor is a common multiple of them, plus 3. The smallest common multiple is LCM(5, 7, 9); since 5, 7, 9 share no common factor, LCM = 5 × 7 × 9 = 315. Add the remainder: 315 + 3 = 318.\nCheck: 318 ÷ 5 = 63 remainder 3; 318 ÷ 7 = 45 remainder 3; 318 ÷ 9 = 35 remainder 3. Correct.\n\n**Why not the others**\n- 312 — this is LCM − 3; the remainder must be added, not subtracted.\n- 315 — this is the LCM itself, which leaves remainder 0, not 3.\n- 321 — this is LCM + 6, adding twice the remainder.\n\n**Key facts**\n- Smallest number leaving common remainder R = LCM(divisors) + R.\n- Greatest number leaving common remainder R on dividing x, y, z = HCF(x − R, y − R, z − R).\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 18, remainders).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (Example 18, remainders)",
       "verified": true,
@@ -350,15 +350,15 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-15",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The units digit of 7^{105} is:",
+      "question": "Using the cyclicity of the last digit, the units digit of 7^{105} is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
       "options": [
-        "1",
-        "3",
+        "9",
         "7",
-        "9"
+        "3",
+        "1"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "The last digit of powers of 7 marches round the loop 7, 9, 3, 1 (7^{1} ends 7, 7^{2} = 49 ends 9, 7^{3} = 343 ends 3, 7^{4} = 2401 ends 1), repeating every 4. Divide the exponent by 4: 105 ÷ 4 = 26 remainder 1. Remainder 1 points to the first value in the loop, which is 7.\n\n**Why not the others**\n- 1 — corresponds to remainder 0 (e.g. 7^{4}), but 105 ÷ 4 leaves remainder 1.\n- 3 — corresponds to remainder 3 (as in 7^{3}).\n- 9 — corresponds to remainder 2 (as in 7^{2}).\n\n**Key facts**\n- The units digit of a power repeats in a fixed loop; for 7 it is 7, 9, 3, 1 (length 4).\n- Reduce the exponent by the loop length; remainder 1 points to the first term, remainder 0 to the last.\n\n*Source: local APPSC Quantitative Reasoning PDF — Cyclicity of Units Digit.*",
       "source": "local APPSC Quantitative Reasoning PDF — Cyclicity of Units Digit",
       "verified": true,
@@ -377,12 +377,12 @@
       "question": "The number of trailing zeros at the end of 100! is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
       "options": [
+        "10",
         "20",
         "24",
-        "25",
-        "10"
+        "25"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Trailing zeros come from factors of 10 = 2 × 5, and 5's are scarcer than 2's, so count the 5's in 100!. Add the whole-number parts: 100 ÷ 5 = 20, 100 ÷ 25 = 4, 100 ÷ 125 = 0. Total = 20 + 4 + 0 = 24 zeros. (The extra 4 are the second 5's hidden in 25, 50, 75, 100.)\n\n**Why not the others**\n- 20 — counts only 100 ÷ 5, missing the extra 5's in multiples of 25.\n- 25 — adds one too many; 100 ÷ 125 = 0, not 1.\n- 10 — counts multiples of 10 only, which is the wrong method.\n\n**Key facts**\n- Trailing zeros of n! = (n ÷ 5) + (n ÷ 25) + (n ÷ 125) + … (whole-number parts), the power of 5.\n- Here 20 + 4 + 0 = 24.\n\n*Source: local APPSC Quantitative Reasoning PDF — Factorials / Power of a Prime.*",
       "source": "local APPSC Quantitative Reasoning PDF — Factorials / Power of a Prime",
       "verified": true,
@@ -401,12 +401,12 @@
       "question": "If x = 3 + 2√2, then the value of x + 1/x is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
       "options": [
-        "4√2",
         "6",
+        "4√2",
         "6√2",
         "4"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "explanation": "First rationalise 1/x. With x = 3 + 2√2, multiply by the conjugate: 1 ÷ (3 + 2√2) = (3 − 2√2) ÷ [(3 + 2√2)(3 − 2√2)] = (3 − 2√2) ÷ (9 − 8) = 3 − 2√2. Now add: x + 1/x = (3 + 2√2) + (3 − 2√2) = 6, because the 2√2 terms cancel.\n\n**Why not the others**\n- 4√2 — this is x − 1/x, not the sum.\n- 6√2 — keeps the surd terms instead of cancelling them.\n- 4 — drops one of the rational 3's.\n\n**Key facts**\n- Rationalise 1 ÷ (a + b√c) by multiplying by the conjugate (a − b√c).\n- Here the ±2√2 terms cancel, leaving 3 + 3 = 6.\n\n*Source: local APPSC Quantitative Reasoning PDF — Surds (conjugate).*",
       "source": "local APPSC Quantitative Reasoning PDF — Surds (conjugate)",
       "verified": true,
@@ -422,13 +422,13 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-18",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The HCF of 1.75, 5.6 and 7 is:",
+      "question": "Find the HCF of the three decimal numbers 1.75, 5.6 and 7.",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
         "0.07",
         "0.35",
-        "1.75",
-        "0.7"
+        "0.7",
+        "1.75"
       ],
       "answerIndex": 1,
       "explanation": "Give every number the same number of decimal places, take the integer HCF, then restore the decimal. Write 1.75, 5.60, 7.00 and work with 175, 560, 700. Factorise: 175 = 5^{2} × 7, 560 = 2^{4} × 5 × 7, 700 = 2^{2} × 5^{2} × 7; the common part is 5 × 7 = 35. Restore two decimal places: 35 ÷ 100 = 0.35.\n\n**Why not the others**\n- 0.07 — takes the common factor as 7 only, missing the shared 5.\n- 1.75 — the smallest number, not the HCF of all three.\n- 0.7 — uses common factor 70, but 175 is not divisible by 70.\n\n**Key facts**\n- HCF of decimals: equalise the decimal places, take the integer HCF, then put the decimal back.\n- HCF(175, 560, 700) = 35, so 0.35.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (decimals).*",
@@ -449,13 +449,13 @@
       "question": "The greatest number that divides 62, 132 and 237 leaving the same remainder in each case is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
-        "25",
-        "35",
-        "15",
-        "70"
+        "175",
+        "105",
+        "70",
+        "35"
       ],
-      "answerIndex": 1,
-      "explanation": "For the same (unknown) remainder, the required number divides the differences of the numbers. Differences: 132 − 62 = 70, 237 − 132 = 105, 237 − 62 = 175. Their HCF is the answer: 70 = 2 × 5 × 7, 105 = 3 × 5 × 7, 175 = 5^{2} × 7, so HCF = 5 × 7 = 35.\n\n**Why not the others**\n- 25 — does not divide 70 (70 ÷ 25 is not whole).\n- 15 — does not divide 70 or 175 exactly.\n- 70 — divides 70 but not 105 (105 ÷ 70 is not whole).\n\n**Key facts**\n- Greatest number leaving the same remainder = HCF of the pairwise differences.\n- 70, 105, 175 share 5 × 7 = 35.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
+      "answerIndex": 3,
+      "explanation": "For the same (unknown) remainder, the required number divides the differences of the numbers. Differences: 132 − 62 = 70, 237 − 132 = 105, 237 − 62 = 175. Their HCF is the answer: 70 = 2 × 5 × 7, 105 = 3 × 5 × 7, 175 = 5^{2} × 7, so HCF = 5 × 7 = 35.\n\n**Why not the others**\n- 70 — this is only the smallest difference (132 − 62); it does not divide 105.\n- 105 — this is one difference (237 − 132); it does not divide 70.\n- 175 — this is the largest difference (237 − 62); it does not divide 70.\n\n**Key facts**\n- Greatest number leaving the same remainder = HCF of the pairwise differences.\n- 70, 105, 175 share 5 × 7 = 35.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders)",
       "verified": true,
       "covers": [
@@ -473,13 +473,13 @@
       "question": "Four bells toll at intervals of 6, 8, 12 and 18 seconds respectively. If they toll together at the start, how many times will they toll together again in the next one hour?",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
-        "40",
-        "48",
+        "25",
         "50",
-        "60"
+        "51",
+        "600"
       ],
-      "answerIndex": 2,
-      "explanation": "The bells coincide every LCM of their intervals. Factorise: 6 = 2 × 3, 8 = 2^{3}, 12 = 2^{2} × 3, 18 = 2 × 3^{2}; highest powers give LCM = 2^{3} × 3^{2} = 72 seconds. One hour = 3600 seconds, so the number of further coincidences = 3600 ÷ 72 = 50.\nCheck: 50 × 72 = 3600, exactly one hour. Correct.\n\n**Why not the others**\n- 40 — uses an interval of 90 s, not the true LCM of 72 s.\n- 48 — uses 75 s; the LCM is 72 s.\n- 60 — uses 60 s, ignoring that LCM(6, 8, 12, 18) = 72.\n\n**Key facts**\n- Events recur together every LCM of their intervals.\n- Coincidences after the start in time T = whole-number part of T ÷ LCM = 3600 ÷ 72 = 50.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (bells).*",
+      "answerIndex": 1,
+      "explanation": "The bells coincide every LCM of their intervals. Factorise: 6 = 2 × 3, 8 = 2^{3}, 12 = 2^{2} × 3, 18 = 2 × 3^{2}; highest powers give LCM = 2^{3} × 3^{2} = 72 seconds. One hour = 3600 seconds, so the number of further coincidences = 3600 ÷ 72 = 50.\nCheck: 50 × 72 = 3600, exactly one hour. Correct.\n\n**Why not the others**\n- 25 — uses 144 (8 × 18) as the common interval instead of the LCM 72.\n- 51 — also counts the toll at the start; the question asks for tolls AGAIN.\n- 600 — divides by the shortest interval 6 s, which is when the first bell alone tolls.\n\n**Key facts**\n- Events recur together every LCM of their intervals.\n- Coincidences after the start in time T = whole-number part of T ÷ LCM = 3600 ÷ 72 = 50.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (bells).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (bells)",
       "verified": true,
       "covers": [
@@ -497,13 +497,13 @@
       "question": "Given log₁₀ 2 = 0.3010, the number of digits in 2^{64} is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-logarithms",
       "options": [
-        "18",
-        "19",
+        "64",
+        "21",
         "20",
-        "21"
+        "19"
       ],
       "answerIndex": 2,
-      "explanation": "The number of digits of N is one more than the whole-number part of its base-10 log. Here log of 2^{64} = 64 × log 2 = 64 × 0.3010 = 19.264. The whole-number part (characteristic) is 19, so the number of digits = 19 + 1 = 20.\n\n**Why not the others**\n- 18 — would need a characteristic of 17.\n- 19 — forgets to add 1 to the characteristic.\n- 21 — adds 2 instead of 1 to the characteristic.\n\n**Key facts**\n- Digits of N = (whole-number part of log base 10 of N) + 1.\n- 64 × 0.3010 = 19.264, so characteristic 19, giving 20 digits.\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (digits).*",
+      "explanation": "The number of digits of N is one more than the whole-number part of its base-10 log. Here log of 2^{64} = 64 × log 2 = 64 × 0.3010 = 19.264. The whole-number part (characteristic) is 19, so the number of digits = 19 + 1 = 20.\n\n**Why not the others**\n- 19 — forgets to add 1 to the characteristic.\n- 21 — adds 2 instead of 1 to the characteristic.\n- 64 — this is the exponent, not the number of digits.\n\n**Key facts**\n- Digits of N = (whole-number part of log base 10 of N) + 1.\n- 64 × 0.3010 = 19.264, so characteristic 19, giving 20 digits.\n\n*Source: local APPSC Quantitative Reasoning PDF — Logarithm (digits).*",
       "source": "local APPSC Quantitative Reasoning PDF — Logarithm (digits)",
       "verified": true,
       "covers": [
@@ -553,11 +553,11 @@
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "options": [
         "5 cm",
-        "35 cm",
         "7 cm",
+        "35 cm",
         "175 cm"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "The greatest tape that measures each length exactly is the HCF of the lengths, so first convert all to centimetres: 7 m = 700 cm, 3 m 85 cm = 385 cm, 12 m 95 cm = 1295 cm. Factorise: 700 = 2^{2} × 5^{2} × 7, 385 = 5 × 7 × 11, 1295 = 5 × 7 × 37; the common part is 5 × 7 = 35 cm.\n\n**Why not the others**\n- 5 cm — only the factor 5; it divides all three but is not the greatest.\n- 7 cm — only the factor 7; a common divisor but smaller than 35.\n- 175 cm — 175 = 5^{2} × 7 does not divide 385 (385 ÷ 175 is not whole).\n\n**Key facts**\n- 'Greatest length that measures each exactly' = HCF of the lengths.\n- Always convert all measures to the same unit first.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (greatest measure).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (greatest measure)",
       "verified": true,
@@ -577,13 +577,13 @@
       "question": "A rectangular floor 15 m 17 cm long and 9 m 2 cm broad is to be paved with square tiles of the same size. The least number of such tiles required is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "options": [
-        "814",
         "902",
-        "41",
-        "770"
+        "814",
+        "59",
+        "41"
       ],
-      "answerIndex": 0,
-      "explanation": "The largest identical square tile has side = HCF of the floor's dimensions in centimetres. Convert: 15 m 17 cm = 1517 cm, 9 m 2 cm = 902 cm. Factorise: 1517 = 37 × 41 and 902 = 2 × 11 × 41, so HCF = 41 cm. The number of tiles = (length ÷ side) × (breadth ÷ side) = (1517 ÷ 41) × (902 ÷ 41) = 37 × 22 = 814.\n\n**Why not the others**\n- 902 — the breadth in cm, not a tile count.\n- 41 — the tile side in cm, not the number of tiles.\n- 770 — comes from a wrong tile side; only side 41 divides both dimensions.\n\n**Key facts**\n- Largest identical square tile side = HCF of length and breadth.\n- Least number of tiles = (L ÷ side) × (B ÷ side).\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (paving tiles).*",
+      "answerIndex": 1,
+      "explanation": "The largest identical square tile has side = HCF of the floor's dimensions in centimetres. Convert: 15 m 17 cm = 1517 cm, 9 m 2 cm = 902 cm. Factorise: 1517 = 37 × 41 and 902 = 2 × 11 × 41, so HCF = 41 cm. The number of tiles = (length ÷ side) × (breadth ÷ side) = (1517 ÷ 41) × (902 ÷ 41) = 37 × 22 = 814.\n\n**Why not the others**\n- 41 — the tile side in cm, not the number of tiles.\n- 59 — ADDS the tiles along the two sides (37 + 22) instead of multiplying.\n- 902 — the breadth in cm, not a tile count.\n\n**Key facts**\n- Largest identical square tile side = HCF of length and breadth.\n- Least number of tiles = (L ÷ side) × (B ÷ side).\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (paving tiles).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (paving tiles)",
       "verified": true,
       "covers": [
@@ -602,13 +602,13 @@
       "question": "Three runners complete one round of a circular track in 252, 308 and 198 seconds respectively. If they start together from the same point, after how many seconds will they next meet at the starting point?",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
+        "22",
         "1386",
-        "2520",
         "2772",
         "5544"
       ],
       "answerIndex": 2,
-      "explanation": "They are all back at the start together only after a whole number of laps each, that is, after the LCM of the lap times. Factorise: 252 = 2^{2} × 3^{2} × 7, 308 = 2^{2} × 7 × 11, 198 = 2 × 3^{2} × 11; highest powers give LCM = 2^{2} × 3^{2} × 7 × 11 = 2772 seconds.\n\n**Why not the others**\n- 1386 — half the LCM; not a whole number of laps for the 252 s runner.\n- 2520 — the LCM of a different set; not divisible by 198 or 308.\n- 5544 — twice the LCM; they already meet at 2772 s.\n\n**Key facts**\n- Runners from the same point meet at the start again after the LCM of their lap times.\n- They may cross elsewhere sooner, but coincide at the start only at the LCM.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (circular track).*",
+      "explanation": "They are all back at the start together only after a whole number of laps each, that is, after the LCM of the lap times. Factorise: 252 = 2^{2} × 3^{2} × 7, 308 = 2^{2} × 7 × 11, 198 = 2 × 3^{2} × 11; highest powers give LCM = 2^{2} × 3^{2} × 7 × 11 = 2772 seconds.\n\n**Why not the others**\n- 22 — this is the HCF of the lap times; meeting at the start needs the LCM.\n- 1386 — half the LCM; not a whole number of laps for the 252 s runner.\n- 5544 — twice the LCM; they already meet at 2772 s.\n\n**Key facts**\n- Runners from the same point meet at the start again after the LCM of their lap times.\n- They may cross elsewhere sooner, but coincide at the start only at the LCM.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (circular track).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (circular track)",
       "verified": true,
       "covers": [
@@ -627,12 +627,12 @@
       "question": "The greatest number of persons among whom 1001 pens and 910 pencils can be distributed so that each person gets the same number of pens and the same number of pencils is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "options": [
-        "7",
-        "13",
+        "143",
         "91",
-        "143"
+        "13",
+        "7"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "Each person gets an equal whole number of pens and of pencils, so the number of persons must divide both 1001 and 910; the greatest such number is their HCF. Factorise: 1001 = 7 × 11 × 13 and 910 = 2 × 5 × 7 × 13, so HCF = 7 × 13 = 91.\nThen each person gets 1001 ÷ 91 = 11 pens and 910 ÷ 91 = 10 pencils.\n\n**Why not the others**\n- 7 — a common factor, but not the greatest.\n- 13 — a common factor, but 91 is larger.\n- 143 = 11 × 13 — does not divide 910 (910 ÷ 143 is not whole).\n\n**Key facts**\n- 'Greatest number of persons for equal distribution' = HCF of the quantities.\n- Each person then receives (quantity ÷ HCF) of each item.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (equal distribution).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (equal distribution)",
       "verified": true,
@@ -652,13 +652,13 @@
       "question": "Three traffic lights change after 48, 72 and 108 seconds respectively. If they all change together at 8:20:00 a.m., at what time will they next change together?",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
-        "8:26:12 a.m.",
+        "8:20:12 a.m.",
+        "8:24:32 a.m.",
         "8:27:00 a.m.",
-        "8:27:12 a.m.",
-        "8:28:12 a.m."
+        "8:27:12 a.m."
       ],
-      "answerIndex": 2,
-      "explanation": "The lights change together again after the LCM of their intervals. Factorise: 48 = 2^{4} × 3, 72 = 2^{3} × 3^{2}, 108 = 2^{2} × 3^{3}; highest powers give LCM = 2^{4} × 3^{3} = 16 × 27 = 432 seconds = 7 minutes 12 seconds. Add to 8:20:00: 8:20:00 + 7:12 = 8:27:12 a.m.\n\n**Why not the others**\n- 8:26:12 — uses 372 s; the true LCM is 432 s.\n- 8:27:00 — forgets the extra 12 s (adds only 7 minutes).\n- 8:28:12 — uses 492 s, larger than the LCM.\n\n**Key facts**\n- A simultaneous change recurs every LCM of the change intervals.\n- 432 s = 7 min 12 s; add it to the given clock time.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (traffic lights).*",
+      "answerIndex": 3,
+      "explanation": "The lights change together again after the LCM of their intervals. Factorise: 48 = 2^{4} × 3, 72 = 2^{3} × 3^{2}, 108 = 2^{2} × 3^{3}; highest powers give LCM = 2^{4} × 3^{3} = 16 × 27 = 432 seconds = 7 minutes 12 seconds. Add to 8:20:00: 8:20:00 + 7:12 = 8:27:12 a.m.\n\n**Why not the others**\n- 8:20:12 a.m. — adds the HCF (12 s) instead of the LCM.\n- 8:24:32 a.m. — reads 432 seconds as 4 min 32 s; 432 s is 7 min 12 s.\n- 8:27:00 a.m. — forgets the extra 12 s (adds only 7 minutes).\n\n**Key facts**\n- A simultaneous change recurs every LCM of the change intervals.\n- 432 s = 7 min 12 s; add it to the given clock time.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (traffic lights).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (traffic lights)",
       "verified": true,
       "covers": [
@@ -677,13 +677,13 @@
       "question": "The least number which when divided by 6, 7, 8, 9 and 12 leaves a remainder 1 in each case is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
-        "421",
+        "503",
         "504",
         "505",
-        "511"
+        "1009"
       ],
       "answerIndex": 2,
-      "explanation": "A number leaving remainder 1 by each divisor is a common multiple plus 1; the least is LCM + 1. Factorise the divisors: 6 = 2 × 3, 7 = 7, 8 = 2^{3}, 9 = 3^{2}, 12 = 2^{2} × 3; highest powers give LCM = 2^{3} × 3^{2} × 7 = 504. So the number is 504 + 1 = 505.\nCheck: 505 ÷ 8 = 63 remainder 1, and likewise for 6, 7, 9, 12.\n\n**Why not the others**\n- 421 — not of the form LCM + 1; it leaves the wrong remainders.\n- 504 — the LCM itself, which leaves remainder 0, not 1.\n- 511 — this is 504 + 7, giving wrong remainders.\n\n**Key facts**\n- Least number leaving common remainder R = LCM(divisors) + R.\n- LCM(6, 7, 8, 9, 12) = 504.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
+      "explanation": "A number leaving remainder 1 by each divisor is a common multiple plus 1; the least is LCM + 1. Factorise the divisors: 6 = 2 × 3, 7 = 7, 8 = 2^{3}, 9 = 3^{2}, 12 = 2^{2} × 3; highest powers give LCM = 2^{3} × 3^{2} × 7 = 504. So the number is 504 + 1 = 505.\nCheck: 505 ÷ 8 = 63 remainder 1, and likewise for 6, 7, 9, 12.\n\n**Why not the others**\n- 503 — this is LCM − 1; the remainder must be added.\n- 504 — the LCM itself, which leaves remainder 0, not 1.\n- 1009 — this is 2 × 504 + 1, a valid number but not the least.\n\n**Key facts**\n- Least number leaving common remainder R = LCM(divisors) + R.\n- LCM(6, 7, 8, 9, 12) = 504.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders)",
       "verified": true,
       "covers": [
@@ -702,13 +702,13 @@
       "question": "The least number which when divided by 5, 6, 7 and 8 leaves remainders 3, 4, 5 and 6 respectively is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "options": [
-        "838",
-        "840",
+        "1678",
         "842",
-        "418"
+        "840",
+        "838"
       ],
-      "answerIndex": 0,
-      "explanation": "Look at each gap divisor − remainder: 5 − 3 = 2, 6 − 4 = 2, 7 − 5 = 2, 8 − 6 = 2 — a constant 2. So the number is a common multiple minus 2, and the least is LCM − 2. LCM(5, 6, 7, 8) = 2^{3} × 3 × 5 × 7 = 840, so the number is 840 − 2 = 838.\nCheck: 838 ÷ 5 = 167 remainder 3; 838 ÷ 6 = 139 remainder 4; 838 ÷ 7 = 119 remainder 5; 838 ÷ 8 = 104 remainder 6. Correct.\n\n**Why not the others**\n- 840 — the LCM itself; it leaves remainder 0, not the required ones.\n- 842 — this is LCM + 2; the constant gap should be subtracted.\n- 418 — roughly half the LCM; not a common multiple minus 2.\n\n**Key facts**\n- When (divisor − remainder) is the same constant k, the least number = LCM − k.\n- Here k = 5 − 3 = 6 − 4 = 7 − 5 = 8 − 6 = 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
+      "answerIndex": 3,
+      "explanation": "Look at each gap divisor − remainder: 5 − 3 = 2, 6 − 4 = 2, 7 − 5 = 2, 8 − 6 = 2 — a constant 2. So the number is a common multiple minus 2, and the least is LCM − 2. LCM(5, 6, 7, 8) = 2^{3} × 3 × 5 × 7 = 840, so the number is 840 − 2 = 838.\nCheck: 838 ÷ 5 = 167 remainder 3; 838 ÷ 6 = 139 remainder 4; 838 ÷ 7 = 119 remainder 5; 838 ÷ 8 = 104 remainder 6. Correct.\n\n**Why not the others**\n- 840 — the LCM itself; it leaves remainder 0, not the required ones.\n- 842 — this is LCM + 2; the constant gap should be subtracted.\n- 1678 — this is 2 × 840 − 2, a valid number but not the least.\n\n**Key facts**\n- When (divisor − remainder) is the same constant k, the least number = LCM − k.\n- Here k = 5 − 3 = 6 − 4 = 7 − 5 = 8 − 6 = 2.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (remainders)",
       "verified": true,
       "covers": [
@@ -727,13 +727,13 @@
       "question": "24 boys and 60 girls are to be seated in rows for an exam so that each row has the same number of students and no row mixes boys and girls. The minimum number of rows required is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "options": [
-        "6",
+        "2",
         "7",
         "12",
-        "5"
+        "14"
       ],
       "answerIndex": 1,
-      "explanation": "To use the fewest rows, make each row as large as possible while keeping boys and girls in separate rows; that largest equal size is HCF(24, 60) = 12 (24 = 2^{2} × 2 × 3, 60 = 2^{2} × 3 × 5, common 2^{2} × 3 = 12). Then boys need 24 ÷ 12 = 2 rows and girls need 60 ÷ 12 = 5 rows, giving 2 + 5 = 7 rows.\n\n**Why not the others**\n- 6 — would need 14 per row, but 14 divides neither 24 nor 60.\n- 12 — uses 7 per row (HCF misread); 7 divides neither 24 nor 60.\n- 5 — fewer than the 7 rows actually needed once no mixing is allowed.\n\n**Key facts**\n- Largest equal row size with no mixing = HCF of the group sizes.\n- Minimum rows = (24 ÷ HCF) + (60 ÷ HCF) = 2 + 5 = 7.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (grouping).*",
+      "explanation": "To use the fewest rows, make each row as large as possible while keeping boys and girls in separate rows; that largest equal size is HCF(24, 60) = 12 (24 = 2^{2} × 2 × 3, 60 = 2^{2} × 3 × 5, common 2^{2} × 3 = 12). Then boys need 24 ÷ 12 = 2 rows and girls need 60 ÷ 12 = 5 rows, giving 2 + 5 = 7 rows.\n\n**Why not the others**\n- 2 — counts only the boys' rows (24 ÷ 12) and forgets the girls' 5 rows.\n- 12 — this is the row size (the HCF), not the number of rows.\n- 14 — uses a row of 6 (a common factor, not the highest): 4 + 10 rows.\n\n**Key facts**\n- Largest equal row size with no mixing = HCF of the group sizes.\n- Minimum rows = (24 ÷ HCF) + (60 ÷ HCF) = 2 + 5 = 7.\n\n*Source: local APPSC Quantitative Reasoning PDF — LCM and HCF (grouping).*",
       "source": "local APPSC Quantitative Reasoning PDF — LCM and HCF (grouping)",
       "verified": true,
       "covers": [
@@ -752,13 +752,13 @@
       "question": "Three numbers are in the ratio 2 : 3 : 4 and their sum is 549. Their HCF is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-ratio-hcf-and-square-lcm",
       "options": [
-        "61",
-        "59",
-        "63",
-        "67"
+        "244",
+        "183",
+        "122",
+        "61"
       ],
-      "answerIndex": 0,
-      "explanation": "Write the numbers as 2k, 3k, 4k for a common multiplier k. Their sum is 2k + 3k + 4k = 9k, and this equals 549, so k = 549 ÷ 9 = 61. Since 2, 3, 4 share no common factor, the only thing common to all three numbers is k, so the HCF is 61. (The numbers are 122, 183, 244.)\n\n**Why not the others**\n- 59 — 9 × 59 = 531, not 549.\n- 63 — 9 × 63 = 567, not 549.\n- 67 — 9 × 67 = 603, not 549.\n\n**Key facts**\n- Numbers in ratio a : b : c are ak, bk, ck; the common multiplier k is the HCF when a, b, c share no factor.\n- k = sum ÷ (a + b + c) = 549 ÷ 9 = 61.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "answerIndex": 3,
+      "explanation": "Write the numbers as 2k, 3k, 4k for a common multiplier k. Their sum is 2k + 3k + 4k = 9k, and this equals 549, so k = 549 ÷ 9 = 61. Since 2, 3, 4 share no common factor, the only thing common to all three numbers is k, so the HCF is 61. (The numbers are 122, 183, 244.)\n\n**Why not the others**\n- 122 — this is the smallest number (2k), not the HCF.\n- 183 — divides the sum by the 3 numbers (549 ÷ 3) instead of by the 9 ratio parts.\n- 244 — this is the largest number (4k), not the HCF.\n\n**Key facts**\n- Numbers in ratio a : b : c are ak, bk, ck; the common multiplier k is the HCF when a, b, c share no factor.\n- k = sum ÷ (a + b + c) = 549 ÷ 9 = 61.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -776,12 +776,12 @@
       "question": "The least perfect square that is exactly divisible by 2, 3, 5, 6, 9 and 18 is:",
       "noteRef": "ment-powers-roots-hcf-lcm-note-ratio-hcf-and-square-lcm",
       "options": [
-        "900",
-        "1600",
+        "180",
         "450",
-        "180"
+        "900",
+        "1600"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "First find the least number divisible by all six: LCM(2, 3, 5, 6, 9, 18) = 90 = 2^{1} × 3^{2} × 5^{1}. For a perfect square every prime power must be even; here 2 and 5 have odd power 1, so multiply by 2 × 5 = 10. That gives 900 = 2^{2} × 3^{2} × 5^{2} = 30^{2}.\nCheck: 900 ÷ 18 = 50, a whole number, so 900 is divisible by all six.\n\n**Why not the others**\n- 1600 = 40^{2} is a perfect square but is not divisible by 3 or 9.\n- 450 = 2 × 3^{2} × 5^{2} is divisible by all six but is not a perfect square (the power of 2 is odd).\n- 180 = 2^{2} × 3^{2} × 5 is not a perfect square (the power of 5 is odd).\n\n**Key facts**\n- The LCM gives divisibility; even out the odd exponents to make a square.\n- 90 × 10 = 900 = 30^{2}.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
@@ -798,14 +798,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-33",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of 64^{-2/3} is:",
+      "question": "Using the laws of indices, the value of 64^{-2/3} is:",
       "options": [
-        "−16",
         "16",
+        "1/16",
         "−1/16",
-        "1/16"
+        "−16"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-indices",
       "explanation": "64^{-2/3} = 1 ÷ 64^{2/3}. Cube root of 64 = 4, squared = 16, so the value is 1/16.\n\n**Why not the others**\n- −16 — A negative index gives a reciprocal, not a negative number.\n- 16 — Forgets the negative index (reciprocal).\n- −1/16 — The answer is positive; the minus sign is in the index.\n\n**Key facts**\n- a^{-n} = 1 ÷ a^{n}; a^{m/n} = (n-th root)^{m}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -822,14 +822,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-34",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of (243)^{3/5} is:",
+      "question": "Using the laws of indices, the value of (243)^{3/5} is:",
       "options": [
-        "81",
         "9",
         "27",
+        "81",
         "729"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-indices",
       "explanation": "243 = 3^{5}, so the fifth root is 3, and 3^{3} = 27.\n\n**Why not the others**\n- 81 — 81 is 3^{4}, not 3^{3}.\n- 9 — 9 is 3^{2}: uses the power 2 instead of 3.\n- 729 — 729 = 3^{6}: uses the power 6 instead of 3.\n\n**Key facts**\n- Take the root (bottom), then the power (top).\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -848,14 +848,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "If 47^{7.5} ÷ 47^{3/2} × 47^{-3} = (√47)^{x}, then x is:",
       "options": [
-        "3",
+        "18",
         "12",
-        "9",
-        "6"
+        "6",
+        "3"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-indices",
-      "explanation": "Left side = 47^{7.5 − 1.5 − 3} = 47^{3}. Since √47 = 47^{1/2}, 47^{3} = (√47)^{6}, so x = 6.\n\n**Why not the others**\n- 3 — 3 is the power of 47, not of √47.\n- 12 — Ignores the 47^{-3} factor: 47^{6} = (√47)^{12}.\n- 9 — Arithmetic slip in combining the exponents.\n\n**Key facts**\n- Same base: add/subtract the exponents, then equate.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "Left side = 47^{7.5 − 1.5 − 3} = 47^{3}. Since √47 = 47^{1/2}, 47^{3} = (√47)^{6}, so x = 6.\n\n**Why not the others**\n- 3 — 3 is the power of 47, not of √47.\n- 12 — ignores the 47^{-3} factor: 47^{6} = (√47)^{12}.\n- 18 — adds the −3 exponent instead of subtracting it (47^{9} = (√47)^{18}).\n\n**Key facts**\n- Same base: add/subtract the exponents, then equate.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -870,16 +870,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-36",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "If 2^{x+3} = 32, then x equals:",
+      "question": "If 2^{x+3} = 32, then the value of the exponent x is:",
       "options": [
         "2",
         "5",
-        "3",
-        "8"
+        "8",
+        "13"
       ],
       "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-indices",
-      "explanation": "32 = 2^{5}, so x + 3 = 5 and x = 2.\n\n**Why not the others**\n- 5 — 5 is the full exponent x + 3, not x.\n- 3 — Uses 32 = 2^{6}.\n- 8 — 8 is 2^{3}, not x.\n\n**Key facts**\n- Equate exponents once the bases match.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "32 = 2^{5}, so x + 3 = 5 and x = 2.\n\n**Why not the others**\n- 5 — 5 is the full exponent x + 3, not x.\n- 8 — 8 is 2^{3}, not x.\n- 13 — divides 32 by 2 (x + 3 = 16) instead of writing 32 as a power of 2.\n\n**Key facts**\n- Equate exponents once the bases match.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -894,14 +894,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-37",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "Which of the following is a COMPOUND surd?",
+      "question": "Which of the following numbers is a COMPOUND surd?",
       "options": [
+        "4 + √3",
         "4√3",
         "√7",
-        "8√5",
-        "4 + √3"
+        "8√5"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
       "explanation": "A compound surd is a sum or difference of surds or of a number and a surd, such as 4 + √3.\n\n**Why not the others**\n- 4√3 — 4√3 is a mixed surd (rational × root).\n- √7 — √7 is a pure surd.\n- 8√5 — 8√5 is a mixed surd.\n\n**Key facts**\n- Pure √7, mixed 4√3, compound 4 + √3.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -918,14 +918,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-38",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "Which of the following is TRUE?",
+      "question": "Which of the following statements about surds is TRUE?",
       "options": [
+        "√2 × √8 = 4",
         "√9 + √16 = √25",
         "√3 + √2 = √5",
-        "2√3 + 3√2 = 5√5",
-        "√2 × √8 = 4"
+        "2√3 + 3√2 = 5√5"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
       "explanation": "Roots multiply term by term: √2 × √8 = √16 = 4. They do not add under one root: √a + √b ≠ √(a + b).\n\n**Why not the others**\n- √9 + √16 = √25 — √9 + √16 = 3 + 4 = 7, but √25 = 5.\n- √3 + √2 = √5 — Surds do not add under one root.\n- 2√3 + 3√2 = 5√5 — Unlike surds cannot combine.\n\n**Key facts**\n- Multiply under one root, never add under one root.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -942,7 +942,7 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-39",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of √72 − √32 is:",
+      "question": "On simplifying the surds, the value of √72 − √32 is:",
       "options": [
         "√40",
         "4√2",
@@ -966,16 +966,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-40",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of (4 + 3√2)² is:",
+      "question": "On expanding the square, the value of (4 + 3√2)² is:",
       "options": [
-        "16 + 18√2",
+        "34",
         "34 + 12√2",
         "25 + 24√2",
         "34 + 24√2"
       ],
       "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
-      "explanation": "(4 + 3√2)² = 16 + 18 + 2 × 4 × 3√2 = 34 + 24√2.\n\n**Why not the others**\n- 16 + 18√2 — Forgets the 2ab middle term and squares wrongly.\n- 34 + 12√2 — Middle term is 2 × 4 × 3√2 = 24√2, not 12√2.\n- 25 + 24√2 — (3√2)² = 18, so 16 + 18 = 34, not 25.\n\n**Key facts**\n- (a + b)² = a² + b² + 2ab.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "(4 + 3√2)² = 16 + 18 + 2 × 4 × 3√2 = 34 + 24√2.\n\n**Why not the others**\n- 34 — drops the middle term 2ab = 24√2 altogether.\n- 34 + 12√2 — middle term is 2 × 4 × 3√2 = 24√2, not 12√2.\n- 25 + 24√2 — (3√2)² = 18, so 16 + 18 = 34, not 25.\n\n**Key facts**\n- (a + b)² = a² + b² + 2ab.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -992,12 +992,12 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "1 / (√5 + √2), after rationalising the denominator, equals:",
       "options": [
+        "(√5 − √2)/3",
         "(√5 + √2)/3",
         "√5 − √2",
-        "(√5 − √2)/3",
         "(√5 − √2)/7"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
       "explanation": "Multiply top and bottom by √5 − √2: the bottom becomes 5 − 2 = 3, giving (√5 − √2)/3.\n\n**Why not the others**\n- (√5 + √2)/3 — The conjugate flips the sign: multiply by √5 − √2.\n- √5 − √2 — The bottom becomes 5 − 2 = 3, not 1.\n- (√5 − √2)/7 — Adds 5 + 2 instead of subtracting.\n\n**Key facts**\n- Conjugate: (x + y)(x − y) = x² − y².\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1016,12 +1016,12 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "The value of 1/(√25 − √24) − 1/(√24 − √23) + 1/(√23 − √22) − 1/(√22 − √21) + 1/(√21 − √20) is:",
       "options": [
+        "5 + 2√5",
         "5 − 2√5",
         "5",
-        "5 + 2√5",
         "2√5"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
       "explanation": "Each 1/(√(n+1) − √n) = √(n+1) + √n. The middle terms cancel, leaving √25 + √20 = 5 + 2√5.\n\n**Why not the others**\n- 5 − 2√5 — The √20 term is added, not subtracted.\n- 5 — Drops the surviving √20 = 2√5 term.\n- 2√5 — Drops the surviving 5 = √25 term.\n\n**Key facts**\n- Rationalise each term; the chain telescopes.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1062,16 +1062,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-44",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "If x = 2 + √3, the value of x + 1/x is:",
+      "question": "If x = 2 + √3, then the value of the expression x + 1/x is:",
       "options": [
-        "2√3",
         "4",
+        "2√3",
         "2",
-        "7"
+        "4 + 2√3"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
-      "explanation": "1/x = 1/(2 + √3) = (2 − √3)/(4 − 3) = 2 − √3. So x + 1/x = 4; the √3 parts cancel.\n\n**Why not the others**\n- 2√3 — 2√3 is x − 1/x.\n- 2 — Uses only one of the two terms.\n- 7 — 7 = 4 + 3 adds the parts wrongly.\n\n**Key facts**\n- For a + √b with a² − b = 1, x + 1/x = 2a.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "1/x = 1/(2 + √3) = (2 − √3)/(4 − 3) = 2 − √3. So x + 1/x = 4; the √3 parts cancel.\n\n**Why not the others**\n- 2√3 — 2√3 is x − 1/x.\n- 2 — uses only one of the two terms.\n- 4 + 2√3 — adds the √3 parts instead of letting them cancel (1/x = 2 − √3).\n\n**Key facts**\n- For a + √b with a² − b = 1, x + 1/x = 2a.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1117,14 +1117,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "What is the cube root of 13824? (Do not confuse it with the square root √13824 ≈ 117.6.)",
       "options": [
+        "12",
         "24",
-        "28",
-        "22",
-        "26"
+        "216",
+        "4608"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surds",
-      "explanation": "13824 = 2^{9} × 3^{3}. Groups of three: keep 2^{3} × 3 = 24. Check: 24³ = 13824.\n\n**Why not the others**\n- 28 — 28³ = 21952.\n- 22 — 22³ = 10648.\n- 26 — 26³ = 17576.\n\n**Key facts**\n- Cube root: group primes in threes, keep one from each.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "13824 = 2^{9} × 3^{3}. Groups of three: keep 2^{3} × 3 = 24. Check: 24³ = 13824.\n\n**Why not the others**\n- 12 — takes 2^{2} from 2^{9} (divides the power by 4); a cube root divides each power by 3.\n- 216 — roots the 2^{9} but keeps 3^{3} as it is (2^{3} × 27).\n- 4608 — divides 13824 by 3 instead of taking the cube root.\n\n**Key facts**\n- Cube root: group primes in threes, keep one from each.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1141,14 +1141,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "The square of 115 (a number that ends in 5) is:",
       "options": [
+        "230",
+        "1325",
         "12225",
-        "13125",
-        "13225",
-        "11225"
+        "13225"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
-      "explanation": "Remove the 5: x = 11; x(x + 1) = 11 × 12 = 132; append 25 → 13225.\n\n**Why not the others**\n- 12225 — Uses 11 × 11 instead of 11 × 12.\n- 13125 — The last two digits are always 25.\n- 11225 — Uses 10 × 11 + 2.\n\n**Key facts**\n- x5² = x(x + 1) followed by 25.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "Remove the 5: x = 11; x(x + 1) = 11 × 12 = 132; append 25 → 13225.\n\n**Why not the others**\n- 230 — doubles 115 instead of squaring it.\n- 1325 — appends 5 instead of 25 to 11 × 12 = 132.\n- 12225 — uses 11 × 11 instead of 11 × 12.\n\n**Key facts**\n- x5² = x(x + 1) followed by 25.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1163,16 +1163,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-48",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "Using the base-100 method, 104² equals:",
+      "question": "Using the base-100 method of squaring, the value of 104² equals:",
       "options": [
-        "10816",
+        "10016",
         "10416",
-        "10086",
-        "10160"
+        "10800",
+        "10816"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
-      "explanation": "Distance from 100 is 4: 104 + 4 = 108, and 4² = 16 as two digits → 10816.\n\n**Why not the others**\n- 10416 — Adds only 4, not 104 + 4.\n- 10086 — Writes 16 as the middle digits wrongly.\n- 10160 — Drops the 08.\n\n**Key facts**\n- Base 100: shift by the distance, then square the distance.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "Distance from 100 is 4: 104 + 4 = 108, and 4² = 16 as two digits → 10816.\n\n**Why not the others**\n- 10016 — writes 100 for the left part; it should be 104 + 4 = 108.\n- 10416 — writes 104 for the left part and forgets to add the surplus 4 again.\n- 10800 — forgets the right part 4² = 16.\n\n**Key facts**\n- Base 100: shift by the distance, then square the distance.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1189,12 +1189,12 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "Which of the following can NOT be a perfect square?",
       "options": [
-        "1225",
         "1154",
         "1156",
+        "1225",
         "1369"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
       "explanation": "All four end in allowed digits, so use the digital root: 1 + 1 + 5 + 4 = 11 → 2. A perfect square has digital root 1, 4, 7 or 9, so 1154 is not a square.\n\n**Why not the others**\n- 1225 — 1225 = 35².\n- 1156 — 1156 = 34².\n- 1369 — 1369 = 37².\n\n**Key facts**\n- Digital root of a perfect square: 1, 4, 7 or 9.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1267,11 +1267,11 @@
       "question": "The smallest number by which 2028 must be divided so that the quotient is a perfect square is:",
       "options": [
         "2",
-        "13",
         "3",
-        "4"
+        "4",
+        "13"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
       "explanation": "2028 = 2^{2} × 3 × 13^{2}. Divide by the unpaired 3: 676 = 26².\n\n**Why not the others**\n- 2 — 2 appears as 2^{2}, already paired.\n- 13 — 13 appears as 13^{2}, already paired.\n- 4 — 4 = 2^{2} is a paired factor.\n\n**Key facts**\n- Divide by the unpaired primes.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1290,14 +1290,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "The least number that must be subtracted from 6203 to get a perfect square is:",
       "options": [
-        "38",
+        "6084",
         "203",
         "119",
-        "83"
+        "38"
       ],
       "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
-      "explanation": "78² = 6084 ≤ 6203 < 6241 = 79², so subtract 6203 − 6084 = 119.\n\n**Why not the others**\n- 38 — 38 is the number to ADD (to reach 79² = 6241).\n- 203 — 203 subtracts down to 6000, not a square.\n- 83 — Arithmetic slip from 78² = 6084.\n\n**Key facts**\n- Least to subtract = remainder; least to add = next square − number.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "78² = 6084 ≤ 6203 < 6241 = 79², so subtract 6203 − 6084 = 119.\n\n**Why not the others**\n- 38 — 38 is the number to ADD (to reach 79² = 6241).\n- 203 — 203 subtracts down to 6000, which is not a square.\n- 6084 — this is the perfect square 78² itself, not the amount subtracted.\n\n**Key facts**\n- Least to subtract = remainder; least to add = next square − number.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1315,11 +1315,11 @@
       "question": "The least number that must be added to 1300 to make it a perfect square is:",
       "options": [
         "4",
+        "31",
         "69",
-        "96",
-        "31"
+        "96"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
       "explanation": "36² = 1296 < 1300 < 1369 = 37², so add 1369 − 1300 = 69.\n\n**Why not the others**\n- 4 — 4 is the remainder (1300 − 36²); that is what you would SUBTRACT.\n- 96 — 1300 + 96 = 1396 is not a square (37² = 1369).\n- 31 — 1300 + 31 = 1331 = 11³, a cube, not a square.\n\n**Key facts**\n- Least to add = next perfect square − number.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1336,14 +1336,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-55",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The greatest 4-digit perfect square is:",
+      "question": "The greatest 4-digit number that is a perfect square is:",
       "options": [
-        "9801",
-        "9999",
         "9604",
-        "9900"
+        "9801",
+        "9900",
+        "9999"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
       "explanation": "9999 leaves remainder 198 in the long-division square root, so 9999 − 198 = 9801 = 99².\n\n**Why not the others**\n- 9999 — 9999 is not a square (99² = 9801, 100² = 10000).\n- 9604 — 9604 = 98², not the greatest.\n- 9900 — 9900 is not a square.\n\n**Key facts**\n- Greatest 4-digit square 9801; least 1024.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1360,16 +1360,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-56",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of √0.0169 is:",
+      "question": "Find the value of the square root of the decimal 0.0169, that is √0.0169.",
       "options": [
         "0.013",
+        "0.0845",
         "0.13",
-        "1.3",
-        "0.0013"
+        "1.3"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
-      "explanation": "0.0169 = 169 × 10^{−4}, so √0.0169 = 13 × 10^{−2} = 0.13.\n\n**Why not the others**\n- 0.013 — 0.013² = 0.000169.\n- 1.3 — 1.3² = 1.69.\n- 0.0013 — Too many decimal places.\n\n**Key facts**\n- Pair digits from the decimal point: √(a × 10^{−2k}) = √a × 10^{−k}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "0.0169 = 169 × 10^{−4}, so √0.0169 = 13 × 10^{−2} = 0.13.\n\n**Why not the others**\n- 0.013 — 0.013² = 0.000169; one decimal place too many.\n- 0.0845 — halves the number instead of taking its square root.\n- 1.3 — 1.3² = 1.69; the decimal point is lost.\n\n**Key facts**\n- Pair digits from the decimal point: √(a × 10^{−2k}) = √a × 10^{−k}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1384,14 +1384,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-57",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "Which of the following is correct?",
+      "question": "Which of the following statements about powers of negative numbers is correct?",
       "options": [
         "(−3)² = −9",
         "(−3)³ = 27",
-        "(−3)³ = −27",
-        "(−2)⁴ = −16"
+        "(−2)⁴ = −16",
+        "(−3)³ = −27"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
       "explanation": "Odd powers keep the sign, so (−3)³ = −27; even powers are positive.\n\n**Why not the others**\n- (−3)² = −9 — A square is never negative: (−3)² = 9.\n- (−3)³ = 27 — A cube keeps the sign.\n- (−2)⁴ = −16 — An even power is positive.\n\n**Key facts**\n- Cube keeps the sign; square is never negative.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1408,16 +1408,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-58",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of 111² is:",
+      "question": "Using the repunit pattern, the value of 111² is:",
       "options": [
-        "11211",
-        "12221",
+        "1234321",
+        "12321",
         "1221",
-        "12321"
+        "222"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-squares-perfect-square-extras",
-      "explanation": "Repunit squares are palindromes: 11² = 121, 111² = 12321, 1111² = 1234321.\n\n**Why not the others**\n- 11211 — Wrong middle digit.\n- 12221 — Middle digit should be 3.\n- 1221 — That is 11 × 111.\n\n**Key facts**\n- 111² = 12321.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "Repunit squares are palindromes: 11² = 121, 111² = 12321, 1111² = 1234321.\n\n**Why not the others**\n- 222 — doubles 111 instead of squaring it.\n- 1221 — that is 11 × 111.\n- 1234321 — that is 1111², the next repunit square.\n\n**Key facts**\n- 111² = 12321.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1432,14 +1432,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-59",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "Written in logarithmic form, 5³ = 125 is:",
+      "question": "Written in logarithmic form, the statement 5³ = 125 is:",
       "options": [
         "log₃ 125 = 5",
-        "log₅ 125 = 3",
         "log₁₂₅ 5 = 3",
-        "log₅ 3 = 125"
+        "log₅ 3 = 125",
+        "log₅ 125 = 3"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
       "explanation": "aᵇ = c ⟺ log base a of c = b, so 5³ = 125 gives log₅ 125 = 3.\n\n**Why not the others**\n- log₃ 125 = 5 — The base stays 5.\n- log₁₂₅ 5 = 3 — Swaps the base and the number.\n- log₅ 3 = 125 — The log equals the exponent, 3.\n\n**Key facts**\n- A log is the exponent.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1456,16 +1456,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-60",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of log₅ 125 + log₅ 25 is:",
+      "question": "Using the laws of logarithms, the value of log₅ 125 + log₅ 25 is:",
       "options": [
-        "150",
+        "5",
         "6",
-        "3125",
-        "5"
+        "150",
+        "3125"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
-      "explanation": "log₅ 125 = 3 and log₅ 25 = 2, so the sum is 5 (equivalently log₅ 3125 = 5).\n\n**Why not the others**\n- 150 — Adds the numbers instead of the logs.\n- 6 — 125 = 5³ and 25 = 5²: 3 + 2.\n- 3125 — 3125 is the product, not the log.\n\n**Key facts**\n- log x + log y = log(xy); log base b of b^{k} = k.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "log₅ 125 = 3 and log₅ 25 = 2, so the sum is 5 (equivalently log₅ 3125 = 5).\n\n**Why not the others**\n- 6 — multiplies the logs (3 × 2) instead of adding them.\n- 150 — adds the numbers instead of the logs.\n- 3125 — 3125 is the product, not the log.\n\n**Key facts**\n- log x + log y = log(xy); log base b of b^{k} = k.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1480,16 +1480,16 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-61",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of log₇ 1 + log₇ 7 is:",
+      "question": "Using the laws of logarithms, the value of log₇ 1 + log₇ 7 is:",
       "options": [
         "0",
         "1",
-        "7",
-        "8"
+        "2",
+        "7"
       ],
       "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-logarithms",
-      "explanation": "log of 1 is 0 in every base, and log of the base itself is 1: 0 + 1 = 1.\n\n**Why not the others**\n- 0 — log₇ 7 = 1, not 0.\n- 7 — Adds the numbers, not the logs.\n- 8 — 1 + 7 adds the numbers.\n\n**Key facts**\n- log 1 = 0; log base b of b = 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "log of 1 is 0 in every base, and log of the base itself is 1: 0 + 1 = 1.\n\n**Why not the others**\n- 0 — log₇ 7 = 1, not 0.\n- 2 — takes log₇ 1 as 1 as well; the log of 1 is 0 in every base.\n- 7 — adds the numbers, not the logs.\n\n**Key facts**\n- log 1 = 0; log base b of b = 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1504,14 +1504,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-62",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "If log a + log b + log c = 0, then:",
+      "question": "If log a + log b + log c = 0 (all to the same base), then:",
       "options": [
+        "abc = 1",
         "a + b + c = 0",
         "a + b + c = 1",
-        "abc = 1",
         "abc = 0"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
       "explanation": "log a + log b + log c = log(abc) = 0 = log 1, so abc = 1.\n\n**Why not the others**\n- a + b + c = 0 — The SUM of logs is the log of the PRODUCT.\n- a + b + c = 1 — The sum of logs is the log of the product, not a sum.\n- abc = 0 — log 0 is undefined; log 1 = 0.\n\n**Key facts**\n- Sum of logs = log of the product.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1528,14 +1528,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-63",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "If log₃ x − log₃ (x − 2) = 1, then x is:",
+      "question": "If log₃ x − log₃ (x − 2) = 1, then the value of x is:",
       "options": [
+        "1",
         "2",
         "3",
-        "1",
         "6"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-surd-log-extras",
       "explanation": "Quotient rule: log₃ [x/(x − 2)] = 1, so x/(x − 2) = 3, x = 3x − 6, x = 3.\n\n**Why not the others**\n- 2 — x = 2 makes log(x − 2) undefined.\n- 1 — x = 1 makes x − 2 negative.\n- 6 — Uses x = 3(x − 2) wrongly as 2x = 12.\n\n**Key facts**\n- Combine with the quotient rule, convert to exponent form.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1552,14 +1552,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-64",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The value of log₄ 32 is:",
+      "question": "Using the change-of-base rule, the value of log₄ 32 is:",
       "options": [
-        "8",
         "2/5",
+        "5/2",
         "5",
-        "5/2"
+        "8"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-logarithms",
       "explanation": "Change to base 2: log₂ 32 ÷ log₂ 4 = 5 ÷ 2 = 5/2.\n\n**Why not the others**\n- 8 — 32 ÷ 4 divides the numbers.\n- 2/5 — Inverts the change-of-base ratio.\n- 5 — 5 is log₂ 32 only.\n\n**Key facts**\n- log base a of b = log b ÷ log a.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1576,7 +1576,7 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-65",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The natural logarithm ln x uses which base?",
+      "question": "The natural logarithm, written ln x, uses which number as its base?",
       "options": [
         "e",
         "10",
@@ -1602,12 +1602,12 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "Given log 3 = 0.4771, the number of digits in 3^{40} is:",
       "options": [
-        "19",
-        "20",
+        "40",
         "21",
-        "40"
+        "20",
+        "19"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-logarithms",
       "explanation": "log 3^{40} = 40 × 0.4771 = 19.084. Characteristic 19, so digits = 19 + 1 = 20.\n\n**Why not the others**\n- 19 — Takes the characteristic (19) without adding 1.\n- 21 — Adds 2.\n- 40 — Confuses the exponent with the digit count.\n\n**Key facts**\n- Digits = characteristic + 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1627,11 +1627,11 @@
       "question": "Find the HCF (not the LCM) of 2^{3} × 3^{2} × 5 and 2^{2} × 3^{3} × 7.",
       "options": [
         "7560",
-        "36",
+        "108",
         "72",
-        "108"
+        "36"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "explanation": "HCF = lowest powers of the shared primes: 2^{2} × 3^{2} = 36 (5 and 7 are not shared).\n\n**Why not the others**\n- 7560 — 7560 is the LCM (highest powers).\n- 72 — 72 takes 2^{3}, the higher power.\n- 108 — 108 takes 3^{3}, the higher power.\n\n**Key facts**\n- HCF = lowest shared powers; LCM = highest powers.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1650,9 +1650,9 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "Using the Euclidean method, the HCF of 1071 and 462 is:",
       "options": [
-        "42",
-        "21",
         "7",
+        "21",
+        "42",
         "63"
       ],
       "answerIndex": 1,
@@ -1675,13 +1675,13 @@
       "question": "The LCM of two numbers is 72 and their product is 1728. Their HCF is:",
       "options": [
         "24",
-        "12",
-        "18",
-        "36"
+        "36",
+        "1656",
+        "1800"
       ],
       "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
-      "explanation": "HCF × LCM = product, so HCF = 1728 ÷ 72 = 24.\n\n**Why not the others**\n- 12 — 12 × 72 = 864, not 1728.\n- 18 — 18 × 72 = 1296.\n- 36 — 36 × 72 = 2592.\n\n**Key facts**\n- A × B = HCF × LCM.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "HCF × LCM = product, so HCF = 1728 ÷ 72 = 24.\n\n**Why not the others**\n- 36 — halves the LCM; the HCF is product ÷ LCM.\n- 1656 — subtracts the LCM from the product (1728 − 72) instead of dividing.\n- 1800 — adds the LCM to the product.\n\n**Key facts**\n- A × B = HCF × LCM.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1728,13 +1728,13 @@
       "question": "The LCM of the co-prime numbers 13 and 17 is:",
       "options": [
         "1",
-        "221",
+        "4",
         "30",
-        "13"
+        "221"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
-      "explanation": "Co-prime numbers share only the factor 1, so LCM = 13 × 17 = 221.\n\n**Why not the others**\n- 1 — 1 is their HCF.\n- 30 — 30 is their sum.\n- 13 — 13 is just one number.\n\n**Key facts**\n- Co-prime: HCF 1, LCM = product.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "Co-prime numbers share only the factor 1, so LCM = 13 × 17 = 221.\n\n**Why not the others**\n- 1 — 1 is their HCF.\n- 4 — 4 is their difference (17 − 13).\n- 30 — 30 is their sum.\n\n**Key facts**\n- Co-prime: HCF 1, LCM = product.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1753,10 +1753,10 @@
       "options": [
         "HCF 12, LCM 72",
         "HCF 7, LCM 84",
-        "HCF 16, LCM 136",
-        "HCF 5, LCM 60"
+        "HCF 5, LCM 60",
+        "HCF 16, LCM 136"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
       "explanation": "The HCF must divide the LCM exactly. 136 ÷ 16 = 8.5, so HCF 16 with LCM 136 is impossible.\n\n**Why not the others**\n- HCF 12, LCM 72 — 72 ÷ 12 = 6, fine.\n- HCF 7, LCM 84 — 84 ÷ 7 = 12, fine.\n- HCF 5, LCM 60 — 60 ÷ 5 = 12, fine.\n\n**Key facts**\n- HCF always divides LCM.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1776,11 +1776,11 @@
       "question": "Two numbers are in the ratio 4 : 7 and their HCF is 26. Their sum is:",
       "options": [
         "11",
+        "182",
         "286",
-        "728",
-        "182"
+        "728"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
       "explanation": "Numbers = 4 × 26 = 104 and 7 × 26 = 182; sum = 26 × 11 = 286.\n\n**Why not the others**\n- 11 — 11 is just 4 + 7.\n- 728 — 728 is their LCM.\n- 182 — 182 is only the larger number.\n\n**Key facts**\n- Ratio a : b with HCF H → Ha, Hb.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1799,12 +1799,12 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "Two numbers are in the ratio 3 : 4 and their HCF is 4. Their LCM is:",
       "options": [
-        "48",
         "12",
         "16",
-        "28"
+        "28",
+        "48"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
       "explanation": "Numbers = 12 and 16; LCM = H × a × b = 4 × 3 × 4 = 48.\n\n**Why not the others**\n- 12 — 12 = LCM of the ratio parts only.\n- 16 — 16 is the larger number.\n- 28 — 28 is the sum.\n\n**Key facts**\n- LCM = H × a × b for ratio a : b.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1824,9 +1824,9 @@
       "question": "The LCM of two numbers is 15 times their HCF, and LCM + HCF = 112. If one number is 35, the other is:",
       "options": [
         "7",
-        "105",
+        "15",
         "21",
-        "15"
+        "105"
       ],
       "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
@@ -1849,8 +1849,8 @@
       "options": [
         "1890",
         "630",
-        "3",
-        "210"
+        "210",
+        "3"
       ],
       "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
@@ -1872,9 +1872,9 @@
       "question": "The LCM of the fractions 5/33, 25/11, 20/55 and 15/77 is:",
       "options": [
         "300/11",
-        "5/2541",
+        "5/11",
         "300/2541",
-        "5/11"
+        "5/2541"
       ],
       "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
@@ -1893,14 +1893,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-78",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The HCF of 1.05 and 6.23 is:",
+      "question": "Find the HCF of the two decimal numbers 1.05 and 6.23.",
       "options": [
-        "0.7",
-        "7",
+        "0.007",
         "0.07",
-        "0.007"
+        "0.7",
+        "7"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "explanation": "105 and 623 have HCF 7 (105 = 3 × 5 × 7, 623 = 7 × 89). Restore two decimal places: 0.07.\n\n**Why not the others**\n- 0.7 — Wrong decimal places restored.\n- 7 — Forgets to restore the two decimal places.\n- 0.007 — One decimal place too many.\n\n**Key facts**\n- Equalise decimals, find the HCF, restore the places.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1921,10 +1921,10 @@
       "options": [
         "55",
         "60",
-        "125",
-        "65"
+        "65",
+        "125"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "explanation": "LCM(12, 15, 20) = 60; add the common remainder: 60 + 5 = 65.\n\n**Why not the others**\n- 55 — Subtracts the remainder.\n- 60 — Forgets to add the remainder.\n- 125 — Uses 2 × LCM + 5.\n\n**Key facts**\n- Least with the same remainder R = LCM + R.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1943,14 +1943,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "The greatest number that divides 1295, 8146 and 17207 leaving the same remainder in each case is:",
       "options": [
-        "221",
         "190",
-        "31",
-        "1295"
+        "221",
+        "1295",
+        "6851"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
-      "explanation": "Differences: 8146 − 1295 = 6851, 17207 − 8146 = 9061, 17207 − 1295 = 15912. HCF = 221 (remainder 190).\n\n**Why not the others**\n- 190 — 190 is the common remainder.\n- 31 — 31 is the divisor minus the remainder.\n- 1295 — 1295 does not divide 8146.\n\n**Key facts**\n- Greatest divisor with equal remainders = HCF of differences.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "Differences: 8146 − 1295 = 6851, 17207 − 8146 = 9061, 17207 − 1295 = 15912. HCF = 221 (remainder 190).\n\n**Why not the others**\n- 190 — 190 is the common remainder.\n- 1295 — 1295 does not divide 8146.\n- 6851 — this is one difference (8146 − 1295); it does not divide 9061.\n\n**Key facts**\n- Greatest divisor with equal remainders = HCF of differences.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -1967,12 +1967,12 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "The least number which, when divided by 4, 5 and 6, leaves remainders 2, 3 and 4 respectively is:",
       "options": [
-        "62",
-        "60",
         "58",
+        "60",
+        "62",
         "118"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-fractions-remainders",
       "explanation": "Divisor − remainder = 2 each time, so the number = LCM(4, 5, 6) − 2 = 60 − 2 = 58.\n\n**Why not the others**\n- 62 — Adds the gap instead of subtracting.\n- 60 — Forgets to subtract the gap.\n- 118 — Uses 2 × 60 − 2.\n\n**Key facts**\n- Constant gap k: number = LCM − k.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -1992,11 +1992,11 @@
       "question": "The largest 4-digit number exactly divisible by 12, 15 and 18 is:",
       "options": [
         "9999",
+        "9960",
         "9900",
-        "9720",
-        "9960"
+        "9720"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
       "explanation": "LCM = 180. 9999 ÷ 180 leaves 99, so the largest multiple is 9999 − 99 = 9900.\n\n**Why not the others**\n- 9999 — 9999 is not divisible by 12.\n- 9720 — 9720 is a multiple of 180 but not the largest.\n- 9960 — 9960 is not divisible by 18.\n\n**Key facts**\n- Largest n-digit multiple = 9…9 − remainder.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -2016,11 +2016,11 @@
       "question": "The greatest length of a tape that can measure 4 m 95 cm, 9 m and 16 m 65 cm exactly is (in cm):",
       "options": [
         "5",
-        "45",
+        "9",
         "15",
-        "9"
+        "45"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
       "explanation": "In cm: 495, 900, 1665. 495 = 3² × 5 × 11, 900 = 2² × 3² × 5², 1665 = 3² × 5 × 37. HCF = 3² × 5 = 45 cm.\n\n**Why not the others**\n- 5 — 5 divides all three but 45 is larger.\n- 15 — 15 divides all three but is not the greatest.\n- 9 — 9 divides all three but 45 is larger.\n\n**Key facts**\n- Convert to one unit, then take the HCF.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -2039,14 +2039,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "In a school, 48 boys and 72 girls are to stand in rows of equal size with no row mixing boys and girls. The least number of rows is:",
       "options": [
-        "24",
+        "3",
         "5",
-        "2",
+        "24",
         "120"
       ],
       "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm",
-      "explanation": "Row size = HCF(48, 72) = 24. Rows = 48 ÷ 24 + 72 ÷ 24 = 2 + 3 = 5.\n\n**Why not the others**\n- 24 — 24 is the row size (the HCF), not the number of rows.\n- 2 — 2 + 3 counted wrongly as 2.\n- 120 — 120 is the number of students.\n\n**Key facts**\n- Rows = sum of (group ÷ HCF); answer the count asked.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "Row size = HCF(48, 72) = 24. Rows = 48 ÷ 24 + 72 ÷ 24 = 2 + 3 = 5.\n\n**Why not the others**\n- 3 — counts only the girls' rows (72 ÷ 24).\n- 24 — 24 is the row size (the HCF), not the number of rows.\n- 120 — 120 is the number of students.\n\n**Key facts**\n- Rows = sum of (group ÷ HCF); answer the count asked.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -2063,14 +2063,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "Four bells ring at intervals of 8, 12, 16 and 28 seconds. If they ring together at 1:00 a.m., when will they next ring together?",
       "options": [
-        "1:03:36 a.m.",
         "1:05:36 a.m.",
-        "1:05:00 a.m.",
-        "1:06:12 a.m."
+        "1:00:04 a.m.",
+        "1:03:36 a.m.",
+        "1:05:00 a.m."
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
-      "explanation": "LCM(8, 12, 16, 28) = 336 s = 5 min 36 s, so they ring together at 1:05:36 a.m.\n\n**Why not the others**\n- 1:03:36 a.m. — 336 s is 5 min 36 s, not 3 min 36 s.\n- 1:05:00 a.m. — Drops the 36 seconds.\n- 1:06:12 a.m. — Wrong LCM.\n\n**Key facts**\n- Next together = start + LCM of the intervals.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "LCM(8, 12, 16, 28) = 336 s = 5 min 36 s, so they ring together at 1:05:36 a.m.\n\n**Why not the others**\n- 1:00:04 a.m. — adds the HCF (4 s) instead of the LCM.\n- 1:03:36 a.m. — 336 s is 5 min 36 s, not 3 min 36 s.\n- 1:05:00 a.m. — drops the 36 seconds.\n\n**Key facts**\n- Next together = start + LCM of the intervals.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -2087,12 +2087,12 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "Five bells toll at intervals of 5, 10, 15, 20 and 25 seconds and start together. Counting the first toll, how many times do they toll together in 1 hour 20 minutes?",
       "options": [
-        "17",
-        "16",
+        "80",
         "18",
-        "80"
+        "17",
+        "16"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
       "explanation": "LCM = 300 s. 80 min = 4800 s; 4800 ÷ 300 = 16 coincidences after the start; with the first toll, 16 + 1 = 17.\n\n**Why not the others**\n- 16 — 16 counts only the coincidences after the start.\n- 18 — Adds 2 instead of 1.\n- 80 — 80 counts minutes, not coincidences.\n\n**Key facts**\n- Add 1 when the starting toll is counted.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -2111,14 +2111,14 @@
       "subtopicId": "ment-powers-roots-hcf-lcm",
       "question": "Two lights flash every 40 and 60 seconds and flash together at the start. How many times do they flash together AFTER the start in the next 30 minutes?",
       "options": [
-        "16",
-        "14",
         "15",
+        "16",
+        "30",
         "45"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-powers-roots-hcf-lcm-note-hcf-lcm-extras",
-      "explanation": "LCM(40, 60) = 120 s. 30 min = 1800 s; 1800 ÷ 120 = 15 coincidences after the start.\n\n**Why not the others**\n- 16 — 16 also counts the starting flash.\n- 14 — Subtracts 1 wrongly.\n- 45 — 45 = 1800 ÷ 40 counts one light.\n\n**Key facts**\n- After the start: T ÷ LCM (no + 1).\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
+      "explanation": "LCM(40, 60) = 120 s. 30 min = 1800 s; 1800 ÷ 120 = 15 coincidences after the start.\n\n**Why not the others**\n- 16 — 16 also counts the starting flash.\n- 30 — 1800 ÷ 60 counts the flashes of one light only.\n- 45 — 45 = 1800 ÷ 40 counts the other light only.\n\n**Key facts**\n- After the start: T ÷ LCM (no + 1).\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
       "verified": true,
       "covers": [
@@ -2136,11 +2136,11 @@
       "question": "The least perfect square exactly divisible by 3, 4, 5, 6 and 8 is:",
       "options": [
         "120",
-        "14400",
         "900",
-        "3600"
+        "3600",
+        "14400"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-ratio-hcf-and-square-lcm",
       "explanation": "LCM = 120 = 2^{3} × 3 × 5. Odd powers: 2, 3, 5. Multiply by 2 × 3 × 5 = 30: 3600 = 60².\n\n**Why not the others**\n- 120 — 120 is the LCM but not a square.\n- 14400 — 14400 = 120² is a square but not the least.\n- 900 — 900 is not divisible by 8.\n\n**Key facts**\n- Least perfect square = LCM × odd-power primes.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -2157,14 +2157,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-89",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The units digit of 3^{100} is:",
+      "question": "Using the cyclicity of the last digit, the units digit of 3^{100} is:",
       "options": [
-        "1",
-        "3",
         "9",
-        "7"
+        "7",
+        "3",
+        "1"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
       "explanation": "The cycle of 3 is 3, 9, 7, 1 (length 4). 100 ÷ 4 leaves remainder 0, which picks the LAST value: 1.\n\n**Why not the others**\n- 3 — Treats remainder 0 as the first term of the cycle.\n- 9 — 9 is position 2.\n- 7 — 7 is position 3.\n\n**Key facts**\n- Remainder 0 → last value of the cycle.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -2181,11 +2181,11 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-90",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The units digit of 4^{23} is:",
+      "question": "Using the cyclicity of the last digit, the units digit of 4^{23} is:",
       "options": [
-        "6",
-        "4",
         "2",
+        "4",
+        "6",
         "8"
       ],
       "answerIndex": 1,
@@ -2205,14 +2205,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-91",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The number of trailing zeros in 250! is:",
+      "question": "The number of trailing zeros at the end of 250! (250 factorial) is:",
       "options": [
-        "62",
         "50",
+        "52",
         "60",
-        "52"
+        "62"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
       "explanation": "250 ÷ 5 = 50, 250 ÷ 25 = 10, 250 ÷ 125 = 2. Total = 62.\n\n**Why not the others**\n- 50 — Counts only 250 ÷ 5.\n- 60 — Misses 250 ÷ 125 = 2.\n- 52 — Misses 250 ÷ 25 = 10.\n\n**Key facts**\n- Zeros = Σ whole parts of n ÷ 5^{k}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -2232,11 +2232,11 @@
       "question": "The highest power of the prime 3 that divides 30! is:",
       "options": [
         "10",
-        "14",
         "13",
+        "14",
         "15"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
       "explanation": "30 ÷ 3 = 10, 30 ÷ 9 = 3, 30 ÷ 27 = 1. Power of 3 = 14, so 3^{14} divides 30!.\n\n**Why not the others**\n- 10 — Counts only 30 ÷ 3.\n- 13 — Misses 30 ÷ 27 = 1.\n- 15 — Adds 1 extra.\n\n**Key facts**\n- Power of prime p in n! = Σ n ÷ p^{k}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",
@@ -2253,14 +2253,14 @@
       "id": "ment-powers-roots-hcf-lcm-mcq-93",
       "subjectCode": "MENT",
       "subtopicId": "ment-powers-roots-hcf-lcm",
-      "question": "The units digit of 2^{36} is:",
+      "question": "Using the cyclicity of the last digit, the units digit of 2^{36} is:",
       "options": [
-        "2",
-        "4",
+        "8",
         "6",
-        "8"
+        "4",
+        "2"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-powers-roots-hcf-lcm-note-unitdigit-zeros",
       "explanation": "The cycle of 2 is 2, 4, 8, 6. 36 ÷ 4 leaves remainder 0, which picks the LAST value: 6.\n\n**Why not the others**\n- 2 — Treats remainder 0 as the first value of the cycle.\n- 4 — 4 is position 2.\n- 8 — 8 is position 3.\n\n**Key facts**\n- Remainder 0 → last value of the cycle.\n\n*Source: APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Surds & Indices, Square and Square Roots, Perfect Square, Logarithm, LCM and HCF); NCERT Class 8-10 (squares, cubes, exponents, real numbers); PYQ bank .research/pyq-bank/ment-powers-roots-hcf-lcm.md",

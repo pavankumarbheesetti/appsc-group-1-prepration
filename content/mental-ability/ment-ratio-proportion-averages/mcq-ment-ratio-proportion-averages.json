@@ -8,16 +8,16 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "refresher": true,
-      "question": "The average of 15, 20, 35 and 38 is:",
+      "question": "Find the arithmetic mean (average) of the four numbers 15, 20, 35 and 38.",
       "noteRef": "ment-ratio-proportion-averages-note-averages",
       "options": [
-        "25",
+        "26.5",
         "27",
-        "28",
-        "29"
+        "27.5",
+        "36"
       ],
       "answerIndex": 1,
-      "explanation": "Average = (sum of the values) ÷ (how many values). Add them step by step: 15 + 20 = 35, 35 + 35 = 70, 70 + 38 = 108. There are 4 values, so average = 108 ÷ 4 = 27.\nCheck: 27 × 4 = 108, back to the total. Correct.\n\n**Why not the others**\n- 25 — would need a total of 100, but the sum is 108.\n- 28 — would need a total of 112, four more than the actual sum.\n- 29 — would need a total of 116, overstating the sum by 8.\n\n**Key facts**\n- Average = (sum of all values) ÷ (number of values).\n- Total = average × count — the form used to back-solve a missing value.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average.*",
+      "explanation": "Average = (sum of the values) ÷ (how many values). Add them step by step: 15 + 20 = 35, 35 + 35 = 70, 70 + 38 = 108. There are 4 values, so average = 108 ÷ 4 = 27.\nCheck: 27 × 4 = 108, back to the total. Correct.\n\n**Why not the others**\n- 26.5 — averages only the smallest and largest values ((15 + 38) ÷ 2); the list is not evenly spaced.\n- 27.5 — this is the median (mean of the middle two, 20 and 35), not the arithmetic mean.\n- 36 — divides the total 108 by 3 instead of by the 4 values.\n\n**Key facts**\n- Average = (sum of all values) ÷ (number of values).\n- Total = average × count — the form used to back-solve a missing value.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average",
       "verified": true,
       "covers": [
@@ -33,16 +33,16 @@
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
       "refresher": true,
-      "question": "The ratio 84 : 105 in its simplest form is:",
+      "question": "Expressed in its simplest form, the ratio 84 : 105 is equal to:",
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "options": [
-        "4 : 5",
-        "5 : 6",
-        "6 : 7",
-        "7 : 8"
+        "1 : 5",
+        "4 : 7",
+        "3 : 5",
+        "4 : 5"
       ],
-      "answerIndex": 0,
-      "explanation": "Simplify by dividing both terms by their HCF. Factorise: 84 = 2^{2} × 3 × 7 and 105 = 3 × 5 × 7, so the shared part is 3 × 7 = 21. Divide: 84 ÷ 21 = 4 and 105 ÷ 21 = 5, so 84 : 105 = 4 : 5.\nCheck: 4 × 21 = 84 and 5 × 21 = 105. Correct.\n\n**Why not the others**\n- 5 : 6 — that is 85 : 102 at this scale, not 84 : 105.\n- 6 : 7 — equals 90 : 105; the first term is wrong.\n- 7 : 8 — unrelated; dividing 84 : 105 never gives 7 : 8.\n\n**Key facts**\n- A ratio is simplified by dividing both terms by their HCF.\n- 84 = 2^{2} × 3 × 7, 105 = 3 × 5 × 7, common 3 × 7 = 21.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions.*",
+      "answerIndex": 3,
+      "explanation": "Simplify by dividing both terms by their HCF. Factorise: 84 = 2^{2} × 3 × 7 and 105 = 3 × 5 × 7, so the shared part is 3 × 7 = 21. Divide: 84 ÷ 21 = 4 and 105 ÷ 21 = 5, so 84 : 105 = 4 : 5.\nCheck: 4 × 21 = 84 and 5 × 21 = 105. Correct.\n\n**Why not the others**\n- 1 : 5 — compares the difference 105 − 84 = 21 with 105 instead of dividing both terms by their HCF.\n- 4 : 7 — divides 84 by 21 but 105 by 15, using a different factor for each term.\n- 3 : 5 — divides 84 by 28 but 105 by 21; both terms must be divided by the same HCF, 21.\n\n**Key facts**\n- A ratio is simplified by dividing both terms by their HCF.\n- 84 = 2^{2} × 3 × 7, 105 = 3 × 5 × 7, common 3 × 7 = 21.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions",
       "verified": true,
       "covers": [
@@ -61,11 +61,11 @@
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "options": [
         "2 : 3 : 5",
-        "8 : 12 : 15",
         "2 : 4 : 5",
-        "6 : 12 : 20"
+        "6 : 12 : 20",
+        "8 : 12 : 15"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "Make the shared term b equal in both ratios, then read all three together. b appears as 3 in a : b and as 4 in b : c; LCM(3, 4) = 12. Scale a : b = 2 : 3 by 4 to get 8 : 12; scale b : c = 4 : 5 by 3 to get 12 : 15. Now b matches at 12, so a : b : c = 8 : 12 : 15.\nCheck: 8 : 12 = 2 : 3 and 12 : 15 = 4 : 5, so both given ratios survive.\n\n**Why not the others**\n- 2 : 3 : 5 — just stacks the given terms without equalising b (3 ≠ 4).\n- 2 : 4 : 5 — uses b = 4, but then a : b is 2 : 4 = 1 : 2, not 2 : 3.\n- 6 : 12 : 20 — c-term wrong; b : c would be 12 : 20 = 3 : 5, not 4 : 5.\n\n**Key facts**\n- To combine a : b and b : c, scale each so the shared term matches (use its LCM).\n- Read the combined ratio directly from the scaled terms.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios and Proportions",
       "verified": true,
@@ -84,13 +84,13 @@
       "question": "The compound ratio of 2 : 3, 9 : 4 and 5 : 6 is:",
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "options": [
-        "5 : 4",
-        "3 : 2",
+        "20 : 81",
         "4 : 5",
-        "5 : 6"
+        "16 : 13",
+        "5 : 4"
       ],
-      "answerIndex": 0,
-      "explanation": "Compound ratio = (product of the first terms) : (product of the second terms). First terms: 2 × 9 × 5 = 90. Second terms: 3 × 4 × 6 = 72. So the compound ratio is 90 : 72. Divide both by HCF(90, 72) = 18: 90 ÷ 18 = 5 and 72 ÷ 18 = 4, giving 5 : 4.\n\n**Why not the others**\n- 3 : 2 — equals 108 : 72; the first-term product is wrong.\n- 4 : 5 — the inverse of the correct ratio.\n- 5 : 6 — one of the input ratios, not the compounded result.\n\n**Key facts**\n- Compound ratio of a : b, c : d, e : f = (a × c × e) : (b × d × f).\n- Simplify the product ratio by its HCF.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios (Compound Ratio).*",
+      "answerIndex": 3,
+      "explanation": "Compound ratio = (product of the first terms) : (product of the second terms). First terms: 2 × 9 × 5 = 90. Second terms: 3 × 4 × 6 = 72. So the compound ratio is 90 : 72. Divide both by HCF(90, 72) = 18: 90 ÷ 18 = 5 and 72 ÷ 18 = 4, giving 5 : 4.\n\n**Why not the others**\n- 4 : 5 — the inverse of the correct ratio (second-term product over first).\n- 16 : 13 — ADDS the terms (2 + 9 + 5 : 3 + 4 + 6); a compound ratio multiplies them.\n- 20 : 81 — inverts the middle ratio 9 : 4 before multiplying (2 × 4 × 5 : 3 × 9 × 6).\n\n**Key facts**\n- Compound ratio of a : b, c : d, e : f = (a × c × e) : (b × d × f).\n- Simplify the product ratio by its HCF.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios (Compound Ratio).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Types of Ratios (Compound Ratio)",
       "verified": true,
       "covers": [
@@ -108,13 +108,13 @@
       "question": "The cost of cloth varies directly with its length. If 8 metres cost ₹120, then 15 metres will cost:",
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
       "options": [
-        "₹200",
-        "₹210",
+        "₹64",
+        "₹105",
         "₹225",
-        "₹240"
+        "₹1,800"
       ],
       "answerIndex": 2,
-      "explanation": "Cost varies directly with length, so cost ÷ length is a constant rate. Rate = 120 ÷ 8 = ₹15 per metre. Then 15 metres cost 15 × 15 = ₹225.\nCheck: 225 ÷ 15 m = ₹15 per metre, the same rate. Correct.\n\n**Why not the others**\n- ₹200 — uses a rate of about ₹13.3/m, not the given ₹15.\n- ₹210 — uses ₹14/m; wrong rate.\n- ₹240 — uses ₹16/m, overstating the rate by ₹1.\n\n**Key facts**\n- Direct proportion: cost ÷ length stays constant, so cost = rate × length.\n- Both quantities rise and fall together.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Direct Proportion.*",
+      "explanation": "Cost varies directly with length, so cost ÷ length is a constant rate. Rate = 120 ÷ 8 = ₹15 per metre. Then 15 metres cost 15 × 15 = ₹225.\nCheck: 225 ÷ 15 m = ₹15 per metre, the same rate. Correct.\n\n**Why not the others**\n- ₹64 — treats the link as inverse (120 × 8 ÷ 15); more cloth must cost more.\n- ₹105 — this is the cost of the extra 7 metres only (7 × ₹15).\n- ₹1,800 — multiplies 120 × 15 and forgets to divide by 8.\n\n**Key facts**\n- Direct proportion: cost ÷ length stays constant, so cost = rate × length.\n- Both quantities rise and fall together.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Direct Proportion.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Direct Proportion",
       "verified": true,
       "covers": [
@@ -132,13 +132,13 @@
       "question": "12 men build a wall in 20 days. Working at the same rate, how many days will 16 men take to build the same wall?",
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
       "options": [
-        "12 days",
         "15 days",
         "16 days",
-        "18 days"
+        "26.67 days",
+        "240 days"
       ],
-      "answerIndex": 1,
-      "explanation": "More men means fewer days, so men and days are inversely proportional and men × days stays constant. The job is 12 × 20 = 240 man-days. With 16 men, days = 240 ÷ 16 = 15.\nCheck: 16 × 15 = 240 man-days, the same job size. Correct.\n\n**Why not the others**\n- 12 days — would need 20 men (240 ÷ 12), not 16.\n- 16 days — treats the link as direct instead of inverse.\n- 18 days — uses about 13.3 men, not the given 16.\n\n**Key facts**\n- Inverse proportion: men × days is constant, so men1 × days1 = men2 × days2.\n- More men → fewer days.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Inverse Proportion.*",
+      "answerIndex": 0,
+      "explanation": "More men means fewer days, so men and days are inversely proportional and men × days stays constant. The job is 12 × 20 = 240 man-days. With 16 men, days = 240 ÷ 16 = 15.\nCheck: 16 × 15 = 240 man-days, the same job size. Correct.\n\n**Why not the others**\n- 16 days — takes 1 day off for each extra man (20 − 4); the link is inverse, not a subtraction.\n- 26.67 days — treats the link as direct (20 × 16 ÷ 12); more men should take fewer days.\n- 240 days — this is the job size in man-days (12 × 20), not the days for 16 men.\n\n**Key facts**\n- Inverse proportion: men × days is constant, so men1 × days1 = men2 × days2.\n- More men → fewer days.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Inverse Proportion.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Inverse Proportion",
       "verified": true,
       "covers": [
@@ -153,16 +153,16 @@
       "id": "ment-ratio-proportion-averages-mcq-7",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "The third proportional to 8 and 12 is:",
+      "question": "Find the third proportional to the two numbers 8 and 12.",
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
       "options": [
+        "5.33",
+        "9.80",
         "16",
-        "18",
-        "20",
-        "24"
+        "18"
       ],
-      "answerIndex": 1,
-      "explanation": "The third proportional c to a and b satisfies a : b = b : c, so b is repeated and c = b × b ÷ a. Here a = 8, b = 12, so c = 12 × 12 ÷ 8 = 144 ÷ 8 = 18.\nCheck: 8 : 12 = 12 : 18, since both reduce to 2 : 3. Correct.\n\n**Why not the others**\n- 16 — that is 2 × 8, not b × b ÷ a.\n- 20 — no proportion gives it; 8 : 12 is not 12 : 20.\n- 24 — this follows the fourth-proportional pattern, not b × b ÷ a.\n\n**Key facts**\n- Third proportional to a, b = b × b ÷ a (the middle term repeats).\n- Continued proportion a : b = b : c means b × b = a × c.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Third Proportional.*",
+      "answerIndex": 3,
+      "explanation": "The third proportional c to a and b satisfies a : b = b : c, so b is repeated and c = b × b ÷ a. Here a = 8, b = 12, so c = 12 × 12 ÷ 8 = 144 ÷ 8 = 18.\nCheck: 8 : 12 = 12 : 18, since both reduce to 2 : 3. Correct.\n\n**Why not the others**\n- 5.33 — squares the wrong term (8 × 8 ÷ 12); the third proportional is b² ÷ a.\n- 9.80 — this is the mean proportional √(8 × 12), not the third proportional.\n- 16 — continues the arithmetic difference (12 + 4); a proportion needs equal ratios, not equal gaps.\n\n**Key facts**\n- Third proportional to a, b = b × b ÷ a (the middle term repeats).\n- Continued proportion a : b = b : c means b × b = a × c.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Third Proportional.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Third Proportional",
       "verified": true,
       "covers": [
@@ -177,16 +177,16 @@
       "id": "ment-ratio-proportion-averages-mcq-8",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "The fourth proportional to 5, 8 and 15 is:",
+      "question": "Find the fourth proportional to the three numbers 5, 8 and 15.",
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
       "options": [
+        "24",
         "18",
-        "20",
-        "22",
-        "24"
+        "12.8",
+        "9.375"
       ],
-      "answerIndex": 3,
-      "explanation": "The fourth proportional d to a, b, c satisfies a : b = c : d, so d = b × c ÷ a. Here a = 5, b = 8, c = 15, so d = (8 × 15) ÷ 5 = 120 ÷ 5 = 24.\nCheck: 5 : 8 = 15 : 24, since 5 × 24 = 120 = 8 × 15. Correct.\n\n**Why not the others**\n- 18 — this is the third-proportional pattern (12 × 12 ÷ 8), not b × c ÷ a.\n- 20 — would need a = 6 (8 × 15 ÷ 6), not 5.\n- 22 — no whole proportion 5 : 8 = 15 : d gives 22.\n\n**Key facts**\n- Fourth proportional to a, b, c = b × c ÷ a.\n- Proportion a : b = c : d means a × d = b × c (outer product = inner product).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Fourth Proportional.*",
+      "answerIndex": 0,
+      "explanation": "The fourth proportional d to a, b, c satisfies a : b = c : d, so d = b × c ÷ a. Here a = 5, b = 8, c = 15, so d = (8 × 15) ÷ 5 = 120 ÷ 5 = 24.\nCheck: 5 : 8 = 15 : 24, since 5 × 24 = 120 = 8 × 15. Correct.\n\n**Why not the others**\n- 9.375 — puts the wrong term on top (5 × 15 ÷ 8); the fourth proportional is b × c ÷ a.\n- 12.8 — this is the third proportional to 5 and 8 (8² ÷ 5); the 15 is ignored.\n- 18 — adds the difference 8 − 5 = 3 to 15; a proportion needs equal ratios, not equal gaps.\n\n**Key facts**\n- Fourth proportional to a, b, c = b × c ÷ a.\n- Proportion a : b = c : d means a × d = b × c (outer product = inner product).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Fourth Proportional.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Fourth Proportional",
       "verified": true,
       "covers": [
@@ -201,16 +201,16 @@
       "id": "ment-ratio-proportion-averages-mcq-9",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "The mean proportional between 8 and 18 is:",
+      "question": "Find the mean proportional between the two numbers 8 and 18.",
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
       "options": [
-        "10",
         "12",
         "13",
-        "14"
+        "26",
+        "144"
       ],
-      "answerIndex": 1,
-      "explanation": "The mean proportional between a and b is √(a × b). Here a × b = 8 × 18 = 144, so the mean proportional = √144 = 12.\nCheck: 8 : 12 = 12 : 18, since both reduce to 2 : 3. Correct.\n\n**Why not the others**\n- 10 — this is √100, which would need a product of 100, but 8 × 18 = 144.\n- 13 — this is √169; the product is 144, not 169.\n- 14 — this is √196, overshooting the true product of 144.\n\n**Key facts**\n- Mean proportional (geometric mean) of a, b = √(a × b).\n- Here a : x = x : b means x × x = a × b.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mean Proportional.*",
+      "answerIndex": 0,
+      "explanation": "The mean proportional between a and b is √(a × b). Here a × b = 8 × 18 = 144, so the mean proportional = √144 = 12.\nCheck: 8 : 12 = 12 : 18, since both reduce to 2 : 3. Correct.\n\n**Why not the others**\n- 13 — this is the arithmetic mean (8 + 18) ÷ 2; the mean proportional is the geometric mean.\n- 26 — adds the two numbers (8 + 18) instead of multiplying them and taking the root.\n- 144 — this is the product 8 × 18; its square root is still to be taken.\n\n**Key facts**\n- Mean proportional (geometric mean) of a, b = √(a × b).\n- Here a : x = x : b means x × x = a × b.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mean Proportional.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Mean Proportional",
       "verified": true,
       "covers": [
@@ -228,12 +228,12 @@
       "question": "If (m + n) : (m − n) = 7 : 3, then m : n equals:",
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
       "options": [
+        "10 : 3",
         "5 : 2",
-        "4 : 3",
         "7 : 3",
-        "10 : 3"
+        "4 : 3"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "Apply componendo and dividendo to (m + n) ÷ (m − n) = 7 ÷ 3: add the parts on top and subtract them on the bottom. Top: (m + n) + (m − n) = 2m matches 7 + 3 = 10. Bottom: (m + n) − (m − n) = 2n matches 7 − 3 = 4. So 2m ÷ 2n = 10 ÷ 4, giving m ÷ n = 5/2, so m : n = 5 : 2.\nCheck: with m = 5, n = 2, (m + n) : (m − n) = 7 : 3. Correct.\n\n**Why not the others**\n- 4 : 3 — gives (m + n) : (m − n) = 7 : 1, not 7 : 3.\n- 7 : 3 — just copies the given ratio, which is (m + n) : (m − n), not m : n.\n- 10 : 3 — forgets to halve after adding and subtracting.\n\n**Key facts**\n- Componendo and dividendo: from a/b = c/d you get (a + b)/(a − b) = (c + d)/(c − d).\n- It turns a (sum) : (difference) ratio into the base ratio.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Componendo and Dividendo.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Componendo and Dividendo",
       "verified": true,
@@ -253,12 +253,12 @@
       "noteRef": "ment-ratio-proportion-averages-note-partnership",
       "options": [
         "₹2400",
+        "₹2454.55",
         "₹2700",
-        "₹3000",
-        "₹3200"
+        "₹3000"
       ],
-      "answerIndex": 2,
-      "explanation": "Profit is shared in the ratio of capital × time for each partner. A's term = 5000 × 12 = 60000; B's term = 6000 × 8 = 48000. Ratio 60000 : 48000 = 5 : 4 (divide both by 12000), summing to 9 parts. A's share = 5/9 × 5400 = ₹3000.\nCheck: B gets 4/9 × 5400 = ₹2400, and 3000 + 2400 = 5400. Correct.\n\n**Why not the others**\n- ₹2400 — this is B's share (4/9 × 5400).\n- ₹2700 — an equal 1 : 1 split, ignoring the time weighting.\n- ₹3200 — uses a 5000 : 6000 split without multiplying by time.\n\n**Key facts**\n- Profit ratio = (capital1 × time1) : (capital2 × time2).\n- Each share = (that term ÷ total of terms) × total profit.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Partnership.*",
+      "answerIndex": 3,
+      "explanation": "Profit is shared in the ratio of capital × time for each partner. A's term = 5000 × 12 = 60000; B's term = 6000 × 8 = 48000. Ratio 60000 : 48000 = 5 : 4 (divide both by 12000), summing to 9 parts. A's share = 5/9 × 5400 = ₹3000.\nCheck: B gets 4/9 × 5400 = ₹2400, and 3000 + 2400 = 5400. Correct.\n\n**Why not the others**\n- ₹2400 — this is B's share (4/9 × 5400).\n- ₹2454.55 — splits by capital alone (5000 : 6000, so 5/11 × 5400) and ignores the 12 vs 8 months.\n- ₹2700 — an equal 1 : 1 split, ignoring both capital and time.\n\n**Key facts**\n- Profit ratio = (capital1 × time1) : (capital2 × time2).\n- Each share = (that term ÷ total of terms) × total profit.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Partnership.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Partnership",
       "verified": true,
       "covers": [
@@ -279,10 +279,10 @@
         "70.6",
         "71.0",
         "71.4",
-        "71.8"
+        "102"
       ],
       "answerIndex": 2,
-      "explanation": "You cannot average two averages when the groups differ in size; use the combined mean weighted by size. Total of boys = 3 × 70 = 210; total of girls = 7 × 72 = 504; grand total = 210 + 504 = 714 over 3 + 7 = 10 people. Combined average = 714 ÷ 10 = 71.4.\n\n**Why not the others**\n- 71.0 — the plain mean of 70 and 72, ignoring the unequal group sizes.\n- 70.6 — mis-weights toward the boys' group.\n- 71.8 — over-weights the girls' 72 beyond its 7/10 share.\n\n**Key facts**\n- Combined mean = (n1 × m1 + n2 × m2) ÷ (n1 + n2).\n- The larger group pulls the combined average toward its own mean.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Combined Mean (Average).*",
+      "explanation": "You cannot average two averages when the groups differ in size; use the combined mean weighted by size. Total of boys = 3 × 70 = 210; total of girls = 7 × 72 = 504; grand total = 210 + 504 = 714 over 3 + 7 = 10 people. Combined average = 714 ÷ 10 = 71.4.\n\n**Why not the others**\n- 70.6 — swaps the weights (7 × 70 + 3 × 72) ÷ 10.\n- 71.0 — the plain mean of 70 and 72, ignoring the unequal group sizes.\n- 102 — divides the grand total 714 by 7 (the girls only) instead of by all 10.\n\n**Key facts**\n- Combined mean = (n1 × m1 + n2 × m2) ÷ (n1 + n2).\n- The larger group pulls the combined average toward its own mean.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Combined Mean (Average).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Combined Mean (Average)",
       "verified": true,
       "covers": [
@@ -302,11 +302,11 @@
       "options": [
         "14",
         "16",
-        "18",
-        "20"
+        "20",
+        "60"
       ],
       "answerIndex": 1,
-      "explanation": "For an odd count of equally spaced numbers, the average is the middle term. Five consecutive even numbers with average 12 have 12 as the middle term, so they are 8, 10, 12, 14, 16. The largest is 16.\nCheck: (8 + 10 + 12 + 14 + 16) ÷ 5 = 60 ÷ 5 = 12. Correct.\n\n**Why not the others**\n- 14 — this is the fourth term, not the largest.\n- 18 — would make the average 14 (10 to 18), not 12.\n- 20 — belongs to the set 12 to 20, whose average is 16.\n\n**Key facts**\n- Average of consecutive (evenly spaced) numbers = the middle term = (first + last) ÷ 2.\n- With middle m and step 2, the terms are m − 4, m − 2, m, m + 2, m + 4.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average.*",
+      "explanation": "For an odd count of equally spaced numbers, the average is the middle term. Five consecutive even numbers with average 12 have 12 as the middle term, so they are 8, 10, 12, 14, 16. The largest is 16.\nCheck: (8 + 10 + 12 + 14 + 16) ÷ 5 = 60 ÷ 5 = 12. Correct.\n\n**Why not the others**\n- 14 — uses five consecutive INTEGERS (10 to 14) instead of consecutive even numbers.\n- 20 — steps 4 places from the middle (12 + 2 × 4); the largest is only 2 places above the middle.\n- 60 — this is the sum of the five numbers (5 × 12), not the largest.\n\n**Key facts**\n- Average of consecutive (evenly spaced) numbers = the middle term = (first + last) ÷ 2.\n- With middle m and step 2, the terms are m − 4, m − 2, m, m + 2, m + 4.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Basic Concept of Average",
       "verified": true,
       "covers": [
@@ -325,12 +325,12 @@
       "noteRef": "ment-ratio-proportion-averages-note-averages",
       "options": [
         "37",
-        "38",
         "40",
-        "43"
+        "43",
+        "88"
       ],
-      "answerIndex": 2,
-      "explanation": "Let the average after 15 innings be x, so the new average is x + 3. The total after 16 innings can be written two ways: as the old total plus the new score, 15x + 85, and as 16 × (new average), 16(x + 3). Set them equal: 15x + 85 = 16x + 48. Then 85 − 48 = 16x − 15x, so x = 37. The new average = 37 + 3 = 40.\nCheck: 16 × 40 = 640 and 15 × 37 + 85 = 555 + 85 = 640. Correct.\n\n**Why not the others**\n- 37 — the average before this innings, not after.\n- 38 — a rise of only 1 run; the given rise is 3.\n- 43 — assumes the innings score itself equals the new average.\n\n**Key facts**\n- New total = old total + new score = (new count) × (new average).\n- Equating these gives 15x + 85 = 16(x + 3).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (inclusion of a new observation).*",
+      "answerIndex": 1,
+      "explanation": "Let the average after 15 innings be x, so the new average is x + 3. The total after 16 innings can be written two ways: as the old total plus the new score, 15x + 85, and as 16 × (new average), 16(x + 3). Set them equal: 15x + 85 = 16x + 48. Then 85 − 48 = 16x − 15x, so x = 37. The new average = 37 + 3 = 40.\nCheck: 16 × 40 = 640 and 15 × 37 + 85 = 555 + 85 = 640. Correct.\n\n**Why not the others**\n- 37 — this is the average BEFORE the 16th innings (85 − 3 × 16), not after.\n- 43 — uses 14 earlier innings (85 − 3 × 14); there were 15 before the 16th.\n- 88 — adds the rise to the innings score (85 + 3).\n\n**Key facts**\n- New total = old total + new score = (new count) × (new average).\n- Equating these gives 15x + 85 = 16(x + 3).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (inclusion of a new observation).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average (inclusion of a new observation)",
       "verified": true,
       "covers": [
@@ -348,13 +348,13 @@
       "question": "A vessel contains 20 litres of pure milk. 4 litres are drawn out and replaced with water; this is repeated once more. The quantity of milk left is:",
       "noteRef": "ment-ratio-proportion-averages-note-mixtures",
       "options": [
+        "7.2 L",
         "12.0 L",
         "12.8 L",
-        "13.6 L",
         "16.0 L"
       ],
-      "answerIndex": 1,
-      "explanation": "Each draw-and-replace keeps the same fraction of the milk, so after n steps milk left = initial × (1 − r/T)^{n}, with r drawn each time and T the total volume. Here the surviving fraction is 1 − 4/20 = 0.8, so after 2 steps milk = 20 × (0.8)^{2} = 20 × 0.64 = 12.8 litres.\nCheck step by step: after step 1, milk = 20 × 0.8 = 16; after step 2, milk = 16 × 0.8 = 12.8. Correct.\n\n**Why not the others**\n- 16.0 L — accounts for only one replacement (20 × 0.8), not two.\n- 13.6 L — mixes a linear and a fractional subtraction.\n- 12.0 L — subtracts a flat 8 L, treating each draw as pure milk.\n\n**Key facts**\n- Successive replacement: final = initial × (1 − r/T)^{n}.\n- Each step removes the same fraction of whatever milk remains.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Replacement N Times.*",
+      "answerIndex": 2,
+      "explanation": "Each draw-and-replace keeps the same fraction of the milk, so after n steps milk left = initial × (1 − r/T)^{n}, with r drawn each time and T the total volume. Here the surviving fraction is 1 − 4/20 = 0.8, so after 2 steps milk = 20 × (0.8)^{2} = 20 × 0.64 = 12.8 litres.\nCheck step by step: after step 1, milk = 20 × 0.8 = 16; after step 2, milk = 16 × 0.8 = 12.8. Correct.\n\n**Why not the others**\n- 7.2 L — this is the milk REMOVED in total (4 + 3.2), not the milk left.\n- 12.0 L — subtracts a flat 8 L, treating the second draw as pure milk too.\n- 16.0 L — accounts for only one replacement (20 × 0.8), not two.\n\n**Key facts**\n- Successive replacement: final = initial × (1 − r/T)^{n}.\n- Each step removes the same fraction of whatever milk remains.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Replacement N Times.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Replacement N Times",
       "verified": true,
       "covers": [
@@ -372,13 +372,13 @@
       "question": "In what ratio must rice at ₹30/kg be mixed with rice at ₹40/kg to get a mixture worth ₹34/kg?",
       "noteRef": "ment-ratio-proportion-averages-note-mixtures",
       "options": [
+        "2 : 5",
+        "3 : 5",
         "2 : 3",
-        "3 : 2",
-        "4 : 3",
-        "3 : 4"
+        "3 : 2"
       ],
-      "answerIndex": 1,
-      "explanation": "By the rule of alligation, cheaper : dearer = (dearer price − mean) : (mean − cheaper price). Here that is (40 − 34) : (34 − 30) = 6 : 4 = 3 : 2, so 3 parts of the ₹30 rice to 2 parts of the ₹40 rice.\nCheck: (3 × 30 + 2 × 40) ÷ 5 = (90 + 80) ÷ 5 = 170 ÷ 5 = 34. Correct.\n\n**Why not the others**\n- 2 : 3 — the inverse; it would place more dear rice, pushing the mean above ₹35.\n- 4 : 3 — gives a mean of about ₹34.3, not ₹34.\n- 3 : 4 — gives a mean of about ₹35.7, too high.\n\n**Key facts**\n- Alligation: quantity(cheap) : quantity(dear) = (dear − mean) : (mean − cheap).\n- The mean price always lies between the two component prices.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mixtures & Alligation.*",
+      "answerIndex": 3,
+      "explanation": "By the rule of alligation, cheaper : dearer = (dearer price − mean) : (mean − cheaper price). Here that is (40 − 34) : (34 − 30) = 6 : 4 = 3 : 2, so 3 parts of the ₹30 rice to 2 parts of the ₹40 rice.\nCheck: (3 × 30 + 2 × 40) ÷ 5 = (90 + 80) ÷ 5 = 170 ÷ 5 = 34. Correct.\n\n**Why not the others**\n- 2 : 5 — uses (mean − cheaper) : (dearer − cheaper) = 4 : 10; not the alligation pairing.\n- 3 : 5 — uses (dearer − mean) : (dearer − cheaper) = 6 : 10; the second term must be (mean − cheaper).\n- 2 : 3 — the inverse; it gives dearer : cheaper.\n\n**Key facts**\n- Alligation: quantity(cheap) : quantity(dear) = (dear − mean) : (mean − cheap).\n- The mean price always lies between the two component prices.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mixtures & Alligation.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Mixtures & Alligation",
       "verified": true,
       "covers": [
@@ -396,13 +396,13 @@
       "question": "In a field, chickens and cows together have 30 heads and 74 legs. The number of cows is:",
       "noteRef": "ment-ratio-proportion-averages-note-mixtures",
       "options": [
-        "5",
         "7",
-        "8",
-        "23"
+        "14",
+        "23",
+        "37"
       ],
-      "answerIndex": 1,
-      "explanation": "Each animal has one head, so heads = total animals = 30. Suppose all 30 were chickens: that would give 30 × 2 = 60 legs. The actual count is 74, so there are 74 − 60 = 14 extra legs. Each cow has 2 legs more than a chicken, so the number of cows = 14 ÷ 2 = 7 (and 30 − 7 = 23 chickens).\nCheck: 7 cows × 4 + 23 chickens × 2 = 28 + 46 = 74 legs. Correct.\n\n**Why not the others**\n- 23 — the number of chickens, not cows.\n- 8 — gives 30 × 2 + 8 × 2 = 76 legs, two too many.\n- 5 — gives 70 legs, four short of 74.\n\n**Key facts**\n- Heads-and-legs: assume all of one type, then each swap to the 4-legged type adds 2 legs.\n- cows = (legs − 2 × heads) ÷ 2; chickens = heads − cows.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Alligation by Number of Heads and Legs.*",
+      "answerIndex": 0,
+      "explanation": "Each animal has one head, so heads = total animals = 30. Suppose all 30 were chickens: that would give 30 × 2 = 60 legs. The actual count is 74, so there are 74 − 60 = 14 extra legs. Each cow has 2 legs more than a chicken, so the number of cows = 14 ÷ 2 = 7 (and 30 − 7 = 23 chickens).\nCheck: 7 cows × 4 + 23 chickens × 2 = 28 + 46 = 74 legs. Correct.\n\n**Why not the others**\n- 14 — this is the count of extra legs (74 − 60); each cow accounts for 2 of them.\n- 23 — the number of chickens, not cows.\n- 37 — this is half the legs (74 ÷ 2), i.e. treats every animal as two-legged and counts legs as animals.\n\n**Key facts**\n- Heads-and-legs: assume all of one type, then each swap to the 4-legged type adds 2 legs.\n- cows = (legs − 2 × heads) ÷ 2; chickens = heads − cows.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Alligation by Number of Heads and Legs.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Alligation by Number of Heads and Legs",
       "verified": true,
       "covers": [
@@ -445,12 +445,12 @@
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "options": [
         "₹300",
+        "₹337.50",
         "₹450",
-        "₹600",
-        "₹750"
+        "₹600"
       ],
-      "answerIndex": 2,
-      "explanation": "Divide in the ratio 2 : 3 : 4, which has 2 + 3 + 4 = 9 equal parts. One part = 1350 ÷ 9 = 150. C has 4 parts, so C's share = 4 × 150 = ₹600.\nCheck: A = 2 × 150 = 300, B = 3 × 150 = 450, and 300 + 450 + 600 = 1350. Correct.\n\n**Why not the others**\n- ₹300 — that is 2/9 × 1350, A's share.\n- ₹450 — that is 3/9 × 1350, B's share.\n- ₹750 — exceeds C's 4/9 portion; it would need 5 parts.\n\n**Key facts**\n- Each share = (its ratio value ÷ sum of ratio values) × total quantity.\n- The shares must add back to the whole.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Division in a Ratio.*",
+      "answerIndex": 3,
+      "explanation": "Divide in the ratio 2 : 3 : 4, which has 2 + 3 + 4 = 9 equal parts. One part = 1350 ÷ 9 = 150. C has 4 parts, so C's share = 4 × 150 = ₹600.\nCheck: A = 2 × 150 = 300, B = 3 × 150 = 450, and 300 + 450 + 600 = 1350. Correct.\n\n**Why not the others**\n- ₹300 — that is 2/9 × 1350, A's share.\n- ₹337.50 — divides 1350 by C's term 4 instead of taking 4 of the 9 parts.\n- ₹450 — that is 3/9 × 1350, B's share.\n\n**Key facts**\n- Each share = (its ratio value ÷ sum of ratio values) × total quantity.\n- The shares must add back to the whole.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Division in a Ratio.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Division in a Ratio",
       "verified": true,
       "covers": [
@@ -468,13 +468,13 @@
       "question": "The present ages of A and B are in the ratio 5 : 7. Six years hence the ratio of their ages will be 3 : 4. B's present age is:",
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "options": [
-        "30 years",
-        "35 years",
+        "48 years",
         "42 years",
-        "49 years"
+        "36 years",
+        "30 years"
       ],
-      "answerIndex": 2,
-      "explanation": "Let the present ages be 5x and 7x. Six years later they are 5x + 6 and 7x + 6, and their ratio is 3 : 4, so (5x + 6) ÷ (7x + 6) = 3 ÷ 4. Cross-multiply: 4(5x + 6) = 3(7x + 6), so 20x + 24 = 21x + 18. Then 24 − 18 = 21x − 20x, giving x = 6. B's present age = 7x = 42 years.\nCheck: ages 30 and 42; in 6 years 36 and 48, and 36 : 48 = 3 : 4. Correct.\n\n**Why not the others**\n- 30 years — that is 5x, A's present age, not B's.\n- 35 years — uses x = 5, which fails the future-ratio equation.\n- 49 years — uses x = 7; then the ratio six years later is not 3 : 4.\n\n**Key facts**\n- Set the ages as 5x and 7x and turn the second condition into one equation.\n- Add the same number of years to both ages before forming the new ratio.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Ages).*",
+      "answerIndex": 1,
+      "explanation": "Let the present ages be 5x and 7x. Six years later they are 5x + 6 and 7x + 6, and their ratio is 3 : 4, so (5x + 6) ÷ (7x + 6) = 3 ÷ 4. Cross-multiply: 4(5x + 6) = 3(7x + 6), so 20x + 24 = 21x + 18. Then 24 − 18 = 21x − 20x, giving x = 6. B's present age = 7x = 42 years.\nCheck: ages 30 and 42; in 6 years 36 and 48, and 36 : 48 = 3 : 4. Correct.\n\n**Why not the others**\n- 30 years — that is 5x, A's present age, not B's.\n- 36 years — this is A's age six years hence (5x + 6).\n- 48 years — this is B's age six years hence (7x + 6), not now.\n\n**Key facts**\n- Set the ages as 5x and 7x and turn the second condition into one equation.\n- Add the same number of years to both ages before forming the new ratio.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Ages).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Ages)",
       "verified": true,
       "covers": [
@@ -495,10 +495,10 @@
         "20",
         "30",
         "40",
-        "50"
+        "180"
       ],
       "answerIndex": 2,
-      "explanation": "Let the counts be 2k, 3k, 4k. Convert each denomination to rupees: ₹1 coins give 2k × 1 = 2k; 50-paise coins give 3k × 0.5 = 1.5k; 25-paise coins give 4k × 0.25 = k. Total value = 2k + 1.5k + k = 4.5k rupees. Set 4.5k = 45, so k = 10. The 25-paise coins number 4k = 40.\nCheck: value = 2(10) + 1.5(10) + 10 = 20 + 15 + 10 = ₹45. Correct.\n\n**Why not the others**\n- 20 — this is 2k, the number of ₹1 coins.\n- 30 — this is 3k, the number of 50-paise coins.\n- 50 — the 25-paise term is 4k, not 5k.\n\n**Key facts**\n- Convert each denomination to rupees before summing the value.\n- Value per k = 2(1) + 3(0.5) + 4(0.25) = ₹4.5; divide the total by this.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Coins).*",
+      "explanation": "Let the counts be 2k, 3k, 4k. Convert each denomination to rupees: ₹1 coins give 2k × 1 = 2k; 50-paise coins give 3k × 0.5 = 1.5k; 25-paise coins give 4k × 0.25 = k. Total value = 2k + 1.5k + k = 4.5k rupees. Set 4.5k = 45, so k = 10. The 25-paise coins number 4k = 40.\nCheck: value = 2(10) + 1.5(10) + 10 = 20 + 15 + 10 = ₹45. Correct.\n\n**Why not the others**\n- 20 — treats 2 : 3 : 4 as the ratio of VALUES (4/9 × ₹45 = ₹20) and then reads rupees as coins.\n- 30 — this is 3k, the number of 50-paise coins.\n- 180 — converts the whole ₹45 into 25-paise coins (45 × 4).\n\n**Key facts**\n- Convert each denomination to rupees before summing the value.\n- Value per k = 2(1) + 3(0.5) + 4(0.25) = ₹4.5; divide the total by this.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Coins).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Ratio (Coins)",
       "verified": true,
       "covers": [
@@ -516,13 +516,13 @@
       "question": "The average of 11 numbers is 50. The average of the first six is 49 and that of the last six is 52. The sixth number is:",
       "noteRef": "ment-ratio-proportion-averages-note-averages",
       "options": [
-        "48",
-        "52",
         "56",
-        "60"
+        "52",
+        "50",
+        "18"
       ],
-      "answerIndex": 2,
-      "explanation": "All 11 numbers total 11 × 50 = 550. The first six total 6 × 49 = 294 and the last six total 6 × 52 = 312. Adding 294 + 312 = 606 counts every number once except the sixth, which sits in both groups and is counted twice. So the sixth number = 606 − 550 = 56.\nCheck: the sixth number is the only overlap, and 294 + 312 − 56 = 550, the true total. Correct.\n\n**Why not the others**\n- 48 — ignores the double-counting of the overlapping sixth term.\n- 52 — the last-six average, not the shared term.\n- 60 — overstates; the correct overlap is 606 − 550 = 56.\n\n**Key facts**\n- For overlapping groups, (sum of group 1) + (sum of group 2) counts the common term twice.\n- Common term = (sum of group 1 + sum of group 2) − (sum of all).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (overlapping groups).*",
+      "answerIndex": 0,
+      "explanation": "All 11 numbers total 11 × 50 = 550. The first six total 6 × 49 = 294 and the last six total 6 × 52 = 312. Adding 294 + 312 = 606 counts every number once except the sixth, which sits in both groups and is counted twice. So the sixth number = 606 − 550 = 56.\nCheck: the sixth number is the only overlap, and 294 + 312 − 56 = 550, the true total. Correct.\n\n**Why not the others**\n- 18 — subtracts the two group totals (312 − 294) instead of removing the overall total.\n- 50 — this is the overall average, not the shared sixth number.\n- 52 — the last-six average, not the shared term.\n\n**Key facts**\n- For overlapping groups, (sum of group 1) + (sum of group 2) counts the common term twice.\n- Common term = (sum of group 1 + sum of group 2) − (sum of all).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (overlapping groups).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average (overlapping groups)",
       "verified": true,
       "covers": [
@@ -540,13 +540,13 @@
       "question": "The average weight of 8 persons increases by 2.5 kg when a new person replaces one weighing 65 kg. The weight of the new person is:",
       "noteRef": "ment-ratio-proportion-averages-note-averages",
       "options": [
-        "82.5 kg",
-        "85 kg",
         "87.5 kg",
-        "90 kg"
+        "85 kg",
+        "82.5 kg",
+        "67.5 kg"
       ],
       "answerIndex": 1,
-      "explanation": "When a new person replaces one, the total weight changes by (new − replaced), and that change equals (rise in average) × (number of people). The rise is 2.5 kg over 8 people, so the total rises by 8 × 2.5 = 20 kg. Hence new weight = replaced weight + 20 = 65 + 20 = 85 kg.\nCheck: adding 85 and removing 65 raises the total by 20 kg, which over 8 people lifts the average by 2.5 kg. Correct.\n\n**Why not the others**\n- 82.5 kg — adds only 17.5 kg; the total rise is 8 × 2.5 = 20 kg.\n- 87.5 kg — adds 22.5 kg, over-counting the increase.\n- 90 kg — assumes a 25 kg rise (8 × 3.125).\n\n**Key facts**\n- Replacement: new value = old value + (change in average × number of members).\n- Here 8 × 2.5 = 20 kg added, on top of the 65 kg removed.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (replacement).*",
+      "explanation": "When a new person replaces one, the total weight changes by (new − replaced), and that change equals (rise in average) × (number of people). The rise is 2.5 kg over 8 people, so the total rises by 8 × 2.5 = 20 kg. Hence new weight = replaced weight + 20 = 65 + 20 = 85 kg.\nCheck: adding 85 and removing 65 raises the total by 20 kg, which over 8 people lifts the average by 2.5 kg. Correct.\n\n**Why not the others**\n- 67.5 kg — adds only the rise in average (65 + 2.5) instead of rise × 8.\n- 82.5 kg — counts only the 7 people who stay (65 + 7 × 2.5); the average is over all 8.\n- 87.5 kg — counts 9 people (65 + 9 × 2.5); the group size stays 8.\n\n**Key facts**\n- Replacement: new value = old value + (change in average × number of members).\n- Here 8 × 2.5 = 20 kg added, on top of the 65 kg removed.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average (replacement).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average (replacement)",
       "verified": true,
       "covers": [
@@ -593,13 +593,13 @@
       "question": "The average of the first 50 natural numbers is:",
       "noteRef": "ment-ratio-proportion-averages-note-average-first-n-series",
       "options": [
-        "24.5",
-        "25",
         "25.5",
-        "26"
+        "50",
+        "51",
+        "1275"
       ],
-      "answerIndex": 2,
-      "explanation": "The first n natural numbers are evenly spaced, so their average = (first + last) ÷ 2 = (1 + n) ÷ 2. For n = 50 that is (1 + 50) ÷ 2 = 51 ÷ 2 = 25.5.\nCheck with the sum: 1 + 2 + … + 50 = 50 × 51 ÷ 2 = 1275, and 1275 ÷ 50 = 25.5. Correct.\n\n**Why not the others**\n- 24.5 — uses (n − 1) ÷ 2, off by one.\n- 25 — uses n ÷ 2, ignoring the +1.\n- 26 — overshoots; (n + 1) ÷ 2 = 25.5, not 26.\n\n**Key facts**\n- Sum of the first n naturals = n(n + 1) ÷ 2, so their average = (n + 1) ÷ 2.\n- For any evenly spaced list, average = (first + last) ÷ 2.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average of Natural Numbers.*",
+      "answerIndex": 0,
+      "explanation": "The first n natural numbers are evenly spaced, so their average = (first + last) ÷ 2 = (1 + n) ÷ 2. For n = 50 that is (1 + 50) ÷ 2 = 51 ÷ 2 = 25.5.\nCheck with the sum: 1 + 2 + … + 50 = 50 × 51 ÷ 2 = 1275, and 1275 ÷ 50 = 25.5. Correct.\n\n**Why not the others**\n- 50 — this is n itself, the number of terms, not their average.\n- 51 — adds the first and last terms (1 + 50) but forgets to halve.\n- 1275 — this is the sum 50 × 51 ÷ 2, not the average.\n\n**Key facts**\n- Sum of the first n naturals = n(n + 1) ÷ 2, so their average = (n + 1) ÷ 2.\n- For any evenly spaced list, average = (first + last) ÷ 2.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Average of Natural Numbers.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Average of Natural Numbers",
       "verified": true,
       "covers": [
@@ -617,13 +617,13 @@
       "question": "A 40-litre mixture of milk and water contains milk and water in the ratio 3 : 1. How much water must be added to make the ratio 3 : 2?",
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "options": [
-        "8 L",
-        "10 L",
-        "12 L",
-        "15 L"
+        "50 L",
+        "20 L",
+        "16 L",
+        "10 L"
       ],
-      "answerIndex": 1,
-      "explanation": "Only water is added, so the milk stays fixed. Milk = 3/4 × 40 = 30 L and water = 40 − 30 = 10 L. For the new ratio milk : water = 3 : 2 with milk still 30, the water must be 30 × 2/3 = 20 L. Water to add = 20 − 10 = 10 L.\nCheck: after adding, milk : water = 30 : 20 = 3 : 2. Correct.\n\n**Why not the others**\n- 8 L — gives 18 L water, ratio 30 : 18 = 5 : 3, not 3 : 2.\n- 12 L — gives 22 L water, ratio 30 : 22, not 3 : 2.\n- 15 L — gives 25 L water, ratio 30 : 25 = 6 : 5, not 3 : 2.\n\n**Key facts**\n- Adding one component leaves the other fixed; solve for the new quantity of the added one.\n- Required water = milk × (new water part ÷ milk part) = 30 × 2/3 = 20 L.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mixtures (changing ratio).*",
+      "answerIndex": 3,
+      "explanation": "Only water is added, so the milk stays fixed. Milk = 3/4 × 40 = 30 L and water = 40 − 30 = 10 L. For the new ratio milk : water = 3 : 2 with milk still 30, the water must be 30 × 2/3 = 20 L. Water to add = 20 − 10 = 10 L.\nCheck: after adding, milk : water = 30 : 20 = 3 : 2. Correct.\n\n**Why not the others**\n- 16 L — this is the water a 40 L mixture in the ratio 3 : 2 would hold (2/5 × 40); the total does not stay 40 L.\n- 20 L — this is the final quantity of water, not the amount added.\n- 50 L — this is the new total volume of the mixture.\n\n**Key facts**\n- Adding one component leaves the other fixed; solve for the new quantity of the added one.\n- Required water = milk × (new water part ÷ milk part) = 30 × 2/3 = 20 L.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Mixtures (changing ratio).*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Mixtures (changing ratio)",
       "verified": true,
       "covers": [
@@ -641,13 +641,13 @@
       "question": "The average of the first 120 odd natural numbers is:",
       "noteRef": "ment-ratio-proportion-averages-note-average-first-n-series",
       "options": [
+        "60",
         "120",
         "121",
-        "119",
-        "60"
+        "239"
       ],
-      "answerIndex": 0,
-      "explanation": "The sum of the first n odd numbers is n × n, so their average = n × n ÷ n = n. For n = 120 the average is 120.\nCheck with (first + last) ÷ 2: the 120th odd number is 2 × 120 − 1 = 239, so (1 + 239) ÷ 2 = 240 ÷ 2 = 120. Correct.\n\n**Why not the others**\n- 121 — this is n + 1, the rule for the first n EVEN numbers.\n- 119 — this is n − 1, with no valid basis.\n- 60 — halves n, confusing it with (n + 1) ÷ 2 for counting numbers.\n\n**Key facts**\n- First n odd naturals: sum = n × n, average = n.\n- Equivalent shortcut: (first + last) ÷ 2.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "answerIndex": 1,
+      "explanation": "The sum of the first n odd numbers is n × n, so their average = n × n ÷ n = n. For n = 120 the average is 120.\nCheck with (first + last) ÷ 2: the 120th odd number is 2 × 120 − 1 = 239, so (1 + 239) ÷ 2 = 240 ÷ 2 = 120. Correct.\n\n**Why not the others**\n- 60 — halves n, confusing it with the (n + 1) ÷ 2 rule for counting numbers.\n- 121 — this is n + 1, the rule for the first n EVEN numbers.\n- 239 — this is the 120th odd number (2n − 1), the last term, not the average.\n\n**Key facts**\n- First n odd naturals: sum = n × n, average = n.\n- Equivalent shortcut: (first + last) ÷ 2.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -666,13 +666,13 @@
       "question": "The average of the first 25 even natural numbers is:",
       "noteRef": "ment-ratio-proportion-averages-note-average-first-n-series",
       "options": [
-        "26",
+        "13",
         "25",
-        "24",
-        "13"
+        "26",
+        "50"
       ],
-      "answerIndex": 0,
-      "explanation": "The sum of the first n even numbers is n × (n + 1), so their average = n × (n + 1) ÷ n = n + 1. For n = 25 the average is 26.\nCheck with (first + last) ÷ 2: the 25th even number is 50, so (2 + 50) ÷ 2 = 52 ÷ 2 = 26. Correct.\n\n**Why not the others**\n- 25 — this is n, the rule for ODD numbers.\n- 24 — this is n − 1, with no basis.\n- 13 — halves the count, a careless error.\n\n**Key facts**\n- First n even naturals: sum = n × (n + 1), average = n + 1.\n- Check: (2 + 50) ÷ 2 = 26.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
+      "answerIndex": 2,
+      "explanation": "The sum of the first n even numbers is n × (n + 1), so their average = n × (n + 1) ÷ n = n + 1. For n = 25 the average is 26.\nCheck with (first + last) ÷ 2: the 25th even number is 50, so (2 + 50) ÷ 2 = 52 ÷ 2 = 26. Correct.\n\n**Why not the others**\n- 13 — applies the (n + 1) ÷ 2 rule for natural numbers.\n- 25 — this is n, the rule for ODD numbers.\n- 50 — this is the 25th even number, the last term, not the average.\n\n**Key facts**\n- First n even naturals: sum = n × (n + 1), average = n + 1.\n- Check: (2 + 50) ÷ 2 = 26.\n\n*Source: local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F).*",
       "source": "local APPSC Quantitative Reasoning PDF + SSC/APPSC PYQ patterns (REVIEW-V2 Stage F)",
       "verified": true,
       "covers": [
@@ -691,11 +691,11 @@
       "question": "₹5600 is divided among P, Q and R in the ratio 3 : 5 : 6. Q's share is:",
       "options": [
         "₹1200",
-        "₹2400",
         "₹1866.67",
-        "₹2000"
+        "₹2000",
+        "₹2400"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "explanation": "Sum of parts = 14, one part = 5600 ÷ 14 = 400, so Q gets 5 × 400 = ₹2000.\n\n**Why not the others**\n- ₹1200 — ₹1200 is P's share.\n- ₹2400 — ₹2400 is R's share.\n- ₹1866.67 — Divides by 3 parts instead of 14.\n\n**Key facts**\n- One part = total ÷ sum of the ratio terms.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -716,10 +716,10 @@
       "options": [
         "3 : 4 : 7",
         "18 : 24 : 7",
-        "9 : 12 : 14",
-        "3 : 6 : 7"
+        "3 : 6 : 7",
+        "9 : 12 : 14"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
       "explanation": "LCM of the two B values (4 and 6) is 12: A : B = 9 : 12 and B : C = 12 : 14, so A : B : C = 9 : 12 : 14.\n\n**Why not the others**\n- 3 : 4 : 7 — Stacks the ratios without matching B.\n- 18 : 24 : 7 — Scales only one ratio.\n- 3 : 6 : 7 — Uses B from one ratio only.\n\n**Key facts**\n- Match the shared term with its LCM.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -739,13 +739,13 @@
       "question": "The compound ratio of 20 : 30 and 60 : 40 is:",
       "options": [
         "2 : 3",
-        "3 : 2",
-        "4 : 9",
-        "1 : 1"
+        "1 : 1",
+        "8 : 7",
+        "3 : 2"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
-      "explanation": "Compound ratio = (20 × 60) : (30 × 40) = 1200 : 1200 = 1 : 1.\n\n**Why not the others**\n- 2 : 3 — That is only the first ratio.\n- 3 : 2 — That is only the second ratio.\n- 4 : 9 — Multiplies the wrong terms.\n\n**Key facts**\n- Compound ratio = product of antecedents : product of consequents.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Compound ratio = (20 × 60) : (30 × 40) = 1200 : 1200 = 1 : 1.\n\n**Why not the others**\n- 2 : 3 — that is only the first ratio.\n- 8 : 7 — ADDS the terms (20 + 60 : 30 + 40); a compound ratio multiplies them.\n- 3 : 2 — that is only the second ratio.\n\n**Key facts**\n- Compound ratio = product of antecedents : product of consequents.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -760,7 +760,7 @@
       "id": "ment-ratio-proportion-averages-mcq-32",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "The duplicate ratio of 3 : 4 is:",
+      "question": "The duplicate ratio of the ratio 3 : 4, in its lowest terms, is:",
       "options": [
         "9 : 16",
         "6 : 8",
@@ -786,12 +786,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "₹1300 is divided among A, B and C in the inverse ratio of 2 : 3 : 4. A's share is:",
       "options": [
-        "₹300",
         "₹288.89",
-        "₹600",
-        "₹400"
+        "₹300",
+        "₹400",
+        "₹600"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
       "explanation": "Inverse ratio 1/2 : 1/3 : 1/4 = 6 : 4 : 3 (multiply by 12). One part = 1300 ÷ 13 = 100, so A gets ₹600.\n\n**Why not the others**\n- ₹300 — ₹300 is C's share.\n- ₹288.89 — ₹288.89 = 2/9 × 1300 uses the direct ratio 2 : 3 : 4.\n- ₹400 — ₹400 is B's share.\n\n**Key facts**\n- Inverse ratio of a : b : c = bc : ca : ab.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -839,12 +839,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "Which ratio is the GREATEST: 3 : 4, 5 : 7, 7 : 10, 2 : 3?",
       "options": [
+        "3 : 4",
         "5 : 7",
         "7 : 10",
-        "2 : 3",
-        "3 : 4"
+        "2 : 3"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
       "explanation": "Cross-multiply pairwise or convert: 3/4 = 0.75 is the greatest (3 × 7 = 21 > 4 × 5 = 20 against 5 : 7).\n\n**Why not the others**\n- 5 : 7 — 5/7 ≈ 0.714 < 0.75.\n- 7 : 10 — 7/10 = 0.70 < 0.75.\n- 2 : 3 — 2/3 ≈ 0.667 < 0.75.\n\n**Key facts**\n- Compare ratios by cross-multiplying.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -887,14 +887,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The ratio of the present ages of P and Q is 3 : 4. Five years ago it was 2 : 3. The present age of Q is:",
       "options": [
-        "20 years",
+        "5 years",
         "15 years",
-        "25 years",
-        "10 years"
+        "20 years",
+        "25 years"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
-      "explanation": "Ages 3k and 4k. (3k − 5) : (4k − 5) = 2 : 3 → 9k − 15 = 8k − 10 → k = 5. Q = 20 years (P = 15).\n\n**Why not the others**\n- 15 years — 15 years is P's age.\n- 25 years — Adds 5 years instead of subtracting.\n- 10 years — Uses Q's age five years ago (15) minus 5.\n\n**Key facts**\n- Subtract the same years from both k-multiples.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Ages 3k and 4k. (3k − 5) : (4k − 5) = 2 : 3 → 9k − 15 = 8k − 10 → k = 5. Q = 20 years (P = 15).\n\n**Why not the others**\n- 5 years — this is k, the ratio multiplier, not an age.\n- 15 years — 15 years is P's present age.\n- 25 years — adds 5 years to Q's age instead of using five years AGO.\n\n**Key facts**\n- Subtract the same years from both k-multiples.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -911,14 +911,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A bag has 280 coins of ₹1, 50 paise and 25 paise whose VALUES are in the ratio 20 : 8 : 5. The number of 50-paise coins is:",
       "options": [
-        "80",
         "100",
-        "56",
+        "80",
+        "40",
         "16"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
-      "explanation": "Counts = value ÷ coin value: 20 ÷ 1 : 8 ÷ 0.5 : 5 ÷ 0.25 = 20 : 16 : 20 = 5 : 4 : 5. 50-paise coins = 4/14 × 280 = 80.\n\n**Why not the others**\n- 100 — 100 is the number of ₹1 (or 25-paise) coins.\n- 56 — 56 = 280 ÷ 5 matches neither the count nor the value ratio.\n- 16 — 16 is the count part, not the number.\n\n**Key facts**\n- Convert a value ratio to a count ratio by dividing by the coin value.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Counts = value ÷ coin value: 20 ÷ 1 : 8 ÷ 0.5 : 5 ÷ 0.25 = 20 : 16 : 20 = 5 : 4 : 5. 50-paise coins = 4/14 × 280 = 80.\n\n**Why not the others**\n- 16 — this is the 50-paise term of the count ratio 20 : 16 : 20, before scaling to 280 coins.\n- 40 — this is the VALUE of the 50-paise coins in rupees (80 × ₹0.50), not their number.\n- 100 — 100 is the number of ₹1 (or 25-paise) coins.\n\n**Key facts**\n- Convert a value ratio to a count ratio by dividing by the coin value.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -935,14 +935,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A 60-litre mixture has milk and water in the ratio 2 : 1. How much milk must be added to make the ratio 3 : 1?",
       "options": [
-        "10 litres",
-        "30 litres",
-        "15 litres",
-        "20 litres"
+        "5 litres",
+        "20 litres",
+        "40 litres",
+        "60 litres"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-ratios",
-      "explanation": "Milk 40 L, water 20 L. Water stays 20, so milk must become 60 L: add 20 L of milk.\n\n**Why not the others**\n- 10 litres — 10 L gives 50 : 20 = 5 : 2.\n- 30 litres — 30 L gives 70 : 20 = 7 : 2.\n- 15 litres — 15 L gives 55 : 20 = 11 : 4.\n\n**Key facts**\n- Hold the unchanged component fixed.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Milk 40 L, water 20 L. Water stays 20, so milk must become 60 L: add 20 L of milk.\n\n**Why not the others**\n- 5 litres — keeps the total at 60 L (milk 45 L); adding milk raises the total.\n- 40 litres — this is the milk already present.\n- 60 litres — this is the final quantity of milk, not the amount added.\n\n**Key facts**\n- Hold the unchanged component fixed.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -959,12 +959,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "What number must be added to each of 6, 15, 20 and 43 so that they become proportional?",
       "options": [
-        "2",
-        "5",
         "7",
-        "3"
+        "5",
+        "3",
+        "2"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
       "explanation": "(6 + x)(43 + x) = (15 + x)(20 + x) → 258 + 49x = 300 + 35x → 14x = 42 → x = 3 (9 : 18 = 23 : 46).\n\n**Why not the others**\n- 2 — With 2: 8 × 45 = 360 but 17 × 22 = 374.\n- 5 — With 5: 11 × 48 = 528 but 20 × 25 = 500.\n- 7 — With 7: 13 × 50 = 650 but 22 × 27 = 594.\n\n**Key facts**\n- Make them proportional by equating extremes × means.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -983,12 +983,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The incomes of A and B are in the ratio 3 : 2 and their expenditures in the ratio 5 : 3. If each saves ₹1000, A's income is:",
       "options": [
-        "₹4000",
-        "₹6000",
         "₹3000",
-        "₹5000"
+        "₹4000",
+        "₹5000",
+        "₹6000"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
       "explanation": "Incomes 3x, 2x; expenditures 5y, 3y. 3x − 5y = 1000 and 2x − 3y = 1000 give x = 2000, y = 1000, so A earns ₹6000.\n\n**Why not the others**\n- ₹4000 — ₹4000 is B's income.\n- ₹3000 — Treats ₹1000 as one ratio part of income.\n- ₹5000 — ₹5000 is A's expenditure.\n\n**Key facts**\n- Savings = income − expenditure for each person.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1007,14 +1007,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "If 4 : x = 10 : 25 (a proportion), then x is:",
       "options": [
-        "8",
+        "1.6",
         "10",
-        "16",
+        "19",
         "62.5"
       ],
       "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
-      "explanation": "Product of extremes = product of means: 4 × 25 = 10 × x, so x = 100 ÷ 10 = 10.\n\n**Why not the others**\n- 8 — 8 does not satisfy 4 × 25 = 10 × x.\n- 16 — 16 does not satisfy it either.\n- 62.5 — Inverts the cross-product.\n\n**Key facts**\n- In a proportion, ad = bc.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Product of extremes = product of means: 4 × 25 = 10 × x, so x = 100 ÷ 10 = 10.\n\n**Why not the others**\n- 1.6 — multiplies the wrong pair (4 × 10 ÷ 25); extremes × extremes must equal means × means.\n- 19 — adds the gap 25 − 10 = 15 to 4; a proportion needs equal ratios, not equal gaps.\n- 62.5 — inverts the cross-product (10 × 25 ÷ 4).\n\n**Key facts**\n- In a proportion, ad = bc.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1031,14 +1031,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The cost of pens varies directly with their number. If 6 pens cost ₹90, then 10 pens cost:",
       "options": [
-        "₹150",
         "₹54",
         "₹100",
-        "₹160"
+        "₹150",
+        "₹900"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
-      "explanation": "Direct proportion: cost ÷ number stays at ₹15 per pen, so 10 pens cost ₹150.\n\n**Why not the others**\n- ₹54 — Treats the cost as inversely proportional.\n- ₹100 — Adds ₹10 instead of scaling.\n- ₹160 — Arithmetic slip.\n\n**Key facts**\n- Direct: x ÷ y constant.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Direct proportion: cost ÷ number stays at ₹15 per pen, so 10 pens cost ₹150.\n\n**Why not the others**\n- ₹54 — treats the cost as inversely proportional (90 × 6 ÷ 10).\n- ₹100 — adds ₹10 instead of scaling by the rate.\n- ₹900 — multiplies 90 × 10 and forgets to divide by 6 pens.\n\n**Key facts**\n- Direct: x ÷ y constant.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1055,14 +1055,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "15 workers can finish a job in 24 days. In how many days will 20 workers finish it at the same rate?",
       "options": [
-        "32 days",
-        "19 days",
         "18 days",
-        "20 days"
+        "19 days",
+        "32 days",
+        "360 days"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
-      "explanation": "Inverse proportion: workers × days stays 15 × 24 = 360, so days = 360 ÷ 20 = 18.\n\n**Why not the others**\n- 32 days — 32 days treats it as direct proportion.\n- 19 days — Subtracts 5 days for 5 more workers.\n- 20 days — Confuses workers with days.\n\n**Key facts**\n- Inverse: x × y constant.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Inverse proportion: workers × days stays 15 × 24 = 360, so days = 360 ÷ 20 = 18.\n\n**Why not the others**\n- 19 days — subtracts 5 days for 5 more workers; the link is inverse, not a subtraction.\n- 32 days — 32 days treats it as direct proportion.\n- 360 days — this is the job size in worker-days (15 × 24).\n\n**Key facts**\n- Inverse: x × y constant.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1077,16 +1077,16 @@
       "id": "ment-ratio-proportion-averages-mcq-45",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "The third proportional to 9 and 12 is:",
+      "question": "Find the third proportional to the two numbers 9 and 12.",
       "options": [
-        "15",
         "6.75",
-        "108",
+        "10.39",
+        "15",
         "16"
       ],
       "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
-      "explanation": "Third proportional = b² ÷ a = 144 ÷ 9 = 16 (9 : 12 = 12 : 16).\n\n**Why not the others**\n- 15 — 15 adds the difference 3 again.\n- 6.75 — 6.75 = 9 × 9 ÷ 12 squares the wrong term.\n- 108 — 108 = 9 × 12 is a product, not a proportional.\n\n**Key facts**\n- Third proportional to a, b = b² ÷ a.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Third proportional = b² ÷ a = 144 ÷ 9 = 16 (9 : 12 = 12 : 16).\n\n**Why not the others**\n- 6.75 — 6.75 = 9 × 9 ÷ 12 squares the wrong term.\n- 10.39 — this is the mean proportional √(9 × 12), not the third proportional.\n- 15 — 15 adds the difference 3 again; a proportion needs equal ratios.\n\n**Key facts**\n- Third proportional to a, b = b² ÷ a.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1101,16 +1101,16 @@
       "id": "ment-ratio-proportion-averages-mcq-46",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "The fourth proportional to 4, 9 and 12 is:",
+      "question": "Find the fourth proportional to the three numbers 4, 9 and 12.",
       "options": [
-        "16",
         "5.33",
-        "27",
-        "36"
+        "17",
+        "20.25",
+        "27"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
-      "explanation": "Fourth proportional = bc ÷ a = 9 × 12 ÷ 4 = 27 (4 : 9 = 12 : 27).\n\n**Why not the others**\n- 16 — 16 uses the third-proportional formula.\n- 5.33 — 5.33 = 4 × 12 ÷ 9 puts the wrong term on top.\n- 36 — 36 = 4 × 9.\n\n**Key facts**\n- Fourth proportional to a, b, c = bc ÷ a.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Fourth proportional = bc ÷ a = 9 × 12 ÷ 4 = 27 (4 : 9 = 12 : 27).\n\n**Why not the others**\n- 5.33 — 5.33 = 4 × 12 ÷ 9 puts the wrong term on top.\n- 17 — adds the gap 9 − 4 = 5 to 12; a proportion needs equal ratios, not equal gaps.\n- 20.25 — this is the third proportional to 4 and 9 (9² ÷ 4); the 12 is ignored.\n\n**Key facts**\n- Fourth proportional to a, b, c = bc ÷ a.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1178,16 +1178,16 @@
       "id": "ment-ratio-proportion-averages-mcq-49",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "If (x + y) : (x − y) = 5 : 1, then x : y is:",
+      "question": "If (x + y) : (x − y) = 5 : 1, then the ratio x : y is equal to:",
       "options": [
-        "5 : 1",
+        "1 : 5",
         "2 : 3",
-        "6 : 4",
-        "3 : 2"
+        "3 : 2",
+        "5 : 1"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
-      "explanation": "Componendo–dividendo: 2x : 2y = (5 + 1) : (5 − 1) = 6 : 4, so x : y = 3 : 2.\n\n**Why not the others**\n- 5 : 1 — 5 : 1 is the given ratio, not x : y.\n- 2 : 3 — Inverts the answer.\n- 6 : 4 — 6 : 4 is 2x : 2y before simplifying.\n\n**Key facts**\n- Add and subtract the parts of both sides.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Componendo–dividendo: 2x : 2y = (5 + 1) : (5 − 1) = 6 : 4, so x : y = 3 : 2.\n\n**Why not the others**\n- 1 : 5 — inverts the given ratio and stops there.\n- 2 : 3 — inverts the answer (y : x).\n- 5 : 1 — 5 : 1 is the given ratio (x + y) : (x − y), not x : y.\n\n**Key facts**\n- Add and subtract the parts of both sides.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1204,12 +1204,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "If a : b = c : d, which of the following also holds (alternendo)?",
       "options": [
-        "a : c = b : d",
         "a : d = b : c",
         "a + c : b = d",
-        "a : b = d : c"
+        "a : b = d : c",
+        "a : c = b : d"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-proportion",
       "explanation": "Alternendo swaps the middle pair: a : c = b : d (still ad = bc). Invertendo flips both: b : a = d : c.\n\n**Why not the others**\n- a : d = b : c — That swaps extremes with means and breaks ad = bc.\n- a + c : b = d — Not a proportion property.\n- a : b = d : c — Flips only one side.\n\n**Key facts**\n- Invertendo b : a = d : c; alternendo a : c = b : d.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1228,12 +1228,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "If 4, 8 and x are in continued proportion, then x is:",
       "options": [
+        "2",
         "12",
         "16",
-        "32",
-        "2"
+        "32"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-ratio-proportion-extras",
       "explanation": "Continued proportion: 4 : 8 = 8 : x, so 8² = 4x and x = 16.\n\n**Why not the others**\n- 12 — 12 continues an arithmetic pattern, not a proportion.\n- 32 — 32 = 4 × 8.\n- 2 — 2 = 8 ÷ 4.\n\n**Key facts**\n- a, b, c in continued proportion → b² = ac.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1252,12 +1252,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A and B invest ₹12000 and ₹16000. A stays for 12 months and B for 6 months. Out of a profit of ₹5000, B's share is:",
       "options": [
-        "₹3000",
-        "₹2857",
         "₹2000",
-        "₹2500"
+        "₹2500",
+        "₹2857",
+        "₹3000"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-partnership",
       "explanation": "A: 12000 × 12 = 144000; B: 16000 × 6 = 96000. Ratio 3 : 2, so B gets 2/5 × 5000 = ₹2000.\n\n**Why not the others**\n- ₹3000 — ₹3000 is A's share.\n- ₹2857 — Uses capitals only (12 : 16).\n- ₹2500 — Splits equally.\n\n**Key facts**\n- Profit ratio = capital × time.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1276,12 +1276,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A, B and C invest ₹28000, ₹42000 and ₹56000 for the same period. C's share is ₹4120. The total profit is:",
       "options": [
-        "₹4120",
         "₹12360",
         "₹9270",
-        "₹8240"
+        "₹8240",
+        "₹4120"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-partnership",
       "explanation": "Equal periods: ratio of capitals 2 : 3 : 4. C gets 4/9 of the profit, so profit = 4120 × 9 ÷ 4 = ₹9270.\n\n**Why not the others**\n- ₹4120 — ₹4120 is only C's share.\n- ₹12360 — Treats C as 1/3 of the profit.\n- ₹8240 — Treats C as half of the profit.\n\n**Key facts**\n- Equal periods → ratio of capitals.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1300,12 +1300,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A invests ₹30000 for the whole year. B invests ₹20000 for the first 4 months and then raises it to ₹50000 for the remaining 8 months. Out of a profit of ₹14000, B gets:",
       "options": [
-        "₹8000",
-        "₹6000",
         "₹5600",
+        "₹6000",
+        "₹8000",
         "₹10000"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
       "explanation": "A: 30000 × 12 = 360000. B: 20000 × 4 + 50000 × 8 = 480000. Ratio 3 : 4, so B gets 4/7 × 14000 = ₹8000.\n\n**Why not the others**\n- ₹6000 — ₹6000 is A's share.\n- ₹5600 — Uses B's ₹20000 for 12 months.\n- ₹10000 — Uses ₹50000 for 12 months.\n\n**Key facts**\n- Effective capital = Σ capital × months.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1324,10 +1324,10 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A (a working partner) and B share profits in the ratio 3 : 1 after A is paid a salary of ₹2000 from the profit. If the profit is ₹10000, A receives in all:",
       "options": [
-        "₹7500",
+        "₹9500",
         "₹8000",
-        "₹6000",
-        "₹9500"
+        "₹7500",
+        "₹6000"
       ],
       "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
@@ -1346,16 +1346,16 @@
       "id": "ment-ratio-proportion-averages-mcq-56",
       "subjectCode": "MENT",
       "subtopicId": "ment-ratio-proportion-averages",
-      "question": "The average of 12, 18, 25, 31 and 44 is:",
+      "question": "Find the average (arithmetic mean) of the five numbers 12, 18, 25, 31 and 44.",
       "options": [
-        "25",
-        "130",
         "26",
-        "28"
+        "28",
+        "32.5",
+        "130"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "Sum = 130; average = 130 ÷ 5 = 26.\n\n**Why not the others**\n- 25 — 25 is the middle value (median), not the mean.\n- 130 — 130 is the sum.\n- 28 — Divides by the wrong count.\n\n**Key facts**\n- Average = sum ÷ count.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Sum = 130; average = 130 ÷ 5 = 26.\n\n**Why not the others**\n- 28 — averages only the smallest and largest values ((12 + 44) ÷ 2); the list is not evenly spaced.\n- 32.5 — divides the sum by 4 instead of by the 5 values.\n- 130 — 130 is the sum.\n\n**Key facts**\n- Average = sum ÷ count.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1372,14 +1372,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The average score of 4 batsmen is 61. Three of them scored 68, 31 and 27. The fourth scored:",
       "options": [
-        "61",
-        "42",
+        "244",
+        "183",
         "126",
         "118"
       ],
       "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
-      "explanation": "Total = 4 × 61 = 244; known = 126; fourth = 244 − 126 = 118.\n\n**Why not the others**\n- 61 — 61 is the average.\n- 42 — Averages the three known scores.\n- 126 — 126 is the sum of the three.\n\n**Key facts**\n- Missing value = average × count − known sum.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Total = 4 × 61 = 244; known = 126; fourth = 244 − 126 = 118.\n\n**Why not the others**\n- 126 — 126 is the sum of the three known scores.\n- 183 — subtracts the average from the total (244 − 61) instead of the three known scores.\n- 244 — this is the total of all four (4 × 61), not the fourth score.\n\n**Key facts**\n- Missing value = average × count − known sum.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1397,13 +1397,13 @@
       "question": "The average age of 12 players and their coach is 32. The first 5 players average 28 and the remaining 7 average 26. The coach's age is:",
       "options": [
         "32",
-        "94",
-        "54",
-        "78"
+        "62",
+        "92",
+        "94"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
-      "explanation": "Total of 13 = 416. Players = 140 + 182 = 322. Coach = 416 − 322 = 94.\n\n**Why not the others**\n- 32 — 32 is the average.\n- 54 — Arithmetic slip.\n- 78 — Arithmetic slip.\n\n**Key facts**\n- Through totals.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Total of 13 = 416. Players = 140 + 182 = 322. Coach = 416 − 322 = 94.\n\n**Why not the others**\n- 32 — 32 is the average, not the coach's age.\n- 62 — multiplies by 12 instead of 13 (384 − 322); the coach is the 13th member.\n- 92 — uses the plain mean 27 of the two player averages for all 12 players (416 − 324).\n\n**Key facts**\n- Through totals.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1420,14 +1420,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The average of five consecutive odd numbers is 63. The largest of them is:",
       "options": [
-        "67",
         "65",
+        "67",
         "71",
-        "69"
+        "315"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "The middle number is the average, 63; the list is 59, 61, 63, 65, 67, so the largest is 67.\n\n**Why not the others**\n- 65 — 65 is the second largest.\n- 71 — Adds 8.\n- 69 — Adds 6.\n\n**Key facts**\n- Average of consecutive numbers = middle term.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "The middle number is the average, 63; the list is 59, 61, 63, 65, 67, so the largest is 67.\n\n**Why not the others**\n- 65 — uses consecutive INTEGERS (61 to 65); odd numbers step by 2.\n- 71 — steps 4 places of 2 from the middle (63 + 8); the largest is only 2 places above it.\n- 315 — this is the sum (5 × 63), not the largest.\n\n**Key facts**\n- Average of consecutive numbers = middle term.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1444,14 +1444,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The average of the consecutive multiples of 5 from 10 to 100 (10, 15, 20, …, 100) is:",
       "options": [
+        "52.25",
+        "52.5",
         "55",
-        "50",
-        "57.5",
-        "60"
+        "57.5"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "Equally spaced list: average = (first + last) ÷ 2 = (10 + 100) ÷ 2 = 55.\n\n**Why not the others**\n- 50 — 50 is not the middle.\n- 57.5 — 57.5 uses 115 ÷ 2.\n- 60 — 60 has no basis.\n\n**Key facts**\n- Equally spaced → (first + last) ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Equally spaced list: average = (first + last) ÷ 2 = (10 + 100) ÷ 2 = 55.\n\n**Why not the others**\n- 52.25 — miscounts the terms as 20 (1045 ÷ 20); from 10 to 100 in steps of 5 there are 19.\n- 52.5 — starts the list at 5 instead of 10 ((5 + 100) ÷ 2).\n- 57.5 — 57.5 uses (15 + 100) ÷ 2, starting one step late.\n\n**Key facts**\n- Equally spaced → (first + last) ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1469,11 +1469,11 @@
       "question": "The average of the first 99 natural numbers is:",
       "options": [
         "49.5",
+        "50",
         "99",
-        "100",
-        "50"
+        "100"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-average-first-n-series",
       "explanation": "Average of the first n natural numbers = (n + 1) ÷ 2 = 100 ÷ 2 = 50.\n\n**Why not the others**\n- 49.5 — Uses n ÷ 2.\n- 99 — That is n.\n- 100 — That is n + 1.\n\n**Key facts**\n- First n natural numbers → (n + 1) ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1521,12 +1521,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The average of the squares of the first 5 natural numbers is:",
       "options": [
-        "11",
-        "9",
         "55",
-        "15"
+        "15",
+        "11",
+        "9"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
       "explanation": "(1 + 4 + 9 + 16 + 25) ÷ 5 = 55 ÷ 5 = 11, matching (n + 1)(2n + 1) ÷ 6 = 6 × 11 ÷ 6.\n\n**Why not the others**\n- 9 — 9 is the square of the average 3.\n- 55 — 55 is the sum of the squares.\n- 15 — 15 is the sum of the numbers.\n\n**Key facts**\n- Average of squares = (n + 1)(2n + 1) ÷ 6.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1545,14 +1545,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "In a class, 15 boys average 160 cm and the remaining 35 boys average 168 cm. The average height of the class is:",
       "options": [
+        "162.4 cm",
         "164 cm",
-        "166 cm",
-        "163.2 cm",
-        "165.6 cm"
+        "165.6 cm",
+        "168 cm"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "(15 × 160 + 35 × 168) ÷ 50 = (2400 + 5880) ÷ 50 = 165.6 cm.\n\n**Why not the others**\n- 164 cm — 164 averages the two averages, ignoring group sizes.\n- 166 cm — Rounds the wrong way.\n- 163.2 cm — Swaps the group sizes.\n\n**Key facts**\n- Weight each average by its group size.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "(15 × 160 + 35 × 168) ÷ 50 = (2400 + 5880) ÷ 50 = 165.6 cm.\n\n**Why not the others**\n- 162.4 cm — swaps the group sizes (35 × 160 + 15 × 168) ÷ 50.\n- 164 cm — averages the two averages, ignoring group sizes.\n- 168 cm — uses the larger group only and ignores the 15 boys.\n\n**Key facts**\n- Weight each average by its group size.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1569,14 +1569,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "In an exam, 75 and 50 candidates appeared from two centres, with pass rates 84% and 52%. The overall pass percentage (a weighted average) is:",
       "options": [
-        "68%",
+        "89%",
         "71.2%",
-        "70%",
-        "72.5%"
+        "68%",
+        "64.8%"
       ],
       "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "Passed = 63 + 26 = 89 out of 125, i.e. 89 ÷ 125 × 100 = 71.2% (71⅕%).\n\n**Why not the others**\n- 68% — 68% averages the two rates without weighting.\n- 70% — Arithmetic slip.\n- 72.5% — Arithmetic slip.\n\n**Key facts**\n- A combined percentage is a weighted average.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Passed = 63 + 26 = 89 out of 125, i.e. 89 ÷ 125 × 100 = 71.2% (71⅕%).\n\n**Why not the others**\n- 64.8% — swaps the weights (50 × 84% + 75 × 52%) ÷ 125.\n- 68% — averages the two rates without weighting.\n- 89% — this is the NUMBER who passed (63 + 26), not a percentage of 125.\n\n**Key facts**\n- A combined percentage is a weighted average.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1593,8 +1593,8 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The average of 8 numbers is 20. If every number is multiplied by 3 and then 4 is added to each, the new average is:",
       "options": [
-        "60",
         "24",
+        "60",
         "64",
         "84"
       ],
@@ -1617,14 +1617,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The average of 10 members is 20. When one new member joins, the average becomes 21. The new member's value is:",
       "options": [
-        "21",
+        "231",
         "31",
-        "41",
-        "30"
+        "30",
+        "21"
       ],
       "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "New member = 11 × 21 − 10 × 20 = 231 − 200 = 31.\n\n**Why not the others**\n- 21 — 21 is the new average.\n- 41 — Adds 2 × 10 + 1.\n- 30 — Forgets that the count is now 11.\n\n**Key facts**\n- New member = new average × (n + 1) − old average × n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "New member = 11 × 21 − 10 × 20 = 231 − 200 = 31.\n\n**Why not the others**\n- 21 — 21 is the new average, not the new member's value.\n- 30 — uses the old count 10 for the rise (20 + 10 × 1); the new count is 11.\n- 231 — this is the new total (11 × 21), not the new member's value.\n\n**Key facts**\n- New member = new average × (n + 1) − old average × n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1643,12 +1643,12 @@
       "options": [
         "37",
         "41",
-        "45",
-        "81"
+        "81",
+        "89"
       ],
       "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "11x + 85 = 12(x + 4) → x = 37, so the new average is 41.\n\n**Why not the others**\n- 37 — 37 is the average BEFORE the 12th innings.\n- 45 — Adds 4 twice.\n- 81 — Subtracts 4 from 85.\n\n**Key facts**\n- Equate the totals before and after.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "11x + 85 = 12(x + 4) → x = 37, so the new average is 41.\n\n**Why not the others**\n- 37 — 37 is the average BEFORE the 12th innings.\n- 81 — subtracts 4 from 85.\n- 89 — adds the rise to the innings score (85 + 4).\n\n**Key facts**\n- Equate the totals before and after.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1667,12 +1667,12 @@
       "options": [
         "14",
         "25",
-        "39",
-        "28"
+        "28",
+        "40"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
-      "explanation": "New value = replaced value + rise × count = 13 + 1 × 15 = 28.\n\n**Why not the others**\n- 14 — Adds 1 instead of 1 × 15.\n- 25 — Confuses the new average with his age.\n- 39 — Adds 2 × 13.\n\n**Key facts**\n- Replacement: new = old + rise × count.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "New value = replaced value + rise × count = 13 + 1 × 15 = 28.\n\n**Why not the others**\n- 14 — adds 1 instead of 1 × 15 to the replaced boy's age.\n- 25 — confuses the new average with his age.\n- 40 — adds the total rise of 15 to the new average (25 + 15) instead of to the replaced boy's 13.\n\n**Key facts**\n- Replacement: new = old + rise × count.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1689,14 +1689,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "80 phones have an average price of ₹30000. Removing the costliest (₹80000) and the cheapest leaves 78 phones averaging ₹29500. The cheapest phone costs:",
       "options": [
-        "₹20000",
         "₹19000",
         "₹29500",
-        "₹21000"
+        "₹40000",
+        "₹99000"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
-      "explanation": "Lowest = 80 × 30000 − 80000 − 78 × 29500 = 2400000 − 80000 − 2301000 = ₹19000.\n\n**Why not the others**\n- ₹20000 — Arithmetic slip in the totals.\n- ₹29500 — That is the new average.\n- ₹21000 — Arithmetic slip.\n\n**Key facts**\n- Lowest = old total − highest − new total.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Lowest = 80 × 30000 − 80000 − 78 × 29500 = 2400000 − 80000 − 2301000 = ₹19000.\n\n**Why not the others**\n- ₹29500 — that is the new average, not the cheapest price.\n- ₹40000 — multiplies the fall in average by 80 phones (80 × 500); the totals must be compared.\n- ₹99000 — forgets to remove the costliest ₹80000 phone (2400000 − 2301000).\n\n**Key facts**\n- Lowest = old total − highest − new total.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1713,14 +1713,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "The average age of three persons is 56 and their ages are in the ratio 2 : 5 : 7. The youngest is:",
       "options": [
-        "16 years",
-        "56 years",
         "24 years",
-        "28 years"
+        "48 years",
+        "56 years",
+        "84 years"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
-      "explanation": "Total = 3 × 56 = 168; youngest = 168 × 2/14 = 24 years.\n\n**Why not the others**\n- 16 years — Uses 56 as the total.\n- 56 years — That is the average.\n- 28 years — Uses 56 ÷ 2.\n\n**Key facts**\n- Total from the average, then share in the ratio.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Total = 3 × 56 = 168; youngest = 168 × 2/14 = 24 years.\n\n**Why not the others**\n- 48 years — divides by 7 instead of 2 + 5 + 7 = 14 parts (168 × 2/7).\n- 56 years — that is the average.\n- 84 years — this is the ELDEST person's age (168 × 7/14), not the youngest.\n\n**Key facts**\n- Total from the average, then share in the ratio.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1737,10 +1737,10 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A farm keeps 120 hens; 140 more are bought. Total expenses rise by ₹4050 while the average expense per hen falls by ₹3. The original expenditure was:",
       "options": [
+        "₹34.50",
         "₹4050",
-        "₹8190",
         "₹4140",
-        "₹34.50"
+        "₹8190"
       ],
       "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
@@ -1762,13 +1762,13 @@
       "question": "The average of 9 numbers is 30. The average of the first five is 25 and of the last five is 35. The fifth number is:",
       "options": [
         "25",
+        "30",
         "35",
-        "20",
-        "30"
+        "270"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-averages",
-      "explanation": "The fifth number is in both groups: 5 × 25 + 5 × 35 − 9 × 30 = 125 + 175 − 270 = 30. The sixth-number type works the same way.\n\n**Why not the others**\n- 25 — 25 is the first group's average.\n- 35 — 35 is the second group's average.\n- 20 — Arithmetic slip.\n\n**Key facts**\n- Shared term = sum of group totals − overall total.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "The fifth number is in both groups: 5 × 25 + 5 × 35 − 9 × 30 = 125 + 175 − 270 = 30. The sixth-number type works the same way.\n\n**Why not the others**\n- 25 — 25 is the first group's average.\n- 35 — 35 is the second group's average.\n- 270 — this is the total of all nine (9 × 30).\n\n**Key facts**\n- Shared term = sum of group totals − overall total.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1785,14 +1785,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "In the first 32 overs the run rate was 7.2. What run rate is needed in the remaining 18 overs to reach 297?",
       "options": [
-        "7.2",
-        "3.7",
         "16.5",
-        "4.1"
+        "7.2",
+        "5.94",
+        "3.7"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-averages-extras",
-      "explanation": "Runs so far = 32 × 7.2 = 230.4; needed = 66.6; required run rate = 66.6 ÷ 18 = 3.7.\n\n**Why not the others**\n- 7.2 — That is the existing run rate.\n- 16.5 — 297 ÷ 18 ignores runs already scored.\n- 4.1 — Arithmetic slip.\n\n**Key facts**\n- Required run rate = runs needed ÷ overs left.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Runs so far = 32 × 7.2 = 230.4; needed = 66.6; required run rate = 66.6 ÷ 18 = 3.7.\n\n**Why not the others**\n- 5.94 — divides the target by all 50 overs (297 ÷ 50); 32 overs are already bowled.\n- 7.2 — that is the existing run rate.\n- 16.5 — 297 ÷ 18 ignores runs already scored.\n\n**Key facts**\n- Required run rate = runs needed ÷ overs left.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1809,14 +1809,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "In what ratio must rice at ₹20/kg be mixed with rice at ₹35/kg to get a mixture worth ₹25/kg?",
       "options": [
+        "1 : 3",
         "1 : 2",
         "4 : 7",
-        "5 : 10",
         "2 : 1"
       ],
       "answerIndex": 3,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures",
-      "explanation": "Cheaper : dearer = (35 − 25) : (25 − 20) = 10 : 5 = 2 : 1. The mixture price lies between the two.\n\n**Why not the others**\n- 1 : 2 — Swaps the distances.\n- 4 : 7 — Uses the prices, not the distances.\n- 5 : 10 — Uses the wrong distances.\n\n**Key facts**\n- Alligation: cheaper : dearer = (dearer − mean) : (mean − cheaper).\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Cheaper : dearer = (35 − 25) : (25 − 20) = 10 : 5 = 2 : 1. The mixture price lies between the two.\n\n**Why not the others**\n- 1 : 3 — uses (mean − cheaper) : (dearer − cheaper) = 5 : 15; not the alligation pairing.\n- 1 : 2 — swaps the distances, giving dearer : cheaper.\n- 4 : 7 — uses the prices (20 : 35), not the distances from the mean.\n\n**Key facts**\n- Alligation: cheaper : dearer = (dearer − mean) : (mean − cheaper).\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1833,12 +1833,12 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "Rice at ₹30/kg and ₹40/kg is mixed. Which of the following can be the price of the mixture?",
       "options": [
-        "₹36/kg",
         "₹28/kg",
+        "₹36/kg",
         "₹42/kg",
         "₹70/kg"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures",
       "explanation": "A mixture price always lies between the two component prices, so only ₹36 is possible.\n\n**Why not the others**\n- ₹28/kg — Below the cheaper price — impossible.\n- ₹42/kg — Above the dearer price — impossible.\n- ₹70/kg — Adds the prices.\n\n**Key facts**\n- The mean lies between the components.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -1857,14 +1857,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "Tea at ₹60/kg and ₹100/kg is mixed in the ratio 3 : 2. The price of the mixture per kg is:",
       "options": [
+        "₹76",
         "₹80",
         "₹84",
-        "₹76",
-        "₹72"
+        "₹380"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
-      "explanation": "(3 × 60 + 2 × 100) ÷ 5 = 380 ÷ 5 = ₹76.\n\n**Why not the others**\n- ₹80 — ₹80 averages the prices without weights.\n- ₹84 — Swaps the weights.\n- ₹72 — Arithmetic slip.\n\n**Key facts**\n- Mixture price = weighted average.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "(3 × 60 + 2 × 100) ÷ 5 = 380 ÷ 5 = ₹76.\n\n**Why not the others**\n- ₹80 — ₹80 averages the prices without weights.\n- ₹84 — swaps the weights (2 × 60 + 3 × 100) ÷ 5.\n- ₹380 — this is the total cost of the 5 kg, not divided by 5.\n\n**Key facts**\n- Mixture price = weighted average.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1881,14 +1881,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "Rice at ₹504/kg and ₹540/kg is mixed with a third variety in the ratio 1 : 1 : 2. If the mixture is worth ₹612/kg, the third variety costs:",
       "options": [
-        "₹612/kg",
+        "₹1404/kg",
         "₹792/kg",
         "₹702/kg",
-        "₹684/kg"
+        "₹612/kg"
       ],
       "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
-      "explanation": "504 + 540 + 2x = 4 × 612 = 2448 → 2x = 1404 → x = ₹702.\n\n**Why not the others**\n- ₹612/kg — That is the mixture price.\n- ₹792/kg — Uses weight 1 for the third variety.\n- ₹684/kg — Arithmetic slip.\n\n**Key facts**\n- Weighted average equation with the unknown inside.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "504 + 540 + 2x = 4 × 612 = 2448 → 2x = 1404 → x = ₹702.\n\n**Why not the others**\n- ₹612/kg — that is the mixture price.\n- ₹792/kg — gives the third variety weight 1 instead of 2.\n- ₹1404/kg — forgets to halve 2x = 1404.\n\n**Key facts**\n- Weighted average equation with the unknown inside.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1905,14 +1905,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "Rice at ₹45/kg is mixed with another variety in the ratio 3 : 2 to give a mixture worth ₹50/kg. The price of the second variety is:",
       "options": [
+        "₹53.33/kg",
         "₹55/kg",
-        "₹52.50/kg",
         "₹57.50/kg",
-        "₹60/kg"
+        "₹115/kg"
       ],
       "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
-      "explanation": "3 × 45 + 2x = 5 × 50 → 135 + 2x = 250 → x = ₹57.50.\n\n**Why not the others**\n- ₹55/kg — Assumes equal weights.\n- ₹52.50/kg — Arithmetic slip.\n- ₹60/kg — Arithmetic slip.\n\n**Key facts**\n- Reverse alligation: solve the weighted-average equation.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "3 × 45 + 2x = 5 × 50 → 135 + 2x = 250 → x = ₹57.50.\n\n**Why not the others**\n- ₹53.33/kg — swaps the weights (2 × 45 + 3x = 250).\n- ₹55/kg — assumes equal weights.\n- ₹115/kg — reaches 2x = 115 but forgets to halve it.\n\n**Key facts**\n- Reverse alligation: solve the weighted-average equation.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1929,14 +1929,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "2 litres of a mixture with alcohol : water = 3 : 5 are mixed with 3 litres of a mixture with alcohol : water = 4 : 1. The ratio of alcohol to water in the new mixture formed from the two mixtures is:",
       "options": [
-        "7 : 6",
-        "63 : 37",
         "12 : 5",
-        "3 : 2"
+        "63 : 37",
+        "47 : 33",
+        "7 : 6"
       ],
       "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
-      "explanation": "Alcohol = 0.75 + 2.4 = 3.15 L; water = 1.25 + 0.6 = 1.85 L; ratio 315 : 185 = 63 : 37 for the two mixtures combined.\n\n**Why not the others**\n- 7 : 6 — Adds the ratio terms directly.\n- 12 : 5 — Multiplies the ratios.\n- 3 : 2 — Arithmetic slip.\n\n**Key facts**\n- Add each component separately.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Alcohol = 0.75 + 2.4 = 3.15 L; water = 1.25 + 0.6 = 1.85 L; ratio 315 : 185 = 63 : 37 for the two mixtures combined.\n\n**Why not the others**\n- 7 : 6 — adds the ratio terms directly (3 + 4 : 5 + 1).\n- 47 : 33 — mixes EQUAL volumes of the two mixtures, ignoring the 2 L and 3 L.\n- 12 : 5 — multiplies the ratios (3 × 4 : 5 × 1).\n\n**Key facts**\n- Add each component separately.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1953,14 +1953,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A 60-litre mixture has milk and water in the ratio 7 : 8. 10 litres of the mixture are taken out and replaced with 10 litres of milk. The new ratio of milk to water is:",
       "options": [
+        "4 : 5",
         "19 : 16",
         "5 : 4",
-        "4 : 5",
-        "7 : 6"
+        "19 : 11"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures-partnership-extras",
-      "explanation": "Milk 28, water 32. Removing 10 L takes 14/3 milk and 16/3 water; adding 10 L milk gives 100/3 : 80/3 = 5 : 4 after it is replaced.\n\n**Why not the others**\n- 19 : 16 — Removes 10 L of water only.\n- 4 : 5 — Inverts the answer.\n- 7 : 6 — Arithmetic slip.\n\n**Key facts**\n- Remove proportionally from each component, then add.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Milk 28, water 32. Removing 10 L takes 14/3 milk and 16/3 water; adding 10 L milk gives 100/3 : 80/3 = 5 : 4 after it is replaced.\n\n**Why not the others**\n- 4 : 5 — inverts the answer (water : milk).\n- 19 : 16 — adds 10 L of milk without first removing 10 L of mixture (38 : 32).\n- 19 : 11 — removes the 10 L from water only (38 : 22); the drawn mixture carries milk too.\n\n**Key facts**\n- Remove proportionally from each component, then add.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [
@@ -1978,11 +1978,11 @@
       "question": "From a 40-litre can of pure milk, 8 litres are drawn and replaced with water. This is done twice more (three times in all). Milk left is:",
       "options": [
         "16 L",
-        "24 L",
         "20.48 L",
+        "24 L",
         "25.6 L"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures",
       "explanation": "Each step keeps 1 − 8/40 = 0.8 of the milk: 40 × 0.8³ = 40 × 0.512 = 20.48 L after the milk is replaced three times.\n\n**Why not the others**\n- 16 L — 16 L subtracts 8 L three times in a straight line.\n- 24 L — 24 L subtracts twice.\n- 25.6 L — 25.6 L stops after two steps.\n\n**Key facts**\n- Milk left = initial × (1 − r/T)^{n}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
@@ -2001,14 +2001,14 @@
       "subtopicId": "ment-ratio-proportion-averages",
       "question": "A group of hens and goats has 50 heads and 140 legs. The number of goats is:",
       "options": [
+        "20",
+        "25",
         "30",
-        "70",
-        "45",
-        "20"
+        "70"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-ratio-proportion-averages-note-mixtures",
-      "explanation": "Goats = (legs − 2 × heads) ÷ 2 = (140 − 100) ÷ 2 = 20; hens = 30.\n\n**Why not the others**\n- 30 — 30 is the number of hens.\n- 70 — 70 is half the legs.\n- 45 — Arithmetic slip.\n\n**Key facts**\n- Four-legged = (legs − 2 × heads) ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
+      "explanation": "Goats = (legs − 2 × heads) ÷ 2 = (140 − 100) ÷ 2 = 20; hens = 30.\n\n**Why not the others**\n- 25 — assumes equal numbers of hens and goats (50 ÷ 2).\n- 30 — 30 is the number of hens.\n- 70 — 70 is half the legs.\n\n**Key facts**\n- Four-legged = (legs − 2 × heads) ÷ 2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Types of Ratios, Third/Fourth/Mean Proportional, Componendo-Dividendo, Partnership, Basic Concept Averages, Set of numbers, Based on Cricket and Age, Leaving/Joining the Group, Mixture Problems, To Make a Mixture, Concept Based on Replacement, Replacement N times, Alligation by Heads and Legs, Income and Expenditure); NCERT Class 6-8 ratio & proportion; PYQ bank .research/pyq-bank/ment-ratio-proportion-averages.md",
       "verified": true,
       "covers": [

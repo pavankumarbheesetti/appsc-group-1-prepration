@@ -11,13 +11,13 @@
       "question": "Find the area of a rectangle whose length is 12 cm and breadth is 8 cm.",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
-        "40 cm²",
-        "96 cm²",
         "20 cm²",
-        "192 cm²"
+        "40 cm²",
+        "48 cm²",
+        "96 cm²"
       ],
-      "answerIndex": 1,
-      "explanation": "Area of a rectangle = length × breadth = 12 × 8 = **96 cm²**.\n\n**Why not the others**\n- 40 cm² — this is the perimeter 2(12 + 8), not the area.\n- 20 cm² — this is just (12 + 8), the semi-perimeter, not the area.\n- 192 cm² — this doubles the correct area (a ×2 slip).\n\n**Key facts**\n- Rectangle: area = l × b; perimeter = 2(l + b); diagonal = √(l² + b²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Rectangle.*",
+      "answerIndex": 3,
+      "explanation": "Area of a rectangle = length × breadth = 12 × 8 = **96 cm²**.\n\n**Why not the others**\n- 20 cm² — this is just (12 + 8), the semi-perimeter, not the area.\n- 40 cm² — this is the perimeter 2(12 + 8), not the area.\n- 48 cm² — applies the triangle's ½ (½ × 12 × 8); a rectangle has no ½.\n\n**Key facts**\n- Rectangle: area = l × b; perimeter = 2(l + b); diagonal = √(l² + b²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Rectangle.*",
       "source": "local APPSC Quantitative Reasoning PDF — Rectangle",
       "verified": true,
       "covers": [
@@ -36,13 +36,13 @@
       "question": "What is the volume of a cube whose edge is 5 cm?",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "150 cm³",
-        "100 cm³",
-        "75 cm³",
-        "125 cm³"
+        "15 cm³",
+        "25 cm³",
+        "125 cm³",
+        "150 cm³"
       ],
-      "answerIndex": 3,
-      "explanation": "Volume of a cube = (edge)³ = 5³ = **125 cm³**.\n\n**Why not the others**\n- 150 cm³ — this is the total surface area 6 × 5² = 150 cm², not the volume.\n- 100 cm³ — corresponds to 4 × 5², no standard cube formula.\n- 75 cm³ — corresponds to 3 × 5², not a volume.\n\n**Key facts**\n- Cube (edge a): volume = a³; TSA = 6a²; diagonal = a√3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
+      "answerIndex": 2,
+      "explanation": "Volume of a cube = (edge)³ = 5³ = **125 cm³**.\n\n**Why not the others**\n- 15 cm³ — multiplies the edge by 3 instead of cubing it (5 × 3).\n- 25 cm³ — this is the area of one face (5²), not the volume.\n- 150 cm³ — this is the total surface area 6 × 5² = 150 cm², not the volume.\n\n**Key facts**\n- Cube (edge a): volume = a³; TSA = 6a²; diagonal = a√3.\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
       "source": "local APPSC Quantitative Reasoning PDF — Cube",
       "verified": true,
       "covers": [
@@ -61,12 +61,12 @@
       "question": "Find the area of a circle of radius 7 cm. (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
-        "154 cm²",
         "44 cm²",
         "49 cm²",
+        "154 cm²",
         "616 cm²"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "Area = πr² = (22/7) × 7 × 7 = 22 × 7 = **154 cm²**.\n\n**Why not the others**\n- 44 cm² — this is the circumference 2πr = 2 × (22/7) × 7 = 44 cm, not the area.\n- 49 cm² — this is r² alone, missing the factor π.\n- 616 cm² — this is 4πr² (the surface area of a sphere of radius 7), not a circle's area.\n\n**Key facts**\n- Circle: area = πr²; circumference = 2πr; with π = 22/7 keep radius a multiple of 7 for clean values.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Circle.*",
       "source": "local APPSC Quantitative Reasoning PDF — Basic concept of Circle",
       "verified": true,
@@ -85,13 +85,13 @@
       "question": "The sides of a triangle are 13 cm, 14 cm and 15 cm. Find its area.",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
-        "42 cm²",
-        "168 cm²",
+        "21 cm²",
         "84 cm²",
-        "91 cm²"
+        "105 cm²",
+        "7056 cm²"
       ],
-      "answerIndex": 2,
-      "explanation": "Use Heron's formula. Semi-perimeter s = (13 + 14 + 15)/2 = 21. Area = √[s(s−a)(s−b)(s−c)] = √[21 × 8 × 7 × 6] = √7056 = **84 cm²**.\n\n**Why not the others**\n- 42 cm² — this halves the correct area (misusing ½ twice).\n- 168 cm² — this doubles the area (dropping a ½ that Heron's formula does not need).\n- 91 cm² — arises from a wrong s−side product; the radicand must be 7056.\n\n**Key facts**\n- Heron: s = (a+b+c)/2, area = √[s(s−a)(s−b)(s−c)]; the 13-14-15 triangle is a standard 84 cm² case.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Triangle.*",
+      "answerIndex": 1,
+      "explanation": "Use Heron's formula. Semi-perimeter s = (13 + 14 + 15)/2 = 21. Area = √[s(s−a)(s−b)(s−c)] = √[21 × 8 × 7 × 6] = √7056 = **84 cm²**.\n\n**Why not the others**\n- 21 cm² — this is the semi-perimeter s, not the area.\n- 105 cm² — treats the triangle as right-angled (½ × 14 × 15); 13-14-15 has no right angle.\n- 7056 cm² — this is the radicand s(s − a)(s − b)(s − c); the square root is still to be taken.\n\n**Key facts**\n- Heron: s = (a+b+c)/2, area = √[s(s−a)(s−b)(s−c)]; the 13-14-15 triangle is a standard 84 cm² case.\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Triangle.*",
       "source": "local APPSC Quantitative Reasoning PDF — Basic concept of Triangle",
       "verified": true,
       "covers": [
@@ -109,13 +109,13 @@
       "question": "The parallel sides of a trapezium are 12 cm and 20 cm, and the distance between them is 5 cm. Find its area.",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
-        "160 cm²",
-        "96 cm²",
-        "64 cm²",
-        "80 cm²"
+        "20 cm²",
+        "37 cm²",
+        "80 cm²",
+        "160 cm²"
       ],
-      "answerIndex": 3,
-      "explanation": "Area of a trapezium = ½ × (sum of parallel sides) × height = ½ × (12 + 20) × 5 = ½ × 32 × 5 = **80 cm²**.\n\n**Why not the others**\n- 160 cm² — this forgets the ½ (uses sum × height directly).\n- 96 cm² — this uses the difference-free product 12 × 8, not the trapezium rule.\n- 64 cm² — this multiplies only one parallel side (16 × 4-type slip).\n\n**Key facts**\n- Trapezium: area = ½(a + b)h. Parallelogram: area = base × height.\n\n*Source: local APPSC Quantitative Reasoning PDF — Trapezium.*",
+      "answerIndex": 2,
+      "explanation": "Area of a trapezium = ½ × (sum of parallel sides) × height = ½ × (12 + 20) × 5 = ½ × 32 × 5 = **80 cm²**.\n\n**Why not the others**\n- 20 cm² — uses the DIFFERENCE of the parallel sides (½ × 8 × 5) instead of their sum.\n- 37 cm² — adds the three numbers (12 + 20 + 5); no area formula adds lengths.\n- 160 cm² — this forgets the ½ (uses sum × height directly).\n\n**Key facts**\n- Trapezium: area = ½(a + b)h. Parallelogram: area = base × height.\n\n*Source: local APPSC Quantitative Reasoning PDF — Trapezium.*",
       "source": "local APPSC Quantitative Reasoning PDF — Trapezium",
       "verified": true,
       "covers": [
@@ -133,13 +133,13 @@
       "question": "Find the area of a sector of a circle of radius 21 cm subtending an angle of 60° at the centre. (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
+        "22 cm²",
         "231 cm²",
         "462 cm²",
-        "154 cm²",
-        "77 cm²"
+        "1386 cm²"
       ],
-      "answerIndex": 0,
-      "explanation": "Sector area = (θ/360) × πr² = (60/360) × (22/7) × 21² = (1/6) × (22/7) × 441 = (1/6) × 1386 = **231 cm²**.\n\n**Why not the others**\n- 462 cm² — this uses θ = 120° (a doubled angle).\n- 154 cm² — this is (θ/360) taken as 1/9 (using 40°), a wrong fraction.\n- 77 cm² — this is the arc length region under a 1/18 fraction, not 1/6.\n\n**Key facts**\n- Sector: area = (θ/360)πr²; arc length = (θ/360)·2πr.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sector, Chord and Tangent.*",
+      "answerIndex": 1,
+      "explanation": "Sector area = (θ/360) × πr² = (60/360) × (22/7) × 21² = (1/6) × (22/7) × 441 = (1/6) × 1386 = **231 cm²**.\n\n**Why not the others**\n- 22 cm² — this is the ARC length (60/360 × 2πr = 22 cm), not the sector area.\n- 462 cm² — this uses θ = 120° (a doubled angle).\n- 1386 cm² — this is the area of the whole circle; the 60/360 fraction is dropped.\n\n**Key facts**\n- Sector: area = (θ/360)πr²; arc length = (θ/360)·2πr.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sector, Chord and Tangent.*",
       "source": "local APPSC Quantitative Reasoning PDF — Sector, Chord and Tangent",
       "verified": true,
       "covers": [
@@ -157,13 +157,13 @@
       "question": "Find the length of the space diagonal of a cuboid whose dimensions are 2 cm × 3 cm × 6 cm.",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "11 cm",
+        "6.71 cm",
         "7 cm",
-        "√41 cm ≈ 6.4 cm",
-        "5 cm"
+        "11 cm",
+        "49 cm"
       ],
       "answerIndex": 1,
-      "explanation": "Space diagonal = √(l² + b² + h²) = √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = **7 cm**.\n\n**Why not the others**\n- 11 cm — this adds the edges (2 + 3 + 6), which is not the diagonal.\n- √41 cm — this drops one term (only 4 + 36 or 9 + 32), an incomplete sum.\n- 5 cm — this uses only √(9 + 16)-type face values, ignoring the third dimension.\n\n**Key facts**\n- Cuboid: volume = lbh; TSA = 2(lb + bh + hl); space diagonal = √(l² + b² + h²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cuboid (Rectangular Prism).*",
+      "explanation": "Space diagonal = √(l² + b² + h²) = √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = **7 cm**.\n\n**Why not the others**\n- 6.71 cm — this is only the diagonal of the 3 × 6 face (√45); the 2 cm edge is left out.\n- 11 cm — this adds the edges (2 + 3 + 6), which is not the diagonal.\n- 49 cm — this is l² + b² + h²; the square root is still to be taken.\n\n**Key facts**\n- Cuboid: volume = lbh; TSA = 2(lb + bh + hl); space diagonal = √(l² + b² + h²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cuboid (Rectangular Prism).*",
       "source": "local APPSC Quantitative Reasoning PDF — Cuboid (Rectangular Prism)",
       "verified": true,
       "covers": [
@@ -181,13 +181,13 @@
       "question": "Find the volume of a right circular cylinder of radius 7 cm and height 10 cm. (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "770 cm³",
+        "154 cm³",
         "440 cm³",
         "1540 cm³",
-        "2200 cm³"
+        "6160 cm³"
       ],
       "answerIndex": 2,
-      "explanation": "Volume = πr²h = (22/7) × 7² × 10 = (22/7) × 49 × 10 = 22 × 70 = **1540 cm³**.\n\n**Why not the others**\n- 770 cm³ — this halves the correct volume.\n- 440 cm³ — this is the curved surface area 2πrh = 2 × (22/7) × 7 × 10 = 440 cm², not the volume.\n- 2200 cm³ — uses r = 10-type mix-up, overstating the base area.\n\n**Key facts**\n- Cylinder: volume = πr²h; CSA = 2πrh; TSA = 2πr(r + h).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cylinder.*",
+      "explanation": "Volume = πr²h = (22/7) × 7² × 10 = (22/7) × 49 × 10 = 22 × 70 = **1540 cm³**.\n\n**Why not the others**\n- 154 cm³ — this is only the base area πr²; it is not multiplied by the height.\n- 440 cm³ — this is the curved surface area 2πrh = 440 cm², not the volume.\n- 6160 cm³ — uses the diameter 14 as the radius (π × 14² × 10).\n\n**Key facts**\n- Cylinder: volume = πr²h; CSA = 2πrh; TSA = 2πr(r + h).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cylinder.*",
       "source": "local APPSC Quantitative Reasoning PDF — Right Circular Cylinder",
       "verified": true,
       "covers": [
@@ -205,13 +205,13 @@
       "question": "Find the volume of a right circular cone of radius 7 cm and height 6 cm. (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "924 cm³",
+        "44 cm³",
         "308 cm³",
-        "462 cm³",
-        "616 cm³"
+        "924 cm³",
+        "1232 cm³"
       ],
       "answerIndex": 1,
-      "explanation": "Volume = (1/3)πr²h = (1/3) × (22/7) × 7² × 6 = (1/3) × 22 × 7 × 6 = (1/3) × 924 = **308 cm³**.\n\n**Why not the others**\n- 924 cm³ — this omits the 1/3 (that is the enclosing cylinder's volume).\n- 462 cm³ — this uses 1/2 instead of 1/3.\n- 616 cm³ — corresponds to a wrong height/factor mix, not (1/3)πr²h.\n\n**Key facts**\n- Cone: volume = ⅓πr²h; slant l = √(r² + h²); CSA = πrl; a cone is one-third of the cylinder on the same base.\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cone.*",
+      "explanation": "Volume = (1/3)πr²h = (1/3) × (22/7) × 7² × 6 = (1/3) × 22 × 7 × 6 = (1/3) × 924 = **308 cm³**.\n\n**Why not the others**\n- 44 cm³ — forgets to square the radius ((1/3) × π × 7 × 6).\n- 924 cm³ — this omits the 1/3 (that is the enclosing cylinder's volume).\n- 1232 cm³ — uses the diameter 14 as the radius ((1/3) × π × 14² × 6).\n\n**Key facts**\n- Cone: volume = ⅓πr²h; slant l = √(r² + h²); CSA = πrl; a cone is one-third of the cylinder on the same base.\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cone.*",
       "source": "local APPSC Quantitative Reasoning PDF — Right Circular Cone",
       "verified": true,
       "covers": [
@@ -230,12 +230,12 @@
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
         "616 cm²",
-        "1232 cm²",
         "462 cm²",
-        "308 cm²"
+        "308 cm²",
+        "154 cm²"
       ],
       "answerIndex": 0,
-      "explanation": "Surface area of a sphere = 4πr² = 4 × (22/7) × 7² = 4 × 22 × 7 = **616 cm²**.\n\n**Why not the others**\n- 1232 cm² — this doubles the correct value (uses 8πr²).\n- 462 cm² — this is 3πr² (the total surface area of a hemisphere), not a full sphere.\n- 308 cm² — this is 2πr², the curved surface of a hemisphere.\n\n**Key facts**\n- Sphere: surface area = 4πr²; volume = (4/3)πr³.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sphere.*",
+      "explanation": "Surface area of a sphere = 4πr² = 4 × (22/7) × 7² = 4 × 22 × 7 = **616 cm²**.\n\n**Why not the others**\n- 154 cm² — this is πr², the area of a circle of radius 7, not a sphere's surface.\n- 308 cm² — this is 2πr², the curved surface of a hemisphere.\n- 462 cm² — this is 3πr² (the total surface area of a hemisphere), not a full sphere.\n\n**Key facts**\n- Sphere: surface area = 4πr²; volume = (4/3)πr³.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sphere.*",
       "source": "local APPSC Quantitative Reasoning PDF — Sphere",
       "verified": true,
       "covers": [
@@ -253,13 +253,13 @@
       "question": "Find the total surface area of a solid hemisphere of radius 7 cm. (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
+        "154 cm²",
         "308 cm²",
         "462 cm²",
-        "616 cm²",
-        "231 cm²"
+        "616 cm²"
       ],
-      "answerIndex": 1,
-      "explanation": "Total surface area of a solid hemisphere = curved (2πr²) + flat circular base (πr²) = 3πr² = 3 × (22/7) × 7² = 3 × 22 × 7 = **462 cm²**.\n\n**Why not the others**\n- 308 cm² — this is only the curved part 2πr², forgetting the flat base.\n- 616 cm² — this is 4πr², a full sphere's surface.\n- 231 cm² — this is 1.5πr², an incorrect coefficient.\n\n**Key facts**\n- Hemisphere: curved SA = 2πr²; total SA (solid) = 3πr²; volume = (2/3)πr³.\n\n*Source: local APPSC Quantitative Reasoning PDF — Hemisphere.*",
+      "answerIndex": 2,
+      "explanation": "Total surface area of a solid hemisphere = curved (2πr²) + flat circular base (πr²) = 3πr² = 3 × (22/7) × 7² = 3 × 22 × 7 = **462 cm²**.\n\n**Why not the others**\n- 154 cm² — this is only the flat circular base πr².\n- 308 cm² — this is only the curved part 2πr², forgetting the flat base.\n- 616 cm² — this is 4πr², a full sphere's surface.\n\n**Key facts**\n- Hemisphere: curved SA = 2πr²; total SA (solid) = 3πr²; volume = (2/3)πr³.\n\n*Source: local APPSC Quantitative Reasoning PDF — Hemisphere.*",
       "source": "local APPSC Quantitative Reasoning PDF — Hemisphere",
       "verified": true,
       "covers": [
@@ -277,13 +277,13 @@
       "question": "A frustum of a cone has radii 6 cm and 3 cm and height 7 cm. Find its volume. (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "231 cm³",
-        "924 cm³",
-        "308 cm³",
+        "66 cm³",
+        "264 cm³",
+        "330 cm³",
         "462 cm³"
       ],
       "answerIndex": 3,
-      "explanation": "Volume = (1/3)πh(R² + Rr + r²) = (1/3) × (22/7) × 7 × (6² + 6×3 + 3²) = (1/3) × 22 × (36 + 18 + 9) = (1/3) × 22 × 63 = (1/3) × 1386 = **462 cm³**.\n\n**Why not the others**\n- 231 cm³ — this halves the correct value (uses 1/6 instead of 1/3).\n- 924 cm³ — this omits the 1/3 factor.\n- 308 cm³ — this uses only R² (treats it as a full cone of radius 6).\n\n**Key facts**\n- Frustum: volume = ⅓πh(R² + Rr + r²); slant l = √(h² + (R−r)²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Frustum of Cone.*",
+      "explanation": "Volume = (1/3)πh(R² + Rr + r²) = (1/3) × (22/7) × 7 × (6² + 6×3 + 3²) = (1/3) × 22 × (36 + 18 + 9) = (1/3) × 22 × 63 = (1/3) × 1386 = **462 cm³**.\n\n**Why not the others**\n- 66 cm³ — treats it as a full cone of the SMALL radius 3 ((1/3)π × 3² × 7).\n- 264 cm³ — treats it as a full cone of the large radius 6 ((1/3)π × 6² × 7).\n- 330 cm³ — drops the middle term Rr from R² + Rr + r² (uses 36 + 9 = 45).\n\n**Key facts**\n- Frustum: volume = ⅓πh(R² + Rr + r²); slant l = √(h² + (R−r)²).\n\n*Source: local APPSC Quantitative Reasoning PDF — Frustum of Cone.*",
       "source": "local APPSC Quantitative Reasoning PDF — Frustum of Cone",
       "verified": true,
       "covers": [
@@ -301,13 +301,13 @@
       "question": "A right prism has a triangular base with sides 3 cm, 4 cm, 5 cm and a length (height) of 10 cm. Find its volume.",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "120 cm³",
         "60 cm³",
         "30 cm³",
-        "90 cm³"
+        "20 cm³",
+        "6 cm³"
       ],
-      "answerIndex": 1,
-      "explanation": "The base is a right triangle (3-4-5), area = ½ × 3 × 4 = 6 cm². Prism volume = base area × length = 6 × 10 = **60 cm³**.\n\n**Why not the others**\n- 120 cm³ — this is the lateral surface area (perimeter 12 × length 10), not the volume.\n- 30 cm³ — this uses base area × 5, a wrong length.\n- 90 cm³ — this uses a base area of 9, mis-computing the triangle.\n\n**Key facts**\n- Right prism: volume = (base area) × length; LSA = (base perimeter) × length; TSA = LSA + 2(base area).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Prism.*",
+      "answerIndex": 0,
+      "explanation": "The base is a right triangle (3-4-5), area = ½ × 3 × 4 = 6 cm². Prism volume = base area × length = 6 × 10 = **60 cm³**.\n\n**Why not the others**\n- 6 cm³ — this is only the base area; it is not multiplied by the length.\n- 20 cm³ — applies the pyramid's 1/3 (6 × 10 ÷ 3); a prism has no 1/3.\n- 30 cm³ — applies a second ½ to the already-halved base (½ × 6 × 10).\n\n**Key facts**\n- Right prism: volume = (base area) × length; LSA = (base perimeter) × length; TSA = LSA + 2(base area).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Prism.*",
       "source": "local APPSC Quantitative Reasoning PDF — Right Prism",
       "verified": true,
       "covers": [
@@ -325,13 +325,13 @@
       "question": "Find the volume of a pyramid whose base is a square of side 6 cm and whose height is 10 cm.",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "360 cm³",
+        "12 cm³",
+        "20 cm³",
         "120 cm³",
-        "240 cm³",
-        "60 cm³"
+        "360 cm³"
       ],
-      "answerIndex": 1,
-      "explanation": "Pyramid volume = (1/3) × base area × height = (1/3) × 6² × 10 = (1/3) × 36 × 10 = (1/3) × 360 = **120 cm³**.\n\n**Why not the others**\n- 360 cm³ — this omits the 1/3 factor (base area × height only).\n- 240 cm³ — uses 2/3 instead of 1/3.\n- 60 cm³ — uses 1/6 instead of 1/3.\n\n**Key facts**\n- Pyramid: volume = ⅓ × (base area) × height — like a cone, one-third of the enclosing prism.\n\n*Source: local APPSC Quantitative Reasoning PDF — Pyramid.*",
+      "answerIndex": 2,
+      "explanation": "Pyramid volume = (1/3) × base area × height = (1/3) × 6² × 10 = (1/3) × 36 × 10 = (1/3) × 360 = **120 cm³**.\n\n**Why not the others**\n- 12 cm³ — forgets the height (1/3 × 36).\n- 20 cm³ — forgets to square the side (1/3 × 6 × 10).\n- 360 cm³ — this omits the 1/3 factor (base area × height only).\n\n**Key facts**\n- Pyramid: volume = ⅓ × (base area) × height — like a cone, one-third of the enclosing prism.\n\n*Source: local APPSC Quantitative Reasoning PDF — Pyramid.*",
       "source": "local APPSC Quantitative Reasoning PDF — Pyramid",
       "verified": true,
       "covers": [
@@ -349,13 +349,13 @@
       "question": "A solid consists of a right circular cylinder (radius 7 cm, height 10 cm) surmounted by a cone of the same radius and height 6 cm. Find its total volume. (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-combined-recast",
       "options": [
+        "2156 cm³",
         "1848 cm³",
         "1540 cm³",
-        "2156 cm³",
-        "1232 cm³"
+        "308 cm³"
       ],
-      "answerIndex": 0,
-      "explanation": "Total volume = cylinder + cone = πr²h₁ + (1/3)πr²h₂ = 1540 + 308 = **1848 cm³** (cylinder = (22/7)×49×10 = 1540; cone = (1/3)×(22/7)×49×6 = 308).\n\n**Why not the others**\n- 1540 cm³ — this counts only the cylinder, ignoring the cone on top.\n- 2156 cm³ — this adds a full cone (924) instead of ⅓ of it.\n- 1232 cm³ — an under-count using a wrong cone contribution.\n\n**Key facts**\n- Combined solids: add the component volumes; for surface area add only the exposed faces (omit shared interfaces).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cylinder / Right Circular Cone.*",
+      "answerIndex": 1,
+      "explanation": "Total volume = cylinder + cone = πr²h₁ + (1/3)πr²h₂ = 1540 + 308 = **1848 cm³** (cylinder = (22/7)×49×10 = 1540; cone = (1/3)×(22/7)×49×6 = 308).\n\n**Why not the others**\n- 308 cm³ — this counts only the cone, ignoring the cylinder.\n- 1540 cm³ — this counts only the cylinder, ignoring the cone on top.\n- 2156 cm³ — this adds the cone without its 1/3 (a cylinder of height 6, 616) instead of 308.\n\n**Key facts**\n- Combined solids: add the component volumes; for surface area add only the exposed faces (omit shared interfaces).\n\n*Source: local APPSC Quantitative Reasoning PDF — Right Circular Cylinder / Right Circular Cone.*",
       "source": "local APPSC Quantitative Reasoning PDF — Right Circular Cylinder / Right Circular Cone",
       "verified": true,
       "covers": [
@@ -373,13 +373,13 @@
       "question": "A solid metallic sphere of radius 6 cm is melted and recast into small spheres each of radius 1 cm. How many small spheres are formed?",
       "noteRef": "ment-mensuration-note-combined-recast",
       "options": [
+        "6",
         "36",
-        "72",
         "216",
-        "108"
+        "288"
       ],
       "answerIndex": 2,
-      "explanation": "Volume is conserved on melting. Number = (volume of big sphere)/(volume of small sphere) = [(4/3)πR³]/[(4/3)πr³] = (R/r)³ = (6/1)³ = **216**.\n\n**Why not the others**\n- 36 — this is (R/r)², using area scaling instead of volume.\n- 72 — this is 2 × 36, a mixed factor.\n- 108 — this halves 216 incorrectly.\n\n**Key facts**\n- Recasting conserves volume; number of pieces = total volume ÷ one-piece volume = (R/r)³ for spheres.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sphere.*",
+      "explanation": "Volume is conserved on melting. Number = (volume of big sphere)/(volume of small sphere) = [(4/3)πR³]/[(4/3)πr³] = (R/r)³ = (6/1)³ = **216**.\n\n**Why not the others**\n- 6 — this is R/r, a ratio of lengths, not of volumes.\n- 36 — this is (R/r)², using area scaling instead of volume.\n- 288 — keeps the 4/3 on one side only ((4/3) × 216); it cancels in the ratio.\n\n**Key facts**\n- Recasting conserves volume; number of pieces = total volume ÷ one-piece volume = (R/r)³ for spheres.\n\n*Source: local APPSC Quantitative Reasoning PDF — Sphere.*",
       "source": "local APPSC Quantitative Reasoning PDF — Sphere",
       "verified": true,
       "covers": [
@@ -397,13 +397,13 @@
       "question": "If each edge of a cube is increased by 50%, by what percentage does its total surface area increase?",
       "noteRef": "ment-mensuration-note-scaling",
       "options": [
-        "225%",
+        "50%",
         "125%",
-        "237.5%",
-        "112.5%"
+        "225%",
+        "237.5%"
       ],
       "answerIndex": 1,
-      "explanation": "Surface area scales as the square of the linear factor. New edge = 1.5a, so SA scales by (1.5)² = 2.25, i.e. the new SA is 225% of the old. Increase = 225% − 100% = **125%**.\n\n**Why not the others**\n- 225% — this is the ratio of new to old SA, not the increase (which is 125%).\n- 237.5% — this is the volume increase, since volume scales by (1.5)³ = 3.375 → +237.5%.\n- 112.5% — this halves the correct increase.\n\n**Key facts**\n- Scaling every length by k gives area × k² and volume × k³. Here k = 1.5: area ×2.25 (+125%), volume ×3.375 (+237.5%).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
+      "explanation": "Surface area scales as the square of the linear factor. New edge = 1.5a, so SA scales by (1.5)² = 2.25, i.e. the new SA is 225% of the old. Increase = 225% − 100% = **125%**.\n\n**Why not the others**\n- 50% — scales the area linearly with the edge; area goes as the SQUARE.\n- 225% — this is the ratio of new to old SA, not the increase (which is 125%).\n- 237.5% — this is the volume increase, since volume scales by (1.5)³ = 3.375 → +237.5%.\n\n**Key facts**\n- Scaling every length by k gives area × k² and volume × k³. Here k = 1.5: area ×2.25 (+125%), volume ×3.375 (+237.5%).\n\n*Source: local APPSC Quantitative Reasoning PDF — Cube.*",
       "source": "local APPSC Quantitative Reasoning PDF — Cube",
       "verified": true,
       "covers": [
@@ -421,13 +421,13 @@
       "question": "The area of an equilateral triangle of side 12 cm is:",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
-        "24√3 cm²",
         "36√3 cm²",
+        "3√3 cm²",
         "72√3 cm²",
         "144√3 cm²"
       ],
-      "answerIndex": 1,
-      "explanation": "Area of an equilateral triangle = (√3/4)a² = (√3/4) × 12² = (√3/4) × 144 = **36√3 cm²** (≈ 62.35 cm²).\n\n**Why not the others**\n- 24√3 cm² — uses (√3/6)a², a wrong coefficient.\n- 72√3 cm² — doubles the correct area.\n- 144√3 cm² — this is √3 × a², forgetting the 1/4 factor.\n\n**Key facts**\n- Equilateral triangle (side a): area = (√3/4)a²; height = (√3/2)a.\n- (√3/4) × 144 = 36√3 cm².\n\n*Source: local APPSC Quantitative Reasoning PDF — Equilateral Triangle.*",
+      "answerIndex": 0,
+      "explanation": "Area of an equilateral triangle = (√3/4)a² = (√3/4) × 12² = (√3/4) × 144 = **36√3 cm²** (≈ 62.35 cm²).\n\n**Why not the others**\n- 3√3 cm² — forgets to square the side ((√3/4) × 12).\n- 72√3 cm² — uses (√3/2)a², the coefficient for twice the triangle.\n- 144√3 cm² — this is √3 × a², forgetting the 1/4 factor.\n\n**Key facts**\n- Equilateral triangle (side a): area = (√3/4)a²; height = (√3/2)a.\n- (√3/4) × 144 = 36√3 cm².\n\n*Source: local APPSC Quantitative Reasoning PDF — Equilateral Triangle.*",
       "source": "local APPSC Quantitative Reasoning PDF — Equilateral Triangle",
       "verified": true,
       "covers": [
@@ -445,12 +445,12 @@
       "question": "The diagonals of a rhombus are 24 cm and 10 cm. Its area and side are respectively:",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
-        "120 cm² and 13 cm",
         "240 cm² and 13 cm",
         "120 cm² and 26 cm",
-        "60 cm² and 13 cm"
+        "60 cm² and 13 cm",
+        "120 cm² and 13 cm"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Area = ½ × d₁ × d₂ = ½ × 24 × 10 = **120 cm²**. The diagonals bisect at right angles, so side = √(12² + 5²) = √169 = **13 cm**.\n\n**Why not the others**\n- 240 cm² and 13 cm — forgets the ½ in the area formula.\n- 120 cm² and 26 cm — uses the full diagonals, not their halves, for the side.\n- 60 cm² and 13 cm — halves the area twice.\n\n**Key facts**\n- Rhombus area = ½·d₁·d₂; diagonals bisect each other at 90°.\n- Side = √[(d₁/2)² + (d₂/2)²] = √(12²+5²) = 13 cm.\n\n*Source: local APPSC Quantitative Reasoning PDF — Rhombus.*",
       "source": "local APPSC Quantitative Reasoning PDF — Rhombus",
       "verified": true,
@@ -469,13 +469,13 @@
       "question": "A circular ring (annulus) has an outer radius of 14 cm and an inner radius of 7 cm. Its area is: (Take π = 22/7.)",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
-        "462 cm²",
+        "147 cm²",
         "154 cm²",
-        "616 cm²",
-        "231 cm²"
+        "462 cm²",
+        "616 cm²"
       ],
-      "answerIndex": 0,
-      "explanation": "Area of a ring = π(R² − r²) = (22/7)(14² − 7²) = (22/7)(196 − 49) = (22/7)(147) = **462 cm²**.\n\n**Why not the others**\n- 154 cm² — this is the inner circle's area πr², not the ring.\n- 616 cm² — this is the outer circle's area πR².\n- 231 cm² — halves the correct ring area.\n\n**Key facts**\n- Ring/annulus area = π(R² − r²) = outer circle − inner circle.\n- (22/7)(196 − 49) = 462 cm².\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Circle.*",
+      "answerIndex": 2,
+      "explanation": "Area of a ring = π(R² − r²) = (22/7)(14² − 7²) = (22/7)(196 − 49) = (22/7)(147) = **462 cm²**.\n\n**Why not the others**\n- 147 cm² — this is R² − r² = 196 − 49; the factor π is left out.\n- 154 cm² — this is the inner circle's area πr², not the ring.\n- 616 cm² — this is the outer circle's area πR².\n\n**Key facts**\n- Ring/annulus area = π(R² − r²) = outer circle − inner circle.\n- (22/7)(196 − 49) = 462 cm².\n\n*Source: local APPSC Quantitative Reasoning PDF — Basic concept of Circle.*",
       "source": "local APPSC Quantitative Reasoning PDF — Basic concept of Circle",
       "verified": true,
       "covers": [
@@ -517,10 +517,10 @@
       "question": "A rectangular water tank is 6 m long, 5 m wide and 4.5 m deep. Its full capacity in litres is:",
       "noteRef": "ment-mensuration-note-solids-formulae",
       "options": [
-        "13,500 litres",
+        "1,35,00,000 litres",
         "1,35,000 litres",
-        "1,350 litres",
-        "1,35,00,000 litres"
+        "13,500 litres",
+        "1,350 litres"
       ],
       "answerIndex": 1,
       "explanation": "Volume = 6 × 5 × 4.5 = 135 m³. Since 1 m³ = 1000 litres, capacity = 135 × 1000 = **1,35,000 litres**.\n\n**Why not the others**\n- 13,500 litres — uses 1 m³ = 100 L, a wrong conversion.\n- 1,350 litres — uses 1 m³ = 10 L.\n- 1,35,00,000 litres — uses 1 m³ = 100,000 L, off by a factor of 100.\n\n**Key facts**\n- Volume of a cuboidal tank = l × b × h (in metres) gives cubic metres.\n- 1 m³ = 1000 litres, so 135 m³ = 1,35,000 L.\n\n*Source: local APPSC Quantitative Reasoning PDF — Cuboid (capacity).*",
@@ -541,13 +541,13 @@
       "question": "A rectangular lawn 60 m long and 40 m wide is surrounded on the outside by a path 2 m wide. The area of the path is:",
       "noteRef": "ment-mensuration-note-2d-formulae",
       "options": [
+        "204 m²",
+        "384 m²",
         "400 m²",
-        "408 m²",
-        "416 m²",
-        "424 m²"
+        "416 m²"
       ],
-      "answerIndex": 2,
-      "explanation": "Outer rectangle = (60 + 2×2) × (40 + 2×2) = 64 × 44 = 2816 m². Lawn = 60 × 40 = 2400 m². Path = 2816 − 2400 = **416 m²**.\n\n**Why not the others**\n- 400 m² — ignores the four corner squares of the path.\n- 408 m² — adds only part of the corner contribution.\n- 424 m² — over-counts the corners.\n\n**Key facts**\n- Outside path: add 2×width to each dimension, then subtract the inner rectangle.\n- (64×44) − (60×40) = 2816 − 2400 = 416 m².\n\n*Source: local APPSC Quantitative Reasoning PDF — Paths and Borders.*",
+      "answerIndex": 3,
+      "explanation": "Outer rectangle = (60 + 2×2) × (40 + 2×2) = 64 × 44 = 2816 m². Lawn = 60 × 40 = 2400 m². Path = 2816 − 2400 = **416 m²**.\n\n**Why not the others**\n- 204 m² — adds the path width on one side only ((62 × 42) − 2400); the path runs on both sides.\n- 384 m² — this is the area of a 2 m path INSIDE the lawn (2400 − 56 × 36).\n- 400 m² — ignores the four corner squares of the path (2 × 2 × (60 + 40)).\n\n**Key facts**\n- Outside path: add 2×width to each dimension, then subtract the inner rectangle.\n- (64×44) − (60×40) = 2816 − 2400 = 416 m².\n\n*Source: local APPSC Quantitative Reasoning PDF — Paths and Borders.*",
       "source": "local APPSC Quantitative Reasoning PDF — Paths and Borders",
       "verified": true,
       "covers": [
@@ -565,13 +565,13 @@
       "question": "How many square tiles of side 40 cm are required to pave the floor of a room 8 m long and 6 m wide?",
       "noteRef": "ment-mensuration-note-scaling",
       "options": [
-        "240",
+        "30",
+        "120",
         "300",
-        "360",
-        "480"
+        "3000"
       ],
-      "answerIndex": 1,
-      "explanation": "Floor area = 8 × 6 = 48 m². Each tile = 0.4 × 0.4 = 0.16 m². Number = 48 ÷ 0.16 = **300**.\n\n**Why not the others**\n- 240 — uses a tile of 0.5 m side (0.25 m²).\n- 360 — uses a tile of area 48/360, i.e. wrong tile size.\n- 480 — uses a 0.3 m × 0.3 m tile pattern incorrectly.\n\n**Key facts**\n- Number of tiles = floor area ÷ area of one tile (consistent units).\n- 48 m² ÷ 0.16 m² = 300 tiles.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tiling / Bricks.*",
+      "answerIndex": 2,
+      "explanation": "Floor area = 8 × 6 = 48 m². Each tile = 0.4 × 0.4 = 0.16 m². Number = 48 ÷ 0.16 = **300**.\n\n**Why not the others**\n- 30 — puts the decimal one place wrong in the tile area (48 ÷ 1.6).\n- 120 — divides the floor area by the tile's SIDE (48 ÷ 0.4) instead of its area.\n- 3000 — uses a tile area of 0.016 m²; 40 cm × 40 cm is 0.16 m².\n\n**Key facts**\n- Number of tiles = floor area ÷ area of one tile (consistent units).\n- 48 m² ÷ 0.16 m² = 300 tiles.\n\n*Source: local APPSC Quantitative Reasoning PDF — Tiling / Bricks.*",
       "source": "local APPSC Quantitative Reasoning PDF — Tiling / Bricks",
       "verified": true,
       "covers": [
@@ -653,12 +653,12 @@
       "question": "Two cones have their heights in the ratio 1 : 5 and the radii of their bases in the ratio 5 : 3. The ratio of their volumes is:",
       "noteRef": "ment-mensuration-note-volume-ratios",
       "options": [
+        "5 : 27",
         "5 : 9",
         "9 : 5",
-        "5 : 27",
         "25 : 9"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "explanation": "Cone volume V = ⅓πr²h, so V ∝ r²h; the common ⅓π cancels in a ratio.\n\n**Worked steps**\n- V₁ : V₂ = r₁²h₁ : r₂²h₂ = (5² × 1) : (3² × 5) = 25 : 45.\n- Divide by 5: = **5 : 9**.\n\n**Why not the others**\n- 25 : 9 — uses only the radius ratio squared, ignoring the heights.\n- 9 : 5 — inverts the correct ratio.\n- 5 : 27 — cubes a ratio, which applies to similar solids, not this mix.\n\n**Key facts**\n- For volume comparisons keep only the varying factors: V ∝ r²h for a cone.\n- Reduce 25 : 45 to lowest terms (÷5) → 5 : 9.\n\n*Source: standard APPSC/SSC mensuration — ratio of cone volumes.*",
       "source": "standard APPSC/SSC mensuration — volume ratios",
       "verified": true,
@@ -680,11 +680,11 @@
       "noteRef": "ment-mensuration-note-volume-ratios",
       "options": [
         "unchanged",
-        "doubled",
         "four times",
-        "halved"
+        "halved",
+        "doubled"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "Cylinder volume V = πr²h, so the factor change = (radius factor)² × (height factor).\n\n**Worked steps**\n- Radius × 2 makes the r² factor 2² = 4; height × ½.\n- New ÷ old = 4 × ½ = 2, so the volume is **doubled**.\n\n**Why not the others**\n- unchanged — assumes the ×4 and ×½ cancel to 1, but 4 × ½ = 2.\n- four times — counts only the radius effect, ignoring the halved height.\n- halved — uses the height change only.\n\n**Key facts**\n- V ∝ r²h: radius enters as a square, height linearly.\n- Combine the factors multiplicatively: 4 × 0.5 = 2.\n\n*Source: standard APPSC/SSC mensuration — scaling of cylinder volume.*",
       "source": "standard APPSC/SSC mensuration — scaling",
       "verified": true,
@@ -703,14 +703,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A rectangle has an area of 120 cm² and a length of 15 cm. Its perimeter is:",
       "options": [
+        "8 cm",
         "23 cm",
-        "120 cm",
-        "34 cm",
-        "46 cm"
+        "46 cm",
+        "120 cm"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-mensuration-extras",
-      "explanation": "Breadth = 120 ÷ 15 = 8 cm, so the perimeter of the rectangle = 2(15 + 8) = 46 cm (its diagonal is √(225 + 64) = 17 cm).\n\n**Why not the others**\n- 23 cm — 23 cm is half the perimeter (l + b).\n- 120 cm — 120 is the area.\n- 34 cm — 34 cm = 2(15 + 2) is an arithmetic slip.\n\n**Key facts**\n- Rectangle: perimeter 2(l + b).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Breadth = 120 ÷ 15 = 8 cm, so the perimeter of the rectangle = 2(15 + 8) = 46 cm (its diagonal is √(225 + 64) = 17 cm).\n\n**Why not the others**\n- 8 cm — this is the breadth (120 ÷ 15), not the perimeter.\n- 23 cm — 23 cm is half the perimeter (l + b).\n- 120 cm — 120 is the area.\n\n**Key facts**\n- Rectangle: perimeter 2(l + b).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -727,12 +727,12 @@
       "subtopicId": "ment-mensuration",
       "question": "The diagonal of a rectangle with sides 15 cm and 8 cm is:",
       "options": [
+        "17 cm",
         "23 cm",
         "7 cm",
-        "√161 cm",
-        "17 cm"
+        "√161 cm"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-mensuration-note-mensuration-extras",
       "explanation": "Diagonal of a rectangle = √(l² + b²) = √(225 + 64) = √289 = 17 cm.\n\n**Why not the others**\n- 23 cm — 23 adds the sides.\n- 7 cm — 7 subtracts them.\n- √161 cm — √161 subtracts the squares.\n\n**Key facts**\n- Rectangle diagonal = √(l² + b²).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -777,10 +777,10 @@
       "options": [
         "16 cm",
         "8√3 cm",
-        "8√2 cm",
-        "4√2 cm"
+        "4√2 cm",
+        "8√2 cm"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-mensuration-note-mensuration-extras",
       "explanation": "Diagonal of a square = a√2 = 8√2 cm.\n\n**Why not the others**\n- 16 cm — 16 = 2a.\n- 8√3 cm — 8√3 is the diagonal of a cube of edge 8.\n- 4√2 cm — 4√2 is half the diagonal.\n\n**Key facts**\n- Square diagonal = a√2.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -799,12 +799,12 @@
       "subtopicId": "ment-mensuration",
       "question": "A triangle has a base of 16 cm and a height of 9 cm. Its area is:",
       "options": [
-        "72 cm²",
-        "144 cm²",
         "25 cm²",
-        "36 cm²"
+        "36 cm²",
+        "72 cm²",
+        "144 cm²"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-mensuration-extras",
       "explanation": "Area = ½ × base × height = ½ × 16 × 9 = 72 cm².\n\n**Why not the others**\n- 144 cm² — 144 forgets the ½.\n- 25 cm² — 25 adds base and height.\n- 36 cm² — 36 halves twice.\n\n**Key facts**\n- Triangle area = ½ × base × height.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -823,14 +823,14 @@
       "subtopicId": "ment-mensuration",
       "question": "The sides of a triangle are 9 cm, 10 cm and 17 cm. Its area is:",
       "options": [
-        "72 cm²",
-        "18 cm²",
         "36 cm²",
-        "45 cm²"
+        "45 cm²",
+        "72 cm²",
+        "1296 cm²"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-mensuration-note-2d-formulae",
-      "explanation": "Heron: s = (9 + 10 + 17) ÷ 2 = 18; area = √(18 × 9 × 8 × 1) = √1296 = 36 cm² for these sides.\n\n**Why not the others**\n- 72 cm² — 72 doubles the result.\n- 18 cm² — 18 halves it.\n- 45 cm² — 45 = ½ × 9 × 10 treats it as right-angled.\n\n**Key facts**\n- Heron's formula √[s(s − a)(s − b)(s − c)].\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Heron: s = (9 + 10 + 17) ÷ 2 = 18; area = √(18 × 9 × 8 × 1) = √1296 = 36 cm² for these sides.\n\n**Why not the others**\n- 45 cm² — 45 = ½ × 9 × 10 treats it as right-angled.\n- 72 cm² — 72 doubles the result.\n- 1296 cm² — this is the radicand s(s − a)(s − b)(s − c); the square root is still to be taken.\n\n**Key facts**\n- Heron's formula √[s(s − a)(s − b)(s − c)].\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -847,14 +847,14 @@
       "subtopicId": "ment-mensuration",
       "question": "The two legs of a right triangle are 9 cm and 40 cm. Its perimeter is:",
       "options": [
-        "49 cm",
-        "90 cm",
         "180 cm",
-        "98 cm"
+        "90 cm",
+        "49 cm",
+        "41 cm"
       ],
       "answerIndex": 1,
       "noteRef": "ment-mensuration-note-mensuration-extras",
-      "explanation": "Hypotenuse of the right triangle = √(81 + 1600) = √1681 = 41, so perimeter = 9 + 40 + 41 = 90 cm.\n\n**Why not the others**\n- 49 cm — 49 leaves out the hypotenuse.\n- 180 cm — 180 is the area.\n- 98 cm — 98 doubles the legs.\n\n**Key facts**\n- Right triangle: find the hypotenuse by Pythagoras.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Hypotenuse of the right triangle = √(81 + 1600) = √1681 = 41, so perimeter = 9 + 40 + 41 = 90 cm.\n\n**Why not the others**\n- 41 cm — this is only the hypotenuse, not the perimeter.\n- 49 cm — 49 leaves out the hypotenuse.\n- 180 cm — 180 is the area.\n\n**Key facts**\n- Right triangle: find the hypotenuse by Pythagoras.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -895,12 +895,12 @@
       "subtopicId": "ment-mensuration",
       "question": "An isosceles triangle has equal sides of 13 cm and a base of 10 cm. Its area is:",
       "options": [
+        "30 cm²",
         "60 cm²",
         "65 cm²",
-        "120 cm²",
-        "30 cm²"
+        "120 cm²"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-mensuration-note-mensuration-extras",
       "explanation": "Isosceles area = (b ÷ 4)√(4a² − b²) = 2.5 × √(676 − 100) = 2.5 × 24 = 60 cm² (height 12).\n\n**Why not the others**\n- 65 cm² — 65 = ½ × 10 × 13 uses the slant side as height.\n- 120 cm² — 120 forgets the ½.\n- 30 cm² — 30 halves twice.\n\n**Key facts**\n- Isosceles: (b/4)√(4a² − b²).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -919,14 +919,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A parallelogram has a base of 15 cm, an adjacent side of 10 cm and a perpendicular height of 8 cm on that base. Its area is:",
       "options": [
-        "150 cm²",
-        "120 cm²",
         "50 cm²",
-        "60 cm²"
+        "80 cm²",
+        "120 cm²",
+        "150 cm²"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-mensuration-extras",
-      "explanation": "Parallelogram area = base × perpendicular height = 15 × 8 = 120 cm² (its perimeter is 2(15 + 10) = 50 cm).\n\n**Why not the others**\n- 150 cm² — 150 multiplies the two sides.\n- 50 cm² — 50 is the perimeter.\n- 60 cm² — 60 halves the area.\n\n**Key facts**\n- Parallelogram area = base × height, not side × side.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Parallelogram area = base × perpendicular height = 15 × 8 = 120 cm² (its perimeter is 2(15 + 10) = 50 cm).\n\n**Why not the others**\n- 50 cm² — 50 is the perimeter.\n- 80 cm² — multiplies the adjacent side by the height (10 × 8); the height of 8 belongs to the 15 cm base.\n- 150 cm² — 150 multiplies the two sides.\n\n**Key facts**\n- Parallelogram area = base × height, not side × side.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -972,14 +972,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A trapezium has an area of 360 m² and its parallel sides are 12 m apart. If the parallel sides are in the ratio 3 : 2, the longer parallel side is:",
       "options": [
+        "18 m",
         "24 m",
         "36 m",
-        "30 m",
         "60 m"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-2d-formulae",
-      "explanation": "Sum of parallel sides = 2 × 360 ÷ 12 = 60; longer = 3/5 × 60 = 36 m.\n\n**Why not the others**\n- 24 m — 24 m is the shorter side.\n- 30 m — 30 m halves the sum.\n- 60 m — 60 m is the sum of the sides.\n\n**Key facts**\n- Trapezium = ½ × (sum of parallel sides) × height.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Sum of parallel sides = 2 × 360 ÷ 12 = 60; longer = 3/5 × 60 = 36 m.\n\n**Why not the others**\n- 18 m — forgets the 2 in 2 × area ÷ height (sum = 30), then takes 3/5 of it.\n- 24 m — 24 m is the shorter side.\n- 60 m — 60 m is the sum of the sides.\n\n**Key facts**\n- Trapezium = ½ × (sum of parallel sides) × height.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -996,12 +996,12 @@
       "subtopicId": "ment-mensuration",
       "question": "A rhombus has a side of 10 cm and one diagonal of 12 cm. Its area is:",
       "options": [
+        "60 cm²",
         "96 cm²",
         "120 cm²",
-        "60 cm²",
         "192 cm²"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-mensuration-note-2d-formulae",
       "explanation": "Half-diagonals and the side form a right triangle: (d₂/2)² = 100 − 36 = 64, so d₂ = 16. Area of the rhombus = ½ × 12 × 16 = 96 cm².\n\n**Why not the others**\n- 120 cm² — 120 = 10 × 12.\n- 60 cm² — 60 = ½ × 10 × 12.\n- 192 cm² — 192 forgets the ½.\n\n**Key facts**\n- Rhombus: diagonals bisect at right angles; area ½d₁d₂.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1020,14 +1020,14 @@
       "subtopicId": "ment-mensuration",
       "question": "The circumference of a circle is 44 cm. Its area is: (Take π = 22/7.)",
       "options": [
-        "616 cm²",
-        "154 cm²",
+        "38.5 cm²",
         "44 cm²",
-        "308 cm²"
+        "154 cm²",
+        "616 cm²"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-2d-formulae",
-      "explanation": "2πr = 44 → r = 7 cm, so the area of the circle = 22/7 × 49 = 154 cm².\n\n**Why not the others**\n- 616 cm² — 616 uses the diameter as the radius.\n- 44 cm² — 44 is the circumference.\n- 308 cm² — 308 is double the area.\n\n**Key facts**\n- Circle: C = 2πr, A = πr².\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "2πr = 44 → r = 7 cm, so the area of the circle = 22/7 × 49 = 154 cm².\n\n**Why not the others**\n- 38.5 cm² — takes 7 as the diameter (r = 3.5); 2πr = 44 gives r = 7.\n- 44 cm² — 44 is the circumference.\n- 616 cm² — 616 uses the diameter as the radius.\n\n**Key facts**\n- Circle: C = 2πr, A = πr².\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1045,11 +1045,11 @@
       "question": "The perimeter of a semicircle of radius 7 cm is: (Take π = 22/7.)",
       "options": [
         "22 cm",
-        "44 cm",
         "36 cm",
+        "44 cm",
         "77 cm"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-mensuration-note-mensuration-extras",
       "explanation": "Semicircle perimeter = πr + 2r = 22 + 14 = 36 cm.\n\n**Why not the others**\n- 22 cm — 22 is only the curved part.\n- 44 cm — 44 is the full circumference.\n- 77 cm — 77 is the area.\n\n**Key facts**\n- Semicircle perimeter includes the diameter.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1068,12 +1068,12 @@
       "subtopicId": "ment-mensuration",
       "question": "The length of the arc of a sector of radius 21 cm with a central angle of 60° is: (Take π = 22/7.)",
       "options": [
-        "44 cm",
         "22 cm",
-        "231 cm",
-        "66 cm"
+        "44 cm",
+        "66 cm",
+        "231 cm"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-mensuration-note-2d-formulae",
       "explanation": "Arc of the sector = (60 ÷ 360) × 2 × 22/7 × 21 = 22 cm.\n\n**Why not the others**\n- 44 cm — 44 uses 120°.\n- 231 cm — 231 is the sector area.\n- 66 cm — 66 uses 180°.\n\n**Key facts**\n- Arc = (θ/360) × 2πr.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1092,12 +1092,12 @@
       "subtopicId": "ment-mensuration",
       "question": "The area of a regular hexagon of side 4 cm is:",
       "options": [
+        "24√3 cm²",
         "4√3 cm²",
         "48√3 cm²",
-        "16√3 cm²",
-        "24√3 cm²"
+        "16√3 cm²"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-mensuration-note-mensuration-extras",
       "explanation": "A regular hexagon is six equilateral triangles: 6 × (√3 ÷ 4) × 16 = 24√3 cm².\n\n**Why not the others**\n- 4√3 cm² — 4√3 is one of the six triangles.\n- 48√3 cm² — 48√3 doubles it.\n- 16√3 cm² — 16√3 is four triangles.\n\n**Key facts**\n- Hexagon = 6 equilateral triangles.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1116,14 +1116,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A path 2 m wide runs INSIDE along the edges of a lawn 50 m × 30 m. The area of the path is:",
       "options": [
+        "156 m²",
+        "304 m²",
         "336 m²",
-        "1196 m²",
-        "320 m²",
-        "304 m²"
+        "1196 m²"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-mensuration-note-mensuration-extras",
-      "explanation": "Inside path = 50 × 30 − (50 − 4)(30 − 4) = 1500 − 1196 = 304 m².\n\n**Why not the others**\n- 336 m² — 336 is the area of a path outside.\n- 1196 m² — 1196 is the lawn left inside the path.\n- 320 m² — 320 forgets the corner overlap.\n\n**Key facts**\n- Inside path: lb − (l − 2w)(b − 2w).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Inside path = 50 × 30 − (50 − 4)(30 − 4) = 1500 − 1196 = 304 m².\n\n**Why not the others**\n- 156 m² — subtracts the width once from each side ((50 − 2)(30 − 2)); the path runs along both edges.\n- 336 m² — 336 is the area of a path outside.\n- 1196 m² — 1196 is the lawn left inside the path.\n\n**Key facts**\n- Inside path: lb − (l − 2w)(b − 2w).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1140,12 +1140,12 @@
       "subtopicId": "ment-mensuration",
       "question": "Two roads, each 3 m wide, cross each other through the middle of a 60 m × 40 m field, parallel to its sides. The area of the roads is:",
       "options": [
-        "291 m²",
-        "300 m²",
+        "2400 m²",
         "309 m²",
-        "2400 m²"
+        "300 m²",
+        "291 m²"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-mensuration-note-mensuration-extras",
       "explanation": "Road area = 3 × 60 + 3 × 40 − 3 × 3 = w(l + b − w) = 291 m².\n\n**Why not the others**\n- 300 m² — 300 counts the crossing square twice.\n- 309 m² — 309 adds the crossing.\n- 2400 m² — 2400 is the field.\n\n**Key facts**\n- Crossing roads: w(l + b − w).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1164,14 +1164,14 @@
       "subtopicId": "ment-mensuration",
       "question": "How many tiles of 25 cm × 20 cm are needed to cover a floor 5 m × 4 m?",
       "options": [
+        "4",
         "40",
-        "4000",
-        "200",
+        "80",
         "400"
       ],
       "answerIndex": 3,
       "noteRef": "ment-mensuration-note-scaling",
-      "explanation": "Floor = 500 × 400 = 200000 cm²; one tile = 500 cm²; tiles = 400.\n\n**Why not the others**\n- 40 — 40 forgets to convert metres to centimetres.\n- 4000 — 4000 is an arithmetic slip.\n- 200 — 200 halves.\n\n**Key facts**\n- Tiles = floor area ÷ tile area (same units).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Floor = 500 × 400 = 200000 cm²; one tile = 500 cm²; tiles = 400.\n\n**Why not the others**\n- 4 — uses 1 m² = 100 cm² (2000 ÷ 500); 1 m² is 10,000 cm².\n- 40 — uses 1 m² = 1000 cm² (20,000 ÷ 500).\n- 80 — counts only the tiles along the four edges, 2(500/25 + 400/20).\n\n**Key facts**\n- Tiles = floor area ÷ tile area (same units).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1188,12 +1188,12 @@
       "subtopicId": "ment-mensuration",
       "question": "A cube has an edge of 4 cm. Its total surface area and lateral surface area are respectively:",
       "options": [
-        "96 cm² and 64 cm²",
         "64 cm² and 96 cm²",
         "64 cm² and 48 cm²",
-        "96 cm² and 16 cm²"
+        "96 cm² and 16 cm²",
+        "96 cm² and 64 cm²"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-mensuration-note-solids-extras",
       "explanation": "Cube: TSA = 6a² = 96 cm², LSA = 4a² = 64 cm².\n\n**Why not the others**\n- 64 cm² and 96 cm² — Reverses them.\n- 64 cm² and 48 cm² — 64 is the volume.\n- 96 cm² and 16 cm² — 16 is one face.\n\n**Key facts**\n- Cube: TSA 6a², LSA 4a².\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1212,14 +1212,14 @@
       "subtopicId": "ment-mensuration",
       "question": "The total surface area of a cuboid 10 cm × 8 cm × 5 cm is:",
       "options": [
-        "400 cm²",
         "170 cm²",
+        "240 cm²",
         "340 cm²",
-        "230 cm²"
+        "400 cm²"
       ],
       "answerIndex": 2,
       "noteRef": "ment-mensuration-note-solids-extras",
-      "explanation": "Cuboid TSA = 2(lb + bh + hl) = 2(80 + 40 + 50) = 340 cm².\n\n**Why not the others**\n- 400 cm² — 400 is its volume.\n- 170 cm² — 170 is half the TSA.\n- 230 cm² — 230 is an arithmetic slip.\n\n**Key facts**\n- Cuboid TSA = 2(lb + bh + hl).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Cuboid TSA = 2(lb + bh + hl) = 2(80 + 40 + 50) = 340 cm².\n\n**Why not the others**\n- 170 cm² — 170 is half the TSA (forgets the 2).\n- 240 cm² — leaves out one pair of faces (2(lb + bh) = 2 × 120).\n- 400 cm² — 400 is its volume.\n\n**Key facts**\n- Cuboid TSA = 2(lb + bh + hl).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1236,12 +1236,12 @@
       "subtopicId": "ment-mensuration",
       "question": "The four walls of a cuboid-shaped room 6 m long, 4 m wide and 3 m high are painted at ₹20 per m². The cost of painting is:",
       "options": [
+        "₹480",
         "₹1200",
         "₹1440",
-        "₹480",
         "₹2160"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-mensuration-note-solids-extras",
       "explanation": "Four walls of a cuboid = 2h(l + b) = 2 × 3 × 10 = 60 m²; painting cost = 60 × 20 = ₹1200.\n\n**Why not the others**\n- ₹1440 — ₹1440 includes the ceiling.\n- ₹480 — ₹480 is the floor-area cost (24 m²).\n- ₹2160 — ₹2160 paints walls, floor and ceiling.\n\n**Key facts**\n- Cost = area × rate; walls = 2h(l + b).\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1260,14 +1260,14 @@
       "subtopicId": "ment-mensuration",
       "question": "The curved surface area of a cylinder is 880 cm² and its height is 10 cm. Its volume is: (Take π = 22/7.)",
       "options": [
-        "6160 cm³",
+        "12320 cm³",
         "8800 cm³",
-        "3080 cm³",
-        "12320 cm³"
+        "6160 cm³",
+        "1540 cm³"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-solids-formulae",
-      "explanation": "CSA of the cylinder 2πrh = 880 → r = 880 × 7 ÷ (2 × 22 × 10) = 14 cm. Volume = 22/7 × 196 × 10 = 6160 cm³.\n\n**Why not the others**\n- 8800 cm³ — 8800 = CSA × h.\n- 3080 cm³ — 3080 halves the volume.\n- 12320 cm³ — 12320 doubles it.\n\n**Key facts**\n- Cylinder: CSA 2πrh, volume πr²h.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "CSA of the cylinder 2πrh = 880 → r = 880 × 7 ÷ (2 × 22 × 10) = 14 cm. Volume = 22/7 × 196 × 10 = 6160 cm³.\n\n**Why not the others**\n- 1540 cm³ — takes 14 as the diameter (r = 7).\n- 8800 cm³ — 8800 = CSA × h.\n- 12320 cm³ — multiplies CSA by r and forgets the ÷ 2 (V = CSA × r ÷ 2).\n\n**Key facts**\n- Cylinder: CSA 2πrh, volume πr²h.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1284,10 +1284,10 @@
       "subtopicId": "ment-mensuration",
       "question": "A metal pipe is 14 cm long with an external radius of 5 cm and an internal radius of 4 cm. The volume of metal is: (Take π = 22/7.)",
       "options": [
-        "1100 cm³",
+        "44 cm³",
         "396 cm³",
         "704 cm³",
-        "44 cm³"
+        "1100 cm³"
       ],
       "answerIndex": 1,
       "noteRef": "ment-mensuration-note-solids-extras",
@@ -1308,10 +1308,10 @@
       "subtopicId": "ment-mensuration",
       "question": "A cone has a base radius of 7 cm and a height of 24 cm. Its curved surface area is: (Take π = 22/7.)",
       "options": [
-        "528 cm²",
         "1232 cm²",
+        "704 cm²",
         "550 cm²",
-        "704 cm²"
+        "528 cm²"
       ],
       "answerIndex": 2,
       "noteRef": "ment-mensuration-note-solids-extras",
@@ -1330,14 +1330,14 @@
       "id": "ment-mensuration-mcq-54",
       "subjectCode": "MENT",
       "subtopicId": "ment-mensuration",
-      "question": "The volume of a sphere of radius 3 cm is:",
+      "question": "The volume of a solid sphere of radius 3 cm, expressed in terms of π, is:",
       "options": [
         "12π cm³",
-        "36π cm³",
         "108π cm³",
-        "27π cm³"
+        "27π cm³",
+        "36π cm³"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-mensuration-note-solids-formulae",
       "explanation": "Sphere volume = (4/3)πr³ = (4/3) × 27π = 36π cm³ (its surface is also 4π × 9 = 36π cm²).\n\n**Why not the others**\n- 12π cm³ — 12π drops a factor of 3.\n- 108π cm³ — 108π multiplies by 4 without ÷ 3.\n- 27π cm³ — 27π = πr³.\n\n**Key facts**\n- Sphere volume (4/3)πr³.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1380,12 +1380,12 @@
       "subtopicId": "ment-mensuration",
       "question": "A frustum of a cone has end radii 10 cm and 4 cm and a height of 8 cm. Its curved surface area is:",
       "options": [
+        "140π cm²",
         "112π cm²",
         "116π cm²",
-        "140π cm²",
         "256π cm²"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-mensuration-note-solids-extras",
       "explanation": "Slant l = √(8² + (10 − 4)²) = 10. CSA of the frustum = π(R + r)l = π × 14 × 10 = 140π cm².\n\n**Why not the others**\n- 112π cm² — 112π uses the height 8 instead of the slant height.\n- 116π cm² — 116π adds the small end.\n- 256π cm² — 256π adds both ends.\n\n**Key facts**\n- Frustum CSA = π(R + r)l.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1406,10 +1406,10 @@
       "options": [
         "360 cm² and 432 cm²",
         "240 cm² and 276 cm²",
-        "240 cm² and 312 cm²",
-        "60 cm² and 132 cm²"
+        "60 cm² and 132 cm²",
+        "240 cm² and 312 cm²"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-mensuration-note-solids-extras",
       "explanation": "Prism LSA = base perimeter × height = 24 × 10 = 240; TSA = 240 + 2 × 36 = 312 cm².\n\n**Why not the others**\n- 360 cm² and 432 cm² — 360 is the volume.\n- 240 cm² and 276 cm² — 276 adds only one base.\n- 60 cm² and 132 cm² — 60 is one face.\n\n**Key facts**\n- Prism LSA = perimeter × height; TSA adds two bases.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1429,11 +1429,11 @@
       "question": "A square pyramid has a base of side 16 cm and a height of 6 cm. Its lateral surface area is:",
       "options": [
         "192 cm²",
+        "320 cm²",
         "512 cm²",
-        "576 cm²",
-        "320 cm²"
+        "576 cm²"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-mensuration-note-solids-extras",
       "explanation": "Slant height = √(6² + 8²) = 10. Pyramid LSA = ½ × perimeter × slant = ½ × 64 × 10 = 320 cm².\n\n**Why not the others**\n- 192 cm² — 192 uses the height 6 instead of the slant height.\n- 512 cm² — 512 is its volume.\n- 576 cm² — 576 adds the base.\n\n**Key facts**\n- Pyramid LSA = ½ × base perimeter × slant.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1452,12 +1452,12 @@
       "subtopicId": "ment-mensuration",
       "question": "The total surface area of a regular tetrahedron with every edge 6 cm is:",
       "options": [
+        "36√3 cm²",
         "9√3 cm²",
         "27√3 cm²",
-        "72√3 cm²",
-        "36√3 cm²"
+        "72√3 cm²"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-mensuration-note-solids-extras",
       "explanation": "Regular tetrahedron = four equilateral faces: 4 × (√3 ÷ 4) × 36 = 36√3 cm².\n\n**Why not the others**\n- 9√3 cm² — 9√3 is one face.\n- 27√3 cm² — 27√3 is three faces (lateral).\n- 72√3 cm² — 72√3 doubles it.\n\n**Key facts**\n- Tetrahedron TSA = √3a².\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1476,14 +1476,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A tank measures 50 cm × 40 cm × 30 cm. Its capacity is:",
       "options": [
+        "60000 litres",
         "600 litres",
         "60 litres",
-        "6 litres",
-        "60000 litres"
+        "6 litres"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-solids-formulae",
-      "explanation": "Volume = 60000 cm³; 1 litre = 1000 cm³, so 60 litres.\n\n**Why not the others**\n- 600 litres — 600 is off by 10.\n- 6 litres — 6 is off by 10.\n- 60000 litres — 60000 is the volume in cm³, not litres.\n\n**Key facts**\n- 1 litre = 1000 cm³; 1 m³ = 1000 litres.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Volume = 60000 cm³; 1 litre = 1000 cm³, so 60 litres.\n\n**Why not the others**\n- 6 litres — uses 1 litre = 10,000 cm³; one litre is 1000 cm³.\n- 600 litres — uses 1 litre = 100 cm³.\n- 60000 litres — 60000 is the volume in cm³, not litres.\n\n**Key facts**\n- 1 litre = 1000 cm³; 1 m³ = 1000 litres.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1524,14 +1524,14 @@
       "subtopicId": "ment-mensuration",
       "question": "For the same toy (cone r 3, h 4 on a hemisphere r 3), the total outer surface area is:",
       "options": [
-        "42π cm²",
         "24π cm²",
         "27π cm²",
+        "42π cm²",
         "33π cm²"
       ],
       "answerIndex": 3,
       "noteRef": "ment-mensuration-note-combined-recast",
-      "explanation": "Exposed surface only: cone CSA πrl = π × 3 × 5 = 15π, hemisphere curved 2πr² = 18π; total 33π cm² (the joint is hidden).\n\n**Why not the others**\n- 42π cm² — 42π adds the hidden circular joint twice (9π).\n- 24π cm² — 24π is only the cone CSA plus the base.\n- 27π cm² — 27π uses a wrong slant height.\n\n**Key facts**\n- Combined surface = exposed faces only.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Exposed surface only: cone CSA πrl = π × 3 × 5 = 15π, hemisphere curved 2πr² = 18π; total 33π cm² (the joint is hidden).\n\n**Why not the others**\n- 24π cm² — adds the cone's CSA (15π) and its base (9π) and leaves out the hemisphere.\n- 27π cm² — takes the solid hemisphere's total 3πr² and leaves out the cone.\n- 42π cm² — adds the hidden circular joint (9π), which is not on the outside.\n\n**Key facts**\n- Combined surface = exposed faces only.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1548,14 +1548,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A solid cylinder of radius 6 cm and height 10 cm is melted and recast into cones of radius 3 cm and height 4 cm. How many cones are made?",
       "options": [
-        "30",
+        "4",
         "10",
-        "90",
-        "15"
+        "30",
+        "90"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-combined-recast",
-      "explanation": "Cylinder volume = π × 36 × 10 = 360π. One cone = ⅓π × 9 × 4 = 12π. Number of cones melted from it = 360π ÷ 12π = 30.\n\n**Why not the others**\n- 10 — 10 compares radii only.\n- 90 — 90 forgets the ⅓.\n- 15 — 15 halves.\n\n**Key facts**\n- Pieces = original volume ÷ one piece.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Cylinder volume = π × 36 × 10 = 360π. One cone = ⅓π × 9 × 4 = 12π. Number of cones melted from it = 360π ÷ 12π = 30.\n\n**Why not the others**\n- 4 — compares only the radii squared ((6/3)²) and ignores the heights.\n- 10 — forgets the ⅓ in the cone's volume (360π ÷ 36π).\n- 90 — forgets to square the cone's radius (⅓π × 3 × 4 = 4π).\n\n**Key facts**\n- Pieces = original volume ÷ one piece.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1572,14 +1572,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A solid sphere of radius 3 cm is melted and drawn into a wire of radius 0.1 cm. The length of the wire is:",
       "options": [
-        "3.6 m",
-        "360 m",
-        "0.36 m",
-        "36 m"
+        "3600 m",
+        "36 m",
+        "12 m",
+        "3.6 m"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-mensuration-note-combined-recast",
-      "explanation": "(4/3)π × 27 = π × 0.01 × L → L = 36 ÷ 0.01 = 3600 cm = 36 m of wire.\n\n**Why not the others**\n- 3.6 m — 3.6 m is off by 10.\n- 360 m — 360 m is off by 10.\n- 0.36 m — 0.36 m is off by 100.\n\n**Key facts**\n- Solid into a wire: volume = πr²L.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "(4/3)π × 27 = π × 0.01 × L → L = 36 ÷ 0.01 = 3600 cm = 36 m of wire.\n\n**Why not the others**\n- 3.6 m — forgets to square the wire radius (36 ÷ 0.1 = 360 cm).\n- 12 m — uses r² instead of r³ for the sphere ((4/3)π × 9 = 12π).\n- 3600 m — forgets to convert 3600 cm into metres.\n\n**Key facts**\n- Solid into a wire: volume = πr²L.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1598,12 +1598,12 @@
       "options": [
         "1 cm",
         "3 cm",
-        "0.5 cm",
-        "4 cm"
+        "4 cm",
+        "6 cm"
       ],
       "answerIndex": 0,
       "noteRef": "ment-mensuration-note-solids-extras",
-      "explanation": "Rise = sphere volume ÷ base area = 36π ÷ 36π = 1 cm.\n\n**Why not the others**\n- 3 cm — 3 cm is the sphere radius.\n- 0.5 cm — 0.5 cm halves it.\n- 4 cm — 4 cm is an arithmetic slip.\n\n**Key facts**\n- Water rise = volume ÷ base area.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Rise = sphere volume ÷ base area = 36π ÷ 36π = 1 cm.\n\n**Why not the others**\n- 3 cm — 3 cm is the sphere radius.\n- 4 cm — uses the sphere's radius 3 for the vessel base (36π ÷ 9π).\n- 6 cm — forgets to square the vessel radius (36π ÷ 6π).\n\n**Key facts**\n- Water rise = volume ÷ base area.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1620,14 +1620,14 @@
       "subtopicId": "ment-mensuration",
       "question": "A metal sphere of radius 9 cm is melted into small spheres of radius 3 cm each. How many small spheres are made?",
       "options": [
+        "3",
         "9",
         "27",
-        "3",
-        "81"
+        "729"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-combined-recast",
-      "explanation": "Spheres recast into spheres: count = (R/r)³ = 3³ = 27.\n\n**Why not the others**\n- 9 — 9 = (R/r)² uses area, not volume.\n- 3 — 3 = R/r.\n- 81 — 81 is (R/r)⁴.\n\n**Key facts**\n- Count = (R/r)³.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "Spheres recast into spheres: count = (R/r)³ = 3³ = 27.\n\n**Why not the others**\n- 3 — 3 = R/r.\n- 9 — 9 = (R/r)² uses area, not volume.\n- 729 — cubes the big radius (9³) and does not divide by 3³.\n\n**Key facts**\n- Count = (R/r)³.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1644,12 +1644,12 @@
       "subtopicId": "ment-mensuration",
       "question": "If the diameter of a circle is doubled, its area becomes:",
       "options": [
+        "4 times",
         "2 times",
         "8 times",
-        "π times",
-        "4 times"
+        "π times"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-mensuration-note-scaling",
       "explanation": "All lengths × 2 → area × 2² = 4 times (the area does increase fourfold).\n\n**Why not the others**\n- 2 times — Area depends on r², not r.\n- 8 times — 8 is the volume factor (k³).\n- π times — π is a constant.\n\n**Key facts**\n- Area × k², volume × k³.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1668,14 +1668,14 @@
       "subtopicId": "ment-mensuration",
       "question": "If the radius of a circle is increased by 10 percent, by what percentage does its area increase?",
       "options": [
-        "10%",
+        "121%",
         "21%",
         "20%",
-        "11%"
+        "10%"
       ],
       "answerIndex": 1,
       "noteRef": "ment-mensuration-note-scaling",
-      "explanation": "k = 1.1, so area × 1.21: an increase of 21%.\n\n**Why not the others**\n- 10% — 10% scales linearly.\n- 20% — 20% adds 10% twice.\n- 11% — 11% is an arithmetic slip.\n\n**Key facts**\n- Area scales by k².\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
+      "explanation": "k = 1.1, so area × 1.21: an increase of 21%.\n\n**Why not the others**\n- 10% — 10% scales linearly.\n- 20% — 20% adds 10% twice and drops the 1% cross term.\n- 121% — this is the new area as a percentage of the old, not the increase.\n\n**Key facts**\n- Area scales by k².\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
       "verified": true,
       "covers": [
@@ -1693,11 +1693,11 @@
       "question": "A cylinder and a cone have the same base radius and the same height. The ratio of the cylinder's volume to the cone's is:",
       "options": [
         "1 : 3",
+        "1 : 1",
         "2 : 1",
-        "3 : 1",
-        "1 : 1"
+        "3 : 1"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-mensuration-note-solids-formulae",
       "explanation": "Cone = ⅓πr²h, cylinder = πr²h, so 3 : 1 (with h = r the cone : hemisphere : cylinder ratio is 1 : 2 : 3).\n\n**Why not the others**\n- 1 : 3 — Reversed.\n- 2 : 1 — 2 : 1 is cylinder : hemisphere-type confusion.\n- 1 : 1 — The cone is one-third.\n\n**Key facts**\n- Cone : hemisphere : cylinder = 1 : 2 : 3 when h = r.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",
@@ -1716,12 +1716,12 @@
       "subtopicId": "ment-mensuration",
       "question": "Two cylinders have radii in the ratio 2 : 3 and heights in the ratio 5 : 3. The ratio of their volumes is:",
       "options": [
-        "10 : 9",
         "4 : 9",
         "2 : 3",
-        "20 : 27"
+        "20 : 27",
+        "10 : 9"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-mensuration-note-volume-ratios",
       "explanation": "V ∝ r²h: (4 × 5) : (9 × 3) = 20 : 27.\n\n**Why not the others**\n- 10 : 9 — 10 : 9 uses r, not r².\n- 4 : 9 — 4 : 9 ignores the heights.\n- 2 : 3 — 2 : 3 is the radius ratio.\n\n**Key facts**\n- Volume ratio ∝ r²h.\n\n*Source: APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Rectangle, Square, Triangle, Equilateral/Isosceles/Scalene Triangle, Parallelogram, Trapezium, Rhombus, Polygons, Circle and Semi Circle, Two Figures, Cube, Cuboid, Right Circular Cylinder, Right Circular Cone, Frustum of Cone, Sphere, Hemisphere, Right Prism, Pyramid, Tetrahedron); NCERT Class 8–10 mensuration; PYQ bank .research/pyq-bank/ment-mensuration.md",

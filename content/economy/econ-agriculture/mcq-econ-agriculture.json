@@ -11,9 +11,9 @@
       "question": "Which body recommends the Minimum Support Price (MSP) for crops in India?",
       "options": [
         "NITI Aayog",
-        "Food Corporation of India (FCI)",
-        "Commission for Agricultural Costs and Prices (CACP)",
-        "Reserve Bank of India"
+        "FCI",
+        "CACP",
+        "RBI"
       ],
       "answerIndex": 2,
       "noteRef": "econ-agriculture-note-msp-cacp",
@@ -151,11 +151,11 @@
       },
       "options": [
         "A-1, B-2, C-3",
-        "A-3, B-1, C-2",
+        "A-3, B-2, C-1",
         "A-2, B-3, C-1",
-        "A-3, B-2, C-1"
+        "A-3, B-1, C-2"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "econ-agriculture-note-place-and-seasons",
       "explanation": "**Kharif** = monsoon-sown (Jun-Jul) — rice, cotton, bajra (A-3). **Rabi** = winter (Oct-Dec sowing) — wheat, gram, mustard (B-1). **Zaid** = short summer crops (Mar-Jun) — watermelon, cucumber (C-2).\n\n**Why not the others**\n- A-1, B-2, C-3 — swaps Kharif with Rabi and misplaces Zaid.\n- A-2, B-3, C-1 — labels Kharif as summer crops, which is wrong.\n- A-3, B-2, C-1 — Rabi is not the summer (Zaid) season.\n\n**Key facts**\n- Kharif harvested Sep-Oct; Rabi harvested Mar-May.\n- Zaid needs assured irrigation and longer daylight.\n\n*Source: local APPSC GK PDF — Indian Agriculture (Cropping Pattern with Seasons).*",
       "source": "local APPSC GK PDF — Indian Agriculture (Cropping Pattern)",
@@ -317,14 +317,14 @@
       "subtopicId": "econ-agriculture",
       "question": "The Swaminathan Commission (National Commission on Farmers) recommended that MSP be fixed at:",
       "options": [
-        "A2 cost only",
-        "A2 + FL cost",
-        "At least 50% above the C2 (comprehensive) cost of production",
-        "The prevailing international market price"
+        "A2 cost plus 50%",
+        "A2 + FL cost plus 50%",
+        "C2 cost plus 50%",
+        "Import parity price"
       ],
       "answerIndex": 2,
       "noteRef": "econ-agriculture-note-msp-cacp",
-      "explanation": "The Swaminathan Commission recommended MSP be **at least 50% above the comprehensive C2 cost** (i.e., C2 + 50%). C2 includes A2 + family labour plus imputed rent and interest on owned land and capital.\n\n**Why not the others**\n- A2 cost only — covers only paid-out expenses (seeds, fertiliser, irrigation), far too narrow.\n- A2 + FL — adds family labour but the government uses A2+FL+50%, which is below the C2+50% the Commission urged.\n- International market price — MSP is a domestic support price, not import-parity pricing.\n\n**Key facts**\n- A2 = actual paid-out costs; FL = imputed family labour; C2 = A2+FL + rent/interest on owned assets.\n- MSP is announced for 23 crops on CACP's advice.\n\n*Source: local APPSC GK PDF — Indian Agriculture (How MSP is Determined); Swaminathan Commission.*",
+      "explanation": "The Swaminathan Commission recommended MSP be **at least 50% above the comprehensive C2 cost** (i.e., C2 + 50%). C2 includes A2 + family labour plus imputed rent and interest on owned land and capital.\n\n**Why not the others**\n- A2 cost plus 50% — A2 covers only paid-out expenses (seeds, fertiliser, irrigation), far too narrow a base.\n- A2 + FL cost plus 50% — this is the formula the government actually uses, which is below the C2+50% the Commission urged.\n- Import parity price — MSP is a domestic support price, not import-parity pricing.\n\n**Key facts**\n- A2 = actual paid-out costs; FL = imputed family labour; C2 = A2+FL + rent/interest on owned assets.\n- MSP is announced for 23 crops on CACP's advice.\n\n*Source: local APPSC GK PDF — Indian Agriculture (How MSP is Determined); Swaminathan Commission.*",
       "source": "local APPSC GK PDF — Indian Agriculture (MSP costs); Swaminathan Commission",
       "verified": true,
       "covers": [
@@ -400,11 +400,11 @@
       },
       "options": [
         "A-1, B-2, C-3",
-        "A-2, B-3, C-1",
+        "A-2, B-1, C-3",
         "A-3, B-1, C-2",
-        "A-2, B-1, C-3"
+        "A-2, B-3, C-1"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "econ-agriculture-note-msp-cacp",
       "explanation": "**FCI** procures foodgrains (A-2), **NAFED** procures oilseeds and pulses (B-3), **CCI** (Cotton Corporation of India) procures cotton (C-1).\n\n**Why not the others**\n- A-1, B-2, C-3 — makes FCI a cotton agency, which is wrong.\n- A-3, B-1, C-2 — FCI does not handle oilseeds; CCI is not a foodgrain agency.\n- A-2, B-1, C-3 — swaps NAFED (pulses/oilseeds) with CCI (cotton).\n\n**Key facts**\n- MSP procurement is concentrated in Punjab, Haryana and MP for wheat/rice — a key regional-disparity critique.\n- Awareness of MSP among farmers is low (~23%), limiting its reach.\n\n*Source: local APPSC GK PDF — Indian Agriculture (Implementation of MSP; Challenges).*",
       "source": "local APPSC GK PDF — Indian Agriculture (MSP implementation)",
@@ -425,18 +425,18 @@
       "question": "Consider the following statements about the Pradhan Mantri Fasal Bima Yojana (PMFBY):\nWhich of the statements is/are correct?",
       "statements": [
         "It was launched in 2016 replacing the earlier NAIS and Modified NAIS schemes.",
-        "Farmers pay a uniform premium of 2% for Kharif, 1.5% for Rabi and 5% for commercial/horticultural crops.",
+        "Farmers pay a uniform premium of 1.5% for Kharif, 2% for Rabi and 5% for commercial/horticultural crops.",
         "Since 2020 it is voluntary even for loanee farmers."
       ],
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "1 only",
+        "3 only",
+        "1, 2 and 3",
+        "1 and 3 only"
       ],
       "answerIndex": 3,
       "noteRef": "econ-agriculture-note-schemes-credit",
-      "explanation": "All three are correct. PMFBY (2016) replaced **NAIS and Modified NAIS**, fixed farmer premiums at **2% Kharif / 1.5% Rabi / 5% commercial-horticultural** (government subsidises the rest), and became **voluntary for loanee farmers from 2020**.\n\n**Why not the others**\n- 1 and 2 only — the 2020 voluntary reform (statement 3) is also correct.\n- 2 and 3 only — the replacement of NAIS/MNAIS (statement 1) is correct.\n- 1 and 3 only — the premium slabs (statement 2) are correct.\n\n**Key facts**\n- Aligned with the 'One Nation, One Scheme' theme; aims at quick claim settlement.\n- Covers yield loss from natural, non-preventable risks.\n\n*Source: local APPSC GK PDF — Indian Agriculture (Schemes); PMFBY guidelines.*",
+      "explanation": "Statements 1 and 3 are correct: PMFBY (2016) replaced NAIS and Modified NAIS, and since 2020 it is **voluntary** even for loanee farmers. Statement 2 swaps the rates: farmers pay **2%** for **Kharif**, **1.5%** for **Rabi** and 5% for commercial/horticultural crops.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (the Kharif and Rabi rates are swapped — 2% Kharif, 1.5% Rabi).\n\n**Key facts**\n- Aligned with the 'One Nation, One Scheme' theme; aims at quick claim settlement.\n- Covers yield loss from natural, non-preventable risks.\n\n*Source: local APPSC GK PDF — Indian Agriculture (Schemes); PMFBY guidelines.*",
       "source": "local APPSC GK PDF — Indian Agriculture (Schemes); PMFBY guidelines",
       "verified": true,
       "covers": [
@@ -494,12 +494,12 @@
         ]
       },
       "options": [
-        "A-2, B-1, C-4, D-3",
+        "A-4, B-1, C-2, D-3",
         "A-1, B-2, C-3, D-4",
         "A-2, B-4, C-1, D-3",
-        "A-4, B-1, C-2, D-3"
+        "A-2, B-1, C-4, D-3"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "econ-agriculture-note-schemes-credit",
       "explanation": "**KUSUM = solar irrigation** (A-2), **Soil Health Card = nutrient advisory** (B-1), **PMKSY = irrigation potential/water efficiency** (C-4), **e-NAM = online national market** (D-3).\n\n**Why not the others**\n- A-1, B-2, C-3, D-4 — makes KUSUM a soil-card scheme and PMKSY an e-market, both wrong.\n- A-2, B-4, C-1, D-3 — swaps Soil Health Card with PMKSY.\n- A-4, B-1, C-2, D-3 — makes KUSUM an irrigation-potential scheme and PMKSY a solar-pump scheme.\n\n**Key facts**\n- e-NAM was launched on 14 April 2016 to integrate mandis electronically.\n- PM Kisan Maan Dhan Yojana (2019) gives a ₹3,000/month pension to small farmers after 60.\n\n*Source: local APPSC GK PDF — Indian Agriculture (Agricultural Schemes).*",
       "source": "local APPSC GK PDF — Indian Agriculture (Schemes)",
@@ -519,7 +519,7 @@
       "subtopicId": "econ-agriculture",
       "question": "Which institution is the apex body for refinancing agricultural and rural credit in India?",
       "options": [
-        "Reserve Bank of India",
+        "RBI",
         "NABARD",
         "SIDBI",
         "SEBI"
@@ -569,19 +569,19 @@
       "subtopicId": "econ-agriculture",
       "question": "Consider the following statements about the National Food Security Act (NFSA), 2013:\nWhich of the statements is/are correct?",
       "statements": [
-        "Priority households are entitled to 5 kg of foodgrains per person per month.",
+        "Priority households are entitled to 7 kg of foodgrains per person per month.",
         "Antyodaya Anna Yojana (AAY) households receive 35 kg per household per month.",
         "The Act covers up to about two-thirds of the population."
       ],
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
-        "1, 2 and 3"
+        "2 only",
+        "3 only",
+        "1, 2 and 3",
+        "2 and 3 only"
       ],
       "answerIndex": 3,
       "noteRef": "econ-agriculture-note-food-security-ap",
-      "explanation": "All three are correct. NFSA 2013 gives **5 kg/person/month** to priority households and **35 kg/household/month** to AAY families, covering up to **75% rural + 50% urban (~67%, about 813 million people)**.\n\n**Why not the others**\n- 1 and 2 only — the ~two-thirds coverage (statement 3) is also correct.\n- 2 and 3 only — the 5 kg priority entitlement (statement 1) is correct.\n- 1 and 3 only — the AAY 35 kg entitlement (statement 2) is correct.\n\n**Key facts**\n- Foodgrains are now free under PMGKAY (since Jan 2023), which replaced NFSA's subsidised ₹3/₹2/₹1 pricing.\n- One Nation, One Ration Card (ONORC) makes ration cards portable for migrants.\n\n*Source: local APPSC GK PDF — Food Security (NFSA 2013; PDS; ONORC).*",
+      "explanation": "Statements 2 and 3 are correct: AAY households get **35 kg** per household per month, and the Act covers up to about **two-thirds** of the population (75% rural, 50% urban). Statement 1 is incorrect: priority households are entitled to **5 kg** per person per month, not 7 kg.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (priority households get 5 kg per person per month).\n\n**Key facts**\n- Foodgrains are now free under PMGKAY (since Jan 2023), which replaced NFSA's subsidised ₹3/₹2/₹1 pricing.\n- One Nation, One Ration Card (ONORC) makes ration cards portable for migrants.\n\n*Source: local APPSC GK PDF — Food Security (NFSA 2013; PDS; ONORC).*",
       "source": "local APPSC GK PDF — Food Security (NFSA 2013)",
       "verified": true,
       "covers": [
@@ -654,12 +654,12 @@
         "India is the largest producer of wheat in the world."
       ],
       "options": [
-        "1 and 2 only",
+        "1, 2 and 3",
         "2 and 3 only",
         "1 and 3 only",
-        "1, 2 and 3"
+        "1 and 2 only"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "econ-agriculture-note-place-and-seasons",
       "explanation": "India ranks **1st in milk** and **1st in pulses**, but is the **2nd-largest wheat producer** (after China), so statement 3 is wrong.\n\n**Why not the others**\n- 2 and 3 only — statement 3 is false; India is 2nd, not 1st, in wheat.\n- 1 and 3 only — same error on wheat.\n- 1, 2 and 3 — statement 3 is incorrect.\n\n**Key facts**\n| Produce | India's rank |\n|---|---|\n| Milk, Pulses, Jute | 1st |\n| Wheat, Rice, Sugarcane, Cotton | 2nd |\n| Eggs | 3rd |\n\nAllied sectors (dairy, fisheries, horticulture) now drive much of agri growth.\n\n*Source: local APPSC GK PDF — Indian Agriculture (India's Position in World Agriculture Production).*",
       "source": "local APPSC GK PDF — Indian Agriculture (World production ranks)",
@@ -711,8 +711,8 @@
       "assertion": "Despite record foodgrain output, a large share of Indians remains undernourished.",
       "reason": "High production does not automatically ensure economic and physical access to a balanced, nutritious diet.",
       "options": [
-        "Both A and R are true, and R is the correct explanation of A",
-        "Both A and R are true, but R is NOT the correct explanation of A",
+        "Both A and R are true, and R explains A",
+        "Both A and R are true, but R does not explain A",
         "A is true, but R is false",
         "A is false, but R is true"
       ],
@@ -777,12 +777,12 @@
         ]
       },
       "options": [
-        "A-2, B-3, C-1, D-4",
+        "A-3, B-2, C-4, D-1",
         "A-1, B-3, C-2, D-4",
         "A-2, B-4, C-1, D-3",
-        "A-3, B-2, C-4, D-1"
+        "A-2, B-3, C-1, D-4"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "econ-agriculture-note-food-security-ap",
       "explanation": "**Polavaram** is the multipurpose national project on the Godavari (A-2); **Handri-Neeva** is the longest canal taking Srisailam water to Rayalaseema (B-3); **Pattiseema** lifts Godavari water into the Polavaram Right Main Canal, interlinking it with the Krishna (C-1); **Veligonda** tunnels Srisailam water to fluoride/drought tracts of Prakasam, Nellore and Kadapa (D-4).\n\n**Why not the others**\n- A-1, B-3, C-2, D-4 — swaps Polavaram (a national project) with Pattiseema (the lift/interlink).\n- A-2, B-4, C-1, D-3 — swaps Handri-Neeva with Veligonda.\n- A-3, B-2, C-4, D-1 — misplaces nearly every pair.\n\n**Key facts**\n| Project | River / feature |\n|---|---|\n| Polavaram | Godavari; National Project status |\n| Handri-Neeva & Galeru-Nagari (GNSS) | Srisailam (Krishna) water to Rayalaseema |\n| Pattiseema | Godavari-Krishna interlink |\n| Veligonda | Srisailam water via Nallamala tunnels |\n\n*Source: AP Water Resources Dept.; Wikipedia (Polavaram, Handri-Neeva, Pattiseema, Veligonda) — verified online.*",
       "source": "AP Water Resources Department; Wikipedia (project pages) — verified online",
@@ -805,17 +805,17 @@
       "statements": [
         "It is a multipurpose irrigation project on the Godavari river.",
         "It has been accorded National Project status by the Central Government.",
-        "Its Right Main Canal is designed to link Godavari waters towards the Krishna basin."
+        "Its Left Main Canal is designed to link Godavari waters towards the Krishna basin."
       ],
       "options": [
+        "1 only",
+        "2 only",
         "1 and 2 only",
-        "2 and 3 only",
-        "1 and 3 only",
         "1, 2 and 3"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "econ-agriculture-note-food-security-ap",
-      "explanation": "All three are correct. Polavaram is a **multipurpose project on the Godavari**, holds **National Project status**, and its **Right Main Canal carries Godavari water towards the Krishna basin** (aided by the Pattiseema lift).\n\n**Why not the others**\n- 1 and 2 only — the Right Main Canal-Krishna link (statement 3) is also correct.\n- 2 and 3 only — the Godavari multipurpose fact (statement 1) is correct.\n- 1 and 3 only — the National Project status (statement 2) is correct.\n\n**Key facts**\n- Located in the Eluru/Polavaram district region of AP.\n- Provides irrigation, drinking water and hydropower; a keystone of AP's water grid.\n\n*Source: Polavaram Project — Wikipedia; AP Water Resources Dept. (verified online).*",
+      "explanation": "Statements 1 and 2 are correct: **Polavaram** is a multipurpose project on the **Godavari** with National Project status. Statement 3 names the wrong canal: the **Right** Main Canal links Godavari water to the **Krishna** basin; the Left Main Canal runs north-east towards Visakhapatnam.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (it is the Right Main Canal that carries Godavari water to the Krishna; the Left Main Canal runs towards Visakhapatnam).\n\n**Key facts**\n- Located in the Eluru/Polavaram district region of AP.\n- Provides irrigation, drinking water and hydropower; a keystone of AP's water grid.\n\n*Source: Polavaram Project — Wikipedia; AP Water Resources Dept. (verified online).*",
       "source": "Polavaram Project — Wikipedia; AP Water Resources Department (verified online)",
       "verified": true,
       "covers": [
@@ -870,11 +870,11 @@
       ],
       "options": [
         "2 and 3 only",
-        "1 and 2 only",
+        "1, 2 and 3",
         "1 and 3 only",
-        "1, 2 and 3"
+        "1 and 2 only"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "econ-agriculture-note-food-security-ap",
       "explanation": "Statements 1 and 2 are correct: **Rythu Bharosa Kendras (RBKs)** are AP's village-level agri one-stop centres, and **Annadata Sukhibhava** is an AP state income-support scheme topping up PM-KISAN. Statement 3 is wrong — these are Andhra Pradesh state initiatives, not uniform Union schemes.\n\n**Why not the others**\n- 2 and 3 only — statement 3 (Union-scheme claim) is false.\n- 1 and 3 only — same error on statement 3.\n- 1, 2 and 3 — statement 3 is incorrect.\n\n**Key facts**\n- RBKs (launched 2020) integrate input supply, e-crop booking and extension at the village level.\n- Annadata Sukhibhava was announced (under the 'Super Six') to provide about ₹20,000/year per farmer family, inclusive of the central PM-KISAN ₹6,000.\n\n*Source: Government of Andhra Pradesh — Agriculture Dept. / 'Super Six' scheme announcements (verified online).*",
       "source": "Government of Andhra Pradesh — Agriculture Department; 'Super Six' announcements",
@@ -896,18 +896,18 @@
       "question": "Consider the following statements about the 'Rainbow Revolution' in Indian agriculture:\nWhich of the statements is/are correct?",
       "statements": [
         "It denotes the integrated, holistic development of agriculture together with all its allied 'colour' revolutions.",
-        "It encompasses the Green (foodgrains), White (milk), Blue (fisheries) and Yellow (oilseeds) revolutions, among others.",
+        "It encompasses the Green (foodgrains), White (fisheries), Blue (milk) and Yellow (oilseeds) revolutions, among others.",
         "Its aim is to make agriculture more productive, profitable and sustainable as a whole."
       ],
       "options": [
-        "1 and 2 only",
-        "2 and 3 only",
-        "1, 2 and 3",
-        "1 and 3 only"
+        "1 only",
+        "3 only",
+        "1 and 3 only",
+        "1, 2 and 3"
       ],
       "answerIndex": 2,
       "noteRef": "econ-agriculture-note-revolutions",
-      "explanation": "All three are correct. The **Rainbow Revolution** is the umbrella concept of **integrated, holistic agricultural growth** that ties together the individual colour revolutions and aims at a productive, profitable and sustainable farm sector.\n\n**Why not the others**\n- 1 and 2 only — the productivity/sustainability objective (statement 3) is also correct.\n- 2 and 3 only — the 'integrated umbrella' definition (statement 1) is correct.\n- 1 and 3 only — the list of constituent revolutions (statement 2) is correct.\n\n**Key facts**\n- Colour revolutions: Green (foodgrains), White (milk), Blue (fisheries), Yellow (oilseeds), Golden (horticulture/honey), Pink (meat/prawn), Silver (eggs).\n- The Rainbow Revolution aligns with the goal of doubling farmers' income through allied-sector diversification.\n\n*Source: NCERT/ICAR — agricultural revolutions; local APPSC GK PDF — Indian Agriculture.*",
+      "explanation": "Statements 1 and 3 are correct: the **Rainbow** Revolution denotes integrated development of agriculture with all its 'colour' revolutions, to make farming productive, profitable and sustainable. Statement 2 swaps two colours: **White** is milk and **Blue** is fisheries (Green = foodgrains, **Yellow** = oilseeds).\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (White is milk and Blue is fisheries — the two are swapped).\n\n**Key facts**\n- Colour revolutions: Green (foodgrains), White (milk), Blue (fisheries), Yellow (oilseeds), Golden (horticulture/honey), Pink (meat/prawn), Silver (eggs).\n- The Rainbow Revolution aligns with the goal of doubling farmers' income through allied-sector diversification.\n\n*Source: NCERT/ICAR — agricultural revolutions; local APPSC GK PDF — Indian Agriculture.*",
       "source": "NCERT/ICAR — agricultural revolutions; local APPSC GK PDF — Indian Agriculture",
       "verified": true,
       "covers": [
@@ -989,17 +989,17 @@
       "statements": [
         "It is a farmer income-support (investment support) scheme.",
         "It was allocated about ₹6,600 crore in the 2026-27 State Budget.",
-        "It is designed to work alongside the Centre's PM-KISAN support."
+        "It is designed to replace the Centre's PM-KISAN support."
       ],
       "options": [
+        "1 only",
+        "2 only",
         "1 and 2 only",
-        "2 and 3 only",
-        "1, 2 and 3",
-        "1 and 3 only"
+        "1, 2 and 3"
       ],
       "answerIndex": 2,
       "noteRef": "econ-agriculture-note-food-security-ap",
-      "explanation": "All three are correct: Annadata Sukhibhava is a farmer income/investment-support scheme, allocated ~₹6,600 cr in 2026-27, structured to top up the Centre's PM-KISAN support.\n\n**Why not the others**\n- 1 and 2 only — the PM-KISAN complementarity (statement 3) is also correct.\n- 2 and 3 only — the income-support nature (statement 1) is correct.\n- 1 and 3 only — the ₹6,600 cr allocation (statement 2) is correct.\n\n**Key facts**\n- Annadata Sukhibhava: farmer income support; 2026-27 allocation ~₹6,600 cr.\n- Delivered as a state top-up to PM-KISAN for eligible farmer families.\n\n*Source: PRS Legislative Research — AP Budget Analysis 2026-27.*",
+      "explanation": "Statements 1 and 2 are correct: Annadata Sukhibhava is a farmer investment-support scheme allocated about **₹6,600** crore in the 2026-27 Budget. Statement 3 is incorrect: it does not replace PM-KISAN — the State's ₹14,000 is paid **alongside** the Centre's ₹6,000 to make ₹20,000 a year.\n\n**Why not the others**\n- '1 only' — It leaves out statement 2, which is correct.\n- '2 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 3 is incorrect (it works alongside PM-KISAN — ₹6,000 central plus ₹14,000 State).\n\n**Key facts**\n- Annadata Sukhibhava: farmer income support; 2026-27 allocation ~₹6,600 cr.\n- Delivered as a state top-up to PM-KISAN for eligible farmer families.\n\n*Source: PRS Legislative Research — AP Budget Analysis 2026-27.*",
       "source": "PRS Legislative Research — AP Budget Analysis 2026-27",
       "verified": true,
       "covers": [
@@ -1102,8 +1102,8 @@
       "question": "In India, markets in agricultural produce are primarily regulated under",
       "options": [
         "a central law passed by Parliament",
-        "the Agricultural Produce Market Committee (APMC) Acts enacted by the States",
-        "regulations issued by the Reserve Bank of India",
+        "State-level APMC Acts",
+        "regulations issued by the RBI",
         "the Essential Commodities Act alone"
       ],
       "answerIndex": 1,
@@ -1133,11 +1133,11 @@
       ],
       "options": [
         "1 and 2 only",
-        "2 and 3 only",
+        "1, 2 and 3",
         "1 and 3 only",
-        "1, 2 and 3"
+        "2 and 3 only"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "econ-agriculture-note-food-security-ap",
       "explanation": "Statements 2 and 3 are correct. The NFSA makes the **eldest woman (≥18) the head of the household** for ration cards, and entitles **pregnant/lactating women to take-home rations** (and maternity benefit). Statement 1 is wrong — NFSA covers **up to 75% rural and 50% urban** population (about two-thirds), not only BPL.\n\n**Why not the others**\n- 1 and 2 only — statement 1 (BPL-only) is false.\n- 1 and 3 only — statement 1 is false.\n- 1, 2 and 3 — includes the incorrect BPL-only claim.\n\n**Key facts**\n- Priority households: 5 kg/person/month; AAY: 35 kg/household.\n- Eldest woman ≥18 = head; maternity benefit (₹6,000) + take-home ration (~600 kcal/day, ICDS norm).\n\n*Source: National Food Security Act, 2013.*",
       "source": "National Food Security Act, 2013",
@@ -1159,7 +1159,7 @@
       "question": "Which of the following statements about the Minimum Support Price (MSP) regime is correct?",
       "options": [
         "MSP was first announced for rice in 1980-81",
-        "MSP was first announced for wheat (1966-67), and the CACP began in 1965 as the Agricultural Prices Commission (renamed CACP in 1985)",
+        "MSP was first announced for wheat in 1966-67",
         "The CACP fixes and legally guarantees the MSP",
         "MSP is announced for exactly 11 crops"
       ],
@@ -1355,11 +1355,11 @@
       },
       "options": [
         "A-3, B-4, C-1, D-2",
-        "A-4, B-3, C-1, D-2",
+        "A-2, B-3, C-1, D-4",
         "A-4, B-1, C-2, D-3",
-        "A-2, B-3, C-1, D-4"
+        "A-4, B-3, C-1, D-2"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "**Sericulture** = silk from silkworms; **Moriculture** = mulberry (silkworm food); **Viticulture** = grapes; **Vermiculture** = earthworms.\n\n**Why not the others**\n- A-3, B-4, C-1, D-2 — pairs Sericulture with Growing mulberry plants; Sericulture actually goes with Silk production by rearing silkworms\n- A-4, B-1, C-2, D-3 — pairs Moriculture with Grapes (especially for wine); Moriculture actually goes with Growing mulberry plants\n- A-2, B-3, C-1, D-4 — pairs Sericulture with Rearing earthworms for compost; Sericulture actually goes with Silk production by rearing silkworms\n\n**Key facts**\n- Apiculture = bees; Pisciculture = fish.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
@@ -1473,17 +1473,17 @@
       "question": "Consider the following statements about farm output in 2025-26:\nWhich of the statements given above is/are correct?",
       "statements": [
         "Foodgrain output (third advance estimates) was a record 376.56 million tonnes.",
-        "Horticulture output, at about 377.8 million tonnes, was larger than foodgrain output.",
+        "Horticulture output, at about 377.8 million tonnes, was smaller than foodgrain output.",
         "In January 2026 India became the world's largest rice producer, overtaking China."
       ],
       "options": [
-        "1, 2 and 3",
         "1 only",
-        "1 and 2 only",
-        "3 only"
+        "3 only",
+        "1 and 3 only",
+        "1, 2 and 3"
       ],
-      "answerIndex": 0,
-      "explanation": "All three are correct: foodgrains **376.56** mt, horticulture **377.8** mt, and India the **largest rice producer**, ahead of **China** (Jan 2026).\n\n**Why not the others**\n- 1 only — leaves out statement 2 and 3, which are correct\n- 1 and 2 only — leaves out statement 3, which is correct\n- 3 only — leaves out statement 1 and 2, which are correct\n\n**Key facts**\n- Wheat about 121 million tonnes; India is also the largest rice exporter.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1 and 3 are correct: foodgrain output was a record **376.56** million tonnes, and in January 2026 India became the **largest rice producer**, overtaking **China**. Statement 2 is incorrect: horticulture at about **377.8** mt was **larger** than foodgrain output, not smaller.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (at 377.8 mt horticulture exceeded foodgrains (376.56 mt)).\n\n**Key facts**\n- Wheat about 121 million tonnes; India is also the largest rice exporter.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -1655,18 +1655,18 @@
       "subtopicId": "econ-agriculture",
       "question": "Consider the following statements about the Green Revolution:\nWhich of the statements given above is/are correct?",
       "statements": [
-        "Norman Borlaug, who developed dwarf HYV wheat, won the Nobel Peace Prize in 1970.",
+        "Norman Borlaug, who developed dwarf HYV wheat, won the Nobel Prize in Chemistry in 1970.",
         "IR-8 was a high-yielding rice variety from IRRI.",
         "Its drawbacks included groundwater depletion, soil-nutrient loss and regional imbalance."
       ],
       "options": [
-        "1 only",
+        "2 only",
+        "3 only",
         "2 and 3 only",
-        "1, 2 and 3",
-        "3 only"
+        "1, 2 and 3"
       ],
       "answerIndex": 2,
-      "explanation": "All three are correct: **Borlaug** — **Nobel** Peace Prize **1970**; **IR-8** rice from IRRI; and **groundwater** and soil depletion with regional imbalance.\n\n**Why not the others**\n- 1 only — leaves out statement 2 and 3, which are correct\n- 2 and 3 only — leaves out statement 1, which is correct\n- 3 only — leaves out statement 1 and 2, which are correct\n\n**Key facts**\n- Swaminathan led it in India.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "explanation": "Statements 2 and 3 are correct: **IR-8** was IRRI's high-yielding rice variety, and the Green Revolution's drawbacks included **groundwater** depletion, soil-nutrient loss and regional imbalance. Statement 1 is incorrect: Borlaug, father of dwarf **HYV** wheat, won the **Nobel** **Peace** Prize in **1970**, not the Chemistry prize.\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (Borlaug's 1970 Nobel was the Peace Prize).\n\n**Key facts**\n- Swaminathan led it in India.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -1778,17 +1778,17 @@
       "question": "Consider the following pairs (Revolution — Product):\nWhich of the pairs given above is/are correctly matched?",
       "statements": [
         "Pink Revolution — prawns and meat processing",
-        "Silver Revolution — eggs and poultry",
+        "Silver Revolution — cotton",
         "Yellow Revolution — oilseeds, linked to Sam Pitroda"
       ],
       "options": [
-        "1 and 2 only",
+        "1 only",
         "3 only",
-        "1, 2 and 3",
-        "2 and 3 only"
+        "1 and 3 only",
+        "1, 2 and 3"
       ],
       "answerIndex": 2,
-      "explanation": "All three pairs are correct: **Pink** = prawns/meat, **Silver** = eggs and poultry, **Yellow** = oilseeds (**Pitroda**, Technology Mission on Oilseeds, 1986).\n\n**Why not the others**\n- 1 and 2 only — leaves out statement 3, which is correct\n- 3 only — leaves out statement 1 and 2, which are correct\n- 2 and 3 only — leaves out statement 1, which is correct\n\n**Key facts**\n- Golden Fibre = jute; Silver Fibre = cotton.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "explanation": "Pairs 1 and 3 are correctly matched: **Pink** — prawns and meat processing; Yellow — oilseeds (associated with Sam **Pitroda**'s Technology Mission). Pair 2 is wrong: the **Silver** Revolution is eggs and poultry; cotton belongs to the 'Silver Fibre' revolution.\n\n**Why not the others**\n- '1 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 1, which is correct.\n- '1, 2 and 3' — Statement 2 is incorrect (Silver Revolution is eggs/poultry; cotton is the 'Silver Fibre' revolution).\n\n**Key facts**\n- Golden Fibre = jute; Silver Fibre = cotton.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -1847,11 +1847,11 @@
       },
       "options": [
         "A-2, B-4, C-3, D-1",
-        "A-2, B-4, C-1, D-3",
+        "A-1, B-4, C-3, D-2",
         "A-4, B-2, C-1, D-3",
-        "A-1, B-4, C-3, D-2"
+        "A-2, B-4, C-1, D-3"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "**Evergreen** = Swaminathan, sustainable output; **Rainbow** = **2000**, 4% growth; **Operation Greens** = **TOP**; **Sweet** = **Beekeeping** and Honey Mission.\n\n**Why not the others**\n- A-2, B-4, C-3, D-1 — pairs Operation Greens with National Beekeeping and Honey Mission; Operation Greens actually goes with Tomato, onion and potato (TOP)\n- A-4, B-2, C-1, D-3 — pairs Evergreen Revolution with Announced in 2000 for 4% farm growth; Evergreen Revolution actually goes with Swaminathan's output growth without ecological harm\n- A-1, B-4, C-3, D-2 — pairs Evergreen Revolution with Tomato, onion and potato (TOP); Evergreen Revolution actually goes with Swaminathan's output growth without ecological harm\n\n**Key facts**\n- Tricolour = Saffron (energy), White, Blue.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
@@ -1899,19 +1899,19 @@
       "subtopicId": "econ-agriculture",
       "question": "Consider the following statements about land reforms:\nWhich of the statements given above is/are correct?",
       "statements": [
-        "The Bhoodan Movement was started by Acharya Vinoba Bhave in 1951.",
+        "The Bhoodan Movement was started by Acharya Vinoba Bhave in 1958.",
         "V. Ramachandra Reddy made the first land donation under Bhoodan.",
         "The Kumarappa Committee (1949) recommended 'land to the tiller'.",
         "As per the Agriculture Census 2015-16 the average operational holding was about 1.08 hectare."
       ],
       "options": [
-        "1 and 2 only",
-        "1 and 4 only",
-        "1, 2, 3 and 4",
-        "3 and 4 only"
+        "2 and 3 only",
+        "2 and 4 only",
+        "2, 3 and 4 only",
+        "1, 2, 3 and 4"
       ],
       "answerIndex": 2,
-      "explanation": "All four are correct: **Bhoodan** — **Vinoba** Bhave, 1951; first donor **Ramachandra Reddy** (Pochampally); **Kumarappa** Committee 1949; average holding **1.08** ha.\n\n**Why not the others**\n- 1 and 2 only — leaves out statement 3 and 4, which are correct\n- 1 and 4 only — leaves out statement 2 and 3, which are correct\n- 3 and 4 only — leaves out statement 1 and 2, which are correct\n\n**Key facts**\n- Small and marginal holdings are about 86% of all holdings.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "explanation": "Statements 2, 3 and 4 are correct: V. **Ramachandra Reddy** made the first land gift; the **Kumarappa** Committee (1949) urged 'land to the tiller'; and the Agriculture Census 2015-16 put the average holding at about **1.08** ha. Statement 1 is incorrect on the year: **Vinoba** Bhave began **Bhoodan** in **1951** at Pochampally.\n\n**Why not the others**\n- '2 and 3 only' — It leaves out statement 4, which is correct.\n- '2 and 4 only' — It leaves out statement 3, which is correct.\n- '1, 2, 3 and 4' — Statement 1 is incorrect (Bhoodan began in 1951 at Pochampally (Telangana)).\n\n**Key facts**\n- Small and marginal holdings are about 86% of all holdings.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -1930,12 +1930,12 @@
       "question": "The National Land Records Modernisation Programme (NLRMP), now the DILRMP, was formed in 2008 by merging",
       "options": [
         "the Bhoodan and Gramdan movements",
-        "the IRDP and the NREP",
-        "the Lead Bank Scheme and the Service Area Approach",
-        "Computerisation of Land Records (CLR) and Strengthening of Revenue Administration and Updating of Land Records (SRA&ULR)"
+        "the IRDP and the NREP programmes",
+        "the Lead Bank Scheme and Service Area Approach",
+        "Computerisation of Land Records and SRA&ULR"
       ],
       "answerIndex": 3,
-      "explanation": "**NLRMP** (2008) merged **CLR** and **SRA&ULR**; renamed **DILRMP**, it aims at conclusive land titles.\n\n**Why not the others**\n- the Bhoodan and Gramdan movements — These were voluntary land-gift movements of the 1950s.\n- the IRDP and the NREP — These were anti-poverty schemes.\n- the Lead Bank Scheme and the Service Area Approach — These are banking schemes.\n\n**Key facts**\n- Digitised maps reduce land disputes.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "explanation": "**NLRMP** (2008) merged **CLR** and **SRA&ULR**; renamed **DILRMP**, it aims at conclusive land titles.\n\n**Why not the others**\n- the Bhoodan and Gramdan movements — These were voluntary land-gift movements of the 1950s.\n- the IRDP and the NREP programmes — These were anti-poverty schemes.\n- the Lead Bank Scheme and Service Area Approach — These are banking schemes.\n\n**Key facts**\n- Digitised maps reduce land disputes.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -1956,16 +1956,16 @@
         "The MSP of common paddy for Kharif Marketing Season 2026-27 is ₹2,441 per quintal.",
         "The MSP of wheat for Rabi Marketing Season 2027-28 is ₹2,610 per quintal.",
         "The Fair and Remunerative Price (FRP) of sugarcane for 2026-27 is ₹365 per quintal.",
-        "MSP in India was introduced in 1965-66."
+        "MSP in India was introduced in 1975-76."
       ],
       "options": [
-        "2 and 3 only",
+        "1 and 2 only",
+        "1 and 3 only",
         "1, 2 and 3 only",
-        "3 and 4 only",
         "1, 2, 3 and 4"
       ],
-      "answerIndex": 3,
-      "explanation": "All four are correct: paddy **₹2,441**, wheat **₹2,610** (+₹25), sugarcane FRP **₹365** (+₹10), and MSP since **1965-66**.\n\n**Why not the others**\n- 2 and 3 only — leaves out statement 1 and 4, which are correct\n- 1, 2 and 3 only — leaves out statement 4, which is correct\n- 3 and 4 only — leaves out statement 1 and 2, which are correct\n\n**Key facts**\n- Grade A paddy ₹2,461; safflower got the biggest rabi rise (₹675).\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 2 and 3 are correct: the **Kharif** 2026-27 MSP for common paddy is **₹2,441**/quintal; the **Rabi** 2027-28 wheat MSP is **₹2,610**; and the 2026-27 sugarcane FRP is **₹365**/quintal. Statement 4 is incorrect: MSP was introduced in **1965-66**, not 1975-76.\n\n**Why not the others**\n- '1 and 2 only' — It leaves out statement 3, which is correct.\n- '1 and 3 only' — It leaves out statement 2, which is correct.\n- '1, 2, 3 and 4' — Statement 4 is incorrect (MSP was introduced in 1965-66 (first announced for wheat, 1966-67)).\n\n**Key facts**\n- Grade A paddy ₹2,461; safflower got the biggest rabi rise (₹675).\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2098,17 +2098,17 @@
       "statements": [
         "PM-AASHA (2018) comprises the Price Support Scheme (PSS), the Price Deficiency Payment Scheme (PDPS) and a pilot private procurement scheme (PPPS).",
         "Under the Price Deficiency Payment Scheme the farmer is paid the difference between MSP and the market price.",
-        "The Central Issue Price (CIP) is the subsidised price at which grain is issued under the PDS.",
+        "The Central Issue Price (CIP) is the price at which the FCI procures grain from farmers.",
         "While fixing MSP the CACP also considers the terms of trade and inter-crop price parity."
       ],
       "options": [
-        "1, 3 and 4 only",
-        "1, 2, 3 and 4",
-        "2 and 3 only",
-        "1 and 2 only"
+        "1 and 2 only",
+        "1 and 4 only",
+        "1, 2 and 4 only",
+        "1, 2, 3 and 4"
       ],
-      "answerIndex": 1,
-      "explanation": "All four are correct: **PM-AASHA** = PSS + **PDPS** + PPPS; **Price Deficiency** payments cover the MSP-market gap; **Central Issue Price** is the PDS issue price; CACP weighs **terms of trade** and inter-crop **parity**.\n\n**Why not the others**\n- 1, 3 and 4 only — leaves out statement 2, which is correct\n- 2 and 3 only — leaves out statement 1 and 4, which are correct\n- 1 and 2 only — leaves out statement 3 and 4, which are correct\n\n**Key facts**\n- Procurement price is the actual buying price.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 2 and 4 are correct: **PM-AASHA** (2018) comprises PSS, **PDPS** and PPPS; under the **Price Deficiency** Payment Scheme the farmer gets the MSP-market price gap; and the **CACP** weighs **terms of trade** and inter-crop **parity**. Statement 3 is incorrect: the **Central Issue Price** is the subsidised price at which grain is **issued** under the PDS; the FCI procures at MSP.\n\n**Why not the others**\n- '1 and 2 only' — It leaves out statement 4, which is correct.\n- '1 and 4 only' — It leaves out statement 2, which is correct.\n- '1, 2, 3 and 4' — Statement 3 is incorrect (CIP is the subsidised price at which grain is issued under the PDS; procurement is at MSP).\n\n**Key facts**\n- Procurement price is the actual buying price.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2129,7 +2129,7 @@
         "MSP is fixed by the Reserve Bank of India",
         "MSP applies only to horticultural crops",
         "MSP is announced after the harvest is sold",
-        "Procurement is concentrated in a few states such as Punjab, Haryana and Madhya Pradesh, and it encourages water-intensive paddy and wheat"
+        "Procurement is skewed to Punjab, Haryana and a few states"
       ],
       "answerIndex": 3,
       "explanation": "MSP buying is skewed to **Punjab, Haryana** and MP and favours water-guzzling paddy and wheat, depleting groundwater.\n\n**Why not the others**\n- MSP is fixed by the Reserve Bank of India — The CACP recommends and the CCEA approves MSP.\n- MSP applies only to horticultural crops — Horticulture is largely outside MSP.\n- MSP is announced after the harvest is sold — MSP is announced before sowing.\n\n**Key facts**\n- Shanta Kumar found only about 6% of farmers sell at MSP.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
@@ -2215,18 +2215,18 @@
       "question": "Consider the following statements about agricultural marketing:\nWhich of the statements given above is/are correct?",
       "statements": [
         "e-NAM was launched on 14 April 2016 with SFAC as the lead agency.",
-        "The Model APLM Act (2017) and the Model Contract Farming Act (2018) are templates for the States.",
+        "The Model APLM Act (2017) and the Model Contract Farming Act (2018) are Central laws binding on the States.",
         "The three farm laws of 2020 were repealed by the Farm Laws Repeal Act, 2021.",
         "The Essential Commodities Act was enacted in 1955."
       ],
       "options": [
+        "1 and 3 only",
         "1 and 4 only",
-        "3 and 4 only",
-        "1, 2 and 3 only",
+        "1, 3 and 4 only",
         "1, 2, 3 and 4"
       ],
-      "answerIndex": 3,
-      "explanation": "All four are correct: **e-NAM** (14 April 2016, **SFAC**); **APLM** 2017 and **Contract Farming** 2018 models; farm laws **Repeal** Act **2021**; **Essential Commodities Act** **1955**.\n\n**Why not the others**\n- 1 and 4 only — leaves out statement 2 and 3, which are correct\n- 3 and 4 only — leaves out statement 1 and 2, which are correct\n- 1, 2 and 3 only — leaves out statement 4, which is correct\n\n**Key facts**\n- Markets remain under State APMC Acts.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 3 and 4 are correct: **e-NAM** was launched on 14 April 2016 with **SFAC** as lead agency; the 2020 farm laws were withdrawn by the Farm Laws **Repeal** Act, **2021**; and the **Essential Commodities Act** dates from **1955**. Statement 2 is incorrect: the Model **APLM** and **Contract Farming** Acts are only templates for adoption by the States — agricultural marketing is a State subject.\n\n**Why not the others**\n- '1 and 3 only' — It leaves out statement 4, which is correct.\n- '1 and 4 only' — It leaves out statement 3, which is correct.\n- '1, 2, 3 and 4' — Statement 2 is incorrect (they are model templates; agricultural marketing is a State subject).\n\n**Key facts**\n- Markets remain under State APMC Acts.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2245,16 +2245,16 @@
       "question": "Consider the following statements about the National Agriculture Market (e-NAM):\nWhich of the statements given above is/are correct?",
       "statements": [
         "e-NAM is a pan-India electronic trading portal.",
-        "It gives farmers access to a nationwide market, with prices commensurate with quality."
+        "It is restricted to trade within a single State's regulated mandis."
       ],
       "options": [
-        "Both 1 and 2",
         "1 only",
         "2 only",
+        "Both 1 and 2",
         "Neither 1 nor 2"
       ],
       "answerIndex": 0,
-      "explanation": "Both are correct (UPSC 2017): **e-NAM** is a pan-India **electronic** portal linking APMC mandis.\n\n**Why not the others**\n- 1 only — leaves out statement 2, which is correct\n- 2 only — leaves out statement 1, which is correct\n- Neither 1 nor 2 — leaves out statement 1 and 2, which are correct\n\n**Key facts**\n- Launched 14 April 2016.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "explanation": "Only statement 1 is correct: **e-NAM** is a pan-India **electronic** trading portal. Statement 2 is incorrect: it links APMC mandis **across States**, giving farmers access to a nationwide market with quality-linked prices.\n\n**Why not the others**\n- '2 only' — Statement 2 is incorrect (e-NAM links mandis across States into a national market); it leaves out statement 1, which is correct.\n- 'Both 1 and 2' — Statement 2 is incorrect (e-NAM links mandis across States into a national market).\n- 'Neither 1 nor 2' — It leaves out statement 1, which is correct.\n\n**Key facts**\n- Launched 14 April 2016.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2274,17 +2274,17 @@
       "statements": [
         "The Protection of Plant Varieties and Farmers' Rights (PPV&FR) Act was passed in 2001.",
         "The National Seeds Policy, 2002 addresses the low seed replacement rate.",
-        "The Nutrient Based Subsidy (NBS) began in 2010 for phosphatic and potassic fertilisers; urea is excluded.",
+        "The Nutrient Based Subsidy (NBS) began in 2010 and covers urea as well as phosphatic and potassic fertilisers.",
         "Neem-coated urea was made 100% mandatory in 2015."
       ],
       "options": [
-        "1, 2 and 3 only",
-        "2, 3 and 4 only",
         "1 and 2 only",
+        "1 and 4 only",
+        "1, 2 and 4 only",
         "1, 2, 3 and 4"
       ],
-      "answerIndex": 3,
-      "explanation": "All four are correct: **PPV&FR** **2001**; Seeds Policy 2002 (**seed replacement rate**); **Nutrient Based Subsidy** **2010**; **neem-coated** urea 2015.\n\n**Why not the others**\n- 1, 2 and 3 only — leaves out statement 4, which is correct\n- 2, 3 and 4 only — leaves out statement 1, which is correct\n- 1 and 2 only — leaves out statement 3 and 4, which are correct\n\n**Key facts**\n- Seeds Act 1966; New Urea Policy 2015.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 2 and 4 are correct: the **PPV&FR** Act was passed in **2001**; the National Seeds Policy, 2002 tackles the low **seed replacement rate**; and **neem-coated** urea became 100% mandatory in 2015. Statement 3 is incorrect: the **Nutrient Based Subsidy** (**2010**) covers phosphatic and potassic fertilisers only — urea stays under a controlled price.\n\n**Why not the others**\n- '1 and 2 only' — It leaves out statement 4, which is correct.\n- '1 and 4 only' — It leaves out statement 2, which is correct.\n- '1, 2, 3 and 4' — Statement 3 is incorrect (urea is outside NBS; it has a statutorily controlled price).\n\n**Key facts**\n- Seeds Act 1966; New Urea Policy 2015.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2367,18 +2367,18 @@
       "question": "Consider the following statements:\nWhich of the statements given above is/are correct?",
       "statements": [
         "The National Mission on Natural Farming was approved in November 2024 with an outlay of ₹2,481 crore.",
-        "Sikkim was declared India's first fully organic state in 2016.",
+        "Sikkim was declared India's first fully organic state in 2010.",
         "PMKSY's slogans are 'Har Khet Ko Pani' and 'Per Drop More Crop'.",
         "The Soil Health Card scheme was launched at Suratgarh in Rajasthan."
       ],
       "options": [
-        "1, 2, 3 and 4",
+        "1 and 3 only",
         "1 and 4 only",
-        "1 and 2 only",
-        "1, 2 and 3 only"
+        "1, 3 and 4 only",
+        "1, 2, 3 and 4"
       ],
-      "answerIndex": 0,
-      "explanation": "All four are correct: NMNF **₹2,481** crore; **Sikkim** 2016; PMKSY **Per Drop More Crop**; Soil Health Card launched at **Suratgarh** (19 Feb 2015).\n\n**Why not the others**\n- 1 and 4 only — leaves out statement 2 and 3, which are correct\n- 1 and 2 only — leaves out statement 3 and 4, which are correct\n- 1, 2 and 3 only — leaves out statement 4, which is correct\n\n**Key facts**\n- BPKP = natural farming; PKVY = organic clusters.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 3 and 4 are correct: the National Mission on Natural Farming (Nov 2024) has an outlay of **₹2,481** crore; PMKSY's slogans are 'Har Khet Ko Pani' and '**Per Drop More Crop**'; and the **Soil Health Card** scheme was launched at **Suratgarh**, Rajasthan (2015). Statement 2 is incorrect on the year: **Sikkim** was declared fully organic in **2016**, not 2010.\n\n**Why not the others**\n- '1 and 3 only' — It leaves out statement 4, which is correct.\n- '1 and 4 only' — It leaves out statement 3, which is correct.\n- '1, 2, 3 and 4' — Statement 2 is incorrect (Sikkim was declared fully organic in January 2016).\n\n**Key facts**\n- BPKP = natural farming; PKVY = organic clusters.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2490,18 +2490,18 @@
       "subtopicId": "econ-agriculture",
       "question": "Under the Kisan Credit Card scheme, short-term credit can be provided for which of the following?\nSelect the correct answer using the codes given below:",
       "statements": [
-        "Working capital for maintenance of farm assets",
+        "Purchase of tractors and combine harvesters",
         "Post-harvest expenses",
         "Consumption requirements of farm households"
       ],
       "options": [
-        "2 and 3 only",
+        "2 only",
         "3 only",
-        "1, 2 and 3",
-        "1 and 2 only"
+        "2 and 3 only",
+        "1, 2 and 3"
       ],
       "answerIndex": 2,
-      "explanation": "All three (UPSC 2020): working capital for farm-asset maintenance, **post-harvest expenses** and **consumption** needs.\n\n**Why not the others**\n- 2 and 3 only — leaves out statement 1, which is correct\n- 3 only — leaves out statement 1 and 2, which are correct\n- 1 and 2 only — leaves out statement 3, which is correct\n\n**Key facts**\n- KCC was extended to animal husbandry and fisheries in 2018-19.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "explanation": "Items 2 and 3 qualify: KCC short-term credit covers **post-harvest expenses** and the **consumption** requirements of farm households (besides crop cultivation and working capital for farm assets). Item 1 does not: buying tractors and combine harvesters needs **term** (investment) credit, not KCC short-term credit (UPSC 2020).\n\n**Why not the others**\n- '2 only' — It leaves out statement 3, which is correct.\n- '3 only' — It leaves out statement 2, which is correct.\n- '1, 2 and 3' — Statement 1 is incorrect (machinery purchase is term (investment) credit, not KCC short-term credit).\n\n**Key facts**\n- KCC was extended to animal husbandry and fisheries in 2018-19.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2582,16 +2582,16 @@
         "It was launched on 24 February 2019 at Gorakhpur.",
         "Its 23rd instalment was released in June 2026.",
         "In July 2026 the Cabinet approved its continuation from 2026-27 to 2030-31 with ₹3.15 lakh crore.",
-        "PM Kisan Maan Dhan, a separate scheme, gives a pension of ₹3,000 a month after age 60."
+        "PM Kisan Maan Dhan, a separate scheme, gives a pension of ₹3,000 a month after age 65."
       ],
       "options": [
-        "1, 3 and 4 only",
-        "1, 2, 3 and 4",
+        "1 and 2 only",
+        "1 and 3 only",
         "1, 2 and 3 only",
-        "1 and 2 only"
+        "1, 2, 3 and 4"
       ],
-      "answerIndex": 1,
-      "explanation": "All four are correct: **Gorakhpur** launch; **23rd** instalment June 2026; extension with **3.15 lakh crore**; **Maan Dhan** pension **3,000**.\n\n**Why not the others**\n- 1, 3 and 4 only — leaves out statement 2, which is correct\n- 1, 2 and 3 only — leaves out statement 4, which is correct\n- 1 and 2 only — leaves out statement 3 and 4, which are correct\n\n**Key facts**\n- PM-KISAN gives ₹6,000 a year in three instalments.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 2 and 3 are correct: PM-KISAN was launched on 24 February 2019 at **Gorakhpur**; the **23rd** instalment came in June 2026; and in July 2026 the Cabinet approved continuation to 2030-31 with **₹3.15 lakh crore**. Statement 4 is incorrect: PM Kisan **Maan Dhan** pays **₹3,000** a month from age **60**, not 65.\n\n**Why not the others**\n- '1 and 2 only' — It leaves out statement 3, which is correct.\n- '1 and 3 only' — It leaves out statement 2, which is correct.\n- '1, 2, 3 and 4' — Statement 4 is incorrect (the Maan Dhan pension starts at age 60).\n\n**Key facts**\n- PM-KISAN gives ₹6,000 a year in three instalments.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2700,16 +2700,16 @@
         "The Revamped PDS was launched in 1992.",
         "The Targeted PDS was introduced in 1997.",
         "The Antyodaya Anna Yojana began in 2000.",
-        "Under NFSA, before free grain, prices were ₹3 per kg for rice, ₹2 for wheat and ₹1 for millets."
+        "Under NFSA, before free grain, prices were ₹3 per kg for wheat, ₹2 for rice and ₹1 for millets."
       ],
       "options": [
-        "2, 3 and 4 only",
         "1 and 2 only",
+        "1 and 3 only",
         "1, 2 and 3 only",
         "1, 2, 3 and 4"
       ],
-      "answerIndex": 3,
-      "explanation": "All four are correct: **Revamped** PDS **1992**, **Targeted** PDS **1997**, **Antyodaya** **2000**, NFSA prices **₹3**/₹2/**₹1**.\n\n**Why not the others**\n- 2, 3 and 4 only — leaves out statement 1, which is correct\n- 1 and 2 only — leaves out statement 3 and 4, which are correct\n- 1, 2 and 3 only — leaves out statement 4, which is correct\n\n**Key facts**\n- NFSA enacted 2013.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 2 and 3 are correct: the **Revamped** PDS came in **1992**, the **Targeted** PDS in **1997** and **Antyodaya** Anna Yojana in **2000**. Statement 4 swaps the prices: under NFSA rice was **₹3**/kg, wheat ₹2 and millets **₹1**.\n\n**Why not the others**\n- '1 and 2 only' — It leaves out statement 3, which is correct.\n- '1 and 3 only' — It leaves out statement 2, which is correct.\n- '1, 2, 3 and 4' — Statement 4 is incorrect (rice was ₹3 and wheat ₹2 — the two are swapped).\n\n**Key facts**\n- NFSA enacted 2013.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2759,17 +2759,17 @@
       "statements": [
         "NFHS-5 found 35.5% of under-five children stunted.",
         "About 195 million Indians are undernourished (FAO).",
-        "ICDS began in 1975, and the Mid-Day Meal became PM POSHAN in 2021.",
+        "ICDS began in 1985, and the Mid-Day Meal became PM POSHAN in 2021.",
         "The FCI holds the central buffer stock and procures at MSP."
       ],
       "options": [
-        "2 and 3 only",
-        "1, 2, 3 and 4",
-        "2, 3 and 4 only",
-        "1 and 2 only"
+        "1 and 2 only",
+        "1 and 4 only",
+        "1, 2 and 4 only",
+        "1, 2, 3 and 4"
       ],
-      "answerIndex": 1,
-      "explanation": "All four are correct: **35.5%** stunting; **195 million** undernourished; **ICDS** 1975 and **PM POSHAN** 2021; **FCI** **buffer stock**.\n\n**Why not the others**\n- 2 and 3 only — leaves out statement 1 and 4, which are correct\n- 2, 3 and 4 only — leaves out statement 1, which is correct\n- 1 and 2 only — leaves out statement 3 and 4, which are correct\n\n**Key facts**\n- GHI 2025: 102/123.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "answerIndex": 2,
+      "explanation": "Statements 1, 2 and 4 are correct: NFHS-5 found **35.5%** of under-fives stunted; about **195 million** Indians are undernourished (FAO); and the **FCI** holds the central **buffer stock**, procuring at MSP. Statement 3 is incorrect on the year: **ICDS** began in **1975** (the Mid-Day Meal did become **PM POSHAN** in 2021).\n\n**Why not the others**\n- '1 and 2 only' — It leaves out statement 4, which is correct.\n- '1 and 4 only' — It leaves out statement 2, which is correct.\n- '1, 2, 3 and 4' — Statement 3 is incorrect (ICDS began in 1975).\n\n**Key facts**\n- GHI 2025: 102/123.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -2926,16 +2926,16 @@
         "Annadata Sukhibhava gives ₹20,000 a year per farmer — ₹14,000 from the State and ₹6,000 from PM-KISAN.",
         "It was launched on 2 August 2025 at Darsi in Prakasam district.",
         "AP's separate agriculture budget for 2026-27 was about ₹53,753 crore.",
-        "The Rythu Bharosa Kendras were renamed Rythu Seva Kendras in 2024."
+        "The Rythu Bharosa Kendras were renamed Rythu Seva Kendras in 2019."
       ],
       "options": [
-        "2 and 3 only",
-        "1 and 4 only",
-        "1, 2, 3 and 4",
-        "2, 3 and 4 only"
+        "1 and 2 only",
+        "1 and 3 only",
+        "1, 2 and 3 only",
+        "1, 2, 3 and 4"
       ],
       "answerIndex": 2,
-      "explanation": "All four are correct: **20,000** (**14,000** + 6,000); launched at **Darsi**; agri budget **53,753** crore (K. Atchannaidu); **Rythu Seva Kendras**.\n\n**Why not the others**\n- 2 and 3 only — leaves out statement 1 and 4, which are correct\n- 1 and 4 only — leaves out statement 2 and 3, which are correct\n- 2, 3 and 4 only — leaves out statement 1, which is correct\n\n**Key facts**\n- About 46.86 lakh farmers got the first instalment.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
+      "explanation": "Statements 1, 2 and 3 are correct: Annadata Sukhibhava gives **₹20,000** a year (₹**14,000** State + ₹**6,000** PM-KISAN); it was launched on 2 August 2025 at **Darsi**, Prakasam; and AP's 2026-27 agriculture budget was about **₹53,753** crore. Statement 4 is incorrect: the Rythu Bharosa Kendras (set up in May 2020) were renamed **Rythu Seva Kendras** in **2024**.\n\n**Why not the others**\n- '1 and 2 only' — It leaves out statement 3, which is correct.\n- '1 and 3 only' — It leaves out statement 2, which is correct.\n- '1, 2, 3 and 4' — Statement 4 is incorrect (the renaming came in 2024; the RBKs themselves were launched in 2020).\n\n**Key facts**\n- About 46.86 lakh farmers got the first instalment.\n\n*Source: APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)*",
       "source": "APPSC GK — Indian Economics: Indian Agriculture.txt, Food Security.txt; CACP/CCEA MSP releases (KMS 2026-27, RMS 2027-28, FRP 2026-27); PIB (PM-KISAN, PMFBY, PM-DDKY, pulses/oilseeds missions, NMNF); Economic Survey; GHI 2025; AP Agriculture Budget 2026-27; AP dossier-econ; PYQ bank .research/pyq-bank/econ-agriculture.md (verified Oct 2026)",
       "verified": true,
       "covers": [
@@ -3055,10 +3055,10 @@
       "id": "econ-agriculture-mcq-88",
       "subjectCode": "ECON",
       "subtopicId": "econ-agriculture",
-      "question": "Asia's largest chilli market yard is located at:",
+      "question": "Asia's largest chilli market yard (the 'Mirchi Yard') is located at:",
       "options": [
         "Byadgi, Karnataka",
-        "Guntur Mirchi Yard, Andhra Pradesh",
+        "Guntur, Andhra Pradesh",
         "Khammam, Telangana",
         "Unjha, Gujarat"
       ],

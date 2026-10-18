@@ -11,13 +11,13 @@
       "question": "The fraction 5/8 expressed as a percentage is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
       "options": [
+        "6.25%",
+        "37.5%",
         "58%",
-        "40%",
-        "62.5%",
-        "80%"
+        "62.5%"
       ],
-      "answerIndex": 2,
-      "explanation": "Multiply the fraction by 100: (5/8) x 100 = 500/8 = **62.5%**.\n\n**Why not the others**\n- 58% — reading the digits of 5/8 as 58; not a conversion.\n- 40% — this is 5/8 read the wrong way (8/... ) or 2/5; incorrect.\n- 80% — that is 4/5, not 5/8.\n\n**Key facts**\n| Fraction | Percentage |\n|---|---|\n| 1/8 | 12.5% |\n| 3/8 | 37.5% |\n| 5/8 | 62.5% |\n| 7/8 | 87.5% |\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Percentage.txt.*",
+      "answerIndex": 3,
+      "explanation": "Multiply the fraction by 100: (5/8) x 100 = 500/8 = **62.5%**.\n\n**Why not the others**\n- 6.25% — multiplies 5/8 by 10 instead of 100 (0.625 × 10).\n- 37.5% — this is 3/8, the part NOT covered (100 − 62.5); the complement, not the fraction asked.\n- 58% — writes the digits of 5/8 side by side; no conversion is done.\n\n**Key facts**\n| Fraction | Percentage |\n|---|---|\n| 1/8 | 12.5% |\n| 3/8 | 37.5% |\n| 5/8 | 62.5% |\n| 7/8 | 87.5% |\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Basic Percentage.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Basic Percentage.txt",
       "verified": true,
       "covers": [
@@ -37,13 +37,13 @@
       "question": "The simple interest on Rs 5,000 at 8% per annum for 3 years is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
       "options": [
-        "Rs 1,200",
-        "Rs 1,320",
+        "Rs 400",
         "Rs 1,000",
-        "Rs 1,440"
+        "Rs 1,200",
+        "Rs 6,200"
       ],
-      "answerIndex": 0,
-      "explanation": "SI = P x R x T / 100 = 5000 x 8 x 3 / 100 = **Rs 1,200**.\n\n**Why not the others**\n- Rs 1,320 — this is the 2-year *compound* interest at 10%, unrelated to these figures.\n- Rs 1,000 — takes only 2 years (5000x8x2/100) instead of 3.\n- Rs 1,440 — uses 3.6 years or a wrong rate; arithmetic slip.\n\n**Key facts**\n- SI = PRT/100; interest is on the original principal only.\n- Amount = P + SI = 5000 + 1200 = Rs 6,200.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Simple Interest.txt.*",
+      "answerIndex": 2,
+      "explanation": "SI = P x R x T / 100 = 5000 x 8 x 3 / 100 = **Rs 1,200**.\n\n**Why not the others**\n- Rs 400 — one year's interest only (5000 × 8/100); the time of 3 years is dropped.\n- Rs 1,000 — uses 2 years (5000 × 8 × 2/100) instead of 3.\n- Rs 6,200 — this is the amount P + SI, not the interest asked.\n\n**Key facts**\n- SI = PRT/100; interest is on the original principal only.\n- Amount = P + SI = 5000 + 1200 = Rs 6,200.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Simple Interest.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Simple Interest.txt",
       "verified": true,
       "covers": [
@@ -62,12 +62,12 @@
       "question": "An article bought for Rs 400 is sold for Rs 500. The profit percentage is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
       "options": [
-        "20%",
-        "10%",
         "125%",
-        "25%"
+        "25%",
+        "20%",
+        "10%"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "explanation": "Profit% = (SP - CP)/CP x 100 = (500 - 400)/400 x 100 = 100/400 x 100 = **25%**.\n\n**Why not the others**\n- 20% — divides the profit by the selling price (100/500) instead of the cost price.\n- 10% — treats the Rs 100 gain as a percentage of 1000; wrong base.\n- 125% — this is SP as a percentage of CP (500/400), not the profit percentage.\n\n**Key facts**\n- Profit% is always taken on the **cost price** unless stated otherwise.\n- SP = CP(1 + profit%/100) = 400 x 1.25 = Rs 500.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt",
       "verified": true,
@@ -88,10 +88,10 @@
       "options": [
         "No change",
         "4% increase",
-        "4% decrease",
-        "2% decrease"
+        "2% decrease",
+        "4% decrease"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "Chain the multipliers: 1.20 x 0.80 = 0.96, i.e. 96% of the original — a **4% decrease**. By the successive-change formula, net = +20 - 20 + (20)(-20)/100 = -4%.\n\n**Why not the others**\n- No change — the +20% and -20% act on *different* bases, so they never cancel.\n- 4% increase — right magnitude, wrong sign; a rise-then-fall of equal % always ends lower.\n- 2% decrease — halves the correct answer; forgets the ab/100 term is 4, not 2.\n\n**Key facts**\n- Equal +x% then −x% gives a net fall of x² ÷ 100 % (here 400 ÷ 100 = 4%).\n- Successive change: a + b + ab/100 with signs.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.txt",
       "verified": true,
@@ -111,13 +111,13 @@
       "question": "A shopkeeper offers two successive discounts of 20% and 10% on the marked price. The single equivalent discount is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
       "options": [
-        "30%",
         "28%",
+        "30%",
         "32%",
-        "25%"
+        "72%"
       ],
-      "answerIndex": 1,
-      "explanation": "Successive discounts multiply the remaining fraction: (1 - 0.20)(1 - 0.10) = 0.80 x 0.90 = 0.72, so 72% is paid and **28%** is the single equivalent discount. Formula: a + b - ab/100 = 20 + 10 - 200/100 = 28%.\n\n**Why not the others**\n- 30% — simply adds 20 + 10, ignoring that the second discount acts on the reduced price.\n- 32% — over-corrects by adding the ab/100 term instead of subtracting it.\n- 25% — an unsupported guess between the two rates.\n\n**Key facts**\n- Single equivalent of successive discounts a%, b% = a + b - ab/100.\n- Never simply add successive percentage discounts.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive discount.txt.*",
+      "answerIndex": 0,
+      "explanation": "Successive discounts multiply the remaining fraction: (1 - 0.20)(1 - 0.10) = 0.80 x 0.90 = 0.72, so 72% is paid and **28%** is the single equivalent discount. Formula: a + b - ab/100 = 20 + 10 - 200/100 = 28%.\n\n**Why not the others**\n- 30% — simply adds 20 + 10, ignoring that the second discount acts on the reduced price.\n- 32% — adds the ab/100 term (20 + 10 + 2) instead of subtracting it.\n- 72% — this is the fraction of the marked price actually PAID (0.8 × 0.9), not the discount.\n\n**Key facts**\n- Single equivalent of successive discounts a%, b% = a + b - ab/100.\n- Never simply add successive percentage discounts.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive discount.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Successive discount.txt",
       "verified": true,
       "covers": [
@@ -135,12 +135,12 @@
       "question": "If A's income is 25% more than B's income, then B's income is less than A's income by:",
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
       "options": [
-        "25%",
         "16.66%",
-        "33.33%",
-        "20%"
+        "20%",
+        "25%",
+        "33.33%"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "explanation": "If A is x% more than B, B is x/(100+x) x 100 % less than A. Here x = 25, so 25/125 x 100 = **20%**. Check: let B = 100, then A = 125; B is (25/125) x 100 = 20% below A.\n\n**Why not the others**\n- 25% — wrongly assumes the relation is symmetric; the base changes from B to A.\n- 16.66% — this is the answer for 'A is 20% more than B' (20/120), not 25%.\n- 33.33% — this is for 'A is 50% more than B' (50/150); wrong x.\n\n**Key facts**\n- A is x% more than B => B is x/(100+x)x100 % less than A.\n- A is x% less than B => B is x/(100-x)x100 % more than A.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage.txt",
       "verified": true,
@@ -161,11 +161,11 @@
       "options": [
         "20%",
         "25%",
-        "22.5%",
-        "18%"
+        "33.33%",
+        "80%"
       ],
       "answerIndex": 0,
-      "explanation": "Reduction% = rise/(100 + rise) x 100 = 25/125 x 100 = **20%**. Check: let price 100, consumption 100 => spend 10000; new price 125, to keep 10000 the consumption must be 80, a 20% cut.\n\n**Why not the others**\n- 25% — cutting consumption by the same 25% overshoots because the higher price is the new base.\n- 22.5% — an averaged guess with no formula basis.\n- 18% — under-cuts; expenditure would still rise.\n\n**Key facts**\n- Price up x% => reduce consumption by x/(100+x)x100 % to hold expenditure.\n- Price down x% => consumption may rise by x/(100-x)x100 %.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Percentage Increase and Decrease.txt.*",
+      "explanation": "Reduction% = rise/(100 + rise) x 100 = 25/125 x 100 = **20%**. Check: let price 100, consumption 100 => spend 10000; new price 125, to keep 10000 the consumption must be 80, a 20% cut.\n\n**Why not the others**\n- 25% — cuts consumption by the same 25%; the higher price is the new base, so this overshoots.\n- 33.33% — uses rise/(100 − rise) = 25/75; that formula is for a price FALL.\n- 80% — this is the new consumption as a percentage of the old (100/125), not the reduction.\n\n**Key facts**\n- Price up x% => reduce consumption by x/(100+x)x100 % to hold expenditure.\n- Price down x% => consumption may rise by x/(100-x)x100 %.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Percentage Increase and Decrease.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Percentage Increase and Decrease.txt",
       "verified": true,
       "covers": [
@@ -183,12 +183,12 @@
       "question": "In an election between two candidates, the winner secured 60% of the valid votes and won by a margin of 200 votes. The total number of valid votes was:",
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
       "options": [
+        "500",
         "800",
         "1,000",
-        "1,200",
-        "500"
+        "1,200"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "The two candidates get 60% and 40%, so the winning margin is 60% - 40% = 20% of the total. That 20% equals 200 votes, hence total = 200 x 100/20 = **1,000** votes.\n\n**Why not the others**\n- 800 — treats 200 as 25% of the total; wrong margin percentage.\n- 1,200 — takes 200 as one candidate's shortfall from 60% rather than the 20% gap.\n- 500 — treats 200 as the 40% loser's votes; misreads the quantity given.\n\n**Key facts**\n- whole = part x 100 / (part's %); here 200 is 20% of the total.\n- Margin between two candidates = (winner% - loser%) of total votes.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Percentage of a Quantity.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Percentage of a Quantity.txt",
       "verified": true,
@@ -207,8 +207,8 @@
       "question": "At what rate of simple interest per annum will a sum of money double itself in 8 years?",
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
       "options": [
-        "10%",
         "8%",
+        "10%",
         "12.5%",
         "15%"
       ],
@@ -231,13 +231,13 @@
       "question": "The compound interest on Rs 8,000 at 10% per annum for 2 years, compounded annually, is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
       "options": [
+        "Rs 9,680",
+        "Rs 1,680",
         "Rs 1,600",
-        "Rs 1,700",
-        "Rs 1,764",
-        "Rs 1,680"
+        "Rs 800"
       ],
-      "answerIndex": 3,
-      "explanation": "A = P(1 + R/100)^n = 8000 x (1.1)^2 = 8000 x 1.21 = Rs 9,680. CI = A - P = 9680 - 8000 = **Rs 1,680**.\n\n**Why not the others**\n- Rs 1,600 — this is the *simple* interest (8000x10x2/100); it omits interest-on-interest.\n- Rs 1,700 — a rounding-style guess between SI and CI.\n- Rs 1,764 — this is CI on Rs 8,000 for 2 years at 10.5% or on a larger sum; wrong figure.\n\n**Key facts**\n- CI = P[(1 + R/100)^n - 1]; here 8000 x (1.21 - 1) = 1680.\n- The Rs 80 excess over SI (1680 - 1600) = interest on the first year's Rs 800 interest.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
+      "answerIndex": 1,
+      "explanation": "A = P(1 + R/100)^n = 8000 x (1.1)^2 = 8000 x 1.21 = Rs 9,680. CI = A - P = 9680 - 8000 = **Rs 1,680**.\n\n**Why not the others**\n- Rs 800 — interest for the first year only (10% of 8,000).\n- Rs 1,600 — this is the *simple* interest (8000 × 10 × 2/100); it omits interest-on-interest.\n- Rs 9,680 — this is the amount A, not the compound interest A − P.\n\n**Key facts**\n- CI = P[(1 + R/100)^n - 1]; here 8000 x (1.21 - 1) = 1680.\n- The Rs 80 excess over SI (1680 - 1600) = interest on the first year's Rs 800 interest.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt",
       "verified": true,
       "covers": [
@@ -256,11 +256,11 @@
       "options": [
         "Rs 1,000",
         "Rs 1,025",
-        "Rs 1,050",
-        "Rs 1,100"
+        "Rs 2,100",
+        "Rs 11,025"
       ],
       "answerIndex": 1,
-      "explanation": "Half-yearly: rate = 10/2 = 5% per period, periods = 2. A = 10000 x (1.05)^2 = 10000 x 1.1025 = Rs 11,025. CI = 11025 - 10000 = **Rs 1,025**.\n\n**Why not the others**\n- Rs 1,000 — simple interest at 10% for 1 year; ignores half-yearly compounding.\n- Rs 1,050 — adds two flat 5% slices (500 + 500) but omits interest on the first 500.\n- Rs 1,100 — treats it as annual CI at 11% or two full years; wrong period count.\n\n**Key facts**\n- Half-yearly: use rate R/2 for 2n periods; quarterly: R/4 for 4n periods.\n- More frequent compounding => higher effective yield (1025 > 1000 annual SI).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
+      "explanation": "Half-yearly: rate = 10/2 = 5% per period, periods = 2. A = 10000 x (1.05)^2 = 10000 x 1.1025 = Rs 11,025. CI = 11025 - 10000 = **Rs 1,025**.\n\n**Why not the others**\n- Rs 1,000 — simple interest at 10% for 1 year; ignores half-yearly compounding.\n- Rs 2,100 — uses the full 10% for each of the two half-years (10000 × 1.1² − 10000) instead of 5%.\n- Rs 11,025 — this is the amount after one year, not the interest.\n\n**Key facts**\n- Half-yearly: use rate R/2 for 2n periods; quarterly: R/4 for 4n periods.\n- More frequent compounding => higher effective yield (1025 > 1000 annual SI).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt",
       "verified": true,
       "covers": [
@@ -278,13 +278,13 @@
       "question": "The difference between the compound interest and the simple interest on a sum of Rs 5,000 for 2 years at 10% per annum is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
       "options": [
-        "Rs 50",
-        "Rs 100",
-        "Rs 25",
-        "Rs 500"
+        "Rs 1,050",
+        "Rs 1,000",
+        "Rs 500",
+        "Rs 50"
       ],
-      "answerIndex": 0,
-      "explanation": "For 2 years, CI - SI = P(R/100)^2 = 5000 x (10/100)^2 = 5000 x 0.01 = **Rs 50**. (SI = 1000, CI = 1050.)\n\n**Why not the others**\n- Rs 100 — doubles the difference; forgets the difference is only the interest on one year's interest.\n- Rs 25 — halves the correct value; arithmetic slip in squaring R/100.\n- Rs 500 — this is a full year's simple interest, not the CI-SI gap.\n\n**Key facts**\n- 2-year gap: CI - SI = P(R/100)^2.\n- 3-year gap: CI - SI = P(R/100)^2 x (3 + R/100).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
+      "answerIndex": 3,
+      "explanation": "For 2 years, CI - SI = P(R/100)^2 = 5000 x (10/100)^2 = 5000 x 0.01 = **Rs 50**. (SI = 1000, CI = 1050.)\n\n**Why not the others**\n- Rs 500 — one year's simple interest (10% of 5,000), not the CI − SI gap.\n- Rs 1,000 — the 2-year simple interest itself, not the difference.\n- Rs 1,050 — the 2-year compound interest itself, not the difference.\n\n**Key facts**\n- 2-year gap: CI - SI = P(R/100)^2.\n- 3-year gap: CI - SI = P(R/100)^2 x (3 + R/100).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt",
       "verified": true,
       "covers": [
@@ -302,13 +302,13 @@
       "question": "The population of a town is 10,000 and it increases at 10% per annum. Its population after 2 years will be:",
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
       "options": [
-        "12,000",
+        "2,100",
         "11,000",
-        "12,100",
-        "12,200"
+        "12,000",
+        "12,100"
       ],
-      "answerIndex": 2,
-      "explanation": "Growth compounds like CI: P(1 + R/100)^n = 10000 x (1.1)^2 = 10000 x 1.21 = **12,100**.\n\n**Why not the others**\n- 12,000 — applies simple growth (10% of 10000 twice = 2000 added); misses growth on the added population.\n- 11,000 — only one year's growth.\n- 12,200 — over-counts by adding an extra flat 10% slice.\n\n**Key facts**\n- Compound growth: Final = P(1 + R/100)^n.\n- Decline/decay uses (1 - R/100)^n.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
+      "answerIndex": 3,
+      "explanation": "Growth compounds like CI: P(1 + R/100)^n = 10000 x (1.1)^2 = 10000 x 1.21 = **12,100**.\n\n**Why not the others**\n- 2,100 — this is the increase over two years, not the population.\n- 11,000 — only one year's growth.\n- 12,000 — applies simple growth (1,000 added each year); misses growth on the added population.\n\n**Key facts**\n- Compound growth: Final = P(1 + R/100)^n.\n- Decline/decay uses (1 - R/100)^n.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.txt",
       "verified": true,
       "covers": [
@@ -326,13 +326,13 @@
       "question": "A machine worth Rs 20,000 depreciates at 10% per annum on the reducing-balance method. Its value after 2 years is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
       "options": [
+        "Rs 3,800",
         "Rs 16,000",
-        "Rs 15,800",
-        "Rs 18,000",
-        "Rs 16,200"
+        "Rs 16,200",
+        "Rs 18,000"
       ],
-      "answerIndex": 3,
-      "explanation": "Depreciated value = P(1 - R/100)^n = 20000 x (0.9)^2 = 20000 x 0.81 = **Rs 16,200**.\n\n**Why not the others**\n- Rs 16,000 — uses flat depreciation (2000 each year on the original); ignores the falling base.\n- Rs 15,800 — subtracts too much; a computation slip.\n- Rs 18,000 — only one year of depreciation.\n\n**Key facts**\n- Reducing-balance depreciation: Value = P(1 - R/100)^n.\n- Year-2 depreciation (1800) is less than year-1 (2000) because the base has fallen.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Depreciation.txt.*",
+      "answerIndex": 2,
+      "explanation": "Depreciated value = P(1 - R/100)^n = 20000 x (0.9)^2 = 20000 x 0.81 = **Rs 16,200**.\n\n**Why not the others**\n- Rs 3,800 — this is the total depreciation (20,000 − 16,200), not the value left.\n- Rs 16,000 — uses flat depreciation (2,000 each year on the original); ignores the falling base.\n- Rs 18,000 — only one year of depreciation.\n\n**Key facts**\n- Reducing-balance depreciation: Value = P(1 - R/100)^n.\n- Year-2 depreciation (1800) is less than year-1 (2000) because the base has fallen.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Depreciation.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Depreciation.txt",
       "verified": true,
       "covers": [
@@ -351,11 +351,11 @@
       "options": [
         "20%",
         "30%",
-        "25%",
-        "15%"
+        "50%",
+        "120%"
       ],
       "answerIndex": 0,
-      "explanation": "Let CP = 100, so MP = 150. SP = MP x (1 - 20/100) = 150 x 0.8 = 120. Profit% = (120 - 100)/100 x 100 = **20%**.\n\n**Why not the others**\n- 30% — subtracts the 20% discount from the 50% mark-up (50 - 20); the two act on different bases.\n- 25% — a mid-value guess without the CP=100 method.\n- 15% — under-values; would need a larger discount.\n\n**Key facts**\n- SP = MP(1 - discount%/100); discount is on MP, profit on CP.\n- Take CP = 100 to convert mark-up and discount into one clean SP.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt.*",
+      "explanation": "Let CP = 100, so MP = 150. SP = MP x (1 - 20/100) = 150 x 0.8 = 120. Profit% = (120 - 100)/100 x 100 = **20%**.\n\n**Why not the others**\n- 30% — subtracts the 20% discount from the 50% mark-up (50 − 20); the two act on different bases.\n- 50% — this is the mark-up alone; the discount is ignored.\n- 120% — this is SP as a percentage of CP (120/100), not the profit percentage.\n\n**Key facts**\n- SP = MP(1 - discount%/100); discount is on MP, profit on CP.\n- Take CP = 100 to convert mark-up and discount into one clean SP.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt",
       "verified": true,
       "covers": [
@@ -376,11 +376,11 @@
       "options": [
         "10%",
         "11.11%",
-        "9%",
-        "12.5%"
+        "12.5%",
+        "111.11%"
       ],
       "answerIndex": 1,
-      "explanation": "Gain% = error / (true value - error) x 100 = (1000 - 900)/900 x 100 = 100/900 x 100 = **11.11%** (= 100/9 %). He pockets 100 g of goods on every 900 g actually delivered.\n\n**Why not the others**\n- 10% — divides the 100 g shortfall by 1000 g (the claimed weight) instead of the 900 g actually given.\n- 9% — inverts the ratio (900/... ); wrong base.\n- 12.5% — corresponds to an 800 g false weight, not 900 g.\n\n**Key facts**\n- Selling at CP with a false weight: gain% = error/(true value - error) x 100.\n- Profit is reckoned on the reduced quantity actually supplied.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt.*",
+      "explanation": "Gain% = error / (true value - error) x 100 = (1000 - 900)/900 x 100 = 100/900 x 100 = **11.11%** (= 100/9 %). He pockets 100 g of goods on every 900 g actually delivered.\n\n**Why not the others**\n- 10% — divides the 100 g shortfall by 1000 g (the claimed weight) instead of the 900 g actually given.\n- 12.5% — the answer for an 800 g false weight (200/800), not 900 g.\n- 111.11% — the ratio 1000/900 written as a percentage, not the gain over cost.\n\n**Key facts**\n- Selling at CP with a false weight: gain% = error/(true value - error) x 100.\n- Profit is reckoned on the reduced quantity actually supplied.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Discount & MP.txt",
       "verified": true,
       "covers": [
@@ -398,13 +398,13 @@
       "question": "A sum borrowed is to be repaid in two equal annual installments of Rs 1,210 each at 10% per annum compound interest. The sum borrowed was:",
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
       "options": [
-        "Rs 2,000",
         "Rs 2,420",
+        "Rs 2,200",
         "Rs 2,100",
-        "Rs 2,200"
+        "Rs 1,100"
       ],
       "answerIndex": 2,
-      "explanation": "Discount each installment to its present worth: 1210/1.1 + 1210/(1.1)^2 = 1100 + 1000 = **Rs 2,100**.\n\n**Why not the others**\n- Rs 2,000 — discounts only one installment or uses a wrong rate.\n- Rs 2,420 — simply adds the two installments (1210 x 2) with no discounting.\n- Rs 2,200 — takes the present worth of both at a flat single-year discount.\n\n**Key facts**\n- Debt via equal installments x at R%: principal = x/(1+R/100) + x/(1+R/100)^2 + ...\n- Each installment must be brought back to present value.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Installment.txt.*",
+      "explanation": "Discount each installment to its present worth: 1210/1.1 + 1210/(1.1)^2 = 1100 + 1000 = **Rs 2,100**.\n\n**Why not the others**\n- Rs 1,100 — discounts only the first installment (1210/1.1) and forgets the second.\n- Rs 2,200 — discounts both installments by one year only (1100 + 1100).\n- Rs 2,420 — simply adds the two installments (1210 × 2) with no discounting.\n\n**Key facts**\n- Debt via equal installments x at R%: principal = x/(1+R/100) + x/(1+R/100)^2 + ...\n- Each installment must be brought back to present value.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Installment.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Installment.txt",
       "verified": true,
       "covers": [
@@ -422,13 +422,13 @@
       "question": "A salesman earns a commission of 5% on his total sales. If his sales in a month were Rs 50,000, his commission is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
       "options": [
-        "Rs 2,000",
-        "Rs 3,000",
-        "Rs 5,000",
-        "Rs 2,500"
+        "Rs 250",
+        "Rs 2,500",
+        "Rs 10,000",
+        "Rs 47,500"
       ],
-      "answerIndex": 3,
-      "explanation": "Commission = 5% of sales = 50000 x 5/100 = **Rs 2,500**.\n\n**Why not the others**\n- Rs 2,000 — uses a 4% rate; misreads the commission percentage.\n- Rs 3,000 — uses 6%; wrong rate.\n- Rs 5,000 — takes 10% instead of 5%.\n\n**Key facts**\n- Commission = rate% x sales value; sales tax = rate% x price — both scale linearly with the base.\n- 5% of any amount = amount/20.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Commission Based.txt.*",
+      "answerIndex": 1,
+      "explanation": "Commission = 5% of sales = 50000 x 5/100 = **Rs 2,500**.\n\n**Why not the others**\n- Rs 250 — misplaces the decimal (50000 × 5/1000), i.e. takes 0.5%.\n- Rs 10,000 — divides the sales by 5 instead of taking 5% of them.\n- Rs 47,500 — this is the sales left after deducting the commission, not the commission.\n\n**Key facts**\n- Commission = rate% x sales value; sales tax = rate% x price — both scale linearly with the base.\n- 5% of any amount = amount/20.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Commission Based.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Commission Based.txt",
       "verified": true,
       "covers": [
@@ -446,13 +446,13 @@
       "question": "A sells an article to B at a profit of 20% and B sells it to C at a profit of 10%. If A paid Rs 1,000 for it, the price C pays is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
       "options": [
-        "Rs 1,320",
-        "Rs 1,300",
+        "Rs 1,100",
         "Rs 1,200",
-        "Rs 1,330"
+        "Rs 1,300",
+        "Rs 1,320"
       ],
-      "answerIndex": 0,
-      "explanation": "Chain the profit multipliers: C's price = 1000 x (1 + 20/100)(1 + 10/100) = 1000 x 1.20 x 1.10 = **Rs 1,320**.\n\n**Why not the others**\n- Rs 1,300 — adds the two profit percentages (20 + 10 = 30%); ignores profit-on-profit.\n- Rs 1,200 — applies only A's 20% profit; omits B's stage.\n- Rs 1,330 — an over-count of the compounding term.\n\n**Key facts**\n- Successive selling: final price = C x (1+p1/100)(1+p2/100)...\n- A loss stage would use (1 - loss%/100) in the chain.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Selling.txt.*",
+      "answerIndex": 3,
+      "explanation": "Chain the profit multipliers: C's price = 1000 x (1 + 20/100)(1 + 10/100) = 1000 x 1.20 x 1.10 = **Rs 1,320**.\n\n**Why not the others**\n- Rs 1,100 — applies only B's 10% profit; omits A's stage.\n- Rs 1,200 — applies only A's 20% profit; omits B's stage.\n- Rs 1,300 — adds the two profit percentages (20 + 10 = 30%); ignores profit-on-profit.\n\n**Key facts**\n- Successive selling: final price = C x (1+p1/100)(1+p2/100)...\n- A loss stage would use (1 - loss%/100) in the chain.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Selling.txt.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Successive Selling.txt",
       "verified": true,
       "covers": [
@@ -470,13 +470,13 @@
       "question": "If 15% of A is equal to 20% of B, then A : B is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
       "options": [
-        "3 : 4",
         "4 : 3",
-        "15 : 20",
-        "5 : 4"
+        "1 : 1",
+        "3 : 4",
+        "15 : 20"
       ],
-      "answerIndex": 1,
-      "explanation": "15% of A equals 20% of B, so 15A ÷ 100 = 20B ÷ 100, which gives 15A = 20B. Dividing, A ÷ B = 20 ÷ 15 = 4/3, so A : B = **4 : 3**.\n\n**Why not the others**\n- 3 : 4 — the reciprocal; it makes 15% of A smaller than 20% of B.\n- 15 : 20 — just copies the percentages; A : B is the inverse, 20 : 15.\n- 5 : 4 — no valid reduction of 20 : 15 gives 5 : 4.\n\n**Key facts**\n- x% of A = y% of B means A : B = y : x.\n- Cross-multiply then reduce: 20 : 15 = 4 : 3.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage.*",
+      "answerIndex": 0,
+      "explanation": "15% of A equals 20% of B, so 15A ÷ 100 = 20B ÷ 100, which gives 15A = 20B. Dividing, A ÷ B = 20 ÷ 15 = 4/3, so A : B = **4 : 3**.\n\n**Why not the others**\n- 1 : 1 — assumes equal results mean equal numbers; the different percentages make A and B unequal.\n- 3 : 4 — the reciprocal; it would make 15% of A smaller than 20% of B.\n- 15 : 20 — just copies the percentages; A : B is the inverse, 20 : 15.\n\n**Key facts**\n- x% of A = y% of B means A : B = y : x.\n- Cross-multiply then reduce: 20 : 15 = 4 : 3.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Comparison of Percentage",
       "verified": true,
       "covers": [
@@ -494,13 +494,13 @@
       "question": "A sum lent at simple interest amounts to ₹1,200 in 2 years and to ₹1,600 in 4 years. The sum lent (principal) is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
       "options": [
-        "₹700",
-        "₹750",
         "₹800",
-        "₹900"
+        "₹1,000",
+        "₹1,200",
+        "₹1,400"
       ],
-      "answerIndex": 2,
-      "explanation": "Interest for (4−2) = 2 years = 1600 − 1200 = ₹400, so ₹200 per year. Interest for 2 years = ₹400, hence principal = 1200 − 400 = **₹800**.\n\n**Why not the others**\n- ₹700 — uses ₹250/year; the yearly SI is ₹200.\n- ₹750 — subtracts only ₹450 of interest for 2 years.\n- ₹900 — subtracts ₹300, but 2 years' SI here is ₹400.\n\n**Key facts**\n- Under SI, interest is equal each year: yearly SI = (A₂ − A₁)/(t₂ − t₁).\n- Principal = amount − (interest accrued up to that time).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Simple Interest.*",
+      "answerIndex": 0,
+      "explanation": "Interest for (4−2) = 2 years = 1600 − 1200 = ₹400, so ₹200 per year. Interest for 2 years = ₹400, hence principal = 1200 − 400 = **₹800**.\n\n**Why not the others**\n- ₹1,000 — subtracts only one year's interest (₹200) from the 2-year amount of ₹1,200.\n- ₹1,200 — takes the 2-year amount as the principal; it already includes 2 years of interest.\n- ₹1,400 — subtracts one year's interest from the 4-year amount (1600 − 200) instead of four years'.\n\n**Key facts**\n- Under SI, interest is equal each year: yearly SI = (A₂ − A₁)/(t₂ − t₁).\n- Principal = amount − (interest accrued up to that time).\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Simple Interest.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Simple Interest",
       "verified": true,
       "covers": [
@@ -518,12 +518,12 @@
       "question": "A sum of ₹2,000 amounts to ₹2,205 in 2 years at compound interest, compounded annually. The rate of interest per annum is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
       "options": [
-        "4%",
-        "5%",
+        "10%",
         "6%",
-        "10%"
+        "5%",
+        "4%"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Using A = P × (1 + R ÷ 100)², divide both sides by P: 2205 ÷ 2000 = (1 + R ÷ 100)², so 1.1025 = (1 + R ÷ 100)². Take the square root: 1 + R ÷ 100 = 1.05, so R = **5%**.\n\n**Why not the others**\n- 4% — gives (1.04)² = 1.0816, so ₹2,163.20, not ₹2,205.\n- 6% — gives (1.06)² = 1.1236, so ₹2,247.20.\n- 10% — gives (1.10)² = 1.21, so ₹2,420.\n\n**Key facts**\n- From A ÷ P = (1 + R ÷ 100)ⁿ, take the n-th root to isolate the rate.\n- √1.1025 = 1.05, so R = 5%.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Compound Interest",
       "verified": true,
@@ -542,12 +542,12 @@
       "question": "A man sells two articles for ₹1,200 each. On one he gains 20% and on the other he loses 20%. His overall result is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
       "options": [
-        "No profit no loss",
         "4% loss",
+        "No profit no loss",
         "4% profit",
         "2% loss"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "explanation": "CP₁ = 1200/1.2 = ₹1000; CP₂ = 1200/0.8 = ₹1500; total CP = ₹2500; total SP = ₹2400; loss = ₹100 on ₹2500 = **4% loss**. (Shortcut: equal +x% and −x% at the same SP give a net loss of x²/100 = 400/100 = 4%.)\n\n**Why not the others**\n- No profit no loss — the gain and loss act on different cost prices, so they do not cancel.\n- 4% profit — right magnitude, wrong sign; this situation always ends in a loss.\n- 2% loss — halves the correct loss; the x²/100 term is 4, not 2.\n\n**Key facts**\n- Same SP, +x% and −x%: net effect is always a loss of x²/100 %.\n- Here x = 20, so 400 ÷ 100 = 4% loss.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Profit and Loss",
       "verified": true,
@@ -646,11 +646,11 @@
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
       "options": [
         "10% increase",
-        "8% increase",
         "12% increase",
-        "10% decrease"
+        "10% decrease",
+        "8% increase"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "explanation": "Successive change = a + b + ab/100 = (−10) + 20 + (−10×20)/100 = 10 − 2 = **+8%** (net 8% increase). Check: 100 → 90 → 108.\n\n**Why not the others**\n- 10% increase — just adds −10 + 20, ignoring the −2 cross term.\n- 12% increase — adds the cross term with the wrong sign.\n- 10% decrease — wrong direction; the +20% outweighs the −10%.\n\n**Key facts**\n- Successive percentage change: net = a + b + ab/100 (use signs).\n- −10% then +20%: 0.90 × 1.20 = 1.08, so +8%.\n\n*Source: local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change.*",
       "source": "local APPSC Group-1 Quantitative Reasoning PDF — Successive Percentage Change",
       "verified": true,
@@ -695,11 +695,11 @@
       "options": [
         "₹3,600",
         "₹4,800",
-        "₹6,000",
-        "₹3,200"
+        "₹5,236.36",
+        "₹6,000"
       ],
       "answerIndex": 0,
-      "explanation": "When investment periods differ, share ∝ Capital × Time (capital-months).\n\n**Worked steps**\n- A's capital-months = 5000 × 12 = 60,000; B's = 6000 × 6 = 36,000.\n- Ratio A:B = 60000 : 36000 = 5 : 3 (total 8 parts).\n- B's share = 3/8 × 9,600 = **₹3,600**.\n\n**Why not the others**\n- ₹6,000 — is A's share (5/8 × 9600).\n- ₹4,800 — splits the profit equally, ignoring capital × time.\n- ₹3,200 — uses the plain capital ratio 5:6 wrongly.\n\n**Key facts**\n- Multiply each capital by the number of months it was invested before forming the ratio.\n- A larger capital for a shorter time can still earn the bigger share.\n\n*Source: standard APPSC/SSC arithmetic — Partnership (capital × time).*",
+      "explanation": "When investment periods differ, share ∝ Capital × Time (capital-months).\n\n**Worked steps**\n- A's capital-months = 5000 × 12 = 60,000; B's = 6000 × 6 = 36,000.\n- Ratio A:B = 60000 : 36000 = 5 : 3 (total 8 parts).\n- B's share = 3/8 × 9,600 = **₹3,600**.\n\n**Why not the others**\n- ₹4,800 — splits the profit equally, ignoring capital × time.\n- ₹5,236.36 — uses the plain capital ratio 5 : 6 (6/11 × 9,600) and ignores B's shorter 6 months.\n- ₹6,000 — this is A's share (5/8 × 9,600), not B's.\n\n**Key facts**\n- Multiply each capital by the number of months it was invested before forming the ratio.\n- A larger capital for a shorter time can still earn the bigger share.\n\n*Source: standard APPSC/SSC arithmetic — Partnership (capital × time).*",
       "source": "standard APPSC/SSC arithmetic — Partnership",
       "verified": true,
       "covers": [
@@ -717,13 +717,13 @@
       "question": "In what ratio must rice costing ₹30/kg be mixed with rice costing ₹40/kg so that the mixture costs ₹36/kg?",
       "noteRef": "ment-percentage-interest-profit-loss-note-partnership-alligation",
       "options": [
+        "2 : 5",
+        "3 : 5",
         "2 : 3",
-        "3 : 2",
-        "4 : 5",
-        "5 : 4"
+        "3 : 2"
       ],
-      "answerIndex": 0,
-      "explanation": "Use the rule of alligation about the mean price.\n\n**Worked steps**\n- Quantity of cheaper : dearer = (dearer − mean) : (mean − cheaper).\n- = (40 − 36) : (36 − 30) = 4 : 6 = **2 : 3**.\n\n**Why not the others**\n- 3 : 2 — inverts the alligation ratio (dearer : cheaper).\n- 4 : 5 and 5 : 4 — do not reduce from 4 : 6.\n\n**Key facts**\n- Alligation: (dearer − mean) : (mean − cheaper) = qty of cheaper : qty of dearer.\n- The mean price lies closer to the ingredient present in greater quantity.\n\n*Source: standard APPSC/SSC arithmetic — Mixtures & Alligation.*",
+      "answerIndex": 2,
+      "explanation": "Use the rule of alligation about the mean price.\n\n**Worked steps**\n- Quantity of cheaper : dearer = (dearer − mean) : (mean − cheaper).\n- = (40 − 36) : (36 − 30) = 4 : 6 = **2 : 3**.\n\n**Why not the others**\n- 2 : 5 — uses (dearer − mean) : (dearer − cheaper) = 4 : 10; the denominator must be (mean − cheaper).\n- 3 : 5 — uses (mean − cheaper) : (dearer − cheaper) = 6 : 10; not the alligation pairing.\n- 3 : 2 — inverts the alligation ratio (gives dearer : cheaper).\n\n**Key facts**\n- Alligation: (dearer − mean) : (mean − cheaper) = qty of cheaper : qty of dearer.\n- The mean price lies closer to the ingredient present in greater quantity.\n\n*Source: standard APPSC/SSC arithmetic — Mixtures & Alligation.*",
       "source": "standard APPSC/SSC arithmetic — Mixtures & Alligation",
       "verified": true,
       "covers": [
@@ -741,13 +741,13 @@
       "question": "Two varieties of tea costing ₹18/kg and ₹24/kg are mixed so that the blend costs ₹20/kg. The required ratio (cheaper : dearer) is:",
       "noteRef": "ment-percentage-interest-profit-loss-note-partnership-alligation",
       "options": [
-        "2 : 1",
+        "1 : 3",
         "1 : 2",
-        "3 : 2",
-        "2 : 3"
+        "2 : 3",
+        "2 : 1"
       ],
-      "answerIndex": 0,
-      "explanation": "Apply alligation about the mean price ₹20.\n\n**Worked steps**\n- Cheaper : dearer = (24 − 20) : (20 − 18) = 4 : 2 = **2 : 1**.\n\n**Why not the others**\n- 1 : 2 — inverts the ratio.\n- 3 : 2 and 2 : 3 — arithmetic slips; 4 : 2 reduces to 2 : 1.\n\n**Key facts**\n- The blend price (20) is nearer the cheaper tea (18), so more of the cheaper variety is used, which means the ratio favours the cheaper (2 : 1).\n- Alligation gives quantities, not prices.\n\n*Source: standard APPSC/SSC arithmetic — Mixtures & Alligation.*",
+      "answerIndex": 3,
+      "explanation": "Apply alligation about the mean price ₹20.\n\n**Worked steps**\n- Cheaper : dearer = (24 − 20) : (20 − 18) = 4 : 2 = **2 : 1**.\n\n**Why not the others**\n- 1 : 3 — uses (mean − cheaper) : (dearer − cheaper) = 2 : 6; not the alligation pairing.\n- 1 : 2 — inverts the ratio (gives dearer : cheaper).\n- 2 : 3 — uses (dearer − mean) : (dearer − cheaper) = 4 : 6; the second term must be (mean − cheaper).\n\n**Key facts**\n- The blend price (20) is nearer the cheaper tea (18), so more of the cheaper variety is used, which means the ratio favours the cheaper (2 : 1).\n- Alligation gives quantities, not prices.\n\n*Source: standard APPSC/SSC arithmetic — Mixtures & Alligation.*",
       "source": "standard APPSC/SSC arithmetic — Mixtures & Alligation",
       "verified": true,
       "covers": [
@@ -764,14 +764,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "Which of the following is the percentage equivalent of the fraction 1/8?",
       "options": [
-        "8%",
+        "87.5%",
         "12.5%",
-        "18%",
+        "8%",
         "0.125%"
       ],
       "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
-      "explanation": "1/8 × 100 = 12.5%. Others to remember: 1/6 = 16⅔%, 1/7 = 14 2/7%, 1/9 = 11 1/9%.\n\n**Why not the others**\n- 8% — Confuses the denominator with the percentage.\n- 18% — Adds 10.\n- 0.125% — Forgets to multiply by 100.\n\n**Key facts**\n- Fraction × 100 = percentage.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "1/8 × 100 = 12.5%. Others to remember: 1/6 = 16⅔%, 1/7 = 14 2/7%, 1/9 = 11 1/9%.\n\n**Why not the others**\n- 0.125% — writes the decimal 0.125 with a % sign; forgets to multiply by 100.\n- 8% — confuses the denominator with the percentage.\n- 87.5% — this is 7/8, the complement (100 − 12.5), not 1/8.\n\n**Key facts**\n- Fraction × 100 = percentage.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -788,14 +788,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The fraction 1/7 expressed as a percentage is approximately:",
       "options": [
-        "17%",
-        "7%",
         "1.43%",
-        "14 2/7%"
+        "7%",
+        "14 2/7%",
+        "85 5/7%"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
-      "explanation": "100 ÷ 7 = 14 2/7 ≈ 14.29%.\n\n**Why not the others**\n- 17% — Arithmetic slip.\n- 7% — Confuses the denominator.\n- 1.43% — Forgets to multiply by 100.\n\n**Key facts**\n- Fraction × 100 = percentage.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "100 ÷ 7 = 14 2/7 ≈ 14.29%.\n\n**Why not the others**\n- 1.43% — divides 10 by 7 instead of 100 by 7; the decimal point slips one place.\n- 7% — confuses the denominator with the percentage.\n- 85 5/7% — this is 6/7, the complement (100 − 14 2/7), not 1/7.\n\n**Key facts**\n- Fraction × 100 = percentage.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -813,13 +813,13 @@
       "question": "A student secured 432 marks, which is 72% of the total marks. The total marks are:",
       "options": [
         "600",
-        "311",
+        "553",
         "504",
-        "720"
+        "311"
       ],
       "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
-      "explanation": "Total = 432 × 100 ÷ 72 = 600.\n\n**Why not the others**\n- 311 — Takes 72% of 432 instead of dividing.\n- 504 — Adds 72 to 432.\n- 720 — Treats 72% as 72 marks out of 1000.\n\n**Key facts**\n- Whole = part × 100 ÷ percentage.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Total = 432 × 100 ÷ 72 = 600.\n\n**Why not the others**\n- 311 — takes 72% of 432 (432 × 0.72) instead of dividing by 0.72.\n- 504 — adds the percentage figure to the marks (432 + 72); percentages cannot be added to marks.\n- 553 — adds the missing 28% of 432 (432 × 1.28 ≈ 553); the 28% must be of the total, not of 432.\n\n**Key facts**\n- Whole = part × 100 ÷ percentage.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -836,14 +836,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "Pass marks are 40%. A student scores 120 marks and fails by 30 marks. The total marks are:",
       "options": [
+        "150",
+        "225",
         "300",
-        "375",
-        "450",
-        "150"
+        "375"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
-      "explanation": "Pass mark = 120 + 30 = 150 = 40% of the total, so the total = 150 × 100 ÷ 40 = 375 marks.\n\n**Why not the others**\n- 300 — Uses 120 as 40% (forgets the 30 short).\n- 450 — Uses 120 + 60.\n- 150 — 150 is the pass mark, not the total.\n\n**Key facts**\n- Pass mark = obtained + shortfall; total = pass × 100 ÷ pass %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Pass mark = 120 + 30 = 150 = 40% of the total, so the total = 150 × 100 ÷ 40 = 375 marks.\n\n**Why not the others**\n- 150 — this is the pass mark (120 + 30), not the total.\n- 225 — subtracts the 30-mark shortfall (90 = 40%) instead of adding it.\n- 300 — treats the 120 scored as 40% of the total; forgets the 30 marks short.\n\n**Key facts**\n- Pass mark = obtained + shortfall; total = pass × 100 ÷ pass %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -884,14 +884,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A number is increased by 10% and then by 20%. The net percentage increase is:",
       "options": [
+        "12%",
         "30%",
-        "22%",
         "32%",
-        "12%"
+        "132%"
       ],
       "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
-      "explanation": "Net = 10 + 20 + (10 × 20) ÷ 100 = 32%.\n\n**Why not the others**\n- 30% — Adds the rates and ignores 10 × 20 ÷ 100.\n- 22% — Arithmetic slip.\n- 12% — Uses only the product term.\n\n**Key facts**\n- Successive change: a + b + ab/100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Net = 10 + 20 + (10 × 20) ÷ 100 = 32%.\n\n**Why not the others**\n- 12% — keeps only the cross term 10 + (10 × 20)/100 and drops the 20.\n- 30% — adds the rates and ignores the 10 × 20 ÷ 100 term.\n- 132% — this is the final value as a percentage of the original (1.1 × 1.2), not the increase.\n\n**Key facts**\n- Successive change: a + b + ab/100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -932,12 +932,12 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "B's salary is 20% less than A's. By what percentage is A's salary more than B's?",
       "options": [
-        "20%",
-        "16.67%",
         "80%",
-        "25%"
+        "25%",
+        "20%",
+        "16.67%"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
       "explanation": "Take A = 100, B = 80: A is 20 more on a base of 80, i.e. 20 ÷ 80 × 100 = 25% more; the \"less than\" reverse is x/(100 − x).\n\n**Why not the others**\n- 20% — The base changes from A to B.\n- 16.67% — That is the reverse of \"20% MORE\".\n- 80% — B is 80% of A.\n\n**Key facts**\n- B x% less than A → A is x/(100 − x) × 100 % more.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
@@ -956,12 +956,12 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "X's height is 25% less than Y's. By what percentage is Y's height more than X's?",
       "options": [
-        "25%",
         "33⅓%",
+        "25%",
         "20%",
         "75%"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
       "explanation": "Take Y = 100, X = 75: Y is 25 more on a base of 75, i.e. 25 ÷ 75 × 100 = 33⅓%.\n\n**Why not the others**\n- 25% — The base changes from Y to X.\n- 20% — That is the reverse of \"25% MORE\".\n- 75% — X is 75% of Y.\n\n**Key facts**\n- B x% less than A → A is x/(100 − x) × 100 % more.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
@@ -980,14 +980,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "If A's income is 40% more than B's, then B's income is less than A's by:",
       "options": [
-        "40%",
         "28 4/7%",
-        "60%",
-        "71 3/7%"
+        "40%",
+        "71 3/7%",
+        "140%"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
-      "explanation": "B less than A by 40 ÷ 140 × 100 = 28 4/7%.\n\n**Why not the others**\n- 40% — The base changes.\n- 60% — Arithmetic slip.\n- 71 3/7% — That is B as a percentage of A.\n\n**Key facts**\n- A x% more than B → B is x/(100 + x) × 100 % less.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "B less than A by 40 ÷ 140 × 100 = 28 4/7%.\n\n**Why not the others**\n- 40% — assumes the relation is symmetric; the base changes from B to A.\n- 71 3/7% — this is B as a percentage of A (100/140), not how much less.\n- 140% — this is A's income as a percentage of B's.\n\n**Key facts**\n- A x% more than B → B is x/(100 + x) × 100 % less.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1004,14 +1004,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The price of rice falls by 20%. By what percentage can a family increase its consumption without changing its expenditure?",
       "options": [
-        "25%",
-        "20%",
         "16.67%",
-        "80%"
+        "20%",
+        "25%",
+        "125%"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
-      "explanation": "Consumption can rise by 20 ÷ (100 − 20) × 100 = 25%.\n\n**Why not the others**\n- 20% — The base changes.\n- 16.67% — That is for a 20% price RISE.\n- 80% — Arithmetic slip.\n\n**Key facts**\n- Price down x% → consumption up x/(100 − x) × 100 %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Consumption can rise by 20 ÷ (100 − 20) × 100 = 25%.\n\n**Why not the others**\n- 16.67% — uses fall/(100 + fall); that formula is for a price RISE.\n- 20% — raises consumption by the same 20%; the lower price is the new base.\n- 125% — this is the new consumption as a percentage of the old, not the increase.\n\n**Key facts**\n- Price down x% → consumption up x/(100 − x) × 100 %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1028,12 +1028,12 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "In an election 20% of the votes were invalid. The winner got 60% of the valid votes and won by 960 votes. The total number of votes cast was:",
       "options": [
+        "9600",
         "6000",
         "4800",
-        "2400",
-        "9600"
+        "2400"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
       "explanation": "Margin = 60% − 40% = 20% of valid votes = 960, so valid = 4800. Valid votes are 80% of the total: 4800 ÷ 0.8 = 6000.\n\n**Why not the others**\n- 4800 — 4800 is the number of VALID votes.\n- 2400 — Uses 40% as the margin.\n- 9600 — Treats 960 as 10%.\n\n**Key facts**\n- Margin is on valid votes; convert to total last.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
@@ -1050,16 +1050,16 @@
       "id": "ment-percentage-interest-profit-loss-mcq-44",
       "subjectCode": "MENT",
       "subtopicId": "ment-percentage-interest-profit-loss",
-      "question": "If 25% of A equals 40% of B, then A : B is:",
+      "question": "If 25% of a number A equals 40% of a number B, then the ratio A : B is:",
       "options": [
         "5 : 8",
-        "25 : 40",
-        "2 : 5",
+        "4 : 5",
+        "1 : 1",
         "8 : 5"
       ],
       "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
-      "explanation": "0.25A = 0.40B → A : B = 40 : 25 = 8 : 5.\n\n**Why not the others**\n- 5 : 8 — Inverts the ratio.\n- 25 : 40 — That is 5 : 8 again.\n- 2 : 5 — Arithmetic slip.\n\n**Key facts**\n- x% of A = y% of B → A : B = y : x.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "0.25A = 0.40B → A : B = 40 : 25 = 8 : 5.\n\n**Why not the others**\n- 4 : 5 — works with the complements (75% of A = 60% of B); the given percentages are 25% and 40%.\n- 5 : 8 — inverts the ratio; it would make 25% of A smaller than 40% of B.\n- 1 : 1 — assumes equal results mean equal numbers.\n\n**Key facts**\n- x% of A = y% of B → A : B = y : x.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1076,14 +1076,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "An agent gets a commission of 2.5% on the sales of cloth. If he earns ₹12.50 as commission, the cloth sold was worth:",
       "options": [
-        "₹312.50",
+        "₹31.25",
         "₹50",
-        "₹1250",
-        "₹500"
+        "₹500",
+        "₹1,250"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-methods",
-      "explanation": "Sales = 12.50 × 100 ÷ 2.5 = ₹500.\n\n**Why not the others**\n- ₹312.50 — Multiplies instead of dividing.\n- ₹50 — Divides by 25 instead of 2.5%.\n- ₹1250 — Divides by 1%.\n\n**Key facts**\n- Sales = commission × 100 ÷ rate.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Sales = 12.50 × 100 ÷ 2.5 = ₹500.\n\n**Why not the others**\n- ₹31.25 — multiplies 12.50 × 2.5 instead of dividing by 2.5%.\n- ₹50 — divides by 25 instead of by 2.5 (12.50 × 100 ÷ 25).\n- ₹1,250 — multiplies by 100 but forgets to divide by 2.5.\n\n**Key facts**\n- Sales = commission × 100 ÷ rate.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1102,12 +1102,12 @@
       "options": [
         "₹48,422",
         "₹48,500",
-        "₹52,458",
-        "₹50,000"
+        "₹50,440",
+        "₹52,458"
       ],
       "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
-      "explanation": "Price with tax = price × 1.04, so price = 50440 ÷ 1.04 = ₹48,500 (the sales tax was ₹1,940).\n\n**Why not the others**\n- ₹48,422 — Subtracts 4% of 50440 — the tax is 4% of the pre-tax price.\n- ₹52,458 — Adds the tax again.\n- ₹50,000 — Guesses a round figure.\n\n**Key facts**\n- Sales tax is added on the selling price.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Price with tax = price × 1.04, so price = 50440 ÷ 1.04 = ₹48,500 (the sales tax was ₹1,940).\n\n**Why not the others**\n- ₹48,422 — subtracts 4% of ₹50,440; the tax is 4% of the pre-tax price, not of the total.\n- ₹50,440 — this is the tax-inclusive price given in the question; nothing has been removed.\n- ₹52,458 — adds the 4% tax again (50440 × 1.04) instead of removing it.\n\n**Key facts**\n- Sales tax is added on the selling price.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1124,14 +1124,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A person earns ₹4000 a month and spends ₹3200. What is his savings percentage?",
       "options": [
+        "20%",
         "25%",
         "80%",
-        "8%",
-        "20%"
+        "125%"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-percentage-extras",
-      "explanation": "He saves 800 out of 4000: 800 ÷ 4000 × 100 = 20%.\n\n**Why not the others**\n- 25% — Divides savings by expenditure.\n- 80% — That is the expenditure %.\n- 8% — Arithmetic slip.\n\n**Key facts**\n- Savings % = savings ÷ income × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "He saves 800 out of 4000: 800 ÷ 4000 × 100 = 20%.\n\n**Why not the others**\n- 25% — divides savings by expenditure (800/3200) instead of by income.\n- 80% — this is the expenditure as a percentage of income.\n- 125% — this is income as a percentage of expenditure (4000/3200).\n\n**Key facts**\n- Savings % = savings ÷ income × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1148,14 +1148,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The simple interest on ₹12,000 at 6% per annum for 2½ years is:",
       "options": [
+        "₹720",
         "₹1,440",
         "₹1,800",
-        "₹720",
-        "₹1,950"
+        "₹13,800"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
-      "explanation": "SI = 12000 × 6 × 2.5 ÷ 100 = ₹1,800.\n\n**Why not the others**\n- ₹1,440 — Uses 2 years.\n- ₹720 — Uses 1 year.\n- ₹1,950 — Arithmetic slip.\n\n**Key facts**\n- SI = PRT/100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "SI = 12000 × 6 × 2.5 ÷ 100 = ₹1,800.\n\n**Why not the others**\n- ₹720 — uses 1 year instead of 2½.\n- ₹1,440 — uses 2 years and drops the half year.\n- ₹13,800 — this is the amount P + SI, not the interest.\n\n**Key facts**\n- SI = PRT/100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1172,14 +1172,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "In how many years will ₹4,000 earn a simple interest of ₹1,200 at 5% per annum?",
       "options": [
-        "5 years",
-        "4 years",
+        "1.5 years",
         "6 years",
-        "8 years"
+        "16 2/3 years",
+        "30 years"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
-      "explanation": "T = 100 × SI ÷ (P × R) = 100 × 1200 ÷ (4000 × 5) = 6 years of simple interest.\n\n**Why not the others**\n- 5 years — Arithmetic slip.\n- 4 years — Arithmetic slip.\n- 8 years — Arithmetic slip.\n\n**Key facts**\n- T = 100·SI ÷ (PR).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "T = 100 × SI ÷ (P × R) = 100 × 1200 ÷ (4000 × 5) = 6 years of simple interest.\n\n**Why not the others**\n- 1.5 years — multiplies by the rate instead of dividing (1200 × 5 ÷ 4000).\n- 16 2/3 years — inverts the formula as T = P × R ÷ SI (4000 × 5 ÷ 1200).\n- 30 years — computes 100 × SI ÷ P = 30 and forgets to divide by the rate of 5%.\n\n**Key facts**\n- T = 100·SI ÷ (PR).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1196,14 +1196,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "At simple interest a sum becomes 4 times itself in 15 years. The rate per annum is:",
       "options": [
-        "26.67%",
-        "25%",
+        "6.67%",
+        "15%",
         "20%",
-        "15%"
+        "26.67%"
       ],
       "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
-      "explanation": "n times needs RT = (n − 1) × 100 = 300, so R = 300 ÷ 15 = 20% — the sum does not double alone, it adds 3 P of interest.\n\n**Why not the others**\n- 26.67% — Uses RT = 400.\n- 25% — Uses n × 100 ÷ T.\n- 15% — Confuses rate and time.\n\n**Key facts**\n- n times under SI: RT = (n − 1) × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "n times needs RT = (n − 1) × 100 = 300, so R = 300 ÷ 15 = 20% — the sum does not double alone, it adds 3 P of interest.\n\n**Why not the others**\n- 6.67% — uses the doubling rule RT = 100; four times needs interest of 3P, so RT = 300.\n- 15% — confuses the rate with the time of 15 years.\n- 26.67% — uses RT = 400 (n × 100); the principal itself is not interest, so it is (n − 1) × 100.\n\n**Key facts**\n- n times under SI: RT = (n − 1) × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1220,14 +1220,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "At what rate of simple interest will a sum double itself in 10 years?",
       "options": [
-        "20%",
+        "7.2%",
         "10%",
-        "5%",
-        "12.5%"
+        "12.5%",
+        "20%"
       ],
       "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
-      "explanation": "A sum doubles when R × T = 100, so R = 100 ÷ 10 = 10%.\n\n**Why not the others**\n- 20% — Uses RT = 200.\n- 5% — Uses RT = 50.\n- 12.5% — That is for 8 years.\n\n**Key facts**\n- Doubling under SI: RT = 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "A sum doubles when R × T = 100, so R = 100 ÷ 10 = 10%.\n\n**Why not the others**\n- 7.2% — applies the compound-interest 'rule of 72' (72 ÷ 10); the question is simple interest.\n- 12.5% — this is the rate that doubles a sum in 8 years, not 10.\n- 20% — uses RT = 200, treating doubling as interest of 2P instead of P.\n\n**Key facts**\n- Doubling under SI: RT = 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1244,14 +1244,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A sum at simple interest amounts to ₹1,560 in 3 years and ₹1,740 in 5 years. The principal is:",
       "options": [
-        "₹1,380",
+        "₹1,020",
         "₹1,290",
-        "₹1,200",
+        "₹1,380",
         "₹1,470"
       ],
       "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-simple-interest",
-      "explanation": "Interest for 2 years = 180, so 90 a year. Principal = 1560 − 3 × 90 = ₹1,290 (both amounts check).\n\n**Why not the others**\n- ₹1,380 — Subtracts only two years of interest.\n- ₹1,200 — Arithmetic slip.\n- ₹1,470 — Arithmetic slip.\n\n**Key facts**\n- Yearly interest = difference of amounts ÷ difference of years.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Interest for 2 years = 180, so 90 a year. Principal = 1560 − 3 × 90 = ₹1,290 (both amounts check).\n\n**Why not the others**\n- ₹1,020 — takes the 2-year difference ₹180 as the yearly interest (1560 − 3 × 180).\n- ₹1,380 — subtracts only two years of interest (1560 − 180) though 3 years have passed.\n- ₹1,470 — subtracts only one year of interest (1560 − 90).\n\n**Key facts**\n- Yearly interest = difference of amounts ÷ difference of years.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1268,14 +1268,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "What annual instalment will discharge a debt of ₹10,920 due in 3 years at 12% simple interest?",
       "options": [
-        "₹3,250",
         "₹3,640",
-        "₹3,000",
-        "₹3,500"
+        "₹3,500",
+        "₹3,250",
+        "₹2,935.48"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-interest-extras",
-      "explanation": "The first instalment earns 2 years of interest, the second 1, the third none: I(1.24) + I(1.12) + I = 3.36I = 10920 → I = ₹3,250 per instalment.\n\n**Why not the others**\n- ₹3,640 — Divides the debt by 3, ignoring interest on instalments.\n- ₹3,000 — Arithmetic slip.\n- ₹3,500 — Arithmetic slip.\n\n**Key facts**\n- SI instalments: I + I(1 + R/100) + I(1 + 2R/100) = debt.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "The first instalment earns 2 years of interest, the second 1, the third none: I(1.24) + I(1.12) + I = 3.36I = 10920 → I = ₹3,250 per instalment.\n\n**Why not the others**\n- ₹2,935.48 — treats the instalments as paid at the START of each year, giving 3, 2 and 1 years of interest (3.72I).\n- ₹3,500 — gives interest for one year to the first instalment only (3.12I); it earns 2 years and the second earns 1.\n- ₹3,640 — divides the debt by 3, ignoring the interest the instalments earn.\n\n**Key facts**\n- SI instalments: I + I(1 + R/100) + I(1 + 2R/100) = debt.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1292,14 +1292,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The compound interest on ₹5,000 at 10% per annum for 2 years, compounded annually, is:",
       "options": [
+        "₹500",
         "₹1,000",
         "₹1,050",
-        "₹6,050",
-        "₹1,100"
+        "₹6,050"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "A = 5000 × 1.1² = 6050; CI = 6050 − 5000 = ₹1,050.\n\n**Why not the others**\n- ₹1,000 — That is the simple interest.\n- ₹6,050 — That is the amount, not the interest.\n- ₹1,100 — Arithmetic slip.\n\n**Key facts**\n- A = P(1 + R/100)^{n}; CI = A − P.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "A = 5000 × 1.1² = 6050; CI = 6050 − 5000 = ₹1,050.\n\n**Why not the others**\n- ₹500 — interest for the first year only.\n- ₹1,000 — that is the simple interest; it misses interest on the first year's interest.\n- ₹6,050 — that is the amount, not the interest.\n\n**Key facts**\n- A = P(1 + R/100)^{n}; CI = A − P.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1317,13 +1317,13 @@
       "question": "The compound interest on ₹16,000 for 6 months at 20% per annum, compounded quarterly, is:",
       "options": [
         "₹1,600",
+        "₹1,640",
         "₹3,200",
-        "₹1,681",
-        "₹1,640"
+        "₹17,640"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "Quarterly: rate 5% per quarter for 2 quarters: 16000 × 1.05² = 17640; CI = ₹1,640.\n\n**Why not the others**\n- ₹1,600 — That is simple interest for 6 months.\n- ₹3,200 — Uses a full year.\n- ₹1,681 — Arithmetic slip.\n\n**Key facts**\n- Quarterly: rate R/4, periods 4n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Quarterly: rate 5% per quarter for 2 quarters: 16000 × 1.05² = 17640; CI = ₹1,640.\n\n**Why not the others**\n- ₹1,600 — that is simple interest for 6 months (16000 × 20 × ½ ÷ 100).\n- ₹3,200 — uses a full year of simple interest instead of 6 months.\n- ₹17,640 — that is the amount, not the interest.\n\n**Key facts**\n- Quarterly: rate R/4, periods 4n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1341,13 +1341,13 @@
       "question": "Compound interest on ₹8,000 at 10% per annum for 1 year compounded half-yearly is:",
       "options": [
         "₹800",
-        "₹840",
-        "₹1,600",
-        "₹820"
+        "₹820",
+        "₹1,680",
+        "₹8,820"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "Half-yearly: 5% for 2 periods: 8000 × 1.05² = 8820; CI = ₹820.\n\n**Why not the others**\n- ₹800 — That is simple interest.\n- ₹840 — Arithmetic slip.\n- ₹1,600 — Uses 10% per half-year.\n\n**Key facts**\n- Half-yearly: rate R/2, periods 2n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Half-yearly: 5% for 2 periods: 8000 × 1.05² = 8820; CI = ₹820.\n\n**Why not the others**\n- ₹800 — that is simple interest; it ignores half-yearly compounding.\n- ₹1,680 — uses the full 10% for each half-year (8000 × 1.1² − 8000) instead of 5%.\n- ₹8,820 — that is the amount, not the interest.\n\n**Key facts**\n- Half-yearly: rate R/2, periods 2n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1364,14 +1364,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A rate of 10% per annum compounded half-yearly is equivalent to what effective annual rate?",
       "options": [
+        "5%",
         "10%",
-        "20%",
         "10.25%",
-        "10.5%"
+        "20%"
       ],
       "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-interest-extras",
-      "explanation": "(1.05)² − 1 = 0.1025, i.e. 10.25% effective per year.\n\n**Why not the others**\n- 10% — Ignores compounding.\n- 20% — Doubles the rate.\n- 10.5% — Arithmetic slip.\n\n**Key facts**\n- Effective rate = (1 + R/200)² − 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "(1.05)² − 1 = 0.1025, i.e. 10.25% effective per year.\n\n**Why not the others**\n- 5% — takes the half-yearly rate as the annual rate.\n- 10% — ignores compounding; the nominal rate is not the effective rate.\n- 20% — doubles the rate because there are two half-years.\n\n**Key facts**\n- Effective rate = (1 + R/200)² − 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1388,14 +1388,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The difference between compound interest and simple interest on a sum for 2 years at 10% per annum is ₹80. The sum is:",
       "options": [
+        "₹80",
+        "₹400",
         "₹800",
-        "₹8,000",
-        "₹4,000",
-        "₹16,000"
+        "₹8,000"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "Difference = P(R/100)² → 80 = P × 0.01 → P = ₹8,000.\n\n**Why not the others**\n- ₹800 — Uses (R/100) instead of (R/100)².\n- ₹4,000 — Halves the answer.\n- ₹16,000 — Doubles the answer.\n\n**Key facts**\n- CI − SI (2 years) = P(R/100)².\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Difference = P(R/100)² → 80 = P × 0.01 → P = ₹8,000.\n\n**Why not the others**\n- ₹80 — drops one factor of 100: 80 × 100 ÷ 10² instead of 80 × 100² ÷ 10².\n- ₹400 — treats ₹80 as the 2-year simple interest (80 × 100 ÷ 20).\n- ₹800 — uses (R/100) instead of (R/100)², i.e. treats ₹80 as one year's interest.\n\n**Key facts**\n- CI − SI (2 years) = P(R/100)².\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1413,11 +1413,11 @@
       "question": "The difference between compound interest and simple interest on ₹8,000 for 3 years at 10% per annum is:",
       "options": [
         "₹80",
-        "₹248",
         "₹240",
+        "₹248",
         "₹2,648"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-interest-extras",
       "explanation": "Difference for 3 years = P(R/100)²(3 + R/100) = 8000 × 0.01 × 3.1 = ₹248 (CI 2648 − SI 2400).\n\n**Why not the others**\n- ₹80 — That is the 2-year difference.\n- ₹240 — Uses 3 × 80.\n- ₹2,648 — That is the compound interest itself.\n\n**Key facts**\n- CI − SI (3 years) = P(R/100)²(3 + R/100).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
@@ -1436,14 +1436,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A sum doubles itself in 5 years at compound interest. In how many years will it become 8 times itself?",
       "options": [
-        "20 years",
         "15 years",
-        "40 years",
-        "35 years"
+        "20 years",
+        "35 years",
+        "40 years"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-interest-extras",
-      "explanation": "8 = 2³, three doublings: 3 × 5 = 15 years. Under CI, doubling in n years means 8 times in 3n.\n\n**Why not the others**\n- 20 years — Thinks in simple-interest steps (7 doublings of P).\n- 40 years — Uses 8 × 5.\n- 35 years — Arithmetic slip.\n\n**Key facts**\n- CI multiples: 2^{k} times in k × n years.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "8 = 2³, three doublings: 3 × 5 = 15 years. Under CI, doubling in n years means 8 times in 3n.\n\n**Why not the others**\n- 20 years — counts 8 ÷ 2 = 4 doublings; 8 = 2³ needs only three.\n- 35 years — thinks in simple-interest steps: RT = 100 doubles, so 8 times needs RT = 700, i.e. 7 × 5.\n- 40 years — multiplies 8 × 5, as if each fold took 5 years.\n\n**Key facts**\n- CI multiples: 2^{k} times in k × n years.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1489,14 +1489,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The population of a town 2 years ago was 2,45,000. It increased by 15% in the first year and 20% in the second year. The present population is:",
       "options": [
-        "3,30,750",
+        "2,81,750",
         "2,94,000",
-        "3,38,100",
-        "3,52,800"
+        "3,30,750",
+        "3,38,100"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "245000 × 1.15 × 1.20 = 338100; the population grows by 38%, not 35%.\n\n**Why not the others**\n- 3,30,750 — Adds the rates (35%) instead of multiplying the factors.\n- 2,94,000 — Uses only 20%.\n- 3,52,800 — Arithmetic slip.\n\n**Key facts**\n- Different yearly rates multiply.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "245000 × 1.15 × 1.20 = 338100; the population grows by 38%, not 35%.\n\n**Why not the others**\n- 2,81,750 — applies only the first year's 15%.\n- 2,94,000 — applies only the second year's 20%.\n- 3,30,750 — adds the rates (35%) instead of multiplying the factors 1.15 × 1.20.\n\n**Key facts**\n- Different yearly rates multiply.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1513,14 +1513,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The population of a town is 50,000 and grows at 3% per year (compounded). The population after 2 years is about:",
       "options": [
+        "53,045",
         "53,000",
         "51,500",
-        "53,045",
-        "56,000"
+        "3,045"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "50000 × 1.03² = 53045 for the population after two years.\n\n**Why not the others**\n- 53,000 — Simple growth: 50000 + 2 × 1500.\n- 51,500 — One year only.\n- 56,000 — Arithmetic slip.\n\n**Key facts**\n- Growth = P(1 + R/100)^{n}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "50000 × 1.03² = 53045 for the population after two years.\n\n**Why not the others**\n- 3,045 — this is the increase, not the population after 2 years.\n- 51,500 — one year of growth only.\n- 53,000 — simple growth: 50000 + 2 × 1500; ignores growth on the first year's increase.\n\n**Key facts**\n- Growth = P(1 + R/100)^{n}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1539,12 +1539,12 @@
       "options": [
         "16%",
         "20%",
-        "25%",
-        "30%"
+        "48.8%",
+        "80%"
       ],
       "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "32000 ÷ 62500 = 64/125 = (4/5)³, so 1 − r/100 = 4/5 and r = 20% depreciation a year.\n\n**Why not the others**\n- 16% — Uses a straight-line average.\n- 25% — Arithmetic slip.\n- 30% — Arithmetic slip.\n\n**Key facts**\n- Depreciation: (1 − r/100)^{n} = new ÷ old.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "32000 ÷ 62500 = 64/125 = (4/5)³, so 1 − r/100 = 4/5 and r = 20% depreciation a year.\n\n**Why not the others**\n- 16% — straight-line average: the total fall of 48.8% divided by 3 years.\n- 48.8% — this is the total fall over 3 years (1 − 32000/62500), not the annual rate.\n- 80% — this is the fraction RETAINED each year (cube root of 0.512), not the rate of depreciation.\n\n**Key facts**\n- Depreciation: (1 − r/100)^{n} = new ÷ old.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1561,14 +1561,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A machine worth ₹10,000 depreciates at 10% a year on the reducing balance. Its value after 2 years is:",
       "options": [
+        "₹1,900",
         "₹8,000",
-        "₹9,000",
         "₹8,100",
-        "₹8,190"
+        "₹9,000"
       ],
       "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "10000 × 0.9² = ₹8,100 after the depreciation of two years.\n\n**Why not the others**\n- ₹8,000 — Straight-line: subtracts 1000 twice.\n- ₹9,000 — One year only.\n- ₹8,190 — Arithmetic slip.\n\n**Key facts**\n- Value = P(1 − R/100)^{n}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "10000 × 0.9² = ₹8,100 after the depreciation of two years.\n\n**Why not the others**\n- ₹1,900 — this is the total depreciation, not the value after 2 years.\n- ₹8,000 — straight-line: subtracts 1,000 twice on the original value.\n- ₹9,000 — one year only.\n\n**Key facts**\n- Value = P(1 − R/100)^{n}.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1585,14 +1585,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A sum earns ₹2,100 compound interest in 2 years at 10% per annum compounded annually. The sum is:",
       "options": [
-        "₹10,500",
-        "₹21,000",
+        "₹1,735.54",
         "₹10,000",
-        "₹9,500"
+        "₹10,500",
+        "₹21,000"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-compound-interest",
-      "explanation": "CI for 2 years at 10% = 21% of P (1.1² − 1 = 0.21), so the compound sum P = 2100 ÷ 0.21 = ₹10,000.\n\n**Why not the others**\n- ₹10,500 — Uses simple interest: 2100 ÷ 0.20 = 10500.\n- ₹21,000 — Divides by 0.1.\n- ₹9,500 — Arithmetic slip.\n\n**Key facts**\n- CI factor for 2 years at R%: (1 + R/100)² − 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "CI for 2 years at 10% = 21% of P (1.1² − 1 = 0.21), so the compound sum P = 2100 ÷ 0.21 = ₹10,000.\n\n**Why not the others**\n- ₹1,735.54 — divides by the amount factor 1.21 instead of the interest factor 0.21.\n- ₹10,500 — uses simple interest: 2100 ÷ 0.20.\n- ₹21,000 — divides by 0.1, treating ₹2,100 as one year's interest.\n\n**Key facts**\n- CI factor for 2 years at R%: (1 + R/100)² − 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1609,14 +1609,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A man buys a radio for ₹1,200 and sells it at a loss of 15%. The selling price is:",
       "options": [
-        "₹1,380",
-        "₹1,180",
-        "₹1,035",
-        "₹1,020"
+        "₹180",
+        "₹1,020",
+        "₹1,043.48",
+        "₹1,380"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "SP = 1200 × (1 − 15/100) = ₹1,020; the 15% loss is on the cost price.\n\n**Why not the others**\n- ₹1,380 — Adds the 15% as if it were a profit.\n- ₹1,180 — Subtracts only ₹20.\n- ₹1,035 — Takes 15% of a wrong base.\n\n**Key facts**\n- SP = CP × (1 ± p/100); profit and loss % are on CP.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "SP = 1200 × (1 − 15/100) = ₹1,020; the 15% loss is on the cost price.\n\n**Why not the others**\n- ₹180 — this is the loss (15% of 1,200), not the selling price.\n- ₹1,043.48 — divides by 1.15 as if the 15% were on the selling price; the loss is on CP.\n- ₹1,380 — adds the 15% as if it were a profit.\n\n**Key facts**\n- SP = CP × (1 ± p/100); profit and loss % are on CP.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1633,14 +1633,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "By selling an article for ₹690 a shopkeeper makes a profit of 15%. Its cost price is:",
       "options": [
+        "₹90",
         "₹586.50",
-        "₹675",
-        "₹793.50",
-        "₹600"
+        "₹600",
+        "₹793.50"
       ],
-      "answerIndex": 3,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "CP = SP ÷ 1.15 = 690 ÷ 1.15 = ₹600 (profit ₹90 = 15% of 600).\n\n**Why not the others**\n- ₹586.50 — Subtracts 15% of the SP — the profit is on CP.\n- ₹675 — Subtracts ₹15.\n- ₹793.50 — Adds 15% to the SP.\n\n**Key facts**\n- CP = SP ÷ (1 + p/100).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "CP = SP ÷ 1.15 = 690 ÷ 1.15 = ₹600 (profit ₹90 = 15% of 600).\n\n**Why not the others**\n- ₹90 — this is the profit (690 − 600), not the cost price.\n- ₹586.50 — subtracts 15% of the SP; the profit is a percentage of CP.\n- ₹793.50 — adds 15% to the SP instead of removing it.\n\n**Key facts**\n- CP = SP ÷ (1 + p/100).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1657,14 +1657,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "Goods are marked 20% above cost price and sold at a 10% discount. The gain percent is:",
       "options": [
-        "10%",
-        "12%",
         "8%",
-        "2%"
+        "10%",
+        "20%",
+        "108%"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "Take CP = 100: MP = 120; SP = 120 × 0.9 = 108; gain = 8%.\n\n**Why not the others**\n- 10% — Subtracts 10 from 20.\n- 12% — Arithmetic slip.\n- 2% — Arithmetic slip.\n\n**Key facts**\n- Never subtract the discount % from the mark-up %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Take CP = 100: MP = 120; SP = 120 × 0.9 = 108; gain = 8%.\n\n**Why not the others**\n- 10% — subtracts 10 from 20; the discount acts on the marked price, not CP.\n- 20% — this is the mark-up alone; the discount is ignored.\n- 108% — this is SP as a percentage of CP, not the gain.\n\n**Key facts**\n- Never subtract the discount % from the mark-up %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1681,12 +1681,12 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "An article marked at ₹800 is sold after a discount of 15%. The selling price is:",
       "options": [
-        "₹785",
-        "₹920",
+        "₹120",
         "₹680",
-        "₹120"
+        "₹785",
+        "₹920"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
       "explanation": "Discount is on the marked price: SP = 800 × 0.85 = ₹680.\n\n**Why not the others**\n- ₹785 — Subtracts ₹15.\n- ₹920 — Adds the discount.\n- ₹120 — ₹120 is the discount itself.\n\n**Key facts**\n- SP = MP × (1 − d/100).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
@@ -1705,14 +1705,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "Two successive discounts of 40% and 20% together amount to ₹988. The marked price is:",
       "options": [
-        "₹1,900",
-        "₹1,646.67",
         "₹2,470",
-        "₹1,520"
+        "₹2,058.33",
+        "₹1,900",
+        "₹1,646.67"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "Single discount = 40 + 20 − 40 × 20 ÷ 100 = 52%. 52% of MP = 988 → MP = ₹1,900.\n\n**Why not the others**\n- ₹1,646.67 — Uses 60% as the single discount.\n- ₹2,470 — Uses 40% only.\n- ₹1,520 — Arithmetic slip.\n\n**Key facts**\n- Successive discounts: a + b − ab/100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Single discount = 40 + 20 − 40 × 20 ÷ 100 = 52%. 52% of MP = 988 → MP = ₹1,900.\n\n**Why not the others**\n- ₹1,646.67 — adds the discounts to 60% (988 ÷ 0.6) instead of combining them to 52%.\n- ₹2,058.33 — treats ₹988 as the price PAID (48% of MP); it is the total discount.\n- ₹2,470 — uses the first discount of 40% only (988 ÷ 0.4).\n\n**Key facts**\n- Successive discounts: a + b − ab/100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1729,14 +1729,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The single discount equivalent to successive discounts of 10%, 20% and 25% is:",
       "options": [
+        "28%",
         "46%",
-        "55%",
-        "45%",
-        "50%"
+        "54%",
+        "55%"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "Price factor = 0.9 × 0.8 × 0.75 = 0.54, so the single discount is 46%.\n\n**Why not the others**\n- 55% — Adds the three rates.\n- 45% — Arithmetic slip.\n- 50% — Arithmetic slip.\n\n**Key facts**\n- Multiply the (1 − d/100) factors.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Price factor = 0.9 × 0.8 × 0.75 = 0.54, so the single discount is 46%.\n\n**Why not the others**\n- 28% — combines only the first two discounts (10% and 20%) and drops the 25%.\n- 54% — this is the fraction of the price still PAID (0.9 × 0.8 × 0.75), not the discount.\n- 55% — adds the three rates; successive discounts multiply.\n\n**Key facts**\n- Multiply the (1 − d/100) factors.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1753,14 +1753,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A trader wants a 20% profit after giving a 20% discount. By what percentage above the cost price should he mark the goods?",
       "options": [
+        "25%",
         "40%",
         "44%",
-        "25%",
         "50%"
       ],
       "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "MP = CP × (100 + 20) ÷ (100 − 20) = 1.5 CP, i.e. 50% above cost before the discount.\n\n**Why not the others**\n- 40% — Adds the two percentages.\n- 44% — Arithmetic slip.\n- 25% — Arithmetic slip.\n\n**Key facts**\n- MP = CP × (100 + p) ÷ (100 − d).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "MP = CP × (100 + 20) ÷ (100 − 20) = 1.5 CP, i.e. 50% above cost before the discount.\n\n**Why not the others**\n- 25% — only offsets the discount (100/80) and forgets the 20% profit.\n- 40% — adds the two percentages.\n- 44% — multiplies 1.2 × 1.2; the discount factor is 0.8, so it must divide 1.2 by 0.8.\n\n**Key facts**\n- MP = CP × (100 + p) ÷ (100 − d).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1777,14 +1777,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A shopkeeper sells at cost price but uses an 800 g weight for 1 kg. His gain percent is:",
       "options": [
-        "25%",
-        "20%",
+        "125%",
         "80%",
-        "12.5%"
+        "25%",
+        "20%"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "Gain = error ÷ (true − error) × 100 = 200 ÷ 800 × 100 = 25% from the false weight.\n\n**Why not the others**\n- 20% — Divides by the true weight instead of the false one.\n- 80% — Uses the weight as the gain.\n- 12.5% — Arithmetic slip.\n\n**Key facts**\n- Dealer gain = error ÷ (true − error) × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Gain = error ÷ (true − error) × 100 = 200 ÷ 800 × 100 = 25% from the false weight.\n\n**Why not the others**\n- 20% — divides the 200 g error by the true weight (1000 g) instead of the 800 g given.\n- 80% — this is 800/1000, the share of goods actually delivered, not the gain.\n- 125% — the ratio 1000/800 itself, not the gain over cost.\n\n**Key facts**\n- Dealer gain = error ÷ (true − error) × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1801,14 +1801,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A dealer sells at 10% above cost price and also uses a 900 g weight for 1 kg. His total gain percent is:",
       "options": [
-        "20%",
-        "22.22%",
         "11.11%",
-        "21%"
+        "20%",
+        "21.11%",
+        "22.22%"
       ],
-      "answerIndex": 1,
+      "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "He gives goods costing 0.9 and charges 1.1: gain = 1.1 ÷ 0.9 − 1 = 22.22% from the false weight and the mark-up together.\n\n**Why not the others**\n- 20% — Adds 10% and the weight gain.\n- 11.11% — Weight gain only.\n- 21% — Arithmetic slip.\n\n**Key facts**\n- Price factor ÷ weight factor − 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "He gives goods costing 0.9 and charges 1.1: gain = 1.1 ÷ 0.9 − 1 = 22.22% from the false weight and the mark-up together.\n\n**Why not the others**\n- 11.11% — counts the weight gain only and forgets the 10% mark-up.\n- 20% — treats the 900 g weight as a 10% gain and adds it to the 10% mark-up.\n- 21.11% — adds 10% and 11.11%; successive gains multiply (1.1 ÷ 0.9).\n\n**Key facts**\n- Price factor ÷ weight factor − 1.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1826,13 +1826,13 @@
       "question": "A sells a TV to B at 25% profit, and B sells it to C at 10% loss. If C pays ₹5,625, A bought it for:",
       "options": [
         "₹4,500",
+        "₹5,000",
         "₹5,625",
-        "₹6,250",
-        "₹5,000"
+        "₹6,250"
       ],
-      "answerIndex": 3,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "A's cost = 5625 ÷ 0.9 ÷ 1.25 = ₹5,000 — the chain of sells is undone by dividing.\n\n**Why not the others**\n- ₹4,500 — Divides by 1.25 only.\n- ₹5,625 — That is what C pays.\n- ₹6,250 — Multiplies instead of dividing.\n\n**Key facts**\n- Work a chain backwards by dividing by each factor.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "A's cost = 5625 ÷ 0.9 ÷ 1.25 = ₹5,000 — the chain of sells is undone by dividing.\n\n**Why not the others**\n- ₹4,500 — divides by 1.25 only; undoes A's profit but not B's loss.\n- ₹5,625 — that is what C pays, not A's cost.\n- ₹6,250 — divides by 0.9 only; undoes B's loss but not A's profit.\n\n**Key facts**\n- Work a chain backwards by dividing by each factor.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1849,14 +1849,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A man sells two horses for ₹4,800 each, gaining 10% on one and losing 10% on the other. Overall he gains or loses:",
       "options": [
-        "gains 1%",
-        "loses 1%",
-        "neither gains nor loses",
-        "loses 10%"
+        "a loss of 1%",
+        "a gain of 1%",
+        "a loss of 2%",
+        "no gain or loss"
       ],
-      "answerIndex": 1,
+      "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "Same SP, +x% and −x%: net loss of x²/100 % = 1%, so overall he loses 1%.\n\n**Why not the others**\n- gains 1% — Same SP with ±x% always means a net loss.\n- neither gains nor loses — The two do not cancel.\n- loses 10% — Arithmetic slip.\n\n**Key facts**\n- Same SP, ±x% → loss x²/100 %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Same SP, +x% and −x%: net loss of x²/100 % = 1%, so overall he loses 1%.\n\n**Why not the others**\n- a gain of 1% — right size, wrong sign; same SP with ±x% always gives a net loss.\n- a loss of 2% — doubles x²/100 because there are two horses; the formula already covers both.\n- no gain or loss — the 10% gain and 10% loss act on different cost prices, so they do not cancel.\n\n**Key facts**\n- Same SP, ±x% → loss x²/100 %.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1873,14 +1873,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "On selling 20 articles for ₹1,600 a man gains the cost price of 4 articles. The cost price of one article is:",
       "options": [
-        "₹66.67",
-        "₹80",
         "₹100",
+        "₹80",
+        "₹66.67",
         "₹64"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-discount",
-      "explanation": "Gain = cost price of 4 → SP of 20 = CP of 24, so CP of one = 1600 ÷ 24 = ₹66.67.\n\n**Why not the others**\n- ₹80 — 80 is the SP of one.\n- ₹100 — Subtracts 4 from 20 the other way.\n- ₹64 — Arithmetic slip.\n\n**Key facts**\n- Gain of the cost price of n: SP of N = CP of N + n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Gain = cost price of 4 → SP of 20 = CP of 24, so CP of one = 1600 ÷ 24 = ₹66.67.\n\n**Why not the others**\n- ₹64 — treats the gain as the SELLING price of 4 articles (CP of 20 = SP of 16).\n- ₹80 — this is the selling price of one article (1600 ÷ 20).\n- ₹100 — subtracts 4 from 20 (1600 ÷ 16); a gain must be added, not taken away.\n\n**Key facts**\n- Gain of the cost price of n: SP of N = CP of N + n.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1899,12 +1899,12 @@
       "options": [
         "20%",
         "25%",
-        "30%",
-        "6%"
+        "33.33%",
+        "80%"
       ],
       "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "CP of 24 = SP of 30, so loss % = 6 ÷ (24 + 6) × 100 = 20% (the selling price of 6 pens is the loss).\n\n**Why not the others**\n- 25% — Divides by 24 instead of 30.\n- 30% — Arithmetic slip.\n- 6% — Arithmetic slip.\n\n**Key facts**\n- Loss = SP of n on selling N → n ÷ (N + n) × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "CP of 24 = SP of 30, so loss % = 6 ÷ (24 + 6) × 100 = 20% (the selling price of 6 pens is the loss).\n\n**Why not the others**\n- 25% — divides the loss of 6 by 24 (the SP count) instead of by the CP count 30.\n- 33.33% — subtracts 6 from 24 (6 ÷ 18) instead of adding it.\n- 80% — this is the SP-to-CP ratio (24/30), not the loss.\n\n**Key facts**\n- Loss = SP of n on selling N → n ÷ (N + n) × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1921,14 +1921,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "75 articles cost ₹10,800. On selling them, the loss equals the selling price of 5 articles. The selling price of one article is:",
       "options": [
-        "₹144",
+        "₹134.40",
         "₹135",
-        "₹154.29",
-        "₹128"
+        "₹144",
+        "₹154.29"
       ],
       "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "CP of 75 = SP of 80, so the selling price of one article = 10800 ÷ 80 = ₹135.\n\n**Why not the others**\n- ₹144 — 144 = CP of one.\n- ₹154.29 — Divides by 70.\n- ₹128 — Arithmetic slip.\n\n**Key facts**\n- Loss = SP of n → CP of N = SP of (N + n).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "CP of 75 = SP of 80, so the selling price of one article = 10800 ÷ 80 = ₹135.\n\n**Why not the others**\n- ₹134.40 — takes the loss as 5/75 of CP (144 × 70/75); the loss is 5 articles' SELLING price.\n- ₹144 — this is the cost price of one article (10800 ÷ 75).\n- ₹154.29 — divides by 70 (subtracts 5 articles instead of adding).\n\n**Key facts**\n- Loss = SP of n → CP of N = SP of (N + n).\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1945,14 +1945,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "The cost price of 15 pens equals the selling price of 12 pens. The profit percent is:",
       "options": [
-        "20%",
-        "3%",
+        "125%",
+        "80%",
         "25%",
-        "33.33%"
+        "20%"
       ],
       "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "Profit % = (15 − 12) ÷ 12 × 100 = 25% when the cost price of 15 = SP of 12.\n\n**Why not the others**\n- 20% — Divides by 15 instead of 12.\n- 3% — Uses the difference only.\n- 33.33% — Arithmetic slip.\n\n**Key facts**\n- CP of x = SP of y → (x − y) ÷ y × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Profit % = (15 − 12) ÷ 12 × 100 = 25% when the cost price of 15 = SP of 12.\n\n**Why not the others**\n- 20% — divides the gain of 3 by 15 instead of by 12.\n- 80% — this is 12/15, the SP-count to CP-count ratio, not the profit.\n- 125% — this is SP as a percentage of CP (15/12), not the profit.\n\n**Key facts**\n- CP of x = SP of y → (x − y) ÷ y × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -1971,10 +1971,10 @@
       "options": [
         "25% loss",
         "20% profit",
-        "20% loss",
-        "25% profit"
+        "25% profit",
+        "20% loss"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
       "explanation": "Loss % = (25 − 20) ÷ 25 × 100 = 20% because the cost price of 20 buys only 25 at the SP.\n\n**Why not the others**\n- 25% loss — Divides by 20 instead of 25.\n- 20% profit — y > x means a loss.\n- 25% profit — Wrong base and sign.\n\n**Key facts**\n- If y > x it is a loss: (y − x) ÷ y × 100.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
@@ -1993,14 +1993,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A trader buys goods for ₹5,400. He sells 2/3 of them at 8% profit. At what profit percent must he sell the rest to make an overall profit of 18%?",
       "options": [
-        "38%",
-        "28%",
         "10%",
-        "26%"
+        "26%",
+        "28%",
+        "38%"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "Target SP = 5400 × 1.18 = 6372. Part SP = 3600 × 1.08 = 3888. Rest SP = 2484 on a cost of 1800 → 38% to reach the overall target.\n\n**Why not the others**\n- 28% — Arithmetic slip.\n- 10% — Uses 18 − 8.\n- 26% — Arithmetic slip.\n\n**Key facts**\n- Rest SP = total target SP − part SP.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Target SP = 5400 × 1.18 = 6372. Part SP = 3600 × 1.08 = 3888. Rest SP = 2484 on a cost of 1800 → 38% to reach the overall target.\n\n**Why not the others**\n- 10% — subtracts 8 from 18; ignores that the rest is only 1/3 of the goods.\n- 26% — adds 18 + 8.\n- 28% — takes a simple average (8 + x)/2 = 18; the two parts carry weights 2/3 and 1/3.\n\n**Key facts**\n- Rest SP = total target SP − part SP.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -2017,14 +2017,14 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "Two shirts cost ₹650 together. One is sold at a 7% profit and the other at a 6% loss, so that the trader neither gains nor loses. The cost of the cheaper shirt is:",
       "options": [
+        "₹50",
         "₹300",
-        "₹350",
         "₹325",
-        "₹250"
+        "₹350"
       ],
-      "answerIndex": 0,
+      "answerIndex": 1,
       "noteRef": "ment-percentage-interest-profit-loss-note-profit-loss-extras",
-      "explanation": "0.07 × CP₁ = 0.06 × CP₂ with CP₁ + CP₂ = 650 → CP₁ = 300, CP₂ = 350.\n\n**Why not the others**\n- ₹350 — That is the dearer shirt.\n- ₹325 — Assumes equal costs.\n- ₹250 — Arithmetic slip.\n\n**Key facts**\n- No profit no loss: a × CP₁ = b × CP₂.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "0.07 × CP₁ = 0.06 × CP₂ with CP₁ + CP₂ = 650 → CP₁ = 300, CP₂ = 350.\n\n**Why not the others**\n- ₹50 — this is the difference between the two costs, not the cheaper cost.\n- ₹325 — assumes equal costs; a 7% gain cannot cancel a 6% loss on equal bases.\n- ₹350 — that is the dearer shirt.\n\n**Key facts**\n- No profit no loss: a × CP₁ = b × CP₂.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [
@@ -2041,12 +2041,12 @@
       "subtopicId": "ment-percentage-interest-profit-loss",
       "question": "A, B and C invest in the ratio 3 : 2 : 6. After 6 months C withdraws half his capital. Out of a year's profit of ₹53,010, A gets:",
       "options": [
-        "₹16,740",
-        "₹14,457",
         "₹11,160",
+        "₹14,457",
+        "₹16,740",
         "₹28,914"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "noteRef": "ment-percentage-interest-profit-loss-note-partnership-alligation",
       "explanation": "Capital × months: A 3 × 12 = 36, B 2 × 12 = 24, C 6 × 6 + 3 × 6 = 54. Total 114. A = 36/114 × 53010 = ₹16,740 of the profit.\n\n**Why not the others**\n- ₹14,457 — Ignores the withdrawal (3/11 of the profit).\n- ₹11,160 — That is B's share.\n- ₹28,914 — C's share if the withdrawal is ignored.\n\n**Key facts**\n- Withdrawal: add capital × months for each period.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
@@ -2066,13 +2066,13 @@
       "question": "5 kg of rice at ₹18/kg is mixed with 2 kg of another rice so that the mixture costs ₹20/kg. The price of the second rice is:",
       "options": [
         "₹25/kg",
-        "₹22/kg",
+        "₹20.80/kg",
         "₹20/kg",
         "₹19/kg"
       ],
       "answerIndex": 0,
       "noteRef": "ment-percentage-interest-profit-loss-note-partnership-alligation",
-      "explanation": "Total cost = 7 × 20 = 140; first rice = 90; second = 50 ÷ 2 = ₹25/kg in the mixture.\n\n**Why not the others**\n- ₹22/kg — Arithmetic slip.\n- ₹20/kg — That is the mixture price.\n- ₹19/kg — Average of 18 and 20.\n\n**Key facts**\n- Weighted average equation with the unknown inside.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
+      "explanation": "Total cost = 7 × 20 = 140; first rice = 90; second = 50 ÷ 2 = ₹25/kg in the mixture.\n\n**Why not the others**\n- ₹19/kg — averages 18 and 20; ignores the quantities 5 kg and 2 kg.\n- ₹20/kg — that is the mixture price, not the second rice's price.\n- ₹20.80/kg — inverts the quantities in alligation, (x − 20) : 2 = 2 : 5.\n\n**Key facts**\n- Weighted average equation with the unknown inside.\n\n*Source: APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md*",
       "source": "APPSC Quantitative Reasoning extracted text (Percentage, Basic Percentage, Percentage of a Quantity, Percentage Increase and Decrease, Successive Percentage Change, Comparison of Percentage, Consumption and Expenditure, Population Based, Election Based, Marks Based, Income and Expenditure, Commission Based, Sales Tax, Simple Interest, Compound Interest, Simple and Compound, Installment, Depreciation, Discount & MP, Successive discount, Successive Selling, Dishonest Dealings, Mixture Problems, Partnership); NCERT Class 7-8 comparing quantities; PYQ bank .research/pyq-bank/ment-percentage-interest-profit-loss.md",
       "verified": true,
       "covers": [

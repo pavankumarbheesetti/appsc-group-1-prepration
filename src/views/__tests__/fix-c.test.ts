@@ -67,7 +67,9 @@ describe('D14 — MCQ options render ^{} as superscripts everywhere', () => {
     expect(found).toBe(true);
     const opts = root.querySelector('.option-list')!;
     expect(opts.textContent).not.toContain('^{');
-    expect(opts.querySelector('.option-body sup')!.textContent).toBe('6');
+    // Option order is balanced for answer spread, so assert the exponent
+    // is rendered as <sup> on some option rather than on the first one.
+    expect([...opts.querySelectorAll('.option-body sup')].map((s) => s.textContent)).toContain('6');
     // Submit → the review list renders the same way.
     byText(root, 'button', 'Submit test')!.click();
     byText(document.querySelector<HTMLElement>('.confirm-panel')!, 'button', 'Submit test')!.click();
