@@ -187,6 +187,65 @@ export const AlignExceptionsSchema = z
 export type AlignExceptions = z.infer<typeof AlignExceptionsSchema>;
 
 /* -------------------------------------------------------------------------- */
+/* Question-quality waivers                                                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The waivable rules of the `question-quality` validator (see
+ * `.research/plan/QUESTION-QUALITY.md`). `waiver-stale` is deliberately NOT
+ * waivable — it is the rule that reports a waiver that should be removed.
+ */
+export const QUALITY_RULES = [
+  'stem-short',
+  'stem-prompt',
+  'option-length',
+  'option-duplicate',
+  'option-filler',
+  'option-absolute',
+  'all-correct-share',
+  'answer-spread',
+  'key-variety',
+] as const;
+/** Zod enum of waivable question-quality rules. */
+export const QualityRuleSchema = z.enum(QUALITY_RULES);
+
+/**
+ * `content/audit/quality-waivers.json` — the per-BANK allowlist that lets the
+ * question-quality fix land bank by bank. A waived bank's findings are still
+ * reported (as `waived`), but do not fail the `VALIDATE_QUALITY=1` /
+ * `npm run audit:quality` gate. Remove a bank's entry once it is clean; an
+ * entry that no longer suppresses anything is reported as `waiver-stale`.
+ * `rules` (optional) narrows the waiver to those rules; absent = every rule.
+ */
+export const QualityWaiversSchema = z
+  .object({
+    version: z.number().int().positive(),
+    source: z.string().min(1),
+    waivers: z.array(
+      z
+        .object({
+          /** Bank path as in the manifest, e.g. `/content/polity/pol-x/mcq-pol-x.json`. */
+          bank: z.string().regex(/^\/content\/.+\.json$/, 'bank must be a /content/…json path'),
+          /** Optional subset of rules waived; absent = all rules. */
+          rules: z.array(QualityRuleSchema).min(1).optional(),
+          /** Why the bank is waived (e.g. "baseline — pending quality rewrite"). */
+          why: z.string().min(10),
+        })
+        .strict(),
+    ),
+  })
+  .strict()
+  .superRefine((doc, ctx) => {
+    const seen = new Set<string>();
+    doc.waivers.forEach((w, i) => {
+      if (seen.has(w.bank)) ctx.addIssue({ code: 'custom', path: ['waivers', i, 'bank'], message: `duplicate bank ${w.bank}` });
+      seen.add(w.bank);
+    });
+  });
+/** The whole question-quality waivers document. */
+export type QualityWaivers = z.infer<typeof QualityWaiversSchema>;
+
+/* -------------------------------------------------------------------------- */
 /* Parse helpers                                                               */
 /* -------------------------------------------------------------------------- */
 

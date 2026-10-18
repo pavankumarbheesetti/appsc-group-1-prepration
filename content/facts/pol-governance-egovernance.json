@@ -1,0 +1,1797 @@
+{
+  "version": 1,
+  "subtopicId": "pol-governance-egovernance",
+  "facts": [
+    {
+      "id": "gg-attributes",
+      "fact": "UNESCAP lists eight attributes of good governance, including participation, rule of law, transparency and accountability.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Participation",
+        "Rule of law"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-good-governance",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-4",
+        "pol-governance-egovernance-card-1"
+      ]
+    },
+    {
+      "id": "gg-concentration",
+      "fact": "Concentration of authority in the executive is not an attribute of good governance.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Concentration of authority"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-good-governance",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-4"
+      ]
+    },
+    {
+      "id": "gg-day",
+      "fact": "Good Governance Day (25 December) marks Atal Bihari Vajpayee's birth anniversary.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "25 December",
+        "Vajpayee"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-good-governance",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-1",
+        "pol-governance-egovernance-card-2"
+      ]
+    },
+    {
+      "id": "gg-motto",
+      "fact": "India's reform motto is \"minimum government, maximum governance\".",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "minimum government"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-good-governance",
+      "drilledBy": [
+        "pol-governance-egovernance-card-1"
+      ]
+    },
+    {
+      "id": "rti-force",
+      "fact": "The RTI Act came into force on 12 October 2005.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "12 October 2005"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-29"
+      ]
+    },
+    {
+      "id": "rti-ladder",
+      "fact": "The RTI appeal ladder is PIO, First Appellate Authority, then the Information Commission.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "First Appellate Authority"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-5",
+        "pol-governance-egovernance-card-3"
+      ]
+    },
+    {
+      "id": "rti-s4s8",
+      "fact": "Section 4 is proactive disclosure and Section 8 lists exemptions with a public-interest override.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Section 4",
+        "Section 8"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-6",
+        "pol-governance-egovernance-mcq-33",
+        "pol-governance-egovernance-mcq-35"
+      ]
+    },
+    {
+      "id": "rti-2019",
+      "fact": "The RTI (Amendment) Act 2019 lets the Centre fix the term and salary of Information Commissioners.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "2019",
+        "Central Government"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-7",
+        "pol-governance-egovernance-card-4"
+      ]
+    },
+    {
+      "id": "cc-uk",
+      "fact": "The Citizen's Charter originated in the United Kingdom in 1991.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "United Kingdom"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-citizen-charter-sevottam",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-3"
+      ]
+    },
+    {
+      "id": "cc-1997",
+      "fact": "India adopted the Citizen's Charter in 1997 and it is not legally enforceable.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "1997"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-citizen-charter-sevottam",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-32",
+        "pol-governance-egovernance-card-5"
+      ]
+    },
+    {
+      "id": "cc-sevottam",
+      "fact": "Sevottam has three modules: Citizen's Charter, grievance redress and service-delivery capability.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Sevottam"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-good-governance",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-8",
+        "pol-governance-egovernance-card-5"
+      ]
+    },
+    {
+      "id": "cc-mp",
+      "fact": "Madhya Pradesh passed the first Public Service Guarantee law in 2010.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Madhya Pradesh"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-citizen-charter-sevottam",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-12"
+      ]
+    },
+    {
+      "id": "sa-mgnrega",
+      "fact": "Social audit by the Gram Sabha was made a statutory mandate under MGNREGA, 2005 (Section 17).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "MGNREGA"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-social-audit",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-2",
+        "pol-governance-egovernance-mcq-9",
+        "pol-governance-egovernance-mcq-17",
+        "pol-governance-egovernance-mcq-55",
+        "pol-governance-egovernance-card-6"
+      ]
+    },
+    {
+      "id": "sa-ssaat",
+      "fact": "Andhra Pradesh's SSAAT is the independent body that pioneered institutional social audit.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "SSAAT"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-social-audit",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-9",
+        "pol-governance-egovernance-mcq-17",
+        "pol-governance-egovernance-card-6"
+      ]
+    },
+    {
+      "id": "eg-types",
+      "fact": "e-Governance interaction types are G2C, G2B, G2G and G2E.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "G2B",
+        "G2E"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egovernance",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-10",
+        "pol-governance-egovernance-card-7"
+      ]
+    },
+    {
+      "id": "arc2-moily",
+      "fact": "The 2nd ARC (2005) was chaired by Veerappa Moily and gave 15 reports.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Moily"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-40"
+      ]
+    },
+    {
+      "id": "arc2-master",
+      "fact": "The 2nd ARC's first report is \"Right to Information: Master Key to Good Governance\".",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Master Key"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-2nd-arc-ap",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-13",
+        "pol-governance-egovernance-card-9"
+      ]
+    },
+    {
+      "id": "arc2-smart",
+      "fact": "SMART governance means Simple, Moral, Accountable, Responsive and Transparent.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Moral",
+        "Responsive"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-2nd-arc-ap",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-30"
+      ]
+    },
+    {
+      "id": "ap-rtgs",
+      "fact": "AP's RTGS was formed on 6 September 2017 by a Government Order and runs a command-and-control centre.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "6 September 2017"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-2nd-arc-ap",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-15"
+      ]
+    },
+    {
+      "id": "ap-meeseva",
+      "fact": "MeeSeva is AP's single-window platform for certificates and G2C services.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "MeeSeva",
+        "single-window"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-citizen-charter-sevottam",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-14",
+        "pol-governance-egovernance-mcq-18",
+        "pol-governance-egovernance-card-13"
+      ]
+    },
+    {
+      "id": "dev-civil",
+      "fact": "Civil society is the space of voluntary non-state, non-market associations.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "syllabus",
+        "standard"
+      ],
+      "keys": [
+        "Civil society",
+        "voluntary"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-civil-society-ngos-shgs",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-19"
+      ]
+    },
+    {
+      "id": "dev-pressure",
+      "fact": "Pressure groups influence policy without contesting elections.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard"
+      ],
+      "keys": [
+        "Pressure groups"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-civil-society-ngos-shgs",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-19"
+      ]
+    },
+    {
+      "id": "dev-shg",
+      "fact": "An SHG is a small voluntary group of 10-20 members, mostly women.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "10-20"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-civil-society-ngos-shgs",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-21"
+      ]
+    },
+    {
+      "id": "dev-ladder",
+      "fact": "SHGs federate as SHG, Village Organisation, Mandal Samakhya.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "ap",
+        "standard"
+      ],
+      "keys": [
+        "Village Organisation",
+        "Mandal Samakhya"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-civil-society-ngos-shgs",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-21"
+      ]
+    },
+    {
+      "id": "dev-serp",
+      "fact": "In AP, SERP runs Velugu/Indira Kranthi Patham and MEPMA is the urban SHG arm.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "SERP",
+        "MEPMA"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-civil-society-ngos-shgs",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-20"
+      ]
+    },
+    {
+      "id": "aadhaar-money",
+      "fact": "The Aadhaar Act 2016 was passed as a Money Bill for targeted delivery of subsidies (UPSC 2017).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Money Bill"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-pyq-precision",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-22",
+        "pol-governance-egovernance-card-10"
+      ]
+    },
+    {
+      "id": "adp",
+      "fact": "The Aspirational Districts Programme (2018) is anchored by NITI Aayog.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "NITI Aayog",
+        "2018"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-pyq-precision",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-23",
+        "pol-governance-egovernance-card-11"
+      ]
+    },
+    {
+      "id": "platforms",
+      "fact": "UMANG is the unified mobile app, DigiLocker stores documents and MyGov is for citizen engagement.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "UMANG",
+        "DigiLocker"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-pyq-precision",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-24",
+        "pol-governance-egovernance-card-12"
+      ]
+    },
+    {
+      "id": "mplads",
+      "fact": "MPLADS funds are non-lapsable and at least a tenth of works are inspected (UPSC 2021).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "non-lapsable"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-mplads-niua",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-25",
+        "pol-governance-egovernance-card-14"
+      ]
+    },
+    {
+      "id": "dop-1970",
+      "fact": "The Department of Personnel was set up in 1970 under the Prime Minister.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "Prime Minister"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-good-governance",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-26",
+        "pol-governance-egovernance-card-15"
+      ]
+    },
+    {
+      "id": "niua",
+      "fact": "NIUA is the apex body of the Ministry of Housing & Urban Affairs (UPSC 2020).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "NIUA"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-mplads-niua",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-27",
+        "pol-governance-egovernance-card-16"
+      ]
+    },
+    {
+      "id": "rti-mkss",
+      "fact": "The MKSS of Aruna Roy in Rajasthan led the right-to-information movement.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "MKSS",
+        "Aruna Roy"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-32"
+      ]
+    },
+    {
+      "id": "rti-tn-goa",
+      "fact": "Tamil Nadu and Goa passed the first state RTI laws in 1997.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Tamil Nadu",
+        "Goa"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-32"
+      ]
+    },
+    {
+      "id": "rti-foi",
+      "fact": "The Freedom of Information Act 2002 never came into force and was replaced by the RTI Act.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Freedom of Information Act"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-32"
+      ]
+    },
+    {
+      "id": "rti-habibullah",
+      "fact": "Wajahat Habibullah was the first Chief Information Commissioner.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Habibullah"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-32"
+      ]
+    },
+    {
+      "id": "rti-2h",
+      "fact": "Section 2(h) defines a public authority, including bodies substantially financed by government.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "2(h)",
+        "substantially financed"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-35"
+      ]
+    },
+    {
+      "id": "rti-fee",
+      "fact": "Section 6 needs no reason for a request; the fee is ₹10 and BPL applicants pay nothing.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "₹10",
+        "BPL"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-28"
+      ]
+    },
+    {
+      "id": "rti-48",
+      "fact": "Section 7 sets 30 days for a reply, or 48 hours if life or liberty is involved.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "48 hours",
+        "liberty"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-28"
+      ]
+    },
+    {
+      "id": "rti-40",
+      "fact": "Third-party information (Section 11) must be answered within 40 days.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "40 days"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-28"
+      ]
+    },
+    {
+      "id": "rti-appeal-90",
+      "fact": "The second appeal to the Information Commission lies within 90 days.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "90 days"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-36"
+      ]
+    },
+    {
+      "id": "rti-penalty",
+      "fact": "Section 20 fines a PIO ₹250 a day up to ₹25,000.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "₹250",
+        "₹25,000"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-31"
+      ]
+    },
+    {
+      "id": "rti-s22",
+      "fact": "Section 22 gives the RTI Act overriding effect over the Official Secrets Act 1923.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Official Secrets Act"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-31"
+      ]
+    },
+    {
+      "id": "rti-s24",
+      "fact": "Section 24 exempts Second Schedule intelligence bodies except for corruption and human-rights information.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Second Schedule",
+        "corruption"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-31"
+      ]
+    },
+    {
+      "id": "rti-rules-2019",
+      "fact": "The RTI Rules 2019 set a three-year term for Information Commissioners.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "three years",
+        "RTI Rules"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-33"
+      ]
+    },
+    {
+      "id": "rti-dpdp",
+      "fact": "Section 44(3) of the DPDP Act 2023 rewrote RTI Section 8(1)(j) to exempt all personal information.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "44(3)",
+        "8(1)(j)"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-33"
+      ]
+    },
+    {
+      "id": "rti-sc-2026",
+      "fact": "The Supreme Court issued notice in August 2026 on petitions challenging the DPDP change to RTI.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "August 2026"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-33"
+      ]
+    },
+    {
+      "id": "rti-cji",
+      "fact": "The CJI's office was held a public authority under RTI on 13 November 2019.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "13 November 2019"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-34"
+      ]
+    },
+    {
+      "id": "rti-parties",
+      "fact": "The CIC declared six national political parties public authorities in 2013.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "political parties",
+        "2013"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-34"
+      ]
+    },
+    {
+      "id": "rti-whistle",
+      "fact": "The Whistle Blowers Protection Act was passed in 2014.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Whistle Blowers",
+        "2014"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-rti-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-34"
+      ]
+    },
+    {
+      "id": "arc1",
+      "fact": "The First ARC (5 January 1966) was chaired by Morarji Desai, then K. Hanumanthaiah, and gave 20 reports.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Hanumanthaiah",
+        "20 reports"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-40"
+      ]
+    },
+    {
+      "id": "arc2-date",
+      "fact": "The Second ARC was set up on 31 August 2005; V. Ramachandran later chaired it.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "31 August 2005",
+        "Ramachandran"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-40"
+      ]
+    },
+    {
+      "id": "arc2-r2",
+      "fact": "The 2nd ARC's second report, \"Unlocking Human Capital\", studied NREGA.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Unlocking Human Capital"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-38"
+      ]
+    },
+    {
+      "id": "arc2-r3",
+      "fact": "The 2nd ARC's third report is \"Crisis Management: From Despair to Hope\".",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Crisis Management"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-38"
+      ]
+    },
+    {
+      "id": "arc2-r4",
+      "fact": "The 2nd ARC's fourth report is \"Ethics in Governance\".",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Ethics in Governance"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-37"
+      ]
+    },
+    {
+      "id": "arc2-r5",
+      "fact": "The 2nd ARC's fifth report is on Public Order.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Public Order"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-39"
+      ]
+    },
+    {
+      "id": "arc2-r6",
+      "fact": "The 2nd ARC's sixth report is \"Local Governance\".",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Local Governance"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-37"
+      ]
+    },
+    {
+      "id": "arc2-r7",
+      "fact": "The 2nd ARC's seventh report is on Capacity Building for Conflict Resolution.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Conflict Resolution"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-39"
+      ]
+    },
+    {
+      "id": "arc2-r8",
+      "fact": "The 2nd ARC's eighth report is \"Combatting Terrorism\".",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Combatting Terrorism"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-38"
+      ]
+    },
+    {
+      "id": "arc2-r9",
+      "fact": "The 2nd ARC's ninth report is \"Social Capital: A Shared Destiny\".",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Social Capital"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-38"
+      ]
+    },
+    {
+      "id": "arc2-r10",
+      "fact": "The 2nd ARC's tenth report is \"Refurbishing of Personnel Administration\".",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Personnel Administration"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-39"
+      ]
+    },
+    {
+      "id": "arc2-r11",
+      "fact": "The 2nd ARC's eleventh report is \"Promoting e-Governance: The SMART Way Forward\".",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "SMART Way"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-37"
+      ]
+    },
+    {
+      "id": "arc2-r12",
+      "fact": "The 2nd ARC's twelfth report is \"Citizen Centric Administration\".",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "pyq"
+      ],
+      "keys": [
+        "Citizen Centric Administration"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-37"
+      ]
+    },
+    {
+      "id": "arc2-r13",
+      "fact": "The 2nd ARC's thirteenth report is on the Organisational Structure of Government of India.",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Organisational Structure"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-39"
+      ]
+    },
+    {
+      "id": "arc2-r14",
+      "fact": "The 2nd ARC's fourteenth report is \"Strengthening Financial Management Systems\".",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Financial Management"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-40"
+      ]
+    },
+    {
+      "id": "arc2-r15",
+      "fact": "The 2nd ARC's fifteenth report is \"State and District Administration\".",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "State and District Administration"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-40"
+      ]
+    },
+    {
+      "id": "cpgrams",
+      "fact": "CPGRAMS, the DARPG online grievance portal, started in 2007.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "CPGRAMS",
+        "2007"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-41"
+      ]
+    },
+    {
+      "id": "grievance-bill",
+      "fact": "The Citizens' Right to Grievance Redress Bill 2011 lapsed.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Grievance Redress Bill"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-41"
+      ]
+    },
+    {
+      "id": "ggi",
+      "fact": "The DARPG first released the Good Governance Index on 25 December 2019.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Good Governance Index"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-arc-reports-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-41"
+      ]
+    },
+    {
+      "id": "negp-2006",
+      "fact": "The NeGP was approved on 18 May 2006 with 27 Mission Mode Projects.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "18 May 2006",
+        "27"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-42"
+      ]
+    },
+    {
+      "id": "negp-core",
+      "fact": "SWAN, State Data Centres and Common Service Centres are the NeGP core infrastructure.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "SWAN",
+        "State Data Centres"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-42"
+      ]
+    },
+    {
+      "id": "ekranti",
+      "fact": "e-Kranti (NeGP 2.0) was approved on 25 March 2015 with 44 Mission Mode Projects.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "44"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-42"
+      ]
+    },
+    {
+      "id": "di-1july",
+      "fact": "Digital India was launched on 1 July 2015.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "1 July 2015"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-42"
+      ]
+    },
+    {
+      "id": "di-pillars",
+      "fact": "Digital India has three vision areas and nine pillars.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "nine pillars"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-42"
+      ]
+    },
+    {
+      "id": "mygov",
+      "fact": "MyGov was launched on 26 July 2014 for citizen engagement.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "MyGov",
+        "2014"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-43"
+      ]
+    },
+    {
+      "id": "pragati",
+      "fact": "PRAGATI (2015) is the PM's Pro-Active Governance And Timely Implementation platform.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "PRAGATI",
+        "Timely Implementation"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-43"
+      ]
+    },
+    {
+      "id": "gem",
+      "fact": "GeM, the Government e-Marketplace for public procurement, was launched on 9 August 2016.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "GeM",
+        "procurement"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-43"
+      ]
+    },
+    {
+      "id": "umang-2017",
+      "fact": "UMANG was launched in November 2017.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "UMANG",
+        "2017"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-43"
+      ]
+    },
+    {
+      "id": "dbt-2013",
+      "fact": "Direct Benefit Transfer began on 1 January 2013.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "1 January 2013"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-44"
+      ]
+    },
+    {
+      "id": "jam",
+      "fact": "The JAM trinity (Jan Dhan, Aadhaar, Mobile) was named in the Economic Survey 2014-15.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "JAM",
+        "Economic Survey"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-44"
+      ]
+    },
+    {
+      "id": "pmjdy",
+      "fact": "PM Jan Dhan Yojana was launched on 28 August 2014.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "28 August 2014"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-44"
+      ]
+    },
+    {
+      "id": "uidai-2009",
+      "fact": "UIDAI was set up in January 2009 with Nandan Nilekani as first chairman.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Nilekani"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-45"
+      ]
+    },
+    {
+      "id": "tembhli",
+      "fact": "The first Aadhaar was issued at Tembhli, Maharashtra, on 29 September 2010.",
+      "kind": "place",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Tembhli"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-45"
+      ]
+    },
+    {
+      "id": "aadhaar-sc",
+      "fact": "The SC upheld the Aadhaar Act on 26 September 2018 but struck down Section 57.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Section 57"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-45"
+      ]
+    },
+    {
+      "id": "privacy",
+      "fact": "Puttaswamy (24 August 2017) made privacy a Fundamental Right under Article 21.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "24 August 2017",
+        "Article 21"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-46"
+      ]
+    },
+    {
+      "id": "srikrishna",
+      "fact": "The Justice B.N. Srikrishna committee drafted India's first data-protection bill.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Srikrishna"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-46"
+      ]
+    },
+    {
+      "id": "dpdp-act",
+      "fact": "The DPDP Act got assent on 11 August 2023 and creates a Data Protection Board of India.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "11 August 2023",
+        "Data Protection Board"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-46"
+      ]
+    },
+    {
+      "id": "dpdp-terms",
+      "fact": "The DPDP Act calls the person whose data it is the Data Principal and the processor the Data Fiduciary.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Data Principal",
+        "Data Fiduciar"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-46"
+      ]
+    },
+    {
+      "id": "dpdp-penalty",
+      "fact": "DPDP Act penalties go up to ₹250 crore.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "₹250 crore"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-47"
+      ]
+    },
+    {
+      "id": "dpdp-rules",
+      "fact": "The DPDP Rules 2025 were notified on 13 November 2025 with an 18-month runway to May 2027.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "13 November 2025",
+        "18 months"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-47"
+      ]
+    },
+    {
+      "id": "dpb-2026",
+      "fact": "MeitY invited applications for the Data Protection Board chairperson and members in May 2026.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "May 2026"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-48"
+      ]
+    },
+    {
+      "id": "karmayogi",
+      "fact": "Mission Karmayogi (civil-services capacity building) began on 2 September 2020 with the iGOT platform.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Karmayogi",
+        "iGOT"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-49"
+      ]
+    },
+    {
+      "id": "adp-112",
+      "fact": "The Aspirational Districts Programme covers 112 districts on 49 indicators.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "112",
+        "49"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-49"
+      ]
+    },
+    {
+      "id": "adp-ap",
+      "fact": "Vizianagaram, Visakhapatnam and YSR Kadapa are AP's aspirational districts.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Vizianagaram",
+        "Kadapa"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-50"
+      ]
+    },
+    {
+      "id": "abp",
+      "fact": "The Aspirational Blocks Programme (7 January 2023) covers 500 blocks.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Aspirational Blocks",
+        "500"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-egov-platforms-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-49"
+      ]
+    },
+    {
+      "id": "mm-launch",
+      "fact": "Mana Mitra, AP's WhatsApp governance platform, was launched on 30 January 2025 with 161 services.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "30 January 2025",
+        "161"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-51"
+      ]
+    },
+    {
+      "id": "mm-number",
+      "fact": "Mana Mitra runs on WhatsApp number 9552300009.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "9552300009"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-51"
+      ]
+    },
+    {
+      "id": "mm-1126",
+      "fact": "Mana Mitra reached 1,126 services by July 2026.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "1,126"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-51"
+      ]
+    },
+    {
+      "id": "mm-budget",
+      "fact": "AP's 2026-27 budget gave ₹100 crore for WhatsApp governance.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "₹100 crore"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-51"
+      ]
+    },
+    {
+      "id": "mm-caste",
+      "fact": "Caste-certificate re-issue was added to Mana Mitra in October 2026.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "caste"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-52"
+      ]
+    },
+    {
+      "id": "pgrs",
+      "fact": "AP renamed the Spandana grievance programme as PGRS (Public Grievance Redressal System) in June 2024.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Spandana",
+        "PGRS"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-53"
+      ]
+    },
+    {
+      "id": "secretariats",
+      "fact": "AP's Village and Ward Secretariats began on 2 October 2019.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "2 October 2019"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-53"
+      ]
+    },
+    {
+      "id": "swarna",
+      "fact": "AP renamed the secretariats Swarna Gramam and Swarna Ward by a Bill passed in February 2026.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Swarna Gramam"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-53"
+      ]
+    },
+    {
+      "id": "rtgs-lake",
+      "fact": "RTGS, under minister Nara Lokesh, is being made the common data centre for all AP departments.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "Nara Lokesh"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-54"
+      ]
+    },
+    {
+      "id": "meghalaya",
+      "fact": "Meghalaya passed India's first social-audit law in 2017.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Meghalaya"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-55"
+      ]
+    },
+    {
+      "id": "vbg-sa",
+      "fact": "The VB-G RAM G Act 2025, which replaced MGNREGA from 1 July 2026, keeps social audit.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "VB-G RAM G",
+        "social audit"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-55"
+      ]
+    },
+    {
+      "id": "sa-rules",
+      "fact": "The MGNREGA Audit of Schemes Rules 2011 set national social-audit standards.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Audit of Schemes Rules"
+      ],
+      "taughtIn": "pol-governance-egovernance-note-ap-governance-complete",
+      "drilledBy": [
+        "pol-governance-egovernance-mcq-55"
+      ]
+    }
+  ]
+}

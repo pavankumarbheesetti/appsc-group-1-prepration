@@ -18,6 +18,10 @@
  * The validation logic lives in `src/content/validate.ts` and is shared with the
  * Vitest suite (`content-integrity.test.ts`) — this file is only the reporter.
  *
+ * The exam-standard QUESTION-QUALITY rule (`auditAllQuality`) runs only under
+ * `VALIDATE_QUALITY=1` (never via `--strict` yet): findings in banks not waived
+ * in `content/audit/quality-waivers.json` fail, waived ones are warnings.
+ *
  * Run via `npm run validate:content` (executed with vite-node, matching gen:schema).
  */
 import {
@@ -27,7 +31,10 @@ import {
   loadAlignExceptions,
   type AlignRule,
   auditAllStructure,
+  auditAllQuality,
   lintAllContent,
+  qualityEnabled,
+  type QualityRule,
   validateAllContent,
   type LintRule,
   type StructureFlag,
@@ -129,6 +136,38 @@ if (alignEnabled(process.env, strict)) {
   console.log(`  justified heuristic exceptions: ${loadAlignExceptions().size}`);
   if (strict) failed += align.length;
   else warned += align.length;
+}
+
+/* ----- Question quality (exam standard) — opt-in, NOT strict yet ---------- */
+// Off by default (so `npm run check` stays green while content is rewritten);
+// VALIDATE_QUALITY=1 prints the per-bank report and FAILS on any finding in a
+// bank not waived in content/audit/quality-waivers.json (and on stale waivers).
+// Waived findings are counted as warnings. `--quality-verbose` prints each one.
+// The standard: .research/plan/QUESTION-QUALITY.md; fix queue: npm run audit:quality.
+
+if (qualityEnabled(process.env)) {
+  const quality = auditAllQuality();
+  const unwaived = quality.findings.filter((f) => !f.waived);
+  const byRule = new Map<QualityRule, number>();
+  for (const f of quality.findings) byRule.set(f.rule, (byRule.get(f.rule) ?? 0) + 1);
+  console.log('');
+  console.log(`question quality: ${quality.findings.length} finding(s), ${unwaived.length} un-waived (errors)`);
+  for (const b of quality.banks) {
+    const v = Object.entries(b.violations).map(([r, n]) => `${r}=${n}`).join(', ') || 'clean';
+    const spread = b.spread.map((c) => (b.fourOptionItems ? Math.round((c / b.fourOptionItems) * 100) : 0)).join('/');
+    const allPct = b.statementItems ? Math.round((b.allCorrectStatements / b.statementItems) * 100) : 0;
+    console.log(
+      `  ${b.waived === false ? ' ' : 'W'} ${b.file}: ${b.items} items, A/B/C/D ${spread}%, all-correct ${b.allCorrectStatements}/${b.statementItems} stmt (${allPct}%) — ${v}`,
+    );
+  }
+  for (const f of quality.findings) {
+    if (!f.waived || process.argv.includes('--quality-verbose')) {
+      console.log(`        ${f.waived ? '⚠' : '✗'} [${f.rule}] ${f.file} ${f.itemId}: ${f.detail}`);
+    }
+  }
+  console.log(`  quality by rule: ${[...byRule.entries()].map(([r, n]) => `${r}=${n}`).join(', ') || 'none'}`);
+  failed += unwaived.length;
+  warned += quality.findings.length - unwaived.length;
 }
 
 /* ----- Completeness (fact universe taught + drilled) — warnings for now --- */

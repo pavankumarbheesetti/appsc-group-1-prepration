@@ -1,0 +1,829 @@
+{
+  "version": 1,
+  "subtopicId": "eng-comprehension",
+  "facts": [
+    {
+      "id": "pp-150",
+      "fact": "The English qualifying paper is 150 marks in 180 minutes.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "150",
+        "180"
+      ],
+      "taughtIn": "eng-comprehension-note-paper-skim-scan",
+      "drilledBy": [
+        "eng-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "pp-ssc",
+      "fact": "The English qualifying paper is set at SSC standard.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "SSC"
+      ],
+      "taughtIn": "eng-comprehension-note-paper-skim-scan",
+      "drilledBy": [
+        "eng-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "pp-10items",
+      "fact": "The English qualifying paper has 10 items.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "10 items"
+      ],
+      "taughtIn": "eng-comprehension-note-paper-skim-scan",
+      "drilledBy": [
+        "eng-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "pp-qualifying",
+      "fact": "English is qualifying — its marks are not counted for merit.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "merit"
+      ],
+      "taughtIn": "eng-comprehension-note-paper-skim-scan",
+      "drilledBy": [
+        "eng-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "pp-minimums",
+      "fact": "Minimum qualifying marks are 40% (OC/EWS/Sports), 35% (BC), 30% (SC/ST/PBD).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "40%",
+        "35%",
+        "30%"
+      ],
+      "taughtIn": "eng-comprehension-note-paper-skim-scan",
+      "drilledBy": [
+        "eng-comprehension-mcq-16"
+      ]
+    },
+    {
+      "id": "rc-250",
+      "fact": "The English RC passage is about 250 words.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "250"
+      ],
+      "taughtIn": "eng-comprehension-note-method",
+      "drilledBy": [
+        "eng-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "rc-15",
+      "fact": "The RC item (item 08) carries 15 marks.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "15 marks"
+      ],
+      "taughtIn": "eng-comprehension-note-method",
+      "drilledBy": [
+        "eng-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "rc-short",
+      "fact": "RC questions are short-answer type, not option-ticking.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "short-answer"
+      ],
+      "taughtIn": "eng-comprehension-note-method",
+      "drilledBy": [
+        "eng-comprehension-mcq-17"
+      ]
+    },
+    {
+      "id": "sk-skim",
+      "fact": "Skimming is reading fast for the general idea.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Skimming"
+      ],
+      "taughtIn": "eng-comprehension-note-paper-skim-scan",
+      "drilledBy": [
+        "eng-comprehension-mcq-18"
+      ]
+    },
+    {
+      "id": "sk-scan",
+      "fact": "Scanning is searching the text for one keyword, name, date or number.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Scanning"
+      ],
+      "taughtIn": "eng-comprehension-note-paper-skim-scan",
+      "drilledBy": [
+        "eng-comprehension-mcq-18"
+      ]
+    },
+    {
+      "id": "sk-two-reads",
+      "fact": "Two reads: Read 1 for the gist, then read the questions, Read 2 for the exact lines.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "gist"
+      ],
+      "taughtIn": "eng-comprehension-note-method",
+      "drilledBy": [
+        "eng-comprehension-mcq-18"
+      ]
+    },
+    {
+      "id": "qt-main",
+      "fact": "The main idea is the single central point the whole passage develops.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "main idea"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-20"
+      ]
+    },
+    {
+      "id": "qt-title",
+      "fact": "A title is the shortest accurate label for the main idea — not too wide, not too narrow.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "too broad"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-19"
+      ]
+    },
+    {
+      "id": "qt-detail",
+      "fact": "An explicit-detail answer is stated in one specific line.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "stated"
+      ],
+      "taughtIn": "eng-comprehension-note-inference-vs-detail",
+      "drilledBy": [
+        "eng-comprehension-mcq-20"
+      ]
+    },
+    {
+      "id": "qt-inference",
+      "fact": "An inference is supported by the passage but not stated; it needs no outside facts.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "outside"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-20"
+      ]
+    },
+    {
+      "id": "qt-purpose",
+      "fact": "A signpost sentence such as \"consider three factors\" introduces and organises what follows.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "three factors"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-9"
+      ]
+    },
+    {
+      "id": "qt-pronoun",
+      "fact": "Pronoun-reference questions ask which noun a word like it/they/this points back to.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "report"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-10"
+      ]
+    },
+    {
+      "id": "qt-fact-opinion",
+      "fact": "A fact can be verified; an opinion is a judgement using words like \"best\" or \"should\".",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "opinion"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-12"
+      ]
+    },
+    {
+      "id": "qt-sequence",
+      "fact": "Sequence connectors are first/next/then/finally.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Next"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-13"
+      ]
+    },
+    {
+      "id": "tr-extreme",
+      "fact": "Reject too-extreme options (always/never/only) for a moderate passage.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "always"
+      ],
+      "taughtIn": "eng-comprehension-note-inference-vs-detail",
+      "drilledBy": [
+        "eng-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "tr-scope",
+      "fact": "Reject out-of-scope options — true in reality but not in the passage.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "scope"
+      ],
+      "taughtIn": "eng-comprehension-note-inference-vs-detail",
+      "drilledBy": [
+        "eng-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "tr-reversed",
+      "fact": "Reject reversed options that state the opposite of the passage.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Reversed"
+      ],
+      "taughtIn": "eng-comprehension-note-inference-vs-detail",
+      "drilledBy": [
+        "eng-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "tr-half",
+      "fact": "Reject half-right options where one clause adds a false detail.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Half-right"
+      ],
+      "taughtIn": "eng-comprehension-note-inference-vs-detail",
+      "drilledBy": [
+        "eng-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "tr-agree",
+      "fact": "\"The author would agree\" asks for the option that follows from the author's argument.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "investment"
+      ],
+      "taughtIn": "eng-comprehension-note-inference-vs-detail",
+      "drilledBy": [
+        "eng-comprehension-mcq-14"
+      ]
+    },
+    {
+      "id": "vc-definition",
+      "fact": "Context clue 1 — definition/restatement given nearby (e.g. after \"that is\").",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Definition"
+      ],
+      "taughtIn": "eng-comprehension-note-vocab-context",
+      "drilledBy": [
+        "eng-comprehension-mcq-22"
+      ]
+    },
+    {
+      "id": "vc-contrast",
+      "fact": "Context clue 2 — contrast signals (but, however, unlike) point to an opposite meaning.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Contrast"
+      ],
+      "taughtIn": "eng-comprehension-note-vocab-context",
+      "drilledBy": [
+        "eng-comprehension-mcq-22"
+      ]
+    },
+    {
+      "id": "vc-example",
+      "fact": "Context clue 3 — listed examples reveal the meaning (ungulates such as deer, cattle).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Ungulates"
+      ],
+      "taughtIn": "eng-comprehension-note-vocab-context",
+      "drilledBy": [
+        "eng-comprehension-mcq-22"
+      ]
+    },
+    {
+      "id": "vc-logic",
+      "fact": "Context clue 4 — the overall tone/logic of the sentence narrows the meaning.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "logic"
+      ],
+      "taughtIn": "eng-comprehension-note-vocab-context",
+      "drilledBy": [
+        "eng-comprehension-mcq-22"
+      ]
+    },
+    {
+      "id": "vc-novel",
+      "fact": "Context may force an uncommon sense: a \"novel idea\" means a new idea.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "novel"
+      ],
+      "taughtIn": "eng-comprehension-note-vocab-context",
+      "drilledBy": [
+        "eng-comprehension-mcq-23"
+      ]
+    },
+    {
+      "id": "vc-substitute",
+      "fact": "Substitute each option into the sentence and keep the one that fits.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "substitute"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-23"
+      ]
+    },
+    {
+      "id": "to-sceptical",
+      "fact": "Loaded words like \"so-called\" and \"once again\" signal a sceptical, critical tone.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "so-called"
+      ],
+      "taughtIn": "eng-comprehension-note-question-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-8"
+      ]
+    },
+    {
+      "id": "to-optimistic",
+      "fact": "Optimistic = hopeful; pessimistic = expecting the worst.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "pessimistic"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "to-sarcastic",
+      "fact": "Sarcastic/ironic = saying the opposite of what is meant, to mock.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "sarcastic"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-25"
+      ]
+    },
+    {
+      "id": "to-nostalgic",
+      "fact": "Nostalgic = longing for the past.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "nostalgic"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "to-didactic",
+      "fact": "Didactic = teaching a moral lesson.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "didactic"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "to-satirical",
+      "fact": "Satirical = mocking folly in order to correct it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "satirical"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "to-objective",
+      "fact": "Objective/neutral = facts without feeling.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "objective"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-26"
+      ]
+    },
+    {
+      "id": "to-laudatory",
+      "fact": "Laudatory = praising.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "laudatory"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "pu-four",
+      "fact": "An author writes to inform, persuade, entertain or describe/explain.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "persuade",
+        "entertain"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-27"
+      ]
+    },
+    {
+      "id": "ty-narrative",
+      "fact": "A narrative passage tells a story in time order.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Narrative"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-27",
+        "eng-comprehension-mcq-28"
+      ]
+    },
+    {
+      "id": "ty-descriptive",
+      "fact": "A descriptive passage paints a person, place or scene.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Descriptive"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-28"
+      ]
+    },
+    {
+      "id": "ty-expository",
+      "fact": "An expository passage explains a topic with facts.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Expository"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-27",
+        "eng-comprehension-mcq-28"
+      ]
+    },
+    {
+      "id": "ty-argumentative",
+      "fact": "An argumentative passage argues a position.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Argumentative"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-27",
+        "eng-comprehension-mcq-28"
+      ]
+    },
+    {
+      "id": "sg-cause",
+      "fact": "Cause/effect signals: because, therefore, as a result; contrast: however, whereas.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "whereas"
+      ],
+      "taughtIn": "eng-comprehension-note-tone-purpose-types",
+      "drilledBy": [
+        "eng-comprehension-mcq-29"
+      ]
+    },
+    {
+      "id": "sa-sentences",
+      "fact": "Give one or two complete, self-contained sentences per answer.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "complete"
+      ],
+      "taughtIn": "eng-comprehension-note-short-answers",
+      "drilledBy": [
+        "eng-comprehension-mcq-30"
+      ]
+    },
+    {
+      "id": "sa-own-words",
+      "fact": "Paraphrase in your own words — a copied whole line can lose marks.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "own words"
+      ],
+      "taughtIn": "eng-comprehension-note-short-answers",
+      "drilledBy": [
+        "eng-comprehension-mcq-30"
+      ]
+    },
+    {
+      "id": "sa-why-what",
+      "fact": "\"Why\" wants a reason; \"what\" wants the thing.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "reason"
+      ],
+      "taughtIn": "eng-comprehension-note-short-answers",
+      "drilledBy": [
+        "eng-comprehension-mcq-30"
+      ]
+    },
+    {
+      "id": "sa-no-opinion",
+      "fact": "Do not add personal opinion unless the question asks for it.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "personal opinion"
+      ],
+      "taughtIn": "eng-comprehension-note-short-answers",
+      "drilledBy": [
+        "eng-comprehension-mcq-30"
+      ]
+    },
+    {
+      "id": "sa-marking",
+      "fact": "Marks reward the correct point plus clear, grammatical expression.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "grammatical"
+      ],
+      "taughtIn": "eng-comprehension-note-short-answers",
+      "drilledBy": [
+        "eng-comprehension-mcq-31"
+      ]
+    },
+    {
+      "id": "pa-rules",
+      "fact": "A paraphrase keeps the same meaning and scope — adds nothing, drops nothing, keeps the claim's strength.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "paraphrase"
+      ],
+      "taughtIn": "eng-comprehension-note-short-answers",
+      "drilledBy": [
+        "eng-comprehension-mcq-32"
+      ]
+    },
+    {
+      "id": "pa-vs-summary",
+      "fact": "A paraphrase is not a summary (which shortens) and not a copy.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "summary"
+      ],
+      "taughtIn": "eng-comprehension-note-short-answers",
+      "drilledBy": [
+        "eng-comprehension-mcq-32"
+      ]
+    }
+  ]
+}

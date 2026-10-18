@@ -1,0 +1,807 @@
+{
+  "version": 1,
+  "subtopicId": "pol-lpg-impact",
+  "facts": [
+    {
+      "id": "rao-singh",
+      "fact": "The 1991 reforms were launched under PM P.V. Narasimha Rao and FM Manmohan Singh.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Narasimha Rao",
+        "Manmohan Singh"
+      ],
+      "taughtIn": "pol-lpg-impact-note-lpg-and-state-role",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-1",
+        "pol-lpg-impact-card-1"
+      ]
+    },
+    {
+      "id": "lpg-meaning",
+      "fact": "LPG stands for Liberalisation, Privatisation and Globalisation.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Liberalisation",
+        "Globalisation"
+      ],
+      "taughtIn": "pol-lpg-impact-note-lpg-and-state-role",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-18"
+      ]
+    },
+    {
+      "id": "licence-raj",
+      "fact": "The New Industrial Policy 1991 dismantled the Licence-Permit-Quota Raj.",
+      "kind": "cause",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Licence-Permit-Quota Raj"
+      ],
+      "taughtIn": "pol-lpg-impact-note-lpg-and-state-role",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-3"
+      ]
+    },
+    {
+      "id": "mgmg",
+      "fact": "\"Minimum Government, Maximum Governance\" captures the state's withdrawal from direct control.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Minimum Government"
+      ],
+      "taughtIn": "pol-lpg-impact-note-lpg-and-state-role",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-2",
+        "pol-lpg-impact-card-2"
+      ]
+    },
+    {
+      "id": "regulator-state",
+      "fact": "Liberalisation turned the state from producer into regulator, with SEBI, TRAI and CCI as instruments.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "regulator",
+        "SEBI"
+      ],
+      "taughtIn": "pol-lpg-impact-note-lpg-and-state-role",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-4",
+        "pol-lpg-impact-mcq-5",
+        "pol-lpg-impact-card-3"
+      ]
+    },
+    {
+      "id": "regulators",
+      "fact": "SEBI oversees securities, TRAI telecom, IRDAI insurance and CCI competition.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "IRDAI"
+      ],
+      "taughtIn": "pol-lpg-impact-note-regulatory-state",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-5",
+        "pol-lpg-impact-card-3"
+      ]
+    },
+    {
+      "id": "disinvestment",
+      "fact": "Disinvestment means the government selling part or all of its equity in a PSU.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "equity"
+      ],
+      "taughtIn": "pol-lpg-impact-note-lpg-and-state-role",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-6"
+      ]
+    },
+    {
+      "id": "comp-fed",
+      "fact": "Reforms strengthened competitive federalism, with states competing for investment.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "competitive federalism"
+      ],
+      "taughtIn": "pol-lpg-impact-note-federalism",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-7",
+        "pol-lpg-impact-card-8"
+      ]
+    },
+    {
+      "id": "coop-fed",
+      "fact": "NITI Aayog, the GST Council and the Inter-State Council are forums of cooperative federalism.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "GST Council",
+        "Inter-State Council"
+      ],
+      "taughtIn": "pol-lpg-impact-note-federalism",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-8",
+        "pol-lpg-impact-card-8"
+      ]
+    },
+    {
+      "id": "jam",
+      "fact": "The JAM trinity is Jan Dhan, Aadhaar and Mobile.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Jan Dhan",
+        "Mobile"
+      ],
+      "taughtIn": "pol-lpg-impact-note-welfare-civil-society",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-9",
+        "pol-lpg-impact-card-9"
+      ]
+    },
+    {
+      "id": "jobless",
+      "fact": "Jobless growth is growth that generates little matching employment.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "employment"
+      ],
+      "taughtIn": "pol-lpg-impact-note-society-sovereignty-critique",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-11"
+      ]
+    },
+    {
+      "id": "sovereignty",
+      "fact": "WTO membership constrains, but does not end, national policy autonomy.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "WTO",
+        "autonomy"
+      ],
+      "taughtIn": "pol-lpg-impact-note-society-sovereignty-critique",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-12"
+      ]
+    },
+    {
+      "id": "wto-fema",
+      "fact": "India was a founder member of the WTO (1995), and FERA 1973 was replaced by FEMA 1999.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "FEMA"
+      ],
+      "taughtIn": "pol-lpg-impact-note-pyq-precision",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-13",
+        "pol-lpg-impact-card-5"
+      ]
+    },
+    {
+      "id": "frbm",
+      "fact": "The FRBM Act 2003 institutionalises fiscal discipline through deficit targets (UPSC 2019).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "FRBM"
+      ],
+      "taughtIn": "pol-lpg-impact-note-pyq-precision",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-14",
+        "pol-lpg-impact-mcq-21",
+        "pol-lpg-impact-card-6"
+      ]
+    },
+    {
+      "id": "ratna",
+      "fact": "The Maharatna/Navratna/Miniratna grades were not created by the 1991 Industrial Policy.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Maharatna",
+        "Navratna"
+      ],
+      "taughtIn": "pol-lpg-impact-note-regulatory-state",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-15",
+        "pol-lpg-impact-card-4"
+      ]
+    },
+    {
+      "id": "art39c",
+      "fact": "Article 39(c) says the economy must not concentrate wealth to the common detriment (UPSC 2014).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "39(c)"
+      ],
+      "taughtIn": "pol-lpg-impact-note-dpsp-ideology",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-16"
+      ]
+    },
+    {
+      "id": "stateless",
+      "fact": "Gandhism and Marxism converge on a stateless society (UPSC 2020).",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq"
+      ],
+      "keys": [
+        "stateless"
+      ],
+      "taughtIn": "pol-lpg-impact-note-dpsp-ideology",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-17",
+        "pol-lpg-impact-card-12"
+      ]
+    },
+    {
+      "id": "reserves",
+      "fact": "In 1991 India's reserves covered only about two weeks of imports.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "two weeks"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-19"
+      ]
+    },
+    {
+      "id": "gold",
+      "fact": "India pledged gold with the Bank of England in 1991 and took an IMF loan.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Bank of England",
+        "IMF"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-19"
+      ]
+    },
+    {
+      "id": "devaluation",
+      "fact": "The rupee was devalued in two steps on 1 and 3 July 1991.",
+      "kind": "date",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "3 July 1991"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-19"
+      ]
+    },
+    {
+      "id": "ip-date",
+      "fact": "The Statement on Industrial Policy was issued on 24 July 1991, the day of the Budget.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "24 July 1991"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-20"
+      ]
+    },
+    {
+      "id": "reserved-17-8",
+      "fact": "The 1991 policy cut public-sector reserved industries from 17 to 8.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "17",
+        "8"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-20"
+      ]
+    },
+    {
+      "id": "reserved-now",
+      "fact": "Only atomic energy and railway operations remain reserved for the public sector.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "atomic energy",
+        "railway operations"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-20"
+      ]
+    },
+    {
+      "id": "compulsory",
+      "fact": "Compulsory licensing survives for defence and aerospace electronics, industrial explosives, hazardous chemicals and tobacco products.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "hazardous chemicals",
+        "explosives"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-20"
+      ]
+    },
+    {
+      "id": "narasimham",
+      "fact": "The Narasimham Committees on banking reported in 1991 and 1998.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Narasimham",
+        "1998"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-21"
+      ]
+    },
+    {
+      "id": "chelliah",
+      "fact": "The Raja Chelliah Committee (1991) dealt with tax reform.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Chelliah"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-21"
+      ]
+    },
+    {
+      "id": "rangarajan",
+      "fact": "The Rangarajan Committee (1993) dealt with disinvestment.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Rangarajan",
+        "1993"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-21"
+      ]
+    },
+    {
+      "id": "nk-singh",
+      "fact": "The N.K. Singh Committee (2017) reviewed the FRBM Act and proposed a 60% debt anchor.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "N.K. Singh",
+        "60%"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-22"
+      ]
+    },
+    {
+      "id": "make-in-india",
+      "fact": "Make in India was launched on 25 September 2014.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Make in India",
+        "25 September 2014"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-23"
+      ]
+    },
+    {
+      "id": "pli",
+      "fact": "PLI schemes began in 2020 for 14 sectors.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "PLI",
+        "14"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-23"
+      ]
+    },
+    {
+      "id": "db-63",
+      "fact": "The World Bank stopped Doing Business in 2021; India's last rank was 63.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "63"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-23"
+      ]
+    },
+    {
+      "id": "brap-ap",
+      "fact": "Andhra Pradesh ranked first in BRAP 2019 (released September 2020).",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "ap"
+      ],
+      "keys": [
+        "BRAP 2019",
+        "Andhra Pradesh"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-23"
+      ]
+    },
+    {
+      "id": "brap-2024",
+      "fact": "Kerala, Telangana and Haryana were BRAP 2024 top achievers (November 2025).",
+      "kind": "name",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "BRAP 2024"
+      ],
+      "taughtIn": "pol-lpg-impact-note-crisis-reforms-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-24"
+      ]
+    },
+    {
+      "id": "dis-comm",
+      "fact": "The Disinvestment Commission (1996) was headed by G.V. Ramakrishna.",
+      "kind": "name",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Ramakrishna"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-25"
+      ]
+    },
+    {
+      "id": "ministry-dis",
+      "fact": "A separate Ministry of Disinvestment existed from 1999 to 2004.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Ministry of Disinvestment"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-25"
+      ]
+    },
+    {
+      "id": "dipam",
+      "fact": "The Department of Disinvestment was renamed DIPAM in 2016.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "DIPAM",
+        "2016"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-25"
+      ]
+    },
+    {
+      "id": "nif",
+      "fact": "The National Investment Fund (2005) receives disinvestment proceeds.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "National Investment Fund"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-25"
+      ]
+    },
+    {
+      "id": "pse-2021",
+      "fact": "The New Public Sector Enterprise Policy 2021 keeps only a bare minimum presence in strategic sectors.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "strategic sectors"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-26"
+      ]
+    },
+    {
+      "id": "air-india",
+      "fact": "Air India was handed to the Tata group on 27 January 2022.",
+      "kind": "date",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Air India",
+        "Tata"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-26"
+      ]
+    },
+    {
+      "id": "lic",
+      "fact": "The LIC IPO (May 2022) was India's largest IPO.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "LIC"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-26"
+      ]
+    },
+    {
+      "id": "idbi",
+      "fact": "On 14 October 2026 the Cabinet approved selling 60.72% of IDBI Bank to Fairfax for ₹52,878 crore.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Fairfax",
+        "60.72%"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-26"
+      ]
+    },
+    {
+      "id": "nmp",
+      "fact": "The NMP (August 2021) aimed at ₹6 lakh crore over FY22-25 by leasing, not selling, assets.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "₹6 lakh crore"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-27"
+      ]
+    },
+    {
+      "id": "nmp2",
+      "fact": "NMP 2.0 (23 February 2026) targets ₹16.72 lakh crore for 2025-30.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "NMP 2.0",
+        "16.72"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-27"
+      ]
+    },
+    {
+      "id": "routes",
+      "fact": "FDI comes through the automatic route or the government route.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "automatic route",
+        "government route"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-28"
+      ]
+    },
+    {
+      "id": "fipb",
+      "fact": "The FIPB was abolished in 2017 and replaced by the Foreign Investment Facilitation Portal.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "FIPB",
+        "2017"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-28"
+      ]
+    },
+    {
+      "id": "insurance",
+      "fact": "Insurance FDI became 100% under the Sabka Bima Sabki Raksha Act (December 2025).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "Sabka Bima Sabki Raksha",
+        "100%"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-28"
+      ]
+    },
+    {
+      "id": "defence",
+      "fact": "Defence allows 74% FDI under the automatic route.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "pyq",
+        "standard"
+      ],
+      "keys": [
+        "74%"
+      ],
+      "taughtIn": "pol-lpg-impact-note-privatisation-fdi-complete",
+      "drilledBy": [
+        "pol-lpg-impact-mcq-28"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1026 @@
+{
+  "version": 1,
+  "subtopicId": "tel-comprehension",
+  "facts": [
+    {
+      "id": "rc-250",
+      "fact": "The Telugu comprehension passage is about 250 words long.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "250"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-25"
+      ]
+    },
+    {
+      "id": "rc-five",
+      "fact": "The passage is followed by five short-answer questions.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "five"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-25"
+      ]
+    },
+    {
+      "id": "rc-10m",
+      "fact": "The comprehension item carries 10 marks.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "10"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-25"
+      ]
+    },
+    {
+      "id": "rc-passage-only",
+      "fact": "Comprehension answers must come only from the passage, never from outside knowledge.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "syllabus",
+        "standard"
+      ],
+      "keys": [
+        "passage"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-26"
+      ]
+    },
+    {
+      "id": "rc-method",
+      "fact": "Method: read for gist, read the questions, re-read and underline, then write concise answers.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "gist"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-27"
+      ]
+    },
+    {
+      "id": "rc-full-sentences",
+      "fact": "Answers are written in complete, concise Telugu sentences, not by copying the passage.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "concise"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-27"
+      ]
+    },
+    {
+      "id": "rc-2-marks",
+      "fact": "Five answers for 10 marks means about 2 marks per answer.",
+      "kind": "number",
+      "yield": "low",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "2 marks"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-25"
+      ]
+    },
+    {
+      "id": "rc-title",
+      "fact": "శీర్షిక means the title — a short phrase naming the passage's central idea.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "శీర్షిక"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-28"
+      ]
+    },
+    {
+      "id": "sk-main-idea",
+      "fact": "కేంద్ర భావం is the main idea — the one theme every sentence supports.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "కేంద్ర"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-29"
+      ]
+    },
+    {
+      "id": "sk-inference",
+      "fact": "అంతరార్థం is an inference — what the passage implies but does not state.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "అంతరార్థం"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-29"
+      ]
+    },
+    {
+      "id": "sk-vocab",
+      "fact": "సందర్భానుసార పదార్థం is the meaning of a word that fits its sentence (vocabulary-in-context).",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "సందర్భానుసార"
+      ],
+      "taughtIn": "tel-comprehension-note-method",
+      "drilledBy": [
+        "tel-comprehension-mcq-29"
+      ]
+    },
+    {
+      "id": "sk-tone",
+      "fact": "ధోరణి is the tone — the writer's attitude or purpose.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ధోరణి"
+      ],
+      "taughtIn": "tel-comprehension-note-main-idea-inference",
+      "drilledBy": [
+        "tel-comprehension-mcq-29"
+      ]
+    },
+    {
+      "id": "sk-factual",
+      "fact": "ప్రత్యక్ష సమాచారం is a fact stated directly in the passage (factual recall).",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ప్రత్యక్ష"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-29"
+      ]
+    },
+    {
+      "id": "sk-tone-signals",
+      "fact": "Words like danger/beware signal a cautionary tone; please/should signal a persuasive appeal.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "beware"
+      ],
+      "taughtIn": "tel-comprehension-note-main-idea-inference",
+      "drilledBy": [
+        "tel-comprehension-mcq-31"
+      ]
+    },
+    {
+      "id": "sk-what-how",
+      "fact": "Main idea is WHAT the passage says; tone is HOW or WHY it is said.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "WHAT",
+        "HOW"
+      ],
+      "taughtIn": "tel-comprehension-note-main-idea-inference",
+      "drilledBy": [
+        "tel-comprehension-mcq-30"
+      ]
+    },
+    {
+      "id": "qw-evaru",
+      "fact": "ఎవరు asks \"who\" — the answer is a person.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ఎవరు"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "qw-eppudu",
+      "fact": "ఎప్పుడు asks \"when\" — the answer is a time.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ఎప్పుడు"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "qw-ekkada",
+      "fact": "ఎక్కడ asks \"where\" — the answer is a place.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ఎక్కడ"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "qw-enduku",
+      "fact": "ఎందుకు asks \"why\" — the answer is a reason.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ఎందుకు"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "qw-ela",
+      "fact": "ఎలా asks \"how\" — the answer is a manner.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ఎలా"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-24"
+      ]
+    },
+    {
+      "id": "el-two-of-three",
+      "fact": "Item 2 asks candidates to elaborate any two of three given verses.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "two",
+        "three"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-32"
+      ]
+    },
+    {
+      "id": "el-100",
+      "fact": "Each verse elaboration is about 100 words.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "100"
+      ],
+      "taughtIn": "tel-comprehension-note-vemana",
+      "drilledBy": [
+        "tel-comprehension-mcq-10"
+      ]
+    },
+    {
+      "id": "el-20m",
+      "fact": "The verse-elaboration item carries 20 marks.",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "20 marks"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-32"
+      ]
+    },
+    {
+      "id": "el-sources",
+      "fact": "The verses are set from the Vemana and Sumati satakams.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "Vemana",
+        "Sumati"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-32"
+      ]
+    },
+    {
+      "id": "el-structure",
+      "fact": "An elaboration runs theme line → bhavam → example → moral.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "theme",
+        "moral"
+      ],
+      "taughtIn": "tel-comprehension-note-vemana",
+      "drilledBy": [
+        "tel-comprehension-mcq-33"
+      ]
+    },
+    {
+      "id": "tm-pratipadartham",
+      "fact": "ప్రతిపదార్థం is the word-by-word meaning of a verse.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ప్రతిపదార్థం"
+      ],
+      "taughtIn": "tel-comprehension-note-vemana",
+      "drilledBy": [
+        "tel-comprehension-mcq-34"
+      ]
+    },
+    {
+      "id": "tm-bhavam",
+      "fact": "భావం / తాత్పర్యం is the overall purport of a verse — what an elaboration expands.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "తాత్పర్యం"
+      ],
+      "taughtIn": "tel-comprehension-note-vemana",
+      "drilledBy": [
+        "tel-comprehension-mcq-34"
+      ]
+    },
+    {
+      "id": "tm-padam",
+      "fact": "పాదం is one line of a verse.",
+      "kind": "term",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "పాదం"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-22",
+        "tel-comprehension-mcq-34"
+      ]
+    },
+    {
+      "id": "sat-def",
+      "fact": "A satakam is a collection of about 100 verses (often 108).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "100",
+        "108"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-17"
+      ]
+    },
+    {
+      "id": "sat-makutam",
+      "fact": "The makutam (మకుటం) is the same signature ending repeated in every verse of a satakam.",
+      "kind": "term",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "మకుటం"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-17",
+        "tel-comprehension-mcq-34"
+      ]
+    },
+    {
+      "id": "vem-makutam",
+      "fact": "Vemana's makutam is విశ్వదాభిరామ వినురవేమ.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "విశ్వదాభిరామ"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "vem-metre",
+      "fact": "Vemana's verses are in the ఆటవెలది metre.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ఆటవెలది"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-35"
+      ]
+    },
+    {
+      "id": "vem-niti",
+      "fact": "Vemana taught worldly ethics (నీతి) in simple spoken Telugu.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "spoken"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-18"
+      ]
+    },
+    {
+      "id": "vem-prajakavi",
+      "fact": "Vemana is called ప్రజాకవి — the people's poet.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ప్రజాకవి"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-18"
+      ]
+    },
+    {
+      "id": "vem-brown",
+      "fact": "C. P. Brown collected, printed and translated Vemana's verses into English.",
+      "kind": "name",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "Brown"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-18"
+      ]
+    },
+    {
+      "id": "vem-university",
+      "fact": "Yogi Vemana University is at Kadapa, Andhra Pradesh.",
+      "kind": "place",
+      "yield": "high",
+      "sources": [
+        "standard",
+        "ap"
+      ],
+      "keys": [
+        "Kadapa"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-18"
+      ]
+    },
+    {
+      "id": "vem-date",
+      "fact": "Vemana's date is disputed — estimates range from the 14th to the 17th century.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "disputed"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-19"
+      ]
+    },
+    {
+      "id": "vem-sample",
+      "fact": "Vemana's bronze-and-gold verse teaches that quiet worth beats noisy show.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "కంచు"
+      ],
+      "taughtIn": "tel-comprehension-note-vemana",
+      "drilledBy": [
+        "tel-comprehension-mcq-35"
+      ]
+    },
+    {
+      "id": "sum-poet",
+      "fact": "The Sumati Satakam is attributed to Baddena (Bhadra Bhupala).",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "బద్దెన"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-16",
+        "tel-comprehension-mcq-20"
+      ]
+    },
+    {
+      "id": "sum-makutam",
+      "fact": "The Sumati Satakam's makutam is సుమతీ (\"O wise one\").",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "సుమతీ"
+      ],
+      "taughtIn": "tel-comprehension-note-sumati",
+      "drilledBy": [
+        "tel-comprehension-mcq-15"
+      ]
+    },
+    {
+      "id": "sum-metre",
+      "fact": "The Sumati Satakam is written in the కందం (Kanda) metre.",
+      "kind": "pair",
+      "yield": "high",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "కంద"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-35"
+      ]
+    },
+    {
+      "id": "sum-century",
+      "fact": "Baddena is a 13th-century poet.",
+      "kind": "date",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "13th"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-20"
+      ]
+    },
+    {
+      "id": "sum-nitisastra",
+      "fact": "Baddena also wrote నీతిశాస్త్ర ముక్తావళి.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ముక్తావళి"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-20"
+      ]
+    },
+    {
+      "id": "sum-sample",
+      "fact": "Baddena's ఉపకారికి నుపకారము verse praises doing good even to one who harmed you.",
+      "kind": "cause",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "అపకారికి"
+      ],
+      "taughtIn": "tel-comprehension-note-sumati",
+      "drilledBy": [
+        "tel-comprehension-mcq-35"
+      ]
+    },
+    {
+      "id": "bhaskara",
+      "fact": "The Bhaskara Satakam is by మారన వెంకయ్య, makutam భాస్కరా.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "మారన"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-16"
+      ]
+    },
+    {
+      "id": "dasarathi",
+      "fact": "The Dasarathi Satakam is by కంచర్ల గోపన్న (Bhakta Ramadasu), makutam దాశరథీ కరుణాపయోనిధీ.",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "కంచర్ల"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-16"
+      ]
+    },
+    {
+      "id": "narasimha",
+      "fact": "The Narasimha Satakam is by శేషప్ప కవి.",
+      "kind": "pair",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "శేషప్ప"
+      ],
+      "taughtIn": "tel-comprehension-note-satakam-basics",
+      "drilledBy": [
+        "tel-comprehension-mcq-16"
+      ]
+    },
+    {
+      "id": "met-surya",
+      "fact": "సూర్య గణాలు are న (III) and హ/గల (UI).",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "సూర్య"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "met-indra",
+      "fact": "ఇంద్ర గణాలు are భ, ర, త, నల, నగ, సల.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "ఇంద్ర"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "met-at-odd",
+      "fact": "In ఆటవెలది the odd lines have 3 సూర్య + 2 ఇంద్ర గణాలు.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "3 సూర్య"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-22"
+      ]
+    },
+    {
+      "id": "met-at-even",
+      "fact": "In ఆటవెలది the even lines have 5 సూర్య గణాలు.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "5 సూర్య"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "met-at-prasa",
+      "fact": "ఆటవెలది has no prasa rule; its yati falls on the first letter of the 4th gana.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "prasa"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-22"
+      ]
+    },
+    {
+      "id": "met-kanda-ganas",
+      "fact": "కందం uses the ganas గగ, భ, జ, స, నల.",
+      "kind": "classification",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "గగ"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-21"
+      ]
+    },
+    {
+      "id": "met-kanda-lines",
+      "fact": "కందం has 3 ganas in odd lines and 5 in even lines.",
+      "kind": "number",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "3 ganas"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-23"
+      ]
+    },
+    {
+      "id": "met-kanda-6th",
+      "fact": "In కందం the 6th gana must be జ or నల and prasa is compulsory.",
+      "kind": "classification",
+      "yield": "low",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "6th"
+      ],
+      "taughtIn": "tel-comprehension-note-metres",
+      "drilledBy": [
+        "tel-comprehension-mcq-23"
+      ]
+    },
+    {
+      "id": "syn-tree",
+      "fact": "చెట్టు = వృక్షం / తరువు / మ్రాను (tree).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "తరువు"
+      ],
+      "taughtIn": "tel-comprehension-note-vocabulary",
+      "drilledBy": [
+        "tel-comprehension-mcq-36"
+      ]
+    },
+    {
+      "id": "syn-house",
+      "fact": "ఇల్లు = గృహం / నివాసం / సదనం (house).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "సదనం"
+      ],
+      "taughtIn": "tel-comprehension-note-vocabulary",
+      "drilledBy": [
+        "tel-comprehension-mcq-36"
+      ]
+    },
+    {
+      "id": "syn-mother",
+      "fact": "తల్లి = మాత / జనని (mother).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "జనని"
+      ],
+      "taughtIn": "tel-comprehension-note-vocabulary",
+      "drilledBy": [
+        "tel-comprehension-mcq-36"
+      ]
+    },
+    {
+      "id": "syn-sun",
+      "fact": "సూర్యుడు = రవి / భానుడు / ఆదిత్యుడు (sun).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "భానుడు"
+      ],
+      "taughtIn": "tel-comprehension-note-vocabulary",
+      "drilledBy": [
+        "tel-comprehension-mcq-36"
+      ]
+    },
+    {
+      "id": "syn-water",
+      "fact": "నీరు = జలం / ఉదకం / వారి / సలిలం (water).",
+      "kind": "pair",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "సలిలం"
+      ],
+      "taughtIn": "tel-comprehension-note-vocabulary",
+      "drilledBy": [
+        "tel-comprehension-mcq-36"
+      ]
+    },
+    {
+      "id": "vc-substitute",
+      "fact": "For vocabulary-in-context, substitute each option into the sentence and keep the one that fits.",
+      "kind": "term",
+      "yield": "medium",
+      "sources": [
+        "standard"
+      ],
+      "keys": [
+        "substitute"
+      ],
+      "taughtIn": "tel-comprehension-note-vocabulary",
+      "drilledBy": [
+        "tel-comprehension-mcq-37"
+      ]
+    },
+    {
+      "id": "pp-qualifying",
+      "fact": "The Telugu paper is qualifying — its marks are not counted for merit.",
+      "kind": "classification",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "merit"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-38"
+      ]
+    },
+    {
+      "id": "pp-minimums",
+      "fact": "Minimum qualifying marks are 40% (OC/EWS/Sports), 35% (BC) and 30% (SC/ST/PBD).",
+      "kind": "number",
+      "yield": "high",
+      "sources": [
+        "syllabus"
+      ],
+      "keys": [
+        "40%",
+        "35%",
+        "30%"
+      ],
+      "taughtIn": "tel-comprehension-note-question-words",
+      "drilledBy": [
+        "tel-comprehension-mcq-38"
+      ]
+    }
+  ]
+}

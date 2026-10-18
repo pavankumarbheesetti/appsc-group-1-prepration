@@ -31,12 +31,20 @@ import {
   type SyllabusBank,
 } from './types';
 import { TaxonomySchema, type Taxonomy } from './taxonomy';
-import { AlignExceptionsSchema, PyqMapSchema, PyqWeightsSchema, SyllabusMapSchema } from './audit-types';
+import {
+  AlignExceptionsSchema,
+  PyqMapSchema,
+  PyqWeightsSchema,
+  QUALITY_RULES,
+  QualityWaiversSchema,
+  SyllabusMapSchema,
+} from './audit-types';
 import { TimelineBankSchema } from './timeline-types';
 import {
   classifyStem,
   hasStructured,
   isStatementCode,
+  maxStatementRef,
   parseMatchOptions,
   statementNumbersIn,
   structuredProblems,
@@ -199,6 +207,7 @@ export function validateAllContent(): FileValidationResult[] {
   const pyqMapGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'pyq-map.json'));
   const pyqWeightsGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'pyq-weights.json'));
   const alignExceptionsGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'align-exceptions.json'));
+  const qualityWaiversGlob = toGlobPath(join(CONTENT_DIR, 'audit', 'quality-waivers.json'));
   const timelineGlob = toGlobPath(join(CONTENT_DIR, 'timeline', 'events.json'));
   const planGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'learning-sequence.json'));
   const unitsGlob = toGlobPath(join(CONTENT_DIR, 'plan', 'units.json'));
@@ -259,11 +268,17 @@ export function validateAllContent(): FileValidationResult[] {
     // The audit maps under content/audit/ are validated against their OWN
     // schemas and EXCLUDED from the bank/orphan/manifest checks (they are the
     // independent-audit inputs, not content banks and not manifest entries).
-    if (file === syllabusMapGlob || file === pyqMapGlob || file === alignExceptionsGlob) {
+    if (file === syllabusMapGlob || file === pyqMapGlob || file === alignExceptionsGlob || file === qualityWaiversGlob) {
       const raw = readJson(abs);
       if (raw === undefined) continue;
       const schema =
-        file === syllabusMapGlob ? SyllabusMapSchema : file === pyqMapGlob ? PyqMapSchema : AlignExceptionsSchema;
+        file === syllabusMapGlob
+          ? SyllabusMapSchema
+          : file === pyqMapGlob
+            ? PyqMapSchema
+            : file === qualityWaiversGlob
+              ? QualityWaiversSchema
+              : AlignExceptionsSchema;
       const parsed = schema.safeParse(raw);
       if (parsed.success) {
         resultFor(file); // show as PASS
@@ -277,7 +292,7 @@ export function validateAllContent(): FileValidationResult[] {
     // neither a bank nor a manifest entry, so don't fail the gate on it.
     if (file.startsWith('/content/audit/')) {
       resultFor(file).warnings.push(
-        'unrecognised file under content/audit/ (not the syllabus-map, pyq-map, pyq-weights or align-exceptions) — ignored by the audit',
+        'unrecognised file under content/audit/ (not the syllabus-map, pyq-map, pyq-weights, align-exceptions or quality-waivers) — ignored by the audit',
       );
       continue;
     }
@@ -2029,4 +2044,462 @@ export function auditAllCompleteness(contentDir: string = CONTENT_DIR): Complete
   }
   rows.sort((a, c) => a.order - c.order || a.subjectCode.localeCompare(c.subjectCode) || a.subtopicId.localeCompare(c.subtopicId));
   return { rows, findings, orphanFacts };
+}
+
+/* ========================================================================== */
+/* QUESTION-QUALITY rule — are the MCQs at exam standard?                      */
+/*                                                                             */
+/* The machine-checkable part of `.research/plan/QUESTION-QUALITY.md`:         */
+/*   ITEM rules (one finding per item per rule)                                */
+/*     stem-short        (a) rendered stem (lead-in + statements / lists /     */
+/*                           A-R) under QUALITY_MIN_STEM chars;                */
+/*     stem-prompt       (a) a statement item's lead-in never asks the         */
+/*                           question ("Which of the above …?");               */
+/*     option-length     (b) longest option > QUALITY_MAX_LEN_RATIO × the      */
+/*                           shortest (prose options only — code, numeric and  */
+/*                           short (< 20 char) option sets are exempt);        */
+/*     option-duplicate  (b) two options identical after normalising;          */
+/*     option-filler     (b) "None of the above" / "All of the above" option;  */
+/*     option-absolute   (b) give-away absolutes: >= 2 distractors say         */
+/*                           always/never/solely/… while the key does not;     */
+/*   BANK rules (one finding per bank per rule)                                */
+/*     all-correct-share (c) > 20% of a bank's statement items keyed "all      */
+/*                           statements correct" (1, 2 and 3 / Both / All …);  */
+/*     answer-spread     (d) an option index outside 20–30% of keys            */
+/*                           (18–32% for banks under 30 items);                */
+/*     key-variety       (e) statement-item keys too uniform (see below);      */
+/*   META                                                                      */
+/*     waiver-stale      a quality-waivers entry names an unknown bank or no   */
+/*                       longer suppresses any finding (remove it).            */
+/*                                                                             */
+/* NOT strict yet: `validate:content` runs it only under VALIDATE_QUALITY=1,   */
+/* and `npm run audit:quality` prints the per-bank table + BASELINE.md. Both   */
+/* fail only on findings in banks NOT listed in                                */
+/* `content/audit/quality-waivers.json`, so the fix can land bank by bank.     */
+/* ========================================================================== */
+
+/** Question-quality rule ids (the waivable ones plus `waiver-stale`). */
+export type QualityRule = (typeof QUALITY_RULES)[number] | 'waiver-stale';
+
+/** Minimum rendered-stem length (characters) of an exam stem. */
+export const QUALITY_MIN_STEM = 45;
+/** Max longest/shortest option length ratio for prose options. */
+export const QUALITY_MAX_LEN_RATIO = 2.2;
+/** Option sets whose longest option is shorter than this are exempt from the ratio (names, places, years). */
+export const QUALITY_LEN_RATIO_MIN_LONGEST = 20;
+/** Max share of a bank's statement items that may be keyed "all statements correct". */
+export const QUALITY_MAX_ALL_CORRECT = 0.2;
+/** Per-option key-share band, and the wider band for banks under {@link QUALITY_SMALL_BANK} items. */
+export const QUALITY_SPREAD_BAND: readonly [number, number] = [0.2, 0.3];
+export const QUALITY_SPREAD_BAND_SMALL: readonly [number, number] = [0.18, 0.32];
+export const QUALITY_SMALL_BANK = 30;
+/** key-variety: the most common statement key may hold at most this share (banks with >= 6 statement items). */
+export const QUALITY_MAX_TOP_KEY = 0.4;
+
+/** The fields of an MCQ the quality rules read. */
+export interface QualityItem {
+  id: string;
+  question: string;
+  options: readonly string[];
+  answerIndex: number;
+  statements?: readonly string[];
+  assertion?: string;
+  reason?: string;
+  match?: { left: readonly { text: string }[]; right: readonly { text: string }[] };
+}
+
+/** One question-quality finding. `itemId` is `-` for a bank-level rule. */
+export interface QualityFinding {
+  file: string;
+  itemId: string;
+  rule: QualityRule;
+  detail: string;
+  /** True when the bank's waiver covers this rule (reported, not failed). */
+  waived: boolean;
+}
+
+/** Per-bank quality metrics + findings. */
+export interface BankQuality {
+  file: string;
+  subjectCode: string;
+  items: number;
+  /** Keys per option index A/B/C/D (4-option items only). */
+  spread: [number, number, number, number];
+  /** Items with exactly four options (the spread denominator). */
+  fourOptionItems: number;
+  statementItems: number;
+  /** Items keyed "all correct" (statement all-covering codes, Both, All of the above …). */
+  allCorrect: number;
+  /** …of which statement items (the all-correct-share numerator). */
+  allCorrectStatements: number;
+  shortStems: number;
+  /** Item findings of the option-* rules. */
+  homogeneity: number;
+  violations: Partial<Record<QualityRule, number>>;
+  findings: QualityFinding[];
+  /** Waiver status: false, true (all rules) or the waived rule list. */
+  waived: boolean | QualityRule[];
+  /** Worst-first sort key (see {@link qualityScore}). */
+  score: number;
+}
+
+/** The whole question-quality audit. */
+export interface QualityReport {
+  banks: BankQuality[];
+  /** Every finding, including `waiver-stale` and waiver-file schema problems. */
+  findings: QualityFinding[];
+  /** Schema / JSON errors in the waivers file (reported as non-waived failures). */
+  waiverErrors: string[];
+}
+
+/** Is the question-quality report switched on in `validate:content`? Only with `VALIDATE_QUALITY=1` (never by `--strict` yet). */
+export function qualityEnabled(env: Record<string, string | undefined> = process.env): boolean {
+  return env.VALIDATE_QUALITY === '1';
+}
+
+/** A sequence/ordering code option such as `2 - 4 - 3 - 1` or `1 → 2 → 3`. */
+function isOrderingCode(opt: string): boolean {
+  return /\d\s*[-–—→]\s*\d/.test(opt) && /^[\d\s\-–—→,]+$/.test(opt.trim());
+}
+
+/** "All of the above"-family key text. */
+const ALL_KEY_RE = /^(?:all\s+(?:of\s+(?:the\s+)?(?:above|these|them)|the\s+above|three|four|five|six|statements?|are\s+correct|the\s+statements)|both\b)/i;
+/** "None"-family key text (none of the statements is correct). */
+const NONE_KEY_RE = /^(?:none\b|neither\b)/i;
+/** "How many" count keys: "Only one", "Only two", "Exactly three" … */
+const COUNT_KEY_RE = /^(?:only|exactly)\s+(one|two|three|four|five)\b/i;
+/** Filler options. */
+const FILLER_RE = /^(?:none|all)\s+of\s+(?:the\s+)?(?:above|these|them)\.?$/i;
+/** Give-away absolutes (distractor-only absolutes are a cue). */
+const ABSOLUTE_RE =
+  /\b(?:always|never|entirely|completely|solely|exclusively|invariably|absolutely|without\s+exception|under\s+no\s+circumstances|in\s+all\s+cases)\b/i;
+
+/**
+ * Is this a STATEMENT item (numbered statements answered by a code such as
+ * "1 and 3 only")? True when it has a structured `statements` field, or when the
+ * stem reads as statements/pairs and at least three options are statement
+ * codes. Ordering items (`2 - 4 - 3 - 1`) and match items never are.
+ */
+export function isStatementItem(item: QualityItem): boolean {
+  if (item.match || item.options.some(isOrderingCode)) return false;
+  if (item.statements && item.statements.length > 0) return true;
+  // Unstructured: the stem must itself read as numbered statements / pairs —
+  // bare numbers ("2050", "17 and 119") are numericals, not statement codes.
+  const statementStem = classifyStem(item.question) === 'statements' || /\b(?:statements?|pairs?)\b/i.test(item.question);
+  return statementStem && item.options.filter((o) => isStatementCode(o)).length >= 3;
+}
+
+/** Number of statements of a statement item (structured length, else the highest number any option references). */
+function statementCount(item: QualityItem): number {
+  return item.statements?.length ?? maxStatementRef(item.options);
+}
+
+/**
+ * Normalised key of a statement item: `all`, `none`, `count-N`, or the sorted
+ * statement numbers (`1,3`). `null` when the key is not a recognisable code.
+ */
+export function statementKeyCode(item: QualityItem): string | null {
+  const key = (item.options[item.answerIndex] ?? '').trim();
+  const n = statementCount(item);
+  if (/^both\s+\d+\s+and\s+\d+(?:\s+only)?$/i.test(key)) return n <= 2 ? 'all' : (key.match(/\d+/g) ?? []).sort().join(',');
+  if (ALL_KEY_RE.test(key)) return 'all';
+  if (NONE_KEY_RE.test(key)) return 'none';
+  const count = COUNT_KEY_RE.exec(key);
+  if (count) {
+    const words = ['one', 'two', 'three', 'four', 'five'];
+    const k = words.indexOf(count[1]!.toLowerCase()) + 1;
+    return k === n ? 'all' : `count-${k}`;
+  }
+  if (!isStatementCode(key) || isOrderingCode(key)) return null;
+  const nums = [...new Set(statementNumbersIn(key))].sort((a, b) => a - b);
+  if (n > 0 && nums.length === n && nums.every((v, i) => v === i + 1)) return 'all';
+  return nums.join(',');
+}
+
+/**
+ * Is the item keyed "all correct" — a statement code naming every statement,
+ * "Both 1 and 2" on a two-statement item, or an "All of the above" key?
+ */
+export function isAllCorrectKey(item: QualityItem): boolean {
+  if (isStatementItem(item)) return statementKeyCode(item) === 'all';
+  const key = (item.options[item.answerIndex] ?? '').trim();
+  return FILLER_RE.test(key) && /^all/i.test(key);
+}
+
+/** The rendered stem: lead-in plus structured statements / A-R / match lists. */
+export function renderedStem(item: QualityItem): string {
+  return [
+    item.question,
+    ...(item.statements ?? []),
+    item.assertion ?? '',
+    item.reason ?? '',
+    ...(item.match ? [...item.match.left, ...item.match.right].map((e) => e.text) : []),
+  ]
+    .filter((s) => s !== '')
+    .join('\n')
+    .trim();
+}
+
+/** Normalise an option for duplicate detection. */
+function normaliseOption(o: string): string {
+  return o
+    .toLowerCase()
+    .replace(/[‘’`]/g, "'")
+    .replace(/\s+/g, ' ')
+    .replace(/[\s.;,]+$/, '')
+    .trim();
+}
+
+/** A code / numeric option (exempt from the length ratio). */
+function isCodeOrNumeric(o: string): boolean {
+  const t = o.trim();
+  return isStatementCode(t) || isOrderingCode(t) || /^[\d\s.,:/%₹$+\-−×()]+[a-zA-Z%°²³]{0,6}\.?$/.test(t);
+}
+
+/** The ITEM-level quality problems of one MCQ (pure). */
+export function checkItemQuality(item: QualityItem): { rule: QualityRule; detail: string }[] {
+  const out: { rule: QualityRule; detail: string }[] = [];
+  const stem = renderedStem(item);
+  if (stem.length < QUALITY_MIN_STEM) out.push({ rule: 'stem-short', detail: `stem is ${stem.length} chars (< ${QUALITY_MIN_STEM}): "${stem.slice(0, 60)}"` });
+
+  const statement = isStatementItem(item);
+  if (statement && !/\b(?:which|how\s+many|select|choose|identify)\b/i.test(item.question)) {
+    out.push({ rule: 'stem-prompt', detail: 'statement item never asks "Which of the above … correct?" / "How many …?"' });
+  }
+
+  const opts = item.options.map((o) => o.trim());
+  // (b1) length ratio — prose options only.
+  const coded = item.match !== undefined || statement || opts.some(isOrderingCode) || opts.every(isCodeOrNumeric);
+  if (!coded && opts.length > 0) {
+    const lens = opts.map((o) => o.length);
+    const longest = Math.max(...lens);
+    const shortest = Math.max(1, Math.min(...lens));
+    if (longest >= QUALITY_LEN_RATIO_MIN_LONGEST && longest / shortest > QUALITY_MAX_LEN_RATIO) {
+      out.push({
+        rule: 'option-length',
+        detail: `longest option ${longest} chars is ${(longest / shortest).toFixed(1)}× the shortest (${shortest}) — max ${QUALITY_MAX_LEN_RATIO}×`,
+      });
+    }
+  }
+  // (b2) duplicates.
+  const seen = new Map<string, number>();
+  opts.forEach((o, i) => {
+    const k = normaliseOption(o);
+    if (seen.has(k)) out.push({ rule: 'option-duplicate', detail: `options ${'ABCDEF'[seen.get(k)!]} and ${'ABCDEF'[i]} are identical: "${o.slice(0, 40)}"` });
+    else seen.set(k, i);
+  });
+  // (b3) filler.
+  opts.forEach((o, i) => {
+    if (FILLER_RE.test(o)) out.push({ rule: 'option-filler', detail: `option ${'ABCDEF'[i]} is filler: "${o}"` });
+  });
+  // (b4) give-away absolutes.
+  if (!coded) {
+    const key = opts[item.answerIndex] ?? '';
+    const absDistractors = opts.filter((o, i) => i !== item.answerIndex && ABSOLUTE_RE.test(o)).length;
+    if (absDistractors >= 2 && !ABSOLUTE_RE.test(key)) {
+      out.push({ rule: 'option-absolute', detail: `${absDistractors} distractors use absolutes (always/never/solely…) and the key does not — a give-away` });
+    }
+  }
+  return out;
+}
+
+/**
+ * Worst-first score: pct-points outside the spread band + pct-points over the
+ * all-correct cap (only when that rule fires) + 10 when key-variety fails + % of
+ * items with any item-level finding.
+ */
+function qualityScore(b: Omit<BankQuality, 'score' | 'waived'>, itemsWithFindings: number): number {
+  const [lo, hi] = b.items < QUALITY_SMALL_BANK ? QUALITY_SPREAD_BAND_SMALL : QUALITY_SPREAD_BAND;
+  let s = 0;
+  if (b.fourOptionItems > 0) {
+    for (const c of b.spread) {
+      const p = c / b.fourOptionItems;
+      if (p < lo) s += (lo - p) * 100;
+      else if (p > hi) s += (p - hi) * 100;
+    }
+  }
+  if (b.violations['all-correct-share'] && b.statementItems > 0) {
+    s += Math.max(0, (b.allCorrectStatements / b.statementItems - QUALITY_MAX_ALL_CORRECT) * 100);
+  }
+  if (b.violations['key-variety']) s += 10;
+  if (b.items > 0) s += (itemsWithFindings / b.items) * 100;
+  return Math.round(s * 10) / 10;
+}
+
+/** Percent with no decimals. */
+function pct0(n: number, d: number): string {
+  return d === 0 ? '—' : `${Math.round((n / d) * 100)}%`;
+}
+
+/**
+ * Check ONE bank (pure): every item rule, then the bank rules (all-correct
+ * share, answer spread, key variety). Waivers are applied by
+ * {@link auditAllQuality}; here every finding has `waived: false`.
+ */
+export function checkBankQuality(file: string, subjectCode: string, items: readonly QualityItem[]): BankQuality {
+  const findings: QualityFinding[] = [];
+  const push = (itemId: string, rule: QualityRule, detail: string): void => {
+    findings.push({ file, itemId, rule, detail, waived: false });
+  };
+  const spread: [number, number, number, number] = [0, 0, 0, 0];
+  let four = 0;
+  let statementItems = 0;
+  let allCorrect = 0;
+  let allCorrectStatements = 0;
+  let shortStems = 0;
+  let homogeneity = 0;
+  const itemsWithFindings = new Set<string>();
+  const keyCodes = new Map<string, number>();
+
+  for (const q of items) {
+    if (q.options.length === 4) {
+      four += 1;
+      spread[q.answerIndex as 0 | 1 | 2 | 3] += 1;
+    }
+    const statement = isStatementItem(q);
+    const all = isAllCorrectKey(q);
+    if (all) allCorrect += 1;
+    if (statement) {
+      statementItems += 1;
+      if (all) allCorrectStatements += 1;
+      const code = statementKeyCode(q) ?? `raw:${normaliseOption(q.options[q.answerIndex] ?? '')}`;
+      keyCodes.set(code, (keyCodes.get(code) ?? 0) + 1);
+    }
+    for (const f of checkItemQuality(q)) {
+      push(q.id, f.rule, f.detail);
+      itemsWithFindings.add(q.id);
+      if (f.rule === 'stem-short') shortStems += 1;
+      if (f.rule.startsWith('option-')) homogeneity += 1;
+    }
+  }
+
+  // (c) all-correct share of statement items. Small statement sets (< 5) may hold one.
+  if (statementItems > 0) {
+    const share = allCorrectStatements / statementItems;
+    const over = statementItems >= 5 ? share > QUALITY_MAX_ALL_CORRECT : allCorrectStatements > 1;
+    if (over) {
+      push('-', 'all-correct-share', `${allCorrectStatements}/${statementItems} statement items (${pct0(allCorrectStatements, statementItems)}) keyed "all correct" — max ${QUALITY_MAX_ALL_CORRECT * 100}%`);
+    }
+  }
+  // (d) answer-index spread.
+  if (four > 0) {
+    const [lo, hi] = items.length < QUALITY_SMALL_BANK ? QUALITY_SPREAD_BAND_SMALL : QUALITY_SPREAD_BAND;
+    const bad = spread
+      .map((c, i) => ({ letter: 'ABCD'[i]!, p: c / four }))
+      .filter(({ p }) => p < lo - 1e-9 || p > hi + 1e-9);
+    if (bad.length > 0) {
+      push(
+        '-',
+        'answer-spread',
+        `A/B/C/D = ${spread.map((c) => pct0(c, four)).join('/')}; ${bad.map((b) => `${b.letter} ${pct0(b.p * four, four)}`).join(', ')} outside ${lo * 100}–${hi * 100}%`,
+      );
+    }
+  }
+  // (e) key-phrase variety of statement items.
+  if (statementItems >= 3) {
+    const distinct = keyCodes.size;
+    const top = Math.max(...keyCodes.values());
+    const problems: string[] = [];
+    if (statementItems >= 6) {
+      if (distinct < 3) problems.push(`only ${distinct} distinct key(s)`);
+      if (top / statementItems > QUALITY_MAX_TOP_KEY) {
+        const [code] = [...keyCodes.entries()].find(([, n]) => n === top)!;
+        problems.push(`"${code}" keys ${pct0(top, statementItems)} (max ${QUALITY_MAX_TOP_KEY * 100}%)`);
+      }
+      if (statementItems >= 10) {
+        const single = [...keyCodes.keys()].some((c) => c === 'none' || /^\d+$/.test(c) || c === 'count-1');
+        if (!single) problems.push('no "N only" / "none" key');
+      }
+    } else if (distinct < 2) problems.push('every statement item has the same key');
+    if (problems.length > 0) push('-', 'key-variety', `${statementItems} statement items: ${problems.join('; ')}`);
+  }
+
+  const violations: Partial<Record<QualityRule, number>> = {};
+  for (const f of findings) violations[f.rule] = (violations[f.rule] ?? 0) + 1;
+  const base = {
+    file,
+    subjectCode,
+    items: items.length,
+    spread,
+    fourOptionItems: four,
+    statementItems,
+    allCorrect,
+    allCorrectStatements,
+    shortStems,
+    homogeneity,
+    violations,
+    findings,
+  };
+  return { ...base, waived: false, score: qualityScore(base, itemsWithFindings.size) };
+}
+
+/** Read `<contentDir>/audit/quality-waivers.json` → bank → waived rules (`null` = all). */
+export function loadQualityWaivers(contentDir: string = CONTENT_DIR): { waivers: Map<string, QualityRule[] | null>; errors: string[] } {
+  const waivers = new Map<string, QualityRule[] | null>();
+  const path = join(contentDir, 'audit', 'quality-waivers.json');
+  if (!existsSync(path)) return { waivers, errors: [] };
+  let raw: unknown;
+  try {
+    raw = JSON.parse(readFileSync(path, 'utf8')) as unknown;
+  } catch (e) {
+    return { waivers, errors: [`quality-waivers.json is not valid JSON: ${(e as Error).message}`] };
+  }
+  const parsed = QualityWaiversSchema.safeParse(raw);
+  if (!parsed.success) return { waivers, errors: formatIssues(parsed.error) };
+  for (const w of parsed.data.waivers) waivers.set(w.bank, w.rules ? [...w.rules] : null);
+  return { waivers, errors: [] };
+}
+
+/**
+ * Run the question-quality audit over every MCQ bank under `contentDir`, apply
+ * the waivers, and flag stale waivers. Never throws for content problems.
+ */
+export function auditAllQuality(contentDir: string = CONTENT_DIR): QualityReport {
+  const { waivers, errors } = loadQualityWaivers(contentDir);
+  const banks: BankQuality[] = [];
+  for (const abs of walkJsonFiles(contentDir)) {
+    let raw: unknown;
+    try {
+      raw = JSON.parse(readFileSync(abs, 'utf8')) as unknown;
+    } catch {
+      continue;
+    }
+    if ((raw as { kind?: unknown } | null)?.kind !== 'mcq') continue;
+    const parsed = ContentBankSchema.safeParse(raw);
+    if (!parsed.success || parsed.data.kind !== 'mcq') continue;
+    const file = `/content/${relative(contentDir, abs).split(sep).join('/')}`;
+    const b = checkBankQuality(file, parsed.data.subjectCode, parsed.data.items);
+    if (waivers.has(file)) {
+      const rules = waivers.get(file)!;
+      b.waived = rules ?? true;
+      for (const f of b.findings) f.waived = rules === null || rules.includes(f.rule);
+    }
+    banks.push(b);
+  }
+  banks.sort((a, c) => c.score - a.score || a.file.localeCompare(c.file));
+
+  const findings: QualityFinding[] = banks.flatMap((b) => b.findings);
+  const WAIVERS_FILE = '/content/audit/quality-waivers.json';
+  for (const e of errors) findings.push({ file: WAIVERS_FILE, itemId: '-', rule: 'waiver-stale', detail: `invalid waivers file: ${e}`, waived: false });
+  const byFile = new Map(banks.map((b) => [b.file, b] as const));
+  for (const [bank, rules] of waivers) {
+    const b = byFile.get(bank);
+    if (!b) {
+      findings.push({ file: WAIVERS_FILE, itemId: bank, rule: 'waiver-stale', detail: 'waiver names an unknown MCQ bank — remove it', waived: false });
+    } else if (!b.findings.some((f) => f.waived)) {
+      findings.push({
+        file: WAIVERS_FILE,
+        itemId: bank,
+        rule: 'waiver-stale',
+        detail: `bank is clean for ${rules ? rules.join(', ') : 'every rule'} — remove the waiver`,
+        waived: false,
+      });
+    }
+  }
+  return { banks, findings, waiverErrors: errors };
+}
+
+/** Gate exit code: 1 when any finding is NOT waived (incl. stale waivers / a bad waivers file). */
+export function qualityExitCode(report: Pick<QualityReport, 'findings'>): 0 | 1 {
+  return report.findings.some((f) => !f.waived) ? 1 : 0;
 }
