@@ -8209,6 +8209,10 @@ details.learn-coverage[open] > .exam-points {
      Note bodies are shifted one level down (a content '###' renders as h4),
      so both h3 and h4 need the step; the accent bar and weight carry the
      rest of the distinction. */
+  .note > .note-body > h3 {
+    font-size: var(--fs-lg);
+  }
+  .note > .note-body > h4,
   .note-body h3,
   .note-body h4 {
     font-size: var(--fs-md);
