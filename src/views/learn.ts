@@ -32,7 +32,7 @@ import { icon } from './components/icon';
 import { progressBar } from './components/progress';
 import { bandBadge, studyStatusChip } from './components/badges';
 import { buildAtAGlance } from './components/atglance';
-import { buildNoteArticle, buildMainsNotesSection } from './notes';
+import { buildNoteArticle, buildMainsNotesSection, noteSections, type NoteSection } from './notes';
 import { isMainsNote } from '../engine/flashcards';
 import { buildCuratedDeck, mountFlashcards } from './revise';
 import { mountQuiz, type QuizSessionOpts } from './quiz';
@@ -276,16 +276,20 @@ function scrollToEl(node: HTMLElement): void {
 /* Header: breadcrumb, h1, status, progress, collapsed checklist               */
 /* -------------------------------------------------------------------------- */
 
-/** One TOC entry: a prelims note and its anchor id. @internal */
+/** One TOC entry: a prelims note, its anchor id and its body sections. @internal */
 interface TocEntry {
   anchor: string;
   title: string;
   noteId: string;
+  sections: NoteSection[];
 }
 
 /** The notes' "On this page" entries (Prelims notes, reading order). @internal */
 function tocEntries(sub: SubtopicView): TocEntry[] {
-  return sub.notes.filter((n) => !isMainsNote(n)).map((n) => ({ anchor: `learn-note-${n.id}`, title: n.title, noteId: n.id }));
+  return sub.notes.filter((n) => !isMainsNote(n)).map((n) => {
+    const anchor = `learn-note-${n.id}`;
+    return { anchor, title: n.title, noteId: n.id, sections: noteSections(n, anchor) };
+  });
 }
 
 /** localStorage key of the last section read per topic. @internal */
@@ -489,21 +493,40 @@ interface ContentsChip {
   setCurrent(idx: number): void;
 }
 
-/** Build the TOC links (shared by the side list and the chip sheet). @internal */
-function tocLinks(toc: readonly TocEntry[], onPick?: () => void): HTMLElement[] {
-  return toc.map((t, i) =>
-    el('a', {
-      class: 'toc-link',
-      href: `#${t.anchor}`,
-      attrs: { 'data-toc-idx': String(i) },
-      onClick: (e) => {
-        e.preventDefault();
-        onPick?.();
-        const node = document.getElementById(t.anchor);
-        if (node) scrollToEl(node);
-      },
-    }, [el('span', { class: 'toc-mark', attrs: { 'aria-hidden': 'true' } }), el('span', { class: 'toc-text', text: t.title })]),
-  );
+/**
+ * Build the NESTED TOC (shared by the side list and the chip sheet): one group
+ * per note (`a.toc-link`, the note title) with its body sections indented
+ * beneath (`a.toc-sublink`). The current note's sections are expanded. @internal
+ */
+function tocLinks(toc: readonly TocEntry[], onPick?: () => void): HTMLElement {
+  const jump = (anchor: string) => (e: MouseEvent): void => {
+    e.preventDefault();
+    onPick?.();
+    const node = document.getElementById(anchor);
+    if (node) scrollToEl(node);
+  };
+  return el('ol', { class: 'toc-list' }, toc.map((t, i) =>
+    el('li', { class: 'toc-group', attrs: { 'data-toc-group': String(i) } }, [
+      el('a', {
+        class: 'toc-link',
+        href: `#${t.anchor}`,
+        attrs: { 'data-toc-idx': String(i) },
+        onClick: jump(t.anchor),
+      }, [el('span', { class: 'toc-mark', attrs: { 'aria-hidden': 'true' } }), el('span', { class: 'toc-text', text: t.title })]),
+      t.sections.length > 0
+        ? el('ol', { class: 'toc-sub' }, t.sections.map((s, k) =>
+            el('li', {}, [
+              el('a', {
+                class: 'toc-sublink',
+                href: `#${s.anchor}`,
+                attrs: { 'data-toc-idx': String(i), 'data-toc-sub': String(k) },
+                onClick: jump(s.anchor),
+              }, [s.title]),
+            ]),
+          ))
+        : null,
+    ]),
+  ));
 }
 
 /** Build the contents chip + sheet. @internal */
@@ -520,7 +543,7 @@ function buildContentsChip(toc: readonly TocEntry[]): ContentsChip {
   };
   const sheet = el('nav', { class: 'contents-sheet toc', ariaLabel: 'Contents', attrs: { id: 'learn-contents-sheet', hidden: 'true' } }, [
     el('span', { class: 'toc-eyebrow', text: 'On this page' }),
-    ...tocLinks(toc, close),
+    tocLinks(toc, close),
   ]);
   sheet.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -532,7 +555,12 @@ function buildContentsChip(toc: readonly TocEntry[]): ContentsChip {
     const open = sheet.hidden;
     sheet.hidden = !open;
     chipBtn.setAttribute('aria-expanded', String(open));
-    if (open) sheet.querySelector<HTMLElement>('.toc-link.is-current, .toc-link')?.focus();
+    if (open) {
+      // Land on (and reveal) the section being read, not the first entry.
+      const cur = sheet.querySelector<HTMLElement>('.toc-sublink.is-current') ?? sheet.querySelector<HTMLElement>('.toc-link.is-current') ?? sheet.querySelector<HTMLElement>('.toc-link');
+      cur?.focus();
+      cur?.scrollIntoView?.({ block: 'nearest' });
+    }
   });
   return {
     chip: chipBtn,
@@ -543,45 +571,85 @@ function buildContentsChip(toc: readonly TocEntry[]): ContentsChip {
   };
 }
 
+/** The live contents tracker's setter (note index, section index or -1). @internal */
+let tocSetCurrent: ((idx: number, sub: number) => void) | null = null;
+
 /**
- * Track the section being read (IntersectionObserver): highlight it in every
- * TOC, tick sections already scrolled past, update the chip count, and
- * remember it for "Continue at …". @internal
+ * Track the section being read on BOTH levels: the note (highlighted, its
+ * sections expanded, earlier notes ticked, chip count updated, remembered for
+ * "Continue at …") and the body section within it. The reading line sits 35%
+ * down the viewport; the current item is the last one whose top has crossed
+ * it. Scroll-driven (rAF-throttled, passive); detaches once the view is gone.
+ * @internal
  */
 function wireTocTracking(id: string, toc: readonly TocEntry[], root: HTMLElement, chipCtl: ContentsChip | null): void {
-  const setCurrent = (idx: number): void => {
+  let cur = -1;
+  let curSub = -2;
+  const setCurrent = (idx: number, sub: number): void => {
+    if (idx === cur && sub === curSub) return;
+    const noteChanged = idx !== cur;
+    cur = idx;
+    curSub = sub;
+    for (const g of root.querySelectorAll<HTMLElement>('.toc-group[data-toc-group]')) {
+      g.classList.toggle('is-current', Number(g.dataset.tocGroup) === idx);
+    }
     for (const a of root.querySelectorAll<HTMLElement>('.toc-link[data-toc-idx]')) {
       const i = Number(a.dataset.tocIdx);
       a.classList.toggle('is-current', i === idx);
       a.classList.toggle('is-read', i < idx);
-      if (i === idx) a.setAttribute('aria-current', 'location');
+      if (i === idx && sub < 0) a.setAttribute('aria-current', 'location');
       else a.removeAttribute('aria-current');
     }
+    for (const a of root.querySelectorAll<HTMLElement>('.toc-sublink[data-toc-sub]')) {
+      const on = Number(a.dataset.tocIdx) === idx && Number(a.dataset.tocSub) === sub;
+      a.classList.toggle('is-current', on);
+      if (on) a.setAttribute('aria-current', 'location');
+      else a.removeAttribute('aria-current');
+    }
+    if (!noteChanged) return;
     chipCtl?.setCurrent(idx);
     const entry = toc[idx];
     if (entry) rememberSection(id, entry.noteId);
   };
-  setCurrent(0);
-  if (typeof IntersectionObserver === 'undefined') return;
-  const nodes = toc.map((t) => document.getElementById(t.anchor));
-  const visible = new Set<number>();
-  const io = new IntersectionObserver(
-    (entries) => {
-      if (!root.isConnected || !nodes[0]?.isConnected) {
-        io.disconnect();
-        return;
-      }
-      for (const e of entries) {
-        const i = nodes.indexOf(e.target as HTMLElement);
-        if (i === -1) continue;
-        if (e.isIntersecting) visible.add(i);
-        else visible.delete(i);
-      }
-      if (visible.size > 0) setCurrent(Math.min(...visible));
-    },
-    { rootMargin: '-35% 0px -55% 0px' },
-  );
-  for (const n of nodes) if (n) io.observe(n);
+  setCurrent(0, -1);
+  tocSetCurrent = setCurrent;
+  if (navigator.userAgent.includes('jsdom')) return;
+  const groups = toc.map((t) => ({
+    node: document.getElementById(t.anchor),
+    subs: t.sections.map((s) => document.getElementById(s.anchor)),
+  }));
+  /** Index of the last node whose top is above the reading line (or -1). */
+  const lastAbove = (nodes: readonly (HTMLElement | null)[], line: number): number => {
+    let found = -1;
+    nodes.forEach((n, i) => {
+      if (n && n.getBoundingClientRect().top <= line) found = i;
+    });
+    return found;
+  };
+  let queued = false;
+  const update = (): void => {
+    queued = false;
+    if (!root.isConnected || !groups[0]?.node?.isConnected) {
+      window.removeEventListener('scroll', onScroll);
+      return;
+    }
+    const line = window.innerHeight * 0.35;
+    const idx = Math.max(0, lastAbove(groups.map((g) => g.node), line));
+    setCurrent(idx, lastAbove(groups[idx]?.subs ?? [], line));
+  };
+  const onScroll = (): void => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  requestAnimationFrame(update);
+}
+
+
+/** Test hook: drive the contents tracker as a scroll would. @internal */
+export function __setTocCurrentForTests(idx: number, sub: number): void {
+  tocSetCurrent?.(idx, sub);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -659,7 +727,7 @@ function notesPanel(sub: SubtopicView, root: HTMLElement, route: LearnRoute, toc
   const prelims: NoteItem[] = sub.notes.filter((n) => !isMainsNote(n));
   const mainsNotes = sub.notes.filter((n) => isMainsNote(n));
   prelims.forEach((n, i) => {
-    const article = buildNoteArticle(n, `learn-note-${n.id}`);
+    const article = buildNoteArticle(n, `learn-note-${n.id}`, { index: i + 1, total: prelims.length, titleTag: 'h2' });
     const next = prelims[i + 1];
     if (next) {
       article.append(el('a', {
@@ -682,7 +750,7 @@ function notesPanel(sub: SubtopicView, root: HTMLElement, route: LearnRoute, toc
   if (toc.length <= 1) return reading;
   const side = el('nav', { class: 'toc learn-toc', ariaLabel: 'On this page' }, [
     el('span', { class: 'toc-eyebrow', text: 'On this page' }),
-    ...tocLinks(toc),
+    tocLinks(toc),
   ]);
   return el('div', { class: 'learn-notes-layout' }, [reading, side]);
 }

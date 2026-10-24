@@ -12,7 +12,7 @@ import { resolveImage } from '../content/assets';
 import { buildClozeCards, buildFlashcards, isMainsNote } from '../engine/flashcards';
 import { newCard, review, type Grade } from '../engine/spaced-repetition';
 import { updateState } from '../state/store';
-import { el, mount, renderInline, renderMarkdown, type Child } from './dom';
+import { el, markdownHeadings, mount, plainInline, renderInline, renderMarkdown, type Child } from './dom';
 import { card } from './components/card';
 import { button } from './components/button';
 import { icon } from './components/icon';
@@ -167,18 +167,79 @@ export function stripLeadHeading(body: string): string {
   return body.replace(/^\s*##(?!#)\s+[^\n]*\n+/, '');
 }
 
-/** Build one note article with body + optional figures/retention blocks. */
-export function buildNoteArticle(note: NoteItem, anchorId: string): HTMLElement {
-  const kids: Child[] = [el('h3', { class: 'note-title' }, renderInline(note.title))];
+/** Options for {@link buildNoteArticle}. */
+export interface NoteArticleOpts {
+  /** 1-based position of this note among its siblings (drives the eyebrow). */
+  index?: number;
+  /** How many sibling notes there are (`Section 3 of 8`). */
+  total?: number;
+  /** Heading tag of the note title — `h2` directly under a page h1. Default `h3`. */
+  titleTag?: 'h2' | 'h3';
+}
+
+/** The DOM id of a note's n-th body section heading (`##`/`###`). */
+export function noteSectionId(anchorId: string, k: number): string {
+  return `${anchorId}-s${k}`;
+}
+
+/** One body section of a note, for the nested "On this page" contents. */
+export interface NoteSection {
+  /** DOM id of the section heading (see {@link noteSectionId}). */
+  anchor: string;
+  /** Plain-text heading. */
+  title: string;
+}
+
+/**
+ * The body sections a note's contents entry should list: its TOP-MOST body
+ * heading level (`##` sections when the body has any, else its `###`
+ * sections), each with the id {@link buildNoteArticle} gives that heading.
+ */
+export function noteSections(note: NoteItem, anchorId: string): NoteSection[] {
+  const heads = markdownHeadings(stripLeadHeading(note.body))
+    .filter((h) => h.level !== 5)
+    .map((h, k) => ({ ...h, k }));
+  if (heads.length === 0) return [];
+  const top = Math.min(...heads.map((h) => h.level));
+  return heads.filter((h) => h.level === top).map((h) => ({ anchor: noteSectionId(anchorId, h.k), title: plainInline(h.text) }));
+}
+
+/**
+ * Build one note article — a self-contained SECTION of the page:
+ *  - a header (`Section 3 of 8` eyebrow + the note title),
+ *  - the body (its `##`/`###` sections get stable ids for the contents list),
+ *  - a closing panel (`Must remember / Test yourself`, memory hook, source) so
+ *    it is obvious where the sub-topic ends.
+ */
+export function buildNoteArticle(note: NoteItem, anchorId: string, opts: NoteArticleOpts = {}): HTMLElement {
+  const titleId = `${anchorId}-title`;
+  const numbered = opts.index !== undefined && opts.total !== undefined && opts.total > 1;
+  const head = el('header', { class: 'note-head' }, [
+    numbered ? el('p', { class: 'note-eyebrow', text: `Section ${opts.index} of ${opts.total}` }) : null,
+    el(opts.titleTag ?? 'h3', { class: 'note-title', attrs: { id: titleId } }, renderInline(note.title)),
+  ]);
+  const kids: Child[] = [head];
   // Lead figure sits above the body; extra figures follow it.
   if (note.figure) kids.push(renderFigure(note.figure));
-  kids.push(el('div', { class: 'note-body' }, renderMarkdown(stripLeadHeading(note.body))));
+  const body = el('div', { class: 'note-body' }, renderMarkdown(stripLeadHeading(note.body)));
+  let k = 0;
+  for (const h of body.children) {
+    if (h.tagName !== 'H3' && h.tagName !== 'H4') continue;
+    h.id = noteSectionId(anchorId, k);
+    h.classList.add('note-section-heading');
+    k += 1;
+  }
+  kids.push(body);
   if (note.figures) for (const fig of note.figures) kids.push(renderFigure(fig));
-  if (note.keyPoints && note.keyPoints.length > 0) kids.push(renderKeyPoints(note));
-  if (note.mnemonic) kids.push(renderMnemonic(note.mnemonic));
+  const end: Child[] = [];
+  if (note.keyPoints && note.keyPoints.length > 0) end.push(renderKeyPoints(note));
+  if (note.mnemonic) end.push(renderMnemonic(note.mnemonic));
   const src = note.source ? learnerSource(note.source) : null;
-  if (src) kids.push(el('p', { class: 'note-source', text: `Source: ${src}` }));
-  return el('article', { class: 'note card', attrs: { id: anchorId } }, kids);
+  if (src) end.push(el('p', { class: 'note-source', text: `Source: ${src}` }));
+  if (end.length > 0) kids.push(el('footer', { class: 'note-end', attrs: { 'aria-label': `End of ${plainInline(note.title)}` } }, end));
+  const attrs: Record<string, string> = { id: anchorId, 'aria-labelledby': titleId };
+  if (numbered) attrs['data-section'] = String(opts.index);
+  return el('article', { class: 'note card', attrs }, kids);
 }
 
 /**
@@ -256,10 +317,10 @@ export function render(root: HTMLElement): void {
     reading.appendChild(el('h2', { class: 'section-title', text: SUBJECTS[subject] }));
     for (const [topic, items] of topics) {
       reading.appendChild(el('h3', { class: 'topic', text: topic }));
-      for (const note of items) {
+      items.forEach((note, i) => {
         idx += 1;
-        reading.appendChild(buildNoteArticle(note, `note-${idx}`));
-      }
+        reading.appendChild(buildNoteArticle(note, `note-${idx}`, { index: i + 1, total: items.length, titleTag: 'h3' }));
+      });
     }
   }
 

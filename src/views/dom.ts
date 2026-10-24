@@ -247,7 +247,8 @@ function normaliseRow(cells: string[], cols: number): string[] {
 /**
  * Minimal, safe markdown → DOM renderer for note bodies and MCQ explanations.
  *
- * Supports the subset the content uses: `## ` / `### ` headings, `- `/`* `
+ * Supports the subset the content uses: `## ` / `### ` / `#### ` headings
+ * (→ h3 / h4 / h5), bold-only run-in labels (→ `p.md-label`), `- `/`* `
  * bullet lists, `1.` ordered lists, GFM pipe TABLES (header + `---` separator),
  * `---` horizontal rules, blank-line paragraph breaks, and inline `**bold**`.
  * Everything is built as text nodes/elements (never innerHTML), so content can
@@ -323,6 +324,9 @@ export function renderMarkdown(md: string): Node[] {
     if (/^(?:-{3,}|\*{3,})$/.test(trimmed)) {
       flushList();
       out.push(el('hr', { class: 'md-hr' }));
+    } else if (trimmed.startsWith('#### ')) {
+      flushList();
+      out.push(el('h5', {}, inlineNodes(trimmed.slice(5))));
     } else if (trimmed.startsWith('### ')) {
       flushList();
       out.push(el('h4', {}, inlineNodes(trimmed.slice(4))));
@@ -343,9 +347,63 @@ export function renderMarkdown(md: string): Node[] {
       list.node.append(el('li', {}, inlineNodes(trimmed.replace(/^\d+\.\s+/, ''))));
     } else {
       flushList();
-      out.push(el('p', {}, inlineNodes(line)));
+      out.push(el('p', { class: isRunInLabel(trimmed) ? 'md-label' : undefined }, inlineNodes(line)));
     }
   }
   flushList();
+  return out;
+}
+
+/**
+ * A paragraph that is ONLY a short bold phrase — the gold format's run-in
+ * labels (`**The idea in one sentence**`, `**Common traps**`, `**TL;DR:**`).
+ * They introduce the block below them, so they render as compact labels
+ * (`<p class="md-label">`), not as headings or emphasised prose. A long or
+ * sentence-final bold line (ends in `.`/`!`) is real emphasis, not a label.
+ */
+export function isRunInLabel(line: string): boolean {
+  const m = /^\*\*([^*]+)\*\*:?$/.exec(line.trim());
+  if (!m) return false;
+  const inner = m[1]!.trim();
+  return inner.length > 0 && inner.length <= 60 && !/[.!]$/.test(inner);
+}
+
+/** A top-level markdown heading as {@link renderMarkdown} renders it. */
+export interface MdHeading {
+  /** The rendered tag level: `##` → 3, `###` → 4, `####` → 5. */
+  level: 3 | 4 | 5;
+  /** The heading's source text (inline markup still present). */
+  text: string;
+}
+
+/**
+ * The headings {@link renderMarkdown} would emit for `md`, in order, WITHOUT
+ * building any DOM (fenced code and table rows are skipped exactly as the
+ * renderer skips them). Used to build a nested table of contents. PURE.
+ */
+export function markdownHeadings(md: string): MdHeading[] {
+  const out: MdHeading[] = [];
+  const lines = md.split('\n');
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = (lines[i] ?? '').trimEnd();
+    const trimmed = line.trim();
+    if (trimmed.startsWith('```')) {
+      let j = i + 1;
+      while (j < lines.length && !(lines[j] ?? '').trim().startsWith('```')) j += 1;
+      i = j;
+      continue;
+    }
+    if (trimmed === '') continue;
+    const next = lines[i + 1];
+    if (trimmed.includes('|') && next !== undefined && isTableSeparator(next)) {
+      let j = i + 2;
+      while (j < lines.length && (lines[j] ?? '').trim() !== '' && (lines[j] ?? '').includes('|')) j += 1;
+      i = j - 1;
+      continue;
+    }
+    if (trimmed.startsWith('#### ')) out.push({ level: 5, text: trimmed.slice(5) });
+    else if (trimmed.startsWith('### ')) out.push({ level: 4, text: trimmed.slice(4) });
+    else if (trimmed.startsWith('## ')) out.push({ level: 3, text: trimmed.slice(3) });
+  }
   return out;
 }

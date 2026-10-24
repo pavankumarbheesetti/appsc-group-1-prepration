@@ -7983,3 +7983,231 @@ details.learn-coverage[open] > .exam-points {
   flex-wrap: wrap;
   min-width: 0;
 }
+
+/* ========================================================================== */
+/* Notes heading hierarchy (3 levels + a closing panel)                        */
+/* ========================================================================== */
+/* LEVEL 1 — a note item is one SECTION of the page: an accent top rule, extra
+   space before it, a numbered eyebrow and the largest heading in the reading
+   column. LEVEL 2 — `##`/`###` body sections: smaller, semibold, a short
+   accent bar, much more space above than below. LEVEL 3 — `####` and the
+   gold format's bold run-in labels: compact, letter-spaced, muted labels.
+   The closing panel (Must remember / memory hook / Source) ends the section. */
+.reading > .note {
+  border-top: 4px solid var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+.reading > .note + .note,
+.reading > * + .note {
+  margin-top: var(--space-4);
+}
+.note,
+.note-section-heading {
+  scroll-margin-top: calc(var(--topbar-h) + 3.5rem);
+}
+.note-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.note-eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.note-head .note-title {
+  margin: 0;
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--text);
+}
+
+/* LEVEL 2 — body sections. */
+.note-body > h3,
+.note-body > h4 {
+  position: relative;
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0 var(--space-2);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  color: var(--text);
+}
+.note-body > h3::before,
+.note-body > h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 4px;
+  height: 1.05em;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+}
+.note-body > h3 {
+  font-size: var(--fs-lg);
+}
+.note-body > h4 {
+  font-size: var(--fs-md);
+}
+/* Inside a note the body sections step up (title 28 → ## 22 → ### 18). */
+.note > .note-body > h3 {
+  font-size: var(--fs-xl);
+}
+.note > .note-body > h4 {
+  font-size: var(--fs-lg);
+}
+.note-body > h3:first-child,
+.note-body > h4:first-child {
+  margin-top: var(--space-2);
+}
+/* A ### right after a ## sits closer (it is the ##'s first sub-section). */
+.note-body > h3 + h4 {
+  margin-top: var(--space-4);
+}
+
+/* LEVEL 3 — `####` and run-in labels ("The idea in one sentence", "TL;DR"). */
+.note-body > h5,
+.note-body > p.md-label {
+  margin: var(--space-4) 0 var(--space-1);
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.note-body > p.md-label strong {
+  color: inherit;
+  font-weight: inherit;
+}
+.note-body > h5 + p,
+.note-body > p.md-label + p {
+  margin-top: var(--space-1);
+}
+.note-body > h4 + p.md-label,
+.note-body > h3 + p.md-label {
+  margin-top: var(--space-2);
+}
+
+/* END OF SECTION — one tinted closing panel. */
+.note-end {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  background: var(--accent-soft);
+  font-size: var(--fs-sm);
+  max-width: var(--reading);
+}
+.note-end > .note-keypoints {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  max-width: none;
+}
+.note-end .keypoint-list {
+  font-size: var(--fs-sm);
+}
+.note-end > .note-mnemonic {
+  margin: 0;
+}
+.note-end > .note-source {
+  margin: 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-strong);
+  color: var(--text-2);
+}
+/* A thin divider after the closing panel before the next section starts. */
+.note > .note-next {
+  display: flex;
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+}
+
+/* Nested "On this page" contents. */
+.toc-list,
+.toc-sub {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.toc-list .toc-link:not(.is-current) {
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+}
+.toc-sub {
+  display: none;
+  margin: 2px 0 var(--space-2) calc(var(--space-3) + 0.5em);
+  border-left: 2px solid var(--border-strong);
+}
+.toc-group.is-current > .toc-sub {
+  display: flex;
+}
+.toc-sublink {
+  display: block;
+  margin-left: -2px;
+  padding: var(--space-1) var(--space-3);
+  border-left: 2px solid transparent;
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.toc-sublink:hover {
+  color: var(--text);
+  background: var(--bg-2);
+}
+.toc-sublink.is-current {
+  border-left-color: var(--accent);
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+}
+.toc-link:focus-visible,
+.toc-sublink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+@media (max-width: 839px) {
+  .note-end {
+    padding: var(--space-3);
+  }
+}
+
+
+/* Small screens: the page h1 steps down to --fs-xl, so step the note (section)
+   title below it. Otherwise a section title would outrank the topic name —
+   the hierarchy the learner reads top-down must never invert. */
+/* The page h1 (topic name) must always read as the largest text, then the
+   section title, then its sub-headings, then run-in labels. */
+.note-head .note-title,
+.note-title {
+  font-size: var(--fs-xl);
+}
+@media (max-width: 839px) {
+  .note-head .note-title,
+  .note-title {
+    font-size: var(--fs-lg);
+  }
+  /* Keep one step between the section title and its sub-headings on phones;
+     the accent bar and weight carry the rest of the distinction. */
+  .note-body h3 {
+    font-size: var(--fs-md);
+  }
+}
