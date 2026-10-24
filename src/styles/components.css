@@ -8205,9 +8205,12 @@ details.learn-coverage[open] > .exam-points {
   .note-title {
     font-size: var(--fs-lg);
   }
-  /* Keep one step between the section title and its sub-headings on phones;
-     the accent bar and weight carry the rest of the distinction. */
-  .note-body h3 {
+  /* Keep one step between the section title and its sub-headings on phones.
+     Note bodies are shifted one level down (a content '###' renders as h4),
+     so both h3 and h4 need the step; the accent bar and weight carry the
+     rest of the distinction. */
+  .note-body h3,
+  .note-body h4 {
     font-size: var(--fs-md);
   }
 }
