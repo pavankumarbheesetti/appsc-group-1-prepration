@@ -2682,30 +2682,13 @@ input[type='checkbox'] {
   gap: var(--space-2);
 }
 
-/* ---- Memory hook (optional, de-emphasized disclosure) -------------------- */
+/* ---- Memory hook (optional, de-emphasized) — ONE inline labelled line ---- */
+/* Rendered as `Memory hook — <text>` inside the closing panel so the value is */
+/* always visible (a closed <details> showed a bare label with no value).     */
 .note-mnemonic {
   margin: var(--space-3) 0 0;
   font-size: var(--fs-sm);
-}
-.note-mnemonic-summary {
-  cursor: pointer;
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  width: fit-content;
-}
-.note-mnemonic-summary::-webkit-details-marker {
-  display: none;
-}
-.note-mnemonic-summary::before {
-  content: '▸';
-  color: var(--muted);
-  font-size: var(--fs-xs);
-  transition: transform var(--dur-fast, 120ms) ease;
-}
-.note-mnemonic[open] .note-mnemonic-summary::before {
-  content: '▾';
+  color: var(--text-2);
 }
 .note-mnemonic-label {
   font-size: var(--fs-xs);
@@ -2714,13 +2697,10 @@ input[type='checkbox'] {
   letter-spacing: 0.04em;
   color: var(--muted);
 }
+.note-mnemonic-sep {
+  color: var(--muted);
+}
 .note-mnemonic-text {
-  margin-top: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-  background: var(--surface-2);
-  border: 1px dashed var(--border-strong);
-  color: var(--text-2);
   font-style: italic;
 }
 

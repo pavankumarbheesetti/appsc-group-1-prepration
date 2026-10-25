@@ -13,7 +13,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { isRunInLabel, markdownHeadings, renderMarkdown } from '../dom';
-import { buildNoteArticle, noteSections, noteSectionId, stripLeadHeading } from '../notes';
+import { buildMainsNotesSection, buildNoteArticle, noteSections, noteSectionId, sourceRunEnds, stripLeadHeading } from '../notes';
 import { renderApp } from '../../app';
 import { __setTocCurrentForTests, openLearn } from '../learn';
 import { getBanks, getSubtopic } from '../../content/loader';
@@ -255,5 +255,122 @@ describe('notes CSS — a descending heading ladder built from tokens', () => {
     expect(end).toContain('background: var(--accent-soft)');
     expect(end).toContain('border-top: 3px solid var(--accent)');
     expect(rule('.toc-group.is-current > .toc-sub')).toContain('display: flex');
+  });
+});
+
+/**
+ * The last two on-screen repetitions:
+ *  - SOURCE: a run of sections citing the byte-identical source shows the
+ *    `Source:` line once, on the run's LAST section; distinct sources all stay;
+ *  - CONTENTS: every destination is listed exactly once (no duplicate anchors,
+ *    no sub-entry restating its note title).
+ */
+describe('Notes — one Source per run of sections', () => {
+  const src = (id: string, source?: string): NoteItem => note({ id, title: `T ${id}`, source });
+
+  it('sourceRunEnds marks only the last note of each shared-source run', () => {
+    const notes = [src('a', 'NCERT Class 6'), src('b', 'NCERT Class 6'), src('c', 'Laxmikanth'), src('d'), src('e', 'Laxmikanth')];
+    // 'e' re-cites Laxmikanth, already shown on 'c' → not printed again.
+    expect(sourceRunEnds(notes)).toEqual([false, true, true, false, false]);
+    expect(sourceRunEnds([])).toEqual([]);
+    // A shared set carries across calls for one page (Prelims → For Mains).
+    const shown = new Set<string>();
+    expect(sourceRunEnds([src('x', 'A')], shown)).toEqual([true]);
+    expect(sourceRunEnds([src('y', 'A'), src('z', 'B')], shown)).toEqual([false, true]);
+  });
+
+  it('a shared-source run renders ONE Source; a distinct source still renders', () => {
+    const notes = [src('a', 'NCERT Class 6'), src('b', 'NCERT Class 6'), src('c', 'NCERT Class 6'), src('d', 'Laxmikanth')];
+    const show = sourceRunEnds(notes);
+    const arts = notes.map((n, i) => buildNoteArticle(n, `x-${n.id}`, { showSource: show[i] }));
+    const lines = arts.map((a) => a.querySelector('.note-source')?.textContent ?? null);
+    expect(lines).toEqual([null, null, 'Source: NCERT Class 6', 'Source: Laxmikanth']);
+    // Still the LAST item of the closing panel, and the panel survives for key points.
+    expect(arts[2]!.querySelector('footer.note-end')?.lastElementChild?.className).toBe('note-source');
+    expect(arts[0]!.querySelector('footer.note-end .note-keypoints')).not.toBeNull();
+    // Default (no option) keeps rendering the source.
+    expect(buildNoteArticle(notes[0]!, 'y').querySelector('.note-source')?.textContent).toBe('Source: NCERT Class 6');
+  });
+
+  it('a For-Mains section applies the same rule', () => {
+    const mains = [src('m1', 'Laxmikanth'), src('m2', 'Laxmikanth')];
+    const sec = buildMainsNotesSection(mains, 'mp')!;
+    expect([...sec.querySelectorAll('.note-source')].map((p) => p.textContent)).toEqual(['Source: Laxmikanth']);
+  });
+});
+
+describe('Learn Notes — real pages: no repeated Source, contents listed once', () => {
+  const PAGES = ['ment-venn-nonverbal', 'pol-foreign-policy-ir', 'hist-ancient-early-vedic', 'ca-national'];
+
+  beforeEach(() => {
+    localStorage.clear();
+    __resetForTests();
+    location.hash = '';
+  });
+
+  function open(id: string): HTMLElement {
+    document.body.innerHTML = '';
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+    renderApp(root);
+    openLearn(id, { from: 'topics' });
+    return root;
+  }
+
+  it.each(PAGES)('%s: every distinct source shows, none is repeated back-to-back', (id) => {
+    const root = open(id);
+    const prelims = getSubtopic(id)!.notes.filter((n) => !isMainsNote(n));
+    // Prelims sections only (the collapsed For-Mains block has its own run).
+    const arts = [...root.querySelectorAll<HTMLElement>('.learn-notes-layout > .reading > article.note')];
+    expect(arts).toHaveLength(prelims.length);
+    const shown = arts.map((a) => a.querySelector('.note-end .note-source')?.textContent ?? null);
+    const rendered = shown.filter((s): s is string => s !== null);
+    // No rendered Source line repeats anywhere on the page (incl. For Mains).
+    const all = [...root.querySelectorAll('.learn-notes-layout .note-source')].map((p) => p.textContent);
+    expect(new Set(all).size, id).toBe(all.length);
+    // Every distinct learner-facing source is still on the page.
+    const expected = new Set(prelims.map((n) => buildNoteArticle(n, 'probe').querySelector('.note-source')?.textContent).filter(Boolean));
+    expect(new Set(rendered)).toEqual(expected);
+  });
+
+  it.each(PAGES)('%s: contents has no duplicate anchors and no sub-entry restating its note', (id) => {
+    const root = open(id);
+    for (const nav of root.querySelectorAll<HTMLElement>('.learn-toc, .contents-sheet')) {
+      const hrefs = [...nav.querySelectorAll<HTMLAnchorElement>('a.toc-link, a.toc-sublink')].map((a) => a.getAttribute('href')!);
+      expect(new Set(hrefs).size, id).toBe(hrefs.length);
+      for (const g of nav.querySelectorAll<HTMLElement>('li.toc-group')) {
+        const parent = g.querySelector(':scope > a.toc-link')!.textContent!.trim().toLowerCase();
+        const subs = [...g.querySelectorAll('a.toc-sublink')].map((a) => a.textContent!.trim().toLowerCase());
+        expect(subs, `${id}: ${parent}`).not.toContain(parent);
+        expect(new Set(subs).size, `${id}: ${parent}`).toBe(subs.length);
+      }
+      // Note titles are listed once each, and every entry resolves on the page.
+      const titles = [...nav.querySelectorAll('a.toc-link')].map((a) => a.textContent);
+      expect(new Set(titles).size, id).toBe(titles.length);
+      for (const h of hrefs) expect(document.getElementById(h.slice(1)), h).not.toBeNull();
+    }
+  });
+
+  it('noteSections skips a body heading that restates the title but keeps later ids aligned', () => {
+    const n = note({ title: 'Mirror images', body: '### Mirror images\n\nIntro.\n\n### Water images\n\nText.' });
+    const secs = noteSections(n, 'm');
+    expect(secs).toEqual([{ anchor: noteSectionId('m', 1), title: 'Water images' }]);
+    const art = buildNoteArticle(n, 'm');
+    expect(art.querySelector(`#${secs[0]!.anchor}`)?.textContent).toBe('Water images');
+  });
+
+  it('no real note lists its own title (or one anchor twice) among its sections', () => {
+    let checked = 0;
+    for (const { bank } of getBanks('notes')) {
+      if (bank.kind !== 'notes') continue;
+      for (const n of bank.items) {
+        const secs = noteSections(n, 'a');
+        const t = n.title.trim().toLowerCase();
+        expect(secs.map((s) => s.title.trim().toLowerCase()), n.id).not.toContain(t);
+        expect(new Set(secs.map((s) => s.anchor)).size, n.id).toBe(secs.length);
+        checked += 1;
+      }
+    }
+    expect(checked).toBeGreaterThan(100);
   });
 });

@@ -23,6 +23,10 @@
  * in `content/audit/quality-waivers.json` fail; under `--strict` waived ones
  * fail too (the waivers file must stay empty).
  *
+ * The NOTE-NO-REPETITION gate (`auditAllRepetition`) enforces "recap exactly
+ * once (keyPoints), mnemonic exactly once": its findings are warnings normally
+ * and hard failures under `--strict` (so `npm run check` fails on any repeat).
+ *
  * Run via `npm run validate:content` (executed with vite-node, matching gen:schema).
  */
 import {
@@ -32,6 +36,8 @@ import {
   loadAlignExceptions,
   type AlignRule,
   auditAllStructure,
+  auditAllRepetition,
+  type RepetitionClause,
   auditAllQuality,
   lintAllContent,
   qualityEnabled,
@@ -109,6 +115,38 @@ if (structure.length > 0) {
   // warnings.
   if (strict) failed += structure.length;
   else warned += structure.length;
+}
+
+/* ----- Note-no-repetition (recap once in keyPoints, mnemonic once) -------- */
+// Strict under --strict (so `npm run check` gates it); advisory otherwise.
+// No waivers by design — fix the content. Each finding names the file, the item
+// id, the failing clause and a one-line fix hint; the tally is printed both by
+// clause and as a count of distinct items.
+
+{
+  const repetition = auditAllRepetition();
+  if (repetition.length > 0) {
+    const byClause = new Map<RepetitionClause, number>();
+    const items = new Set<string>();
+    console.log('');
+    console.log(
+      `note-no-repetition: ${repetition.length} finding(s)${strict ? ' (STRICT — treated as errors)' : ' (warnings)'}`,
+    );
+    let currentFile = '';
+    for (const f of repetition) {
+      if (f.file !== currentFile) {
+        currentFile = f.file;
+        console.log(`  ${f.file}`);
+      }
+      console.log(`        ${strict ? '✗' : '⚠'} [note-no-repetition/${f.clause}] ${f.itemId}: ${f.detail} — fix: ${f.hint}`);
+      byClause.set(f.clause, (byClause.get(f.clause) ?? 0) + 1);
+      items.add(`${f.file}#${f.itemId}`);
+    }
+    console.log(`  note-no-repetition by clause: ${[...byClause.entries()].map(([c, n]) => `${c}=${n}`).join(', ')}`);
+    console.log(`  note-no-repetition: ${items.size} note item(s) FAIL`);
+    if (strict) failed += repetition.length;
+    else warned += repetition.length;
+  }
 }
 
 /* ----- Question-format + taught-before-tested alignment ------------------- */

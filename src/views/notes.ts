@@ -144,19 +144,22 @@ function renderKeyPoints(note: NoteItem): HTMLElement {
 }
 
 /**
- * Render the OPTIONAL "Memory hook" as a collapsed disclosure — a minor,
- * secondary aid. Evidence favours active recall over mnemonics, so the authored
- * hook is preserved but tucked into a `<details>` that stays closed by default
- * rather than shown as a prominent callout. @internal
+ * Render the OPTIONAL "Memory hook" as ONE short labelled line inside the
+ * closing panel: `Memory hook — <text>`. It is a minor, secondary aid (evidence
+ * favours active recall over mnemonics), so it stays small and muted rather
+ * than a prominent callout — but it is shown INLINE. The previous closed
+ * `<details>` left learners looking at a bare "Memory hook (optional)" label
+ * with no visible value. Returns `null` for a missing/blank hook so the label
+ * is never rendered on its own. @internal
  */
-function renderMnemonic(mnemonic: string): HTMLElement {
-  const details = el('details', { class: 'note-mnemonic' }, [
-    el('summary', { class: 'note-mnemonic-summary' }, [
-      el('span', { class: 'note-mnemonic-label', text: 'Memory hook (optional)' }),
-    ]),
-    el('p', { class: 'note-mnemonic-text' }, renderInline(mnemonic)),
+function renderMnemonic(mnemonic: string | undefined): HTMLElement | null {
+  const text = mnemonic?.trim();
+  if (!text) return null;
+  return el('p', { class: 'note-mnemonic' }, [
+    el('span', { class: 'note-mnemonic-label', text: 'Memory hook' }),
+    el('span', { class: 'note-mnemonic-sep', text: ' \u2014 ', attrs: { 'aria-hidden': 'true' } }),
+    el('span', { class: 'note-mnemonic-text' }, renderInline(text)),
   ]);
-  return details;
 }
 
 /**
@@ -175,6 +178,41 @@ export interface NoteArticleOpts {
   total?: number;
   /** Heading tag of the note title — `h2` directly under a page h1. Default `h3`. */
   titleTag?: 'h2' | 'h3';
+  /**
+   * Render the `Source:` line in the closing panel. Default `true`. Page
+   * renderers pass the result of {@link sourceRunEnds} so a run of sections
+   * sharing one citation shows it once, on the run's last section.
+   */
+  showSource?: boolean;
+}
+
+/** The learner-facing `Source:` text of a note, or `null` when it has none. @internal */
+function sourceLine(note: NoteItem): string | null {
+  const src = note.source ? learnerSource(note.source) : null;
+  return src ? `Source: ${src}` : null;
+}
+
+/**
+ * Which notes of ONE page should render their `Source:` line. Consecutive
+ * notes very often cite the byte-identical source, which read as the same
+ * footer repeated section after section. A run of notes sharing a source shows
+ * it ONCE, on the LAST note of the run (so it still reads as a closing
+ * attribution for the sections above); every DISTINCT source stays visible and
+ * its text is untouched. Notes without a source break a run.
+ *
+ * A source that RECURS later on the page (a non-adjacent run of the same
+ * citation) is not printed again — it is already on screen once. Pass the
+ * same `shown` set across several calls for one page (e.g. Prelims notes, then
+ * the For-Mains section) so a line is never repeated anywhere on that page;
+ * the set is updated with the lines this call renders.
+ */
+export function sourceRunEnds(notes: readonly NoteItem[], shown: Set<string> = new Set()): boolean[] {
+  const lines = notes.map(sourceLine);
+  return lines.map((line, i) => {
+    if (line === null || line === lines[i + 1] || shown.has(line)) return false;
+    shown.add(line);
+    return true;
+  });
 }
 
 /** The DOM id of a note's n-th body section heading (`##`/`###`). */
@@ -201,7 +239,27 @@ export function noteSections(note: NoteItem, anchorId: string): NoteSection[] {
     .map((h, k) => ({ ...h, k }));
   if (heads.length === 0) return [];
   const top = Math.min(...heads.map((h) => h.level));
-  return heads.filter((h) => h.level === top).map((h) => ({ anchor: noteSectionId(anchorId, h.k), title: plainInline(h.text) }));
+  // A body heading that merely restates the note title (many bodies open with
+  // `### <title>`) would list the same title twice in the contents — the parent
+  // entry already links there, so it is skipped. Its DOM id (index `k`) is kept
+  // so the remaining entries still point at the right headings.
+  const parent = sameTitleKey(plainInline(note.title));
+  const seen = new Set<string>();
+  const out: NoteSection[] = [];
+  for (const h of heads) {
+    if (h.level !== top) continue;
+    const title = plainInline(h.text);
+    const anchor = noteSectionId(anchorId, h.k);
+    if (sameTitleKey(title) === parent || seen.has(anchor)) continue;
+    seen.add(anchor);
+    out.push({ anchor, title });
+  }
+  return out;
+}
+
+/** Compare titles ignoring case, spacing and trailing punctuation. @internal */
+function sameTitleKey(t: string): string {
+  return t.replace(/\s+/g, ' ').replace(/[\s:.]+$/, '').trim().toLowerCase();
 }
 
 /**
@@ -233,9 +291,12 @@ export function buildNoteArticle(note: NoteItem, anchorId: string, opts: NoteArt
   if (note.figures) for (const fig of note.figures) kids.push(renderFigure(fig));
   const end: Child[] = [];
   if (note.keyPoints && note.keyPoints.length > 0) end.push(renderKeyPoints(note));
-  if (note.mnemonic) end.push(renderMnemonic(note.mnemonic));
-  const src = note.source ? learnerSource(note.source) : null;
-  if (src) end.push(el('p', { class: 'note-source', text: `Source: ${src}` }));
+  const hook = renderMnemonic(note.mnemonic);
+  if (hook) end.push(hook);
+  // Source sits LAST in the closing panel; a page may suppress it when the
+  // next section repeats the identical citation (see sourceRunEnds).
+  const src = opts.showSource === false ? null : sourceLine(note);
+  if (src) end.push(el('p', { class: 'note-source', text: src }));
   if (end.length > 0) kids.push(el('footer', { class: 'note-end', attrs: { 'aria-label': `End of ${plainInline(note.title)}` } }, end));
   const attrs: Record<string, string> = { id: anchorId, 'aria-labelledby': titleId };
   if (numbered) attrs['data-section'] = String(opts.index);
@@ -249,10 +310,14 @@ export function buildNoteArticle(note: NoteItem, anchorId: string, opts: NoteArt
  * `<details>` (closed by default) with a short explainer: read them in the
  * December revision, not during the first-pass Prelims study. Returns `null`
  * when there are no mains notes, so callers can append it unconditionally.
+ * `shownSources` (see {@link sourceRunEnds}) suppresses a `Source:` line the
+ * page has already rendered above the section.
  */
-export function buildMainsNotesSection(notes: readonly NoteItem[], anchorPrefix: string): HTMLElement | null {
+export function buildMainsNotesSection(notes: readonly NoteItem[], anchorPrefix: string, shownSources: Set<string> = new Set()): HTMLElement | null {
   if (notes.length === 0) return null;
-  const articles = notes.map((n, i) => buildNoteArticle(n, `${anchorPrefix}-${n.id}-${i}`));
+  // `shownSources`: the Source lines the page already rendered above.
+  const showSource = sourceRunEnds(notes, shownSources);
+  const articles = notes.map((n, i) => buildNoteArticle(n, `${anchorPrefix}-${n.id}-${i}`, { showSource: showSource[i] }));
   return el('details', { class: 'notes-for-mains' }, [
     el('summary', { class: 'notes-for-mains-summary' }, [
       icon('notebook', 16),
@@ -317,9 +382,11 @@ export function render(root: HTMLElement): void {
     reading.appendChild(el('h2', { class: 'section-title', text: SUBJECTS[subject] }));
     for (const [topic, items] of topics) {
       reading.appendChild(el('h3', { class: 'topic', text: topic }));
+      // One shared citation per run of sections within the topic.
+      const showSource = sourceRunEnds(items);
       items.forEach((note, i) => {
         idx += 1;
-        reading.appendChild(buildNoteArticle(note, `note-${idx}`, { index: i + 1, total: items.length, titleTag: 'h3' }));
+        reading.appendChild(buildNoteArticle(note, `note-${idx}`, { index: i + 1, total: items.length, titleTag: 'h3', showSource: showSource[i] }));
       });
     }
   }

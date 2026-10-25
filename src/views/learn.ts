@@ -32,7 +32,7 @@ import { icon } from './components/icon';
 import { progressBar } from './components/progress';
 import { bandBadge, studyStatusChip } from './components/badges';
 import { buildAtAGlance } from './components/atglance';
-import { buildNoteArticle, buildMainsNotesSection, noteSections, type NoteSection } from './notes';
+import { buildNoteArticle, buildMainsNotesSection, noteSections, sourceRunEnds, type NoteSection } from './notes';
 import { isMainsNote } from '../engine/flashcards';
 import { buildCuratedDeck, mountFlashcards } from './revise';
 import { mountQuiz, type QuizSessionOpts } from './quiz';
@@ -284,12 +284,26 @@ interface TocEntry {
   sections: NoteSection[];
 }
 
-/** The notes' "On this page" entries (Prelims notes, reading order). @internal */
+/**
+ * The notes' "On this page" entries (Prelims notes, reading order). Every
+ * destination appears exactly ONCE: entries are de-duplicated by anchor id
+ * across both levels (a repeated note id would otherwise list its title — and
+ * all its sections — twice), and {@link noteSections} already drops a
+ * sub-heading that only restates its note's title. @internal
+ */
 function tocEntries(sub: SubtopicView): TocEntry[] {
-  return sub.notes.filter((n) => !isMainsNote(n)).map((n) => {
+  const seen = new Set<string>();
+  const out: TocEntry[] = [];
+  for (const n of sub.notes) {
+    if (isMainsNote(n)) continue;
     const anchor = `learn-note-${n.id}`;
-    return { anchor, title: n.title, noteId: n.id, sections: noteSections(n, anchor) };
-  });
+    if (seen.has(anchor)) continue;
+    seen.add(anchor);
+    const sections = noteSections(n, anchor).filter((s) => !seen.has(s.anchor));
+    for (const s of sections) seen.add(s.anchor);
+    out.push({ anchor, title: n.title, noteId: n.id, sections });
+  }
+  return out;
 }
 
 /** localStorage key of the last section read per topic. @internal */
@@ -726,8 +740,11 @@ function notesPanel(sub: SubtopicView, root: HTMLElement, route: LearnRoute, toc
   }
   const prelims: NoteItem[] = sub.notes.filter((n) => !isMainsNote(n));
   const mainsNotes = sub.notes.filter((n) => isMainsNote(n));
+  // A run of sections citing the same source shows it once, on the run's last section.
+  const shownSources = new Set<string>();
+  const showSource = sourceRunEnds(prelims, shownSources);
   prelims.forEach((n, i) => {
-    const article = buildNoteArticle(n, `learn-note-${n.id}`, { index: i + 1, total: prelims.length, titleTag: 'h2' });
+    const article = buildNoteArticle(n, `learn-note-${n.id}`, { index: i + 1, total: prelims.length, titleTag: 'h2', showSource: showSource[i] });
     const next = prelims[i + 1];
     if (next) {
       article.append(el('a', {
@@ -742,7 +759,7 @@ function notesPanel(sub: SubtopicView, root: HTMLElement, route: LearnRoute, toc
     }
     kids.push(article);
   });
-  const mainsSection = buildMainsNotesSection(mainsNotes, 'learn-note-mains');
+  const mainsSection = buildMainsNotesSection(mainsNotes, 'learn-note-mains', shownSources);
   if (mainsSection) kids.push(mainsSection);
   kids.push(notesFooter(sub, route));
 

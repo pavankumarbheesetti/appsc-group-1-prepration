@@ -1100,8 +1100,11 @@ export function lintAllContent(): LintFinding[] {
 /*      section but > 0 formula characters is THIN_RULE (a rule dumped with no  */
 /*      explanation around it).                                                */
 /*   2. Theory notes (HIST/POL/ECON/GEO/SCI/CA, excluding `mains`): each note   */
-/*      must contain 'In one line' + 'TL;DR' + >= 1 of 'The story' /            */
-/*      'Terms explained' → else MISSING_STRUCTURE.                            */
+/*      must contain 'In one line' + >= 1 of 'The story' / 'Terms explained'   */
+/*      (the body TEACHES) AND carry a recap → else MISSING_STRUCTURE. The      */
+/*      recap is satisfied by a non-empty `keyPoints` ("Must remember") — the   */
+/*      body no longer needs its own 'TL;DR' (a body TL;DR is still accepted   */
+/*      here, but `note-no-repetition` flags it as a duplicate recap).          */
 /*   3. Any note using a hard symbol (⌊ ⌈ ∑ ∏ ≡ or the word `mod`) must         */
 /*      explain it with the phrase 'means' inside the SAME `### ` section →     */
 /*      else UNEXPLAINED_SYMBOL.                                               */
@@ -1158,6 +1161,8 @@ export interface StructureNoteLike {
   subjectCode: string;
   body: string;
   tags?: string[];
+  /** The "Must remember" recap; non-empty satisfies rule 2's recap requirement. */
+  keyPoints?: readonly string[];
 }
 
 /** Count the formula characters/tokens (⌊ ⌈ = ÷ × ^{ mod) in `text`. @internal */
@@ -1263,12 +1268,16 @@ export function lintNoteStructure(
   /* ----- Rule 2: theory notes --------------------------------------------- */
   if (THEORY_SUBJECTS.has(note.subjectCode) && !isMains) {
     const hasInOneLine = /in one line/i.test(body);
-    const hasTldr = /tl;dr/i.test(body);
+    // The recap lives ONCE, in `keyPoints` (rendered as "Must remember"). A
+    // legacy body 'TL;DR' still counts as a recap for THIS rule; the
+    // note-no-repetition gate is what pushes it out of the body.
+    const hasKeyPointRecap = (note.keyPoints ?? []).some((k) => k.trim() !== '');
+    const hasRecap = hasKeyPointRecap || /tl;dr/i.test(body);
     const hasStoryOrTerms = /the story/i.test(body) || /terms explained/i.test(body);
-    if (!(hasInOneLine && hasTldr && hasStoryOrTerms)) {
+    if (!(hasInOneLine && hasRecap && hasStoryOrTerms)) {
       const missing: string[] = [];
       if (!hasInOneLine) missing.push("'In one line'");
-      if (!hasTldr) missing.push("'TL;DR'");
+      if (!hasRecap) missing.push("a recap (non-empty keyPoints)");
       if (!hasStoryOrTerms) missing.push("one of 'The story' / 'Terms explained'");
       findings.push({
         flag: 'MISSING_STRUCTURE',
@@ -1315,6 +1324,7 @@ export function auditAllStructure(): StructureFinding[] {
         subjectCode?: unknown;
         body?: unknown;
         tags?: unknown;
+        keyPoints?: unknown;
       };
       if (typeof it.body !== 'string') continue;
       const subjectCode =
@@ -1327,7 +1337,10 @@ export function auditAllStructure(): StructureFinding[] {
         ? it.tags.filter((t): t is string => typeof t === 'string')
         : undefined;
       const itemId = typeof it.id === 'string' ? it.id : '(no id)';
-      for (const { flag, detail } of lintNoteStructure({ subjectCode, body: it.body, tags })) {
+      const keyPoints = Array.isArray(it.keyPoints)
+        ? it.keyPoints.filter((k): k is string => typeof k === 'string')
+        : undefined;
+      for (const { flag, detail } of lintNoteStructure({ subjectCode, body: it.body, tags, keyPoints })) {
         findings.push({ file, itemId, subjectCode, flag, detail });
       }
     }
@@ -1337,6 +1350,376 @@ export function auditAllStructure(): StructureFinding[] {
       a.file.localeCompare(b.file) ||
       a.itemId.localeCompare(b.itemId) ||
       a.flag.localeCompare(b.flag),
+  );
+  return findings;
+}
+
+/* ========================================================================== */
+/* NOTE-NO-REPETITION gate (`note-no-repetition`, strict in `npm run check`)    */
+/*                                                                             */
+/* The contract for a note item:                                               */
+/*   - `body` TEACHES only — the story, the picture, terms explained and any   */
+/*     SPECIFIC "Don't confuse" warning;                                       */
+/*   - the recap appears EXACTLY ONCE, as `keyPoints` ("Must remember");       */
+/*   - the `mnemonic` appears EXACTLY ONCE (rendered as "Memory hook").        */
+/* So a learner never reads the same bullets twice in one section.            */
+/*                                                                             */
+/* Clauses (each reported separately, with a one-line fix hint):               */
+/*   (a) `repeated-run`    — a paragraph / list item of >= 40 chars appears     */
+/*                           verbatim more than once inside the same body;     */
+/*   (b) `recap-in-body`   — the body carries a recap block: a 'Key fact at a  */
+/*                           glance' table, an '### In short' section, a       */
+/*                           'TL;DR' marker, or ANY list whose items cover     */
+/*                           >= 60% of the keyPoints lines;                    */
+/*   (c) `mnemonic-in-body`— the body repeats the mnemonic (verbatim, or a     */
+/*                           '**Remember it:**' / 'Memory hook' paragraph      */
+/*                           restating it);                                    */
+/*   (d) `boilerplate`     — a known stamped boilerplate sentence;             */
+/*   (e) `repeated-label`  — a LABEL line (heading / lone bold run) whose text  */
+/*                           is longer than 25 chars appears verbatim more     */
+/*                           than once inside the same body (e.g. a gloss like */
+/*                           'The formula (now that you know what it does)'    */
+/*                           re-stated per section). Keep the full label on    */
+/*                           its first use; later uses take the bare label     */
+/*                           ('The formula'). Short bare labels such as        */
+/*                           'Common traps' repeat per section by design.      */
+/*                                                                             */
+/* Exemption (documented, not a waiver): MENT notes keep their per-section     */
+/* `**TL;DR**` sub-heading — structure rule 1 REQUIRES it and the formula      */
+/* sheet is generated from it — so for MENT only the bare 'TL;DR' marker is    */
+/* not flagged; the keyPoints-overlap check still applies to MENT lists.       */
+/* ========================================================================== */
+
+/** The note-no-repetition clauses. @see lintNoteRepetition */
+export type RepetitionClause =
+  | 'repeated-run'
+  | 'recap-in-body'
+  | 'mnemonic-in-body'
+  | 'boilerplate'
+  | 'repeated-label';
+
+/** One note-no-repetition hit against a single note item. */
+export interface RepetitionFinding {
+  /** Glob-style bank path. */
+  file: string;
+  /** The note item id. */
+  itemId: string;
+  /** Which clause (a–d) failed. */
+  clause: RepetitionClause;
+  /** What was found (with a short snippet). */
+  detail: string;
+  /** One-line fix hint for the content author. */
+  hint: string;
+}
+
+/** A note-like value — the only fields the repetition gate reads. */
+export interface RepetitionNoteLike {
+  subjectCode: string;
+  body: string;
+  keyPoints?: readonly string[];
+  mnemonic?: string;
+}
+
+/** Minimum length (chars, after trimming) of a paragraph / list item for clause (a). @internal */
+const REPEAT_MIN_CHARS = 40;
+
+/**
+ * Clause (e): a label whose visible text is LONGER than this many chars must not
+ * repeat verbatim within one body. 25 lets the bare gold-format labels ('Do it
+ * the slow way first' = 24, 'The idea in one sentence' = 24) repeat per
+ * section, while every glossed variant ('… (no formula)') is caught. @internal
+ */
+const LABEL_REPEAT_MAX_CHARS = 25;
+
+/** A body list counts as a keyPoints recap when it covers at least this share of keyPoints. @internal */
+const RECAP_OVERLAP_THRESHOLD = 0.6;
+
+/** A "Remember it" paragraph restates the mnemonic when it covers this share of its tokens. @internal */
+const MNEMONIC_COVERAGE_THRESHOLD = 0.6;
+
+/** Known stamped boilerplate sentences (clause d), compared after {@link recapNormalise}. @internal */
+const BOILERPLATE_SENTENCES: readonly string[] = [
+  'In the exam the names, dates and places listed above are swapped between options',
+  'The story in brief. The background, the cause-and-effect and every term used are explained in the sections above',
+];
+
+/** The fix hint shown for each clause. @internal */
+const REPETITION_HINTS: Readonly<Record<RepetitionClause, string>> = {
+  'repeated-run': 'keep ONE copy of the repeated text and delete the others (copies are verbatim)',
+  'recap-in-body':
+    'move any fact missing from keyPoints into keyPoints, then delete the recap block from body',
+  'mnemonic-in-body': 'delete the hook from body — it is rendered once from `mnemonic` as "Memory hook"',
+  boilerplate: 'delete the boilerplate sentence (it carries no information)',
+  'repeated-label':
+    "keep the full label (with its '(…)' gloss) on its FIRST use only; shorten later uses to the bare label, e.g. 'The formula'",
+};
+
+/**
+ * Normalise a line for recap / duplicate comparison: drop markdown emphasis and
+ * code ticks, a leading bullet or number, unify dashes and quotes, collapse
+ * whitespace, lower-case, and drop trailing punctuation. Two lines that differ
+ * only in formatting therefore compare equal. @internal
+ */
+function recapNormalise(text: string): string {
+  return text
+    .replace(/^\s*(?:[-*+]|\d+[.)])\s+/, '') // leading list marker
+    .replace(/\*\*|__|`/g, '') // bold / code emphasis
+    .replace(/[‐-―−]/g, '-') // all dash variants → '-'
+    .replace(/[‘’]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/[.;:,\s]+$/, '')
+    .toLowerCase();
+}
+
+/** True for a markdown list-item line (`- x`, `* x`, `+ x`, `1. x`). @internal */
+function isListItemLine(line: string): boolean {
+  return /^\s*(?:[-*+]|\d+[.)])\s+\S/.test(line);
+}
+
+/** True for a GFM table row (`| a | b |`). @internal */
+function isTableRow(line: string): boolean {
+  return line.trim().startsWith('|');
+}
+
+/**
+ * True for a line that is only a LABEL — a heading or a lone bold run such as
+ * `**Do it the slow way first (reason through a scenario)**`. Labels repeat per
+ * `### ` section by design (MENT sub-headings), so clause (a) ignores them. @internal
+ */
+function isLabelLine(line: string): boolean {
+  const t = line.trim();
+  return /^#{1,6}\s/.test(t) || /^\*\*[^*]+\*\*[:.]?$/.test(t);
+}
+
+/**
+ * The visible text of a label line: heading marker, bold markers and trailing
+ * ':' / '.' removed, whitespace collapsed. Used for clause (e)'s length test. @internal
+ */
+function labelText(line: string): string {
+  return line
+    .trim()
+    .replace(/^#{1,6}\s+/, '')
+    .replace(/\*\*/g, '')
+    .replace(/[:.]\s*$/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * The body's prose lines OUTSIDE fenced code blocks (fence contents are
+ * diagrams / tables-as-text and are covered by the 'Key fact at a glance'
+ * marker instead). Each returned line is trimmed and non-empty. @internal
+ */
+function proseLines(body: string): string[] {
+  const out: string[] = [];
+  let inFence = false;
+  for (const raw of body.split('\n')) {
+    const line = raw.trim();
+    if (line.startsWith('```') || line.startsWith('~~~')) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence || line === '') continue;
+    out.push(line);
+  }
+  return out;
+}
+
+/**
+ * Group the body's list items into LISTS: a list is a maximal run of list-item
+ * lines, where blank lines between items do not break it but any other line
+ * (paragraph, heading, table) does. Fenced code is skipped. @internal
+ */
+function bodyLists(body: string): string[][] {
+  const lists: string[][] = [];
+  let current: string[] = [];
+  let inFence = false;
+  const close = (): void => {
+    if (current.length > 0) lists.push(current);
+    current = [];
+  };
+  for (const raw of body.split('\n')) {
+    const line = raw.trim();
+    if (line.startsWith('```') || line.startsWith('~~~')) {
+      inFence = !inFence;
+      close();
+      continue;
+    }
+    if (inFence) continue;
+    if (line === '') continue; // loose lists: a blank line keeps the list open
+    if (isListItemLine(raw)) current.push(line);
+    else close();
+  }
+  close();
+  return lists;
+}
+
+/** First `n` chars of `text` for a finding snippet. @internal */
+function repetitionSnippet(text: string, n = 70): string {
+  const t = text.replace(/\s+/g, ' ').trim();
+  return t.length > n ? `${t.slice(0, n)}…` : t;
+}
+
+/**
+ * Audit ONE note item against the note-no-repetition contract and return one
+ * hit per failing clause (a clause reports its first/representative example).
+ * Pure and side-effect-free, so every clause is unit-testable with a fixture.
+ */
+export function lintNoteRepetition(
+  note: RepetitionNoteLike,
+): { clause: RepetitionClause; detail: string; hint: string }[] {
+  const findings: { clause: RepetitionClause; detail: string; hint: string }[] = [];
+  const add = (clause: RepetitionClause, detail: string): void => {
+    findings.push({ clause, detail, hint: REPETITION_HINTS[clause] });
+  };
+  const body = note.body ?? '';
+  const lines = proseLines(body);
+  const keyPoints = (note.keyPoints ?? []).map(recapNormalise).filter((k) => k !== '');
+
+  /* ----- (a) a paragraph / list item repeated verbatim inside the body ---- */
+  // Every prose line (a paragraph line or one list item) of >= 40 chars is
+  // counted; a repeated multi-line RUN shows up as each of its lines repeating.
+  // Table rows and pure labels are excluded (see isLabelLine / isTableRow).
+  {
+    const seen = new Map<string, number>();
+    for (const line of lines) {
+      if (isTableRow(line) || isLabelLine(line) || line.length < REPEAT_MIN_CHARS) continue;
+      seen.set(line, (seen.get(line) ?? 0) + 1);
+    }
+    const repeated = [...seen.entries()].filter(([, n]) => n > 1);
+    if (repeated.length > 0) {
+      const [first, times] = repeated[0]!;
+      add(
+        'repeated-run',
+        `${repeated.length} line(s) repeated verbatim in body, e.g. ×${times} "${repetitionSnippet(first)}"`,
+      );
+    }
+  }
+
+  /* ----- (b) a recap block in the body that duplicates keyPoints ----------- */
+  {
+    const reasons: string[] = [];
+    if (/key fact at a glance/i.test(body)) reasons.push("'Key fact at a glance' block");
+    if (lines.some((l) => /^#{2,6}\s+in short\b/i.test(l))) reasons.push("'### In short' section");
+    // MENT keeps its per-section **TL;DR** (rule 1 + formula sheet) — see header.
+    if (note.subjectCode !== 'MENT' && /tl;dr/i.test(body)) reasons.push("'TL;DR' marker");
+    if (keyPoints.length > 0) {
+      const kpSet = new Set(keyPoints);
+      for (const list of bodyLists(body)) {
+        // How many DISTINCT keyPoints this list repeats word-for-word.
+        const covered = new Set(list.map(recapNormalise).filter((item) => kpSet.has(item)));
+        const share = covered.size / kpSet.size;
+        if (covered.size > 0 && share >= RECAP_OVERLAP_THRESHOLD) {
+          reasons.push(`a list repeating ${covered.size}/${kpSet.size} keyPoints`);
+          break; // one example list is enough to fail the clause
+        }
+      }
+    }
+    if (reasons.length > 0) add('recap-in-body', `body carries a recap: ${reasons.join('; ')}`);
+  }
+
+  /* ----- (c) the body repeats the mnemonic --------------------------------- */
+  const mnemonic = note.mnemonic?.trim() ?? '';
+  if (mnemonic !== '') {
+    const normMnemonic = recapNormalise(mnemonic);
+    const normBody = recapNormalise(body.replace(/\s+/g, ' '));
+    if (normMnemonic !== '' && normBody.includes(normMnemonic)) {
+      add('mnemonic-in-body', `body contains the mnemonic verbatim: "${repetitionSnippet(mnemonic)}"`);
+    } else {
+      // A labelled hook paragraph ("**Remember it:** …" / "Memory hook …") that
+      // restates the mnemonic — same significant words, even if re-worded.
+      const hookTokens = significantTokens(mnemonic);
+      const hookLine = lines.find((l) => {
+        if (!/^\W*(?:remember it|memory hook)\b/i.test(recapNormalise(l))) return false;
+        return hookTokens.length > 0 && tokenCoverage(hookTokens, significantTokens(l).join(' ')) >= MNEMONIC_COVERAGE_THRESHOLD;
+      });
+      if (hookLine !== undefined) {
+        add('mnemonic-in-body', `body restates the mnemonic: "${repetitionSnippet(hookLine)}"`);
+      }
+    }
+  }
+
+  /* ----- (d) known stamped boilerplate ------------------------------------- */
+  {
+    const normBody = recapNormalise(body.replace(/\s+/g, ' '));
+    const hits = BOILERPLATE_SENTENCES.filter((s) => normBody.includes(recapNormalise(s)));
+    if (hits.length > 0) {
+      add('boilerplate', `body contains boilerplate: ${hits.map((h) => `"${repetitionSnippet(h, 50)}"`).join('; ')}`);
+    }
+  }
+
+  /* ----- (e) a long label repeated verbatim inside the body --------------- */
+  // Clause (a) skips labels (bare sub-headings repeat per section by design);
+  // a LONG label — in practice one carrying a '(…)' gloss — must appear once.
+  {
+    const seen = new Map<string, number>();
+    for (const line of lines) {
+      if (!isLabelLine(line) || labelText(line).length <= LABEL_REPEAT_MAX_CHARS) continue;
+      seen.set(line, (seen.get(line) ?? 0) + 1);
+    }
+    const repeated = [...seen.entries()].filter(([, n]) => n > 1);
+    if (repeated.length > 0) {
+      const [first, times] = repeated[0]!;
+      add(
+        'repeated-label',
+        `${repeated.length} label(s) > ${LABEL_REPEAT_MAX_CHARS} chars repeated verbatim in body, e.g. ×${times} "${repetitionSnippet(labelText(first))}"`,
+      );
+    }
+  }
+
+  return findings;
+}
+
+/**
+ * Run the note-no-repetition gate over every note bank on disk and return a
+ * flat, stably-sorted list of findings. Shared by `validate:content` (hard
+ * errors under `--strict`, i.e. in `npm run check`) and the Vitest suite. Never
+ * throws — unparseable JSON is skipped (the schema gate reports it).
+ */
+export function auditAllRepetition(contentDir: string = CONTENT_DIR): RepetitionFinding[] {
+  const findings: RepetitionFinding[] = [];
+  for (const abs of walkJsonFiles(contentDir)) {
+    const file = toGlobPath(abs);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(readFileSync(abs, 'utf8')) as unknown;
+    } catch {
+      continue; // the schema gate reports unparseable JSON
+    }
+    const bank = raw as { kind?: unknown; subjectCode?: unknown; items?: unknown };
+    if (bank.kind !== 'notes' || !Array.isArray(bank.items)) continue;
+    for (const rawItem of bank.items) {
+      const it = rawItem as {
+        id?: unknown;
+        subjectCode?: unknown;
+        body?: unknown;
+        keyPoints?: unknown;
+        mnemonic?: unknown;
+      };
+      if (typeof it.body !== 'string') continue;
+      const subjectCode =
+        typeof it.subjectCode === 'string'
+          ? it.subjectCode
+          : typeof bank.subjectCode === 'string'
+            ? bank.subjectCode
+            : '(unknown)';
+      const keyPoints = Array.isArray(it.keyPoints)
+        ? it.keyPoints.filter((k): k is string => typeof k === 'string')
+        : undefined;
+      const mnemonic = typeof it.mnemonic === 'string' ? it.mnemonic : undefined;
+      const itemId = typeof it.id === 'string' ? it.id : '(no id)';
+      for (const f of lintNoteRepetition({ subjectCode, body: it.body, keyPoints, mnemonic })) {
+        findings.push({ file, itemId, ...f });
+      }
+    }
+  }
+  findings.sort(
+    (a, b) =>
+      a.file.localeCompare(b.file) ||
+      a.itemId.localeCompare(b.itemId) ||
+      a.clause.localeCompare(b.clause),
   );
   return findings;
 }

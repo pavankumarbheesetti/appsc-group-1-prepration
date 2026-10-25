@@ -91,6 +91,31 @@ describe('structure — rule 2: theory notes', () => {
       'MISSING_STRUCTURE',
     );
   });
+
+  // The recap lives ONCE, in keyPoints — the body need not carry a TL;DR.
+  const teachingOnly = '**In one line** the empire rose and fell.\n**The story** cause, event, result.';
+
+  it('a keyPoints-only recap satisfies the recap requirement (no body TL;DR)', () => {
+    expect(
+      flags({ subjectCode: 'HIST', body: teachingOnly, keyPoints: ['The empire fell in 185 BCE.'] }),
+    ).not.toContain('MISSING_STRUCTURE');
+  });
+
+  it('still fires when there is no recap at all (no keyPoints, no TL;DR)', () => {
+    const f = lintNoteStructure({ subjectCode: 'HIST', body: teachingOnly, keyPoints: ['  '] });
+    expect(f.map((x) => x.flag)).toContain('MISSING_STRUCTURE');
+    expect(f.find((x) => x.flag === 'MISSING_STRUCTURE')?.detail).toContain('recap');
+  });
+
+  it('keyPoints do NOT excuse a body that does not teach (story / terms / in one line)', () => {
+    const kp = ['A fact.'];
+    expect(flags({ subjectCode: 'POL', body: '**In one line** x.', keyPoints: kp })).toContain(
+      'MISSING_STRUCTURE',
+    );
+    expect(flags({ subjectCode: 'POL', body: '**The story** x.', keyPoints: kp })).toContain(
+      'MISSING_STRUCTURE',
+    );
+  });
 });
 
 describe('structure — rule 3: unexplained symbols', () => {

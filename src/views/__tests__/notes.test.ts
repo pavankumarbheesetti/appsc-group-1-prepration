@@ -8,7 +8,8 @@ import type { NoteItem } from '../../content/types';
  *  - the "Must remember" block is PRIMARY and carries a "Test yourself" control
  *    that hides the points, prompts recall, then reveals with a self-rating that
  *    seeds the note's spaced-repetition cards;
- *  - the authored mnemonic is DEMOTED to a collapsed, optional "Memory hook".
+ *  - the authored mnemonic is DEMOTED to one short, muted INLINE line
+ *    ("Memory hook — <text>") in the closing panel — never a bare label.
  */
 function makeNote(): NoteItem {
   return {
@@ -83,14 +84,34 @@ describe('notes — Test yourself (active recall)', () => {
 describe('notes — Memory hook (demoted mnemonic)', () => {
   beforeEach(() => __resetForTests());
 
-  it('renders the mnemonic as a collapsed, optional disclosure (not a headline)', () => {
+  it('renders the mnemonic INLINE as one labelled line (value visible, not a headline)', () => {
     const article = buildNoteArticle(makeNote(), 'note-1');
-    const details = article.querySelector('details.note-mnemonic') as HTMLDetailsElement | null;
-    expect(details).not.toBeNull();
-    expect(details!.open).toBe(false); // collapsed by default
-    expect(details!.querySelector('summary')?.textContent).toContain('Memory hook (optional)');
-    // The authored text is preserved (never deleted), just tucked away.
-    expect(details!.textContent).toContain('M-C-M order');
+    const hook = article.querySelector('.note-end .note-mnemonic') as HTMLElement | null;
+    expect(hook).not.toBeNull();
+    // Inline paragraph — no collapsed disclosure hiding the value.
+    expect(hook!.tagName).toBe('P');
+    expect(article.querySelector('details.note-mnemonic')).toBeNull();
+    expect(hook!.querySelector('.note-mnemonic-label')?.textContent).toBe('Memory hook');
+    // The authored text is preserved (never deleted) and shown on the same line.
+    expect(hook!.querySelector('.note-mnemonic-text')?.textContent).toContain('M-C-M order');
+    expect(hook!.textContent).toBe('Memory hook \u2014 M-C-M order to remember the excavators.');
+    // Exactly once per note.
+    expect(article.querySelectorAll('.note-mnemonic').length).toBe(1);
+    expect(article.textContent?.split('M-C-M order').length).toBe(2);
+  });
+
+  it('keeps the Must remember / Test yourself block inside the closing panel', () => {
+    const article = buildNoteArticle(makeNote(), 'note-1');
+    const end = article.querySelector('footer.note-end')!;
+    expect(end.querySelector('.note-keypoints-title')?.textContent).toBe('Must remember');
+    expect([...end.querySelectorAll('button')].some((b) => b.textContent?.includes('Test yourself'))).toBe(true);
+    expect(article.querySelectorAll('.note-keypoints').length).toBe(1);
+  });
+
+  it('never renders the label for a blank mnemonic', () => {
+    const article = buildNoteArticle({ ...makeNote(), mnemonic: '   ' }, 'note-1');
+    expect(article.querySelector('.note-mnemonic')).toBeNull();
+    expect(article.textContent).not.toContain('Memory hook');
   });
 
   it('omits the memory hook when the note has none', () => {
@@ -98,6 +119,7 @@ describe('notes — Memory hook (demoted mnemonic)', () => {
     delete note.mnemonic;
     const article = buildNoteArticle(note, 'note-1');
     expect(article.querySelector('.note-mnemonic')).toBeNull();
+    expect(article.textContent).not.toContain('Memory hook');
   });
 });
 
