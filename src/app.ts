@@ -37,6 +37,13 @@ import * as english from './views/english';
 import * as settings from './views/settings';
 import * as formulaSheet from './views/formula-sheet';
 import * as weakView from './views/weak';
+import * as timelineView from './views/timeline';
+import * as yearExplorer from './views/year-explorer';
+import { YEAR_PATH } from './views/year-explorer';
+import * as historyLearn from './views/history-learn';
+import { HISTORY_PATH } from './views/history-learn';
+import * as yearDrillView from './views/year-drill';
+import { YEARS_PATH } from './views/year-drill';
 import { openSearch } from './views/search';
 import { openDialog, type DialogController } from './views/dialog';
 
@@ -80,7 +87,7 @@ interface NavSection {
 
 const TODAY: NavItem = { label: 'Today', path: PATHS.today, iconName: 'dashboard', owns: ['/today', '/start', '/set/'] };
 const PLAN: NavItem = { label: 'Plan', path: PATHS.plan, iconName: 'calendar' };
-const TOPICS: NavItem = { label: 'Topics', path: PATHS.topics, iconName: 'syllabus', owns: ['/learn/', '/notes'] };
+const TOPICS: NavItem = { label: 'Topics', path: PATHS.topics, iconName: 'syllabus', owns: ['/learn/', '/notes', '/timeline'] };
 const PRACTICE: NavItem = { label: 'Practice', path: PATHS.practice, iconName: 'drill', owns: ['/q/'] };
 const REVISE: NavItem = { label: 'Revise', path: PATHS.revise, iconName: 'revise', owns: ['/formula-sheet'] };
 const PROGRESS: NavItem = { label: 'Progress', path: PATHS.progress, iconName: 'notebook' };
@@ -513,6 +520,12 @@ export function renderApp(root: HTMLElement): void {
   // N16: the weak-topics view has its own page.
   page(PATHS.weak, 'Weak topics', weakView.render, ['Weak topics', 'Revise']);
   page('/formula-sheet', 'Formula sheet', formulaSheet.render, ['Formula sheet', 'Revise']);
+  page('/timeline', 'Timeline', timelineView.render, ['Timeline', 'Topics']);
+  page(YEAR_PATH, 'Year lookup', yearExplorer.render, ['Year lookup', 'History']);
+  page(HISTORY_PATH, 'History, year by year', historyLearn.renderIndex, ['History, year by year', 'Topics']);
+  page(YEARS_PATH, 'Year drill', yearDrillView.render, ['Year drill', 'History']);
+  page(`${HISTORY_PATH}/:id`, 'History', historyLearn.renderChapter, ['History chapter', 'Topics']);
+  page(`${HISTORY_PATH}/:id/:n`, 'History', historyLearn.renderChapter, ['History lesson', 'Topics']);
   page(PATHS.progress, 'Progress', progress.render);
   page(PATHS.mains, 'Mains', mains.render);
   page('/mains/:id', 'Mains', mains.renderWorkspace, ['Answer writing', 'Mains']);

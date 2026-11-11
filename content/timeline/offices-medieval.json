@@ -1,0 +1,392 @@
+{
+  "kind": "offices",
+  "version": "1.0.0",
+  "offices": [
+    {
+      "id": "off-chola",
+      "label": "Chola king (imperial Cholas)",
+      "group": "Medieval India",
+      "lane": "south-india",
+      "holders": [
+        {
+          "name": "Vijayalaya",
+          "from": 850,
+          "to": 871,
+          "approx": true,
+          "note": "Captured Thanjavur (NCERT)"
+        },
+        {
+          "name": "Aditya I",
+          "from": 871,
+          "to": 907,
+          "approx": true,
+          "note": "Ended Pallava rule"
+        },
+        {
+          "name": "Parantaka I",
+          "from": 907,
+          "to": 955,
+          "approx": true,
+          "note": "Uttaramerur inscriptions"
+        },
+        {
+          "name": "Rajaraja I",
+          "personId": "p-rajaraja-1",
+          "from": 985,
+          "to": 1014,
+          "approx": true,
+          "note": "Brihadeshvara temple (NCERT)"
+        },
+        {
+          "name": "Rajendra I",
+          "personId": "p-rajendra-1",
+          "from": 1014,
+          "to": 1044,
+          "note": "Gangaikonda Chola (NCERT)"
+        },
+        {
+          "name": "Rajadhiraja I and successors",
+          "from": 1044,
+          "to": 1070
+        },
+        {
+          "name": "Kulottunga I",
+          "personId": "p-kulottunga-1",
+          "from": 1070,
+          "to": 1122,
+          "note": "Chalukya-Chola line"
+        },
+        {
+          "name": "Later Cholas",
+          "from": 1122,
+          "to": 1279,
+          "note": "Ended by the Pandyas"
+        }
+      ]
+    },
+    {
+      "id": "off-kakatiya",
+      "label": "Kakatiya ruler (Warangal)",
+      "group": "Andhra",
+      "lane": "andhra",
+      "holders": [
+        {
+          "name": "Prola II",
+          "personId": "p-prola-2",
+          "from": 1116,
+          "to": 1157,
+          "note": "Anumakonda"
+        },
+        {
+          "name": "Rudradeva (Prataparudra I)",
+          "personId": "p-rudradeva",
+          "from": 1158,
+          "to": 1195,
+          "note": "Independence c. 1163"
+        },
+        {
+          "name": "Mahadeva",
+          "from": 1195,
+          "to": 1199,
+          "note": "Killed fighting the Yadavas"
+        },
+        {
+          "name": "Ganapati Deva",
+          "personId": "p-ganapati-deva",
+          "from": 1199,
+          "to": 1262,
+          "note": "Capital Warangal"
+        },
+        {
+          "name": "Rudramadevi",
+          "personId": "p-rudrama",
+          "from": 1262,
+          "to": 1289,
+          "note": "NCERT: 1262–1289"
+        },
+        {
+          "name": "Prataparudra II",
+          "personId": "p-prataparudra",
+          "from": 1289,
+          "to": 1323,
+          "note": "Last king"
+        }
+      ]
+    },
+    {
+      "id": "off-delhi-sultan",
+      "label": "Sultan of Delhi",
+      "group": "Medieval India",
+      "lane": "north-india",
+      "holders": [
+        {
+          "name": "Qutbuddin Aibak (Mamluk)",
+          "personId": "p-aibak",
+          "from": 1206,
+          "to": 1210,
+          "note": "NCERT: 1206–1210"
+        },
+        {
+          "name": "Aram Shah",
+          "from": 1210,
+          "to": 1211
+        },
+        {
+          "name": "Iltutmish",
+          "personId": "p-iltutmish",
+          "from": 1211,
+          "to": 1236
+        },
+        {
+          "name": "Ruknuddin Firuz",
+          "from": 1236,
+          "to": 1236
+        },
+        {
+          "name": "Raziyya",
+          "personId": "p-razia",
+          "from": 1236,
+          "to": 1240,
+          "note": "NCERT: 1236–1240"
+        },
+        {
+          "name": "Bahram Shah, Masud Shah",
+          "from": 1240,
+          "to": 1246
+        },
+        {
+          "name": "Nasiruddin Mahmud",
+          "from": 1246,
+          "to": 1266,
+          "note": "Balban was his naib"
+        },
+        {
+          "name": "Balban",
+          "personId": "p-balban",
+          "from": 1266,
+          "to": 1287
+        },
+        {
+          "name": "Kaiqubad, Kayumars",
+          "from": 1287,
+          "to": 1290
+        },
+        {
+          "name": "Jalaluddin Khalji",
+          "from": 1290,
+          "to": 1296,
+          "note": "Founder of the Khaljis"
+        },
+        {
+          "name": "Alauddin Khalji",
+          "personId": "p-alauddin",
+          "from": 1296,
+          "to": 1316
+        },
+        {
+          "name": "Qutbuddin Mubarak Shah",
+          "from": 1316,
+          "to": 1320
+        },
+        {
+          "name": "Khusrau Khan",
+          "from": 1320,
+          "to": 1320
+        },
+        {
+          "name": "Ghiyasuddin Tughlaq",
+          "personId": "p-ghiyasuddin-tughlaq",
+          "from": 1320,
+          "to": 1325,
+          "note": "Founder of the Tughlaqs"
+        },
+        {
+          "name": "Muhammad bin Tughlaq",
+          "personId": "p-mb-tughlaq",
+          "from": 1325,
+          "to": 1351
+        },
+        {
+          "name": "Firoz Shah Tughlaq",
+          "personId": "p-firoz-tughlaq",
+          "from": 1351,
+          "to": 1388
+        },
+        {
+          "name": "Later Tughlaqs",
+          "from": 1388,
+          "to": 1413,
+          "note": "Timur sacked Delhi (1398)"
+        },
+        {
+          "name": "Khizr Khan (Sayyid)",
+          "from": 1414,
+          "to": 1421,
+          "note": "NCERT: 1414–1421"
+        },
+        {
+          "name": "Later Sayyids",
+          "from": 1421,
+          "to": 1451
+        },
+        {
+          "name": "Bahlul Lodi",
+          "personId": "p-bahlul-lodi",
+          "from": 1451,
+          "to": 1489,
+          "note": "Founder of the Lodis"
+        },
+        {
+          "name": "Sikandar Lodi",
+          "personId": "p-sikandar-lodi",
+          "from": 1489,
+          "to": 1517,
+          "note": "Founded Agra (1504)"
+        },
+        {
+          "name": "Ibrahim Lodi",
+          "personId": "p-ibrahim-lodi",
+          "from": 1517,
+          "to": 1526,
+          "note": "Killed at Panipat"
+        }
+      ]
+    },
+    {
+      "id": "off-vijayanagara",
+      "label": "Vijayanagara king (raya)",
+      "group": "Medieval India",
+      "lane": "deccan",
+      "holders": [
+        {
+          "name": "Harihara I (Sangama)",
+          "personId": "p-harihara-1",
+          "from": 1336,
+          "to": 1356,
+          "note": "NCERT: founded 1336"
+        },
+        {
+          "name": "Bukka Raya I",
+          "personId": "p-bukka-1",
+          "from": 1356,
+          "to": 1377
+        },
+        {
+          "name": "Harihara II",
+          "from": 1377,
+          "to": 1404,
+          "note": "First to take imperial titles"
+        },
+        {
+          "name": "Deva Raya I",
+          "from": 1406,
+          "to": 1422
+        },
+        {
+          "name": "Deva Raya II",
+          "personId": "p-deva-raya-2",
+          "from": 1424,
+          "to": 1446,
+          "note": "Abdur Razzaq visited (1443)"
+        },
+        {
+          "name": "Later Sangamas",
+          "from": 1446,
+          "to": 1485,
+          "note": "NCERT: Sangamas till 1485"
+        },
+        {
+          "name": "Saluva Narasimha",
+          "from": 1485,
+          "to": 1491,
+          "note": "Saluva dynasty till 1503 (NCERT)"
+        },
+        {
+          "name": "Tuluva Narasa / Vira Narasimha",
+          "from": 1491,
+          "to": 1509,
+          "note": "Tuluvas from 1503 (NCERT)"
+        },
+        {
+          "name": "Krishnadevaraya",
+          "personId": "p-krishnadevaraya",
+          "from": 1509,
+          "to": 1529,
+          "note": "NCERT: died 1529"
+        },
+        {
+          "name": "Achyuta Deva Raya",
+          "from": 1529,
+          "to": 1542
+        },
+        {
+          "name": "Sadashiva Raya (Rama Raya regent)",
+          "personId": "p-rama-raya",
+          "from": 1542,
+          "to": 1570,
+          "note": "Aravidu control from 1542 (NCERT)"
+        },
+        {
+          "name": "Aravidu kings (Tirumala … Venkata II)",
+          "from": 1570,
+          "to": 1614,
+          "note": "Capitals Penukonda, Chandragiri"
+        }
+      ]
+    },
+    {
+      "id": "off-qutb-shahi",
+      "label": "Qutb Shahi sultan of Golconda",
+      "group": "Andhra",
+      "lane": "andhra",
+      "holders": [
+        {
+          "name": "Sultan Quli Qutb-ul-Mulk",
+          "personId": "p-sultan-quli",
+          "from": 1518,
+          "to": 1543,
+          "note": "Founder"
+        },
+        {
+          "name": "Jamsheed Quli",
+          "from": 1543,
+          "to": 1550,
+          "note": "Killed his father"
+        },
+        {
+          "name": "Ibrahim Qutb Shah",
+          "personId": "p-ibrahim-qutb",
+          "from": 1550,
+          "to": 1580,
+          "note": "\"Malki Bharama\"; Talikota"
+        },
+        {
+          "name": "Muhammad Quli Qutb Shah",
+          "personId": "p-muhammad-quli",
+          "from": 1580,
+          "to": 1612,
+          "note": "Founded Hyderabad (1591)"
+        },
+        {
+          "name": "Sultan Muhammad Qutb Shah",
+          "from": 1612,
+          "to": 1626,
+          "note": "Mecca Masjid begun"
+        },
+        {
+          "name": "Abdullah Qutb Shah",
+          "from": 1626,
+          "to": 1672,
+          "note": "Accepted Mughal overlordship (1636)"
+        },
+        {
+          "name": "Abul Hasan Qutb Shah (Tana Shah)",
+          "personId": "p-tana-shah",
+          "from": 1672,
+          "to": 1687,
+          "note": "Golconda fell (1687)"
+        }
+      ]
+    }
+  ]
+}

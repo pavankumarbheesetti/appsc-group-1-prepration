@@ -129,9 +129,44 @@ export type TimelineDate = z.infer<typeof TimelineDateSchema>;
 /* -------------------------------------------------------------------------- */
 
 /**
+ * An exam "pair": the two sides a match-the-following / pairs question joins,
+ * e.g. `{ left: 'Treaty of Salbai', right: 'Hastings & Mahadji Scindia' }`.
+ */
+export const PairSchema = z.object({
+  left: z.string().min(1),
+  right: z.string().min(1),
+});
+export type Pair = z.infer<typeof PairSchema>;
+
+/** A fact tied to a different year than its parent, e.g. an IVC site's excavation in 1921. */
+export const DatedFactSchema = z.object({
+  year: z.number().int().refine((y) => y !== 0, { message: 'year must not be 0' }),
+  text: z.string().min(1),
+});
+export type DatedFact = z.infer<typeof DatedFactSchema>;
+
+/**
+ * An image KEY resolved by `assets.ts` (inlined at build). Internet images
+ * must carry their credit + licence; `scripts/fetch-images.ts` fills these.
+ */
+export const TimelineImageSchema = z.object({
+  src: z.string().min(1),
+  alt: z.string().min(1),
+  caption: z.string().min(1).optional(),
+  credit: z.string().min(1).optional(),
+  license: z.string().min(1).optional(),
+  sourceUrl: z.string().url().optional(),
+});
+export type TimelineImage = z.infer<typeof TimelineImageSchema>;
+
+/**
  * A single dated event. `subtopicIds` link to `content/taxonomy.json` subtopics
  * and `relatedMcqIds` to real MCQ item ids (both cross-checked in validate.ts).
  * `importance` 1..3 (3 = must-know) drives label density at low zoom.
+ *
+ * The optional exam fields (`place` … `pairs`) feed the Year explorer:
+ * treaty sides/signers/outcomes, linked people, and one-line facts written so
+ * each can stand alone as a "which statement is correct" option.
  */
 export const TimelineEventSchema = z.object({
   id: z.string().min(1),
@@ -154,6 +189,70 @@ export const TimelineEventSchema = z.object({
   importance: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   /** Provenance / citation string. */
   source: z.string().min(1),
+  place: z.string().min(1).optional(),
+  /** Sides of a battle / treaty / pact. */
+  parties: z.array(z.string().min(1)).optional(),
+  /** Who signed (treaty) or who led (battle commanders). */
+  signatories: z.array(z.string().min(1)).optional(),
+  outcomes: z.array(z.string().min(1)).optional(),
+  /** People ids (from the people banks) involved in this event. */
+  personIds: z.array(z.string().min(1)).optional(),
+  /** What each person did in THIS event — taught inline in the history chapters. */
+  participants: z
+    .array(
+      z.object({
+        personId: z.string().min(1),
+        role: z.string().min(1),
+        /** Which side they were on (matches a `sides[].name`). */
+        side: z.string().min(1).optional(),
+        /** Their post at the time, e.g. "Commander-in-chief of the northern army". */
+        post: z.string().min(1).optional(),
+      }),
+    )
+    .optional(),
+  /** The sides of a war/treaty, each with its ruler, commanders and allies. */
+  sides: z
+    .array(
+      z.object({
+        name: z.string().min(1),
+        ruler: z.string().min(1).optional(),
+        commanders: z.array(z.string().min(1)).optional(),
+        allies: z.array(z.string().min(1)).optional(),
+        strength: z.string().min(1).optional(),
+      }),
+    )
+    .optional(),
+  /** What led to it. */
+  causes: z.array(z.string().min(1)).optional(),
+  /** What happened, step by step. */
+  course: z.array(z.string().min(1)).optional(),
+  /** Losses on each side. */
+  losses: z.array(z.string().min(1)).optional(),
+  /** Who gained what. */
+  gains: z.array(z.string().min(1)).optional(),
+  /** Treaties that came out of it (or that it is). */
+  treaties: z
+    .array(
+      z.object({
+        name: z.string().min(1),
+        year: z.number().int().refine((y) => y !== 0).optional(),
+        between: z.array(z.string().min(1)).optional(),
+        terms: z.array(z.string().min(1)).optional(),
+      }),
+    )
+    .optional(),
+  /** Stand-alone true statements about the event. */
+  facts: z.array(z.string().min(1)).optional(),
+  pairs: z.array(PairSchema).optional(),
+  /** Facts that also belong under another year (shown in that year's "Also in this year"). */
+  alsoOn: z.array(DatedFactSchema).optional(),
+  images: z.array(TimelineImageSchema).optional(),
+  /** English Wikipedia article title used by `scripts/fetch-images.ts` to find a free image. */
+  wiki: z.string().min(1).optional(),
+  /** A memory hook tying the year to one the learner already knows ("Plassey + 7 = Buxar"). */
+  yearHook: z.string().min(1).optional(),
+  /** A fact with no real date (e.g. geography); kept on the axis but never taught in a history lesson. */
+  timeless: z.boolean().optional(),
 });
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;
 
@@ -194,7 +293,7 @@ export const TimelineBankSchema = z.object({
   kind: z.literal('timeline'),
   version: z.string(),
   events: z.array(TimelineEventSchema),
-  periods: z.array(TimelinePeriodSchema),
+  periods: z.array(TimelinePeriodSchema).default([]),
 });
 export type TimelineBank = z.infer<typeof TimelineBankSchema>;
 

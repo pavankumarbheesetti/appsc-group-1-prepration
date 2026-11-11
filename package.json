@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit",
     "gen:schema": "vite-node scripts/gen-json-schema.ts",
     "gen:manifest": "vite-node scripts/gen-manifest.ts",
+    "fetch:images": "vite-node scripts/fetch-images.ts",
     "validate:content": "vite-node scripts/validate-content.ts",
     "audit:coverage": "vite-node scripts/audit-coverage.ts",
     "audit:completeness": "vite-node scripts/audit-completeness.ts",

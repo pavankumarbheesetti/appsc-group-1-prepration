@@ -31,7 +31,7 @@ import { bandBadge, studyStatusChip } from './components/badges';
 import { topicStudyFrom, type StudyStatus } from '../lib/study-status';
 import { caUpToDateLine, prelimsScope, studySummary, studiedLine } from '../lib/study-summary';
 import { openLearn } from './learn';
-import { routeQuery } from '../router/router';
+import { navigate, routeQuery } from '../router/router';
 
 /** How rows within a chapter are ordered. */
 type SortMode = 'order' | 'priority';
@@ -194,6 +194,14 @@ export function render(root: HTMLElement): void {
       }, [
         icon('target', 14),
         el('span', { text: 'Studied = marked studied, or 10 practice answers with at least 50% correct. Current affairs is a continuous stream, shown as \u201cup to date through\u201d. Accuracy = correct \u00f7 answered, over all your attempts at a topic\u2019s questions. Priority = High-yield / Medium / Low.' }),
+      ]),
+      el('button', { class: 'card hl-banner', type: 'button', onClick: () => navigate('/topics/history') }, [
+        icon('history', 22),
+        el('span', { class: 'hl-banner-text' }, [
+          el('strong', { text: 'History, year by year' }),
+          el('span', { text: 'Ancient, medieval and modern India taught in order: every event, who did what, and what came of it.' }),
+        ]),
+        icon('arrow-right', 16),
       ]),
       buildSortBar(draw),
     ]);

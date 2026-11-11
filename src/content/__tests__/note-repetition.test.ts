@@ -133,6 +133,19 @@ describe('note-no-repetition — (d) boilerplate', () => {
   it("PASSES for a SPECIFIC Don't-confuse warning", () => {
     expect(clauses(clean)).not.toContain('boilerplate');
   });
+
+  it("FAILS on content-free 'explained where it first appears' filler (and re-worded variants)", () => {
+    const stamped = `${cleanBody}\n\n**Terms explained:** Every technical term used above is explained where it first appears in this note.`;
+    expect(clauses({ ...clean, body: stamped })).toContain('boilerplate');
+    const reworded = `${cleanBody}\n\nEach term is defined where it first appears.`;
+    expect(clauses({ ...clean, body: reworded })).toContain('boilerplate');
+  });
+
+  it("PASSES for a real 'Terms explained' section that defines each term", () => {
+    // cleanBody carries a genuine '**Terms explained:**' list (term — meaning).
+    expect(cleanBody).toContain('**Terms explained:**');
+    expect(clauses(clean)).not.toContain('boilerplate');
+  });
 });
 
 describe('note-no-repetition — (e) repeated-label', () => {

@@ -39,7 +39,8 @@ import {
   QualityWaiversSchema,
   SyllabusMapSchema,
 } from './audit-types';
-import { TimelineBankSchema } from './timeline-types';
+import { TimelineBankSchema, type TimelineBank } from './timeline-types';
+import { ChaptersBankSchema, GlossaryBankSchema, OfficesBankSchema, PeopleBankSchema, type Chapter, type Office, type Person } from './chronicle-types';
 import {
   classifyStem,
   hasStructured,
@@ -106,6 +107,21 @@ function formatIssues(error: z.ZodError): string[] {
 }
 
 /** Recursively collect every `*.json` file under `dir` as absolute paths. */
+/** Image keys (file name without extension) available under src/assets. */
+function assetKeys(): Set<string> {
+  const keys = new Set<string>();
+  const walk = (dir: string): void => {
+    if (!existsSync(dir)) return;
+    for (const name of readdirSync(dir)) {
+      const abs = join(dir, name);
+      if (statSync(abs).isDirectory()) walk(abs);
+      else if (/\.(png|jpe?g|svg)$/i.test(name)) keys.add(name.replace(/\.[^.]+$/, ''));
+    }
+  };
+  walk(resolve(CONTENT_DIR, '../src/assets'));
+  return keys;
+}
+
 function walkJsonFiles(dir: string): string[] {
   const out: string[] = [];
   for (const entry of readdirSync(dir)) {
@@ -219,6 +235,13 @@ export function validateAllContent(): FileValidationResult[] {
   let taxonomyParsed: Taxonomy | undefined;
   /** The parsed timeline bank (for cross-checks after banks are parsed). */
   let timeline: import('./timeline-types').TimelineBank | undefined;
+  /** Extra event banks (`events-*.json`), people and offices, keyed by file for error routing. */
+  const extraTimelines: { file: string; bank: TimelineBank }[] = [];
+  const peopleFiles: { file: string; people: Person[] }[] = [];
+  const officeFiles: { file: string; offices: Office[] }[] = [];
+  const chapterFiles: { file: string; chapters: Chapter[] }[] = [];
+  const glossaryIds = new Set<string>();
+  const glossaryForms = new Map<string, string>();
   /** The parsed pyq-weights doc (for cross-checks after the taxonomy is parsed). */
   let pyqWeights: import('./audit-types').PyqWeights | undefined;
   /** The parsed learning sequence (for the completeness/ordering cross-check). */
@@ -314,9 +337,50 @@ export function validateAllContent(): FileValidationResult[] {
       continue;
     }
     if (file.startsWith('/content/timeline/')) {
-      resultFor(file).warnings.push(
-        'unrecognised file under content/timeline/ (not events.json) — ignored',
-      );
+      const name = file.slice(file.lastIndexOf('/') + 1);
+      const raw = readJson(abs);
+      if (raw === undefined) continue;
+      if (name.startsWith('events-')) {
+        const parsed = TimelineBankSchema.safeParse(raw);
+        if (parsed.success) extraTimelines.push({ file, bank: parsed.data });
+        else resultFor(file).errors.push(...formatIssues(parsed.error));
+        resultFor(file);
+      } else if (name.startsWith('people-')) {
+        const parsed = PeopleBankSchema.safeParse(raw);
+        if (parsed.success) peopleFiles.push({ file, people: parsed.data.people });
+        else resultFor(file).errors.push(...formatIssues(parsed.error));
+        resultFor(file);
+      } else if (name.startsWith('glossary-')) {
+        const parsed = GlossaryBankSchema.safeParse(raw);
+        const r = resultFor(file);
+        if (!parsed.success) r.errors.push(...formatIssues(parsed.error));
+        else {
+          for (const t of parsed.data.terms) {
+            if (glossaryIds.has(t.id)) r.errors.push(`duplicate glossary id '${t.id}'`);
+            glossaryIds.add(t.id);
+            for (const form of [t.term, ...(t.aka ?? [])]) {
+              const key = form.toLowerCase();
+              const owner = glossaryForms.get(key);
+              if (owner && owner !== t.id) r.errors.push(`glossary form '${form}' is used by both '${owner}' and '${t.id}'`);
+              glossaryForms.set(key, t.id);
+            }
+          }
+        }
+      } else if (name.startsWith('chapters-')) {
+        const parsed = ChaptersBankSchema.safeParse(raw);
+        if (parsed.success) chapterFiles.push({ file, chapters: parsed.data.chapters });
+        else resultFor(file).errors.push(...formatIssues(parsed.error));
+        resultFor(file);
+      } else if (name.startsWith('offices-')) {
+        const parsed = OfficesBankSchema.safeParse(raw);
+        if (parsed.success) officeFiles.push({ file, offices: parsed.data.offices });
+        else resultFor(file).errors.push(...formatIssues(parsed.error));
+        resultFor(file);
+      } else {
+        resultFor(file).warnings.push(
+          'unrecognised file under content/timeline/ (expected events.json, events-*, people-* or offices-*) — ignored',
+        );
+      }
       continue;
     }
 
@@ -563,32 +627,146 @@ export function validateAllContent(): FileValidationResult[] {
     for (const { bank } of parsedBanks) {
       if (bank.kind === 'mcq') for (const item of bank.items) mcqIds.add(item.id);
     }
-    const tl = resultFor(timelineGlob);
-    const evIds = new Set<string>();
-    for (const ev of timeline.events) {
-      if (evIds.has(ev.id)) tl.errors.push(`duplicate timeline event id '${ev.id}'`);
-      evIds.add(ev.id);
-      for (const sid of ev.subtopicIds) {
-        if (!taxonomySubtopicIds.has(sid)) {
-          tl.errors.push(`event ${ev.id}: subtopicId '${sid}' is not in the taxonomy`);
-        }
+    const allPeople = peopleFiles.flatMap((f) => f.people.map((p) => ({ file: f.file, p })));
+    const personIds = new Set<string>();
+    for (const { file, p } of allPeople) {
+      if (personIds.has(p.id)) resultFor(file).errors.push(`duplicate person id '${p.id}'`);
+      personIds.add(p.id);
+    }
+    const allOffices = officeFiles.flatMap((f) => f.offices.map((o) => ({ file: f.file, o })));
+    const officeIds = new Set<string>();
+    for (const { file, o } of allOffices) {
+      if (officeIds.has(o.id)) resultFor(file).errors.push(`duplicate office id '${o.id}'`);
+      officeIds.add(o.id);
+    }
+
+    const images = assetKeys();
+    const checkImages = (r: FileValidationResult, owner: string, list: { src: string; sourceUrl?: string; credit?: string; license?: string }[] | undefined): void => {
+      for (const img of list ?? []) {
+        if (!images.has(img.src)) r.errors.push(`${owner}: image '${img.src}' has no file under src/assets`);
+        if (img.sourceUrl && (!img.credit || !img.license)) r.errors.push(`${owner}: internet image '${img.src}' needs credit and license`);
       }
-      for (const mid of ev.relatedMcqIds) {
-        if (!mcqIds.has(mid)) {
-          tl.errors.push(`event ${ev.id}: relatedMcqId '${mid}' matches no MCQ item id`);
+    };
+    const evIds = new Set<string>();
+    const eventSources = [{ file: timelineGlob, bank: timeline }, ...extraTimelines];
+    for (const { file, bank } of eventSources) {
+      const tl = resultFor(file);
+      for (const ev of bank.events) {
+        if (evIds.has(ev.id)) tl.errors.push(`duplicate timeline event id '${ev.id}'`);
+        evIds.add(ev.id);
+        for (const sid of ev.subtopicIds) {
+          if (!taxonomySubtopicIds.has(sid)) {
+            tl.errors.push(`event ${ev.id}: subtopicId '${sid}' is not in the taxonomy`);
+          }
+        }
+        for (const mid of ev.relatedMcqIds) {
+          if (!mcqIds.has(mid)) {
+            tl.errors.push(`event ${ev.id}: relatedMcqId '${mid}' matches no MCQ item id`);
+          }
+        }
+        checkImages(tl, `event ${ev.id}`, ev.images);
+        for (const f of ev.alsoOn ?? []) {
+          if (f.year === ev.date.year) tl.warnings.push(`event ${ev.id}: alsoOn year ${f.year} equals the event's own year`);
+        }
+        for (const pid of ev.personIds ?? []) {
+          if (!personIds.has(pid)) tl.errors.push(`event ${ev.id}: personId '${pid}' matches no person`);
+        }
+        for (const pt of ev.participants ?? []) {
+          if (!personIds.has(pt.personId)) tl.errors.push(`event ${ev.id}: participant '${pt.personId}' matches no person`);
         }
       }
     }
     const pIds = new Set<string>();
-    for (const p of timeline.periods) {
-      if (pIds.has(p.id)) tl.errors.push(`duplicate timeline period id '${p.id}'`);
-      pIds.add(p.id);
-      if (p.endYear < p.startYear) {
-        tl.errors.push(`period ${p.id}: endYear ${p.endYear} < startYear ${p.startYear}`);
+    for (const { file, bank } of eventSources) {
+      const tl = resultFor(file);
+      for (const p of bank.periods) {
+        if (pIds.has(p.id)) tl.errors.push(`duplicate timeline period id '${p.id}'`);
+        pIds.add(p.id);
+        if (p.endYear < p.startYear) {
+          tl.errors.push(`period ${p.id}: endYear ${p.endYear} < startYear ${p.startYear}`);
+        }
+        for (const sid of p.subtopicIds) {
+          if (!taxonomySubtopicIds.has(sid)) {
+            tl.errors.push(`period ${p.id}: subtopicId '${sid}' is not in the taxonomy`);
+          }
+        }
       }
+    }
+    for (const { file, p } of allPeople) {
+      const r = resultFor(file);
+      checkImages(r, `person ${p.id}`, p.images);
       for (const sid of p.subtopicIds) {
-        if (!taxonomySubtopicIds.has(sid)) {
-          tl.errors.push(`period ${p.id}: subtopicId '${sid}' is not in the taxonomy`);
+        if (!taxonomySubtopicIds.has(sid)) r.errors.push(`person ${p.id}: subtopicId '${sid}' is not in the taxonomy`);
+      }
+      for (const eid of p.eventIds ?? []) {
+        if (!evIds.has(eid)) r.errors.push(`person ${p.id}: eventId '${eid}' matches no timeline event`);
+      }
+      for (const role of p.roles ?? []) {
+        if (role.officeId && !officeIds.has(role.officeId)) {
+          r.errors.push(`person ${p.id}: role officeId '${role.officeId}' matches no office`);
+        }
+      }
+    }
+    // Nobody who acted in a taught event may be left out of "Who did what":
+    // (a) every named leader/signer must be a known person and a participant;
+    // (b) every known person named in the event's text must be a participant.
+    const allChapters = chapterFiles.flatMap((f) => f.chapters);
+    const taught = (y: number): boolean => allChapters.some((c) => y >= c.from && y <= c.to);
+    const forms = allPeople.flatMap(({ p }) => [p.name, ...(p.aka ?? [])].filter((f) => f.length >= 4).map((f) => ({ f, id: p.id })));
+    const esc = (x: string): string => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const formRe = forms.map(({ f, id }) => ({ id, re: new RegExp(`(?<![\\p{L}])${esc(f)}(?![\\p{L}])`, 'iu') }));
+    const named = (text: string): Set<string> => new Set(formRe.filter(({ re }) => re.test(text)).map(({ id }) => id));
+    for (const { file, bank } of eventSources) {
+      for (const ev of bank.events) {
+        if (ev.timeless || !taught(ev.date.year)) continue;
+        const r = resultFor(file);
+        const inEvent = new Set([...(ev.personIds ?? []), ...(ev.participants ?? []).map((x) => x.personId)]);
+        // Rulers may be institutions ("Madras council"), so only named rulers are checked.
+        const leaders = [...(ev.signatories ?? []), ...(ev.sides ?? []).flatMap((sd) => sd.commanders ?? [])];
+        for (const who of leaders) {
+          const ids = named(who);
+          if (ids.size === 0) r.errors.push(`event ${ev.id}: '${who}' is named as a leader/signer but has no person card`);
+          else if (![...ids].some((id) => inEvent.has(id))) r.errors.push(`event ${ev.id}: '${who}' is a leader/signer but missing from participants`);
+        }
+        for (const sd of ev.sides ?? []) {
+          const ids = sd.ruler ? named(sd.ruler) : new Set<string>();
+          if (ids.size > 0 && ![...ids].some((id) => inEvent.has(id))) r.errors.push(`event ${ev.id}: ruler '${sd.ruler}' is missing from participants`);
+        }
+        const text = [ev.title, ev.summary, ev.detail, ...(ev.causes ?? []), ...(ev.course ?? []), ...(ev.outcomes ?? []), ...(ev.gains ?? []), ...(ev.losses ?? []),
+          ...(ev.treaties ?? []).flatMap((t) => t.terms ?? [])].join('\n');
+        for (const id of named(text)) {
+          if (!inEvent.has(id)) r.errors.push(`event ${ev.id}: person '${id}' is named in the text but missing from participants`);
+        }
+      }
+    }
+
+    const chIds = new Set<string>();
+    for (const { file, chapters } of chapterFiles) {
+      const r = resultFor(file);
+      const sorted = [...chapters].sort((a, b) => a.from - b.from);
+      for (const c of chapters) {
+        if (chIds.has(c.id)) r.errors.push(`duplicate chapter id '${c.id}'`);
+        chIds.add(c.id);
+        for (const sid of c.subtopicIds) {
+          if (!taxonomySubtopicIds.has(sid)) r.errors.push(`chapter ${c.id}: subtopicId '${sid}' is not in the taxonomy`);
+        }
+      }
+      for (let i = 1; i < sorted.length; i++) {
+        if (sorted[i]!.part === sorted[i - 1]!.part && sorted[i]!.from <= sorted[i - 1]!.to && !sorted[i]!.lanes && !sorted[i - 1]!.lanes) {
+          r.warnings.push(`chapters ${sorted[i - 1]!.id} and ${sorted[i]!.id} overlap`);
+        }
+      }
+    }
+    for (const { file, o } of allOffices) {
+      const r = resultFor(file);
+      for (const h of o.holders) {
+        if (h.personId && !personIds.has(h.personId)) {
+          r.errors.push(`office ${o.id}: holder '${h.name}' personId '${h.personId}' matches no person`);
+        }
+      }
+      for (let i = 1; i < o.holders.length; i++) {
+        if (o.holders[i]!.from < o.holders[i - 1]!.from) {
+          r.errors.push(`office ${o.id}: holder '${o.holders[i]!.name}' is out of chronological order`);
         }
       }
     }
@@ -1374,7 +1552,9 @@ export function auditAllStructure(): StructureFinding[] {
 /*   (c) `mnemonic-in-body`— the body repeats the mnemonic (verbatim, or a     */
 /*                           '**Remember it:**' / 'Memory hook' paragraph      */
 /*                           restating it);                                    */
-/*   (d) `boilerplate`     — a known stamped boilerplate sentence;             */
+/*   (d) `boilerplate`     — a known stamped boilerplate sentence, or known     */
+/*                           content-free filler such as 'Every technical term */
+/*                           used above is explained where it first appears';  */
 /*   (e) `repeated-label`  — a LABEL line (heading / lone bold run) whose text  */
 /*                           is longer than 25 chars appears verbatim more     */
 /*                           than once inside the same body (e.g. a gloss like */
@@ -1441,6 +1621,18 @@ const MNEMONIC_COVERAGE_THRESHOLD = 0.6;
 const BOILERPLATE_SENTENCES: readonly string[] = [
   'In the exam the names, dates and places listed above are swapped between options',
   'The story in brief. The background, the cause-and-effect and every term used are explained in the sections above',
+];
+
+/**
+ * Known content-free FILLER phrasing (clause d), matched against the
+ * {@link recapNormalise}d body. Unlike {@link BOILERPLATE_SENTENCES} these are
+ * patterns, so re-worded stamps are caught too — e.g. the stamped
+ * '**Terms explained:** Every technical term used above is explained where it
+ * first appears in this note.', or 'each term is defined where it first
+ * appears'. A REAL 'Terms explained' section (term — meaning) never matches. @internal
+ */
+const FILLER_PATTERNS: readonly RegExp[] = [
+  /\b(?:explained|defined|glossed) where (?:it|they|each) (?:first )?appears?\b/,
 ];
 
 /** The fix hint shown for each clause. @internal */
@@ -1645,6 +1837,11 @@ export function lintNoteRepetition(
   {
     const normBody = recapNormalise(body.replace(/\s+/g, ' '));
     const hits = BOILERPLATE_SENTENCES.filter((s) => normBody.includes(recapNormalise(s)));
+    // Content-free filler: report the matched phrase so the author can find it.
+    for (const re of FILLER_PATTERNS) {
+      const m = re.exec(normBody);
+      if (m !== null) hits.push(m[0]);
+    }
     if (hits.length > 0) {
       add('boilerplate', `body contains boilerplate: ${hits.map((h) => `"${repetitionSnippet(h, 50)}"`).join('; ')}`);
     }

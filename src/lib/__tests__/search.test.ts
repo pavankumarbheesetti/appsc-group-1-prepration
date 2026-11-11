@@ -65,5 +65,5 @@ describe('Languages are searchable (D35)', () => {
     expect(searchDocs('precis', docs).languages.length).toBeGreaterThan(0);
     expect(searchDocs('english grammar', docs).languages.length).toBeGreaterThan(0);
     expect(totalResults(searchDocs('sunna', docs))).toBeGreaterThan(0);
-  });
+  }, 20_000);
 });

@@ -1,0 +1,482 @@
+{
+  "kind": "offices",
+  "version": "1.0.0",
+  "offices": [
+    {
+      "id": "off-bengal-governor",
+      "label": "Governor of Bengal (Fort William)",
+      "group": "British India",
+      "lane": "north-india",
+      "holders": [
+        {
+          "name": "Robert Clive",
+          "personId": "p-robert-clive",
+          "from": 1758,
+          "to": 1760
+        },
+        {
+          "name": "Henry Vansittart",
+          "from": 1760,
+          "to": 1764,
+          "personId": "p-vansittart"
+        },
+        {
+          "name": "Robert Clive",
+          "personId": "p-robert-clive",
+          "from": 1765,
+          "to": 1767,
+          "note": "second term — Dual Government"
+        },
+        {
+          "name": "Harry Verelst",
+          "from": 1767,
+          "to": 1769
+        },
+        {
+          "name": "John Cartier",
+          "from": 1769,
+          "to": 1772
+        },
+        {
+          "name": "Warren Hastings",
+          "personId": "p-warren-hastings",
+          "from": 1772,
+          "to": 1774,
+          "note": "became Governor-General under the Regulating Act"
+        }
+      ]
+    },
+    {
+      "id": "off-nawab-bengal",
+      "label": "Nawab of Bengal",
+      "group": "Bengal",
+      "lane": "north-india",
+      "holders": [
+        {
+          "name": "Alivardi Khan",
+          "from": 1740,
+          "to": 1756,
+          "personId": "p-alivardi"
+        },
+        {
+          "name": "Sirajuddaulah",
+          "personId": "p-siraj",
+          "from": 1756,
+          "to": 1757
+        },
+        {
+          "name": "Mir Jafar",
+          "personId": "p-mir-jafar",
+          "from": 1757,
+          "to": 1760
+        },
+        {
+          "name": "Mir Qasim",
+          "personId": "p-mir-qasim",
+          "from": 1760,
+          "to": 1763
+        },
+        {
+          "name": "Mir Jafar",
+          "personId": "p-mir-jafar",
+          "from": 1763,
+          "to": 1765,
+          "note": "reinstalled"
+        },
+        {
+          "name": "Najm-ud-daula",
+          "from": 1765,
+          "to": 1766,
+          "note": "puppet under Dual Government",
+          "personId": "p-najm"
+        }
+      ]
+    },
+    {
+      "id": "off-mughal-late",
+      "label": "Mughal emperor",
+      "group": "Mughal Delhi",
+      "lane": "north-india",
+      "holders": [
+        {
+          "name": "Babur",
+          "personId": "p-babur",
+          "from": 1526,
+          "to": 1530,
+          "note": "Panipat 1526"
+        },
+        {
+          "name": "Humayun",
+          "personId": "p-humayun",
+          "from": 1530,
+          "to": 1540,
+          "note": "Lost to Sher Shah"
+        },
+        {
+          "name": "Sur Afghans (Sher Shah, Islam Shah …)",
+          "personId": "p-sher-shah",
+          "from": 1540,
+          "to": 1555,
+          "note": "Sher Shah 1540–45"
+        },
+        {
+          "name": "Humayun (restored)",
+          "personId": "p-humayun",
+          "from": 1555,
+          "to": 1556
+        },
+        {
+          "name": "Akbar",
+          "personId": "p-akbar",
+          "from": 1556,
+          "to": 1605
+        },
+        {
+          "name": "Jahangir",
+          "personId": "p-jahangir",
+          "from": 1605,
+          "to": 1627
+        },
+        {
+          "name": "Shah Jahan",
+          "personId": "p-shah-jahan",
+          "from": 1628,
+          "to": 1658
+        },
+        {
+          "name": "Aurangzeb",
+          "personId": "p-aurangzeb",
+          "from": 1658,
+          "to": 1707,
+          "note": "Died 1707 (NCERT)"
+        },
+        {
+          "name": "Bahadur Shah I",
+          "from": 1707,
+          "to": 1712
+        },
+        {
+          "name": "Jahandar Shah",
+          "from": 1712,
+          "to": 1713
+        },
+        {
+          "name": "Farrukhsiyar",
+          "from": 1713,
+          "to": 1719,
+          "note": "Assassinated (NCERT)"
+        },
+        {
+          "name": "Muhammad Shah",
+          "personId": "p-muhammad-shah",
+          "from": 1719,
+          "to": 1748,
+          "note": "Nadir Shah sacked Delhi (1739)"
+        },
+        {
+          "name": "Ahmad Shah Bahadur",
+          "from": 1748,
+          "to": 1754,
+          "note": "Blinded (NCERT)"
+        },
+        {
+          "name": "Alamgir II",
+          "from": 1754,
+          "to": 1759
+        },
+        {
+          "name": "Shah Alam II",
+          "personId": "p-shah-alam-2",
+          "from": 1759,
+          "to": 1806
+        },
+        {
+          "name": "Akbar II",
+          "from": 1806,
+          "to": 1837
+        },
+        {
+          "name": "Bahadur Shah II (Zafar)",
+          "from": 1837,
+          "to": 1857,
+          "note": "last Mughal emperor; exiled to Rangoon",
+          "personId": "p-bahadur-shah-2"
+        }
+      ]
+    },
+    {
+      "id": "off-peshwa",
+      "label": "Peshwa (Pune)",
+      "group": "Marathas",
+      "lane": "deccan",
+      "holders": [
+        {
+          "name": "Balaji Vishwanath",
+          "from": 1713,
+          "to": 1720,
+          "note": "Appointed by Shahu"
+        },
+        {
+          "name": "Baji Rao I",
+          "personId": "p-baji-rao-1",
+          "from": 1720,
+          "to": 1740,
+          "note": "Raided Delhi 1737 (NCERT)"
+        },
+        {
+          "name": "Balaji Baji Rao (Nanasaheb)",
+          "from": 1740,
+          "to": 1761,
+          "note": "Third Battle of Panipat 1761",
+          "personId": "p-balaji-baji-rao"
+        },
+        {
+          "name": "Madhavrao I",
+          "from": 1761,
+          "to": 1772,
+          "personId": "p-madhavrao-1"
+        },
+        {
+          "name": "Narayanrao",
+          "from": 1772,
+          "to": 1773,
+          "note": "murdered",
+          "personId": "p-narayanrao"
+        },
+        {
+          "name": "Raghunathrao",
+          "from": 1773,
+          "to": 1774,
+          "personId": "p-raghunathrao"
+        },
+        {
+          "name": "Madhavrao II",
+          "from": 1774,
+          "to": 1795,
+          "note": "regency of Nana Phadnis",
+          "personId": "p-madhavrao-2"
+        },
+        {
+          "name": "Baji Rao II",
+          "personId": "p-baji-rao-2",
+          "from": 1795,
+          "to": 1818,
+          "note": "last Peshwa"
+        }
+      ]
+    },
+    {
+      "id": "off-mysore",
+      "label": "Ruler of Mysore",
+      "group": "South India",
+      "lane": "south-india",
+      "holders": [
+        {
+          "name": "Haidar Ali",
+          "personId": "p-haidar-ali",
+          "from": 1761,
+          "to": 1782
+        },
+        {
+          "name": "Tipu Sultan",
+          "personId": "p-tipu",
+          "from": 1782,
+          "to": 1799
+        },
+        {
+          "name": "Krishnaraja Wodeyar III",
+          "from": 1799,
+          "to": 1831,
+          "note": "Wodeyars restored under a subsidiary alliance"
+        }
+      ]
+    },
+    {
+      "id": "off-nizam",
+      "label": "Nizam of Hyderabad",
+      "group": "Deccan",
+      "lane": "andhra",
+      "holders": [
+        {
+          "name": "Nizam Ali Khan (Asaf Jah II)",
+          "personId": "p-nizam-ali",
+          "from": 1762,
+          "to": 1803
+        },
+        {
+          "name": "Sikandar Jah (Asaf Jah III)",
+          "from": 1803,
+          "to": 1829
+        },
+        {
+          "name": "Nasir-ud-Daula (Asaf Jah IV)",
+          "from": 1829,
+          "to": 1857
+        },
+        {
+          "name": "Afzal-ud-Daula (Asaf Jah V)",
+          "from": 1857,
+          "to": 1869,
+          "note": "stayed loyal to the British in 1857 (Salar Jung as minister)"
+        },
+        {
+          "name": "Mahbub Ali Khan (Asaf Jah VI)",
+          "from": 1869,
+          "to": 1911,
+          "note": "Came to the throne as a child; Salar Jung I was regent"
+        },
+        {
+          "name": "Mir Osman Ali Khan (Asaf Jah VII)",
+          "personId": "p-osman-ali",
+          "from": 1911,
+          "to": 1948,
+          "note": "Last Nizam; surrendered 17 Sept 1948"
+        }
+      ]
+    },
+    {
+      "id": "off-afghan-king",
+      "label": "King of Afghanistan (Durrani)",
+      "group": "Invaders and neighbours",
+      "lane": "world",
+      "holders": [
+        {
+          "name": "Ahmad Shah Abdali",
+          "personId": "p-abdali",
+          "from": 1747,
+          "to": 1772
+        },
+        {
+          "name": "Timur Shah",
+          "from": 1772,
+          "to": 1793
+        }
+      ]
+    },
+    {
+      "id": "off-chhatrapati",
+      "label": "Maratha Chhatrapati (Satara)",
+      "group": "Marathas",
+      "lane": "deccan",
+      "holders": [
+        {
+          "name": "Shivaji",
+          "personId": "p-shivaji",
+          "from": 1674,
+          "to": 1680,
+          "note": "Crowned at Raigad"
+        },
+        {
+          "name": "Sambhaji",
+          "from": 1681,
+          "to": 1689,
+          "note": "Executed by Aurangzeb (NCERT: 1681–1689)"
+        },
+        {
+          "name": "Rajaram",
+          "from": 1689,
+          "to": 1700,
+          "note": "NCERT: 1689–1700"
+        },
+        {
+          "name": "Tarabai (regent for Shivaji II)",
+          "from": 1700,
+          "to": 1707,
+          "note": "NCERT lists Maharani Tarabai"
+        },
+        {
+          "name": "Shahu",
+          "from": 1707,
+          "to": 1749,
+          "note": "released by the Mughals in 1707; appointed the Peshwas"
+        },
+        {
+          "name": "Rajaram II",
+          "from": 1749,
+          "to": 1777,
+          "note": "titular; real power with the Peshwa"
+        }
+      ]
+    },
+    {
+      "id": "off-punjab",
+      "label": "Maharaja of the Punjab (Lahore)",
+      "group": "Punjab",
+      "lane": "north-india",
+      "holders": [
+        {
+          "name": "Ranjit Singh",
+          "personId": "p-ranjit-singh",
+          "from": 1801,
+          "to": 1839
+        },
+        {
+          "name": "Kharak Singh",
+          "from": 1839,
+          "to": 1840
+        },
+        {
+          "name": "Nau Nihal Singh",
+          "from": 1840,
+          "to": 1840,
+          "note": "killed by a falling gateway on the day of his father's funeral"
+        },
+        {
+          "name": "Sher Singh",
+          "from": 1841,
+          "to": 1843,
+          "note": "assassinated"
+        },
+        {
+          "name": "Duleep Singh",
+          "from": 1843,
+          "to": 1849,
+          "note": "boy king under his mother Rani Jindan; deposed when the Punjab was annexed",
+          "personId": "p-duleep-singh"
+        }
+      ]
+    },
+    {
+      "id": "off-awadh",
+      "label": "Nawab / King of Awadh",
+      "group": "Awadh",
+      "lane": "north-india",
+      "holders": [
+        {
+          "name": "Saadat Ali Khan II",
+          "personId": "p-saadat-ali-khan",
+          "from": 1798,
+          "to": 1814
+        },
+        {
+          "name": "Ghazi-ud-din Haidar",
+          "from": 1814,
+          "to": 1827,
+          "note": "took the title of King in 1819"
+        },
+        {
+          "name": "Nasir-ud-din Haidar",
+          "from": 1827,
+          "to": 1837
+        },
+        {
+          "name": "Muhammad Ali Shah",
+          "from": 1837,
+          "to": 1842
+        },
+        {
+          "name": "Amjad Ali Shah",
+          "from": 1842,
+          "to": 1847
+        },
+        {
+          "name": "Wajid Ali Shah",
+          "from": 1847,
+          "to": 1856,
+          "note": "deposed when Awadh was annexed; exiled to Calcutta",
+          "personId": "p-wajid-ali-shah"
+        }
+      ]
+    }
+  ]
+}

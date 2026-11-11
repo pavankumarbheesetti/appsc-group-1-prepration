@@ -47,6 +47,7 @@ import {
   type SyllabusMap,
 } from './audit-types';
 import { parseTimeline, type TimelineBank } from './timeline-types';
+import { parseChapters, parseGlossary, parseOffices, parsePeople, type Chapter, type GlossaryTerm, type Office, type Person } from './chronicle-types';
 import { parseLearningSequence, parseUnits, type LearningSequence, type Units } from './plan-types';
 import { parseFacts, type FactsFile } from './facts-types';
 import {
@@ -118,6 +119,14 @@ export interface ContentIndex {
   auditPyqWeights: PyqWeights;
   /** The interactive-timeline dataset (events + dynasty/era period bars). */
   timeline: TimelineBank;
+  /** Prominent people (from `content/timeline/people-*.json`). */
+  people: Person[];
+  /** Posts/thrones and their holders (from `content/timeline/offices-*.json`). */
+  offices: Office[];
+  /** History reading chapters (from `content/timeline/chapters-*.json`). */
+  chapters: Chapter[];
+  /** Historical terms (from `content/timeline/glossary-*.json`). */
+  glossary: GlossaryTerm[];
   /**
    * The pedagogical LEARNING SEQUENCE — the per-subject study ORDER for every
    * Prelims subject (chronology for History, concept prerequisites elsewhere).
@@ -168,6 +177,11 @@ function buildIndex(): ContentIndex {
   let auditPyqMap: PyqMap | null = null;
   let auditPyqWeights: PyqWeights | null = null;
   let timeline: TimelineBank | null = null;
+  const extraTimeline: TimelineBank[] = [];
+  const people: Person[] = [];
+  const offices: Office[] = [];
+  const chapters: Chapter[] = [];
+  const glossary: GlossaryTerm[] = [];
   let learningSequence: LearningSequence | null = null;
   let units: Units | null = null;
   let caMeta: CaMeta | null = null;
@@ -205,8 +219,13 @@ function buildIndex(): ContentIndex {
     // The timeline dataset lives under /content/timeline/ and is NOT a content
     // bank — it is validated by its own schema (kind:"timeline").
     if (path.startsWith('/content/timeline/')) {
-      if (path.endsWith('/events.json')) timeline = parseTimeline(data);
-      // Any other file under content/timeline/ is ignored by the loader.
+      const name = path.slice(path.lastIndexOf('/') + 1);
+      if (name === 'events.json') timeline = parseTimeline(data);
+      else if (name.startsWith('events-')) extraTimeline.push(parseTimeline(data));
+      else if (name.startsWith('people-')) people.push(...parsePeople(data).people);
+      else if (name.startsWith('offices-')) offices.push(...parseOffices(data).offices);
+      else if (name.startsWith('chapters-')) chapters.push(...parseChapters(data).chapters);
+      else if (name.startsWith('glossary-')) glossary.push(...parseGlossary(data));
       continue;
     }
 
@@ -301,6 +320,13 @@ function buildIndex(): ContentIndex {
   if (!timeline) {
     throw new Error('content: timeline/events.json not found under /content');
   }
+  if (extraTimeline.length > 0) {
+    timeline = {
+      ...timeline,
+      events: [...timeline.events, ...extraTimeline.flatMap((b) => b.events)],
+      periods: [...timeline.periods, ...extraTimeline.flatMap((b) => b.periods)],
+    };
+  }
   if (!learningSequence) {
     throw new Error(
       'content: plan/learning-sequence.json not found under /content',
@@ -365,6 +391,10 @@ function buildIndex(): ContentIndex {
     auditPyqMap,
     auditPyqWeights,
     timeline,
+    people,
+    offices,
+    chapters,
+    glossary,
     learningSequence,
     units,
     caMeta,
@@ -391,6 +421,22 @@ export function getSyllabus(): SyllabusBank {
 /** The interactive-timeline dataset (events + dynasty/era period bars). */
 export function getTimeline(): TimelineBank {
   return getContentIndex().timeline;
+}
+
+export function getPeople(): Person[] {
+  return getContentIndex().people;
+}
+
+export function getOffices(): Office[] {
+  return getContentIndex().offices;
+}
+
+export function getChapters(): Chapter[] {
+  return getContentIndex().chapters;
+}
+
+export function getGlossary(): GlossaryTerm[] {
+  return getContentIndex().glossary;
 }
 
 /**
