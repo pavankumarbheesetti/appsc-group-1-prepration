@@ -39,6 +39,7 @@ const PART_LABEL: Record<HistoryPart, string> = {
   ancient: 'Ancient India',
   medieval: 'Medieval India',
   modern: 'Modern India',
+  culture: 'Art & Culture',
   andhra: 'Andhra Pradesh history',
   polity: 'Polity & Constitution',
 };
@@ -48,7 +49,7 @@ const PART_LABEL: Record<HistoryPart, string> = {
 /* -------------------------------------------------------------------------- */
 
 const inSpan = (c: Chapter, from: number, to: number, ev: TimelineEvent): boolean =>
-  !ev.timeless && ev.date.year >= from && ev.date.year <= to && (!c.lanes || c.lanes.includes(ev.lane));
+  !ev.timeless && ev.date.year >= from && ev.date.year <= to && (!c.lanes || c.lanes.includes(ev.lane)) && (!c.apOnly || ev.apSpecific);
 
 const inChapter = (c: Chapter, ev: TimelineEvent): boolean => inSpan(c, c.from, c.to, ev);
 

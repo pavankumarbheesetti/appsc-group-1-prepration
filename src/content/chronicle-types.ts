@@ -135,7 +135,7 @@ export const OfficesBankSchema = z.object({
 });
 export type OfficesBank = z.infer<typeof OfficesBankSchema>;
 
-export const HISTORY_PARTS = ['ancient', 'medieval', 'modern', 'andhra', 'polity'] as const;
+export const HISTORY_PARTS = ['ancient', 'medieval', 'modern', 'culture', 'andhra', 'polity'] as const;
 export const HistoryPartSchema = z.enum(HISTORY_PARTS);
 export type HistoryPart = z.infer<typeof HistoryPartSchema>;
 
@@ -153,6 +153,8 @@ export const ChapterSchema = z
     to: YearSchema,
     /** Lanes taught in this chapter; omitted = every lane. */
     lanes: z.array(LaneSchema).optional(),
+    /** Teach only Andhra-specific events (any lane): an Andhra-only view of the whole timeline. */
+    apOnly: z.boolean().optional(),
     intro: z.string().min(1),
     /** Short lessons inside the chapter, in order; each covers [from, to]. */
     fragments: z

@@ -1,3 +1,4 @@
+import { LANE_IDS } from '../../content/timeline-types';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '../timeline';
 import { getTimeline } from '../../content/loader';
@@ -30,9 +31,9 @@ describe('timeline view', () => {
     expect(root.querySelectorAll('.tl-marker').length).toBe(total);
   });
 
-  it('renders the eight swim-lane labels in the gutter', () => {
+  it('renders one swim-lane label per lane in the gutter', () => {
     const root = mountTimeline();
-    expect(root.querySelectorAll('.tl-gutter-lane').length).toBe(8);
+    expect(root.querySelectorAll('.tl-gutter-lane').length).toBe(LANE_IDS.length);
   });
 
   it('AP-only filter narrows the markers to AP-specific events', () => {
