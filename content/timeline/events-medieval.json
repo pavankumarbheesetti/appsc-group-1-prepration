@@ -531,7 +531,7 @@
         "year": 1260
       },
       "era": "sultanate",
-      "lane": "andhra",
+      "lane": "art-culture",
       "kind": "culture",
       "summary": "At the Nellore court of the Telugu Choda king Manumasiddhi, Tikkana translates fifteen parvas of the Mahabharata into Telugu (13th century).",
       "detail": "Nannaya had completed two and a half parvas in the 11th century. Tikkana, called \"Kavi Brahma\", completed fifteen; Errana later finished the remaining part of the Aranya parva under the Reddis. The three are the Kavitrayam.",
@@ -840,7 +840,7 @@
         "year": 1450
       },
       "era": "vijayanagara-bahmani",
-      "lane": "andhra",
+      "lane": "art-culture",
       "kind": "culture",
       "summary": "In the 15th century Tallapaka Annamacharya composes thousands of Telugu kirtanas on Venkateswara of Tirumala, and Bammera Potana writes the Andhra Maha Bhagavatamu.",
       "detail": "Annamacharya (1408–1503) wrote about 32,000 songs, of which about 12,000 survive on copper plates; he is called the \"Pada Kavita Pitamaha\". Potana refused to dedicate his Bhagavatam to a king (by tradition, Sarvajna Singabhupala of the Recherla Velamas) and offered it to Rama.",
@@ -866,6 +866,10 @@
         {
           "personId": "p-potana",
           "role": "Poet."
+        },
+        {
+          "personId": "p-singabhupala",
+          "role": "King Potana refused, by tradition."
         }
       ],
       "subtopicIds": [
@@ -1154,7 +1158,7 @@
         "year": 1632
       },
       "era": "mughal",
-      "lane": "north-india",
+      "lane": "art-culture",
       "kind": "culture",
       "summary": "Shah Jahan begins the Taj Mahal at Agra (1632) as a tomb for Mumtaz Mahal; it is completed by about 1653 (NCERT shows it as the high point of Mughal architecture).",
       "detail": "It stands in a char bagh (four-part garden) on the bank of the Yamuna; Ustad Ahmad Lahori is regarded as its chief architect. Shah Jahan also built Shahjahanabad (Delhi) with the Red Fort and Jama Masjid (NCERT).",
@@ -1177,6 +1181,10 @@
         {
           "personId": "p-shah-jahan",
           "role": "Built it (NCERT)."
+        },
+        {
+          "personId": "p-lahori",
+          "role": "Chief architect."
         }
       ],
       "subtopicIds": [
@@ -1792,6 +1800,238 @@
       "apSpecific": false,
       "importance": 2,
       "source": "NCERT Class 7 Our Pasts II"
+    },
+    {
+      "id": "tl-med-kalyani",
+      "title": "Chalukyas of Kalyani",
+      "date": {
+        "year": 973,
+        "approx": true
+      },
+      "era": "early-medieval",
+      "lane": "deccan",
+      "kind": "dynasty-start",
+      "summary": "Tailapa II overthrows the last Rashtrakuta and founds the Chalukya dynasty of Kalyani (973); under Vikramaditya VI (1076–1126) Bilhana writes the Vikramankadeva Charita and Vijnaneshwara the Mitakshara, the great commentary on Hindu law.",
+      "detail": "The Kalyani Chalukyas fought the Cholas for two centuries over Vengi and the Raichur doab. The Mitakshara became the basis of Hindu inheritance law in most of India (as against the Dayabhaga of Bengal). The Kakatiyas and Hoysalas began as their feudatories. Their power ended in the late 12th century (Kalachuri Bijjala, Basavanna's patron, briefly took Kalyani).",
+      "place": "Kalyani (Basavakalyan)",
+      "outcomes": [
+        "Feudatories such as the Kakatiyas, Hoysalas and Yadavas became independent."
+      ],
+      "pairs": [
+        {
+          "left": "Kalyani Chalukya founder",
+          "right": "Tailapa II (973)"
+        },
+        {
+          "left": "Mitakshara",
+          "right": "Vijnaneshwara"
+        },
+        {
+          "left": "Vikramankadeva Charita",
+          "right": "Bilhana"
+        },
+        {
+          "left": "Dayabhaga",
+          "right": "Jimutavahana (Bengal)"
+        }
+      ],
+      "alsoOn": [
+        {
+          "year": 1076,
+          "text": "Vikramaditya VI becomes king of Kalyani; Chalukya-Vikrama era begins."
+        }
+      ],
+      "yearHook": "973 — Rashtrakutas (753) end after 220 years.",
+      "participants": [
+        {
+          "personId": "p-tailapa-2",
+          "role": "Founder."
+        },
+        {
+          "personId": "p-vikramaditya-6",
+          "role": "Greatest king."
+        },
+        {
+          "personId": "p-basavanna",
+          "role": "Minister of the Kalachuri Bijjala at Kalyani."
+        }
+      ],
+      "subtopicIds": [
+        "hist-medieval-south-indian-dynasties"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": false,
+      "importance": 2,
+      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)"
+    },
+    {
+      "id": "tl-med-yadavas-hoysalas",
+      "title": "Yadavas of Devagiri and Hoysalas of Dwarasamudra",
+      "date": {
+        "year": 1187
+      },
+      "era": "early-medieval",
+      "lane": "deccan",
+      "kind": "dynasty-start",
+      "summary": "As Kalyani declines, Bhillama V founds the Yadava kingdom of Devagiri (1187) and the Hoysalas of Dwarasamudra (Halebidu), made great by Vishnuvardhana, rule southern Karnataka; Alauddin Khalji's armies conquer both (1296–1311).",
+      "detail": "Yadava king Ramachandra was defeated by Alauddin in 1296 and became a tributary; Devagiri became Daulatabad (1327). Hemadri, Yadava minister, wrote the Chaturvarga Chintamani and gave his name to the Hemadpanti style of temples. Jnaneshwar lived under the Yadavas.\n\nThe Hoysalas fought the Kakatiyas, Yadavas and Pandyas; Malik Kafur sacked Dwarasamudra (1311) and Ballala III was killed fighting the Madurai sultan (1343). The Kakatiyas, Yadavas, Hoysalas and Pandyas were the four southern kingdoms of the 13th century.",
+      "outcomes": [
+        "Both fell to the Delhi Sultanate; Vijayanagara rose in their place (1336)."
+      ],
+      "pairs": [
+        {
+          "left": "Yadava capital",
+          "right": "Devagiri"
+        },
+        {
+          "left": "Hoysala capital",
+          "right": "Dwarasamudra (Halebidu)"
+        },
+        {
+          "left": "Hemadpanti style",
+          "right": "Hemadri (Yadava minister)"
+        }
+      ],
+      "alsoOn": [
+        {
+          "year": 1296,
+          "text": "Alauddin Khalji raids Devagiri; Ramachandra becomes a tributary."
+        },
+        {
+          "year": 1311,
+          "text": "Malik Kafur sacks Dwarasamudra."
+        }
+      ],
+      "yearHook": "1187 Yadavas → 1296 Alauddin → 1327 Daulatabad.",
+      "participants": [
+        {
+          "personId": "p-vishnuvardhana-hoysala",
+          "side": "Hoysalas",
+          "role": "Made the Hoysalas great."
+        },
+        {
+          "personId": "p-alauddin",
+          "side": "Delhi Sultanate",
+          "role": "Conquered Devagiri (1296)."
+        },
+        {
+          "personId": "p-malik-kafur",
+          "side": "Delhi Sultanate",
+          "role": "Sacked Dwarasamudra (1311)."
+        },
+        {
+          "personId": "p-jnaneshwar",
+          "role": "Lived in the Yadava kingdom."
+        }
+      ],
+      "subtopicIds": [
+        "hist-medieval-south-indian-dynasties"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": false,
+      "importance": 2,
+      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)"
+    },
+    {
+      "id": "tl-med-velamas",
+      "title": "Recherla Velamas of Rachakonda",
+      "date": {
+        "year": 1368
+      },
+      "era": "vijayanagara-bahmani",
+      "lane": "andhra",
+      "kind": "dynasty-start",
+      "summary": "The Recherla Velama chiefs take Warangal from Kapaya Nayaka (1368) and rule Telangana from Rachakonda and Devarakonda; Sarvajna Singabhupala is a scholar-king.",
+      "detail": "They allied with the Bahmanis against Vijayanagara and the Reddis. Their forts at Rachakonda and Devarakonda survive. The Bahmanis annexed their lands in the 15th century.",
+      "place": "Rachakonda and Devarakonda (Telangana)",
+      "outcomes": [
+        "Telangana under the Velamas until Bahmani annexation."
+      ],
+      "pairs": [
+        {
+          "left": "Recherla Velama capitals",
+          "right": "Rachakonda, Devarakonda"
+        },
+        {
+          "left": "Rasarnava Sudhakara",
+          "right": "Singabhupala"
+        }
+      ],
+      "yearHook": "1368 — 32 years after the Musunuris took Warangal.",
+      "participants": [
+        {
+          "personId": "p-singabhupala",
+          "role": "Scholar-king."
+        },
+        {
+          "personId": "p-kapaya-nayaka",
+          "role": "Lost Warangal to them."
+        },
+        {
+          "personId": "p-potana",
+          "role": "Refused to dedicate his work to a Velama king, by tradition."
+        }
+      ],
+      "subtopicIds": [
+        "hist-ap-reddi-kingdoms"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": true,
+      "importance": 1,
+      "source": "Andhra Pradesh history (AP SCERT / Telugu Akademi syllabus)"
+    },
+    {
+      "id": "tl-med-gajapatis",
+      "title": "Gajapatis of Odisha in coastal Andhra",
+      "date": {
+        "year": 1435
+      },
+      "era": "vijayanagara-bahmani",
+      "lane": "andhra",
+      "kind": "dynasty-start",
+      "summary": "Kapilendra Deva founds the Gajapati dynasty of Odisha (1435) and conquers coastal Andhra, taking Rajahmundry and Kondavidu from the Reddis (1448–54); Krishnadevaraya later takes these lands from Prataparudra Gajapati (1513–19).",
+      "detail": "The Gajapatis ended the Reddi kingdoms. Their capital was Cuttack. Krishnadevaraya took Udayagiri (1513) and Kondavidu (1515) and then Simhachalam, and Prataparudra made peace by giving him his daughter in marriage. The Qutb Shahis later took the coast up to the Godavari.",
+      "outcomes": [
+        "End of the Reddi kingdoms; Vijayanagara and Golconda later took the coast."
+      ],
+      "pairs": [
+        {
+          "left": "Gajapati founder",
+          "right": "Kapilendra Deva (1435)"
+        },
+        {
+          "left": "Kondavidu taken from the Gajapatis",
+          "right": "Krishnadevaraya (1515)"
+        }
+      ],
+      "alsoOn": [
+        {
+          "year": 1515,
+          "text": "Krishnadevaraya captures Kondavidu from the Gajapatis."
+        }
+      ],
+      "yearHook": "1435 Gajapatis → 1448 Reddis fall → 1515 Krishnadevaraya.",
+      "participants": [
+        {
+          "personId": "p-kapilendra",
+          "role": "Founder."
+        },
+        {
+          "personId": "p-prataparudra-gajapati",
+          "role": "Lost to Krishnadevaraya."
+        },
+        {
+          "personId": "p-krishnadevaraya",
+          "role": "Took the coastal lands."
+        }
+      ],
+      "subtopicIds": [
+        "hist-ap-reddi-kingdoms"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": true,
+      "importance": 2,
+      "source": "Andhra Pradesh history (AP SCERT / Telugu Akademi syllabus)"
     }
   ]
 }

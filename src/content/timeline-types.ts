@@ -68,6 +68,7 @@ export const LANE_IDS = [
   'polity-constitution',
   'economy',
   'science-tech',
+  'art-culture',
 ] as const;
 export const LaneSchema = z.enum(LANE_IDS);
 /** Union of lane identifiers. */

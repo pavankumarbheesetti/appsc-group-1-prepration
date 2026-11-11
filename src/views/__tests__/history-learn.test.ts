@@ -164,7 +164,7 @@ describe('lesson building', () => {
     for (const c of getChapters()) {
       const ids = fragmentsOf(c).flatMap((f) => buildSlides(c, f, data, () => undefined).flatMap((s) => (s.kind === 'event' ? [s.event.id] : [])));
       expect(new Set(ids).size).toBe(ids.length);
-      const inChapter = data.events.filter((e) => !e.timeless && e.date.year >= c.from && e.date.year <= c.to).map((e) => e.id);
+      const inChapter = data.events.filter((e) => !e.timeless && e.date.year >= c.from && e.date.year <= c.to && (!c.lanes || c.lanes.includes(e.lane)) && (!c.apOnly || e.apSpecific)).map((e) => e.id);
       expect(ids.sort()).toEqual(inChapter.sort());
     }
   });
@@ -209,7 +209,7 @@ describe('lesson building', () => {
     const c = chapter();
     const ids = fragmentsOf(c).flatMap((f) => buildSlides(c, f, data, () => undefined).flatMap((s) => (s.kind === 'event' ? [s.event.id] : [])));
     expect(new Set(ids).size).toBe(ids.length);
-    const inChapter = data.events.filter((e) => !e.timeless && e.date.year >= c.from && e.date.year <= c.to).map((e) => e.id);
+    const inChapter = data.events.filter((e) => !e.timeless && e.date.year >= c.from && e.date.year <= c.to && (!c.lanes || c.lanes.includes(e.lane)) && (!c.apOnly || e.apSpecific)).map((e) => e.id);
     expect(ids.sort()).toEqual(inChapter.sort());
   });
 

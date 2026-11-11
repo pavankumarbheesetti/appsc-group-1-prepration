@@ -394,7 +394,7 @@
         "approx": true
       },
       "era": "gupta",
-      "lane": "north-india",
+      "lane": "art-culture",
       "kind": "discovery",
       "summary": "In 499 CE Aryabhata, aged 23, writes the Aryabhatiya at Kusumapura (Pataliputra), stating that the earth rotates on its axis and explaining eclipses (NCERT).",
       "detail": "He gave the place-value system a firm base, a value of pi close to 3.1416, and rules for squares, cubes and roots. He said day and night were caused by the earth's rotation and that eclipses happen because of the shadows of the earth and moon, not because of Rahu (NCERT). Varahamihira (Panchasiddhantika, Brihatsamhita) and Brahmagupta came later.",
@@ -416,6 +416,14 @@
         {
           "personId": "p-aryabhata",
           "role": "Wrote the Aryabhatiya."
+        },
+        {
+          "personId": "p-varahamihira",
+          "role": "Later astronomer."
+        },
+        {
+          "personId": "p-brahmagupta",
+          "role": "Later mathematician."
         }
       ],
       "subtopicIds": [
@@ -434,7 +442,7 @@
         "approx": true
       },
       "era": "gupta",
-      "lane": "deccan",
+      "lane": "art-culture",
       "kind": "culture",
       "summary": "Under the Vakataka king Harishena (c. 460–478 CE) many of the Ajanta caves are cut and painted with scenes from the Jatakas (NCERT shows Ajanta paintings).",
       "detail": "The Vakatakas ruled the Deccan and were allies of the Guptas: Chandragupta II's daughter Prabhavati married Rudrasena II. Ajanta has 29 rock-cut Buddhist caves; the paintings in caves 1, 2, 16 and 17 are the finest. The site was rediscovered by a British officer in 1819.",
@@ -536,6 +544,99 @@
       ],
       "subtopicIds": [
         "hist-ancient-guptas"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": false,
+      "importance": 2,
+      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)"
+    },
+    {
+      "id": "tl-anc-salankayanas",
+      "title": "Salankayanas of Vengi",
+      "date": {
+        "year": 320,
+        "approx": true
+      },
+      "era": "post-mauryan",
+      "lane": "andhra",
+      "kind": "dynasty-start",
+      "summary": "After the Ikshvakus, the Salankayanas rule from Vengi (near Eluru) in the Krishna–Godavari delta (c. 300–440 CE); their king Hastivarman is defeated by Samudragupta (Prayaga prashasti).",
+      "detail": "They issued copper-plate charters in Prakrit and later Sanskrit and worshipped Chitraratha Swami (the Sun). The Brihatphalayanas (Kudura) and Anandagotrikas (Guntur) were small dynasties of the same age. Vengi later became the capital of the Eastern Chalukyas.\n\nThe early Pallavas also ruled parts of southern Andhra, issuing Prakrit charters such as the Mayidavolu plates of Shivaskandavarman; Vishnugopa of Kanchi was another king defeated by Samudragupta.",
+      "place": "Vengi (Pedavegi, Eluru)",
+      "outcomes": [
+        "Followed by the Vishnukundins; Vengi became the Eastern Chalukya capital."
+      ],
+      "pairs": [
+        {
+          "left": "Salankayana capital",
+          "right": "Vengi"
+        },
+        {
+          "left": "Hastivarman of Vengi",
+          "right": "Defeated by Samudragupta"
+        },
+        {
+          "left": "Mayidavolu plates",
+          "right": "Early Pallavas (Prakrit)"
+        }
+      ],
+      "yearHook": "c. 300–440 CE: between the Ikshvakus and the Vishnukundins.",
+      "participants": [
+        {
+          "personId": "p-samudragupta",
+          "role": "Defeated Hastivarman of Vengi (NCERT prashasti)."
+        }
+      ],
+      "subtopicIds": [
+        "hist-ap-satavahanas-ikshvakus"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": true,
+      "importance": 2,
+      "source": "Andhra Pradesh history (AP SCERT / Telugu Akademi syllabus)"
+    },
+    {
+      "id": "tl-anc-pallavas",
+      "title": "Simhavishnu revives the Pallavas of Kanchi",
+      "date": {
+        "year": 575,
+        "approx": true
+      },
+      "era": "post-gupta",
+      "lane": "south-india",
+      "kind": "dynasty-start",
+      "summary": "Simhavishnu (c. 575) ends the Kalabhra interlude and makes the Pallavas of Kanchi a great power; his son Mahendravarman I and grandson Narasimhavarman I fight the Badami Chalukyas (NCERT notes the rise of the Pallavas c. 500–600).",
+      "detail": "The early Pallavas had issued Prakrit charters from the Andhra region. Kanchi became a great centre of learning (the ghatika). The Pallavas spread the Grantha script and Indian culture to Southeast Asia. The Cholas ended Pallava rule (c. 897).",
+      "outcomes": [
+        "Pallava–Chalukya wars for 150 years."
+      ],
+      "pairs": [
+        {
+          "left": "Pallava capital",
+          "right": "Kanchipuram"
+        },
+        {
+          "left": "Ended the Kalabhras",
+          "right": "Simhavishnu"
+        }
+      ],
+      "yearHook": "c. 575 → Vatapi 642 → Cholas c. 897.",
+      "participants": [
+        {
+          "personId": "p-simhavishnu",
+          "role": "Revived the dynasty."
+        },
+        {
+          "personId": "p-mahendravarman",
+          "role": "His son."
+        },
+        {
+          "personId": "p-narasimhavarman-1",
+          "role": "His grandson."
+        }
+      ],
+      "subtopicIds": [
+        "hist-medieval-south-indian-dynasties"
       ],
       "relatedMcqIds": [],
       "apSpecific": false,

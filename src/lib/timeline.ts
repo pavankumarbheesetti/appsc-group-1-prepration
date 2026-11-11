@@ -63,6 +63,7 @@ export const LANE_META: Record<Lane, { label: string; short: string }> = {
   'polity-constitution': { label: 'Polity & Constitution', short: 'Polity' },
   economy: { label: 'Economy', short: 'Economy' },
   'science-tech': { label: 'Science & Tech', short: 'Sci/Tech' },
+  'art-culture': { label: 'Art & Culture', short: 'Culture' },
 };
 
 /** The four marker shapes the view can draw. */
