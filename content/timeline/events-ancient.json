@@ -554,7 +554,11 @@
       "relatedMcqIds": [],
       "apSpecific": false,
       "importance": 2,
-      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)"
+      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)",
+      "noteIds": [
+        "hist-ancient-guptas-note-science",
+        "hist-ancient-guptas-note-science-art-literature-records"
+      ]
     },
     {
       "id": "tl-anc-ajanta-vakatakas",
@@ -588,7 +592,7 @@
           "text": "Ajanta caves rediscovered by a British officer, John Smith."
         }
       ],
-      "yearHook": "c. 475 CE, between Fa-Hien (405) and Aryabhata (499).",
+      "yearHook": "About 475 CE: between Fa-Hien (405) and Aryabhata (499).",
       "participants": [
         {
           "personId": "p-harishena",
@@ -606,7 +610,10 @@
       "relatedMcqIds": [],
       "apSpecific": false,
       "importance": 2,
-      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)"
+      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)",
+      "before": "The **Vakatakas** ruled the Deccan as Gupta in-laws. Ajanta had older caves of the 2nd century BCE.",
+      "after": "Later painting traditions such as **Bagh** (MP) and **Sittanavasal** (Tamil Nadu) follow Ajanta's style.",
+      "today": "Ajanta (Maharashtra) has been a UNESCO World Heritage Site since 1983; the Bodhisattva Padmapani of Cave 1 is its most famous painting."
     },
     {
       "id": "tl-anc-hunas",
@@ -647,7 +654,7 @@
           "right": "Mihirakula"
         }
       ],
-      "yearHook": "c. 528 CE.",
+      "yearHook": "About 528 CE: Yashodharman beats Mihirakula.",
       "participants": [
         {
           "personId": "p-mihirakula",
@@ -670,7 +677,10 @@
       "relatedMcqIds": [],
       "apSpecific": false,
       "importance": 2,
-      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)"
+      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh)",
+      "before": "Skandagupta had stopped the Hunas once (about 455 CE), but the empire weakened after him.",
+      "after": "The north broke into regional kingdoms: Maukharis of **Kanauj**, Pushyabhutis of **Thanesar**, later Guptas of Magadha, Maitrakas of **Vallabhi**. Out of these came **Harsha** (606 CE).",
+      "today": "Mihirakula is remembered in Kalhana's **Rajatarangini** as a cruel king of Kashmir."
     },
     {
       "id": "tl-anc-salankayanas",
@@ -794,6 +804,11 @@
         "Mahendravarman I defeated Pulakeshin II at Pullalur (by Pallava claim).",
         "Pallava administration: kottams (districts).",
         "Bharavi wrote the Kiratarjuniya (6th century)."
+      ],
+      "noteIds": [
+        "hist-ancient-post-gupta-note-emergence-pallavas",
+        "hist-ancient-post-gupta-note-simhavishnu",
+        "hist-ancient-post-gupta-note-early-pallavas-andhra"
       ]
     },
     {
@@ -1496,6 +1511,40 @@
       ],
       "personIds": [
         "p-ilango"
+      ]
+    },
+    {
+      "id": "tl-anc-mahendravarman",
+      "title": "Mahendravarman I starts rock-cut temples in the Pallava land",
+      "date": {
+        "year": 610,
+        "approx": true
+      },
+      "era": "post-gupta",
+      "lane": "south-india",
+      "kind": "ruler",
+      "summary": "The Pallava king Mahendravarman I (about 600–630 CE) cuts the first rock-cut cave temples of the Tamil land, writes the Sanskrit farce Mattavilasa Prahasana, and turns from Jainism to Shaivism under the saint Appar.",
+      "detail": "His titles include **Vichitrachitta** (\"curious-minded\") and **Chaityakari** (temple-builder). His cave temple at **Mandagapattu** says it was made \"without bricks, timber, metal or mortar\" — something new.\n\nHe fought **Pulakeshin II** of Badami, who took Vengi and pressed on Kanchi. This began a long **Pallava–Chalukya war**.",
+      "subtopicIds": [
+        "hist-ancient-post-gupta"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": false,
+      "importance": 2,
+      "source": "NCERT Class 6, 7 and 12; R. S. Sharma, Ancient India; APPSC topic notes",
+      "yearHook": "About 610 CE: four years after Harsha takes the throne (606) and four years before Pulakeshin II's brother is placed at Vengi (624).",
+      "before": "**Simhavishnu** (about 575 CE) had revived the Pallavas at Kanchi and taken the land up to the Kaveri.",
+      "after": "His son **Narasimhavarman I (Mamalla)** avenged him by sacking the Chalukya capital **Vatapi** (642 CE) and built the rathas at **Mamallapuram**.",
+      "today": "Cave temples of his time are at Mandagapattu, Mahendravadi and Dalavanur (Tamil Nadu). In Andhra, the **Undavalli** caves are older (Vishnukundin).",
+      "mnemonic": "Pallava art in four steps by king \"Mahendra → Mamalla → Rajasimha → Aparajita\": caves → rathas → structural temples → late temples.",
+      "noteIds": [
+        "hist-ancient-post-gupta-note-mahendravarman-i",
+        "hist-ancient-post-gupta-note-administration",
+        "hist-ancient-post-gupta-note-economy"
+      ],
+      "personIds": [
+        "p-pulakeshin-2",
+        "p-mahendravarman"
       ]
     }
   ]
