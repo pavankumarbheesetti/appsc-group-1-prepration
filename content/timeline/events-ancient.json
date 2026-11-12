@@ -262,7 +262,7 @@
           "right": "Rules for the sangha"
         }
       ],
-      "yearHook": "The year the Buddha died, c. 483 BCE.",
+      "yearHook": "483 BCE, soon after the Buddha's death, at Rajagriha (capital of Magadha).",
       "participants": [
         {
           "personId": "p-ajatashatru",
@@ -283,7 +283,22 @@
       "relatedMcqIds": [],
       "apSpecific": false,
       "importance": 2,
-      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh); NCERT Class 12 Themes in Indian History I, Ch. 4 \"Thinkers, Beliefs and Buildings\""
+      "source": "Standard ancient and medieval Indian history (R.S. Sharma / Satish Chandra / Upinder Singh); NCERT Class 12 Themes in Indian History I, Ch. 4 \"Thinkers, Beliefs and Buildings\"",
+      "before": "When the Buddha died, nothing was written down. His monks feared his teachings would be lost or changed.",
+      "after": "About 100 years later disputes over monks' rules led to the **Second Council** at Vaishali (383 BCE) and the first split.",
+      "today": "The Saptaparni cave at Rajgir (Bihar) is shown as the place where the council met.",
+      "examAngle": [
+        {
+          "point": "First Council: Rajagriha, under King Ajatashatru, president Mahakassapa. Upali recited the Vinaya (rules) and Ananda the Sutta (sermons).",
+          "asked": [
+            "NCERT"
+          ],
+          "context": "Learn the councils as a set of four, each with a place, king and president. Councils 1 and 2 are in the time of the Haryanka and Shishunaga kings of Magadha; 3 under Ashoka; 4 under Kanishka."
+        }
+      ],
+      "noteIds": [
+        "hist-ancient-buddhism-2-note-councils"
+      ]
     },
     {
       "id": "tl-anc-bindusara",
@@ -888,6 +903,51 @@
       "mnemonic": "Councils: \"Pataliputra Puts in order (300 BCE, Sthulabhadra); Vallabhi Writes it down (512 CE, Devardhigani)\".",
       "noteIds": [
         "hist-ancient-jainism-note-literature-agamas"
+      ]
+    },
+    {
+      "id": "tl-anc-fourth-council",
+      "title": "Fourth Buddhist Council in Kashmir: Mahayana takes shape",
+      "date": {
+        "year": 100,
+        "approx": true
+      },
+      "era": "post-mauryan",
+      "lane": "north-india",
+      "kind": "culture",
+      "summary": "Under the Kushana king Kanishka a council meets at Kundalvana in Kashmir, led by Vasumitra with Ashvaghosha as deputy. Its texts are in Sanskrit, and the split between Mahayana and Hinayana (Theravada) becomes sharp.",
+      "detail": "Until now Buddhists had worshipped the Buddha only through **symbols** (the wheel, the tree, footprints) and aimed at their own release. The **Mahayana** (\"great vehicle\") now worshipped the Buddha in human images and honoured **Bodhisattvas**, beings who put off their own nirvana to help others (Avalokiteshvara, Maitreya, Manjushri).\n\nThe older school, which kept the Pali texts and the old way, was called **Hinayana** (\"lesser vehicle\", a name given by its rivals) or **Theravada** (\"teaching of the elders\"). Later, in eastern India and Tibet, came **Vajrayana** (the \"thunderbolt vehicle\", with magic and rituals).\n\nThe council wrote commentaries called **Vibhasha** (the Mahavibhasha).",
+      "subtopicIds": [
+        "hist-ancient-buddhism-2",
+        "hist-ancient-kushanas"
+      ],
+      "relatedMcqIds": [],
+      "apSpecific": false,
+      "importance": 2,
+      "source": "NCERT Class 12 Themes I Ch. 4; R. S. Sharma, Ancient India; APPSC topic notes (Buddhism)",
+      "facts": [
+        "Mahayana Bodhisattvas: Avalokiteshvara (Padmapani), Maitreya (the future Buddha), Manjushri; the six Paramitas (perfections).",
+        "Vajrayana (Tantric Buddhism) grew later in eastern India and Tibet."
+      ],
+      "yearHook": "About 100 CE (books give from 72 CE to the end of the 1st century). Kanishka took the throne in 78 CE, the start of the Shaka era.",
+      "participants": [
+        {
+          "personId": "p-kanishka",
+          "role": "Patron of the council."
+        }
+      ],
+      "before": "Ashoka's **Third Council** (about 250 BCE) had sent monks abroad. In the north-west, Greek, Shaka and Kushana rulers met Buddhism. Their artists began to show the Buddha in human form (Gandhara and Mathura).",
+      "after": "Mahayana spread along the **Silk Road** to Central Asia, China, Korea and Japan; Theravada went to Sri Lanka, Myanmar and Thailand. Andhra teachers such as **Acharya Nagarjuna** shaped Mahayana thought.",
+      "today": "The world's two main Buddhist families still follow this split: Theravada in Sri Lanka and South-East Asia, Mahayana in China, Japan, Korea and Tibet.",
+      "mnemonic": "Councils \"R-V-P-K\" = Rajagriha (483 BCE), Vaishali (383 BCE), Pataliputra (250 BCE), Kashmir (about 100 CE). Every 100 years or so. Presidents \"Maha-Saba-Mogga-Vasu\": Mahakassapa, Sabakami, Moggaliputta Tissa, Vasumitra.",
+      "noteIds": [
+        "hist-ancient-buddhism-2-note-schools",
+        "hist-ancient-buddhism-2-note-bodhisattvas",
+        "hist-ancient-buddhism-2-note-schools-texts-extra"
+      ],
+      "personIds": [
+        "p-buddha",
+        "p-ashvaghosha"
       ]
     }
   ]
