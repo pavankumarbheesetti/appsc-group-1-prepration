@@ -10,13 +10,13 @@ describe('timeline teaches every history note', () => {
 
   const historyNotes = getBanks('notes')
     .flatMap(({ bank }) => (bank.kind === 'notes' ? bank.items : []))
-    .filter((n) => n.subtopicId?.startsWith('hist-'));
+    .filter((n) => n.subtopicId?.startsWith('hist-') || n.subtopicId?.startsWith('pol-'));
 
-  it('finds the history notes', () => {
-    expect(historyNotes.length).toBeGreaterThan(600);
+  it('finds the history and polity notes', () => {
+    expect(historyNotes.length).toBeGreaterThan(900);
   });
 
-  it('links every history note section to an event', () => {
+  it('links every history and polity note section to an event', () => {
     const missing = historyNotes.filter((n) => !linked.has(n.id)).map((n) => n.id);
     expect(missing).toEqual([]);
   });
@@ -31,9 +31,9 @@ describe('timeline teaches every history note', () => {
     expect(broken).toEqual([]);
   });
 
-  it('gives story context to every history event', () => {
+  it('gives story context to every event except current affairs', () => {
     const bare = events
-      .filter((e) => !e.timeless && e.subtopicIds.some((s) => s.startsWith('hist-')))
+      .filter((e) => !e.timeless && !e.subtopicIds.some((s) => s.startsWith('ca-')))
       .filter((e) => !e.before || !e.after)
       .map((e) => e.id);
     expect(bare).toEqual([]);
