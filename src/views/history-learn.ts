@@ -390,7 +390,7 @@ function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show
       el('p', { class: 'hl-muted', text: 'Everything the topic notes teach about this event. Open each one; nothing here is left for later.' }),
       ...linked.map((n, i) => el('details', { class: 'hl-fullnote', attrs: i === 0 ? { open: '' } : {} }, [
         el('summary', { text: n.title.replace(/\*\*/g, '') }),
-        buildNoteArticle(n, `${ev.id}-n${i}`, { titleTag: 'h4' }),
+        buildNoteArticle(n, `${ev.id}-n${i}`, { titleTag: 'h3' }),
       ])),
     ]));
   }
