@@ -486,6 +486,16 @@ export function getBankByPath(path: string): LoadedBank | undefined {
   return getContentIndex().byPath.get(path);
 }
 
+let noteIndex: Map<string, NoteItem> | undefined;
+/** One note section by its id (any subject), for pages that teach notes outside the notebook. */
+export function getNoteById(id: string): NoteItem | undefined {
+  if (!noteIndex) {
+    noteIndex = new Map();
+    for (const { bank } of getBanks('notes')) if (bank.kind === 'notes') for (const n of bank.items) noteIndex.set(n.id, n);
+  }
+  return noteIndex.get(id);
+}
+
 /* -------------------------------------------------------------------------- */
 /* Taxonomy accessors                                                          */
 /* -------------------------------------------------------------------------- */

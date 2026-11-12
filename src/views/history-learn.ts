@@ -9,7 +9,9 @@
  * first (pre-training), then one event per slide at your own pace
  * (segmenting), then a recap table and a match-the-following check.
  */
-import { getChapters, getGlossary } from '../content/loader';
+import { getChapters, getGlossary, getNoteById } from '../content/loader';
+import type { NoteItem } from '../content/types';
+import { buildNoteArticle } from './notes';
 import { HISTORY_PARTS, type Chapter, type GlossaryTerm, type HistoryPart, type Person } from '../content/chronicle-types';
 import type { Pair, TimelineEvent } from '../content/timeline-types';
 import { eventText, termMatcher } from '../lib/glossary';
@@ -20,7 +22,19 @@ import { el, mount, renderMarkdown, type Child } from './dom';
 import { icon } from './components/icon';
 import { postLine, roleAt, wordsToKnow } from './event-parts';
 import { YEARS_PATH, yearDrill, yearDrillCounts } from './year-drill';
-import { gapPhrase } from '../lib/year-drill';
+import {
+  askedPapers,
+  meanwhile,
+  meanwhileWindow,
+  nearestPeg,
+  neighbours,
+  relLabel,
+  resolvePegs,
+  seededShuffle,
+  splitPaperTag,
+  spread,
+  type Peg,
+} from '../lib/chronology';
 import {
   CATEGORY_LABEL,
   YEAR_PATH,
@@ -70,7 +84,7 @@ export function lessonYears(c: Chapter, from: number, to: number, data: Chronicl
   return yearsWithEntries(data).filter((y) => {
     if (y < from || y > to) return false;
     const s = yearSnapshot(y, data);
-    return s.events.some((e) => inSpan(c, from, to, e)) || s.echoes.length > 0 || officeStarts(s.holders, y, c).length > 0;
+    return s.events.some((e) => inSpan(c, from, to, e)) || echoesFor(c, s.echoes).length > 0 || officeStarts(s.holders, y, c).length > 0;
   });
 }
 
@@ -78,8 +92,15 @@ export function chapterYears(c: Chapter, data: ChronicleData): number[] {
   return lessonYears(c, c.from, c.to, data);
 }
 
+/** New holders this year; an Andhra-only chapter shows only Andhra thrones and posts. */
 function officeStarts(holders: Map<string, HolderInYear[]>, year: number, c: Chapter): HolderInYear[] {
-  return [...holders.values()].flat().filter((r) => r.holder.from === year && (!c.lanes || c.lanes.includes(r.office.lane)));
+  return [...holders.values()].flat().filter((r) =>
+    r.holder.from === year && (!c.lanes || c.lanes.includes(r.office.lane)) && (!c.apOnly || r.office.apSpecific === true));
+}
+
+/** "Also in this year" facts; an Andhra-only chapter keeps only those of Andhra events. */
+function echoesFor<T extends { event?: TimelineEvent }>(c: Chapter, echoes: readonly T[]): T[] {
+  return c.apOnly ? echoes.filter((f) => f.event?.apSpecific === true) : [...echoes];
 }
 
 /** Events no chapter teaches yet — shown on the index so gaps are visible. */
@@ -153,6 +174,8 @@ export function renderIndex(root: HTMLElement): void {
 
 function renderOverview(root: HTMLElement, c: Chapter, data: ChronicleData): void {
   const frags = fragmentsOf(c);
+  const pegs = resolvePegs(c.pegs ?? [], data.events);
+  const all = data.events.filter((e) => inChapter(c, e)).sort((a, b) => a.date.year - b.date.year);
   mount(
     root,
     el('div', { class: 'hl' }, [
@@ -160,6 +183,20 @@ function renderOverview(root: HTMLElement, c: Chapter, data: ChronicleData): voi
       el('p', { class: 'hl-kicker', text: `${PART_LABEL[c.part]} · ${yearLabel(c.from)} – ${yearLabel(c.to)}` }),
       el('h1', { class: 'page-title', text: c.title }),
       el('div', { class: 'hl-prose md' }, renderMarkdown(c.intro)),
+      pegs.length
+        ? el('section', { class: 'hl-section hl-pegs' }, [
+            el('h2', { text: `Learn these ${pegs.length} year pegs first` }),
+            el('p', { class: 'hl-muted', text: 'Every other event in this chapter is shown as "peg + years". Fix the pegs once, and the rest hangs on them.' }),
+            el('ol', { class: 'hl-peg-list' }, pegs.map((p, i) => el('li', {}, [
+              el('span', { class: 'hl-chain-year tnum', text: yearLabel(p.year) }),
+              el('span', { class: 'hl-chain-body' }, [
+                el('strong', { text: p.title }),
+                i > 0 ? el('span', { class: 'hl-muted tnum', text: ` (${relLabel(pegs[i - 1]!.year, p.year)} after the last peg)` }) : null,
+                el('span', { class: 'hl-chain-next', text: p.hook }),
+              ]),
+            ]))),
+          ])
+        : null,
       el('ol', { class: 'hl-frags' }, frags.map((f, i) => {
         const events = data.events.filter((e) => inSpan(c, f.from, f.to, e)).length;
         return el('li', {}, [
@@ -175,6 +212,26 @@ function renderOverview(root: HTMLElement, c: Chapter, data: ChronicleData): voi
         ]);
       })),
       c.takeaways?.length ? el('section', { class: 'hl-section' }, [el('h2', { text: 'Key takeaways' }), el('ul', { class: 'hl-list' }, c.takeaways.map((t) => el('li', { text: t })))]) : null,
+      all.length
+        ? el('details', { class: 'hl-section hl-glance' }, [
+            el('summary', { text: `All ${all.length} events at a glance` }),
+            el('div', { class: 'hl-table-wrap' }, [
+              el('table', { class: 'hl-recap' }, [
+                el('thead', {}, [el('tr', {}, ['Year', 'Event', 'Peg + years', 'Asked'].map((h) => el('th', { attrs: { scope: 'col' }, text: h })))]),
+                el('tbody', {}, all.map((e) => {
+                  const p = nearestPeg(e.date.year, pegs);
+                  const asked = askedPapers(e).length;
+                  return el('tr', {}, [
+                    el('td', { class: 'tnum', text: formatYear(e.date) }),
+                    el('td', { text: e.title }),
+                    el('td', { class: 'tnum', text: p ? (p.eventId === e.id ? 'peg' : `${p.title.split(/[:—–(]/)[0]!.trim()} ${relLabel(p.year, e.date.year)}`) : '' }),
+                    el('td', { class: 'tnum', text: asked ? String(asked) : '' }),
+                  ]);
+                })),
+              ]),
+            ]),
+          ])
+        : null,
       el('p', { class: 'hl-source', text: `Source: ${c.source}` }),
     ]),
   );
@@ -212,12 +269,68 @@ export function sidesAside(ev: TimelineEvent): HTMLElement | null {
   ));
 }
 
-function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show: (p: Person) => void, prev?: TimelineEvent): HTMLElement {
+/** What an event slide needs to know about the lesson around it. */
+interface SlideCtx {
+  /** This lesson's events, in time order. */
+  lesson: TimelineEvent[];
+  pegs: Peg[];
+  /** Events outside this chapter, for "meanwhile elsewhere". */
+  pool: TimelineEvent[];
+  jump: (eventId: string) => void;
+  matcher: ReturnType<typeof termMatcher>;
+}
+
+/** Small "G-II 2018" tags for the papers that asked a point. */
+const paperChips = (papers: readonly string[]): HTMLElement | null =>
+  papers.length ? el('span', { class: 'hl-papers' }, papers.map((p) => el('span', { class: 'hl-paper', text: p }))) : null;
+
+/** The story in time: the peg it hangs on and the events just before and after it. */
+function timeStrip(ev: TimelineEvent, ctx: SlideCtx): HTMLElement {
+  const i = ctx.lesson.findIndex((e) => e.id === ev.id);
+  const { before, after } = neighbours(ctx.lesson, i < 0 ? 0 : i, 2);
+  const row = (e: TimelineEvent, cls: string, label: string): HTMLElement =>
+    el('li', { class: `hl-strip-row ${cls}` }, [
+      el('span', { class: 'hl-strip-rel tnum', text: label }),
+      el('span', { class: 'hl-strip-year tnum', text: yearLabel(e.date.year) }),
+      cls === 'is-now'
+        ? el('strong', { class: 'hl-strip-title', text: e.title })
+        : el('button', { class: 'hl-strip-title hl-linkish', type: 'button', text: e.title, onClick: () => ctx.jump(e.id) }),
+    ]);
+  return el('section', { class: 'hl-strip', attrs: { 'aria-label': 'Where this sits in time' } }, [
+    el('p', { class: 'hl-hook-label', text: 'Where this sits' }),
+    el('ol', { class: 'hl-strip-list' }, [
+      ...before.map((e) => row(e, 'is-before', relLabel(ev.date.year, e.date.year))),
+      row(ev, 'is-now', 'now'),
+      ...after.map((e) => row(e, 'is-after', relLabel(ev.date.year, e.date.year))),
+    ]),
+  ]);
+}
+
+/** "Peg: Satavahanas begin (230 BCE) + 30 years" — every year hung on a year already learnt. */
+function pegLine(ev: TimelineEvent, pegs: readonly Peg[]): HTMLElement | null {
+  const p = nearestPeg(ev.date.year, pegs);
+  if (!p) return null;
+  if (p.eventId === ev.id) {
+    return el('p', { class: 'hl-peg is-peg' }, [
+      el('span', { class: 'hl-hook-label', text: 'Year peg — learn this one by heart' }),
+      el('span', { text: p.hook }),
+    ]);
+  }
+  return el('p', { class: 'hl-peg' }, [
+    el('span', { class: 'hl-hook-label', text: 'Hang it on a peg' }),
+    el('span', {}, [el('strong', { class: 'tnum', text: `${yearLabel(p.year)} ${p.title}` }), el('span', { class: 'tnum', text: `  ${relLabel(p.year, ev.date.year)}` })]),
+  ]);
+}
+
+function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show: (p: Person) => void, ctx: SlideCtx): HTMLElement {
   const byId = new Map(data.people.map((p) => [p.id, p]));
   const pts = new Map((ev.participants ?? []).map((p) => [p.personId, p]));
   const people = peopleOf(ev).map((id) => byId.get(id)).filter((p): p is Person => p !== undefined);
+  const papers = askedPapers(ev);
 
-  const main: Child[] = [el('p', { class: 'hl-lead', text: ev.summary }), el('div', { class: 'hl-prose md' }, renderMarkdown(ev.detail))];
+  const main: Child[] = [el('p', { class: 'hl-lead', text: ev.summary })];
+  if (ev.before) main.push(part('The story so far', el('div', { class: 'hl-prose md' }, renderMarkdown(ev.before))));
+  main.push(el('div', { class: 'hl-prose md' }, renderMarkdown(ev.detail)));
   if (ev.causes?.length) main.push(part('Why it happened', ul(ev.causes)));
   if (ev.course?.length) main.push(part('What happened', el('ol', { class: 'hl-list hl-steps' }, ev.course.map((t) => el('li', { text: t })))));
   const result: Child[] = [];
@@ -225,6 +338,8 @@ function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show
   if (ev.losses?.length) result.push(el('p', { class: 'hl-sub', text: 'Losses' }), ul(ev.losses));
   if (ev.gains?.length) result.push(el('p', { class: 'hl-sub', text: 'Who gained' }), ul(ev.gains));
   if (result.length) main.push(part('Result', el('div', {}, result)));
+  if (ev.after) main.push(part('What it led to', el('div', { class: 'hl-prose md' }, renderMarkdown(ev.after))));
+  if (ev.today) main.push(part('Still with us today', el('div', { class: 'hl-prose md' }, renderMarkdown(ev.today))));
   if (ev.treaties?.length) {
     main.push(part('Treaty', el('div', {}, ev.treaties.map((t) => el('div', { class: 'hl-treaty' }, [
       el('strong', { text: t.year ? `${t.name} (${yearLabel(t.year)})` : t.name }),
@@ -245,9 +360,47 @@ function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show
       ]);
     }))));
   }
-  const remember = [...(ev.facts ?? []), ...(ev.pairs ?? []).map((p) => `${p.left} — ${p.right}`)];
+  if (ev.examAngle?.length) {
+    main.push(el('section', { class: 'hl-exam' }, [
+      el('h3', { class: 'hl-h', text: 'How APPSC asks this' }),
+      el('ol', { class: 'hl-exam-list' }, ev.examAngle.map((x) => el('li', {}, [
+        el('p', { class: 'hl-exam-point' }, [el('strong', { text: x.point }), paperChips(x.asked ?? [])]),
+        el('div', { class: 'hl-prose md hl-exam-context' }, renderMarkdown(x.context)),
+      ]))),
+    ]));
+  }
+  const facts = (ev.facts ?? []).map(splitPaperTag);
+  const remember: Child[] = [
+    ...facts.map((f) => el('span', {}, [el('span', { text: f.text }), paperChips(f.paper ? [f.paper] : [])])),
+    ...(ev.pairs ?? []).map((p) => `${p.left} — ${p.right}`),
+  ];
   if (ev.alsoOn?.length) remember.push(...[...ev.alsoOn].sort((a, b) => a.year - b.year).map((f) => `${yearLabel(f.year)}: ${f.text}`));
-  if (remember.length) main.push(el('section', { class: 'hl-remember' }, [el('h3', { class: 'hl-h', text: 'Remember' }), ul(remember)]));
+  if (remember.length) main.push(el('section', { class: 'hl-remember' }, [el('h3', { class: 'hl-h', text: ev.examAngle?.length ? 'Quick facts' : 'Remember' }), ul(remember)]));
+  const others = meanwhile(ev, ctx.pool, meanwhileWindow(ev.date.year));
+  if (others.length) {
+    main.push(part('Meanwhile, elsewhere', ul(others.map((e) => el('span', {}, [
+      el('strong', { class: 'tnum', text: `${yearLabel(e.date.year)} (${relLabel(ev.date.year, e.date.year)}): ` }),
+      el('span', { text: `${e.title} — ${e.summary}` }),
+    ])))));
+  }
+  const linked = (ev.noteIds ?? []).map((id) => getNoteById(id)).filter((n): n is NoteItem => n !== undefined);
+  if (linked.length) {
+    main.push(el('section', { class: 'hl-fullnotes' }, [
+      el('h3', { class: 'hl-h', text: `Full notes for this event (${linked.length})` }),
+      el('p', { class: 'hl-muted', text: 'Everything the topic notes teach about this event. Open each one; nothing here is left for later.' }),
+      ...linked.map((n, i) => el('details', { class: 'hl-fullnote', attrs: i === 0 ? { open: '' } : {} }, [
+        el('summary', { text: n.title.replace(/\*\*/g, '') }),
+        buildNoteArticle(n, `${ev.id}-n${i}`, { titleTag: 'h3' }),
+      ])),
+    ]));
+  }
+  const terms = ctx.matcher.find(eventText(ev));
+  if (terms.length) {
+    main.push(el('details', { class: 'hl-words' }, [
+      el('summary', { text: `Words on this page (${terms.length})` }),
+      wordsToKnow(terms),
+    ]));
+  }
   if (notes.length) main.push(el('section', { class: 'hl-notes' }, [el('h3', { class: 'hl-h', text: `Also in ${yearLabel(ev.date.year)}` }), ul(notes)]));
 
   return el('article', { class: 'hl-slide' }, [
@@ -257,6 +410,7 @@ function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show
         el('span', { class: 'tnum', text: ` ${formatYear(ev.date)}` }),
         ev.importance === 3 ? el('span', { class: 'hl-must', text: ' · Must know' }) : null,
         ev.apSpecific ? el('span', { class: 'hl-must', text: ' · AP' }) : null,
+        papers.length ? el('span', { class: 'hl-must', text: papers.length >= 2 ? ` · Repeat topic: asked in ${papers.length} papers` : ' · Asked in 1 paper' }) : null,
       ]),
       el('h2', { class: 'hl-slide-title', text: ev.title }),
     ]),
@@ -264,7 +418,9 @@ function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show
       el('aside', { class: 'hl-slide-aside' }, [
         el('p', { class: 'hl-big-year tnum', text: yearLabel(ev.date.year) }),
         ev.yearHook ? el('p', { class: 'hl-hook' }, [el('span', { class: 'hl-hook-label', text: 'Remember the year' }), el('span', { text: ev.yearHook })]) : null,
-        prev ? el('p', { class: 'hl-gap tnum', text: `${gapPhrase(prev.date.year, ev.date.year)} ${prev.title} (${yearLabel(prev.date.year)})` }) : null,
+        ev.mnemonic ? el('p', { class: 'hl-hook hl-mnemonic' }, [el('span', { class: 'hl-hook-label', text: 'Memory trick' }), el('span', { text: ev.mnemonic })]) : null,
+        pegLine(ev, ctx.pegs),
+        timeStrip(ev, ctx),
         figures(ev.images, 'hl-figs'),
         ev.place ? el('p', { class: 'hl-place' }, [el('span', { class: 'hl-muted', text: 'Where: ' }), el('span', { text: ev.place })]) : null,
         sidesAside(ev),
@@ -286,7 +442,7 @@ function yearNotes(year: number, c: Chapter, data: ChronicleData, show: (p: Pers
       el('span', { text: ` becomes ${office.label} (${yearLabel(holder.from)} – ${yearLabel(holder.to)})${holder.note ? ` — ${holder.note}` : ''}` }),
     ]);
   });
-  for (const f of s.echoes) notes.push(f.text);
+  for (const f of echoesFor(c, s.echoes)) notes.push(f.text);
   return notes;
 }
 
@@ -332,7 +488,52 @@ function startSlide(c: Chapter, f: Fragment, events: TimelineEvent[], data: Chro
   ]);
 }
 
-function recapSlide(c: Chapter, f: Fragment, events: TimelineEvent[], data: ChronicleData, isLast: boolean): HTMLElement {
+/** The lesson as one chain: each event, then what it led to. Read top to bottom like a story. */
+function storyChain(events: readonly TimelineEvent[], pegs: readonly Peg[]): HTMLElement {
+  return el('ol', { class: 'hl-chain' }, events.map((e, i) => {
+    const prev = events[i - 1];
+    const lead = (e.after ?? e.outcomes?.[0] ?? '').replace(/\s+/g, ' ');
+    const short = lead.length > 180 ? `${lead.slice(0, 177).replace(/\s\S*$/, '')}…` : lead;
+    const peg = pegs.find((p) => p.eventId === e.id);
+    return el('li', { class: `hl-chain-item${peg ? ' is-peg' : ''}` }, [
+      el('span', { class: 'hl-chain-year tnum', text: yearLabel(e.date.year) }),
+      el('span', { class: 'hl-chain-body' }, [
+        el('strong', { text: e.title }),
+        prev ? el('span', { class: 'hl-muted tnum', text: ` (${relLabel(prev.date.year, e.date.year)} after the last)` }) : null,
+        short ? el('span', { class: 'hl-chain-next', text: `→ ${short}` }) : null,
+      ]),
+    ]);
+  }));
+}
+
+/** Tap the events from oldest to newest. Teaches order without asking for exact years. */
+export function orderGame(events: readonly TimelineEvent[], seed: number): HTMLElement {
+  const picks = spread(events, 6);
+  const right = [...picks].sort((a, b) => a.date.year - b.date.year);
+  const shown = seededShuffle(picks, seed);
+  let next = 0;
+  const status = el('p', { class: 'hl-muted', attrs: { 'aria-live': 'polite' }, text: 'Tap the oldest first.' });
+  const buttons = shown.map((e) => {
+    const b = el('button', { class: 'hl-order-btn', type: 'button', text: e.title, onClick: () => {
+      if (b.classList.contains('is-done')) return;
+      if (right[next]?.id === e.id) {
+        next += 1;
+        b.classList.add('is-done');
+        b.textContent = `${next}. ${e.title} — ${yearLabel(e.date.year)}`;
+        status.textContent = next === right.length ? 'All in order. Read the chain above once more.' : 'Right. Next?';
+      } else {
+        b.classList.add('is-wrong');
+        setTimeout(() => b.classList.remove('is-wrong'), 600);
+        const want = right[next]!;
+        status.textContent = `Not yet: ${e.title} is ${relLabel(want.date.year, e.date.year)} from the one that comes next.`;
+      }
+    } });
+    return b;
+  });
+  return el('div', { class: 'hl-order' }, [status, el('div', { class: 'hl-order-grid' }, buttons)]);
+}
+
+function recapSlide(c: Chapter, f: Fragment, events: TimelineEvent[], data: ChronicleData, isLast: boolean, pegs: readonly Peg[]): HTMLElement {
   const byId = new Map(data.people.map((p) => [p.id, p]));
   const pairs: Pair[] = [];
   const seen = new Set<string>();
@@ -344,6 +545,8 @@ function recapSlide(c: Chapter, f: Fragment, events: TimelineEvent[], data: Chro
   }
   return el('article', { class: 'hl-slide' }, [
     el('header', { class: 'hl-slide-head' }, [el('p', { class: 'hl-kicker', text: 'Recap' }), el('h2', { class: 'hl-slide-title', text: f.title })]),
+    part('The story in order', storyChain(events, pegs)),
+    events.length >= 3 ? part('Put them in order', orderGame(events, Math.abs(f.from) + events.length)) : null,
     el('div', { class: 'hl-table-wrap' }, [
       el('table', { class: 'hl-recap' }, [
         el('thead', {}, [el('tr', {}, ['Year', 'Event', 'Key people', 'Result'].map((h) => el('th', { attrs: { scope: 'col' }, text: h })))]),
@@ -368,6 +571,17 @@ function renderFragment(root: HTMLElement, c: Chapter, n: number, data: Chronicl
   const show = (p: Person): void => openPersonCard(p, data, (y) => navigate(`${YEAR_PATH}?y=${y}`));
   const slides = buildSlides(c, f, data, show);
   const events = slides.flatMap((s) => (s.kind === 'event' ? [s.event] : []));
+  const pegs = resolvePegs(c.pegs ?? [], data.events);
+  const ctx: SlideCtx = {
+    lesson: events,
+    pegs,
+    pool: data.events.filter((e) => !e.timeless && !inChapter(c, e)),
+    jump: (id) => {
+      const k = slides.findIndex((s) => s.kind === 'event' && s.event.id === id);
+      if (k >= 0) go(k);
+    },
+    matcher: termMatcher(getGlossary()),
+  };
   let at = 0;
 
   const stage = el('div', { class: 'hl-stage', attrs: { 'aria-live': 'polite' } });
@@ -390,23 +604,13 @@ function renderFragment(root: HTMLElement, c: Chapter, n: number, data: Chronicl
     return `${base} ·${k}`;
   });
   const dotLabel = (s: Slide): string => labels[slides.indexOf(s)]!;
-  /** The nearest earlier event in this lesson from a different year — used for "7 years after Plassey". */
-  const previousEvent = (i: number): TimelineEvent | undefined => {
-    const cur = slides[i];
-    if (cur?.kind !== 'event') return undefined;
-    for (let k = i - 1; k >= 0; k--) {
-      const s = slides[k]!;
-      if (s.kind === 'event' && s.event.date.year !== cur.event.date.year) return s.event;
-    }
-    return undefined;
-  };
 
   function draw(): void {
     const s = slides[at]!;
     const node =
       s.kind === 'start' ? startSlide(c, f, events, data, show)
-        : s.kind === 'recap' ? recapSlide(c, f, events, data, n === frags.length)
-          : s.kind === 'event' ? eventSlide(s.event, s.notes, data, show, previousEvent(at))
+        : s.kind === 'recap' ? recapSlide(c, f, events, data, n === frags.length, pegs)
+          : s.kind === 'event' ? eventSlide(s.event, s.notes, data, show, ctx)
             : el('article', { class: 'hl-slide' }, [
                 el('header', { class: 'hl-slide-head' }, [el('p', { class: 'hl-kicker', text: 'Year notes' }), el('h2', { class: 'hl-slide-title tnum', text: yearLabel(s.year) })]),
                 ul(s.notes),

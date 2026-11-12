@@ -110,15 +110,27 @@ describe('lesson player', () => {
     expect(new Set(labels).size).toBe(labels.length);
   });
 
-  it('ties each year to a memory hook and to the previous event', () => {
+  it('ties each year to a memory hook and places it among the events before and after', () => {
     const root = open('#/topics/history/modern-1757-1805/1', renderChapter);
     for (let i = 0; i < 20 && !title(root).includes('Buxar'); i++) nextBtn(root).click();
     expect(root.querySelector('.hl-hook')?.textContent).toContain('Plassey + 7 = Buxar');
-    expect(root.querySelector('.hl-gap')?.textContent).toMatch(/years? after/);
+    const strip = root.querySelector('.hl-strip')!;
+    expect(strip.querySelector('.is-now')?.textContent).toContain('Buxar');
+    expect(strip.querySelector('.is-before .hl-strip-rel')?.textContent).toMatch(/^-\d+ yrs?$/);
     const dots = root.querySelectorAll<HTMLButtonElement>('.hl-dot');
     dots[dots.length - 1]!.click();
     expect(root.textContent).toContain('Year drill');
     expect(root.querySelectorAll('.yd-option')).toHaveLength(4);
+  });
+
+  it('jumps to a neighbour event from the time strip', () => {
+    const root = open('#/topics/history/modern-1757-1805/1', renderChapter);
+    for (let i = 0; i < 20 && !title(root).includes('Buxar'); i++) nextBtn(root).click();
+    const befores = root.querySelectorAll<HTMLButtonElement>('.hl-strip .is-before button');
+    const prev = befores[befores.length - 1]!;
+    const want = prev.textContent!;
+    prev.click();
+    expect(title(root)).toBe(want);
   });
 
   it('ends with a recap table and moves on to the next lesson', () => {
@@ -264,5 +276,86 @@ describe('event parts', () => {
     expect(postLine(person, 1800)?.textContent).toBe('Post: Former King (1700 CE – 1710 CE)');
     expect(postLine(person, 1650)).toBeNull();
     expect(postLine(person, 1800, 'Envoy')?.textContent).toBe('Post: Envoy');
+  });
+});
+
+describe('placing events in time (Andhra chapter)', () => {
+  const goTo = (root: HTMLElement, text: string): void => {
+    for (let i = 0; i < 60 && !title(root).includes(text); i++) nextBtn(root).click();
+  };
+
+  it('every chapter peg points at an event of that chapter', () => {
+    const data = chronicleData();
+    for (const c of getChapters()) {
+      for (const p of c.pegs ?? []) {
+        const ev = data.events.find((e) => e.id === p.eventId);
+        expect(ev, `${c.id}: ${p.eventId}`).toBeDefined();
+        expect(ev!.date.year >= c.from && ev!.date.year <= c.to, `${c.id}: ${p.eventId} in span`).toBe(true);
+        if (c.apOnly) expect(ev!.apSpecific, `${c.id}: ${p.eventId} is AP`).toBe(true);
+      }
+    }
+  });
+
+  it('lists the year pegs and all events at a glance on the overview', () => {
+    const root = open('#/topics/history/andhra-all', renderChapter);
+    expect(root.querySelector('.hl-pegs h2')?.textContent).toMatch(/Learn these \d+ year pegs first/);
+    expect(root.querySelector('.hl-pegs')?.textContent).toContain('Simuka founds the Satavahana dynasty');
+    expect(root.querySelector('.hl-glance summary')?.textContent).toMatch(/All \d+ events at a glance/);
+  });
+
+  it('keeps other regions\' king lists out of the Andhra-only lessons', () => {
+    const root = open('#/topics/history/andhra-all/1', renderChapter);
+    const dots = [...root.querySelectorAll('.hl-dot')].map((d) => d.textContent);
+    expect(dots).not.toContain('544 BCE');
+    expect(dots).not.toContain('492 BCE');
+  });
+
+  it('teaches the story around an event: before, after, today, peg, memory trick and exam points with their papers', () => {
+    const root = open('#/topics/history/andhra-all/1', renderChapter);
+    goTo(root, 'Simuka founds the Satavahana dynasty');
+    const text = root.textContent ?? '';
+    expect(text).toContain('The story so far');
+    expect(text).toContain('What it led to');
+    expect(text).toContain('Still with us today');
+    expect(root.querySelector('.hl-mnemonic')?.textContent).toContain('Six Kings Sat');
+    expect(root.querySelector('.hl-peg.is-peg')?.textContent).toContain('learn this one by heart');
+    expect(root.querySelectorAll('.hl-exam-list > li').length).toBeGreaterThan(5);
+    expect(root.querySelector('.hl-exam .hl-paper')?.textContent).toMatch(/NCERT|G-I|G-II/);
+    expect(root.querySelector('.hl-kicker')?.textContent).toMatch(/Repeat topic: asked in \d+ papers/);
+    expect(root.querySelector('.hl-words summary')?.textContent).toMatch(/Words on this page \(\d+\)/);
+  });
+
+  it('hangs a non-peg event on the nearest earlier peg', () => {
+    const root = open('#/topics/history/andhra-all/1', renderChapter);
+    goTo(root, 'Gautamiputra');
+    const peg = root.querySelector('.hl-peg:not(.is-peg)')?.textContent ?? '';
+    expect(peg).toContain('Hang it on a peg');
+    expect(peg).toContain('Simuka');
+    expect(peg).toMatch(/\+3\d\d yrs/);
+  });
+
+  it('shows paper tags apart from the fact text in quick facts', () => {
+    const root = open('#/topics/history/andhra-all/1', renderChapter);
+    goTo(root, 'Simuka founds the Satavahana dynasty');
+    const quick = root.querySelector('.hl-remember')!;
+    expect(quick.querySelector('.hl-h')?.textContent).toBe('Quick facts');
+    expect(quick.textContent).not.toContain('(APPSC');
+    expect(quick.querySelector('.hl-paper')?.textContent).toBe('G-II 2018');
+  });
+
+  it('ends with the story in order and an ordering game that accepts the oldest first', () => {
+    const root = open('#/topics/history/andhra-all/1', renderChapter);
+    const dots = root.querySelectorAll<HTMLButtonElement>('.hl-dot');
+    dots[dots.length - 1]!.click();
+    expect(root.querySelectorAll('.hl-chain-item').length).toBeGreaterThan(5);
+    const btns = [...root.querySelectorAll<HTMLButtonElement>('.hl-order-btn')];
+    expect(btns.length).toBe(6);
+    const stone = btns.find((b) => b.textContent!.includes('Jwalapuram'))!;
+    const other = btns.find((b) => !b.textContent!.includes('Jwalapuram'))!;
+    other.click();
+    expect(other.classList.contains('is-done')).toBe(false);
+    stone.click();
+    expect(stone.classList.contains('is-done')).toBe(true);
+    expect(stone.textContent).toMatch(/^1\. /);
   });
 });

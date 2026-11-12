@@ -150,6 +150,17 @@ export type DatedFact = z.infer<typeof DatedFactSchema>;
  * An image KEY resolved by `assets.ts` (inlined at build). Internet images
  * must carry their credit + licence; `scripts/fetch-images.ts` fills these.
  */
+/** A past-paper point told with its context, so it is learnt as part of the story. */
+export const ExamPointSchema = z.object({
+  /** The fact as the exam tests it. */
+  point: z.string().min(1),
+  /** The story behind it: why it is true and how it links to the event. */
+  context: z.string().min(1),
+  /** Papers that asked it, e.g. "G-II 2018", "G-I 2023". */
+  asked: z.array(z.string().min(1)).optional(),
+});
+export type ExamPoint = z.infer<typeof ExamPointSchema>;
+
 export const TimelineImageSchema = z.object({
   src: z.string().min(1),
   alt: z.string().min(1),
@@ -254,6 +265,18 @@ export const TimelineEventSchema = z.object({
   yearHook: z.string().min(1).optional(),
   /** A fact with no real date (e.g. geography); kept on the axis but never taught in a history lesson. */
   timeless: z.boolean().optional(),
+  /** The story so far: what came before and led up to this (markdown). */
+  before: z.string().min(1).optional(),
+  /** What this led to later — the thread to the next events (markdown). */
+  after: z.string().min(1).optional(),
+  /** Where you can still see it today: places, names, laws, museums (markdown). */
+  today: z.string().min(1).optional(),
+  /** A memory trick for the names, order or year. */
+  mnemonic: z.string().min(1).optional(),
+  /** Past-paper points told with their context: the fact, why it matters, and which papers asked it. */
+  examAngle: z.array(ExamPointSchema).optional(),
+  /** Topic note sections (NoteItem ids) taught on this event's slide, so the timeline alone covers the notes. */
+  noteIds: z.array(z.string().min(1)).optional(),
 });
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;
 
