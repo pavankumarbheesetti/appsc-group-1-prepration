@@ -266,6 +266,38 @@
 .hl-hook { margin: 0; display: flex; flex-direction: column; gap: 2px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); background: var(--accent-soft); color: var(--text); font-size: var(--fs-sm); }
 .hl-hook-label { font-size: var(--fs-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); }
 .hl-gap { margin: 0; font-size: var(--fs-sm); color: var(--text-2); }
+
+/* placing an event in time: peg, before/after strip, story chain, ordering game */
+.hl-mnemonic { background: var(--success-soft); }
+.hl-peg { margin: 0; display: flex; flex-direction: column; gap: 2px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); border: 1px dashed var(--border-strong); background: var(--surface); color: var(--text); font-size: var(--fs-sm); }
+.hl-peg.is-peg { border-style: solid; border-color: var(--accent); background: var(--accent-soft); }
+.hl-strip { display: flex; flex-direction: column; gap: var(--space-1); }
+.hl-strip-list { list-style: none; margin: 0; padding: 0 0 0 var(--space-3); border-left: 2px solid var(--border-strong); display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--fs-sm); }
+.hl-strip-row { display: grid; grid-template-columns: 4.5rem 5.5rem 1fr; gap: var(--space-2); align-items: baseline; color: var(--text-2); }
+.hl-strip-row.is-now { color: var(--text); font-weight: var(--fw-semibold); }
+.hl-strip-rel { font-size: var(--fs-xs); color: var(--text-2); }
+.hl-linkish { font: inherit; text-align: left; padding: 0; border: 0; background: none; color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.hl-exam { padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--accent-soft); color: var(--text); display: flex; flex-direction: column; gap: var(--space-2); }
+.hl-exam-list { margin: 0; padding-left: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.hl-exam-point { margin: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: baseline; }
+.hl-exam-context { font-size: var(--fs-sm); }
+.hl-papers { display: inline-flex; flex-wrap: wrap; gap: 4px; margin-left: var(--space-2); }
+.hl-paper { font-size: var(--fs-xs); padding: 1px 6px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-2); white-space: nowrap; }
+.hl-words > summary { cursor: pointer; font-weight: var(--fw-semibold); }
+.hl-chain, .hl-peg-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.hl-chain-item, .hl-peg-list > li { display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--space-3); padding: var(--space-2) var(--space-3); border-left: 3px solid var(--border-strong); background: var(--surface); color: var(--text); }
+.hl-chain-item.is-peg, .hl-peg-list > li { border-left-color: var(--accent); }
+.hl-chain-year { font-weight: var(--fw-semibold); }
+.hl-chain-body { display: flex; flex-direction: column; gap: 2px; }
+.hl-chain-next { color: var(--text-2); font-size: var(--fs-sm); }
+.hl-order { display: flex; flex-direction: column; gap: var(--space-2); }
+.hl-order-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: var(--space-2); }
+.hl-order-btn { font: inherit; text-align: left; padding: var(--space-2) var(--space-3); cursor: pointer; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: var(--radius-md); }
+.hl-order-btn:hover:not(.is-done), .hl-order-btn:focus-visible { border-color: var(--accent); }
+.hl-order-btn.is-done { background: var(--success-soft); border-color: var(--success); cursor: default; }
+.hl-order-btn.is-wrong { background: var(--danger-soft, var(--warning-soft)); border-color: var(--danger, var(--warning)); }
+.hl-glance > summary { cursor: pointer; font-weight: var(--fw-semibold); font-size: var(--fs-lg); }
+@media (prefers-reduced-motion: reduce) { .hl-order-btn { transition: none; } }
 .yd { display: flex; flex-direction: column; gap: var(--space-3); }
 .yd-q { margin: 0; font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
 .yd-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2); }

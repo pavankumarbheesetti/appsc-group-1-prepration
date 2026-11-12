@@ -124,6 +124,8 @@ export const OfficeSchema = z.object({
   /** Grouping shown in the Year explorer, e.g. "British India", "Delhi Sultanate". */
   group: z.string().min(1),
   lane: LaneSchema,
+  /** An Andhra throne or post: shown in Andhra-only chapters. */
+  apSpecific: z.boolean().optional(),
   holders: z.array(OfficeHolderSchema).min(1),
 });
 export type Office = z.infer<typeof OfficeSchema>;
@@ -161,6 +163,8 @@ export const ChapterSchema = z
       .array(z.object({ title: z.string().min(1), from: YearSchema, to: YearSchema, intro: z.string().min(1).optional() }))
       .optional(),
     takeaways: z.array(z.string().min(1)).optional(),
+    /** Year pegs: a few anchor events learnt first; every other event is placed as "peg + N years". */
+    pegs: z.array(z.object({ eventId: z.string().min(1), hook: z.string().min(1) })).optional(),
     subtopicIds: z.array(z.string()),
     source: z.string().min(1),
   })

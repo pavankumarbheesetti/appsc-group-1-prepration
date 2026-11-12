@@ -41,5 +41,7 @@ export function eventText(ev: TimelineEvent): string {
     ...(ev.treaties ?? []).flatMap((t) => [t.name, ...(t.terms ?? [])]),
     ...(ev.outcomes ?? []), ...(ev.participants ?? []).flatMap((p) => [p.role, p.post ?? '']),
     ...(ev.facts ?? []),
+    ev.before ?? '', ev.after ?? '', ev.today ?? '',
+    ...(ev.examAngle ?? []).flatMap((x) => [x.point, x.context]),
   ].join('\n');
 }
