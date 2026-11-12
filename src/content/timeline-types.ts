@@ -275,6 +275,8 @@ export const TimelineEventSchema = z.object({
   mnemonic: z.string().min(1).optional(),
   /** Past-paper points told with their context: the fact, why it matters, and which papers asked it. */
   examAngle: z.array(ExamPointSchema).optional(),
+  /** Topic note sections (NoteItem ids) taught on this event's slide, so the timeline alone covers the notes. */
+  noteIds: z.array(z.string().min(1)).optional(),
 });
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;
 

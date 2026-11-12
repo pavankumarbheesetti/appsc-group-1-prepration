@@ -9,7 +9,9 @@
  * first (pre-training), then one event per slide at your own pace
  * (segmenting), then a recap table and a match-the-following check.
  */
-import { getChapters, getGlossary } from '../content/loader';
+import { getChapters, getGlossary, getNoteById } from '../content/loader';
+import type { NoteItem } from '../content/types';
+import { buildNoteArticle } from './notes';
 import { HISTORY_PARTS, type Chapter, type GlossaryTerm, type HistoryPart, type Person } from '../content/chronicle-types';
 import type { Pair, TimelineEvent } from '../content/timeline-types';
 import { eventText, termMatcher } from '../lib/glossary';
@@ -380,6 +382,17 @@ function eventSlide(ev: TimelineEvent, notes: Child[], data: ChronicleData, show
       el('strong', { class: 'tnum', text: `${yearLabel(e.date.year)} (${relLabel(ev.date.year, e.date.year)}): ` }),
       el('span', { text: `${e.title} — ${e.summary}` }),
     ])))));
+  }
+  const linked = (ev.noteIds ?? []).map((id) => getNoteById(id)).filter((n): n is NoteItem => n !== undefined);
+  if (linked.length) {
+    main.push(el('section', { class: 'hl-fullnotes' }, [
+      el('h3', { class: 'hl-h', text: `Full notes for this event (${linked.length})` }),
+      el('p', { class: 'hl-muted', text: 'Everything the topic notes teach about this event. Open each one; nothing here is left for later.' }),
+      ...linked.map((n, i) => el('details', { class: 'hl-fullnote', attrs: i === 0 ? { open: '' } : {} }, [
+        el('summary', { text: n.title.replace(/\*\*/g, '') }),
+        buildNoteArticle(n, `${ev.id}-n${i}`, { titleTag: 'h4' }),
+      ])),
+    ]));
   }
   const terms = ctx.matcher.find(eventText(ev));
   if (terms.length) {

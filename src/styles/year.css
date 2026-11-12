@@ -297,6 +297,10 @@
 .hl-order-btn.is-done { background: var(--success-soft); border-color: var(--success); cursor: default; }
 .hl-order-btn.is-wrong { background: var(--danger-soft, var(--warning-soft)); border-color: var(--danger, var(--warning)); }
 .hl-glance > summary { cursor: pointer; font-weight: var(--fw-semibold); font-size: var(--fs-lg); }
+.hl-fullnotes { display: flex; flex-direction: column; gap: var(--space-2); }
+.hl-fullnote { border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface); color: var(--text); }
+.hl-fullnote > summary { cursor: pointer; padding: var(--space-2) var(--space-3); font-weight: var(--fw-semibold); }
+.hl-fullnote > .note { margin: 0 var(--space-2) var(--space-2); box-shadow: none; }
 @media (prefers-reduced-motion: reduce) { .hl-order-btn { transition: none; } }
 .yd { display: flex; flex-direction: column; gap: var(--space-3); }
 .yd-q { margin: 0; font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
