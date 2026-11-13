@@ -31,9 +31,9 @@ describe('timeline teaches every history note', () => {
     expect(broken).toEqual([]);
   });
 
-  it('gives story context to every event except current affairs', () => {
+  it('gives story context to every event', () => {
     const bare = events
-      .filter((e) => !e.timeless && !e.subtopicIds.some((s) => s.startsWith('ca-')))
+      .filter((e) => !e.timeless)
       .filter((e) => !e.before || !e.after)
       .map((e) => e.id);
     expect(bare).toEqual([]);
