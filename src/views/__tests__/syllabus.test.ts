@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import * as syllabus from '../syllabus';
 import { __resetForTests } from '../../state/store';
-import { markTopicStudied } from '../../lib/study-status';
+import { isTopicStudied, markTopicStudied } from '../../lib/study-status';
 
 /**
  * Syllabus tracker semantics: rows default to CHRONOLOGICAL (taxonomy `order`)
@@ -80,5 +80,64 @@ describe('syllabus tracker', () => {
     (root.querySelector('.track-chapter-summary') as HTMLElement).click();
     const first = root.querySelector('.track-row')!;
     expect(first.querySelector('.study-status-chip')!.textContent).toContain('Studied');
+  });
+});
+
+describe('Topics: Mark studied toggle on each row', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    __resetForTests();
+    location.hash = '';
+  });
+
+  function openFirstChapter(root: HTMLElement): void {
+    (root.querySelector('.track-subject-summary') as HTMLElement).click();
+    (root.querySelector('.track-chapter-summary') as HTMLElement).click();
+  }
+
+  it('ticks a topic studied, updates the counts, and untick undoes it', () => {
+    const root = document.createElement('div');
+    syllabus.render(root);
+    openFirstChapter(root);
+    const mark = root.querySelector<HTMLButtonElement>('.track-row-mark')!;
+    expect(mark.getAttribute('aria-pressed')).toBe('false');
+    expect(mark.textContent).toContain('Mark studied');
+    mark.click();
+
+    expect(isTopicStudied('hist-ancient-stone-age')).toBe(true);
+    expect(root.querySelector('.syll-studied-headline')!.textContent).toContain('Studied 1 of 117');
+    const after = root.querySelector<HTMLButtonElement>('.track-row-mark')!;
+    expect(after.classList.contains('is-studied')).toBe(true);
+    expect(after.getAttribute('aria-pressed')).toBe('true');
+    expect(root.querySelector('.track-row .study-status-chip')!.textContent).toContain('Studied');
+
+    after.click();
+    expect(isTopicStudied('hist-ancient-stone-age')).toBe(false);
+    expect(root.querySelector('.syll-studied-headline')!.textContent).toContain('Studied 0 of 117');
+    expect(root.querySelector('.track-row-mark')!.getAttribute('aria-pressed')).toBe('false');
+  });
+
+  it('the toggle does not open the topic (it sits beside the row button)', () => {
+    location.hash = '#/topics';
+    const root = document.createElement('div');
+    syllabus.render(root);
+    openFirstChapter(root);
+    const mark = root.querySelector<HTMLButtonElement>('.track-row-mark')!;
+    expect(mark.closest('.track-row')).toBeNull();
+    mark.click();
+    expect(location.hash).toBe('#/topics');
+  });
+
+  it('current affairs rows have no Mark studied toggle', () => {
+    const root = document.createElement('div');
+    syllabus.render(root);
+    const ca = root.querySelector<HTMLElement>('[data-anchor="CA"]')!;
+    (ca.querySelector('.track-subject-summary') as HTMLElement).click();
+    root.querySelector<HTMLElement>('[data-anchor="CA"]')!
+      .querySelectorAll<HTMLElement>('.track-chapter-summary')
+      .forEach((b) => b.click());
+    const caNow = root.querySelector<HTMLElement>('[data-anchor="CA"]')!;
+    expect(caNow.querySelectorAll('.track-row').length).toBeGreaterThan(0);
+    expect(caNow.querySelectorAll('.track-row-mark')).toHaveLength(0);
   });
 });

@@ -28,7 +28,7 @@ import { icon } from './components/icon';
 import { chip } from './components/chip';
 import { progressBar } from './components/progress';
 import { bandBadge, studyStatusChip } from './components/badges';
-import { topicStudyFrom, type StudyStatus } from '../lib/study-status';
+import { markTopicStudied, topicStudyFrom, type StudyStatus } from '../lib/study-status';
 import { caUpToDateLine, prelimsScope, studySummary, studiedLine } from '../lib/study-summary';
 import { openLearn } from './learn';
 import { navigate, routeQuery } from '../router/router';
@@ -285,7 +285,7 @@ function buildChapter(chapter: TaxonomyChapter, rerender: () => void): HTMLEleme
   const sum = summarize(rows);
   const open = expandedChapters.has(chapter.id);
 
-  const body = el('div', { class: 'track-chapter-body' }, rows.map(buildRow));
+  const body = el('div', { class: 'track-chapter-body' }, rows.map((r) => buildRow(r, rerender)));
   if (!open) body.style.display = 'none';
 
   const summary = el('button', {
@@ -306,8 +306,30 @@ function buildChapter(chapter: TaxonomyChapter, rerender: () => void): HTMLEleme
   return el('section', { class: open ? 'track-chapter open' : 'track-chapter', attrs: { 'data-anchor': chapter.id } }, [summary, body]);
 }
 
+/**
+ * One subtopic row plus its "Mark studied" toggle. The toggle sits beside the
+ * row button (a button can't hold a button). Current affairs has no toggle: it
+ * is a stream, never "studied". @internal
+ */
+function buildRow(row: Row, rerender: () => void): HTMLElement {
+  const main = buildRowButton(row);
+  if (row.meta.subjectCode === 'CA' || !row.hasMaterial) return el('div', { class: 'track-row-wrap' }, [main]);
+  const studied = row.study === 'studied';
+  const toggle = el('button', {
+    class: studied ? 'track-row-mark is-studied' : 'track-row-mark',
+    type: 'button',
+    ariaLabel: studied ? `Mark ${row.meta.name} as not studied` : `Mark ${row.meta.name} as studied`,
+    attrs: { 'aria-pressed': String(studied), title: studied ? 'Studied. Tap to undo' : 'Mark studied' },
+    onClick: () => {
+      markTopicStudied(row.meta.id, !studied);
+      rerender();
+    },
+  }, [icon('check', 16), el('span', { class: 'track-row-mark-text', text: studied ? 'Studied' : 'Mark studied' })]);
+  return el('div', { class: 'track-row-wrap' }, [main, toggle]);
+}
+
 /** Build one clickable subtopic row. @internal */
-function buildRow(row: Row): HTMLElement {
+function buildRowButton(row: Row): HTMLElement {
   return el('button', {
     class: row.hasMaterial ? 'track-row' : 'track-row is-empty',
     type: 'button',

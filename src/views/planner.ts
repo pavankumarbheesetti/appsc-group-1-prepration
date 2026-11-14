@@ -23,9 +23,9 @@ import { mockSectionPools } from '../lib/plan';
 import { mockSeriesLength } from '../engine/mock';
 import { PAPER_I, PAPER_II } from '../lib/exam-pattern';
 import { loadState } from '../state/store';
-import { subtopicMasteryPct } from '../lib/metrics';
 import { addDaysISO, dayOfWeekISO, daysToGo, diffDaysISO, todayISO } from '../lib/dates';
 import { isTopicStudied, studiedTopicIds, topicStudyFrom } from '../lib/study-status';
+import { prelimsScope } from '../lib/study-summary';
 import { el, mount, type Child } from './dom';
 import { card } from './components/card';
 import { chip } from './components/chip';
@@ -52,6 +52,7 @@ export function render(root: HTMLElement): void {
     buildRecoveryBanner(summary, planDayFor(plan, todayISO())),
     buildUnitHeader(plan),
     buildThisWeek(plan),
+    buildStudiedLeft(),
     buildRoadStrip(plan),
     buildAllWeeks(plan),
     buildPlanDetails(summary),
@@ -577,12 +578,64 @@ function stat(label: string, value: string): HTMLElement {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Studied vs left                                                             */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Every Prelims topic split into "Left" (in learning order, what the plan
+ * still schedules) and "Studied", one collapsible row per subject. Current
+ * affairs is a stream, so it is left out. @internal
+ */
+export function buildStudiedLeft(state = loadState()): HTMLElement {
+  const scope = prelimsScope().filter((s) => s.subjectCode !== 'CA');
+  const seq = getLearningSequence().subjects as Record<string, ReadonlyArray<{ id: string }>>;
+  const bySubject = new Map<string, string[]>();
+  for (const s of scope) {
+    const list = bySubject.get(s.subjectCode) ?? [];
+    list.push(s.id);
+    bySubject.set(s.subjectCode, list);
+  }
+  let studiedAll = 0;
+  const rows: HTMLElement[] = [];
+  for (const [code, ids] of bySubject) {
+    const rank = new Map((seq[code] ?? []).map((s, i) => [s.id, i]));
+    const ordered = [...ids].sort((a, b) => (rank.get(a) ?? 1e9) - (rank.get(b) ?? 1e9));
+    const studied = ordered.filter((id) => topicStudyFrom(state, id).status === 'studied');
+    const left = ordered.filter((id) => !studied.includes(id));
+    studiedAll += studied.length;
+    const pills = (list: string[], done: boolean): HTMLElement =>
+      el('div', { class: 'plan-sl-pills' }, list.map((id) =>
+        el('button', {
+          class: done ? 'plan-sl-pill is-done' : 'plan-sl-pill',
+          type: 'button',
+          ariaLabel: `Study ${getSubtopic(id)?.meta.name ?? id}${done ? ', studied' : ''}`,
+          onClick: () => openLearn(id),
+        }, [el('span', { text: `${getSubtopic(id)?.meta.name ?? id}${done ? ' \u2713' : ''}` })]),
+      ));
+    rows.push(el('details', { class: 'plan-sl-subject', attrs: { 'data-subject': code } }, [
+      el('summary', {}, [
+        el('span', { class: 'plan-subject-name', text: subjectName(code) }),
+        el('span', { class: 'plan-subject-count tnum', text: `${studied.length}/${ordered.length} studied` }),
+        el('span', { class: 'plan-subject-next', text: left.length > 0 ? `${left.length} left` : 'all done' }),
+      ]),
+      left.length > 0 ? el('p', { class: 'plan-sl-label', text: `Left (${left.length}), in study order` }) : null,
+      left.length > 0 ? pills(left, false) : null,
+      studied.length > 0 ? el('p', { class: 'plan-sl-label', text: `Studied (${studied.length})` }) : null,
+      studied.length > 0 ? pills(studied, true) : null,
+    ]));
+  }
+  return card({ title: `Studied and left \u00b7 ${studiedAll} of ${scope.length}` }, [
+    el('p', { class: 'section-lead', text: 'Mark topics studied on the Topics page. The plan then schedules only what is left.' }),
+    el('div', { class: 'plan-sl' }, rows),
+  ]);
+}
+
+/* -------------------------------------------------------------------------- */
 /* Per-subject progress                                                        */
 /* -------------------------------------------------------------------------- */
 
 /** Per-subject progress rows: "History 12/47 · next: Mauryan Empire". @internal */
 function buildSubjectProgress(summary: PlanSummary): HTMLElement {
-  const progress = loadState().progress;
   const seq = getLearningSequence();
   const rows: HTMLElement[] = [];
 
@@ -595,10 +648,7 @@ function buildSubjectProgress(summary: PlanSummary): HTMLElement {
     let nextName = '';
     for (const id of fallbackIds) {
       const view = getSubtopic(id);
-      const ids = view?.mcqs.map((m) => m.id) ?? [];
-      const done = ids.length > 0 && subtopicMasteryPct(progress, ids) > 0;
-      const seen = ids.some((mid) => (progress[mid]?.seen ?? 0) > 0);
-      if (done || seen) studied += 1;
+      if (isTopicStudied(id)) studied += 1;
       else if (nextName === '') nextName = view?.meta.name ?? id;
     }
     rows.push(el('div', { class: 'plan-subject-progress' }, [

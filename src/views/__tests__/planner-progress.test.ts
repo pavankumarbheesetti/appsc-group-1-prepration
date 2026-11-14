@@ -12,6 +12,7 @@ import { behindBanner, MIN_BLOCK_MIN, planDayFor, type PlanSummary } from '../..
 import { isTopicStudied, markTopicStudied } from '../../lib/study-status';
 import { __resetForTests, loadState, setPlanStartDate } from '../../state/store';
 import { addDaysISO, dayOfWeekISO } from '../../lib/dates';
+import { prelimsScope } from '../../lib/study-summary';
 
 const START = '2026-10-10';
 const at = (iso: string): Date => new Date(`${iso}T10:00:00`);
@@ -227,5 +228,54 @@ describe('Mains practice scope + revision-cycle labels + live behind count (N6/N
     expect(opts).not.toMatch(/exam date/i);
     expect(opts).toMatch(/quick pass/i);
     expect(opts).not.toMatch(/Saturday catch-up/);
+  });
+});
+
+describe('Plan: Studied and left card', () => {
+  const card = (root: HTMLElement): HTMLElement =>
+    [...root.querySelectorAll<HTMLElement>('.card')].find((c) => c.textContent?.includes('Studied and left'))!;
+
+  it('lists every Prelims topic as left on a fresh profile, in study order', () => {
+    const root = renderInto(planner);
+    const c = card(root);
+    expect(c.textContent).toContain('Studied and left \u00b7 0 of');
+    const hist = c.querySelector<HTMLElement>('[data-subject="HIST"]')!;
+    expect(hist.textContent).toContain('0/47 studied');
+    expect(hist.textContent).toContain('47 left');
+    const first = hist.querySelector('.plan-sl-pill')!;
+    expect(first.textContent).toBe('Stone Age');
+    expect(c.querySelector('[data-subject="CA"]')).toBeNull();
+  });
+
+  it('moves a marked topic to Studied and updates the counts', () => {
+    markTopicStudied('hist-ancient-stone-age', true, START);
+    const root = renderInto(planner);
+    const c = card(root);
+    expect(c.textContent).toContain('Studied and left \u00b7 1 of');
+    const hist = c.querySelector<HTMLElement>('[data-subject="HIST"]')!;
+    expect(hist.textContent).toContain('1/47 studied');
+    expect(hist.textContent).toContain('46 left');
+    const done = [...hist.querySelectorAll('.plan-sl-pill.is-done')].map((p) => p.textContent);
+    expect(done).toEqual(['Stone Age \u2713']);
+    const left = [...hist.querySelectorAll('.plan-sl-pill:not(.is-done)')].map((p) => p.textContent);
+    expect(left).not.toContain('Stone Age');
+  });
+
+  it('"Where each subject stands" counts a hand-marked topic as studied', () => {
+    markTopicStudied('hist-ancient-stone-age', true, START);
+    const root = renderInto(planner);
+    const row = [...root.querySelectorAll<HTMLElement>('.plan-subject-progress')].find((r) => r.textContent?.includes('History'));
+    expect(row?.querySelector('.plan-subject-count')?.textContent).toMatch(/^1\//);
+  });
+
+  it('shows "all done" when every topic of a subject is studied', () => {
+    const geo = prelimsScope().filter((s) => s.subjectCode === 'GEO').map((s) => s.id);
+    expect(geo.length).toBeGreaterThan(0);
+    for (const id of geo) markTopicStudied(id, true, START);
+    const root = renderInto(planner);
+    const g = card(root).querySelector<HTMLElement>('[data-subject="GEO"]')!;
+    expect(g.textContent).toContain('all done');
+    expect(g.textContent).not.toContain('Left (');
+    expect(g.querySelectorAll('.plan-sl-pill:not(.is-done)')).toHaveLength(0);
   });
 });
