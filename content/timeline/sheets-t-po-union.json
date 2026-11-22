@@ -1,0 +1,682 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-union",
+   "part": "Polity",
+   "title": "Union executive and Parliament",
+   "order": 5,
+   "intro": "President, VP, PM, AG, Houses, membership, bills, officers, devices, budget, committees.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "un-pres-el",
+     "name": "President – election and office",
+     "tag": "President",
+     "rows": [
+      {
+       "k": "Arts",
+       "v": "52 office; 53 executive power; 54 – 55 election; 56 term 5 yrs; 57 re-election"
+      },
+      {
+       "k": "College",
+       "v": "Elected MPs + elected MLAs incl. Delhi, Puducherry (70th, 1992); not nominated, not MLCs"
+      },
+      {
+       "k": "Vote value",
+       "v": "MLA = population (1971) ÷ MLAs ÷ 1,000; MP = all MLA votes ÷ MPs"
+      },
+      {
+       "k": "Method",
+       "v": "PR by STV, secret ballot"
+      },
+      {
+       "k": "Art 58",
+       "v": "Citizen, 35, fit for Lok Sabha, no office of profit"
+      },
+      {
+       "k": "Oath",
+       "v": "CJI (Art 60); resigns to Vice-President"
+      },
+      {
+       "k": "Disputes",
+       "v": "Supreme Court (Art 71)"
+      },
+      {
+       "k": "Immunity",
+       "v": "Art 361 – no criminal case in term"
+      }
+     ]
+    },
+    {
+     "id": "un-pres-rm",
+     "name": "President – impeachment and vacancy",
+     "tag": "President",
+     "rows": [
+      {
+       "k": "Art 61",
+       "v": "Only \"violation of the Constitution\"; 1/4 members sign, 14 days' notice; 2/3 of total in each House"
+      },
+      {
+       "k": "Who votes",
+       "v": "Nominated MPs yes; MLAs no"
+      },
+      {
+       "k": "Art 62",
+       "v": "Casual vacancy filled in 6 months; full new term"
+      },
+      {
+       "k": "Acting",
+       "v": "Vice-President (Art 65); then CJI – Hidayatullah 1969"
+      },
+      {
+       "k": "Record",
+       "v": "No President impeached"
+      }
+     ]
+    },
+    {
+     "id": "un-pres-pw",
+     "name": "President – powers",
+     "tag": "President",
+     "rows": [
+      {
+       "k": "Art 74",
+       "v": "Advice binding (42nd); may return once (44th)"
+      },
+      {
+       "k": "Veto (111)",
+       "v": "Ordinary – absolute, suspensive, pocket; Money – no return; Amendment – must assent (24th)"
+      },
+      {
+       "k": "Absolute veto used",
+       "v": "Rajendra Prasad 1954 (PEPSU); R. Venkataraman 1991"
+      },
+      {
+       "k": "Art 123 ordinance",
+       "v": "House not sitting; lapses 6 weeks after reassembly (max 6 months 6 weeks); no amendment of Constitution"
+      },
+      {
+       "k": "Ordinance cases",
+       "v": "R.C. Cooper 1970; 38th made final, 44th undid; D.C. Wadhwa 1987, Krishna Kumar Singh 2017 – re-promulgation fraud"
+      },
+      {
+       "k": "Art 72 pardon",
+       "v": "Union law, court-martial, death; pardon, commutation, remission, respite, reprieve"
+      },
+      {
+       "k": "Pardon cases",
+       "v": "Maru Ram 1980; Kehar Singh 1989; Epuru Sudhakar 2006 (AP)"
+      },
+      {
+       "k": "Governor (161)",
+       "v": "No court-martial, no death pardon"
+      },
+      {
+       "k": "Discretion",
+       "v": "Hung House (1979 Charan Singh); return advice once"
+      }
+     ],
+     "traps": [
+      "No veto on Amendment Bill; no return of Money Bill"
+     ]
+    },
+    {
+     "id": "un-pres-list",
+     "name": "Presidents to remember",
+     "years": {
+      "from": 1950,
+      "to": 2022
+     },
+     "tag": "President",
+     "rows": [
+      {
+       "k": "Rajendra Prasad",
+       "v": "First; two full terms"
+      },
+      {
+       "k": "Zakir Husain",
+       "v": "First Muslim; died in office 1969"
+      },
+      {
+       "k": "V.V. Giri",
+       "v": "Acting, then President"
+      },
+      {
+       "k": "Neelam Sanjiva Reddy",
+       "v": "Unopposed 1977; first AP CM"
+      },
+      {
+       "k": "K.R. Narayanan",
+       "v": "First Dalit"
+      },
+      {
+       "k": "Pratibha Patil",
+       "v": "First woman"
+      },
+      {
+       "k": "Droupadi Murmu",
+       "v": "15th, from 25 July 2022; first tribal woman"
+      }
+     ]
+    },
+    {
+     "id": "un-vp",
+     "name": "Vice-President",
+     "tag": "Executive",
+     "rows": [
+      {
+       "k": "Arts",
+       "v": "63 – 71; Art 64 ex-officio RS Chairman"
+      },
+      {
+       "k": "College",
+       "v": "All MPs (elected + nominated), no MLAs; joint meeting not needed (11th, 1961)"
+      },
+      {
+       "k": "Qualify",
+       "v": "Citizen, 35, fit for Rajya Sabha; 20 proposers + 20 seconders"
+      },
+      {
+       "k": "Oath, resignation",
+       "v": "President"
+      },
+      {
+       "k": "Removal 67(b)",
+       "v": "RS effective majority, 14 days; LS simple majority; no ground"
+      },
+      {
+       "k": "Acting President",
+       "v": "Up to 6 months; then not RS chair"
+      },
+      {
+       "k": "Salary",
+       "v": "As RS Chairman"
+      }
+     ],
+     "traps": [
+      "President resigns to VP; VP resigns to President"
+     ]
+    },
+    {
+     "id": "un-pm",
+     "name": "Prime Minister and Council",
+     "tag": "Executive",
+     "rows": [
+      {
+       "k": "Art 75",
+       "v": "PM appointed by President; non-member 6 months; either House (RS PMs – Indira 1966, Deve Gowda, Gujral, Manmohan)"
+      },
+      {
+       "k": "Art 78",
+       "v": "PM informs President of Cabinet decisions"
+      },
+      {
+       "k": "75(1A)",
+       "v": "Ministers ≤ 15% of LS (91st, 2003); 75(1B) defectors barred"
+      },
+      {
+       "k": "75(3)",
+       "v": "Collective responsibility to Lok Sabha"
+      },
+      {
+       "k": "74(2)",
+       "v": "Courts cannot ask what advice was given"
+      },
+      {
+       "k": "Art 77",
+       "v": "Action in President's name"
+      },
+      {
+       "k": "Art 88",
+       "v": "Ministers, AG speak in either House; vote where members"
+      },
+      {
+       "k": "Tiers",
+       "v": "Cabinet, MoS, Deputy Ministers"
+      },
+      {
+       "k": "Cabinet word",
+       "v": "Only in Art 352 (44th, 1978)"
+      },
+      {
+       "k": "Committees",
+       "v": "Political Affairs (\"super cabinet\"), Economic, Appointments, Security, Parliamentary Affairs"
+      },
+      {
+       "k": "PM chairs",
+       "v": "NITI Aayog, Inter-State Council, NIC, Water Resources Council"
+      }
+     ],
+     "traps": [
+      "Council = wide body; Cabinet = core"
+     ]
+    },
+    {
+     "id": "un-ag",
+     "name": "Attorney General",
+     "tag": "Executive",
+     "rows": [
+      {
+       "k": "Art 76",
+       "v": "Qualified as SC judge"
+      },
+      {
+       "k": "Term",
+       "v": "President's pleasure; no fixed term"
+      },
+      {
+       "k": "Rights",
+       "v": "Audience in all courts; speaks in Parliament, no vote"
+      },
+      {
+       "k": "Status",
+       "v": "Not in Cabinet; private practice allowed (not vs govt)"
+      }
+     ]
+    },
+    {
+     "id": "un-houses",
+     "name": "Lok Sabha and Rajya Sabha",
+     "tag": "Parliament",
+     "rows": [
+      {
+       "k": "RS (Art 80)",
+       "v": "Max 250 (238 + 12 nominated); now 245; STV, open ballot since 2003; Fourth Schedule (UP 31)"
+      },
+      {
+       "k": "LS (Art 81)",
+       "v": "Max 552 (530 + 20 + 2 Anglo-Indian till 2020); now 543; FPTP"
+      },
+      {
+       "k": "Term (83)",
+       "v": "LS 5 yrs (+1 yr at a time in emergency); RS permanent, 1/3 retire every 2 yrs, 6-yr members"
+      },
+      {
+       "k": "Age (84)",
+       "v": "RS 30; LS 25"
+      },
+      {
+       "k": "UTs in RS",
+       "v": "Delhi, Puducherry, J&K"
+      },
+      {
+       "k": "AP",
+       "v": "25 LS, 11 RS"
+      },
+      {
+       "k": "Delimitation",
+       "v": "Seats frozen on 1971 census till after 2026 (42nd, 84th); boundaries on 2001 (87th)"
+      },
+      {
+       "k": "Reservation",
+       "v": "SC/ST Art 330; women 1/3 – 106th 2023, Art 330A, after census, 15 yrs"
+      },
+      {
+       "k": "Only LS",
+       "v": "No-confidence, Money Bill start"
+      },
+      {
+       "k": "Only RS",
+       "v": "Art 249, Art 312"
+      }
+     ]
+    },
+    {
+     "id": "un-member",
+     "name": "Membership and disqualification",
+     "tag": "Parliament",
+     "rows": [
+      {
+       "k": "Art 102",
+       "v": "Office of profit, unsound mind, insolvent, non-citizen, by law"
+      },
+      {
+       "k": "RPA",
+       "v": "2+ years' jail; Lily Thomas 2013 struck Sec 8(4)"
+      },
+      {
+       "k": "Art 103",
+       "v": "President decides on EC opinion (binding)"
+      },
+      {
+       "k": "Tenth Schedule (52nd, 1985)",
+       "v": "Leaving party, defying whip, independent joins, nominated joins after 6 months; 2/3 merger exempt; split clause deleted (91st)"
+      },
+      {
+       "k": "Defection cases",
+       "v": "Kihoto Hollohan 1992 (review); Keisham Meghachandra 2020 (~3 months)"
+      },
+      {
+       "k": "Art 101",
+       "v": "Double membership; 60 days' absence"
+      },
+      {
+       "k": "Art 105",
+       "v": "Speech, vote immunity; arrest-free in civil cases 40 days around session; Sita Soren 2024 – no bribery immunity (overruled 1998 Narasimha Rao)"
+      },
+      {
+       "k": "Domicile for RS",
+       "v": "Dropped 2003 (Kuldip Nayar 2006)"
+      }
+     ],
+     "traps": [
+      "Art 102 → President; Tenth Schedule → Speaker / Chairman"
+     ]
+    },
+    {
+     "id": "un-bills",
+     "name": "Bills and joint sitting",
+     "tag": "Parliament",
+     "hook": "Dowry, Banking, POTA",
+     "rows": [
+      {
+       "k": "Art 107",
+       "v": "Ordinary – either House; survives prorogation"
+      },
+      {
+       "k": "Art 110",
+       "v": "Money Bill – tax, borrowing, Consolidated / Contingency Fund, appropriation; not fines or fees"
+      },
+      {
+       "k": "Art 109",
+       "v": "LS only, President's recommendation; RS 14 days, recommend only"
+      },
+      {
+       "k": "Speaker",
+       "v": "Certificate final; Aadhaar (Puttaswamy 2018); Rojer Mathew 2019 to larger bench"
+      },
+      {
+       "k": "Art 117",
+       "v": "Financial Bills – 117(1) LS only; 117(3) either House"
+      },
+      {
+       "k": "Art 368",
+       "v": "Amendment – special majority; no joint sitting"
+      },
+      {
+       "k": "Art 108 joint sitting",
+       "v": "Speaker presides; simple majority"
+      },
+      {
+       "k": "Held",
+       "v": "Dowry 1961, Banking Service Commission 1978, POTA 2002"
+      }
+     ]
+    },
+    {
+     "id": "un-officers",
+     "name": "Presiding officers",
+     "tag": "Parliament",
+     "rows": [
+      {
+       "k": "Speaker (93 – 96)",
+       "v": "Money Bill certificate; Tenth Schedule; joint sitting; casting vote only; stays till new House meets; resigns to Deputy"
+      },
+      {
+       "k": "Removal",
+       "v": "Effective majority, 14 days; during it votes first instance, no casting vote"
+      },
+      {
+       "k": "Deputy Speaker",
+       "v": "Vacant since 2019"
+      },
+      {
+       "k": "Pro tem",
+       "v": "Senior-most; swears in (Bhartruhari Mahtab 2024)"
+      },
+      {
+       "k": "Panel",
+       "v": "Up to 10 chairpersons"
+      },
+      {
+       "k": "RS",
+       "v": "Chairman = VP; Deputy Chairman Harivansh (since 2018)"
+      },
+      {
+       "k": "LoP",
+       "v": "1/10 seats; statutory 1977; LS Rahul Gandhi (June 2024); RS Mallikarjun Kharge"
+      },
+      {
+       "k": "Leader of House",
+       "v": "LS – PM; RS – J.P. Nadda"
+      }
+     ]
+    },
+    {
+     "id": "un-session",
+     "name": "Sessions and lapse of bills",
+     "tag": "Parliament",
+     "hook": "Adjourn, prorogue, dissolve",
+     "rows": [
+      {
+       "k": "Art 85",
+       "v": "Gap ≤ 6 months; Budget, Monsoon, Winter"
+      },
+      {
+       "k": "Ladder",
+       "v": "Adjournment (presiding officer) → prorogation (President) → dissolution (LS only)"
+      },
+      {
+       "k": "Lapse",
+       "v": "Bills pending in LS; LS-passed bills pending in RS"
+      },
+      {
+       "k": "Survive",
+       "v": "RS bills not passed by LS; joint-sitting bills; bills awaiting assent or returned"
+      },
+      {
+       "k": "Art 100",
+       "v": "Quorum 1/10"
+      },
+      {
+       "k": "New building",
+       "v": "28 May 2023"
+      }
+     ]
+    },
+    {
+     "id": "un-devices",
+     "name": "Parliamentary devices",
+     "tag": "Parliament",
+     "rows": [
+      {
+       "k": "Question Hour",
+       "v": "Starred (oral, supplementaries); unstarred (written); short-notice (<10 days)"
+      },
+      {
+       "k": "Zero Hour",
+       "v": "1962; not in rules"
+      },
+      {
+       "k": "Calling attention",
+       "v": "1954; in rules"
+      },
+      {
+       "k": "Adjournment motion",
+       "v": "LS only; 50 members; censure element; 2.5 hrs"
+      },
+      {
+       "k": "No-confidence",
+       "v": "Rule 198; 50 members; no reasons; first – Kripalani vs Nehru 1963"
+      },
+      {
+       "k": "Censure",
+       "v": "States reasons; may target one minister"
+      },
+      {
+       "k": "Rule 193",
+       "v": "Short-duration discussion"
+      },
+      {
+       "k": "Rule 377 / Special Mention",
+       "v": "LS / RS"
+      },
+      {
+       "k": "Closures",
+       "v": "Simple, compartments, kangaroo, guillotine"
+      },
+      {
+       "k": "Lost confidence",
+       "v": "V.P. Singh 1990; Deve Gowda 1997; Vajpayee 1999 (one vote)"
+      }
+     ],
+     "traps": [
+      "Adjournment motion ≠ adjournment of the House"
+     ]
+    },
+    {
+     "id": "un-budget",
+     "name": "Budget articles",
+     "years": {
+      "from": 1924,
+      "to": 2026
+     },
+     "tag": "Money",
+     "rows": [
+      {
+       "k": "Art 112",
+       "v": "Annual Financial Statement (\"budget\" not used)"
+      },
+      {
+       "k": "Art 113",
+       "v": "Charged – discussed, not voted; demands need President's recommendation"
+      },
+      {
+       "k": "Art 114",
+       "v": "Appropriation Bill – no change of amount"
+      },
+      {
+       "k": "Art 115",
+       "v": "Supplementary, additional, excess grants"
+      },
+      {
+       "k": "Art 116",
+       "v": "Vote on account, credit, exceptional grant"
+      },
+      {
+       "k": "Arts 265 – 267",
+       "v": "Tax by law; Consolidated Fund, Public Account; Contingency Fund (₹30,000 cr, Finance Secretary)"
+      },
+      {
+       "k": "Stages",
+       "v": "Presentation, general discussion, committees, demands (LS only), Appropriation, Finance Bill (75 days; 1931 Act)"
+      },
+      {
+       "k": "Cut motions",
+       "v": "Policy (₹1), Economy (sum), Token (₹100); guillotine"
+      },
+      {
+       "k": "Dates",
+       "v": "1 Feb since 2017; Railway merged 2017 (separate since Acworth 1924); first – R.K. Shanmukham Chetty 26 Nov 1947"
+      }
+     ],
+     "traps": [
+      "Appropriation Bill spends; Finance Bill taxes"
+     ]
+    },
+    {
+     "id": "un-cttee",
+     "name": "Parliamentary committees",
+     "years": {
+      "from": 1921,
+      "to": 2004
+     },
+     "tag": "Money",
+     "hook": "PAC looks back, Estimates ahead",
+     "rows": [
+      {
+       "k": "PAC",
+       "v": "22 (15 + 7); 1921; examines CAG reports"
+      },
+      {
+       "k": "Estimates",
+       "v": "30, LS only; 1950 (John Mathai); largest"
+      },
+      {
+       "k": "Public Undertakings",
+       "v": "22; 1964 (Krishna Menon)"
+      },
+      {
+       "k": "DRSCs",
+       "v": "1993; 24 since 2004 (16 LS + 8 RS); 31 each"
+      },
+      {
+       "k": "Others",
+       "v": "Petitions; Privileges; Ethics (RS 1997, LS 2000); Assurances; Subordinate Legislation; SC/ST welfare (30, 1968); Women (1997); Offices of Profit (15)"
+      },
+      {
+       "k": "Ad hoc",
+       "v": "Select; JPC (Bofors 1987, Harshad Mehta 1992)"
+      },
+      {
+       "k": "Not parliamentary",
+       "v": "Consultative Committees"
+      }
+     ]
+    },
+    {
+     "id": "un-mplads",
+     "name": "MPLADS and personnel",
+     "years": {
+      "from": 1993,
+      "to": 2022
+     },
+     "tag": "Money",
+     "rows": [
+      {
+       "k": "MPLADS",
+       "v": "23 Dec 1993; MoSPI since Oct 1994"
+      },
+      {
+       "k": "Amount",
+       "v": "₹5 crore per MP per year (2011-12); suspended 2020 – 22"
+      },
+      {
+       "k": "Earmark",
+       "v": "15% SC, 7.5% ST areas"
+      },
+      {
+       "k": "Rules",
+       "v": "Durable assets; non-lapsable; district inspects 10%; ₹25 lakh outside state"
+      },
+      {
+       "k": "Dept of Personnel",
+       "v": "1970 under PM (Gopalaswami Ayyangar; ARC 1966) → DoPT"
+      }
+     ]
+    },
+    {
+     "id": "un-system",
+     "name": "Parliamentary system vs Britain",
+     "tag": "Parliament",
+     "rows": [
+      {
+       "k": "India",
+       "v": "Elected head; Parliament not sovereign; PM from either House; non-member minister 6 months; no shadow cabinet"
+      },
+      {
+       "k": "Britain",
+       "v": "Monarch; sovereign Parliament; PM from Commons; ministers countersign"
+      },
+      {
+       "k": "Forums",
+       "v": "First 2005 (water); 8 forums, Speaker presides (Population – RS Chairman)"
+      },
+      {
+       "k": "IPG",
+       "v": "1949; IPU national group; Speaker heads"
+      },
+      {
+       "k": "Art 361A",
+       "v": "Media reports of proceedings protected (44th)"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
