@@ -1,0 +1,552 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-features",
+   "part": "Polity",
+   "title": "Salient features, Preamble, Parts and Schedules",
+   "order": 2,
+   "intro": "Features, federal-unitary mix, Preamble words and cases, Parts, Schedules, writs.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "pf-size",
+     "name": "Size and form",
+     "tag": "Features",
+     "rows": [
+      {
+       "k": "Written",
+       "v": "Yes (UK unwritten)"
+      },
+      {
+       "k": "1949",
+       "v": "Preamble, 395 Articles, 22 Parts, 8 Schedules"
+      },
+      {
+       "k": "Now",
+       "v": "~448 Articles (470 with lettered), 25 Parts, 12 Schedules (Oct 2024)"
+      },
+      {
+       "k": "Amendments",
+       "v": "106 by 2023 (women's reservation)"
+      },
+      {
+       "k": "Why long",
+       "v": "Diversity, 1935 Act, one constitution for all, lawyers in Assembly"
+      }
+     ]
+    },
+    {
+     "id": "pf-amend",
+     "name": "Rigid yet flexible",
+     "tag": "Features",
+     "rows": [
+      {
+       "k": "Special majority",
+       "v": "Majority of total + 2/3 present and voting (Art 368)"
+      },
+      {
+       "k": "Plus states",
+       "v": "Above + half the state legislatures (federal matters)"
+      },
+      {
+       "k": "Simple majority",
+       "v": "Ordinary law, outside Art 368"
+      }
+     ],
+     "traps": [
+      "Special majority (368) ≠ simple majority"
+     ]
+    },
+    {
+     "id": "pf-fed",
+     "name": "Federal with unitary bias",
+     "tag": "Features",
+     "rows": [
+      {
+       "k": "Federal",
+       "v": "Two governments, division of powers, written, supreme, rigid, independent courts, bicameral"
+      },
+      {
+       "k": "Unitary",
+       "v": "Strong Centre, one constitution, single citizenship, integrated judiciary, Governors by Centre, AIS, emergencies"
+      },
+      {
+       "k": "Art 1",
+       "v": "\"Union of States\" – no agreement, no secession; word \"Federation\" absent"
+      },
+      {
+       "k": "Labels",
+       "v": "Wheare – quasi-federal; Austin – co-operative; Morris-Jones – bargaining; Jennings – strong centralising tendency"
+      }
+     ],
+     "traps": [
+      "Quasi-federal Wheare; co-operative Austin; bargaining Morris-Jones"
+     ]
+    },
+    {
+     "id": "pf-parl",
+     "name": "Parliamentary system",
+     "tag": "Features",
+     "rows": [
+      {
+       "k": "Model",
+       "v": "Westminster / cabinet / responsible government, Centre and states"
+      },
+      {
+       "k": "Unlike UK",
+       "v": "Parliament not sovereign; elected head of state"
+      },
+      {
+       "k": "Synthesis",
+       "v": "Parliamentary sovereignty + judicial supremacy"
+      },
+      {
+       "k": "Art 21",
+       "v": "Procedure established by law (Japan), not due process (USA)"
+      },
+      {
+       "k": "Liberty safeguard",
+       "v": "Separation of powers (UPSC 2021)"
+      }
+     ]
+    },
+    {
+     "id": "pf-bodies",
+     "name": "Independent bodies and emergencies",
+     "tag": "Features",
+     "rows": [
+      {
+       "k": "Bodies",
+       "v": "Election Commission, CAG, UPSC (advises President), State PSC (advises Governor)"
+      },
+      {
+       "k": "Not one",
+       "v": "NITI Aayog – Cabinet resolution 2015"
+      },
+      {
+       "k": "National Emergency",
+       "v": "Art 352 – war, aggression, armed rebellion"
+      },
+      {
+       "k": "President's Rule",
+       "v": "Arts 356, 365"
+      },
+      {
+       "k": "Financial",
+       "v": "Art 360"
+      }
+     ],
+     "traps": [
+      "NITI Aayog is not constitutional"
+     ]
+    },
+    {
+     "id": "pf-other",
+     "name": "Other features",
+     "tag": "Features",
+     "rows": [
+      {
+       "k": "Secular",
+       "v": "Positive – equal respect; word added 1976"
+      },
+      {
+       "k": "Franchise",
+       "v": "Art 326; 21 → 18 by 61st Amendment 1988 (in force 1989)"
+      },
+      {
+       "k": "Citizenship",
+       "v": "Single; naturalised citizen can be head of state"
+      },
+      {
+       "k": "Three tiers",
+       "v": "73rd, 74th Amendments 1992"
+      },
+      {
+       "k": "Judiciary",
+       "v": "Integrated, independent; SC = guardian"
+      },
+      {
+       "k": "Rights / duties",
+       "v": "FRs justiciable; DPSP and duties not"
+      }
+     ]
+    },
+    {
+     "id": "pf-critic",
+     "name": "Criticism of the Constitution",
+     "tag": "Features",
+     "rows": [
+      {
+       "k": "Borrowed",
+       "v": "Lokanath Misra – \"slavish imitation of the West\""
+      },
+      {
+       "k": "1935 copy",
+       "v": "Only admin frame taken"
+      },
+      {
+       "k": "Un-Gandhian",
+       "v": "K. Hanumanthaiya – \"veena or sitar … English band\""
+      },
+      {
+       "k": "Size, lawyers",
+       "v": "Ivor Jennings – too long, rigid; \"paradise for lawyers\""
+      }
+     ]
+    },
+    {
+     "id": "pf-pre-text",
+     "name": "Preamble text",
+     "years": {
+      "from": 1946,
+      "to": 1949
+     },
+     "tag": "Preamble",
+     "rows": [
+      {
+       "k": "Source",
+       "v": "\"We, the people of India\""
+      },
+      {
+       "k": "Nature",
+       "v": "Sovereign Socialist Secular Democratic Republic"
+      },
+      {
+       "k": "Justice",
+       "v": "Social, economic, political (3)"
+      },
+      {
+       "k": "Liberty",
+       "v": "Thought, expression, belief, faith, worship (5) – no \"economic liberty\""
+      },
+      {
+       "k": "Equality",
+       "v": "Status, opportunity (2)"
+      },
+      {
+       "k": "Fraternity",
+       "v": "Dignity of individual; unity and integrity of the Nation"
+      },
+      {
+       "k": "Date",
+       "v": "26 Nov 1949"
+      },
+      {
+       "k": "Basis",
+       "v": "Objectives Resolution (Nehru)"
+      }
+     ],
+     "traps": [
+      "Preamble has no \"economic liberty\"; economic content is in Justice"
+     ]
+    },
+    {
+     "id": "pf-pre-42",
+     "name": "42nd Amendment and Preamble",
+     "years": {
+      "from": 1976,
+      "to": 2024
+     },
+     "tag": "Preamble",
+     "rows": [
+      {
+       "k": "1976",
+       "v": "Added Socialist, Secular, \"and integrity\""
+      },
+      {
+       "k": "Before",
+       "v": "Sovereign Democratic Republic (1950)"
+      },
+      {
+       "k": "Balram Singh 2024",
+       "v": "SC upheld the 1976 words"
+      },
+      {
+       "k": "Bommai 1994",
+       "v": "Secularism is basic structure"
+      },
+      {
+       "k": "Meanings",
+       "v": "Socialist – democratic, mixed economy; Republic – elected head"
+      }
+     ]
+    },
+    {
+     "id": "pf-pre-src",
+     "name": "Preamble sources and praise",
+     "tag": "Preamble",
+     "rows": [
+      {
+       "k": "Sources",
+       "v": "\"We the people\" – USA; Justice – Russian Revolution; Liberty, Equality, Fraternity – French Revolution"
+      },
+      {
+       "k": "Munshi",
+       "v": "\"Horoscope of our sovereign democratic republic\""
+      },
+      {
+       "k": "Thakur Das Bhargava",
+       "v": "\"Soul\", \"jewel\", \"yardstick\""
+      },
+      {
+       "k": "Ernest Barker",
+       "v": "\"Key-note to the Constitution\""
+      },
+      {
+       "k": "Palkhivala",
+       "v": "\"Identity card of the Constitution\""
+      },
+      {
+       "k": "Hidayatullah",
+       "v": "Like US Declaration but more; \"soul\""
+      },
+      {
+       "k": "Alladi",
+       "v": "\"What we had thought or dreamt\""
+      }
+     ]
+    },
+    {
+     "id": "pf-pre-case",
+     "name": "Is the Preamble part of the Constitution?",
+     "years": {
+      "from": 1960,
+      "to": 1995
+     },
+     "tag": "Preamble",
+     "rows": [
+      {
+       "k": "Berubari 1960",
+       "v": "Art 143 reference; \"key to the mind of the makers\" – not a part"
+      },
+      {
+       "k": "Kesavananda 1973",
+       "v": "Is a part; amendable but not basic features"
+      },
+      {
+       "k": "LIC 1995",
+       "v": "Integral part; not directly enforceable"
+      },
+      {
+       "k": "Status",
+       "v": "Not source of power, not a limit; non-justiciable"
+      }
+     ],
+     "traps": [
+      "Part of the Constitution ≠ enforceable"
+     ]
+    },
+    {
+     "id": "pf-parts",
+     "name": "Parts of the Constitution",
+     "tag": "Structure",
+     "rows": [
+      {
+       "k": "I (1 – 4)",
+       "v": "Union, territory"
+      },
+      {
+       "k": "II (5 – 11)",
+       "v": "Citizenship"
+      },
+      {
+       "k": "III (12 – 35)",
+       "v": "Fundamental Rights"
+      },
+      {
+       "k": "IV (36 – 51), IVA (51A)",
+       "v": "DPSP; Duties"
+      },
+      {
+       "k": "V (52 – 151)",
+       "v": "Union – executive 52 – 78, Parliament 79 – 122, SC 124 – 147, CAG"
+      },
+      {
+       "k": "VI (152 – 237)",
+       "v": "States"
+      },
+      {
+       "k": "VII",
+       "v": "Part B states – repealed 1956"
+      },
+      {
+       "k": "VIII (239 – 242)",
+       "v": "UTs"
+      },
+      {
+       "k": "IX, IXA, IXB",
+       "v": "Panchayats 243 – 243O; Municipalities 243P – ZG; Co-operatives 243ZH – ZT"
+      },
+      {
+       "k": "X (244 – 244A)",
+       "v": "Scheduled, tribal areas"
+      },
+      {
+       "k": "XI (245 – 263)",
+       "v": "Union – state relations"
+      },
+      {
+       "k": "XII (264 – 300A)",
+       "v": "Finance, property"
+      },
+      {
+       "k": "XIII (301 – 307)",
+       "v": "Trade (Australia)"
+      },
+      {
+       "k": "XIV, XIVA (308 – 323B)",
+       "v": "Services; Tribunals"
+      },
+      {
+       "k": "XV (324 – 329A)",
+       "v": "Elections"
+      },
+      {
+       "k": "XVI (330 – 342)",
+       "v": "SC, ST, Anglo-Indians"
+      },
+      {
+       "k": "XVII (343 – 351)",
+       "v": "Official language"
+      },
+      {
+       "k": "XVIII (352 – 360)",
+       "v": "Emergency"
+      },
+      {
+       "k": "XIX – XXII",
+       "v": "Misc 361 – 367; Amendment 368; Temporary 369 – 392 (371D, 371E for AP); Short title 393 – 395"
+      }
+     ],
+     "traps": [
+      "Added parts: IVA, IXA, IXB, XIVA"
+     ]
+    },
+    {
+     "id": "pf-sched",
+     "name": "Schedules",
+     "tag": "Structure",
+     "rows": [
+      {
+       "k": "1st",
+       "v": "States and UTs (Arts 1, 4)"
+      },
+      {
+       "k": "2nd",
+       "v": "Salaries – President, Governors, judges, CAG"
+      },
+      {
+       "k": "3rd",
+       "v": "Oaths"
+      },
+      {
+       "k": "4th",
+       "v": "Rajya Sabha seats (4, 80)"
+      },
+      {
+       "k": "5th",
+       "v": "Scheduled Areas, STs (244(1))"
+      },
+      {
+       "k": "6th",
+       "v": "Tribal areas – Assam, Meghalaya, Tripura, Mizoram (244(2), 275(1))"
+      },
+      {
+       "k": "7th",
+       "v": "Union, State, Concurrent Lists (246)"
+      },
+      {
+       "k": "8th",
+       "v": "22 languages (originally 14)"
+      },
+      {
+       "k": "9th",
+       "v": "Land laws (31B) – 1st Amendment 1951"
+      },
+      {
+       "k": "10th",
+       "v": "Anti-defection (102, 191) – 52nd Amendment 1985"
+      },
+      {
+       "k": "11th",
+       "v": "29 panchayat subjects (243G) – 73rd"
+      },
+      {
+       "k": "12th",
+       "v": "18 municipal subjects (243W) – 74th"
+      },
+      {
+       "k": "Origin",
+       "v": "Idea from 1935 Act (10 schedules)"
+      }
+     ]
+    },
+    {
+     "id": "pf-writs",
+     "name": "Writs and remedies",
+     "tag": "Rights",
+     "rows": [
+      {
+       "k": "Habeas Corpus",
+       "v": "\"You may have the body\" – unlawful detention"
+      },
+      {
+       "k": "Mandamus",
+       "v": "\"We command\" – do a public duty"
+      },
+      {
+       "k": "Prohibition",
+       "v": "\"To forbid\" – stop lower court before order"
+      },
+      {
+       "k": "Certiorari",
+       "v": "\"To be certified\" – quash order made"
+      },
+      {
+       "k": "Quo Warranto",
+       "v": "\"By what authority\" – right to office"
+      },
+      {
+       "k": "Base",
+       "v": "Art 32 (SC), Art 226 (HC)"
+      }
+     ],
+     "traps": [
+      "Prohibition before; Certiorari after"
+     ]
+    },
+    {
+     "id": "pf-coop",
+     "name": "97th Amendment – co-operatives",
+     "years": {
+      "from": 2011,
+      "to": 2011
+     },
+     "tag": "Rights",
+     "rows": [
+      {
+       "k": "Year",
+       "v": "2011"
+      },
+      {
+       "k": "FR",
+       "v": "Right to form co-operatives under Art 19"
+      },
+      {
+       "k": "DPSP",
+       "v": "Art 43B"
+      },
+      {
+       "k": "Part IXB",
+       "v": "Arts 243ZH – 243ZT"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
