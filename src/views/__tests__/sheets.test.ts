@@ -73,10 +73,10 @@ describe('revision sheets pages', () => {
   });
 
   it('shows one table row per key, oldest first, and covers values', () => {
-    const root = open('#/revise/sheets/s-mughal', renderSheet);
+    const root = open('#/revise/sheets/mughal-maratha', renderSheet);
     const names = [...root.querySelectorAll('.sh-tk-name')].map((n) => n.textContent);
-    expect(names).toContain('Akbar');
-    expect(names.indexOf('Babur')).toBeLessThan(names.indexOf('Akbar'));
+    expect(names).toContain('Babur');
+    expect(names.indexOf('Babur')).toBeLessThan(names.indexOf('Shivaji'));
     expect(root.querySelector('.sh-td-h')?.textContent).toBeTruthy();
     const cover = [...root.querySelectorAll<HTMLButtonElement>('.sh-tool')].find((b) => b.textContent?.includes('Cover'))!;
     cover.click();
