@@ -109,7 +109,7 @@ describe('revision sheets pages', () => {
   });
 
   it('shows traps as their own cell', () => {
-    const root = open('#/revise/sheets/s-ivc', renderSheet);
+    const root = open('#/revise/sheets/ivc', renderSheet);
     expect(root.querySelector('.sh-td-trap')?.textContent).toContain('Don');
   });
 
