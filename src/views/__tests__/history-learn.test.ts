@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { buildSlides, chapterYears, fragmentsOf, renderChapter, renderIndex, untaughtEvents } from '../history-learn';
 import { chronicleData } from '../year-explorer';
-import { getChapters } from '../../content/loader';
+import { getChapters, getRevision } from '../../content/loader';
 
 afterEach(() => {
   document.body.replaceChildren();
@@ -369,5 +369,14 @@ describe('quick revision tables', () => {
     expect(root.textContent).toContain('Neolithic');
     expect(root.querySelectorAll('.rv-bar').length).toBeGreaterThan(5);
     expect(root.textContent).toContain('Same time:');
+  });
+});
+
+describe('revision coverage', () => {
+  it('every history chapter has revision tables with at least 5 keys', () => {
+    for (const c of getChapters()) {
+      const cards = getRevision(c.id).flatMap((s) => s.cards);
+      expect(cards.length, c.id).toBeGreaterThanOrEqual(5);
+    }
   });
 });
