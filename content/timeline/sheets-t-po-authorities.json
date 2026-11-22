@@ -1,0 +1,408 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-authorities",
+   "part": "Polity",
+   "title": "Constitutional authorities",
+   "order": 11,
+   "intro": "ECI, UPSC/SPSC, APPSC, CAG, Finance Commission, GST Council, SC/ST/BC commissions, law officers.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "au-types",
+     "name": "Constitutional vs statutory vs executive",
+     "tag": "Overview",
+     "rows": [
+      {
+       "k": "Constitutional",
+       "v": "ECI (324), UPSC / SPSC (315 – 323), CAG (148), FC (280), NCSC (338), NCST (338A), NCBC (338B), 350B officer, GST Council (279A), AG (76), Advocate General (165)"
+      },
+      {
+       "k": "Statutory",
+       "v": "NHRC, CIC, Lokpal, CVC, NCW, Joint SPSC"
+      },
+      {
+       "k": "Executive",
+       "v": "NITI Aayog (2015), NDC (1952), Planning Commission"
+      }
+     ],
+     "traps": [
+      "NITI, NDC not constitutional; NHRC, CVC, Lokpal statutory"
+     ]
+    },
+    {
+     "id": "au-eci",
+     "name": "Election Commission",
+     "years": {
+      "from": 1950,
+      "to": 2025
+     },
+     "tag": "Elections",
+     "rows": [
+      {
+       "k": "324",
+       "v": "Superintendence of polls to Parliament, legislatures, President, VP (not local bodies)"
+      },
+      {
+       "k": "325 – 329",
+       "v": "One roll; adult suffrage 18; laws by Parliament / states; courts barred – petitions only"
+      },
+      {
+       "k": "Set up",
+       "v": "25 Jan 1950 (National Voters' Day since 2011); first CEC Sukumar Sen"
+      },
+      {
+       "k": "Members",
+       "v": "Single till 16 Oct 1989; ECs abolished 1 Jan 1990; three from Oct 1993; majority decides (Seshan 1995)"
+      },
+      {
+       "k": "Term",
+       "v": "6 years or 65; SC judge's pay"
+      },
+      {
+       "k": "Removal",
+       "v": "CEC like SC judge; EC only on CEC's advice"
+      },
+      {
+       "k": "Appointment",
+       "v": "Anoop Baranwal 2023 (PM, LoP, CJI interim); 2023 Act – PM, LoP, Cabinet minister; Law Minister's search panel"
+      },
+      {
+       "k": "Work",
+       "v": "Rolls, schedule, MCC, party recognition, symbols (1968 Order); advises on disqualification"
+      },
+      {
+       "k": "Field",
+       "v": "CEO per state; Collector = DEO"
+      },
+      {
+       "k": "Now (per notes)",
+       "v": "CEC Gyanesh Kumar (26th, 19 Feb 2025); ECs Sukhbir Singh Sandhu, Vivek Joshi"
+      }
+     ],
+     "traps": [
+      "2023 Act panel has no CJI"
+     ]
+    },
+    {
+     "id": "au-psc",
+     "name": "UPSC and SPSC",
+     "years": {
+      "from": 1924,
+      "to": 1950
+     },
+     "tag": "Services",
+     "rows": [
+      {
+       "k": "315 – 323",
+       "v": "PSCs; 317 removal by President only (SC inquiry for misbehaviour); 319 bar on later jobs; 320 functions; 322 charged; 323 reports"
+      },
+      {
+       "k": "History",
+       "v": "First PSC 1 Oct 1926 (Lee Commission 1924; Ross Barker); Federal PSC 1935; UPSC 26 Jan 1950"
+      },
+      {
+       "k": "Members",
+       "v": "Half with 10 yrs govt service; UPSC 6 yrs / 65; SPSC 62"
+      },
+      {
+       "k": "Appoint",
+       "v": "UPSC – President; SPSC – Governor; both removed by President"
+      },
+      {
+       "k": "After term",
+       "v": "UPSC chair barred from all; members may move up to chair posts"
+      },
+      {
+       "k": "Limits",
+       "v": "Advice not binding; not consulted on reservations (16(4), 335); exclusions laid 14 days"
+      },
+      {
+       "k": "Joint SPSC",
+       "v": "Statutory; President appoints"
+      },
+      {
+       "k": "Now",
+       "v": "UPSC chair Ajay Kumar"
+      }
+     ],
+     "traps": [
+      "UPSC 65; SPSC 62"
+     ]
+    },
+    {
+     "id": "au-appsc",
+     "name": "APPSC",
+     "years": {
+      "from": 2024,
+      "to": 2026
+     },
+     "tag": "Services",
+     "rows": [
+      {
+       "k": "Type",
+       "v": "SPSC under 315 – 323; HQ Vijayawada"
+      },
+      {
+       "k": "Chair",
+       "v": "A.R. Anuradha retired 9 Oct 2025; Prof. C. Sashidhar in charge (per notes)"
+      },
+      {
+       "k": "Group-I 2026",
+       "v": "166 vacancies (per notes)"
+      },
+      {
+       "k": "Report",
+       "v": "To Governor and state legislature"
+      }
+     ]
+    },
+    {
+     "id": "au-cag",
+     "name": "CAG",
+     "years": {
+      "from": 1950,
+      "to": 2024
+     },
+     "tag": "Money",
+     "rows": [
+      {
+       "k": "148",
+       "v": "President's warrant; removed like SC judge; 6 yrs / 65; no later office"
+      },
+      {
+       "k": "149",
+       "v": "Duties – CAG's DPC Act 1971"
+      },
+      {
+       "k": "150 – 151",
+       "v": "Account forms; reports to President / Governor"
+      },
+      {
+       "k": "Audits",
+       "v": "Consolidated, Contingency, Public Account of Union, states, UTs; govt companies"
+      },
+      {
+       "k": "279",
+       "v": "Certifies net tax proceeds – final"
+      },
+      {
+       "k": "Type",
+       "v": "Only Auditor-General – post-facto, no control over issue (unlike UK)"
+      },
+      {
+       "k": "1976",
+       "v": "Accounts separated from audit at Centre"
+      },
+      {
+       "k": "PAC",
+       "v": "CAG its \"friend, philosopher and guide\""
+      },
+      {
+       "k": "First, now",
+       "v": "V. Narahari Rao; K. Sanjay Murthy (15th, 21 Nov 2024)"
+      }
+     ],
+     "traps": [
+      "India’s CAG audits after spending"
+     ]
+    },
+    {
+     "id": "au-fc2",
+     "name": "Finance Commission",
+     "years": {
+      "from": 1951,
+      "to": 2031
+     },
+     "tag": "Money",
+     "rows": [
+      {
+       "k": "280",
+       "v": "Every 5th year; chair + 4; reappointable; 280(3) tasks incl. local bodies"
+      },
+      {
+       "k": "1951 Act",
+       "v": "Chair from public affairs; HC-judge-qualified, finance expert, administrator, economist"
+      },
+      {
+       "k": "281",
+       "v": "Report before Parliament; advisory"
+      },
+      {
+       "k": "Chairs",
+       "v": "K.C. Neogy (1st); N.K. Singh (15th, 41%); Arvind Panagariya (16th, 2026 – 31, 41% kept, per notes)"
+      }
+     ],
+     "traps": [
+      "280 FC ≠ 279A GST Council ≠ 243-I State FC"
+     ]
+    },
+    {
+     "id": "au-gstc",
+     "name": "GST Council",
+     "years": {
+      "from": 2016,
+      "to": 2016
+     },
+     "tag": "Money",
+     "rows": [
+      {
+       "k": "279A",
+       "v": "101st 2016"
+      },
+      {
+       "k": "Chair",
+       "v": "Union FM (Nirmala Sitharaman)"
+      },
+      {
+       "k": "Votes",
+       "v": "Centre 1/3, states 2/3; pass by 3/4"
+      }
+     ]
+    },
+    {
+     "id": "au-social",
+     "name": "NCSC, NCST, NCBC",
+     "years": {
+      "from": 1953,
+      "to": 2026
+     },
+     "tag": "Social justice",
+     "rows": [
+      {
+       "k": "NCSC (338)",
+       "v": "Special Officer first; 65th 1990 joint body; 89th 2003 split; separate from 2004"
+      },
+      {
+       "k": "NCST (338A)",
+       "v": "89th; forest produce, PESA, shifting cultivation"
+      },
+      {
+       "k": "NCBC (338B)",
+       "v": "Kalelkar 1953, Mandal 1979 (Art 340); Indra Sawhney 1992 → 1993 Act; 102nd 2018 constitutional + 342A"
+      },
+      {
+       "k": "Maratha case 2021",
+       "v": "Only Centre could list SEBCs → 105th restored states"
+      },
+      {
+       "k": "Members",
+       "v": "Chair, vice-chair, 3; civil-court powers"
+      },
+      {
+       "k": "Chairs (per notes)",
+       "v": "NCSC Kishor Makwana; NCST Antar Singh Arya; NCBC Sadhvi Niranjan Jyoti (Mar 2026)"
+      }
+     ],
+     "traps": [
+      "89th = NCSC, NCST; 102nd = NCBC"
+     ]
+    },
+    {
+     "id": "au-law",
+     "name": "Attorney General and Advocate General",
+     "years": {
+      "from": 1950,
+      "to": 2024
+     },
+     "tag": "Law officers",
+     "rows": [
+      {
+       "k": "AG (76)",
+       "v": "President; SC-judge qualified; pleasure; speaks (88), no vote; not Cabinet; private practice not vs govt"
+      },
+      {
+       "k": "Advocate General (165)",
+       "v": "Governor; HC-judge qualified; state legislature (177)"
+      },
+      {
+       "k": "Solicitor General",
+       "v": "Not constitutional; no Art 88 right"
+      },
+      {
+       "k": "Firsts and now",
+       "v": "M.C. Setalvad (1950 – 63); R. Venkataramani (16th, 1 Oct 2022); SG Tushar Mehta; AP AG Dammalapati Srinivas (June 2024)"
+      }
+     ]
+    },
+    {
+     "id": "au-350b",
+     "name": "Special Officer for Linguistic Minorities",
+     "years": {
+      "from": 1956,
+      "to": 1956
+     },
+     "tag": "Social justice",
+     "rows": [
+      {
+       "k": "350B",
+       "v": "7th Amendment 1956 (SRC advice)"
+      },
+      {
+       "k": "Reports",
+       "v": "To President, before Parliament"
+      },
+      {
+       "k": "Office",
+       "v": "Commissioner for Linguistic Minorities; Prayagraj; Ministry of Minority Affairs"
+      },
+      {
+       "k": "350A",
+       "v": "Mother-tongue primary teaching"
+      }
+     ]
+    },
+    {
+     "id": "au-ap",
+     "name": "AP state authorities",
+     "years": {
+      "from": 1983,
+      "to": 2026
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "SEC (243K, 243ZA)",
+       "v": "Local polls; Anil Chandra Punetha"
+      },
+      {
+       "k": "State FC (243-I, 243-Y)",
+       "v": "Governor, every 5 years"
+      },
+      {
+       "k": "Lokayukta",
+       "v": "AP Act 1983 (amended 2024); Justice Mallikarjuna Rao (per notes)"
+      },
+      {
+       "k": "Statutory",
+       "v": "AP SHRC (1993 Act); AP Women's Commission"
+      }
+     ]
+    },
+    {
+     "id": "au-pyq",
+     "name": "PYQ precision – PAC, NDC, vote value",
+     "tag": "PYQ",
+     "rows": [
+      {
+       "k": "PAC",
+       "v": "22 (15 + 7); 1 yr; Opposition chair since 1967; no minister"
+      },
+      {
+       "k": "NDC",
+       "v": "1952 Cabinet resolution; PM, Cabinet, CMs, UT heads, NITI – not FC chair"
+      },
+      {
+       "k": "President poll",
+       "v": "MLA value varies by state; all MPs equal; parity"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
