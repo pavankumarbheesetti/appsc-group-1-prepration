@@ -359,3 +359,15 @@ describe('placing events in time (Andhra chapter)', () => {
     expect(stone.textContent).toMatch(/^1\. /);
   });
 });
+
+describe('quick revision tables', () => {
+  it('offers the tables from the chapter overview and renders them', () => {
+    const ov = open('#/topics/history/ancient-to-232bce', renderChapter);
+    expect(ov.textContent).toContain('Quick revision tables');
+    const root = open('#/topics/history/ancient-to-232bce/revision', renderChapter);
+    expect(root.querySelectorAll('.rv-card').length).toBeGreaterThan(20);
+    expect(root.textContent).toContain('Neolithic');
+    expect(root.querySelectorAll('.rv-bar').length).toBeGreaterThan(5);
+    expect(root.textContent).toContain('Same time:');
+  });
+});

@@ -9,9 +9,10 @@
  * first (pre-training), then one event per slide at your own pace
  * (segmenting), then a recap table and a match-the-following check.
  */
-import { getChapters, getGlossary, getNoteById } from '../content/loader';
+import { getChapters, getGlossary, getNoteById, getRevision } from '../content/loader';
 import type { NoteItem } from '../content/types';
 import { buildNoteArticle } from './notes';
+import { renderRevision } from './history-revision';
 import { HISTORY_PARTS, type Chapter, type GlossaryTerm, type HistoryPart, type Person } from '../content/chronicle-types';
 import type { Pair, TimelineEvent } from '../content/timeline-types';
 import { eventText, termMatcher } from '../lib/glossary';
@@ -195,6 +196,16 @@ function renderOverview(root: HTMLElement, c: Chapter, data: ChronicleData): voi
                 el('span', { class: 'hl-chain-next', text: p.hook }),
               ]),
             ]))),
+          ])
+        : null,
+      getRevision(c.id).length
+        ? el('button', { class: 'hl-banner', type: 'button', onClick: () => navigate(`${HISTORY_PATH}/${c.id}/revision`) }, [
+            icon('calendar', 22),
+            el('span', { class: 'hl-banner-text' }, [
+              el('strong', { text: 'Quick revision tables' }),
+              el('span', { text: 'One big box per key, with small boxes beside it. Read the lessons first, then use this the night before.' }),
+            ]),
+            icon('arrow-right', 16),
           ])
         : null,
       el('ol', { class: 'hl-frags' }, frags.map((f, i) => {
@@ -682,6 +693,10 @@ export function renderChapter(root: HTMLElement): void {
   }
   const data = chronicleData();
   const n = Number(nRaw);
+  if (nRaw === 'revision' && getRevision(c.id).length) {
+    renderRevision(root, c);
+    return;
+  }
   if (nRaw !== undefined && Number.isInteger(n) && n >= 1 && n <= fragmentsOf(c).length) renderFragment(root, c, n, data);
   else renderOverview(root, c, data);
 }

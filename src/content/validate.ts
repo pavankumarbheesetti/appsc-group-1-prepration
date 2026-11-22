@@ -14,6 +14,7 @@
  * It never throws for content problems — every issue is collected into a
  * per-file result so callers can print a full report and decide the exit code.
  */
+import { RevisionBankSchema, type RevisionSection } from './revision-types';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -240,6 +241,7 @@ export function validateAllContent(): FileValidationResult[] {
   const peopleFiles: { file: string; people: Person[] }[] = [];
   const officeFiles: { file: string; offices: Office[] }[] = [];
   const chapterFiles: { file: string; chapters: Chapter[] }[] = [];
+  const revisionFiles: { file: string; sections: RevisionSection[] }[] = [];
   const glossaryIds = new Set<string>();
   const glossaryForms = new Map<string, string>();
   /** The parsed pyq-weights doc (for cross-checks after the taxonomy is parsed). */
@@ -371,6 +373,18 @@ export function validateAllContent(): FileValidationResult[] {
         if (parsed.success) chapterFiles.push({ file, chapters: parsed.data.chapters });
         else resultFor(file).errors.push(...formatIssues(parsed.error));
         resultFor(file);
+      } else if (name.startsWith('revision-')) {
+        const parsed = RevisionBankSchema.safeParse(raw);
+        const r = resultFor(file);
+        if (!parsed.success) r.errors.push(...formatIssues(parsed.error));
+        else {
+          const ids = new Set<string>();
+          for (const sec of parsed.data.sections) for (const c of sec.cards) {
+            if (ids.has(c.id)) r.errors.push(`duplicate revision card id '${c.id}'`);
+            ids.add(c.id);
+          }
+          revisionFiles.push({ file, sections: parsed.data.sections });
+        }
       } else if (name.startsWith('offices-')) {
         const parsed = OfficesBankSchema.safeParse(raw);
         if (parsed.success) officeFiles.push({ file, offices: parsed.data.offices });
@@ -738,6 +752,11 @@ export function validateAllContent(): FileValidationResult[] {
           if (!inEvent.has(id)) r.errors.push(`event ${ev.id}: person '${id}' is named in the text but missing from participants`);
         }
       }
+    }
+
+    const knownChapters = new Set(allChapters.map((c) => c.id));
+    for (const { file, sections } of revisionFiles) {
+      for (const sec of sections) if (!knownChapters.has(sec.chapterId)) resultFor(file).errors.push(`revision section '${sec.id}': unknown chapter '${sec.chapterId}'`);
     }
 
     const chIds = new Set<string>();

@@ -317,3 +317,25 @@
 .yd-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .yd-body { display: flex; flex-direction: column; gap: var(--space-3); }
 @media (max-width: 599px) { .yd-options { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Quick-revision tables */
+.rv-nav { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0; }
+.rv-nav-link { padding: var(--space-1) var(--space-3); border: 1px solid var(--border); border-radius: 999px; font-size: var(--fs-sm); color: var(--text); text-decoration: none; }
+.rv-section { margin-top: var(--space-6); }
+.rv-card { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: var(--space-3); margin: var(--space-3) 0; scroll-margin-top: 4rem; }
+.rv-key { background: var(--surface-2, var(--surface)); border: 1px solid var(--border); border-left: 4px solid var(--accent, currentColor); border-radius: var(--radius-md, 8px); padding: var(--space-3); align-self: start; }
+.rv-key h3 { margin: 0; font-size: var(--fs-lg); }
+.rv-span { margin: var(--space-1) 0 0; font-weight: var(--fw-semibold); }
+.rv-hook, .rv-rel { margin: var(--space-2) 0 0; font-size: var(--fs-sm); }
+.rv-facets { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: var(--space-2); }
+.rv-facet { border: 1px solid var(--border); border-radius: var(--radius-md, 8px); padding: var(--space-2) var(--space-3); background: var(--surface); }
+.rv-facet-label { margin: 0 0 var(--space-1); font-size: var(--fs-xs, 0.75rem); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted, inherit); }
+.rv-facet ul { margin: 0; padding-left: 1.1rem; font-size: var(--fs-sm); }
+.rv-scroll { overflow-x: auto; }
+.rv-line { min-width: 760px; }
+.rv-lane { display: grid; grid-template-columns: 110px 1fr; align-items: center; margin: 2px 0; }
+.rv-lane-name { font-size: var(--fs-sm); font-weight: var(--fw-semibold); }
+.rv-track { position: relative; height: 28px; background: var(--surface-2, var(--surface)); border-radius: 6px; }
+.rv-bar { position: absolute; top: 2px; bottom: 2px; overflow: hidden; white-space: nowrap; font-size: 11px; padding: 0 4px; border: 1px solid var(--border); border-radius: 4px; background: var(--accent-soft, var(--surface)); color: var(--text); cursor: pointer; }
+.rv-scale { margin: var(--space-1) 0 var(--space-3); font-size: var(--fs-sm); color: var(--text-muted, inherit); }
+@media (max-width: 640px) { .rv-card { grid-template-columns: 1fr; } }

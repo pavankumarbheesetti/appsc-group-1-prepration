@@ -12,6 +12,7 @@
  * Each bank is validated with the Zod schemas at load; malformed content fails
  * fast with a clear error rather than corrupting the in-memory index.
  */
+import { parseRevision, type RevisionSection } from './revision-types';
 import {
   parseBank,
   parseCards,
@@ -127,6 +128,8 @@ export interface ContentIndex {
   chapters: Chapter[];
   /** Historical terms (from `content/timeline/glossary-*.json`). */
   glossary: GlossaryTerm[];
+  /** Quick-revision tables (from `content/timeline/revision-*.json`). */
+  revision: RevisionSection[];
   /**
    * The pedagogical LEARNING SEQUENCE — the per-subject study ORDER for every
    * Prelims subject (chronology for History, concept prerequisites elsewhere).
@@ -182,6 +185,7 @@ function buildIndex(): ContentIndex {
   const offices: Office[] = [];
   const chapters: Chapter[] = [];
   const glossary: GlossaryTerm[] = [];
+  const revision: RevisionSection[] = [];
   let learningSequence: LearningSequence | null = null;
   let units: Units | null = null;
   let caMeta: CaMeta | null = null;
@@ -226,6 +230,7 @@ function buildIndex(): ContentIndex {
       else if (name.startsWith('offices-')) offices.push(...parseOffices(data).offices);
       else if (name.startsWith('chapters-')) chapters.push(...parseChapters(data).chapters);
       else if (name.startsWith('glossary-')) glossary.push(...parseGlossary(data));
+      else if (name.startsWith('revision-')) revision.push(...parseRevision(data));
       continue;
     }
 
@@ -395,6 +400,7 @@ function buildIndex(): ContentIndex {
     offices,
     chapters,
     glossary,
+    revision,
     learningSequence,
     units,
     caMeta,
@@ -433,6 +439,10 @@ export function getOffices(): Office[] {
 
 export function getChapters(): Chapter[] {
   return getContentIndex().chapters;
+}
+
+export function getRevision(chapterId: string): RevisionSection[] {
+  return getContentIndex().revision.filter((s) => s.chapterId === chapterId);
 }
 
 export function getGlossary(): GlossaryTerm[] {
