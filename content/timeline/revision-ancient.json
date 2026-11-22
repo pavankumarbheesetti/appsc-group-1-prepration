@@ -898,10 +898,11 @@
       ]
     },
     {
-      "id": "a1-rulers",
+      "id": "ar1",
       "chapterId": "ancient-to-232bce",
-      "title": "Rulers: tenure, wars, works, people",
-      "style": "boxes",
+      "title": "Rulers to 232 BCE: one key each",
+      "style": "table",
+      "intro": "One row per ruler, grouped by dynasty. Scroll sideways on a phone.",
       "cards": [
         {
           "id": "k-bim",
@@ -910,32 +911,48 @@
             "from": -544,
             "to": -492
           },
-          "hook": "Magadha’s first great king.",
+          "group": "Haryanka (Magadha)",
+          "hook": "First big Magadha king",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "544 – 492 BCE (Haryanka)"
+                "544 – 492 BCE",
+                "Rajagriha (Girivraja)",
+                "Contemporary of Buddha and Mahavira"
               ]
             },
             {
-              "label": "Work",
+              "label": "Wars & expansion",
               "points": [
-                "Took Anga; first to use paid officials",
-                "Matrimonial alliances: Kosala, Licchavi, Madra",
-                "Met Buddha and Mahavira"
+                "Annexed Anga (Champa), killed Brahmadatta",
+                "Marriage alliances: Kosala (Kosaladevi, dowry Kashi village), Licchavi (Chellana), Madra (Khema)"
               ]
             },
             {
-              "label": "Capital",
+              "label": "Rule, tax & coins",
               "points": [
-                "Rajagriha (Girivraja)"
+                "First to keep paid officials",
+                "Village heads (gramikas) under royal officers"
               ]
             },
             {
-              "label": "Death",
+              "label": "Court, poets & works",
               "points": [
-                "Killed by son Ajatashatru"
+                "Royal physician Jivaka"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Met Buddha; gave Veluvana to the Sangha",
+                "Jain texts call him Shrenika"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Pali canon, Jain Agamas"
               ]
             }
           ]
@@ -947,26 +964,237 @@
             "from": -492,
             "to": -460
           },
-          "hook": "Siege weapons.",
+          "group": "Haryanka (Magadha)",
+          "hook": "Parricide, Vajji conqueror",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "492 – 460 BCE"
+                "492 – 460 BCE",
+                "Rajagriha; fortified Patali village"
               ]
             },
             {
-              "label": "Work",
+              "label": "Wars & expansion",
               "points": [
-                "Beat Vajji confederacy using rathamusala and mahashilakantaka",
-                "Built a fort at Pataliputra village (Patali)",
-                "Hosted 1st Buddhist Council at Rajagriha"
+                "Beat Vajji (Licchavi) confederacy with rathamusala and mahashilakantaka (catapult)",
+                "War with Kosala (Prasenajit); took Kashi"
               ]
             },
             {
-              "label": "Link",
+              "label": "Rule, tax & coins",
               "points": [
-                "Killed his father Bimbisara; Kosala war with Prasenajit"
+                "Killed father Bimbisara"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Minister Vassakara"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Hosted 1st Buddhist Council, Rajagriha, 483 BCE (Mahakassapa)",
+                "Stupa over Buddha’s relics"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Samannaphala Sutta"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-udayin",
+          "key": "Udayin",
+          "span": {
+            "from": -460,
+            "to": -444
+          },
+          "group": "Haryanka (Magadha)",
+          "hook": "Founder of Pataliputra",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "460 – 444 BCE",
+                "Built Pataliputra at the Ganga-Son confluence"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Held Magadha against Avanti"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Jain follower (Jain tradition)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Puranas"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-shis",
+          "key": "Shishunaga",
+          "span": {
+            "from": -413,
+            "to": -395
+          },
+          "group": "Shishunaga (Magadha)",
+          "hook": "Ended Avanti",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 413 BCE; Girivraja, later Vaishali"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Destroyed Pradyota line of Avanti"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Puranas"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-kala",
+          "key": "Kalashoka",
+          "span": {
+            "from": -395,
+            "to": -367
+          },
+          "group": "Shishunaga (Magadha)",
+          "hook": "2nd Council",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Kakavarna; Pataliputra capital again"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "2nd Buddhist Council, Vaishali, 383 BCE (Sabakami)",
+                "Sthaviravada and Mahasanghika split"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Mahavamsa"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-mah",
+          "key": "Mahapadma Nanda",
+          "span": {
+            "from": -345,
+            "to": -329
+          },
+          "group": "Nanda (Magadha)",
+          "hook": "Ekarat, Sarvakshatrantaka",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 345 – 329 BCE; Pataliputra",
+                "Low-born origin (Puranas)"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Uprooted Kshatriya dynasties (Ikshvakus, Panchalas, Kasis, Kalingas, Kurus, Surasenas)",
+                "Held Kalinga"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Huge army (Greek accounts: 2,00,000 foot, 20,000 horse, 2,000 chariots, 3,000 elephants)",
+                "Heavy taxes; canals"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Panini’s age"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Patron of Jainism"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Puranas, Curtius"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-dhana",
+          "key": "Dhana Nanda",
+          "span": {
+            "from": -329,
+            "to": -321
+          },
+          "group": "Nanda (Magadha)",
+          "hook": "Agrammes, last Nanda",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 329 – 321 BCE; Pataliputra"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Alexander’s army refused to face his army at the Beas (326)"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Hated for taxes and hoarded wealth"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Chanakya insulted at his court"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Greek writers (Agrammes)"
               ]
             }
           ]
@@ -978,38 +1206,51 @@
             "from": -321,
             "to": -297
           },
-          "hook": "Seleucus, Chanakya, Megasthenes.",
+          "group": "Maurya (Pataliputra)",
+          "hook": "Founder; Seleucus; Jain",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "321 – 297 BCE"
+                "321 – 297 BCE; Pataliputra",
+                "Guide: Chanakya (Kautilya)"
               ]
             },
             {
-              "label": "Wars",
+              "label": "Wars & expansion",
               "points": [
-                "Defeated Nandas, 321 BCE",
-                "Defeated Seleucus Nicator, about 305 BCE: gained Aria, Arachosia, Gedrosia, Paropamisadae; gave 500 elephants"
+                "Overthrew Nandas, 321 BCE",
+                "Beat Seleucus Nicator about 305 BCE: Aria, Arachosia, Gedrosia, Paropamisadae; gave 500 elephants",
+                "Held Saurashtra (governor Pushyagupta, Sudarshana lake)"
               ]
             },
             {
-              "label": "People",
+              "label": "Rule, tax & coins",
               "points": [
-                "Chanakya (Kautilya, Vishnugupta): Arthashastra",
-                "Megasthenes: Indica, ambassador of Seleucus"
+                "Spy system (gudhapurushas)",
+                "Army: 6 lakh foot, 30,000 horse, 9,000 elephants (Pliny)",
+                "City board of 30 (Megasthenes)",
+                "Punch-marked silver karshapana"
               ]
             },
             {
-              "label": "Religion",
+              "label": "Court, poets & works",
               "points": [
-                "Became a Jain, starved to death (sallekhana) at Shravanabelagola with Bhadrabahu"
+                "Arthashastra (Kautilya)",
+                "Mudrarakshasa (Vishakhadatta) on the Nanda overthrow"
               ]
             },
             {
-              "label": "Admin",
+              "label": "Religion, art & buildings",
               "points": [
-                "Spies, big army; 30-member city board at Pataliputra"
+                "Became Jain; sallekhana at Shravanabelagola with Bhadrabahu"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Megasthenes: Indica (lost; quoted by Strabo, Arrian)",
+                "Justin, Plutarch"
               ]
             }
           ]
@@ -1021,26 +1262,45 @@
             "from": -297,
             "to": -273
           },
-          "hook": "Amitraghata.",
+          "group": "Maurya (Pataliputra)",
+          "hook": "Amitraghata",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "297 – 273 BCE"
+                "297 – 273 BCE; Pataliputra",
+                "Amitraghata (Greek: Amitrochates)"
               ]
             },
             {
-              "label": "Names",
+              "label": "Wars & expansion",
               "points": [
-                "Amitraghata (slayer of foes, Greek Amitrochates)",
-                "Followed the Ajivikas"
+                "Held empire up to Mysore",
+                "Put down Taxila revolt (Ashoka, then Susima)"
               ]
             },
             {
-              "label": "Facts",
+              "label": "Rule, tax & coins",
               "points": [
-                "Greek envoy Deimachus (Antiochus I)",
-                "Took the empire to the Deccan; Taxila revolts, Ashoka sent to settle"
+                "Provinces under princes"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Asked Antiochus I for wine, figs and a sophist"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Patron of the Ajivikas"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Deimachus (Seleucid envoy); Dionysius (Egypt)"
               ]
             }
           ]
@@ -1052,51 +1312,118 @@
             "from": -268,
             "to": -232
           },
-          "hook": "Kalinga 261 BCE changed him.",
+          "group": "Maurya (Pataliputra)",
+          "hook": "Kalinga to Dhamma",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "268 – 232 BCE (crowned about 269)",
-                "Called Devanampiya Piyadasi; name Ashoka in Maski and Gujjara"
+                "268 – 232 BCE (crowned about 269); Pataliputra; viceroys at Taxila, Ujjain, Tosali, Suvarnagiri",
+                "Devanampiya Piyadasi"
               ]
             },
             {
-              "label": "War and change",
+              "label": "Wars & expansion",
               "points": [
-                "Kalinga war, 261 BCE; remorse; turned to Buddhism (Upagupta)",
-                "Dhamma, not Buddhism; Dhamma Mahamattas (13th year)"
+                "Kalinga War 261 BCE: 1,00,000 killed, 1,50,000 deported (13th Rock Edict)",
+                "Then Dhamma vijaya; Greek kings named in 13th edict (Antiyoka, Turamaya, Antikini, Maga, Alikasudara)"
               ]
             },
             {
-              "label": "Edicts",
+              "label": "Rule, tax & coins",
               "points": [
-                "14 Major Rock Edicts; 7 Pillar Edicts; Minor Rock Edicts; separate Kalinga Edicts at Dhauli and Jaugada",
-                "Languages: Prakrit in Brahmi; Kharosthi at Shahbazgarhi, Mansehra; Greek and Aramaic in Afghanistan",
-                "Deciphered by James Prinsep, 1837"
+                "Dhamma Mahamattas (13th year)",
+                "Rajukas, Pradeshikas, Yuktas",
+                "Lumbini tax cut to 1/8"
               ]
             },
             {
-              "label": "Buddhism",
+              "label": "Court, poets & works",
               "points": [
-                "3rd Council at Pataliputra, 250 BCE; Mahendra and Sanghamitra to Sri Lanka",
-                "Stupas at Sanchi; Lumbini pillar"
+                "14 Major Rock Edicts, Kalinga Edicts (Dhauli, Jaugada), 7 Pillar Edicts, Minor Rock Edicts (Maski names “Ashoka”)",
+                "Brahmi; Kharosthi (Shahbazgarhi, Mansehra); Greek and Aramaic (Kandahar)"
               ]
             },
             {
-              "label": "AP link",
+              "label": "Religion, art & buildings",
               "points": [
-                "Erragudi (Kurnool) edicts; Jonnagiri, Rajula Mandagiri"
+                "Buddhist (Upagupta); 3rd Council, Pataliputra, 250 BCE (Moggaliputta Tissa)",
+                "Mahendra and Sanghamitra to Sri Lanka",
+                "Sarnath lion capital (national emblem), Sanchi stupa, Barabar caves for Ajivikas"
               ]
             },
             {
-              "label": "Symbols",
+              "label": "Sources & visitors",
               "points": [
-                "Sarnath lion capital: national emblem; wheel on the flag"
+                "Edicts deciphered by James Prinsep, 1837",
+                "Mahavamsa, Ashokavadana"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-das",
+          "key": "Dasharatha and Samprati",
+          "span": {
+            "from": -232,
+            "to": -185
+          },
+          "group": "Maurya (Pataliputra)",
+          "hook": "Weak successors",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Dasharatha: Nagarjuni caves for Ajivikas",
+                "Samprati: Jain patron"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Samprati spread Jainism (Jain tradition)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-brih",
+          "key": "Brihadratha",
+          "span": {
+            "from": -187,
+            "to": -185
+          },
+          "group": "Maurya (Pataliputra)",
+          "hook": "Last Maurya",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "187 – 185 BCE"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Killed by general Pushyamitra Shunga at a military review (Harshacharita)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Harshacharita (Bana)"
               ]
             }
           ]
         }
+      ],
+      "columns": [
+        "Reign & capital",
+        "Wars & expansion",
+        "Rule, tax & coins",
+        "Court, poets & works",
+        "Religion, art & buildings",
+        "Sources & visitors"
       ]
     },
     {
@@ -1767,10 +2094,11 @@
       ]
     },
     {
-      "id": "a2-rulers",
+      "id": "ar2",
       "chapterId": "ancient-231bce-647",
-      "title": "Rulers: tenure, wars, works, people",
-      "style": "boxes",
+      "title": "Rulers 231 BCE – 647 CE: one key each",
+      "style": "table",
+      "intro": "One row per ruler, grouped by dynasty.",
       "cards": [
         {
           "id": "k-push",
@@ -1779,57 +2107,378 @@
             "from": -185,
             "to": -149
           },
-          "hook": "Killed the last Maurya.",
+          "group": "Shunga (Vidisha)",
+          "hook": "Two horse sacrifices",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "185 – 149 BCE"
+                "185 – 149 BCE; Pataliputra; Vidisha for his son"
               ]
             },
             {
-              "label": "Work",
+              "label": "Wars & expansion",
               "points": [
-                "Ashvamedha, twice (Ayodhya inscription of Dhanadeva)",
-                "Fought Yavanas on the Sindhu (Malavikagnimitra)",
-                "Patanjali was his priest"
+                "Fought Bactrian Greeks on the Sindhu (Malavikagnimitra)",
+                "Defeated Vidarbha"
               ]
             },
             {
-              "label": "Art",
+              "label": "Rule, tax & coins",
               "points": [
+                "Brahmanical revival"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Patanjali (Mahabhashya) was his priest"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Two Ashvamedhas (Dhanadeva inscription, Ayodhya)",
                 "Bharhut stupa gateway, Sanchi railings"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Harshacharita, Puranas"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-agni",
+          "key": "Agnimitra",
+          "span": {
+            "from": -149,
+            "to": -141
+          },
+          "group": "Shunga (Vidisha)",
+          "hook": "Hero of a play",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Viceroy at Vidisha, then king"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Defeated Vidarbha (in the play)"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Kalidasa’s Malavikagnimitra"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Malavikagnimitra"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-bhag",
+          "key": "Bhagabhadra",
+          "span": {
+            "from": -110,
+            "to": -100
+          },
+          "group": "Shunga (Vidisha)",
+          "hook": "Besnagar pillar",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Ruled Vidisha about 110 BCE"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Heliodorus, Greek envoy of Antialcidas, raised the Garuda pillar to Vasudeva at Besnagar; became a Bhagavata"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Besnagar inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-vasu",
+          "key": "Vasudeva Kanva",
+          "span": {
+            "from": -73,
+            "to": -60
+          },
+          "group": "Kanva (Magadha)",
+          "hook": "Founder",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "73 BCE; Pataliputra"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Overthrew the last Shunga, Devabhuti"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Puranas"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-susha",
+          "key": "Susharman",
+          "span": {
+            "from": -40,
+            "to": -28
+          },
+          "group": "Kanva (Magadha)",
+          "hook": "Last Kanva",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Last Kanva, to 28 BCE"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Killed by the Satavahanas"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Puranas"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-meng",
+          "key": "Menander (Milinda)",
+          "span": {
+            "from": -165,
+            "to": -130
+          },
+          "group": "Indo-Greek",
+          "hook": "Milinda and Nagasena",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 165 – 130 BCE; Sakala (Sialkot)"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Kabul to Mathura (Greek writers); maybe to Pataliputra"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Coins with Greek and Kharosthi legends; Dharmachakra on coins"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Milindapanha: debate with Nagasena"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Became Buddhist; relics divided at death"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Strabo; Milindapanha"
               ]
             }
           ]
         },
         {
           "id": "k-khar",
-          "key": "Kharavela of Kalinga",
+          "key": "Kharavela",
           "span": {
             "from": -60,
-            "to": -30,
-            "label": "about 1st century BCE"
+            "to": -30
           },
-          "hook": "Hathigumpha.",
+          "group": "Chedi (Kalinga)",
+          "hook": "Hathigumpha",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "1st century BCE (Chedi / Mahameghavahana)"
+                "About 1st century BCE; Kalinganagara; Aira, Mahameghavahana"
               ]
             },
             {
-              "label": "Source",
+              "label": "Wars & expansion",
               "points": [
-                "Hathigumpha inscription, Udayagiri (Odisha), Prakrit, Brahmi"
+                "Sent army west against Satakarni",
+                "Beat Rathikas, Bhojakas and Magadha king Brihaspatimitra; brought back the Jina image"
               ]
             },
             {
-              "label": "Work",
+              "label": "Rule, tax & coins",
               "points": [
-                "Deeds year by year; canal of Nandaraja; Jain king",
-                "Raided Magadha, Rathikas, the Satavahana kingdom"
+                "Repaired canal of Nandaraja",
+                "Remitted taxes"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Music and dance festivals"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Jain; Udayagiri-Khandagiri caves; Hathigumpha inscription (Prakrit, Brahmi, 17 lines)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Hathigumpha inscription, Udayagiri (Bhubaneswar)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-simu",
+          "key": "Simuka",
+          "span": {
+            "from": -230,
+            "to": -207
+          },
+          "group": "Satavahana",
+          "hook": "Founder",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 230 BCE; Junnar / Pratishthana"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Overthrew Kanvas and Shungas in the Deccan (Puranas)"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Built Jain and Buddhist temples (Puranas)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nanaghat inscription, Puranas"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-sat1",
+          "key": "Satakarni I",
+          "span": {
+            "from": -180,
+            "to": -170
+          },
+          "group": "Satavahana",
+          "hook": "Two Ashvamedhas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 180 – 170 BCE; Pratishthana"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Took Malwa and Anupa"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Land grants to Brahmins begin"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Ashvamedha twice, Rajasuya; Nanaghat reliefs"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nanaghat inscription of his wife Naganika"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-hala",
+          "key": "Hala",
+          "span": {
+            "from": 60,
+            "to": 65
+          },
+          "group": "Satavahana",
+          "hook": "Gatha Saptashati",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Early 1st century CE"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Gatha Saptashati (Gaha Sattasai), 700 verses in Maharashtri Prakrit",
+                "Gunadhya: Brihatkatha (Paishachi)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Gatha Saptashati"
               ]
             }
           ]
@@ -1841,26 +2490,287 @@
             "from": 106,
             "to": 130
           },
-          "hook": "Satavahana revival.",
+          "group": "Satavahana",
+          "hook": "Restorer",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "About 106 – 130 CE"
+                "About 106 – 130 CE; Pratishthana",
+                "Titles: Ekabrahmana, Trisamudratoyapitavahana"
               ]
             },
             {
-              "label": "Work",
+              "label": "Wars & expansion",
               "points": [
-                "Defeated Nahapana, restruck his coins",
-                "Titles: Ekabrahmana, lord of three seas",
-                "Prasasti by his mother Gautami Balashri at Nasik"
+                "Crushed Nahapana (Kshaharata); restruck his coins",
+                "Beat Shakas, Yavanas, Pahlavas",
+                "Held Maharashtra, Malwa, Kathiawar, Konkan"
               ]
             },
             {
-              "label": "Link",
+              "label": "Rule, tax & coins",
               "points": [
-                "Son Vasishthiputra Pulumavi married Rudradaman’s daughter"
+                "Claimed to stop mixing of varnas",
+                "Restruck silver coins with Satavahana marks"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Land to ascetics at Nashik"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nashik prasasti of his mother Gautami Balashri"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-pulu",
+          "key": "Vasishthiputra Pulumavi",
+          "span": {
+            "from": 130,
+            "to": 158
+          },
+          "group": "Satavahana",
+          "hook": "Amaravati king",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 130 – 158 CE; Pratishthana, Dhanyakataka"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Married Rudradaman’s daughter; Rudradaman beat him twice but spared him"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Coins with ships"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Patron of Amaravati stupa; Karle chaitya"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nashik and Karle inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-yaj",
+          "key": "Yajna Sri Satakarni",
+          "span": {
+            "from": 165,
+            "to": 194
+          },
+          "group": "Satavahana",
+          "hook": "Last great Satavahana",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 165 – 194 CE"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Regained north Konkan and Aparanta from Shakas"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Ship coins show sea trade"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Buddhist; Nagarjuna lived in his time (tradition)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Coins; Kanheri, Nashik"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-rudr",
+          "key": "Rudradaman I",
+          "span": {
+            "from": 130,
+            "to": 150
+          },
+          "group": "Shaka (Western Kshatrapa)",
+          "hook": "Junagadh inscription",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 130 – 150 CE; Ujjain"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Beat Yaudheyas; took Sindhu, Konkan, Narmada valley from Satavahanas"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Repaired Sudarshana lake without forced labour or new taxes"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Skilled in grammar, music, logic"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Used Sanskrit for his inscription"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Junagadh (Girnar) rock inscription, 150 CE: first long Sanskrit inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-gond",
+          "key": "Gondophernes",
+          "span": {
+            "from": 19,
+            "to": 45
+          },
+          "group": "Parthian (Pahlava)",
+          "hook": "St Thomas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 19 – 45 CE; Taxila"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Ruled Kabul, Gandhara, Sind"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Tradition: St Thomas came to his court"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Takht-i-Bahi inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-kuj",
+          "key": "Kujula Kadphises",
+          "span": {
+            "from": 30,
+            "to": 80
+          },
+          "group": "Kushana",
+          "hook": "Founder",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 30 – 80 CE; Kabul"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "United five Yuezhi tribes; took Kabul and Gandhara"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Copper coins"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Hou Hanshu (Chinese)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-vima",
+          "key": "Vima Kadphises",
+          "span": {
+            "from": 80,
+            "to": 100
+          },
+          "group": "Kushana",
+          "hook": "First gold",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 80 – 100 CE"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Took north India up to Mathura"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Large gold coins (dinaras); Shiva and bull"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Shaiva (Maheshvara on coins)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Rabatak inscription"
               ]
             }
           ]
@@ -1872,36 +2782,211 @@
             "from": 78,
             "to": 101
           },
-          "hook": "Silk route emperor.",
+          "group": "Kushana",
+          "hook": "Saka era; 4th Council",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "78 – 101 CE (Saka era 78)"
+                "About 78 – 101 CE (Saka era 78); Purushapura (Peshawar); Mathura"
               ]
             },
             {
-              "label": "Capital",
+              "label": "Wars & expansion",
               "points": [
-                "Purushapura (Peshawar); Mathura"
+                "Held Kashmir, Gandhara, Mathura; fought Chinese general Pan Chao"
               ]
             },
             {
-              "label": "Religion",
+              "label": "Rule, tax & coins",
               "points": [
-                "Mahayana; 4th Buddhist Council, Kundalvana, Kashmir"
+                "Controlled the silk route; gold coins with Greek, Persian and Indian gods; Buddha on a coin"
               ]
             },
             {
-              "label": "People",
+              "label": "Court, poets & works",
               "points": [
-                "Ashvaghosha (Buddhacharita), Nagarjuna, Charaka, Vasumitra"
+                "Ashvaghosha (Buddhacharita), Vasumitra, Nagarjuna, Charaka, Parshva"
               ]
             },
             {
-              "label": "Art",
+              "label": "Religion, art & buildings",
               "points": [
-                "Gandhara (Greek-Indian), Mathura school"
+                "Mahayana; 4th Council, Kundalvana, Kashmir; Gandhara and Mathura art"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Rabatak inscription; Chinese texts"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-huv",
+          "key": "Huvishka and Vasudeva I",
+          "span": {
+            "from": 106,
+            "to": 185
+          },
+          "group": "Kushana",
+          "hook": "Decline",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Huvishka about 106 – 138; Vasudeva I about 145 – 185"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Huvishka founded Huvishkapura (Kashmir)"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Coins with many gods; Vasudeva with Shiva and bull"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Mathura sculpture at its peak"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Ara inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-kari",
+          "key": "Karikala",
+          "span": {
+            "from": 90,
+            "to": 130
+          },
+          "group": "Early Chola (Sangam)",
+          "hook": "Venni victory",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 2nd century CE; Uraiyur, Puhar"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Won Venni over Cheras and Pandyas"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Kallanai (Grand Anicut) on the Kaveri; tanks"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Pattinappalai, Porunararruppadai sing of him"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Tiger emblem"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Sangam poems"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-sengu",
+          "key": "Senguttuvan",
+          "span": {
+            "from": 180,
+            "to": 230
+          },
+          "group": "Chera (Sangam)",
+          "hook": "Red Chera, Pattini",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Vanji; Muziris port"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Went north for the Pattini stone"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Silappadikaram by his brother Ilango Adigal"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Pattini (Kannagi) cult, temple"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Silappadikaram, Padirruppattu"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-cg1",
+          "key": "Chandragupta I",
+          "span": {
+            "from": 319,
+            "to": 335
+          },
+          "group": "Gupta",
+          "hook": "Gupta era 319–20",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 319 – 335 CE; Pataliputra; Gupta era 319 – 20; Maharajadhiraja"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Married Kumaradevi of the Licchavis; alliance made him strong"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Gold king-and-queen coins"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Coins; Allahabad pillar"
               ]
             }
           ]
@@ -1913,39 +2998,49 @@
             "from": 335,
             "to": 375
           },
-          "hook": "Prayag Prashasti.",
+          "group": "Gupta",
+          "hook": "Prayag Prashasti; Napoleon",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "335 – 375 CE"
+                "About 335 – 375 CE; Pataliputra",
+                "Titles: Parakramanka, Kaviraja, Ashvamedhaparakrama"
               ]
             },
             {
-              "label": "Source",
+              "label": "Wars & expansion",
               "points": [
-                "Allahabad (Prayag) Prashasti by Harishena"
+                "Aryavarta: uprooted 9 kings",
+                "Dakshinapatha: 12 kings captured and freed: Mahendra of Kosala, Vyaghraraja of Mahakantara, Mantaraja of Kurala, Vishnugopa of Kanchi, Nilaraja of Avamukta, Hastivarman of Vengi, Kubera of Devarashtra",
+                "Frontier kings (Samatata, Davaka, Kamarupa, Nepal) paid tribute"
               ]
             },
             {
-              "label": "Wars",
+              "label": "Rule, tax & coins",
               "points": [
-                "Aryavarta (north): uprooted nine kings",
-                "Dakshinapatha: twelve kings captured and freed, including Vishnugopa of Kanchi, Hastivarman of Vengi (AP), Mantaraja of Kurala",
-                "Forest kings, frontier states paid tribute"
+                "Gold coins of 6 types: Archer, Lyrist (veena), Ashvamedha, Standard, Battle-axe, Tiger-slayer"
               ]
             },
             {
-              "label": "Titles",
+              "label": "Court, poets & works",
               "points": [
-                "Kaviraja, Parakramanka; played the veena on coins",
+                "Harishena wrote the Prayag Prashasti",
+                "He was poet and musician"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Vaishnava; Ashvamedha",
+                "Sri Lanka’s Meghavarna asked to build a monastery at Bodh Gaya"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Allahabad pillar (Ashokan pillar)",
                 "“Napoleon of India” (V A Smith)"
-              ]
-            },
-            {
-              "label": "Other",
-              "points": [
-                "King of Sri Lanka Meghavarna asked leave to build a monastery at Bodh Gaya"
               ]
             }
           ]
@@ -1957,177 +3052,772 @@
             "from": 375,
             "to": 415
           },
-          "hook": "Shakas ended. Navaratnas.",
+          "group": "Gupta",
+          "hook": "Shakas, Navaratnas",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "375 – 415 CE"
+                "375 – 415 CE; Pataliputra, Ujjain second capital",
+                "Vikramaditya, Devagupta"
               ]
             },
             {
-              "label": "Wars",
+              "label": "Wars & expansion",
               "points": [
-                "Defeated Shaka Rudrasimha III of Malwa and Gujarat",
-                "Daughter Prabhavatigupta married Vakataka Rudrasena II"
+                "Beat Rudrasimha III (Western Kshatrapa), about 395",
+                "Married daughter Prabhavatigupta to Vakataka Rudrasena II; Kadamba link",
+                "Conquered Bengal (Meharauli pillar “Chandra”)"
               ]
             },
             {
-              "label": "Court",
+              "label": "Rule, tax & coins",
               "points": [
-                "Navaratnas: Kalidasa, Amarasimha, Varahamihira, Dhanvantari, Vararuchi, Shanku, Ghatakarpara, Kshapanaka, Vetalabhatta"
+                "Silver coins for Malwa and Gujarat; gold dinaras"
               ]
             },
             {
-              "label": "Visitor",
+              "label": "Court, poets & works",
               "points": [
-                "Fa-hien, 399 – 414 CE"
+                "Navaratnas: Kalidasa, Amarasimha, Dhanvantari, Varahamihira, Vararuchi, Shanku, Ghatakarpara, Kshapanaka, Vetalabhatta",
+                "Vishakhadatta: Devichandraguptam"
               ]
             },
             {
-              "label": "Other",
+              "label": "Religion, art & buildings",
               "points": [
-                "Ujjain second capital; Mehrauli iron pillar; silver coins"
+                "Paramabhagavata (Vaishnava)",
+                "Meharauli iron pillar; Udayagiri caves, Vidisha"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Fa-hien (Fo-kuo-ki), 399 – 414",
+                "Mathura, Sanchi, Udayagiri inscriptions"
               ]
             }
           ]
         },
         {
           "id": "k-kum",
-          "key": "Kumaragupta I and Skandagupta",
+          "key": "Kumaragupta I",
           "span": {
             "from": 415,
-            "to": 467
+            "to": 455
           },
-          "hook": "Nalanda, then the Huns.",
+          "group": "Gupta",
+          "hook": "Nalanda",
           "facets": [
             {
-              "label": "Kumaragupta (415 – 455)",
+              "label": "Reign & capital",
               "points": [
-                "Founded Nalanda; Mahendraditya; many coins"
+                "415 – 455 CE; Mahendraditya"
               ]
             },
             {
-              "label": "Skandagupta (455 – 467)",
+              "label": "Wars & expansion",
               "points": [
-                "Defeated Huns; Bhitari pillar",
-                "Repaired Sudarshana lake (Junagadh) by Parnadatta"
+                "Ashvamedha; Huna pressure begins at the end"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "14 coin types: Peacock, Horseman, Lion-slayer"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Founded Nalanda mahavihara (Shakraditya)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Mandasor inscription (silk weavers’ guild); Bilsad pillar"
               ]
             }
           ]
         },
         {
-          "id": "k-harsha",
-          "key": "Harsha",
+          "id": "k-skan",
+          "key": "Skandagupta",
           "span": {
-            "from": 606,
-            "to": 647
+            "from": 455,
+            "to": 467
           },
-          "hook": "Last great northern Hindu emperor.",
+          "group": "Gupta",
+          "hook": "Hun-fighter",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "606 – 647 CE (Harsha era 606)"
+                "455 – 467 CE; Vikramaditya, Kramaditya"
               ]
             },
             {
-              "label": "Wars",
+              "label": "Wars & expansion",
               "points": [
-                "Defeated Shashanka of Gauda (revenge for Rajyavardhana)",
-                "Lost to Pulakeshin II on the Narmada, 618–19"
+                "Repelled Huns about 455 – 458",
+                "Beat Pushyamitras"
               ]
             },
             {
-              "label": "Works",
+              "label": "Rule, tax & coins",
               "points": [
-                "Ratnavali, Priyadarshika, Nagananda (Harsha himself)",
-                "Bana: Harshacharita, Kadambari"
+                "Gold content of coins fell",
+                "Governor Parnadatta repaired Sudarshana lake, 456 – 58"
               ]
             },
             {
-              "label": "Religion",
+              "label": "Religion, art & buildings",
               "points": [
-                "Shaiva, then Mahayana Buddhism; Kannauj assembly and Prayag Maha-Moksha Parishad (every 5 years)"
+                "Vaishnava; Bhitari pillar"
               ]
             },
             {
-              "label": "Visitor",
+              "label": "Sources & visitors",
               "points": [
-                "Xuanzang (Hiuen Tsang), 630 – 644; Nalanda; Si-Yu-Ki"
+                "Bhitari pillar; Junagadh rock inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-tora",
+          "key": "Toramana and Mihirakula",
+          "span": {
+            "from": 490,
+            "to": 540
+          },
+          "group": "Huna",
+          "hook": "Hun terror",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "Toramana about 490 – 515 (Eran boar inscription); Mihirakula about 515 – 540, Sakala"
               ]
             },
             {
-              "label": "Admin",
+              "label": "Wars & expansion",
               "points": [
-                "Bhukti, Vishaya; taxes: bhaga, hiranya, bali; land grants (Madhuban, Banskhera plates)"
+                "Mihirakula beaten by Yashodharman of Mandasor and Baladitya"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Mihirakula, a Shaiva, persecuted Buddhists"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Gwalior inscription; Xuanzang"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-pravara",
+          "key": "Pravarasena I",
+          "span": {
+            "from": 275,
+            "to": 335
+          },
+          "group": "Vakataka",
+          "hook": "Four Ashvamedhas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 275 – 335 CE; Nandivardhana, Vatsagulma"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Took north Deccan from Narmada to Vidarbha"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Four Ashvamedhas; Vajapeya"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Puranas, inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-harishena",
+          "key": "Harishena",
+          "span": {
+            "from": 475,
+            "to": 500
+          },
+          "group": "Vakataka",
+          "hook": "Ajanta patron",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 475 – 500 CE; Vatsagulma"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Held Malwa to Andhra, Kuntala, Kosala"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Ajanta Caves 16 and 17 under minister Varahadeva"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Ajanta Caves 16, 17, 19"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Ajanta Cave 16 inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-santa",
+          "key": "Santamula I",
+          "span": {
+            "from": 225,
+            "to": 250
+          },
+          "group": "Ikshvaku (Vijayapuri)",
+          "hook": "Founder",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 225 – 250 CE; Vijayapuri (Nagarjunakonda)"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Performed Ashvamedha and Vajapeya"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Vedic sacrifice; temple of Kartikeya"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nagarjunakonda inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-viru",
+          "key": "Virapurushadatta",
+          "span": {
+            "from": 250,
+            "to": 275
+          },
+          "group": "Ikshvaku (Vijayapuri)",
+          "hook": "Buddhist queens",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 250 – 275 CE; Vijayapuri"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Marriages with Ujjain Shakas and Pallavas"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Queens Santisri and Bapisri built Mahachaitya and monasteries at Nagarjunakonda"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nagarjunakonda inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-madh",
+          "key": "Madhavavarman II",
+          "span": {
+            "from": 535,
+            "to": 585
+          },
+          "group": "Vishnukundin",
+          "hook": "Eleven Ashvamedhas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 535 – 585 CE; Indrapalanagara, Denduluru"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Beat Vakatakas, Pallavas, Eastern Gangas"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Eleven Ashvamedhas; Undavalli caves"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Copper plates"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-simh",
+          "key": "Simhavishnu",
+          "span": {
+            "from": 575,
+            "to": 600
+          },
+          "group": "Pallava",
+          "hook": "Kalabhra destroyer",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 575 – 600 CE; Kanchi"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Ended Kalabhras; beat Cholas, Pandyas, Cheras, Sri Lanka"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Bharavi (Kiratarjuniya) at his court"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Vaishnava; Adivaraha cave, Mamallapuram"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Kasakudi plates"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-mahv",
+          "key": "Mahendravarman I",
+          "span": {
+            "from": 600,
+            "to": 630
+          },
+          "group": "Pallava",
+          "hook": "Rock-cut",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "600 – 630 CE; Kanchi",
+                "Titles: Vichitrachitta, Gunabhara, Mattavilasa"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Lost north Pallava land to Pulakeshin II (Pullalur)"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Wrote Mattavilasa Prahasana, Bhagavadajjukiyam",
+                "Musician and painter"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Jain turned Shaiva (Appar)",
+                "Rock-cut caves at Mandagapattu, Mahendravadi, Pallavaram, Vallam"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Mandagapattu inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-nara",
+          "key": "Narasimhavarman I (Mamalla)",
+          "span": {
+            "from": 630,
+            "to": 668
+          },
+          "group": "Pallava",
+          "hook": "Vatapikonda",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "630 – 668 CE; Kanchi; Mamallapuram port"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Beat Pulakeshin II at Pariyala, Manimangalam, Suramara; took Vatapi 642",
+                "Naval expedition to Sri Lanka"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Monolithic rathas of Mamallapuram"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Xuanzang visited Kanchi about 640"
               ]
             }
           ]
         },
         {
           "id": "k-pulak",
-          "key": "Pulakeshin II",
+          "key": "Pulakeshin I",
           "span": {
-            "from": 610,
-            "to": 642
+            "from": 535,
+            "to": 566
           },
-          "hook": "Aihole inscription.",
+          "group": "Chalukya of Badami",
+          "hook": "Founder",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "610 – 642 CE"
+                "About 535 – 566 CE; Vatapi (Badami)"
               ]
             },
             {
-              "label": "Wars",
+              "label": "Wars & expansion",
               "points": [
-                "Beat Harsha on the Narmada, 618–19",
-                "Beat Pallava Mahendravarman I; killed by Narasimhavarman I at Vatapi, 642"
+                "Ashvamedha"
               ]
             },
             {
-              "label": "Source",
+              "label": "Sources & visitors",
               "points": [
-                "Aihole inscription by Ravikirti, 634 CE (Jain poet)"
-              ]
-            },
-            {
-              "label": "Other",
-              "points": [
-                "Persian embassy of Khusrau II; Xuanzang visited"
+                "Badami inscription"
               ]
             }
           ]
         },
         {
-          "id": "k-mahe",
-          "key": "Mahendravarman I and Narasimhavarman I",
+          "id": "k-pulak2",
+          "key": "Pulakeshin II",
           "span": {
-            "from": 600,
-            "to": 668
+            "from": 610,
+            "to": 642
           },
-          "hook": "Rock-cut then monolithic.",
+          "group": "Chalukya of Badami",
+          "hook": "Aihole, Harsha",
           "facets": [
             {
-              "label": "Mahendravarman I (600 – 630)",
+              "label": "Reign & capital",
               "points": [
-                "Rock-cut temples (Mandagapattu); titles Vichitrachitta, Gunabhara",
-                "Mattavilasa Prahasana (play)",
-                "Became Shaiva (Appar)"
+                "610 – 642 CE; Vatapi"
               ]
             },
             {
-              "label": "Narasimhavarman I Mamalla (630 – 668)",
+              "label": "Wars & expansion",
               "points": [
-                "Took Vatapi, 642",
-                "Monolithic rathas of Mamallapuram",
-                "Xuanzang visited Kanchi, about 640"
+                "Beat Harsha on the Narmada, 618 – 19",
+                "Took Vengi (brother Kubja Vishnuvardhana, 624), Kalinga, Kosala",
+                "Beat Mahendravarman I at Pullalur; killed by Narasimhavarman I, 642"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Persian embassy of Khusrau II about 625"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Ravikirti wrote the Aihole prasasti, 634 CE"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Jain patron (Ravikirti); Aihole Meguti temple"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Aihole inscription; Xuanzang"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-vik1",
+          "key": "Vikramaditya II",
+          "span": {
+            "from": 733,
+            "to": 746
+          },
+          "group": "Chalukya of Badami",
+          "hook": "Pattadakal",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "733 – 746 CE"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Took Kanchi from Nandivarman II"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Queen Lokamahadevi built Virupaksha temple, Pattadakal; Trailokyamahadevi built Mallikarjuna"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Pattadakal inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-prab",
+          "key": "Prabhakaravardhana",
+          "span": {
+            "from": 580,
+            "to": 605
+          },
+          "group": "Pushyabhuti (Vardhana)",
+          "hook": "Parama-bhattaraka",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "580 – 605 CE; Sthanvishvara (Thanesar)"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Fought Hunas, Gurjaras, Malavas"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Sun worshipper"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Harshacharita"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-rajya",
+          "key": "Rajyavardhana",
+          "span": {
+            "from": 605,
+            "to": 606
+          },
+          "group": "Pushyabhuti (Vardhana)",
+          "hook": "Killed by Shashanka",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "605 – 606 CE"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Beat Malava king Devagupta; killed by Shashanka of Gauda"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Buddhist"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Harshacharita"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-shas",
+          "key": "Shashanka",
+          "span": {
+            "from": 590,
+            "to": 625
+          },
+          "group": "Gauda",
+          "hook": "Bodhi tree",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "About 590 – 625 CE; Karnasuvarna"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Allied with Malwa; killed Rajyavardhana"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Shaiva; cut the Bodhi tree at Bodh Gaya (Xuanzang)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Xuanzang"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "k-harsha",
+          "key": "Harsha (Harshavardhana)",
+          "span": {
+            "from": 606,
+            "to": 647
+          },
+          "group": "Pushyabhuti (Vardhana)",
+          "hook": "Kannauj, Xuanzang",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "606 – 647 CE; Thanesar, then Kannauj; Harsha era 606",
+                "Titles: Siladitya, Parameshvara"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Beat Shashanka about 619; Valabhi; Sindh; Magadha",
+                "Lost to Pulakeshin II on the Narmada, 618 – 19"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Revenue: 1/6 (bhaga), hiranya, bali; 1/4 of income for charity",
+                "Officers: Mahasandhivigrahadhikrita, Sarvagata; bhuktis, vishayas",
+                "Banskhera and Madhuban plates (land grants)"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Plays: Ratnavali, Priyadarshika, Nagananda (by Harsha)",
+                "Bana: Harshacharita, Kadambari; Mayura: Suryashataka"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Shaiva, later Mahayana; Kannauj assembly 643; Prayag Maha-Moksha Parishad every 5 years",
+                "Nalanda patron"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Xuanzang (Si-Yu-Ki), 630 – 644",
+                "Banskhera, Madhuban plates"
               ]
             }
           ]
         }
+      ],
+      "columns": [
+        "Reign & capital",
+        "Wars & expansion",
+        "Rule, tax & coins",
+        "Court, poets & works",
+        "Religion, art & buildings",
+        "Sources & visitors"
       ]
     },
     {

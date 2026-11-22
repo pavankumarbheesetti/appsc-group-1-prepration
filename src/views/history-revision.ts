@@ -65,6 +65,35 @@ function timelineSection(s: RevisionSection): HTMLElement {
   ]);
 }
 
+function tableSection(s: RevisionSection): HTMLElement {
+  const cols = s.columns ?? [];
+  const rows: HTMLElement[] = [];
+  let last: string | undefined;
+  for (const c of s.cards) {
+    if (c.group && c.group !== last) {
+      last = c.group;
+      rows.push(el('tr', { class: 'rv-t-group' }, [el('th', { attrs: { colspan: String(cols.length + 1), scope: 'colgroup' }, text: c.group })]));
+    }
+    rows.push(el('tr', { attrs: { id: c.id } }, [
+      el('th', { class: 'rv-t-key', attrs: { scope: 'row' } }, [
+        el('strong', { text: c.key }),
+        c.span ? el('span', { class: 'rv-t-span tnum', text: spanLabel(c) }) : null,
+        c.hook ? el('span', { class: 'rv-t-hook', text: c.hook }) : null,
+      ]),
+      ...cols.map((col) => {
+        const f = c.facets.find((x) => x.label === col);
+        return el('td', {}, f ? [el('ul', {}, f.points.map((p) => el('li', { text: p })))] : [el('span', { class: 'hl-muted', text: '—' })]);
+      }),
+    ]));
+  }
+  return el('div', { class: 'rv-t-wrap' }, [
+    el('table', { class: 'rv-t' }, [
+      el('thead', {}, [el('tr', {}, [el('th', { attrs: { scope: 'col' }, text: 'Ruler' }), ...cols.map((h) => el('th', { attrs: { scope: 'col' }, text: h }))])]),
+      el('tbody', {}, rows),
+    ]),
+  ]);
+}
+
 export function renderRevision(root: HTMLElement, c: Chapter): void {
   const sections = getRevision(c.id);
   mount(
@@ -76,7 +105,7 @@ export function renderRevision(root: HTMLElement, c: Chapter): void {
       ...sections.map((s) => el('section', { class: 'rv-section', attrs: { id: `rv-${s.id}` } }, [
         el('h2', { class: 'hl-part-title', text: s.title }),
         s.intro ? el('p', { class: 'hl-muted', text: s.intro }) : null,
-        s.style === 'timeline' ? timelineSection(s) : el('div', {}, s.cards.map(boxesCard)),
+        s.style === 'timeline' ? timelineSection(s) : s.style === 'table' ? tableSection(s) : el('div', {}, s.cards.map(boxesCard)),
       ])),
     ]),
   );

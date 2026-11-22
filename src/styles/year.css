@@ -339,3 +339,15 @@
 .rv-bar { position: absolute; top: 2px; bottom: 2px; overflow: hidden; white-space: nowrap; font-size: 11px; padding: 0 4px; border: 1px solid var(--border); border-radius: 4px; background: var(--accent-soft, var(--surface)); color: var(--text); cursor: pointer; }
 .rv-scale { margin: var(--space-1) 0 var(--space-3); font-size: var(--fs-sm); color: var(--text-muted, inherit); }
 @media (max-width: 640px) { .rv-card { grid-template-columns: 1fr; } }
+
+/* Revision: ruler tables */
+.rv-t-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-md, 8px); }
+.rv-t { border-collapse: collapse; min-width: 980px; width: 100%; font-size: 12.5px; line-height: 1.35; }
+.rv-t th, .rv-t td { border: 1px solid var(--border); padding: 5px 7px; vertical-align: top; text-align: left; }
+.rv-t thead th { position: sticky; top: 0; background: var(--surface-2, var(--surface)); z-index: 2; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+.rv-t-key { position: sticky; left: 0; background: var(--surface); min-width: 130px; max-width: 150px; z-index: 1; }
+.rv-t-key strong { display: block; font-size: 13.5px; }
+.rv-t-span, .rv-t-hook { display: block; font-weight: normal; color: var(--text-muted, inherit); }
+.rv-t-group th { background: var(--accent-soft, var(--surface-2, var(--surface))); font-size: 12px; letter-spacing: .03em; }
+.rv-t ul { margin: 0; padding-left: 13px; }
+.rv-t li { margin: 0 0 2px; }

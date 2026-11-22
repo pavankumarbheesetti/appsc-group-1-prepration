@@ -405,185 +405,969 @@
       ]
     },
     {
-      "id": "an-rul",
+      "id": "an-rt",
       "chapterId": "andhra-all",
-      "title": "Andhra rulers and fighters",
-      "style": "boxes",
+      "title": "Andhra rulers: one key each",
+      "style": "table",
+      "intro": "One row per ruler, grouped by dynasty.",
       "cards": [
         {
-          "id": "r-ganap",
+          "id": "an-simuka",
+          "key": "Simuka",
+          "span": {
+            "from": -230,
+            "to": -207
+          },
+          "group": "Satavahana",
+          "hook": "First Satavahana",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 230 – 207 BCE; Pratishthana (Paithan) / Srikakulam tradition"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Overthrew the Kanvas and the last Shungas (Puranas)"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Nanaghat inscription lists him"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Puranas; Nanaghat"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-gautami",
+          "key": "Gautamiputra Satakarni",
+          "span": {
+            "from": 106,
+            "to": 130
+          },
+          "group": "Satavahana",
+          "hook": "Beat the Shakas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 106 – 130 CE; Pratishthana"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Defeated Nahapana (Kshaharata) and the Shakas, Pahlavas, Yavanas; restored Satavahana power"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Coins restruck over Nahapana silver coins (Jogalthembi hoard)"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Called Ekabrahmana; checked mixing of varnas"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nasik inscription by mother Gautami Balasri"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-pulumavi",
+          "key": "Vasishthiputra Pulumavi",
+          "span": {
+            "from": 130,
+            "to": 158
+          },
+          "group": "Satavahana",
+          "hook": "Amaravati stupa",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 130 – 158 CE; Amaravati region"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Rudradaman (Shaka) beat him twice but spared him as a son-in-law (Junagadh inscription)"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Ship-mast coins (maritime trade)"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Amaravati stupa casing and Nagarjunakonda grew under his line"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Junagadh inscription"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-yajna",
+          "key": "Yajna Sri Satakarni",
+          "span": {
+            "from": 165,
+            "to": 194
+          },
+          "group": "Satavahana",
+          "hook": "Last great",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 165 – 194 CE"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Won back the northern Konkan and Malwa from the Shakas"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Ship and conch coins"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Patron of Buddhist Mahasanghikas at Nagarjunakonda"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nasik, Kanheri inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-hala",
+          "key": "Hala",
+          "span": {
+            "from": 20,
+            "to": 24
+          },
+          "group": "Satavahana",
+          "hook": "Gatha Saptashati",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 20 – 24 CE"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Compiled Gatha Saptashati (700 Prakrit verses, Maharashtri)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Gatha Saptashati"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-vijaya",
+          "key": "Madhariputra Sivalakurti",
+          "span": {
+            "from": 225,
+            "to": 250
+          },
+          "group": "Ikshvaku",
+          "hook": "Founder",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 225 – 250 CE; Vijayapuri (Nagarjunakonda)"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Succeeded the Satavahanas in the Krishna valley"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Chamtamula, first Ikshvaku king, performed Vedic sacrifices (Ashvamedha)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nagarjunakonda inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-virapurusha",
+          "key": "Virapurushadatta",
+          "span": {
+            "from": 250,
+            "to": 275
+          },
+          "group": "Ikshvaku",
+          "hook": "Queens built viharas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 250 – 275 CE; Vijayapuri"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Married Shaka and Rudrabhattarika (Ujjain) princesses"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Queens (his aunt Santisri) built viharas, Mahachaitya, Ashvamedha pillar at Nagarjunakonda; Buddhist boom"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nagarjunakonda, Jaggayyapeta inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-madhava",
+          "key": "Madhavavarman II",
+          "span": {
+            "from": 440,
+            "to": 460
+          },
+          "group": "Vishnukundin",
+          "hook": "Eleven Ashvamedhas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 440 – 460 CE; Indrapalanagara, then Denduluru"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Married a Vakataka princess; Kalinga and coastal Andhra"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Performed eleven Ashvamedhas and a thousand Agnishtomas (claimed)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Copper plates (Polamuru, Ipur)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-govinda",
+          "key": "Govindavarman",
+          "span": {
+            "from": 420,
+            "to": 440
+          },
+          "group": "Vishnukundin",
+          "hook": "Founder of line",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 420 – 440 CE; Indrapalanagara (Nalgonda)"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Buddhist patron; Indrapalanagara monastery"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Copper plates (Ramatirtham)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-vikramendra",
+          "key": "Vikramendravarman",
+          "span": {
+            "from": 500,
+            "to": 520
+          },
+          "group": "Vishnukundin",
+          "hook": "Cave temples",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 500 – 520 CE; Denduluru"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Rock-cut temples at Undavalli (Guntur) and Mogalrajapuram (Vijayawada) are linked to the Vishnukundins"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Copper plates"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-pulakeshi",
+          "key": "Pulakeshin II",
+          "span": {
+            "from": 610,
+            "to": 642
+          },
+          "group": "Chalukya of Badami",
+          "hook": "Beat Harsha, Pallava",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "610 – 642 CE; Badami (Vatapi)"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Beat Harsha on the Narmada; took Vengi and set up Kubja Vishnuvardhana; killed by Narasimhavarman I (Pallava) 642"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Aihole inscription by Ravikirti"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Aihole inscription; Hiuen Tsang"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-kubja",
+          "key": "Kubja Vishnuvardhana",
+          "span": {
+            "from": 624,
+            "to": 641
+          },
+          "group": "Eastern Chalukya",
+          "hook": "Founder of Vengi line",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 624 – 641 CE; Pishtapura, then Vengi"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Made viceroy of Vengi by brother Pulakeshin II; became independent"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Dynasty ruled Vengi for about 500 years"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Copper plates"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-gunaga",
+          "key": "Gunaga Vijayaditya",
+          "span": {
+            "from": 848,
+            "to": 892
+          },
+          "group": "Eastern Chalukya",
+          "hook": "Fought Rashtrakutas",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "848 – 892 CE; Vengi"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Long wars with the Rashtrakutas; burnt Kiranapura"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Court of Pandaranga"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Pandaranga, his general, built temples (Bezawada)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Copper plates"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-rajaraja",
+          "key": "Rajaraja Narendra",
+          "span": {
+            "from": 1022,
+            "to": 1061
+          },
+          "group": "Eastern Chalukya",
+          "hook": "Nannaya began Mahabharata",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "1022 – 1061 CE; Rajahmundry"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Married Chola princess Ammanga Devi; son Kulottunga I became Chola"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Nannaya (Adikavi) began the Andhra Mahabharata at his court"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Rajahmundry as cultural centre"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Nannaya’s Mahabharata"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-kulottunga",
+          "key": "Kulottunga I",
+          "span": {
+            "from": 1070,
+            "to": 1118
+          },
+          "group": "Chalukya-Chola",
+          "hook": "Chola-Chalukya union",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "1070 – 1118 CE; Gangaikondacholapuram"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Founded Chalukya-Chola line; Vengi under Chola control"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Abolished tolls (Sungam tavirtta)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Chola inscriptions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-ganapati",
           "key": "Ganapatideva",
           "span": {
             "from": 1199,
             "to": 1262
           },
-          "hook": "Motupalli.",
+          "group": "Kakatiya",
+          "hook": "Trade and tanks",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "1199 – 1262"
+                "1199 – 1262 CE; Warangal (Orugallu)"
               ]
             },
             {
-              "label": "Work",
+              "label": "Wars & expansion",
               "points": [
-                "Unified coastal Andhra and Telangana",
-                "Motupalli abhayasasanam to sea merchants",
-                "Capital moved Hanamkonda to Warangal"
+                "Won coastal Andhra; Motupalli port; war with Yadavas"
               ]
             },
             {
-              "label": "Court",
+              "label": "Rule, tax & coins",
+              "points": [
+                "Motupalli abhayasasanam (safe trade charter, 1244)",
+                "Irrigation tanks and Ghanpur"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
               "points": [
                 "Jayapa Senani: Nritta Ratnavali"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Ramappa temple built by Recherla Rudra (1213)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Motupalli inscription; Marco Polo"
               ]
             }
           ]
         },
         {
-          "id": "r-rudra",
+          "id": "an-rudrama",
           "key": "Rudramadevi",
           "span": {
             "from": 1262,
             "to": 1289
           },
-          "hook": "Queen of Warangal.",
+          "group": "Kakatiya",
+          "hook": "Queen ruler",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "1262 – 89"
+                "1262 – 1289 CE; Warangal"
               ]
             },
             {
-              "label": "Facts",
+              "label": "Wars & expansion",
               "points": [
-                "Ruled as a man (Rudradeva Maharaja); Marco Polo praised her",
-                "Ambadeva rebelled; she held the throne"
+                "Fought the Yadavas of Devagiri and the Cholas of Kanchi; Ambadeva of Tripurantaka rebelled"
+              ]
+            },
+            {
+              "label": "Rule, tax & coins",
+              "points": [
+                "Nayankara system took shape under her generals"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Marco Polo praised her rule; Tikkana and Gona Buddha Reddy"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Warangal fort (Kakatiya Kala Thoranam)"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Marco Polo; Ranganatha Ramayana (Gona Buddha Reddy)"
               ]
             }
           ]
         },
         {
-          "id": "r-pratap",
-          "key": "Prataparudra",
+          "id": "an-prataparudra",
+          "key": "Prataparudra II",
           "span": {
             "from": 1289,
             "to": 1323
           },
-          "hook": "Fall of Warangal.",
+          "group": "Kakatiya",
+          "hook": "Fell to Delhi",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "1289 – 1323"
+                "1289 – 1323 CE; Warangal"
               ]
             },
             {
-              "label": "Wars",
+              "label": "Wars & expansion",
               "points": [
-                "Attacks by Malik Kafur (1310) and Ulugh Khan (1323)"
+                "Sieged by Alauddin’s Malik Kafur (1310) and Ulugh Khan (1323); captured; taken to Delhi"
               ]
             },
             {
-              "label": "End",
+              "label": "Rule, tax & coins",
               "points": [
-                "Taken prisoner and died on the way to Delhi, 1323"
+                "Paid tribute to Delhi in 1310"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Vidyanatha: Prataparudra Yashobhushanam"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Amir Khusrau, Barani"
               ]
             }
           ]
         },
         {
-          "id": "r-pvema",
+          "id": "an-prolaya",
           "key": "Prolaya Vema Reddy",
           "span": {
             "from": 1325,
             "to": 1353
           },
-          "hook": "Reddi founder.",
+          "group": "Reddi",
+          "hook": "Founder of Reddi kingdom",
           "facets": [
             {
-              "label": "Tenure",
+              "label": "Reign & capital",
               "points": [
-                "1325 – 53 (Addanki, Kondaveedu)"
+                "c. 1325 – 1353 CE; Addanki"
               ]
             },
             {
-              "label": "Work",
+              "label": "Wars & expansion",
               "points": [
-                "Founded Reddi kingdom; Srisailam steps; helped scholars"
+                "Part of the Telugu Nayaka rising against Delhi (Musunuri Nayaks)"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Errana (Errapragada) at the Reddi court; Mahabharata Aranya Parva"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Vilasa grant"
               ]
             }
           ]
         },
         {
-          "id": "r-quli",
-          "key": "Qutb Shahi kings",
+          "id": "an-komati",
+          "key": "Komati Vema Reddy",
+          "span": {
+            "from": 1400,
+            "to": 1420
+          },
+          "group": "Reddi",
+          "hook": "Court of Rajahmundry",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "c. 1400 – 1420 CE; Rajahmundry"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Srinatha (Kavi Sarvabhauma) moved in his court; Sringara Naishadham"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Kavya texts"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-krishnadeva",
+          "key": "Krishnadevaraya",
+          "span": {
+            "from": 1509,
+            "to": 1529
+          },
+          "group": "Vijayanagara",
+          "hook": "Andhra Bhoja",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "1509 – 1529 CE; Hampi; Tuluva"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Beat Gajapati of Odisha (Udayagiri, Kondaveedu), Adil Shah (Raichur 1520)"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Ashtadiggajas: Allasani Peddana (Manucharitra), Nandi Timmana, Dhurjati, Madayyagari Mallana, Ayyalaraju Ramabhadra, Pingali Surana, Ramarajabhushanudu, Tenali Ramakrishna"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Wrote Amuktamalyada in Telugu; Hazara Rama, Vitthala temples"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Domingo Paes, Nuniz, Amuktamalyada"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-quli",
+          "key": "Quli Qutb Shah",
           "span": {
             "from": 1518,
-            "to": 1687
+            "to": 1543
           },
-          "hook": "Hyderabad 1591.",
+          "group": "Qutb Shahi",
+          "hook": "Golconda founder",
           "facets": [
             {
-              "label": "Quli Qutb Shah (1518 – 43)",
+              "label": "Reign & capital",
               "points": [
-                "Founder, Golconda; murdered by son Jamsheed"
+                "1518 – 1543 CE; Golconda"
               ]
             },
             {
-              "label": "Muhammad Quli (1580 – 1612)",
+              "label": "Wars & expansion",
               "points": [
-                "Founded Hyderabad 1591; Charminar; Poet in Telugu and Urdu"
+                "Declared independence from the Bahmanis"
               ]
             },
             {
-              "label": "Abdullah and Tana Shah",
+              "label": "Religion, art & buildings",
               "points": [
-                "Golconda fell to Aurangzeb 1687"
+                "Golconda fort"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Persian chronicles"
               ]
             }
           ]
         },
         {
-          "id": "r-free",
-          "key": "Andhra freedom fighters",
-          "hook": "Alluri, Prakasam, Potti.",
+          "id": "an-ibrahim",
+          "key": "Ibrahim Quli Qutb Shah",
+          "span": {
+            "from": 1550,
+            "to": 1580
+          },
+          "group": "Qutb Shahi",
+          "hook": "Malki Bharam",
           "facets": [
             {
-              "label": "Alluri Sitarama Raju",
+              "label": "Reign & capital",
               "points": [
-                "Rampa rebellion, 1922 – 24; shot at Koyyuru, 7 May 1924"
+                "1550 – 1580 CE; Golconda"
               ]
             },
             {
-              "label": "Tanguturi Prakasam",
+              "label": "Wars & expansion",
               "points": [
-                "Andhra Kesari; first CM of Andhra State, 1953"
+                "Joined the Deccan sultans against Vijayanagara at Talikota (1565)"
               ]
             },
             {
-              "label": "Potti Sriramulu",
+              "label": "Court, poets & works",
               "points": [
-                "Fasted unto death for Andhra State; died 15 Dec 1952"
+                "Telugu poet Addanki Gangadharudu"
               ]
             },
             {
-              "label": "Pingali Venkayya",
+              "label": "Religion, art & buildings",
               "points": [
-                "Designed the Indian flag (Machilipatnam)"
+                "Husain Sagar tank, 1562"
               ]
             },
             {
-              "label": "Others",
+              "label": "Sources & visitors",
               "points": [
-                "Pattabhi Sitaramayya (Congress president 1948)",
-                "Komaram Bheem (Gond leader, 1940)"
+                "Persian chronicles"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-muhammad",
+          "key": "Muhammad Quli Qutb Shah",
+          "span": {
+            "from": 1580,
+            "to": 1612
+          },
+          "group": "Qutb Shahi",
+          "hook": "Hyderabad, Charminar",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "1580 – 1612 CE; Golconda, then Hyderabad"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Urdu poet; first Urdu Diwan"
+              ]
+            },
+            {
+              "label": "Religion, art & buildings",
+              "points": [
+                "Founded Hyderabad 1591; Charminar"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Persian chronicles"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "an-abul",
+          "key": "Abul Hasan Tana Shah",
+          "span": {
+            "from": 1672,
+            "to": 1687
+          },
+          "group": "Qutb Shahi",
+          "hook": "Last Qutb Shahi",
+          "facets": [
+            {
+              "label": "Reign & capital",
+              "points": [
+                "1672 – 1687 CE; Golconda"
+              ]
+            },
+            {
+              "label": "Wars & expansion",
+              "points": [
+                "Aurangzeb besieged Golconda for 8 months; fell 1687"
+              ]
+            },
+            {
+              "label": "Court, poets & works",
+              "points": [
+                "Ministers Madanna and Akkanna"
+              ]
+            },
+            {
+              "label": "Sources & visitors",
+              "points": [
+                "Mughal records"
               ]
             }
           ]
         }
+      ],
+      "columns": [
+        "Reign & capital",
+        "Wars & expansion",
+        "Rule, tax & coins",
+        "Court, poets & works",
+        "Religion, art & buildings",
+        "Sources & visitors"
       ]
     },
     {

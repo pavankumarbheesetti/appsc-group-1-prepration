@@ -372,6 +372,17 @@ describe('quick revision tables', () => {
   });
 });
 
+describe('ruler tables', () => {
+  it('shows one row per ruler with fixed columns', () => {
+    const root = open('#/topics/history/ancient-231bce-647/revision', renderChapter);
+    const rows = [...root.querySelectorAll('.rv-t tbody tr[id]')].map((r) => r.querySelector('strong')?.textContent);
+    expect(rows).toContain('Samudragupta');
+    expect(rows).toContain('Harsha (Harshavardhana)');
+    expect(root.querySelector('.rv-t thead')?.textContent).toContain('Wars & expansion');
+    expect(root.querySelectorAll('.rv-t-group').length).toBeGreaterThan(5);
+  });
+});
+
 describe('revision coverage', () => {
   it('every history chapter has revision tables with at least 5 keys', () => {
     for (const c of getChapters()) {

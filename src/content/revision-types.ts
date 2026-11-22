@@ -26,11 +26,20 @@ export const RevisionSectionSchema = z
     chapterId: z.string().min(1),
     title: z.string().min(1),
     /** boxes = key box with small boxes beside it; timeline = dynasties on one line with before/contemporaries. */
-    style: z.enum(['boxes', 'timeline']),
+    style: z.enum(['boxes', 'timeline', 'table']),
+    /** table: fixed columns; every card is one row (one ruler) and its facet labels must be column names. */
+    columns: z.array(z.string().min(1)).min(2).optional(),
     intro: z.string().min(1).optional(),
     cards: z.array(RevisionCardSchema).min(1),
   })
   .superRefine((s, ctx) => {
+    if (s.style === 'table') {
+      if (!s.columns) ctx.addIssue({ code: 'custom', path: ['columns'], message: 'table section needs columns' });
+      else s.cards.forEach((c, i) => c.facets.forEach((f, j) => {
+        if (!s.columns!.includes(f.label)) ctx.addIssue({ code: 'custom', path: ['cards', i, 'facets', j], message: `'${f.label}' is not a column of '${s.id}'` });
+      }));
+      return;
+    }
     if (s.style !== 'timeline') return;
     s.cards.forEach((c, i) => {
       if (!c.span) ctx.addIssue({ code: 'custom', path: ['cards', i, 'span'], message: `timeline card '${c.id}' needs a span` });
