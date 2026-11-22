@@ -1,0 +1,458 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-state",
+   "part": "Polity",
+   "title": "State executive and legislature (with AP)",
+   "order": 6,
+   "intro": "Governor’s office, powers, discretion and cases; CM; state legislature; AP who’s who.",
+   "chapters": [
+    "polity-all",
+    "andhra-all"
+   ],
+   "keys": [
+    {
+     "id": "st-gov",
+     "name": "Governor – office",
+     "tag": "Governor",
+     "rows": [
+      {
+       "k": "153",
+       "v": "A Governor per state; one for 2+ states (7th, 1956)"
+      },
+      {
+       "k": "154, 166",
+       "v": "Executive power; business in his name"
+      },
+      {
+       "k": "155",
+       "v": "Appointed by President (warrant) – Canadian model"
+      },
+      {
+       "k": "156",
+       "v": "President's pleasure; 5 yrs; resigns to President; no removal procedure"
+      },
+      {
+       "k": "157 – 158",
+       "v": "Citizen, 35; no legislature or office of profit; pay by Parliament"
+      },
+      {
+       "k": "159",
+       "v": "Oath before HC Chief Justice"
+      },
+      {
+       "k": "361",
+       "v": "No criminal case in term"
+      },
+      {
+       "k": "Appoints",
+       "v": "CM, ministers, Advocate General (165), State Election Commissioner, SPSC members; Chancellor"
+      },
+      {
+       "k": "Removal note",
+       "v": "SEC like HC judge; SPSC only by President"
+      }
+     ],
+     "traps": [
+      "Governor oath: HC CJ; President oath: CJI",
+      "HC judges appointed by President, not Governor"
+     ]
+    },
+    {
+     "id": "st-govpw",
+     "name": "Governor – legislative and pardon powers",
+     "tag": "Governor",
+     "rows": [
+      {
+       "k": "174, 176",
+       "v": "Summon, prorogue, dissolve; special address"
+      },
+      {
+       "k": "Council",
+       "v": "Nominates 1/6 (literature, science, art, co-operation, social service)"
+      },
+      {
+       "k": "192",
+       "v": "MLA disqualification on EC opinion"
+      },
+      {
+       "k": "Finance Commission",
+       "v": "State FC every 5 years"
+      },
+      {
+       "k": "213",
+       "v": "Ordinances – President's instructions in some cases"
+      },
+      {
+       "k": "161",
+       "v": "Pardon for state-law offences; no death pardon, no court-martial"
+      },
+      {
+       "k": "Tribal minister",
+       "v": "Chhattisgarh, Jharkhand, MP, Odisha (Bihar freed by 94th, 2006)"
+      },
+      {
+       "k": "239(2)",
+       "v": "May run an adjoining UT"
+      }
+     ]
+    },
+    {
+     "id": "st-govdisc",
+     "name": "Governor – discretion and assent",
+     "tag": "Governor",
+     "rows": [
+      {
+       "k": "Discretion",
+       "v": "Hung House CM; dismiss ministry; reserve bill; recommend 356; 163(2) his decision final"
+      },
+      {
+       "k": "Special responsibility",
+       "v": "Maharashtra, Gujarat, Nagaland (371A), Manipur, Sikkim, Karnataka (371J)"
+      },
+      {
+       "k": "Art 200",
+       "v": "Assent, withhold, return (not Money Bill), reserve; never amend"
+      },
+      {
+       "k": "Art 201",
+       "v": "President assents, withholds or returns; House reconsiders in 6 months"
+      },
+      {
+       "k": "Compulsory reservation",
+       "v": "Bill endangering HC"
+      },
+      {
+       "k": "304(b)",
+       "v": "Trade-restricting bill needs prior President's sanction"
+      }
+     ]
+    },
+    {
+     "id": "st-govcase",
+     "name": "Governor – cases and commissions",
+     "years": {
+      "from": 1974,
+      "to": 2025
+     },
+     "tag": "Governor",
+     "rows": [
+      {
+       "k": "Shamsher Singh 1974",
+       "v": "Acts on advice except discretion"
+      },
+      {
+       "k": "Rameshwar Prasad 2006",
+       "v": "Bihar dissolution 2005 invalid"
+      },
+      {
+       "k": "B.P. Singhal 2010",
+       "v": "No arbitrary removal"
+      },
+      {
+       "k": "Nabam Rebia 2016",
+       "v": "Cannot advance session alone"
+      },
+      {
+       "k": "Punjab Nov 2023",
+       "v": "Withholding means return to House"
+      },
+      {
+       "k": "Tamil Nadu 8 Apr 2025",
+       "v": "No pocket veto; 1 month / 3 months timelines; 10 bills deemed assented (Art 142)"
+      },
+      {
+       "k": "Reference Nov 2025",
+       "v": "Courts cannot impose timelines"
+      },
+      {
+       "k": "Sarkaria 1983 – 88",
+       "v": "Eminent outsider, consult CM, 356 last resort"
+      },
+      {
+       "k": "Punchhi 2007 – 10",
+       "v": "Fixed 5-yr term; removal by state resolution; assent timelines"
+      }
+     ]
+    },
+    {
+     "id": "st-cm",
+     "name": "Chief Minister and Council",
+     "tag": "Executive",
+     "hook": "15 percent, floor of 12",
+     "rows": [
+      {
+       "k": "163(1)",
+       "v": "Council aids, advises Governor; 163(3) advice not inquired"
+      },
+      {
+       "k": "164(1)",
+       "v": "CM by Governor; ministers on CM's advice; Governor's pleasure"
+      },
+      {
+       "k": "164(1A)",
+       "v": "≤ 15% of Assembly, minimum 12 (91st, 2003)"
+      },
+      {
+       "k": "164(1B)",
+       "v": "Defectors barred"
+      },
+      {
+       "k": "164(2)",
+       "v": "Collective responsibility to Assembly"
+      },
+      {
+       "k": "164(4)",
+       "v": "Non-member 6 months; S.R. Chaudhuri 2001 – no repeat"
+      },
+      {
+       "k": "167",
+       "v": "CM informs Governor"
+      },
+      {
+       "k": "177",
+       "v": "Ministers, AG speak in both Houses; vote in own"
+      },
+      {
+       "k": "Deputy CM",
+       "v": "Not constitutional; valid (SC Feb 2024)"
+      },
+      {
+       "k": "Chief Secretary",
+       "v": "Appointed by CM; no fixed tenure"
+      },
+      {
+       "k": "CM sits on",
+       "v": "NITI Governing Council, Inter-State Council, Zonal Council"
+      }
+     ]
+    },
+    {
+     "id": "st-leg",
+     "name": "State legislature structure",
+     "tag": "Legislature",
+     "rows": [
+      {
+       "k": "Part VI",
+       "v": "Arts 168 – 212"
+      },
+      {
+       "k": "169",
+       "v": "Council created / abolished – Assembly special majority + Parliament law (not 368)"
+      },
+      {
+       "k": "170",
+       "v": "Assembly 60 – 500 (Sikkim 32, Goa, Mizoram 40)"
+      },
+      {
+       "k": "171",
+       "v": "Council ≤ 1/3 of Assembly, ≥ 40; 1/3 MLAs, 1/3 local bodies, 1/12 graduates, 1/12 teachers, 1/6 nominated"
+      },
+      {
+       "k": "172",
+       "v": "5 years; emergency extension 1 yr at a time"
+      },
+      {
+       "k": "173",
+       "v": "Age 25 Assembly, 30 Council"
+      },
+      {
+       "k": "Bicameral",
+       "v": "UP 100, Maharashtra 78, Bihar 75, Karnataka 75, AP 58, Telangana 40"
+      },
+      {
+       "k": "189",
+       "v": "Quorum 10 or 1/10"
+      }
+     ],
+     "traps": [
+      "Council max 1/3, not 1/2",
+      "Art 169 is not an Art 368 amendment"
+     ]
+    },
+    {
+     "id": "st-bills",
+     "name": "State bills and officers",
+     "tag": "Legislature",
+     "rows": [
+      {
+       "k": "Ordinary bill",
+       "v": "Council holds 3 + 1 months (max 4), then deemed passed"
+      },
+      {
+       "k": "No joint sitting",
+       "v": "Assembly prevails"
+      },
+      {
+       "k": "Money Bill (198 – 199)",
+       "v": "Assembly only, Governor's recommendation; Council 14 days"
+      },
+      {
+       "k": "Council",
+       "v": "No role in President or RS election; no no-confidence"
+      },
+      {
+       "k": "Speaker (178 – 179)",
+       "v": "Effective majority removal; resigns to Deputy; stays after dissolution"
+      },
+      {
+       "k": "Chairman (182)",
+       "v": "Elected by Council"
+      },
+      {
+       "k": "194, 208 – 212",
+       "v": "Privileges, own rules, language, no judge discussion, courts can't question"
+      }
+     ],
+     "traps": [
+      "Council: 4 months ordinary, 14 days Money Bill"
+     ]
+    },
+    {
+     "id": "st-member",
+     "name": "State membership rules",
+     "tag": "Legislature",
+     "hook": "25 lower, 30 upper",
+     "rows": [
+      {
+       "k": "Disqualify (191)",
+       "v": "Office of profit, unsound mind, insolvent, non-citizen, by law"
+      },
+      {
+       "k": "RPA",
+       "v": "2+ yrs' conviction; election expenses; govt contracts"
+      },
+      {
+       "k": "Lily Thomas 2013",
+       "v": "Sec 8(4) void – out on conviction"
+      },
+      {
+       "k": "Defection",
+       "v": "Speaker / Chairman; Kihoto Hollohan 1992 review"
+      },
+      {
+       "k": "Anglo-Indian (333)",
+       "v": "Ended by 104th, 2019"
+      }
+     ]
+    },
+    {
+     "id": "st-res",
+     "name": "Reserved seats",
+     "tag": "Legislature",
+     "rows": [
+      {
+       "k": "330",
+       "v": "SC/ST in Lok Sabha"
+      },
+      {
+       "k": "332",
+       "v": "SC/ST in Assemblies, by population"
+      },
+      {
+       "k": "331, 333",
+       "v": "Anglo-Indian – ended"
+      },
+      {
+       "k": "334",
+       "v": "Time limit – extended to 2030 (104th)"
+      },
+      {
+       "k": "335",
+       "v": "SC/ST claims in services"
+      },
+      {
+       "k": "None",
+       "v": "Rajya Sabha, Councils"
+      }
+     ]
+    },
+    {
+     "id": "st-ap-leg",
+     "name": "AP legislature",
+     "years": {
+      "from": 1956,
+      "to": 2024
+     },
+     "tag": "Andhra Pradesh",
+     "hook": "175 and 58, abolished 85, revived 07",
+     "rows": [
+      {
+       "k": "Assembly",
+       "v": "175 (undivided 294; Telangana 119); 16th Assembly June 2024"
+      },
+      {
+       "k": "Council",
+       "v": "58 = 20 MLAs + 20 local bodies + 5 graduates + 5 teachers + 8 nominated; \"Sasana Mandali\""
+      },
+      {
+       "k": "Council history",
+       "v": "1958 – 85; abolished 1985 (NTR); revived 2007 (YSR); 2020 abolition resolution withdrawn Nov 2021"
+      },
+      {
+       "k": "Seat",
+       "v": "Amaravati (Velagapudi)"
+      },
+      {
+       "k": "Speaker",
+       "v": "Chintakayala Ayyanna Patrudu (22 June 2024)"
+      },
+      {
+       "k": "Deputy Speaker",
+       "v": "K. Raghu Rama Krishna Raju"
+      },
+      {
+       "k": "Council Chairman",
+       "v": "Koyye Moshenu Raju"
+      },
+      {
+       "k": "President's Rule",
+       "v": "Andhra State 1954; AP 1973 (Jai Andhra), 2014"
+      }
+     ]
+    },
+    {
+     "id": "st-ap-exec",
+     "name": "AP executive (2024 – )",
+     "years": {
+      "from": 1953,
+      "to": 2024
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "Governor",
+       "v": "Justice S. Abdul Nazeer – from 24 Feb 2023; Raj Bhavan Vijayawada"
+      },
+      {
+       "k": "Past Governors",
+       "v": "C.M. Trivedi (1956); E.S.L. Narasimhan (common 2014 – 19); Biswabhusan Harichandan (2019)"
+      },
+      {
+       "k": "CM",
+       "v": "N. Chandrababu Naidu (TDP, Kuppam) – 12 June 2024, 4th term; longest-serving"
+      },
+      {
+       "k": "Deputy CM",
+       "v": "Pawan Kalyan (Jana Sena, Pithapuram)"
+      },
+      {
+       "k": "2024 result",
+       "v": "TDP 135, JSP 21, BJP 8 (NDA 164); YSRCP 11; Congress 0"
+      },
+      {
+       "k": "Ministry cap",
+       "v": "26 incl. CM"
+      },
+      {
+       "k": "Firsts",
+       "v": "Prakasam (Andhra State 1953); Sanjiva Reddy (AP 1956); NTR first non-Congress (1983); P.V. Narasimha Rao later PM"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
