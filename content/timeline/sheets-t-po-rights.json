@@ -1,0 +1,360 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-rights",
+   "part": "Polity",
+   "title": "Rights issues: groups, laws and conventions",
+   "order": 15,
+   "intro": "Human-rights bodies, UN treaties, education, women, children, SC/ST, other groups, key cases.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "ri-hr",
+     "name": "Human rights machinery",
+     "years": {
+      "from": 1948,
+      "to": 1993
+     },
+     "tag": "Machinery",
+     "rows": [
+      {
+       "k": "UDHR",
+       "v": "10 Dec 1948 – Human Rights Day; non-binding"
+      },
+      {
+       "k": "PHRA 1993",
+       "v": "NHRC (12 Oct 1993), SHRCs, Human Rights Courts (Sessions Court per district)"
+      },
+      {
+       "k": "Nature",
+       "v": "Statutory; recommends only"
+      },
+      {
+       "k": "AP SHRC",
+       "v": "No chair for months; panel met Oct 2026 (per notes)"
+      }
+     ]
+    },
+    {
+     "id": "ri-conv",
+     "name": "UN conventions and India",
+     "years": {
+      "from": 1948,
+      "to": 2007
+     },
+     "tag": "International",
+     "rows": [
+      {
+       "k": "ICCPR / ICESCR",
+       "v": "1966; India 1979"
+      },
+      {
+       "k": "CERD",
+       "v": "India 1968"
+      },
+      {
+       "k": "CEDAW",
+       "v": "1979; India 1993"
+      },
+      {
+       "k": "CRC",
+       "v": "1989; India 1992"
+      },
+      {
+       "k": "CRPD",
+       "v": "2006; India 2007 (→ RPwD 2016)"
+      },
+      {
+       "k": "Torture (CAT)",
+       "v": "Signed 1997, not ratified"
+      }
+     ],
+     "traps": [
+      "Declaration non-binding; convention binding once ratified"
+     ]
+    },
+    {
+     "id": "ri-edu",
+     "name": "Education and consumer rights",
+     "years": {
+      "from": 2002,
+      "to": 2021
+     },
+     "tag": "Education",
+     "rows": [
+      {
+       "k": "21A",
+       "v": "86th 2002; RTE Act 2009 (1 Apr 2010); 25% seats in private schools"
+      },
+      {
+       "k": "RTE 2026",
+       "v": "SC criticised NCPCR enforcement (per notes)"
+      },
+      {
+       "k": "Consumer Act 2019",
+       "v": "CCPA regulator; product liability; e-commerce"
+      },
+      {
+       "k": "Limits 2021",
+       "v": "District ≤ ₹50 lakh; State ₹50 lakh – 2 crore; National > ₹2 crore"
+      }
+     ],
+     "traps": [
+      "RTE 25% seats ≠ 10% EWS jobs"
+     ]
+    },
+    {
+     "id": "ri-women",
+     "name": "Women’s rights laws",
+     "years": {
+      "from": 1961,
+      "to": 2024
+     },
+     "tag": "Women",
+     "rows": [
+      {
+       "k": "15(3)",
+       "v": "Special provisions allowed"
+      },
+      {
+       "k": "Dowry, PCPNDT",
+       "v": "Dowry Act 1961; PCPNDT Act 1994"
+      },
+      {
+       "k": "DV Act 2005",
+       "v": "Civil remedy"
+      },
+      {
+       "k": "Hindu Succession 2005",
+       "v": "Daughters coparceners; Vineeta Sharma 2020"
+      },
+      {
+       "k": "Vishaka 1997 → POSH 2013",
+       "v": "IC (10+ staff), Local Committee"
+      },
+      {
+       "k": "Criminal Law Amendment 2013",
+       "v": "Nirbhaya, Verma Committee"
+      },
+      {
+       "k": "BBBP",
+       "v": "Panipat, 22 Jan 2015"
+      },
+      {
+       "k": "Maternity 2017",
+       "v": "12 → 26 weeks"
+      },
+      {
+       "k": "Triple talaq",
+       "v": "Shayara Bano 2017 → 2019 Act"
+      },
+      {
+       "k": "MTP 2021",
+       "v": "24 weeks for special cases"
+      },
+      {
+       "k": "106th 2023",
+       "v": "Women's quota; assent 28 Sep 2023"
+      },
+      {
+       "k": "BNS 2023",
+       "v": "Replaced IPC 1 July 2024"
+      }
+     ],
+     "traps": [
+      "POSH civil ≠ Criminal Law Amendment 2013"
+     ]
+    },
+    {
+     "id": "ri-child",
+     "name": "Child rights laws",
+     "years": {
+      "from": 2005,
+      "to": 2024
+     },
+     "tag": "Children",
+     "rows": [
+      {
+       "k": "Art 24",
+       "v": "No child below 14 in hazardous work"
+      },
+      {
+       "k": "Child Marriage Act 2006",
+       "v": "18 girls, 21 boys; 2021 Bill lapsed 2024"
+      },
+      {
+       "k": "POCSO 2012",
+       "v": "Gender-neutral, under 18; Special Courts; death penalty 2019"
+      },
+      {
+       "k": "JJ Act 2015",
+       "v": "16 – 18 tried as adults for heinous crimes; JJ Boards, CWCs"
+      },
+      {
+       "k": "Child Labour 2016",
+       "v": "Below 14 no work; 14 – 18 no hazardous work"
+      },
+      {
+       "k": "NCPCR",
+       "v": "2005 Act, 2007"
+      },
+      {
+       "k": "Childline 1098",
+       "v": "Merged with 112 (Mission Vatsalya)"
+      }
+     ],
+     "traps": [
+      "POCSO (victims) ≠ JJ Act (offenders)"
+     ]
+    },
+    {
+     "id": "ri-scst",
+     "name": "SC and ST protection",
+     "years": {
+      "from": 1955,
+      "to": 2025
+     },
+     "tag": "SC/ST",
+     "rows": [
+      {
+       "k": "Art 17",
+       "v": "PCR Act (1955 → renamed 1976)"
+      },
+      {
+       "k": "PoA Act 1989",
+       "v": "2018 Sec 18A after Subhash Mahajan; upheld Prithvi Raj Chauhan 2020"
+      },
+      {
+       "k": "Sub-classification",
+       "v": "Davinder Singh, 1 Aug 2024, 7 judges 6:1 (overruled Chinnaiah 2004)"
+      },
+      {
+       "k": "AP split",
+       "v": "Justice Rajiv Ranjan Mishra (Mar 2025); Group I Relli 1%, II Madiga 6.5%, III Mala 7.5% (Bill Sep 2025)"
+      },
+      {
+       "k": "FRA 2006",
+       "v": "Tribal Affairs; Gram Sabha; cut-off 13 Dec 2005; others 75 yrs"
+      },
+      {
+       "k": "AP \"1/70\"",
+       "v": "1959 Regulation amended 1970 – no land to non-tribals"
+      },
+      {
+       "k": "Commissions",
+       "v": "338, 338A (89th), 338B (102nd)"
+      }
+     ]
+    },
+    {
+     "id": "ri-groups",
+     "name": "Other vulnerable groups",
+     "years": {
+      "from": 1976,
+      "to": 2026
+     },
+     "tag": "Groups",
+     "rows": [
+      {
+       "k": "Transgender",
+       "v": "NALSA 15 Apr 2014; 2019 Act; Amendment Act 2026 under challenge (per notes)"
+      },
+      {
+       "k": "Disability",
+       "v": "RPwD 2016 – 7 → 21 types; 4% jobs, 5% education; benchmark 40%"
+      },
+      {
+       "k": "Mental health",
+       "v": "2017 Act – suicide attempt not punished"
+      },
+      {
+       "k": "Elderly",
+       "v": "2007 Act – up to ₹10,000/month"
+      },
+      {
+       "k": "Labour",
+       "v": "Art 23; Bonded Labour Act 1976; Manual Scavengers Act 2013; NAMASTE"
+      },
+      {
+       "k": "Minorities",
+       "v": "Arts 29, 30; six notified (Jains 2014)"
+      }
+     ]
+    },
+    {
+     "id": "ri-cases",
+     "name": "Rights judgments",
+     "years": {
+      "from": 1974,
+      "to": 2023
+     },
+     "tag": "Cases",
+     "rows": [
+      {
+       "k": "E.P. Royappa 1974",
+       "v": "Arbitrariness violates Art 14"
+      },
+      {
+       "k": "Maneka Gandhi 1978",
+       "v": "Fair, just, reasonable"
+      },
+      {
+       "k": "Puttaswamy 24 Aug 2017",
+       "v": "Privacy (9 judges)"
+      },
+      {
+       "k": "Shayara Bano 22 Aug 2017",
+       "v": "Triple talaq"
+      },
+      {
+       "k": "2018",
+       "v": "Hadiya (marriage choice); Navtej Johar (6 Sep); Joseph Shine"
+      },
+      {
+       "k": "Supriyo Chakraborty 17 Oct 2023",
+       "v": "No FR to same-sex marriage"
+      }
+     ],
+     "traps": [
+      "Navtej decriminalised; Supriyo refused marriage equality"
+     ]
+    },
+    {
+     "id": "ri-property",
+     "name": "Property and AP land laws",
+     "years": {
+      "from": 1978,
+      "to": 2025
+     },
+     "tag": "Property",
+     "rows": [
+      {
+       "k": "44th 1978",
+       "v": "Property → Art 300A; any person"
+      },
+      {
+       "k": "Fifth Schedule",
+       "v": "Tribal land shielded in 10 states"
+      },
+      {
+       "k": "AP Land Titling Repeal",
+       "v": "Act 11 of 2024; assent 31 July 2024"
+      },
+      {
+       "k": "AP Land Conversion Repeal",
+       "v": "Act 20 of 2025; replaced Ordinance 5"
+      },
+      {
+       "k": "Right to the City",
+       "v": "Not a formal UN right (UPSC 2021)"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
