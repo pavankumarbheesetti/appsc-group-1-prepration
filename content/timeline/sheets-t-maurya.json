@@ -1,0 +1,670 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "maurya",
+   "part": "Ancient India",
+   "title": "Mauryan empire (322 – 185 BCE)",
+   "order": 7,
+   "intro": "Chandragupta to Brihadratha: rulers, edicts, state, economy, art, decline.",
+   "chapters": [
+    "ancient-to-232bce",
+    "ancient-231bce-647"
+   ],
+   "keys": [
+    {
+     "id": "my-src",
+     "name": "Sources",
+     "tag": "Sources",
+     "rows": [
+      {
+       "k": "Arthashastra",
+       "v": "Kautilya; Sanskrit; 15 books, 180 chapters, 3 parts; found 1905, published 1909 by R. Shamasastry"
+      },
+      {
+       "k": "Indica",
+       "v": "Megasthenes (Seleucus's envoy at Pataliputra); lost, only quoted fragments"
+      },
+      {
+       "k": "Mudrarakshasa",
+       "v": "Vishakhadatta (Gupta age) – drama on Nanda's fall"
+      },
+      {
+       "k": "Others",
+       "v": "Buddhist texts (Divyavadana, Dipavamsa, Mahavamsa), Jain Parishishtaparvan (Hemachandra), Puranas; Pliny (army size)"
+      },
+      {
+       "k": "Inscriptions",
+       "v": "39 Ashokan edicts; Junagadh inscription of Rudradaman (150 CE)"
+      },
+      {
+       "k": "Archaeology",
+       "v": "NBPW, punch-marked coins, Kumhrar hall"
+      }
+     ],
+     "traps": [
+      "Arthashastra – Kautilya; Indica – Megasthenes; Mudrarakshasa – Vishakhadatta"
+     ]
+    },
+    {
+     "id": "my-cg",
+     "name": "Chandragupta Maurya",
+     "years": {
+      "from": -322,
+      "to": -297
+     },
+     "tag": "Ruler",
+     "hook": "First all-India empire",
+     "rows": [
+      {
+       "k": "Reign",
+       "v": "322 – 297 BCE; Pataliputra"
+      },
+      {
+       "k": "Rise",
+       "v": "With Chanakya overthrew Dhana Nanda (322/321 BCE)"
+      },
+      {
+       "k": "Origin",
+       "v": "Brahmanical – son of a Shudra woman (Mura); Buddhist – Moriya Kshatriya clan of Pipphalivana (Gorakhpur)"
+      },
+      {
+       "k": "Seleucus",
+       "v": "Beat Seleucus I Nicator 305 BCE – got Arachosia (Kandahar), Gedrosia (Baluchistan), Paropamisadae (Kabul), Aria (Herat); gave 500 elephants; marriage pact; Megasthenes sent"
+      },
+      {
+       "k": "Army",
+       "v": "Pliny – 6,00,000 foot, 30,000 horse, 9,000 elephants"
+      },
+      {
+       "k": "Empire",
+       "v": "All north and NW, Bengal, Odisha, Deccan; only Kerala, Tamil Nadu, parts of NE outside"
+      },
+      {
+       "k": "Works",
+       "v": "Governor Pushyagupta built Sudarshana lake, Girnar (Junagadh inscription)"
+      },
+      {
+       "k": "End",
+       "v": "Jain monk under Bhadrabahu; Sallekhana at Chandragiri hill, Shravanabelagola"
+      }
+     ],
+     "traps": [
+      "Chandragupta Maurya (322 BCE) ≠ Chandragupta I Gupta (319 CE)",
+      "Pushyagupta (lake) ≠ Pushyamitra (Shunga)"
+     ]
+    },
+    {
+     "id": "my-chan",
+     "name": "Chanakya (Kautilya)",
+     "years": {
+      "from": -322,
+      "to": -280
+     },
+     "tag": "Ruler",
+     "rows": [
+      {
+       "k": "Names",
+       "v": "Chanakya, Kautilya, Vishnugupta"
+      },
+      {
+       "k": "Role",
+       "v": "Planned Nanda's fall; PM of Chandragupta and Bindusara"
+      },
+      {
+       "k": "Ideas",
+       "v": "Yogakshema (welfare duty of king); Saptanga theory; spies; strong central rule"
+      }
+     ]
+    },
+    {
+     "id": "my-bind",
+     "name": "Bindusara",
+     "years": {
+      "from": -297,
+      "to": -273
+     },
+     "tag": "Ruler",
+     "hook": "Asked for a philosopher",
+     "rows": [
+      {
+       "k": "Reign",
+       "v": "297 – 273 BCE (or 272/268)"
+      },
+      {
+       "k": "Titles",
+       "v": "Amitraghata / Amitrochates, Allitrochates (\"slayer of foes\")"
+      },
+      {
+       "k": "Wars",
+       "v": "South up to Mysore; 16 states (Taranatha); only Kalinga left"
+      },
+      {
+       "k": "Greeks",
+       "v": "Asked Antiochus I (Syria) for sweet wine, figs and a sophist; envoys Deimachus (Antiochus I) and Dionysius (Ptolemy II, Egypt)"
+      },
+      {
+       "k": "Revolt",
+       "v": "Taxila revolted – sent prince Ashoka"
+      },
+      {
+       "k": "Faith",
+       "v": "Ajivika"
+      }
+     ],
+     "traps": [
+      "Antiochus I = Bindusara’s friend; Antiochus II = named in Ashoka’s edicts"
+     ]
+    },
+    {
+     "id": "my-ashoka",
+     "name": "Ashoka",
+     "years": {
+      "from": -268,
+      "to": -232
+     },
+     "tag": "Ruler",
+     "hook": "Beloved of the gods",
+     "rows": [
+      {
+       "k": "Reign",
+       "v": "c. 268 – 232 BCE (accession 272/273, crowned c. 268)"
+      },
+      {
+       "k": "Before",
+       "v": "Viceroy at Ujjain; sent to Taxila revolt"
+      },
+      {
+       "k": "Title",
+       "v": "Devanampiya Piyadasi; name \"Ashoka\" only at Maski, Nittur, Udegolam (Karnataka), Gujarra (MP); \"Ranyo Ashoka\" portrait at Kanganahalli"
+      },
+      {
+       "k": "Faith",
+       "v": "Buddhist through Upagupta (also Nigrodha); 3rd council 250 BCE (Moggaliputta Tissa)"
+      },
+      {
+       "k": "Missions",
+       "v": "Son Mahinda (Mahendra), daughter Sanghamitra to Sri Lanka; others to Burma, West Asia"
+      },
+      {
+       "k": "Officers",
+       "v": "Dhamma Mahamattas (13th year); Rajukas (reward and punish; land survey); rotated officers at Ujjain, Taxila, Tosali"
+      },
+      {
+       "k": "Governor",
+       "v": "Tushaspha (Yavana) added canals to Sudarshana lake"
+      },
+      {
+       "k": "Queen",
+       "v": "Karuvaki (Queen's Edict)"
+      },
+      {
+       "k": "Title later",
+       "v": "\"First global ambassador of India\""
+      }
+     ]
+    },
+    {
+     "id": "my-kal",
+     "name": "Kalinga war",
+     "years": {
+      "from": -261,
+      "to": -261
+     },
+     "tag": "Ruler",
+     "rows": [
+      {
+       "k": "When",
+       "v": "261 BCE (8th year of reign)"
+      },
+      {
+       "k": "Where",
+       "v": "Coastal Odisha"
+      },
+      {
+       "k": "Cost",
+       "v": "1,00,000 killed, 1,50,000 deported (Rock Edict XIII)"
+      },
+      {
+       "k": "Change",
+       "v": "Bherighosha (war drum) → Dhammaghosha (drum of Dhamma)"
+      },
+      {
+       "k": "Edict",
+       "v": "Separate Kalinga Edict (Dhauli, Jaugada) – \"All men are my children\""
+      }
+     ],
+     "traps": [
+      "Kalinga 261 BCE; Seleucus war 305 BCE; Ashoka died 232 BCE"
+     ]
+    },
+    {
+     "id": "my-dhamma",
+     "name": "Ashoka’s Dhamma",
+     "years": {
+      "from": -260,
+      "to": -232
+     },
+     "tag": "Ruler",
+     "rows": [
+      {
+       "k": "What",
+       "v": "Moral code for all – not a conversion to Buddhism"
+      },
+      {
+       "k": "Values",
+       "v": "Respect elders, kindness to slaves and animals, tolerance of all sects, few rituals"
+      },
+      {
+       "k": "King",
+       "v": "Paternal – subjects as children"
+      },
+      {
+       "k": "Tools",
+       "v": "Dhamma Mahamattas; Dhammayatras (tours) replacing hunts; tours every 5 years by Yuktas, Rajukas, Pradeshikas"
+      },
+      {
+       "k": "Welfare",
+       "v": "Medical care for men and animals; wells, trees, rest houses"
+      }
+     ]
+    },
+    {
+     "id": "my-re",
+     "name": "14 Major Rock Edicts",
+     "years": {
+      "from": -258,
+      "to": -250
+     },
+     "tag": "Edicts",
+     "rows": [
+      {
+       "k": "RE I",
+       "v": "Ban on animal sacrifice and samajas (festive gatherings)"
+      },
+      {
+       "k": "RE II",
+       "v": "Medical care for men, animals; names Cholas, Pandyas, Satiyaputras, Keralaputras, Tamraparni (Sri Lanka)"
+      },
+      {
+       "k": "RE III",
+       "v": "Yuktas, Rajukas, Pradeshikas tour every 5 years"
+      },
+      {
+       "k": "RE IV",
+       "v": "Bherighosha → Dhammaghosha"
+      },
+      {
+       "k": "RE V",
+       "v": "Dhamma Mahamattas appointed"
+      },
+      {
+       "k": "RE VI",
+       "v": "King to be told of public affairs at all times"
+      },
+      {
+       "k": "RE VII, XII",
+       "v": "Tolerance of all sects (\"who praises his own sect … harms it\")"
+      },
+      {
+       "k": "RE VIII",
+       "v": "Dhammayatras; visit to Bodh Gaya"
+      },
+      {
+       "k": "RE IX – XI",
+       "v": "Against useless rituals; true glory is Dhamma; explains Dhamma"
+      },
+      {
+       "k": "RE XIII",
+       "v": "Kalinga war; names 5 Greek kings – Antiochus II (Syria), Ptolemy II (Egypt), Antigonus (Macedonia), Magas (Cyrene), Alexander (Epirus)"
+      },
+      {
+       "k": "RE XIV",
+       "v": "Why the edicts were carved"
+      },
+      {
+       "k": "Odisha",
+       "v": "Dhauli, Jaugada drop RE XI – XIII; add 2 Separate Kalinga Edicts"
+      }
+     ],
+     "traps": [
+      "RE I = no sacrifice; RE XIII = Kalinga"
+     ]
+    },
+    {
+     "id": "my-pe",
+     "name": "Pillar and minor edicts",
+     "years": {
+      "from": -250,
+      "to": -232
+     },
+     "tag": "Edicts",
+     "rows": [
+      {
+       "k": "Pillar Edicts",
+       "v": "7; PE V – animals not to be killed, 25 prisoners freed; PE VI – Dhamma; PE VII longest (only Delhi-Topra, moved by Firoz Tughlaq)"
+      },
+      {
+       "k": "Allahabad pillar",
+       "v": "Queen's Edict, Schism Edict; later Samudragupta's prashasti, Jahangir's record"
+      },
+      {
+       "k": "Bhabru (Bairat)",
+       "v": "Faith in Buddha, Dhamma, Sangha"
+      },
+      {
+       "k": "Rummindei (Lumbini)",
+       "v": "Buddha's birthplace; village freed of bali, bhaga cut to 1/8"
+      },
+      {
+       "k": "Brahmagiri",
+       "v": "Minor Rock Edicts I, II"
+      },
+      {
+       "k": "Kandahar",
+       "v": "Greek – Aramaic bilingual"
+      },
+      {
+       "k": "Sohgaura copper plate",
+       "v": "Famine relief (Mauryan)"
+      }
+     ]
+    },
+    {
+     "id": "my-script",
+     "name": "Edict languages and sites",
+     "tag": "Edicts",
+     "rows": [
+      {
+       "k": "Most of India",
+       "v": "Prakrit in Brahmi"
+      },
+      {
+       "k": "North-west",
+       "v": "Kharosthi – Shahbazgarhi, Mansehra (Pakistan)"
+      },
+      {
+       "k": "Afghanistan",
+       "v": "Greek and Aramaic (Kandahar)"
+      },
+      {
+       "k": "Deciphered",
+       "v": "James Prinsep, 1837 (Brahmi)"
+      },
+      {
+       "k": "AP sites",
+       "v": "Erragudi (Kurnool) – Major Rock Edicts; Rajula Mandagiri (Kurnool) – Minor RE; Amaravati – pillar fragment"
+      },
+      {
+       "k": "Other sites",
+       "v": "Dhauli, Jaugada (Odisha); Kalsi (Uttarakhand); Girnar (Gujarat); Sopara (Maharashtra)"
+      },
+      {
+       "k": "Pillars",
+       "v": "Chunar sandstone, one piece, polished"
+      }
+     ],
+     "traps": [
+      "Jaugada and Dhauli are in Odisha; Kalsi in Uttarakhand"
+     ]
+    },
+    {
+     "id": "my-later",
+     "name": "Later Mauryas",
+     "years": {
+      "from": -232,
+      "to": -185
+     },
+     "tag": "Ruler",
+     "hook": "C-B-A then D-S-S-D-S-B",
+     "rows": [
+      {
+       "k": "Dasharatha",
+       "v": "232 – 224 BCE; Ashoka's grandson; Nagarjuni caves to Ajivikas"
+      },
+      {
+       "k": "Samprati",
+       "v": "224 – 215 BCE; great Jain patron"
+      },
+      {
+       "k": "Others",
+       "v": "Shalishuka, Devavarman, Shatadhanvan"
+      },
+      {
+       "k": "Brihadratha",
+       "v": "187 – 185 BCE; killed by general Pushyamitra Shunga at a parade"
+      }
+     ]
+    },
+    {
+     "id": "my-central",
+     "name": "Central government",
+     "tag": "State",
+     "rows": [
+      {
+       "k": "King",
+       "v": "All power; council (Mantriparishad) advice not binding"
+      },
+      {
+       "k": "Saptanga",
+       "v": "Swami, Amatya, Janapada, Durga, Kosha, Danda, Mitra"
+      },
+      {
+       "k": "18 Tirthas",
+       "v": "Top officers – Mantrin, Purohita, Senapati, Yuvaraja; pay 48,000 panas down to 60 panas"
+      },
+      {
+       "k": "Samaharta",
+       "v": "Collector-general of revenue (assessment)"
+      },
+      {
+       "k": "Sannidhata",
+       "v": "Treasurer, storehouses"
+      },
+      {
+       "k": "Courts",
+       "v": "Dharmasthiya (civil, Vyavaharika); Kantakashodhana (criminal, Pradeshta)"
+      },
+      {
+       "k": "Spies",
+       "v": "Gudhapurushas – samstha (fixed) and sanchara (wandering)"
+      }
+     ],
+     "traps": [
+      "Samaharta collects; Sannidhata stores",
+      "Dharmasthiya = civil; Kantakashodhana = criminal"
+     ]
+    },
+    {
+     "id": "my-prov",
+     "name": "Provinces and local rule",
+     "tag": "State",
+     "rows": [
+      {
+       "k": "Uttarapatha",
+       "v": "Taxila"
+      },
+      {
+       "k": "Avantiratha",
+       "v": "Ujjain"
+      },
+      {
+       "k": "Dakshinapatha",
+       "v": "Suvarnagiri"
+      },
+      {
+       "k": "Kalinga",
+       "v": "Tosali (Dhauli)"
+      },
+      {
+       "k": "Centre",
+       "v": "Pataliputra"
+      },
+      {
+       "k": "Heads",
+       "v": "Princes – Kumara, Aryaputra; Rashtrapala"
+      },
+      {
+       "k": "District",
+       "v": "Pradeshika (like DM); Rajuka (survey, land); Yukta (revenue clerk); Sthanika (collector); Gopa (accounts, 5 – 10 villages)"
+      },
+      {
+       "k": "Megasthenes",
+       "v": "Agoranomoi (district), Astynomoi (city)"
+      }
+     ],
+     "traps": [
+      "Taxila = north; Suvarnagiri = south"
+     ]
+    },
+    {
+     "id": "my-city",
+     "name": "Pataliputra and the army",
+     "tag": "State",
+     "rows": [
+      {
+       "k": "City",
+       "v": "6 boards of 5 members (Megasthenes) – crafts, foreigners, births and deaths, trade, goods, tax on sales"
+      },
+      {
+       "k": "Army",
+       "v": "6 boards of 5 – infantry, cavalry, elephants, chariots, navy, transport"
+      },
+      {
+       "k": "City officer",
+       "v": "Nagaraka"
+      },
+      {
+       "k": "Kumhrar",
+       "v": "80-pillar hall (Patna)"
+      }
+     ]
+    },
+    {
+     "id": "my-econ",
+     "name": "Economy and tax",
+     "tag": "State",
+     "rows": [
+      {
+       "k": "Control",
+       "v": "State ran mines, liquor, arms (monopolies); state farms (Sita land) worked by slaves and hired labour"
+      },
+      {
+       "k": "Superintendents",
+       "v": "27 adhyakshas – Sitadhyaksha (crown farms), Panyadhyaksha (trade), Lakshanadhyaksha (mint), Sunadhyaksha (slaughter), Navadhyaksha (ships), Sulkadhyaksha (customs)"
+      },
+      {
+       "k": "Taxes",
+       "v": "Bhaga 1/4 to 1/6 of produce; Bali; Pindakara (lump village tax); in kind too; extra cultivation in emergency"
+      },
+      {
+       "k": "Coins",
+       "v": "Punch-marked silver (peacock, hill and crescent) – pana; copper mashaka"
+      }
+     ],
+     "traps": [
+      "Land tax ranged 1/4 to 1/6 – not a flat 1/6"
+     ]
+    },
+    {
+     "id": "my-soc",
+     "name": "Society (Megasthenes and material life)",
+     "tag": "Society",
+     "rows": [
+      {
+       "k": "Megasthenes",
+       "v": "7 castes – philosophers, farmers, soldiers, herdsmen, artisans, overseers, councillors"
+      },
+      {
+       "k": "Errors",
+       "v": "Said India had no slavery and no famine (Arthashastra shows slaves)"
+      },
+      {
+       "k": "Material",
+       "v": "Iron tools, NBPW, punch-marked coins, burnt bricks (first in NE India), ring wells (first in Ganga plain), spoked wheel, writing"
+      }
+     ],
+     "traps": [
+      "Mauryans used iron widely"
+     ]
+    },
+    {
+     "id": "my-art",
+     "name": "Mauryan art",
+     "tag": "Art",
+     "rows": [
+      {
+       "k": "Pillars",
+       "v": "Chunar buff sandstone, monolithic, mirror polish"
+      },
+      {
+       "k": "Sarnath lion capital",
+       "v": "4 lions back to back; abacus – elephant, horse, bull, lion with wheels; 24-spoke chakra; emblem 26 Jan 1950 with \"Satyameva Jayate\""
+      },
+      {
+       "k": "Capitals",
+       "v": "Bull – Rampurva; lion – Lauriya Nandangarh (whole pillar); elephant – Sankisa"
+      },
+      {
+       "k": "Caves",
+       "v": "Barabar (Lomas Rishi, Sudama) – Ajivikas; Nagarjuni (Dasharatha)"
+      },
+      {
+       "k": "Sculpture",
+       "v": "Didarganj Yakshi (chauri bearer, polished) – near Patna"
+      },
+      {
+       "k": "Stupas",
+       "v": "Sanchi, Bharhut cores"
+      }
+     ],
+     "traps": [
+      "Lion capital = Sarnath; bull capital = Rampurva",
+      "Lion capital is Mauryan, not Gupta"
+     ]
+    },
+    {
+     "id": "my-decline",
+     "name": "Decline of the Mauryas",
+     "years": {
+      "from": -232,
+      "to": -185
+     },
+     "tag": "Decline",
+     "hook": "Many causes",
+     "rows": [
+      {
+       "k": "Brahmin reaction",
+       "v": "Anti-sacrifice policy hurt priests (H.P. Shastri)"
+      },
+      {
+       "k": "Money crisis",
+       "v": "Huge army, staff, gifts to monks; gold images melted (R.S. Sharma)"
+      },
+      {
+       "k": "Harsh provinces",
+       "v": "Taxila revolts"
+      },
+      {
+       "k": "Spread of knowledge",
+       "v": "Iron and skills spread – new powers (Shungas, Kanvas, Chedis, Satavahanas)"
+      },
+      {
+       "k": "NW frontier",
+       "v": "No wall, passes open to Greeks, Shakas"
+      },
+      {
+       "k": "Weak heirs",
+       "v": "Empire split after 232 BCE"
+      },
+      {
+       "k": "End",
+       "v": "Brihadratha killed by Pushyamitra Shunga, 185 BCE"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
