@@ -1,0 +1,294 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-schemes",
+   "part": "Polity",
+   "title": "Policies and programmes (Centre and AP)",
+   "order": 14,
+   "intro": "Scheme types, DBT, central scheme calendar, VB-G RAM G, AP Super Six and P4.",
+   "chapters": [
+    "polity-all",
+    "andhra-all"
+   ],
+   "keys": [
+    {
+     "id": "sc-types",
+     "name": "Scheme types and DBT",
+     "years": {
+      "from": 2013,
+      "to": 2013
+     },
+     "tag": "Design",
+     "rows": [
+      {
+       "k": "Central Sector",
+       "v": "100% Union – PM-KISAN, PM Suryaghar"
+      },
+      {
+       "k": "Centrally Sponsored",
+       "v": "Shared 60:40 (90:10 NE, hill) – MGNREGA, PMAY, JJM, POSHAN"
+      },
+      {
+       "k": "DBT",
+       "v": "1 Jan 2013; JAM trinity"
+      },
+      {
+       "k": "Fixes",
+       "v": "DBT (leaks), social audit, outcome budget, CPGRAMS"
+      }
+     ],
+     "traps": [
+      "PM-KISAN Central Sector; MGNREGA CSS"
+     ]
+    },
+    {
+     "id": "sc-early",
+     "name": "Schemes 2000 – 2014",
+     "years": {
+      "from": 2000,
+      "to": 2014
+     },
+     "tag": "Central",
+     "rows": [
+      {
+       "k": "PMGSY",
+       "v": "25 Dec 2000 – rural roads"
+      },
+      {
+       "k": "MGNREGA",
+       "v": "2005 – 100 days; Sec 17 audit"
+      },
+      {
+       "k": "NFSA",
+       "v": "2013 – 75% rural, 50% urban; 5 kg / person; 35 kg AAY"
+      },
+      {
+       "k": "PMJDY",
+       "v": "28 Aug 2014 – zero balance, RuPay"
+      },
+      {
+       "k": "Swachh Bharat",
+       "v": "2 Oct 2014 – ODF"
+      },
+      {
+       "k": "Mission Indradhanush",
+       "v": "25 Dec 2014 – immunisation"
+      }
+     ]
+    },
+    {
+     "id": "sc-2015",
+     "name": "Schemes 2015 – 2016",
+     "years": {
+      "from": 2015,
+      "to": 2016
+     },
+     "tag": "Central",
+     "hook": "JJ = life; SB = accident",
+     "rows": [
+      {
+       "k": "MUDRA",
+       "v": "8 Apr 2015 – Shishu, Kishore, Tarun; Tarun Plus ₹20 lakh (2024)"
+      },
+      {
+       "k": "Jan Suraksha",
+       "v": "9 May 2015, Kolkata – PMJJBY life ₹2 lakh; PMSBY accident ₹2 lakh; APY pension"
+      },
+      {
+       "k": "Urban",
+       "v": "Smart Cities (ended Mar 2025), AMRUT, PMAY-U – 25 June 2015"
+      },
+      {
+       "k": "Skill India",
+       "v": "15 July 2015 (PMKVY)"
+      },
+      {
+       "k": "Stand-Up India",
+       "v": "5 Apr 2016 – ₹10 lakh – ₹1 crore for SC/ST, women"
+      },
+      {
+       "k": "Ujjwala",
+       "v": "1 May 2016, Ballia"
+      },
+      {
+       "k": "PMFBY",
+       "v": "2016 – 2% kharif, 1.5% rabi, 5% commercial"
+      },
+      {
+       "k": "PMAY-G",
+       "v": "20 Nov 2016"
+      }
+     ]
+    },
+    {
+     "id": "sc-2018",
+     "name": "Schemes 2018 – 2020",
+     "years": {
+      "from": 2018,
+      "to": 2021
+     },
+     "tag": "Central",
+     "rows": [
+      {
+       "k": "POSHAN Abhiyaan",
+       "v": "8 Mar 2018, Jhunjhunu"
+      },
+      {
+       "k": "PM-JAY",
+       "v": "23 Sep 2018, Ranchi – ₹5 lakh per family; all 70+ from Oct 2024 (Vay Vandana)"
+      },
+      {
+       "k": "PM-KISAN",
+       "v": "24 Feb 2019, Gorakhpur – ₹6,000 (3 × ₹2,000)"
+      },
+      {
+       "k": "Jal Jeevan",
+       "v": "15 Aug 2019 – Har Ghar Jal; to 2028"
+      },
+      {
+       "k": "PMGKAY",
+       "v": "2020; 5 more years from 1 Jan 2024"
+      },
+      {
+       "k": "SVANidhi",
+       "v": "1 June 2020 – street vendors"
+      },
+      {
+       "k": "PM POSHAN",
+       "v": "Mid-day meal renamed Sep 2021"
+      }
+     ]
+    },
+    {
+     "id": "sc-2023",
+     "name": "Schemes 2023 – 2026",
+     "years": {
+      "from": 2023,
+      "to": 2026
+     },
+     "tag": "Central",
+     "rows": [
+      {
+       "k": "PM Vishwakarma",
+       "v": "17 Sep 2023 – 18 trades; skilling, toolkit, credit"
+      },
+      {
+       "k": "PM-JANMAN",
+       "v": "15 Nov 2023 – PVTGs"
+      },
+      {
+       "k": "PM Surya Ghar",
+       "v": "13 Feb 2024 – 1 crore homes; 300 units free"
+      },
+      {
+       "k": "PMAY-U 2.0",
+       "v": "2024"
+      },
+      {
+       "k": "UPS",
+       "v": "1 Apr 2025 – 50% of basic for 25 yrs' service"
+      },
+      {
+       "k": "PM Dhan-Dhaanya",
+       "v": "2025 – 100 low-productivity districts"
+      },
+      {
+       "k": "PM-VBRY",
+       "v": "1 Aug 2025 – first-job incentive"
+      },
+      {
+       "k": "VB-G RAM G",
+       "v": "Assent 21 Dec 2025; from 1 July 2026; 125 days; 60:40; 60-day pause in peak season"
+      },
+      {
+       "k": "Others",
+       "v": "NEP 2020 (5+3+3+4); SWAYAM; DDU-GKY"
+      }
+     ],
+     "traps": [
+      "MGNREGA 100 days → VB-G RAM G 125 days"
+     ]
+    },
+    {
+     "id": "sc-super6",
+     "name": "AP Super Six (2024 NDA)",
+     "years": {
+      "from": 2024,
+      "to": 2026
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "Deepam-2",
+       "v": "1 Nov 2024 (Srikakulam) – 3 free cylinders; tops up Ujjwala"
+      },
+      {
+       "k": "Thalliki Vandanam",
+       "v": "12 June 2025 – ₹15,000 per child (₹13,000 to mother, ₹2,000 school fund); replaced Amma Vodi"
+      },
+      {
+       "k": "Annadata Sukhibhava",
+       "v": "2 Aug 2025 – ₹20,000 = ₹14,000 State + ₹6,000 PM-KISAN; ~46.86 lakh farmers; replaced Rythu Bharosa"
+      },
+      {
+       "k": "Stree Shakti",
+       "v": "15 Aug 2025 – free non-AC RTC bus for women"
+      },
+      {
+       "k": "Adabidda Nidhi",
+       "v": "₹1,500/month women 18 – 59 – pending (per notes)"
+      },
+      {
+       "k": "Yuvashakti",
+       "v": "₹3,000/month youth – pending (per notes)"
+      }
+     ],
+     "traps": [
+      "PM-KISAN ₹6,000 is inside the ₹20,000",
+      "Amma Vodi (YSRCP) ≠ Thalliki Vandanam (NDA)"
+     ]
+    },
+    {
+     "id": "sc-apother",
+     "name": "Other AP schemes and vision",
+     "years": {
+      "from": 2002,
+      "to": 2029
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "NTR Bharosa",
+       "v": "From July 2024 – ₹4,000 old age / widow; ₹6,000 disabled (was YSR Pension Kanuka)"
+      },
+      {
+       "k": "Swarna Andhra @2047",
+       "v": "Nov 2024; 10 \"Padi Sutralu\""
+      },
+      {
+       "k": "P4",
+       "v": "Ugadi 30 Mar 2025, Amaravati – Margadarsis adopt Bangaru Kutumbalu; zero poverty 2029"
+      },
+      {
+       "k": "Mega DSC 2025",
+       "v": "16,347 teacher posts"
+      },
+      {
+       "k": "YSRCP era",
+       "v": "Navaratnalu (2019 – 24)"
+      },
+      {
+       "k": "Older",
+       "v": "SERP; APWALTA 2002; Abhaya Hastham; Indira Prabha"
+      }
+     ],
+     "traps": [
+      "P4 is a model, not a Super Six guarantee"
+     ]
+    }
+   ]
+  }
+ ]
+}
