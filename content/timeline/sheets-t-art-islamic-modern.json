@@ -1,0 +1,420 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "art-islamic-modern",
+   "part": "Art & Culture",
+   "title": "Indo-Islamic, painting, colonial and modern",
+   "order": 2,
+   "intro": "Sultanate to Mughal buildings, painting schools, colonial and modern architects, UNESCO list.",
+   "chapters": [
+    "culture-medieval",
+    "culture-modern"
+   ],
+   "keys": [
+    {
+     "id": "ai-sultan",
+     "name": "Delhi Sultanate buildings",
+     "years": {
+      "from": 1193,
+      "to": 1400
+     },
+     "tag": "Indo-Islamic",
+     "rows": [
+      {
+       "k": "Method",
+       "v": "Arcuate – true arch, dome (voussoirs) replacing trabeate lintels; geometric, arabesque, calligraphy"
+      },
+      {
+       "k": "Quwwat-ul-Islam",
+       "v": "Oldest mosque in India; temple material (Aibak)"
+      },
+      {
+       "k": "Adhai Din Ka Jhopra",
+       "v": "Ajmer; reused temple pillars"
+      },
+      {
+       "k": "Qutub Minar",
+       "v": "Begun Aibak, finished Iltutmish; UNESCO 1993"
+      },
+      {
+       "k": "Alai Darwaza",
+       "v": "1311, Alauddin – first true arch and dome"
+      },
+      {
+       "k": "Tughlaq",
+       "v": "Sloping walls – Tughlaqabad, Ghiyasuddin's tomb; Firoz's Hauz Khas; Khirki Masjid"
+      }
+     ],
+     "traps": [
+      "Alai Darwaza = first true arch; earlier arches corbelled"
+     ]
+    },
+    {
+     "id": "ai-prov",
+     "name": "Provincial and Deccani styles",
+     "years": {
+      "from": 1400,
+      "to": 1700
+     },
+     "tag": "Indo-Islamic",
+     "rows": [
+      {
+       "k": "Jaunpur",
+       "v": "Atala Masjid (Sharqi)"
+      },
+      {
+       "k": "Mandu",
+       "v": "Hoshang Shah's tomb – first marble tomb"
+      },
+      {
+       "k": "Bengal",
+       "v": "Adina Mosque, Pandua"
+      },
+      {
+       "k": "Gujarat",
+       "v": "Sidi Saiyyed jaalis"
+      },
+      {
+       "k": "Bidar",
+       "v": "Mahmud Gawan's madrasa"
+      },
+      {
+       "k": "Bijapur",
+       "v": "Gol Gumbaz – whispering gallery"
+      },
+      {
+       "k": "Hyderabad",
+       "v": "Charminar; Mecca Masjid (1617 – 1694); Golconda acoustics"
+      }
+     ]
+    },
+    {
+     "id": "ai-mughal",
+     "name": "Mughal buildings",
+     "years": {
+      "from": 1565,
+      "to": 1784
+     },
+     "tag": "Indo-Islamic",
+     "rows": [
+      {
+       "k": "Humayun's tomb",
+       "v": "Mirak Mirza Ghiyas; double dome, charbagh; UNESCO 1993"
+      },
+      {
+       "k": "Akbar",
+       "v": "Fatehpur Sikri – Buland Darwaza (Gujarat win), Panch Mahal; UNESCO 1986"
+      },
+      {
+       "k": "Nur Jahan",
+       "v": "Itmad-ud-Daulah, \"Baby Taj\"; early pietra dura"
+      },
+      {
+       "k": "Taj Mahal",
+       "v": "Ustad Ahmad Lahori; UNESCO 1983"
+      },
+      {
+       "k": "Red Fort",
+       "v": "Shah Jahan, 1648; UNESCO 2007"
+      },
+      {
+       "k": "Aurangzeb",
+       "v": "Moti Masjid (Red Fort); Bibi ka Maqbara – \"Taj of the Deccan\""
+      },
+      {
+       "k": "Late",
+       "v": "Safdarjung's tomb; Bara Imambara (Asaf-ud-Daula, famine relief)"
+      },
+      {
+       "k": "Devices",
+       "v": "Squinch; foreshortening of lettering"
+      }
+     ],
+     "traps": [
+      "Baby Taj = Itmad-ud-Daulah; Taj of Deccan = Bibi ka Maqbara",
+      "Moti Masjid: Red Fort = Aurangzeb; Agra Fort = Shah Jahan"
+     ]
+    },
+    {
+     "id": "ai-manu",
+     "name": "Manuscript painting",
+     "years": {
+      "from": 800,
+      "to": 1500
+     },
+     "tag": "Painting",
+     "rows": [
+      {
+       "k": "Pala",
+       "v": "Buddhist palm-leaf"
+      },
+      {
+       "k": "Apabhramsa",
+       "v": "Jain Kalpasutra (western India)"
+      },
+      {
+       "k": "Use",
+       "v": "Illustrated religious texts before miniatures"
+      }
+     ]
+    },
+    {
+     "id": "ai-mini",
+     "name": "Miniature schools",
+     "years": {
+      "from": 1560,
+      "to": 1850
+     },
+     "tag": "Painting",
+     "rows": [
+      {
+       "k": "Mughal",
+       "v": "Akbar's atelier – Hamzanama (Mir Sayyid Ali, Abd al-Samad); peak under Jahangir; Ustad Mansur (birds)"
+      },
+      {
+       "k": "Rajput",
+       "v": "Kishangarh – Bani Thani (\"Indian Mona Lisa\")"
+      },
+      {
+       "k": "Pahari",
+       "v": "Basohli (bold colours); Kangra (Gita Govinda)"
+      },
+      {
+       "k": "Deccani",
+       "v": "Bijapur Ragamala; Golconda portraits"
+      },
+      {
+       "k": "Tanjore",
+       "v": "Gold foil, gesso"
+      }
+     ],
+     "traps": [
+      "Akbar founded the atelier; Jahangir = peak"
+     ]
+    },
+    {
+     "id": "ai-folk",
+     "name": "Folk and tribal painting",
+     "tag": "Painting",
+     "rows": [
+      {
+       "k": "Kalighat",
+       "v": "Bengal, satire"
+      },
+      {
+       "k": "Warli",
+       "v": "Maharashtra, rice paste"
+      },
+      {
+       "k": "Madhubani",
+       "v": "Mithila, Bihar"
+      },
+      {
+       "k": "Pattachitra",
+       "v": "Odisha, Raghurajpur; Saura (Odisha)"
+      },
+      {
+       "k": "Phad",
+       "v": "Rajasthan (Pabuji); Pichwai – Nathdwara"
+      },
+      {
+       "k": "Gond",
+       "v": "MP / Chhattisgarh"
+      },
+      {
+       "k": "Chittara",
+       "v": "Karnataka"
+      },
+      {
+       "k": "Sanjhi",
+       "v": "UP paper-cutting"
+      },
+      {
+       "k": "Cheriyal",
+       "v": "Telangana scrolls; Kalamkari = AP"
+      }
+     ],
+     "traps": [
+      "Pattachitra Odisha; Phad Rajasthan; Cheriyal Telangana"
+     ]
+    },
+    {
+     "id": "ai-modpaint",
+     "name": "Modern painting and sculpture",
+     "years": {
+      "from": 1870,
+      "to": 1980
+     },
+     "tag": "Painting",
+     "rows": [
+      {
+       "k": "Raja Ravi Varma",
+       "v": "Oils, lithographs (Kilimanoor)"
+      },
+      {
+       "k": "Abanindranath Tagore",
+       "v": "Bengal School; \"Bharat Mata\""
+      },
+      {
+       "k": "Ramkinkar Baij",
+       "v": "Modern sculpture, Santiniketan"
+      },
+      {
+       "k": "Progressive Artists' Group",
+       "v": "1947 – Souza, Husain, Raza"
+      },
+      {
+       "k": "S.H. Raza",
+       "v": "\"Bindu\" series"
+      }
+     ]
+    },
+    {
+     "id": "ai-portu",
+     "name": "Portuguese and French building",
+     "years": {
+      "from": 1510,
+      "to": 1760
+     },
+     "tag": "Colonial",
+     "rows": [
+      {
+       "k": "Goa",
+       "v": "Sé Cathedral (Golden Bell); Bom Jesus (St Francis Xavier relics); UNESCO 1986"
+      },
+      {
+       "k": "Diu Fort",
+       "v": "1535"
+      },
+      {
+       "k": "French",
+       "v": "Grid towns, plain facades – Puducherry, Yanam (AP)"
+      }
+     ]
+    },
+    {
+     "id": "ai-brit",
+     "name": "British colonial architecture",
+     "years": {
+      "from": 1860,
+      "to": 1958
+     },
+     "tag": "Colonial",
+     "rows": [
+      {
+       "k": "Indo-Gothic",
+       "v": "CSMT (F.W. Stevens, 1887; UNESCO 2004); Victoria Memorial (William Emerson, 1921); Gateway (George Wittet, 1924)"
+      },
+      {
+       "k": "Indo-Saracenic",
+       "v": "Chepauk Palace first; Henry Irwin – Shimla Viceregal Lodge (1888), Mysore Palace"
+      },
+      {
+       "k": "New Delhi",
+       "v": "\"Rome of Hindustan\"; Lutyens – India Gate, Rashtrapati Bhavan; Herbert Baker – Parliament (1927)"
+      },
+      {
+       "k": "Supreme Court",
+       "v": "1958 – Ganesh Bhikaji Deolalikar"
+      },
+      {
+       "k": "Mumbai",
+       "v": "Victorian Gothic and Art Deco, UNESCO 2018"
+      }
+     ],
+     "traps": [
+      "Supreme Court = Deolalikar, not Baker",
+      "CSMT 2004 ≠ Mumbai ensembles 2018"
+     ]
+    },
+    {
+     "id": "ai-modern",
+     "name": "Modern architects",
+     "years": {
+      "from": 1951,
+      "to": 2018
+     },
+     "tag": "Modern",
+     "rows": [
+      {
+       "k": "Le Corbusier",
+       "v": "Chandigarh; Capitol Complex UNESCO 2016"
+      },
+      {
+       "k": "Louis Kahn",
+       "v": "IIM Ahmedabad"
+      },
+      {
+       "k": "Charles Correa",
+       "v": "Gandhi Smarak Sangrahalaya 1963; Kanchanjunga; Jawahar Kala Kendra; MP Assembly"
+      },
+      {
+       "k": "Laurie Baker",
+       "v": "\"Architect of the Poor\" / \"Gandhi of Indian Architecture\", Kerala"
+      },
+      {
+       "k": "Others",
+       "v": "Kengal Hanumanthaiah – Vidhana Soudha 1956; Joseph Allen Stein – India Habitat Centre; Raj Rewal – Hall of Nations; Gautam Sarabhai – NID; Achyut Kanvinde – IIT Kanpur; Fariborz Sahba – Lotus Temple 1986"
+      },
+      {
+       "k": "B.V. Doshi",
+       "v": "First Indian Pritzker, 2018"
+      }
+     ]
+    },
+    {
+     "id": "ai-unesco",
+     "name": "India’s World Heritage Sites",
+     "years": {
+      "from": 1983,
+      "to": 2026
+     },
+     "tag": "UNESCO",
+     "rows": [
+      {
+       "k": "1983",
+       "v": "Ajanta, Ellora, Agra Fort, Taj (\"A-E-A-T\")"
+      },
+      {
+       "k": "1984",
+       "v": "Konark, Mahabalipuram"
+      },
+      {
+       "k": "1986",
+       "v": "Goa churches, Khajuraho, Hampi, Fatehpur Sikri"
+      },
+      {
+       "k": "1987",
+       "v": "Pattadakal, Elephanta, Chola temples"
+      },
+      {
+       "k": "1989 – 2004",
+       "v": "Sanchi; Humayun's tomb, Qutb (1993); Mountain Railways (1999); Mahabodhi (2002); Bhimbetka (2003); Champaner, CSMT (2004)"
+      },
+      {
+       "k": "2007 – 2019",
+       "v": "Red Fort; Jantar Mantar (2010); Rajasthan hill forts (2013); Rani-ki-Vav (2014); Nalanda, Capitol (2016); Ahmedabad (2017, first city); Mumbai (2018); Jaipur (2019)"
+      },
+      {
+       "k": "2021 – 2025",
+       "v": "Ramappa (39th), Dholavira (40th); Hoysalas, Santiniketan (2023); Moidams (2024); Maratha Military Landscapes (2025)"
+      },
+      {
+       "k": "Latest (per notes)",
+       "v": "Sarnath 2026; 45 sites – 37 cultural, 7 natural, 1 mixed (Khangchendzonga)"
+      },
+      {
+       "k": "AP",
+       "v": "Lepakshi only on Tentative List"
+      }
+     ],
+     "traps": [
+      "Ramappa is in Telangana; Lepakshi (AP) only tentative"
+     ]
+    }
+   ]
+  }
+ ]
+}
