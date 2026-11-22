@@ -1,0 +1,437 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-local",
+   "part": "Polity",
+   "title": "Panchayati Raj and urban local bodies",
+   "order": 10,
+   "intro": "Roots and committees, Part IX and IXA, Schedules, PESA, AP mandals and sachivalayams.",
+   "chapters": [
+    "polity-all",
+    "andhra-all"
+   ],
+   "keys": [
+    {
+     "id": "lo-roots",
+     "name": "Ancient and British roots",
+     "years": {
+      "from": 1688,
+      "to": 1925
+     },
+     "tag": "History",
+     "rows": [
+      {
+       "k": "Vedic",
+       "v": "Sabha, Samiti, Vidatha"
+      },
+      {
+       "k": "Mahabharata",
+       "v": "Gramik (1), Dashap (10), Vinshya Adhipati (20), Shat Gram Adhyaksha (100), Shat Gram Pati (1,000)"
+      },
+      {
+       "k": "Gupta",
+       "v": "Vishaya Pati (district), Grampati (village); Sultanate – Mukkaddam, Patwari, Choudhri"
+      },
+      {
+       "k": "1870",
+       "v": "Mayo – financial decentralisation"
+      },
+      {
+       "k": "1882",
+       "v": "Ripon – elected members; \"Magna Carta\"; father of local self-govt"
+      },
+      {
+       "k": "1907",
+       "v": "Hobhouse Royal Commission – village panchayats"
+      },
+      {
+       "k": "1919",
+       "v": "Local govt a transferred subject"
+      },
+      {
+       "k": "Urban",
+       "v": "Madras corporation 1688; Bombay, Calcutta 1726"
+      }
+     ]
+    },
+    {
+     "id": "lo-cttee",
+     "name": "Committees on Panchayati Raj",
+     "years": {
+      "from": 1952,
+      "to": 1988
+     },
+     "tag": "History",
+     "rows": [
+      {
+       "k": "Art 40",
+       "v": "DPSP; Ambedkar sceptical"
+      },
+      {
+       "k": "CDP 1952, NES 1953",
+       "v": "Little participation"
+      },
+      {
+       "k": "Balwant Rai Mehta 1957",
+       "v": "NDC; three tiers; \"democratic decentralisation\"; accepted Jan 1958"
+      },
+      {
+       "k": "First PRIs",
+       "v": "Rajasthan, Nagaur 2 Oct 1959 (Nehru); AP 1 Nov 1959"
+      },
+      {
+       "k": "Ashok Mehta 1977",
+       "v": "Two tiers – ZP + mandal (15 – 20,000); party participation; nyaya panchayats"
+      },
+      {
+       "k": "G.V.K. Rao 1985",
+       "v": "\"Grass without roots\"; district planning unit"
+      },
+      {
+       "k": "L.M. Singhvi 1986",
+       "v": "Constitutional status; nyaya panchayats"
+      },
+      {
+       "k": "P.K. Thungon 1988",
+       "v": "Constitutional recognition; ZP pivot"
+      },
+      {
+       "k": "Gadgil 1988",
+       "v": "5-yr term, reservation, SFC and SEC ideas"
+      }
+     ],
+     "traps": [
+      "Balwant Rai three-tier; Ashok Mehta two-tier",
+      "Singhvi status; G.V.K. Rao district planning"
+     ]
+    },
+    {
+     "id": "lo-73",
+     "name": "73rd Amendment",
+     "years": {
+      "from": 1989,
+      "to": 2004
+     },
+     "tag": "Panchayats",
+     "rows": [
+      {
+       "k": "Bills",
+       "v": "64th (1989, Rajiv) failed in RS; V.P. Singh bill lapsed"
+      },
+      {
+       "k": "Act",
+       "v": "1992 (Narasimha Rao); in force 24 Apr 1993 – Panchayati Raj Day"
+      },
+      {
+       "k": "Part IX",
+       "v": "Arts 243 – 243O; Eleventh Schedule, 29 subjects"
+      },
+      {
+       "k": "Ministry",
+       "v": "Panchayati Raj 2004"
+      },
+      {
+       "k": "Finance Commission",
+       "v": "Art 280(3)(bb)"
+      }
+     ]
+    },
+    {
+     "id": "lo-part9",
+     "name": "Part IX article by article",
+     "tag": "Panchayats",
+     "rows": [
+      {
+       "k": "243A",
+       "v": "Gram Sabha – all village voters"
+      },
+      {
+       "k": "243B",
+       "v": "Three tiers; skip middle if state ≤ 20 lakh"
+      },
+      {
+       "k": "243C",
+       "v": "Direct election; upper chairs indirect; MPs, MLAs by law"
+      },
+      {
+       "k": "243D",
+       "v": "SC/ST by population; ≥ 1/3 women (AP 50%); chairs by rotation; OBC optional"
+      },
+      {
+       "k": "243E",
+       "v": "5 years; election within 6 months; remainder term after early dissolution"
+      },
+      {
+       "k": "243F",
+       "v": "Disqualification; age 21"
+      },
+      {
+       "k": "243G, 243H",
+       "v": "Plans; taxes as state law allows"
+      },
+      {
+       "k": "243I",
+       "v": "State Finance Commission (Governor, 5 yrs; advice not binding)"
+      },
+      {
+       "k": "243J",
+       "v": "Audit"
+      },
+      {
+       "k": "243K",
+       "v": "State Election Commission (Governor appoints; removed like HC judge)"
+      },
+      {
+       "k": "243M",
+       "v": "Not in Fifth / tribal areas, Nagaland, Meghalaya, Mizoram, Manipur hills, Darjeeling"
+      },
+      {
+       "k": "243N, 243O",
+       "v": "Old laws 1 yr; courts barred in elections"
+      }
+     ],
+     "traps": [
+      "243I money; 243K elections",
+      "Panchayat age 21, not 25"
+     ]
+    },
+    {
+     "id": "lo-comp",
+     "name": "Compulsory and voluntary provisions",
+     "tag": "Panchayats",
+     "rows": [
+      {
+       "k": "Compulsory",
+       "v": "Gram Sabha; three tiers; direct polls; indirect upper chairs; age 21; SC/ST and 1/3 women; 5 years; SEC; SFC"
+      },
+      {
+       "k": "Voluntary",
+       "v": "MPs, MLAs as members; OBC quota; tax powers; devolving 29 subjects; autonomy"
+      },
+      {
+       "k": "Result",
+       "v": "Devolution of 3 Fs left to states (243G)"
+      }
+     ]
+    },
+    {
+     "id": "lo-11",
+     "name": "Eleventh Schedule – 29 items",
+     "tag": "Panchayats",
+     "rows": [
+      {
+       "k": "1 – 7",
+       "v": "Agriculture; land reforms; minor irrigation; animal husbandry; fisheries; social forestry; minor forest produce"
+      },
+      {
+       "k": "8 – 15",
+       "v": "Small industries; khadi; rural housing; drinking water; fuel, fodder; roads; electrification; non-conventional energy"
+      },
+      {
+       "k": "16 – 22",
+       "v": "Poverty; education; technical training; adult education; libraries; culture; markets, fairs"
+      },
+      {
+       "k": "23 – 29",
+       "v": "Health; family welfare; women and children; social welfare; weaker sections; PDS; community assets"
+      }
+     ]
+    },
+    {
+     "id": "lo-pesa",
+     "name": "PESA 1996",
+     "years": {
+      "from": 1996,
+      "to": 2011
+     },
+     "tag": "Tribal",
+     "rows": [
+      {
+       "k": "Covers",
+       "v": "Fifth Schedule areas, 10 states – AP, Chhattisgarh, Gujarat, HP, Jharkhand, MP, Maharashtra, Odisha, Rajasthan, Telangana"
+      },
+      {
+       "k": "Gram Sabha",
+       "v": "Plans, beneficiaries, land acquisition consult, minor forest produce, land alienation, markets, money-lending, intoxicants, minor minerals"
+      },
+      {
+       "k": "Seats",
+       "v": "≥ half for STs; all chairs ST"
+      },
+      {
+       "k": "Ministry",
+       "v": "Panchayati Raj; AP PESA Rules 2011"
+      }
+     ],
+     "traps": [
+      "PESA = Fifth Schedule, not Sixth"
+     ]
+    },
+    {
+     "id": "lo-74",
+     "name": "74th Amendment – Part IXA",
+     "years": {
+      "from": 1989,
+      "to": 1993
+     },
+     "tag": "Urban",
+     "rows": [
+      {
+       "k": "Act",
+       "v": "1992; in force 1 June 1993; 65th Nagarpalika Bill 1989 failed"
+      },
+      {
+       "k": "243Q",
+       "v": "Nagar Panchayat, Municipal Council, Corporation; Governor decides"
+      },
+      {
+       "k": "243R, 243S",
+       "v": "Composition; Wards Committees at 3 lakh+"
+      },
+      {
+       "k": "243T, 243U, 243V",
+       "v": "Reservation; 5 yrs; age 21"
+      },
+      {
+       "k": "243W, 243X, 243Y",
+       "v": "Powers (12th Schedule); taxes; SFC"
+      },
+      {
+       "k": "243ZA",
+       "v": "SEC polls"
+      },
+      {
+       "k": "243ZC",
+       "v": "Not in Scheduled areas, Darjeeling Gorkha Council"
+      },
+      {
+       "k": "243ZD",
+       "v": "District Planning Committee – ≥ 4/5 elected"
+      },
+      {
+       "k": "243ZE",
+       "v": "Metropolitan Planning Committee – 10 lakh+; ≥ 2/3 elected"
+      },
+      {
+       "k": "Ministry",
+       "v": "Housing and Urban Affairs"
+      }
+     ],
+     "traps": [
+      "243ZD district; 243ZE metro"
+     ]
+    },
+    {
+     "id": "lo-12",
+     "name": "Twelfth Schedule and urban bodies",
+     "tag": "Urban",
+     "rows": [
+      {
+       "k": "1 – 6",
+       "v": "Town planning; land use; development planning; roads; water; sanitation"
+      },
+      {
+       "k": "7 – 12",
+       "v": "Fire; urban forestry; weaker sections; slums; urban poverty; parks"
+      },
+      {
+       "k": "13 – 18",
+       "v": "Culture; burial grounds; cattle pounds; births and deaths; street lights; slaughter houses"
+      },
+      {
+       "k": "Corporation",
+       "v": "Mayor"
+      },
+      {
+       "k": "Others",
+       "v": "Notified Area Committee (nominated); Town Area Committee; Cantonment Board (Defence, 2006 Act); Township; Port Trust; SPA"
+      }
+     ],
+     "traps": [
+      "Only 12th has fire, slaughter houses, vital statistics"
+     ]
+    },
+    {
+     "id": "lo-ap",
+     "name": "Andhra Pradesh local government",
+     "years": {
+      "from": 1959,
+      "to": 2026
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "1959",
+       "v": "Samithis and ZP Act; AP second (1 Nov 1959)"
+      },
+      {
+       "k": "1985 – 86",
+       "v": "NTR – mandals replace taluks; Mandal Praja Parishads"
+      },
+      {
+       "k": "1994",
+       "v": "AP PR Act (Act 13 of 1994)"
+      },
+      {
+       "k": "Heads",
+       "v": "Sarpanch (direct); MPP President (by MPTCs); ZPP Chairperson (by ZPTCs)"
+      },
+      {
+       "k": "Women",
+       "v": "50%"
+      },
+      {
+       "k": "Urban",
+       "v": "AP Municipalities Act 1965; GVMC"
+      },
+      {
+       "k": "Minister",
+       "v": "Deputy CM Pawan Kalyan (PR and RD)"
+      },
+      {
+       "k": "Sachivalayams",
+       "v": "2 Oct 2019 – ~15,004 Grama, 3,842 Ward; volunteers ~50 households; now \"Swarna\"; administrative only"
+      },
+      {
+       "k": "Districts",
+       "v": "28 since 31 Dec 2025; 28 ZPPs from 25 Sep 2026"
+      },
+      {
+       "k": "2026 polls (per notes)",
+       "v": "Urban 28 Oct; MPTC/ZPTC 3 Nov; GPs 26 Nov – 2 Dec; SEC Anil Chandra Punetha"
+      }
+     ],
+     "traps": [
+      "Rajasthan first; AP second",
+      "Sachivalayam does not replace Gram Sabha"
+     ]
+    },
+    {
+     "id": "lo-svam",
+     "name": "SVAMITVA and reform",
+     "years": {
+      "from": 2005,
+      "to": 2021
+     },
+     "tag": "Reform",
+     "rows": [
+      {
+       "k": "SVAMITVA",
+       "v": "2020 – 21; drones survey abadi land; property cards; Ministry of Panchayati Raj"
+      },
+      {
+       "k": "2nd ARC",
+       "v": "\"Local Governance\" report – subsidiarity, activity mapping"
+      },
+      {
+       "k": "Gaps",
+       "v": "3 Fs (funds, functions, functionaries); proxy \"Sarpanch-Pati\"; weak Gram Sabha"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
