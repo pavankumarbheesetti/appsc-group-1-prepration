@@ -95,7 +95,7 @@ describe('revision sheets pages', () => {
     expect(rows[0]!.textContent).toContain('Australopithecus');
     [...root.querySelectorAll<HTMLButtonElement>('.sh-filter .sh-chip')].find((b) => b.textContent === 'Polity')!.click();
     expect(root.querySelectorAll('.sh-tr').length).toBe(everything(getSheets(), 'Polity').length);
-    expect(root.querySelector('.sh-tk-sheet')?.getAttribute('href')).toContain('#/revise/sheets/s-po');
+    expect(root.querySelector('.sh-tk-sheet')?.getAttribute('href')).toContain('#/revise/sheets/po-');
   });
 
   it('draws a lane chart with before and same-time rows', () => {

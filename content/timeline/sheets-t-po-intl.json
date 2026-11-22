@@ -1,0 +1,362 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-intl",
+   "part": "Polity",
+   "title": "International institutions",
+   "order": 18,
+   "intro": "UN organs and agencies, Bretton Woods, WTO, development banks, regional bodies, reports.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "in-un",
+     "name": "United Nations – founding",
+     "years": {
+      "from": 1945,
+      "to": 2026
+     },
+     "tag": "UN",
+     "rows": [
+      {
+       "k": "Charter",
+       "v": "Signed by 50 at San Francisco, 26 June 1945; 51 original (India one)"
+      },
+      {
+       "k": "In force",
+       "v": "24 Oct 1945 – UN Day; 80 years in 2025"
+      },
+      {
+       "k": "Members",
+       "v": "193; newest South Sudan 2011"
+      },
+      {
+       "k": "SG",
+       "v": "António Guterres – term ends 31 Dec 2026 (per notes)"
+      },
+      {
+       "k": "Firsts",
+       "v": "Vijaya Lakshmi Pandit – first woman UNGA President 1953"
+      },
+      {
+       "k": "Human rights chief",
+       "v": "Volker Türk"
+      }
+     ]
+    },
+    {
+     "id": "in-organs",
+     "name": "UN principal organs",
+     "years": {
+      "from": 1945,
+      "to": 1994
+     },
+     "tag": "UN",
+     "rows": [
+      {
+       "k": "General Assembly",
+       "v": "All 193, New York"
+      },
+      {
+       "k": "Security Council",
+       "v": "15 = P5 (US, UK, France, Russia, China, veto) + 10 for 2 yrs; 11 → 15 in 1965"
+      },
+      {
+       "k": "ECOSOC",
+       "v": "54 members, 3 yrs"
+      },
+      {
+       "k": "Secretariat",
+       "v": "Under Secretary-General"
+      },
+      {
+       "k": "ICJ",
+       "v": "The Hague; 15 judges, 9 yrs; Dalveer Bhandari (2017)"
+      },
+      {
+       "k": "Trusteeship Council",
+       "v": "Suspended since 1994 (Palau)"
+      },
+      {
+       "k": "Reform",
+       "v": "G4 vs Uniting for Consensus; Africa – Ezulwini Consensus"
+      }
+     ],
+     "traps": [
+      "ICJ (states, UN organ) ≠ ICC (individuals, not UN)"
+     ]
+    },
+    {
+     "id": "in-agency",
+     "name": "UN agencies and HQs",
+     "years": {
+      "from": 1919,
+      "to": 1957
+     },
+     "tag": "UN",
+     "rows": [
+      {
+       "k": "ILO",
+       "v": "1919 (oldest; Nobel 1969); Geneva; Gilbert Houngbo"
+      },
+      {
+       "k": "FAO",
+       "v": "16 Oct 1945; Rome; Qu Dongyu"
+      },
+      {
+       "k": "UNESCO",
+       "v": "16 Nov 1945; Paris; Khaled El-Enany (Nov 2025)"
+      },
+      {
+       "k": "UNICEF",
+       "v": "1946; New York; Catherine Russell"
+      },
+      {
+       "k": "WHO",
+       "v": "7 Apr 1948; Geneva; Tedros"
+      },
+      {
+       "k": "IAEA",
+       "v": "1957; Vienna; Rafael Grossi"
+      },
+      {
+       "k": "Geneva",
+       "v": "WHO, ILO, WTO, WMO, WIPO, ITU, UNHCR"
+      },
+      {
+       "k": "Vienna",
+       "v": "IAEA, OPEC, UNIDO, CTBTO"
+      },
+      {
+       "k": "Rome",
+       "v": "FAO, WFP, IFAD"
+      },
+      {
+       "k": "Others",
+       "v": "UPU Bern; ICAO Montreal; IMO London; UNEP, UN-Habitat Nairobi; UN Tourism Madrid; UNDP, UNFPA New York"
+      }
+     ],
+     "traps": [
+      "UPU Bern, not Geneva; ICAO Montreal"
+     ]
+    },
+    {
+     "id": "in-bw",
+     "name": "Bretton Woods twins",
+     "years": {
+      "from": 1944,
+      "to": 2016
+     },
+     "tag": "Finance",
+     "rows": [
+      {
+       "k": "Born",
+       "v": "July 1944, Bretton Woods (44 nations); Washington D.C."
+      },
+      {
+       "k": "IMF",
+       "v": "191 members; SDR – dollar, euro, renminbi (2016), yen, pound; Kristalina Georgieva"
+      },
+      {
+       "k": "World Bank",
+       "v": "IBRD + IDA; Ajay Banga"
+      },
+      {
+       "k": "Group",
+       "v": "IFC; MIGA (1988); ICSID (1966 – India not member)"
+      },
+      {
+       "k": "Convention",
+       "v": "IMF head European; WB head American"
+      }
+     ]
+    },
+    {
+     "id": "in-wto",
+     "name": "WTO",
+     "years": {
+      "from": 1995,
+      "to": 2026
+     },
+     "tag": "Trade",
+     "rows": [
+      {
+       "k": "Start",
+       "v": "1 Jan 1995 from GATT; Geneva; 166 members"
+      },
+      {
+       "k": "DG",
+       "v": "Ngozi Okonjo-Iweala – 2nd term 1 Sep 2025"
+      },
+      {
+       "k": "Doha Round",
+       "v": "2001"
+      },
+      {
+       "k": "TFA",
+       "v": "Bali 2013; in force 22 Feb 2017"
+      },
+      {
+       "k": "Appellate Body",
+       "v": "Not working since Dec 2019"
+      },
+      {
+       "k": "Ministerials",
+       "v": "MC13 Abu Dhabi 2024; MC14 Yaoundé 2026"
+      }
+     ]
+    },
+    {
+     "id": "in-banks",
+     "name": "Development banks",
+     "years": {
+      "from": 1966,
+      "to": 2026
+     },
+     "tag": "Finance",
+     "hook": "ADB Manila, AIIB Beijing, NDB Shanghai",
+     "rows": [
+      {
+       "k": "ADB",
+       "v": "1966; Manila; Japanese head – Masato Kanda"
+      },
+      {
+       "k": "AIIB",
+       "v": "2016; Beijing; Zou Jiayi; India 2nd-largest shareholder"
+      },
+      {
+       "k": "NDB",
+       "v": "Fortaleza 2014; 2015; Shanghai; Dilma Rousseff; BRICS"
+      },
+      {
+       "k": "AP",
+       "v": "Amaravati – World Bank $800 mn, ADB $788.8 mn (Dec 2024); WB $340 mn released Apr 2026 (per notes)"
+      }
+     ]
+    },
+    {
+     "id": "in-region",
+     "name": "Regional bodies",
+     "years": {
+      "from": 1967,
+      "to": 2025
+     },
+     "tag": "Regional",
+     "rows": [
+      {
+       "k": "SAARC",
+       "v": "Dhaka 1985; Secretariat Kathmandu; 8; last summit Kathmandu 2014; 2016 Islamabad cancelled"
+      },
+      {
+       "k": "ASEAN",
+       "v": "1967; Jakarta; 11 (Timor-Leste 26 Oct 2025)"
+      },
+      {
+       "k": "BIMSTEC",
+       "v": "Bangkok Declaration 1997; Dhaka; 7; Charter 2024; 6th summit Bangkok Apr 2025"
+      },
+      {
+       "k": "IORA",
+       "v": "1997; Ebene, Mauritius; India chairs 2025 – 27"
+      },
+      {
+       "k": "EU",
+       "v": "1993; Brussels; 27"
+      },
+      {
+       "k": "Commonwealth",
+       "v": "56; London"
+      }
+     ],
+     "traps": [
+      "SAARC founded Dhaka, secretariat Kathmandu"
+     ]
+    },
+    {
+     "id": "in-clubs",
+     "name": "Clubs and climate bodies",
+     "years": {
+      "from": 1992,
+      "to": 2026
+     },
+     "tag": "Groupings",
+     "rows": [
+      {
+       "k": "G20",
+       "v": "India 2023 – AU admitted"
+      },
+      {
+       "k": "G7",
+       "v": "India not member; Evian 2026 guest"
+      },
+      {
+       "k": "BRICS",
+       "v": "10 members; SCO: HQ Beijing"
+      },
+      {
+       "k": "Quad, I2U2",
+       "v": "India, Israel, UAE, USA"
+      },
+      {
+       "k": "UNFCCC",
+       "v": "1992; Paris Agreement 2015; COP30 Belém 2025; COP31 Antalya Nov 2026"
+      },
+      {
+       "k": "IPCC",
+       "v": "WMO + UNEP"
+      },
+      {
+       "k": "India-led",
+       "v": "ISA (Gurugram); CDRI (New Delhi)"
+      }
+     ],
+     "traps": [
+      "IPCC set up by WMO and UNEP, not UNFCCC"
+     ]
+    },
+    {
+     "id": "in-reports",
+     "name": "Reports and memberships",
+     "tag": "PYQ",
+     "rows": [
+      {
+       "k": "HDR",
+       "v": "UNDP"
+      },
+      {
+       "k": "World Investment Report",
+       "v": "UNCTAD"
+      },
+      {
+       "k": "Global Competitiveness",
+       "v": "WEF (Davos)"
+      },
+      {
+       "k": "GFSR, WEO",
+       "v": "IMF"
+      },
+      {
+       "k": "World Development Report",
+       "v": "World Bank"
+      },
+      {
+       "k": "State of World Population",
+       "v": "UNFPA"
+      },
+      {
+       "k": "India not in",
+       "v": "OECD, OPEC, ICSID, NSG, APEC"
+      },
+      {
+       "k": "Tax",
+       "v": "OECD/G20 two-pillar 15% minimum"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
