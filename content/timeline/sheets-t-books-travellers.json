@@ -1,0 +1,679 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "books-travellers",
+   "part": "Ancient India",
+   "title": "Ancient books, authors and foreign travellers",
+   "order": 12,
+   "intro": "Who wrote what, and who came to India when.",
+   "chapters": [
+    "ancient-to-232bce",
+    "ancient-231bce-647"
+   ],
+   "keys": [
+    {
+     "id": "bk-vedic",
+     "name": "Vedic texts and authors",
+     "years": {
+      "from": -1500,
+      "to": -500
+     },
+     "tag": "Vedic",
+     "rows": [
+      {
+       "k": "Rig Veda",
+       "v": "Many sages (Gritsamada, Vishvamitra, Vamadeva…); 1,028 hymns; Gayatri – Vishvamitra"
+      },
+      {
+       "k": "Sama / Yajur / Atharva",
+       "v": "Chants / ritual formulae / charms"
+      },
+      {
+       "k": "Shatapatha Brahmana",
+       "v": "Yajnavalkya (Yajur Veda)"
+      },
+      {
+       "k": "Aitareya Brahmana",
+       "v": "Mahidasa Aitareya (Rig Veda)"
+      },
+      {
+       "k": "Taittiriya Brahmana",
+       "v": "Tittiri school; Gopatha – Atharva"
+      },
+      {
+       "k": "Brihadaranyaka Upanishad",
+       "v": "Yajnavalkya – Atman, Brahman"
+      },
+      {
+       "k": "Mundaka",
+       "v": "\"Satyameva Jayate\"; Katha – Nachiketa, Yama; Chandogya – Sama Veda"
+      },
+      {
+       "k": "Manusmriti",
+       "v": "Manu – law, dharma"
+      }
+     ],
+     "traps": [
+      "Yajnavalkya: Shatapatha Brahmana + Brihadaranyaka"
+     ]
+    },
+    {
+     "id": "bk-gram",
+     "name": "Grammarians",
+     "years": {
+      "from": -450,
+      "to": -150
+     },
+     "tag": "Language",
+     "rows": [
+      {
+       "k": "Panini",
+       "v": "Ashtadhyayi – 8 chapters, about 4,000 sutras (5th – 4th c. BCE)"
+      },
+      {
+       "k": "Katyayana",
+       "v": "Vartika – notes on Panini"
+      },
+      {
+       "k": "Patanjali",
+       "v": "Mahabhashya (2nd c. BCE); Pushyamitra's priest"
+      },
+      {
+       "k": "Sarvavarman",
+       "v": "Katantra – short Sanskrit grammar for a Satavahana king"
+      },
+      {
+       "k": "Amarasimha",
+       "v": "Amarakosha – lexicon (Gupta)"
+      }
+     ],
+     "traps": [
+      "Panini – Ashtadhyayi; Patanjali – Mahabhashya"
+     ]
+    },
+    {
+     "id": "bk-darshana",
+     "name": "Six schools of philosophy",
+     "tag": "Philosophy",
+     "rows": [
+      {
+       "k": "Samkhya",
+       "v": "Kapila – Purusha (spirit) and Prakriti (matter)"
+      },
+      {
+       "k": "Yoga",
+       "v": "Patanjali – Yoga Sutra"
+      },
+      {
+       "k": "Nyaya",
+       "v": "Gautama (Akshapada) – logic"
+      },
+      {
+       "k": "Vaisheshika",
+       "v": "Kanada – atoms (paramanu)"
+      },
+      {
+       "k": "Mimamsa",
+       "v": "Jaimini – Vedic ritual"
+      },
+      {
+       "k": "Vedanta",
+       "v": "Badarayana – Brahma Sutra (Upanishads)"
+      },
+      {
+       "k": "Pairs",
+       "v": "Samkhya – Yoga; Nyaya – Vaisheshika; Mimamsa – Vedanta"
+      }
+     ],
+     "traps": [
+      "Patanjali of Yoga and of Mahabhashya may be two people"
+     ]
+    },
+    {
+     "id": "bk-epic",
+     "name": "Epics and Puranas",
+     "years": {
+      "from": -400,
+      "to": 400
+     },
+     "tag": "Epic",
+     "rows": [
+      {
+       "k": "Ramayana",
+       "v": "Valmiki – \"Adi Kavi\""
+      },
+      {
+       "k": "Mahabharata",
+       "v": "Ved Vyasa; holds the Bhagavad Gita"
+      },
+      {
+       "k": "Harivamsa",
+       "v": "Vyasa (attr.) – Krishna, Yadavas"
+      },
+      {
+       "k": "Vishnu Purana",
+       "v": "Mauryan dynasty list"
+      },
+      {
+       "k": "Matsya Purana",
+       "v": "Satavahana list"
+      }
+     ]
+    },
+    {
+     "id": "bk-budd",
+     "name": "Buddhist books",
+     "tag": "Buddhist",
+     "rows": [
+      {
+       "k": "Tripitaka",
+       "v": "Vinaya, Sutta, Abhidhamma – Pali; councils"
+      },
+      {
+       "k": "Dhammapada, Jatakas, Therigatha",
+       "v": "In the Sutta Pitaka"
+      },
+      {
+       "k": "Milindapanho",
+       "v": "Nagasena and Menander – Pali"
+      },
+      {
+       "k": "Buddhacharita, Saundarananda",
+       "v": "Ashvaghosha (Kanishka's court) – Sanskrit"
+      },
+      {
+       "k": "Madhyamika Karika",
+       "v": "Nagarjuna – Shunyavada"
+      },
+      {
+       "k": "Abhidharmakosha",
+       "v": "Vasubandhu"
+      },
+      {
+       "k": "Visuddhimagga",
+       "v": "Buddhaghosa – Pali, Sri Lanka"
+      },
+      {
+       "k": "Dipavamsa, Mahavamsa",
+       "v": "Sri Lankan chronicles; Mahavamsa by Mahanama"
+      },
+      {
+       "k": "Mahayana sutras",
+       "v": "Heart Sutra (emptiness), Lankavatara (mind only)"
+      }
+     ]
+    },
+    {
+     "id": "bk-jain",
+     "name": "Jain books",
+     "tag": "Jain",
+     "rows": [
+      {
+       "k": "Agamas",
+       "v": "Mahavira's teachings by Ganadharas – Prakrit"
+      },
+      {
+       "k": "Kalpasutra, Niryukti",
+       "v": "Bhadrabahu"
+      },
+      {
+       "k": "Tattvartha Sutra",
+       "v": "Umasvati – both sects accept"
+      },
+      {
+       "k": "Samayasara, Panchastikaya, Niyamasara",
+       "v": "Kundakunda"
+      },
+      {
+       "k": "Ratnakaranda Shravakachara",
+       "v": "Samantabhadra – householder manual"
+      },
+      {
+       "k": "Gommatsara",
+       "v": "Nemichandra"
+      },
+      {
+       "k": "Parishishtaparvan",
+       "v": "Hemachandra (12th c.)"
+      }
+     ]
+    },
+    {
+     "id": "bk-state",
+     "name": "Statecraft books",
+     "tag": "Statecraft",
+     "rows": [
+      {
+       "k": "Arthashastra",
+       "v": "Kautilya (Chanakya, Vishnugupta) – Sanskrit"
+      },
+      {
+       "k": "Indica",
+       "v": "Megasthenes – Greek"
+      },
+      {
+       "k": "Mudrarakshasa, Devichandraguptam",
+       "v": "Vishakhadatta"
+      },
+      {
+       "k": "Nitisara",
+       "v": "Kamandaka (Gupta) – built on Arthashastra"
+      },
+      {
+       "k": "Ashokan edicts",
+       "v": "Prakrit in Brahmi, Kharosthi"
+      }
+     ]
+    },
+    {
+     "id": "bk-prakrit",
+     "name": "Satavahana-age Prakrit books",
+     "years": {
+      "from": 20,
+      "to": 200
+     },
+     "tag": "Prakrit",
+     "hook": "Hala’s 700, Gunadhya’s great story",
+     "rows": [
+      {
+       "k": "Gatha Saptasati",
+       "v": "Hala – 700 verses, Maharashtri Prakrit"
+      },
+      {
+       "k": "Brihatkatha",
+       "v": "Gunadhya – Paishachi (lost; Sanskrit retellings)"
+      },
+      {
+       "k": "Katantra",
+       "v": "Sarvavarman"
+      }
+     ]
+    },
+    {
+     "id": "bk-tamil",
+     "name": "Tamil books",
+     "tag": "Tamil",
+     "rows": [
+      {
+       "k": "Tolkappiyam",
+       "v": "Tolkappiyar – letters, words, subject matter (3 parts)"
+      },
+      {
+       "k": "Ettuthokai",
+       "v": "Aingurunuru, Purananuru, Akananuru, Narrinai, Kurunthogai, Paripadal, Kalithogai, Pathirruppathu"
+      },
+      {
+       "k": "Pattuppattu",
+       "v": "Tirumurugarruppadai, Porunarruppadai, Maduraikanchi (Mangudi Maruthanar), Malaipadukadam"
+      },
+      {
+       "k": "Tirukkural",
+       "v": "Thiruvalluvar – 1,330 couplets"
+      },
+      {
+       "k": "Five epics",
+       "v": "Silappadikaram (Ilango Adigal), Manimekalai (Sattanar), Civaka Cintamani (Tirutakkadevar, Jain), Valayapathi, Kundalakesi"
+      }
+     ]
+    },
+    {
+     "id": "bk-classical",
+     "name": "Classical Sanskrit authors",
+     "years": {
+      "from": 300,
+      "to": 750
+     },
+     "tag": "Sanskrit",
+     "hook": "Bhasa dreams, Bharavi hunts, Magha kills Shishupala",
+     "rows": [
+      {
+       "k": "Bhasa",
+       "v": "13 plays – Svapnavasavadatta (Udayana)"
+      },
+      {
+       "k": "Kalidasa",
+       "v": "Shakuntalam, Malavikagnimitram, Vikramorvashiyam; Raghuvamsha, Kumarasambhava, Meghaduta, Ritusamhara"
+      },
+      {
+       "k": "Shudraka",
+       "v": "Mrichchhakatika"
+      },
+      {
+       "k": "Bharavi",
+       "v": "Kiratarjuniya (Simhavishnu's age)"
+      },
+      {
+       "k": "Magha",
+       "v": "Shishupalavadha"
+      },
+      {
+       "k": "Dandin",
+       "v": "Dashakumaracharita, Kavyadarsha (Pallava court)"
+      },
+      {
+       "k": "Bhartrihari",
+       "v": "Niti, Shringara, Vairagya Shatakas; Vakyapadiya"
+      },
+      {
+       "k": "Bhavabhuti",
+       "v": "Uttararamacharita (Yashovarman of Kannauj, 8th c.)"
+      },
+      {
+       "k": "Banabhatta",
+       "v": "Harshacharita, Kadambari (finished by son Bhushanabhatta)"
+      },
+      {
+       "k": "Harsha",
+       "v": "Ratnavali, Priyadarshika, Nagananda"
+      },
+      {
+       "k": "Bharata",
+       "v": "Natyashastra"
+      }
+     ],
+     "traps": [
+      "Bharavi ≠ Bharata ≠ Bhasa"
+     ]
+    },
+    {
+     "id": "bk-other",
+     "name": "Fables and other books",
+     "tag": "Sanskrit",
+     "rows": [
+      {
+       "k": "Panchatantra",
+       "v": "Vishnu Sharma – animal fables"
+      },
+      {
+       "k": "Kamasutra",
+       "v": "Vatsyayana"
+      },
+      {
+       "k": "Amarakosha",
+       "v": "Amarasimha"
+      }
+     ]
+    },
+    {
+     "id": "bk-sci",
+     "name": "Science books",
+     "years": {
+      "from": 499,
+      "to": 628
+     },
+     "tag": "Science",
+     "rows": [
+      {
+       "k": "Aryabhatiya",
+       "v": "Aryabhata, 499 – place value, trigonometry"
+      },
+      {
+       "k": "Brahmasphuta Siddhanta",
+       "v": "Brahmagupta, 628 – rules for zero, negative numbers"
+      },
+      {
+       "k": "Surya Siddhanta",
+       "v": "Planets, eclipses, time"
+      },
+      {
+       "k": "Brihat Samhita, Pancha Siddhantika",
+       "v": "Varahamihira"
+      },
+      {
+       "k": "Charaka Samhita",
+       "v": "Charaka (Kanishka's court) – medicine"
+      },
+      {
+       "k": "Sushruta Samhita",
+       "v": "Sushruta – surgery"
+      },
+      {
+       "k": "Ashtanga Hridaya",
+       "v": "Vagbhata – Ayurveda"
+      }
+     ],
+     "traps": [
+      "Charaka = medicine; Sushruta = surgery",
+      "Brahmagupta gave rules for zero; Aryabhata used place value"
+     ]
+    },
+    {
+     "id": "tr-ktesias",
+     "name": "Ktesias",
+     "years": {
+      "from": -400,
+      "to": -400
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "From",
+       "v": "Greek physician at the Persian court"
+      },
+      {
+       "k": "When",
+       "v": "5th c. BCE"
+      },
+      {
+       "k": "Wrote",
+       "v": "First Greek account of India – plants, animals, customs; half myth"
+      }
+     ]
+    },
+    {
+     "id": "tr-mega",
+     "name": "Megasthenes",
+     "years": {
+      "from": -302,
+      "to": -298
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "From",
+       "v": "Greece; envoy of Seleucus I"
+      },
+      {
+       "k": "When",
+       "v": "4th c. BCE, Chandragupta Maurya's court"
+      },
+      {
+       "k": "Book",
+       "v": "Indica (lost; quoted by Arrian, Strabo, Diodorus)"
+      },
+      {
+       "k": "Wrote",
+       "v": "Pataliputra run by 6 boards of 5; seven classes; farming"
+      }
+     ]
+    },
+    {
+     "id": "tr-deim",
+     "name": "Deimachus and Dionysius",
+     "years": {
+      "from": -280,
+      "to": -260
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "Deimachus",
+       "v": "Envoy of Antiochus I to Bindusara"
+      },
+      {
+       "k": "Dionysius",
+       "v": "Envoy of Ptolemy II (Egypt) to the Mauryas"
+      },
+      {
+       "k": "When",
+       "v": "3rd c. BCE"
+      }
+     ]
+    },
+    {
+     "id": "tr-pliny",
+     "name": "Pliny and the Periplus",
+     "years": {
+      "from": 60,
+      "to": 80
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "Pliny the Elder",
+       "v": "Rome, 1st c. CE; Naturalis Historia; India drained Rome of 50 million sesterces a year"
+      },
+      {
+       "k": "Periplus of the Erythraean Sea",
+       "v": "Unknown Greek sailor, 1st c. CE; ports Barygaza, Muziris"
+      },
+      {
+       "k": "Goods",
+       "v": "Spices, pearls, fine cloth to Rome; gold to India"
+      }
+     ]
+    },
+    {
+     "id": "tr-ptolemy",
+     "name": "Ptolemy",
+     "years": {
+      "from": 150,
+      "to": 150
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "From",
+       "v": "Egypt (Greek-Roman); 2nd c. CE"
+      },
+      {
+       "k": "Book",
+       "v": "Geographia – ports, cities, rivers"
+      },
+      {
+       "k": "AP link",
+       "v": "\"Siri Polemaios\" (Pulumavi) at Baithana (Paithan); \"Tiastenes\" (Chashtana) at Ozene (Ujjain); Maisolia coast (Machilipatnam)"
+      }
+     ]
+    },
+    {
+     "id": "tr-fahien",
+     "name": "Fa-Hien (Faxian)",
+     "years": {
+      "from": 399,
+      "to": 414
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "From",
+       "v": "China; Buddhist monk"
+      },
+      {
+       "k": "When",
+       "v": "c. 399 – 414 CE, Chandragupta II (never names him)"
+      },
+      {
+       "k": "Book",
+       "v": "Fo-kuo-ki (Record of the Buddhist Kingdoms); came for Vinaya texts"
+      },
+      {
+       "k": "Wrote",
+       "v": "Peace, no death penalty, vegetarians; Chandalas outside towns struck wood"
+      },
+      {
+       "k": "Route",
+       "v": "Overland via Central Asia; back by sea via Sri Lanka"
+      }
+     ]
+    },
+    {
+     "id": "tr-hiuen",
+     "name": "Hiuen Tsang (Xuanzang)",
+     "years": {
+      "from": 630,
+      "to": 643
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "From",
+       "v": "China; \"prince of pilgrims\""
+      },
+      {
+       "k": "When",
+       "v": "630 – 643 CE, Harsha"
+      },
+      {
+       "k": "Book",
+       "v": "Si-Yu-Ki; biography by disciple Hwui-li"
+      },
+      {
+       "k": "Visited",
+       "v": "Nalanda; Pulakeshin II's Deccan; Kanchi"
+      }
+     ]
+    },
+    {
+     "id": "tr-itsing",
+     "name": "I-Tsing (Yi Jing)",
+     "years": {
+      "from": 671,
+      "to": 695
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "From",
+       "v": "China"
+      },
+      {
+       "k": "When",
+       "v": "671 – 695 CE (after Harsha)"
+      },
+      {
+       "k": "Route",
+       "v": "Sea via Srivijaya (Sumatra)"
+      },
+      {
+       "k": "Book",
+       "v": "Record of the Buddhist Religion in India and the Malay Archipelago; lives of eminent monks"
+      },
+      {
+       "k": "Study",
+       "v": "Vinaya at Nalanda"
+      }
+     ]
+    },
+    {
+     "id": "tr-mahuan",
+     "name": "Ma Huan",
+     "years": {
+      "from": 1413,
+      "to": 1413
+     },
+     "tag": "Traveller",
+     "rows": [
+      {
+       "k": "From",
+       "v": "China; with admiral Zheng He (Ming)"
+      },
+      {
+       "k": "When",
+       "v": "15th c. (c. 1413)"
+      },
+      {
+       "k": "Book",
+       "v": "Ying-yai Sheng-lan; detailed Calicut"
+      }
+     ],
+     "traps": [
+      "Order: Ktesias, Megasthenes, Dionysius, Pliny, Ptolemy, Fa-Hien, Hiuen Tsang, I-Tsing, Ma Huan"
+     ]
+    }
+   ]
+  }
+ ]
+}
