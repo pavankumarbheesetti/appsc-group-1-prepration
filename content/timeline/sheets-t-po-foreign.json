@@ -1,0 +1,448 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-foreign",
+   "part": "Polity",
+   "title": "Foreign policy and international relations",
+   "order": 17,
+   "intro": "Phases, treaties, regional doctrines, big-power ties, groupings, memberships and the AP link.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "fp-phases",
+     "name": "Phases of foreign policy",
+     "years": {
+      "from": 1947,
+      "to": 2014
+     },
+     "tag": "Principles",
+     "hook": "Belgrade 1961, Panchsheel China 1954",
+     "rows": [
+      {
+       "k": "1947 – 64",
+       "v": "Nehruvian idealism; non-alignment"
+      },
+      {
+       "k": "1962 – 91",
+       "v": "Realism; 1962 war; 1971 Indo-Soviet Treaty"
+      },
+      {
+       "k": "Post-1991",
+       "v": "Economic diplomacy; Look East"
+      },
+      {
+       "k": "Post-2014",
+       "v": "Multi-alignment, strategic autonomy (Quad + BRICS/SCO)"
+      },
+      {
+       "k": "NAM",
+       "v": "Bandung 1955 → Belgrade 1961"
+      }
+     ]
+    },
+    {
+     "id": "fp-treaty1",
+     "name": "Treaties 1949 – 1972",
+     "years": {
+      "from": 1949,
+      "to": 1972
+     },
+     "tag": "Treaties",
+     "rows": [
+      {
+       "k": "Bhutan",
+       "v": "1949 friendship; revised 2007 (no \"guidance\")"
+      },
+      {
+       "k": "Nepal",
+       "v": "1950 peace and friendship; open border"
+      },
+      {
+       "k": "Panchsheel",
+       "v": "29 Apr 1954 – China, Tibet trade"
+      },
+      {
+       "k": "Indus Waters",
+       "v": "1960, World Bank; in abeyance from 23 Apr 2025"
+      },
+      {
+       "k": "Tashkent",
+       "v": "Jan 1966 – after 1965 war (USSR)"
+      },
+      {
+       "k": "Indo-Soviet",
+       "v": "9 Aug 1971 – 20 years"
+      },
+      {
+       "k": "Simla",
+       "v": "2 July 1972 – ceasefire line → LoC"
+      }
+     ],
+     "traps": [
+      "Tashkent after 1965; Simla after 1971"
+     ]
+    },
+    {
+     "id": "fp-treaty2",
+     "name": "Treaties 1974 – 2019",
+     "years": {
+      "from": 1974,
+      "to": 2019
+     },
+     "tag": "Treaties",
+     "rows": [
+      {
+       "k": "Katchatheevu",
+       "v": "1974 – to Sri Lanka"
+      },
+      {
+       "k": "Indo-Sri Lanka Accord",
+       "v": "29 July 1987 – 13th Amendment, IPKF"
+      },
+      {
+       "k": "Siachen",
+       "v": "Operation Meghdoot 13 Apr 1984"
+      },
+      {
+       "k": "Ganga Waters",
+       "v": "1996, Bangladesh, 30 years – expires Dec 2026"
+      },
+      {
+       "k": "Lahore",
+       "v": "Feb 1999 – bus diplomacy"
+      },
+      {
+       "k": "LBA",
+       "v": "2015 – 100th Amendment; 162 enclaves"
+      },
+      {
+       "k": "Kartarpur",
+       "v": "9 Nov 2019"
+      }
+     ],
+     "traps": [
+      "Ganga with Bangladesh; Indus with Pakistan"
+     ]
+    },
+    {
+     "id": "fp-region",
+     "name": "Regional doctrines",
+     "years": {
+      "from": 1991,
+      "to": 2025
+     },
+     "tag": "Policies",
+     "hook": "Gujral gives, SAGAR sails",
+     "rows": [
+      {
+       "k": "Look East",
+       "v": "1991 → Act East 2014 (4 Cs)"
+      },
+      {
+       "k": "Gujral Doctrine",
+       "v": "1996 – non-reciprocity, not Pakistan"
+      },
+      {
+       "k": "Connect Central Asia",
+       "v": "2012"
+      },
+      {
+       "k": "Neighbourhood First",
+       "v": "2014"
+      },
+      {
+       "k": "SAGAR",
+       "v": "2015 Mauritius → MAHASAGAR Mar 2025"
+      },
+      {
+       "k": "IPOI",
+       "v": "2019 Indo-Pacific"
+      }
+     ]
+    },
+    {
+     "id": "fp-us",
+     "name": "India – US",
+     "years": {
+      "from": 2002,
+      "to": 2026
+     },
+     "tag": "Powers",
+     "rows": [
+      {
+       "k": "Label",
+       "v": "Comprehensive Global Strategic Partnership"
+      },
+      {
+       "k": "Pacts",
+       "v": "GSOMIA 2002; LEMOA 2016; COMCASA 2018; BECA 2020; 2+2 since 2018"
+      },
+      {
+       "k": "Nuclear",
+       "v": "123 Agreement 2008; NSG waiver 6 Sep 2008"
+      },
+      {
+       "k": "Tech",
+       "v": "iCET 2023 → TRUST Feb 2025"
+      },
+      {
+       "k": "Trade",
+       "v": "First phase near (Oct 2026, per notes)"
+      }
+     ],
+     "traps": [
+      "Partnership, not a treaty alliance"
+     ]
+    },
+    {
+     "id": "fp-russia",
+     "name": "India – Russia and China",
+     "years": {
+      "from": 1971,
+      "to": 2024
+     },
+     "tag": "Powers",
+     "rows": [
+      {
+       "k": "Russia",
+       "v": "Special and Privileged Strategic Partnership; S-400, BrahMos, Kudankulam; discounted oil since 2022"
+      },
+      {
+       "k": "China",
+       "v": "Galwan June 2020 – first deadly clash since 1975"
+      },
+      {
+       "k": "Oct 2024",
+       "v": "Patrolling pact (Depsang, Demchok); Kazan BRICS meeting"
+      },
+      {
+       "k": "Concerns",
+       "v": "BRI/CPEC through PoK; string of pearls"
+      }
+     ],
+     "traps": [
+      "LAC with China; LoC with Pakistan"
+     ]
+    },
+    {
+     "id": "fp-pak",
+     "name": "India – Pakistan",
+     "years": {
+      "from": 2025,
+      "to": 2025
+     },
+     "tag": "Powers",
+     "rows": [
+      {
+       "k": "Pahalgam",
+       "v": "Apr 2025 attack"
+      },
+      {
+       "k": "Operation Sindoor",
+       "v": "7 May 2025; firing stopped 10 May"
+      },
+      {
+       "k": "IWT",
+       "v": "Held in abeyance"
+      },
+      {
+       "k": "Status",
+       "v": "Near-frozen ties"
+      }
+     ]
+    },
+    {
+     "id": "fp-groups",
+     "name": "Groupings",
+     "years": {
+      "from": 2004,
+      "to": 2026
+     },
+     "tag": "Groupings",
+     "rows": [
+      {
+       "k": "Quad",
+       "v": "India, US, Japan, Australia; 2004 tsunami roots; revived 2017; summits from 2021; dialogue not alliance; FMs met New Delhi 26 May 2026"
+      },
+      {
+       "k": "BRICS",
+       "v": "10 – + Egypt, Ethiopia, Iran, UAE, Indonesia (Jan 2025); NDB, CRA; 2026 summit New Delhi (Declaration 12 Sep 2026, per notes)"
+      },
+      {
+       "k": "SCO",
+       "v": "Full member 2017; RATS; chaired 2023; Tianjin 2025; Bishkek 2026"
+      },
+      {
+       "k": "G20",
+       "v": "AU admitted 2023 (India); \"Vasudhaiva Kutumbakam\"; Johannesburg 2025; Miami 2026"
+      },
+      {
+       "k": "Global South",
+       "v": "Voice of Global South Summit Jan 2023"
+      }
+     ],
+     "traps": [
+      "Saudi Arabia invited to BRICS, not joined"
+     ]
+    },
+    {
+     "id": "fp-member",
+     "name": "Member or not",
+     "years": {
+      "from": 2005,
+      "to": 2019
+     },
+     "tag": "Memberships",
+     "rows": [
+      {
+       "k": "Member",
+       "v": "EAS (2005), SCO, BRICS, G20, BIMSTEC, IORA, Quad, I2U2"
+      },
+      {
+       "k": "Not",
+       "v": "APEC; ASEAN (dialogue partner); AUKUS; NSG; RCEP (left 2019); NPT; CTBT"
+      },
+      {
+       "k": "Regimes",
+       "v": "MTCR 2016; Wassenaar 2017; Australia Group 2018"
+      }
+     ],
+     "traps": [
+      "EAS yes; APEC, ASEAN, RCEP, NSG no"
+     ]
+    },
+    {
+     "id": "fp-unsc",
+     "name": "UNSC reform and nuclear doctrine",
+     "years": {
+      "from": 1998,
+      "to": 2026
+     },
+     "tag": "Global",
+     "rows": [
+      {
+       "k": "G4",
+       "v": "India, Japan, Germany, Brazil"
+      },
+      {
+       "k": "Opposed by",
+       "v": "Uniting for Consensus (Coffee Club – Italy, Pakistan)"
+      },
+      {
+       "k": "Non-permanent",
+       "v": "8 times; latest 2021 – 22; bid for 2028 – 29"
+      },
+      {
+       "k": "Doctrine 2003",
+       "v": "Credible minimum deterrence; No First Use; massive retaliation; civilian control"
+      },
+      {
+       "k": "Pokhran-II",
+       "v": "1998"
+      }
+     ]
+    },
+    {
+     "id": "fp-trade",
+     "name": "Trade deals and corridors",
+     "years": {
+      "from": 2023,
+      "to": 2026
+     },
+     "tag": "Economy",
+     "rows": [
+      {
+       "k": "India – UK CETA",
+       "v": "Signed 24 July 2025; in force 15 July 2026 (per notes)"
+      },
+      {
+       "k": "India – EFTA TEPA",
+       "v": "1 Oct 2025; $100 bn over 15 yrs"
+      },
+      {
+       "k": "India – NZ FTA",
+       "v": "20 Oct 2026 (per notes)"
+      },
+      {
+       "k": "India – EU FTA",
+       "v": "Being finalised"
+      },
+      {
+       "k": "IMEC",
+       "v": "G20 Delhi 2023"
+      },
+      {
+       "k": "INSTC",
+       "v": "India – Iran (Chabahar) – Russia"
+      }
+     ],
+     "traps": [
+      "TEPA is with EFTA, not EU"
+     ]
+    },
+    {
+     "id": "fp-people",
+     "name": "Neighbours and officials (2026)",
+     "years": {
+      "from": 2024,
+      "to": 2026
+     },
+     "tag": "People",
+     "rows": [
+      {
+       "k": "India",
+       "v": "EAM S. Jaishankar; FS Vikram Misri; NSA Ajit Doval"
+      },
+      {
+       "k": "Bangladesh",
+       "v": "Yunus interim 2024 – 26; PM Tarique Rahman (Feb 2026, per notes)"
+      },
+      {
+       "k": "Nepal",
+       "v": "PM Balendra Shah (23 May 2026, per notes)"
+      },
+      {
+       "k": "Sri Lanka",
+       "v": "Anura Kumara Dissanayake"
+      },
+      {
+       "k": "Maldives",
+       "v": "Mohamed Muizzu"
+      }
+     ]
+    },
+    {
+     "id": "fp-ap",
+     "name": "AP and foreign policy",
+     "years": {
+      "from": 2016,
+      "to": 2026
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "Visakhapatnam",
+       "v": "Eastern Naval Command HQ"
+      },
+      {
+       "k": "Fleet reviews",
+       "v": "IFR 2016; IFR 2026 (President, 18 Feb 2026) + MILAN 2026"
+      },
+      {
+       "k": "G20",
+       "v": "Working group 2023"
+      },
+      {
+       "k": "Diaspora",
+       "v": "Gulf, USA remittances"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
