@@ -1,0 +1,560 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-amend",
+   "part": "Polity",
+   "title": "Amendments and the basic structure",
+   "order": 9,
+   "intro": "Article 368 routes, every key amendment, recurring groups and the basic-structure case line.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "am-368",
+     "name": "Article 368 procedure",
+     "tag": "Procedure",
+     "rows": [
+      {
+       "k": "Where",
+       "v": "Part XX; idea from South Africa"
+      },
+      {
+       "k": "Start",
+       "v": "Either House of Parliament, never a state; minister or private member; no prior President's nod"
+      },
+      {
+       "k": "Passing",
+       "v": "Each House separately; no joint sitting"
+      },
+      {
+       "k": "Assent",
+       "v": "Compulsory (24th, 1971); constituent power"
+      },
+      {
+       "k": "States",
+       "v": "Half the legislatures, simple majority, no time limit"
+      },
+      {
+       "k": "Criticism",
+       "v": "States cannot initiate (except Art 169); vague; no deadline"
+      }
+     ],
+     "traps": [
+      "Half the states, not all"
+     ]
+    },
+    {
+     "id": "am-routes",
+     "name": "Three routes",
+     "tag": "Procedure",
+     "rows": [
+      {
+       "k": "Simple (outside 368)",
+       "v": "Arts 2, 3, 169; Second Schedule; quorum; MPs' pay; rules, privileges; English in Parliament; puisne SC judges; SC jurisdiction; citizenship; elections, delimitation; UTs; Fifth, Sixth Schedules"
+      },
+      {
+       "k": "Special majority",
+       "v": "FRs, DPSPs, everything else"
+      },
+      {
+       "k": "Special + half states",
+       "v": "President's election; Union and state executive power; SC, HCs; legislative lists; GST Council; Seventh Schedule; states in Parliament; Art 368 itself"
+      }
+     ]
+    },
+    {
+     "id": "am-1-26",
+     "name": "Amendments 1951 – 1971",
+     "years": {
+      "from": 1951,
+      "to": 1971
+     },
+     "tag": "Acts",
+     "rows": [
+      {
+       "k": "1st 1951",
+       "v": "Ninth Schedule; 31A, 31B; 15(4); speech limits"
+      },
+      {
+       "k": "7th 1956",
+       "v": "Part A – D states ended; 14 states, 6 UTs; common HC; 350A, 350B"
+      },
+      {
+       "k": "9th 1960",
+       "v": "Berubari to Pakistan"
+      },
+      {
+       "k": "10th – 14th 1961 – 62",
+       "v": "Dadra & NH; VP by electoral college (11th); Goa; Nagaland 371A; Puducherry 239A"
+      },
+      {
+       "k": "15th 1963",
+       "v": "HC retirement 60 → 62; 224A"
+      },
+      {
+       "k": "16th 1963",
+       "v": "Sovereignty and integrity in Art 19"
+      },
+      {
+       "k": "19th 1966",
+       "v": "Election Tribunals ended"
+      },
+      {
+       "k": "21st 1967",
+       "v": "Sindhi"
+      },
+      {
+       "k": "22nd 1969",
+       "v": "Meghalaya within Assam (244A)"
+      },
+      {
+       "k": "24th 1971",
+       "v": "Amend any part; assent compulsory"
+      },
+      {
+       "k": "25th 1971",
+       "v": "\"Amount\" for compensation; 31C"
+      },
+      {
+       "k": "26th 1971",
+       "v": "Privy purses ended"
+      }
+     ],
+     "traps": [
+      "24th answered Golaknath; 25th = 31C; 26th = privy purses"
+     ]
+    },
+    {
+     "id": "am-27-41",
+     "name": "Amendments 1971 – 1976",
+     "years": {
+      "from": 1971,
+      "to": 1976
+     },
+     "tag": "Acts",
+     "rows": [
+      {
+       "k": "27th 1971",
+       "v": "Manipur 371C; Mizoram, Arunachal UT legislatures"
+      },
+      {
+       "k": "28th 1972",
+       "v": "ICS privileges ended"
+      },
+      {
+       "k": "31st 1973",
+       "v": "Lok Sabha 525 → 545"
+      },
+      {
+       "k": "32nd 1973",
+       "v": "371D, 371E for AP (Six-Point Formula)"
+      },
+      {
+       "k": "33rd 1974",
+       "v": "Resignations must be voluntary"
+      },
+      {
+       "k": "35th, 36th",
+       "v": "Sikkim associate (1974); full state 371F (1975)"
+      },
+      {
+       "k": "38th 1975",
+       "v": "Emergency, ordinances non-justiciable"
+      },
+      {
+       "k": "39th 1975",
+       "v": "PM, Speaker election beyond courts (329A)"
+      },
+      {
+       "k": "40th 1976",
+       "v": "Territorial waters, EEZ"
+      },
+      {
+       "k": "41st 1976",
+       "v": "SPSC retirement 60 → 62"
+      }
+     ],
+     "traps": [
+      "39th barred courts on PM’s election, not 44th"
+     ]
+    },
+    {
+     "id": "am-42",
+     "name": "42nd Amendment 1976",
+     "years": {
+      "from": 1976,
+      "to": 1976
+     },
+     "tag": "Acts",
+     "rows": [
+      {
+       "k": "Name",
+       "v": "\"Mini-Constitution\""
+      },
+      {
+       "k": "Preamble",
+       "v": "Socialist, Secular, Integrity"
+      },
+      {
+       "k": "Duties",
+       "v": "Part IVA, Art 51A"
+      },
+      {
+       "k": "DPSP",
+       "v": "39A, 43A, 48A"
+      },
+      {
+       "k": "Tribunals",
+       "v": "Part XIVA, 323A, 323B"
+      },
+      {
+       "k": "Terms",
+       "v": "LS and Assemblies 5 → 6 years"
+      },
+      {
+       "k": "Others",
+       "v": "Advice binding (74); 5 subjects to Concurrent; 368(4), (5); 31C widened; seats frozen to 2001; AIJS"
+      }
+     ]
+    },
+    {
+     "id": "am-43-44",
+     "name": "43rd and 44th Amendments",
+     "years": {
+      "from": 1977,
+      "to": 1978
+     },
+     "tag": "Acts",
+     "rows": [
+      {
+       "k": "43rd 1977",
+       "v": "Restored SC, HC jurisdiction"
+      },
+      {
+       "k": "44th property",
+       "v": "19(1)(f), 31 out; Art 300A legal right"
+      },
+      {
+       "k": "44th emergency",
+       "v": "\"Armed rebellion\" for internal disturbance; written cabinet advice"
+      },
+      {
+       "k": "44th rights",
+       "v": "20, 21 never suspended"
+      },
+      {
+       "k": "44th others",
+       "v": "President may return advice once; LS 5 years again; 361A media reports"
+      }
+     ]
+    },
+    {
+     "id": "am-52-80",
+     "name": "Amendments 1985 – 2000",
+     "years": {
+      "from": 1985,
+      "to": 2000
+     },
+     "tag": "Acts",
+     "rows": [
+      {
+       "k": "52nd 1985",
+       "v": "Anti-defection, Tenth Schedule"
+      },
+      {
+       "k": "54th 1986",
+       "v": "Judges' salaries"
+      },
+      {
+       "k": "58th 1987",
+       "v": "Hindi text (394A)"
+      },
+      {
+       "k": "61st 1988",
+       "v": "Voting 21 → 18 (in force 28 Mar 1989)"
+      },
+      {
+       "k": "65th 1990",
+       "v": "National Commission for SC/ST"
+      },
+      {
+       "k": "69th, 70th",
+       "v": "Delhi NCT 1991; Delhi, Puducherry MLAs vote for President 1992"
+      },
+      {
+       "k": "73rd 1992",
+       "v": "Panchayats, Part IX, 11th Schedule – in force 24 Apr 1993"
+      },
+      {
+       "k": "74th 1992",
+       "v": "Municipalities, Part IXA, 12th Schedule – 1 June 1993"
+      },
+      {
+       "k": "75th, 76th 1994",
+       "v": "Rent tribunals; TN 69% in Ninth Schedule"
+      },
+      {
+       "k": "77th 1995",
+       "v": "16(4A) SC/ST promotion"
+      },
+      {
+       "k": "80th 2000",
+       "v": "All central taxes shared"
+      }
+     ]
+    },
+    {
+     "id": "am-81-99",
+     "name": "Amendments 2000 – 2014",
+     "years": {
+      "from": 2000,
+      "to": 2014
+     },
+     "tag": "Acts",
+     "rows": [
+      {
+       "k": "81st 2000",
+       "v": "16(4B) carry-forward"
+      },
+      {
+       "k": "82nd, 83rd 2000",
+       "v": "Qualifying marks relaxed (335); no SC quota in Arunachal panchayats"
+      },
+      {
+       "k": "85th 2001",
+       "v": "Consequential seniority"
+      },
+      {
+       "k": "86th 2002",
+       "v": "21A; Art 45; 51A(k)"
+      },
+      {
+       "k": "88th 2003",
+       "v": "Service tax 268A"
+      },
+      {
+       "k": "89th 2003",
+       "v": "Separate NCST 338A"
+      },
+      {
+       "k": "91st 2003",
+       "v": "15% ministers (state min 12); split clause deleted"
+      },
+      {
+       "k": "93rd 2005",
+       "v": "15(5) private institutions"
+      },
+      {
+       "k": "94th 2006",
+       "v": "Tribal ministers – Chhattisgarh, Jharkhand"
+      },
+      {
+       "k": "97th 2011",
+       "v": "Co-operatives"
+      },
+      {
+       "k": "98th 2012",
+       "v": "Hyderabad-Karnataka 371J"
+      },
+      {
+       "k": "99th 2014",
+       "v": "NJAC – struck 2015"
+      }
+     ]
+    },
+    {
+     "id": "am-100-106",
+     "name": "Amendments 2015 – 2023",
+     "years": {
+      "from": 2015,
+      "to": 2026
+     },
+     "tag": "Acts",
+     "rows": [
+      {
+       "k": "100th 2015",
+       "v": "Bangladesh land boundary"
+      },
+      {
+       "k": "101st 2016",
+       "v": "GST – 246A, 269A, 279A"
+      },
+      {
+       "k": "102nd 2018",
+       "v": "NCBC constitutional (338B)"
+      },
+      {
+       "k": "103rd 2019",
+       "v": "10% EWS – 15(6), 16(6)"
+      },
+      {
+       "k": "104th 2019",
+       "v": "SC/ST seats to 2030; Anglo-Indian seats ended"
+      },
+      {
+       "k": "105th 2021",
+       "v": "States identify SEBCs (342A)"
+      },
+      {
+       "k": "106th 2023",
+       "v": "Women 1/3 – 330A, 332A, 334A; 15 yrs; in force 16 Apr 2026 (per notes)"
+      },
+      {
+       "k": "Bills (per notes)",
+       "v": "129th ONOE and 130th with JPCs; 131st defeated Apr 2026"
+      }
+     ],
+     "traps": [
+      "102nd gave NCBC status; 105th restored states’ power"
+     ]
+    },
+    {
+     "id": "am-groups",
+     "name": "Recurring amendment groups",
+     "tag": "Groups",
+     "rows": [
+      {
+       "k": "Art 334 extensions",
+       "v": "8th 1970; 23rd 1980; 45th 1990; 62nd 2000; 79th 2010; 95th 2020; 104th 2030"
+      },
+      {
+       "k": "Eighth Schedule",
+       "v": "21st Sindhi; 71st Konkani, Manipuri, Nepali; 92nd Bodo, Dogri, Maithili, Santali; 96th Odia"
+      },
+      {
+       "k": "Art 371",
+       "v": "A Nagaland (13th); C Manipur (27th); D/E AP (32nd); F Sikkim (36th); G Mizoram (53rd); H Arunachal (55th); I Goa (56th); J Karnataka (98th)"
+      },
+      {
+       "k": "Seat freeze",
+       "v": "42nd to 2001; 84th to 2026; 87th used 2001 census"
+      },
+      {
+       "k": "Punjab PR",
+       "v": "48th, 59th, 64th, 67th, 68th"
+      }
+     ]
+    },
+    {
+     "id": "am-cases1",
+     "name": "Basic structure cases 1951 – 1981",
+     "years": {
+      "from": 1951,
+      "to": 1981
+     },
+     "tag": "Basic structure",
+     "rows": [
+      {
+       "k": "Shankari Prasad 1951",
+       "v": "Amendment not \"law\"; FRs amendable"
+      },
+      {
+       "k": "Sajjan Singh 1965",
+       "v": "Same (17th)"
+      },
+      {
+       "k": "Golaknath 1967",
+       "v": "11 judges, 6:5, CJ Subba Rao; FRs not abridgeable; prospective overruling"
+      },
+      {
+       "k": "Kesavananda 24 Apr 1973",
+       "v": "13 judges, 7:6, CJ Sikri; Edneer Mutt head; basic structure; Preamble part"
+      },
+      {
+       "k": "Raj Narain 1975",
+       "v": "First strike-down – 329A(4); free elections basic"
+      },
+      {
+       "k": "Minerva Mills 1980",
+       "v": "CJ Chandrachud; 368(4), (5) struck; limited power, FR – DPSP harmony basic"
+      },
+      {
+       "k": "Waman Rao 1981",
+       "v": "Pre-24 Apr 1973 changes safe"
+      }
+     ],
+     "traps": [
+      "Shankari can; Golaknath cannot; Kesavananda can but not the core"
+     ]
+    },
+    {
+     "id": "am-cases2",
+     "name": "Basic structure cases 1987 – 2022",
+     "years": {
+      "from": 1987,
+      "to": 2022
+     },
+     "tag": "Basic structure",
+     "rows": [
+      {
+       "k": "P. Sambamurthy v. AP 1987",
+       "v": "Struck 371D clause letting govt annul tribunal orders"
+      },
+      {
+       "k": "Kihoto Hollohan 1992",
+       "v": "Para 7 struck; Speaker reviewable"
+      },
+      {
+       "k": "Indra Sawhney 1992",
+       "v": "Rule of law; 50% cap"
+      },
+      {
+       "k": "Bommai 1994",
+       "v": "Federalism, secularism, democracy"
+      },
+      {
+       "k": "L. Chandra Kumar 1997",
+       "v": "HC and SC review basic; tribunals under HC"
+      },
+      {
+       "k": "M. Nagaraj 2006",
+       "v": "Promotion amendments upheld with conditions"
+      },
+      {
+       "k": "I.R. Coelho 2007",
+       "v": "9 judges; Ninth Schedule review"
+      },
+      {
+       "k": "NJAC 16 Oct 2015",
+       "v": "4:1; Chelameswar dissent"
+      },
+      {
+       "k": "Janhit Abhiyan 7 Nov 2022",
+       "v": "EWS upheld 3:2"
+      }
+     ]
+    },
+    {
+     "id": "am-elements",
+     "name": "Elements of the basic structure",
+     "tag": "Basic structure",
+     "rows": [
+      {
+       "k": "State",
+       "v": "Supremacy of Constitution; sovereign democratic republic; secular; federal; unity and integrity; welfare state"
+      },
+      {
+       "k": "Powers",
+       "v": "Separation of powers; parliamentary system; limited amending power"
+      },
+      {
+       "k": "Courts",
+       "v": "Judicial review; independent judiciary; Arts 32, 136, 141, 142"
+      },
+      {
+       "k": "Rights",
+       "v": "Rule of law; equality; free and fair elections; dignity; access to justice; FR – DPSP harmony"
+      },
+      {
+       "k": "Note",
+       "v": "No closed list; built case by case"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
