@@ -1,0 +1,449 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-statutory",
+   "part": "Polity",
+   "title": "Statutory, regulatory and quasi-judicial bodies",
+   "order": 12,
+   "intro": "Statutory watchdogs, rights and information commissions, regulators, tribunals, AP bodies.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "sb-types",
+     "name": "Three families of bodies",
+     "tag": "Overview",
+     "rows": [
+      {
+       "k": "Constitutional",
+       "v": "ECI, CAG, UPSC, FC – change needs amendment"
+      },
+      {
+       "k": "Statutory",
+       "v": "NHRC, CVC, SEBI, NGT, Lokpal, NCW, NCM, CIC, NDMA, UGC – ordinary Act"
+      },
+      {
+       "k": "Executive",
+       "v": "NITI Aayog, Law Commission – government order"
+      },
+      {
+       "k": "Why",
+       "v": "Flexibility, expertise, relief to courts"
+      }
+     ],
+     "traps": [
+      "RBI and SEBI are statutory, not constitutional"
+     ]
+    },
+    {
+     "id": "sb-cbi",
+     "name": "CBI",
+     "years": {
+      "from": 1941,
+      "to": 2026
+     },
+     "tag": "Anti-corruption",
+     "rows": [
+      {
+       "k": "Roots",
+       "v": "Special Police Establishment 1941; DSPE Act 1946"
+      },
+      {
+       "k": "Set up",
+       "v": "1 Apr 1963, Home Ministry resolution (Santhanam)"
+      },
+      {
+       "k": "Ministry",
+       "v": "Personnel; state consent (Sec 6)"
+      },
+      {
+       "k": "Director",
+       "v": "PM, LoP, CJI panel; 2 yrs, up to 5"
+      },
+      {
+       "k": "Now (per notes)",
+       "v": "Praveen Sood"
+      }
+     ]
+    },
+    {
+     "id": "sb-cvc",
+     "name": "CVC",
+     "years": {
+      "from": 1964,
+      "to": 2026
+     },
+     "tag": "Anti-corruption",
+     "rows": [
+      {
+       "k": "Set up",
+       "v": "Feb 1964 resolution (Santhanam 1962 – 64)"
+      },
+      {
+       "k": "Statutory",
+       "v": "Vineet Narain 1997 → CVC Act 2003"
+      },
+      {
+       "k": "Members",
+       "v": "CVC + up to 2 VCs; PM, Home Minister, LoP panel"
+      },
+      {
+       "k": "Term",
+       "v": "4 yrs / 65; removal after SC inquiry"
+      },
+      {
+       "k": "Role",
+       "v": "Supervises CBI in PC Act cases"
+      },
+      {
+       "k": "Now (per notes)",
+       "v": "A.S. Rajeev acting (Aug 2026)"
+      }
+     ]
+    },
+    {
+     "id": "sb-lokpal",
+     "name": "Lokpal and Lokayuktas",
+     "years": {
+      "from": 1963,
+      "to": 2026
+     },
+     "tag": "Anti-corruption",
+     "rows": [
+      {
+       "k": "Word",
+       "v": "L.M. Singhvi 1963; First ARC 1966 (Morarji Desai)"
+      },
+      {
+       "k": "Act",
+       "v": "2013 (Anna Hazare 2011); in force 16 Jan 2014"
+      },
+      {
+       "k": "Body",
+       "v": "Chair + up to 8; half judicial; half SC/ST/OBC/minority/women"
+      },
+      {
+       "k": "Panel",
+       "v": "PM, Speaker, LoP, CJI, eminent jurist"
+      },
+      {
+       "k": "Term",
+       "v": "5 yrs / 70"
+      },
+      {
+       "k": "PM",
+       "v": "Covered except foreign relations, security, order, atomic, space"
+      },
+      {
+       "k": "Chairs",
+       "v": "Pinaki Chandra Ghose (23 Mar 2019); A.M. Khanwilkar (2024)"
+      },
+      {
+       "k": "Lokayuktas",
+       "v": "Sec 63 – within 1 yr; Maharashtra first 1971; Odisha Act 1970"
+      },
+      {
+       "k": "AP",
+       "v": "1983 Act; Justice T. Mallikarjuna Rao sworn in 25 Aug 2026 (per notes)"
+      }
+     ],
+     "traps": [
+      "CBI panel has CJI; CVC panel Home Minister; Lokpal panel Speaker, CJI, jurist"
+     ]
+    },
+    {
+     "id": "sb-nhrc",
+     "name": "NHRC and SHRC",
+     "years": {
+      "from": 1993,
+      "to": 2019
+     },
+     "tag": "Rights",
+     "rows": [
+      {
+       "k": "NHRC",
+       "v": "12 Oct 1993; Paris Principles; 7 ex-officio commission heads"
+      },
+      {
+       "k": "Panel",
+       "v": "PM, Speaker, RS Deputy Chairman, both LoPs, Home Minister"
+      },
+      {
+       "k": "Term",
+       "v": "3 yrs / 70 (2019, was 5)"
+      },
+      {
+       "k": "Limits",
+       "v": "Not >1 yr old; armed forces only a report; recommendatory"
+      },
+      {
+       "k": "Chairs",
+       "v": "Ranganath Misra first; V. Ramasubramanian now"
+      },
+      {
+       "k": "SHRC",
+       "v": "Former HC CJ / judge; Governor appoints (CM, Speaker, Home Minister, LoP); President removes"
+      }
+     ],
+     "traps": [
+      "SHRC appointed by Governor, removed by President"
+     ]
+    },
+    {
+     "id": "sb-women",
+     "name": "NCW, NCM, NCPCR",
+     "years": {
+      "from": 1978,
+      "to": 2014
+     },
+     "tag": "Rights",
+     "rows": [
+      {
+       "k": "NCW",
+       "v": "1990 Act; 31 Jan 1992; chair + 5 + secretary; Vijaya Rahatkar"
+      },
+      {
+       "k": "NCM",
+       "v": "Executive 1978; NCM Act 1992; Muslims, Christians, Sikhs, Buddhists, Parsis (1993), Jains (2014); chair Harjit Singh Grewal (per notes)"
+      },
+      {
+       "k": "NCPCR",
+       "v": "2005 Act; 2007"
+      },
+      {
+       "k": "Note",
+       "v": "SC/ST/BC commissions are constitutional (338 series)"
+      }
+     ]
+    },
+    {
+     "id": "sb-cic",
+     "name": "CIC and SICs",
+     "years": {
+      "from": 2005,
+      "to": 2026
+     },
+     "tag": "Transparency",
+     "rows": [
+      {
+       "k": "RTI Act 2005",
+       "v": "CIC + up to 10 ICs"
+      },
+      {
+       "k": "Panel",
+       "v": "PM, LoP, Cabinet minister"
+      },
+      {
+       "k": "2019 Amendment",
+       "v": "Centre fixes term, pay (3 yrs); earlier 5 yrs / 65"
+      },
+      {
+       "k": "CIC (per notes)",
+       "v": "Raj Kumar Goyal (15 Dec 2025)"
+      },
+      {
+       "k": "AP SIC",
+       "v": "Governor appoints; CIC Vajja Srinivasa Rao; 7,034 cases Jan – Sep 2026"
+      }
+     ]
+    },
+    {
+     "id": "sb-reg",
+     "name": "Sectoral regulators",
+     "years": {
+      "from": 1934,
+      "to": 2016
+     },
+     "tag": "Regulators",
+     "rows": [
+      {
+       "k": "RBI",
+       "v": "1934 Act; 1 Apr 1935; nationalised 1 Jan 1949; Mumbai; Sanjay Malhotra"
+      },
+      {
+       "k": "SEBI",
+       "v": "12 Apr 1988; 1992 Act; Mumbai; Tuhin Kanta Pandey"
+      },
+      {
+       "k": "IRDAI",
+       "v": "1999 Act; Hyderabad; Ajay Seth"
+      },
+      {
+       "k": "PFRDA",
+       "v": "Interim 2003; 2013 Act; S. Ramann"
+      },
+      {
+       "k": "TRAI",
+       "v": "1997 Act; TDSAT 2000; Anil Kumar Lahoti"
+      },
+      {
+       "k": "CCI",
+       "v": "2002 Act; 2003; working 2009; replaced MRTP (1969); Ravneet Kaur"
+      },
+      {
+       "k": "Others",
+       "v": "FSSAI 2006 (Health); BIS 2016 (1986; ISI 1947); NPPA 1997 – resolution"
+      },
+      {
+       "k": "Roles",
+       "v": "Rule-making, supervision, adjudication"
+      }
+     ],
+     "traps": [
+      "IRDAI Hyderabad; SEBI, RBI Mumbai"
+     ]
+    },
+    {
+     "id": "sb-trib",
+     "name": "Tribunals",
+     "years": {
+      "from": 1976,
+      "to": 2026
+     },
+     "tag": "Tribunals",
+     "rows": [
+      {
+       "k": "323A, 323B",
+       "v": "42nd 1976 – administrative; other subjects"
+      },
+      {
+       "k": "CAT",
+       "v": "1985 Act; 1 Nov 1985; HC review after L. Chandra Kumar 1997"
+      },
+      {
+       "k": "NGT",
+       "v": "2010 Act (18 Oct 2010); Delhi + Bhopal, Pune, Kolkata, Chennai; retired SC judge; 6 months; SC appeal in 90 days; 3rd after Australia, NZ; Prakash Shrivastava"
+      },
+      {
+       "k": "2021 Act",
+       "v": "Key parts struck 19 Nov 2025"
+      },
+      {
+       "k": "2026 Bill (per notes)",
+       "v": "National Tribunals Commission (Aug 2026)"
+      }
+     ],
+     "traps": [
+      "323A administrative; 323B broader",
+      "NGT appeal to SC; CAT first to HC"
+     ]
+    },
+    {
+     "id": "sb-justice",
+     "name": "Access-to-justice bodies",
+     "years": {
+      "from": 1987,
+      "to": 2009
+     },
+     "tag": "Justice",
+     "rows": [
+      {
+       "k": "NALSA",
+       "v": "1987 Act; 9 Nov 1995; Art 39A; CJI patron; executive chair Vikram Nath"
+      },
+      {
+       "k": "Lok Adalat",
+       "v": "Award final, no appeal"
+      },
+      {
+       "k": "Gram Nyayalayas",
+       "v": "2008 Act; 2 Oct 2009; civil and criminal; Nyayadhikari"
+      }
+     ]
+    },
+    {
+     "id": "sb-exec",
+     "name": "NITI Aayog and Law Commission",
+     "years": {
+      "from": 1834,
+      "to": 2026
+     },
+     "tag": "Executive",
+     "rows": [
+      {
+       "k": "NITI",
+       "v": "1 Jan 2015; replaced Planning Commission (15 Mar 1950); PM chair; CMs, LGs in Governing Council"
+      },
+      {
+       "k": "NITI heads (per notes)",
+       "v": "VC Ashok Kumar Lahiri (Apr 2026); CEO Anurag Jain (Jul 2026)"
+      },
+      {
+       "k": "Law Commission",
+       "v": "First 1834 (Macaulay); post-1955 (Setalvad); 3-yr terms; non-statutory"
+      },
+      {
+       "k": "23rd",
+       "v": "Justice Dinesh Maheshwari (Apr 2025)"
+      }
+     ]
+    },
+    {
+     "id": "sb-other",
+     "name": "NDMA, UGC and commodity boards",
+     "years": {
+      "from": 1953,
+      "to": 2006
+     },
+     "tag": "Other",
+     "rows": [
+      {
+       "k": "NDMA",
+       "v": "DM Act 2005; PM chairs; state – CM; district – Collector; NDRF"
+      },
+      {
+       "k": "UGC",
+       "v": "28 Dec 1953; Act 1956"
+      },
+      {
+       "k": "Boards (Commerce)",
+       "v": "Tea – Kolkata; Coffee – Bengaluru; Rubber – Kottayam; Spices – Kochi; Tobacco – Guntur (1975 Act)"
+      },
+      {
+       "k": "FRA 2006",
+       "v": "Tribal Affairs; Gram Sabha starts claims"
+      },
+      {
+       "k": "FTII",
+       "v": "1960"
+      }
+     ],
+     "traps": [
+      "Tobacco Board at Guntur",
+      "NDMA chair = PM"
+     ]
+    },
+    {
+     "id": "sb-ap",
+     "name": "AP statutory bodies",
+     "years": {
+      "from": 1983,
+      "to": 2026
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "Lokayukta",
+       "v": "1983 Act; T. Mallikarjuna Rao"
+      },
+      {
+       "k": "SIC",
+       "v": "Vajja Srinivasa Rao"
+      },
+      {
+       "k": "Women's Commission",
+       "v": "Dr Rayapati Sailaja"
+      },
+      {
+       "k": "SHRC",
+       "v": "1993 Act; chair being chosen (per notes)"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
