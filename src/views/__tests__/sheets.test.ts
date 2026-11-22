@@ -92,7 +92,7 @@ describe('revision sheets pages', () => {
     const root = open('#/revise/sheets/all', renderSheet);
     const rows = root.querySelectorAll('.sh-tr');
     expect(rows.length).toBe(everything(getSheets()).length);
-    expect(rows[0]!.textContent).toContain('Palaeolithic');
+    expect(rows[0]!.textContent).toContain('Australopithecus');
     [...root.querySelectorAll<HTMLButtonElement>('.sh-filter .sh-chip')].find((b) => b.textContent === 'Polity')!.click();
     expect(root.querySelectorAll('.sh-tr').length).toBe(everything(getSheets(), 'Polity').length);
     expect(root.querySelector('.sh-tk-sheet')?.getAttribute('href')).toContain('#/revise/sheets/s-po');
@@ -114,23 +114,23 @@ describe('revision sheets pages', () => {
   });
 
   it('marks a sheet revised and undoes it', () => {
-    const root = open('#/revise/sheets/s-ages', renderSheet);
+    const root = open('#/revise/sheets/stone-age', renderSheet);
     root.querySelector<HTMLButtonElement>('.sh-done')!.click();
-    expect(getSheetsRevised()['s-ages']).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(getSheetsRevised()['stone-age']).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(root.querySelector('.sh-done')!.textContent).toContain('undo');
     expect(open('#/revise/sheets', renderIndex).querySelector('.sh-tile.is-done')).not.toBeNull();
     root.querySelector<HTMLButtonElement>('.sh-done')!.click();
-    expect(getSheetsRevised()['s-ages']).toBeUndefined();
+    expect(getSheetsRevised()['stone-age']).toBeUndefined();
   });
 
   it('pages between sheets and falls back to the index', () => {
-    const root = open('#/revise/sheets/s-ages', renderSheet);
+    const root = open('#/revise/sheets/stone-age', renderSheet);
     expect(root.querySelector('.sh-pager-link.is-next')?.textContent).toContain('Indus');
     expect(open('#/revise/sheets/nope', renderSheet).textContent).toContain('sheets revised');
   });
 
   it('prints without throwing', () => {
-    const root = open('#/revise/sheets/s-ages', renderSheet);
+    const root = open('#/revise/sheets/stone-age', renderSheet);
     [...root.querySelectorAll<HTMLButtonElement>('.sh-tool')].find((b) => b.textContent === 'Print')!.click();
     window.dispatchEvent(new Event('afterprint'));
     expect(document.body.classList.contains('print-sheet')).toBe(false);
@@ -139,6 +139,6 @@ describe('revision sheets pages', () => {
   it('links each history chapter to its sheets', () => {
     const root = open('#/topics/history/ancient-to-232bce', renderChapter);
     const links = [...root.querySelectorAll<HTMLAnchorElement>('.hl-sheets-link')].map((a) => a.getAttribute('href'));
-    expect(links).toContain('#/revise/sheets/s-ages');
+    expect(links).toContain('#/revise/sheets/stone-age');
   });
 });
