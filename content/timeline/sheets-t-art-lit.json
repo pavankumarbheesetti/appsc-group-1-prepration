@@ -1,0 +1,545 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "art-lit",
+   "part": "Art & Culture",
+   "title": "Languages, literature, philosophy, science",
+   "order": 4,
+   "intro": "Language families, scripts, classical status, darshanas, literature streams, science.",
+   "chapters": [
+    "culture-ancient",
+    "culture-medieval",
+    "culture-modern"
+   ],
+   "keys": [
+    {
+     "id": "al-lang",
+     "name": "Language families",
+     "tag": "Language",
+     "rows": [
+      {
+       "k": "Indo-Aryan",
+       "v": "~74%; Old (Sanskrit) → Middle (Pali, Prakrit, Apabhramsha – 600 BCE – 1000 CE) → Hindi, Bengali, Marathi"
+      },
+      {
+       "k": "Dravidian",
+       "v": "~25%; Tamil oldest, Telugu largest; north – Brahui, Malto, Kurukh; central – Gondi, Kui, Gadaba"
+      },
+      {
+       "k": "Sino-Tibetan",
+       "v": "Manipuri, Bhutia, Ladakhi, Sherpa; Ahom extinct (Tai)"
+      },
+      {
+       "k": "Austric",
+       "v": "Santhali, Khasi, Nicobarese"
+      },
+      {
+       "k": "Canons",
+       "v": "Pali – Buddhist Tripitaka; Prakrit – Jain Agamas"
+      },
+      {
+       "k": "Eighth Schedule",
+       "v": "22 languages; 92nd Amendment 2003 added Bodo, Dogri, Maithili, Santhali"
+      }
+     ],
+     "traps": [
+      "Pali = Buddhist; Prakrit = Jain"
+     ]
+    },
+    {
+     "id": "al-script",
+     "name": "Scripts",
+     "years": {
+      "from": -300,
+      "to": 700
+     },
+     "tag": "Language",
+     "rows": [
+      {
+       "k": "Brahmi",
+       "v": "Left to right; parent of most Indian scripts"
+      },
+      {
+       "k": "Kharoshthi",
+       "v": "Right to left; Gandhara (NW edicts)"
+      },
+      {
+       "k": "Tamil-Brahmi",
+       "v": "Caves, pottery, 3rd c. BCE"
+      },
+      {
+       "k": "Gupta",
+       "v": "→ Nagari, Bengali"
+      },
+      {
+       "k": "Grantha",
+       "v": "Sanskrit in Tamil land"
+      },
+      {
+       "k": "Sharada",
+       "v": "Kashmir; Siddham → Tibetan, Japanese"
+      }
+     ]
+    },
+    {
+     "id": "al-classic",
+     "name": "Classical languages",
+     "years": {
+      "from": 2004,
+      "to": 2024
+     },
+     "tag": "Language",
+     "hook": "Tamil leads, Telugu-Kannada 4 years later",
+     "rows": [
+      {
+       "k": "2004",
+       "v": "Tamil"
+      },
+      {
+       "k": "2005",
+       "v": "Sanskrit"
+      },
+      {
+       "k": "2008",
+       "v": "Telugu, Kannada"
+      },
+      {
+       "k": "2013",
+       "v": "Malayalam"
+      },
+      {
+       "k": "2014",
+       "v": "Odia"
+      },
+      {
+       "k": "2024",
+       "v": "Marathi, Pali, Prakrit, Assamese, Bengali"
+      },
+      {
+       "k": "Marker texts",
+       "v": "Kavirajamarga (Kannada); Sarala Mahabharata (Odia); Dnyaneshwari (Marathi); Buranjis (Assamese); Gaha Sattasai of Hala (Prakrit)"
+      },
+      {
+       "k": "Benefits",
+       "v": "Awards, centres of excellence, chairs"
+      }
+     ]
+    },
+    {
+     "id": "al-vedic",
+     "name": "Vedic texts",
+     "years": {
+      "from": -1000,
+      "to": -500
+     },
+     "tag": "Sanskrit",
+     "rows": [
+      {
+       "k": "Aitareya Brahmana",
+       "v": "Rigveda"
+      },
+      {
+       "k": "Shatapatha Brahmana",
+       "v": "Yajurveda"
+      },
+      {
+       "k": "Brihadaranyaka",
+       "v": "Oldest Upanishad (Yajnavalkya)"
+      },
+      {
+       "k": "Mundaka",
+       "v": "\"Satyameva Jayate\""
+      }
+     ]
+    },
+    {
+     "id": "al-phil6",
+     "name": "Six orthodox darshanas",
+     "years": {
+      "from": -500,
+      "to": 500
+     },
+     "tag": "Philosophy",
+     "rows": [
+      {
+       "k": "Samkhya",
+       "v": "Kapila; Purusha – Prakriti dualism; oldest; Satkaryavada"
+      },
+      {
+       "k": "Yoga",
+       "v": "Patanjali; ashtanga – yama … dharana, dhyana, samadhi"
+      },
+      {
+       "k": "Nyaya",
+       "v": "Akshapada Gautama; logic; four pramanas incl. upamana"
+      },
+      {
+       "k": "Vaisheshika",
+       "v": "Kanada; atoms (anu); dravyas"
+      },
+      {
+       "k": "Mimamsa",
+       "v": "Jaimini; Vedic ritual; adds Arthapatti, Anupalabdhi; Kumarila Bhatta, Prabhakara"
+      },
+      {
+       "k": "Vedanta",
+       "v": "Badarayana (Vyasa); Brahman"
+      },
+      {
+       "k": "Pairs",
+       "v": "Sa-Yo, Nya-Vai, Mi-Ve"
+      }
+     ]
+    },
+    {
+     "id": "al-heter",
+     "name": "Heterodox schools",
+     "years": {
+      "from": -600,
+      "to": -300
+     },
+     "tag": "Philosophy",
+     "rows": [
+      {
+       "k": "Buddhism",
+       "v": "Four Truths, Eightfold Path; Anatta (no-self)"
+      },
+      {
+       "k": "Jainism",
+       "v": "Ahimsa; Anekantavada, Syadvada; Digambara (unclothed) and Svetambara"
+      },
+      {
+       "k": "Charvaka / Lokayata",
+       "v": "Brihaspati; only perception; four elements; no soul"
+      },
+      {
+       "k": "Ajivika",
+       "v": "Makkhali Gosala; Niyati (fate)"
+      },
+      {
+       "k": "Ajnana",
+       "v": "Sanjaya Belatthiputta; scepticism"
+      }
+     ]
+    },
+    {
+     "id": "al-sangam",
+     "name": "Sangam literature",
+     "years": {
+      "from": -300,
+      "to": 300
+     },
+     "tag": "Tamil",
+     "rows": [
+      {
+       "k": "Tolkappiyam",
+       "v": "Oldest Tamil grammar"
+      },
+      {
+       "k": "Tirukkural",
+       "v": "Thiruvalluvar; 1,330 couplets"
+      },
+      {
+       "k": "Twin epics",
+       "v": "Silappadikaram (Ilango Adigal); Manimekalai (Sathanar)"
+      },
+      {
+       "k": "Anthologies",
+       "v": "Akananuru (love, akam); Purananuru (war, puram)"
+      }
+     ],
+     "traps": [
+      "Akam = love; Puram = war"
+     ]
+    },
+    {
+     "id": "al-sanskrit",
+     "name": "Classical Sanskrit",
+     "years": {
+      "from": 100,
+      "to": 800
+     },
+     "tag": "Sanskrit",
+     "rows": [
+      {
+       "k": "Kalidasa",
+       "v": "Meghaduta, Raghuvamsa, Ritusamhara"
+      },
+      {
+       "k": "Mahakavyas",
+       "v": "Bharavi – Kiratarjuniya; Magha – Shishupala Vadha"
+      },
+      {
+       "k": "Prose",
+       "v": "Dandin – Dashakumaracharita; Banabhatta – Kadambari"
+      },
+      {
+       "k": "Drama",
+       "v": "Bhavabhuti – Uttararamacharita; Vishakhadatta – Mudrarakshasa; Harsha – Ratnavali, Nagananda"
+      },
+      {
+       "k": "Buddhist",
+       "v": "Ashvaghosha – Buddhacharita"
+      },
+      {
+       "k": "Learning",
+       "v": "Panini – Ashtadhyayi; Amarasimha – Amarakosha"
+      },
+      {
+       "k": "Fables",
+       "v": "Vishnu Sharma – Panchatantra; Narayana – Hitopadesha"
+      },
+      {
+       "k": "Theory",
+       "v": "Shadanga (painting); Abhinaya Darpana (Nandikeshvara)"
+      }
+     ],
+     "traps": [
+      "Kiratarjuniya = Bharavi; Shishupala Vadha = Magha"
+     ]
+    },
+    {
+     "id": "al-science",
+     "name": "Ancient science and mathematics",
+     "years": {
+      "from": -800,
+      "to": 1400
+     },
+     "tag": "Science",
+     "rows": [
+      {
+       "k": "Baudhayana",
+       "v": "Sulbasutra – \"Pythagoras\" rule"
+      },
+      {
+       "k": "Pingala",
+       "v": "Chandahshastra – binary-like metres"
+      },
+      {
+       "k": "Charaka",
+       "v": "Medicine; physician of Kanishka"
+      },
+      {
+       "k": "Sushruta",
+       "v": "Surgery, rhinoplasty"
+      },
+      {
+       "k": "Aryabhata",
+       "v": "Aryabhatiya 499 – place value, zero, π, rotation"
+      },
+      {
+       "k": "Varahamihira",
+       "v": "Brihat Samhita, Panchasiddhantika"
+      },
+      {
+       "k": "Brahmagupta",
+       "v": "Brahmasphutasiddhanta 628 – zero, negatives"
+      },
+      {
+       "k": "Nagarjuna",
+       "v": "Rasaratnakara – metallurgy, zinc"
+      },
+      {
+       "k": "Vagbhata",
+       "v": "Ashtanga Hridaya"
+      },
+      {
+       "k": "Bhaskara II",
+       "v": "Lilavati"
+      },
+      {
+       "k": "Madhava of Sangamagrama",
+       "v": "Infinite series (Kerala)"
+      }
+     ],
+     "traps": [
+      "Sushruta cuts, Charaka cures"
+     ]
+    },
+    {
+     "id": "al-univ",
+     "name": "Ancient universities",
+     "years": {
+      "from": -500,
+      "to": 1200
+     },
+     "tag": "Science",
+     "rows": [
+      {
+       "k": "Takshashila",
+       "v": "North-west"
+      },
+      {
+       "k": "Nalanda",
+       "v": "Kumaragupta I; Gupta – Pala; UNESCO 2016"
+      },
+      {
+       "k": "Vikramashila",
+       "v": "Pala Dharmapala"
+      },
+      {
+       "k": "Odantapuri",
+       "v": "Pala Gopala"
+      },
+      {
+       "k": "Valabhi",
+       "v": "Maitrakas, Gujarat"
+      }
+     ]
+    },
+    {
+     "id": "al-persian",
+     "name": "Persian and medieval literature",
+     "years": {
+      "from": 1030,
+      "to": 1700
+     },
+     "tag": "Persian",
+     "rows": [
+      {
+       "k": "Al-Biruni",
+       "v": "Kitab-ul-Hind (Arabic)"
+      },
+      {
+       "k": "Chachnama",
+       "v": "Ali Kufi – Sindh"
+      },
+      {
+       "k": "Sultanate",
+       "v": "Minhaj – Tabaqat-i-Nasiri; Isami – Futuh-us-Salatin; Barani – Tarikh-i-Firuz Shahi; Amir Khusrau – Khazain-ul-Futuh"
+      },
+      {
+       "k": "Sufi",
+       "v": "Amir Hasan Sijzi – Fawaid-ul-Fuad (Nizamuddin)"
+      },
+      {
+       "k": "Ibn Battuta",
+       "v": "Rihla"
+      },
+      {
+       "k": "Mughal",
+       "v": "Babur – Tuzuk-i-Baburi (Turkish); Abul Fazl – Akbarnama; Tuzuk-i-Jahangiri (Persian); Dara Shikoh – Sirr-i-Akbar"
+      },
+      {
+       "k": "Others",
+       "v": "Jayasi – Padmavat (Awadhi c. 1540); Tulsidas – Ramcharitmanas 1574; Kambar – Kamba Ramayanam; Melpathur – Narayaneeyam; Guru Gobind Singh – Zafarnama"
+      }
+     ],
+     "traps": [
+      "Baburi in Turkish; Jahangiri in Persian; Kitab-ul-Hind in Arabic"
+     ]
+    },
+    {
+     "id": "al-telugu",
+     "name": "Telugu literature stream",
+     "years": {
+      "from": 1050,
+      "to": 1650
+     },
+     "tag": "Telugu",
+     "rows": [
+      {
+       "k": "Kavitrayam",
+       "v": "Nannaya, Tikkana, Errana (\"NA-TI-E\")"
+      },
+      {
+       "k": "Others",
+       "v": "Potana (Bhagavatam); Vemana; Atukuri Molla (potter-poet, Ramayanam)"
+      },
+      {
+       "k": "Golden age",
+       "v": "Krishnadevaraya (Amuktamalyada); Peddana (Manucharitra, Andhra Kavita Pitamaha)"
+      }
+     ]
+    },
+    {
+     "id": "al-modern",
+     "name": "Modern Indian literature",
+     "years": {
+      "from": 1864,
+      "to": 2008
+     },
+     "tag": "Modern",
+     "rows": [
+      {
+       "k": "Rajmohan's Wife",
+       "v": "1864 – first Indian novel in English (Bankim)"
+      },
+      {
+       "k": "Anandamath",
+       "v": "1882 – Vande Mataram"
+      },
+      {
+       "k": "Tagore",
+       "v": "Gitanjali, Nobel 1913"
+      },
+      {
+       "k": "Iqbal",
+       "v": "Saare Jahan Se Achcha; Bang-i-Dara"
+      },
+      {
+       "k": "Novels",
+       "v": "Mulk Raj Anand – Untouchable (1935); Premchand – Godaan (1936); Raja Rao – Kanthapura (1938)"
+      },
+      {
+       "k": "Others",
+       "v": "Jaishankar Prasad – Kamayani; U.R. Ananthamurthy – Samskara; Bhisham Sahni – Tamas"
+      },
+      {
+       "k": "Booker",
+       "v": "Arundhati Roy 1997; Aravind Adiga 2008"
+      }
+     ]
+    },
+    {
+     "id": "al-vedanta",
+     "name": "Vedanta schools",
+     "years": {
+      "from": 788,
+      "to": 1530
+     },
+     "tag": "Philosophy",
+     "rows": [
+      {
+       "k": "Advaita",
+       "v": "Shankaracharya – non-dualism"
+      },
+      {
+       "k": "Vishishtadvaita",
+       "v": "Ramanuja"
+      },
+      {
+       "k": "Dvaita",
+       "v": "Madhvacharya"
+      },
+      {
+       "k": "Dvaitadvaita",
+       "v": "Nimbarka"
+      },
+      {
+       "k": "Shuddhadvaita",
+       "v": "Vallabhacharya"
+      },
+      {
+       "k": "Achintya Bhedabheda",
+       "v": "Chaitanya"
+      },
+      {
+       "k": "Summary text",
+       "v": "Sarva Darshana Samgraha (Madhavacharya / Vidyaranya)"
+      },
+      {
+       "k": "Concepts",
+       "v": "Purusharthas – dharma, artha, kama, moksha; three rinas – Guru, Pitru, Deva"
+      }
+     ],
+     "traps": [
+      "Shuddhadvaita = Vallabha; Dvaitadvaita = Nimbarka"
+     ]
+    }
+   ]
+  }
+ ]
+}

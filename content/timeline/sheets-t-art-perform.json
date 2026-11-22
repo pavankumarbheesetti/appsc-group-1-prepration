@@ -1,0 +1,368 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "art-perform",
+   "part": "Art & Culture",
+   "title": "Dance, music, theatre, puppets and crafts",
+   "order": 5,
+   "intro": "Classical and folk dances, gharanas, Carnatic, theatre, puppets, crafts.",
+   "chapters": [
+    "culture-ancient",
+    "culture-modern"
+   ],
+   "keys": [
+    {
+     "id": "ap-natya",
+     "name": "Natya Shastra base",
+     "years": {
+      "from": -200,
+      "to": 200
+     },
+     "tag": "Dance",
+     "rows": [
+      {
+       "k": "Author",
+       "v": "Bharata Muni"
+      },
+      {
+       "k": "Moods",
+       "v": "Tandava (vigorous), Lasya (graceful)"
+      },
+      {
+       "k": "Modes",
+       "v": "Nritta (pure), Nritya (expressive), Natya (drama)"
+      },
+      {
+       "k": "Tools",
+       "v": "9 rasas (Bibhatsa disgust, Bhayanaka fear); 108 mudras"
+      },
+      {
+       "k": "Count",
+       "v": "8 classical (Sangeet Natak Akademi); 9 with Chhau (Ministry of Culture)"
+      }
+     ]
+    },
+    {
+     "id": "ap-bharata",
+     "name": "Bharatanatyam",
+     "tag": "Dance",
+     "rows": [
+      {
+       "k": "State",
+       "v": "Tamil Nadu; devadasi roots; Carnatic music"
+      },
+      {
+       "k": "Tanjore Quartet",
+       "v": "Systematised its music"
+      },
+      {
+       "k": "Revival",
+       "v": "Rukmini Devi Arundale – Kalakshetra 1936; T. Balasaraswati (old style)"
+      }
+     ]
+    },
+    {
+     "id": "ap-kuchi2",
+     "name": "Kuchipudi",
+     "tag": "Dance",
+     "rows": [
+      {
+       "k": "State",
+       "v": "Andhra Pradesh; Bhagavathalu (male Brahmins)"
+      },
+      {
+       "k": "Founder",
+       "v": "Siddhendra Yogi – Bhamakalapam"
+      },
+      {
+       "k": "Village",
+       "v": "Granted by Tana Shah 1678"
+      },
+      {
+       "k": "Terms",
+       "v": "Tarangam (on brass plate rim); Vachika Abhinaya; Tarakas"
+      },
+      {
+       "k": "Artists",
+       "v": "Vempati Chinna Satyam; Raja and Radha Reddy"
+      }
+     ]
+    },
+    {
+     "id": "ap-kathak",
+     "name": "Kathak",
+     "tag": "Dance",
+     "rows": [
+      {
+       "k": "Region",
+       "v": "North India; Hindustani music"
+      },
+      {
+       "k": "Gharanas",
+       "v": "Lucknow (Wajid Ali Shah); Banaras (Janaki Prasad); Jaipur"
+      },
+      {
+       "k": "Artists",
+       "v": "Birju Maharaj (Lucknow); Sitara Devi (\"Empress of Dance\")"
+      },
+      {
+       "k": "Revival",
+       "v": "Leela Sokhey (Menaka)"
+      }
+     ]
+    },
+    {
+     "id": "ap-kerala",
+     "name": "Kathakali and Mohiniyattam",
+     "tag": "Dance",
+     "rows": [
+      {
+       "k": "Kathakali",
+       "v": "Kerala; all-male drama, make-up; Manipravalam songs; chenda, maddalam"
+      },
+      {
+       "k": "Revival",
+       "v": "Vallathol Narayana Menon – Kerala Kalamandalam 1930"
+      },
+      {
+       "k": "Star",
+       "v": "Kalamandalam Gopi"
+      },
+      {
+       "k": "Mohiniyattam",
+       "v": "Lasya, solo female; Kalyanikutty Amma; 40 atavukal"
+      }
+     ]
+    },
+    {
+     "id": "ap-odissi",
+     "name": "Odissi, Manipuri, Sattriya, Chhau",
+     "tag": "Dance",
+     "rows": [
+      {
+       "k": "Odissi",
+       "v": "Maharis; tribhanga; Gita Govinda; \"mobile sculpture\"; Kelucharan Mohapatra, Sanjukta Panigrahi"
+      },
+      {
+       "k": "Manipuri",
+       "v": "Vaishnav Raslila; Pung Cholom; Guru Bipin Singh"
+      },
+      {
+       "k": "Sattriya",
+       "v": "Assam; Sankardev; Ankia Naat; Paurashik Bhangi; classical 2000"
+      },
+      {
+       "k": "Chhau",
+       "v": "Mayurbhanj (no mask), Purulia, Seraikella; UNESCO 2010"
+      }
+     ],
+     "traps": [
+      "Mayurbhanj Chhau has no masks"
+     ]
+    },
+    {
+     "id": "ap-folkd",
+     "name": "Folk dances by state",
+     "tag": "Folk",
+     "rows": [
+      {
+       "k": "AP",
+       "v": "Dhimsa (tribal), Veeranatyam (Shiva), Kolattam (sticks)"
+      },
+      {
+       "k": "North",
+       "v": "Saang, Dhamal (Haryana); Nati (HP); Karam (Jharkhand); Gidda (Punjab women)"
+      },
+      {
+       "k": "West",
+       "v": "Lavani, Koli (Maharashtra); Garba (Gujarat, UNESCO 2023); Kalbeliya (UNESCO 2010), Bhavai, Kachchhi Ghodi (Rajasthan)"
+      },
+      {
+       "k": "South",
+       "v": "Dollu Kunitha, Huli Vesha (Karnataka); Theyyam, Ottamthullal (Kerala); Karagattam, Mayil Attam (TN)"
+      },
+      {
+       "k": "East",
+       "v": "Gotipua (boys as girls), Dalkhai (Odisha); Thang Ta (Manipur); Bihu (Assam); Matki (MP)"
+      }
+     ],
+     "traps": [
+      "Gotipua (Odisha boys) ≠ Gidda (Punjab women)"
+     ]
+    },
+    {
+     "id": "ap-hind",
+     "name": "Hindustani music",
+     "tag": "Music",
+     "rows": [
+      {
+       "k": "Gwalior",
+       "v": "Oldest khayal – Nathan Peerbaksh"
+      },
+      {
+       "k": "Patiala",
+       "v": "Bade Ghulam Ali Khan"
+      },
+      {
+       "k": "Kirana",
+       "v": "Abdul Karim Khan; Bhimsen Joshi, Gangubai Hangal"
+      },
+      {
+       "k": "Mewati",
+       "v": "Pandit Jasraj"
+      },
+      {
+       "k": "Jaipur-Atrauli",
+       "v": "Alladiya Khan; Kishori Amonkar, Mallikarjun Mansur"
+      },
+      {
+       "k": "Agra",
+       "v": "Faiyaz Khan; Rampur-Sahaswan: Rashid Khan"
+      },
+      {
+       "k": "Others",
+       "v": "Gundechas (dhrupad); Begum Akhtar (\"Mallika-e-Ghazal\"); Amir Khusrau (qawwali)"
+      }
+     ]
+    },
+    {
+     "id": "ap-carn",
+     "name": "Carnatic music",
+     "tag": "Music",
+     "hook": "Tya-Di-Sha",
+     "rows": [
+      {
+       "k": "Pitamaha",
+       "v": "Purandara Dasa"
+      },
+      {
+       "k": "Trinity",
+       "v": "Tyagaraja, Muthuswami Dikshitar, Shyama Shastri"
+      },
+      {
+       "k": "Forms",
+       "v": "Varnam, kriti"
+      },
+      {
+       "k": "Female trinity",
+       "v": "M.S. Subbulakshmi (first musician Bharat Ratna), D.K. Pattammal, M.L. Vasanthakumari"
+      },
+      {
+       "k": "Instruments",
+       "v": "Tata (strings), sushira (wind), avanaddha (drums), ghana (solid)"
+      }
+     ]
+    },
+    {
+     "id": "ap-fsong",
+     "name": "Folk songs",
+     "tag": "Music",
+     "rows": [
+      {
+       "k": "Bengal",
+       "v": "Baul (ektara), Bhatiali (boatmen)"
+      },
+      {
+       "k": "Maharashtra",
+       "v": "Powada"
+      },
+      {
+       "k": "UP",
+       "v": "Kajri"
+      },
+      {
+       "k": "Goa",
+       "v": "Mando"
+      },
+      {
+       "k": "Chhattisgarh",
+       "v": "Pandavani – Teejan Bai"
+      },
+      {
+       "k": "TN",
+       "v": "Villu Pattu; Rajasthan: Maand"
+      }
+     ]
+    },
+    {
+     "id": "ap-theatre",
+     "name": "Theatre forms",
+     "tag": "Theatre",
+     "rows": [
+      {
+       "k": "Oldest",
+       "v": "Sitabenga, Jogimara caves"
+      },
+      {
+       "k": "UNESCO",
+       "v": "Koodiyattam 2001 (first); Ramman 2009; Mudiyettu"
+      },
+      {
+       "k": "States",
+       "v": "Jatra (Bengal); Bhavai (Gujarat); Nautanki (UP); Swang (Haryana); Maach (MP); Bhand Pather (J&K); Therukoothu (TN); Krishnattam (Kerala); Dashavatar (Konkan); Oja-Pali (Assam); Yakshagana (Karnataka); Tamasha (Maharashtra); Pagati Veshalu (AP)"
+      },
+      {
+       "k": "Body",
+       "v": "Sangeet Natak Akademi 1952"
+      }
+     ]
+    },
+    {
+     "id": "ap-puppet",
+     "name": "Puppetry",
+     "tag": "Theatre",
+     "rows": [
+      {
+       "k": "String",
+       "v": "Kathputli (Rajasthan); Bommalattam (TN, string-rod); Gombeyatta (Karnataka); Kundhei (Odisha); Kalasutri Bahulya (Maharashtra)"
+      },
+      {
+       "k": "Shadow",
+       "v": "Tholu Bommalata (AP); Togalu Gombeyatta (Karnataka); Ravanachhaya (Odisha)"
+      },
+      {
+       "k": "Rod",
+       "v": "Putul Nach (Bengal); Yampuri (Bihar)"
+      },
+      {
+       "k": "Glove",
+       "v": "Pavakoothu (Kerala)"
+      },
+      {
+       "k": "Modern",
+       "v": "Meher Contractor (Darpana)"
+      }
+     ]
+    },
+    {
+     "id": "ap-craft",
+     "name": "Crafts by state",
+     "tag": "Crafts",
+     "rows": [
+      {
+       "k": "Textiles",
+       "v": "Bandhani (Rajasthan, Gujarat); Chikankari (Lucknow); Kantha (Bengal); Phulkari (Punjab); Pipli (Odisha); Patola double ikat (Gujarat); Toda (Nilgiris); Chanderi (MP); Bhagalpur tussar (Bihar)"
+      },
+      {
+       "k": "Metal",
+       "v": "Bidri (Bidar); Dokra lost-wax; Pembarthi (Telangana); Marori (Rajasthan)"
+      },
+      {
+       "k": "Others",
+       "v": "Firozabad bangles; Bankura horse; Kolhapuri chappals; Manoti (Bikaner); Khatamband (Kashmir); Channapatna toys; Pith dolls (Assam); Makrana marble"
+      },
+      {
+       "k": "Floor art",
+       "v": "Mandana (Rajasthan); Muggulu (Andhra)"
+      }
+     ],
+     "traps": [
+      "Patola double ikat; Pochampally single ikat"
+     ]
+    }
+   ]
+  }
+ ]
+}
