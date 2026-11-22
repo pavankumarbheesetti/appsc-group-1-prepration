@@ -14,7 +14,7 @@
  * It never throws for content problems — every issue is collected into a
  * per-file result so callers can print a full report and decide the exit code.
  */
-import { RevisionBankSchema, type RevisionSection } from './revision-types';
+import { SheetBankSchema, type Sheet } from './sheet-types';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -241,7 +241,7 @@ export function validateAllContent(): FileValidationResult[] {
   const peopleFiles: { file: string; people: Person[] }[] = [];
   const officeFiles: { file: string; offices: Office[] }[] = [];
   const chapterFiles: { file: string; chapters: Chapter[] }[] = [];
-  const revisionFiles: { file: string; sections: RevisionSection[] }[] = [];
+  const sheetFiles: { file: string; sheets: Sheet[] }[] = [];
   const glossaryIds = new Set<string>();
   const glossaryForms = new Map<string, string>();
   /** The parsed pyq-weights doc (for cross-checks after the taxonomy is parsed). */
@@ -373,18 +373,11 @@ export function validateAllContent(): FileValidationResult[] {
         if (parsed.success) chapterFiles.push({ file, chapters: parsed.data.chapters });
         else resultFor(file).errors.push(...formatIssues(parsed.error));
         resultFor(file);
-      } else if (name.startsWith('revision-')) {
-        const parsed = RevisionBankSchema.safeParse(raw);
+      } else if (name.startsWith('sheets-')) {
+        const parsed = SheetBankSchema.safeParse(raw);
         const r = resultFor(file);
         if (!parsed.success) r.errors.push(...formatIssues(parsed.error));
-        else {
-          const ids = new Set<string>();
-          for (const sec of parsed.data.sections) for (const c of sec.cards) {
-            if (ids.has(c.id)) r.errors.push(`duplicate revision card id '${c.id}'`);
-            ids.add(c.id);
-          }
-          revisionFiles.push({ file, sections: parsed.data.sections });
-        }
+        else sheetFiles.push({ file, sheets: parsed.data.sheets });
       } else if (name.startsWith('offices-')) {
         const parsed = OfficesBankSchema.safeParse(raw);
         if (parsed.success) officeFiles.push({ file, offices: parsed.data.offices });
@@ -755,8 +748,19 @@ export function validateAllContent(): FileValidationResult[] {
     }
 
     const knownChapters = new Set(allChapters.map((c) => c.id));
-    for (const { file, sections } of revisionFiles) {
-      for (const sec of sections) if (!knownChapters.has(sec.chapterId)) resultFor(file).errors.push(`revision section '${sec.id}': unknown chapter '${sec.chapterId}'`);
+    const sheetIds = new Set<string>();
+    const keyIds = new Set<string>();
+    for (const { file, sheets } of sheetFiles) {
+      const r = resultFor(file);
+      for (const sh of sheets) {
+        if (sheetIds.has(sh.id)) r.errors.push(`duplicate sheet id '${sh.id}'`);
+        sheetIds.add(sh.id);
+        for (const ch of sh.chapters ?? []) if (!knownChapters.has(ch)) r.errors.push(`sheet '${sh.id}': unknown chapter '${ch}'`);
+        for (const k of sh.keys) {
+          if (keyIds.has(k.id)) r.errors.push(`duplicate sheet key id '${k.id}'`);
+          keyIds.add(k.id);
+        }
+      }
     }
 
     const chIds = new Set<string>();

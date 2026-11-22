@@ -15,7 +15,8 @@
  * `'correct'`) — scheduled via {@link review} into the store's `flashcards` SR
  * map. DOM-only; all logic is pure/engine code.
  */
-import { getBanks, getCards, getSubtopic, getSubtopics } from '../content/loader';
+import { getBanks, getCards, getSheets, getSubtopic, getSubtopics } from '../content/loader';
+import { getSheetsRevised } from '../state/store';
 import type { MCQItem } from '../content/types';
 import { mountQuiz } from './quiz';
 import { isRevisable } from '../lib/study-status';
@@ -160,6 +161,13 @@ export function render(root: HTMLElement): void {
             flashStatus,
             deck.length > 0 ? 'Start recall' : 'How it works',
             () => navigate('/revise/flashcards'),
+          ),
+          hubCard(
+            'syllabus',
+            `Revision sheets (${getSheets().length})`,
+            `${Object.keys(getSheetsRevised()).length} revised · rulers, sites, Acts, wars and cases in a few lines each`,
+            'Open sheets',
+            () => navigate('/revise/sheets'),
           ),
           hubCard(
             'notebook',

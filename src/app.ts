@@ -29,6 +29,7 @@ import * as mock from './views/mock';
 import * as notebook from './views/notebook';
 import * as syllabus from './views/syllabus';
 import * as revise from './views/revise';
+import * as sheets from './views/sheets';
 import * as learn from './views/learn';
 import * as mains from './views/mains';
 import * as progress from './views/progress';
@@ -514,6 +515,8 @@ export function renderApp(root: HTMLElement): void {
   page('/q/:id', 'Question', drill.renderSingleQuestion, ['Question', 'Practice']);
   page(PATHS.revise, 'Revise', revise.render);
   page(PATHS.flashcards, 'Flashcards', revise.renderFlashcards, ['Flashcards', 'Revise']);
+  page(sheets.SHEETS_PATH, 'Revision sheets', sheets.renderIndex, ['Revision sheets', 'Revise']);
+  page(`${sheets.SHEETS_PATH}/:id`, 'Revision sheet', sheets.renderSheet, ['Revision sheet', 'Revise']);
   page(PATHS.mistakes, 'My mistakes', notebook.render, ['My mistakes', 'Revise']);
   // N15: weekly revision = due flashcards + this week's mistakes, one session.
   page(PATHS.weekly, 'Weekly revision', revise.renderWeekly, ['Weekly revision', 'Revise']);

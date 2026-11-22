@@ -12,7 +12,7 @@
  * Each bank is validated with the Zod schemas at load; malformed content fails
  * fast with a clear error rather than corrupting the in-memory index.
  */
-import { parseRevision, type RevisionSection } from './revision-types';
+import { parseSheets, type Sheet } from './sheet-types';
 import {
   parseBank,
   parseCards,
@@ -128,8 +128,8 @@ export interface ContentIndex {
   chapters: Chapter[];
   /** Historical terms (from `content/timeline/glossary-*.json`). */
   glossary: GlossaryTerm[];
-  /** Quick-revision tables (from `content/timeline/revision-*.json`). */
-  revision: RevisionSection[];
+  /** Quick-revision sheets (from `content/timeline/sheets-*.json`). */
+  sheets: Sheet[];
   /**
    * The pedagogical LEARNING SEQUENCE — the per-subject study ORDER for every
    * Prelims subject (chronology for History, concept prerequisites elsewhere).
@@ -185,7 +185,7 @@ function buildIndex(): ContentIndex {
   const offices: Office[] = [];
   const chapters: Chapter[] = [];
   const glossary: GlossaryTerm[] = [];
-  const revision: RevisionSection[] = [];
+  const sheets: Sheet[] = [];
   let learningSequence: LearningSequence | null = null;
   let units: Units | null = null;
   let caMeta: CaMeta | null = null;
@@ -230,7 +230,7 @@ function buildIndex(): ContentIndex {
       else if (name.startsWith('offices-')) offices.push(...parseOffices(data).offices);
       else if (name.startsWith('chapters-')) chapters.push(...parseChapters(data).chapters);
       else if (name.startsWith('glossary-')) glossary.push(...parseGlossary(data));
-      else if (name.startsWith('revision-')) revision.push(...parseRevision(data));
+      else if (name.startsWith('sheets-')) sheets.push(...parseSheets(data));
       continue;
     }
 
@@ -400,7 +400,7 @@ function buildIndex(): ContentIndex {
     offices,
     chapters,
     glossary,
-    revision,
+    sheets,
     learningSequence,
     units,
     caMeta,
@@ -441,8 +441,17 @@ export function getChapters(): Chapter[] {
   return getContentIndex().chapters;
 }
 
-export function getRevision(chapterId: string): RevisionSection[] {
-  return getContentIndex().revision.filter((s) => s.chapterId === chapterId);
+export function getSheets(): Sheet[] {
+  return getContentIndex().sheets;
+}
+
+export function getSheet(id: string): Sheet | undefined {
+  return getContentIndex().sheets.find((s) => s.id === id);
+}
+
+/** Sheets that revise one history chapter, in part order. */
+export function getSheetsForChapter(chapterId: string): Sheet[] {
+  return getContentIndex().sheets.filter((s) => s.chapters?.includes(chapterId));
 }
 
 export function getGlossary(): GlossaryTerm[] {

@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { buildSlides, chapterYears, fragmentsOf, renderChapter, renderIndex, untaughtEvents } from '../history-learn';
 import { chronicleData } from '../year-explorer';
-import { getChapters, getRevision } from '../../content/loader';
+import { getChapters } from '../../content/loader';
 
 afterEach(() => {
   document.body.replaceChildren();
@@ -357,37 +357,5 @@ describe('placing events in time (Andhra chapter)', () => {
     stone.click();
     expect(stone.classList.contains('is-done')).toBe(true);
     expect(stone.textContent).toMatch(/^1\. /);
-  });
-});
-
-describe('quick revision tables', () => {
-  it('offers the tables from the chapter overview and renders them', () => {
-    const ov = open('#/topics/history/ancient-to-232bce', renderChapter);
-    expect(ov.textContent).toContain('Quick revision tables');
-    const root = open('#/topics/history/ancient-to-232bce/revision', renderChapter);
-    expect(root.querySelectorAll('.rv-card').length).toBeGreaterThan(20);
-    expect(root.textContent).toContain('Neolithic');
-    expect(root.querySelectorAll('.rv-bar').length).toBeGreaterThan(5);
-    expect(root.textContent).toContain('Same time:');
-  });
-});
-
-describe('ruler tables', () => {
-  it('shows one row per ruler with fixed columns', () => {
-    const root = open('#/topics/history/ancient-231bce-647/revision', renderChapter);
-    const rows = [...root.querySelectorAll('.rv-t tbody tr[id]')].map((r) => r.querySelector('strong')?.textContent);
-    expect(rows).toContain('Samudragupta');
-    expect(rows).toContain('Harsha (Harshavardhana)');
-    expect(root.querySelector('.rv-t thead')?.textContent).toContain('Wars & expansion');
-    expect(root.querySelectorAll('.rv-t-group').length).toBeGreaterThan(5);
-  });
-});
-
-describe('revision coverage', () => {
-  it('every history chapter has revision tables with at least 5 keys', () => {
-    for (const c of getChapters()) {
-      const cards = getRevision(c.id).flatMap((s) => s.cards);
-      expect(cards.length, c.id).toBeGreaterThanOrEqual(5);
-    }
   });
 });

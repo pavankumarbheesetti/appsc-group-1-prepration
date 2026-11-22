@@ -238,6 +238,8 @@ export interface AppState {
    * OPTIONAL on disk / import — older blobs normalise to `{}`.
    */
   teluguLessons: Record<string, string>;
+  /** Revision sheets marked revised, keyed by sheet id → ISO `YYYY-MM-DD`. OPTIONAL on disk / import. */
+  sheetsRevised: Record<string, string>;
   /**
    * Per-DAY completion of Today's topic-less rows, keyed by local ISO
    * `YYYY-MM-DD` → the list of row keys finished that day (e.g. `revise`,
@@ -408,6 +410,7 @@ export function defaultState(): AppState {
     testAttempts: [],
     study: {},
     teluguLessons: {},
+    sheetsRevised: {},
     blocksDone: {},
   };
 }
@@ -471,6 +474,9 @@ function normalize(input: unknown): AppState {
     study: isRecord((obj as { study?: unknown }).study) ? ((obj as { study: unknown }).study as AppState['study']) : {},
     teluguLessons: isRecord((obj as { teluguLessons?: unknown }).teluguLessons)
       ? ((obj as { teluguLessons: unknown }).teluguLessons as AppState['teluguLessons'])
+      : {},
+    sheetsRevised: isRecord((obj as { sheetsRevised?: unknown }).sheetsRevised)
+      ? ((obj as { sheetsRevised: unknown }).sheetsRevised as AppState['sheetsRevised'])
       : {},
     blocksDone: normalizeBlocksDone((obj as { blocksDone?: unknown }).blocksDone),
   };
@@ -930,6 +936,19 @@ export function setTeluguLessonDone(
   });
 }
 
+/** Revision sheets marked revised (`sheetId → ISO date`). */
+export function getSheetsRevised(): Readonly<Record<string, string>> {
+  return loadState().sheetsRevised;
+}
+
+/** Mark revision sheet `id` revised today (`true`) or clear it (`false`). */
+export function setSheetRevised(id: string, done: boolean): AppState {
+  return updateState((s) => {
+    if (done) s.sheetsRevised[id] = todayISO();
+    else delete s.sheetsRevised[id];
+  });
+}
+
 /* -------------------------------------------------------------------------- */
 /* English writing-practice accessors (draft + self-eval checklist)            */
 /* -------------------------------------------------------------------------- */
@@ -1102,7 +1121,7 @@ export interface ParsedBackup {
 /** Top-level keys of a backup that hold `Record<string, …>` maps. @internal */
 const RECORD_KEYS = [
   'progress', 'sr', 'notebook', 'flashcards', 'mains', 'telugu', 'english',
-  'adminDone', 'study', 'teluguLessons', 'blocksDone',
+  'adminDone', 'study', 'teluguLessons', 'sheetsRevised', 'blocksDone',
 ] as const;
 
 /**
@@ -1151,6 +1170,7 @@ function validateAllEntries(next: AppState): void {
   validateEntries('adminDone', AdminFlagSchema, next.adminDone);
   validateEntries('study', TopicStudyEntrySchema, next.study);
   validateEntries('teluguLessons', z.string(), next.teluguLessons);
+  validateEntries('sheetsRevised', z.string(), next.sheetsRevised);
   validateEntries('blocksDone', BlocksDoneDaySchema, next.blocksDone);
   next.testAttempts.forEach((rec, i) => {
     const result = TestAttemptRecordSchema.safeParse(rec);
@@ -1246,6 +1266,7 @@ export function resetProgress(): AppState {
     s.testAttempts = [];
     s.study = {};
     s.teluguLessons = {};
+    s.sheetsRevised = {};
     s.blocksDone = {};
   });
 }
