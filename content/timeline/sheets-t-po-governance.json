@@ -1,0 +1,460 @@
+{
+ "kind": "sheets",
+ "version": "1",
+ "sheets": [
+  {
+   "id": "po-governance",
+   "part": "Polity",
+   "title": "Governance, RTI, e-governance and AP models",
+   "order": 13,
+   "intro": "Good governance, RTI, charters, social audit, e-governance, ARCs and the AP delivery stack.",
+   "chapters": [
+    "polity-all"
+   ],
+   "keys": [
+    {
+     "id": "go-good",
+     "name": "Good governance",
+     "tag": "Concept",
+     "rows": [
+      {
+       "k": "Idea",
+       "v": "UN, World Bank from 1990s; \"minimum government, maximum governance\""
+      },
+      {
+       "k": "Attributes",
+       "v": "Participation; rule of law; transparency; responsiveness; consensus; equity; effectiveness; accountability"
+      },
+      {
+       "k": "Not one",
+       "v": "Concentration of power in executive"
+      }
+     ]
+    },
+    {
+     "id": "go-rti",
+     "name": "RTI Act 2005",
+     "years": {
+      "from": 1997,
+      "to": 2005
+     },
+     "tag": "RTI",
+     "rows": [
+      {
+       "k": "Road",
+       "v": "MKSS (Aruna Roy); TN, Goa laws 1997; FoI Act 2002 never in force"
+      },
+      {
+       "k": "Act",
+       "v": "Passed June 2005; in force 12 Oct 2005; first CIC Wajahat Habibullah"
+      },
+      {
+       "k": "2(h)",
+       "v": "Public authority"
+      },
+      {
+       "k": "Sec 4",
+       "v": "Proactive disclosure"
+      },
+      {
+       "k": "Sec 6, 7",
+       "v": "Request, no reason, ₹10 (BPL free); 30 days; 48 hrs for life or liberty"
+      },
+      {
+       "k": "Sec 8",
+       "v": "Exemptions; 8(2) public interest override"
+      },
+      {
+       "k": "Sec 11",
+       "v": "Third party – 40 days"
+      },
+      {
+       "k": "Sec 19",
+       "v": "First appeal (FAA) 30 days; second to Commission 90 days"
+      },
+      {
+       "k": "Sec 20",
+       "v": "Penalty ₹250 a day, max ₹25,000"
+      },
+      {
+       "k": "Sec 22, 24",
+       "v": "Overrides OSA 1923; security bodies exempt except corruption, human rights"
+      },
+      {
+       "k": "Status",
+       "v": "Statutory right flowing from 19(1)(a)"
+      }
+     ],
+     "traps": [
+      "First appeal to FAA, not the Commission"
+     ]
+    },
+    {
+     "id": "go-rti2",
+     "name": "RTI changes",
+     "years": {
+      "from": 2013,
+      "to": 2026
+     },
+     "tag": "RTI",
+     "rows": [
+      {
+       "k": "2013",
+       "v": "CIC said six parties are public authorities (not complied)"
+      },
+      {
+       "k": "2014",
+       "v": "Whistle Blowers Protection Act"
+      },
+      {
+       "k": "2019",
+       "v": "Centre fixes IC term, pay; 3 years"
+      },
+      {
+       "k": "DPDP 2023 Sec 44(3)",
+       "v": "All personal info exempt in 8(1)(j); in force 13 Nov 2025; SC notice Aug 2026 (per notes)"
+      }
+     ]
+    },
+    {
+     "id": "go-charter",
+     "name": "Citizen’s Charter and Sevottam",
+     "years": {
+      "from": 1991,
+      "to": 2014
+     },
+     "tag": "Service delivery",
+     "rows": [
+      {
+       "k": "Origin",
+       "v": "UK 1991 (John Major)"
+      },
+      {
+       "k": "India",
+       "v": "CMs' Conference 1997"
+      },
+      {
+       "k": "Nature",
+       "v": "Voluntary promise; not enforceable"
+      },
+      {
+       "k": "Sevottam (DARPG)",
+       "v": "Charter; grievance redress; delivery capability"
+      },
+      {
+       "k": "Guarantee laws",
+       "v": "MP first 2010; Union Grievance Redress Bill 2011 lapsed 2014"
+      }
+     ],
+     "traps": [
+      "Charter = promise; Guarantee Act = enforceable"
+     ]
+    },
+    {
+     "id": "go-audit",
+     "name": "Social audit",
+     "years": {
+      "from": 2005,
+      "to": 2026
+     },
+     "tag": "Accountability",
+     "rows": [
+      {
+       "k": "MGNREGA",
+       "v": "2005, Sec 17 – Gram Sabha audits works"
+      },
+      {
+       "k": "Rules",
+       "v": "Audit of Schemes Rules 2011"
+      },
+      {
+       "k": "AP",
+       "v": "SSAAT – independent social-audit society; AP pioneered it"
+      },
+      {
+       "k": "First law",
+       "v": "Meghalaya"
+      },
+      {
+       "k": "VB-G RAM G Act 2025",
+       "v": "Replaced MGNREGA 1 July 2026; keeps audit (per notes)"
+      }
+     ]
+    },
+    {
+     "id": "go-egov",
+     "name": "e-Governance plans",
+     "years": {
+      "from": 2006,
+      "to": 2015
+     },
+     "tag": "e-Governance",
+     "rows": [
+      {
+       "k": "Types",
+       "v": "G2C (certificates), G2B (MCA21), G2G, G2E"
+      },
+      {
+       "k": "NeGP",
+       "v": "18 May 2006; 27 → 31 MMPs; SWAN, State Data Centres, CSCs"
+      },
+      {
+       "k": "e-Kranti",
+       "v": "25 Mar 2015; 44 MMPs; one of nine pillars"
+      },
+      {
+       "k": "Digital India",
+       "v": "1 July 2015; 3 visions, 9 pillars"
+      }
+     ],
+     "traps": [
+      "MCA21 is G2B"
+     ]
+    },
+    {
+     "id": "go-plat",
+     "name": "Digital platforms",
+     "years": {
+      "from": 2013,
+      "to": 2017
+     },
+     "tag": "e-Governance",
+     "rows": [
+      {
+       "k": "DBT",
+       "v": "1 Jan 2013"
+      },
+      {
+       "k": "MyGov",
+       "v": "26 July 2014"
+      },
+      {
+       "k": "Jan Dhan",
+       "v": "28 Aug 2014; JAM – Economic Survey 2014-15"
+      },
+      {
+       "k": "DigiLocker",
+       "v": "2015"
+      },
+      {
+       "k": "PRAGATI",
+       "v": "25 Mar 2015 – PM's review"
+      },
+      {
+       "k": "GeM",
+       "v": "9 Aug 2016 – procurement"
+      },
+      {
+       "k": "UMANG",
+       "v": "Nov 2017"
+      },
+      {
+       "k": "CPGRAMS",
+       "v": "Grievances; CSCs last mile"
+      }
+     ],
+     "traps": [
+      "PRAGATI review ≠ GeM procurement"
+     ]
+    },
+    {
+     "id": "go-aadhaar",
+     "name": "Aadhaar and data protection",
+     "years": {
+      "from": 2009,
+      "to": 2027
+     },
+     "tag": "e-Governance",
+     "rows": [
+      {
+       "k": "UIDAI",
+       "v": "Jan 2009 executive order; Nandan Nilekani; first number Tembhli 29 Sep 2010"
+      },
+      {
+       "k": "Act",
+       "v": "2016 as Money Bill; upheld 26 Sep 2018; Sec 57 struck"
+      },
+      {
+       "k": "Privacy",
+       "v": "Puttaswamy 24 Aug 2017; Srikrishna committee"
+      },
+      {
+       "k": "DPDP Act",
+       "v": "Assent 11 Aug 2023; Data Principal, Data Fiduciary; Data Protection Board; up to ₹250 crore"
+      },
+      {
+       "k": "Rules",
+       "v": "13 Nov 2025; most duties May 2027"
+      }
+     ]
+    },
+    {
+     "id": "go-arc",
+     "name": "Administrative Reforms Commissions",
+     "years": {
+      "from": 1966,
+      "to": 2009
+     },
+     "tag": "Reform",
+     "rows": [
+      {
+       "k": "1st ARC",
+       "v": "5 Jan 1966; Morarji Desai, then K. Hanumanthaiah; 20 reports; Lokpal idea"
+      },
+      {
+       "k": "2nd ARC",
+       "v": "31 Aug 2005; Veerappa Moily, then V. Ramachandran; 15 reports (2006 – 09)"
+      },
+      {
+       "k": "Reports 1 – 5",
+       "v": "RTI Master Key; Unlocking Human Capital; Crisis Management; Ethics; Public Order"
+      },
+      {
+       "k": "Reports 6 – 10",
+       "v": "Local Governance; Conflict Resolution; Terrorism; Social Capital; Personnel"
+      },
+      {
+       "k": "Reports 11 – 15",
+       "v": "e-Governance SMART (Simple, Moral, Accountable, Responsive, Transparent); Citizen Centric Administration; GoI structure; Financial Management; State and District Administration"
+      }
+     ]
+    },
+    {
+     "id": "go-ap",
+     "name": "Andhra Pradesh governance stack",
+     "years": {
+      "from": 2011,
+      "to": 2026
+     },
+     "tag": "Andhra Pradesh",
+     "rows": [
+      {
+       "k": "MeeSeva",
+       "v": "2011 single window, fixed timelines"
+      },
+      {
+       "k": "RTGS",
+       "v": "6 Sep 2017 by G.O.; command centre; data lake; minister Nara Lokesh"
+      },
+      {
+       "k": "e-Pragati",
+       "v": "State enterprise architecture"
+      },
+      {
+       "k": "Sachivalayams",
+       "v": "2 Oct 2019 → Swarna Gramam / Ward (Bill Feb 2026)"
+      },
+      {
+       "k": "PGRS",
+       "v": "Spandana renamed June 2024; Mondays"
+      },
+      {
+       "k": "Mana Mitra",
+       "v": "30 Jan 2025; WhatsApp 9552300009; 161 → 1,126 services (per notes)"
+      }
+     ]
+    },
+    {
+     "id": "go-dev",
+     "name": "Development actors and SHGs",
+     "years": {
+      "from": 1982,
+      "to": 2023
+     },
+     "tag": "Development",
+     "rows": [
+      {
+       "k": "Actors",
+       "v": "Civil society, NGOs, SHGs, pressure groups"
+      },
+      {
+       "k": "DWCRA",
+       "v": "1982-83 women's SHG scheme"
+      },
+      {
+       "k": "SERP",
+       "v": "Velugu / Indira Kranthi Patham"
+      },
+      {
+       "k": "MEPMA",
+       "v": "Urban SHGs"
+      },
+      {
+       "k": "Ladder",
+       "v": "SHG → Village Organisation → Mandal Samakhya → DAY-NRLM"
+      },
+      {
+       "k": "Aspirational Districts",
+       "v": "2018 (Blocks 2023); convergence, collaboration, competition"
+      }
+     ]
+    },
+    {
+     "id": "go-groups",
+     "name": "Pressure groups and integration",
+     "tag": "Society",
+     "rows": [
+      {
+       "k": "Business",
+       "v": "FICCI, CII, ASSOCHAM"
+      },
+      {
+       "k": "Labour",
+       "v": "AITUC, INTUC, BMS, CITU"
+      },
+      {
+       "k": "Farmers",
+       "v": "AIKS, BKU"
+      },
+      {
+       "k": "Professional, students",
+       "v": "IMA, Bar Council; ABVP, NSUI, AISF"
+      },
+      {
+       "k": "Anomic",
+       "v": "Riots, sudden outbursts"
+      },
+      {
+       "k": "Communalism",
+       "v": "Bipan Chandra – communal nationalism → liberal → extreme"
+      },
+      {
+       "k": "NIC",
+       "v": "1961, PM chairs"
+      }
+     ],
+     "traps": [
+      "Pressure group does not contest elections"
+     ]
+    },
+    {
+     "id": "go-misc",
+     "name": "MPLADS, DoPT, urban bodies",
+     "years": {
+      "from": 1970,
+      "to": 1993
+     },
+     "tag": "Other",
+     "rows": [
+      {
+       "k": "MPLADS",
+       "v": "Non-lapsable; durable assets; SC/ST share; 10% inspected"
+      },
+      {
+       "k": "DoP",
+       "v": "1970 under PM (Ayyangar Committee)"
+      },
+      {
+       "k": "NIUA",
+       "v": "Apex body of Housing and Urban Affairs"
+      },
+      {
+       "k": "India Sanitation Coalition",
+       "v": "Industry-led sanitation platform"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
