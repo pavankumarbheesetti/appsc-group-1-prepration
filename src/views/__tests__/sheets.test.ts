@@ -3,7 +3,7 @@ import { renderIndex, renderSheet } from '../sheets';
 import { render as renderRevise } from '../revise';
 import { renderChapter } from '../history-learn';
 import { getChapters, getSheets, getSheetsForChapter } from '../../content/loader';
-import { inOrder, lanesOf, previousInLane, sameTime, yearsLabel } from '../../lib/sheets';
+import { chrono, everything, inOrder, lanesOf, previousInLane, sameTime, yearsLabel } from '../../lib/sheets';
 import { getSheetsRevised } from '../../state/store';
 
 beforeEach(() => localStorage.clear());
@@ -43,6 +43,11 @@ describe('sheet helpers', () => {
     expect(sameTime(keys[2]!, keys).map((k) => k.id)).toEqual(['a', 'b']);
     expect(sameTime(keys[3]!, keys)).toEqual([]);
   });
+  it('puts undated keys beside the dated key before them', () => {
+    const k = (id: string, y?: number) => ({ id, name: id, rows: [], ...(y === undefined ? {} : { years: { from: y, to: y } }) });
+    expect(chrono([k('x'), k('b', 10), k('y'), k('a', 5)]).map((e) => e.key.id)).toEqual(['a', 'x', 'b', 'y']);
+    expect(chrono([k('z')], 7)[0]!.at).toBe(7);
+  });
 });
 
 describe('revision sheets content', () => {
@@ -67,19 +72,30 @@ describe('revision sheets pages', () => {
     expect(root.querySelectorAll('.sh-tile').length).toBe(getSheets().length);
   });
 
-  it('shows one box per key, in order, with traps, and covers values', () => {
+  it('shows one table row per key, oldest first, and covers values', () => {
     const root = open('#/revise/sheets/s-mughal', renderSheet);
-    const names = [...root.querySelectorAll('.sh-key-name')].map((n) => n.textContent);
+    const names = [...root.querySelectorAll('.sh-tk-name')].map((n) => n.textContent);
     expect(names).toContain('Akbar');
-    expect(root.querySelectorAll('.sh-order .sh-chip').length).toBeGreaterThan(5);
+    expect(names.indexOf('Babur')).toBeLessThan(names.indexOf('Akbar'));
+    expect(root.querySelector('.sh-td-h')?.textContent).toBeTruthy();
     const cover = [...root.querySelectorAll<HTMLButtonElement>('.sh-tool')].find((b) => b.textContent?.includes('Cover'))!;
     cover.click();
     expect(root.querySelector('.sh')!.classList.contains('is-covered')).toBe(true);
-    const row = root.querySelector<HTMLElement>('.sh-row')!;
-    row.click();
-    expect(row.classList.contains('is-shown')).toBe(true);
+    const cell = root.querySelector<HTMLElement>('.sh-td')!;
+    cell.click();
+    expect(cell.classList.contains('is-shown')).toBe(true);
     cover.click();
     expect(root.querySelector('.sh')!.classList.contains('is-covered')).toBe(false);
+  });
+
+  it('shows everything in one table with part filters', () => {
+    const root = open('#/revise/sheets/all', renderSheet);
+    const rows = root.querySelectorAll('.sh-tr');
+    expect(rows.length).toBe(everything(getSheets()).length);
+    expect(rows[0]!.textContent).toContain('Palaeolithic');
+    [...root.querySelectorAll<HTMLButtonElement>('.sh-filter .sh-chip')].find((b) => b.textContent === 'Polity')!.click();
+    expect(root.querySelectorAll('.sh-tr').length).toBe(everything(getSheets(), 'Polity').length);
+    expect(root.querySelector('.sh-tk-sheet')?.getAttribute('href')).toContain('#/revise/sheets/s-po');
   });
 
   it('draws a lane chart with before and same-time rows', () => {
@@ -89,13 +105,12 @@ describe('revision sheets pages', () => {
     expect(root.textContent).toContain('Before');
     const bar = root.querySelector<HTMLButtonElement>('.sh-bar')!;
     bar.click();
-    expect(root.querySelector('.sh-key.is-flash')).not.toBeNull();
+    expect(root.querySelector('.sh-tr.is-flash')).not.toBeNull();
   });
 
-  it('shows traps and a jump bar for undated sheets', () => {
+  it('shows traps as their own cell', () => {
     const root = open('#/revise/sheets/s-ivc', renderSheet);
-    expect(root.querySelector('.sh-traps')).not.toBeNull();
-    expect(root.querySelector('.sh-jump')).not.toBeNull();
+    expect(root.querySelector('.sh-td-trap')?.textContent).toContain('Don');
   });
 
   it('marks a sheet revised and undoes it', () => {

@@ -149,10 +149,11 @@
 @media print {
   body.print-sheet .sh,
   body.print-sheet .sh * { visibility: visible; }
-  body.print-sheet .sh { position: absolute; inset: 0; color: #000; background: #fff; font-size: 9pt; }
+  body.print-sheet .sh { position: absolute; inset: 0; color: #000; background: #fff; font-size: 8pt; }
   body.print-sheet .sh-back, body.print-sheet .sh-toolbar, body.print-sheet .sh-cover-hint,
-  body.print-sheet .sh-pager, body.print-sheet .sh-order, body.print-sheet .sh-jump { display: none; }
-  body.print-sheet .sh-grid { display: block; column-count: 2; column-gap: 6mm; }
-  body.print-sheet .sh-key { break-inside: avoid; margin: 0 0 3mm; box-shadow: none; }
-  body.print-sheet .sh.is-covered dd { visibility: visible; }
+  body.print-sheet .sh-pager, body.print-sheet .sh-filter, body.print-sheet .sh-chart-wrap { display: none; }
+  body.print-sheet .sh-table-wrap { overflow: visible; border: 0; }
+  body.print-sheet .sh-tk { position: static; }
+  body.print-sheet .sh-tr { break-inside: avoid; }
+  body.print-sheet .sh.is-covered .sh-td-v { color: #000; background: none; }
 }

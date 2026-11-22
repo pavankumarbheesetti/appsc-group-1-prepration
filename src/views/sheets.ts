@@ -7,7 +7,8 @@
  */
 import { getSheet, getSheets } from '../content/loader';
 import type { Sheet, SheetKey } from '../content/sheet-types';
-import { byPart, inOrder, lanesOf, previousInLane, sameTime, sheetSpan, yearText, yearsLabel } from '../lib/sheets';
+import { byPart, chrono, everything, inOrder, lanesOf, previousInLane, sameTime, sheetSpan, yearText, yearsLabel } from '../lib/sheets';
+import { SHEET_PARTS } from '../content/sheet-types';
 import { navigate, routeParam } from '../router/router';
 import { getSheetsRevised, setSheetRevised } from '../state/store';
 import { el, mount } from './dom';
@@ -28,6 +29,7 @@ export function renderIndex(root: HTMLElement): void {
     el('h1', { class: 'page-title', text: 'Revision sheets' }),
     el('p', { class: 'section-lead', text: 'One sheet per topic. Every key has its years and the facts the paper asks, in a few lines. Read the lessons first; use these to revise.' }),
     el('p', { class: 'sh-count tnum', text: `${n} of ${all.length} sheets revised` }),
+    el('a', { class: 'btn btn-primary sh-all', attrs: { href: `#${SHEETS_PATH}/all` }, text: 'Everything in one table, oldest first' }),
     ...byPart(getSheets()).map((g) => el('section', { class: 'sh-part' }, [
       el('h2', { class: 'sh-part-title', text: g.part }),
       el('div', { class: 'sh-tiles' }, g.sheets.map((s) => el('a', {
@@ -50,22 +52,6 @@ function focusKey(id: string): void {
   node.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
   node.classList.add('is-flash');
   window.setTimeout(() => node.classList.remove('is-flash'), 1600);
-}
-
-/** Keys oldest first, with the gap to the one before. */
-function orderStrip(keys: readonly SheetKey[]): HTMLElement | null {
-  const d = inOrder(keys);
-  if (d.length < 3) return null;
-  return el('div', { class: 'sh-order' }, [
-    el('p', { class: 'sh-label', text: 'In order' }),
-    el('ol', { class: 'sh-order-list' }, d.map((k, i) => el('li', {}, [
-      i > 0 ? el('span', { class: 'sh-gap tnum', text: `+${Math.max(0, k.years.from - d[i - 1]!.years.from)}` }) : null,
-      el('button', { class: 'sh-chip', type: 'button', onClick: () => focusKey(k.id) }, [
-        el('span', { class: 'sh-chip-year tnum', text: yearText(k.years.from) }),
-        el('span', { text: k.name }),
-      ]),
-    ]))),
-  ]);
 }
 
 /** Lane chart: one row per lane, bars on a common year axis. */
@@ -96,7 +82,8 @@ function laneChart(keys: readonly SheetKey[]): HTMLElement {
   ]);
 }
 
-function keyBox(k: SheetKey, sheet: Sheet): HTMLElement {
+/** One table row: the key cell, then one cell per fact, each with its own small header. */
+function keyRow(k: SheetKey, sheet: Sheet, showSheet = false): HTMLElement {
   const rows = [...k.rows];
   if (sheet.chart) {
     const prev = previousInLane(k, sheet.keys);
@@ -104,24 +91,59 @@ function keyBox(k: SheetKey, sheet: Sheet): HTMLElement {
     rows.push({ k: 'Before', v: prev ? `${prev.name} (${yearsLabel(prev)})` : 'First in this row' });
     rows.push({ k: 'Same time', v: mates.length ? mates.map((m) => m.name).join(', ') : 'None here' });
   }
-  return el('article', { class: 'sh-key', attrs: { id: `k-${k.id}` } }, [
-    el('header', { class: 'sh-key-head' }, [
-      el('h3', { class: 'sh-key-name', text: k.name }),
-      k.years ? el('span', { class: 'sh-key-years tnum', text: yearsLabel(k) }) : null,
-      k.tag && !sheet.chart ? el('span', { class: 'sh-key-tag', text: k.tag }) : null,
+  const reveal = (e: Event) => (e.currentTarget as HTMLElement).classList.toggle('is-shown');
+  return el('tr', { class: 'sh-tr', attrs: { id: `k-${k.id}` } }, [
+    el('th', { class: 'sh-tk', attrs: { scope: 'row' } }, [
+      el('strong', { class: 'sh-tk-name', text: k.name }),
+      k.years ? el('span', { class: 'sh-tk-years tnum', text: yearsLabel(k) }) : null,
+      k.hook ? el('span', { class: 'sh-tk-hook', text: k.hook }) : null,
+      showSheet ? el('a', { class: 'sh-tk-sheet', attrs: { href: `#${SHEETS_PATH}/${sheet.id}` }, text: sheet.title }) : k.tag && !sheet.chart ? el('span', { class: 'sh-tk-sheet', text: k.tag }) : null,
     ]),
-    k.hook ? el('p', { class: 'sh-key-hook', text: k.hook }) : null,
-    el('dl', { class: 'sh-rows' }, rows.map((r) => el('div', {
-      class: 'sh-row',
-      onClick: (e: Event) => (e.currentTarget as HTMLElement).classList.toggle('is-shown'),
-    }, [el('dt', { text: r.k }), el('dd', { text: r.v })]))),
+    ...rows.map((r) => el('td', { class: 'sh-td', onClick: reveal }, [
+      el('span', { class: 'sh-td-h', text: r.k }),
+      el('span', { class: 'sh-td-v', text: r.v }),
+    ])),
     k.traps?.length
-      ? el('div', { class: 'sh-traps' }, [
-          el('p', { class: 'sh-label', text: 'Don\u2019t confuse' }),
-          el('ul', {}, k.traps.map((t) => el('li', { text: t }))),
+      ? el('td', { class: 'sh-td sh-td-trap', onClick: reveal }, [
+          el('span', { class: 'sh-td-h', text: 'Don\u2019t confuse' }),
+          el('span', { class: 'sh-td-v', text: k.traps.join(' · ') }),
         ])
       : null,
   ]);
+}
+
+function bigTable(rows: HTMLElement[]): HTMLElement {
+  return el('div', { class: 'sh-table-wrap' }, [el('table', { class: 'sh-table' }, [el('tbody', {}, rows)])]);
+}
+
+function coverButton(page: HTMLElement): HTMLElement {
+  const btn = el('button', { class: 'btn btn-ghost sh-tool', type: 'button', attrs: { 'aria-pressed': 'false' } }, [icon('revise', 15), el('span', { text: 'Cover and recall' })]);
+  btn.addEventListener('click', () => {
+    const on = !page.classList.contains('is-covered');
+    page.classList.toggle('is-covered', on);
+    page.querySelectorAll('.is-shown').forEach((r) => r.classList.remove('is-shown'));
+    btn.setAttribute('aria-pressed', String(on));
+    btn.replaceChildren(icon('revise', 15), el('span', { text: on ? 'Show all' : 'Cover and recall' }));
+  });
+  return btn;
+}
+
+/** `#/revise/sheets/all`: every key of every sheet in one table, oldest first. */
+export function renderAll(root: HTMLElement, part?: Sheet['part']): void {
+  const page = el('div', { class: 'sh' });
+  const list = everything(getSheets(), part);
+  mount(root, el('div', {}, [page]));
+  page.append(
+    el('button', { class: 'btn btn-ghost sh-back', type: 'button', onClick: () => navigate(SHEETS_PATH) }, [el('span', { text: '‹ All revision sheets' })]),
+    el('h1', { class: 'page-title', text: 'Everything, one table' }),
+    el('p', { class: 'section-lead', text: `${list.length} rows, oldest first. Each cell has its own heading.` }),
+    el('div', { class: 'sh-filter' }, [undefined, ...SHEET_PARTS].map((p) => el('button', {
+      class: `sh-chip${p === part ? ' is-on' : ''}`, type: 'button', onClick: () => renderAll(root, p),
+    }, [el('span', { text: p ?? 'All' })]))),
+    el('div', { class: 'sh-toolbar' }, [coverButton(page), el('button', { class: 'btn btn-ghost sh-tool', type: 'button', onClick: printSheet }, [el('span', { text: 'Print' })])]),
+    el('p', { class: 'sh-cover-hint', text: 'Values are hidden. Say each one, then tap the cell to check.' }),
+    bigTable(list.map((e) => keyRow(e.key, e.sheet, true))),
+  );
 }
 
 /** Print ONLY the sheet (print.css keys off `body.print-sheet`). */
@@ -141,6 +163,10 @@ function printSheet(): void {
 
 export function renderSheet(root: HTMLElement): void {
   const id = routeParam(`${SHEETS_PATH}/:id`, 'id');
+  if (id === 'all') {
+    renderAll(root);
+    return;
+  }
   const sheet = id ? getSheet(id) : undefined;
   if (!sheet) {
     renderIndex(root);
@@ -153,14 +179,7 @@ export function renderSheet(root: HTMLElement): void {
   const done = getSheetsRevised()[sheet.id];
   const page = el('div', { class: 'sh' });
 
-  const coverBtn = el('button', { class: 'btn btn-ghost sh-tool', type: 'button', attrs: { 'aria-pressed': 'false' } }, [icon('revise', 15), el('span', { text: 'Cover and recall' })]);
-  coverBtn.addEventListener('click', () => {
-    const on = !page.classList.contains('is-covered');
-    page.classList.toggle('is-covered', on);
-    page.querySelectorAll('.sh-row.is-shown').forEach((r) => r.classList.remove('is-shown'));
-    coverBtn.setAttribute('aria-pressed', String(on));
-    coverBtn.replaceChildren(icon('revise', 15), el('span', { text: on ? 'Show all' : 'Cover and recall' }));
-  });
+  const coverBtn = coverButton(page);
   const doneBtn = el('button', {
     class: `btn ${done ? 'btn-ghost' : 'btn-primary'} sh-tool sh-done`, type: 'button',
     onClick: () => { setSheetRevised(sheet.id, !done); renderSheet(root); },
@@ -178,9 +197,9 @@ export function renderSheet(root: HTMLElement): void {
       el('button', { class: 'btn btn-ghost sh-tool', type: 'button', onClick: printSheet }, [el('span', { text: 'Print' })]),
       doneBtn,
     ]),
-    el('p', { class: 'sh-cover-hint', text: 'Values are hidden. Say each one, then tap the row to check.' }),
-    sheet.chart ? laneChart(sheet.keys) : orderStrip(sheet.keys) ?? el('nav', { class: 'sh-jump' }, sheet.keys.map((k) => el('button', { class: 'sh-chip', type: 'button', onClick: () => focusKey(k.id) }, [el('span', { text: k.name })]))),
-    el('div', { class: 'sh-grid' }, sheet.keys.map((k) => keyBox(k, sheet))),
+    el('p', { class: 'sh-cover-hint', text: 'Values are hidden. Say each one, then tap the cell to check.' }),
+    sheet.chart ? laneChart(sheet.keys) : null,
+    bigTable(chrono(sheet.keys).map((e) => keyRow(e.key, sheet))),
     el('nav', { class: 'sh-pager' }, [
       prev ? el('a', { class: 'sh-pager-link', attrs: { href: `#${SHEETS_PATH}/${prev.id}` } }, [el('span', { class: 'sh-label', text: 'Previous' }), el('strong', { text: prev.title })]) : el('span'),
       next ? el('a', { class: 'sh-pager-link is-next', attrs: { href: `#${SHEETS_PATH}/${next.id}` } }, [el('span', { class: 'sh-label', text: 'Next' }), el('strong', { text: next.title })]) : el('span'),

@@ -51,3 +51,27 @@ export function sheetSpan(s: Sheet): string {
   const to = Math.max(...d.map((k) => k.years.to));
   return yearsLabel({ years: { from, to } });
 }
+
+/**
+ * Keys in time order. An undated key takes the year of the dated key just
+ * before it in the sheet (else the next one, else `fallback`), so a site or a
+ * text stays beside the age it belongs to. Stable for equal years.
+ */
+export function chrono(keys: readonly SheetKey[], fallback = 0): { key: SheetKey; at: number }[] {
+  const at = keys.map((k, i) => {
+    if (k.years) return k.years.from;
+    for (let j = i - 1; j >= 0; j -= 1) if (keys[j]!.years) return keys[j]!.years!.from;
+    for (let j = i + 1; j < keys.length; j += 1) if (keys[j]!.years) return keys[j]!.years!.from;
+    return fallback;
+  });
+  return keys.map((key, i) => ({ key, at: at[i]!, i })).sort((a, b) => a.at - b.at || a.i - b.i).map(({ key, at: y }) => ({ key, at: y }));
+}
+
+/** Every key of every non-chart sheet, oldest first (the "everything" table). */
+export function everything(sheets: readonly Sheet[], part?: Sheet['part']): { key: SheetKey; sheet: Sheet; at: number }[] {
+  return sheets
+    .filter((s) => !s.chart && (!part || s.part === part))
+    .flatMap((s, si) => chrono(s.keys).map((e, ki) => ({ ...e, sheet: s, si, ki })))
+    .sort((a, b) => a.at - b.at || a.si - b.si || a.ki - b.ki)
+    .map(({ key, sheet, at }) => ({ key, sheet, at }));
+}
